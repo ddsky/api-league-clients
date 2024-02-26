@@ -1,0 +1,4727 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API League",
+    "description": "API League is a Hub for World Class APIs.",
+    "termsOfService": "https://apileague.com/terms",
+    "version": "1.0",
+    "contact": {
+      "name": "David Urbansky",
+      "email": "mail@apileague.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.apileague.com"
+    }
+  ],
+  "paths": {
+    "/search-books": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "available": {
+                      "type": "integer"
+                    },
+                    "number": {
+                      "type": "integer"
+                    },
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "books": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "image": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "available": 5999,
+                      "number": 10,
+                      "offset": 0,
+                      "books": [
+                        {
+                          "title": "Journey to Hogwarts",
+                          "image": "https://covers.openlibrary.org/b/id/2520429-M.jpg",
+                          "id": 17200576
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/2520430-M.jpg",
+                          "id": 15954006,
+                          "title": "Inside Hogwarts",
+                          "subtitle": "Magical Paintbook"
+                        },
+                        {
+                          "title": "Harry Potter and the Goblet of Fire",
+                          "image": "https://covers.openlibrary.org/b/id/12775900-M.jpg",
+                          "id": 16384516
+                        },
+                        {
+                          "title": "Harry Potter and the Order of the Phoenix",
+                          "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg",
+                          "id": 14296534
+                        },
+                        {
+                          "title": "Great Gatsby (Silver Screen Edition)",
+                          "image": "https://covers.openlibrary.org/b/id/12791857-M.jpg",
+                          "id": 14530450
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/394001-M.jpg",
+                          "id": 18810398,
+                          "title": "The Hobbit",
+                          "subtitle": "or, There and back again"
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/6282709-M.jpg",
+                          "id": 13597674,
+                          "title": "The Name of the Wind",
+                          "subtitle": "The Kingkiller Chronicle : day one"
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/13220226-M.jpg",
+                          "id": 20778556,
+                          "title": "Two Towers : The Lord of the Rings",
+                          "subtitle": "Part Two"
+                        },
+                        {
+                          "title": "Frankenstein (Silver Screen Edition)",
+                          "image": "https://covers.openlibrary.org/b/id/12791860-M.jpg",
+                          "id": 20101114
+                        },
+                        {
+                          "title": "Bogar b\u00e1rd mes\u00e9i",
+                          "image": "https://covers.openlibrary.org/b/id/9326689-M.jpg",
+                          "id": 17798828
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "books about wizards"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "earliest-publish-year",
+            "description": "The books must have been published after this year.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 9999,
+              "type": "integer",
+              "example": 2022
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "latest-publish-year",
+            "description": "The books must have been published before this year.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 9999,
+              "type": "integer",
+              "example": 2023
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-rating",
+            "description": "The minimum rating the book must have gotten in the interval [0,1].",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0.8
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-rating",
+            "description": "The maximum rating the book must have gotten in the interval [0,1].",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0.99
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "genres",
+            "description": "A comma-separated list of  genres. Only books from any of the given genres will be returned.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "nonfiction"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "authors",
+            "description": "A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "J.K. Rowling"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "isbn",
+            "description": "Only the book matching the ISBN-13 will be returned",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 13,
+              "type": "string",
+              "example": "9781781257654"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "oclc",
+            "description": "Only the book matching the OCLC will be returned",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "864418200"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort",
+            "description": "The sorting criteria (publish-date or rating).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "rating"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort-direction",
+            "description": "Whether to sort ascending or descending (ASC or DESC).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 4,
+              "type": "string",
+              "example": "DESC"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "group-results",
+            "description": "Whether to group similar editions of the same book.",
+            "schema": {
+              "type": "boolean",
+              "example": false
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of books to skip in range [0,1000]",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of books to return in range [1,100]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 100,
+              "type": "integer",
+              "example": 10
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-books-api"
+        },
+        "summary": "Search Books",
+        "tags": [
+          "Books"
+        ],
+        "description": "Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.",
+        "operationId": "searchBooks",
+        "deprecated": false
+      }
+    },
+    "/list-similar-books": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "similar_books": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "image": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "similar_books": [
+                        {
+                          "title": "Harry Potter and the Order of the Phoenix",
+                          "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg",
+                          "id": 14296534
+                        },
+                        {
+                          "title": "Harry Potter and the Half-Blood Prince",
+                          "image": "https://covers.openlibrary.org/b/id/8235163-M.jpg",
+                          "id": 16499448
+                        },
+                        {
+                          "title": "Blood and Fire",
+                          "image": "https://covers.openlibrary.org/b/id/10404497-M.jpg",
+                          "id": 18610968
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/6657713-M.jpg",
+                          "id": 20464852,
+                          "title": "Towers of midnight",
+                          "subtitle": "Wheel of Time Book 13"
+                        },
+                        {
+                          "image": "https://covers.openlibrary.org/b/id/3027823-M.jpg",
+                          "id": 13804028,
+                          "title": "Best of Robert Jordan",
+                          "subtitle": "The Shadow Rising; The Fires of Heaven; Lord of Chaos; A Crown of Swords (The Wheel of Time Series)"
+                        },
+                        {
+                          "title": "MAR, Volume 7",
+                          "image": "https://covers.openlibrary.org/b/id/765103-M.jpg",
+                          "id": 14987824
+                        },
+                        {
+                          "title": "The Daysong of the Knightbird",
+                          "image": "https://covers.openlibrary.org/b/id/1822804-M.jpg",
+                          "id": 19984854
+                        },
+                        {
+                          "title": "The key",
+                          "image": "https://covers.openlibrary.org/b/id/8369732-M.jpg",
+                          "id": 17174416
+                        },
+                        {
+                          "title": "Bring me the head of Prince Charming",
+                          "image": "https://covers.openlibrary.org/b/id/3965371-M.jpg",
+                          "id": 20121054
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "The id of the book to which similar books should be found.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 999999999,
+              "type": "integer",
+              "example": 8302059
+            },
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "in": "path"
+          },
+          {
+            "name": "number",
+            "description": "The number of similar books to return in range [1,100]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 100,
+              "type": "integer",
+              "example": 10
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/find-similar-books-api"
+        },
+        "summary": "Find Similar Books",
+        "tags": [
+          "Books"
+        ],
+        "description": "Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.",
+        "operationId": "findSimilarBooks",
+        "deprecated": false
+      }
+    },
+    "/search-news": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "number": {
+                      "type": "integer"
+                    },
+                    "available": {
+                      "type": "integer"
+                    },
+                    "news": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "summary": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "image": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "sentiment": {
+                            "type": "number"
+                          },
+                          "source_country": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "language": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "text": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "publish_date": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "authors": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "offset": 0,
+                      "number": 10,
+                      "available": 83,
+                      "news": [
+                        {
+                          "summary": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck. According to Musk, its initial production will begin with a four-motor variant.",
+                          "image": "https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png",
+                          "sentiment": 0.712523,
+                          "source_country": "co",
+                          "language": "en",
+                          "id": 28,
+                          "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
+                          "title": "Tesla to Release a Four-Motor Version of Cybertruck",
+                          "publish_date": "2022-09-30 01:07:48",
+                          "url": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
+                          "authors": [
+                            "Iwan Stone",
+                            "Zahna Eklund"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "tesla"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "source-countries",
+            "description": "A comma-separated list of ISO 3166 country codes from which the news should originate.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "us,uk"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "language",
+            "description": "The ISO 6391 language code of the news.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 2,
+              "type": "string",
+              "example": "en"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-sentiment",
+            "description": "The minimal sentiment of the news in range [-1,1].",
+            "schema": {
+              "format": "double",
+              "minimum": -1,
+              "maximum": 1,
+              "type": "number",
+              "example": -0.8
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-sentiment",
+            "description": "The maximal sentiment of the news in range [-1,1].",
+            "schema": {
+              "format": "double",
+              "minimum": -1,
+              "maximum": 1,
+              "type": "number",
+              "example": 0.8
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "earliest-publish-date",
+            "description": "The news must have been published after this date.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "2022-04-22 16:12:35"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "latest-publish-date",
+            "description": "The news must have been published before this date.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "2022-04-22 16:12:35"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "news-sources",
+            "description": "A comma-separated list of news sources from which the news should originate.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "https://www.bbc.co.uk"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "authors",
+            "description": "A comma-separated list of author names. Only news from any of the given authors will be returned.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "John Doe"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "entities",
+            "description": "Filter news by entities (see semantic types).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "ORG:Tesla"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "location-filter",
+            "description": "Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "51.050407, 13.737262, 100"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort",
+            "description": "The sorting criteria (publish-time or sentiment).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "publish-time"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort-direction",
+            "description": "Whether to sort ascending or descending (ASC or DESC).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 4,
+              "type": "string",
+              "example": "ASC"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of news to skip in range [0,10000]",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of news to return in range [1,100]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 100,
+              "type": "integer",
+              "example": 10
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-news-api"
+        },
+        "summary": "Search News",
+        "tags": [
+          "News"
+        ],
+        "description": "Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.",
+        "operationId": "searchNews",
+        "deprecated": false
+      }
+    },
+    "/extract-news": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "text": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "publish_date": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "author": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "language": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "source_country": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "sentiment": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "title": "Tesla to Release a Four-Motor Version of Cybertruck",
+                      "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
+                      "url": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
+                      "image": "https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png",
+                      "publish_date": "2022-09-30 01:07:48",
+                      "author": "Kay Lee",
+                      "language": "en",
+                      "source_country": "co",
+                      "sentiment": 0.712523
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url of the news.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "analyze",
+            "description": "Whether to analyze the news (extract entities etc.)",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-news-api"
+        },
+        "summary": "Extract News",
+        "tags": [
+          "News"
+        ],
+        "description": "Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.",
+        "operationId": "extractNews",
+        "deprecated": false
+      }
+    },
+    "/search-jokes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jokes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "joke": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    },
+                    "available": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "jokes": [
+                        {
+                          "joke": "A retiring farmer in preparation for selling his land, needed to rid his farm of animals. So he went to every house in his town. \nTo the houses where the man is the boss, he gave a horse. To the houses where the woman is the boss, a chicken was given. \nHe got toward the end of the street and saw a couple outside gardening. \"Who's the boss around here?\" he asked. \n\"I am.\" said the man. \n\"I have a black horse and a brown horse,\" the farmer said, \"which one would you like?\" \nThe man thought for a minute and said, \"The black one.\" \n\"No, no, no, get the brown one.\" the man's wife said. \n\"Here's your chicken.\" said the farmer."
+                        },
+                        {
+                          "joke": "A blonde decides to try horseback riding, even though she has had no\r\nlessons or prior experience. She mounts the horse unassisted and then\r\nhorse immediately springs into motion. It gallops along at a steady and\r\nrhythmic pace, but the blonde begins to slip from the\r\nsaddle. In terror, she grabs for the horse's mane, but cannot seem to get\r\na firm grip.\r\nShe tries to throw her arms around the horse's neck, but she slides down\r\nthe side of the horse anyway. The horse gallops along, seemingly\r\nimpervious to its slipping rider. Finally, giving up her frail grip, she\r\nleaps away from the horse to try and throw herself to safety.\r\nUnfortunately, her foot has become entangled in the stirrup and she is now\r\nat the mercy of the horse's pounding hooves as her head is battered\r\nagainst the ground again and again. She is mere moments away from\r\nunconsciousness when...\r\n ...the Wal-Mart manager runs out to shut the horse off."
+                        },
+                        {
+                          "joke": "Once Chuck Norris met a man on a horse that he did'nt like, now we know him as the headless horseman."
+                        }
+                      ],
+                      "available": 169
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "keywords",
+            "description": "A comma-separated list of words that must occur in the joke.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "horse,man"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "include-tags",
+            "description": "A comma-separated list of tags the jokes should have.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "animal"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "exclude-tags",
+            "description": "A comma-separated list of tags the jokes must not have.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "nsfw,dark"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-rating",
+            "description": "The minimum rating (0-10) of the jokes.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-length",
+            "description": "The maximum length of the joke in letters.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 140
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of jokes to skip, between 0 and 1000.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of jokes, between 1 and 10.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10,
+              "type": "integer",
+              "example": 3
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-jokes-api"
+        },
+        "summary": "Search Jokes",
+        "tags": [
+          "Humor"
+        ],
+        "description": "With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.",
+        "operationId": "searchJokes",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-joke": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "joke": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "joke": "What do you call a boxing match between two aardvarks?\nA snout bout!"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "include-tags",
+            "description": "A comma-separated list of tags the jokes should have.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "animal"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "exclude-tags",
+            "description": "A comma-separated list of tags the jokes must not have.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "nsfw,dark"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-rating",
+            "description": "The minimum rating in range [0.0,1.0] of the jokes.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-length",
+            "description": "The maximum length of the joke in letters.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 140
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-joke-api"
+        },
+        "summary": "Random Joke",
+        "tags": [
+          "Humor"
+        ],
+        "description": "This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".",
+        "operationId": "randomJoke",
+        "deprecated": false
+      }
+    },
+    "/search-memes": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "memes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "description": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    },
+                    "available": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "memes": [
+                        {
+                          "type": "video/mp4",
+                          "description": "Hey, you want a light show?: Edit: Thank you for getting the joke. I didn\u2019t think a joke about gloving would land, but I appreciate your sense of humor Imgur. Let me know what shows you are going to or went to this year. DM me if you want to team up on Rocket League.",
+                          "url": "https://i.imgur.com/4msjS5E.mp4"
+                        },
+                        {
+                          "type": "image/png",
+                          "description": "Rocket Money is a scam.: Prevented a $30 charge of something I don't use anymore. Feels good.",
+                          "url": "https://i.imgur.com/q3cZlpv.png"
+                        },
+                        {
+                          "type": "image/jpeg",
+                          "description": "Rocket Money is a scam.: Cat tax.",
+                          "url": "https://i.imgur.com/yaZoCFP.jpg"
+                        }
+                      ],
+                      "available": 156
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "keywords",
+            "description": "A comma-separated list of words that must occur in the meme.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "rocket"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "keywords-in-image",
+            "description": "Whether the keywords must occur in the image.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "media-type",
+            "description": "The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10,
+              "type": "string",
+              "example": "image"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-rating",
+            "description": "The minimum rating in range [0.0,1.0] of the meme.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-age-days",
+            "description": "The maximum age of the meme in days.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 30
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of memes to skip, between 0 and 1000.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of memes, between 0 and 10.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 10,
+              "type": "integer",
+              "example": 3
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-memes-api"
+        },
+        "summary": "Search Memes",
+        "tags": [
+          "Humor"
+        ],
+        "description": "With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.",
+        "operationId": "searchMemes",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-meme": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "type": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "ratio": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "description": "That's totally fine.",
+                      "url": "https://preview.redd.it/2wpfufhz8p751.jpg?width=640&crop=smart&auto=webp&s=dab7d5eba791f3a884b0c0614630c99e38c46c4d",
+                      "type": "image/jpeg",
+                      "width": 640,
+                      "height": 702,
+                      "ratio": 0.911681
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "keywords",
+            "description": "A comma-separated list of words that must occur in the meme.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "airplane"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "keywords-in-image",
+            "description": "Whether the keywords must occur in the image.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "media-type",
+            "description": "The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10,
+              "type": "string",
+              "example": "image"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-rating",
+            "description": "The minimum rating in range [0.0-1.0] of the meme.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 1,
+              "type": "number",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-age-days",
+            "description": "The maximum age of the meme in days.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 30
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-meme-api"
+        },
+        "summary": "Random Meme",
+        "tags": [
+          "Humor"
+        ],
+        "description": "Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.",
+        "operationId": "randomMeme",
+        "deprecated": false
+      }
+    },
+    "/search-gifs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "width": {
+                            "type": "integer"
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "height": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "images": [
+                        {
+                          "width": 362,
+                          "url": "https://media.tenor.com/xEf4j9pnMywAAAAC/dog-dogs.gif",
+                          "height": 498
+                        },
+                        {
+                          "width": 248,
+                          "url": "https://media.tenor.com/U-g_SmVeq40AAAAC/poodle-dancing-dog-poodle.gif",
+                          "height": 498
+                        },
+                        {
+                          "width": 498,
+                          "url": "https://media.tenor.com/SmFA9ziWpx4AAAAC/dogs-dog.gif",
+                          "height": 374
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "dogs"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of gifs to return in range [1,10]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10,
+              "type": "integer",
+              "example": 5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-gifs-api"
+        },
+        "summary": "Search Gifs",
+        "tags": [
+          "Humor"
+        ],
+        "description": "Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.",
+        "operationId": "searchGifs",
+        "deprecated": false
+      }
+    },
+    "/generate-nonsense-word": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "word": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "rating": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "word": "caboo",
+                      "rating": 0.41
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/generate-nonsense-word-api"
+        },
+        "summary": "Generate Nonsense Word",
+        "tags": [
+          "Humor"
+        ],
+        "description": "Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.",
+        "operationId": "generateNonsenseWord",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-trivia": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "trivia": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "trivia": "Koalas sleep up to 20 hours a day."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "max-length",
+            "description": "The maximum length of the trivia in letters.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 300
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-trivia-api"
+        },
+        "summary": "Random Trivia",
+        "tags": [
+          "Knowledge"
+        ],
+        "description": "This endpoint returns a random piece of trivia.",
+        "operationId": "randomTrivia",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-quote": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "author": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "quote": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "author": "Francis Bacon",
+                      "quote": "A little philosophy inclineth man's mind to atheism, but depth in philosophy bringeth men's minds about to religion."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "min-length",
+            "description": "The minimum length of the quote in letters.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 120
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-length",
+            "description": "The maximum length of the quote in letters.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10000,
+              "type": "integer",
+              "example": 300
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-quote-api"
+        },
+        "summary": "Random Quote",
+        "tags": [
+          "Knowledge"
+        ],
+        "description": "This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.",
+        "operationId": "randomQuote",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-poem": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "author": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "poem": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "title": "Purpose",
+                      "author": "Amos Russel Wells",
+                      "poem": "Deeply and long the sap must flow\nEre the merest layer of elm can grow.\n\nMany a wave's recurrent shock\nIs needed to smooth the tiniest rock.\n\nThousands of leaves must fade and fall\nTo make the mold by the garden wall.\n\nThus, as the patient seasons roll,\nSlowly is fashioned a human soul.\n\nPurpose and failure and purpose still,\nSteadily moved by a quiet will,\u2014\n\nLayer on layer in sturdy way,\nHardly seen the growth of a day,\u2014\n\nTimes of failure and fear and fall,\nBut one strong tendency through it all,\u2014\n\nGod and purpose and sun by sun\nReach the stars before they are done!\nFor I know the plans I have for you,\u201d declares the Lord, \u201cplans to prosper you and not to harm you, plans to give you hope and a future"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "min-lines",
+            "description": "The minimum number of lines of the poem.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-lines",
+            "description": "The maximum number of lines of the poem.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 20
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-poem-api"
+        },
+        "summary": "Random Poem",
+        "tags": [
+          "Art"
+        ],
+        "description": "Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).",
+        "operationId": "randomPoem",
+        "deprecated": false
+      }
+    },
+    "/convert-image-to-ascii-txt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {
+                  "Response": {
+                    "value": ".................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n..............................................,,,,,,,,...........................................\n...........................................:+?%%%%%%%%*;,........................................\n........................................,+%###S%????SS##S?;......................................\n.......................................*S@#*;;:,,,,,::;+%##%;....................................\n.....................................:%@S+:,............,;?##*,..................................\n...................................,+##*,.................,;%#%:.................................\n...................................*@S:.....................,*##;................................\n..................................*#%:........................;#S;...............................\n.................................*@%,..........................;#S:..............................\n................................;#S:............................+@?,.............................\n...............................,%#;..............................?#;.............................\n...............................+#+...............................,SS,............................\n..............................:S%,................................+@*............................\n..............................+#+.................................,S#:...........................\n.............................,?#:..................................*@*...........................\n.............................,S?...................................,@%...........................\n.............................:#+....................................%#,..........................\n.............................;#;....................................+#:..........................\n.............................*S,....................................:@+..........................\n.............................?S,....................................:@*..........................\n.............................*S,....................................:@+..........................\n.............................?S,....................................:@*..........................\n.............................*S,....................................:@+..........................\n.............................:#;....................................*#:..........................\n.............................:#*....................................SS,..........................\n.............................,%%,..................................,@%...........................\n..............................*#:..................................?@+...........................\n..............................;#*.................................:##,...........................\n..............................,%S,................................*@*............................\n...............................;#*...............................:S%,............................\n...............................,?#+.............................,%#:.............................\n................................:##;............................*@*..............................\n.................................+#S:..........................*#%,..............................\n..................................;#S:.......................,*@%:...............................\n...................................;SS+,....................:?#%:................................\n....................................:%@S+.................,*##*,.................................\n.....................................,+#@%;.............,*S@S;...................................\n.......................................:?#@S?+;:,,,,:;*%#@S+,....................................\n.........................................,+%#@@#####@@@#%;,......................................\n............................................:+*?S#@S?*;,.........................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................:S@?,............................................\n...............................................,?@@@+............................................\n...............................................*#@@@S:...........................................\n..............................................*@%%@@@?...........................................\n.............................................+@S;?S%@#;..........................................\n............................................+@#;,%S;%@S,.........................................\n...........................................:##;.,%#::#@*.........................................\n..........................................:##;..,%#:.*@#;........................................\n.........................................;##;...,%#:.,%@S,.......................................\n........................................:S#+....,%#:..:S@*.......................................\n.......................................,%#*.....,%#:...+@#;......................................\n......................................,%#*......,%#:...,%@S,.....................................\n.....................................:%@+.......,%#:....:S@*.....................................\n....................................,%@*........,%#:.....+@#;....................................\n...................................,*@?,........,%#:.....,?@%,...................................\n...................................*#?,.........,%#:......:%#+...................................\n..................................*@?,..........,%#:.......;#S:..................................\n................................,*@%,...........,%#:.......,*@?..................................\n................................+@#;............,%#:........:S@+.................................\n...............................;##;.............,%#:.........+#S:................................\n..............................;S#;..............,%#:.........,?@*,...............................\n.............................:S#;...............,%#:..........,%#;...............................\n............................:#@*................,%#:...........:#%:..............................\n...........................:#@*.................,%#:............*@*..............................\n..........................,%@?..................,%#:............,SS:.............................\n.........................,%@?...................,%#:.............;#?,............................\n........................:%@?....................,%#:..............?@*............................\n.......................:%@%,....................,%#:..............,##;...........................\n......................,%@%,.....................,%#:...............;#S,..........................\n......................*@S:......................,%#:................+@?..........................\n....................,*@S:.......................,%#:.................?#;.........................\n...................,*@S:........................,%#:.................:SS,........................\n...................*@%:.........................,%#:..................+@?........................\n..................+@%,..........................,%#:..................,%#;.......................\n.................;#S:...........................,%#:...................:#S:......................\n................:##;............................,%#:....................+@?,.....................\n...............:S#;.............................,%#:....................,?#+.....................\n..............;##;..............................,%#:.....................:SS:....................\n.............:S#;...............................,%#:......................+#?,...................\n............,%@+................................,%#:......................,?#+...................\n...........,%@*.................................,%#:.......................:SS:..................\n...........?@*..................................,%#:........................+#*..................\n...........+*...................................,%#:........................,*;..................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................,%#:.............................................\n................................................+#@+.............................................\n...............................................;SS##;............................................\n..............................................+#%;+#S;...........................................\n.............................................+#S;..?@S:..........................................\n............................................;#S;...,%@%,.........................................\n..........................................,*#S:.....,%@?.........................................\n.........................................,?@S:.......:S@*........................................\n.........................................?@S:.........:S@+.......................................\n........................................?@S:...........:##;......................................\n.......................................?@S:.............+@#;.....................................\n......................................?@S:...............+@S:....................................\n....................................,?@S;.................*@%,...................................\n...................................,*@S:...................*@*,..................................\n..................................,?#%:....................,?#*..................................\n.................................:%@?,......................,%#+.................................\n................................:%@?,........................:S#;................................\n...............................:%@?,..........................;##;...............................\n..............................:%@?,............................+#S:..............................\n.............................,%@?,..............................+#%..............................\n............................,S@?,...............................,?@?.............................\n...........................,S@%,.................................,%@;............................\n..........................:S@*,...................................:S@;...........................\n.........................;S#+......................................;S#:..........................\n........................+#S;........................................:#S:.........................\n.......................;##:..........................................;@%,........................\n......................;##;............................................+@*........................\n.....................;##:.............................................,%@*.......................\n....................;##;...............................................,%#+......................\n...................;#S;.................................................,S#;.....................\n..................;S#;...................................................:#S:....................\n.................+S#;.....................................................+#%:...................\n...............,*#S;.......................................................+#?,..................\n..............,*#%,.........................................................*#?,.................\n.............,*@%,..........................................................,?@*.................\n.............;@?,............................................................:%#:................\n.............:*,..............................................................:+,................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n.................................................................................................\n................................................................................................."
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The URL to the image.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "width",
+            "description": "The maximum width of the image (default 400, max. 500).",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 500,
+              "type": "integer",
+              "example": 200
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "height",
+            "description": "The maximum height of the image (default 400, max. 500).",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 500,
+              "type": "integer",
+              "example": 200
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/image-to-ascii-art-api"
+        },
+        "summary": "Image to Ascii Art by URL",
+        "tags": [
+          "Art"
+        ],
+        "description": "Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.",
+        "operationId": "imageToAsciiArtByURL",
+        "deprecated": false
+      }
+    },
+    "/extract-content": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "main_text": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "main_html": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "title": "Usher joined by Alicia Keys and will.i.am at Super Bowl half-time show",
+                      "main_text": "R&B star Usher delivered a hit-heavy half-time show at Sunday's Super Bowl - with help from will.i.am, Alicia Keys, Ludacris... and a pair of roller skates.\n\nA disclaimer shown before the performance jokingly warned viewers it may cause \"singing, dancing, sweating, gyrating, and possible relationship issues\". It would go on to deliver on all fronts. \n\nDressed in all-white and surrounded by a swarm of energetic dancers, Usher emerged on the stage at the Allegiant Stadium in Las Vegas and launched straight into one of his best-known songs, Caught Up.\n\nIt kicked off a dynamic performance which took advantage of the 45-year-old's dancing skills and sizeable back catalogue. \n\nBefore his half-time show, Usher admitted it had been \"a challenge to squeeze 30 years in to 13 minutes\". But the singer did an admirable job of cramming in as many of his most recognisable songs as possible. \n\nThe set featured acrobats and a brass band so large there were enough members to spell out \"USHER\" on the grounds of the stadium as he was performing.\n\nThe singer switched effortlessly between the two apexes of his music: club anthems and sex jams. \n\nSome songs ran for a full verse and a chorus, others for just a few seconds. A tiny snippet of Superstar appropriately saw him sing only the lyrics: \"Spotlight / big stage / 50,000 fans screaming in a rage\" - as if to hammer home the magnitude of his Super Bowl show. \n\nThe dancers who surrounded him - many of whom had only travelled a short distance from his Vegas residency - wore colourful, even outlandish outfits, perfectly complementing his central performance and adding to the sense of spectacle.\n\nOnce Usher was a few songs deep and well into his groove, [...]",
+                      "main_html": "<article>[...]</article>",
+                      "images": [
+                        "https://ichef.bbci.co.uk/news/976/cpsprodpb/FDEA/production/_132620056_crgettyimages-2003966267.jpg",
+                        "https://ichef.bbci.co.uk/news/976/cpsprodpb/C802/production/_132620215_crgettyimages-1996271673.jpg",
+                        "https://ichef.bbci.co.uk/news/976/cpsprodpb/88BA/production/_132620053_crgettyimages-2003935602.jpg"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url for which the content will be extracted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://www.bbc.com/news/entertainment-arts-68270826"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-web-content-api"
+        },
+        "summary": "Extract Content from a Web Page",
+        "tags": [
+          "Web"
+        ],
+        "description": "Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.",
+        "operationId": "extractContentFromAWebPage",
+        "deprecated": false
+      }
+    },
+    "/extract-publish-date": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "publish_date": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "publish_date": "2023-02-13"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url for which the publish date should be extracted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://www.bbc.com/news/entertainment-arts-68270826"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-publish-date-api"
+        },
+        "summary": "Extract Publish Date",
+        "tags": [
+          "Web"
+        ],
+        "description": "Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.",
+        "operationId": "extractPublishDate",
+        "deprecated": false
+      }
+    },
+    "/extract-authors": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "authors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "link": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "name": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "authors": [
+                        {
+                          "link": "",
+                          "name": "Steven McIntosh"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url with the article from which authors should be extracted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://www.bbc.com/news/entertainment-arts-68270826"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-authors-api"
+        },
+        "summary": "Extract Authors",
+        "tags": [
+          "Web"
+        ],
+        "description": "Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.",
+        "operationId": "extractAuthors",
+        "deprecated": false
+      }
+    },
+    "/search-web": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "summary": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "results": [
+                        {
+                          "title": "Penguin - Wikipedia",
+                          "summary": "Penguins are a group of aquatic flightless birds from the family Spheniscidae (/ s f \u026a \u02c8 n \u026a s \u026a d i\u02d0,-d a\u026a /) of the order Sphenisciformes (/ s f \u026a \u02c8 n \u026a s \u0259 f \u0254\u02d0r m i\u02d0 z /). They live almost exclusively in the Southern Hemisphere: only one species, the Gal\u00e1pagos penguin, is found north of the Equator.Highly adapted for life in the ocean water, penguins have countershaded dark ...",
+                          "url": "https://en.wikipedia.org/wiki/Penguin"
+                        },
+                        {
+                          "title": "Penguin | Features, Habitat, & Facts | Britannica",
+                          "summary": "Learn about penguins, the flightless marine birds that live only in the Southern Hemisphere. Find out their general features, habitat, and facts, such as their distribution, diet, behavior, and conservation status. See images and videos of different species of penguins, such as the emperor, the fairy, and the Galapagos penguin.",
+                          "url": "https://www.britannica.com/animal/penguin"
+                        },
+                        {
+                          "title": "Penguins, facts and photos - National Geographic",
+                          "summary": "Learn about the 18 different species of penguins, their adaptations, behavior, and threats. Find out how they live, breed, and feed in the Antarctic and subantarctic regions, and how they cope with the challenges of climate change and predators.",
+                          "url": "https://www.nationalgeographic.com/animals/birds/facts/penguins-1"
+                        },
+                        {
+                          "title": "Official Pittsburgh Penguins Website | Pittsburgh Penguins - NHL.com",
+                          "summary": "The official website of the Pittsburgh Penguins, a professional ice hockey team in the National Hockey League. Find news, tickets, schedule, photos, video, scores, stats, community, and more about the team and its players.",
+                          "url": "https://www.nhl.com/penguins/"
+                        },
+                        {
+                          "title": "Penguin | Species | WWF - World Wildlife Fund",
+                          "summary": "Learn about the 17 to 19 species of penguins that live in the Southern Hemisphere, from the tiny blue penguins of Australia and New Zealand to the majestic emperor penguins of Antarctica. Find out why they matter, what threats they face, and how you can help protect them.",
+                          "url": "https://www.worldwildlife.org/species/penguin"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "penguins"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of results to return in range [1,50]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 50,
+              "type": "integer",
+              "example": 5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/web-search-api"
+        },
+        "summary": "Search Web",
+        "tags": [
+          "Web"
+        ],
+        "description": "Search the web for a given query. The API returns a list of results with the title, summary, and URL.",
+        "operationId": "searchWeb",
+        "deprecated": false
+      }
+    },
+    "/correct-spelling": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "corrected_text": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "corrected_text": "driving cars is fun"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text to be corrected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Driving carss is fun."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "language",
+            "description": "The language of the text, one of en, de, es, fr, or it.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 2,
+              "type": "string",
+              "example": "en"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/correct-spelling-api"
+        },
+        "summary": "Correct Spelling",
+        "tags": [
+          "Text"
+        ],
+        "description": "The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).",
+        "operationId": "correctSpelling",
+        "deprecated": false
+      }
+    },
+    "/detect-language": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "confidence": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": [
+                      {
+                        "language": "de",
+                        "confidence": 0.34
+                      },
+                      {
+                        "language": "et",
+                        "confidence": 0.22
+                      },
+                      {
+                        "language": "fi",
+                        "confidence": 0.13
+                      },
+                      {
+                        "language": "sv",
+                        "confidence": 0.11
+                      },
+                      {
+                        "language": "it",
+                        "confidence": 0.11
+                      },
+                      {
+                        "language": "es",
+                        "confidence": 0.05
+                      },
+                      {
+                        "language": "pt",
+                        "confidence": 0.03
+                      },
+                      {
+                        "language": "lt",
+                        "confidence": 0.01
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text for which the language should be detected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Das ist ein Text."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/detect-language-api"
+        },
+        "summary": "Detect Language",
+        "tags": [
+          "Text"
+        ],
+        "description": "Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.",
+        "operationId": "detectLanguage",
+        "deprecated": false
+      }
+    },
+    "/detect-sentiment": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "document": {
+                      "type": "object",
+                      "properties": {
+                        "sentiment": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "confidence": {
+                          "type": "integer"
+                        },
+                        "average_confidence": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "sentences": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "length": {
+                            "type": "integer"
+                          },
+                          "sentiment": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "offset": {
+                            "type": "integer"
+                          },
+                          "confidence": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "document": {
+                        "sentiment": "positive",
+                        "confidence": 1,
+                        "average_confidence": 1
+                      },
+                      "sentences": [
+                        {
+                          "length": 34,
+                          "sentiment": "positive",
+                          "offset": 0,
+                          "confidence": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text for which the sentiment should be detected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Happy times feel so good."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/detect-sentiment-api"
+        },
+        "summary": "Detect Sentiment",
+        "tags": [
+          "Text"
+        ],
+        "description": "Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.",
+        "operationId": "detectSentiment",
+        "deprecated": false
+      }
+    },
+    "/score-text": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "number_of_words": {
+                      "type": "integer"
+                    },
+                    "number_of_sentences": {
+                      "type": "integer"
+                    },
+                    "readability": {
+                      "type": "object",
+                      "properties": {
+                        "mainscores": {
+                          "type": "object",
+                          "properties": {
+                            "total_possible": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "subscores": {
+                          "type": "object",
+                          "properties": {
+                            "reading_time_seconds": {
+                              "type": "integer"
+                            },
+                            "forcast": {
+                              "type": "number"
+                            },
+                            "flesch": {
+                              "type": "number"
+                            },
+                            "smog": {
+                              "type": "number"
+                            },
+                            "ari": {
+                              "type": "number"
+                            },
+                            "lix": {
+                              "type": "number"
+                            },
+                            "coleman_liau": {
+                              "type": "number"
+                            },
+                            "kincaid": {
+                              "type": "number"
+                            },
+                            "fog": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "skimmability": {
+                      "type": "object",
+                      "properties": {
+                        "mainscores": {
+                          "type": "object",
+                          "properties": {
+                            "total_possible": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "subscores": {
+                          "type": "object",
+                          "properties": {
+                            "bullet_point_ratio_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "image_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "highlighted_word_ratio_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "video_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "paragraph_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "paragraph_headline_ratio_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "interestingness": {
+                      "type": "object",
+                      "properties": {
+                        "mainscores": {
+                          "type": "object",
+                          "properties": {
+                            "total_possible": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "subscores": {
+                          "type": "object",
+                          "properties": {
+                            "title_rating_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "quote_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "length_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "link_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "google_hits_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "style": {
+                      "type": "object",
+                      "properties": {
+                        "mainscores": {
+                          "type": "object",
+                          "properties": {
+                            "total_possible": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "subscores": {
+                          "type": "object",
+                          "properties": {
+                            "abbreviation_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "style_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            },
+                            "spelling_score": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "total_score": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "number_of_words": 7,
+                      "number_of_sentences": 1,
+                      "readability": {
+                        "mainscores": {
+                          "total_possible": 10,
+                          "total": 10
+                        },
+                        "subscores": {
+                          "reading_time_seconds": 1,
+                          "forcast": -0.99,
+                          "flesch": 78.873,
+                          "smog": 8.842,
+                          "ari": 0.237,
+                          "lix": -0.99,
+                          "coleman_liau": 2.633,
+                          "kincaid": 3.997,
+                          "fog": 8.514
+                        }
+                      },
+                      "skimmability": {
+                        "mainscores": {
+                          "total_possible": 10,
+                          "total": 3.076923
+                        },
+                        "subscores": {
+                          "bullet_point_ratio_score": [
+                            0,
+                            2
+                          ],
+                          "image_score": [
+                            0,
+                            3
+                          ],
+                          "highlighted_word_ratio_score": [
+                            0,
+                            2
+                          ],
+                          "video_score": [
+                            0,
+                            1
+                          ],
+                          "paragraph_score": [
+                            4,
+                            3
+                          ],
+                          "paragraph_headline_ratio_score": [
+                            0,
+                            2
+                          ]
+                        }
+                      },
+                      "interestingness": {
+                        "mainscores": {
+                          "total_possible": 10,
+                          "total": 3.571429
+                        },
+                        "subscores": {
+                          "title_rating_score": [
+                            1,
+                            4
+                          ],
+                          "quote_score": [
+                            0,
+                            1
+                          ],
+                          "length_score": [
+                            0,
+                            2
+                          ],
+                          "link_score": [
+                            0,
+                            2
+                          ],
+                          "google_hits_score": [
+                            4,
+                            4
+                          ]
+                        }
+                      },
+                      "style": {
+                        "mainscores": {
+                          "total_possible": 10,
+                          "total": 10
+                        },
+                        "subscores": {
+                          "abbreviation_score": [
+                            3,
+                            3
+                          ],
+                          "style_score": [
+                            5,
+                            5
+                          ],
+                          "spelling_score": [
+                            5,
+                            5
+                          ]
+                        }
+                      },
+                      "total_score": 6.662088
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "title",
+            "description": "The title of the text to score.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "A short story"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "text",
+            "description": "The text to score for multiple metrics.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "A nice short story to be analyzed"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/score-text-api"
+        },
+        "summary": "Score Text",
+        "tags": [
+          "Text"
+        ],
+        "description": "Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.",
+        "operationId": "scoreText",
+        "deprecated": false
+      }
+    },
+    "/score-readability": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "readability": {
+                      "type": "object",
+                      "properties": {
+                        "mainscores": {
+                          "type": "object",
+                          "properties": {
+                            "total_possible": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "subscores": {
+                          "type": "object",
+                          "properties": {
+                            "reading_time_seconds": {
+                              "type": "integer"
+                            },
+                            "forcast": {
+                              "type": "number"
+                            },
+                            "flesch": {
+                              "type": "number"
+                            },
+                            "smog": {
+                              "type": "number"
+                            },
+                            "ari": {
+                              "type": "number"
+                            },
+                            "lix": {
+                              "type": "number"
+                            },
+                            "coleman_liau": {
+                              "type": "number"
+                            },
+                            "kincaid": {
+                              "type": "number"
+                            },
+                            "fog": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "readability": {
+                        "mainscores": {
+                          "total_possible": 10,
+                          "total": 10
+                        },
+                        "subscores": {
+                          "reading_time_seconds": 3,
+                          "forcast": -0.99,
+                          "flesch": 50.471,
+                          "smog": 11.208,
+                          "ari": 8.258,
+                          "lix": -0.99,
+                          "coleman_liau": 10.889,
+                          "kincaid": 9.449,
+                          "fog": 11.354
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text to score for readability.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "A rather complex text, hard to read, and highly convoluted using acronym TERMS."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/score-readability-api"
+        },
+        "summary": "Score Readability",
+        "tags": [
+          "Text"
+        ],
+        "description": "Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.",
+        "operationId": "scoreReadability",
+        "deprecated": false
+      }
+    },
+    "/extract-dates": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "start_position": {
+                            "type": "integer"
+                          },
+                          "date": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "normalized_date": {
+                            "type": "number"
+                          },
+                          "tag": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "end_position": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "dates": [
+                        {
+                          "start_position": 3,
+                          "date": "April 5th, 2035",
+                          "normalized_date": 2059336800000,
+                          "tag": "DATETIME",
+                          "end_position": 18
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text from which dates should be extracted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "On 5th or April, 2035 there will be flying cars - 2023-02-12."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-dates-api"
+        },
+        "summary": "Extract Dates",
+        "tags": [
+          "Text"
+        ],
+        "description": "Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).",
+        "operationId": "extractDates",
+        "deprecated": false
+      }
+    },
+    "/list-synonyms": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "synonyms": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "synonyms": [
+                        "aeroplane",
+                        "plane",
+                        "heavier-than-air craft"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "word",
+            "description": "The (noun) word for which a list of synonyms should be returned.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 50,
+              "type": "string",
+              "example": "airplane"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/synonyms-api"
+        },
+        "summary": "List Word Synonyms",
+        "tags": [
+          "Text"
+        ],
+        "description": "Return synonyms of a word.",
+        "operationId": "listWordSynonyms",
+        "deprecated": false
+      }
+    },
+    "/tag-pos": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tagged_text": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "tagged_text": "The/AT lazy/JJ dog/NN jumps/NNS over/UNDER the/AT quick/RB brown/JJ fox/NN"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text to tag the part of speech.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "The lazy dog jumps over the quick brown fox."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/pos-tagging-api"
+        },
+        "summary": "Part of Speech Tagging",
+        "tags": [
+          "Text"
+        ],
+        "description": "Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.",
+        "operationId": "partOfSpeechTagging",
+        "deprecated": false
+      }
+    },
+    "/stem-text": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "original": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "stemmed": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "original": "The laziest dogs are jumping over the quicker brown foxes",
+                      "stemmed": "The laziest dog are jump over the quicker brown fox"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text to be stemmed.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "The laziest dogs are jumping over the quicker brown foxes."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/stemming-api"
+        },
+        "summary": "Text Stemming",
+        "tags": [
+          "Text"
+        ],
+        "description": "The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.",
+        "operationId": "textStemming",
+        "deprecated": false
+      }
+    },
+    "/singularize-word": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "original": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "singular": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "original": "parties",
+                      "singular": "party"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "word",
+            "description": "The (noun) word for which the singular form should be found.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 50,
+              "type": "string",
+              "example": "airplanes"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/word-singularization-pluralization-api"
+        },
+        "summary": "Singularize Word",
+        "tags": [
+          "Text"
+        ],
+        "description": "Find the singular form of a word.",
+        "operationId": "singularizeWord",
+        "deprecated": false
+      }
+    },
+    "/pluralize-word": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "original": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "plural": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "original": "party",
+                      "plural": "parties"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "word",
+            "description": "The (noun) word for which the plural form should be found.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 50,
+              "type": "string",
+              "example": "party"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/word-singularization-pluralization-api"
+        },
+        "summary": "Pluralize Word",
+        "tags": [
+          "Text"
+        ],
+        "description": "Find the plural form of a word.",
+        "operationId": "pluralizeWord",
+        "deprecated": false
+      }
+    },
+    "/extract-entities": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "entities": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "start_position": {
+                            "type": "integer"
+                          },
+                          "image": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "type": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "value": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "end_position": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "entities": [
+                        {
+                          "start_position": 0,
+                          "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Jim_Carrey_2008.jpg",
+                          "type": "PER",
+                          "value": "Jim Carrey",
+                          "end_position": 10
+                        },
+                        {
+                          "start_position": 28,
+                          "type": "LOC",
+                          "value": "Canada",
+                          "end_position": 34
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text from which entities should be extracted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Jim Carrey is an actor from Canada"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/extract-entities-api"
+        },
+        "summary": "Extract Entities",
+        "tags": [
+          "Text"
+        ],
+        "description": "Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.",
+        "operationId": "extractEntities",
+        "deprecated": false
+      }
+    },
+    "/search-images": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "width": {
+                            "type": "integer"
+                          },
+                          "license": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "link": {
+                                "type": "string",
+                                "nullable": true
+                              }
+                            }
+                          },
+                          "thumbnail": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "url": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "height": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "images": [
+                        {
+                          "width": 2303,
+                          "license": {
+                            "name": "FREE",
+                            "link": "https://unsplash.com/license"
+                          },
+                          "thumbnail": "https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDF8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200",
+                          "id": "U6nlG0Y5sfs",
+                          "url": "https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDF8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080",
+                          "height": 3594
+                        },
+                        {
+                          "width": 2694,
+                          "license": {
+                            "name": "FREE",
+                            "link": "https://unsplash.com/license"
+                          },
+                          "thumbnail": "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDJ8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200",
+                          "id": "BJaqPaH6AGQ",
+                          "url": "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDJ8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080",
+                          "height": 4033
+                        },
+                        {
+                          "width": 3024,
+                          "license": {
+                            "name": "FREE",
+                            "link": "https://unsplash.com/license"
+                          },
+                          "thumbnail": "https://images.unsplash.com/photo-1568572933382-74d440642117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDN8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200",
+                          "id": "v0_MCllHY9M",
+                          "url": "https://images.unsplash.com/photo-1568572933382-74d440642117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDN8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080",
+                          "height": 4032
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "dogs"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of images to return in range [1,10]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10,
+              "type": "integer",
+              "example": 3
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-images-api"
+        },
+        "summary": "Search Royalty Free Images",
+        "tags": [
+          "Media"
+        ],
+        "description": "Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.",
+        "operationId": "searchRoyaltyFreeImages",
+        "deprecated": false
+      }
+    },
+    "/rescale-image": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url of the image to be rescaled.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM "
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "width",
+            "description": "The desired width of the rescaled image.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 5000,
+              "type": "integer",
+              "example": 200
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "height",
+            "description": "The desired height of the rescaled image.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 5000,
+              "type": "integer",
+              "example": 200
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "crop",
+            "description": "Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/rescale-image-api"
+        },
+        "summary": "Rescale Image",
+        "tags": [
+          "Media"
+        ],
+        "description": "Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.",
+        "operationId": "rescaleImage",
+        "deprecated": false
+      }
+    },
+    "/detect-color": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "specific_color": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "main_color": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "hex_code": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": [
+                      {
+                        "specific_color": "Firebrick",
+                        "main_color": "Red",
+                        "hex_code": "#b01c20"
+                      },
+                      {
+                        "specific_color": "Thistle Green",
+                        "main_color": "Green",
+                        "hex_code": "#bfaf9a"
+                      },
+                      {
+                        "specific_color": "Brown Pod",
+                        "main_color": "Brown",
+                        "hex_code": "#36180d"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "description": "The url of the image for which the colors should be detected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM "
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/detect-main-image-color-api"
+        },
+        "summary": "Detect Main Image Color",
+        "tags": [
+          "Media"
+        ],
+        "description": "Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.",
+        "operationId": "detectMainImageColor",
+        "deprecated": false
+      }
+    },
+    "/convert-units": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "target_amount": {
+                      "type": "number"
+                    },
+                    "target_unit": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "target_amount": 220.462262,
+                      "target_unit": "lb"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "source-amount",
+            "description": "The source amount.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999999,
+              "type": "number",
+              "example": 100
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "source-unit",
+            "description": "The source unit.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "kg"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "target-unit",
+            "description": "The unit to which should be converted.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "lb"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "food-name",
+            "description": "An optional food name. For converting foods the food is relevant as they have different densities.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 200,
+              "type": "string",
+              "example": "flour"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/convert-units-api"
+        },
+        "summary": "Convert Units",
+        "tags": [
+          "Math"
+        ],
+        "description": "Convert units from one to another. The API returns the amount and the unit of the target unit.",
+        "operationId": "convertUnits",
+        "deprecated": false
+      }
+    },
+    "/read-key-value": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "value": "100"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "description": "The key for which the value is stored (max length 255 characters).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 255,
+              "type": "string",
+              "example": "visitors24h"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/key-value-storage-api"
+        },
+        "summary": "Read Key Value from Store",
+        "tags": [
+          "Storage"
+        ],
+        "description": "Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.",
+        "operationId": "readKeyValueFromStore",
+        "deprecated": false
+      }
+    },
+    "/store-key-value": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "status": "success"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "description": "The key for which the value is stored (max length 255 characters).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 255,
+              "type": "string",
+              "example": "visitors24h"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "value",
+            "description": "The value that is supposed to be stored (max length 10,000 characters).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "23578 visitors"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/key-value-storage-api"
+        },
+        "summary": "Store Key Value (GET)",
+        "tags": [
+          "Storage"
+        ],
+        "description": "Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.",
+        "operationId": "storeKeyValueGET",
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "apiKey": {
+        "name": "api-key",
+        "type": "apiKey",
+        "in": "query"
+      },
+      "headerApiKey": {
+        "name": "x-api-key",
+        "type": "apiKey",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "headerApiKey": []
+    }
+  ]
+}

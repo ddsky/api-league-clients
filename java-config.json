@@ -1,0 +1,14 @@
+{
+    "artifactId": "com.apileague",
+    "artifactUrl": "https://apileague.com/sdks/",
+    "dateLibrary": "java8",
+    "artifactDescription": "Java Client for the API League",
+    "developerName": "David Urbansky",
+	"developerEmail": "mail@apileague.com",
+	"developerOrganization": "dsky",
+	"developerOrganizationUrl": "https://apileague.com",
+	"licenseName": "API League license",
+	"licenseUrl": "https://apileague.com/terms/",
+	"java8": true
+}
+

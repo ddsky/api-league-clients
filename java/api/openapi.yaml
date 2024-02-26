@@ -1,0 +1,4318 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: mail@apileague.com
+    name: David Urbansky
+  description: API League is a Hub for World Class APIs.
+  termsOfService: https://apileague.com/terms
+  title: API League
+  version: "1.0"
+servers:
+- url: https://api.apileague.com
+security:
+- apiKey: []
+- headerApiKey: []
+paths:
+  /search-books:
+    get:
+      deprecated: false
+      description: Search and filter books based on matching a query, the ISBN, rating,
+        and more fields. The query is semantically parsed using our own large ontology.
+        That means you can search for "books about dogs" and will automatically also
+        find books about "border collies" and other types without specifying them
+        in the query.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-books-api
+      operationId: searchBooks
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: false
+        schema:
+          example: books about wizards
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The books must have been published after this year.
+        explode: false
+        in: query
+        name: earliest-publish-year
+        required: false
+        schema:
+          example: 2022
+          format: int32
+          maximum: 9999
+          minimum: 0
+          type: integer
+        style: form
+      - description: The books must have been published before this year.
+        explode: false
+        in: query
+        name: latest-publish-year
+        required: false
+        schema:
+          example: 2023
+          format: int32
+          maximum: 9999
+          minimum: 0
+          type: integer
+        style: form
+      - description: The minimum rating the book must have gotten in the interval
+          [0,1].
+        explode: false
+        in: query
+        name: min-rating
+        required: false
+        schema:
+          example: 0.8
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum rating the book must have gotten in the interval
+          [0,1].
+        explode: false
+        in: query
+        name: max-rating
+        required: false
+        schema:
+          example: 0.99
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: A comma-separated list of  genres. Only books from any of the
+          given genres will be returned.
+        explode: false
+        in: query
+        name: genres
+        required: false
+        schema:
+          example: nonfiction
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of author ids or names. Only books from
+          any of the given authors will be returned. You can retrieve author ids from
+          the search authors endpoint. Pass author names is slower and if two authors
+          have the same name you can't disambiguate.
+        explode: false
+        in: query
+        name: authors
+        required: false
+        schema:
+          example: J.K. Rowling
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: Only the book matching the ISBN-13 will be returned
+        explode: false
+        in: query
+        name: isbn
+        required: false
+        schema:
+          example: "9781781257654"
+          maxLength: 13
+          pattern: "."
+          type: string
+        style: form
+      - description: Only the book matching the OCLC will be returned
+        explode: false
+        in: query
+        name: oclc
+        required: false
+        schema:
+          example: "864418200"
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: The sorting criteria (publish-date or rating).
+        explode: false
+        in: query
+        name: sort
+        required: false
+        schema:
+          example: rating
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether to sort ascending or descending (ASC or DESC).
+        explode: false
+        in: query
+        name: sort-direction
+        required: false
+        schema:
+          example: DESC
+          maxLength: 4
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether to group similar editions of the same book.
+        explode: false
+        in: query
+        name: group-results
+        required: false
+        schema:
+          example: false
+          type: boolean
+        style: form
+      - description: The number of books to skip in range [0,1000]
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The number of books to return in range [1,100]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 10
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    available: 5999
+                    number: 10
+                    offset: 0
+                    books:
+                    - title: Journey to Hogwarts
+                      image: https://covers.openlibrary.org/b/id/2520429-M.jpg
+                      id: 17200576
+                    - image: https://covers.openlibrary.org/b/id/2520430-M.jpg
+                      id: 15954006
+                      title: Inside Hogwarts
+                      subtitle: Magical Paintbook
+                    - title: Harry Potter and the Goblet of Fire
+                      image: https://covers.openlibrary.org/b/id/12775900-M.jpg
+                      id: 16384516
+                    - title: Harry Potter and the Order of the Phoenix
+                      image: https://covers.openlibrary.org/b/id/11416565-M.jpg
+                      id: 14296534
+                    - title: Great Gatsby (Silver Screen Edition)
+                      image: https://covers.openlibrary.org/b/id/12791857-M.jpg
+                      id: 14530450
+                    - image: https://covers.openlibrary.org/b/id/394001-M.jpg
+                      id: 18810398
+                      title: The Hobbit
+                      subtitle: or, There and back again
+                    - image: https://covers.openlibrary.org/b/id/6282709-M.jpg
+                      id: 13597674
+                      title: The Name of the Wind
+                      subtitle: 'The Kingkiller Chronicle : day one'
+                    - image: https://covers.openlibrary.org/b/id/13220226-M.jpg
+                      id: 20778556
+                      title: 'Two Towers : The Lord of the Rings'
+                      subtitle: Part Two
+                    - title: Frankenstein (Silver Screen Edition)
+                      image: https://covers.openlibrary.org/b/id/12791860-M.jpg
+                      id: 20101114
+                    - title: Bogar bárd meséi
+                      image: https://covers.openlibrary.org/b/id/9326689-M.jpg
+                      id: 17798828
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Books
+      tags:
+      - Books
+      x-accepts: application/json
+  /list-similar-books:
+    get:
+      deprecated: false
+      description: Find books that are similar to the given book. This is useful for
+        recommending books to users based on their reading history or preferences.
+        The response will contain a list of similar books with their title, id, and
+        cover image.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/find-similar-books-api
+      operationId: findSimilarBooks
+      parameters:
+      - description: The id of the book to which similar books should be found.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          example: 8302059
+          format: int32
+          maximum: 999999999
+          minimum: 0
+          type: integer
+        style: simple
+      - description: The number of similar books to return in range [1,100]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 10
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    similar_books:
+                    - title: Harry Potter and the Order of the Phoenix
+                      image: https://covers.openlibrary.org/b/id/11416565-M.jpg
+                      id: 14296534
+                    - title: Harry Potter and the Half-Blood Prince
+                      image: https://covers.openlibrary.org/b/id/8235163-M.jpg
+                      id: 16499448
+                    - title: Blood and Fire
+                      image: https://covers.openlibrary.org/b/id/10404497-M.jpg
+                      id: 18610968
+                    - image: https://covers.openlibrary.org/b/id/6657713-M.jpg
+                      id: 20464852
+                      title: Towers of midnight
+                      subtitle: Wheel of Time Book 13
+                    - image: https://covers.openlibrary.org/b/id/3027823-M.jpg
+                      id: 13804028
+                      title: Best of Robert Jordan
+                      subtitle: The Shadow Rising; The Fires of Heaven; Lord of Chaos;
+                        A Crown of Swords (The Wheel of Time Series)
+                    - title: MAR, Volume 7
+                      image: https://covers.openlibrary.org/b/id/765103-M.jpg
+                      id: 14987824
+                    - title: The Daysong of the Knightbird
+                      image: https://covers.openlibrary.org/b/id/1822804-M.jpg
+                      id: 19984854
+                    - title: The key
+                      image: https://covers.openlibrary.org/b/id/8369732-M.jpg
+                      id: 17174416
+                    - title: Bring me the head of Prince Charming
+                      image: https://covers.openlibrary.org/b/id/3965371-M.jpg
+                      id: 20121054
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Find Similar Books
+      tags:
+      - Books
+      x-accepts: application/json
+  /search-news:
+    get:
+      deprecated: false
+      description: Search and filter news by text, date, location, language, and more.
+        The API returns a list of news articles matching the given criteria. You can
+        set as many filtering parameters as you like, but you have to set at least
+        one, e.g. text or language.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-news-api
+      operationId: searchNews
+      parameters:
+      - description: The text to match in the news content. By default all query terms
+          are expected, you can use an uppercase OR to search for any terms, e.g.
+          tesla OR ford
+        explode: false
+        in: query
+        name: text
+        required: false
+        schema:
+          example: tesla
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of ISO 3166 country codes from which the
+          news should originate.
+        explode: false
+        in: query
+        name: source-countries
+        required: false
+        schema:
+          example: us,uk
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: The ISO 6391 language code of the news.
+        explode: false
+        in: query
+        name: language
+        required: false
+        schema:
+          example: en
+          maxLength: 2
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimal sentiment of the news in range [-1,1].
+        explode: false
+        in: query
+        name: min-sentiment
+        required: false
+        schema:
+          example: -0.8
+          format: double
+          maximum: 1
+          minimum: -1
+          type: number
+        style: form
+      - description: The maximal sentiment of the news in range [-1,1].
+        explode: false
+        in: query
+        name: max-sentiment
+        required: false
+        schema:
+          example: 0.8
+          format: double
+          maximum: 1
+          minimum: -1
+          type: number
+        style: form
+      - description: The news must have been published after this date.
+        explode: false
+        in: query
+        name: earliest-publish-date
+        required: false
+        schema:
+          example: 2022-04-22 16:12:35
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: The news must have been published before this date.
+        explode: false
+        in: query
+        name: latest-publish-date
+        required: false
+        schema:
+          example: 2022-04-22 16:12:35
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of news sources from which the news should
+          originate.
+        explode: false
+        in: query
+        name: news-sources
+        required: false
+        schema:
+          example: https://www.bbc.co.uk
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of author names. Only news from any of
+          the given authors will be returned.
+        explode: false
+        in: query
+        name: authors
+        required: false
+        schema:
+          example: John Doe
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: Filter news by entities (see semantic types).
+        explode: false
+        in: query
+        name: entities
+        required: false
+        schema:
+          example: ORG:Tesla
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      - description: Filter news by radius around a certain location. Format is "latitude,longitude,radius
+          in kilometers"
+        explode: false
+        in: query
+        name: location-filter
+        required: false
+        schema:
+          example: 51.050407, 13.737262, 100
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: The sorting criteria (publish-time or sentiment).
+        explode: false
+        in: query
+        name: sort
+        required: false
+        schema:
+          example: publish-time
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether to sort ascending or descending (ASC or DESC).
+        explode: false
+        in: query
+        name: sort-direction
+        required: false
+        schema:
+          example: ASC
+          maxLength: 4
+          pattern: "."
+          type: string
+        style: form
+      - description: The number of news to skip in range [0,10000]
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 10000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The number of news to return in range [1,100]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 10
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    offset: 0
+                    number: 10
+                    available: 83
+                    news:
+                    - summary: Tesla CEO Elon Musk has revealed new details about
+                        the upcoming Cybertruck electric pickup truck. According to
+                        Musk, its initial production will begin with a four-motor
+                        variant.
+                      image: https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png
+                      sentiment: 0.712523
+                      source_country: co
+                      language: en
+                      id: 28
+                      text: 'Tesla CEO Elon Musk has revealed new details about the
+                        upcoming Cybertruck electric pickup truck, the mass production
+                        of which was delayed until 2023 because of the lack of components
+                        and a lot of complex technologies that need to be scaled up.
+                        According to Musk, the initial production of the electric
+                        pickup truck will begin with a four-motor variant with “independent,
+                        ultra fast response torque control of each wheel,” the tweet
+                        reads. In response, Twitter users asked if the Cybertruck
+                        could turn like a tank. Musk said that thanks to both the
+                        rear and front wheel steer, the electric truck will not only
+                        be able to turn like a tank, but also drive diagonally like
+                        a crab. According to Electrek, this change could be Tesla''s
+                        reaction to what its competitors do. Since the introduction
+                        of Tesla’s novelty, the market for electric pickup trucks
+                        has significantly evolved. Currently, one electric pickup
+                        on the market can turn like a tank – the Rivian R1T, while
+                        GMC''s Hummer EV can drive diagonally. Following the announcement
+                        of Tesla Cybertruck in 2019, the company announced three configurations
+                        of the pickup truck: the entry-level model with one motor,
+                        the one with two motors, and the one with three. Rumor has
+                        it that the company intends to abandon the single-motor version
+                        altogether. In this case, Tesla Cybertruck will be sold with
+                        two, three, and four motors. Musk has promised to provide
+                        an update on the pickup''s roadmap on the next earnings call.
+                        The production of Tesla Cybertruck is expected to begin at
+                        the end of 2022, and its mass production is slated to start
+                        in 2023.'
+                      title: Tesla to Release a Four-Motor Version of Cybertruck
+                      publish_date: 2022-09-30 01:07:48
+                      url: https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/
+                      authors:
+                      - Iwan Stone
+                      - Zahna Eklund
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search News
+      tags:
+      - News
+      x-accepts: application/json
+  /extract-news:
+    get:
+      deprecated: false
+      description: Extract a news article from a website to a well structure JSON
+        object. The API will return the title, text, URL, image, publish date, author,
+        language, source country, and sentiment of the news article.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-news-api
+      operationId: extractNews
+      parameters:
+      - description: The url of the news.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether to analyze the news (extract entities etc.)
+        explode: false
+        in: query
+        name: analyze
+        required: true
+        schema:
+          example: true
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    title: Tesla to Release a Four-Motor Version of Cybertruck
+                    text: 'Tesla CEO Elon Musk has revealed new details about the
+                      upcoming Cybertruck electric pickup truck, the mass production
+                      of which was delayed until 2023 because of the lack of components
+                      and a lot of complex technologies that need to be scaled up.
+                      According to Musk, the initial production of the electric pickup
+                      truck will begin with a four-motor variant with “independent,
+                      ultra fast response torque control of each wheel,” the tweet
+                      reads. In response, Twitter users asked if the Cybertruck could
+                      turn like a tank. Musk said that thanks to both the rear and
+                      front wheel steer, the electric truck will not only be able
+                      to turn like a tank, but also drive diagonally like a crab.
+                      According to Electrek, this change could be Tesla''s reaction
+                      to what its competitors do. Since the introduction of Tesla’s
+                      novelty, the market for electric pickup trucks has significantly
+                      evolved. Currently, one electric pickup on the market can turn
+                      like a tank – the Rivian R1T, while GMC''s Hummer EV can drive
+                      diagonally. Following the announcement of Tesla Cybertruck in
+                      2019, the company announced three configurations of the pickup
+                      truck: the entry-level model with one motor, the one with two
+                      motors, and the one with three. Rumor has it that the company
+                      intends to abandon the single-motor version altogether. In this
+                      case, Tesla Cybertruck will be sold with two, three, and four
+                      motors. Musk has promised to provide an update on the pickup''s
+                      roadmap on the next earnings call. The production of Tesla Cybertruck
+                      is expected to begin at the end of 2022, and its mass production
+                      is slated to start in 2023.'
+                    url: https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/
+                    image: https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png
+                    publish_date: 2022-09-30 01:07:48
+                    author: Kay Lee
+                    language: en
+                    source_country: co
+                    sentiment: 0.712523
+              schema:
+                $ref: '#/components/schemas/inline_response_200_3'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract News
+      tags:
+      - News
+      x-accepts: application/json
+  /search-jokes:
+    get:
+      deprecated: false
+      description: With over 50,000 jokes, you should find something for any occasion.
+        There are 27 categories/tags to choose from, but you can also search for very
+        specific words within jokes.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-jokes-api
+      operationId: searchJokes
+      parameters:
+      - description: A comma-separated list of words that must occur in the joke.
+        explode: false
+        in: query
+        name: keywords
+        required: false
+        schema:
+          example: horse,man
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of tags the jokes should have.
+        explode: false
+        in: query
+        name: include-tags
+        required: false
+        schema:
+          example: animal
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of tags the jokes must not have.
+        explode: false
+        in: query
+        name: exclude-tags
+        required: false
+        schema:
+          example: nsfw,dark
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimum rating (0-10) of the jokes.
+        explode: false
+        in: query
+        name: min-rating
+        required: false
+        schema:
+          example: 0
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum length of the joke in letters.
+        explode: false
+        in: query
+        name: max-length
+        required: false
+        schema:
+          example: 140
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The number of jokes to skip, between 0 and 1000.
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The number of jokes, between 1 and 10.
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 10
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    jokes:
+                    - joke: "A retiring farmer in preparation for selling his land,\
+                        \ needed to rid his farm of animals. So he went to every house\
+                        \ in his town. \nTo the houses where the man is the boss,\
+                        \ he gave a horse. To the houses where the woman is the boss,\
+                        \ a chicken was given. \nHe got toward the end of the street\
+                        \ and saw a couple outside gardening. \"Who's the boss around\
+                        \ here?\" he asked. \n\"I am.\" said the man. \n\"I have a\
+                        \ black horse and a brown horse,\" the farmer said, \"which\
+                        \ one would you like?\" \nThe man thought for a minute and\
+                        \ said, \"The black one.\" \n\"No, no, no, get the brown one.\"\
+                        \ the man's wife said. \n\"Here's your chicken.\" said the\
+                        \ farmer."
+                    - joke: "A blonde decides to try horseback riding, even though\
+                        \ she has had no\r\nlessons or prior experience. She mounts\
+                        \ the horse unassisted and then\r\nhorse immediately springs\
+                        \ into motion. It gallops along at a steady and\r\nrhythmic\
+                        \ pace, but the blonde begins to slip from the\r\nsaddle.\
+                        \ In terror, she grabs for the horse's mane, but cannot seem\
+                        \ to get\r\na firm grip.\r\nShe tries to throw her arms around\
+                        \ the horse's neck, but she slides down\r\nthe side of the\
+                        \ horse anyway. The horse gallops along, seemingly\r\nimpervious\
+                        \ to its slipping rider. Finally, giving up her frail grip,\
+                        \ she\r\nleaps away from the horse to try and throw herself\
+                        \ to safety.\r\nUnfortunately, her foot has become entangled\
+                        \ in the stirrup and she is now\r\nat the mercy of the horse's\
+                        \ pounding hooves as her head is battered\r\nagainst the ground\
+                        \ again and again. She is mere moments away from\r\nunconsciousness\
+                        \ when...\r\n ...the Wal-Mart manager runs out to shut the\
+                        \ horse off."
+                    - joke: Once Chuck Norris met a man on a horse that he did'nt
+                        like, now we know him as the headless horseman.
+                    available: 169
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Jokes
+      tags:
+      - Humor
+      x-accepts: application/json
+  /retrieve-random-joke:
+    get:
+      deprecated: false
+      description: This is a simple API that returns a random joke. You can filter
+        the jokes by tags and keywords. To make sure they are safe for work, you could
+        use the exclude-tags parameter to exclude jokes with certain tags such as
+        "nsfw" or "religious".
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-joke-api
+      operationId: randomJoke
+      parameters:
+      - description: A comma-separated list of tags the jokes should have.
+        explode: false
+        in: query
+        name: include-tags
+        required: false
+        schema:
+          example: animal
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of tags the jokes must not have.
+        explode: false
+        in: query
+        name: exclude-tags
+        required: false
+        schema:
+          example: nsfw,dark
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimum rating in range [0.0,1.0] of the jokes.
+        explode: false
+        in: query
+        name: min-rating
+        required: false
+        schema:
+          example: 0
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum length of the joke in letters.
+        explode: false
+        in: query
+        name: max-length
+        required: false
+        schema:
+          example: 140
+          format: int32
+          maximum: 10000
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    joke: |-
+                      What do you call a boxing match between two aardvarks?
+                      A snout bout!
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4_jokes'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Joke
+      tags:
+      - Humor
+      x-accepts: application/json
+  /search-memes:
+    get:
+      deprecated: false
+      description: With over 200,000 memes, you'll surely find something funny. You
+        can even search for text within memes and filter by user ratings.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-memes-api
+      operationId: searchMemes
+      parameters:
+      - description: A comma-separated list of words that must occur in the meme.
+        explode: false
+        in: query
+        name: keywords
+        required: false
+        schema:
+          example: rocket
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether the keywords must occur in the image.
+        explode: false
+        in: query
+        name: keywords-in-image
+        required: false
+        schema:
+          example: true
+          type: boolean
+        style: form
+      - description: The media type (either 'image', 'video' or even specific format
+          such as 'jpg', 'png', or 'gif').
+        explode: false
+        in: query
+        name: media-type
+        required: false
+        schema:
+          example: image
+          maxLength: 10
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimum rating in range [0.0,1.0] of the meme.
+        explode: false
+        in: query
+        name: min-rating
+        required: false
+        schema:
+          example: 0
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum age of the meme in days.
+        explode: false
+        in: query
+        name: max-age-days
+        required: false
+        schema:
+          example: 30
+          format: int32
+          maximum: 10000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The number of memes to skip, between 0 and 1000.
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The number of memes, between 0 and 10.
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 10
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    memes:
+                    - type: video/mp4
+                      description: 'Hey, you want a light show?: Edit: Thank you for
+                        getting the joke. I didn’t think a joke about gloving would
+                        land, but I appreciate your sense of humor Imgur. Let me know
+                        what shows you are going to or went to this year. DM me if
+                        you want to team up on Rocket League.'
+                      url: https://i.imgur.com/4msjS5E.mp4
+                    - type: image/png
+                      description: 'Rocket Money is a scam.: Prevented a $30 charge
+                        of something I don''t use anymore. Feels good.'
+                      url: https://i.imgur.com/q3cZlpv.png
+                    - type: image/jpeg
+                      description: 'Rocket Money is a scam.: Cat tax.'
+                      url: https://i.imgur.com/yaZoCFP.jpg
+                    available: 156
+              schema:
+                $ref: '#/components/schemas/inline_response_200_5'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Memes
+      tags:
+      - Humor
+      x-accepts: application/json
+  /retrieve-random-meme:
+    get:
+      deprecated: false
+      description: Get a random meme out of over 200,000+ memes. To get the latest
+        memes, you can use the max-age-days parameter.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-meme-api
+      operationId: randomMeme
+      parameters:
+      - description: A comma-separated list of words that must occur in the meme.
+        explode: false
+        in: query
+        name: keywords
+        required: false
+        schema:
+          example: airplane
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether the keywords must occur in the image.
+        explode: false
+        in: query
+        name: keywords-in-image
+        required: false
+        schema:
+          example: true
+          type: boolean
+        style: form
+      - description: The media type (either 'image', 'video' or even specific format
+          such as 'jpg', 'png', or 'gif').
+        explode: false
+        in: query
+        name: media-type
+        required: false
+        schema:
+          example: image
+          maxLength: 10
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimum rating in range [0.0-1.0] of the meme.
+        explode: false
+        in: query
+        name: min-rating
+        required: false
+        schema:
+          example: 0
+          format: double
+          maximum: 1
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum age of the meme in days.
+        explode: false
+        in: query
+        name: max-age-days
+        required: false
+        schema:
+          example: 30
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    description: That's totally fine.
+                    url: https://preview.redd.it/2wpfufhz8p751.jpg?width=640&crop=smart&auto=webp&s=dab7d5eba791f3a884b0c0614630c99e38c46c4d
+                    type: image/jpeg
+                    width: 640
+                    height: 702
+                    ratio: 0.911681
+              schema:
+                $ref: '#/components/schemas/inline_response_200_6'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Meme
+      tags:
+      - Humor
+      x-accepts: application/json
+  /search-gifs:
+    get:
+      deprecated: false
+      description: Search through hundreds of thousands of gifs to match any reaction
+        you want. The gifs are returned in a list with the URL, width, and height
+        of the gif.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-gifs-api
+      operationId: searchGifs
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: true
+        schema:
+          example: dogs
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The number of gifs to return in range [1,10]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 5
+          format: int32
+          maximum: 10
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    images:
+                    - width: 362
+                      url: https://media.tenor.com/xEf4j9pnMywAAAAC/dog-dogs.gif
+                      height: 498
+                    - width: 248
+                      url: https://media.tenor.com/U-g_SmVeq40AAAAC/poodle-dancing-dog-poodle.gif
+                      height: 498
+                    - width: 498
+                      url: https://media.tenor.com/SmFA9ziWpx4AAAAC/dogs-dog.gif
+                      height: 374
+              schema:
+                $ref: '#/components/schemas/inline_response_200_7'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Gifs
+      tags:
+      - Humor
+      x-accepts: application/json
+  /generate-nonsense-word:
+    get:
+      deprecated: false
+      description: Generate a funny sounding nonsense word. This is useful for generating
+        random words for games, naming things, or just for fun. The response will
+        contain the generated word and a rating of how funny it is.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/generate-nonsense-word-api
+      operationId: generateNonsenseWord
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    word: caboo
+                    rating: 0.41
+              schema:
+                $ref: '#/components/schemas/inline_response_200_8'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Generate Nonsense Word
+      tags:
+      - Humor
+      x-accepts: application/json
+  /retrieve-random-trivia:
+    get:
+      deprecated: false
+      description: This endpoint returns a random piece of trivia.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-trivia-api
+      operationId: randomTrivia
+      parameters:
+      - description: The maximum length of the trivia in letters.
+        explode: false
+        in: query
+        name: max-length
+        required: false
+        schema:
+          example: 300
+          format: int32
+          maximum: 10000
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    trivia: Koalas sleep up to 20 hours a day.
+              schema:
+                $ref: '#/components/schemas/inline_response_200_9'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Trivia
+      tags:
+      - Knowledge
+      x-accepts: application/json
+  /retrieve-random-quote:
+    get:
+      deprecated: false
+      description: This API returns a random quote from a collection of quotes. The
+        quotes are from famous people and are in English.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-quote-api
+      operationId: randomQuote
+      parameters:
+      - description: The minimum length of the quote in letters.
+        explode: false
+        in: query
+        name: min-length
+        required: false
+        schema:
+          example: 120
+          format: int32
+          maximum: 10000
+          minimum: 1
+          type: integer
+        style: form
+      - description: The maximum length of the quote in letters.
+        explode: false
+        in: query
+        name: max-length
+        required: false
+        schema:
+          example: 300
+          format: int32
+          maximum: 10000
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    author: Francis Bacon
+                    quote: A little philosophy inclineth man's mind to atheism, but
+                      depth in philosophy bringeth men's minds about to religion.
+              schema:
+                $ref: '#/components/schemas/inline_response_200_10'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Quote
+      tags:
+      - Knowledge
+      x-accepts: application/json
+  /retrieve-random-poem:
+    get:
+      deprecated: false
+      description: Retrieve a random poem by many famous authors. You can filter poem's
+        by length (number of lines).
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-poem-api
+      operationId: randomPoem
+      parameters:
+      - description: The minimum number of lines of the poem.
+        explode: false
+        in: query
+        name: min-lines
+        required: false
+        schema:
+          example: 5
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: The maximum number of lines of the poem.
+        explode: false
+        in: query
+        name: max-lines
+        required: false
+        schema:
+          example: 20
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    title: Purpose
+                    author: Amos Russel Wells
+                    poem: |-
+                      Deeply and long the sap must flow
+                      Ere the merest layer of elm can grow.
+
+                      Many a wave's recurrent shock
+                      Is needed to smooth the tiniest rock.
+
+                      Thousands of leaves must fade and fall
+                      To make the mold by the garden wall.
+
+                      Thus, as the patient seasons roll,
+                      Slowly is fashioned a human soul.
+
+                      Purpose and failure and purpose still,
+                      Steadily moved by a quiet will,—
+
+                      Layer on layer in sturdy way,
+                      Hardly seen the growth of a day,—
+
+                      Times of failure and fear and fall,
+                      But one strong tendency through it all,—
+
+                      God and purpose and sun by sun
+                      Reach the stars before they are done!
+                      For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future
+              schema:
+                $ref: '#/components/schemas/inline_response_200_11'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Poem
+      tags:
+      - Art
+      x-accepts: application/json
+  /convert-image-to-ascii-txt:
+    get:
+      deprecated: false
+      description: Convert an image to ASCII art. You can pass the image URL as a
+        query parameter. The API returns the ASCII art as plain text. This endpoint
+        is using the GET method and an image URL as a query parameter.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/image-to-ascii-art-api
+      operationId: imageToAsciiArtByURL
+      parameters:
+      - description: The URL to the image.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: The maximum width of the image (default 400, max. 500).
+        explode: false
+        in: query
+        name: width
+        required: false
+        schema:
+          example: 200
+          format: int32
+          maximum: 500
+          minimum: 1
+          type: integer
+        style: form
+      - description: The maximum height of the image (default 400, max. 500).
+        explode: false
+        in: query
+        name: height
+        required: false
+        schema:
+          example: 200
+          format: int32
+          maximum: 500
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              examples:
+                Response:
+                  value: |-
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    ..............................................,,,,,,,,...........................................
+                    ...........................................:+?%%%%%%%%*;,........................................
+                    ........................................,+%###S%????SS##S?;......................................
+                    .......................................*S@#*;;:,,,,,::;+%##%;....................................
+                    .....................................:%@S+:,............,;?##*,..................................
+                    ...................................,+##*,.................,;%#%:.................................
+                    ...................................*@S:.....................,*##;................................
+                    ..................................*#%:........................;#S;...............................
+                    .................................*@%,..........................;#S:..............................
+                    ................................;#S:............................+@?,.............................
+                    ...............................,%#;..............................?#;.............................
+                    ...............................+#+...............................,SS,............................
+                    ..............................:S%,................................+@*............................
+                    ..............................+#+.................................,S#:...........................
+                    .............................,?#:..................................*@*...........................
+                    .............................,S?...................................,@%...........................
+                    .............................:#+....................................%#,..........................
+                    .............................;#;....................................+#:..........................
+                    .............................*S,....................................:@+..........................
+                    .............................?S,....................................:@*..........................
+                    .............................*S,....................................:@+..........................
+                    .............................?S,....................................:@*..........................
+                    .............................*S,....................................:@+..........................
+                    .............................:#;....................................*#:..........................
+                    .............................:#*....................................SS,..........................
+                    .............................,%%,..................................,@%...........................
+                    ..............................*#:..................................?@+...........................
+                    ..............................;#*.................................:##,...........................
+                    ..............................,%S,................................*@*............................
+                    ...............................;#*...............................:S%,............................
+                    ...............................,?#+.............................,%#:.............................
+                    ................................:##;............................*@*..............................
+                    .................................+#S:..........................*#%,..............................
+                    ..................................;#S:.......................,*@%:...............................
+                    ...................................;SS+,....................:?#%:................................
+                    ....................................:%@S+.................,*##*,.................................
+                    .....................................,+#@%;.............,*S@S;...................................
+                    .......................................:?#@S?+;:,,,,:;*%#@S+,....................................
+                    .........................................,+%#@@#####@@@#%;,......................................
+                    ............................................:+*?S#@S?*;,.........................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................:S@?,............................................
+                    ...............................................,?@@@+............................................
+                    ...............................................*#@@@S:...........................................
+                    ..............................................*@%%@@@?...........................................
+                    .............................................+@S;?S%@#;..........................................
+                    ............................................+@#;,%S;%@S,.........................................
+                    ...........................................:##;.,%#::#@*.........................................
+                    ..........................................:##;..,%#:.*@#;........................................
+                    .........................................;##;...,%#:.,%@S,.......................................
+                    ........................................:S#+....,%#:..:S@*.......................................
+                    .......................................,%#*.....,%#:...+@#;......................................
+                    ......................................,%#*......,%#:...,%@S,.....................................
+                    .....................................:%@+.......,%#:....:S@*.....................................
+                    ....................................,%@*........,%#:.....+@#;....................................
+                    ...................................,*@?,........,%#:.....,?@%,...................................
+                    ...................................*#?,.........,%#:......:%#+...................................
+                    ..................................*@?,..........,%#:.......;#S:..................................
+                    ................................,*@%,...........,%#:.......,*@?..................................
+                    ................................+@#;............,%#:........:S@+.................................
+                    ...............................;##;.............,%#:.........+#S:................................
+                    ..............................;S#;..............,%#:.........,?@*,...............................
+                    .............................:S#;...............,%#:..........,%#;...............................
+                    ............................:#@*................,%#:...........:#%:..............................
+                    ...........................:#@*.................,%#:............*@*..............................
+                    ..........................,%@?..................,%#:............,SS:.............................
+                    .........................,%@?...................,%#:.............;#?,............................
+                    ........................:%@?....................,%#:..............?@*............................
+                    .......................:%@%,....................,%#:..............,##;...........................
+                    ......................,%@%,.....................,%#:...............;#S,..........................
+                    ......................*@S:......................,%#:................+@?..........................
+                    ....................,*@S:.......................,%#:.................?#;.........................
+                    ...................,*@S:........................,%#:.................:SS,........................
+                    ...................*@%:.........................,%#:..................+@?........................
+                    ..................+@%,..........................,%#:..................,%#;.......................
+                    .................;#S:...........................,%#:...................:#S:......................
+                    ................:##;............................,%#:....................+@?,.....................
+                    ...............:S#;.............................,%#:....................,?#+.....................
+                    ..............;##;..............................,%#:.....................:SS:....................
+                    .............:S#;...............................,%#:......................+#?,...................
+                    ............,%@+................................,%#:......................,?#+...................
+                    ...........,%@*.................................,%#:.......................:SS:..................
+                    ...........?@*..................................,%#:........................+#*..................
+                    ...........+*...................................,%#:........................,*;..................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................,%#:.............................................
+                    ................................................+#@+.............................................
+                    ...............................................;SS##;............................................
+                    ..............................................+#%;+#S;...........................................
+                    .............................................+#S;..?@S:..........................................
+                    ............................................;#S;...,%@%,.........................................
+                    ..........................................,*#S:.....,%@?.........................................
+                    .........................................,?@S:.......:S@*........................................
+                    .........................................?@S:.........:S@+.......................................
+                    ........................................?@S:...........:##;......................................
+                    .......................................?@S:.............+@#;.....................................
+                    ......................................?@S:...............+@S:....................................
+                    ....................................,?@S;.................*@%,...................................
+                    ...................................,*@S:...................*@*,..................................
+                    ..................................,?#%:....................,?#*..................................
+                    .................................:%@?,......................,%#+.................................
+                    ................................:%@?,........................:S#;................................
+                    ...............................:%@?,..........................;##;...............................
+                    ..............................:%@?,............................+#S:..............................
+                    .............................,%@?,..............................+#%..............................
+                    ............................,S@?,...............................,?@?.............................
+                    ...........................,S@%,.................................,%@;............................
+                    ..........................:S@*,...................................:S@;...........................
+                    .........................;S#+......................................;S#:..........................
+                    ........................+#S;........................................:#S:.........................
+                    .......................;##:..........................................;@%,........................
+                    ......................;##;............................................+@*........................
+                    .....................;##:.............................................,%@*.......................
+                    ....................;##;...............................................,%#+......................
+                    ...................;#S;.................................................,S#;.....................
+                    ..................;S#;...................................................:#S:....................
+                    .................+S#;.....................................................+#%:...................
+                    ...............,*#S;.......................................................+#?,..................
+                    ..............,*#%,.........................................................*#?,.................
+                    .............,*@%,..........................................................,?@*.................
+                    .............;@?,............................................................:%#:................
+                    .............:*,..............................................................:+,................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+                    .................................................................................................
+              schema:
+                type: string
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Image to Ascii Art by URL
+      tags:
+      - Art
+      x-accepts: text/plain
+  /extract-content:
+    get:
+      deprecated: false
+      description: Extract the main content from a web page. This API is useful for
+        extracting the main text, title, and images from a web page. It can be used
+        to create a summary of the content of a web page, or to extract the main content
+        of a web page to display it in a different format.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-web-content-api
+      operationId: extractContentFromAWebPage
+      parameters:
+      - description: The url for which the content will be extracted.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: https://www.bbc.com/news/entertainment-arts-68270826
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    title: Usher joined by Alicia Keys and will.i.am at Super Bowl
+                      half-time show
+                    main_text: "R&B star Usher delivered a hit-heavy half-time show\
+                      \ at Sunday's Super Bowl - with help from will.i.am, Alicia\
+                      \ Keys, Ludacris... and a pair of roller skates.\n\nA disclaimer\
+                      \ shown before the performance jokingly warned viewers it may\
+                      \ cause \"singing, dancing, sweating, gyrating, and possible\
+                      \ relationship issues\". It would go on to deliver on all fronts.\
+                      \ \n\nDressed in all-white and surrounded by a swarm of energetic\
+                      \ dancers, Usher emerged on the stage at the Allegiant Stadium\
+                      \ in Las Vegas and launched straight into one of his best-known\
+                      \ songs, Caught Up.\n\nIt kicked off a dynamic performance which\
+                      \ took advantage of the 45-year-old's dancing skills and sizeable\
+                      \ back catalogue. \n\nBefore his half-time show, Usher admitted\
+                      \ it had been \"a challenge to squeeze 30 years in to 13 minutes\"\
+                      . But the singer did an admirable job of cramming in as many\
+                      \ of his most recognisable songs as possible. \n\nThe set featured\
+                      \ acrobats and a brass band so large there were enough members\
+                      \ to spell out \"USHER\" on the grounds of the stadium as he\
+                      \ was performing.\n\nThe singer switched effortlessly between\
+                      \ the two apexes of his music: club anthems and sex jams. \n\
+                      \nSome songs ran for a full verse and a chorus, others for just\
+                      \ a few seconds. A tiny snippet of Superstar appropriately saw\
+                      \ him sing only the lyrics: \"Spotlight / big stage / 50,000\
+                      \ fans screaming in a rage\" - as if to hammer home the magnitude\
+                      \ of his Super Bowl show. \n\nThe dancers who surrounded him\
+                      \ - many of whom had only travelled a short distance from his\
+                      \ Vegas residency - wore colourful, even outlandish outfits,\
+                      \ perfectly complementing his central performance and adding\
+                      \ to the sense of spectacle.\n\nOnce Usher was a few songs deep\
+                      \ and well into his groove, [...]"
+                    main_html: <article>[...]</article>
+                    images:
+                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/FDEA/production/_132620056_crgettyimages-2003966267.jpg
+                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/C802/production/_132620215_crgettyimages-1996271673.jpg
+                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/88BA/production/_132620053_crgettyimages-2003935602.jpg
+              schema:
+                $ref: '#/components/schemas/inline_response_200_12'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract Content from a Web Page
+      tags:
+      - Web
+      x-accepts: application/json
+  /extract-publish-date:
+    get:
+      deprecated: false
+      description: Extract the publish date of an article (news or blog). The API
+        will return the publish date of the article if it can be found. The date returned
+        is in the format YYYY-MM-DD.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-publish-date-api
+      operationId: extractPublishDate
+      parameters:
+      - description: The url for which the publish date should be extracted.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: https://www.bbc.com/news/entertainment-arts-68270826
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    publish_date: 2023-02-13
+              schema:
+                $ref: '#/components/schemas/inline_response_200_13'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract Publish Date
+      tags:
+      - Web
+      x-accepts: application/json
+  /extract-authors:
+    get:
+      deprecated: false
+      description: Extracts the authors from a given URL. This API is useful for extracting
+        the authors from a blog post or news article. The API will return a list of
+        authors with their names and links to their profiles if available.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-authors-api
+      operationId: extractAuthors
+      parameters:
+      - description: The url with the article from which authors should be extracted.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: https://www.bbc.com/news/entertainment-arts-68270826
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    authors:
+                    - link: ""
+                      name: Steven McIntosh
+              schema:
+                $ref: '#/components/schemas/inline_response_200_14'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract Authors
+      tags:
+      - Web
+      x-accepts: application/json
+  /search-web:
+    get:
+      deprecated: false
+      description: Search the web for a given query. The API returns a list of results
+        with the title, summary, and URL.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/web-search-api
+      operationId: searchWeb
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: true
+        schema:
+          example: penguins
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The number of results to return in range [1,50]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 5
+          format: int32
+          maximum: 50
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    results:
+                    - title: Penguin - Wikipedia
+                      summary: 'Penguins are a group of aquatic flightless birds from
+                        the family Spheniscidae (/ s f ɪ ˈ n ɪ s ɪ d iː,-d aɪ /) of
+                        the order Sphenisciformes (/ s f ɪ ˈ n ɪ s ə f ɔːr m iː z
+                        /). They live almost exclusively in the Southern Hemisphere:
+                        only one species, the Galápagos penguin, is found north of
+                        the Equator.Highly adapted for life in the ocean water, penguins
+                        have countershaded dark ...'
+                      url: https://en.wikipedia.org/wiki/Penguin
+                    - title: Penguin | Features, Habitat, & Facts | Britannica
+                      summary: Learn about penguins, the flightless marine birds that
+                        live only in the Southern Hemisphere. Find out their general
+                        features, habitat, and facts, such as their distribution,
+                        diet, behavior, and conservation status. See images and videos
+                        of different species of penguins, such as the emperor, the
+                        fairy, and the Galapagos penguin.
+                      url: https://www.britannica.com/animal/penguin
+                    - title: Penguins, facts and photos - National Geographic
+                      summary: Learn about the 18 different species of penguins, their
+                        adaptations, behavior, and threats. Find out how they live,
+                        breed, and feed in the Antarctic and subantarctic regions,
+                        and how they cope with the challenges of climate change and
+                        predators.
+                      url: https://www.nationalgeographic.com/animals/birds/facts/penguins-1
+                    - title: Official Pittsburgh Penguins Website | Pittsburgh Penguins
+                        - NHL.com
+                      summary: The official website of the Pittsburgh Penguins, a
+                        professional ice hockey team in the National Hockey League.
+                        Find news, tickets, schedule, photos, video, scores, stats,
+                        community, and more about the team and its players.
+                      url: https://www.nhl.com/penguins/
+                    - title: Penguin | Species | WWF - World Wildlife Fund
+                      summary: Learn about the 17 to 19 species of penguins that live
+                        in the Southern Hemisphere, from the tiny blue penguins of
+                        Australia and New Zealand to the majestic emperor penguins
+                        of Antarctica. Find out why they matter, what threats they
+                        face, and how you can help protect them.
+                      url: https://www.worldwildlife.org/species/penguin
+              schema:
+                $ref: '#/components/schemas/inline_response_200_15'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Web
+      tags:
+      - Web
+      x-accepts: application/json
+  /correct-spelling:
+    get:
+      deprecated: false
+      description: 'The API corrects spelling mistakes in a given text. It returns
+        the corrected text or the original text if nothing was corrected. This API
+        supports text in the following languages: English (en), French (fr), German
+        (de), Italian (it), and Spanish (es).'
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/correct-spelling-api
+      operationId: correctSpelling
+      parameters:
+      - description: The text to be corrected.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Driving carss is fun.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      - description: The language of the text, one of en, de, es, fr, or it.
+        explode: false
+        in: query
+        name: language
+        required: true
+        schema:
+          example: en
+          maxLength: 2
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    corrected_text: driving cars is fun
+              schema:
+                $ref: '#/components/schemas/inline_response_200_16'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Correct Spelling
+      tags:
+      - Text
+      x-accepts: application/json
+  /detect-language:
+    get:
+      deprecated: false
+      description: Detect the language of the given text. The API returns a list of
+        languages and their confidence scores. The confidence score is a value between
+        0 and 1, where 1 means the language was detected with 100% confidence. The
+        API supports text in 22 languages.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/detect-language-api
+      operationId: detectLanguage
+      parameters:
+      - description: The text for which the language should be detected.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Das ist ein Text.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                  - language: de
+                    confidence: 0.34
+                  - language: et
+                    confidence: 0.22
+                  - language: fi
+                    confidence: 0.13
+                  - language: sv
+                    confidence: 0.11
+                  - language: it
+                    confidence: 0.11
+                  - language: es
+                    confidence: 0.05
+                  - language: pt
+                    confidence: 0.03
+                  - language: lt
+                    confidence: 0.01
+              schema:
+                items:
+                  $ref: '#/components/schemas/inline_response_200_17'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Detect Language
+      tags:
+      - Text
+      x-accepts: application/json
+  /detect-sentiment:
+    get:
+      deprecated: false
+      description: Detect the sentiment (positive or negative) of a given text. The
+        entire document is scored and also each individual sentence.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/detect-sentiment-api
+      operationId: detectSentiment
+      parameters:
+      - description: The text for which the sentiment should be detected.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Happy times feel so good.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    document:
+                      sentiment: positive
+                      confidence: 1
+                      average_confidence: 1
+                    sentences:
+                    - length: 34
+                      sentiment: positive
+                      offset: 0
+                      confidence: 1
+              schema:
+                $ref: '#/components/schemas/inline_response_200_18'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Detect Sentiment
+      tags:
+      - Text
+      x-accepts: application/json
+  /score-text:
+    get:
+      deprecated: false
+      description: Score the readability, skimmability, interestingness, and style
+        of a text. The readability score is based on the average length of the sentences
+        and the average length of the words in the text. The text is scored with multiple
+        readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman
+        Liau. Additionally, information such as the estimated reading time in seconds
+        is returned.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/score-text-api
+      operationId: scoreText
+      parameters:
+      - description: The title of the text to score.
+        explode: false
+        in: query
+        name: title
+        required: true
+        schema:
+          example: A short story
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      - description: The text to score for multiple metrics.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: A nice short story to be analyzed
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    number_of_words: 7
+                    number_of_sentences: 1
+                    readability:
+                      mainscores:
+                        total_possible: 10
+                        total: 10
+                      subscores:
+                        reading_time_seconds: 1
+                        forcast: -0.99
+                        flesch: 78.873
+                        smog: 8.842
+                        ari: 0.237
+                        lix: -0.99
+                        coleman_liau: 2.633
+                        kincaid: 3.997
+                        fog: 8.514
+                    skimmability:
+                      mainscores:
+                        total_possible: 10
+                        total: 3.076923
+                      subscores:
+                        bullet_point_ratio_score:
+                        - 0
+                        - 2
+                        image_score:
+                        - 0
+                        - 3
+                        highlighted_word_ratio_score:
+                        - 0
+                        - 2
+                        video_score:
+                        - 0
+                        - 1
+                        paragraph_score:
+                        - 4
+                        - 3
+                        paragraph_headline_ratio_score:
+                        - 0
+                        - 2
+                    interestingness:
+                      mainscores:
+                        total_possible: 10
+                        total: 3.571429
+                      subscores:
+                        title_rating_score:
+                        - 1
+                        - 4
+                        quote_score:
+                        - 0
+                        - 1
+                        length_score:
+                        - 0
+                        - 2
+                        link_score:
+                        - 0
+                        - 2
+                        google_hits_score:
+                        - 4
+                        - 4
+                    style:
+                      mainscores:
+                        total_possible: 10
+                        total: 10
+                      subscores:
+                        abbreviation_score:
+                        - 3
+                        - 3
+                        style_score:
+                        - 5
+                        - 5
+                        spelling_score:
+                        - 5
+                        - 5
+                    total_score: 6.662088
+              schema:
+                $ref: '#/components/schemas/inline_response_200_19'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Score Text
+      tags:
+      - Text
+      x-accepts: application/json
+  /score-readability:
+    get:
+      deprecated: false
+      description: Score the readability of a text. The readability score is based
+        on the average length of the sentences and the average length of the words
+        in the text. The text is score with multiple readability scores such as Flesch,
+        Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/score-readability-api
+      operationId: scoreReadability
+      parameters:
+      - description: The text to score for readability.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: A rather complex text, hard to read, and highly convoluted using
+            acronym TERMS.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    readability:
+                      mainscores:
+                        total_possible: 10
+                        total: 10
+                      subscores:
+                        reading_time_seconds: 3
+                        forcast: -0.99
+                        flesch: 50.471
+                        smog: 11.208
+                        ari: 8.258
+                        lix: -0.99
+                        coleman_liau: 10.889
+                        kincaid: 9.449
+                        fog: 11.354
+              schema:
+                $ref: '#/components/schemas/inline_response_200_20'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Score Readability
+      tags:
+      - Text
+      x-accepts: application/json
+  /extract-dates:
+    get:
+      deprecated: false
+      description: Extract dates from a given text. The API will return a list of
+        dates with their positions in the text and the normalized form of the date.
+        A large list of date formats is supported. For example, the text could contain
+        dates in the form of "April 5th, 2035", "04/05/2035", or "05.04.2035". The
+        normalized date is the date in the form of a timestamp (milliseconds since
+        1970).
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-dates-api
+      operationId: extractDates
+      parameters:
+      - description: The text from which dates should be extracted.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: On 5th or April, 2035 there will be flying cars - 2023-02-12.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    dates:
+                    - start_position: 3
+                      date: April 5th, 2035
+                      normalized_date: 2059336800000
+                      tag: DATETIME
+                      end_position: 18
+              schema:
+                $ref: '#/components/schemas/inline_response_200_21'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract Dates
+      tags:
+      - Text
+      x-accepts: application/json
+  /list-synonyms:
+    get:
+      deprecated: false
+      description: Return synonyms of a word.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/synonyms-api
+      operationId: listWordSynonyms
+      parameters:
+      - description: The (noun) word for which a list of synonyms should be returned.
+        explode: false
+        in: query
+        name: word
+        required: true
+        schema:
+          example: airplane
+          maxLength: 50
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    synonyms:
+                    - aeroplane
+                    - plane
+                    - heavier-than-air craft
+              schema:
+                $ref: '#/components/schemas/inline_response_200_22'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: List Word Synonyms
+      tags:
+      - Text
+      x-accepts: application/json
+  /tag-pos:
+    get:
+      deprecated: false
+      description: Part of speech tagging is the process of marking up a word in a
+        text as corresponding to a particular part of speech, based on both its definition
+        and its context. This is a simple API that takes a text and returns the tagged
+        text.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/pos-tagging-api
+      operationId: partOfSpeechTagging
+      parameters:
+      - description: The text to tag the part of speech.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: The lazy dog jumps over the quick brown fox.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    tagged_text: The/AT lazy/JJ dog/NN jumps/NNS over/UNDER the/AT
+                      quick/RB brown/JJ fox/NN
+              schema:
+                $ref: '#/components/schemas/inline_response_200_23'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Part of Speech Tagging
+      tags:
+      - Text
+      x-accepts: application/json
+  /stem-text:
+    get:
+      deprecated: false
+      description: The Text Stemming API is used to get the root form of a word. It
+        is useful for searching and natural language processing.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/stemming-api
+      operationId: textStemming
+      parameters:
+      - description: The text to be stemmed.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: The laziest dogs are jumping over the quicker brown foxes.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    original: The laziest dogs are jumping over the quicker brown
+                      foxes
+                    stemmed: The laziest dog are jump over the quicker brown fox
+              schema:
+                $ref: '#/components/schemas/inline_response_200_24'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Text Stemming
+      tags:
+      - Text
+      x-accepts: application/json
+  /singularize-word:
+    get:
+      deprecated: false
+      description: Find the singular form of a word.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/word-singularization-pluralization-api
+      operationId: singularizeWord
+      parameters:
+      - description: The (noun) word for which the singular form should be found.
+        explode: false
+        in: query
+        name: word
+        required: true
+        schema:
+          example: airplanes
+          maxLength: 50
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    original: parties
+                    singular: party
+              schema:
+                $ref: '#/components/schemas/inline_response_200_25'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Singularize Word
+      tags:
+      - Text
+      x-accepts: application/json
+  /pluralize-word:
+    get:
+      deprecated: false
+      description: Find the plural form of a word.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/word-singularization-pluralization-api
+      operationId: pluralizeWord
+      parameters:
+      - description: The (noun) word for which the plural form should be found.
+        explode: false
+        in: query
+        name: word
+        required: true
+        schema:
+          example: party
+          maxLength: 50
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    original: party
+                    plural: parties
+              schema:
+                $ref: '#/components/schemas/inline_response_200_26'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Pluralize Word
+      tags:
+      - Text
+      x-accepts: application/json
+  /extract-entities:
+    get:
+      deprecated: false
+      description: Extract entities from a text. An entity is a word or a group of
+        words that represent a concept. For example, the word "Canada" represents
+        the concept of a country. The word "Jim Carrey" represents the concept of
+        a person. The word "Tesla" represents the concept of a company. The API will
+        return a list of entities found in the text. The entities are classified into
+        different types such as person, location, organization, etc.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/extract-entities-api
+      operationId: extractEntities
+      parameters:
+      - description: The text from which entities should be extracted.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Jim Carrey is an actor from Canada
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    entities:
+                    - start_position: 0
+                      image: https://upload.wikimedia.org/wikipedia/commons/8/8b/Jim_Carrey_2008.jpg
+                      type: PER
+                      value: Jim Carrey
+                      end_position: 10
+                    - start_position: 28
+                      type: LOC
+                      value: Canada
+                      end_position: 34
+              schema:
+                $ref: '#/components/schemas/inline_response_200_27'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Extract Entities
+      tags:
+      - Text
+      x-accepts: application/json
+  /search-images:
+    get:
+      deprecated: false
+      description: Search through hundreds of thousands of royalty free images to
+        match any topic you want. The images are returned in a list with the URL,
+        width, and height of the image. Additionally, you can find the license type
+        and link of the image.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-images-api
+      operationId: searchRoyaltyFreeImages
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: true
+        schema:
+          example: dogs
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The number of images to return in range [1,10]
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 10
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    images:
+                    - width: 2303
+                      license:
+                        name: FREE
+                        link: https://unsplash.com/license
+                      thumbnail: https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDF8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200
+                      id: U6nlG0Y5sfs
+                      url: https://images.unsplash.com/photo-1529472119196-cb724127a98e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDF8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080
+                      height: 3594
+                    - width: 2694
+                      license:
+                        name: FREE
+                        link: https://unsplash.com/license
+                      thumbnail: https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDJ8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200
+                      id: BJaqPaH6AGQ
+                      url: https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDJ8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080
+                      height: 4033
+                    - width: 3024
+                      license:
+                        name: FREE
+                        link: https://unsplash.com/license
+                      thumbnail: https://images.unsplash.com/photo-1568572933382-74d440642117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDN8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=200
+                      id: v0_MCllHY9M
+                      url: https://images.unsplash.com/photo-1568572933382-74d440642117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDN8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080
+                      height: 4032
+              schema:
+                $ref: '#/components/schemas/inline_response_200_28'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Royalty Free Images
+      tags:
+      - Media
+      x-accepts: application/json
+  /rescale-image:
+    get:
+      deprecated: false
+      description: Rescale an image to a specific width and height. The image will
+        be resized to fit the specified width and height while maintaining the original
+        aspect ratio unless the crop parameter is set to true. The image will be returned
+        in the same format as the original image.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/rescale-image-api
+      operationId: rescaleImage
+      parameters:
+      - description: The url of the image to be rescaled.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: 'https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM '
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: The desired width of the rescaled image.
+        explode: false
+        in: query
+        name: width
+        required: true
+        schema:
+          example: 200
+          format: int32
+          maximum: 5000
+          minimum: 1
+          type: integer
+        style: form
+      - description: The desired height of the rescaled image.
+        explode: false
+        in: query
+        name: height
+        required: true
+        schema:
+          example: 200
+          format: int32
+          maximum: 5000
+          minimum: 1
+          type: integer
+        style: form
+      - description: Whether the image should be cropped. If true, the returned image
+          will have exactly the given width and height and some content might have
+          been cropped from the left/right or top/bottom. If this parameter is false,
+          the image will keep its ratio but will be resized to fill the given box.
+          Some content might be outside the box though.
+        explode: false
+        in: query
+        name: crop
+        required: true
+        schema:
+          example: true
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Rescale Image
+      tags:
+      - Media
+      x-accepts: application/octet-stream
+  /detect-color:
+    get:
+      deprecated: false
+      description: 'Detect the main color of an image. The API returns a list of colors
+        and their hex codes. The API supports images in the following formats: JPEG,
+        PNG, and GIF.'
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/detect-main-image-color-api
+      operationId: detectMainImageColor
+      parameters:
+      - description: The url of the image for which the colors should be detected.
+        explode: false
+        in: query
+        name: url
+        required: true
+        schema:
+          example: 'https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM '
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                  - specific_color: Firebrick
+                    main_color: Red
+                    hex_code: '#b01c20'
+                  - specific_color: Thistle Green
+                    main_color: Green
+                    hex_code: '#bfaf9a'
+                  - specific_color: Brown Pod
+                    main_color: Brown
+                    hex_code: '#36180d'
+              schema:
+                items:
+                  $ref: '#/components/schemas/inline_response_200_29'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Detect Main Image Color
+      tags:
+      - Media
+      x-accepts: application/json
+  /convert-units:
+    get:
+      deprecated: false
+      description: Convert units from one to another. The API returns the amount and
+        the unit of the target unit.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/convert-units-api
+      operationId: convertUnits
+      parameters:
+      - description: The source amount.
+        explode: false
+        in: query
+        name: source-amount
+        required: true
+        schema:
+          example: 100
+          format: double
+          maximum: 99999999
+          minimum: 0
+          type: number
+        style: form
+      - description: The source unit.
+        explode: false
+        in: query
+        name: source-unit
+        required: true
+        schema:
+          example: kg
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: The unit to which should be converted.
+        explode: false
+        in: query
+        name: target-unit
+        required: true
+        schema:
+          example: lb
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: An optional food name. For converting foods the food is relevant
+          as they have different densities.
+        explode: false
+        in: query
+        name: food-name
+        required: false
+        schema:
+          example: flour
+          maxLength: 200
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    target_amount: 220.462262
+                    target_unit: lb
+              schema:
+                $ref: '#/components/schemas/inline_response_200_30'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Convert Units
+      tags:
+      - Math
+      x-accepts: application/json
+  /read-key-value:
+    get:
+      deprecated: false
+      description: Read a value from the key-value store. The key-value store is a
+        simple storage system that allows you to store and retrieve data using a key.
+        The data is stored in the cloud and can be accessed from anywhere. You can
+        use the key-value store to store any type of data, such as text or numbers.
+        The key-value store is a great way to store data that you want to access from
+        multiple devices or locations.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/key-value-storage-api
+      operationId: readKeyValueFromStore
+      parameters:
+      - description: The key for which the value is stored (max length 255 characters).
+        explode: false
+        in: query
+        name: key
+        required: true
+        schema:
+          example: visitors24h
+          maxLength: 255
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    value: "100"
+              schema:
+                $ref: '#/components/schemas/inline_response_200_31'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Read Key Value from Store
+      tags:
+      - Storage
+      x-accepts: application/json
+  /store-key-value:
+    get:
+      deprecated: false
+      description: Store a value in the key-value store. The key-value store is a
+        simple storage system that allows you to store and retrieve data using a key.
+        The data is stored in the cloud and can be accessed from anywhere. You can
+        use the key-value store to store any type of data, such as text or numbers.
+        The key-value store is a great way to store data that you want to access from
+        multiple devices or locations.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/key-value-storage-api
+      operationId: storeKeyValueGET
+      parameters:
+      - description: The key for which the value is stored (max length 255 characters).
+        explode: false
+        in: query
+        name: key
+        required: true
+        schema:
+          example: visitors24h
+          maxLength: 255
+          pattern: "."
+          type: string
+        style: form
+      - description: The value that is supposed to be stored (max length 10,000 characters).
+        explode: false
+        in: query
+        name: value
+        required: true
+        schema:
+          example: 23578 visitors
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    status: success
+              schema:
+                $ref: '#/components/schemas/inline_response_200_32'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Store Key Value (GET)
+      tags:
+      - Storage
+      x-accepts: application/json
+components:
+  schemas:
+    inline_response_200_books:
+      example:
+        image: image
+        id: 5
+        title: title
+      properties:
+        title:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        id:
+          type: integer
+      type: object
+    inline_response_200:
+      example:
+        number: 6
+        books:
+        - image: image
+          id: 5
+          title: title
+        - image: image
+          id: 5
+          title: title
+        offset: 1
+        available: 0
+      properties:
+        available:
+          type: integer
+        number:
+          type: integer
+        offset:
+          type: integer
+        books:
+          items:
+            $ref: '#/components/schemas/inline_response_200_books'
+          type: array
+      type: object
+    inline_response_200_1:
+      example:
+        similar_books:
+        - image: image
+          id: 5
+          title: title
+        - image: image
+          id: 5
+          title: title
+      properties:
+        similar_books:
+          items:
+            $ref: '#/components/schemas/inline_response_200_books'
+          type: array
+      type: object
+    inline_response_200_2_news:
+      example:
+        summary: summary
+        image: image
+        sentiment: 5.962133916683182
+        source_country: source_country
+        language: language
+        id: 5
+        text: text
+        title: title
+        publish_date: publish_date
+        url: url
+        authors:
+        - authors
+        - authors
+      properties:
+        summary:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        sentiment:
+          type: number
+        source_country:
+          nullable: true
+          type: string
+        language:
+          nullable: true
+          type: string
+        id:
+          type: integer
+        text:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        publish_date:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+        authors:
+          items:
+            nullable: true
+            type: string
+          type: array
+      type: object
+    inline_response_200_2:
+      example:
+        news:
+        - summary: summary
+          image: image
+          sentiment: 5.962133916683182
+          source_country: source_country
+          language: language
+          id: 5
+          text: text
+          title: title
+          publish_date: publish_date
+          url: url
+          authors:
+          - authors
+          - authors
+        - summary: summary
+          image: image
+          sentiment: 5.962133916683182
+          source_country: source_country
+          language: language
+          id: 5
+          text: text
+          title: title
+          publish_date: publish_date
+          url: url
+          authors:
+          - authors
+          - authors
+        number: 6
+        offset: 0
+        available: 1
+      properties:
+        offset:
+          type: integer
+        number:
+          type: integer
+        available:
+          type: integer
+        news:
+          items:
+            $ref: '#/components/schemas/inline_response_200_2_news'
+          type: array
+      type: object
+    inline_response_200_3:
+      example:
+        image: image
+        sentiment: 0.8008281904610115
+        source_country: source_country
+        author: author
+        language: language
+        text: text
+        title: title
+        publish_date: publish_date
+        url: url
+      properties:
+        title:
+          nullable: true
+          type: string
+        text:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        publish_date:
+          nullable: true
+          type: string
+        author:
+          nullable: true
+          type: string
+        language:
+          nullable: true
+          type: string
+        source_country:
+          nullable: true
+          type: string
+        sentiment:
+          type: number
+      type: object
+    inline_response_200_4_jokes:
+      example:
+        joke: joke
+      properties:
+        joke:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_4:
+      example:
+        available: 0
+        jokes:
+        - joke: joke
+        - joke: joke
+      properties:
+        jokes:
+          items:
+            $ref: '#/components/schemas/inline_response_200_4_jokes'
+          type: array
+        available:
+          type: integer
+      type: object
+    inline_response_200_5_memes:
+      example:
+        description: description
+        type: type
+        url: url
+      properties:
+        type:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_5:
+      example:
+        available: 0
+        memes:
+        - description: description
+          type: type
+          url: url
+        - description: description
+          type: type
+          url: url
+      properties:
+        memes:
+          items:
+            $ref: '#/components/schemas/inline_response_200_5_memes'
+          type: array
+        available:
+          type: integer
+      type: object
+    inline_response_200_6:
+      example:
+        width: 0
+        description: description
+        type: type
+        url: url
+        height: 6
+        ratio: 1.4658129805029452
+      properties:
+        description:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+        type:
+          nullable: true
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        ratio:
+          type: number
+      type: object
+    inline_response_200_7_images:
+      example:
+        width: 0
+        url: url
+        height: 6
+      properties:
+        width:
+          type: integer
+        url:
+          nullable: true
+          type: string
+        height:
+          type: integer
+      type: object
+    inline_response_200_7:
+      example:
+        images:
+        - width: 0
+          url: url
+          height: 6
+        - width: 0
+          url: url
+          height: 6
+      properties:
+        images:
+          items:
+            $ref: '#/components/schemas/inline_response_200_7_images'
+          type: array
+      type: object
+    inline_response_200_8:
+      example:
+        rating: 0.8008281904610115
+        word: word
+      properties:
+        word:
+          nullable: true
+          type: string
+        rating:
+          type: number
+      type: object
+    inline_response_200_9:
+      example:
+        trivia: trivia
+      properties:
+        trivia:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_10:
+      example:
+        quote: quote
+        author: author
+      properties:
+        author:
+          nullable: true
+          type: string
+        quote:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_11:
+      example:
+        poem: poem
+        author: author
+        title: title
+      properties:
+        title:
+          nullable: true
+          type: string
+        author:
+          nullable: true
+          type: string
+        poem:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_12:
+      example:
+        images:
+        - images
+        - images
+        main_html: main_html
+        main_text: main_text
+        title: title
+      properties:
+        title:
+          nullable: true
+          type: string
+        main_text:
+          nullable: true
+          type: string
+        main_html:
+          nullable: true
+          type: string
+        images:
+          items:
+            nullable: true
+            type: string
+          type: array
+      type: object
+    inline_response_200_13:
+      example:
+        publish_date: publish_date
+      properties:
+        publish_date:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_14_authors:
+      example:
+        link: link
+        name: name
+      properties:
+        link:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_14:
+      example:
+        authors:
+        - link: link
+          name: name
+        - link: link
+          name: name
+      properties:
+        authors:
+          items:
+            $ref: '#/components/schemas/inline_response_200_14_authors'
+          type: array
+      type: object
+    inline_response_200_15_results:
+      example:
+        summary: summary
+        title: title
+        url: url
+      properties:
+        title:
+          nullable: true
+          type: string
+        summary:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_15:
+      example:
+        results:
+        - summary: summary
+          title: title
+          url: url
+        - summary: summary
+          title: title
+          url: url
+      properties:
+        results:
+          items:
+            $ref: '#/components/schemas/inline_response_200_15_results'
+          type: array
+      type: object
+    inline_response_200_16:
+      example:
+        corrected_text: corrected_text
+      properties:
+        corrected_text:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_17:
+      example:
+        confidence: 0.8008281904610115
+        language: language
+      properties:
+        language:
+          nullable: true
+          type: string
+        confidence:
+          type: number
+      type: object
+    inline_response_200_18_document:
+      example:
+        sentiment: sentiment
+        confidence: 0
+        average_confidence: 6
+      properties:
+        sentiment:
+          nullable: true
+          type: string
+        confidence:
+          type: integer
+        average_confidence:
+          type: integer
+      type: object
+    inline_response_200_18_sentences:
+      example:
+        sentiment: sentiment
+        offset: 5
+        confidence: 5
+        length: 1
+      properties:
+        length:
+          type: integer
+        sentiment:
+          nullable: true
+          type: string
+        offset:
+          type: integer
+        confidence:
+          type: integer
+      type: object
+    inline_response_200_18:
+      example:
+        sentences:
+        - sentiment: sentiment
+          offset: 5
+          confidence: 5
+          length: 1
+        - sentiment: sentiment
+          offset: 5
+          confidence: 5
+          length: 1
+        document:
+          sentiment: sentiment
+          confidence: 0
+          average_confidence: 6
+      properties:
+        document:
+          $ref: '#/components/schemas/inline_response_200_18_document'
+        sentences:
+          items:
+            $ref: '#/components/schemas/inline_response_200_18_sentences'
+          type: array
+      type: object
+    inline_response_200_19_readability_mainscores:
+      example:
+        total: 5
+        total_possible: 1
+      properties:
+        total_possible:
+          type: integer
+        total:
+          type: integer
+      type: object
+    inline_response_200_19_readability_subscores:
+      example:
+        reading_time_seconds: 5
+        forcast: 2.3021358869347655
+        flesch: 7.061401241503109
+        smog: 9.301444243932576
+        ari: 3.616076749251911
+        lix: 2.027123023002322
+        coleman_liau: 4.145608029883936
+        kincaid: 7.386281948385884
+        fog: 1.2315135367772556
+      properties:
+        reading_time_seconds:
+          type: integer
+        forcast:
+          type: number
+        flesch:
+          type: number
+        smog:
+          type: number
+        ari:
+          type: number
+        lix:
+          type: number
+        coleman_liau:
+          type: number
+        kincaid:
+          type: number
+        fog:
+          type: number
+      type: object
+    inline_response_200_19_readability:
+      example:
+        mainscores:
+          total: 5
+          total_possible: 1
+        subscores:
+          reading_time_seconds: 5
+          forcast: 2.3021358869347655
+          flesch: 7.061401241503109
+          smog: 9.301444243932576
+          ari: 3.616076749251911
+          lix: 2.027123023002322
+          coleman_liau: 4.145608029883936
+          kincaid: 7.386281948385884
+          fog: 1.2315135367772556
+      properties:
+        mainscores:
+          $ref: '#/components/schemas/inline_response_200_19_readability_mainscores'
+        subscores:
+          $ref: '#/components/schemas/inline_response_200_19_readability_subscores'
+      type: object
+    inline_response_200_19_skimmability_mainscores:
+      example:
+        total: 1.4894159098541704
+        total_possible: 1
+      properties:
+        total_possible:
+          type: integer
+        total:
+          type: number
+      type: object
+    inline_response_200_19_skimmability_subscores:
+      example:
+        image_score:
+        - 7
+        - 7
+        video_score:
+        - 4
+        - 4
+        paragraph_score:
+        - 5
+        - 5
+        bullet_point_ratio_score:
+        - 6
+        - 6
+        highlighted_word_ratio_score:
+        - 1
+        - 1
+        paragraph_headline_ratio_score:
+        - 9
+        - 9
+      properties:
+        bullet_point_ratio_score:
+          items:
+            type: integer
+          type: array
+        image_score:
+          items:
+            type: integer
+          type: array
+        highlighted_word_ratio_score:
+          items:
+            type: integer
+          type: array
+        video_score:
+          items:
+            type: integer
+          type: array
+        paragraph_score:
+          items:
+            type: integer
+          type: array
+        paragraph_headline_ratio_score:
+          items:
+            type: integer
+          type: array
+      type: object
+    inline_response_200_19_skimmability:
+      example:
+        mainscores:
+          total: 1.4894159098541704
+          total_possible: 1
+        subscores:
+          image_score:
+          - 7
+          - 7
+          video_score:
+          - 4
+          - 4
+          paragraph_score:
+          - 5
+          - 5
+          bullet_point_ratio_score:
+          - 6
+          - 6
+          highlighted_word_ratio_score:
+          - 1
+          - 1
+          paragraph_headline_ratio_score:
+          - 9
+          - 9
+      properties:
+        mainscores:
+          $ref: '#/components/schemas/inline_response_200_19_skimmability_mainscores'
+        subscores:
+          $ref: '#/components/schemas/inline_response_200_19_skimmability_subscores'
+      type: object
+    inline_response_200_19_interestingness_subscores:
+      example:
+        quote_score:
+        - 6
+        - 6
+        link_score:
+        - 9
+        - 9
+        google_hits_score:
+        - 6
+        - 6
+        title_rating_score:
+        - 9
+        - 9
+        length_score:
+        - 8
+        - 8
+      properties:
+        title_rating_score:
+          items:
+            type: integer
+          type: array
+        quote_score:
+          items:
+            type: integer
+          type: array
+        length_score:
+          items:
+            type: integer
+          type: array
+        link_score:
+          items:
+            type: integer
+          type: array
+        google_hits_score:
+          items:
+            type: integer
+          type: array
+      type: object
+    inline_response_200_19_interestingness:
+      example:
+        mainscores:
+          total: 1.4894159098541704
+          total_possible: 1
+        subscores:
+          quote_score:
+          - 6
+          - 6
+          link_score:
+          - 9
+          - 9
+          google_hits_score:
+          - 6
+          - 6
+          title_rating_score:
+          - 9
+          - 9
+          length_score:
+          - 8
+          - 8
+      properties:
+        mainscores:
+          $ref: '#/components/schemas/inline_response_200_19_skimmability_mainscores'
+        subscores:
+          $ref: '#/components/schemas/inline_response_200_19_interestingness_subscores'
+      type: object
+    inline_response_200_19_style_subscores:
+      example:
+        style_score:
+        - 6
+        - 6
+        spelling_score:
+        - 1
+        - 1
+        abbreviation_score:
+        - 3
+        - 3
+      properties:
+        abbreviation_score:
+          items:
+            type: integer
+          type: array
+        style_score:
+          items:
+            type: integer
+          type: array
+        spelling_score:
+          items:
+            type: integer
+          type: array
+      type: object
+    inline_response_200_19_style:
+      example:
+        mainscores:
+          total: 5
+          total_possible: 1
+        subscores:
+          style_score:
+          - 6
+          - 6
+          spelling_score:
+          - 1
+          - 1
+          abbreviation_score:
+          - 3
+          - 3
+      properties:
+        mainscores:
+          $ref: '#/components/schemas/inline_response_200_19_readability_mainscores'
+        subscores:
+          $ref: '#/components/schemas/inline_response_200_19_style_subscores'
+      type: object
+    inline_response_200_19:
+      example:
+        number_of_sentences: 6
+        skimmability:
+          mainscores:
+            total: 1.4894159098541704
+            total_possible: 1
+          subscores:
+            image_score:
+            - 7
+            - 7
+            video_score:
+            - 4
+            - 4
+            paragraph_score:
+            - 5
+            - 5
+            bullet_point_ratio_score:
+            - 6
+            - 6
+            highlighted_word_ratio_score:
+            - 1
+            - 1
+            paragraph_headline_ratio_score:
+            - 9
+            - 9
+        readability:
+          mainscores:
+            total: 5
+            total_possible: 1
+          subscores:
+            reading_time_seconds: 5
+            forcast: 2.3021358869347655
+            flesch: 7.061401241503109
+            smog: 9.301444243932576
+            ari: 3.616076749251911
+            lix: 2.027123023002322
+            coleman_liau: 4.145608029883936
+            kincaid: 7.386281948385884
+            fog: 1.2315135367772556
+        interestingness:
+          mainscores:
+            total: 1.4894159098541704
+            total_possible: 1
+          subscores:
+            quote_score:
+            - 6
+            - 6
+            link_score:
+            - 9
+            - 9
+            google_hits_score:
+            - 6
+            - 6
+            title_rating_score:
+            - 9
+            - 9
+            length_score:
+            - 8
+            - 8
+        number_of_words: 0
+        style:
+          mainscores:
+            total: 5
+            total_possible: 1
+          subscores:
+            style_score:
+            - 6
+            - 6
+            spelling_score:
+            - 1
+            - 1
+            abbreviation_score:
+            - 3
+            - 3
+        total_score: 2.8841621266687802
+      properties:
+        number_of_words:
+          type: integer
+        number_of_sentences:
+          type: integer
+        readability:
+          $ref: '#/components/schemas/inline_response_200_19_readability'
+        skimmability:
+          $ref: '#/components/schemas/inline_response_200_19_skimmability'
+        interestingness:
+          $ref: '#/components/schemas/inline_response_200_19_interestingness'
+        style:
+          $ref: '#/components/schemas/inline_response_200_19_style'
+        total_score:
+          type: number
+      type: object
+    inline_response_200_20:
+      example:
+        readability:
+          mainscores:
+            total: 5
+            total_possible: 1
+          subscores:
+            reading_time_seconds: 5
+            forcast: 2.3021358869347655
+            flesch: 7.061401241503109
+            smog: 9.301444243932576
+            ari: 3.616076749251911
+            lix: 2.027123023002322
+            coleman_liau: 4.145608029883936
+            kincaid: 7.386281948385884
+            fog: 1.2315135367772556
+      properties:
+        readability:
+          $ref: '#/components/schemas/inline_response_200_19_readability'
+      type: object
+    inline_response_200_21_dates:
+      example:
+        start_position: 0
+        date: date
+        normalized_date: 6.027456183070403
+        tag: tag
+        end_position: 1
+      properties:
+        start_position:
+          type: integer
+        date:
+          nullable: true
+          type: string
+        normalized_date:
+          type: number
+        tag:
+          nullable: true
+          type: string
+        end_position:
+          type: integer
+      type: object
+    inline_response_200_21:
+      example:
+        dates:
+        - start_position: 0
+          date: date
+          normalized_date: 6.027456183070403
+          tag: tag
+          end_position: 1
+        - start_position: 0
+          date: date
+          normalized_date: 6.027456183070403
+          tag: tag
+          end_position: 1
+      properties:
+        dates:
+          items:
+            $ref: '#/components/schemas/inline_response_200_21_dates'
+          type: array
+      type: object
+    inline_response_200_22:
+      example:
+        synonyms:
+        - synonyms
+        - synonyms
+      properties:
+        synonyms:
+          items:
+            nullable: true
+            type: string
+          type: array
+      type: object
+    inline_response_200_23:
+      example:
+        tagged_text: tagged_text
+      properties:
+        tagged_text:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_24:
+      example:
+        stemmed: stemmed
+        original: original
+      properties:
+        original:
+          nullable: true
+          type: string
+        stemmed:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_25:
+      example:
+        original: original
+        singular: singular
+      properties:
+        original:
+          nullable: true
+          type: string
+        singular:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_26:
+      example:
+        original: original
+        plural: plural
+      properties:
+        original:
+          nullable: true
+          type: string
+        plural:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_27_entities:
+      example:
+        start_position: 0
+        image: image
+        type: type
+        value: value
+        end_position: 6
+      properties:
+        start_position:
+          type: integer
+        image:
+          nullable: true
+          type: string
+        type:
+          nullable: true
+          type: string
+        value:
+          nullable: true
+          type: string
+        end_position:
+          type: integer
+      type: object
+    inline_response_200_27:
+      example:
+        entities:
+        - start_position: 0
+          image: image
+          type: type
+          value: value
+          end_position: 6
+        - start_position: 0
+          image: image
+          type: type
+          value: value
+          end_position: 6
+      properties:
+        entities:
+          items:
+            $ref: '#/components/schemas/inline_response_200_27_entities'
+          type: array
+      type: object
+    inline_response_200_28_license:
+      example:
+        name: name
+        link: link
+      properties:
+        name:
+          nullable: true
+          type: string
+        link:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_28_images:
+      example:
+        license:
+          name: name
+          link: link
+        thumbnail: thumbnail
+        width: 0
+        id: id
+        url: url
+        height: 6
+      properties:
+        width:
+          type: integer
+        license:
+          $ref: '#/components/schemas/inline_response_200_28_license'
+        thumbnail:
+          nullable: true
+          type: string
+        id:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+        height:
+          type: integer
+      type: object
+    inline_response_200_28:
+      example:
+        images:
+        - license:
+            name: name
+            link: link
+          thumbnail: thumbnail
+          width: 0
+          id: id
+          url: url
+          height: 6
+        - license:
+            name: name
+            link: link
+          thumbnail: thumbnail
+          width: 0
+          id: id
+          url: url
+          height: 6
+      properties:
+        images:
+          items:
+            $ref: '#/components/schemas/inline_response_200_28_images'
+          type: array
+      type: object
+    inline_response_200_29:
+      example:
+        specific_color: specific_color
+        main_color: main_color
+        hex_code: hex_code
+      properties:
+        specific_color:
+          nullable: true
+          type: string
+        main_color:
+          nullable: true
+          type: string
+        hex_code:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_30:
+      example:
+        target_unit: target_unit
+        target_amount: 0.8008281904610115
+      properties:
+        target_amount:
+          type: number
+        target_unit:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_31:
+      example:
+        value: value
+      properties:
+        value:
+          nullable: true
+          type: string
+      type: object
+    inline_response_200_32:
+      example:
+        status: status
+      properties:
+        status:
+          nullable: true
+          type: string
+      type: object
+  securitySchemes:
+    apiKey:
+      in: query
+      name: api-key
+      type: apiKey
+    headerApiKey:
+      in: header
+      name: x-api-key
+      type: apiKey
+

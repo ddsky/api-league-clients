@@ -1,0 +1,16 @@
+.gitignore
+README.md
+elm.json
+src/Api.elm
+src/Api/Time.elm
+src/com/apileague/Art.elm
+src/com/apileague/Books.elm
+src/com/apileague/Humor.elm
+src/com/apileague/Knowledge.elm
+src/com/apileague/Math.elm
+src/com/apileague/Media.elm
+src/com/apileague/News.elm
+src/com/apileague/Storage.elm
+src/com/apileague/Text.elm
+src/com/apileague/Web.elm
+src/com/apileague/client/model/Data.elm

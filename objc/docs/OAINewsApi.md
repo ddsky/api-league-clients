@@ -1,0 +1,194 @@
+# OAINewsApi
+
+All URIs are relative to *https://api.apileague.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**extractNews**](OAINewsApi.md#extractnews) | **GET** /extract-news | Extract News
+[**searchNews**](OAINewsApi.md#searchnews) | **GET** /search-news | Search News
+
+
+# **extractNews**
+```objc
+-(NSURLSessionTask*) extractNewsWithUrl: (NSString*) url
+    analyze: (NSNumber*) analyze
+        completionHandler: (void (^)(OAIInlineResponse2003* output, NSError* error)) handler;
+```
+
+Extract News
+
+Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* url = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/; // The url of the news.
+NSNumber* analyze = true; // Whether to analyze the news (extract entities etc.)
+
+OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
+
+// Extract News
+[apiInstance extractNewsWithUrl:url
+              analyze:analyze
+          completionHandler: ^(OAIInlineResponse2003* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAINewsApi->extractNews: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **NSString***| The url of the news. | 
+ **analyze** | **NSNumber***| Whether to analyze the news (extract entities etc.) | 
+
+### Return type
+
+[**OAIInlineResponse2003***](OAIInlineResponse2003.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchNews**
+```objc
+-(NSURLSessionTask*) searchNewsWithText: (NSString*) text
+    sourceCountries: (NSString*) sourceCountries
+    language: (NSString*) language
+    minSentiment: (NSNumber*) minSentiment
+    maxSentiment: (NSNumber*) maxSentiment
+    earliestPublishDate: (NSString*) earliestPublishDate
+    latestPublishDate: (NSString*) latestPublishDate
+    varNewsSources: (NSString*) varNewsSources
+    authors: (NSString*) authors
+    entities: (NSString*) entities
+    locationFilter: (NSString*) locationFilter
+    sort: (NSString*) sort
+    sortDirection: (NSString*) sortDirection
+    offset: (NSNumber*) offset
+    number: (NSNumber*) number
+        completionHandler: (void (^)(OAIInlineResponse2002* output, NSError* error)) handler;
+```
+
+Search News
+
+Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* text = tesla; // The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+NSString* sourceCountries = us,uk; // A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
+NSString* language = en; // The ISO 6391 language code of the news. (optional)
+NSNumber* minSentiment = -0.8; // The minimal sentiment of the news in range [-1,1]. (optional)
+NSNumber* maxSentiment = 0.8; // The maximal sentiment of the news in range [-1,1]. (optional)
+NSString* earliestPublishDate = 2022-04-22 16:12:35; // The news must have been published after this date. (optional)
+NSString* latestPublishDate = 2022-04-22 16:12:35; // The news must have been published before this date. (optional)
+NSString* varNewsSources = https://www.bbc.co.uk; // A comma-separated list of news sources from which the news should originate. (optional)
+NSString* authors = John Doe; // A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
+NSString* entities = ORG:Tesla; // Filter news by entities (see semantic types). (optional)
+NSString* locationFilter = 51.050407, 13.737262, 100; // Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
+NSString* sort = publish-time; // The sorting criteria (publish-time or sentiment). (optional)
+NSString* sortDirection = ASC; // Whether to sort ascending or descending (ASC or DESC). (optional)
+NSNumber* offset = 0; // The number of news to skip in range [0,10000] (optional)
+NSNumber* number = 10; // The number of news to return in range [1,100] (optional)
+
+OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
+
+// Search News
+[apiInstance searchNewsWithText:text
+              sourceCountries:sourceCountries
+              language:language
+              minSentiment:minSentiment
+              maxSentiment:maxSentiment
+              earliestPublishDate:earliestPublishDate
+              latestPublishDate:latestPublishDate
+              varNewsSources:varNewsSources
+              authors:authors
+              entities:entities
+              locationFilter:locationFilter
+              sort:sort
+              sortDirection:sortDirection
+              offset:offset
+              number:number
+          completionHandler: ^(OAIInlineResponse2002* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAINewsApi->searchNews: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **NSString***| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **sourceCountries** | **NSString***| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
+ **language** | **NSString***| The ISO 6391 language code of the news. | [optional] 
+ **minSentiment** | **NSNumber***| The minimal sentiment of the news in range [-1,1]. | [optional] 
+ **maxSentiment** | **NSNumber***| The maximal sentiment of the news in range [-1,1]. | [optional] 
+ **earliestPublishDate** | **NSString***| The news must have been published after this date. | [optional] 
+ **latestPublishDate** | **NSString***| The news must have been published before this date. | [optional] 
+ **varNewsSources** | **NSString***| A comma-separated list of news sources from which the news should originate. | [optional] 
+ **authors** | **NSString***| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
+ **entities** | **NSString***| Filter news by entities (see semantic types). | [optional] 
+ **locationFilter** | **NSString***| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
+ **sort** | **NSString***| The sorting criteria (publish-time or sentiment). | [optional] 
+ **sortDirection** | **NSString***| Whether to sort ascending or descending (ASC or DESC). | [optional] 
+ **offset** | **NSNumber***| The number of news to skip in range [0,10000] | [optional] 
+ **number** | **NSNumber***| The number of news to return in range [1,100] | [optional] 
+
+### Return type
+
+[**OAIInlineResponse2002***](OAIInlineResponse2002.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

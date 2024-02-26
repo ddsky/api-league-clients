@@ -1,0 +1,119 @@
+# openapi.api.StorageApi
+
+## Load the API package
+```dart
+import 'package:openapi/api.dart';
+```
+
+All URIs are relative to *https://api.apileague.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**readKeyValueFromStore**](StorageApi.md#readkeyvaluefromstore) | **GET** /read-key-value | Read Key Value from Store
+[**storeKeyValueGET**](StorageApi.md#storekeyvalueget) | **GET** /store-key-value | Store Key Value (GET)
+
+
+# **readKeyValueFromStore**
+> InlineResponse20031 readKeyValueFromStore(key)
+
+Read Key Value from Store
+
+Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = StorageApi();
+final key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
+
+try {
+    final result = api_instance.readKeyValueFromStore(key);
+    print(result);
+} catch (e) {
+    print('Exception when calling StorageApi->readKeyValueFromStore: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| The key for which the value is stored (max length 255 characters). | 
+
+### Return type
+
+[**InlineResponse20031**](InlineResponse20031.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **storeKeyValueGET**
+> InlineResponse20032 storeKeyValueGET(key, value)
+
+Store Key Value (GET)
+
+Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = StorageApi();
+final key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
+final value = 23578 visitors; // String | The value that is supposed to be stored (max length 10,000 characters).
+
+try {
+    final result = api_instance.storeKeyValueGET(key, value);
+    print(result);
+} catch (e) {
+    print('Exception when calling StorageApi->storeKeyValueGET: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**| The key for which the value is stored (max length 255 characters). | 
+ **value** | **String**| The value that is supposed to be stored (max length 10,000 characters). | 
+
+### Return type
+
+[**InlineResponse20032**](InlineResponse20032.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

@@ -1,0 +1,193 @@
+# OpenapiClient::NewsApi
+
+All URIs are relative to *https://api.apileague.com*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News |
+| [**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News |
+
+
+## extract_news
+
+> <InlineResponse2003> extract_news(url, analyze)
+
+Extract News
+
+Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::NewsApi.new
+url = 'https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/' # String | The url of the news.
+analyze = true # Boolean | Whether to analyze the news (extract entities etc.)
+
+begin
+  # Extract News
+  result = api_instance.extract_news(url, analyze)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->extract_news: #{e}"
+end
+```
+
+#### Using the extract_news_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InlineResponse2003>, Integer, Hash)> extract_news_with_http_info(url, analyze)
+
+```ruby
+begin
+  # Extract News
+  data, status_code, headers = api_instance.extract_news_with_http_info(url, analyze)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InlineResponse2003>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->extract_news_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **url** | **String** | The url of the news. |  |
+| **analyze** | **Boolean** | Whether to analyze the news (extract entities etc.) |  |
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## search_news
+
+> <InlineResponse2002> search_news(opts)
+
+Search News
+
+Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::NewsApi.new
+opts = {
+  text: 'tesla', # String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  source_countries: 'us,uk', # String | A comma-separated list of ISO 3166 country codes from which the news should originate.
+  language: 'en', # String | The ISO 6391 language code of the news.
+  min_sentiment: -0.8, # Float | The minimal sentiment of the news in range [-1,1].
+  max_sentiment: 0.8, # Float | The maximal sentiment of the news in range [-1,1].
+  earliest_publish_date: '2022-04-22 16:12:35', # String | The news must have been published after this date.
+  latest_publish_date: '2022-04-22 16:12:35', # String | The news must have been published before this date.
+  news_sources: 'https://www.bbc.co.uk', # String | A comma-separated list of news sources from which the news should originate.
+  authors: 'John Doe', # String | A comma-separated list of author names. Only news from any of the given authors will be returned.
+  entities: 'ORG:Tesla', # String | Filter news by entities (see semantic types).
+  location_filter: '51.050407, 13.737262, 100', # String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
+  sort: 'publish-time', # String | The sorting criteria (publish-time or sentiment).
+  sort_direction: 'ASC', # String | Whether to sort ascending or descending (ASC or DESC).
+  offset: 0, # Integer | The number of news to skip in range [0,10000]
+  number: 10 # Integer | The number of news to return in range [1,100]
+}
+
+begin
+  # Search News
+  result = api_instance.search_news(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->search_news: #{e}"
+end
+```
+
+#### Using the search_news_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InlineResponse2002>, Integer, Hash)> search_news_with_http_info(opts)
+
+```ruby
+begin
+  # Search News
+  data, status_code, headers = api_instance.search_news_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InlineResponse2002>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->search_news_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **text** | **String** | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **source_countries** | **String** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
+| **language** | **String** | The ISO 6391 language code of the news. | [optional] |
+| **min_sentiment** | **Float** | The minimal sentiment of the news in range [-1,1]. | [optional] |
+| **max_sentiment** | **Float** | The maximal sentiment of the news in range [-1,1]. | [optional] |
+| **earliest_publish_date** | **String** | The news must have been published after this date. | [optional] |
+| **latest_publish_date** | **String** | The news must have been published before this date. | [optional] |
+| **news_sources** | **String** | A comma-separated list of news sources from which the news should originate. | [optional] |
+| **authors** | **String** | A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
+| **entities** | **String** | Filter news by entities (see semantic types). | [optional] |
+| **location_filter** | **String** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
+| **sort** | **String** | The sorting criteria (publish-time or sentiment). | [optional] |
+| **sort_direction** | **String** | Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **Integer** | The number of news to skip in range [0,10000] | [optional] |
+| **number** | **Integer** | The number of news to return in range [1,100] | [optional] |
+
+### Return type
+
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
