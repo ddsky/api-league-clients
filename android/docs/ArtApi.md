@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ## randomPoem
 
-> InlineResponse20011 randomPoem(minLines, maxLines)
+> RandomPoem200Response randomPoem(minLines, maxLines)
 
 Random Poem
 
@@ -77,7 +77,7 @@ ArtApi apiInstance = new ArtApi();
 Integer minLines = 5; // Integer | The minimum number of lines of the poem.
 Integer maxLines = 20; // Integer | The maximum number of lines of the poem.
 try {
-    InlineResponse20011 result = apiInstance.randomPoem(minLines, maxLines);
+    RandomPoem200Response result = apiInstance.randomPoem(minLines, maxLines);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArtApi#randomPoem");
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 

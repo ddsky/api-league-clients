@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20030.h"
+#import "OAIConvertUnits200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -39,12 +39,12 @@ extern NSInteger kOAIMathApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20030*
+/// @return OAIConvertUnits200Response*
 -(NSURLSessionTask*) convertUnitsWithSourceAmount: (NSNumber*) sourceAmount
     sourceUnit: (NSString*) sourceUnit
     targetUnit: (NSString*) targetUnit
     foodName: (NSString*) foodName
-    completionHandler: (void (^)(OAIInlineResponse20030* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIConvertUnits200Response* output, NSError* error)) handler;
 
 
 

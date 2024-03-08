@@ -23,12 +23,12 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse2004;
-import com.apileague.client.model.InlineResponse2004Jokes;
-import com.apileague.client.model.InlineResponse2005;
-import com.apileague.client.model.InlineResponse2006;
-import com.apileague.client.model.InlineResponse2007;
-import com.apileague.client.model.InlineResponse2008;
+import com.apileague.client.model.GenerateNonsenseWord200Response;
+import com.apileague.client.model.RandomMeme200Response;
+import com.apileague.client.model.SearchGifs200Response;
+import com.apileague.client.model.SearchJokes200Response;
+import com.apileague.client.model.SearchJokes200ResponseJokesInner;
+import com.apileague.client.model.SearchMemes200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -63,9 +63,9 @@ public class HumorApi {
   /**
   * Generate Nonsense Word
   * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-   * @return InlineResponse2008
+   * @return GenerateNonsenseWord200Response
   */
-  public InlineResponse2008 generateNonsenseWord () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public GenerateNonsenseWord200Response generateNonsenseWord () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -95,7 +95,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2008) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2008.class);
+         return (GenerateNonsenseWord200Response) ApiInvoker.deserialize(localVarResponse, "", GenerateNonsenseWord200Response.class);
       } else {
          return null;
       }
@@ -121,7 +121,7 @@ public class HumorApi {
    * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
   */
-  public void generateNonsenseWord (final Response.Listener<InlineResponse2008> responseListener, final Response.ErrorListener errorListener) {
+  public void generateNonsenseWord (final Response.Listener<GenerateNonsenseWord200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -161,7 +161,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2008) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2008.class));
+              responseListener.onResponse((GenerateNonsenseWord200Response) ApiInvoker.deserialize(localVarResponse,  "", GenerateNonsenseWord200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -183,9 +183,9 @@ public class HumorApi {
    * @param excludeTags A comma-separated list of tags the jokes must not have.
    * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
    * @param maxLength The maximum length of the joke in letters.
-   * @return InlineResponse2004Jokes
+   * @return SearchJokes200ResponseJokesInner
   */
-  public InlineResponse2004Jokes randomJoke (String includeTags, String excludeTags, Double minRating, Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchJokes200ResponseJokesInner randomJoke (String includeTags, String excludeTags, Double minRating, Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -219,7 +219,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2004Jokes) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2004Jokes.class);
+         return (SearchJokes200ResponseJokesInner) ApiInvoker.deserialize(localVarResponse, "", SearchJokes200ResponseJokesInner.class);
       } else {
          return null;
       }
@@ -245,7 +245,7 @@ public class HumorApi {
    * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
    * @param includeTags A comma-separated list of tags the jokes should have.   * @param excludeTags A comma-separated list of tags the jokes must not have.   * @param minRating The minimum rating in range [0.0,1.0] of the jokes.   * @param maxLength The maximum length of the joke in letters.
   */
-  public void randomJoke (String includeTags, String excludeTags, Double minRating, Integer maxLength, final Response.Listener<InlineResponse2004Jokes> responseListener, final Response.ErrorListener errorListener) {
+  public void randomJoke (String includeTags, String excludeTags, Double minRating, Integer maxLength, final Response.Listener<SearchJokes200ResponseJokesInner> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -289,7 +289,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2004Jokes) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2004Jokes.class));
+              responseListener.onResponse((SearchJokes200ResponseJokesInner) ApiInvoker.deserialize(localVarResponse,  "", SearchJokes200ResponseJokesInner.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -312,9 +312,9 @@ public class HumorApi {
    * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
    * @param minRating The minimum rating in range [0.0-1.0] of the meme.
    * @param maxAgeDays The maximum age of the meme in days.
-   * @return InlineResponse2006
+   * @return RandomMeme200Response
   */
-  public InlineResponse2006 randomMeme (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public RandomMeme200Response randomMeme (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -349,7 +349,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2006) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2006.class);
+         return (RandomMeme200Response) ApiInvoker.deserialize(localVarResponse, "", RandomMeme200Response.class);
       } else {
          return null;
       }
@@ -375,7 +375,7 @@ public class HumorApi {
    * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
    * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0-1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.
   */
-  public void randomMeme (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final Response.Listener<InlineResponse2006> responseListener, final Response.ErrorListener errorListener) {
+  public void randomMeme (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final Response.Listener<RandomMeme200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -420,7 +420,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2006) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2006.class));
+              responseListener.onResponse((RandomMeme200Response) ApiInvoker.deserialize(localVarResponse,  "", RandomMeme200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -440,9 +440,9 @@ public class HumorApi {
   * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
    * @param query The search query.
    * @param number The number of gifs to return in range [1,10]
-   * @return InlineResponse2007
+   * @return SearchGifs200Response
   */
-  public InlineResponse2007 searchGifs (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchGifs200Response searchGifs (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'query' is set
     if (query == null) {
@@ -479,7 +479,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2007) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2007.class);
+         return (SearchGifs200Response) ApiInvoker.deserialize(localVarResponse, "", SearchGifs200Response.class);
       } else {
          return null;
       }
@@ -505,7 +505,7 @@ public class HumorApi {
    * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
    * @param query The search query.   * @param number The number of gifs to return in range [1,10]
   */
-  public void searchGifs (String query, Integer number, final Response.Listener<InlineResponse2007> responseListener, final Response.ErrorListener errorListener) {
+  public void searchGifs (String query, Integer number, final Response.Listener<SearchGifs200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'query' is set
@@ -552,7 +552,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2007) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2007.class));
+              responseListener.onResponse((SearchGifs200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchGifs200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -577,9 +577,9 @@ public class HumorApi {
    * @param maxLength The maximum length of the joke in letters.
    * @param offset The number of jokes to skip, between 0 and 1000.
    * @param number The number of jokes, between 1 and 10.
-   * @return InlineResponse2004
+   * @return SearchJokes200Response
   */
-  public InlineResponse2004 searchJokes (String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchJokes200Response searchJokes (String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -616,7 +616,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2004) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2004.class);
+         return (SearchJokes200Response) ApiInvoker.deserialize(localVarResponse, "", SearchJokes200Response.class);
       } else {
          return null;
       }
@@ -642,7 +642,7 @@ public class HumorApi {
    * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
    * @param keywords A comma-separated list of words that must occur in the joke.   * @param includeTags A comma-separated list of tags the jokes should have.   * @param excludeTags A comma-separated list of tags the jokes must not have.   * @param minRating The minimum rating (0-10) of the jokes.   * @param maxLength The maximum length of the joke in letters.   * @param offset The number of jokes to skip, between 0 and 1000.   * @param number The number of jokes, between 1 and 10.
   */
-  public void searchJokes (String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final Response.Listener<InlineResponse2004> responseListener, final Response.ErrorListener errorListener) {
+  public void searchJokes (String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final Response.Listener<SearchJokes200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -689,7 +689,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2004) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2004.class));
+              responseListener.onResponse((SearchJokes200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchJokes200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -714,9 +714,9 @@ public class HumorApi {
    * @param maxAgeDays The maximum age of the meme in days.
    * @param offset The number of memes to skip, between 0 and 1000.
    * @param number The number of memes, between 0 and 10.
-   * @return InlineResponse2005
+   * @return SearchMemes200Response
   */
-  public InlineResponse2005 searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchMemes200Response searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -753,7 +753,7 @@ public class HumorApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2005) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2005.class);
+         return (SearchMemes200Response) ApiInvoker.deserialize(localVarResponse, "", SearchMemes200Response.class);
       } else {
          return null;
       }
@@ -779,7 +779,7 @@ public class HumorApi {
    * With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
    * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0,1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.   * @param offset The number of memes to skip, between 0 and 1000.   * @param number The number of memes, between 0 and 10.
   */
-  public void searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final Response.Listener<InlineResponse2005> responseListener, final Response.ErrorListener errorListener) {
+  public void searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final Response.Listener<SearchMemes200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -826,7 +826,7 @@ public class HumorApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2005) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2005.class));
+              responseListener.onResponse((SearchMemes200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchMemes200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

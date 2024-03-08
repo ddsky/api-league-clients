@@ -1,17 +1,17 @@
-# com.apileague.client\StorageApi
+# OpenAPI\Client\StorageApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**readKeyValueFromStore()**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store
-[**storeKeyValueGET()**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**readKeyValueFromStore()**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store |
+| [**storeKeyValueGET()**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET) |
 
 
 ## `readKeyValueFromStore()`
 
 ```php
-readKeyValueFromStore($key): \com.apileague.client\com.apileague.client.model\InlineResponse20031
+readKeyValueFromStore($key): \OpenAPI\Client\Model\ReadKeyValueFromStore200Response
 ```
 
 Read Key Value from Store
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\StorageApi(
+$apiInstance = new OpenAPI\Client\Api\StorageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,13 +54,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| The key for which the value is stored (max length 255 characters). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The key for which the value is stored (max length 255 characters). | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\OpenAPI\Client\Model\ReadKeyValueFromStore200Response**](../Model/ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 ## `storeKeyValueGET()`
 
 ```php
-storeKeyValueGET($key, $value): \com.apileague.client\com.apileague.client.model\InlineResponse20032
+storeKeyValueGET($key, $value): \OpenAPI\Client\Model\StoreKeyValueGET200Response
 ```
 
 Store Key Value (GET)
@@ -93,17 +93,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\StorageApi(
+$apiInstance = new OpenAPI\Client\Api\StorageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -122,14 +122,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| The key for which the value is stored (max length 255 characters). |
- **value** | **string**| The value that is supposed to be stored (max length 10,000 characters). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The key for which the value is stored (max length 255 characters). | |
+| **value** | **string**| The value that is supposed to be stored (max length 10,000 characters). | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20032**](../Model/InlineResponse20032.md)
+[**\OpenAPI\Client\Model\StoreKeyValueGET200Response**](../Model/StoreKeyValueGET200Response.md)
 
 ### Authorization
 

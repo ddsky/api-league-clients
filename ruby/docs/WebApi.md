@@ -12,7 +12,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## extract_authors
 
-> <InlineResponse20014> extract_authors(url)
+> <ExtractAuthors200Response> extract_authors(url)
 
 Extract Authors
 
@@ -52,7 +52,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20014>, Integer, Hash)> extract_authors_with_http_info(url)
+> <Array(<ExtractAuthors200Response>, Integer, Hash)> extract_authors_with_http_info(url)
 
 ```ruby
 begin
@@ -60,7 +60,7 @@ begin
   data, status_code, headers = api_instance.extract_authors_with_http_info(url)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20014>
+  p data # => <ExtractAuthors200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling WebApi->extract_authors_with_http_info: #{e}"
 end
@@ -74,7 +74,7 @@ end
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ end
 
 ## extract_content_from_a_web_page
 
-> <InlineResponse20012> extract_content_from_a_web_page(url)
+> <ExtractContentFromAWebPage200Response> extract_content_from_a_web_page(url)
 
 Extract Content from a Web Page
 
@@ -128,7 +128,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20012>, Integer, Hash)> extract_content_from_a_web_page_with_http_info(url)
+> <Array(<ExtractContentFromAWebPage200Response>, Integer, Hash)> extract_content_from_a_web_page_with_http_info(url)
 
 ```ruby
 begin
@@ -136,7 +136,7 @@ begin
   data, status_code, headers = api_instance.extract_content_from_a_web_page_with_http_info(url)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20012>
+  p data # => <ExtractContentFromAWebPage200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling WebApi->extract_content_from_a_web_page_with_http_info: #{e}"
 end
@@ -150,7 +150,7 @@ end
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ end
 
 ## extract_publish_date
 
-> <InlineResponse20013> extract_publish_date(url)
+> <ExtractPublishDate200Response> extract_publish_date(url)
 
 Extract Publish Date
 
@@ -204,7 +204,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20013>, Integer, Hash)> extract_publish_date_with_http_info(url)
+> <Array(<ExtractPublishDate200Response>, Integer, Hash)> extract_publish_date_with_http_info(url)
 
 ```ruby
 begin
@@ -212,7 +212,7 @@ begin
   data, status_code, headers = api_instance.extract_publish_date_with_http_info(url)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20013>
+  p data # => <ExtractPublishDate200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling WebApi->extract_publish_date_with_http_info: #{e}"
 end
@@ -226,7 +226,7 @@ end
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ end
 
 ## search_web
 
-> <InlineResponse20015> search_web(query, opts)
+> <SearchWeb200Response> search_web(query, opts)
 
 Search Web
 
@@ -283,7 +283,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20015>, Integer, Hash)> search_web_with_http_info(query, opts)
+> <Array(<SearchWeb200Response>, Integer, Hash)> search_web_with_http_info(query, opts)
 
 ```ruby
 begin
@@ -291,7 +291,7 @@ begin
   data, status_code, headers = api_instance.search_web_with_http_info(query, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20015>
+  p data # => <SearchWeb200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling WebApi->search_web_with_http_info: #{e}"
 end
@@ -306,7 +306,7 @@ end
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 

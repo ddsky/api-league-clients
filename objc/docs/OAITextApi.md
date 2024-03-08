@@ -22,7 +22,7 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) correctSpellingWithText: (NSString*) text
     language: (NSString*) language
-        completionHandler: (void (^)(OAIInlineResponse20016* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAICorrectSpelling200Response* output, NSError* error)) handler;
 ```
 
 Correct Spelling
@@ -52,7 +52,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 // Correct Spelling
 [apiInstance correctSpellingWithText:text
               language:language
-          completionHandler: ^(OAIInlineResponse20016* output, NSError* error) {
+          completionHandler: ^(OAICorrectSpelling200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20016***](OAIInlineResponse20016.md)
+[**OAICorrectSpelling200Response***](OAICorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 # **detectLanguage**
 ```objc
 -(NSURLSessionTask*) detectLanguageWithText: (NSString*) text
-        completionHandler: (void (^)(NSArray<OAIInlineResponse20017>* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<OAIDetectLanguage200ResponseInner>* output, NSError* error)) handler;
 ```
 
 Detect Language
@@ -115,7 +115,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Detect Language
 [apiInstance detectLanguageWithText:text
-          completionHandler: ^(NSArray<OAIInlineResponse20017>* output, NSError* error) {
+          completionHandler: ^(NSArray<OAIDetectLanguage200ResponseInner>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NSArray<OAIInlineResponse20017>***](OAIInlineResponse20017.md)
+[**NSArray<OAIDetectLanguage200ResponseInner>***](OAIDetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 # **detectSentiment**
 ```objc
 -(NSURLSessionTask*) detectSentimentWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20018* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIDetectSentiment200Response* output, NSError* error)) handler;
 ```
 
 Detect Sentiment
@@ -177,7 +177,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Detect Sentiment
 [apiInstance detectSentimentWithText:text
-          completionHandler: ^(OAIInlineResponse20018* output, NSError* error) {
+          completionHandler: ^(OAIDetectSentiment200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20018***](OAIInlineResponse20018.md)
+[**OAIDetectSentiment200Response***](OAIDetectSentiment200Response.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 # **extractDates**
 ```objc
 -(NSURLSessionTask*) extractDatesWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20021* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractDates200Response* output, NSError* error)) handler;
 ```
 
 Extract Dates
@@ -239,7 +239,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Extract Dates
 [apiInstance extractDatesWithText:text
-          completionHandler: ^(OAIInlineResponse20021* output, NSError* error) {
+          completionHandler: ^(OAIExtractDates200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20021***](OAIInlineResponse20021.md)
+[**OAIExtractDates200Response***](OAIExtractDates200Response.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 # **extractEntities**
 ```objc
 -(NSURLSessionTask*) extractEntitiesWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20027* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractEntities200Response* output, NSError* error)) handler;
 ```
 
 Extract Entities
@@ -301,7 +301,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Extract Entities
 [apiInstance extractEntitiesWithText:text
-          completionHandler: ^(OAIInlineResponse20027* output, NSError* error) {
+          completionHandler: ^(OAIExtractEntities200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20027***](OAIInlineResponse20027.md)
+[**OAIExtractEntities200Response***](OAIExtractEntities200Response.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 # **listWordSynonyms**
 ```objc
 -(NSURLSessionTask*) listWordSynonymsWithWord: (NSString*) word
-        completionHandler: (void (^)(OAIInlineResponse20022* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIListWordSynonyms200Response* output, NSError* error)) handler;
 ```
 
 List Word Synonyms
@@ -363,7 +363,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // List Word Synonyms
 [apiInstance listWordSynonymsWithWord:word
-          completionHandler: ^(OAIInlineResponse20022* output, NSError* error) {
+          completionHandler: ^(OAIListWordSynonyms200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20022***](OAIInlineResponse20022.md)
+[**OAIListWordSynonyms200Response***](OAIListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 # **partOfSpeechTagging**
 ```objc
 -(NSURLSessionTask*) partOfSpeechTaggingWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20023* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIPartOfSpeechTagging200Response* output, NSError* error)) handler;
 ```
 
 Part of Speech Tagging
@@ -425,7 +425,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Part of Speech Tagging
 [apiInstance partOfSpeechTaggingWithText:text
-          completionHandler: ^(OAIInlineResponse20023* output, NSError* error) {
+          completionHandler: ^(OAIPartOfSpeechTagging200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20023***](OAIInlineResponse20023.md)
+[**OAIPartOfSpeechTagging200Response***](OAIPartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 # **pluralizeWord**
 ```objc
 -(NSURLSessionTask*) pluralizeWordWithWord: (NSString*) word
-        completionHandler: (void (^)(OAIInlineResponse20026* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIPluralizeWord200Response* output, NSError* error)) handler;
 ```
 
 Pluralize Word
@@ -487,7 +487,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Pluralize Word
 [apiInstance pluralizeWordWithWord:word
-          completionHandler: ^(OAIInlineResponse20026* output, NSError* error) {
+          completionHandler: ^(OAIPluralizeWord200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20026***](OAIInlineResponse20026.md)
+[**OAIPluralizeWord200Response***](OAIPluralizeWord200Response.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 # **scoreReadability**
 ```objc
 -(NSURLSessionTask*) scoreReadabilityWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20020* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIScoreReadability200Response* output, NSError* error)) handler;
 ```
 
 Score Readability
@@ -549,7 +549,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Score Readability
 [apiInstance scoreReadabilityWithText:text
-          completionHandler: ^(OAIInlineResponse20020* output, NSError* error) {
+          completionHandler: ^(OAIScoreReadability200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20020***](OAIInlineResponse20020.md)
+[**OAIScoreReadability200Response***](OAIScoreReadability200Response.md)
 
 ### Authorization
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) scoreTextWithTitle: (NSString*) title
     text: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20019* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIScoreText200Response* output, NSError* error)) handler;
 ```
 
 Score Text
@@ -614,7 +614,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 // Score Text
 [apiInstance scoreTextWithTitle:title
               text:text
-          completionHandler: ^(OAIInlineResponse20019* output, NSError* error) {
+          completionHandler: ^(OAIScoreText200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20019***](OAIInlineResponse20019.md)
+[**OAIScoreText200Response***](OAIScoreText200Response.md)
 
 ### Authorization
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 # **singularizeWord**
 ```objc
 -(NSURLSessionTask*) singularizeWordWithWord: (NSString*) word
-        completionHandler: (void (^)(OAIInlineResponse20025* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISingularizeWord200Response* output, NSError* error)) handler;
 ```
 
 Singularize Word
@@ -677,7 +677,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Singularize Word
 [apiInstance singularizeWordWithWord:word
-          completionHandler: ^(OAIInlineResponse20025* output, NSError* error) {
+          completionHandler: ^(OAISingularizeWord200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20025***](OAIInlineResponse20025.md)
+[**OAISingularizeWord200Response***](OAISingularizeWord200Response.md)
 
 ### Authorization
 
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 # **textStemming**
 ```objc
 -(NSURLSessionTask*) textStemmingWithText: (NSString*) text
-        completionHandler: (void (^)(OAIInlineResponse20024* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAITextStemming200Response* output, NSError* error)) handler;
 ```
 
 Text Stemming
@@ -739,7 +739,7 @@ OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
 // Text Stemming
 [apiInstance textStemmingWithText:text
-          completionHandler: ^(OAIInlineResponse20024* output, NSError* error) {
+          completionHandler: ^(OAITextStemming200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -757,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20024***](OAIInlineResponse20024.md)
+[**OAITextStemming200Response***](OAITextStemming200Response.md)
 
 ### Authorization
 

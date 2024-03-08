@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **findSimilarBooks**
-> InlineResponse2001 findSimilarBooks()
+> FindSimilarBooks200Response findSimilarBooks()
 
 Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2001**
+**FindSimilarBooks200Response**
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchBooks**
-> InlineResponse200 searchBooks()
+> SearchBooks200Response searchBooks()
 
 Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
 
@@ -99,7 +99,7 @@ let body:.BooksApiSearchBooksRequest = {
   maxRating: 0.99,
   // string | A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
   genres: "nonfiction",
-  // string | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate. (optional)
+  // string | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\'t disambiguate. (optional)
   authors: "J.K. Rowling",
   // string | Only the book matching the ISBN-13 will be returned (optional)
   isbn: "9781781257654",
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
  **minRating** | [**number**] | The minimum rating the book must have gotten in the interval [0,1]. | (optional) defaults to undefined
  **maxRating** | [**number**] | The maximum rating the book must have gotten in the interval [0,1]. | (optional) defaults to undefined
  **genres** | [**string**] | A comma-separated list of  genres. Only books from any of the given genres will be returned. | (optional) defaults to undefined
- **authors** | [**string**] | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | (optional) defaults to undefined
+ **authors** | [**string**] | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\&#39;t disambiguate. | (optional) defaults to undefined
  **isbn** | [**string**] | Only the book matching the ISBN-13 will be returned | (optional) defaults to undefined
  **oclc** | [**string**] | Only the book matching the OCLC will be returned | (optional) defaults to undefined
  **sort** | [**string**] | The sorting criteria (publish-date or rating). | (optional) defaults to undefined
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse200**
+**SearchBooks200Response**
 
 ### Authorization
 

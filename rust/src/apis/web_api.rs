@@ -69,7 +69,7 @@ pub enum SearchWebError {
 
 
 /// Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-pub async fn extract_authors(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::InlineResponse20014, Error<ExtractAuthorsError>> {
+pub async fn extract_authors(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::ExtractAuthors200Response, Error<ExtractAuthorsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -114,7 +114,7 @@ pub async fn extract_authors(configuration: &configuration::Configuration, url: 
 }
 
 /// Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-pub async fn extract_content_from_a_web_page(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::InlineResponse20012, Error<ExtractContentFromAWebPageError>> {
+pub async fn extract_content_from_a_web_page(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::ExtractContentFromAWebPage200Response, Error<ExtractContentFromAWebPageError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -159,7 +159,7 @@ pub async fn extract_content_from_a_web_page(configuration: &configuration::Conf
 }
 
 /// Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-pub async fn extract_publish_date(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::InlineResponse20013, Error<ExtractPublishDateError>> {
+pub async fn extract_publish_date(configuration: &configuration::Configuration, url: &str) -> Result<crate::models::ExtractPublishDate200Response, Error<ExtractPublishDateError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -204,7 +204,7 @@ pub async fn extract_publish_date(configuration: &configuration::Configuration, 
 }
 
 /// Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-pub async fn search_web(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::InlineResponse20015, Error<SearchWebError>> {
+pub async fn search_web(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::SearchWeb200Response, Error<SearchWebError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

@@ -23,10 +23,10 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20012;
-import com.apileague.client.model.InlineResponse20013;
-import com.apileague.client.model.InlineResponse20014;
-import com.apileague.client.model.InlineResponse20015;
+import com.apileague.client.model.ExtractAuthors200Response;
+import com.apileague.client.model.ExtractContentFromAWebPage200Response;
+import com.apileague.client.model.ExtractPublishDate200Response;
+import com.apileague.client.model.SearchWeb200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -62,9 +62,9 @@ public class WebApi {
   * Extract Authors
   * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
    * @param url The url with the article from which authors should be extracted.
-   * @return InlineResponse20014
+   * @return ExtractAuthors200Response
   */
-  public InlineResponse20014 extractAuthors (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractAuthors200Response extractAuthors (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'url' is set
     if (url == null) {
@@ -100,7 +100,7 @@ public class WebApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20014) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20014.class);
+         return (ExtractAuthors200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractAuthors200Response.class);
       } else {
          return null;
       }
@@ -126,7 +126,7 @@ public class WebApi {
    * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
    * @param url The url with the article from which authors should be extracted.
   */
-  public void extractAuthors (String url, final Response.Listener<InlineResponse20014> responseListener, final Response.ErrorListener errorListener) {
+  public void extractAuthors (String url, final Response.Listener<ExtractAuthors200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'url' is set
@@ -172,7 +172,7 @@ public class WebApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20014) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20014.class));
+              responseListener.onResponse((ExtractAuthors200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractAuthors200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -191,9 +191,9 @@ public class WebApi {
   * Extract Content from a Web Page
   * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
    * @param url The url for which the content will be extracted.
-   * @return InlineResponse20012
+   * @return ExtractContentFromAWebPage200Response
   */
-  public InlineResponse20012 extractContentFromAWebPage (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractContentFromAWebPage200Response extractContentFromAWebPage (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'url' is set
     if (url == null) {
@@ -229,7 +229,7 @@ public class WebApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20012) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20012.class);
+         return (ExtractContentFromAWebPage200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractContentFromAWebPage200Response.class);
       } else {
          return null;
       }
@@ -255,7 +255,7 @@ public class WebApi {
    * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
    * @param url The url for which the content will be extracted.
   */
-  public void extractContentFromAWebPage (String url, final Response.Listener<InlineResponse20012> responseListener, final Response.ErrorListener errorListener) {
+  public void extractContentFromAWebPage (String url, final Response.Listener<ExtractContentFromAWebPage200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'url' is set
@@ -301,7 +301,7 @@ public class WebApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20012) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20012.class));
+              responseListener.onResponse((ExtractContentFromAWebPage200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractContentFromAWebPage200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -320,9 +320,9 @@ public class WebApi {
   * Extract Publish Date
   * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
    * @param url The url for which the publish date should be extracted.
-   * @return InlineResponse20013
+   * @return ExtractPublishDate200Response
   */
-  public InlineResponse20013 extractPublishDate (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractPublishDate200Response extractPublishDate (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'url' is set
     if (url == null) {
@@ -358,7 +358,7 @@ public class WebApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20013) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20013.class);
+         return (ExtractPublishDate200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractPublishDate200Response.class);
       } else {
          return null;
       }
@@ -384,7 +384,7 @@ public class WebApi {
    * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
    * @param url The url for which the publish date should be extracted.
   */
-  public void extractPublishDate (String url, final Response.Listener<InlineResponse20013> responseListener, final Response.ErrorListener errorListener) {
+  public void extractPublishDate (String url, final Response.Listener<ExtractPublishDate200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'url' is set
@@ -430,7 +430,7 @@ public class WebApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20013) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20013.class));
+              responseListener.onResponse((ExtractPublishDate200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractPublishDate200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -450,9 +450,9 @@ public class WebApi {
   * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
    * @param query The search query.
    * @param number The number of results to return in range [1,50]
-   * @return InlineResponse20015
+   * @return SearchWeb200Response
   */
-  public InlineResponse20015 searchWeb (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchWeb200Response searchWeb (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'query' is set
     if (query == null) {
@@ -489,7 +489,7 @@ public class WebApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20015) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20015.class);
+         return (SearchWeb200Response) ApiInvoker.deserialize(localVarResponse, "", SearchWeb200Response.class);
       } else {
          return null;
       }
@@ -515,7 +515,7 @@ public class WebApi {
    * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
    * @param query The search query.   * @param number The number of results to return in range [1,50]
   */
-  public void searchWeb (String query, Integer number, final Response.Listener<InlineResponse20015> responseListener, final Response.ErrorListener errorListener) {
+  public void searchWeb (String query, Integer number, final Response.Listener<SearchWeb200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'query' is set
@@ -562,7 +562,7 @@ public class WebApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20015) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20015.class));
+              responseListener.onResponse((SearchWeb200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchWeb200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

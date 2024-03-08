@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
 
 
-<a name="extractNews"></a>
+<a id="extractNews"></a>
 # **extractNews**
-> InlineResponse2003 extractNews(url, analyze)
+> ExtractNews200Response extractNews(url, analyze)
 
 Extract News
 
@@ -19,14 +19,14 @@ Extract a news article from a website to a well structure JSON object. The API w
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = NewsApi()
 val url : kotlin.String = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/ // kotlin.String | The url of the news.
 val analyze : kotlin.Boolean = true // kotlin.Boolean | Whether to analyze the news (extract entities etc.)
 try {
-    val result : InlineResponse2003 = apiInstance.extractNews(url, analyze)
+    val result : ExtractNews200Response = apiInstance.extractNews(url, analyze)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NewsApi#extractNews")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -63,9 +63,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchNews"></a>
+<a id="searchNews"></a>
 # **searchNews**
-> InlineResponse2002 searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
 
 Search News
 
@@ -74,7 +74,7 @@ Search and filter news by text, date, location, language, and more. The API retu
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = NewsApi()
@@ -94,7 +94,7 @@ val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascen
 val offset : kotlin.Int = 0 // kotlin.Int | The number of news to skip in range [0,10000]
 val number : kotlin.Int = 10 // kotlin.Int | The number of news to return in range [1,100]
 try {
-    val result : InlineResponse2002 = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+    val result : SearchNews200Response = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NewsApi#searchNews")
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 

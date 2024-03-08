@@ -1,8 +1,8 @@
 #import "OAINewsApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse2002.h"
-#import "OAIInlineResponse2003.h"
+#import "OAIExtractNews200Response.h"
+#import "OAISearchNews200Response.h"
 
 
 @interface OAINewsApi ()
@@ -57,11 +57,11 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
 ///
 ///  @param analyze Whether to analyze the news (extract entities etc.) 
 ///
-///  @returns OAIInlineResponse2003*
+///  @returns OAIExtractNews200Response*
 ///
 -(NSURLSessionTask*) extractNewsWithUrl: (NSString*) url
     analyze: (NSNumber*) analyze
-    completionHandler: (void (^)(OAIInlineResponse2003* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractNews200Response* output, NSError* error)) handler {
     // verify the required parameter 'url' is set
     if (url == nil) {
         NSParameterAssert(url);
@@ -127,10 +127,10 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2003*"
+                              responseType: @"OAIExtractNews200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2003*)data, error);
+                                    handler((OAIExtractNews200Response*)data, error);
                                 }
                             }];
 }
@@ -168,7 +168,7 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of news to return in range [1,100] (optional)
 ///
-///  @returns OAIInlineResponse2002*
+///  @returns OAISearchNews200Response*
 ///
 -(NSURLSessionTask*) searchNewsWithText: (NSString*) text
     sourceCountries: (NSString*) sourceCountries
@@ -185,7 +185,7 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
     sortDirection: (NSString*) sortDirection
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2002* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchNews200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/search-news"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -268,10 +268,10 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2002*"
+                              responseType: @"OAISearchNews200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2002*)data, error);
+                                    handler((OAISearchNews200Response*)data, error);
                                 }
                             }];
 }

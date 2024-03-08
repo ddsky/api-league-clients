@@ -70,7 +70,7 @@ import qualified Prelude as P
 -- 
 detectMainImageColor
   :: Url -- ^ "url" -  The url of the image for which the colors should be detected.
-  -> APILeagueRequest DetectMainImageColor MimeNoContent [InlineResponse20029] MimeJSON
+  -> APILeagueRequest DetectMainImageColor MimeNoContent [DetectMainImageColor200ResponseInner] MimeJSON
 detectMainImageColor (Url url) =
   _mkRequest "GET" ["/detect-color"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -124,7 +124,7 @@ instance Produces RescaleImage MimeOctetStream
 -- 
 searchRoyaltyFreeImages
   :: Query -- ^ "query" -  The search query.
-  -> APILeagueRequest SearchRoyaltyFreeImages MimeNoContent InlineResponse20028 MimeJSON
+  -> APILeagueRequest SearchRoyaltyFreeImages MimeNoContent SearchRoyaltyFreeImages200Response MimeJSON
 searchRoyaltyFreeImages (Query query) =
   _mkRequest "GET" ["/search-images"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

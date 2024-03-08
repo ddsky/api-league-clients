@@ -23,7 +23,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20011;
+import com.apileague.client.model.RandomPoem200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -195,9 +195,9 @@ public class ArtApi {
   * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
    * @param minLines The minimum number of lines of the poem.
    * @param maxLines The maximum number of lines of the poem.
-   * @return InlineResponse20011
+   * @return RandomPoem200Response
   */
-  public InlineResponse20011 randomPoem (Integer minLines, Integer maxLines) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public RandomPoem200Response randomPoem (Integer minLines, Integer maxLines) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -229,7 +229,7 @@ public class ArtApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20011) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20011.class);
+         return (RandomPoem200Response) ApiInvoker.deserialize(localVarResponse, "", RandomPoem200Response.class);
       } else {
          return null;
       }
@@ -255,7 +255,7 @@ public class ArtApi {
    * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
    * @param minLines The minimum number of lines of the poem.   * @param maxLines The maximum number of lines of the poem.
   */
-  public void randomPoem (Integer minLines, Integer maxLines, final Response.Listener<InlineResponse20011> responseListener, final Response.ErrorListener errorListener) {
+  public void randomPoem (Integer minLines, Integer maxLines, final Response.Listener<RandomPoem200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -297,7 +297,7 @@ public class ArtApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20011) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20011.class));
+              responseListener.onResponse((RandomPoem200Response) ApiInvoker.deserialize(localVarResponse,  "", RandomPoem200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

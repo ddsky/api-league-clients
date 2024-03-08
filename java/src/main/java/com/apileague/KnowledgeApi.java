@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20010;
-import com.apileague.client.model.InlineResponse2009;
+import com.apileague.client.model.RandomQuote200Response;
+import com.apileague.client.model.RandomTrivia200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,7 +96,6 @@ public class KnowledgeApi {
      */
     public okhttp3.Call randomQuoteCall(Integer minLength, Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -137,7 +136,6 @@ public class KnowledgeApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -150,10 +148,7 @@ public class KnowledgeApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call randomQuoteValidateBeforeCall(Integer minLength, Integer maxLength, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = randomQuoteCall(minLength, maxLength, _callback);
-        return localVarCall;
+        return randomQuoteCall(minLength, maxLength, _callback);
 
     }
 
@@ -162,7 +157,7 @@ public class KnowledgeApi {
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      * @param minLength The minimum length of the quote in letters. (optional)
      * @param maxLength The maximum length of the quote in letters. (optional)
-     * @return InlineResponse20010
+     * @return RandomQuote200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -178,8 +173,8 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
      */
-    public InlineResponse20010 randomQuote(Integer minLength, Integer maxLength) throws ApiException {
-        ApiResponse<InlineResponse20010> localVarResp = randomQuoteWithHttpInfo(minLength, maxLength);
+    public RandomQuote200Response randomQuote(Integer minLength, Integer maxLength) throws ApiException {
+        ApiResponse<RandomQuote200Response> localVarResp = randomQuoteWithHttpInfo(minLength, maxLength);
         return localVarResp.getData();
     }
 
@@ -188,7 +183,7 @@ public class KnowledgeApi {
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      * @param minLength The minimum length of the quote in letters. (optional)
      * @param maxLength The maximum length of the quote in letters. (optional)
-     * @return ApiResponse&lt;InlineResponse20010&gt;
+     * @return ApiResponse&lt;RandomQuote200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -204,9 +199,9 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
      */
-    public ApiResponse<InlineResponse20010> randomQuoteWithHttpInfo(Integer minLength, Integer maxLength) throws ApiException {
+    public ApiResponse<RandomQuote200Response> randomQuoteWithHttpInfo(Integer minLength, Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomQuoteValidateBeforeCall(minLength, maxLength, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomQuote200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -232,10 +227,10 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
      */
-    public okhttp3.Call randomQuoteAsync(Integer minLength, Integer maxLength, final ApiCallback<InlineResponse20010> _callback) throws ApiException {
+    public okhttp3.Call randomQuoteAsync(Integer minLength, Integer maxLength, final ApiCallback<RandomQuote200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = randomQuoteValidateBeforeCall(minLength, maxLength, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20010>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomQuote200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -261,7 +256,6 @@ public class KnowledgeApi {
      */
     public okhttp3.Call randomTriviaCall(Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -298,7 +292,6 @@ public class KnowledgeApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -311,10 +304,7 @@ public class KnowledgeApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call randomTriviaValidateBeforeCall(Integer maxLength, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = randomTriviaCall(maxLength, _callback);
-        return localVarCall;
+        return randomTriviaCall(maxLength, _callback);
 
     }
 
@@ -322,7 +312,7 @@ public class KnowledgeApi {
      * Random Trivia
      * This endpoint returns a random piece of trivia.
      * @param maxLength The maximum length of the trivia in letters. (optional)
-     * @return InlineResponse2009
+     * @return RandomTrivia200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -338,8 +328,8 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
      */
-    public InlineResponse2009 randomTrivia(Integer maxLength) throws ApiException {
-        ApiResponse<InlineResponse2009> localVarResp = randomTriviaWithHttpInfo(maxLength);
+    public RandomTrivia200Response randomTrivia(Integer maxLength) throws ApiException {
+        ApiResponse<RandomTrivia200Response> localVarResp = randomTriviaWithHttpInfo(maxLength);
         return localVarResp.getData();
     }
 
@@ -347,7 +337,7 @@ public class KnowledgeApi {
      * Random Trivia
      * This endpoint returns a random piece of trivia.
      * @param maxLength The maximum length of the trivia in letters. (optional)
-     * @return ApiResponse&lt;InlineResponse2009&gt;
+     * @return ApiResponse&lt;RandomTrivia200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -363,9 +353,9 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
      */
-    public ApiResponse<InlineResponse2009> randomTriviaWithHttpInfo(Integer maxLength) throws ApiException {
+    public ApiResponse<RandomTrivia200Response> randomTriviaWithHttpInfo(Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomTriviaValidateBeforeCall(maxLength, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomTrivia200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -390,10 +380,10 @@ public class KnowledgeApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
      */
-    public okhttp3.Call randomTriviaAsync(Integer maxLength, final ApiCallback<InlineResponse2009> _callback) throws ApiException {
+    public okhttp3.Call randomTriviaAsync(Integer maxLength, final ApiCallback<RandomTrivia200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = randomTriviaValidateBeforeCall(maxLength, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2009>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomTrivia200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

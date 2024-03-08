@@ -1,9 +1,9 @@
 {
   "name": "api_league",
   "version": "1.0",
-  "description": "API_League_is_a_Hub_for_World_Class_APIs_",
+  "description": "API League is a Hub for World Class APIs.",
   "license": "Unlicense",
-  "main": "dist/com.apileague.client/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
     "prepare": "npm run build",

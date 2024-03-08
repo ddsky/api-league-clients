@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# OPTIONS_GHC -fno-warn-unused-imports -fno-warn-unused-matches #-}
 
 module Instances where
@@ -12,6 +13,7 @@ import qualified Data.Set as Set
 import qualified Data.Text as T
 import qualified Data.Time as TI
 import qualified Data.Vector as V
+import Data.String (fromString)
 
 import Control.Monad
 import Data.Char (isSpace)
@@ -51,9 +53,16 @@ instance Arbitrary Date where
     arbitrary = Date <$> arbitrary
     shrink (Date xs) = Date <$> shrink xs
 
+#if MIN_VERSION_aeson(2,0,0)
+#else
 -- | A naive Arbitrary instance for A.Value:
 instance Arbitrary A.Value where
-  arbitrary = frequency [(3, simpleTypes), (1, arrayTypes), (1, objectTypes)]
+  arbitrary = arbitraryValue
+#endif
+
+arbitraryValue :: Gen A.Value
+arbitraryValue =
+  frequency [(3, simpleTypes), (1, arrayTypes), (1, objectTypes)]
     where
       simpleTypes :: Gen A.Value
       simpleTypes =
@@ -63,7 +72,7 @@ instance Arbitrary A.Value where
           , (2, liftM (A.Number . fromIntegral) (arbitrary :: Gen Int))
           , (2, liftM (A.String . T.pack) (arbitrary :: Gen String))
           ]
-      mapF (k, v) = (T.pack k, v)
+      mapF (k, v) = (fromString k, v)
       simpleAndArrays = frequency [(1, sized sizedArray), (4, simpleTypes)]
       arrayTypes = sized sizedArray
       objectTypes = sized sizedObject
@@ -104,558 +113,558 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary InlineResponse200 where
-  arbitrary = sized genInlineResponse200
+instance Arbitrary ConvertUnits200Response where
+  arbitrary = sized genConvertUnits200Response
 
-genInlineResponse200 :: Int -> Gen InlineResponse200
-genInlineResponse200 n =
-  InlineResponse200
-    <$> arbitraryReducedMaybe n -- inlineResponse200Available :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse200Number :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse200Offset :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse200Books :: Maybe [InlineResponse200Books]
+genConvertUnits200Response :: Int -> Gen ConvertUnits200Response
+genConvertUnits200Response n =
+  ConvertUnits200Response
+    <$> arbitraryReducedMaybe n -- convertUnits200ResponseTargetAmount :: Maybe Double
+    <*> arbitraryReducedMaybe n -- convertUnits200ResponseTargetUnit :: Maybe Text
   
-instance Arbitrary InlineResponse2001 where
-  arbitrary = sized genInlineResponse2001
+instance Arbitrary CorrectSpelling200Response where
+  arbitrary = sized genCorrectSpelling200Response
 
-genInlineResponse2001 :: Int -> Gen InlineResponse2001
-genInlineResponse2001 n =
-  InlineResponse2001
-    <$> arbitraryReducedMaybe n -- inlineResponse2001SimilarBooks :: Maybe [InlineResponse200Books]
+genCorrectSpelling200Response :: Int -> Gen CorrectSpelling200Response
+genCorrectSpelling200Response n =
+  CorrectSpelling200Response
+    <$> arbitraryReducedMaybe n -- correctSpelling200ResponseCorrectedText :: Maybe Text
   
-instance Arbitrary InlineResponse20010 where
-  arbitrary = sized genInlineResponse20010
+instance Arbitrary DetectLanguage200ResponseInner where
+  arbitrary = sized genDetectLanguage200ResponseInner
 
-genInlineResponse20010 :: Int -> Gen InlineResponse20010
-genInlineResponse20010 n =
-  InlineResponse20010
-    <$> arbitraryReducedMaybe n -- inlineResponse20010Author :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20010Quote :: Maybe Text
+genDetectLanguage200ResponseInner :: Int -> Gen DetectLanguage200ResponseInner
+genDetectLanguage200ResponseInner n =
+  DetectLanguage200ResponseInner
+    <$> arbitraryReducedMaybe n -- detectLanguage200ResponseInnerLanguage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectLanguage200ResponseInnerConfidence :: Maybe Double
   
-instance Arbitrary InlineResponse20011 where
-  arbitrary = sized genInlineResponse20011
+instance Arbitrary DetectMainImageColor200ResponseInner where
+  arbitrary = sized genDetectMainImageColor200ResponseInner
 
-genInlineResponse20011 :: Int -> Gen InlineResponse20011
-genInlineResponse20011 n =
-  InlineResponse20011
-    <$> arbitraryReducedMaybe n -- inlineResponse20011Title :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20011Author :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20011Poem :: Maybe Text
+genDetectMainImageColor200ResponseInner :: Int -> Gen DetectMainImageColor200ResponseInner
+genDetectMainImageColor200ResponseInner n =
+  DetectMainImageColor200ResponseInner
+    <$> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerSpecificColor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerMainColor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerHexCode :: Maybe Text
   
-instance Arbitrary InlineResponse20012 where
-  arbitrary = sized genInlineResponse20012
+instance Arbitrary DetectSentiment200Response where
+  arbitrary = sized genDetectSentiment200Response
 
-genInlineResponse20012 :: Int -> Gen InlineResponse20012
-genInlineResponse20012 n =
-  InlineResponse20012
-    <$> arbitraryReducedMaybe n -- inlineResponse20012Title :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20012MainText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20012MainHtml :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20012Images :: Maybe [Text]
+genDetectSentiment200Response :: Int -> Gen DetectSentiment200Response
+genDetectSentiment200Response n =
+  DetectSentiment200Response
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseDocument :: Maybe DetectSentiment200ResponseDocument
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentences :: Maybe [DetectSentiment200ResponseSentencesInner]
   
-instance Arbitrary InlineResponse20013 where
-  arbitrary = sized genInlineResponse20013
+instance Arbitrary DetectSentiment200ResponseDocument where
+  arbitrary = sized genDetectSentiment200ResponseDocument
 
-genInlineResponse20013 :: Int -> Gen InlineResponse20013
-genInlineResponse20013 n =
-  InlineResponse20013
-    <$> arbitraryReducedMaybe n -- inlineResponse20013PublishDate :: Maybe Text
+genDetectSentiment200ResponseDocument :: Int -> Gen DetectSentiment200ResponseDocument
+genDetectSentiment200ResponseDocument n =
+  DetectSentiment200ResponseDocument
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentSentiment :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentConfidence :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentAverageConfidence :: Maybe Int
   
-instance Arbitrary InlineResponse20014 where
-  arbitrary = sized genInlineResponse20014
+instance Arbitrary DetectSentiment200ResponseSentencesInner where
+  arbitrary = sized genDetectSentiment200ResponseSentencesInner
 
-genInlineResponse20014 :: Int -> Gen InlineResponse20014
-genInlineResponse20014 n =
-  InlineResponse20014
-    <$> arbitraryReducedMaybe n -- inlineResponse20014Authors :: Maybe [InlineResponse20014Authors]
+genDetectSentiment200ResponseSentencesInner :: Int -> Gen DetectSentiment200ResponseSentencesInner
+genDetectSentiment200ResponseSentencesInner n =
+  DetectSentiment200ResponseSentencesInner
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerLength :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerSentiment :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerConfidence :: Maybe Int
   
-instance Arbitrary InlineResponse20014Authors where
-  arbitrary = sized genInlineResponse20014Authors
+instance Arbitrary ExtractAuthors200Response where
+  arbitrary = sized genExtractAuthors200Response
 
-genInlineResponse20014Authors :: Int -> Gen InlineResponse20014Authors
-genInlineResponse20014Authors n =
-  InlineResponse20014Authors
-    <$> arbitraryReducedMaybe n -- inlineResponse20014AuthorsLink :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20014AuthorsName :: Maybe Text
+genExtractAuthors200Response :: Int -> Gen ExtractAuthors200Response
+genExtractAuthors200Response n =
+  ExtractAuthors200Response
+    <$> arbitraryReducedMaybe n -- extractAuthors200ResponseAuthors :: Maybe [ExtractAuthors200ResponseAuthorsInner]
   
-instance Arbitrary InlineResponse20015 where
-  arbitrary = sized genInlineResponse20015
+instance Arbitrary ExtractAuthors200ResponseAuthorsInner where
+  arbitrary = sized genExtractAuthors200ResponseAuthorsInner
 
-genInlineResponse20015 :: Int -> Gen InlineResponse20015
-genInlineResponse20015 n =
-  InlineResponse20015
-    <$> arbitraryReducedMaybe n -- inlineResponse20015Results :: Maybe [InlineResponse20015Results]
+genExtractAuthors200ResponseAuthorsInner :: Int -> Gen ExtractAuthors200ResponseAuthorsInner
+genExtractAuthors200ResponseAuthorsInner n =
+  ExtractAuthors200ResponseAuthorsInner
+    <$> arbitraryReducedMaybe n -- extractAuthors200ResponseAuthorsInnerLink :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractAuthors200ResponseAuthorsInnerName :: Maybe Text
   
-instance Arbitrary InlineResponse20015Results where
-  arbitrary = sized genInlineResponse20015Results
+instance Arbitrary ExtractContentFromAWebPage200Response where
+  arbitrary = sized genExtractContentFromAWebPage200Response
 
-genInlineResponse20015Results :: Int -> Gen InlineResponse20015Results
-genInlineResponse20015Results n =
-  InlineResponse20015Results
-    <$> arbitraryReducedMaybe n -- inlineResponse20015ResultsTitle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20015ResultsSummary :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20015ResultsUrl :: Maybe Text
+genExtractContentFromAWebPage200Response :: Int -> Gen ExtractContentFromAWebPage200Response
+genExtractContentFromAWebPage200Response n =
+  ExtractContentFromAWebPage200Response
+    <$> arbitraryReducedMaybe n -- extractContentFromAWebPage200ResponseTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractContentFromAWebPage200ResponseMainText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractContentFromAWebPage200ResponseMainHtml :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractContentFromAWebPage200ResponseImages :: Maybe [Text]
   
-instance Arbitrary InlineResponse20016 where
-  arbitrary = sized genInlineResponse20016
+instance Arbitrary ExtractDates200Response where
+  arbitrary = sized genExtractDates200Response
 
-genInlineResponse20016 :: Int -> Gen InlineResponse20016
-genInlineResponse20016 n =
-  InlineResponse20016
-    <$> arbitraryReducedMaybe n -- inlineResponse20016CorrectedText :: Maybe Text
+genExtractDates200Response :: Int -> Gen ExtractDates200Response
+genExtractDates200Response n =
+  ExtractDates200Response
+    <$> arbitraryReducedMaybe n -- extractDates200ResponseDates :: Maybe [ExtractDates200ResponseDatesInner]
   
-instance Arbitrary InlineResponse20017 where
-  arbitrary = sized genInlineResponse20017
+instance Arbitrary ExtractDates200ResponseDatesInner where
+  arbitrary = sized genExtractDates200ResponseDatesInner
 
-genInlineResponse20017 :: Int -> Gen InlineResponse20017
-genInlineResponse20017 n =
-  InlineResponse20017
-    <$> arbitraryReducedMaybe n -- inlineResponse20017Language :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20017Confidence :: Maybe Double
+genExtractDates200ResponseDatesInner :: Int -> Gen ExtractDates200ResponseDatesInner
+genExtractDates200ResponseDatesInner n =
+  ExtractDates200ResponseDatesInner
+    <$> arbitraryReducedMaybe n -- extractDates200ResponseDatesInnerStartPosition :: Maybe Int
+    <*> arbitraryReducedMaybe n -- extractDates200ResponseDatesInnerDate :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractDates200ResponseDatesInnerNormalizedDate :: Maybe Double
+    <*> arbitraryReducedMaybe n -- extractDates200ResponseDatesInnerTag :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractDates200ResponseDatesInnerEndPosition :: Maybe Int
   
-instance Arbitrary InlineResponse20018 where
-  arbitrary = sized genInlineResponse20018
+instance Arbitrary ExtractEntities200Response where
+  arbitrary = sized genExtractEntities200Response
 
-genInlineResponse20018 :: Int -> Gen InlineResponse20018
-genInlineResponse20018 n =
-  InlineResponse20018
-    <$> arbitraryReducedMaybe n -- inlineResponse20018Document :: Maybe InlineResponse20018Document
-    <*> arbitraryReducedMaybe n -- inlineResponse20018Sentences :: Maybe [InlineResponse20018Sentences]
+genExtractEntities200Response :: Int -> Gen ExtractEntities200Response
+genExtractEntities200Response n =
+  ExtractEntities200Response
+    <$> arbitraryReducedMaybe n -- extractEntities200ResponseEntities :: Maybe [ExtractEntities200ResponseEntitiesInner]
   
-instance Arbitrary InlineResponse20018Document where
-  arbitrary = sized genInlineResponse20018Document
+instance Arbitrary ExtractEntities200ResponseEntitiesInner where
+  arbitrary = sized genExtractEntities200ResponseEntitiesInner
 
-genInlineResponse20018Document :: Int -> Gen InlineResponse20018Document
-genInlineResponse20018Document n =
-  InlineResponse20018Document
-    <$> arbitraryReducedMaybe n -- inlineResponse20018DocumentSentiment :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20018DocumentConfidence :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20018DocumentAverageConfidence :: Maybe Int
+genExtractEntities200ResponseEntitiesInner :: Int -> Gen ExtractEntities200ResponseEntitiesInner
+genExtractEntities200ResponseEntitiesInner n =
+  ExtractEntities200ResponseEntitiesInner
+    <$> arbitraryReducedMaybe n -- extractEntities200ResponseEntitiesInnerStartPosition :: Maybe Int
+    <*> arbitraryReducedMaybe n -- extractEntities200ResponseEntitiesInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractEntities200ResponseEntitiesInnerType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractEntities200ResponseEntitiesInnerValue :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractEntities200ResponseEntitiesInnerEndPosition :: Maybe Int
   
-instance Arbitrary InlineResponse20018Sentences where
-  arbitrary = sized genInlineResponse20018Sentences
+instance Arbitrary ExtractNews200Response where
+  arbitrary = sized genExtractNews200Response
 
-genInlineResponse20018Sentences :: Int -> Gen InlineResponse20018Sentences
-genInlineResponse20018Sentences n =
-  InlineResponse20018Sentences
-    <$> arbitraryReducedMaybe n -- inlineResponse20018SentencesLength :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20018SentencesSentiment :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20018SentencesOffset :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20018SentencesConfidence :: Maybe Int
+genExtractNews200Response :: Int -> Gen ExtractNews200Response
+genExtractNews200Response n =
+  ExtractNews200Response
+    <$> arbitraryReducedMaybe n -- extractNews200ResponseTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponsePublishDate :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseAuthor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseLanguage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseSourceCountry :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseSentiment :: Maybe Double
   
-instance Arbitrary InlineResponse20019 where
-  arbitrary = sized genInlineResponse20019
+instance Arbitrary ExtractPublishDate200Response where
+  arbitrary = sized genExtractPublishDate200Response
 
-genInlineResponse20019 :: Int -> Gen InlineResponse20019
-genInlineResponse20019 n =
-  InlineResponse20019
-    <$> arbitraryReducedMaybe n -- inlineResponse20019NumberOfWords :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20019NumberOfSentences :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20019Readability :: Maybe InlineResponse20019Readability
-    <*> arbitraryReducedMaybe n -- inlineResponse20019Skimmability :: Maybe InlineResponse20019Skimmability
-    <*> arbitraryReducedMaybe n -- inlineResponse20019Interestingness :: Maybe InlineResponse20019Interestingness
-    <*> arbitraryReducedMaybe n -- inlineResponse20019Style :: Maybe InlineResponse20019Style
-    <*> arbitraryReducedMaybe n -- inlineResponse20019TotalScore :: Maybe Double
+genExtractPublishDate200Response :: Int -> Gen ExtractPublishDate200Response
+genExtractPublishDate200Response n =
+  ExtractPublishDate200Response
+    <$> arbitraryReducedMaybe n -- extractPublishDate200ResponsePublishDate :: Maybe Text
   
-instance Arbitrary InlineResponse20019Interestingness where
-  arbitrary = sized genInlineResponse20019Interestingness
+instance Arbitrary FindSimilarBooks200Response where
+  arbitrary = sized genFindSimilarBooks200Response
 
-genInlineResponse20019Interestingness :: Int -> Gen InlineResponse20019Interestingness
-genInlineResponse20019Interestingness n =
-  InlineResponse20019Interestingness
-    <$> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessMainscores :: Maybe InlineResponse20019SkimmabilityMainscores
-    <*> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscores :: Maybe InlineResponse20019InterestingnessSubscores
+genFindSimilarBooks200Response :: Int -> Gen FindSimilarBooks200Response
+genFindSimilarBooks200Response n =
+  FindSimilarBooks200Response
+    <$> arbitraryReducedMaybe n -- findSimilarBooks200ResponseSimilarBooks :: Maybe [SearchBooks200ResponseBooksInner]
   
-instance Arbitrary InlineResponse20019InterestingnessSubscores where
-  arbitrary = sized genInlineResponse20019InterestingnessSubscores
+instance Arbitrary GenerateNonsenseWord200Response where
+  arbitrary = sized genGenerateNonsenseWord200Response
 
-genInlineResponse20019InterestingnessSubscores :: Int -> Gen InlineResponse20019InterestingnessSubscores
-genInlineResponse20019InterestingnessSubscores n =
-  InlineResponse20019InterestingnessSubscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscoresTitleRatingScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscoresQuoteScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscoresLengthScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscoresLinkScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019InterestingnessSubscoresGoogleHitsScore :: Maybe [Int]
+genGenerateNonsenseWord200Response :: Int -> Gen GenerateNonsenseWord200Response
+genGenerateNonsenseWord200Response n =
+  GenerateNonsenseWord200Response
+    <$> arbitraryReducedMaybe n -- generateNonsenseWord200ResponseWord :: Maybe Text
+    <*> arbitraryReducedMaybe n -- generateNonsenseWord200ResponseRating :: Maybe Double
   
-instance Arbitrary InlineResponse20019Readability where
-  arbitrary = sized genInlineResponse20019Readability
+instance Arbitrary ListWordSynonyms200Response where
+  arbitrary = sized genListWordSynonyms200Response
 
-genInlineResponse20019Readability :: Int -> Gen InlineResponse20019Readability
-genInlineResponse20019Readability n =
-  InlineResponse20019Readability
-    <$> arbitraryReducedMaybe n -- inlineResponse20019ReadabilityMainscores :: Maybe InlineResponse20019ReadabilityMainscores
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscores :: Maybe InlineResponse20019ReadabilitySubscores
+genListWordSynonyms200Response :: Int -> Gen ListWordSynonyms200Response
+genListWordSynonyms200Response n =
+  ListWordSynonyms200Response
+    <$> arbitraryReducedMaybe n -- listWordSynonyms200ResponseSynonyms :: Maybe [Text]
   
-instance Arbitrary InlineResponse20019ReadabilityMainscores where
-  arbitrary = sized genInlineResponse20019ReadabilityMainscores
+instance Arbitrary PartOfSpeechTagging200Response where
+  arbitrary = sized genPartOfSpeechTagging200Response
 
-genInlineResponse20019ReadabilityMainscores :: Int -> Gen InlineResponse20019ReadabilityMainscores
-genInlineResponse20019ReadabilityMainscores n =
-  InlineResponse20019ReadabilityMainscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019ReadabilityMainscoresTotalPossible :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilityMainscoresTotal :: Maybe Int
+genPartOfSpeechTagging200Response :: Int -> Gen PartOfSpeechTagging200Response
+genPartOfSpeechTagging200Response n =
+  PartOfSpeechTagging200Response
+    <$> arbitraryReducedMaybe n -- partOfSpeechTagging200ResponseTaggedText :: Maybe Text
   
-instance Arbitrary InlineResponse20019ReadabilitySubscores where
-  arbitrary = sized genInlineResponse20019ReadabilitySubscores
+instance Arbitrary PluralizeWord200Response where
+  arbitrary = sized genPluralizeWord200Response
 
-genInlineResponse20019ReadabilitySubscores :: Int -> Gen InlineResponse20019ReadabilitySubscores
-genInlineResponse20019ReadabilitySubscores n =
-  InlineResponse20019ReadabilitySubscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresReadingTimeSeconds :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresForcast :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresFlesch :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresSmog :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresAri :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresLix :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresColemanLiau :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresKincaid :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20019ReadabilitySubscoresFog :: Maybe Double
+genPluralizeWord200Response :: Int -> Gen PluralizeWord200Response
+genPluralizeWord200Response n =
+  PluralizeWord200Response
+    <$> arbitraryReducedMaybe n -- pluralizeWord200ResponseOriginal :: Maybe Text
+    <*> arbitraryReducedMaybe n -- pluralizeWord200ResponsePlural :: Maybe Text
   
-instance Arbitrary InlineResponse20019Skimmability where
-  arbitrary = sized genInlineResponse20019Skimmability
+instance Arbitrary RandomMeme200Response where
+  arbitrary = sized genRandomMeme200Response
 
-genInlineResponse20019Skimmability :: Int -> Gen InlineResponse20019Skimmability
-genInlineResponse20019Skimmability n =
-  InlineResponse20019Skimmability
-    <$> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilityMainscores :: Maybe InlineResponse20019SkimmabilityMainscores
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscores :: Maybe InlineResponse20019SkimmabilitySubscores
+genRandomMeme200Response :: Int -> Gen RandomMeme200Response
+genRandomMeme200Response n =
+  RandomMeme200Response
+    <$> arbitraryReducedMaybe n -- randomMeme200ResponseDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomMeme200ResponseUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomMeme200ResponseType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomMeme200ResponseWidth :: Maybe Int
+    <*> arbitraryReducedMaybe n -- randomMeme200ResponseHeight :: Maybe Int
+    <*> arbitraryReducedMaybe n -- randomMeme200ResponseRatio :: Maybe Double
   
-instance Arbitrary InlineResponse20019SkimmabilityMainscores where
-  arbitrary = sized genInlineResponse20019SkimmabilityMainscores
+instance Arbitrary RandomPoem200Response where
+  arbitrary = sized genRandomPoem200Response
 
-genInlineResponse20019SkimmabilityMainscores :: Int -> Gen InlineResponse20019SkimmabilityMainscores
-genInlineResponse20019SkimmabilityMainscores n =
-  InlineResponse20019SkimmabilityMainscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilityMainscoresTotalPossible :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilityMainscoresTotal :: Maybe Double
+genRandomPoem200Response :: Int -> Gen RandomPoem200Response
+genRandomPoem200Response n =
+  RandomPoem200Response
+    <$> arbitraryReducedMaybe n -- randomPoem200ResponseTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomPoem200ResponseAuthor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomPoem200ResponsePoem :: Maybe Text
   
-instance Arbitrary InlineResponse20019SkimmabilitySubscores where
-  arbitrary = sized genInlineResponse20019SkimmabilitySubscores
+instance Arbitrary RandomQuote200Response where
+  arbitrary = sized genRandomQuote200Response
 
-genInlineResponse20019SkimmabilitySubscores :: Int -> Gen InlineResponse20019SkimmabilitySubscores
-genInlineResponse20019SkimmabilitySubscores n =
-  InlineResponse20019SkimmabilitySubscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresImageScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresVideoScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresParagraphScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore :: Maybe [Int]
+genRandomQuote200Response :: Int -> Gen RandomQuote200Response
+genRandomQuote200Response n =
+  RandomQuote200Response
+    <$> arbitraryReducedMaybe n -- randomQuote200ResponseAuthor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomQuote200ResponseQuote :: Maybe Text
   
-instance Arbitrary InlineResponse20019Style where
-  arbitrary = sized genInlineResponse20019Style
+instance Arbitrary RandomTrivia200Response where
+  arbitrary = sized genRandomTrivia200Response
 
-genInlineResponse20019Style :: Int -> Gen InlineResponse20019Style
-genInlineResponse20019Style n =
-  InlineResponse20019Style
-    <$> arbitraryReducedMaybe n -- inlineResponse20019StyleMainscores :: Maybe InlineResponse20019ReadabilityMainscores
-    <*> arbitraryReducedMaybe n -- inlineResponse20019StyleSubscores :: Maybe InlineResponse20019StyleSubscores
+genRandomTrivia200Response :: Int -> Gen RandomTrivia200Response
+genRandomTrivia200Response n =
+  RandomTrivia200Response
+    <$> arbitraryReducedMaybe n -- randomTrivia200ResponseTrivia :: Maybe Text
   
-instance Arbitrary InlineResponse20019StyleSubscores where
-  arbitrary = sized genInlineResponse20019StyleSubscores
+instance Arbitrary ReadKeyValueFromStore200Response where
+  arbitrary = sized genReadKeyValueFromStore200Response
 
-genInlineResponse20019StyleSubscores :: Int -> Gen InlineResponse20019StyleSubscores
-genInlineResponse20019StyleSubscores n =
-  InlineResponse20019StyleSubscores
-    <$> arbitraryReducedMaybe n -- inlineResponse20019StyleSubscoresAbbreviationScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019StyleSubscoresStyleScore :: Maybe [Int]
-    <*> arbitraryReducedMaybe n -- inlineResponse20019StyleSubscoresSpellingScore :: Maybe [Int]
+genReadKeyValueFromStore200Response :: Int -> Gen ReadKeyValueFromStore200Response
+genReadKeyValueFromStore200Response n =
+  ReadKeyValueFromStore200Response
+    <$> arbitraryReducedMaybe n -- readKeyValueFromStore200ResponseValue :: Maybe Text
   
-instance Arbitrary InlineResponse2002 where
-  arbitrary = sized genInlineResponse2002
+instance Arbitrary ScoreReadability200Response where
+  arbitrary = sized genScoreReadability200Response
 
-genInlineResponse2002 :: Int -> Gen InlineResponse2002
-genInlineResponse2002 n =
-  InlineResponse2002
-    <$> arbitraryReducedMaybe n -- inlineResponse2002Offset :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2002Number :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2002Available :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2002News :: Maybe [InlineResponse2002News]
+genScoreReadability200Response :: Int -> Gen ScoreReadability200Response
+genScoreReadability200Response n =
+  ScoreReadability200Response
+    <$> arbitraryReducedMaybe n -- scoreReadability200ResponseReadability :: Maybe ScoreText200ResponseReadability
   
-instance Arbitrary InlineResponse20020 where
-  arbitrary = sized genInlineResponse20020
+instance Arbitrary ScoreText200Response where
+  arbitrary = sized genScoreText200Response
 
-genInlineResponse20020 :: Int -> Gen InlineResponse20020
-genInlineResponse20020 n =
-  InlineResponse20020
-    <$> arbitraryReducedMaybe n -- inlineResponse20020Readability :: Maybe InlineResponse20019Readability
+genScoreText200Response :: Int -> Gen ScoreText200Response
+genScoreText200Response n =
+  ScoreText200Response
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseNumberOfWords :: Maybe Int
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseNumberOfSentences :: Maybe Int
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadability :: Maybe ScoreText200ResponseReadability
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmability :: Maybe ScoreText200ResponseSkimmability
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingness :: Maybe ScoreText200ResponseInterestingness
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseStyle :: Maybe ScoreText200ResponseStyle
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseTotalScore :: Maybe Double
   
-instance Arbitrary InlineResponse20021 where
-  arbitrary = sized genInlineResponse20021
+instance Arbitrary ScoreText200ResponseInterestingness where
+  arbitrary = sized genScoreText200ResponseInterestingness
 
-genInlineResponse20021 :: Int -> Gen InlineResponse20021
-genInlineResponse20021 n =
-  InlineResponse20021
-    <$> arbitraryReducedMaybe n -- inlineResponse20021Dates :: Maybe [InlineResponse20021Dates]
+genScoreText200ResponseInterestingness :: Int -> Gen ScoreText200ResponseInterestingness
+genScoreText200ResponseInterestingness n =
+  ScoreText200ResponseInterestingness
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessMainscores :: Maybe ScoreText200ResponseSkimmabilityMainscores
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscores :: Maybe ScoreText200ResponseInterestingnessSubscores
   
-instance Arbitrary InlineResponse20021Dates where
-  arbitrary = sized genInlineResponse20021Dates
+instance Arbitrary ScoreText200ResponseInterestingnessSubscores where
+  arbitrary = sized genScoreText200ResponseInterestingnessSubscores
 
-genInlineResponse20021Dates :: Int -> Gen InlineResponse20021Dates
-genInlineResponse20021Dates n =
-  InlineResponse20021Dates
-    <$> arbitraryReducedMaybe n -- inlineResponse20021DatesStartPosition :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20021DatesDate :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20021DatesNormalizedDate :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20021DatesTag :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20021DatesEndPosition :: Maybe Int
+genScoreText200ResponseInterestingnessSubscores :: Int -> Gen ScoreText200ResponseInterestingnessSubscores
+genScoreText200ResponseInterestingnessSubscores n =
+  ScoreText200ResponseInterestingnessSubscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscoresTitleRatingScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscoresQuoteScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscoresLengthScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscoresLinkScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseInterestingnessSubscoresGoogleHitsScore :: Maybe [Int]
   
-instance Arbitrary InlineResponse20022 where
-  arbitrary = sized genInlineResponse20022
+instance Arbitrary ScoreText200ResponseReadability where
+  arbitrary = sized genScoreText200ResponseReadability
 
-genInlineResponse20022 :: Int -> Gen InlineResponse20022
-genInlineResponse20022 n =
-  InlineResponse20022
-    <$> arbitraryReducedMaybe n -- inlineResponse20022Synonyms :: Maybe [Text]
+genScoreText200ResponseReadability :: Int -> Gen ScoreText200ResponseReadability
+genScoreText200ResponseReadability n =
+  ScoreText200ResponseReadability
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseReadabilityMainscores :: Maybe ScoreText200ResponseReadabilityMainscores
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscores :: Maybe ScoreText200ResponseReadabilitySubscores
   
-instance Arbitrary InlineResponse20023 where
-  arbitrary = sized genInlineResponse20023
+instance Arbitrary ScoreText200ResponseReadabilityMainscores where
+  arbitrary = sized genScoreText200ResponseReadabilityMainscores
 
-genInlineResponse20023 :: Int -> Gen InlineResponse20023
-genInlineResponse20023 n =
-  InlineResponse20023
-    <$> arbitraryReducedMaybe n -- inlineResponse20023TaggedText :: Maybe Text
+genScoreText200ResponseReadabilityMainscores :: Int -> Gen ScoreText200ResponseReadabilityMainscores
+genScoreText200ResponseReadabilityMainscores n =
+  ScoreText200ResponseReadabilityMainscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseReadabilityMainscoresTotalPossible :: Maybe Int
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilityMainscoresTotal :: Maybe Int
   
-instance Arbitrary InlineResponse20024 where
-  arbitrary = sized genInlineResponse20024
+instance Arbitrary ScoreText200ResponseReadabilitySubscores where
+  arbitrary = sized genScoreText200ResponseReadabilitySubscores
 
-genInlineResponse20024 :: Int -> Gen InlineResponse20024
-genInlineResponse20024 n =
-  InlineResponse20024
-    <$> arbitraryReducedMaybe n -- inlineResponse20024Original :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20024Stemmed :: Maybe Text
+genScoreText200ResponseReadabilitySubscores :: Int -> Gen ScoreText200ResponseReadabilitySubscores
+genScoreText200ResponseReadabilitySubscores n =
+  ScoreText200ResponseReadabilitySubscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresReadingTimeSeconds :: Maybe Int
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresForcast :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresFlesch :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresSmog :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresAri :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresLix :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresColemanLiau :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresKincaid :: Maybe Double
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseReadabilitySubscoresFog :: Maybe Double
   
-instance Arbitrary InlineResponse20025 where
-  arbitrary = sized genInlineResponse20025
+instance Arbitrary ScoreText200ResponseSkimmability where
+  arbitrary = sized genScoreText200ResponseSkimmability
 
-genInlineResponse20025 :: Int -> Gen InlineResponse20025
-genInlineResponse20025 n =
-  InlineResponse20025
-    <$> arbitraryReducedMaybe n -- inlineResponse20025Original :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20025Singular :: Maybe Text
+genScoreText200ResponseSkimmability :: Int -> Gen ScoreText200ResponseSkimmability
+genScoreText200ResponseSkimmability n =
+  ScoreText200ResponseSkimmability
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilityMainscores :: Maybe ScoreText200ResponseSkimmabilityMainscores
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscores :: Maybe ScoreText200ResponseSkimmabilitySubscores
   
-instance Arbitrary InlineResponse20026 where
-  arbitrary = sized genInlineResponse20026
+instance Arbitrary ScoreText200ResponseSkimmabilityMainscores where
+  arbitrary = sized genScoreText200ResponseSkimmabilityMainscores
 
-genInlineResponse20026 :: Int -> Gen InlineResponse20026
-genInlineResponse20026 n =
-  InlineResponse20026
-    <$> arbitraryReducedMaybe n -- inlineResponse20026Original :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20026Plural :: Maybe Text
+genScoreText200ResponseSkimmabilityMainscores :: Int -> Gen ScoreText200ResponseSkimmabilityMainscores
+genScoreText200ResponseSkimmabilityMainscores n =
+  ScoreText200ResponseSkimmabilityMainscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilityMainscoresTotalPossible :: Maybe Int
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilityMainscoresTotal :: Maybe Double
   
-instance Arbitrary InlineResponse20027 where
-  arbitrary = sized genInlineResponse20027
+instance Arbitrary ScoreText200ResponseSkimmabilitySubscores where
+  arbitrary = sized genScoreText200ResponseSkimmabilitySubscores
 
-genInlineResponse20027 :: Int -> Gen InlineResponse20027
-genInlineResponse20027 n =
-  InlineResponse20027
-    <$> arbitraryReducedMaybe n -- inlineResponse20027Entities :: Maybe [InlineResponse20027Entities]
+genScoreText200ResponseSkimmabilitySubscores :: Int -> Gen ScoreText200ResponseSkimmabilitySubscores
+genScoreText200ResponseSkimmabilitySubscores n =
+  ScoreText200ResponseSkimmabilitySubscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresImageScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresVideoScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresParagraphScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore :: Maybe [Int]
   
-instance Arbitrary InlineResponse20027Entities where
-  arbitrary = sized genInlineResponse20027Entities
+instance Arbitrary ScoreText200ResponseStyle where
+  arbitrary = sized genScoreText200ResponseStyle
 
-genInlineResponse20027Entities :: Int -> Gen InlineResponse20027Entities
-genInlineResponse20027Entities n =
-  InlineResponse20027Entities
-    <$> arbitraryReducedMaybe n -- inlineResponse20027EntitiesStartPosition :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20027EntitiesImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20027EntitiesType :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20027EntitiesValue :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20027EntitiesEndPosition :: Maybe Int
+genScoreText200ResponseStyle :: Int -> Gen ScoreText200ResponseStyle
+genScoreText200ResponseStyle n =
+  ScoreText200ResponseStyle
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseStyleMainscores :: Maybe ScoreText200ResponseReadabilityMainscores
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseStyleSubscores :: Maybe ScoreText200ResponseStyleSubscores
   
-instance Arbitrary InlineResponse20028 where
-  arbitrary = sized genInlineResponse20028
+instance Arbitrary ScoreText200ResponseStyleSubscores where
+  arbitrary = sized genScoreText200ResponseStyleSubscores
 
-genInlineResponse20028 :: Int -> Gen InlineResponse20028
-genInlineResponse20028 n =
-  InlineResponse20028
-    <$> arbitraryReducedMaybe n -- inlineResponse20028Images :: Maybe [InlineResponse20028Images]
+genScoreText200ResponseStyleSubscores :: Int -> Gen ScoreText200ResponseStyleSubscores
+genScoreText200ResponseStyleSubscores n =
+  ScoreText200ResponseStyleSubscores
+    <$> arbitraryReducedMaybe n -- scoreText200ResponseStyleSubscoresAbbreviationScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseStyleSubscoresStyleScore :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- scoreText200ResponseStyleSubscoresSpellingScore :: Maybe [Int]
   
-instance Arbitrary InlineResponse20028Images where
-  arbitrary = sized genInlineResponse20028Images
+instance Arbitrary SearchBooks200Response where
+  arbitrary = sized genSearchBooks200Response
 
-genInlineResponse20028Images :: Int -> Gen InlineResponse20028Images
-genInlineResponse20028Images n =
-  InlineResponse20028Images
-    <$> arbitraryReducedMaybe n -- inlineResponse20028ImagesWidth :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse20028ImagesLicense :: Maybe InlineResponse20028License
-    <*> arbitraryReducedMaybe n -- inlineResponse20028ImagesThumbnail :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20028ImagesId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20028ImagesUrl :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20028ImagesHeight :: Maybe Int
+genSearchBooks200Response :: Int -> Gen SearchBooks200Response
+genSearchBooks200Response n =
+  SearchBooks200Response
+    <$> arbitraryReducedMaybe n -- searchBooks200ResponseAvailable :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooks :: Maybe [SearchBooks200ResponseBooksInner]
   
-instance Arbitrary InlineResponse20028License where
-  arbitrary = sized genInlineResponse20028License
+instance Arbitrary SearchBooks200ResponseBooksInner where
+  arbitrary = sized genSearchBooks200ResponseBooksInner
 
-genInlineResponse20028License :: Int -> Gen InlineResponse20028License
-genInlineResponse20028License n =
-  InlineResponse20028License
-    <$> arbitraryReducedMaybe n -- inlineResponse20028LicenseName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20028LicenseLink :: Maybe Text
+genSearchBooks200ResponseBooksInner :: Int -> Gen SearchBooks200ResponseBooksInner
+genSearchBooks200ResponseBooksInner n =
+  SearchBooks200ResponseBooksInner
+    <$> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerId :: Maybe Int
   
-instance Arbitrary InlineResponse20029 where
-  arbitrary = sized genInlineResponse20029
+instance Arbitrary SearchGifs200Response where
+  arbitrary = sized genSearchGifs200Response
 
-genInlineResponse20029 :: Int -> Gen InlineResponse20029
-genInlineResponse20029 n =
-  InlineResponse20029
-    <$> arbitraryReducedMaybe n -- inlineResponse20029SpecificColor :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20029MainColor :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse20029HexCode :: Maybe Text
+genSearchGifs200Response :: Int -> Gen SearchGifs200Response
+genSearchGifs200Response n =
+  SearchGifs200Response
+    <$> arbitraryReducedMaybe n -- searchGifs200ResponseImages :: Maybe [SearchGifs200ResponseImagesInner]
   
-instance Arbitrary InlineResponse2002News where
-  arbitrary = sized genInlineResponse2002News
+instance Arbitrary SearchGifs200ResponseImagesInner where
+  arbitrary = sized genSearchGifs200ResponseImagesInner
 
-genInlineResponse2002News :: Int -> Gen InlineResponse2002News
-genInlineResponse2002News n =
-  InlineResponse2002News
-    <$> arbitraryReducedMaybe n -- inlineResponse2002NewsSummary :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsSentiment :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsSourceCountry :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsLanguage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsId :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsTitle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsPublishDate :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsUrl :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2002NewsAuthors :: Maybe [Text]
+genSearchGifs200ResponseImagesInner :: Int -> Gen SearchGifs200ResponseImagesInner
+genSearchGifs200ResponseImagesInner n =
+  SearchGifs200ResponseImagesInner
+    <$> arbitraryReducedMaybe n -- searchGifs200ResponseImagesInnerWidth :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGifs200ResponseImagesInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGifs200ResponseImagesInnerHeight :: Maybe Int
   
-instance Arbitrary InlineResponse2003 where
-  arbitrary = sized genInlineResponse2003
+instance Arbitrary SearchJokes200Response where
+  arbitrary = sized genSearchJokes200Response
 
-genInlineResponse2003 :: Int -> Gen InlineResponse2003
-genInlineResponse2003 n =
-  InlineResponse2003
-    <$> arbitraryReducedMaybe n -- inlineResponse2003Title :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Text :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Url :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Image :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003PublishDate :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Author :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Language :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003SourceCountry :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2003Sentiment :: Maybe Double
+genSearchJokes200Response :: Int -> Gen SearchJokes200Response
+genSearchJokes200Response n =
+  SearchJokes200Response
+    <$> arbitraryReducedMaybe n -- searchJokes200ResponseJokes :: Maybe [SearchJokes200ResponseJokesInner]
+    <*> arbitraryReducedMaybe n -- searchJokes200ResponseAvailable :: Maybe Int
   
-instance Arbitrary InlineResponse20030 where
-  arbitrary = sized genInlineResponse20030
+instance Arbitrary SearchJokes200ResponseJokesInner where
+  arbitrary = sized genSearchJokes200ResponseJokesInner
 
-genInlineResponse20030 :: Int -> Gen InlineResponse20030
-genInlineResponse20030 n =
-  InlineResponse20030
-    <$> arbitraryReducedMaybe n -- inlineResponse20030TargetAmount :: Maybe Double
-    <*> arbitraryReducedMaybe n -- inlineResponse20030TargetUnit :: Maybe Text
+genSearchJokes200ResponseJokesInner :: Int -> Gen SearchJokes200ResponseJokesInner
+genSearchJokes200ResponseJokesInner n =
+  SearchJokes200ResponseJokesInner
+    <$> arbitraryReducedMaybe n -- searchJokes200ResponseJokesInnerJoke :: Maybe Text
   
-instance Arbitrary InlineResponse20031 where
-  arbitrary = sized genInlineResponse20031
+instance Arbitrary SearchMemes200Response where
+  arbitrary = sized genSearchMemes200Response
 
-genInlineResponse20031 :: Int -> Gen InlineResponse20031
-genInlineResponse20031 n =
-  InlineResponse20031
-    <$> arbitraryReducedMaybe n -- inlineResponse20031Value :: Maybe Text
+genSearchMemes200Response :: Int -> Gen SearchMemes200Response
+genSearchMemes200Response n =
+  SearchMemes200Response
+    <$> arbitraryReducedMaybe n -- searchMemes200ResponseMemes :: Maybe [SearchMemes200ResponseMemesInner]
+    <*> arbitraryReducedMaybe n -- searchMemes200ResponseAvailable :: Maybe Int
   
-instance Arbitrary InlineResponse20032 where
-  arbitrary = sized genInlineResponse20032
+instance Arbitrary SearchMemes200ResponseMemesInner where
+  arbitrary = sized genSearchMemes200ResponseMemesInner
 
-genInlineResponse20032 :: Int -> Gen InlineResponse20032
-genInlineResponse20032 n =
-  InlineResponse20032
-    <$> arbitraryReducedMaybe n -- inlineResponse20032Status :: Maybe Text
+genSearchMemes200ResponseMemesInner :: Int -> Gen SearchMemes200ResponseMemesInner
+genSearchMemes200ResponseMemesInner n =
+  SearchMemes200ResponseMemesInner
+    <$> arbitraryReducedMaybe n -- searchMemes200ResponseMemesInnerType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchMemes200ResponseMemesInnerDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchMemes200ResponseMemesInnerUrl :: Maybe Text
   
-instance Arbitrary InlineResponse2004 where
-  arbitrary = sized genInlineResponse2004
+instance Arbitrary SearchNews200Response where
+  arbitrary = sized genSearchNews200Response
 
-genInlineResponse2004 :: Int -> Gen InlineResponse2004
-genInlineResponse2004 n =
-  InlineResponse2004
-    <$> arbitraryReducedMaybe n -- inlineResponse2004Jokes :: Maybe [InlineResponse2004Jokes]
-    <*> arbitraryReducedMaybe n -- inlineResponse2004Available :: Maybe Int
+genSearchNews200Response :: Int -> Gen SearchNews200Response
+genSearchNews200Response n =
+  SearchNews200Response
+    <$> arbitraryReducedMaybe n -- searchNews200ResponseOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseAvailable :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNews :: Maybe [SearchNews200ResponseNewsInner]
   
-instance Arbitrary InlineResponse2004Jokes where
-  arbitrary = sized genInlineResponse2004Jokes
+instance Arbitrary SearchNews200ResponseNewsInner where
+  arbitrary = sized genSearchNews200ResponseNewsInner
 
-genInlineResponse2004Jokes :: Int -> Gen InlineResponse2004Jokes
-genInlineResponse2004Jokes n =
-  InlineResponse2004Jokes
-    <$> arbitraryReducedMaybe n -- inlineResponse2004JokesJoke :: Maybe Text
+genSearchNews200ResponseNewsInner :: Int -> Gen SearchNews200ResponseNewsInner
+genSearchNews200ResponseNewsInner n =
+  SearchNews200ResponseNewsInner
+    <$> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSummary :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSentiment :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSourceCountry :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerLanguage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerPublishDate :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerAuthors :: Maybe [Text]
   
-instance Arbitrary InlineResponse2005 where
-  arbitrary = sized genInlineResponse2005
+instance Arbitrary SearchRoyaltyFreeImages200Response where
+  arbitrary = sized genSearchRoyaltyFreeImages200Response
 
-genInlineResponse2005 :: Int -> Gen InlineResponse2005
-genInlineResponse2005 n =
-  InlineResponse2005
-    <$> arbitraryReducedMaybe n -- inlineResponse2005Memes :: Maybe [InlineResponse2005Memes]
-    <*> arbitraryReducedMaybe n -- inlineResponse2005Available :: Maybe Int
+genSearchRoyaltyFreeImages200Response :: Int -> Gen SearchRoyaltyFreeImages200Response
+genSearchRoyaltyFreeImages200Response n =
+  SearchRoyaltyFreeImages200Response
+    <$> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImages :: Maybe [SearchRoyaltyFreeImages200ResponseImagesInner]
   
-instance Arbitrary InlineResponse2005Memes where
-  arbitrary = sized genInlineResponse2005Memes
+instance Arbitrary SearchRoyaltyFreeImages200ResponseImagesInner where
+  arbitrary = sized genSearchRoyaltyFreeImages200ResponseImagesInner
 
-genInlineResponse2005Memes :: Int -> Gen InlineResponse2005Memes
-genInlineResponse2005Memes n =
-  InlineResponse2005Memes
-    <$> arbitraryReducedMaybe n -- inlineResponse2005MemesType :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2005MemesDescription :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2005MemesUrl :: Maybe Text
+genSearchRoyaltyFreeImages200ResponseImagesInner :: Int -> Gen SearchRoyaltyFreeImages200ResponseImagesInner
+genSearchRoyaltyFreeImages200ResponseImagesInner n =
+  SearchRoyaltyFreeImages200ResponseImagesInner
+    <$> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerWidth :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerLicense :: Maybe SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerThumbnail :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerHeight :: Maybe Int
   
-instance Arbitrary InlineResponse2006 where
-  arbitrary = sized genInlineResponse2006
+instance Arbitrary SearchRoyaltyFreeImages200ResponseImagesInnerLicense where
+  arbitrary = sized genSearchRoyaltyFreeImages200ResponseImagesInnerLicense
 
-genInlineResponse2006 :: Int -> Gen InlineResponse2006
-genInlineResponse2006 n =
-  InlineResponse2006
-    <$> arbitraryReducedMaybe n -- inlineResponse2006Description :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2006Url :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2006Type :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2006Width :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2006Height :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2006Ratio :: Maybe Double
+genSearchRoyaltyFreeImages200ResponseImagesInnerLicense :: Int -> Gen SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+genSearchRoyaltyFreeImages200ResponseImagesInnerLicense n =
+  SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+    <$> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerLicenseName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink :: Maybe Text
   
-instance Arbitrary InlineResponse2007 where
-  arbitrary = sized genInlineResponse2007
+instance Arbitrary SearchWeb200Response where
+  arbitrary = sized genSearchWeb200Response
 
-genInlineResponse2007 :: Int -> Gen InlineResponse2007
-genInlineResponse2007 n =
-  InlineResponse2007
-    <$> arbitraryReducedMaybe n -- inlineResponse2007Images :: Maybe [InlineResponse2007Images]
+genSearchWeb200Response :: Int -> Gen SearchWeb200Response
+genSearchWeb200Response n =
+  SearchWeb200Response
+    <$> arbitraryReducedMaybe n -- searchWeb200ResponseResults :: Maybe [SearchWeb200ResponseResultsInner]
   
-instance Arbitrary InlineResponse2007Images where
-  arbitrary = sized genInlineResponse2007Images
+instance Arbitrary SearchWeb200ResponseResultsInner where
+  arbitrary = sized genSearchWeb200ResponseResultsInner
 
-genInlineResponse2007Images :: Int -> Gen InlineResponse2007Images
-genInlineResponse2007Images n =
-  InlineResponse2007Images
-    <$> arbitraryReducedMaybe n -- inlineResponse2007ImagesWidth :: Maybe Int
-    <*> arbitraryReducedMaybe n -- inlineResponse2007ImagesUrl :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2007ImagesHeight :: Maybe Int
+genSearchWeb200ResponseResultsInner :: Int -> Gen SearchWeb200ResponseResultsInner
+genSearchWeb200ResponseResultsInner n =
+  SearchWeb200ResponseResultsInner
+    <$> arbitraryReducedMaybe n -- searchWeb200ResponseResultsInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchWeb200ResponseResultsInnerSummary :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchWeb200ResponseResultsInnerUrl :: Maybe Text
   
-instance Arbitrary InlineResponse2008 where
-  arbitrary = sized genInlineResponse2008
+instance Arbitrary SingularizeWord200Response where
+  arbitrary = sized genSingularizeWord200Response
 
-genInlineResponse2008 :: Int -> Gen InlineResponse2008
-genInlineResponse2008 n =
-  InlineResponse2008
-    <$> arbitraryReducedMaybe n -- inlineResponse2008Word :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse2008Rating :: Maybe Double
+genSingularizeWord200Response :: Int -> Gen SingularizeWord200Response
+genSingularizeWord200Response n =
+  SingularizeWord200Response
+    <$> arbitraryReducedMaybe n -- singularizeWord200ResponseOriginal :: Maybe Text
+    <*> arbitraryReducedMaybe n -- singularizeWord200ResponseSingular :: Maybe Text
   
-instance Arbitrary InlineResponse2009 where
-  arbitrary = sized genInlineResponse2009
+instance Arbitrary StoreKeyValueGET200Response where
+  arbitrary = sized genStoreKeyValueGET200Response
 
-genInlineResponse2009 :: Int -> Gen InlineResponse2009
-genInlineResponse2009 n =
-  InlineResponse2009
-    <$> arbitraryReducedMaybe n -- inlineResponse2009Trivia :: Maybe Text
+genStoreKeyValueGET200Response :: Int -> Gen StoreKeyValueGET200Response
+genStoreKeyValueGET200Response n =
+  StoreKeyValueGET200Response
+    <$> arbitraryReducedMaybe n -- storeKeyValueGET200ResponseStatus :: Maybe Text
   
-instance Arbitrary InlineResponse200Books where
-  arbitrary = sized genInlineResponse200Books
+instance Arbitrary TextStemming200Response where
+  arbitrary = sized genTextStemming200Response
 
-genInlineResponse200Books :: Int -> Gen InlineResponse200Books
-genInlineResponse200Books n =
-  InlineResponse200Books
-    <$> arbitraryReducedMaybe n -- inlineResponse200BooksTitle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse200BooksImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- inlineResponse200BooksId :: Maybe Int
+genTextStemming200Response :: Int -> Gen TextStemming200Response
+genTextStemming200Response n =
+  TextStemming200Response
+    <$> arbitraryReducedMaybe n -- textStemming200ResponseOriginal :: Maybe Text
+    <*> arbitraryReducedMaybe n -- textStemming200ResponseStemmed :: Maybe Text
   
 
 

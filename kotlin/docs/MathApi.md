@@ -7,9 +7,9 @@ Method | HTTP request | Description
 [**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
 
 
-<a name="convertUnits"></a>
+<a id="convertUnits"></a>
 # **convertUnits**
-> InlineResponse20030 convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
 
 Convert Units
 
@@ -18,7 +18,7 @@ Convert units from one to another. The API returns the amount and the unit of th
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = MathApi()
@@ -27,7 +27,7 @@ val sourceUnit : kotlin.String = kg // kotlin.String | The source unit.
 val targetUnit : kotlin.String = lb // kotlin.String | The unit to which should be converted.
 val foodName : kotlin.String = flour // kotlin.String | An optional food name. For converting foods the food is relevant as they have different densities.
 try {
-    val result : InlineResponse20030 = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+    val result : ConvertUnits200Response = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MathApi#convertUnits")
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

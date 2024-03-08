@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) randomPoemWithMinLines: (NSNumber*) minLines
     maxLines: (NSNumber*) maxLines
-        completionHandler: (void (^)(OAIInlineResponse20011* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIRandomPoem200Response* output, NSError* error)) handler;
 ```
 
 Random Poem
@@ -112,7 +112,7 @@ OAIArtApi*apiInstance = [[OAIArtApi alloc] init];
 // Random Poem
 [apiInstance randomPoemWithMinLines:minLines
               maxLines:maxLines
-          completionHandler: ^(OAIInlineResponse20011* output, NSError* error) {
+          completionHandler: ^(OAIRandomPoem200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20011***](OAIInlineResponse20011.md)
+[**OAIRandomPoem200Response***](OAIRandomPoem200Response.md)
 
 ### Authorization
 

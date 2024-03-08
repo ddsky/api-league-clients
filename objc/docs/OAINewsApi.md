@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) extractNewsWithUrl: (NSString*) url
     analyze: (NSNumber*) analyze
-        completionHandler: (void (^)(OAIInlineResponse2003* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractNews200Response* output, NSError* error)) handler;
 ```
 
 Extract News
@@ -42,7 +42,7 @@ OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
 // Extract News
 [apiInstance extractNewsWithUrl:url
               analyze:analyze
-          completionHandler: ^(OAIInlineResponse2003* output, NSError* error) {
+          completionHandler: ^(OAIExtractNews200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2003***](OAIInlineResponse2003.md)
+[**OAIExtractNews200Response***](OAIExtractNews200Response.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
     sortDirection: (NSString*) sortDirection
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse2002* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchNews200Response* output, NSError* error)) handler;
 ```
 
 Search News
@@ -147,7 +147,7 @@ OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
               sortDirection:sortDirection
               offset:offset
               number:number
-          completionHandler: ^(OAIInlineResponse2002* output, NSError* error) {
+          completionHandler: ^(OAISearchNews200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2002***](OAIInlineResponse2002.md)
+[**OAISearchNews200Response***](OAISearchNews200Response.md)
 
 ### Authorization
 

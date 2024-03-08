@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
 
 
-<a name="randomQuote"></a>
+<a id="randomQuote"></a>
 # **randomQuote**
-> InlineResponse20010 randomQuote(minLength, maxLength)
+> RandomQuote200Response randomQuote(minLength, maxLength)
 
 Random Quote
 
@@ -19,14 +19,14 @@ This API returns a random quote from a collection of quotes. The quotes are from
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = KnowledgeApi()
 val minLength : kotlin.Int = 120 // kotlin.Int | The minimum length of the quote in letters.
 val maxLength : kotlin.Int = 300 // kotlin.Int | The maximum length of the quote in letters.
 try {
-    val result : InlineResponse20010 = apiInstance.randomQuote(minLength, maxLength)
+    val result : RandomQuote200Response = apiInstance.randomQuote(minLength, maxLength)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling KnowledgeApi#randomQuote")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -63,9 +63,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="randomTrivia"></a>
+<a id="randomTrivia"></a>
 # **randomTrivia**
-> InlineResponse2009 randomTrivia(maxLength)
+> RandomTrivia200Response randomTrivia(maxLength)
 
 Random Trivia
 
@@ -74,13 +74,13 @@ This endpoint returns a random piece of trivia.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = KnowledgeApi()
 val maxLength : kotlin.Int = 300 // kotlin.Int | The maximum length of the trivia in letters.
 try {
-    val result : InlineResponse2009 = apiInstance.randomTrivia(maxLength)
+    val result : RandomTrivia200Response = apiInstance.randomTrivia(maxLength)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling KnowledgeApi#randomTrivia")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

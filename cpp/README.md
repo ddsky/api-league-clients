@@ -35,7 +35,7 @@ class Example : public QObject {
     QString create();
     qint32 create();
     qint32 create();
-public slots:
+public Q_SLOTS:
    void exampleFunction1();
 };
 

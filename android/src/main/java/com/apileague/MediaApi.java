@@ -23,8 +23,9 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20028;
-import com.apileague.client.model.InlineResponse20029;
+import com.apileague.client.model.DetectMainImageColor200ResponseInner;
+import java.util.*;
+import com.apileague.client.model.SearchRoyaltyFreeImages200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -60,9 +61,9 @@ public class MediaApi {
   * Detect Main Image Color
   * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
    * @param url The url of the image for which the colors should be detected.
-   * @return List<InlineResponse20029>
+   * @return List<DetectMainImageColor200ResponseInner>
   */
-  public List<InlineResponse20029> detectMainImageColor (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<DetectMainImageColor200ResponseInner> detectMainImageColor (String url) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'url' is set
     if (url == null) {
@@ -98,7 +99,7 @@ public class MediaApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<InlineResponse20029>) ApiInvoker.deserialize(localVarResponse, "array", InlineResponse20029.class);
+         return (List<DetectMainImageColor200ResponseInner>) ApiInvoker.deserialize(localVarResponse, "array", DetectMainImageColor200ResponseInner.class);
       } else {
          return null;
       }
@@ -124,7 +125,7 @@ public class MediaApi {
    * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
    * @param url The url of the image for which the colors should be detected.
   */
-  public void detectMainImageColor (String url, final Response.Listener<List<InlineResponse20029>> responseListener, final Response.ErrorListener errorListener) {
+  public void detectMainImageColor (String url, final Response.Listener<List<DetectMainImageColor200ResponseInner>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'url' is set
@@ -170,7 +171,7 @@ public class MediaApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<InlineResponse20029>) ApiInvoker.deserialize(localVarResponse,  "array", InlineResponse20029.class));
+              responseListener.onResponse((List<DetectMainImageColor200ResponseInner>) ApiInvoker.deserialize(localVarResponse,  "array", DetectMainImageColor200ResponseInner.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -358,9 +359,9 @@ public class MediaApi {
   * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
    * @param query The search query.
    * @param number The number of images to return in range [1,10]
-   * @return InlineResponse20028
+   * @return SearchRoyaltyFreeImages200Response
   */
-  public InlineResponse20028 searchRoyaltyFreeImages (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages (String query, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'query' is set
     if (query == null) {
@@ -397,7 +398,7 @@ public class MediaApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20028) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20028.class);
+         return (SearchRoyaltyFreeImages200Response) ApiInvoker.deserialize(localVarResponse, "", SearchRoyaltyFreeImages200Response.class);
       } else {
          return null;
       }
@@ -423,7 +424,7 @@ public class MediaApi {
    * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
    * @param query The search query.   * @param number The number of images to return in range [1,10]
   */
-  public void searchRoyaltyFreeImages (String query, Integer number, final Response.Listener<InlineResponse20028> responseListener, final Response.ErrorListener errorListener) {
+  public void searchRoyaltyFreeImages (String query, Integer number, final Response.Listener<SearchRoyaltyFreeImages200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'query' is set
@@ -470,7 +471,7 @@ public class MediaApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20028) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20028.class));
+              responseListener.onResponse((SearchRoyaltyFreeImages200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchRoyaltyFreeImages200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

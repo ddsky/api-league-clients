@@ -10,7 +10,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## read_key_value_from_store
 
-> <InlineResponse20031> read_key_value_from_store(key)
+> <ReadKeyValueFromStore200Response> read_key_value_from_store(key)
 
 Read Key Value from Store
 
@@ -50,7 +50,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20031>, Integer, Hash)> read_key_value_from_store_with_http_info(key)
+> <Array(<ReadKeyValueFromStore200Response>, Integer, Hash)> read_key_value_from_store_with_http_info(key)
 
 ```ruby
 begin
@@ -58,7 +58,7 @@ begin
   data, status_code, headers = api_instance.read_key_value_from_store_with_http_info(key)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20031>
+  p data # => <ReadKeyValueFromStore200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling StorageApi->read_key_value_from_store_with_http_info: #{e}"
 end
@@ -72,7 +72,7 @@ end
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ end
 
 ## store_key_value_get
 
-> <InlineResponse20032> store_key_value_get(key, value)
+> <StoreKeyValueGET200Response> store_key_value_get(key, value)
 
 Store Key Value (GET)
 
@@ -127,7 +127,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20032>, Integer, Hash)> store_key_value_get_with_http_info(key, value)
+> <Array(<StoreKeyValueGET200Response>, Integer, Hash)> store_key_value_get_with_http_info(key, value)
 
 ```ruby
 begin
@@ -135,7 +135,7 @@ begin
   data, status_code, headers = api_instance.store_key_value_get_with_http_info(key, value)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20032>
+  p data # => <StoreKeyValueGET200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling StorageApi->store_key_value_get_with_http_info: #{e}"
 end
@@ -150,7 +150,7 @@ end
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 

@@ -245,62 +245,62 @@ use WWW::OpenAPIClient::WebApi;
 
 To load the models:
 ```perl
-use WWW::OpenAPIClient::Object::InlineResponse200;
-use WWW::OpenAPIClient::Object::InlineResponse2001;
-use WWW::OpenAPIClient::Object::InlineResponse20010;
-use WWW::OpenAPIClient::Object::InlineResponse20011;
-use WWW::OpenAPIClient::Object::InlineResponse20012;
-use WWW::OpenAPIClient::Object::InlineResponse20013;
-use WWW::OpenAPIClient::Object::InlineResponse20014;
-use WWW::OpenAPIClient::Object::InlineResponse20014Authors;
-use WWW::OpenAPIClient::Object::InlineResponse20015;
-use WWW::OpenAPIClient::Object::InlineResponse20015Results;
-use WWW::OpenAPIClient::Object::InlineResponse20016;
-use WWW::OpenAPIClient::Object::InlineResponse20017;
-use WWW::OpenAPIClient::Object::InlineResponse20018;
-use WWW::OpenAPIClient::Object::InlineResponse20018Document;
-use WWW::OpenAPIClient::Object::InlineResponse20018Sentences;
-use WWW::OpenAPIClient::Object::InlineResponse20019;
-use WWW::OpenAPIClient::Object::InlineResponse20019Interestingness;
-use WWW::OpenAPIClient::Object::InlineResponse20019InterestingnessSubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Readability;
-use WWW::OpenAPIClient::Object::InlineResponse20019ReadabilityMainscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019ReadabilitySubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Skimmability;
-use WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilityMainscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilitySubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Style;
-use WWW::OpenAPIClient::Object::InlineResponse20019StyleSubscores;
-use WWW::OpenAPIClient::Object::InlineResponse2002;
-use WWW::OpenAPIClient::Object::InlineResponse20020;
-use WWW::OpenAPIClient::Object::InlineResponse20021;
-use WWW::OpenAPIClient::Object::InlineResponse20021Dates;
-use WWW::OpenAPIClient::Object::InlineResponse20022;
-use WWW::OpenAPIClient::Object::InlineResponse20023;
-use WWW::OpenAPIClient::Object::InlineResponse20024;
-use WWW::OpenAPIClient::Object::InlineResponse20025;
-use WWW::OpenAPIClient::Object::InlineResponse20026;
-use WWW::OpenAPIClient::Object::InlineResponse20027;
-use WWW::OpenAPIClient::Object::InlineResponse20027Entities;
-use WWW::OpenAPIClient::Object::InlineResponse20028;
-use WWW::OpenAPIClient::Object::InlineResponse20028Images;
-use WWW::OpenAPIClient::Object::InlineResponse20028License;
-use WWW::OpenAPIClient::Object::InlineResponse20029;
-use WWW::OpenAPIClient::Object::InlineResponse2002News;
-use WWW::OpenAPIClient::Object::InlineResponse2003;
-use WWW::OpenAPIClient::Object::InlineResponse20030;
-use WWW::OpenAPIClient::Object::InlineResponse20031;
-use WWW::OpenAPIClient::Object::InlineResponse20032;
-use WWW::OpenAPIClient::Object::InlineResponse2004;
-use WWW::OpenAPIClient::Object::InlineResponse2004Jokes;
-use WWW::OpenAPIClient::Object::InlineResponse2005;
-use WWW::OpenAPIClient::Object::InlineResponse2005Memes;
-use WWW::OpenAPIClient::Object::InlineResponse2006;
-use WWW::OpenAPIClient::Object::InlineResponse2007;
-use WWW::OpenAPIClient::Object::InlineResponse2007Images;
-use WWW::OpenAPIClient::Object::InlineResponse2008;
-use WWW::OpenAPIClient::Object::InlineResponse2009;
-use WWW::OpenAPIClient::Object::InlineResponse200Books;
+use WWW::OpenAPIClient::Object::ConvertUnits200Response;
+use WWW::OpenAPIClient::Object::CorrectSpelling200Response;
+use WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner;
+use WWW::OpenAPIClient::Object::DetectMainImageColor200ResponseInner;
+use WWW::OpenAPIClient::Object::DetectSentiment200Response;
+use WWW::OpenAPIClient::Object::DetectSentiment200ResponseDocument;
+use WWW::OpenAPIClient::Object::DetectSentiment200ResponseSentencesInner;
+use WWW::OpenAPIClient::Object::ExtractAuthors200Response;
+use WWW::OpenAPIClient::Object::ExtractAuthors200ResponseAuthorsInner;
+use WWW::OpenAPIClient::Object::ExtractContentFromAWebPage200Response;
+use WWW::OpenAPIClient::Object::ExtractDates200Response;
+use WWW::OpenAPIClient::Object::ExtractDates200ResponseDatesInner;
+use WWW::OpenAPIClient::Object::ExtractEntities200Response;
+use WWW::OpenAPIClient::Object::ExtractEntities200ResponseEntitiesInner;
+use WWW::OpenAPIClient::Object::ExtractNews200Response;
+use WWW::OpenAPIClient::Object::ExtractPublishDate200Response;
+use WWW::OpenAPIClient::Object::FindSimilarBooks200Response;
+use WWW::OpenAPIClient::Object::GenerateNonsenseWord200Response;
+use WWW::OpenAPIClient::Object::ListWordSynonyms200Response;
+use WWW::OpenAPIClient::Object::PartOfSpeechTagging200Response;
+use WWW::OpenAPIClient::Object::PluralizeWord200Response;
+use WWW::OpenAPIClient::Object::RandomMeme200Response;
+use WWW::OpenAPIClient::Object::RandomPoem200Response;
+use WWW::OpenAPIClient::Object::RandomQuote200Response;
+use WWW::OpenAPIClient::Object::RandomTrivia200Response;
+use WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response;
+use WWW::OpenAPIClient::Object::ScoreReadability200Response;
+use WWW::OpenAPIClient::Object::ScoreText200Response;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingnessSubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadability;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilityMainscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilitySubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmability;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilityMainscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilitySubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseStyle;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseStyleSubscores;
+use WWW::OpenAPIClient::Object::SearchBooks200Response;
+use WWW::OpenAPIClient::Object::SearchBooks200ResponseBooksInner;
+use WWW::OpenAPIClient::Object::SearchGifs200Response;
+use WWW::OpenAPIClient::Object::SearchGifs200ResponseImagesInner;
+use WWW::OpenAPIClient::Object::SearchJokes200Response;
+use WWW::OpenAPIClient::Object::SearchJokes200ResponseJokesInner;
+use WWW::OpenAPIClient::Object::SearchMemes200Response;
+use WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner;
+use WWW::OpenAPIClient::Object::SearchNews200Response;
+use WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense;
+use WWW::OpenAPIClient::Object::SearchWeb200Response;
+use WWW::OpenAPIClient::Object::SearchWeb200ResponseResultsInner;
+use WWW::OpenAPIClient::Object::SingularizeWord200Response;
+use WWW::OpenAPIClient::Object::StoreKeyValueGET200Response;
+use WWW::OpenAPIClient::Object::TextStemming200Response;
 
 ````
 
@@ -324,62 +324,62 @@ use WWW::OpenAPIClient::TextApi;
 use WWW::OpenAPIClient::WebApi;
 
 # load the models
-use WWW::OpenAPIClient::Object::InlineResponse200;
-use WWW::OpenAPIClient::Object::InlineResponse2001;
-use WWW::OpenAPIClient::Object::InlineResponse20010;
-use WWW::OpenAPIClient::Object::InlineResponse20011;
-use WWW::OpenAPIClient::Object::InlineResponse20012;
-use WWW::OpenAPIClient::Object::InlineResponse20013;
-use WWW::OpenAPIClient::Object::InlineResponse20014;
-use WWW::OpenAPIClient::Object::InlineResponse20014Authors;
-use WWW::OpenAPIClient::Object::InlineResponse20015;
-use WWW::OpenAPIClient::Object::InlineResponse20015Results;
-use WWW::OpenAPIClient::Object::InlineResponse20016;
-use WWW::OpenAPIClient::Object::InlineResponse20017;
-use WWW::OpenAPIClient::Object::InlineResponse20018;
-use WWW::OpenAPIClient::Object::InlineResponse20018Document;
-use WWW::OpenAPIClient::Object::InlineResponse20018Sentences;
-use WWW::OpenAPIClient::Object::InlineResponse20019;
-use WWW::OpenAPIClient::Object::InlineResponse20019Interestingness;
-use WWW::OpenAPIClient::Object::InlineResponse20019InterestingnessSubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Readability;
-use WWW::OpenAPIClient::Object::InlineResponse20019ReadabilityMainscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019ReadabilitySubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Skimmability;
-use WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilityMainscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilitySubscores;
-use WWW::OpenAPIClient::Object::InlineResponse20019Style;
-use WWW::OpenAPIClient::Object::InlineResponse20019StyleSubscores;
-use WWW::OpenAPIClient::Object::InlineResponse2002;
-use WWW::OpenAPIClient::Object::InlineResponse20020;
-use WWW::OpenAPIClient::Object::InlineResponse20021;
-use WWW::OpenAPIClient::Object::InlineResponse20021Dates;
-use WWW::OpenAPIClient::Object::InlineResponse20022;
-use WWW::OpenAPIClient::Object::InlineResponse20023;
-use WWW::OpenAPIClient::Object::InlineResponse20024;
-use WWW::OpenAPIClient::Object::InlineResponse20025;
-use WWW::OpenAPIClient::Object::InlineResponse20026;
-use WWW::OpenAPIClient::Object::InlineResponse20027;
-use WWW::OpenAPIClient::Object::InlineResponse20027Entities;
-use WWW::OpenAPIClient::Object::InlineResponse20028;
-use WWW::OpenAPIClient::Object::InlineResponse20028Images;
-use WWW::OpenAPIClient::Object::InlineResponse20028License;
-use WWW::OpenAPIClient::Object::InlineResponse20029;
-use WWW::OpenAPIClient::Object::InlineResponse2002News;
-use WWW::OpenAPIClient::Object::InlineResponse2003;
-use WWW::OpenAPIClient::Object::InlineResponse20030;
-use WWW::OpenAPIClient::Object::InlineResponse20031;
-use WWW::OpenAPIClient::Object::InlineResponse20032;
-use WWW::OpenAPIClient::Object::InlineResponse2004;
-use WWW::OpenAPIClient::Object::InlineResponse2004Jokes;
-use WWW::OpenAPIClient::Object::InlineResponse2005;
-use WWW::OpenAPIClient::Object::InlineResponse2005Memes;
-use WWW::OpenAPIClient::Object::InlineResponse2006;
-use WWW::OpenAPIClient::Object::InlineResponse2007;
-use WWW::OpenAPIClient::Object::InlineResponse2007Images;
-use WWW::OpenAPIClient::Object::InlineResponse2008;
-use WWW::OpenAPIClient::Object::InlineResponse2009;
-use WWW::OpenAPIClient::Object::InlineResponse200Books;
+use WWW::OpenAPIClient::Object::ConvertUnits200Response;
+use WWW::OpenAPIClient::Object::CorrectSpelling200Response;
+use WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner;
+use WWW::OpenAPIClient::Object::DetectMainImageColor200ResponseInner;
+use WWW::OpenAPIClient::Object::DetectSentiment200Response;
+use WWW::OpenAPIClient::Object::DetectSentiment200ResponseDocument;
+use WWW::OpenAPIClient::Object::DetectSentiment200ResponseSentencesInner;
+use WWW::OpenAPIClient::Object::ExtractAuthors200Response;
+use WWW::OpenAPIClient::Object::ExtractAuthors200ResponseAuthorsInner;
+use WWW::OpenAPIClient::Object::ExtractContentFromAWebPage200Response;
+use WWW::OpenAPIClient::Object::ExtractDates200Response;
+use WWW::OpenAPIClient::Object::ExtractDates200ResponseDatesInner;
+use WWW::OpenAPIClient::Object::ExtractEntities200Response;
+use WWW::OpenAPIClient::Object::ExtractEntities200ResponseEntitiesInner;
+use WWW::OpenAPIClient::Object::ExtractNews200Response;
+use WWW::OpenAPIClient::Object::ExtractPublishDate200Response;
+use WWW::OpenAPIClient::Object::FindSimilarBooks200Response;
+use WWW::OpenAPIClient::Object::GenerateNonsenseWord200Response;
+use WWW::OpenAPIClient::Object::ListWordSynonyms200Response;
+use WWW::OpenAPIClient::Object::PartOfSpeechTagging200Response;
+use WWW::OpenAPIClient::Object::PluralizeWord200Response;
+use WWW::OpenAPIClient::Object::RandomMeme200Response;
+use WWW::OpenAPIClient::Object::RandomPoem200Response;
+use WWW::OpenAPIClient::Object::RandomQuote200Response;
+use WWW::OpenAPIClient::Object::RandomTrivia200Response;
+use WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response;
+use WWW::OpenAPIClient::Object::ScoreReadability200Response;
+use WWW::OpenAPIClient::Object::ScoreText200Response;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingnessSubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadability;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilityMainscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilitySubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmability;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilityMainscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilitySubscores;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseStyle;
+use WWW::OpenAPIClient::Object::ScoreText200ResponseStyleSubscores;
+use WWW::OpenAPIClient::Object::SearchBooks200Response;
+use WWW::OpenAPIClient::Object::SearchBooks200ResponseBooksInner;
+use WWW::OpenAPIClient::Object::SearchGifs200Response;
+use WWW::OpenAPIClient::Object::SearchGifs200ResponseImagesInner;
+use WWW::OpenAPIClient::Object::SearchJokes200Response;
+use WWW::OpenAPIClient::Object::SearchJokes200ResponseJokesInner;
+use WWW::OpenAPIClient::Object::SearchMemes200Response;
+use WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner;
+use WWW::OpenAPIClient::Object::SearchNews200Response;
+use WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner;
+use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense;
+use WWW::OpenAPIClient::Object::SearchWeb200Response;
+use WWW::OpenAPIClient::Object::SearchWeb200ResponseResultsInner;
+use WWW::OpenAPIClient::Object::SingularizeWord200Response;
+use WWW::OpenAPIClient::Object::StoreKeyValueGET200Response;
+use WWW::OpenAPIClient::Object::TextStemming200Response;
 
 # for displaying the API response data
 use Data::Dumper;
@@ -455,66 +455,67 @@ Class | Method | HTTP request | Description
 
 
 # DOCUMENTATION FOR MODELS
- - [WWW::OpenAPIClient::Object::InlineResponse200](docs/InlineResponse200.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2001](docs/InlineResponse2001.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20010](docs/InlineResponse20010.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20011](docs/InlineResponse20011.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20012](docs/InlineResponse20012.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20013](docs/InlineResponse20013.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20014](docs/InlineResponse20014.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20014Authors](docs/InlineResponse20014Authors.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20015](docs/InlineResponse20015.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20015Results](docs/InlineResponse20015Results.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20016](docs/InlineResponse20016.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20017](docs/InlineResponse20017.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20018](docs/InlineResponse20018.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20018Document](docs/InlineResponse20018Document.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20018Sentences](docs/InlineResponse20018Sentences.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019](docs/InlineResponse20019.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019Interestingness](docs/InlineResponse20019Interestingness.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019InterestingnessSubscores](docs/InlineResponse20019InterestingnessSubscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019Readability](docs/InlineResponse20019Readability.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019ReadabilityMainscores](docs/InlineResponse20019ReadabilityMainscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019ReadabilitySubscores](docs/InlineResponse20019ReadabilitySubscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019Skimmability](docs/InlineResponse20019Skimmability.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilityMainscores](docs/InlineResponse20019SkimmabilityMainscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019SkimmabilitySubscores](docs/InlineResponse20019SkimmabilitySubscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019Style](docs/InlineResponse20019Style.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20019StyleSubscores](docs/InlineResponse20019StyleSubscores.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2002](docs/InlineResponse2002.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20020](docs/InlineResponse20020.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20021](docs/InlineResponse20021.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20021Dates](docs/InlineResponse20021Dates.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20022](docs/InlineResponse20022.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20023](docs/InlineResponse20023.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20024](docs/InlineResponse20024.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20025](docs/InlineResponse20025.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20026](docs/InlineResponse20026.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20027](docs/InlineResponse20027.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20027Entities](docs/InlineResponse20027Entities.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20028](docs/InlineResponse20028.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20028Images](docs/InlineResponse20028Images.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20028License](docs/InlineResponse20028License.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20029](docs/InlineResponse20029.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2002News](docs/InlineResponse2002News.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2003](docs/InlineResponse2003.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20030](docs/InlineResponse20030.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20031](docs/InlineResponse20031.md)
- - [WWW::OpenAPIClient::Object::InlineResponse20032](docs/InlineResponse20032.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2004](docs/InlineResponse2004.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2004Jokes](docs/InlineResponse2004Jokes.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2005](docs/InlineResponse2005.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2005Memes](docs/InlineResponse2005Memes.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2006](docs/InlineResponse2006.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2007](docs/InlineResponse2007.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2007Images](docs/InlineResponse2007Images.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2008](docs/InlineResponse2008.md)
- - [WWW::OpenAPIClient::Object::InlineResponse2009](docs/InlineResponse2009.md)
- - [WWW::OpenAPIClient::Object::InlineResponse200Books](docs/InlineResponse200Books.md)
+ - [WWW::OpenAPIClient::Object::ConvertUnits200Response](docs/ConvertUnits200Response.md)
+ - [WWW::OpenAPIClient::Object::CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
+ - [WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
+ - [WWW::OpenAPIClient::Object::DetectMainImageColor200ResponseInner](docs/DetectMainImageColor200ResponseInner.md)
+ - [WWW::OpenAPIClient::Object::DetectSentiment200Response](docs/DetectSentiment200Response.md)
+ - [WWW::OpenAPIClient::Object::DetectSentiment200ResponseDocument](docs/DetectSentiment200ResponseDocument.md)
+ - [WWW::OpenAPIClient::Object::DetectSentiment200ResponseSentencesInner](docs/DetectSentiment200ResponseSentencesInner.md)
+ - [WWW::OpenAPIClient::Object::ExtractAuthors200Response](docs/ExtractAuthors200Response.md)
+ - [WWW::OpenAPIClient::Object::ExtractAuthors200ResponseAuthorsInner](docs/ExtractAuthors200ResponseAuthorsInner.md)
+ - [WWW::OpenAPIClient::Object::ExtractContentFromAWebPage200Response](docs/ExtractContentFromAWebPage200Response.md)
+ - [WWW::OpenAPIClient::Object::ExtractDates200Response](docs/ExtractDates200Response.md)
+ - [WWW::OpenAPIClient::Object::ExtractDates200ResponseDatesInner](docs/ExtractDates200ResponseDatesInner.md)
+ - [WWW::OpenAPIClient::Object::ExtractEntities200Response](docs/ExtractEntities200Response.md)
+ - [WWW::OpenAPIClient::Object::ExtractEntities200ResponseEntitiesInner](docs/ExtractEntities200ResponseEntitiesInner.md)
+ - [WWW::OpenAPIClient::Object::ExtractNews200Response](docs/ExtractNews200Response.md)
+ - [WWW::OpenAPIClient::Object::ExtractPublishDate200Response](docs/ExtractPublishDate200Response.md)
+ - [WWW::OpenAPIClient::Object::FindSimilarBooks200Response](docs/FindSimilarBooks200Response.md)
+ - [WWW::OpenAPIClient::Object::GenerateNonsenseWord200Response](docs/GenerateNonsenseWord200Response.md)
+ - [WWW::OpenAPIClient::Object::ListWordSynonyms200Response](docs/ListWordSynonyms200Response.md)
+ - [WWW::OpenAPIClient::Object::PartOfSpeechTagging200Response](docs/PartOfSpeechTagging200Response.md)
+ - [WWW::OpenAPIClient::Object::PluralizeWord200Response](docs/PluralizeWord200Response.md)
+ - [WWW::OpenAPIClient::Object::RandomMeme200Response](docs/RandomMeme200Response.md)
+ - [WWW::OpenAPIClient::Object::RandomPoem200Response](docs/RandomPoem200Response.md)
+ - [WWW::OpenAPIClient::Object::RandomQuote200Response](docs/RandomQuote200Response.md)
+ - [WWW::OpenAPIClient::Object::RandomTrivia200Response](docs/RandomTrivia200Response.md)
+ - [WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [WWW::OpenAPIClient::Object::ScoreReadability200Response](docs/ScoreReadability200Response.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200Response](docs/ScoreText200Response.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingnessSubscores](docs/ScoreText200ResponseInterestingnessSubscores.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseReadability](docs/ScoreText200ResponseReadability.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilityMainscores](docs/ScoreText200ResponseReadabilityMainscores.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseReadabilitySubscores](docs/ScoreText200ResponseReadabilitySubscores.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmability](docs/ScoreText200ResponseSkimmability.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilityMainscores](docs/ScoreText200ResponseSkimmabilityMainscores.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseSkimmabilitySubscores](docs/ScoreText200ResponseSkimmabilitySubscores.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseStyle](docs/ScoreText200ResponseStyle.md)
+ - [WWW::OpenAPIClient::Object::ScoreText200ResponseStyleSubscores](docs/ScoreText200ResponseStyleSubscores.md)
+ - [WWW::OpenAPIClient::Object::SearchBooks200Response](docs/SearchBooks200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchBooks200ResponseBooksInner](docs/SearchBooks200ResponseBooksInner.md)
+ - [WWW::OpenAPIClient::Object::SearchGifs200Response](docs/SearchGifs200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchGifs200ResponseImagesInner](docs/SearchGifs200ResponseImagesInner.md)
+ - [WWW::OpenAPIClient::Object::SearchJokes200Response](docs/SearchJokes200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchJokes200ResponseJokesInner](docs/SearchJokes200ResponseJokesInner.md)
+ - [WWW::OpenAPIClient::Object::SearchMemes200Response](docs/SearchMemes200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
+ - [WWW::OpenAPIClient::Object::SearchNews200Response](docs/SearchNews200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)
+ - [WWW::OpenAPIClient::Object::SearchWeb200Response](docs/SearchWeb200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchWeb200ResponseResultsInner](docs/SearchWeb200ResponseResultsInner.md)
+ - [WWW::OpenAPIClient::Object::SingularizeWord200Response](docs/SingularizeWord200Response.md)
+ - [WWW::OpenAPIClient::Object::StoreKeyValueGET200Response](docs/StoreKeyValueGET200Response.md)
+ - [WWW::OpenAPIClient::Object::TextStemming200Response](docs/TextStemming200Response.md)
 
 
 # DOCUMENTATION FOR AUTHORIZATION
 
+Authentication schemes defined for the API:
 ## apiKey
 
 - **Type**: API key

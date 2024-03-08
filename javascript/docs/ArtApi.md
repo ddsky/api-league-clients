@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## randomPoem
 
-> InlineResponse20011 randomPoem(opts)
+> RandomPoem200Response randomPoem(opts)
 
 Random Poem
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 

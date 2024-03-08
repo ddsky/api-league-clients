@@ -14,11 +14,10 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import java.math.BigDecimal;
-import com.apileague.client.model.InlineResponse2002;
-import com.apileague.client.model.InlineResponse2003;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.ExtractNews200Response;
+import com.apileague.client.model.SearchNews200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,35 +27,32 @@ import java.util.Map;
 /**
  * API tests for NewsApi
  */
-@Ignore
+@Disabled
 public class NewsApiTest {
 
     private final NewsApi api = new NewsApi();
 
-    
     /**
      * Extract News
      *
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void extractNewsTest() throws ApiException {
         String url = null;
         Boolean analyze = null;
-                InlineResponse2003 response = api.extractNews(url, analyze);
+        ExtractNews200Response response = api.extractNews(url, analyze);
         // TODO: test validations
     }
-    
+
     /**
      * Search News
      *
      * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void searchNewsTest() throws ApiException {
@@ -73,10 +69,10 @@ public class NewsApiTest {
         String locationFilter = null;
         String sort = null;
         String sortDirection = null;
-        BigDecimal offset = null;
-        BigDecimal number = null;
-                InlineResponse2002 response = api.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+        Integer offset = null;
+        Integer number = null;
+        SearchNews200Response response = api.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
         // TODO: test validations
     }
-    
+
 }

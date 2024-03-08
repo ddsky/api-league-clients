@@ -30,7 +30,7 @@ pub enum ConvertUnitsError {
 
 
 /// Convert units from one to another. The API returns the amount and the unit of the target unit.
-pub async fn convert_units(configuration: &configuration::Configuration, source_amount: f64, source_unit: &str, target_unit: &str, food_name: Option<&str>) -> Result<crate::models::InlineResponse20030, Error<ConvertUnitsError>> {
+pub async fn convert_units(configuration: &configuration::Configuration, source_amount: f64, source_unit: &str, target_unit: &str, food_name: Option<&str>) -> Result<crate::models::ConvertUnits200Response, Error<ConvertUnitsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

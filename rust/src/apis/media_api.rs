@@ -56,7 +56,7 @@ pub enum SearchRoyaltyFreeImagesError {
 
 
 /// Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
-pub async fn detect_main_image_color(configuration: &configuration::Configuration, url: &str) -> Result<Vec<crate::models::InlineResponse20029>, Error<DetectMainImageColorError>> {
+pub async fn detect_main_image_color(configuration: &configuration::Configuration, url: &str) -> Result<Vec<crate::models::DetectMainImageColor200ResponseInner>, Error<DetectMainImageColorError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -149,7 +149,7 @@ pub async fn rescale_image(configuration: &configuration::Configuration, url: &s
 }
 
 /// Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
-pub async fn search_royalty_free_images(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::InlineResponse20028, Error<SearchRoyaltyFreeImagesError>> {
+pub async fn search_royalty_free_images(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::SearchRoyaltyFreeImages200Response, Error<SearchRoyaltyFreeImagesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

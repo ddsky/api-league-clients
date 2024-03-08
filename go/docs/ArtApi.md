@@ -1,11 +1,11 @@
-# com.apileague.client\ArtApi
+# \ArtAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ImageToAsciiArtByURL**](ArtApi.md#ImageToAsciiArtByURL) | **Get** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**RandomPoem**](ArtApi.md#RandomPoem) | **Get** /retrieve-random-poem | Random Poem
+[**ImageToAsciiArtByURL**](ArtAPI.md#ImageToAsciiArtByURL) | **Get** /convert-image-to-ascii-txt | Image to Ascii Art by URL
+[**RandomPoem**](ArtAPI.md#RandomPoem) | **Get** /retrieve-random-poem | Random Poem
 
 
 
@@ -23,26 +23,26 @@ Image to Ascii Art by URL
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png" // string | The URL to the image.
-    width := int32(200) // int32 | The maximum width of the image (default 400, max. 500). (optional)
-    height := int32(200) // int32 | The maximum height of the image (default 400, max. 500). (optional)
+	url := "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png" // string | The URL to the image.
+	width := int32(200) // int32 | The maximum width of the image (default 400, max. 500). (optional)
+	height := int32(200) // int32 | The maximum height of the image (default 400, max. 500). (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtApi.ImageToAsciiArtByURL(context.Background()).Url(url).Width(width).Height(height).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtApi.ImageToAsciiArtByURL``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ImageToAsciiArtByURL`: string
-    fmt.Fprintf(os.Stdout, "Response from `ArtApi.ImageToAsciiArtByURL`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArtAPI.ImageToAsciiArtByURL(context.Background()).Url(url).Width(width).Height(height).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.ImageToAsciiArtByURL``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ImageToAsciiArtByURL`: string
+	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.ImageToAsciiArtByURL`: %v\n", resp)
 }
 ```
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## RandomPoem
 
-> InlineResponse20011 RandomPoem(ctx).MinLines(minLines).MaxLines(maxLines).Execute()
+> RandomPoem200Response RandomPoem(ctx).MinLines(minLines).MaxLines(maxLines).Execute()
 
 Random Poem
 
@@ -93,25 +93,25 @@ Random Poem
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    minLines := int32(5) // int32 | The minimum number of lines of the poem. (optional)
-    maxLines := int32(20) // int32 | The maximum number of lines of the poem. (optional)
+	minLines := int32(5) // int32 | The minimum number of lines of the poem. (optional)
+	maxLines := int32(20) // int32 | The maximum number of lines of the poem. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtApi.RandomPoem(context.Background()).MinLines(minLines).MaxLines(maxLines).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtApi.RandomPoem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RandomPoem`: InlineResponse20011
-    fmt.Fprintf(os.Stdout, "Response from `ArtApi.RandomPoem`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ArtAPI.RandomPoem(context.Background()).MinLines(minLines).MaxLines(maxLines).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.RandomPoem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomPoem`: RandomPoem200Response
+	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.RandomPoem`: %v\n", resp)
 }
 ```
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 

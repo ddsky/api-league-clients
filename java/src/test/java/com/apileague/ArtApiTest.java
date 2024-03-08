@@ -14,10 +14,9 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import java.math.BigDecimal;
-import com.apileague.client.model.InlineResponse20011;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.RandomPoem200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,42 +26,40 @@ import java.util.Map;
 /**
  * API tests for ArtApi
  */
-@Ignore
+@Disabled
 public class ArtApiTest {
 
     private final ArtApi api = new ArtApi();
 
-    
     /**
-     * Image to Ascii Art by Image File
+     * Image to Ascii Art by URL
      *
-     * Convert an image to ASCII art. You can pass the image as body to the API. This endpoint is using the POST method and the actual image file as the body of the request.
+     * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
-    public void imageToAsciiArtByImageFileTest() throws ApiException {
-        BigDecimal width = null;
-        BigDecimal height = null;
-                String response = api.imageToAsciiArtByImageFile(width, height);
+    public void imageToAsciiArtByURLTest() throws ApiException {
+        String url = null;
+        Integer width = null;
+        Integer height = null;
+        String response = api.imageToAsciiArtByURL(url, width, height);
         // TODO: test validations
     }
-    
+
     /**
      * Random Poem
      *
      * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void randomPoemTest() throws ApiException {
-        BigDecimal minLines = null;
-        BigDecimal maxLines = null;
-                InlineResponse20011 response = api.randomPoem(minLines, maxLines);
+        Integer minLines = null;
+        Integer maxLines = null;
+        RandomPoem200Response response = api.randomPoem(minLines, maxLines);
         // TODO: test validations
     }
-    
+
 }

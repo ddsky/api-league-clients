@@ -1,4 +1,4 @@
-# openapi_client.ArtApi
+# apileague.ArtApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **image_to_ascii_art_by_url**
-> str image_to_ascii_art_by_url(url)
+> str image_to_ascii_art_by_url(url, width=width, height=height)
 
 Image to Ascii Art by URL
 
@@ -21,13 +21,13 @@ Convert an image to ASCII art. You can pass the image URL as a query parameter. 
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import art_api
+import apileague
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -37,51 +37,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = art_api.ArtApi(api_client)
-    url = "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png" # str | The URL to the image.
+    api_instance = apileague.ArtApi(api_client)
+    url = 'https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png' # str | The URL to the image.
     width = 200 # int | The maximum width of the image (default 400, max. 500). (optional)
     height = 200 # int | The maximum height of the image (default 400, max. 500). (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Image to Ascii Art by URL
-        api_response = api_instance.image_to_ascii_art_by_url(url)
-        pprint(api_response)
-    except openapi_client.ApiException as e:
-        print("Exception when calling ArtApi->image_to_ascii_art_by_url: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Image to Ascii Art by URL
         api_response = api_instance.image_to_ascii_art_by_url(url, width=width, height=height)
+        print("The response of ArtApi->image_to_ascii_art_by_url:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ArtApi->image_to_ascii_art_by_url: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **url** | **str**| The URL to the image. |
- **width** | **int**| The maximum width of the image (default 400, max. 500). | [optional]
- **height** | **int**| The maximum height of the image (default 400, max. 500). | [optional]
+ **url** | **str**| The URL to the image. | 
+ **width** | **int**| The maximum width of the image (default 400, max. 500). | [optional] 
+ **height** | **int**| The maximum height of the image (default 400, max. 500). | [optional] 
 
 ### Return type
 
@@ -95,7 +88,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain
-
 
 ### HTTP response details
 
@@ -112,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_poem**
-> InlineResponse20011 random_poem()
+> RandomPoem200Response random_poem(min_lines=min_lines, max_lines=max_lines)
 
 Random Poem
 
@@ -124,14 +116,14 @@ Retrieve a random poem by many famous authors. You can filter poem's by length (
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import art_api
-from openapi_client.model.inline_response20011 import InlineResponse20011
+import apileague
+from apileague.models.random_poem200_response import RandomPoem200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -141,45 +133,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = art_api.ArtApi(api_client)
+    api_instance = apileague.ArtApi(api_client)
     min_lines = 5 # int | The minimum number of lines of the poem. (optional)
     max_lines = 20 # int | The maximum number of lines of the poem. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Random Poem
         api_response = api_instance.random_poem(min_lines=min_lines, max_lines=max_lines)
+        print("The response of ArtApi->random_poem:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling ArtApi->random_poem: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **min_lines** | **int**| The minimum number of lines of the poem. | [optional]
- **max_lines** | **int**| The maximum number of lines of the poem. | [optional]
+ **min_lines** | **int**| The minimum number of lines of the poem. | [optional] 
+ **max_lines** | **int**| The maximum number of lines of the poem. | [optional] 
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 
@@ -189,7 +182,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

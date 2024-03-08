@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
+| [**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
 
 
-<a name="imageToAsciiArtByURL"></a>
+<a id="imageToAsciiArtByURL"></a>
 # **imageToAsciiArtByURL**
 > String imageToAsciiArtByURL(url, width, height)
 
@@ -63,11 +63,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **String**| The URL to the image. |
- **width** | **Integer**| The maximum width of the image (default 400, max. 500). | [optional]
- **height** | **Integer**| The maximum height of the image (default 400, max. 500). | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **url** | **String**| The URL to the image. | |
+| **width** | **Integer**| The maximum width of the image (default 400, max. 500). | [optional] |
+| **height** | **Integer**| The maximum height of the image (default 400, max. 500). | [optional] |
 
 ### Return type
 
@@ -85,17 +85,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="randomPoem"></a>
+<a id="randomPoem"></a>
 # **randomPoem**
-> InlineResponse20011 randomPoem(minLines, maxLines)
+> RandomPoem200Response randomPoem(minLines, maxLines)
 
 Random Poem
 
@@ -132,7 +132,7 @@ public class Example {
     Integer minLines = 5; // Integer | The minimum number of lines of the poem.
     Integer maxLines = 20; // Integer | The maximum number of lines of the poem.
     try {
-      InlineResponse20011 result = apiInstance.randomPoem(minLines, maxLines);
+      RandomPoem200Response result = apiInstance.randomPoem(minLines, maxLines);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ArtApi#randomPoem");
@@ -147,14 +147,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **minLines** | **Integer**| The minimum number of lines of the poem. | [optional]
- **maxLines** | **Integer**| The maximum number of lines of the poem. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **minLines** | **Integer**| The minimum number of lines of the poem. | [optional] |
+| **maxLines** | **Integer**| The maximum number of lines of the poem. | [optional] |
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 
@@ -168,11 +168,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

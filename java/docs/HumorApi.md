@@ -2,19 +2,19 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word |
+| [**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke |
+| [**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme |
+| [**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs |
+| [**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes |
+| [**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes |
 
 
-<a name="generateNonsenseWord"></a>
+<a id="generateNonsenseWord"></a>
 # **generateNonsenseWord**
-> InlineResponse2008 generateNonsenseWord()
+> GenerateNonsenseWord200Response generateNonsenseWord()
 
 Generate Nonsense Word
 
@@ -49,7 +49,7 @@ public class Example {
 
     HumorApi apiInstance = new HumorApi(defaultClient);
     try {
-      InlineResponse2008 result = apiInstance.generateNonsenseWord();
+      GenerateNonsenseWord200Response result = apiInstance.generateNonsenseWord();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#generateNonsenseWord");
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -81,17 +81,17 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="randomJoke"></a>
+<a id="randomJoke"></a>
 # **randomJoke**
-> InlineResponse2004Jokes randomJoke(includeTags, excludeTags, minRating, maxLength)
+> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
 
 Random Joke
 
@@ -130,7 +130,7 @@ public class Example {
     Double minRating = 0D; // Double | The minimum rating in range [0.0,1.0] of the jokes.
     Integer maxLength = 140; // Integer | The maximum length of the joke in letters.
     try {
-      InlineResponse2004Jokes result = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength);
+      SearchJokes200ResponseJokesInner result = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#randomJoke");
@@ -145,16 +145,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional]
- **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional]
- **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
- **maxLength** | **Integer**| The maximum length of the joke in letters. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional] |
+| **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
+| **maxLength** | **Integer**| The maximum length of the joke in letters. | [optional] |
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -168,17 +168,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="randomMeme"></a>
+<a id="randomMeme"></a>
 # **randomMeme**
-> InlineResponse2006 randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
 Random Meme
 
@@ -218,7 +218,7 @@ public class Example {
     Double minRating = 0D; // Double | The minimum rating in range [0.0-1.0] of the meme.
     Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
     try {
-      InlineResponse2006 result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+      RandomMeme200Response result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#randomMeme");
@@ -233,17 +233,17 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional]
- **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **minRating** | **Double**| The minimum rating in range [0.0-1.0] of the meme. | [optional]
- **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional] |
+| **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **minRating** | **Double**| The minimum rating in range [0.0-1.0] of the meme. | [optional] |
+| **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional] |
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -257,17 +257,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchGifs"></a>
+<a id="searchGifs"></a>
 # **searchGifs**
-> InlineResponse2007 searchGifs(query, number)
+> SearchGifs200Response searchGifs(query, number)
 
 Search Gifs
 
@@ -304,7 +304,7 @@ public class Example {
     String query = "dogs"; // String | The search query.
     Integer number = 5; // Integer | The number of gifs to return in range [1,10]
     try {
-      InlineResponse2007 result = apiInstance.searchGifs(query, number);
+      SearchGifs200Response result = apiInstance.searchGifs(query, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#searchGifs");
@@ -319,14 +319,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **String**| The search query. |
- **number** | **Integer**| The number of gifs to return in range [1,10] | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **query** | **String**| The search query. | |
+| **number** | **Integer**| The number of gifs to return in range [1,10] | [optional] |
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -340,17 +340,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchJokes"></a>
+<a id="searchJokes"></a>
 # **searchJokes**
-> InlineResponse2004 searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
 Search Jokes
 
@@ -392,7 +392,7 @@ public class Example {
     Integer offset = 0; // Integer | The number of jokes to skip, between 0 and 1000.
     Integer number = 3; // Integer | The number of jokes, between 1 and 10.
     try {
-      InlineResponse2004 result = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+      SearchJokes200Response result = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#searchJokes");
@@ -407,19 +407,19 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **String**| A comma-separated list of words that must occur in the joke. | [optional]
- **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional]
- **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional]
- **minRating** | **Double**| The minimum rating (0-10) of the jokes. | [optional]
- **maxLength** | **Double**| The maximum length of the joke in letters. | [optional]
- **offset** | **Integer**| The number of jokes to skip, between 0 and 1000. | [optional]
- **number** | **Integer**| The number of jokes, between 1 and 10. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **keywords** | **String**| A comma-separated list of words that must occur in the joke. | [optional] |
+| **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional] |
+| **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **minRating** | **Double**| The minimum rating (0-10) of the jokes. | [optional] |
+| **maxLength** | **Double**| The maximum length of the joke in letters. | [optional] |
+| **offset** | **Integer**| The number of jokes to skip, between 0 and 1000. | [optional] |
+| **number** | **Integer**| The number of jokes, between 1 and 10. | [optional] |
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -433,17 +433,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchMemes"></a>
+<a id="searchMemes"></a>
 # **searchMemes**
-> InlineResponse2005 searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
 Search Memes
 
@@ -485,7 +485,7 @@ public class Example {
     Integer offset = 0; // Integer | The number of memes to skip, between 0 and 1000.
     Integer number = 3; // Integer | The number of memes, between 0 and 10.
     try {
-      InlineResponse2005 result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+      SearchMemes200Response result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling HumorApi#searchMemes");
@@ -500,19 +500,19 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional]
- **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
- **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional]
- **offset** | **Integer**| The number of memes to skip, between 0 and 1000. | [optional]
- **number** | **Integer**| The number of memes, between 0 and 10. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional] |
+| **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
+| **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional] |
+| **offset** | **Integer**| The number of memes to skip, between 0 and 1000. | [optional] |
+| **number** | **Integer**| The number of memes, between 0 and 10. | [optional] |
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 
@@ -526,11 +526,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

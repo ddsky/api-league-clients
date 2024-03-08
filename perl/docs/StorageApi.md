@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **read_key_value_from_store**
-> InlineResponse20031 read_key_value_from_store(key => $key)
+> ReadKeyValueFromStore200Response read_key_value_from_store(key => $key)
 
 Read Key Value from Store
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_key_value_get**
-> InlineResponse20032 store_key_value_get(key => $key, value => $value)
+> StoreKeyValueGET200Response store_key_value_get(key => $key, value => $value)
 
 Store Key Value (GET)
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 

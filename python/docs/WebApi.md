@@ -1,4 +1,4 @@
-# openapi_client.WebApi
+# apileague.WebApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **extract_authors**
-> InlineResponse20014 extract_authors(url)
+> ExtractAuthors200Response extract_authors(url)
 
 Extract Authors
 
@@ -23,14 +23,14 @@ Extracts the authors from a given URL. This API is useful for extracting the aut
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import web_api
-from openapi_client.model.inline_response20014 import InlineResponse20014
+import apileague
+from apileague.models.extract_authors200_response import ExtractAuthors200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -40,42 +40,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = web_api.WebApi(api_client)
-    url = "https://www.bbc.com/news/entertainment-arts-68270826" # str | The url with the article from which authors should be extracted.
+    api_instance = apileague.WebApi(api_client)
+    url = 'https://www.bbc.com/news/entertainment-arts-68270826' # str | The url with the article from which authors should be extracted.
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract Authors
         api_response = api_instance.extract_authors(url)
+        print("The response of WebApi->extract_authors:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling WebApi->extract_authors: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **url** | **str**| The url with the article from which authors should be extracted. |
+ **url** | **str**| The url with the article from which authors should be extracted. | 
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -85,7 +87,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -102,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_content_from_a_web_page**
-> InlineResponse20012 extract_content_from_a_web_page(url)
+> ExtractContentFromAWebPage200Response extract_content_from_a_web_page(url)
 
 Extract Content from a Web Page
 
@@ -114,14 +115,14 @@ Extract the main content from a web page. This API is useful for extracting the 
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import web_api
-from openapi_client.model.inline_response20012 import InlineResponse20012
+import apileague
+from apileague.models.extract_content_from_a_web_page200_response import ExtractContentFromAWebPage200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -131,42 +132,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = web_api.WebApi(api_client)
-    url = "https://www.bbc.com/news/entertainment-arts-68270826" # str | The url for which the content will be extracted.
+    api_instance = apileague.WebApi(api_client)
+    url = 'https://www.bbc.com/news/entertainment-arts-68270826' # str | The url for which the content will be extracted.
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract Content from a Web Page
         api_response = api_instance.extract_content_from_a_web_page(url)
+        print("The response of WebApi->extract_content_from_a_web_page:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling WebApi->extract_content_from_a_web_page: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **url** | **str**| The url for which the content will be extracted. |
+ **url** | **str**| The url for which the content will be extracted. | 
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -176,7 +179,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -193,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_publish_date**
-> InlineResponse20013 extract_publish_date(url)
+> ExtractPublishDate200Response extract_publish_date(url)
 
 Extract Publish Date
 
@@ -205,14 +207,14 @@ Extract the publish date of an article (news or blog). The API will return the p
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import web_api
-from openapi_client.model.inline_response20013 import InlineResponse20013
+import apileague
+from apileague.models.extract_publish_date200_response import ExtractPublishDate200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -222,42 +224,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = web_api.WebApi(api_client)
-    url = "https://www.bbc.com/news/entertainment-arts-68270826" # str | The url for which the publish date should be extracted.
+    api_instance = apileague.WebApi(api_client)
+    url = 'https://www.bbc.com/news/entertainment-arts-68270826' # str | The url for which the publish date should be extracted.
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract Publish Date
         api_response = api_instance.extract_publish_date(url)
+        print("The response of WebApi->extract_publish_date:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling WebApi->extract_publish_date: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **url** | **str**| The url for which the publish date should be extracted. |
+ **url** | **str**| The url for which the publish date should be extracted. | 
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -267,7 +271,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -284,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_web**
-> InlineResponse20015 search_web(query)
+> SearchWeb200Response search_web(query, number=number)
 
 Search Web
 
@@ -296,14 +299,14 @@ Search the web for a given query. The API returns a list of results with the tit
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import web_api
-from openapi_client.model.inline_response20015 import InlineResponse20015
+import apileague
+from apileague.models.search_web200_response import SearchWeb200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -313,53 +316,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = web_api.WebApi(api_client)
-    query = "penguins" # str | The search query.
+    api_instance = apileague.WebApi(api_client)
+    query = 'penguins' # str | The search query.
     number = 5 # int | The number of results to return in range [1,50] (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Search Web
-        api_response = api_instance.search_web(query)
-        pprint(api_response)
-    except openapi_client.ApiException as e:
-        print("Exception when calling WebApi->search_web: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Search Web
         api_response = api_instance.search_web(query, number=number)
+        print("The response of WebApi->search_web:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling WebApi->search_web: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**| The search query. |
- **number** | **int**| The number of results to return in range [1,50] | [optional]
+ **query** | **str**| The search query. | 
+ **number** | **int**| The number of results to return in range [1,50] | [optional] 
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 
@@ -369,7 +365,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -1,16 +1,15 @@
-# com.apileague.NewsApi
+# apileague.Api.NewsApi
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ExtractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News
-[**SearchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**ExtractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News |
+| [**SearchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News |
 
-
-<a name="extractnews"></a>
+<a id="extractnews"></a>
 # **ExtractNews**
-> InlineResponse2003 ExtractNews (string url, bool? analyze)
+> ExtractNews200Response ExtractNews (string url, bool analyze)
 
 Extract News
 
@@ -18,56 +17,80 @@ Extract a news article from a website to a well structure JSON object. The API w
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ExtractNewsExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new NewsApi();
+            var apiInstance = new NewsApi(config);
             var url = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/;  // string | The url of the news.
-            var analyze = true;  // bool? | Whether to analyze the news (extract entities etc.)
+            var analyze = true;  // bool | Whether to analyze the news (extract entities etc.)
 
             try
             {
                 // Extract News
-                InlineResponse2003 result = apiInstance.ExtractNews(url, analyze);
+                ExtractNews200Response result = apiInstance.ExtractNews(url, analyze);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NewsApi.ExtractNews: " + e.Message );
+                Debug.Print("Exception when calling NewsApi.ExtractNews: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ExtractNewsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Extract News
+    ApiResponse<ExtractNews200Response> response = apiInstance.ExtractNewsWithHttpInfo(url, analyze);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NewsApi.ExtractNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The url of the news. | 
- **analyze** | **bool?**| Whether to analyze the news (extract entities etc.) | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **url** | **string** | The url of the news. |  |
+| **analyze** | **bool** | Whether to analyze the news (extract entities etc.) |  |
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -78,11 +101,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="searchnews"></a>
+<a id="searchnews"></a>
 # **SearchNews**
-> InlineResponse2002 SearchNews (string text, string sourceCountries, string language, double? minSentiment, double? maxSentiment, string earliestPublishDate, string latestPublishDate, string newsSources, string authors, string entities, string locationFilter, string sort, string sortDirection, int? offset, int? number)
+> SearchNews200Response SearchNews (string? text = null, string? sourceCountries = null, string? language = null, double? minSentiment = null, double? maxSentiment = null, string? earliestPublishDate = null, string? latestPublishDate = null, string? newsSources = null, string? authors = null, string? entities = null, string? locationFilter = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
 
 Search News
 
@@ -90,82 +125,106 @@ Search and filter news by text, date, location, language, and more. The API retu
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class SearchNewsExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new NewsApi();
-            var text = tesla;  // string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional) 
-            var sourceCountries = us,uk;  // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional) 
-            var language = en;  // string | The ISO 6391 language code of the news. (optional) 
+            var apiInstance = new NewsApi(config);
+            var text = tesla;  // string? | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional) 
+            var sourceCountries = us,uk;  // string? | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional) 
+            var language = en;  // string? | The ISO 6391 language code of the news. (optional) 
             var minSentiment = -0.8;  // double? | The minimal sentiment of the news in range [-1,1]. (optional) 
             var maxSentiment = 0.8;  // double? | The maximal sentiment of the news in range [-1,1]. (optional) 
-            var earliestPublishDate = 2022-04-22 16:12:35;  // string | The news must have been published after this date. (optional) 
-            var latestPublishDate = 2022-04-22 16:12:35;  // string | The news must have been published before this date. (optional) 
-            var newsSources = https://www.bbc.co.uk;  // string | A comma-separated list of news sources from which the news should originate. (optional) 
-            var authors = John Doe;  // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional) 
-            var entities = ORG:Tesla;  // string | Filter news by entities (see semantic types). (optional) 
-            var locationFilter = 51.050407, 13.737262, 100;  // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional) 
-            var sort = publish-time;  // string | The sorting criteria (publish-time or sentiment). (optional) 
-            var sortDirection = ASC;  // string | Whether to sort ascending or descending (ASC or DESC). (optional) 
+            var earliestPublishDate = 2022-04-22 16:12:35;  // string? | The news must have been published after this date. (optional) 
+            var latestPublishDate = 2022-04-22 16:12:35;  // string? | The news must have been published before this date. (optional) 
+            var newsSources = https://www.bbc.co.uk;  // string? | A comma-separated list of news sources from which the news should originate. (optional) 
+            var authors = John Doe;  // string? | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional) 
+            var entities = ORG:Tesla;  // string? | Filter news by entities (see semantic types). (optional) 
+            var locationFilter = 51.050407, 13.737262, 100;  // string? | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional) 
+            var sort = publish-time;  // string? | The sorting criteria (publish-time or sentiment). (optional) 
+            var sortDirection = ASC;  // string? | Whether to sort ascending or descending (ASC or DESC). (optional) 
             var offset = 0;  // int? | The number of news to skip in range [0,10000] (optional) 
             var number = 10;  // int? | The number of news to return in range [1,100] (optional) 
 
             try
             {
                 // Search News
-                InlineResponse2002 result = apiInstance.SearchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+                SearchNews200Response result = apiInstance.SearchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NewsApi.SearchNews: " + e.Message );
+                Debug.Print("Exception when calling NewsApi.SearchNews: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the SearchNewsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search News
+    ApiResponse<SearchNews200Response> response = apiInstance.SearchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NewsApi.SearchNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
- **sourceCountries** | **string**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
- **language** | **string**| The ISO 6391 language code of the news. | [optional] 
- **minSentiment** | **double?**| The minimal sentiment of the news in range [-1,1]. | [optional] 
- **maxSentiment** | **double?**| The maximal sentiment of the news in range [-1,1]. | [optional] 
- **earliestPublishDate** | **string**| The news must have been published after this date. | [optional] 
- **latestPublishDate** | **string**| The news must have been published before this date. | [optional] 
- **newsSources** | **string**| A comma-separated list of news sources from which the news should originate. | [optional] 
- **authors** | **string**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **string**| Filter news by entities (see semantic types). | [optional] 
- **locationFilter** | **string**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
- **sort** | **string**| The sorting criteria (publish-time or sentiment). | [optional] 
- **sortDirection** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
- **offset** | **int?**| The number of news to skip in range [0,10000] | [optional] 
- **number** | **int?**| The number of news to return in range [1,100] | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string?** | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]  |
+| **sourceCountries** | **string?** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]  |
+| **language** | **string?** | The ISO 6391 language code of the news. | [optional]  |
+| **minSentiment** | **double?** | The minimal sentiment of the news in range [-1,1]. | [optional]  |
+| **maxSentiment** | **double?** | The maximal sentiment of the news in range [-1,1]. | [optional]  |
+| **earliestPublishDate** | **string?** | The news must have been published after this date. | [optional]  |
+| **latestPublishDate** | **string?** | The news must have been published before this date. | [optional]  |
+| **newsSources** | **string?** | A comma-separated list of news sources from which the news should originate. | [optional]  |
+| **authors** | **string?** | A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]  |
+| **entities** | **string?** | Filter news by entities (see semantic types). | [optional]  |
+| **locationFilter** | **string?** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]  |
+| **sort** | **string?** | The sorting criteria (publish-time or sentiment). | [optional]  |
+| **sortDirection** | **string?** | Whether to sort ascending or descending (ASC or DESC). | [optional]  |
+| **offset** | **int?** | The number of news to skip in range [0,10000] | [optional]  |
+| **number** | **int?** | The number of news to return in range [1,100] | [optional]  |
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 
@@ -175,6 +234,18 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

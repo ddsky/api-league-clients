@@ -69,7 +69,7 @@ import qualified Prelude as P
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 generateNonsenseWord
-  :: APILeagueRequest GenerateNonsenseWord MimeNoContent InlineResponse2008 MimeJSON
+  :: APILeagueRequest GenerateNonsenseWord MimeNoContent GenerateNonsenseWord200Response MimeJSON
 generateNonsenseWord =
   _mkRequest "GET" ["/generate-nonsense-word"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -91,7 +91,7 @@ instance Produces GenerateNonsenseWord MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 randomJoke
-  :: APILeagueRequest RandomJoke MimeNoContent InlineResponse2004Jokes MimeJSON
+  :: APILeagueRequest RandomJoke MimeNoContent SearchJokes200ResponseJokesInner MimeJSON
 randomJoke =
   _mkRequest "GET" ["/retrieve-random-joke"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -133,7 +133,7 @@ instance Produces RandomJoke MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 randomMeme
-  :: APILeagueRequest RandomMeme MimeNoContent InlineResponse2006 MimeJSON
+  :: APILeagueRequest RandomMeme MimeNoContent RandomMeme200Response MimeJSON
 randomMeme =
   _mkRequest "GET" ["/retrieve-random-meme"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -181,7 +181,7 @@ instance Produces RandomMeme MimeJSON
 -- 
 searchGifs
   :: Query -- ^ "query" -  The search query.
-  -> APILeagueRequest SearchGifs MimeNoContent InlineResponse2007 MimeJSON
+  -> APILeagueRequest SearchGifs MimeNoContent SearchGifs200Response MimeJSON
 searchGifs (Query query) =
   _mkRequest "GET" ["/search-gifs"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -209,7 +209,7 @@ instance Produces SearchGifs MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 searchJokes
-  :: APILeagueRequest SearchJokes MimeNoContent InlineResponse2004 MimeJSON
+  :: APILeagueRequest SearchJokes MimeNoContent SearchJokes200Response MimeJSON
 searchJokes =
   _mkRequest "GET" ["/search-jokes"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -266,7 +266,7 @@ instance Produces SearchJokes MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 searchMemes
-  :: APILeagueRequest SearchMemes MimeNoContent InlineResponse2005 MimeJSON
+  :: APILeagueRequest SearchMemes MimeNoContent SearchMemes200Response MimeJSON
 searchMemes =
   _mkRequest "GET" ["/search-memes"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

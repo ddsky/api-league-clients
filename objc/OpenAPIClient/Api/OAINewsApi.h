@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse2002.h"
-#import "OAIInlineResponse2003.h"
+#import "OAIExtractNews200Response.h"
+#import "OAISearchNews200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -38,10 +38,10 @@ extern NSInteger kOAINewsApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2003*
+/// @return OAIExtractNews200Response*
 -(NSURLSessionTask*) extractNewsWithUrl: (NSString*) url
     analyze: (NSNumber*) analyze
-    completionHandler: (void (^)(OAIInlineResponse2003* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractNews200Response* output, NSError* error)) handler;
 
 
 /// Search News
@@ -71,7 +71,7 @@ extern NSInteger kOAINewsApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2002*
+/// @return OAISearchNews200Response*
 -(NSURLSessionTask*) searchNewsWithText: (NSString*) text
     sourceCountries: (NSString*) sourceCountries
     language: (NSString*) language
@@ -87,7 +87,7 @@ extern NSInteger kOAINewsApiMissingParamErrorCode;
     sortDirection: (NSString*) sortDirection
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2002* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchNews200Response* output, NSError* error)) handler;
 
 
 

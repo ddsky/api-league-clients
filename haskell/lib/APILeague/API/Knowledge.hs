@@ -69,7 +69,7 @@ import qualified Prelude as P
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 randomQuote
-  :: APILeagueRequest RandomQuote MimeNoContent InlineResponse20010 MimeJSON
+  :: APILeagueRequest RandomQuote MimeNoContent RandomQuote200Response MimeJSON
 randomQuote =
   _mkRequest "GET" ["/retrieve-random-quote"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -101,7 +101,7 @@ instance Produces RandomQuote MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 randomTrivia
-  :: APILeagueRequest RandomTrivia MimeNoContent InlineResponse2009 MimeJSON
+  :: APILeagueRequest RandomTrivia MimeNoContent RandomTrivia200Response MimeJSON
 randomTrivia =
   _mkRequest "GET" ["/retrieve-random-trivia"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

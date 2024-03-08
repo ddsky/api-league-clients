@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **detectMainImageColor**
-> Array<InlineResponse20029> detectMainImageColor()
+> Array<DetectMainImageColor200ResponseInner> detectMainImageColor()
 
 Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Array<InlineResponse20029>**
+**Array<DetectMainImageColor200ResponseInner>**
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchRoyaltyFreeImages**
-> InlineResponse20028 searchRoyaltyFreeImages()
+> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages()
 
 Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20028**
+**SearchRoyaltyFreeImages200Response**
 
 ### Authorization
 

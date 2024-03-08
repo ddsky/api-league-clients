@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## detectMainImageColor
 
-> [InlineResponse20029] detectMainImageColor(url)
+> [DetectMainImageColor200ResponseInner] detectMainImageColor(url)
 
 Detect Main Image Color
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse20029]**](InlineResponse20029.md)
+[**[DetectMainImageColor200ResponseInner]**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ## searchRoyaltyFreeImages
 
-> InlineResponse20028 searchRoyaltyFreeImages(query, opts)
+> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(query, opts)
 
 Search Royalty Free Images
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

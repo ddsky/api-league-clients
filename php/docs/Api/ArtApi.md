@@ -1,11 +1,11 @@
-# com.apileague.client\ArtApi
+# OpenAPI\Client\ArtApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**imageToAsciiArtByURL()**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem()**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**imageToAsciiArtByURL()**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
+| [**randomPoem()**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
 
 
 ## `imageToAsciiArtByURL()`
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\ArtApi(
+$apiInstance = new OpenAPI\Client\Api\ArtApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -56,11 +56,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The URL to the image. |
- **width** | **int**| The maximum width of the image (default 400, max. 500). | [optional]
- **height** | **int**| The maximum height of the image (default 400, max. 500). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **string**| The URL to the image. | |
+| **width** | **int**| The maximum width of the image (default 400, max. 500). | [optional] |
+| **height** | **int**| The maximum height of the image (default 400, max. 500). | [optional] |
 
 ### Return type
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ## `randomPoem()`
 
 ```php
-randomPoem($min_lines, $max_lines): \com.apileague.client\com.apileague.client.model\InlineResponse20011
+randomPoem($min_lines, $max_lines): \OpenAPI\Client\Model\RandomPoem200Response
 ```
 
 Random Poem
@@ -97,17 +97,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\ArtApi(
+$apiInstance = new OpenAPI\Client\Api\ArtApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -126,14 +126,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **min_lines** | **int**| The minimum number of lines of the poem. | [optional]
- **max_lines** | **int**| The maximum number of lines of the poem. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **min_lines** | **int**| The minimum number of lines of the poem. | [optional] |
+| **max_lines** | **int**| The maximum number of lines of the poem. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\OpenAPI\Client\Model\RandomPoem200Response**](../Model/RandomPoem200Response.md)
 
 ### Authorization
 

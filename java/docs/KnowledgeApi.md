@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
-[**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
+| [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
 
-<a name="randomQuote"></a>
+<a id="randomQuote"></a>
 # **randomQuote**
-> InlineResponse20010 randomQuote(minLength, maxLength)
+> RandomQuote200Response randomQuote(minLength, maxLength)
 
 Random Quote
 
@@ -47,7 +47,7 @@ public class Example {
     Integer minLength = 120; // Integer | The minimum length of the quote in letters.
     Integer maxLength = 300; // Integer | The maximum length of the quote in letters.
     try {
-      InlineResponse20010 result = apiInstance.randomQuote(minLength, maxLength);
+      RandomQuote200Response result = apiInstance.randomQuote(minLength, maxLength);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KnowledgeApi#randomQuote");
@@ -62,14 +62,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **minLength** | **Integer**| The minimum length of the quote in letters. | [optional]
- **maxLength** | **Integer**| The maximum length of the quote in letters. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **minLength** | **Integer**| The minimum length of the quote in letters. | [optional] |
+| **maxLength** | **Integer**| The maximum length of the quote in letters. | [optional] |
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -83,17 +83,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="randomTrivia"></a>
+<a id="randomTrivia"></a>
 # **randomTrivia**
-> InlineResponse2009 randomTrivia(maxLength)
+> RandomTrivia200Response randomTrivia(maxLength)
 
 Random Trivia
 
@@ -129,7 +129,7 @@ public class Example {
     KnowledgeApi apiInstance = new KnowledgeApi(defaultClient);
     Integer maxLength = 300; // Integer | The maximum length of the trivia in letters.
     try {
-      InlineResponse2009 result = apiInstance.randomTrivia(maxLength);
+      RandomTrivia200Response result = apiInstance.randomTrivia(maxLength);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling KnowledgeApi#randomTrivia");
@@ -144,13 +144,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **maxLength** | **Integer**| The maximum length of the trivia in letters. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **maxLength** | **Integer**| The maximum length of the trivia in letters. | [optional] |
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 
@@ -164,11 +164,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

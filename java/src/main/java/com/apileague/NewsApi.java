@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse2002;
-import com.apileague.client.model.InlineResponse2003;
+import com.apileague.client.model.ExtractNews200Response;
+import com.apileague.client.model.SearchNews200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,7 +96,6 @@ public class NewsApi {
      */
     public okhttp3.Call extractNewsCall(String url, Boolean analyze, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -137,7 +136,6 @@ public class NewsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -150,20 +148,17 @@ public class NewsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractNewsValidateBeforeCall(String url, Boolean analyze, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling extractNews(Async)");
         }
-        
+
         // verify the required parameter 'analyze' is set
         if (analyze == null) {
             throw new ApiException("Missing the required parameter 'analyze' when calling extractNews(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractNewsCall(url, analyze, _callback);
-        return localVarCall;
+        return extractNewsCall(url, analyze, _callback);
 
     }
 
@@ -172,7 +167,7 @@ public class NewsApi {
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
      * @param url The url of the news. (required)
      * @param analyze Whether to analyze the news (extract entities etc.) (required)
-     * @return InlineResponse2003
+     * @return ExtractNews200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -188,8 +183,8 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
      */
-    public InlineResponse2003 extractNews(String url, Boolean analyze) throws ApiException {
-        ApiResponse<InlineResponse2003> localVarResp = extractNewsWithHttpInfo(url, analyze);
+    public ExtractNews200Response extractNews(String url, Boolean analyze) throws ApiException {
+        ApiResponse<ExtractNews200Response> localVarResp = extractNewsWithHttpInfo(url, analyze);
         return localVarResp.getData();
     }
 
@@ -198,7 +193,7 @@ public class NewsApi {
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
      * @param url The url of the news. (required)
      * @param analyze Whether to analyze the news (extract entities etc.) (required)
-     * @return ApiResponse&lt;InlineResponse2003&gt;
+     * @return ApiResponse&lt;ExtractNews200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -214,9 +209,9 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
      */
-    public ApiResponse<InlineResponse2003> extractNewsWithHttpInfo(String url, Boolean analyze) throws ApiException {
+    public ApiResponse<ExtractNews200Response> extractNewsWithHttpInfo(String url, Boolean analyze) throws ApiException {
         okhttp3.Call localVarCall = extractNewsValidateBeforeCall(url, analyze, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractNews200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -242,10 +237,10 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
      */
-    public okhttp3.Call extractNewsAsync(String url, Boolean analyze, final ApiCallback<InlineResponse2003> _callback) throws ApiException {
+    public okhttp3.Call extractNewsAsync(String url, Boolean analyze, final ApiCallback<ExtractNews200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractNewsValidateBeforeCall(url, analyze, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2003>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractNews200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -285,7 +280,6 @@ public class NewsApi {
      */
     public okhttp3.Call searchNewsCall(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -378,7 +372,6 @@ public class NewsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -391,10 +384,7 @@ public class NewsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchNewsValidateBeforeCall(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = searchNewsCall(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _callback);
-        return localVarCall;
+        return searchNewsCall(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _callback);
 
     }
 
@@ -416,7 +406,7 @@ public class NewsApi {
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of news to skip in range [0,10000] (optional)
      * @param number The number of news to return in range [1,100] (optional)
-     * @return InlineResponse2002
+     * @return SearchNews200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -432,8 +422,8 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
      */
-    public InlineResponse2002 searchNews(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
-        ApiResponse<InlineResponse2002> localVarResp = searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+    public SearchNews200Response searchNews(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
+        ApiResponse<SearchNews200Response> localVarResp = searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
         return localVarResp.getData();
     }
 
@@ -455,7 +445,7 @@ public class NewsApi {
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of news to skip in range [0,10000] (optional)
      * @param number The number of news to return in range [1,100] (optional)
-     * @return ApiResponse&lt;InlineResponse2002&gt;
+     * @return ApiResponse&lt;SearchNews200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -471,9 +461,9 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
      */
-    public ApiResponse<InlineResponse2002> searchNewsWithHttpInfo(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
+    public ApiResponse<SearchNews200Response> searchNewsWithHttpInfo(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchNewsValidateBeforeCall(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchNews200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -512,10 +502,10 @@ public class NewsApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
      */
-    public okhttp3.Call searchNewsAsync(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback<InlineResponse2002> _callback) throws ApiException {
+    public okhttp3.Call searchNewsAsync(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback<SearchNews200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchNewsValidateBeforeCall(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2002>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchNews200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

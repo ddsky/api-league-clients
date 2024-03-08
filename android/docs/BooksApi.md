@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## findSimilarBooks
 
-> InlineResponse2001 findSimilarBooks(id, number)
+> FindSimilarBooks200Response findSimilarBooks(id, number)
 
 Find Similar Books
 
@@ -27,7 +27,7 @@ BooksApi apiInstance = new BooksApi();
 Integer id = 8302059; // Integer | The id of the book to which similar books should be found.
 Integer number = 10; // Integer | The number of similar books to return in range [1,100]
 try {
-    InlineResponse2001 result = apiInstance.findSimilarBooks(id, number);
+    FindSimilarBooks200Response result = apiInstance.findSimilarBooks(id, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BooksApi#findSimilarBooks");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## searchBooks
 
-> InlineResponse200 searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
 Search Books
 
@@ -87,7 +87,7 @@ Boolean groupResults = false; // Boolean | Whether to group similar editions of 
 Integer offset = 0; // Integer | The number of books to skip in range [0,1000]
 Integer number = 10; // Integer | The number of books to return in range [1,100]
 try {
-    InlineResponse200 result = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+    SearchBooks200Response result = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BooksApi#searchBooks");
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

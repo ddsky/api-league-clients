@@ -1,17 +1,17 @@
-# com.apileague.client\KnowledgeApi
+# OpenAPI\Client\KnowledgeApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**randomQuote()**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
-[**randomTrivia()**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**randomQuote()**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
+| [**randomTrivia()**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
 
 ## `randomQuote()`
 
 ```php
-randomQuote($min_length, $max_length): \com.apileague.client\com.apileague.client.model\InlineResponse20010
+randomQuote($min_length, $max_length): \OpenAPI\Client\Model\RandomQuote200Response
 ```
 
 Random Quote
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\KnowledgeApi(
+$apiInstance = new OpenAPI\Client\Api\KnowledgeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,14 +55,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **min_length** | **int**| The minimum length of the quote in letters. | [optional]
- **max_length** | **int**| The maximum length of the quote in letters. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **min_length** | **int**| The minimum length of the quote in letters. | [optional] |
+| **max_length** | **int**| The maximum length of the quote in letters. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\OpenAPI\Client\Model\RandomQuote200Response**](../Model/RandomQuote200Response.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ## `randomTrivia()`
 
 ```php
-randomTrivia($max_length): \com.apileague.client\com.apileague.client.model\InlineResponse2009
+randomTrivia($max_length): \OpenAPI\Client\Model\RandomTrivia200Response
 ```
 
 Random Trivia
@@ -95,17 +95,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\KnowledgeApi(
+$apiInstance = new OpenAPI\Client\Api\KnowledgeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -123,13 +123,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **max_length** | **int**| The maximum length of the trivia in letters. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **max_length** | **int**| The maximum length of the trivia in letters. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\OpenAPI\Client\Model\RandomTrivia200Response**](../Model/RandomTrivia200Response.md)
 
 ### Authorization
 

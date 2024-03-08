@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## extractAuthors
 
-> InlineResponse20014 extractAuthors(url)
+> ExtractAuthors200Response extractAuthors(url)
 
 Extract Authors
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## extractContentFromAWebPage
 
-> InlineResponse20012 extractContentFromAWebPage(url)
+> ExtractContentFromAWebPage200Response extractContentFromAWebPage(url)
 
 Extract Content from a Web Page
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ## extractPublishDate
 
-> InlineResponse20013 extractPublishDate(url)
+> ExtractPublishDate200Response extractPublishDate(url)
 
 Extract Publish Date
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ## searchWeb
 
-> InlineResponse20015 searchWeb(query, opts)
+> SearchWeb200Response searchWeb(query, opts)
 
 Search Web
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 

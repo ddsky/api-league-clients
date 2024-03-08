@@ -14,9 +14,9 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import com.apileague.client.model.InlineResponse20029;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.ConvertUnits200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,19 +26,17 @@ import java.util.Map;
 /**
  * API tests for MathApi
  */
-@Ignore
+@Disabled
 public class MathApiTest {
 
     private final MathApi api = new MathApi();
 
-    
     /**
      * Convert Units
      *
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void convertUnitsTest() throws ApiException {
@@ -46,8 +44,8 @@ public class MathApiTest {
         String sourceUnit = null;
         String targetUnit = null;
         String foodName = null;
-                InlineResponse20029 response = api.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+        ConvertUnits200Response response = api.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
         // TODO: test validations
     }
-    
+
 }

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20030;
+import com.apileague.client.model.ConvertUnits200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -97,7 +97,6 @@ public class MathApi {
      */
     public okhttp3.Call convertUnitsCall(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -146,7 +145,6 @@ public class MathApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -159,25 +157,22 @@ public class MathApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call convertUnitsValidateBeforeCall(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'sourceAmount' is set
         if (sourceAmount == null) {
             throw new ApiException("Missing the required parameter 'sourceAmount' when calling convertUnits(Async)");
         }
-        
+
         // verify the required parameter 'sourceUnit' is set
         if (sourceUnit == null) {
             throw new ApiException("Missing the required parameter 'sourceUnit' when calling convertUnits(Async)");
         }
-        
+
         // verify the required parameter 'targetUnit' is set
         if (targetUnit == null) {
             throw new ApiException("Missing the required parameter 'targetUnit' when calling convertUnits(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = convertUnitsCall(sourceAmount, sourceUnit, targetUnit, foodName, _callback);
-        return localVarCall;
+        return convertUnitsCall(sourceAmount, sourceUnit, targetUnit, foodName, _callback);
 
     }
 
@@ -188,7 +183,7 @@ public class MathApi {
      * @param sourceUnit The source unit. (required)
      * @param targetUnit The unit to which should be converted. (required)
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
-     * @return InlineResponse20030
+     * @return ConvertUnits200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -204,8 +199,8 @@ public class MathApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
      */
-    public InlineResponse20030 convertUnits(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
-        ApiResponse<InlineResponse20030> localVarResp = convertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
+    public ConvertUnits200Response convertUnits(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
+        ApiResponse<ConvertUnits200Response> localVarResp = convertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
         return localVarResp.getData();
     }
 
@@ -216,7 +211,7 @@ public class MathApi {
      * @param sourceUnit The source unit. (required)
      * @param targetUnit The unit to which should be converted. (required)
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
-     * @return ApiResponse&lt;InlineResponse20030&gt;
+     * @return ApiResponse&lt;ConvertUnits200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -232,9 +227,9 @@ public class MathApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
      */
-    public ApiResponse<InlineResponse20030> convertUnitsWithHttpInfo(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
+    public ApiResponse<ConvertUnits200Response> convertUnitsWithHttpInfo(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
         okhttp3.Call localVarCall = convertUnitsValidateBeforeCall(sourceAmount, sourceUnit, targetUnit, foodName, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20030>(){}.getType();
+        Type localVarReturnType = new TypeToken<ConvertUnits200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -262,10 +257,10 @@ public class MathApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
      */
-    public okhttp3.Call convertUnitsAsync(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback<InlineResponse20030> _callback) throws ApiException {
+    public okhttp3.Call convertUnitsAsync(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback<ConvertUnits200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = convertUnitsValidateBeforeCall(sourceAmount, sourceUnit, targetUnit, foodName, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20030>(){}.getType();
+        Type localVarReturnType = new TypeToken<ConvertUnits200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20012;
-import com.apileague.client.model.InlineResponse20013;
-import com.apileague.client.model.InlineResponse20014;
-import com.apileague.client.model.InlineResponse20015;
+import com.apileague.client.model.ExtractAuthors200Response;
+import com.apileague.client.model.ExtractContentFromAWebPage200Response;
+import com.apileague.client.model.ExtractPublishDate200Response;
+import com.apileague.client.model.SearchWeb200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -97,7 +97,6 @@ public class WebApi {
      */
     public okhttp3.Call extractAuthorsCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -134,7 +133,6 @@ public class WebApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -147,15 +145,12 @@ public class WebApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractAuthorsValidateBeforeCall(String url, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling extractAuthors(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractAuthorsCall(url, _callback);
-        return localVarCall;
+        return extractAuthorsCall(url, _callback);
 
     }
 
@@ -163,7 +158,7 @@ public class WebApi {
      * Extract Authors
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
      * @param url The url with the article from which authors should be extracted. (required)
-     * @return InlineResponse20014
+     * @return ExtractAuthors200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -179,8 +174,8 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
      */
-    public InlineResponse20014 extractAuthors(String url) throws ApiException {
-        ApiResponse<InlineResponse20014> localVarResp = extractAuthorsWithHttpInfo(url);
+    public ExtractAuthors200Response extractAuthors(String url) throws ApiException {
+        ApiResponse<ExtractAuthors200Response> localVarResp = extractAuthorsWithHttpInfo(url);
         return localVarResp.getData();
     }
 
@@ -188,7 +183,7 @@ public class WebApi {
      * Extract Authors
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
      * @param url The url with the article from which authors should be extracted. (required)
-     * @return ApiResponse&lt;InlineResponse20014&gt;
+     * @return ApiResponse&lt;ExtractAuthors200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -204,9 +199,9 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
      */
-    public ApiResponse<InlineResponse20014> extractAuthorsWithHttpInfo(String url) throws ApiException {
+    public ApiResponse<ExtractAuthors200Response> extractAuthorsWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractAuthorsValidateBeforeCall(url, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractAuthors200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -231,10 +226,10 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
      */
-    public okhttp3.Call extractAuthorsAsync(String url, final ApiCallback<InlineResponse20014> _callback) throws ApiException {
+    public okhttp3.Call extractAuthorsAsync(String url, final ApiCallback<ExtractAuthors200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractAuthorsValidateBeforeCall(url, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20014>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractAuthors200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -260,7 +255,6 @@ public class WebApi {
      */
     public okhttp3.Call extractContentFromAWebPageCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -297,7 +291,6 @@ public class WebApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -310,15 +303,12 @@ public class WebApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractContentFromAWebPageValidateBeforeCall(String url, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling extractContentFromAWebPage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractContentFromAWebPageCall(url, _callback);
-        return localVarCall;
+        return extractContentFromAWebPageCall(url, _callback);
 
     }
 
@@ -326,7 +316,7 @@ public class WebApi {
      * Extract Content from a Web Page
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
      * @param url The url for which the content will be extracted. (required)
-     * @return InlineResponse20012
+     * @return ExtractContentFromAWebPage200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -342,8 +332,8 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
      */
-    public InlineResponse20012 extractContentFromAWebPage(String url) throws ApiException {
-        ApiResponse<InlineResponse20012> localVarResp = extractContentFromAWebPageWithHttpInfo(url);
+    public ExtractContentFromAWebPage200Response extractContentFromAWebPage(String url) throws ApiException {
+        ApiResponse<ExtractContentFromAWebPage200Response> localVarResp = extractContentFromAWebPageWithHttpInfo(url);
         return localVarResp.getData();
     }
 
@@ -351,7 +341,7 @@ public class WebApi {
      * Extract Content from a Web Page
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
      * @param url The url for which the content will be extracted. (required)
-     * @return ApiResponse&lt;InlineResponse20012&gt;
+     * @return ApiResponse&lt;ExtractContentFromAWebPage200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -367,9 +357,9 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
      */
-    public ApiResponse<InlineResponse20012> extractContentFromAWebPageWithHttpInfo(String url) throws ApiException {
+    public ApiResponse<ExtractContentFromAWebPage200Response> extractContentFromAWebPageWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractContentFromAWebPageValidateBeforeCall(url, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractContentFromAWebPage200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -394,10 +384,10 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
      */
-    public okhttp3.Call extractContentFromAWebPageAsync(String url, final ApiCallback<InlineResponse20012> _callback) throws ApiException {
+    public okhttp3.Call extractContentFromAWebPageAsync(String url, final ApiCallback<ExtractContentFromAWebPage200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractContentFromAWebPageValidateBeforeCall(url, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20012>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractContentFromAWebPage200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -423,7 +413,6 @@ public class WebApi {
      */
     public okhttp3.Call extractPublishDateCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -460,7 +449,6 @@ public class WebApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -473,15 +461,12 @@ public class WebApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractPublishDateValidateBeforeCall(String url, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling extractPublishDate(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractPublishDateCall(url, _callback);
-        return localVarCall;
+        return extractPublishDateCall(url, _callback);
 
     }
 
@@ -489,7 +474,7 @@ public class WebApi {
      * Extract Publish Date
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
      * @param url The url for which the publish date should be extracted. (required)
-     * @return InlineResponse20013
+     * @return ExtractPublishDate200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -505,8 +490,8 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
      */
-    public InlineResponse20013 extractPublishDate(String url) throws ApiException {
-        ApiResponse<InlineResponse20013> localVarResp = extractPublishDateWithHttpInfo(url);
+    public ExtractPublishDate200Response extractPublishDate(String url) throws ApiException {
+        ApiResponse<ExtractPublishDate200Response> localVarResp = extractPublishDateWithHttpInfo(url);
         return localVarResp.getData();
     }
 
@@ -514,7 +499,7 @@ public class WebApi {
      * Extract Publish Date
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
      * @param url The url for which the publish date should be extracted. (required)
-     * @return ApiResponse&lt;InlineResponse20013&gt;
+     * @return ApiResponse&lt;ExtractPublishDate200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -530,9 +515,9 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
      */
-    public ApiResponse<InlineResponse20013> extractPublishDateWithHttpInfo(String url) throws ApiException {
+    public ApiResponse<ExtractPublishDate200Response> extractPublishDateWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractPublishDateValidateBeforeCall(url, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractPublishDate200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -557,10 +542,10 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
      */
-    public okhttp3.Call extractPublishDateAsync(String url, final ApiCallback<InlineResponse20013> _callback) throws ApiException {
+    public okhttp3.Call extractPublishDateAsync(String url, final ApiCallback<ExtractPublishDate200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractPublishDateValidateBeforeCall(url, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20013>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractPublishDate200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -587,7 +572,6 @@ public class WebApi {
      */
     public okhttp3.Call searchWebCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -628,7 +612,6 @@ public class WebApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -641,15 +624,12 @@ public class WebApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchWebValidateBeforeCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'query' is set
         if (query == null) {
             throw new ApiException("Missing the required parameter 'query' when calling searchWeb(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = searchWebCall(query, number, _callback);
-        return localVarCall;
+        return searchWebCall(query, number, _callback);
 
     }
 
@@ -658,7 +638,7 @@ public class WebApi {
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
      * @param query The search query. (required)
      * @param number The number of results to return in range [1,50] (optional)
-     * @return InlineResponse20015
+     * @return SearchWeb200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -674,8 +654,8 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
      */
-    public InlineResponse20015 searchWeb(String query, Integer number) throws ApiException {
-        ApiResponse<InlineResponse20015> localVarResp = searchWebWithHttpInfo(query, number);
+    public SearchWeb200Response searchWeb(String query, Integer number) throws ApiException {
+        ApiResponse<SearchWeb200Response> localVarResp = searchWebWithHttpInfo(query, number);
         return localVarResp.getData();
     }
 
@@ -684,7 +664,7 @@ public class WebApi {
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
      * @param query The search query. (required)
      * @param number The number of results to return in range [1,50] (optional)
-     * @return ApiResponse&lt;InlineResponse20015&gt;
+     * @return ApiResponse&lt;SearchWeb200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -700,9 +680,9 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
      */
-    public ApiResponse<InlineResponse20015> searchWebWithHttpInfo(String query, Integer number) throws ApiException {
+    public ApiResponse<SearchWeb200Response> searchWebWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchWebValidateBeforeCall(query, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchWeb200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -728,10 +708,10 @@ public class WebApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
      */
-    public okhttp3.Call searchWebAsync(String query, Integer number, final ApiCallback<InlineResponse20015> _callback) throws ApiException {
+    public okhttp3.Call searchWebAsync(String query, Integer number, final ApiCallback<SearchWeb200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchWebValidateBeforeCall(query, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20015>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchWeb200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

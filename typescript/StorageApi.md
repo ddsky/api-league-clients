@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **readKeyValueFromStore**
-> InlineResponse20031 readKeyValueFromStore()
+> ReadKeyValueFromStore200Response readKeyValueFromStore()
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20031**
+**ReadKeyValueFromStore200Response**
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **storeKeyValueGET**
-> InlineResponse20032 storeKeyValueGET()
+> StoreKeyValueGET200Response storeKeyValueGET()
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20032**
+**StoreKeyValueGET200Response**
 
 ### Authorization
 

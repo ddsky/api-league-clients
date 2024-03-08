@@ -92,7 +92,7 @@ end
 
 ## random_poem
 
-> <InlineResponse20011> random_poem(opts)
+> <RandomPoem200Response> random_poem(opts)
 
 Random Poem
 
@@ -135,7 +135,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20011>, Integer, Hash)> random_poem_with_http_info(opts)
+> <Array(<RandomPoem200Response>, Integer, Hash)> random_poem_with_http_info(opts)
 
 ```ruby
 begin
@@ -143,7 +143,7 @@ begin
   data, status_code, headers = api_instance.random_poem_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20011>
+  p data # => <RandomPoem200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ArtApi->random_poem_with_http_info: #{e}"
 end
@@ -158,7 +158,7 @@ end
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 

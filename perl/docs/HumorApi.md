@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **generate_nonsense_word**
-> InlineResponse2008 generate_nonsense_word()
+> GenerateNonsenseWord200Response generate_nonsense_word()
 
 Generate Nonsense Word
 
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_joke**
-> InlineResponse2004Jokes random_joke(include_tags => $include_tags, exclude_tags => $exclude_tags, min_rating => $min_rating, max_length => $max_length)
+> SearchJokes200ResponseJokesInner random_joke(include_tags => $include_tags, exclude_tags => $exclude_tags, min_rating => $min_rating, max_length => $max_length)
 
 Random Joke
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_meme**
-> InlineResponse2006 random_meme(keywords => $keywords, keywords_in_image => $keywords_in_image, media_type => $media_type, min_rating => $min_rating, max_age_days => $max_age_days)
+> RandomMeme200Response random_meme(keywords => $keywords, keywords_in_image => $keywords_in_image, media_type => $media_type, min_rating => $min_rating, max_age_days => $max_age_days)
 
 Random Meme
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_gifs**
-> InlineResponse2007 search_gifs(query => $query, number => $number)
+> SearchGifs200Response search_gifs(query => $query, number => $number)
 
 Search Gifs
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_jokes**
-> InlineResponse2004 search_jokes(keywords => $keywords, include_tags => $include_tags, exclude_tags => $exclude_tags, min_rating => $min_rating, max_length => $max_length, offset => $offset, number => $number)
+> SearchJokes200Response search_jokes(keywords => $keywords, include_tags => $include_tags, exclude_tags => $exclude_tags, min_rating => $min_rating, max_length => $max_length, offset => $offset, number => $number)
 
 Search Jokes
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_memes**
-> InlineResponse2005 search_memes(keywords => $keywords, keywords_in_image => $keywords_in_image, media_type => $media_type, min_rating => $min_rating, max_age_days => $max_age_days, offset => $offset, number => $number)
+> SearchMemes200Response search_memes(keywords => $keywords, keywords_in_image => $keywords_in_image, media_type => $media_type, min_rating => $min_rating, max_age_days => $max_age_days, offset => $offset, number => $number)
 
 Search Memes
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

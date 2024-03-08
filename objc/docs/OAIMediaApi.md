@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **detectMainImageColor**
 ```objc
 -(NSURLSessionTask*) detectMainImageColorWithUrl: (NSString*) url
-        completionHandler: (void (^)(NSArray<OAIInlineResponse20029>* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<OAIDetectMainImageColor200ResponseInner>* output, NSError* error)) handler;
 ```
 
 Detect Main Image Color
@@ -40,7 +40,7 @@ OAIMediaApi*apiInstance = [[OAIMediaApi alloc] init];
 
 // Detect Main Image Color
 [apiInstance detectMainImageColorWithUrl:url
-          completionHandler: ^(NSArray<OAIInlineResponse20029>* output, NSError* error) {
+          completionHandler: ^(NSArray<OAIDetectMainImageColor200ResponseInner>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NSArray<OAIInlineResponse20029>***](OAIInlineResponse20029.md)
+[**NSArray<OAIDetectMainImageColor200ResponseInner>***](OAIDetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) searchRoyaltyFreeImagesWithQuery: (NSString*) query
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse20028* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchRoyaltyFreeImages200Response* output, NSError* error)) handler;
 ```
 
 Search Royalty Free Images
@@ -179,7 +179,7 @@ OAIMediaApi*apiInstance = [[OAIMediaApi alloc] init];
 // Search Royalty Free Images
 [apiInstance searchRoyaltyFreeImagesWithQuery:query
               number:number
-          completionHandler: ^(OAIInlineResponse20028* output, NSError* error) {
+          completionHandler: ^(OAISearchRoyaltyFreeImages200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20028***](OAIInlineResponse20028.md)
+[**OAISearchRoyaltyFreeImages200Response***](OAISearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

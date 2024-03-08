@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **randomPoem**
-> InlineResponse20011 randomPoem()
+> RandomPoem200Response randomPoem()
 
-Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
+Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
 
 ### Example
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20011**
+**RandomPoem200Response**
 
 ### Authorization
 

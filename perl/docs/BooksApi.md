@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **find_similar_books**
-> InlineResponse2001 find_similar_books(id => $id, number => $number)
+> FindSimilarBooks200Response find_similar_books(id => $id, number => $number)
 
 Find Similar Books
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_books**
-> InlineResponse200 search_books(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number)
+> SearchBooks200Response search_books(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number)
 
 Search Books
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

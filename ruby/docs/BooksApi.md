@@ -10,7 +10,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## find_similar_books
 
-> <InlineResponse2001> find_similar_books(id, opts)
+> <FindSimilarBooks200Response> find_similar_books(id, opts)
 
 Find Similar Books
 
@@ -53,7 +53,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2001>, Integer, Hash)> find_similar_books_with_http_info(id, opts)
+> <Array(<FindSimilarBooks200Response>, Integer, Hash)> find_similar_books_with_http_info(id, opts)
 
 ```ruby
 begin
@@ -61,7 +61,7 @@ begin
   data, status_code, headers = api_instance.find_similar_books_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2001>
+  p data # => <FindSimilarBooks200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BooksApi->find_similar_books_with_http_info: #{e}"
 end
@@ -76,7 +76,7 @@ end
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ end
 
 ## search_books
 
-> <InlineResponse200> search_books(opts)
+> <SearchBooks200Response> search_books(opts)
 
 Search Books
 
@@ -145,7 +145,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse200>, Integer, Hash)> search_books_with_http_info(opts)
+> <Array(<SearchBooks200Response>, Integer, Hash)> search_books_with_http_info(opts)
 
 ```ruby
 begin
@@ -153,7 +153,7 @@ begin
   data, status_code, headers = api_instance.search_books_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse200>
+  p data # => <SearchBooks200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BooksApi->search_books_with_http_info: #{e}"
 end
@@ -180,7 +180,7 @@ end
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

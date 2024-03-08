@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -14,6 +14,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:collection/collection.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
@@ -38,69 +39,74 @@ part 'api/storage_api.dart';
 part 'api/text_api.dart';
 part 'api/web_api.dart';
 
-part 'model/inline_response200.dart';
-part 'model/inline_response2001.dart';
-part 'model/inline_response20010.dart';
-part 'model/inline_response20011.dart';
-part 'model/inline_response20012.dart';
-part 'model/inline_response20013.dart';
-part 'model/inline_response20014.dart';
-part 'model/inline_response20014_authors.dart';
-part 'model/inline_response20015.dart';
-part 'model/inline_response20015_results.dart';
-part 'model/inline_response20016.dart';
-part 'model/inline_response20017.dart';
-part 'model/inline_response20018.dart';
-part 'model/inline_response20018_document.dart';
-part 'model/inline_response20018_sentences.dart';
-part 'model/inline_response20019.dart';
-part 'model/inline_response20019_interestingness.dart';
-part 'model/inline_response20019_interestingness_subscores.dart';
-part 'model/inline_response20019_readability.dart';
-part 'model/inline_response20019_readability_mainscores.dart';
-part 'model/inline_response20019_readability_subscores.dart';
-part 'model/inline_response20019_skimmability.dart';
-part 'model/inline_response20019_skimmability_mainscores.dart';
-part 'model/inline_response20019_skimmability_subscores.dart';
-part 'model/inline_response20019_style.dart';
-part 'model/inline_response20019_style_subscores.dart';
-part 'model/inline_response2002.dart';
-part 'model/inline_response20020.dart';
-part 'model/inline_response20021.dart';
-part 'model/inline_response20021_dates.dart';
-part 'model/inline_response20022.dart';
-part 'model/inline_response20023.dart';
-part 'model/inline_response20024.dart';
-part 'model/inline_response20025.dart';
-part 'model/inline_response20026.dart';
-part 'model/inline_response20027.dart';
-part 'model/inline_response20027_entities.dart';
-part 'model/inline_response20028.dart';
-part 'model/inline_response20028_images.dart';
-part 'model/inline_response20028_license.dart';
-part 'model/inline_response20029.dart';
-part 'model/inline_response2002_news.dart';
-part 'model/inline_response2003.dart';
-part 'model/inline_response20030.dart';
-part 'model/inline_response20031.dart';
-part 'model/inline_response20032.dart';
-part 'model/inline_response2004.dart';
-part 'model/inline_response2004_jokes.dart';
-part 'model/inline_response2005.dart';
-part 'model/inline_response2005_memes.dart';
-part 'model/inline_response2006.dart';
-part 'model/inline_response2007.dart';
-part 'model/inline_response2007_images.dart';
-part 'model/inline_response2008.dart';
-part 'model/inline_response2009.dart';
-part 'model/inline_response200_books.dart';
+part 'model/convert_units200_response.dart';
+part 'model/correct_spelling200_response.dart';
+part 'model/detect_language200_response_inner.dart';
+part 'model/detect_main_image_color200_response_inner.dart';
+part 'model/detect_sentiment200_response.dart';
+part 'model/detect_sentiment200_response_document.dart';
+part 'model/detect_sentiment200_response_sentences_inner.dart';
+part 'model/extract_authors200_response.dart';
+part 'model/extract_authors200_response_authors_inner.dart';
+part 'model/extract_content_from_a_web_page200_response.dart';
+part 'model/extract_dates200_response.dart';
+part 'model/extract_dates200_response_dates_inner.dart';
+part 'model/extract_entities200_response.dart';
+part 'model/extract_entities200_response_entities_inner.dart';
+part 'model/extract_news200_response.dart';
+part 'model/extract_publish_date200_response.dart';
+part 'model/find_similar_books200_response.dart';
+part 'model/generate_nonsense_word200_response.dart';
+part 'model/list_word_synonyms200_response.dart';
+part 'model/part_of_speech_tagging200_response.dart';
+part 'model/pluralize_word200_response.dart';
+part 'model/random_meme200_response.dart';
+part 'model/random_poem200_response.dart';
+part 'model/random_quote200_response.dart';
+part 'model/random_trivia200_response.dart';
+part 'model/read_key_value_from_store200_response.dart';
+part 'model/score_readability200_response.dart';
+part 'model/score_text200_response.dart';
+part 'model/score_text200_response_interestingness.dart';
+part 'model/score_text200_response_interestingness_subscores.dart';
+part 'model/score_text200_response_readability.dart';
+part 'model/score_text200_response_readability_mainscores.dart';
+part 'model/score_text200_response_readability_subscores.dart';
+part 'model/score_text200_response_skimmability.dart';
+part 'model/score_text200_response_skimmability_mainscores.dart';
+part 'model/score_text200_response_skimmability_subscores.dart';
+part 'model/score_text200_response_style.dart';
+part 'model/score_text200_response_style_subscores.dart';
+part 'model/search_books200_response.dart';
+part 'model/search_books200_response_books_inner.dart';
+part 'model/search_gifs200_response.dart';
+part 'model/search_gifs200_response_images_inner.dart';
+part 'model/search_jokes200_response.dart';
+part 'model/search_jokes200_response_jokes_inner.dart';
+part 'model/search_memes200_response.dart';
+part 'model/search_memes200_response_memes_inner.dart';
+part 'model/search_news200_response.dart';
+part 'model/search_news200_response_news_inner.dart';
+part 'model/search_royalty_free_images200_response.dart';
+part 'model/search_royalty_free_images200_response_images_inner.dart';
+part 'model/search_royalty_free_images200_response_images_inner_license.dart';
+part 'model/search_web200_response.dart';
+part 'model/search_web200_response_results_inner.dart';
+part 'model/singularize_word200_response.dart';
+part 'model/store_key_value_get200_response.dart';
+part 'model/text_stemming200_response.dart';
 
+
+/// An [ApiClient] instance that uses the default values obtained from
+/// the OpenAPI specification file.
+var defaultApiClient = ApiClient();
 
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 const _dateEpochMarker = 'epoch';
+const _deepEquality = DeepCollectionEquality();
 final _dateFormatter = DateFormat('yyyy-MM-dd');
 final _regList = RegExp(r'^List<(.*)>$');
 final _regSet = RegExp(r'^Set<(.*)>$');
 final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-ApiClient defaultApiClient = ApiClient();
+bool _isEpochMarker(String? pattern) => pattern == _dateEpochMarker || pattern == '/$_dateEpochMarker/';

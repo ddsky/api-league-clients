@@ -37,1031 +37,1031 @@ import APILeague.Model
 import APILeague.Core
 
 
--- * InlineResponse200
+-- * ConvertUnits200Response
 
--- | 'inlineResponse200Available' Lens
-inlineResponse200AvailableL :: Lens_' InlineResponse200 (Maybe Int)
-inlineResponse200AvailableL f InlineResponse200{..} = (\inlineResponse200Available -> InlineResponse200 { inlineResponse200Available, ..} ) <$> f inlineResponse200Available
-{-# INLINE inlineResponse200AvailableL #-}
+-- | 'convertUnits200ResponseTargetAmount' Lens
+convertUnits200ResponseTargetAmountL :: Lens_' ConvertUnits200Response (Maybe Double)
+convertUnits200ResponseTargetAmountL f ConvertUnits200Response{..} = (\convertUnits200ResponseTargetAmount -> ConvertUnits200Response { convertUnits200ResponseTargetAmount, ..} ) <$> f convertUnits200ResponseTargetAmount
+{-# INLINE convertUnits200ResponseTargetAmountL #-}
 
--- | 'inlineResponse200Number' Lens
-inlineResponse200NumberL :: Lens_' InlineResponse200 (Maybe Int)
-inlineResponse200NumberL f InlineResponse200{..} = (\inlineResponse200Number -> InlineResponse200 { inlineResponse200Number, ..} ) <$> f inlineResponse200Number
-{-# INLINE inlineResponse200NumberL #-}
+-- | 'convertUnits200ResponseTargetUnit' Lens
+convertUnits200ResponseTargetUnitL :: Lens_' ConvertUnits200Response (Maybe Text)
+convertUnits200ResponseTargetUnitL f ConvertUnits200Response{..} = (\convertUnits200ResponseTargetUnit -> ConvertUnits200Response { convertUnits200ResponseTargetUnit, ..} ) <$> f convertUnits200ResponseTargetUnit
+{-# INLINE convertUnits200ResponseTargetUnitL #-}
 
--- | 'inlineResponse200Offset' Lens
-inlineResponse200OffsetL :: Lens_' InlineResponse200 (Maybe Int)
-inlineResponse200OffsetL f InlineResponse200{..} = (\inlineResponse200Offset -> InlineResponse200 { inlineResponse200Offset, ..} ) <$> f inlineResponse200Offset
-{-# INLINE inlineResponse200OffsetL #-}
 
--- | 'inlineResponse200Books' Lens
-inlineResponse200BooksL :: Lens_' InlineResponse200 (Maybe [InlineResponse200Books])
-inlineResponse200BooksL f InlineResponse200{..} = (\inlineResponse200Books -> InlineResponse200 { inlineResponse200Books, ..} ) <$> f inlineResponse200Books
-{-# INLINE inlineResponse200BooksL #-}
 
+-- * CorrectSpelling200Response
 
+-- | 'correctSpelling200ResponseCorrectedText' Lens
+correctSpelling200ResponseCorrectedTextL :: Lens_' CorrectSpelling200Response (Maybe Text)
+correctSpelling200ResponseCorrectedTextL f CorrectSpelling200Response{..} = (\correctSpelling200ResponseCorrectedText -> CorrectSpelling200Response { correctSpelling200ResponseCorrectedText, ..} ) <$> f correctSpelling200ResponseCorrectedText
+{-# INLINE correctSpelling200ResponseCorrectedTextL #-}
 
--- * InlineResponse2001
 
--- | 'inlineResponse2001SimilarBooks' Lens
-inlineResponse2001SimilarBooksL :: Lens_' InlineResponse2001 (Maybe [InlineResponse200Books])
-inlineResponse2001SimilarBooksL f InlineResponse2001{..} = (\inlineResponse2001SimilarBooks -> InlineResponse2001 { inlineResponse2001SimilarBooks, ..} ) <$> f inlineResponse2001SimilarBooks
-{-# INLINE inlineResponse2001SimilarBooksL #-}
 
+-- * DetectLanguage200ResponseInner
 
+-- | 'detectLanguage200ResponseInnerLanguage' Lens
+detectLanguage200ResponseInnerLanguageL :: Lens_' DetectLanguage200ResponseInner (Maybe Text)
+detectLanguage200ResponseInnerLanguageL f DetectLanguage200ResponseInner{..} = (\detectLanguage200ResponseInnerLanguage -> DetectLanguage200ResponseInner { detectLanguage200ResponseInnerLanguage, ..} ) <$> f detectLanguage200ResponseInnerLanguage
+{-# INLINE detectLanguage200ResponseInnerLanguageL #-}
 
--- * InlineResponse20010
+-- | 'detectLanguage200ResponseInnerConfidence' Lens
+detectLanguage200ResponseInnerConfidenceL :: Lens_' DetectLanguage200ResponseInner (Maybe Double)
+detectLanguage200ResponseInnerConfidenceL f DetectLanguage200ResponseInner{..} = (\detectLanguage200ResponseInnerConfidence -> DetectLanguage200ResponseInner { detectLanguage200ResponseInnerConfidence, ..} ) <$> f detectLanguage200ResponseInnerConfidence
+{-# INLINE detectLanguage200ResponseInnerConfidenceL #-}
 
--- | 'inlineResponse20010Author' Lens
-inlineResponse20010AuthorL :: Lens_' InlineResponse20010 (Maybe Text)
-inlineResponse20010AuthorL f InlineResponse20010{..} = (\inlineResponse20010Author -> InlineResponse20010 { inlineResponse20010Author, ..} ) <$> f inlineResponse20010Author
-{-# INLINE inlineResponse20010AuthorL #-}
 
--- | 'inlineResponse20010Quote' Lens
-inlineResponse20010QuoteL :: Lens_' InlineResponse20010 (Maybe Text)
-inlineResponse20010QuoteL f InlineResponse20010{..} = (\inlineResponse20010Quote -> InlineResponse20010 { inlineResponse20010Quote, ..} ) <$> f inlineResponse20010Quote
-{-# INLINE inlineResponse20010QuoteL #-}
 
+-- * DetectMainImageColor200ResponseInner
 
+-- | 'detectMainImageColor200ResponseInnerSpecificColor' Lens
+detectMainImageColor200ResponseInnerSpecificColorL :: Lens_' DetectMainImageColor200ResponseInner (Maybe Text)
+detectMainImageColor200ResponseInnerSpecificColorL f DetectMainImageColor200ResponseInner{..} = (\detectMainImageColor200ResponseInnerSpecificColor -> DetectMainImageColor200ResponseInner { detectMainImageColor200ResponseInnerSpecificColor, ..} ) <$> f detectMainImageColor200ResponseInnerSpecificColor
+{-# INLINE detectMainImageColor200ResponseInnerSpecificColorL #-}
 
--- * InlineResponse20011
+-- | 'detectMainImageColor200ResponseInnerMainColor' Lens
+detectMainImageColor200ResponseInnerMainColorL :: Lens_' DetectMainImageColor200ResponseInner (Maybe Text)
+detectMainImageColor200ResponseInnerMainColorL f DetectMainImageColor200ResponseInner{..} = (\detectMainImageColor200ResponseInnerMainColor -> DetectMainImageColor200ResponseInner { detectMainImageColor200ResponseInnerMainColor, ..} ) <$> f detectMainImageColor200ResponseInnerMainColor
+{-# INLINE detectMainImageColor200ResponseInnerMainColorL #-}
 
--- | 'inlineResponse20011Title' Lens
-inlineResponse20011TitleL :: Lens_' InlineResponse20011 (Maybe Text)
-inlineResponse20011TitleL f InlineResponse20011{..} = (\inlineResponse20011Title -> InlineResponse20011 { inlineResponse20011Title, ..} ) <$> f inlineResponse20011Title
-{-# INLINE inlineResponse20011TitleL #-}
+-- | 'detectMainImageColor200ResponseInnerHexCode' Lens
+detectMainImageColor200ResponseInnerHexCodeL :: Lens_' DetectMainImageColor200ResponseInner (Maybe Text)
+detectMainImageColor200ResponseInnerHexCodeL f DetectMainImageColor200ResponseInner{..} = (\detectMainImageColor200ResponseInnerHexCode -> DetectMainImageColor200ResponseInner { detectMainImageColor200ResponseInnerHexCode, ..} ) <$> f detectMainImageColor200ResponseInnerHexCode
+{-# INLINE detectMainImageColor200ResponseInnerHexCodeL #-}
 
--- | 'inlineResponse20011Author' Lens
-inlineResponse20011AuthorL :: Lens_' InlineResponse20011 (Maybe Text)
-inlineResponse20011AuthorL f InlineResponse20011{..} = (\inlineResponse20011Author -> InlineResponse20011 { inlineResponse20011Author, ..} ) <$> f inlineResponse20011Author
-{-# INLINE inlineResponse20011AuthorL #-}
 
--- | 'inlineResponse20011Poem' Lens
-inlineResponse20011PoemL :: Lens_' InlineResponse20011 (Maybe Text)
-inlineResponse20011PoemL f InlineResponse20011{..} = (\inlineResponse20011Poem -> InlineResponse20011 { inlineResponse20011Poem, ..} ) <$> f inlineResponse20011Poem
-{-# INLINE inlineResponse20011PoemL #-}
 
+-- * DetectSentiment200Response
 
+-- | 'detectSentiment200ResponseDocument' Lens
+detectSentiment200ResponseDocumentL :: Lens_' DetectSentiment200Response (Maybe DetectSentiment200ResponseDocument)
+detectSentiment200ResponseDocumentL f DetectSentiment200Response{..} = (\detectSentiment200ResponseDocument -> DetectSentiment200Response { detectSentiment200ResponseDocument, ..} ) <$> f detectSentiment200ResponseDocument
+{-# INLINE detectSentiment200ResponseDocumentL #-}
 
--- * InlineResponse20012
+-- | 'detectSentiment200ResponseSentences' Lens
+detectSentiment200ResponseSentencesL :: Lens_' DetectSentiment200Response (Maybe [DetectSentiment200ResponseSentencesInner])
+detectSentiment200ResponseSentencesL f DetectSentiment200Response{..} = (\detectSentiment200ResponseSentences -> DetectSentiment200Response { detectSentiment200ResponseSentences, ..} ) <$> f detectSentiment200ResponseSentences
+{-# INLINE detectSentiment200ResponseSentencesL #-}
 
--- | 'inlineResponse20012Title' Lens
-inlineResponse20012TitleL :: Lens_' InlineResponse20012 (Maybe Text)
-inlineResponse20012TitleL f InlineResponse20012{..} = (\inlineResponse20012Title -> InlineResponse20012 { inlineResponse20012Title, ..} ) <$> f inlineResponse20012Title
-{-# INLINE inlineResponse20012TitleL #-}
 
--- | 'inlineResponse20012MainText' Lens
-inlineResponse20012MainTextL :: Lens_' InlineResponse20012 (Maybe Text)
-inlineResponse20012MainTextL f InlineResponse20012{..} = (\inlineResponse20012MainText -> InlineResponse20012 { inlineResponse20012MainText, ..} ) <$> f inlineResponse20012MainText
-{-# INLINE inlineResponse20012MainTextL #-}
 
--- | 'inlineResponse20012MainHtml' Lens
-inlineResponse20012MainHtmlL :: Lens_' InlineResponse20012 (Maybe Text)
-inlineResponse20012MainHtmlL f InlineResponse20012{..} = (\inlineResponse20012MainHtml -> InlineResponse20012 { inlineResponse20012MainHtml, ..} ) <$> f inlineResponse20012MainHtml
-{-# INLINE inlineResponse20012MainHtmlL #-}
+-- * DetectSentiment200ResponseDocument
 
--- | 'inlineResponse20012Images' Lens
-inlineResponse20012ImagesL :: Lens_' InlineResponse20012 (Maybe [Text])
-inlineResponse20012ImagesL f InlineResponse20012{..} = (\inlineResponse20012Images -> InlineResponse20012 { inlineResponse20012Images, ..} ) <$> f inlineResponse20012Images
-{-# INLINE inlineResponse20012ImagesL #-}
+-- | 'detectSentiment200ResponseDocumentSentiment' Lens
+detectSentiment200ResponseDocumentSentimentL :: Lens_' DetectSentiment200ResponseDocument (Maybe Text)
+detectSentiment200ResponseDocumentSentimentL f DetectSentiment200ResponseDocument{..} = (\detectSentiment200ResponseDocumentSentiment -> DetectSentiment200ResponseDocument { detectSentiment200ResponseDocumentSentiment, ..} ) <$> f detectSentiment200ResponseDocumentSentiment
+{-# INLINE detectSentiment200ResponseDocumentSentimentL #-}
 
+-- | 'detectSentiment200ResponseDocumentConfidence' Lens
+detectSentiment200ResponseDocumentConfidenceL :: Lens_' DetectSentiment200ResponseDocument (Maybe Int)
+detectSentiment200ResponseDocumentConfidenceL f DetectSentiment200ResponseDocument{..} = (\detectSentiment200ResponseDocumentConfidence -> DetectSentiment200ResponseDocument { detectSentiment200ResponseDocumentConfidence, ..} ) <$> f detectSentiment200ResponseDocumentConfidence
+{-# INLINE detectSentiment200ResponseDocumentConfidenceL #-}
 
+-- | 'detectSentiment200ResponseDocumentAverageConfidence' Lens
+detectSentiment200ResponseDocumentAverageConfidenceL :: Lens_' DetectSentiment200ResponseDocument (Maybe Int)
+detectSentiment200ResponseDocumentAverageConfidenceL f DetectSentiment200ResponseDocument{..} = (\detectSentiment200ResponseDocumentAverageConfidence -> DetectSentiment200ResponseDocument { detectSentiment200ResponseDocumentAverageConfidence, ..} ) <$> f detectSentiment200ResponseDocumentAverageConfidence
+{-# INLINE detectSentiment200ResponseDocumentAverageConfidenceL #-}
 
--- * InlineResponse20013
 
--- | 'inlineResponse20013PublishDate' Lens
-inlineResponse20013PublishDateL :: Lens_' InlineResponse20013 (Maybe Text)
-inlineResponse20013PublishDateL f InlineResponse20013{..} = (\inlineResponse20013PublishDate -> InlineResponse20013 { inlineResponse20013PublishDate, ..} ) <$> f inlineResponse20013PublishDate
-{-# INLINE inlineResponse20013PublishDateL #-}
 
+-- * DetectSentiment200ResponseSentencesInner
 
+-- | 'detectSentiment200ResponseSentencesInnerLength' Lens
+detectSentiment200ResponseSentencesInnerLengthL :: Lens_' DetectSentiment200ResponseSentencesInner (Maybe Int)
+detectSentiment200ResponseSentencesInnerLengthL f DetectSentiment200ResponseSentencesInner{..} = (\detectSentiment200ResponseSentencesInnerLength -> DetectSentiment200ResponseSentencesInner { detectSentiment200ResponseSentencesInnerLength, ..} ) <$> f detectSentiment200ResponseSentencesInnerLength
+{-# INLINE detectSentiment200ResponseSentencesInnerLengthL #-}
 
--- * InlineResponse20014
+-- | 'detectSentiment200ResponseSentencesInnerSentiment' Lens
+detectSentiment200ResponseSentencesInnerSentimentL :: Lens_' DetectSentiment200ResponseSentencesInner (Maybe Text)
+detectSentiment200ResponseSentencesInnerSentimentL f DetectSentiment200ResponseSentencesInner{..} = (\detectSentiment200ResponseSentencesInnerSentiment -> DetectSentiment200ResponseSentencesInner { detectSentiment200ResponseSentencesInnerSentiment, ..} ) <$> f detectSentiment200ResponseSentencesInnerSentiment
+{-# INLINE detectSentiment200ResponseSentencesInnerSentimentL #-}
 
--- | 'inlineResponse20014Authors' Lens
-inlineResponse20014AuthorsL :: Lens_' InlineResponse20014 (Maybe [InlineResponse20014Authors])
-inlineResponse20014AuthorsL f InlineResponse20014{..} = (\inlineResponse20014Authors -> InlineResponse20014 { inlineResponse20014Authors, ..} ) <$> f inlineResponse20014Authors
-{-# INLINE inlineResponse20014AuthorsL #-}
+-- | 'detectSentiment200ResponseSentencesInnerOffset' Lens
+detectSentiment200ResponseSentencesInnerOffsetL :: Lens_' DetectSentiment200ResponseSentencesInner (Maybe Int)
+detectSentiment200ResponseSentencesInnerOffsetL f DetectSentiment200ResponseSentencesInner{..} = (\detectSentiment200ResponseSentencesInnerOffset -> DetectSentiment200ResponseSentencesInner { detectSentiment200ResponseSentencesInnerOffset, ..} ) <$> f detectSentiment200ResponseSentencesInnerOffset
+{-# INLINE detectSentiment200ResponseSentencesInnerOffsetL #-}
 
+-- | 'detectSentiment200ResponseSentencesInnerConfidence' Lens
+detectSentiment200ResponseSentencesInnerConfidenceL :: Lens_' DetectSentiment200ResponseSentencesInner (Maybe Int)
+detectSentiment200ResponseSentencesInnerConfidenceL f DetectSentiment200ResponseSentencesInner{..} = (\detectSentiment200ResponseSentencesInnerConfidence -> DetectSentiment200ResponseSentencesInner { detectSentiment200ResponseSentencesInnerConfidence, ..} ) <$> f detectSentiment200ResponseSentencesInnerConfidence
+{-# INLINE detectSentiment200ResponseSentencesInnerConfidenceL #-}
 
 
--- * InlineResponse20014Authors
 
--- | 'inlineResponse20014AuthorsLink' Lens
-inlineResponse20014AuthorsLinkL :: Lens_' InlineResponse20014Authors (Maybe Text)
-inlineResponse20014AuthorsLinkL f InlineResponse20014Authors{..} = (\inlineResponse20014AuthorsLink -> InlineResponse20014Authors { inlineResponse20014AuthorsLink, ..} ) <$> f inlineResponse20014AuthorsLink
-{-# INLINE inlineResponse20014AuthorsLinkL #-}
+-- * ExtractAuthors200Response
 
--- | 'inlineResponse20014AuthorsName' Lens
-inlineResponse20014AuthorsNameL :: Lens_' InlineResponse20014Authors (Maybe Text)
-inlineResponse20014AuthorsNameL f InlineResponse20014Authors{..} = (\inlineResponse20014AuthorsName -> InlineResponse20014Authors { inlineResponse20014AuthorsName, ..} ) <$> f inlineResponse20014AuthorsName
-{-# INLINE inlineResponse20014AuthorsNameL #-}
+-- | 'extractAuthors200ResponseAuthors' Lens
+extractAuthors200ResponseAuthorsL :: Lens_' ExtractAuthors200Response (Maybe [ExtractAuthors200ResponseAuthorsInner])
+extractAuthors200ResponseAuthorsL f ExtractAuthors200Response{..} = (\extractAuthors200ResponseAuthors -> ExtractAuthors200Response { extractAuthors200ResponseAuthors, ..} ) <$> f extractAuthors200ResponseAuthors
+{-# INLINE extractAuthors200ResponseAuthorsL #-}
 
 
 
--- * InlineResponse20015
+-- * ExtractAuthors200ResponseAuthorsInner
 
--- | 'inlineResponse20015Results' Lens
-inlineResponse20015ResultsL :: Lens_' InlineResponse20015 (Maybe [InlineResponse20015Results])
-inlineResponse20015ResultsL f InlineResponse20015{..} = (\inlineResponse20015Results -> InlineResponse20015 { inlineResponse20015Results, ..} ) <$> f inlineResponse20015Results
-{-# INLINE inlineResponse20015ResultsL #-}
+-- | 'extractAuthors200ResponseAuthorsInnerLink' Lens
+extractAuthors200ResponseAuthorsInnerLinkL :: Lens_' ExtractAuthors200ResponseAuthorsInner (Maybe Text)
+extractAuthors200ResponseAuthorsInnerLinkL f ExtractAuthors200ResponseAuthorsInner{..} = (\extractAuthors200ResponseAuthorsInnerLink -> ExtractAuthors200ResponseAuthorsInner { extractAuthors200ResponseAuthorsInnerLink, ..} ) <$> f extractAuthors200ResponseAuthorsInnerLink
+{-# INLINE extractAuthors200ResponseAuthorsInnerLinkL #-}
 
+-- | 'extractAuthors200ResponseAuthorsInnerName' Lens
+extractAuthors200ResponseAuthorsInnerNameL :: Lens_' ExtractAuthors200ResponseAuthorsInner (Maybe Text)
+extractAuthors200ResponseAuthorsInnerNameL f ExtractAuthors200ResponseAuthorsInner{..} = (\extractAuthors200ResponseAuthorsInnerName -> ExtractAuthors200ResponseAuthorsInner { extractAuthors200ResponseAuthorsInnerName, ..} ) <$> f extractAuthors200ResponseAuthorsInnerName
+{-# INLINE extractAuthors200ResponseAuthorsInnerNameL #-}
 
 
--- * InlineResponse20015Results
 
--- | 'inlineResponse20015ResultsTitle' Lens
-inlineResponse20015ResultsTitleL :: Lens_' InlineResponse20015Results (Maybe Text)
-inlineResponse20015ResultsTitleL f InlineResponse20015Results{..} = (\inlineResponse20015ResultsTitle -> InlineResponse20015Results { inlineResponse20015ResultsTitle, ..} ) <$> f inlineResponse20015ResultsTitle
-{-# INLINE inlineResponse20015ResultsTitleL #-}
+-- * ExtractContentFromAWebPage200Response
 
--- | 'inlineResponse20015ResultsSummary' Lens
-inlineResponse20015ResultsSummaryL :: Lens_' InlineResponse20015Results (Maybe Text)
-inlineResponse20015ResultsSummaryL f InlineResponse20015Results{..} = (\inlineResponse20015ResultsSummary -> InlineResponse20015Results { inlineResponse20015ResultsSummary, ..} ) <$> f inlineResponse20015ResultsSummary
-{-# INLINE inlineResponse20015ResultsSummaryL #-}
+-- | 'extractContentFromAWebPage200ResponseTitle' Lens
+extractContentFromAWebPage200ResponseTitleL :: Lens_' ExtractContentFromAWebPage200Response (Maybe Text)
+extractContentFromAWebPage200ResponseTitleL f ExtractContentFromAWebPage200Response{..} = (\extractContentFromAWebPage200ResponseTitle -> ExtractContentFromAWebPage200Response { extractContentFromAWebPage200ResponseTitle, ..} ) <$> f extractContentFromAWebPage200ResponseTitle
+{-# INLINE extractContentFromAWebPage200ResponseTitleL #-}
 
--- | 'inlineResponse20015ResultsUrl' Lens
-inlineResponse20015ResultsUrlL :: Lens_' InlineResponse20015Results (Maybe Text)
-inlineResponse20015ResultsUrlL f InlineResponse20015Results{..} = (\inlineResponse20015ResultsUrl -> InlineResponse20015Results { inlineResponse20015ResultsUrl, ..} ) <$> f inlineResponse20015ResultsUrl
-{-# INLINE inlineResponse20015ResultsUrlL #-}
+-- | 'extractContentFromAWebPage200ResponseMainText' Lens
+extractContentFromAWebPage200ResponseMainTextL :: Lens_' ExtractContentFromAWebPage200Response (Maybe Text)
+extractContentFromAWebPage200ResponseMainTextL f ExtractContentFromAWebPage200Response{..} = (\extractContentFromAWebPage200ResponseMainText -> ExtractContentFromAWebPage200Response { extractContentFromAWebPage200ResponseMainText, ..} ) <$> f extractContentFromAWebPage200ResponseMainText
+{-# INLINE extractContentFromAWebPage200ResponseMainTextL #-}
 
+-- | 'extractContentFromAWebPage200ResponseMainHtml' Lens
+extractContentFromAWebPage200ResponseMainHtmlL :: Lens_' ExtractContentFromAWebPage200Response (Maybe Text)
+extractContentFromAWebPage200ResponseMainHtmlL f ExtractContentFromAWebPage200Response{..} = (\extractContentFromAWebPage200ResponseMainHtml -> ExtractContentFromAWebPage200Response { extractContentFromAWebPage200ResponseMainHtml, ..} ) <$> f extractContentFromAWebPage200ResponseMainHtml
+{-# INLINE extractContentFromAWebPage200ResponseMainHtmlL #-}
 
+-- | 'extractContentFromAWebPage200ResponseImages' Lens
+extractContentFromAWebPage200ResponseImagesL :: Lens_' ExtractContentFromAWebPage200Response (Maybe [Text])
+extractContentFromAWebPage200ResponseImagesL f ExtractContentFromAWebPage200Response{..} = (\extractContentFromAWebPage200ResponseImages -> ExtractContentFromAWebPage200Response { extractContentFromAWebPage200ResponseImages, ..} ) <$> f extractContentFromAWebPage200ResponseImages
+{-# INLINE extractContentFromAWebPage200ResponseImagesL #-}
 
--- * InlineResponse20016
 
--- | 'inlineResponse20016CorrectedText' Lens
-inlineResponse20016CorrectedTextL :: Lens_' InlineResponse20016 (Maybe Text)
-inlineResponse20016CorrectedTextL f InlineResponse20016{..} = (\inlineResponse20016CorrectedText -> InlineResponse20016 { inlineResponse20016CorrectedText, ..} ) <$> f inlineResponse20016CorrectedText
-{-# INLINE inlineResponse20016CorrectedTextL #-}
 
+-- * ExtractDates200Response
 
+-- | 'extractDates200ResponseDates' Lens
+extractDates200ResponseDatesL :: Lens_' ExtractDates200Response (Maybe [ExtractDates200ResponseDatesInner])
+extractDates200ResponseDatesL f ExtractDates200Response{..} = (\extractDates200ResponseDates -> ExtractDates200Response { extractDates200ResponseDates, ..} ) <$> f extractDates200ResponseDates
+{-# INLINE extractDates200ResponseDatesL #-}
 
--- * InlineResponse20017
 
--- | 'inlineResponse20017Language' Lens
-inlineResponse20017LanguageL :: Lens_' InlineResponse20017 (Maybe Text)
-inlineResponse20017LanguageL f InlineResponse20017{..} = (\inlineResponse20017Language -> InlineResponse20017 { inlineResponse20017Language, ..} ) <$> f inlineResponse20017Language
-{-# INLINE inlineResponse20017LanguageL #-}
 
--- | 'inlineResponse20017Confidence' Lens
-inlineResponse20017ConfidenceL :: Lens_' InlineResponse20017 (Maybe Double)
-inlineResponse20017ConfidenceL f InlineResponse20017{..} = (\inlineResponse20017Confidence -> InlineResponse20017 { inlineResponse20017Confidence, ..} ) <$> f inlineResponse20017Confidence
-{-# INLINE inlineResponse20017ConfidenceL #-}
+-- * ExtractDates200ResponseDatesInner
 
+-- | 'extractDates200ResponseDatesInnerStartPosition' Lens
+extractDates200ResponseDatesInnerStartPositionL :: Lens_' ExtractDates200ResponseDatesInner (Maybe Int)
+extractDates200ResponseDatesInnerStartPositionL f ExtractDates200ResponseDatesInner{..} = (\extractDates200ResponseDatesInnerStartPosition -> ExtractDates200ResponseDatesInner { extractDates200ResponseDatesInnerStartPosition, ..} ) <$> f extractDates200ResponseDatesInnerStartPosition
+{-# INLINE extractDates200ResponseDatesInnerStartPositionL #-}
 
+-- | 'extractDates200ResponseDatesInnerDate' Lens
+extractDates200ResponseDatesInnerDateL :: Lens_' ExtractDates200ResponseDatesInner (Maybe Text)
+extractDates200ResponseDatesInnerDateL f ExtractDates200ResponseDatesInner{..} = (\extractDates200ResponseDatesInnerDate -> ExtractDates200ResponseDatesInner { extractDates200ResponseDatesInnerDate, ..} ) <$> f extractDates200ResponseDatesInnerDate
+{-# INLINE extractDates200ResponseDatesInnerDateL #-}
 
--- * InlineResponse20018
+-- | 'extractDates200ResponseDatesInnerNormalizedDate' Lens
+extractDates200ResponseDatesInnerNormalizedDateL :: Lens_' ExtractDates200ResponseDatesInner (Maybe Double)
+extractDates200ResponseDatesInnerNormalizedDateL f ExtractDates200ResponseDatesInner{..} = (\extractDates200ResponseDatesInnerNormalizedDate -> ExtractDates200ResponseDatesInner { extractDates200ResponseDatesInnerNormalizedDate, ..} ) <$> f extractDates200ResponseDatesInnerNormalizedDate
+{-# INLINE extractDates200ResponseDatesInnerNormalizedDateL #-}
 
--- | 'inlineResponse20018Document' Lens
-inlineResponse20018DocumentL :: Lens_' InlineResponse20018 (Maybe InlineResponse20018Document)
-inlineResponse20018DocumentL f InlineResponse20018{..} = (\inlineResponse20018Document -> InlineResponse20018 { inlineResponse20018Document, ..} ) <$> f inlineResponse20018Document
-{-# INLINE inlineResponse20018DocumentL #-}
+-- | 'extractDates200ResponseDatesInnerTag' Lens
+extractDates200ResponseDatesInnerTagL :: Lens_' ExtractDates200ResponseDatesInner (Maybe Text)
+extractDates200ResponseDatesInnerTagL f ExtractDates200ResponseDatesInner{..} = (\extractDates200ResponseDatesInnerTag -> ExtractDates200ResponseDatesInner { extractDates200ResponseDatesInnerTag, ..} ) <$> f extractDates200ResponseDatesInnerTag
+{-# INLINE extractDates200ResponseDatesInnerTagL #-}
 
--- | 'inlineResponse20018Sentences' Lens
-inlineResponse20018SentencesL :: Lens_' InlineResponse20018 (Maybe [InlineResponse20018Sentences])
-inlineResponse20018SentencesL f InlineResponse20018{..} = (\inlineResponse20018Sentences -> InlineResponse20018 { inlineResponse20018Sentences, ..} ) <$> f inlineResponse20018Sentences
-{-# INLINE inlineResponse20018SentencesL #-}
+-- | 'extractDates200ResponseDatesInnerEndPosition' Lens
+extractDates200ResponseDatesInnerEndPositionL :: Lens_' ExtractDates200ResponseDatesInner (Maybe Int)
+extractDates200ResponseDatesInnerEndPositionL f ExtractDates200ResponseDatesInner{..} = (\extractDates200ResponseDatesInnerEndPosition -> ExtractDates200ResponseDatesInner { extractDates200ResponseDatesInnerEndPosition, ..} ) <$> f extractDates200ResponseDatesInnerEndPosition
+{-# INLINE extractDates200ResponseDatesInnerEndPositionL #-}
 
 
 
--- * InlineResponse20018Document
+-- * ExtractEntities200Response
 
--- | 'inlineResponse20018DocumentSentiment' Lens
-inlineResponse20018DocumentSentimentL :: Lens_' InlineResponse20018Document (Maybe Text)
-inlineResponse20018DocumentSentimentL f InlineResponse20018Document{..} = (\inlineResponse20018DocumentSentiment -> InlineResponse20018Document { inlineResponse20018DocumentSentiment, ..} ) <$> f inlineResponse20018DocumentSentiment
-{-# INLINE inlineResponse20018DocumentSentimentL #-}
+-- | 'extractEntities200ResponseEntities' Lens
+extractEntities200ResponseEntitiesL :: Lens_' ExtractEntities200Response (Maybe [ExtractEntities200ResponseEntitiesInner])
+extractEntities200ResponseEntitiesL f ExtractEntities200Response{..} = (\extractEntities200ResponseEntities -> ExtractEntities200Response { extractEntities200ResponseEntities, ..} ) <$> f extractEntities200ResponseEntities
+{-# INLINE extractEntities200ResponseEntitiesL #-}
 
--- | 'inlineResponse20018DocumentConfidence' Lens
-inlineResponse20018DocumentConfidenceL :: Lens_' InlineResponse20018Document (Maybe Int)
-inlineResponse20018DocumentConfidenceL f InlineResponse20018Document{..} = (\inlineResponse20018DocumentConfidence -> InlineResponse20018Document { inlineResponse20018DocumentConfidence, ..} ) <$> f inlineResponse20018DocumentConfidence
-{-# INLINE inlineResponse20018DocumentConfidenceL #-}
 
--- | 'inlineResponse20018DocumentAverageConfidence' Lens
-inlineResponse20018DocumentAverageConfidenceL :: Lens_' InlineResponse20018Document (Maybe Int)
-inlineResponse20018DocumentAverageConfidenceL f InlineResponse20018Document{..} = (\inlineResponse20018DocumentAverageConfidence -> InlineResponse20018Document { inlineResponse20018DocumentAverageConfidence, ..} ) <$> f inlineResponse20018DocumentAverageConfidence
-{-# INLINE inlineResponse20018DocumentAverageConfidenceL #-}
 
+-- * ExtractEntities200ResponseEntitiesInner
 
+-- | 'extractEntities200ResponseEntitiesInnerStartPosition' Lens
+extractEntities200ResponseEntitiesInnerStartPositionL :: Lens_' ExtractEntities200ResponseEntitiesInner (Maybe Int)
+extractEntities200ResponseEntitiesInnerStartPositionL f ExtractEntities200ResponseEntitiesInner{..} = (\extractEntities200ResponseEntitiesInnerStartPosition -> ExtractEntities200ResponseEntitiesInner { extractEntities200ResponseEntitiesInnerStartPosition, ..} ) <$> f extractEntities200ResponseEntitiesInnerStartPosition
+{-# INLINE extractEntities200ResponseEntitiesInnerStartPositionL #-}
 
--- * InlineResponse20018Sentences
+-- | 'extractEntities200ResponseEntitiesInnerImage' Lens
+extractEntities200ResponseEntitiesInnerImageL :: Lens_' ExtractEntities200ResponseEntitiesInner (Maybe Text)
+extractEntities200ResponseEntitiesInnerImageL f ExtractEntities200ResponseEntitiesInner{..} = (\extractEntities200ResponseEntitiesInnerImage -> ExtractEntities200ResponseEntitiesInner { extractEntities200ResponseEntitiesInnerImage, ..} ) <$> f extractEntities200ResponseEntitiesInnerImage
+{-# INLINE extractEntities200ResponseEntitiesInnerImageL #-}
 
--- | 'inlineResponse20018SentencesLength' Lens
-inlineResponse20018SentencesLengthL :: Lens_' InlineResponse20018Sentences (Maybe Int)
-inlineResponse20018SentencesLengthL f InlineResponse20018Sentences{..} = (\inlineResponse20018SentencesLength -> InlineResponse20018Sentences { inlineResponse20018SentencesLength, ..} ) <$> f inlineResponse20018SentencesLength
-{-# INLINE inlineResponse20018SentencesLengthL #-}
+-- | 'extractEntities200ResponseEntitiesInnerType' Lens
+extractEntities200ResponseEntitiesInnerTypeL :: Lens_' ExtractEntities200ResponseEntitiesInner (Maybe Text)
+extractEntities200ResponseEntitiesInnerTypeL f ExtractEntities200ResponseEntitiesInner{..} = (\extractEntities200ResponseEntitiesInnerType -> ExtractEntities200ResponseEntitiesInner { extractEntities200ResponseEntitiesInnerType, ..} ) <$> f extractEntities200ResponseEntitiesInnerType
+{-# INLINE extractEntities200ResponseEntitiesInnerTypeL #-}
 
--- | 'inlineResponse20018SentencesSentiment' Lens
-inlineResponse20018SentencesSentimentL :: Lens_' InlineResponse20018Sentences (Maybe Text)
-inlineResponse20018SentencesSentimentL f InlineResponse20018Sentences{..} = (\inlineResponse20018SentencesSentiment -> InlineResponse20018Sentences { inlineResponse20018SentencesSentiment, ..} ) <$> f inlineResponse20018SentencesSentiment
-{-# INLINE inlineResponse20018SentencesSentimentL #-}
+-- | 'extractEntities200ResponseEntitiesInnerValue' Lens
+extractEntities200ResponseEntitiesInnerValueL :: Lens_' ExtractEntities200ResponseEntitiesInner (Maybe Text)
+extractEntities200ResponseEntitiesInnerValueL f ExtractEntities200ResponseEntitiesInner{..} = (\extractEntities200ResponseEntitiesInnerValue -> ExtractEntities200ResponseEntitiesInner { extractEntities200ResponseEntitiesInnerValue, ..} ) <$> f extractEntities200ResponseEntitiesInnerValue
+{-# INLINE extractEntities200ResponseEntitiesInnerValueL #-}
 
--- | 'inlineResponse20018SentencesOffset' Lens
-inlineResponse20018SentencesOffsetL :: Lens_' InlineResponse20018Sentences (Maybe Int)
-inlineResponse20018SentencesOffsetL f InlineResponse20018Sentences{..} = (\inlineResponse20018SentencesOffset -> InlineResponse20018Sentences { inlineResponse20018SentencesOffset, ..} ) <$> f inlineResponse20018SentencesOffset
-{-# INLINE inlineResponse20018SentencesOffsetL #-}
+-- | 'extractEntities200ResponseEntitiesInnerEndPosition' Lens
+extractEntities200ResponseEntitiesInnerEndPositionL :: Lens_' ExtractEntities200ResponseEntitiesInner (Maybe Int)
+extractEntities200ResponseEntitiesInnerEndPositionL f ExtractEntities200ResponseEntitiesInner{..} = (\extractEntities200ResponseEntitiesInnerEndPosition -> ExtractEntities200ResponseEntitiesInner { extractEntities200ResponseEntitiesInnerEndPosition, ..} ) <$> f extractEntities200ResponseEntitiesInnerEndPosition
+{-# INLINE extractEntities200ResponseEntitiesInnerEndPositionL #-}
 
--- | 'inlineResponse20018SentencesConfidence' Lens
-inlineResponse20018SentencesConfidenceL :: Lens_' InlineResponse20018Sentences (Maybe Int)
-inlineResponse20018SentencesConfidenceL f InlineResponse20018Sentences{..} = (\inlineResponse20018SentencesConfidence -> InlineResponse20018Sentences { inlineResponse20018SentencesConfidence, ..} ) <$> f inlineResponse20018SentencesConfidence
-{-# INLINE inlineResponse20018SentencesConfidenceL #-}
 
 
+-- * ExtractNews200Response
 
--- * InlineResponse20019
+-- | 'extractNews200ResponseTitle' Lens
+extractNews200ResponseTitleL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseTitleL f ExtractNews200Response{..} = (\extractNews200ResponseTitle -> ExtractNews200Response { extractNews200ResponseTitle, ..} ) <$> f extractNews200ResponseTitle
+{-# INLINE extractNews200ResponseTitleL #-}
 
--- | 'inlineResponse20019NumberOfWords' Lens
-inlineResponse20019NumberOfWordsL :: Lens_' InlineResponse20019 (Maybe Int)
-inlineResponse20019NumberOfWordsL f InlineResponse20019{..} = (\inlineResponse20019NumberOfWords -> InlineResponse20019 { inlineResponse20019NumberOfWords, ..} ) <$> f inlineResponse20019NumberOfWords
-{-# INLINE inlineResponse20019NumberOfWordsL #-}
+-- | 'extractNews200ResponseText' Lens
+extractNews200ResponseTextL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseTextL f ExtractNews200Response{..} = (\extractNews200ResponseText -> ExtractNews200Response { extractNews200ResponseText, ..} ) <$> f extractNews200ResponseText
+{-# INLINE extractNews200ResponseTextL #-}
 
--- | 'inlineResponse20019NumberOfSentences' Lens
-inlineResponse20019NumberOfSentencesL :: Lens_' InlineResponse20019 (Maybe Int)
-inlineResponse20019NumberOfSentencesL f InlineResponse20019{..} = (\inlineResponse20019NumberOfSentences -> InlineResponse20019 { inlineResponse20019NumberOfSentences, ..} ) <$> f inlineResponse20019NumberOfSentences
-{-# INLINE inlineResponse20019NumberOfSentencesL #-}
+-- | 'extractNews200ResponseUrl' Lens
+extractNews200ResponseUrlL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseUrlL f ExtractNews200Response{..} = (\extractNews200ResponseUrl -> ExtractNews200Response { extractNews200ResponseUrl, ..} ) <$> f extractNews200ResponseUrl
+{-# INLINE extractNews200ResponseUrlL #-}
 
--- | 'inlineResponse20019Readability' Lens
-inlineResponse20019ReadabilityL :: Lens_' InlineResponse20019 (Maybe InlineResponse20019Readability)
-inlineResponse20019ReadabilityL f InlineResponse20019{..} = (\inlineResponse20019Readability -> InlineResponse20019 { inlineResponse20019Readability, ..} ) <$> f inlineResponse20019Readability
-{-# INLINE inlineResponse20019ReadabilityL #-}
+-- | 'extractNews200ResponseImage' Lens
+extractNews200ResponseImageL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseImageL f ExtractNews200Response{..} = (\extractNews200ResponseImage -> ExtractNews200Response { extractNews200ResponseImage, ..} ) <$> f extractNews200ResponseImage
+{-# INLINE extractNews200ResponseImageL #-}
 
--- | 'inlineResponse20019Skimmability' Lens
-inlineResponse20019SkimmabilityL :: Lens_' InlineResponse20019 (Maybe InlineResponse20019Skimmability)
-inlineResponse20019SkimmabilityL f InlineResponse20019{..} = (\inlineResponse20019Skimmability -> InlineResponse20019 { inlineResponse20019Skimmability, ..} ) <$> f inlineResponse20019Skimmability
-{-# INLINE inlineResponse20019SkimmabilityL #-}
+-- | 'extractNews200ResponsePublishDate' Lens
+extractNews200ResponsePublishDateL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponsePublishDateL f ExtractNews200Response{..} = (\extractNews200ResponsePublishDate -> ExtractNews200Response { extractNews200ResponsePublishDate, ..} ) <$> f extractNews200ResponsePublishDate
+{-# INLINE extractNews200ResponsePublishDateL #-}
 
--- | 'inlineResponse20019Interestingness' Lens
-inlineResponse20019InterestingnessL :: Lens_' InlineResponse20019 (Maybe InlineResponse20019Interestingness)
-inlineResponse20019InterestingnessL f InlineResponse20019{..} = (\inlineResponse20019Interestingness -> InlineResponse20019 { inlineResponse20019Interestingness, ..} ) <$> f inlineResponse20019Interestingness
-{-# INLINE inlineResponse20019InterestingnessL #-}
+-- | 'extractNews200ResponseAuthor' Lens
+extractNews200ResponseAuthorL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseAuthorL f ExtractNews200Response{..} = (\extractNews200ResponseAuthor -> ExtractNews200Response { extractNews200ResponseAuthor, ..} ) <$> f extractNews200ResponseAuthor
+{-# INLINE extractNews200ResponseAuthorL #-}
 
--- | 'inlineResponse20019Style' Lens
-inlineResponse20019StyleL :: Lens_' InlineResponse20019 (Maybe InlineResponse20019Style)
-inlineResponse20019StyleL f InlineResponse20019{..} = (\inlineResponse20019Style -> InlineResponse20019 { inlineResponse20019Style, ..} ) <$> f inlineResponse20019Style
-{-# INLINE inlineResponse20019StyleL #-}
+-- | 'extractNews200ResponseLanguage' Lens
+extractNews200ResponseLanguageL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseLanguageL f ExtractNews200Response{..} = (\extractNews200ResponseLanguage -> ExtractNews200Response { extractNews200ResponseLanguage, ..} ) <$> f extractNews200ResponseLanguage
+{-# INLINE extractNews200ResponseLanguageL #-}
 
--- | 'inlineResponse20019TotalScore' Lens
-inlineResponse20019TotalScoreL :: Lens_' InlineResponse20019 (Maybe Double)
-inlineResponse20019TotalScoreL f InlineResponse20019{..} = (\inlineResponse20019TotalScore -> InlineResponse20019 { inlineResponse20019TotalScore, ..} ) <$> f inlineResponse20019TotalScore
-{-# INLINE inlineResponse20019TotalScoreL #-}
+-- | 'extractNews200ResponseSourceCountry' Lens
+extractNews200ResponseSourceCountryL :: Lens_' ExtractNews200Response (Maybe Text)
+extractNews200ResponseSourceCountryL f ExtractNews200Response{..} = (\extractNews200ResponseSourceCountry -> ExtractNews200Response { extractNews200ResponseSourceCountry, ..} ) <$> f extractNews200ResponseSourceCountry
+{-# INLINE extractNews200ResponseSourceCountryL #-}
 
+-- | 'extractNews200ResponseSentiment' Lens
+extractNews200ResponseSentimentL :: Lens_' ExtractNews200Response (Maybe Double)
+extractNews200ResponseSentimentL f ExtractNews200Response{..} = (\extractNews200ResponseSentiment -> ExtractNews200Response { extractNews200ResponseSentiment, ..} ) <$> f extractNews200ResponseSentiment
+{-# INLINE extractNews200ResponseSentimentL #-}
 
 
--- * InlineResponse20019Interestingness
 
--- | 'inlineResponse20019InterestingnessMainscores' Lens
-inlineResponse20019InterestingnessMainscoresL :: Lens_' InlineResponse20019Interestingness (Maybe InlineResponse20019SkimmabilityMainscores)
-inlineResponse20019InterestingnessMainscoresL f InlineResponse20019Interestingness{..} = (\inlineResponse20019InterestingnessMainscores -> InlineResponse20019Interestingness { inlineResponse20019InterestingnessMainscores, ..} ) <$> f inlineResponse20019InterestingnessMainscores
-{-# INLINE inlineResponse20019InterestingnessMainscoresL #-}
+-- * ExtractPublishDate200Response
 
--- | 'inlineResponse20019InterestingnessSubscores' Lens
-inlineResponse20019InterestingnessSubscoresL :: Lens_' InlineResponse20019Interestingness (Maybe InlineResponse20019InterestingnessSubscores)
-inlineResponse20019InterestingnessSubscoresL f InlineResponse20019Interestingness{..} = (\inlineResponse20019InterestingnessSubscores -> InlineResponse20019Interestingness { inlineResponse20019InterestingnessSubscores, ..} ) <$> f inlineResponse20019InterestingnessSubscores
-{-# INLINE inlineResponse20019InterestingnessSubscoresL #-}
+-- | 'extractPublishDate200ResponsePublishDate' Lens
+extractPublishDate200ResponsePublishDateL :: Lens_' ExtractPublishDate200Response (Maybe Text)
+extractPublishDate200ResponsePublishDateL f ExtractPublishDate200Response{..} = (\extractPublishDate200ResponsePublishDate -> ExtractPublishDate200Response { extractPublishDate200ResponsePublishDate, ..} ) <$> f extractPublishDate200ResponsePublishDate
+{-# INLINE extractPublishDate200ResponsePublishDateL #-}
 
 
 
--- * InlineResponse20019InterestingnessSubscores
+-- * FindSimilarBooks200Response
 
--- | 'inlineResponse20019InterestingnessSubscoresTitleRatingScore' Lens
-inlineResponse20019InterestingnessSubscoresTitleRatingScoreL :: Lens_' InlineResponse20019InterestingnessSubscores (Maybe [Int])
-inlineResponse20019InterestingnessSubscoresTitleRatingScoreL f InlineResponse20019InterestingnessSubscores{..} = (\inlineResponse20019InterestingnessSubscoresTitleRatingScore -> InlineResponse20019InterestingnessSubscores { inlineResponse20019InterestingnessSubscoresTitleRatingScore, ..} ) <$> f inlineResponse20019InterestingnessSubscoresTitleRatingScore
-{-# INLINE inlineResponse20019InterestingnessSubscoresTitleRatingScoreL #-}
+-- | 'findSimilarBooks200ResponseSimilarBooks' Lens
+findSimilarBooks200ResponseSimilarBooksL :: Lens_' FindSimilarBooks200Response (Maybe [SearchBooks200ResponseBooksInner])
+findSimilarBooks200ResponseSimilarBooksL f FindSimilarBooks200Response{..} = (\findSimilarBooks200ResponseSimilarBooks -> FindSimilarBooks200Response { findSimilarBooks200ResponseSimilarBooks, ..} ) <$> f findSimilarBooks200ResponseSimilarBooks
+{-# INLINE findSimilarBooks200ResponseSimilarBooksL #-}
 
--- | 'inlineResponse20019InterestingnessSubscoresQuoteScore' Lens
-inlineResponse20019InterestingnessSubscoresQuoteScoreL :: Lens_' InlineResponse20019InterestingnessSubscores (Maybe [Int])
-inlineResponse20019InterestingnessSubscoresQuoteScoreL f InlineResponse20019InterestingnessSubscores{..} = (\inlineResponse20019InterestingnessSubscoresQuoteScore -> InlineResponse20019InterestingnessSubscores { inlineResponse20019InterestingnessSubscoresQuoteScore, ..} ) <$> f inlineResponse20019InterestingnessSubscoresQuoteScore
-{-# INLINE inlineResponse20019InterestingnessSubscoresQuoteScoreL #-}
 
--- | 'inlineResponse20019InterestingnessSubscoresLengthScore' Lens
-inlineResponse20019InterestingnessSubscoresLengthScoreL :: Lens_' InlineResponse20019InterestingnessSubscores (Maybe [Int])
-inlineResponse20019InterestingnessSubscoresLengthScoreL f InlineResponse20019InterestingnessSubscores{..} = (\inlineResponse20019InterestingnessSubscoresLengthScore -> InlineResponse20019InterestingnessSubscores { inlineResponse20019InterestingnessSubscoresLengthScore, ..} ) <$> f inlineResponse20019InterestingnessSubscoresLengthScore
-{-# INLINE inlineResponse20019InterestingnessSubscoresLengthScoreL #-}
 
--- | 'inlineResponse20019InterestingnessSubscoresLinkScore' Lens
-inlineResponse20019InterestingnessSubscoresLinkScoreL :: Lens_' InlineResponse20019InterestingnessSubscores (Maybe [Int])
-inlineResponse20019InterestingnessSubscoresLinkScoreL f InlineResponse20019InterestingnessSubscores{..} = (\inlineResponse20019InterestingnessSubscoresLinkScore -> InlineResponse20019InterestingnessSubscores { inlineResponse20019InterestingnessSubscoresLinkScore, ..} ) <$> f inlineResponse20019InterestingnessSubscoresLinkScore
-{-# INLINE inlineResponse20019InterestingnessSubscoresLinkScoreL #-}
+-- * GenerateNonsenseWord200Response
 
--- | 'inlineResponse20019InterestingnessSubscoresGoogleHitsScore' Lens
-inlineResponse20019InterestingnessSubscoresGoogleHitsScoreL :: Lens_' InlineResponse20019InterestingnessSubscores (Maybe [Int])
-inlineResponse20019InterestingnessSubscoresGoogleHitsScoreL f InlineResponse20019InterestingnessSubscores{..} = (\inlineResponse20019InterestingnessSubscoresGoogleHitsScore -> InlineResponse20019InterestingnessSubscores { inlineResponse20019InterestingnessSubscoresGoogleHitsScore, ..} ) <$> f inlineResponse20019InterestingnessSubscoresGoogleHitsScore
-{-# INLINE inlineResponse20019InterestingnessSubscoresGoogleHitsScoreL #-}
+-- | 'generateNonsenseWord200ResponseWord' Lens
+generateNonsenseWord200ResponseWordL :: Lens_' GenerateNonsenseWord200Response (Maybe Text)
+generateNonsenseWord200ResponseWordL f GenerateNonsenseWord200Response{..} = (\generateNonsenseWord200ResponseWord -> GenerateNonsenseWord200Response { generateNonsenseWord200ResponseWord, ..} ) <$> f generateNonsenseWord200ResponseWord
+{-# INLINE generateNonsenseWord200ResponseWordL #-}
 
+-- | 'generateNonsenseWord200ResponseRating' Lens
+generateNonsenseWord200ResponseRatingL :: Lens_' GenerateNonsenseWord200Response (Maybe Double)
+generateNonsenseWord200ResponseRatingL f GenerateNonsenseWord200Response{..} = (\generateNonsenseWord200ResponseRating -> GenerateNonsenseWord200Response { generateNonsenseWord200ResponseRating, ..} ) <$> f generateNonsenseWord200ResponseRating
+{-# INLINE generateNonsenseWord200ResponseRatingL #-}
 
 
--- * InlineResponse20019Readability
 
--- | 'inlineResponse20019ReadabilityMainscores' Lens
-inlineResponse20019ReadabilityMainscoresL :: Lens_' InlineResponse20019Readability (Maybe InlineResponse20019ReadabilityMainscores)
-inlineResponse20019ReadabilityMainscoresL f InlineResponse20019Readability{..} = (\inlineResponse20019ReadabilityMainscores -> InlineResponse20019Readability { inlineResponse20019ReadabilityMainscores, ..} ) <$> f inlineResponse20019ReadabilityMainscores
-{-# INLINE inlineResponse20019ReadabilityMainscoresL #-}
+-- * ListWordSynonyms200Response
 
--- | 'inlineResponse20019ReadabilitySubscores' Lens
-inlineResponse20019ReadabilitySubscoresL :: Lens_' InlineResponse20019Readability (Maybe InlineResponse20019ReadabilitySubscores)
-inlineResponse20019ReadabilitySubscoresL f InlineResponse20019Readability{..} = (\inlineResponse20019ReadabilitySubscores -> InlineResponse20019Readability { inlineResponse20019ReadabilitySubscores, ..} ) <$> f inlineResponse20019ReadabilitySubscores
-{-# INLINE inlineResponse20019ReadabilitySubscoresL #-}
+-- | 'listWordSynonyms200ResponseSynonyms' Lens
+listWordSynonyms200ResponseSynonymsL :: Lens_' ListWordSynonyms200Response (Maybe [Text])
+listWordSynonyms200ResponseSynonymsL f ListWordSynonyms200Response{..} = (\listWordSynonyms200ResponseSynonyms -> ListWordSynonyms200Response { listWordSynonyms200ResponseSynonyms, ..} ) <$> f listWordSynonyms200ResponseSynonyms
+{-# INLINE listWordSynonyms200ResponseSynonymsL #-}
 
 
 
--- * InlineResponse20019ReadabilityMainscores
+-- * PartOfSpeechTagging200Response
 
--- | 'inlineResponse20019ReadabilityMainscoresTotalPossible' Lens
-inlineResponse20019ReadabilityMainscoresTotalPossibleL :: Lens_' InlineResponse20019ReadabilityMainscores (Maybe Int)
-inlineResponse20019ReadabilityMainscoresTotalPossibleL f InlineResponse20019ReadabilityMainscores{..} = (\inlineResponse20019ReadabilityMainscoresTotalPossible -> InlineResponse20019ReadabilityMainscores { inlineResponse20019ReadabilityMainscoresTotalPossible, ..} ) <$> f inlineResponse20019ReadabilityMainscoresTotalPossible
-{-# INLINE inlineResponse20019ReadabilityMainscoresTotalPossibleL #-}
+-- | 'partOfSpeechTagging200ResponseTaggedText' Lens
+partOfSpeechTagging200ResponseTaggedTextL :: Lens_' PartOfSpeechTagging200Response (Maybe Text)
+partOfSpeechTagging200ResponseTaggedTextL f PartOfSpeechTagging200Response{..} = (\partOfSpeechTagging200ResponseTaggedText -> PartOfSpeechTagging200Response { partOfSpeechTagging200ResponseTaggedText, ..} ) <$> f partOfSpeechTagging200ResponseTaggedText
+{-# INLINE partOfSpeechTagging200ResponseTaggedTextL #-}
 
--- | 'inlineResponse20019ReadabilityMainscoresTotal' Lens
-inlineResponse20019ReadabilityMainscoresTotalL :: Lens_' InlineResponse20019ReadabilityMainscores (Maybe Int)
-inlineResponse20019ReadabilityMainscoresTotalL f InlineResponse20019ReadabilityMainscores{..} = (\inlineResponse20019ReadabilityMainscoresTotal -> InlineResponse20019ReadabilityMainscores { inlineResponse20019ReadabilityMainscoresTotal, ..} ) <$> f inlineResponse20019ReadabilityMainscoresTotal
-{-# INLINE inlineResponse20019ReadabilityMainscoresTotalL #-}
 
 
+-- * PluralizeWord200Response
 
--- * InlineResponse20019ReadabilitySubscores
+-- | 'pluralizeWord200ResponseOriginal' Lens
+pluralizeWord200ResponseOriginalL :: Lens_' PluralizeWord200Response (Maybe Text)
+pluralizeWord200ResponseOriginalL f PluralizeWord200Response{..} = (\pluralizeWord200ResponseOriginal -> PluralizeWord200Response { pluralizeWord200ResponseOriginal, ..} ) <$> f pluralizeWord200ResponseOriginal
+{-# INLINE pluralizeWord200ResponseOriginalL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresReadingTimeSeconds' Lens
-inlineResponse20019ReadabilitySubscoresReadingTimeSecondsL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Int)
-inlineResponse20019ReadabilitySubscoresReadingTimeSecondsL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresReadingTimeSeconds -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresReadingTimeSeconds, ..} ) <$> f inlineResponse20019ReadabilitySubscoresReadingTimeSeconds
-{-# INLINE inlineResponse20019ReadabilitySubscoresReadingTimeSecondsL #-}
+-- | 'pluralizeWord200ResponsePlural' Lens
+pluralizeWord200ResponsePluralL :: Lens_' PluralizeWord200Response (Maybe Text)
+pluralizeWord200ResponsePluralL f PluralizeWord200Response{..} = (\pluralizeWord200ResponsePlural -> PluralizeWord200Response { pluralizeWord200ResponsePlural, ..} ) <$> f pluralizeWord200ResponsePlural
+{-# INLINE pluralizeWord200ResponsePluralL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresForcast' Lens
-inlineResponse20019ReadabilitySubscoresForcastL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresForcastL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresForcast -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresForcast, ..} ) <$> f inlineResponse20019ReadabilitySubscoresForcast
-{-# INLINE inlineResponse20019ReadabilitySubscoresForcastL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresFlesch' Lens
-inlineResponse20019ReadabilitySubscoresFleschL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresFleschL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresFlesch -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresFlesch, ..} ) <$> f inlineResponse20019ReadabilitySubscoresFlesch
-{-# INLINE inlineResponse20019ReadabilitySubscoresFleschL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresSmog' Lens
-inlineResponse20019ReadabilitySubscoresSmogL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresSmogL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresSmog -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresSmog, ..} ) <$> f inlineResponse20019ReadabilitySubscoresSmog
-{-# INLINE inlineResponse20019ReadabilitySubscoresSmogL #-}
+-- * RandomMeme200Response
 
--- | 'inlineResponse20019ReadabilitySubscoresAri' Lens
-inlineResponse20019ReadabilitySubscoresAriL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresAriL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresAri -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresAri, ..} ) <$> f inlineResponse20019ReadabilitySubscoresAri
-{-# INLINE inlineResponse20019ReadabilitySubscoresAriL #-}
+-- | 'randomMeme200ResponseDescription' Lens
+randomMeme200ResponseDescriptionL :: Lens_' RandomMeme200Response (Maybe Text)
+randomMeme200ResponseDescriptionL f RandomMeme200Response{..} = (\randomMeme200ResponseDescription -> RandomMeme200Response { randomMeme200ResponseDescription, ..} ) <$> f randomMeme200ResponseDescription
+{-# INLINE randomMeme200ResponseDescriptionL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresLix' Lens
-inlineResponse20019ReadabilitySubscoresLixL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresLixL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresLix -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresLix, ..} ) <$> f inlineResponse20019ReadabilitySubscoresLix
-{-# INLINE inlineResponse20019ReadabilitySubscoresLixL #-}
+-- | 'randomMeme200ResponseUrl' Lens
+randomMeme200ResponseUrlL :: Lens_' RandomMeme200Response (Maybe Text)
+randomMeme200ResponseUrlL f RandomMeme200Response{..} = (\randomMeme200ResponseUrl -> RandomMeme200Response { randomMeme200ResponseUrl, ..} ) <$> f randomMeme200ResponseUrl
+{-# INLINE randomMeme200ResponseUrlL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresColemanLiau' Lens
-inlineResponse20019ReadabilitySubscoresColemanLiauL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresColemanLiauL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresColemanLiau -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresColemanLiau, ..} ) <$> f inlineResponse20019ReadabilitySubscoresColemanLiau
-{-# INLINE inlineResponse20019ReadabilitySubscoresColemanLiauL #-}
+-- | 'randomMeme200ResponseType' Lens
+randomMeme200ResponseTypeL :: Lens_' RandomMeme200Response (Maybe Text)
+randomMeme200ResponseTypeL f RandomMeme200Response{..} = (\randomMeme200ResponseType -> RandomMeme200Response { randomMeme200ResponseType, ..} ) <$> f randomMeme200ResponseType
+{-# INLINE randomMeme200ResponseTypeL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresKincaid' Lens
-inlineResponse20019ReadabilitySubscoresKincaidL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresKincaidL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresKincaid -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresKincaid, ..} ) <$> f inlineResponse20019ReadabilitySubscoresKincaid
-{-# INLINE inlineResponse20019ReadabilitySubscoresKincaidL #-}
+-- | 'randomMeme200ResponseWidth' Lens
+randomMeme200ResponseWidthL :: Lens_' RandomMeme200Response (Maybe Int)
+randomMeme200ResponseWidthL f RandomMeme200Response{..} = (\randomMeme200ResponseWidth -> RandomMeme200Response { randomMeme200ResponseWidth, ..} ) <$> f randomMeme200ResponseWidth
+{-# INLINE randomMeme200ResponseWidthL #-}
 
--- | 'inlineResponse20019ReadabilitySubscoresFog' Lens
-inlineResponse20019ReadabilitySubscoresFogL :: Lens_' InlineResponse20019ReadabilitySubscores (Maybe Double)
-inlineResponse20019ReadabilitySubscoresFogL f InlineResponse20019ReadabilitySubscores{..} = (\inlineResponse20019ReadabilitySubscoresFog -> InlineResponse20019ReadabilitySubscores { inlineResponse20019ReadabilitySubscoresFog, ..} ) <$> f inlineResponse20019ReadabilitySubscoresFog
-{-# INLINE inlineResponse20019ReadabilitySubscoresFogL #-}
+-- | 'randomMeme200ResponseHeight' Lens
+randomMeme200ResponseHeightL :: Lens_' RandomMeme200Response (Maybe Int)
+randomMeme200ResponseHeightL f RandomMeme200Response{..} = (\randomMeme200ResponseHeight -> RandomMeme200Response { randomMeme200ResponseHeight, ..} ) <$> f randomMeme200ResponseHeight
+{-# INLINE randomMeme200ResponseHeightL #-}
 
+-- | 'randomMeme200ResponseRatio' Lens
+randomMeme200ResponseRatioL :: Lens_' RandomMeme200Response (Maybe Double)
+randomMeme200ResponseRatioL f RandomMeme200Response{..} = (\randomMeme200ResponseRatio -> RandomMeme200Response { randomMeme200ResponseRatio, ..} ) <$> f randomMeme200ResponseRatio
+{-# INLINE randomMeme200ResponseRatioL #-}
 
 
--- * InlineResponse20019Skimmability
 
--- | 'inlineResponse20019SkimmabilityMainscores' Lens
-inlineResponse20019SkimmabilityMainscoresL :: Lens_' InlineResponse20019Skimmability (Maybe InlineResponse20019SkimmabilityMainscores)
-inlineResponse20019SkimmabilityMainscoresL f InlineResponse20019Skimmability{..} = (\inlineResponse20019SkimmabilityMainscores -> InlineResponse20019Skimmability { inlineResponse20019SkimmabilityMainscores, ..} ) <$> f inlineResponse20019SkimmabilityMainscores
-{-# INLINE inlineResponse20019SkimmabilityMainscoresL #-}
+-- * RandomPoem200Response
 
--- | 'inlineResponse20019SkimmabilitySubscores' Lens
-inlineResponse20019SkimmabilitySubscoresL :: Lens_' InlineResponse20019Skimmability (Maybe InlineResponse20019SkimmabilitySubscores)
-inlineResponse20019SkimmabilitySubscoresL f InlineResponse20019Skimmability{..} = (\inlineResponse20019SkimmabilitySubscores -> InlineResponse20019Skimmability { inlineResponse20019SkimmabilitySubscores, ..} ) <$> f inlineResponse20019SkimmabilitySubscores
-{-# INLINE inlineResponse20019SkimmabilitySubscoresL #-}
+-- | 'randomPoem200ResponseTitle' Lens
+randomPoem200ResponseTitleL :: Lens_' RandomPoem200Response (Maybe Text)
+randomPoem200ResponseTitleL f RandomPoem200Response{..} = (\randomPoem200ResponseTitle -> RandomPoem200Response { randomPoem200ResponseTitle, ..} ) <$> f randomPoem200ResponseTitle
+{-# INLINE randomPoem200ResponseTitleL #-}
 
+-- | 'randomPoem200ResponseAuthor' Lens
+randomPoem200ResponseAuthorL :: Lens_' RandomPoem200Response (Maybe Text)
+randomPoem200ResponseAuthorL f RandomPoem200Response{..} = (\randomPoem200ResponseAuthor -> RandomPoem200Response { randomPoem200ResponseAuthor, ..} ) <$> f randomPoem200ResponseAuthor
+{-# INLINE randomPoem200ResponseAuthorL #-}
 
+-- | 'randomPoem200ResponsePoem' Lens
+randomPoem200ResponsePoemL :: Lens_' RandomPoem200Response (Maybe Text)
+randomPoem200ResponsePoemL f RandomPoem200Response{..} = (\randomPoem200ResponsePoem -> RandomPoem200Response { randomPoem200ResponsePoem, ..} ) <$> f randomPoem200ResponsePoem
+{-# INLINE randomPoem200ResponsePoemL #-}
 
--- * InlineResponse20019SkimmabilityMainscores
 
--- | 'inlineResponse20019SkimmabilityMainscoresTotalPossible' Lens
-inlineResponse20019SkimmabilityMainscoresTotalPossibleL :: Lens_' InlineResponse20019SkimmabilityMainscores (Maybe Int)
-inlineResponse20019SkimmabilityMainscoresTotalPossibleL f InlineResponse20019SkimmabilityMainscores{..} = (\inlineResponse20019SkimmabilityMainscoresTotalPossible -> InlineResponse20019SkimmabilityMainscores { inlineResponse20019SkimmabilityMainscoresTotalPossible, ..} ) <$> f inlineResponse20019SkimmabilityMainscoresTotalPossible
-{-# INLINE inlineResponse20019SkimmabilityMainscoresTotalPossibleL #-}
 
--- | 'inlineResponse20019SkimmabilityMainscoresTotal' Lens
-inlineResponse20019SkimmabilityMainscoresTotalL :: Lens_' InlineResponse20019SkimmabilityMainscores (Maybe Double)
-inlineResponse20019SkimmabilityMainscoresTotalL f InlineResponse20019SkimmabilityMainscores{..} = (\inlineResponse20019SkimmabilityMainscoresTotal -> InlineResponse20019SkimmabilityMainscores { inlineResponse20019SkimmabilityMainscoresTotal, ..} ) <$> f inlineResponse20019SkimmabilityMainscoresTotal
-{-# INLINE inlineResponse20019SkimmabilityMainscoresTotalL #-}
+-- * RandomQuote200Response
 
+-- | 'randomQuote200ResponseAuthor' Lens
+randomQuote200ResponseAuthorL :: Lens_' RandomQuote200Response (Maybe Text)
+randomQuote200ResponseAuthorL f RandomQuote200Response{..} = (\randomQuote200ResponseAuthor -> RandomQuote200Response { randomQuote200ResponseAuthor, ..} ) <$> f randomQuote200ResponseAuthor
+{-# INLINE randomQuote200ResponseAuthorL #-}
 
+-- | 'randomQuote200ResponseQuote' Lens
+randomQuote200ResponseQuoteL :: Lens_' RandomQuote200Response (Maybe Text)
+randomQuote200ResponseQuoteL f RandomQuote200Response{..} = (\randomQuote200ResponseQuote -> RandomQuote200Response { randomQuote200ResponseQuote, ..} ) <$> f randomQuote200ResponseQuote
+{-# INLINE randomQuote200ResponseQuoteL #-}
 
--- * InlineResponse20019SkimmabilitySubscores
 
--- | 'inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore' Lens
-inlineResponse20019SkimmabilitySubscoresBulletPointRatioScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresBulletPointRatioScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresBulletPointRatioScoreL #-}
 
--- | 'inlineResponse20019SkimmabilitySubscoresImageScore' Lens
-inlineResponse20019SkimmabilitySubscoresImageScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresImageScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresImageScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresImageScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresImageScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresImageScoreL #-}
+-- * RandomTrivia200Response
 
--- | 'inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore' Lens
-inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScoreL #-}
+-- | 'randomTrivia200ResponseTrivia' Lens
+randomTrivia200ResponseTriviaL :: Lens_' RandomTrivia200Response (Maybe Text)
+randomTrivia200ResponseTriviaL f RandomTrivia200Response{..} = (\randomTrivia200ResponseTrivia -> RandomTrivia200Response { randomTrivia200ResponseTrivia, ..} ) <$> f randomTrivia200ResponseTrivia
+{-# INLINE randomTrivia200ResponseTriviaL #-}
 
--- | 'inlineResponse20019SkimmabilitySubscoresVideoScore' Lens
-inlineResponse20019SkimmabilitySubscoresVideoScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresVideoScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresVideoScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresVideoScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresVideoScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresVideoScoreL #-}
 
--- | 'inlineResponse20019SkimmabilitySubscoresParagraphScore' Lens
-inlineResponse20019SkimmabilitySubscoresParagraphScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresParagraphScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresParagraphScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresParagraphScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresParagraphScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresParagraphScoreL #-}
 
--- | 'inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore' Lens
-inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScoreL :: Lens_' InlineResponse20019SkimmabilitySubscores (Maybe [Int])
-inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScoreL f InlineResponse20019SkimmabilitySubscores{..} = (\inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore -> InlineResponse20019SkimmabilitySubscores { inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore, ..} ) <$> f inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore
-{-# INLINE inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScoreL #-}
+-- * ReadKeyValueFromStore200Response
 
+-- | 'readKeyValueFromStore200ResponseValue' Lens
+readKeyValueFromStore200ResponseValueL :: Lens_' ReadKeyValueFromStore200Response (Maybe Text)
+readKeyValueFromStore200ResponseValueL f ReadKeyValueFromStore200Response{..} = (\readKeyValueFromStore200ResponseValue -> ReadKeyValueFromStore200Response { readKeyValueFromStore200ResponseValue, ..} ) <$> f readKeyValueFromStore200ResponseValue
+{-# INLINE readKeyValueFromStore200ResponseValueL #-}
 
 
--- * InlineResponse20019Style
 
--- | 'inlineResponse20019StyleMainscores' Lens
-inlineResponse20019StyleMainscoresL :: Lens_' InlineResponse20019Style (Maybe InlineResponse20019ReadabilityMainscores)
-inlineResponse20019StyleMainscoresL f InlineResponse20019Style{..} = (\inlineResponse20019StyleMainscores -> InlineResponse20019Style { inlineResponse20019StyleMainscores, ..} ) <$> f inlineResponse20019StyleMainscores
-{-# INLINE inlineResponse20019StyleMainscoresL #-}
+-- * ScoreReadability200Response
 
--- | 'inlineResponse20019StyleSubscores' Lens
-inlineResponse20019StyleSubscoresL :: Lens_' InlineResponse20019Style (Maybe InlineResponse20019StyleSubscores)
-inlineResponse20019StyleSubscoresL f InlineResponse20019Style{..} = (\inlineResponse20019StyleSubscores -> InlineResponse20019Style { inlineResponse20019StyleSubscores, ..} ) <$> f inlineResponse20019StyleSubscores
-{-# INLINE inlineResponse20019StyleSubscoresL #-}
+-- | 'scoreReadability200ResponseReadability' Lens
+scoreReadability200ResponseReadabilityL :: Lens_' ScoreReadability200Response (Maybe ScoreText200ResponseReadability)
+scoreReadability200ResponseReadabilityL f ScoreReadability200Response{..} = (\scoreReadability200ResponseReadability -> ScoreReadability200Response { scoreReadability200ResponseReadability, ..} ) <$> f scoreReadability200ResponseReadability
+{-# INLINE scoreReadability200ResponseReadabilityL #-}
 
 
 
--- * InlineResponse20019StyleSubscores
+-- * ScoreText200Response
 
--- | 'inlineResponse20019StyleSubscoresAbbreviationScore' Lens
-inlineResponse20019StyleSubscoresAbbreviationScoreL :: Lens_' InlineResponse20019StyleSubscores (Maybe [Int])
-inlineResponse20019StyleSubscoresAbbreviationScoreL f InlineResponse20019StyleSubscores{..} = (\inlineResponse20019StyleSubscoresAbbreviationScore -> InlineResponse20019StyleSubscores { inlineResponse20019StyleSubscoresAbbreviationScore, ..} ) <$> f inlineResponse20019StyleSubscoresAbbreviationScore
-{-# INLINE inlineResponse20019StyleSubscoresAbbreviationScoreL #-}
+-- | 'scoreText200ResponseNumberOfWords' Lens
+scoreText200ResponseNumberOfWordsL :: Lens_' ScoreText200Response (Maybe Int)
+scoreText200ResponseNumberOfWordsL f ScoreText200Response{..} = (\scoreText200ResponseNumberOfWords -> ScoreText200Response { scoreText200ResponseNumberOfWords, ..} ) <$> f scoreText200ResponseNumberOfWords
+{-# INLINE scoreText200ResponseNumberOfWordsL #-}
 
--- | 'inlineResponse20019StyleSubscoresStyleScore' Lens
-inlineResponse20019StyleSubscoresStyleScoreL :: Lens_' InlineResponse20019StyleSubscores (Maybe [Int])
-inlineResponse20019StyleSubscoresStyleScoreL f InlineResponse20019StyleSubscores{..} = (\inlineResponse20019StyleSubscoresStyleScore -> InlineResponse20019StyleSubscores { inlineResponse20019StyleSubscoresStyleScore, ..} ) <$> f inlineResponse20019StyleSubscoresStyleScore
-{-# INLINE inlineResponse20019StyleSubscoresStyleScoreL #-}
+-- | 'scoreText200ResponseNumberOfSentences' Lens
+scoreText200ResponseNumberOfSentencesL :: Lens_' ScoreText200Response (Maybe Int)
+scoreText200ResponseNumberOfSentencesL f ScoreText200Response{..} = (\scoreText200ResponseNumberOfSentences -> ScoreText200Response { scoreText200ResponseNumberOfSentences, ..} ) <$> f scoreText200ResponseNumberOfSentences
+{-# INLINE scoreText200ResponseNumberOfSentencesL #-}
 
--- | 'inlineResponse20019StyleSubscoresSpellingScore' Lens
-inlineResponse20019StyleSubscoresSpellingScoreL :: Lens_' InlineResponse20019StyleSubscores (Maybe [Int])
-inlineResponse20019StyleSubscoresSpellingScoreL f InlineResponse20019StyleSubscores{..} = (\inlineResponse20019StyleSubscoresSpellingScore -> InlineResponse20019StyleSubscores { inlineResponse20019StyleSubscoresSpellingScore, ..} ) <$> f inlineResponse20019StyleSubscoresSpellingScore
-{-# INLINE inlineResponse20019StyleSubscoresSpellingScoreL #-}
+-- | 'scoreText200ResponseReadability' Lens
+scoreText200ResponseReadabilityL :: Lens_' ScoreText200Response (Maybe ScoreText200ResponseReadability)
+scoreText200ResponseReadabilityL f ScoreText200Response{..} = (\scoreText200ResponseReadability -> ScoreText200Response { scoreText200ResponseReadability, ..} ) <$> f scoreText200ResponseReadability
+{-# INLINE scoreText200ResponseReadabilityL #-}
 
+-- | 'scoreText200ResponseSkimmability' Lens
+scoreText200ResponseSkimmabilityL :: Lens_' ScoreText200Response (Maybe ScoreText200ResponseSkimmability)
+scoreText200ResponseSkimmabilityL f ScoreText200Response{..} = (\scoreText200ResponseSkimmability -> ScoreText200Response { scoreText200ResponseSkimmability, ..} ) <$> f scoreText200ResponseSkimmability
+{-# INLINE scoreText200ResponseSkimmabilityL #-}
 
+-- | 'scoreText200ResponseInterestingness' Lens
+scoreText200ResponseInterestingnessL :: Lens_' ScoreText200Response (Maybe ScoreText200ResponseInterestingness)
+scoreText200ResponseInterestingnessL f ScoreText200Response{..} = (\scoreText200ResponseInterestingness -> ScoreText200Response { scoreText200ResponseInterestingness, ..} ) <$> f scoreText200ResponseInterestingness
+{-# INLINE scoreText200ResponseInterestingnessL #-}
 
--- * InlineResponse2002
+-- | 'scoreText200ResponseStyle' Lens
+scoreText200ResponseStyleL :: Lens_' ScoreText200Response (Maybe ScoreText200ResponseStyle)
+scoreText200ResponseStyleL f ScoreText200Response{..} = (\scoreText200ResponseStyle -> ScoreText200Response { scoreText200ResponseStyle, ..} ) <$> f scoreText200ResponseStyle
+{-# INLINE scoreText200ResponseStyleL #-}
 
--- | 'inlineResponse2002Offset' Lens
-inlineResponse2002OffsetL :: Lens_' InlineResponse2002 (Maybe Int)
-inlineResponse2002OffsetL f InlineResponse2002{..} = (\inlineResponse2002Offset -> InlineResponse2002 { inlineResponse2002Offset, ..} ) <$> f inlineResponse2002Offset
-{-# INLINE inlineResponse2002OffsetL #-}
+-- | 'scoreText200ResponseTotalScore' Lens
+scoreText200ResponseTotalScoreL :: Lens_' ScoreText200Response (Maybe Double)
+scoreText200ResponseTotalScoreL f ScoreText200Response{..} = (\scoreText200ResponseTotalScore -> ScoreText200Response { scoreText200ResponseTotalScore, ..} ) <$> f scoreText200ResponseTotalScore
+{-# INLINE scoreText200ResponseTotalScoreL #-}
 
--- | 'inlineResponse2002Number' Lens
-inlineResponse2002NumberL :: Lens_' InlineResponse2002 (Maybe Int)
-inlineResponse2002NumberL f InlineResponse2002{..} = (\inlineResponse2002Number -> InlineResponse2002 { inlineResponse2002Number, ..} ) <$> f inlineResponse2002Number
-{-# INLINE inlineResponse2002NumberL #-}
 
--- | 'inlineResponse2002Available' Lens
-inlineResponse2002AvailableL :: Lens_' InlineResponse2002 (Maybe Int)
-inlineResponse2002AvailableL f InlineResponse2002{..} = (\inlineResponse2002Available -> InlineResponse2002 { inlineResponse2002Available, ..} ) <$> f inlineResponse2002Available
-{-# INLINE inlineResponse2002AvailableL #-}
 
--- | 'inlineResponse2002News' Lens
-inlineResponse2002NewsL :: Lens_' InlineResponse2002 (Maybe [InlineResponse2002News])
-inlineResponse2002NewsL f InlineResponse2002{..} = (\inlineResponse2002News -> InlineResponse2002 { inlineResponse2002News, ..} ) <$> f inlineResponse2002News
-{-# INLINE inlineResponse2002NewsL #-}
+-- * ScoreText200ResponseInterestingness
 
+-- | 'scoreText200ResponseInterestingnessMainscores' Lens
+scoreText200ResponseInterestingnessMainscoresL :: Lens_' ScoreText200ResponseInterestingness (Maybe ScoreText200ResponseSkimmabilityMainscores)
+scoreText200ResponseInterestingnessMainscoresL f ScoreText200ResponseInterestingness{..} = (\scoreText200ResponseInterestingnessMainscores -> ScoreText200ResponseInterestingness { scoreText200ResponseInterestingnessMainscores, ..} ) <$> f scoreText200ResponseInterestingnessMainscores
+{-# INLINE scoreText200ResponseInterestingnessMainscoresL #-}
 
+-- | 'scoreText200ResponseInterestingnessSubscores' Lens
+scoreText200ResponseInterestingnessSubscoresL :: Lens_' ScoreText200ResponseInterestingness (Maybe ScoreText200ResponseInterestingnessSubscores)
+scoreText200ResponseInterestingnessSubscoresL f ScoreText200ResponseInterestingness{..} = (\scoreText200ResponseInterestingnessSubscores -> ScoreText200ResponseInterestingness { scoreText200ResponseInterestingnessSubscores, ..} ) <$> f scoreText200ResponseInterestingnessSubscores
+{-# INLINE scoreText200ResponseInterestingnessSubscoresL #-}
 
--- * InlineResponse20020
 
--- | 'inlineResponse20020Readability' Lens
-inlineResponse20020ReadabilityL :: Lens_' InlineResponse20020 (Maybe InlineResponse20019Readability)
-inlineResponse20020ReadabilityL f InlineResponse20020{..} = (\inlineResponse20020Readability -> InlineResponse20020 { inlineResponse20020Readability, ..} ) <$> f inlineResponse20020Readability
-{-# INLINE inlineResponse20020ReadabilityL #-}
 
+-- * ScoreText200ResponseInterestingnessSubscores
 
+-- | 'scoreText200ResponseInterestingnessSubscoresTitleRatingScore' Lens
+scoreText200ResponseInterestingnessSubscoresTitleRatingScoreL :: Lens_' ScoreText200ResponseInterestingnessSubscores (Maybe [Int])
+scoreText200ResponseInterestingnessSubscoresTitleRatingScoreL f ScoreText200ResponseInterestingnessSubscores{..} = (\scoreText200ResponseInterestingnessSubscoresTitleRatingScore -> ScoreText200ResponseInterestingnessSubscores { scoreText200ResponseInterestingnessSubscoresTitleRatingScore, ..} ) <$> f scoreText200ResponseInterestingnessSubscoresTitleRatingScore
+{-# INLINE scoreText200ResponseInterestingnessSubscoresTitleRatingScoreL #-}
 
--- * InlineResponse20021
+-- | 'scoreText200ResponseInterestingnessSubscoresQuoteScore' Lens
+scoreText200ResponseInterestingnessSubscoresQuoteScoreL :: Lens_' ScoreText200ResponseInterestingnessSubscores (Maybe [Int])
+scoreText200ResponseInterestingnessSubscoresQuoteScoreL f ScoreText200ResponseInterestingnessSubscores{..} = (\scoreText200ResponseInterestingnessSubscoresQuoteScore -> ScoreText200ResponseInterestingnessSubscores { scoreText200ResponseInterestingnessSubscoresQuoteScore, ..} ) <$> f scoreText200ResponseInterestingnessSubscoresQuoteScore
+{-# INLINE scoreText200ResponseInterestingnessSubscoresQuoteScoreL #-}
 
--- | 'inlineResponse20021Dates' Lens
-inlineResponse20021DatesL :: Lens_' InlineResponse20021 (Maybe [InlineResponse20021Dates])
-inlineResponse20021DatesL f InlineResponse20021{..} = (\inlineResponse20021Dates -> InlineResponse20021 { inlineResponse20021Dates, ..} ) <$> f inlineResponse20021Dates
-{-# INLINE inlineResponse20021DatesL #-}
+-- | 'scoreText200ResponseInterestingnessSubscoresLengthScore' Lens
+scoreText200ResponseInterestingnessSubscoresLengthScoreL :: Lens_' ScoreText200ResponseInterestingnessSubscores (Maybe [Int])
+scoreText200ResponseInterestingnessSubscoresLengthScoreL f ScoreText200ResponseInterestingnessSubscores{..} = (\scoreText200ResponseInterestingnessSubscoresLengthScore -> ScoreText200ResponseInterestingnessSubscores { scoreText200ResponseInterestingnessSubscoresLengthScore, ..} ) <$> f scoreText200ResponseInterestingnessSubscoresLengthScore
+{-# INLINE scoreText200ResponseInterestingnessSubscoresLengthScoreL #-}
 
+-- | 'scoreText200ResponseInterestingnessSubscoresLinkScore' Lens
+scoreText200ResponseInterestingnessSubscoresLinkScoreL :: Lens_' ScoreText200ResponseInterestingnessSubscores (Maybe [Int])
+scoreText200ResponseInterestingnessSubscoresLinkScoreL f ScoreText200ResponseInterestingnessSubscores{..} = (\scoreText200ResponseInterestingnessSubscoresLinkScore -> ScoreText200ResponseInterestingnessSubscores { scoreText200ResponseInterestingnessSubscoresLinkScore, ..} ) <$> f scoreText200ResponseInterestingnessSubscoresLinkScore
+{-# INLINE scoreText200ResponseInterestingnessSubscoresLinkScoreL #-}
 
+-- | 'scoreText200ResponseInterestingnessSubscoresGoogleHitsScore' Lens
+scoreText200ResponseInterestingnessSubscoresGoogleHitsScoreL :: Lens_' ScoreText200ResponseInterestingnessSubscores (Maybe [Int])
+scoreText200ResponseInterestingnessSubscoresGoogleHitsScoreL f ScoreText200ResponseInterestingnessSubscores{..} = (\scoreText200ResponseInterestingnessSubscoresGoogleHitsScore -> ScoreText200ResponseInterestingnessSubscores { scoreText200ResponseInterestingnessSubscoresGoogleHitsScore, ..} ) <$> f scoreText200ResponseInterestingnessSubscoresGoogleHitsScore
+{-# INLINE scoreText200ResponseInterestingnessSubscoresGoogleHitsScoreL #-}
 
--- * InlineResponse20021Dates
 
--- | 'inlineResponse20021DatesStartPosition' Lens
-inlineResponse20021DatesStartPositionL :: Lens_' InlineResponse20021Dates (Maybe Int)
-inlineResponse20021DatesStartPositionL f InlineResponse20021Dates{..} = (\inlineResponse20021DatesStartPosition -> InlineResponse20021Dates { inlineResponse20021DatesStartPosition, ..} ) <$> f inlineResponse20021DatesStartPosition
-{-# INLINE inlineResponse20021DatesStartPositionL #-}
 
--- | 'inlineResponse20021DatesDate' Lens
-inlineResponse20021DatesDateL :: Lens_' InlineResponse20021Dates (Maybe Text)
-inlineResponse20021DatesDateL f InlineResponse20021Dates{..} = (\inlineResponse20021DatesDate -> InlineResponse20021Dates { inlineResponse20021DatesDate, ..} ) <$> f inlineResponse20021DatesDate
-{-# INLINE inlineResponse20021DatesDateL #-}
+-- * ScoreText200ResponseReadability
 
--- | 'inlineResponse20021DatesNormalizedDate' Lens
-inlineResponse20021DatesNormalizedDateL :: Lens_' InlineResponse20021Dates (Maybe Double)
-inlineResponse20021DatesNormalizedDateL f InlineResponse20021Dates{..} = (\inlineResponse20021DatesNormalizedDate -> InlineResponse20021Dates { inlineResponse20021DatesNormalizedDate, ..} ) <$> f inlineResponse20021DatesNormalizedDate
-{-# INLINE inlineResponse20021DatesNormalizedDateL #-}
+-- | 'scoreText200ResponseReadabilityMainscores' Lens
+scoreText200ResponseReadabilityMainscoresL :: Lens_' ScoreText200ResponseReadability (Maybe ScoreText200ResponseReadabilityMainscores)
+scoreText200ResponseReadabilityMainscoresL f ScoreText200ResponseReadability{..} = (\scoreText200ResponseReadabilityMainscores -> ScoreText200ResponseReadability { scoreText200ResponseReadabilityMainscores, ..} ) <$> f scoreText200ResponseReadabilityMainscores
+{-# INLINE scoreText200ResponseReadabilityMainscoresL #-}
 
--- | 'inlineResponse20021DatesTag' Lens
-inlineResponse20021DatesTagL :: Lens_' InlineResponse20021Dates (Maybe Text)
-inlineResponse20021DatesTagL f InlineResponse20021Dates{..} = (\inlineResponse20021DatesTag -> InlineResponse20021Dates { inlineResponse20021DatesTag, ..} ) <$> f inlineResponse20021DatesTag
-{-# INLINE inlineResponse20021DatesTagL #-}
+-- | 'scoreText200ResponseReadabilitySubscores' Lens
+scoreText200ResponseReadabilitySubscoresL :: Lens_' ScoreText200ResponseReadability (Maybe ScoreText200ResponseReadabilitySubscores)
+scoreText200ResponseReadabilitySubscoresL f ScoreText200ResponseReadability{..} = (\scoreText200ResponseReadabilitySubscores -> ScoreText200ResponseReadability { scoreText200ResponseReadabilitySubscores, ..} ) <$> f scoreText200ResponseReadabilitySubscores
+{-# INLINE scoreText200ResponseReadabilitySubscoresL #-}
 
--- | 'inlineResponse20021DatesEndPosition' Lens
-inlineResponse20021DatesEndPositionL :: Lens_' InlineResponse20021Dates (Maybe Int)
-inlineResponse20021DatesEndPositionL f InlineResponse20021Dates{..} = (\inlineResponse20021DatesEndPosition -> InlineResponse20021Dates { inlineResponse20021DatesEndPosition, ..} ) <$> f inlineResponse20021DatesEndPosition
-{-# INLINE inlineResponse20021DatesEndPositionL #-}
 
 
+-- * ScoreText200ResponseReadabilityMainscores
 
--- * InlineResponse20022
+-- | 'scoreText200ResponseReadabilityMainscoresTotalPossible' Lens
+scoreText200ResponseReadabilityMainscoresTotalPossibleL :: Lens_' ScoreText200ResponseReadabilityMainscores (Maybe Int)
+scoreText200ResponseReadabilityMainscoresTotalPossibleL f ScoreText200ResponseReadabilityMainscores{..} = (\scoreText200ResponseReadabilityMainscoresTotalPossible -> ScoreText200ResponseReadabilityMainscores { scoreText200ResponseReadabilityMainscoresTotalPossible, ..} ) <$> f scoreText200ResponseReadabilityMainscoresTotalPossible
+{-# INLINE scoreText200ResponseReadabilityMainscoresTotalPossibleL #-}
 
--- | 'inlineResponse20022Synonyms' Lens
-inlineResponse20022SynonymsL :: Lens_' InlineResponse20022 (Maybe [Text])
-inlineResponse20022SynonymsL f InlineResponse20022{..} = (\inlineResponse20022Synonyms -> InlineResponse20022 { inlineResponse20022Synonyms, ..} ) <$> f inlineResponse20022Synonyms
-{-# INLINE inlineResponse20022SynonymsL #-}
+-- | 'scoreText200ResponseReadabilityMainscoresTotal' Lens
+scoreText200ResponseReadabilityMainscoresTotalL :: Lens_' ScoreText200ResponseReadabilityMainscores (Maybe Int)
+scoreText200ResponseReadabilityMainscoresTotalL f ScoreText200ResponseReadabilityMainscores{..} = (\scoreText200ResponseReadabilityMainscoresTotal -> ScoreText200ResponseReadabilityMainscores { scoreText200ResponseReadabilityMainscoresTotal, ..} ) <$> f scoreText200ResponseReadabilityMainscoresTotal
+{-# INLINE scoreText200ResponseReadabilityMainscoresTotalL #-}
 
 
 
--- * InlineResponse20023
+-- * ScoreText200ResponseReadabilitySubscores
 
--- | 'inlineResponse20023TaggedText' Lens
-inlineResponse20023TaggedTextL :: Lens_' InlineResponse20023 (Maybe Text)
-inlineResponse20023TaggedTextL f InlineResponse20023{..} = (\inlineResponse20023TaggedText -> InlineResponse20023 { inlineResponse20023TaggedText, ..} ) <$> f inlineResponse20023TaggedText
-{-# INLINE inlineResponse20023TaggedTextL #-}
+-- | 'scoreText200ResponseReadabilitySubscoresReadingTimeSeconds' Lens
+scoreText200ResponseReadabilitySubscoresReadingTimeSecondsL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Int)
+scoreText200ResponseReadabilitySubscoresReadingTimeSecondsL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresReadingTimeSeconds -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresReadingTimeSeconds, ..} ) <$> f scoreText200ResponseReadabilitySubscoresReadingTimeSeconds
+{-# INLINE scoreText200ResponseReadabilitySubscoresReadingTimeSecondsL #-}
 
+-- | 'scoreText200ResponseReadabilitySubscoresForcast' Lens
+scoreText200ResponseReadabilitySubscoresForcastL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresForcastL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresForcast -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresForcast, ..} ) <$> f scoreText200ResponseReadabilitySubscoresForcast
+{-# INLINE scoreText200ResponseReadabilitySubscoresForcastL #-}
 
+-- | 'scoreText200ResponseReadabilitySubscoresFlesch' Lens
+scoreText200ResponseReadabilitySubscoresFleschL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresFleschL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresFlesch -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresFlesch, ..} ) <$> f scoreText200ResponseReadabilitySubscoresFlesch
+{-# INLINE scoreText200ResponseReadabilitySubscoresFleschL #-}
 
--- * InlineResponse20024
+-- | 'scoreText200ResponseReadabilitySubscoresSmog' Lens
+scoreText200ResponseReadabilitySubscoresSmogL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresSmogL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresSmog -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresSmog, ..} ) <$> f scoreText200ResponseReadabilitySubscoresSmog
+{-# INLINE scoreText200ResponseReadabilitySubscoresSmogL #-}
 
--- | 'inlineResponse20024Original' Lens
-inlineResponse20024OriginalL :: Lens_' InlineResponse20024 (Maybe Text)
-inlineResponse20024OriginalL f InlineResponse20024{..} = (\inlineResponse20024Original -> InlineResponse20024 { inlineResponse20024Original, ..} ) <$> f inlineResponse20024Original
-{-# INLINE inlineResponse20024OriginalL #-}
+-- | 'scoreText200ResponseReadabilitySubscoresAri' Lens
+scoreText200ResponseReadabilitySubscoresAriL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresAriL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresAri -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresAri, ..} ) <$> f scoreText200ResponseReadabilitySubscoresAri
+{-# INLINE scoreText200ResponseReadabilitySubscoresAriL #-}
 
--- | 'inlineResponse20024Stemmed' Lens
-inlineResponse20024StemmedL :: Lens_' InlineResponse20024 (Maybe Text)
-inlineResponse20024StemmedL f InlineResponse20024{..} = (\inlineResponse20024Stemmed -> InlineResponse20024 { inlineResponse20024Stemmed, ..} ) <$> f inlineResponse20024Stemmed
-{-# INLINE inlineResponse20024StemmedL #-}
+-- | 'scoreText200ResponseReadabilitySubscoresLix' Lens
+scoreText200ResponseReadabilitySubscoresLixL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresLixL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresLix -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresLix, ..} ) <$> f scoreText200ResponseReadabilitySubscoresLix
+{-# INLINE scoreText200ResponseReadabilitySubscoresLixL #-}
 
+-- | 'scoreText200ResponseReadabilitySubscoresColemanLiau' Lens
+scoreText200ResponseReadabilitySubscoresColemanLiauL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresColemanLiauL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresColemanLiau -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresColemanLiau, ..} ) <$> f scoreText200ResponseReadabilitySubscoresColemanLiau
+{-# INLINE scoreText200ResponseReadabilitySubscoresColemanLiauL #-}
 
+-- | 'scoreText200ResponseReadabilitySubscoresKincaid' Lens
+scoreText200ResponseReadabilitySubscoresKincaidL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresKincaidL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresKincaid -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresKincaid, ..} ) <$> f scoreText200ResponseReadabilitySubscoresKincaid
+{-# INLINE scoreText200ResponseReadabilitySubscoresKincaidL #-}
 
--- * InlineResponse20025
+-- | 'scoreText200ResponseReadabilitySubscoresFog' Lens
+scoreText200ResponseReadabilitySubscoresFogL :: Lens_' ScoreText200ResponseReadabilitySubscores (Maybe Double)
+scoreText200ResponseReadabilitySubscoresFogL f ScoreText200ResponseReadabilitySubscores{..} = (\scoreText200ResponseReadabilitySubscoresFog -> ScoreText200ResponseReadabilitySubscores { scoreText200ResponseReadabilitySubscoresFog, ..} ) <$> f scoreText200ResponseReadabilitySubscoresFog
+{-# INLINE scoreText200ResponseReadabilitySubscoresFogL #-}
 
--- | 'inlineResponse20025Original' Lens
-inlineResponse20025OriginalL :: Lens_' InlineResponse20025 (Maybe Text)
-inlineResponse20025OriginalL f InlineResponse20025{..} = (\inlineResponse20025Original -> InlineResponse20025 { inlineResponse20025Original, ..} ) <$> f inlineResponse20025Original
-{-# INLINE inlineResponse20025OriginalL #-}
 
--- | 'inlineResponse20025Singular' Lens
-inlineResponse20025SingularL :: Lens_' InlineResponse20025 (Maybe Text)
-inlineResponse20025SingularL f InlineResponse20025{..} = (\inlineResponse20025Singular -> InlineResponse20025 { inlineResponse20025Singular, ..} ) <$> f inlineResponse20025Singular
-{-# INLINE inlineResponse20025SingularL #-}
 
+-- * ScoreText200ResponseSkimmability
 
+-- | 'scoreText200ResponseSkimmabilityMainscores' Lens
+scoreText200ResponseSkimmabilityMainscoresL :: Lens_' ScoreText200ResponseSkimmability (Maybe ScoreText200ResponseSkimmabilityMainscores)
+scoreText200ResponseSkimmabilityMainscoresL f ScoreText200ResponseSkimmability{..} = (\scoreText200ResponseSkimmabilityMainscores -> ScoreText200ResponseSkimmability { scoreText200ResponseSkimmabilityMainscores, ..} ) <$> f scoreText200ResponseSkimmabilityMainscores
+{-# INLINE scoreText200ResponseSkimmabilityMainscoresL #-}
 
--- * InlineResponse20026
+-- | 'scoreText200ResponseSkimmabilitySubscores' Lens
+scoreText200ResponseSkimmabilitySubscoresL :: Lens_' ScoreText200ResponseSkimmability (Maybe ScoreText200ResponseSkimmabilitySubscores)
+scoreText200ResponseSkimmabilitySubscoresL f ScoreText200ResponseSkimmability{..} = (\scoreText200ResponseSkimmabilitySubscores -> ScoreText200ResponseSkimmability { scoreText200ResponseSkimmabilitySubscores, ..} ) <$> f scoreText200ResponseSkimmabilitySubscores
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresL #-}
 
--- | 'inlineResponse20026Original' Lens
-inlineResponse20026OriginalL :: Lens_' InlineResponse20026 (Maybe Text)
-inlineResponse20026OriginalL f InlineResponse20026{..} = (\inlineResponse20026Original -> InlineResponse20026 { inlineResponse20026Original, ..} ) <$> f inlineResponse20026Original
-{-# INLINE inlineResponse20026OriginalL #-}
 
--- | 'inlineResponse20026Plural' Lens
-inlineResponse20026PluralL :: Lens_' InlineResponse20026 (Maybe Text)
-inlineResponse20026PluralL f InlineResponse20026{..} = (\inlineResponse20026Plural -> InlineResponse20026 { inlineResponse20026Plural, ..} ) <$> f inlineResponse20026Plural
-{-# INLINE inlineResponse20026PluralL #-}
 
+-- * ScoreText200ResponseSkimmabilityMainscores
 
+-- | 'scoreText200ResponseSkimmabilityMainscoresTotalPossible' Lens
+scoreText200ResponseSkimmabilityMainscoresTotalPossibleL :: Lens_' ScoreText200ResponseSkimmabilityMainscores (Maybe Int)
+scoreText200ResponseSkimmabilityMainscoresTotalPossibleL f ScoreText200ResponseSkimmabilityMainscores{..} = (\scoreText200ResponseSkimmabilityMainscoresTotalPossible -> ScoreText200ResponseSkimmabilityMainscores { scoreText200ResponseSkimmabilityMainscoresTotalPossible, ..} ) <$> f scoreText200ResponseSkimmabilityMainscoresTotalPossible
+{-# INLINE scoreText200ResponseSkimmabilityMainscoresTotalPossibleL #-}
 
--- * InlineResponse20027
+-- | 'scoreText200ResponseSkimmabilityMainscoresTotal' Lens
+scoreText200ResponseSkimmabilityMainscoresTotalL :: Lens_' ScoreText200ResponseSkimmabilityMainscores (Maybe Double)
+scoreText200ResponseSkimmabilityMainscoresTotalL f ScoreText200ResponseSkimmabilityMainscores{..} = (\scoreText200ResponseSkimmabilityMainscoresTotal -> ScoreText200ResponseSkimmabilityMainscores { scoreText200ResponseSkimmabilityMainscoresTotal, ..} ) <$> f scoreText200ResponseSkimmabilityMainscoresTotal
+{-# INLINE scoreText200ResponseSkimmabilityMainscoresTotalL #-}
 
--- | 'inlineResponse20027Entities' Lens
-inlineResponse20027EntitiesL :: Lens_' InlineResponse20027 (Maybe [InlineResponse20027Entities])
-inlineResponse20027EntitiesL f InlineResponse20027{..} = (\inlineResponse20027Entities -> InlineResponse20027 { inlineResponse20027Entities, ..} ) <$> f inlineResponse20027Entities
-{-# INLINE inlineResponse20027EntitiesL #-}
 
 
+-- * ScoreText200ResponseSkimmabilitySubscores
 
--- * InlineResponse20027Entities
+-- | 'scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore' Lens
+scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScoreL #-}
 
--- | 'inlineResponse20027EntitiesStartPosition' Lens
-inlineResponse20027EntitiesStartPositionL :: Lens_' InlineResponse20027Entities (Maybe Int)
-inlineResponse20027EntitiesStartPositionL f InlineResponse20027Entities{..} = (\inlineResponse20027EntitiesStartPosition -> InlineResponse20027Entities { inlineResponse20027EntitiesStartPosition, ..} ) <$> f inlineResponse20027EntitiesStartPosition
-{-# INLINE inlineResponse20027EntitiesStartPositionL #-}
+-- | 'scoreText200ResponseSkimmabilitySubscoresImageScore' Lens
+scoreText200ResponseSkimmabilitySubscoresImageScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresImageScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresImageScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresImageScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresImageScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresImageScoreL #-}
 
--- | 'inlineResponse20027EntitiesImage' Lens
-inlineResponse20027EntitiesImageL :: Lens_' InlineResponse20027Entities (Maybe Text)
-inlineResponse20027EntitiesImageL f InlineResponse20027Entities{..} = (\inlineResponse20027EntitiesImage -> InlineResponse20027Entities { inlineResponse20027EntitiesImage, ..} ) <$> f inlineResponse20027EntitiesImage
-{-# INLINE inlineResponse20027EntitiesImageL #-}
+-- | 'scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore' Lens
+scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScoreL #-}
 
--- | 'inlineResponse20027EntitiesType' Lens
-inlineResponse20027EntitiesTypeL :: Lens_' InlineResponse20027Entities (Maybe Text)
-inlineResponse20027EntitiesTypeL f InlineResponse20027Entities{..} = (\inlineResponse20027EntitiesType -> InlineResponse20027Entities { inlineResponse20027EntitiesType, ..} ) <$> f inlineResponse20027EntitiesType
-{-# INLINE inlineResponse20027EntitiesTypeL #-}
+-- | 'scoreText200ResponseSkimmabilitySubscoresVideoScore' Lens
+scoreText200ResponseSkimmabilitySubscoresVideoScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresVideoScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresVideoScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresVideoScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresVideoScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresVideoScoreL #-}
 
--- | 'inlineResponse20027EntitiesValue' Lens
-inlineResponse20027EntitiesValueL :: Lens_' InlineResponse20027Entities (Maybe Text)
-inlineResponse20027EntitiesValueL f InlineResponse20027Entities{..} = (\inlineResponse20027EntitiesValue -> InlineResponse20027Entities { inlineResponse20027EntitiesValue, ..} ) <$> f inlineResponse20027EntitiesValue
-{-# INLINE inlineResponse20027EntitiesValueL #-}
+-- | 'scoreText200ResponseSkimmabilitySubscoresParagraphScore' Lens
+scoreText200ResponseSkimmabilitySubscoresParagraphScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresParagraphScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresParagraphScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresParagraphScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresParagraphScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresParagraphScoreL #-}
 
--- | 'inlineResponse20027EntitiesEndPosition' Lens
-inlineResponse20027EntitiesEndPositionL :: Lens_' InlineResponse20027Entities (Maybe Int)
-inlineResponse20027EntitiesEndPositionL f InlineResponse20027Entities{..} = (\inlineResponse20027EntitiesEndPosition -> InlineResponse20027Entities { inlineResponse20027EntitiesEndPosition, ..} ) <$> f inlineResponse20027EntitiesEndPosition
-{-# INLINE inlineResponse20027EntitiesEndPositionL #-}
+-- | 'scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore' Lens
+scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScoreL :: Lens_' ScoreText200ResponseSkimmabilitySubscores (Maybe [Int])
+scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScoreL f ScoreText200ResponseSkimmabilitySubscores{..} = (\scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore -> ScoreText200ResponseSkimmabilitySubscores { scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore, ..} ) <$> f scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore
+{-# INLINE scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScoreL #-}
 
 
 
--- * InlineResponse20028
+-- * ScoreText200ResponseStyle
 
--- | 'inlineResponse20028Images' Lens
-inlineResponse20028ImagesL :: Lens_' InlineResponse20028 (Maybe [InlineResponse20028Images])
-inlineResponse20028ImagesL f InlineResponse20028{..} = (\inlineResponse20028Images -> InlineResponse20028 { inlineResponse20028Images, ..} ) <$> f inlineResponse20028Images
-{-# INLINE inlineResponse20028ImagesL #-}
+-- | 'scoreText200ResponseStyleMainscores' Lens
+scoreText200ResponseStyleMainscoresL :: Lens_' ScoreText200ResponseStyle (Maybe ScoreText200ResponseReadabilityMainscores)
+scoreText200ResponseStyleMainscoresL f ScoreText200ResponseStyle{..} = (\scoreText200ResponseStyleMainscores -> ScoreText200ResponseStyle { scoreText200ResponseStyleMainscores, ..} ) <$> f scoreText200ResponseStyleMainscores
+{-# INLINE scoreText200ResponseStyleMainscoresL #-}
 
+-- | 'scoreText200ResponseStyleSubscores' Lens
+scoreText200ResponseStyleSubscoresL :: Lens_' ScoreText200ResponseStyle (Maybe ScoreText200ResponseStyleSubscores)
+scoreText200ResponseStyleSubscoresL f ScoreText200ResponseStyle{..} = (\scoreText200ResponseStyleSubscores -> ScoreText200ResponseStyle { scoreText200ResponseStyleSubscores, ..} ) <$> f scoreText200ResponseStyleSubscores
+{-# INLINE scoreText200ResponseStyleSubscoresL #-}
 
 
--- * InlineResponse20028Images
 
--- | 'inlineResponse20028ImagesWidth' Lens
-inlineResponse20028ImagesWidthL :: Lens_' InlineResponse20028Images (Maybe Int)
-inlineResponse20028ImagesWidthL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesWidth -> InlineResponse20028Images { inlineResponse20028ImagesWidth, ..} ) <$> f inlineResponse20028ImagesWidth
-{-# INLINE inlineResponse20028ImagesWidthL #-}
+-- * ScoreText200ResponseStyleSubscores
 
--- | 'inlineResponse20028ImagesLicense' Lens
-inlineResponse20028ImagesLicenseL :: Lens_' InlineResponse20028Images (Maybe InlineResponse20028License)
-inlineResponse20028ImagesLicenseL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesLicense -> InlineResponse20028Images { inlineResponse20028ImagesLicense, ..} ) <$> f inlineResponse20028ImagesLicense
-{-# INLINE inlineResponse20028ImagesLicenseL #-}
+-- | 'scoreText200ResponseStyleSubscoresAbbreviationScore' Lens
+scoreText200ResponseStyleSubscoresAbbreviationScoreL :: Lens_' ScoreText200ResponseStyleSubscores (Maybe [Int])
+scoreText200ResponseStyleSubscoresAbbreviationScoreL f ScoreText200ResponseStyleSubscores{..} = (\scoreText200ResponseStyleSubscoresAbbreviationScore -> ScoreText200ResponseStyleSubscores { scoreText200ResponseStyleSubscoresAbbreviationScore, ..} ) <$> f scoreText200ResponseStyleSubscoresAbbreviationScore
+{-# INLINE scoreText200ResponseStyleSubscoresAbbreviationScoreL #-}
 
--- | 'inlineResponse20028ImagesThumbnail' Lens
-inlineResponse20028ImagesThumbnailL :: Lens_' InlineResponse20028Images (Maybe Text)
-inlineResponse20028ImagesThumbnailL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesThumbnail -> InlineResponse20028Images { inlineResponse20028ImagesThumbnail, ..} ) <$> f inlineResponse20028ImagesThumbnail
-{-# INLINE inlineResponse20028ImagesThumbnailL #-}
+-- | 'scoreText200ResponseStyleSubscoresStyleScore' Lens
+scoreText200ResponseStyleSubscoresStyleScoreL :: Lens_' ScoreText200ResponseStyleSubscores (Maybe [Int])
+scoreText200ResponseStyleSubscoresStyleScoreL f ScoreText200ResponseStyleSubscores{..} = (\scoreText200ResponseStyleSubscoresStyleScore -> ScoreText200ResponseStyleSubscores { scoreText200ResponseStyleSubscoresStyleScore, ..} ) <$> f scoreText200ResponseStyleSubscoresStyleScore
+{-# INLINE scoreText200ResponseStyleSubscoresStyleScoreL #-}
 
--- | 'inlineResponse20028ImagesId' Lens
-inlineResponse20028ImagesIdL :: Lens_' InlineResponse20028Images (Maybe Text)
-inlineResponse20028ImagesIdL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesId -> InlineResponse20028Images { inlineResponse20028ImagesId, ..} ) <$> f inlineResponse20028ImagesId
-{-# INLINE inlineResponse20028ImagesIdL #-}
+-- | 'scoreText200ResponseStyleSubscoresSpellingScore' Lens
+scoreText200ResponseStyleSubscoresSpellingScoreL :: Lens_' ScoreText200ResponseStyleSubscores (Maybe [Int])
+scoreText200ResponseStyleSubscoresSpellingScoreL f ScoreText200ResponseStyleSubscores{..} = (\scoreText200ResponseStyleSubscoresSpellingScore -> ScoreText200ResponseStyleSubscores { scoreText200ResponseStyleSubscoresSpellingScore, ..} ) <$> f scoreText200ResponseStyleSubscoresSpellingScore
+{-# INLINE scoreText200ResponseStyleSubscoresSpellingScoreL #-}
 
--- | 'inlineResponse20028ImagesUrl' Lens
-inlineResponse20028ImagesUrlL :: Lens_' InlineResponse20028Images (Maybe Text)
-inlineResponse20028ImagesUrlL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesUrl -> InlineResponse20028Images { inlineResponse20028ImagesUrl, ..} ) <$> f inlineResponse20028ImagesUrl
-{-# INLINE inlineResponse20028ImagesUrlL #-}
 
--- | 'inlineResponse20028ImagesHeight' Lens
-inlineResponse20028ImagesHeightL :: Lens_' InlineResponse20028Images (Maybe Int)
-inlineResponse20028ImagesHeightL f InlineResponse20028Images{..} = (\inlineResponse20028ImagesHeight -> InlineResponse20028Images { inlineResponse20028ImagesHeight, ..} ) <$> f inlineResponse20028ImagesHeight
-{-# INLINE inlineResponse20028ImagesHeightL #-}
 
+-- * SearchBooks200Response
 
+-- | 'searchBooks200ResponseAvailable' Lens
+searchBooks200ResponseAvailableL :: Lens_' SearchBooks200Response (Maybe Int)
+searchBooks200ResponseAvailableL f SearchBooks200Response{..} = (\searchBooks200ResponseAvailable -> SearchBooks200Response { searchBooks200ResponseAvailable, ..} ) <$> f searchBooks200ResponseAvailable
+{-# INLINE searchBooks200ResponseAvailableL #-}
 
--- * InlineResponse20028License
+-- | 'searchBooks200ResponseNumber' Lens
+searchBooks200ResponseNumberL :: Lens_' SearchBooks200Response (Maybe Int)
+searchBooks200ResponseNumberL f SearchBooks200Response{..} = (\searchBooks200ResponseNumber -> SearchBooks200Response { searchBooks200ResponseNumber, ..} ) <$> f searchBooks200ResponseNumber
+{-# INLINE searchBooks200ResponseNumberL #-}
 
--- | 'inlineResponse20028LicenseName' Lens
-inlineResponse20028LicenseNameL :: Lens_' InlineResponse20028License (Maybe Text)
-inlineResponse20028LicenseNameL f InlineResponse20028License{..} = (\inlineResponse20028LicenseName -> InlineResponse20028License { inlineResponse20028LicenseName, ..} ) <$> f inlineResponse20028LicenseName
-{-# INLINE inlineResponse20028LicenseNameL #-}
+-- | 'searchBooks200ResponseOffset' Lens
+searchBooks200ResponseOffsetL :: Lens_' SearchBooks200Response (Maybe Int)
+searchBooks200ResponseOffsetL f SearchBooks200Response{..} = (\searchBooks200ResponseOffset -> SearchBooks200Response { searchBooks200ResponseOffset, ..} ) <$> f searchBooks200ResponseOffset
+{-# INLINE searchBooks200ResponseOffsetL #-}
 
--- | 'inlineResponse20028LicenseLink' Lens
-inlineResponse20028LicenseLinkL :: Lens_' InlineResponse20028License (Maybe Text)
-inlineResponse20028LicenseLinkL f InlineResponse20028License{..} = (\inlineResponse20028LicenseLink -> InlineResponse20028License { inlineResponse20028LicenseLink, ..} ) <$> f inlineResponse20028LicenseLink
-{-# INLINE inlineResponse20028LicenseLinkL #-}
+-- | 'searchBooks200ResponseBooks' Lens
+searchBooks200ResponseBooksL :: Lens_' SearchBooks200Response (Maybe [SearchBooks200ResponseBooksInner])
+searchBooks200ResponseBooksL f SearchBooks200Response{..} = (\searchBooks200ResponseBooks -> SearchBooks200Response { searchBooks200ResponseBooks, ..} ) <$> f searchBooks200ResponseBooks
+{-# INLINE searchBooks200ResponseBooksL #-}
 
 
 
--- * InlineResponse20029
+-- * SearchBooks200ResponseBooksInner
 
--- | 'inlineResponse20029SpecificColor' Lens
-inlineResponse20029SpecificColorL :: Lens_' InlineResponse20029 (Maybe Text)
-inlineResponse20029SpecificColorL f InlineResponse20029{..} = (\inlineResponse20029SpecificColor -> InlineResponse20029 { inlineResponse20029SpecificColor, ..} ) <$> f inlineResponse20029SpecificColor
-{-# INLINE inlineResponse20029SpecificColorL #-}
+-- | 'searchBooks200ResponseBooksInnerTitle' Lens
+searchBooks200ResponseBooksInnerTitleL :: Lens_' SearchBooks200ResponseBooksInner (Maybe Text)
+searchBooks200ResponseBooksInnerTitleL f SearchBooks200ResponseBooksInner{..} = (\searchBooks200ResponseBooksInnerTitle -> SearchBooks200ResponseBooksInner { searchBooks200ResponseBooksInnerTitle, ..} ) <$> f searchBooks200ResponseBooksInnerTitle
+{-# INLINE searchBooks200ResponseBooksInnerTitleL #-}
 
--- | 'inlineResponse20029MainColor' Lens
-inlineResponse20029MainColorL :: Lens_' InlineResponse20029 (Maybe Text)
-inlineResponse20029MainColorL f InlineResponse20029{..} = (\inlineResponse20029MainColor -> InlineResponse20029 { inlineResponse20029MainColor, ..} ) <$> f inlineResponse20029MainColor
-{-# INLINE inlineResponse20029MainColorL #-}
+-- | 'searchBooks200ResponseBooksInnerImage' Lens
+searchBooks200ResponseBooksInnerImageL :: Lens_' SearchBooks200ResponseBooksInner (Maybe Text)
+searchBooks200ResponseBooksInnerImageL f SearchBooks200ResponseBooksInner{..} = (\searchBooks200ResponseBooksInnerImage -> SearchBooks200ResponseBooksInner { searchBooks200ResponseBooksInnerImage, ..} ) <$> f searchBooks200ResponseBooksInnerImage
+{-# INLINE searchBooks200ResponseBooksInnerImageL #-}
 
--- | 'inlineResponse20029HexCode' Lens
-inlineResponse20029HexCodeL :: Lens_' InlineResponse20029 (Maybe Text)
-inlineResponse20029HexCodeL f InlineResponse20029{..} = (\inlineResponse20029HexCode -> InlineResponse20029 { inlineResponse20029HexCode, ..} ) <$> f inlineResponse20029HexCode
-{-# INLINE inlineResponse20029HexCodeL #-}
+-- | 'searchBooks200ResponseBooksInnerId' Lens
+searchBooks200ResponseBooksInnerIdL :: Lens_' SearchBooks200ResponseBooksInner (Maybe Int)
+searchBooks200ResponseBooksInnerIdL f SearchBooks200ResponseBooksInner{..} = (\searchBooks200ResponseBooksInnerId -> SearchBooks200ResponseBooksInner { searchBooks200ResponseBooksInnerId, ..} ) <$> f searchBooks200ResponseBooksInnerId
+{-# INLINE searchBooks200ResponseBooksInnerIdL #-}
 
 
 
--- * InlineResponse2002News
+-- * SearchGifs200Response
 
--- | 'inlineResponse2002NewsSummary' Lens
-inlineResponse2002NewsSummaryL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsSummaryL f InlineResponse2002News{..} = (\inlineResponse2002NewsSummary -> InlineResponse2002News { inlineResponse2002NewsSummary, ..} ) <$> f inlineResponse2002NewsSummary
-{-# INLINE inlineResponse2002NewsSummaryL #-}
+-- | 'searchGifs200ResponseImages' Lens
+searchGifs200ResponseImagesL :: Lens_' SearchGifs200Response (Maybe [SearchGifs200ResponseImagesInner])
+searchGifs200ResponseImagesL f SearchGifs200Response{..} = (\searchGifs200ResponseImages -> SearchGifs200Response { searchGifs200ResponseImages, ..} ) <$> f searchGifs200ResponseImages
+{-# INLINE searchGifs200ResponseImagesL #-}
 
--- | 'inlineResponse2002NewsImage' Lens
-inlineResponse2002NewsImageL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsImageL f InlineResponse2002News{..} = (\inlineResponse2002NewsImage -> InlineResponse2002News { inlineResponse2002NewsImage, ..} ) <$> f inlineResponse2002NewsImage
-{-# INLINE inlineResponse2002NewsImageL #-}
 
--- | 'inlineResponse2002NewsSentiment' Lens
-inlineResponse2002NewsSentimentL :: Lens_' InlineResponse2002News (Maybe Double)
-inlineResponse2002NewsSentimentL f InlineResponse2002News{..} = (\inlineResponse2002NewsSentiment -> InlineResponse2002News { inlineResponse2002NewsSentiment, ..} ) <$> f inlineResponse2002NewsSentiment
-{-# INLINE inlineResponse2002NewsSentimentL #-}
 
--- | 'inlineResponse2002NewsSourceCountry' Lens
-inlineResponse2002NewsSourceCountryL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsSourceCountryL f InlineResponse2002News{..} = (\inlineResponse2002NewsSourceCountry -> InlineResponse2002News { inlineResponse2002NewsSourceCountry, ..} ) <$> f inlineResponse2002NewsSourceCountry
-{-# INLINE inlineResponse2002NewsSourceCountryL #-}
+-- * SearchGifs200ResponseImagesInner
 
--- | 'inlineResponse2002NewsLanguage' Lens
-inlineResponse2002NewsLanguageL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsLanguageL f InlineResponse2002News{..} = (\inlineResponse2002NewsLanguage -> InlineResponse2002News { inlineResponse2002NewsLanguage, ..} ) <$> f inlineResponse2002NewsLanguage
-{-# INLINE inlineResponse2002NewsLanguageL #-}
+-- | 'searchGifs200ResponseImagesInnerWidth' Lens
+searchGifs200ResponseImagesInnerWidthL :: Lens_' SearchGifs200ResponseImagesInner (Maybe Int)
+searchGifs200ResponseImagesInnerWidthL f SearchGifs200ResponseImagesInner{..} = (\searchGifs200ResponseImagesInnerWidth -> SearchGifs200ResponseImagesInner { searchGifs200ResponseImagesInnerWidth, ..} ) <$> f searchGifs200ResponseImagesInnerWidth
+{-# INLINE searchGifs200ResponseImagesInnerWidthL #-}
 
--- | 'inlineResponse2002NewsId' Lens
-inlineResponse2002NewsIdL :: Lens_' InlineResponse2002News (Maybe Int)
-inlineResponse2002NewsIdL f InlineResponse2002News{..} = (\inlineResponse2002NewsId -> InlineResponse2002News { inlineResponse2002NewsId, ..} ) <$> f inlineResponse2002NewsId
-{-# INLINE inlineResponse2002NewsIdL #-}
+-- | 'searchGifs200ResponseImagesInnerUrl' Lens
+searchGifs200ResponseImagesInnerUrlL :: Lens_' SearchGifs200ResponseImagesInner (Maybe Text)
+searchGifs200ResponseImagesInnerUrlL f SearchGifs200ResponseImagesInner{..} = (\searchGifs200ResponseImagesInnerUrl -> SearchGifs200ResponseImagesInner { searchGifs200ResponseImagesInnerUrl, ..} ) <$> f searchGifs200ResponseImagesInnerUrl
+{-# INLINE searchGifs200ResponseImagesInnerUrlL #-}
 
--- | 'inlineResponse2002NewsText' Lens
-inlineResponse2002NewsTextL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsTextL f InlineResponse2002News{..} = (\inlineResponse2002NewsText -> InlineResponse2002News { inlineResponse2002NewsText, ..} ) <$> f inlineResponse2002NewsText
-{-# INLINE inlineResponse2002NewsTextL #-}
+-- | 'searchGifs200ResponseImagesInnerHeight' Lens
+searchGifs200ResponseImagesInnerHeightL :: Lens_' SearchGifs200ResponseImagesInner (Maybe Int)
+searchGifs200ResponseImagesInnerHeightL f SearchGifs200ResponseImagesInner{..} = (\searchGifs200ResponseImagesInnerHeight -> SearchGifs200ResponseImagesInner { searchGifs200ResponseImagesInnerHeight, ..} ) <$> f searchGifs200ResponseImagesInnerHeight
+{-# INLINE searchGifs200ResponseImagesInnerHeightL #-}
 
--- | 'inlineResponse2002NewsTitle' Lens
-inlineResponse2002NewsTitleL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsTitleL f InlineResponse2002News{..} = (\inlineResponse2002NewsTitle -> InlineResponse2002News { inlineResponse2002NewsTitle, ..} ) <$> f inlineResponse2002NewsTitle
-{-# INLINE inlineResponse2002NewsTitleL #-}
 
--- | 'inlineResponse2002NewsPublishDate' Lens
-inlineResponse2002NewsPublishDateL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsPublishDateL f InlineResponse2002News{..} = (\inlineResponse2002NewsPublishDate -> InlineResponse2002News { inlineResponse2002NewsPublishDate, ..} ) <$> f inlineResponse2002NewsPublishDate
-{-# INLINE inlineResponse2002NewsPublishDateL #-}
 
--- | 'inlineResponse2002NewsUrl' Lens
-inlineResponse2002NewsUrlL :: Lens_' InlineResponse2002News (Maybe Text)
-inlineResponse2002NewsUrlL f InlineResponse2002News{..} = (\inlineResponse2002NewsUrl -> InlineResponse2002News { inlineResponse2002NewsUrl, ..} ) <$> f inlineResponse2002NewsUrl
-{-# INLINE inlineResponse2002NewsUrlL #-}
+-- * SearchJokes200Response
 
--- | 'inlineResponse2002NewsAuthors' Lens
-inlineResponse2002NewsAuthorsL :: Lens_' InlineResponse2002News (Maybe [Text])
-inlineResponse2002NewsAuthorsL f InlineResponse2002News{..} = (\inlineResponse2002NewsAuthors -> InlineResponse2002News { inlineResponse2002NewsAuthors, ..} ) <$> f inlineResponse2002NewsAuthors
-{-# INLINE inlineResponse2002NewsAuthorsL #-}
+-- | 'searchJokes200ResponseJokes' Lens
+searchJokes200ResponseJokesL :: Lens_' SearchJokes200Response (Maybe [SearchJokes200ResponseJokesInner])
+searchJokes200ResponseJokesL f SearchJokes200Response{..} = (\searchJokes200ResponseJokes -> SearchJokes200Response { searchJokes200ResponseJokes, ..} ) <$> f searchJokes200ResponseJokes
+{-# INLINE searchJokes200ResponseJokesL #-}
 
+-- | 'searchJokes200ResponseAvailable' Lens
+searchJokes200ResponseAvailableL :: Lens_' SearchJokes200Response (Maybe Int)
+searchJokes200ResponseAvailableL f SearchJokes200Response{..} = (\searchJokes200ResponseAvailable -> SearchJokes200Response { searchJokes200ResponseAvailable, ..} ) <$> f searchJokes200ResponseAvailable
+{-# INLINE searchJokes200ResponseAvailableL #-}
 
 
--- * InlineResponse2003
 
--- | 'inlineResponse2003Title' Lens
-inlineResponse2003TitleL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003TitleL f InlineResponse2003{..} = (\inlineResponse2003Title -> InlineResponse2003 { inlineResponse2003Title, ..} ) <$> f inlineResponse2003Title
-{-# INLINE inlineResponse2003TitleL #-}
+-- * SearchJokes200ResponseJokesInner
 
--- | 'inlineResponse2003Text' Lens
-inlineResponse2003TextL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003TextL f InlineResponse2003{..} = (\inlineResponse2003Text -> InlineResponse2003 { inlineResponse2003Text, ..} ) <$> f inlineResponse2003Text
-{-# INLINE inlineResponse2003TextL #-}
+-- | 'searchJokes200ResponseJokesInnerJoke' Lens
+searchJokes200ResponseJokesInnerJokeL :: Lens_' SearchJokes200ResponseJokesInner (Maybe Text)
+searchJokes200ResponseJokesInnerJokeL f SearchJokes200ResponseJokesInner{..} = (\searchJokes200ResponseJokesInnerJoke -> SearchJokes200ResponseJokesInner { searchJokes200ResponseJokesInnerJoke, ..} ) <$> f searchJokes200ResponseJokesInnerJoke
+{-# INLINE searchJokes200ResponseJokesInnerJokeL #-}
 
--- | 'inlineResponse2003Url' Lens
-inlineResponse2003UrlL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003UrlL f InlineResponse2003{..} = (\inlineResponse2003Url -> InlineResponse2003 { inlineResponse2003Url, ..} ) <$> f inlineResponse2003Url
-{-# INLINE inlineResponse2003UrlL #-}
 
--- | 'inlineResponse2003Image' Lens
-inlineResponse2003ImageL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003ImageL f InlineResponse2003{..} = (\inlineResponse2003Image -> InlineResponse2003 { inlineResponse2003Image, ..} ) <$> f inlineResponse2003Image
-{-# INLINE inlineResponse2003ImageL #-}
 
--- | 'inlineResponse2003PublishDate' Lens
-inlineResponse2003PublishDateL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003PublishDateL f InlineResponse2003{..} = (\inlineResponse2003PublishDate -> InlineResponse2003 { inlineResponse2003PublishDate, ..} ) <$> f inlineResponse2003PublishDate
-{-# INLINE inlineResponse2003PublishDateL #-}
+-- * SearchMemes200Response
 
--- | 'inlineResponse2003Author' Lens
-inlineResponse2003AuthorL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003AuthorL f InlineResponse2003{..} = (\inlineResponse2003Author -> InlineResponse2003 { inlineResponse2003Author, ..} ) <$> f inlineResponse2003Author
-{-# INLINE inlineResponse2003AuthorL #-}
+-- | 'searchMemes200ResponseMemes' Lens
+searchMemes200ResponseMemesL :: Lens_' SearchMemes200Response (Maybe [SearchMemes200ResponseMemesInner])
+searchMemes200ResponseMemesL f SearchMemes200Response{..} = (\searchMemes200ResponseMemes -> SearchMemes200Response { searchMemes200ResponseMemes, ..} ) <$> f searchMemes200ResponseMemes
+{-# INLINE searchMemes200ResponseMemesL #-}
 
--- | 'inlineResponse2003Language' Lens
-inlineResponse2003LanguageL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003LanguageL f InlineResponse2003{..} = (\inlineResponse2003Language -> InlineResponse2003 { inlineResponse2003Language, ..} ) <$> f inlineResponse2003Language
-{-# INLINE inlineResponse2003LanguageL #-}
+-- | 'searchMemes200ResponseAvailable' Lens
+searchMemes200ResponseAvailableL :: Lens_' SearchMemes200Response (Maybe Int)
+searchMemes200ResponseAvailableL f SearchMemes200Response{..} = (\searchMemes200ResponseAvailable -> SearchMemes200Response { searchMemes200ResponseAvailable, ..} ) <$> f searchMemes200ResponseAvailable
+{-# INLINE searchMemes200ResponseAvailableL #-}
 
--- | 'inlineResponse2003SourceCountry' Lens
-inlineResponse2003SourceCountryL :: Lens_' InlineResponse2003 (Maybe Text)
-inlineResponse2003SourceCountryL f InlineResponse2003{..} = (\inlineResponse2003SourceCountry -> InlineResponse2003 { inlineResponse2003SourceCountry, ..} ) <$> f inlineResponse2003SourceCountry
-{-# INLINE inlineResponse2003SourceCountryL #-}
 
--- | 'inlineResponse2003Sentiment' Lens
-inlineResponse2003SentimentL :: Lens_' InlineResponse2003 (Maybe Double)
-inlineResponse2003SentimentL f InlineResponse2003{..} = (\inlineResponse2003Sentiment -> InlineResponse2003 { inlineResponse2003Sentiment, ..} ) <$> f inlineResponse2003Sentiment
-{-# INLINE inlineResponse2003SentimentL #-}
 
+-- * SearchMemes200ResponseMemesInner
 
+-- | 'searchMemes200ResponseMemesInnerType' Lens
+searchMemes200ResponseMemesInnerTypeL :: Lens_' SearchMemes200ResponseMemesInner (Maybe Text)
+searchMemes200ResponseMemesInnerTypeL f SearchMemes200ResponseMemesInner{..} = (\searchMemes200ResponseMemesInnerType -> SearchMemes200ResponseMemesInner { searchMemes200ResponseMemesInnerType, ..} ) <$> f searchMemes200ResponseMemesInnerType
+{-# INLINE searchMemes200ResponseMemesInnerTypeL #-}
 
--- * InlineResponse20030
+-- | 'searchMemes200ResponseMemesInnerDescription' Lens
+searchMemes200ResponseMemesInnerDescriptionL :: Lens_' SearchMemes200ResponseMemesInner (Maybe Text)
+searchMemes200ResponseMemesInnerDescriptionL f SearchMemes200ResponseMemesInner{..} = (\searchMemes200ResponseMemesInnerDescription -> SearchMemes200ResponseMemesInner { searchMemes200ResponseMemesInnerDescription, ..} ) <$> f searchMemes200ResponseMemesInnerDescription
+{-# INLINE searchMemes200ResponseMemesInnerDescriptionL #-}
 
--- | 'inlineResponse20030TargetAmount' Lens
-inlineResponse20030TargetAmountL :: Lens_' InlineResponse20030 (Maybe Double)
-inlineResponse20030TargetAmountL f InlineResponse20030{..} = (\inlineResponse20030TargetAmount -> InlineResponse20030 { inlineResponse20030TargetAmount, ..} ) <$> f inlineResponse20030TargetAmount
-{-# INLINE inlineResponse20030TargetAmountL #-}
+-- | 'searchMemes200ResponseMemesInnerUrl' Lens
+searchMemes200ResponseMemesInnerUrlL :: Lens_' SearchMemes200ResponseMemesInner (Maybe Text)
+searchMemes200ResponseMemesInnerUrlL f SearchMemes200ResponseMemesInner{..} = (\searchMemes200ResponseMemesInnerUrl -> SearchMemes200ResponseMemesInner { searchMemes200ResponseMemesInnerUrl, ..} ) <$> f searchMemes200ResponseMemesInnerUrl
+{-# INLINE searchMemes200ResponseMemesInnerUrlL #-}
 
--- | 'inlineResponse20030TargetUnit' Lens
-inlineResponse20030TargetUnitL :: Lens_' InlineResponse20030 (Maybe Text)
-inlineResponse20030TargetUnitL f InlineResponse20030{..} = (\inlineResponse20030TargetUnit -> InlineResponse20030 { inlineResponse20030TargetUnit, ..} ) <$> f inlineResponse20030TargetUnit
-{-# INLINE inlineResponse20030TargetUnitL #-}
 
 
+-- * SearchNews200Response
 
--- * InlineResponse20031
+-- | 'searchNews200ResponseOffset' Lens
+searchNews200ResponseOffsetL :: Lens_' SearchNews200Response (Maybe Int)
+searchNews200ResponseOffsetL f SearchNews200Response{..} = (\searchNews200ResponseOffset -> SearchNews200Response { searchNews200ResponseOffset, ..} ) <$> f searchNews200ResponseOffset
+{-# INLINE searchNews200ResponseOffsetL #-}
 
--- | 'inlineResponse20031Value' Lens
-inlineResponse20031ValueL :: Lens_' InlineResponse20031 (Maybe Text)
-inlineResponse20031ValueL f InlineResponse20031{..} = (\inlineResponse20031Value -> InlineResponse20031 { inlineResponse20031Value, ..} ) <$> f inlineResponse20031Value
-{-# INLINE inlineResponse20031ValueL #-}
+-- | 'searchNews200ResponseNumber' Lens
+searchNews200ResponseNumberL :: Lens_' SearchNews200Response (Maybe Int)
+searchNews200ResponseNumberL f SearchNews200Response{..} = (\searchNews200ResponseNumber -> SearchNews200Response { searchNews200ResponseNumber, ..} ) <$> f searchNews200ResponseNumber
+{-# INLINE searchNews200ResponseNumberL #-}
 
+-- | 'searchNews200ResponseAvailable' Lens
+searchNews200ResponseAvailableL :: Lens_' SearchNews200Response (Maybe Int)
+searchNews200ResponseAvailableL f SearchNews200Response{..} = (\searchNews200ResponseAvailable -> SearchNews200Response { searchNews200ResponseAvailable, ..} ) <$> f searchNews200ResponseAvailable
+{-# INLINE searchNews200ResponseAvailableL #-}
 
+-- | 'searchNews200ResponseNews' Lens
+searchNews200ResponseNewsL :: Lens_' SearchNews200Response (Maybe [SearchNews200ResponseNewsInner])
+searchNews200ResponseNewsL f SearchNews200Response{..} = (\searchNews200ResponseNews -> SearchNews200Response { searchNews200ResponseNews, ..} ) <$> f searchNews200ResponseNews
+{-# INLINE searchNews200ResponseNewsL #-}
 
--- * InlineResponse20032
 
--- | 'inlineResponse20032Status' Lens
-inlineResponse20032StatusL :: Lens_' InlineResponse20032 (Maybe Text)
-inlineResponse20032StatusL f InlineResponse20032{..} = (\inlineResponse20032Status -> InlineResponse20032 { inlineResponse20032Status, ..} ) <$> f inlineResponse20032Status
-{-# INLINE inlineResponse20032StatusL #-}
 
+-- * SearchNews200ResponseNewsInner
 
+-- | 'searchNews200ResponseNewsInnerSummary' Lens
+searchNews200ResponseNewsInnerSummaryL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerSummaryL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerSummary -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerSummary, ..} ) <$> f searchNews200ResponseNewsInnerSummary
+{-# INLINE searchNews200ResponseNewsInnerSummaryL #-}
 
--- * InlineResponse2004
+-- | 'searchNews200ResponseNewsInnerImage' Lens
+searchNews200ResponseNewsInnerImageL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerImageL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerImage -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerImage, ..} ) <$> f searchNews200ResponseNewsInnerImage
+{-# INLINE searchNews200ResponseNewsInnerImageL #-}
 
--- | 'inlineResponse2004Jokes' Lens
-inlineResponse2004JokesL :: Lens_' InlineResponse2004 (Maybe [InlineResponse2004Jokes])
-inlineResponse2004JokesL f InlineResponse2004{..} = (\inlineResponse2004Jokes -> InlineResponse2004 { inlineResponse2004Jokes, ..} ) <$> f inlineResponse2004Jokes
-{-# INLINE inlineResponse2004JokesL #-}
+-- | 'searchNews200ResponseNewsInnerSentiment' Lens
+searchNews200ResponseNewsInnerSentimentL :: Lens_' SearchNews200ResponseNewsInner (Maybe Double)
+searchNews200ResponseNewsInnerSentimentL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerSentiment -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerSentiment, ..} ) <$> f searchNews200ResponseNewsInnerSentiment
+{-# INLINE searchNews200ResponseNewsInnerSentimentL #-}
 
--- | 'inlineResponse2004Available' Lens
-inlineResponse2004AvailableL :: Lens_' InlineResponse2004 (Maybe Int)
-inlineResponse2004AvailableL f InlineResponse2004{..} = (\inlineResponse2004Available -> InlineResponse2004 { inlineResponse2004Available, ..} ) <$> f inlineResponse2004Available
-{-# INLINE inlineResponse2004AvailableL #-}
+-- | 'searchNews200ResponseNewsInnerSourceCountry' Lens
+searchNews200ResponseNewsInnerSourceCountryL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerSourceCountryL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerSourceCountry -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerSourceCountry, ..} ) <$> f searchNews200ResponseNewsInnerSourceCountry
+{-# INLINE searchNews200ResponseNewsInnerSourceCountryL #-}
 
+-- | 'searchNews200ResponseNewsInnerLanguage' Lens
+searchNews200ResponseNewsInnerLanguageL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerLanguageL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerLanguage -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerLanguage, ..} ) <$> f searchNews200ResponseNewsInnerLanguage
+{-# INLINE searchNews200ResponseNewsInnerLanguageL #-}
 
+-- | 'searchNews200ResponseNewsInnerId' Lens
+searchNews200ResponseNewsInnerIdL :: Lens_' SearchNews200ResponseNewsInner (Maybe Int)
+searchNews200ResponseNewsInnerIdL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerId -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerId, ..} ) <$> f searchNews200ResponseNewsInnerId
+{-# INLINE searchNews200ResponseNewsInnerIdL #-}
 
--- * InlineResponse2004Jokes
+-- | 'searchNews200ResponseNewsInnerText' Lens
+searchNews200ResponseNewsInnerTextL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerTextL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerText -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerText, ..} ) <$> f searchNews200ResponseNewsInnerText
+{-# INLINE searchNews200ResponseNewsInnerTextL #-}
 
--- | 'inlineResponse2004JokesJoke' Lens
-inlineResponse2004JokesJokeL :: Lens_' InlineResponse2004Jokes (Maybe Text)
-inlineResponse2004JokesJokeL f InlineResponse2004Jokes{..} = (\inlineResponse2004JokesJoke -> InlineResponse2004Jokes { inlineResponse2004JokesJoke, ..} ) <$> f inlineResponse2004JokesJoke
-{-# INLINE inlineResponse2004JokesJokeL #-}
+-- | 'searchNews200ResponseNewsInnerTitle' Lens
+searchNews200ResponseNewsInnerTitleL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerTitleL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerTitle -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerTitle, ..} ) <$> f searchNews200ResponseNewsInnerTitle
+{-# INLINE searchNews200ResponseNewsInnerTitleL #-}
 
+-- | 'searchNews200ResponseNewsInnerPublishDate' Lens
+searchNews200ResponseNewsInnerPublishDateL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerPublishDateL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerPublishDate -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerPublishDate, ..} ) <$> f searchNews200ResponseNewsInnerPublishDate
+{-# INLINE searchNews200ResponseNewsInnerPublishDateL #-}
 
+-- | 'searchNews200ResponseNewsInnerUrl' Lens
+searchNews200ResponseNewsInnerUrlL :: Lens_' SearchNews200ResponseNewsInner (Maybe Text)
+searchNews200ResponseNewsInnerUrlL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerUrl -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerUrl, ..} ) <$> f searchNews200ResponseNewsInnerUrl
+{-# INLINE searchNews200ResponseNewsInnerUrlL #-}
 
--- * InlineResponse2005
+-- | 'searchNews200ResponseNewsInnerAuthors' Lens
+searchNews200ResponseNewsInnerAuthorsL :: Lens_' SearchNews200ResponseNewsInner (Maybe [Text])
+searchNews200ResponseNewsInnerAuthorsL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerAuthors -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerAuthors, ..} ) <$> f searchNews200ResponseNewsInnerAuthors
+{-# INLINE searchNews200ResponseNewsInnerAuthorsL #-}
 
--- | 'inlineResponse2005Memes' Lens
-inlineResponse2005MemesL :: Lens_' InlineResponse2005 (Maybe [InlineResponse2005Memes])
-inlineResponse2005MemesL f InlineResponse2005{..} = (\inlineResponse2005Memes -> InlineResponse2005 { inlineResponse2005Memes, ..} ) <$> f inlineResponse2005Memes
-{-# INLINE inlineResponse2005MemesL #-}
 
--- | 'inlineResponse2005Available' Lens
-inlineResponse2005AvailableL :: Lens_' InlineResponse2005 (Maybe Int)
-inlineResponse2005AvailableL f InlineResponse2005{..} = (\inlineResponse2005Available -> InlineResponse2005 { inlineResponse2005Available, ..} ) <$> f inlineResponse2005Available
-{-# INLINE inlineResponse2005AvailableL #-}
 
+-- * SearchRoyaltyFreeImages200Response
 
+-- | 'searchRoyaltyFreeImages200ResponseImages' Lens
+searchRoyaltyFreeImages200ResponseImagesL :: Lens_' SearchRoyaltyFreeImages200Response (Maybe [SearchRoyaltyFreeImages200ResponseImagesInner])
+searchRoyaltyFreeImages200ResponseImagesL f SearchRoyaltyFreeImages200Response{..} = (\searchRoyaltyFreeImages200ResponseImages -> SearchRoyaltyFreeImages200Response { searchRoyaltyFreeImages200ResponseImages, ..} ) <$> f searchRoyaltyFreeImages200ResponseImages
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesL #-}
 
--- * InlineResponse2005Memes
 
--- | 'inlineResponse2005MemesType' Lens
-inlineResponse2005MemesTypeL :: Lens_' InlineResponse2005Memes (Maybe Text)
-inlineResponse2005MemesTypeL f InlineResponse2005Memes{..} = (\inlineResponse2005MemesType -> InlineResponse2005Memes { inlineResponse2005MemesType, ..} ) <$> f inlineResponse2005MemesType
-{-# INLINE inlineResponse2005MemesTypeL #-}
 
--- | 'inlineResponse2005MemesDescription' Lens
-inlineResponse2005MemesDescriptionL :: Lens_' InlineResponse2005Memes (Maybe Text)
-inlineResponse2005MemesDescriptionL f InlineResponse2005Memes{..} = (\inlineResponse2005MemesDescription -> InlineResponse2005Memes { inlineResponse2005MemesDescription, ..} ) <$> f inlineResponse2005MemesDescription
-{-# INLINE inlineResponse2005MemesDescriptionL #-}
+-- * SearchRoyaltyFreeImages200ResponseImagesInner
 
--- | 'inlineResponse2005MemesUrl' Lens
-inlineResponse2005MemesUrlL :: Lens_' InlineResponse2005Memes (Maybe Text)
-inlineResponse2005MemesUrlL f InlineResponse2005Memes{..} = (\inlineResponse2005MemesUrl -> InlineResponse2005Memes { inlineResponse2005MemesUrl, ..} ) <$> f inlineResponse2005MemesUrl
-{-# INLINE inlineResponse2005MemesUrlL #-}
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerWidth' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerWidthL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe Int)
+searchRoyaltyFreeImages200ResponseImagesInnerWidthL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerWidth -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerWidth, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerWidth
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerWidthL #-}
 
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerLicense' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe SearchRoyaltyFreeImages200ResponseImagesInnerLicense)
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerLicense -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerLicense, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerLicense
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerLicenseL #-}
 
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerThumbnail' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerThumbnailL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe Text)
+searchRoyaltyFreeImages200ResponseImagesInnerThumbnailL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerThumbnail -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerThumbnail, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerThumbnail
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerThumbnailL #-}
 
--- * InlineResponse2006
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerId' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerIdL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe Text)
+searchRoyaltyFreeImages200ResponseImagesInnerIdL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerId -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerId, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerId
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerIdL #-}
 
--- | 'inlineResponse2006Description' Lens
-inlineResponse2006DescriptionL :: Lens_' InlineResponse2006 (Maybe Text)
-inlineResponse2006DescriptionL f InlineResponse2006{..} = (\inlineResponse2006Description -> InlineResponse2006 { inlineResponse2006Description, ..} ) <$> f inlineResponse2006Description
-{-# INLINE inlineResponse2006DescriptionL #-}
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerUrl' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerUrlL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe Text)
+searchRoyaltyFreeImages200ResponseImagesInnerUrlL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerUrl -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerUrl, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerUrl
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerUrlL #-}
 
--- | 'inlineResponse2006Url' Lens
-inlineResponse2006UrlL :: Lens_' InlineResponse2006 (Maybe Text)
-inlineResponse2006UrlL f InlineResponse2006{..} = (\inlineResponse2006Url -> InlineResponse2006 { inlineResponse2006Url, ..} ) <$> f inlineResponse2006Url
-{-# INLINE inlineResponse2006UrlL #-}
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerHeight' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerHeightL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInner (Maybe Int)
+searchRoyaltyFreeImages200ResponseImagesInnerHeightL f SearchRoyaltyFreeImages200ResponseImagesInner{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerHeight -> SearchRoyaltyFreeImages200ResponseImagesInner { searchRoyaltyFreeImages200ResponseImagesInnerHeight, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerHeight
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerHeightL #-}
 
--- | 'inlineResponse2006Type' Lens
-inlineResponse2006TypeL :: Lens_' InlineResponse2006 (Maybe Text)
-inlineResponse2006TypeL f InlineResponse2006{..} = (\inlineResponse2006Type -> InlineResponse2006 { inlineResponse2006Type, ..} ) <$> f inlineResponse2006Type
-{-# INLINE inlineResponse2006TypeL #-}
 
--- | 'inlineResponse2006Width' Lens
-inlineResponse2006WidthL :: Lens_' InlineResponse2006 (Maybe Int)
-inlineResponse2006WidthL f InlineResponse2006{..} = (\inlineResponse2006Width -> InlineResponse2006 { inlineResponse2006Width, ..} ) <$> f inlineResponse2006Width
-{-# INLINE inlineResponse2006WidthL #-}
 
--- | 'inlineResponse2006Height' Lens
-inlineResponse2006HeightL :: Lens_' InlineResponse2006 (Maybe Int)
-inlineResponse2006HeightL f InlineResponse2006{..} = (\inlineResponse2006Height -> InlineResponse2006 { inlineResponse2006Height, ..} ) <$> f inlineResponse2006Height
-{-# INLINE inlineResponse2006HeightL #-}
+-- * SearchRoyaltyFreeImages200ResponseImagesInnerLicense
 
--- | 'inlineResponse2006Ratio' Lens
-inlineResponse2006RatioL :: Lens_' InlineResponse2006 (Maybe Double)
-inlineResponse2006RatioL f InlineResponse2006{..} = (\inlineResponse2006Ratio -> InlineResponse2006 { inlineResponse2006Ratio, ..} ) <$> f inlineResponse2006Ratio
-{-# INLINE inlineResponse2006RatioL #-}
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerLicenseName' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseNameL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInnerLicense (Maybe Text)
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseNameL f SearchRoyaltyFreeImages200ResponseImagesInnerLicense{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerLicenseName -> SearchRoyaltyFreeImages200ResponseImagesInnerLicense { searchRoyaltyFreeImages200ResponseImagesInnerLicenseName, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerLicenseName
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerLicenseNameL #-}
 
+-- | 'searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink' Lens
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseLinkL :: Lens_' SearchRoyaltyFreeImages200ResponseImagesInnerLicense (Maybe Text)
+searchRoyaltyFreeImages200ResponseImagesInnerLicenseLinkL f SearchRoyaltyFreeImages200ResponseImagesInnerLicense{..} = (\searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink -> SearchRoyaltyFreeImages200ResponseImagesInnerLicense { searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink, ..} ) <$> f searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink
+{-# INLINE searchRoyaltyFreeImages200ResponseImagesInnerLicenseLinkL #-}
 
 
--- * InlineResponse2007
 
--- | 'inlineResponse2007Images' Lens
-inlineResponse2007ImagesL :: Lens_' InlineResponse2007 (Maybe [InlineResponse2007Images])
-inlineResponse2007ImagesL f InlineResponse2007{..} = (\inlineResponse2007Images -> InlineResponse2007 { inlineResponse2007Images, ..} ) <$> f inlineResponse2007Images
-{-# INLINE inlineResponse2007ImagesL #-}
+-- * SearchWeb200Response
 
+-- | 'searchWeb200ResponseResults' Lens
+searchWeb200ResponseResultsL :: Lens_' SearchWeb200Response (Maybe [SearchWeb200ResponseResultsInner])
+searchWeb200ResponseResultsL f SearchWeb200Response{..} = (\searchWeb200ResponseResults -> SearchWeb200Response { searchWeb200ResponseResults, ..} ) <$> f searchWeb200ResponseResults
+{-# INLINE searchWeb200ResponseResultsL #-}
 
 
--- * InlineResponse2007Images
 
--- | 'inlineResponse2007ImagesWidth' Lens
-inlineResponse2007ImagesWidthL :: Lens_' InlineResponse2007Images (Maybe Int)
-inlineResponse2007ImagesWidthL f InlineResponse2007Images{..} = (\inlineResponse2007ImagesWidth -> InlineResponse2007Images { inlineResponse2007ImagesWidth, ..} ) <$> f inlineResponse2007ImagesWidth
-{-# INLINE inlineResponse2007ImagesWidthL #-}
+-- * SearchWeb200ResponseResultsInner
 
--- | 'inlineResponse2007ImagesUrl' Lens
-inlineResponse2007ImagesUrlL :: Lens_' InlineResponse2007Images (Maybe Text)
-inlineResponse2007ImagesUrlL f InlineResponse2007Images{..} = (\inlineResponse2007ImagesUrl -> InlineResponse2007Images { inlineResponse2007ImagesUrl, ..} ) <$> f inlineResponse2007ImagesUrl
-{-# INLINE inlineResponse2007ImagesUrlL #-}
+-- | 'searchWeb200ResponseResultsInnerTitle' Lens
+searchWeb200ResponseResultsInnerTitleL :: Lens_' SearchWeb200ResponseResultsInner (Maybe Text)
+searchWeb200ResponseResultsInnerTitleL f SearchWeb200ResponseResultsInner{..} = (\searchWeb200ResponseResultsInnerTitle -> SearchWeb200ResponseResultsInner { searchWeb200ResponseResultsInnerTitle, ..} ) <$> f searchWeb200ResponseResultsInnerTitle
+{-# INLINE searchWeb200ResponseResultsInnerTitleL #-}
 
--- | 'inlineResponse2007ImagesHeight' Lens
-inlineResponse2007ImagesHeightL :: Lens_' InlineResponse2007Images (Maybe Int)
-inlineResponse2007ImagesHeightL f InlineResponse2007Images{..} = (\inlineResponse2007ImagesHeight -> InlineResponse2007Images { inlineResponse2007ImagesHeight, ..} ) <$> f inlineResponse2007ImagesHeight
-{-# INLINE inlineResponse2007ImagesHeightL #-}
+-- | 'searchWeb200ResponseResultsInnerSummary' Lens
+searchWeb200ResponseResultsInnerSummaryL :: Lens_' SearchWeb200ResponseResultsInner (Maybe Text)
+searchWeb200ResponseResultsInnerSummaryL f SearchWeb200ResponseResultsInner{..} = (\searchWeb200ResponseResultsInnerSummary -> SearchWeb200ResponseResultsInner { searchWeb200ResponseResultsInnerSummary, ..} ) <$> f searchWeb200ResponseResultsInnerSummary
+{-# INLINE searchWeb200ResponseResultsInnerSummaryL #-}
 
+-- | 'searchWeb200ResponseResultsInnerUrl' Lens
+searchWeb200ResponseResultsInnerUrlL :: Lens_' SearchWeb200ResponseResultsInner (Maybe Text)
+searchWeb200ResponseResultsInnerUrlL f SearchWeb200ResponseResultsInner{..} = (\searchWeb200ResponseResultsInnerUrl -> SearchWeb200ResponseResultsInner { searchWeb200ResponseResultsInnerUrl, ..} ) <$> f searchWeb200ResponseResultsInnerUrl
+{-# INLINE searchWeb200ResponseResultsInnerUrlL #-}
 
 
--- * InlineResponse2008
 
--- | 'inlineResponse2008Word' Lens
-inlineResponse2008WordL :: Lens_' InlineResponse2008 (Maybe Text)
-inlineResponse2008WordL f InlineResponse2008{..} = (\inlineResponse2008Word -> InlineResponse2008 { inlineResponse2008Word, ..} ) <$> f inlineResponse2008Word
-{-# INLINE inlineResponse2008WordL #-}
+-- * SingularizeWord200Response
 
--- | 'inlineResponse2008Rating' Lens
-inlineResponse2008RatingL :: Lens_' InlineResponse2008 (Maybe Double)
-inlineResponse2008RatingL f InlineResponse2008{..} = (\inlineResponse2008Rating -> InlineResponse2008 { inlineResponse2008Rating, ..} ) <$> f inlineResponse2008Rating
-{-# INLINE inlineResponse2008RatingL #-}
+-- | 'singularizeWord200ResponseOriginal' Lens
+singularizeWord200ResponseOriginalL :: Lens_' SingularizeWord200Response (Maybe Text)
+singularizeWord200ResponseOriginalL f SingularizeWord200Response{..} = (\singularizeWord200ResponseOriginal -> SingularizeWord200Response { singularizeWord200ResponseOriginal, ..} ) <$> f singularizeWord200ResponseOriginal
+{-# INLINE singularizeWord200ResponseOriginalL #-}
 
+-- | 'singularizeWord200ResponseSingular' Lens
+singularizeWord200ResponseSingularL :: Lens_' SingularizeWord200Response (Maybe Text)
+singularizeWord200ResponseSingularL f SingularizeWord200Response{..} = (\singularizeWord200ResponseSingular -> SingularizeWord200Response { singularizeWord200ResponseSingular, ..} ) <$> f singularizeWord200ResponseSingular
+{-# INLINE singularizeWord200ResponseSingularL #-}
 
 
--- * InlineResponse2009
 
--- | 'inlineResponse2009Trivia' Lens
-inlineResponse2009TriviaL :: Lens_' InlineResponse2009 (Maybe Text)
-inlineResponse2009TriviaL f InlineResponse2009{..} = (\inlineResponse2009Trivia -> InlineResponse2009 { inlineResponse2009Trivia, ..} ) <$> f inlineResponse2009Trivia
-{-# INLINE inlineResponse2009TriviaL #-}
+-- * StoreKeyValueGET200Response
 
+-- | 'storeKeyValueGET200ResponseStatus' Lens
+storeKeyValueGET200ResponseStatusL :: Lens_' StoreKeyValueGET200Response (Maybe Text)
+storeKeyValueGET200ResponseStatusL f StoreKeyValueGET200Response{..} = (\storeKeyValueGET200ResponseStatus -> StoreKeyValueGET200Response { storeKeyValueGET200ResponseStatus, ..} ) <$> f storeKeyValueGET200ResponseStatus
+{-# INLINE storeKeyValueGET200ResponseStatusL #-}
 
 
--- * InlineResponse200Books
 
--- | 'inlineResponse200BooksTitle' Lens
-inlineResponse200BooksTitleL :: Lens_' InlineResponse200Books (Maybe Text)
-inlineResponse200BooksTitleL f InlineResponse200Books{..} = (\inlineResponse200BooksTitle -> InlineResponse200Books { inlineResponse200BooksTitle, ..} ) <$> f inlineResponse200BooksTitle
-{-# INLINE inlineResponse200BooksTitleL #-}
+-- * TextStemming200Response
 
--- | 'inlineResponse200BooksImage' Lens
-inlineResponse200BooksImageL :: Lens_' InlineResponse200Books (Maybe Text)
-inlineResponse200BooksImageL f InlineResponse200Books{..} = (\inlineResponse200BooksImage -> InlineResponse200Books { inlineResponse200BooksImage, ..} ) <$> f inlineResponse200BooksImage
-{-# INLINE inlineResponse200BooksImageL #-}
+-- | 'textStemming200ResponseOriginal' Lens
+textStemming200ResponseOriginalL :: Lens_' TextStemming200Response (Maybe Text)
+textStemming200ResponseOriginalL f TextStemming200Response{..} = (\textStemming200ResponseOriginal -> TextStemming200Response { textStemming200ResponseOriginal, ..} ) <$> f textStemming200ResponseOriginal
+{-# INLINE textStemming200ResponseOriginalL #-}
 
--- | 'inlineResponse200BooksId' Lens
-inlineResponse200BooksIdL :: Lens_' InlineResponse200Books (Maybe Int)
-inlineResponse200BooksIdL f InlineResponse200Books{..} = (\inlineResponse200BooksId -> InlineResponse200Books { inlineResponse200BooksId, ..} ) <$> f inlineResponse200BooksId
-{-# INLINE inlineResponse200BooksIdL #-}
+-- | 'textStemming200ResponseStemmed' Lens
+textStemming200ResponseStemmedL :: Lens_' TextStemming200Response (Maybe Text)
+textStemming200ResponseStemmedL f TextStemming200Response{..} = (\textStemming200ResponseStemmed -> TextStemming200Response { textStemming200ResponseStemmed, ..} ) <$> f textStemming200ResponseStemmed
+{-# INLINE textStemming200ResponseStemmedL #-}
 
 

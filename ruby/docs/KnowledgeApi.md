@@ -10,7 +10,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## random_quote
 
-> <InlineResponse20010> random_quote(opts)
+> <RandomQuote200Response> random_quote(opts)
 
 Random Quote
 
@@ -53,7 +53,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20010>, Integer, Hash)> random_quote_with_http_info(opts)
+> <Array(<RandomQuote200Response>, Integer, Hash)> random_quote_with_http_info(opts)
 
 ```ruby
 begin
@@ -61,7 +61,7 @@ begin
   data, status_code, headers = api_instance.random_quote_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20010>
+  p data # => <RandomQuote200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling KnowledgeApi->random_quote_with_http_info: #{e}"
 end
@@ -76,7 +76,7 @@ end
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ end
 
 ## random_trivia
 
-> <InlineResponse2009> random_trivia(opts)
+> <RandomTrivia200Response> random_trivia(opts)
 
 Random Trivia
 
@@ -132,7 +132,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2009>, Integer, Hash)> random_trivia_with_http_info(opts)
+> <Array(<RandomTrivia200Response>, Integer, Hash)> random_trivia_with_http_info(opts)
 
 ```ruby
 begin
@@ -140,7 +140,7 @@ begin
   data, status_code, headers = api_instance.random_trivia_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2009>
+  p data # => <RandomTrivia200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling KnowledgeApi->random_trivia_with_http_info: #{e}"
 end
@@ -154,7 +154,7 @@ end
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

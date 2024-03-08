@@ -1,27 +1,27 @@
-# com.apileague.client\TextApi
+# OpenAPI\Client\TextApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**correctSpelling()**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
-[**detectLanguage()**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
-[**detectSentiment()**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
-[**extractDates()**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
-[**extractEntities()**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
-[**listWordSynonyms()**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging()**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging
-[**pluralizeWord()**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
-[**scoreReadability()**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
-[**scoreText()**](TextApi.md#scoreText) | **GET** /score-text | Score Text
-[**singularizeWord()**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-[**textStemming()**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**correctSpelling()**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
+| [**detectLanguage()**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
+| [**detectSentiment()**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
+| [**extractDates()**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
+| [**extractEntities()**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
+| [**listWordSynonyms()**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
+| [**partOfSpeechTagging()**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging |
+| [**pluralizeWord()**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
+| [**scoreReadability()**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
+| [**scoreText()**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
+| [**singularizeWord()**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
+| [**textStemming()**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming |
 
 
 ## `correctSpelling()`
 
 ```php
-correctSpelling($text, $language): \com.apileague.client\com.apileague.client.model\InlineResponse20016
+correctSpelling($text, $language): \OpenAPI\Client\Model\CorrectSpelling200Response
 ```
 
 Correct Spelling
@@ -36,17 +36,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -65,14 +65,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to be corrected. |
- **language** | **string**| The language of the text, one of en, de, es, fr, or it. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to be corrected. | |
+| **language** | **string**| The language of the text, one of en, de, es, fr, or it. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\OpenAPI\Client\Model\CorrectSpelling200Response**](../Model/CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 ## `detectLanguage()`
 
 ```php
-detectLanguage($text): \com.apileague.client\com.apileague.client.model\InlineResponse20017[]
+detectLanguage($text): \OpenAPI\Client\Model\DetectLanguage200ResponseInner[]
 ```
 
 Detect Language
@@ -105,17 +105,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -133,13 +133,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text for which the language should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text for which the language should be detected. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20017[]**](../Model/InlineResponse20017.md)
+[**\OpenAPI\Client\Model\DetectLanguage200ResponseInner[]**](../Model/DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `detectSentiment()`
 
 ```php
-detectSentiment($text): \com.apileague.client\com.apileague.client.model\InlineResponse20018
+detectSentiment($text): \OpenAPI\Client\Model\DetectSentiment200Response
 ```
 
 Detect Sentiment
@@ -172,17 +172,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -200,13 +200,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text for which the sentiment should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text for which the sentiment should be detected. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\OpenAPI\Client\Model\DetectSentiment200Response**](../Model/DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 ## `extractDates()`
 
 ```php
-extractDates($text): \com.apileague.client\com.apileague.client.model\InlineResponse20021
+extractDates($text): \OpenAPI\Client\Model\ExtractDates200Response
 ```
 
 Extract Dates
@@ -239,17 +239,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -267,13 +267,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text from which dates should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text from which dates should be extracted. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\OpenAPI\Client\Model\ExtractDates200Response**](../Model/ExtractDates200Response.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 ## `extractEntities()`
 
 ```php
-extractEntities($text): \com.apileague.client\com.apileague.client.model\InlineResponse20027
+extractEntities($text): \OpenAPI\Client\Model\ExtractEntities200Response
 ```
 
 Extract Entities
@@ -306,17 +306,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -334,13 +334,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text from which entities should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text from which entities should be extracted. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20027**](../Model/InlineResponse20027.md)
+[**\OpenAPI\Client\Model\ExtractEntities200Response**](../Model/ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 ## `listWordSynonyms()`
 
 ```php
-listWordSynonyms($word): \com.apileague.client\com.apileague.client.model\InlineResponse20022
+listWordSynonyms($word): \OpenAPI\Client\Model\ListWordSynonyms200Response
 ```
 
 List Word Synonyms
@@ -373,17 +373,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -401,13 +401,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which a list of synonyms should be returned. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **string**| The (noun) word for which a list of synonyms should be returned. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\OpenAPI\Client\Model\ListWordSynonyms200Response**](../Model/ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 ## `partOfSpeechTagging()`
 
 ```php
-partOfSpeechTagging($text): \com.apileague.client\com.apileague.client.model\InlineResponse20023
+partOfSpeechTagging($text): \OpenAPI\Client\Model\PartOfSpeechTagging200Response
 ```
 
 Part of Speech Tagging
@@ -440,17 +440,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -468,13 +468,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to tag the part of speech. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to tag the part of speech. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\OpenAPI\Client\Model\PartOfSpeechTagging200Response**](../Model/PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 ## `pluralizeWord()`
 
 ```php
-pluralizeWord($word): \com.apileague.client\com.apileague.client.model\InlineResponse20026
+pluralizeWord($word): \OpenAPI\Client\Model\PluralizeWord200Response
 ```
 
 Pluralize Word
@@ -507,17 +507,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -535,13 +535,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which the plural form should be found. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **string**| The (noun) word for which the plural form should be found. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\OpenAPI\Client\Model\PluralizeWord200Response**](../Model/PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 ## `scoreReadability()`
 
 ```php
-scoreReadability($text): \com.apileague.client\com.apileague.client.model\InlineResponse20020
+scoreReadability($text): \OpenAPI\Client\Model\ScoreReadability200Response
 ```
 
 Score Readability
@@ -574,17 +574,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -602,13 +602,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to score for readability. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to score for readability. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\OpenAPI\Client\Model\ScoreReadability200Response**](../Model/ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 ## `scoreText()`
 
 ```php
-scoreText($title, $text): \com.apileague.client\com.apileague.client.model\InlineResponse20019
+scoreText($title, $text): \OpenAPI\Client\Model\ScoreText200Response
 ```
 
 Score Text
@@ -641,17 +641,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -670,14 +670,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **title** | **string**| The title of the text to score. |
- **text** | **string**| The text to score for multiple metrics. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **title** | **string**| The title of the text to score. | |
+| **text** | **string**| The text to score for multiple metrics. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\OpenAPI\Client\Model\ScoreText200Response**](../Model/ScoreText200Response.md)
 
 ### Authorization
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 ## `singularizeWord()`
 
 ```php
-singularizeWord($word): \com.apileague.client\com.apileague.client.model\InlineResponse20025
+singularizeWord($word): \OpenAPI\Client\Model\SingularizeWord200Response
 ```
 
 Singularize Word
@@ -710,17 +710,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -738,13 +738,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which the singular form should be found. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **string**| The (noun) word for which the singular form should be found. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\OpenAPI\Client\Model\SingularizeWord200Response**](../Model/SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -762,7 +762,7 @@ Name | Type | Description  | Notes
 ## `textStemming()`
 
 ```php
-textStemming($text): \com.apileague.client\com.apileague.client.model\InlineResponse20024
+textStemming($text): \OpenAPI\Client\Model\TextStemming200Response
 ```
 
 Text Stemming
@@ -777,17 +777,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\TextApi(
+$apiInstance = new OpenAPI\Client\Api\TextApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -805,13 +805,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to be stemmed. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to be stemmed. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20024**](../Model/InlineResponse20024.md)
+[**\OpenAPI\Client\Model\TextStemming200Response**](../Model/TextStemming200Response.md)
 
 ### Authorization
 

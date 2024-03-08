@@ -1,15 +1,14 @@
-# com.apileague.MathApi
+# apileague.Api.MathApi
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ConvertUnits**](MathApi.md#convertunits) | **GET** /convert-units | Convert Units
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**ConvertUnits**](MathApi.md#convertunits) | **GET** /convert-units | Convert Units |
 
-
-<a name="convertunits"></a>
+<a id="convertunits"></a>
 # **ConvertUnits**
-> InlineResponse20030 ConvertUnits (double? sourceAmount, string sourceUnit, string targetUnit, string foodName)
+> ConvertUnits200Response ConvertUnits (double sourceAmount, string sourceUnit, string targetUnit, string? foodName = null)
 
 Convert Units
 
@@ -17,60 +16,84 @@ Convert units from one to another. The API returns the amount and the unit of th
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ConvertUnitsExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new MathApi();
-            var sourceAmount = 100;  // double? | The source amount.
+            var apiInstance = new MathApi(config);
+            var sourceAmount = 100;  // double | The source amount.
             var sourceUnit = kg;  // string | The source unit.
             var targetUnit = lb;  // string | The unit to which should be converted.
-            var foodName = flour;  // string | An optional food name. For converting foods the food is relevant as they have different densities. (optional) 
+            var foodName = flour;  // string? | An optional food name. For converting foods the food is relevant as they have different densities. (optional) 
 
             try
             {
                 // Convert Units
-                InlineResponse20030 result = apiInstance.ConvertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+                ConvertUnits200Response result = apiInstance.ConvertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MathApi.ConvertUnits: " + e.Message );
+                Debug.Print("Exception when calling MathApi.ConvertUnits: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ConvertUnitsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Convert Units
+    ApiResponse<ConvertUnits200Response> response = apiInstance.ConvertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MathApi.ConvertUnitsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sourceAmount** | **double?**| The source amount. | 
- **sourceUnit** | **string**| The source unit. | 
- **targetUnit** | **string**| The unit to which should be converted. | 
- **foodName** | **string**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sourceAmount** | **double** | The source amount. |  |
+| **sourceUnit** | **string** | The source unit. |  |
+| **targetUnit** | **string** | The unit to which should be converted. |  |
+| **foodName** | **string?** | An optional food name. For converting foods the food is relevant as they have different densities. | [optional]  |
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 
@@ -80,6 +103,18 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

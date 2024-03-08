@@ -3,62 +3,62 @@
             [clojure.spec.alpha :as s]
             [spec-tools.core :as st]
             [orchestra.core :refer [defn-spec]]
-            [api-league.specs.inline-response-200-19-skimmability-subscores :refer :all]
-            [api-league.specs.inline-response-200-19-skimmability :refer :all]
-            [api-league.specs.inline-response-200-19-skimmability-mainscores :refer :all]
-            [api-league.specs.inline-response-200-19-readability-mainscores :refer :all]
-            [api-league.specs.inline-response-200-32 :refer :all]
-            [api-league.specs.inline-response-200-31 :refer :all]
-            [api-league.specs.inline-response-200-30 :refer :all]
-            [api-league.specs.inline-response-200-books :refer :all]
-            [api-league.specs.inline-response-200-19-interestingness :refer :all]
-            [api-league.specs.inline-response-200-28-images :refer :all]
-            [api-league.specs.inline-response-200-29 :refer :all]
-            [api-league.specs.inline-response-200-28 :refer :all]
-            [api-league.specs.inline-response-200-27 :refer :all]
-            [api-league.specs.inline-response-200-2 :refer :all]
-            [api-league.specs.inline-response-200-26 :refer :all]
-            [api-league.specs.inline-response-200-1 :refer :all]
-            [api-league.specs.inline-response-200-25 :refer :all]
-            [api-league.specs.inline-response-200-24 :refer :all]
-            [api-league.specs.inline-response-200-23 :refer :all]
-            [api-league.specs.inline-response-200-22 :refer :all]
-            [api-league.specs.inline-response-200-21 :refer :all]
-            [api-league.specs.inline-response-200-27-entities :refer :all]
-            [api-league.specs.inline-response-200-20 :refer :all]
-            [api-league.specs.inline-response-200-9 :refer :all]
-            [api-league.specs.inline-response-200-8 :refer :all]
-            [api-league.specs.inline-response-200-7 :refer :all]
-            [api-league.specs.inline-response-200-6 :refer :all]
-            [api-league.specs.inline-response-200-5 :refer :all]
-            [api-league.specs.inline-response-200-7-images :refer :all]
-            [api-league.specs.inline-response-200-4 :refer :all]
-            [api-league.specs.inline-response-200-2-news :refer :all]
-            [api-league.specs.inline-response-200-3 :refer :all]
-            [api-league.specs.inline-response-200 :refer :all]
-            [api-league.specs.inline-response-200-19-style-subscores :refer :all]
-            [api-league.specs.inline-response-200-18-sentences :refer :all]
-            [api-league.specs.inline-response-200-19 :refer :all]
-            [api-league.specs.inline-response-200-18 :refer :all]
-            [api-league.specs.inline-response-200-17 :refer :all]
-            [api-league.specs.inline-response-200-16 :refer :all]
-            [api-league.specs.inline-response-200-19-readability-subscores :refer :all]
-            [api-league.specs.inline-response-200-15 :refer :all]
-            [api-league.specs.inline-response-200-14 :refer :all]
-            [api-league.specs.inline-response-200-13 :refer :all]
-            [api-league.specs.inline-response-200-12 :refer :all]
-            [api-league.specs.inline-response-200-11 :refer :all]
-            [api-league.specs.inline-response-200-10 :refer :all]
-            [api-league.specs.inline-response-200-19-interestingness-subscores :refer :all]
-            [api-league.specs.inline-response-200-15-results :refer :all]
-            [api-league.specs.inline-response-200-5-memes :refer :all]
-            [api-league.specs.inline-response-200-4-jokes :refer :all]
-            [api-league.specs.inline-response-200-28-license :refer :all]
-            [api-league.specs.inline-response-200-18-document :refer :all]
-            [api-league.specs.inline-response-200-19-readability :refer :all]
-            [api-league.specs.inline-response-200-14-authors :refer :all]
-            [api-league.specs.inline-response-200-21-dates :refer :all]
-            [api-league.specs.inline-response-200-19-style :refer :all]
+            [api-league.specs.search-gifs-200-response-images-inner :refer :all]
+            [api-league.specs.search-memes-200-response-memes-inner :refer :all]
+            [api-league.specs.singularize-word-200-response :refer :all]
+            [api-league.specs.generate-nonsense-word-200-response :refer :all]
+            [api-league.specs.detect-language-200-response-inner :refer :all]
+            [api-league.specs.random-meme-200-response :refer :all]
+            [api-league.specs.random-trivia-200-response :refer :all]
+            [api-league.specs.extract-authors-200-response :refer :all]
+            [api-league.specs.extract-news-200-response :refer :all]
+            [api-league.specs.search-news-200-response :refer :all]
+            [api-league.specs.search-memes-200-response :refer :all]
+            [api-league.specs.extract-dates-200-response :refer :all]
+            [api-league.specs.score-text-200-response :refer :all]
+            [api-league.specs.detect-main-image-color-200-response-inner :refer :all]
+            [api-league.specs.search-jokes-200-response :refer :all]
+            [api-league.specs.search-web-200-response :refer :all]
+            [api-league.specs.random-poem-200-response :refer :all]
+            [api-league.specs.score-text-200-response-interestingness :refer :all]
+            [api-league.specs.score-text-200-response-readability-subscores :refer :all]
+            [api-league.specs.pluralize-word-200-response :refer :all]
+            [api-league.specs.convert-units-200-response :refer :all]
+            [api-league.specs.find-similar-books-200-response :refer :all]
+            [api-league.specs.score-text-200-response-skimmability-mainscores :refer :all]
+            [api-league.specs.search-gifs-200-response :refer :all]
+            [api-league.specs.score-text-200-response-skimmability :refer :all]
+            [api-league.specs.search-books-200-response :refer :all]
+            [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
+            [api-league.specs.detect-sentiment-200-response-document :refer :all]
+            [api-league.specs.store-key-value-get-200-response :refer :all]
+            [api-league.specs.search-books-200-response-books-inner :refer :all]
+            [api-league.specs.text-stemming-200-response :refer :all]
+            [api-league.specs.detect-sentiment-200-response :refer :all]
+            [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
+            [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
+            [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
+            [api-league.specs.search-news-200-response-news-inner :refer :all]
+            [api-league.specs.extract-entities-200-response :refer :all]
+            [api-league.specs.search-royalty-free-images-200-response :refer :all]
+            [api-league.specs.detect-sentiment-200-response-sentences-inner :refer :all]
+            [api-league.specs.random-quote-200-response :refer :all]
+            [api-league.specs.extract-content-from-a-web-page-200-response :refer :all]
+            [api-league.specs.score-text-200-response-readability :refer :all]
+            [api-league.specs.score-text-200-response-style :refer :all]
+            [api-league.specs.part-of-speech-tagging-200-response :refer :all]
+            [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
+            [api-league.specs.search-web-200-response-results-inner :refer :all]
+            [api-league.specs.score-text-200-response-style-subscores :refer :all]
+            [api-league.specs.extract-entities-200-response-entities-inner :refer :all]
+            [api-league.specs.list-word-synonyms-200-response :refer :all]
+            [api-league.specs.read-key-value-from-store-200-response :refer :all]
+            [api-league.specs.score-readability-200-response :refer :all]
+            [api-league.specs.extract-publish-date-200-response :refer :all]
+            [api-league.specs.score-text-200-response-readability-mainscores :refer :all]
+            [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
+            [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
+            [api-league.specs.correct-spelling-200-response :refer :all]
             )
   (:import (java.io File)))
 
@@ -77,13 +77,13 @@
              :accepts       ["application/json"]
              :auth-names    ["apiKey" "headerApiKey"]}))
 
-(defn-spec extract-authors inline-response-200-14-spec
+(defn-spec extract-authors extract-authors-200-response-spec
   "Extract Authors
   Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available."
   [url string?]
   (let [res (:data (extract-authors-with-http-info url))]
     (if (:decode-models *api-context*)
-       (st/decode inline-response-200-14-spec res st/string-transformer)
+       (st/decode extract-authors-200-response-spec res st/string-transformer)
        res)))
 
 
@@ -101,13 +101,13 @@
              :accepts       ["application/json"]
              :auth-names    ["apiKey" "headerApiKey"]}))
 
-(defn-spec extract-content-from-a-web-page inline-response-200-12-spec
+(defn-spec extract-content-from-a-web-page extract-content-from-a-web-page-200-response-spec
   "Extract Content from a Web Page
   Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format."
   [url string?]
   (let [res (:data (extract-content-from-a-web-page-with-http-info url))]
     (if (:decode-models *api-context*)
-       (st/decode inline-response-200-12-spec res st/string-transformer)
+       (st/decode extract-content-from-a-web-page-200-response-spec res st/string-transformer)
        res)))
 
 
@@ -125,13 +125,13 @@
              :accepts       ["application/json"]
              :auth-names    ["apiKey" "headerApiKey"]}))
 
-(defn-spec extract-publish-date inline-response-200-13-spec
+(defn-spec extract-publish-date extract-publish-date-200-response-spec
   "Extract Publish Date
   Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD."
   [url string?]
   (let [res (:data (extract-publish-date-with-http-info url))]
     (if (:decode-models *api-context*)
-       (st/decode inline-response-200-13-spec res st/string-transformer)
+       (st/decode extract-publish-date-200-response-spec res st/string-transformer)
        res)))
 
 
@@ -150,14 +150,14 @@
               :accepts       ["application/json"]
               :auth-names    ["apiKey" "headerApiKey"]})))
 
-(defn-spec search-web inline-response-200-15-spec
+(defn-spec search-web search-web-200-response-spec
   "Search Web
   Search the web for a given query. The API returns a list of results with the title, summary, and URL."
   ([query string?, ] (search-web query nil))
   ([query string?, optional-params any?]
    (let [res (:data (search-web-with-http-info query optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode inline-response-200-15-spec res st/string-transformer)
+        (st/decode search-web-200-response-spec res st/string-transformer)
         res))))
 
 

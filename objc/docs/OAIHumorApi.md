@@ -15,7 +15,7 @@ Method | HTTP request | Description
 # **generateNonsenseWord**
 ```objc
 -(NSURLSessionTask*) generateNonsenseWordWithCompletionHandler: 
-        (void (^)(OAIInlineResponse2008* output, NSError* error)) handler;
+        (void (^)(OAIGenerateNonsenseWord200Response* output, NSError* error)) handler;
 ```
 
 Generate Nonsense Word
@@ -42,7 +42,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
 
 // Generate Nonsense Word
 [apiInstance generateNonsenseWordWithCompletionHandler: 
-          ^(OAIInlineResponse2008* output, NSError* error) {
+          ^(OAIGenerateNonsenseWord200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OAIInlineResponse2008***](OAIInlineResponse2008.md)
+[**OAIGenerateNonsenseWord200Response***](OAIGenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
     excludeTags: (NSString*) excludeTags
     minRating: (NSNumber*) minRating
     maxLength: (NSNumber*) maxLength
-        completionHandler: (void (^)(OAIInlineResponse2004Jokes* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchJokes200ResponseJokesInner* output, NSError* error)) handler;
 ```
 
 Random Joke
@@ -110,7 +110,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
               excludeTags:excludeTags
               minRating:minRating
               maxLength:maxLength
-          completionHandler: ^(OAIInlineResponse2004Jokes* output, NSError* error) {
+          completionHandler: ^(OAISearchJokes200ResponseJokesInner* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2004Jokes***](OAIInlineResponse2004Jokes.md)
+[**OAISearchJokes200ResponseJokesInner***](OAISearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
     mediaType: (NSString*) mediaType
     minRating: (NSNumber*) minRating
     maxAgeDays: (NSNumber*) maxAgeDays
-        completionHandler: (void (^)(OAIInlineResponse2006* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIRandomMeme200Response* output, NSError* error)) handler;
 ```
 
 Random Meme
@@ -187,7 +187,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
               mediaType:mediaType
               minRating:minRating
               maxAgeDays:maxAgeDays
-          completionHandler: ^(OAIInlineResponse2006* output, NSError* error) {
+          completionHandler: ^(OAIRandomMeme200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2006***](OAIInlineResponse2006.md)
+[**OAIRandomMeme200Response***](OAIRandomMeme200Response.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) searchGifsWithQuery: (NSString*) query
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse2007* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchGifs200Response* output, NSError* error)) handler;
 ```
 
 Search Gifs
@@ -256,7 +256,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
 // Search Gifs
 [apiInstance searchGifsWithQuery:query
               number:number
-          completionHandler: ^(OAIInlineResponse2007* output, NSError* error) {
+          completionHandler: ^(OAISearchGifs200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2007***](OAIInlineResponse2007.md)
+[**OAISearchGifs200Response***](OAISearchGifs200Response.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
     maxLength: (NSNumber*) maxLength
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse2004* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchJokes200Response* output, NSError* error)) handler;
 ```
 
 Search Jokes
@@ -337,7 +337,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
               maxLength:maxLength
               offset:offset
               number:number
-          completionHandler: ^(OAIInlineResponse2004* output, NSError* error) {
+          completionHandler: ^(OAISearchJokes200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2004***](OAIInlineResponse2004.md)
+[**OAISearchJokes200Response***](OAISearchJokes200Response.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
     maxAgeDays: (NSNumber*) maxAgeDays
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse2005* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchMemes200Response* output, NSError* error)) handler;
 ```
 
 Search Memes
@@ -423,7 +423,7 @@ OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
               maxAgeDays:maxAgeDays
               offset:offset
               number:number
-          completionHandler: ^(OAIInlineResponse2005* output, NSError* error) {
+          completionHandler: ^(OAISearchMemes200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2005***](OAIInlineResponse2005.md)
+[**OAISearchMemes200Response***](OAISearchMemes200Response.md)
 
 ### Authorization
 

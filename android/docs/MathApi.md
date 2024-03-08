@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## convertUnits
 
-> InlineResponse20030 convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
 
 Convert Units
 
@@ -28,7 +28,7 @@ String sourceUnit = kg; // String | The source unit.
 String targetUnit = lb; // String | The unit to which should be converted.
 String foodName = flour; // String | An optional food name. For converting foods the food is relevant as they have different densities.
 try {
-    InlineResponse20030 result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+    ConvertUnits200Response result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MathApi#convertUnits");
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

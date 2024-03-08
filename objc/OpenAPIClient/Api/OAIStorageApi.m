@@ -1,8 +1,8 @@
 #import "OAIStorageApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20031.h"
-#import "OAIInlineResponse20032.h"
+#import "OAIReadKeyValueFromStore200Response.h"
+#import "OAIStoreKeyValueGET200Response.h"
 
 
 @interface OAIStorageApi ()
@@ -55,10 +55,10 @@ NSInteger kOAIStorageApiMissingParamErrorCode = 234513;
 /// Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 ///  @param key The key for which the value is stored (max length 255 characters). 
 ///
-///  @returns OAIInlineResponse20031*
+///  @returns OAIReadKeyValueFromStore200Response*
 ///
 -(NSURLSessionTask*) readKeyValueFromStoreWithKey: (NSString*) key
-    completionHandler: (void (^)(OAIInlineResponse20031* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIReadKeyValueFromStore200Response* output, NSError* error)) handler {
     // verify the required parameter 'key' is set
     if (key == nil) {
         NSParameterAssert(key);
@@ -110,10 +110,10 @@ NSInteger kOAIStorageApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20031*"
+                              responseType: @"OAIReadKeyValueFromStore200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20031*)data, error);
+                                    handler((OAIReadKeyValueFromStore200Response*)data, error);
                                 }
                             }];
 }
@@ -125,11 +125,11 @@ NSInteger kOAIStorageApiMissingParamErrorCode = 234513;
 ///
 ///  @param value The value that is supposed to be stored (max length 10,000 characters). 
 ///
-///  @returns OAIInlineResponse20032*
+///  @returns OAIStoreKeyValueGET200Response*
 ///
 -(NSURLSessionTask*) storeKeyValueGETWithKey: (NSString*) key
     value: (NSString*) value
-    completionHandler: (void (^)(OAIInlineResponse20032* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIStoreKeyValueGET200Response* output, NSError* error)) handler {
     // verify the required parameter 'key' is set
     if (key == nil) {
         NSParameterAssert(key);
@@ -195,10 +195,10 @@ NSInteger kOAIStorageApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20032*"
+                              responseType: @"OAIStoreKeyValueGET200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20032*)data, error);
+                                    handler((OAIStoreKeyValueGET200Response*)data, error);
                                 }
                             }];
 }

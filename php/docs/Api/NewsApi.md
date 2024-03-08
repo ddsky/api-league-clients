@@ -1,17 +1,17 @@
-# com.apileague.client\NewsApi
+# OpenAPI\Client\NewsApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractNews()**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
-[**searchNews()**](NewsApi.md#searchNews) | **GET** /search-news | Search News
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**extractNews()**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News |
+| [**searchNews()**](NewsApi.md#searchNews) | **GET** /search-news | Search News |
 
 
 ## `extractNews()`
 
 ```php
-extractNews($url, $analyze): \com.apileague.client\com.apileague.client.model\InlineResponse2003
+extractNews($url, $analyze): \OpenAPI\Client\Model\ExtractNews200Response
 ```
 
 Extract News
@@ -26,17 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\NewsApi(
+$apiInstance = new OpenAPI\Client\Api\NewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,14 +55,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The url of the news. |
- **analyze** | **bool**| Whether to analyze the news (extract entities etc.) |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **string**| The url of the news. | |
+| **analyze** | **bool**| Whether to analyze the news (extract entities etc.) | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\OpenAPI\Client\Model\ExtractNews200Response**](../Model/ExtractNews200Response.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ## `searchNews()`
 
 ```php
-searchNews($text, $source_countries, $language, $min_sentiment, $max_sentiment, $earliest_publish_date, $latest_publish_date, $news_sources, $authors, $entities, $location_filter, $sort, $sort_direction, $offset, $number): \com.apileague.client\com.apileague.client.model\InlineResponse2002
+searchNews($text, $source_countries, $language, $min_sentiment, $max_sentiment, $earliest_publish_date, $latest_publish_date, $news_sources, $authors, $entities, $location_filter, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchNews200Response
 ```
 
 Search News
@@ -95,17 +95,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\NewsApi(
+$apiInstance = new OpenAPI\Client\Api\NewsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -114,8 +114,8 @@ $apiInstance = new com.apileague.client\Api\NewsApi(
 $text = tesla; // string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
 $source_countries = us,uk; // string | A comma-separated list of ISO 3166 country codes from which the news should originate.
 $language = en; // string | The ISO 6391 language code of the news.
-$min_sentiment = -0.8; // double | The minimal sentiment of the news in range [-1,1].
-$max_sentiment = 0.8; // double | The maximal sentiment of the news in range [-1,1].
+$min_sentiment = -0.8; // float | The minimal sentiment of the news in range [-1,1].
+$max_sentiment = 0.8; // float | The maximal sentiment of the news in range [-1,1].
 $earliest_publish_date = 2022-04-22 16:12:35; // string | The news must have been published after this date.
 $latest_publish_date = 2022-04-22 16:12:35; // string | The news must have been published before this date.
 $news_sources = https://www.bbc.co.uk; // string | A comma-separated list of news sources from which the news should originate.
@@ -137,27 +137,27 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
- **source_countries** | **string**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]
- **language** | **string**| The ISO 6391 language code of the news. | [optional]
- **min_sentiment** | **double**| The minimal sentiment of the news in range [-1,1]. | [optional]
- **max_sentiment** | **double**| The maximal sentiment of the news in range [-1,1]. | [optional]
- **earliest_publish_date** | **string**| The news must have been published after this date. | [optional]
- **latest_publish_date** | **string**| The news must have been published before this date. | [optional]
- **news_sources** | **string**| A comma-separated list of news sources from which the news should originate. | [optional]
- **authors** | **string**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
- **entities** | **string**| Filter news by entities (see semantic types). | [optional]
- **location_filter** | **string**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
- **sort** | **string**| The sorting criteria (publish-time or sentiment). | [optional]
- **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **offset** | **int**| The number of news to skip in range [0,10000] | [optional]
- **number** | **int**| The number of news to return in range [1,100] | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **source_countries** | **string**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
+| **language** | **string**| The ISO 6391 language code of the news. | [optional] |
+| **min_sentiment** | **float**| The minimal sentiment of the news in range [-1,1]. | [optional] |
+| **max_sentiment** | **float**| The maximal sentiment of the news in range [-1,1]. | [optional] |
+| **earliest_publish_date** | **string**| The news must have been published after this date. | [optional] |
+| **latest_publish_date** | **string**| The news must have been published before this date. | [optional] |
+| **news_sources** | **string**| A comma-separated list of news sources from which the news should originate. | [optional] |
+| **authors** | **string**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
+| **entities** | **string**| Filter news by entities (see semantic types). | [optional] |
+| **location_filter** | **string**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
+| **sort** | **string**| The sorting criteria (publish-time or sentiment). | [optional] |
+| **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **int**| The number of news to skip in range [0,10000] | [optional] |
+| **number** | **int**| The number of news to return in range [1,100] | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\OpenAPI\Client\Model\SearchNews200Response**](../Model/SearchNews200Response.md)
 
 ### Authorization
 

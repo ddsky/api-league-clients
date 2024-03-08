@@ -14,15 +14,14 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import java.math.BigDecimal;
-import com.apileague.client.model.InlineResponse2004;
-import com.apileague.client.model.InlineResponse2004Jokes;
-import com.apileague.client.model.InlineResponse2005;
-import com.apileague.client.model.InlineResponse2006;
-import com.apileague.client.model.InlineResponse2007;
-import com.apileague.client.model.InlineResponse2008;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.GenerateNonsenseWord200Response;
+import com.apileague.client.model.RandomMeme200Response;
+import com.apileague.client.model.SearchGifs200Response;
+import com.apileague.client.model.SearchJokes200Response;
+import com.apileague.client.model.SearchJokes200ResponseJokesInner;
+import com.apileague.client.model.SearchMemes200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,51 +31,47 @@ import java.util.Map;
 /**
  * API tests for HumorApi
  */
-@Ignore
+@Disabled
 public class HumorApiTest {
 
     private final HumorApi api = new HumorApi();
 
-    
     /**
      * Generate Nonsense Word
      *
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void generateNonsenseWordTest() throws ApiException {
-                InlineResponse2008 response = api.generateNonsenseWord();
+        GenerateNonsenseWord200Response response = api.generateNonsenseWord();
         // TODO: test validations
     }
-    
+
     /**
      * Random Joke
      *
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void randomJokeTest() throws ApiException {
         String includeTags = null;
         String excludeTags = null;
         Double minRating = null;
-        BigDecimal maxLength = null;
-                InlineResponse2004Jokes response = api.randomJoke(includeTags, excludeTags, minRating, maxLength);
+        Integer maxLength = null;
+        SearchJokes200ResponseJokesInner response = api.randomJoke(includeTags, excludeTags, minRating, maxLength);
         // TODO: test validations
     }
-    
+
     /**
      * Random Meme
      *
      * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void randomMemeTest() throws ApiException {
@@ -84,34 +79,32 @@ public class HumorApiTest {
         Boolean keywordsInImage = null;
         String mediaType = null;
         Double minRating = null;
-        BigDecimal maxAgeDays = null;
-                InlineResponse2006 response = api.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+        Integer maxAgeDays = null;
+        RandomMeme200Response response = api.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
         // TODO: test validations
     }
-    
+
     /**
      * Search Gifs
      *
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void searchGifsTest() throws ApiException {
         String query = null;
-        BigDecimal number = null;
-                InlineResponse2007 response = api.searchGifs(query, number);
+        Integer number = null;
+        SearchGifs200Response response = api.searchGifs(query, number);
         // TODO: test validations
     }
-    
+
     /**
      * Search Jokes
      *
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void searchJokesTest() throws ApiException {
@@ -120,19 +113,18 @@ public class HumorApiTest {
         String excludeTags = null;
         Double minRating = null;
         Double maxLength = null;
-        BigDecimal offset = null;
-        BigDecimal number = null;
-                InlineResponse2004 response = api.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+        Integer offset = null;
+        Integer number = null;
+        SearchJokes200Response response = api.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
         // TODO: test validations
     }
-    
+
     /**
      * Search Memes
      *
      * With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void searchMemesTest() throws ApiException {
@@ -140,11 +132,11 @@ public class HumorApiTest {
         Boolean keywordsInImage = null;
         String mediaType = null;
         Double minRating = null;
-        BigDecimal maxAgeDays = null;
-        BigDecimal offset = null;
-        BigDecimal number = null;
-                InlineResponse2005 response = api.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+        Integer maxAgeDays = null;
+        Integer offset = null;
+        Integer number = null;
+        SearchMemes200Response response = api.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
         // TODO: test validations
     }
-    
+
 }

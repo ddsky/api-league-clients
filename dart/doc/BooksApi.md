@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **findSimilarBooks**
-> InlineResponse2001 findSimilarBooks(id, number)
+> FindSimilarBooks200Response findSimilarBooks(id, number)
 
 Find Similar Books
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchBooks**
-> InlineResponse200 searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
 Search Books
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

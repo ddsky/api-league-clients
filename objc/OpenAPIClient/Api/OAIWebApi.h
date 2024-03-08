@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20012.h"
-#import "OAIInlineResponse20013.h"
-#import "OAIInlineResponse20014.h"
-#import "OAIInlineResponse20015.h"
+#import "OAIExtractAuthors200Response.h"
+#import "OAIExtractContentFromAWebPage200Response.h"
+#import "OAIExtractPublishDate200Response.h"
+#import "OAISearchWeb200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -39,9 +39,9 @@ extern NSInteger kOAIWebApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20014*
+/// @return OAIExtractAuthors200Response*
 -(NSURLSessionTask*) extractAuthorsWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20014* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractAuthors200Response* output, NSError* error)) handler;
 
 
 /// Extract Content from a Web Page
@@ -57,9 +57,9 @@ extern NSInteger kOAIWebApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20012*
+/// @return OAIExtractContentFromAWebPage200Response*
 -(NSURLSessionTask*) extractContentFromAWebPageWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20012* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractContentFromAWebPage200Response* output, NSError* error)) handler;
 
 
 /// Extract Publish Date
@@ -75,9 +75,9 @@ extern NSInteger kOAIWebApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20013*
+/// @return OAIExtractPublishDate200Response*
 -(NSURLSessionTask*) extractPublishDateWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20013* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractPublishDate200Response* output, NSError* error)) handler;
 
 
 /// Search Web
@@ -94,10 +94,10 @@ extern NSInteger kOAIWebApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20015*
+/// @return OAISearchWeb200Response*
 -(NSURLSessionTask*) searchWebWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse20015* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchWeb200Response* output, NSError* error)) handler;
 
 
 

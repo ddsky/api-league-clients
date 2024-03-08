@@ -1,12 +1,12 @@
 #import "OAIHumorApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse2004.h"
-#import "OAIInlineResponse2004Jokes.h"
-#import "OAIInlineResponse2005.h"
-#import "OAIInlineResponse2006.h"
-#import "OAIInlineResponse2007.h"
-#import "OAIInlineResponse2008.h"
+#import "OAIGenerateNonsenseWord200Response.h"
+#import "OAIRandomMeme200Response.h"
+#import "OAISearchGifs200Response.h"
+#import "OAISearchJokes200Response.h"
+#import "OAISearchJokes200ResponseJokesInner.h"
+#import "OAISearchMemes200Response.h"
 
 
 @interface OAIHumorApi ()
@@ -57,10 +57,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 /// Generate Nonsense Word
 /// Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-///  @returns OAIInlineResponse2008*
+///  @returns OAIGenerateNonsenseWord200Response*
 ///
 -(NSURLSessionTask*) generateNonsenseWordWithCompletionHandler: 
-    (void (^)(OAIInlineResponse2008* output, NSError* error)) handler {
+    (void (^)(OAIGenerateNonsenseWord200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/generate-nonsense-word"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -98,10 +98,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2008*"
+                              responseType: @"OAIGenerateNonsenseWord200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2008*)data, error);
+                                    handler((OAIGenerateNonsenseWord200Response*)data, error);
                                 }
                             }];
 }
@@ -117,13 +117,13 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxLength The maximum length of the joke in letters. (optional)
 ///
-///  @returns OAIInlineResponse2004Jokes*
+///  @returns OAISearchJokes200ResponseJokesInner*
 ///
 -(NSURLSessionTask*) randomJokeWithIncludeTags: (NSString*) includeTags
     excludeTags: (NSString*) excludeTags
     minRating: (NSNumber*) minRating
     maxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse2004Jokes* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchJokes200ResponseJokesInner* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-random-joke"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -173,10 +173,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2004Jokes*"
+                              responseType: @"OAISearchJokes200ResponseJokesInner*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2004Jokes*)data, error);
+                                    handler((OAISearchJokes200ResponseJokesInner*)data, error);
                                 }
                             }];
 }
@@ -194,14 +194,14 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxAgeDays The maximum age of the meme in days. (optional)
 ///
-///  @returns OAIInlineResponse2006*
+///  @returns OAIRandomMeme200Response*
 ///
 -(NSURLSessionTask*) randomMemeWithKeywords: (NSString*) keywords
     keywordsInImage: (NSNumber*) keywordsInImage
     mediaType: (NSString*) mediaType
     minRating: (NSNumber*) minRating
     maxAgeDays: (NSNumber*) maxAgeDays
-    completionHandler: (void (^)(OAIInlineResponse2006* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIRandomMeme200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-random-meme"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -254,10 +254,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2006*"
+                              responseType: @"OAIRandomMeme200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2006*)data, error);
+                                    handler((OAIRandomMeme200Response*)data, error);
                                 }
                             }];
 }
@@ -269,11 +269,11 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of gifs to return in range [1,10] (optional)
 ///
-///  @returns OAIInlineResponse2007*
+///  @returns OAISearchGifs200Response*
 ///
 -(NSURLSessionTask*) searchGifsWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2007* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchGifs200Response* output, NSError* error)) handler {
     // verify the required parameter 'query' is set
     if (query == nil) {
         NSParameterAssert(query);
@@ -328,10 +328,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2007*"
+                              responseType: @"OAISearchGifs200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2007*)data, error);
+                                    handler((OAISearchGifs200Response*)data, error);
                                 }
                             }];
 }
@@ -353,7 +353,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of jokes, between 1 and 10. (optional)
 ///
-///  @returns OAIInlineResponse2004*
+///  @returns OAISearchJokes200Response*
 ///
 -(NSURLSessionTask*) searchJokesWithKeywords: (NSString*) keywords
     includeTags: (NSString*) includeTags
@@ -362,7 +362,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
     maxLength: (NSNumber*) maxLength
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2004* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchJokes200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/search-jokes"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -421,10 +421,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2004*"
+                              responseType: @"OAISearchJokes200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2004*)data, error);
+                                    handler((OAISearchJokes200Response*)data, error);
                                 }
                             }];
 }
@@ -446,7 +446,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of memes, between 0 and 10. (optional)
 ///
-///  @returns OAIInlineResponse2005*
+///  @returns OAISearchMemes200Response*
 ///
 -(NSURLSessionTask*) searchMemesWithKeywords: (NSString*) keywords
     keywordsInImage: (NSNumber*) keywordsInImage
@@ -455,7 +455,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
     maxAgeDays: (NSNumber*) maxAgeDays
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2005* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchMemes200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/search-memes"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -514,10 +514,10 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2005*"
+                              responseType: @"OAISearchMemes200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2005*)data, error);
+                                    handler((OAISearchMemes200Response*)data, error);
                                 }
                             }];
 }

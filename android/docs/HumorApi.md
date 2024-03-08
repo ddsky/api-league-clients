@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## generateNonsenseWord
 
-> InlineResponse2008 generateNonsenseWord()
+> GenerateNonsenseWord200Response generateNonsenseWord()
 
 Generate Nonsense Word
 
@@ -29,7 +29,7 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 
 HumorApi apiInstance = new HumorApi();
 try {
-    InlineResponse2008 result = apiInstance.generateNonsenseWord();
+    GenerateNonsenseWord200Response result = apiInstance.generateNonsenseWord();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#generateNonsenseWord");
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ## randomJoke
 
-> InlineResponse2004Jokes randomJoke(includeTags, excludeTags, minRating, maxLength)
+> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
 
 Random Joke
 
@@ -75,7 +75,7 @@ String excludeTags = nsfw,dark; // String | A comma-separated list of tags the j
 Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the jokes.
 Integer maxLength = 140; // Integer | The maximum length of the joke in letters.
 try {
-    InlineResponse2004Jokes result = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength);
+    SearchJokes200ResponseJokesInner result = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#randomJoke");
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ## randomMeme
 
-> InlineResponse2006 randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
 Random Meme
 
@@ -128,7 +128,7 @@ String mediaType = image; // String | The media type (either 'image', 'video' or
 Double minRating = 0; // Double | The minimum rating in range [0.0-1.0] of the meme.
 Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 try {
-    InlineResponse2006 result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+    RandomMeme200Response result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#randomMeme");
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## searchGifs
 
-> InlineResponse2007 searchGifs(query, number)
+> SearchGifs200Response searchGifs(query, number)
 
 Search Gifs
 
@@ -179,7 +179,7 @@ HumorApi apiInstance = new HumorApi();
 String query = dogs; // String | The search query.
 Integer number = 5; // Integer | The number of gifs to return in range [1,10]
 try {
-    InlineResponse2007 result = apiInstance.searchGifs(query, number);
+    SearchGifs200Response result = apiInstance.searchGifs(query, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#searchGifs");
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## searchJokes
 
-> InlineResponse2004 searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
 Search Jokes
 
@@ -232,7 +232,7 @@ Double maxLength = 140; // Double | The maximum length of the joke in letters.
 Integer offset = 0; // Integer | The number of jokes to skip, between 0 and 1000.
 Integer number = 3; // Integer | The number of jokes, between 1 and 10.
 try {
-    InlineResponse2004 result = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+    SearchJokes200Response result = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#searchJokes");
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## searchMemes
 
-> InlineResponse2005 searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
 Search Memes
 
@@ -290,7 +290,7 @@ Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 Integer offset = 0; // Integer | The number of memes to skip, between 0 and 1000.
 Integer number = 3; // Integer | The number of memes, between 0 and 10.
 try {
-    InlineResponse2005 result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+    SearchMemes200Response result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HumorApi#searchMemes");
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

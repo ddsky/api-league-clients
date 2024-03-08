@@ -1,18 +1,18 @@
 #import "OAITextApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20016.h"
-#import "OAIInlineResponse20017.h"
-#import "OAIInlineResponse20018.h"
-#import "OAIInlineResponse20019.h"
-#import "OAIInlineResponse20020.h"
-#import "OAIInlineResponse20021.h"
-#import "OAIInlineResponse20022.h"
-#import "OAIInlineResponse20023.h"
-#import "OAIInlineResponse20024.h"
-#import "OAIInlineResponse20025.h"
-#import "OAIInlineResponse20026.h"
-#import "OAIInlineResponse20027.h"
+#import "OAICorrectSpelling200Response.h"
+#import "OAIDetectLanguage200ResponseInner.h"
+#import "OAIDetectSentiment200Response.h"
+#import "OAIExtractDates200Response.h"
+#import "OAIExtractEntities200Response.h"
+#import "OAIListWordSynonyms200Response.h"
+#import "OAIPartOfSpeechTagging200Response.h"
+#import "OAIPluralizeWord200Response.h"
+#import "OAIScoreReadability200Response.h"
+#import "OAIScoreText200Response.h"
+#import "OAISingularizeWord200Response.h"
+#import "OAITextStemming200Response.h"
 
 
 @interface OAITextApi ()
@@ -67,11 +67,11 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 ///
 ///  @param language The language of the text, one of en, de, es, fr, or it. 
 ///
-///  @returns OAIInlineResponse20016*
+///  @returns OAICorrectSpelling200Response*
 ///
 -(NSURLSessionTask*) correctSpellingWithText: (NSString*) text
     language: (NSString*) language
-    completionHandler: (void (^)(OAIInlineResponse20016* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAICorrectSpelling200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -137,10 +137,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20016*"
+                              responseType: @"OAICorrectSpelling200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20016*)data, error);
+                                    handler((OAICorrectSpelling200Response*)data, error);
                                 }
                             }];
 }
@@ -150,10 +150,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 ///  @param text The text for which the language should be detected. 
 ///
-///  @returns NSArray<OAIInlineResponse20017>*
+///  @returns NSArray<OAIDetectLanguage200ResponseInner>*
 ///
 -(NSURLSessionTask*) detectLanguageWithText: (NSString*) text
-    completionHandler: (void (^)(NSArray<OAIInlineResponse20017>* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<OAIDetectLanguage200ResponseInner>* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -205,10 +205,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<OAIInlineResponse20017>*"
+                              responseType: @"NSArray<OAIDetectLanguage200ResponseInner>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSArray<OAIInlineResponse20017>*)data, error);
+                                    handler((NSArray<OAIDetectLanguage200ResponseInner>*)data, error);
                                 }
                             }];
 }
@@ -218,10 +218,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
 ///  @param text The text for which the sentiment should be detected. 
 ///
-///  @returns OAIInlineResponse20018*
+///  @returns OAIDetectSentiment200Response*
 ///
 -(NSURLSessionTask*) detectSentimentWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20018* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIDetectSentiment200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -273,10 +273,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20018*"
+                              responseType: @"OAIDetectSentiment200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20018*)data, error);
+                                    handler((OAIDetectSentiment200Response*)data, error);
                                 }
                             }];
 }
@@ -286,10 +286,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 ///  @param text The text from which dates should be extracted. 
 ///
-///  @returns OAIInlineResponse20021*
+///  @returns OAIExtractDates200Response*
 ///
 -(NSURLSessionTask*) extractDatesWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20021* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractDates200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -341,10 +341,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20021*"
+                              responseType: @"OAIExtractDates200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20021*)data, error);
+                                    handler((OAIExtractDates200Response*)data, error);
                                 }
                             }];
 }
@@ -354,10 +354,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
 ///  @param text The text from which entities should be extracted. 
 ///
-///  @returns OAIInlineResponse20027*
+///  @returns OAIExtractEntities200Response*
 ///
 -(NSURLSessionTask*) extractEntitiesWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20027* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractEntities200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -409,10 +409,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20027*"
+                              responseType: @"OAIExtractEntities200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20027*)data, error);
+                                    handler((OAIExtractEntities200Response*)data, error);
                                 }
                             }];
 }
@@ -422,10 +422,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Return synonyms of a word.
 ///  @param word The (noun) word for which a list of synonyms should be returned. 
 ///
-///  @returns OAIInlineResponse20022*
+///  @returns OAIListWordSynonyms200Response*
 ///
 -(NSURLSessionTask*) listWordSynonymsWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20022* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIListWordSynonyms200Response* output, NSError* error)) handler {
     // verify the required parameter 'word' is set
     if (word == nil) {
         NSParameterAssert(word);
@@ -477,10 +477,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20022*"
+                              responseType: @"OAIListWordSynonyms200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20022*)data, error);
+                                    handler((OAIListWordSynonyms200Response*)data, error);
                                 }
                             }];
 }
@@ -490,10 +490,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
 ///  @param text The text to tag the part of speech. 
 ///
-///  @returns OAIInlineResponse20023*
+///  @returns OAIPartOfSpeechTagging200Response*
 ///
 -(NSURLSessionTask*) partOfSpeechTaggingWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20023* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIPartOfSpeechTagging200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -545,10 +545,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20023*"
+                              responseType: @"OAIPartOfSpeechTagging200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20023*)data, error);
+                                    handler((OAIPartOfSpeechTagging200Response*)data, error);
                                 }
                             }];
 }
@@ -558,10 +558,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Find the plural form of a word.
 ///  @param word The (noun) word for which the plural form should be found. 
 ///
-///  @returns OAIInlineResponse20026*
+///  @returns OAIPluralizeWord200Response*
 ///
 -(NSURLSessionTask*) pluralizeWordWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20026* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIPluralizeWord200Response* output, NSError* error)) handler {
     // verify the required parameter 'word' is set
     if (word == nil) {
         NSParameterAssert(word);
@@ -613,10 +613,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20026*"
+                              responseType: @"OAIPluralizeWord200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20026*)data, error);
+                                    handler((OAIPluralizeWord200Response*)data, error);
                                 }
                             }];
 }
@@ -626,10 +626,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
 ///  @param text The text to score for readability. 
 ///
-///  @returns OAIInlineResponse20020*
+///  @returns OAIScoreReadability200Response*
 ///
 -(NSURLSessionTask*) scoreReadabilityWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20020* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIScoreReadability200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -681,10 +681,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20020*"
+                              responseType: @"OAIScoreReadability200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20020*)data, error);
+                                    handler((OAIScoreReadability200Response*)data, error);
                                 }
                             }];
 }
@@ -696,11 +696,11 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 ///
 ///  @param text The text to score for multiple metrics. 
 ///
-///  @returns OAIInlineResponse20019*
+///  @returns OAIScoreText200Response*
 ///
 -(NSURLSessionTask*) scoreTextWithTitle: (NSString*) title
     text: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20019* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIScoreText200Response* output, NSError* error)) handler {
     // verify the required parameter 'title' is set
     if (title == nil) {
         NSParameterAssert(title);
@@ -766,10 +766,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20019*"
+                              responseType: @"OAIScoreText200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20019*)data, error);
+                                    handler((OAIScoreText200Response*)data, error);
                                 }
                             }];
 }
@@ -779,10 +779,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// Find the singular form of a word.
 ///  @param word The (noun) word for which the singular form should be found. 
 ///
-///  @returns OAIInlineResponse20025*
+///  @returns OAISingularizeWord200Response*
 ///
 -(NSURLSessionTask*) singularizeWordWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20025* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISingularizeWord200Response* output, NSError* error)) handler {
     // verify the required parameter 'word' is set
     if (word == nil) {
         NSParameterAssert(word);
@@ -834,10 +834,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20025*"
+                              responseType: @"OAISingularizeWord200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20025*)data, error);
+                                    handler((OAISingularizeWord200Response*)data, error);
                                 }
                             }];
 }
@@ -847,10 +847,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 /// The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 ///  @param text The text to be stemmed. 
 ///
-///  @returns OAIInlineResponse20024*
+///  @returns OAITextStemming200Response*
 ///
 -(NSURLSessionTask*) textStemmingWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20024* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAITextStemming200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -902,10 +902,10 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20024*"
+                              responseType: @"OAITextStemming200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20024*)data, error);
+                                    handler((OAITextStemming200Response*)data, error);
                                 }
                             }];
 }

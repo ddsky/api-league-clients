@@ -1,17 +1,17 @@
-# com.apileague.client\KnowledgeApi
+# \KnowledgeAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RandomQuote**](KnowledgeApi.md#RandomQuote) | **Get** /retrieve-random-quote | Random Quote
-[**RandomTrivia**](KnowledgeApi.md#RandomTrivia) | **Get** /retrieve-random-trivia | Random Trivia
+[**RandomQuote**](KnowledgeAPI.md#RandomQuote) | **Get** /retrieve-random-quote | Random Quote
+[**RandomTrivia**](KnowledgeAPI.md#RandomTrivia) | **Get** /retrieve-random-trivia | Random Trivia
 
 
 
 ## RandomQuote
 
-> InlineResponse20010 RandomQuote(ctx).MinLength(minLength).MaxLength(maxLength).Execute()
+> RandomQuote200Response RandomQuote(ctx).MinLength(minLength).MaxLength(maxLength).Execute()
 
 Random Quote
 
@@ -23,25 +23,25 @@ Random Quote
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    minLength := int32(120) // int32 | The minimum length of the quote in letters. (optional)
-    maxLength := int32(300) // int32 | The maximum length of the quote in letters. (optional)
+	minLength := int32(120) // int32 | The minimum length of the quote in letters. (optional)
+	maxLength := int32(300) // int32 | The maximum length of the quote in letters. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KnowledgeApi.RandomQuote(context.Background()).MinLength(minLength).MaxLength(maxLength).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeApi.RandomQuote``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RandomQuote`: InlineResponse20010
-    fmt.Fprintf(os.Stdout, "Response from `KnowledgeApi.RandomQuote`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KnowledgeAPI.RandomQuote(context.Background()).MinLength(minLength).MaxLength(maxLength).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomQuote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomQuote`: RandomQuote200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomQuote`: %v\n", resp)
 }
 ```
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## RandomTrivia
 
-> InlineResponse2009 RandomTrivia(ctx).MaxLength(maxLength).Execute()
+> RandomTrivia200Response RandomTrivia(ctx).MaxLength(maxLength).Execute()
 
 Random Trivia
 
@@ -91,24 +91,24 @@ Random Trivia
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    maxLength := int32(300) // int32 | The maximum length of the trivia in letters. (optional)
+	maxLength := int32(300) // int32 | The maximum length of the trivia in letters. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KnowledgeApi.RandomTrivia(context.Background()).MaxLength(maxLength).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeApi.RandomTrivia``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RandomTrivia`: InlineResponse2009
-    fmt.Fprintf(os.Stdout, "Response from `KnowledgeApi.RandomTrivia`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KnowledgeAPI.RandomTrivia(context.Background()).MaxLength(maxLength).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomTrivia``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomTrivia`: RandomTrivia200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomTrivia`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

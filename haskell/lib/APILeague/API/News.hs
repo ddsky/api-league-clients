@@ -71,7 +71,7 @@ import qualified Prelude as P
 extractNews
   :: Url -- ^ "url" -  The url of the news.
   -> Analyze -- ^ "analyze" -  Whether to analyze the news (extract entities etc.)
-  -> APILeagueRequest ExtractNews MimeNoContent InlineResponse2003 MimeJSON
+  -> APILeagueRequest ExtractNews MimeNoContent ExtractNews200Response MimeJSON
 extractNews (Url url) (Analyze analyze) =
   _mkRequest "GET" ["/extract-news"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -95,7 +95,7 @@ instance Produces ExtractNews MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 searchNews
-  :: APILeagueRequest SearchNews MimeNoContent InlineResponse2002 MimeJSON
+  :: APILeagueRequest SearchNews MimeNoContent SearchNews200Response MimeJSON
 searchNews =
   _mkRequest "GET" ["/search-news"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

@@ -2,17 +2,17 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
-[**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
-[**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
-[**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors |
+| [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page |
+| [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
 
 
-<a name="extractAuthors"></a>
+<a id="extractAuthors"></a>
 # **extractAuthors**
-> InlineResponse20014 extractAuthors(url)
+> ExtractAuthors200Response extractAuthors(url)
 
 Extract Authors
 
@@ -48,7 +48,7 @@ public class Example {
     WebApi apiInstance = new WebApi(defaultClient);
     String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url with the article from which authors should be extracted.
     try {
-      InlineResponse20014 result = apiInstance.extractAuthors(url);
+      ExtractAuthors200Response result = apiInstance.extractAuthors(url);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebApi#extractAuthors");
@@ -63,13 +63,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **String**| The url with the article from which authors should be extracted. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **url** | **String**| The url with the article from which authors should be extracted. | |
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -83,17 +83,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="extractContentFromAWebPage"></a>
+<a id="extractContentFromAWebPage"></a>
 # **extractContentFromAWebPage**
-> InlineResponse20012 extractContentFromAWebPage(url)
+> ExtractContentFromAWebPage200Response extractContentFromAWebPage(url)
 
 Extract Content from a Web Page
 
@@ -129,7 +129,7 @@ public class Example {
     WebApi apiInstance = new WebApi(defaultClient);
     String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the content will be extracted.
     try {
-      InlineResponse20012 result = apiInstance.extractContentFromAWebPage(url);
+      ExtractContentFromAWebPage200Response result = apiInstance.extractContentFromAWebPage(url);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebApi#extractContentFromAWebPage");
@@ -144,13 +144,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **String**| The url for which the content will be extracted. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **url** | **String**| The url for which the content will be extracted. | |
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -164,17 +164,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="extractPublishDate"></a>
+<a id="extractPublishDate"></a>
 # **extractPublishDate**
-> InlineResponse20013 extractPublishDate(url)
+> ExtractPublishDate200Response extractPublishDate(url)
 
 Extract Publish Date
 
@@ -210,7 +210,7 @@ public class Example {
     WebApi apiInstance = new WebApi(defaultClient);
     String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the publish date should be extracted.
     try {
-      InlineResponse20013 result = apiInstance.extractPublishDate(url);
+      ExtractPublishDate200Response result = apiInstance.extractPublishDate(url);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebApi#extractPublishDate");
@@ -225,13 +225,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **String**| The url for which the publish date should be extracted. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **url** | **String**| The url for which the publish date should be extracted. | |
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -245,17 +245,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchWeb"></a>
+<a id="searchWeb"></a>
 # **searchWeb**
-> InlineResponse20015 searchWeb(query, number)
+> SearchWeb200Response searchWeb(query, number)
 
 Search Web
 
@@ -292,7 +292,7 @@ public class Example {
     String query = "penguins"; // String | The search query.
     Integer number = 5; // Integer | The number of results to return in range [1,50]
     try {
-      InlineResponse20015 result = apiInstance.searchWeb(query, number);
+      SearchWeb200Response result = apiInstance.searchWeb(query, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebApi#searchWeb");
@@ -307,14 +307,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **String**| The search query. |
- **number** | **Integer**| The number of results to return in range [1,50] | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **query** | **String**| The search query. | |
+| **number** | **Integer**| The number of results to return in range [1,50] | [optional] |
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 
@@ -328,11 +328,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

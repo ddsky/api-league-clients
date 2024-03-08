@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **random_quote**
-> InlineResponse20010 random_quote(min_length => $min_length, max_length => $max_length)
+> RandomQuote200Response random_quote(min_length => $min_length, max_length => $max_length)
 
 Random Quote
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_trivia**
-> InlineResponse2009 random_trivia(max_length => $max_length)
+> RandomTrivia200Response random_trivia(max_length => $max_length)
 
 Random Trivia
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **convertUnits**
-> InlineResponse20030 convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
 
 Convert Units
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

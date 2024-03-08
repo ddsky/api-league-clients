@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## extractNews
 
-> InlineResponse2003 extractNews(url, analyze)
+> ExtractNews200Response extractNews(url, analyze)
 
 Extract News
 
@@ -27,7 +27,7 @@ NewsApi apiInstance = new NewsApi();
 String url = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/; // String | The url of the news.
 Boolean analyze = true; // Boolean | Whether to analyze the news (extract entities etc.)
 try {
-    InlineResponse2003 result = apiInstance.extractNews(url, analyze);
+    ExtractNews200Response result = apiInstance.extractNews(url, analyze);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NewsApi#extractNews");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## searchNews
 
-> InlineResponse2002 searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
 
 Search News
 
@@ -88,7 +88,7 @@ String sortDirection = ASC; // String | Whether to sort ascending or descending 
 Integer offset = 0; // Integer | The number of news to skip in range [0,10000]
 Integer number = 10; // Integer | The number of news to return in range [1,100]
 try {
-    InlineResponse2002 result = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+    SearchNews200Response result = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NewsApi#searchNews");
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 

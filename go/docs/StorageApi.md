@@ -1,17 +1,17 @@
-# com.apileague.client\StorageApi
+# \StorageAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReadKeyValueFromStore**](StorageApi.md#ReadKeyValueFromStore) | **Get** /read-key-value | Read Key Value from Store
-[**StoreKeyValueGET**](StorageApi.md#StoreKeyValueGET) | **Get** /store-key-value | Store Key Value (GET)
+[**ReadKeyValueFromStore**](StorageAPI.md#ReadKeyValueFromStore) | **Get** /read-key-value | Read Key Value from Store
+[**StoreKeyValueGET**](StorageAPI.md#StoreKeyValueGET) | **Get** /store-key-value | Store Key Value (GET)
 
 
 
 ## ReadKeyValueFromStore
 
-> InlineResponse20031 ReadKeyValueFromStore(ctx).Key(key).Execute()
+> ReadKeyValueFromStore200Response ReadKeyValueFromStore(ctx).Key(key).Execute()
 
 Read Key Value from Store
 
@@ -23,24 +23,24 @@ Read Key Value from Store
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    key := "visitors24h" // string | The key for which the value is stored (max length 255 characters).
+	key := "visitors24h" // string | The key for which the value is stored (max length 255 characters).
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StorageApi.ReadKeyValueFromStore(context.Background()).Key(key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `StorageApi.ReadKeyValueFromStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ReadKeyValueFromStore`: InlineResponse20031
-    fmt.Fprintf(os.Stdout, "Response from `StorageApi.ReadKeyValueFromStore`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.ReadKeyValueFromStore(context.Background()).Key(key).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.ReadKeyValueFromStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ReadKeyValueFromStore`: ReadKeyValueFromStore200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.ReadKeyValueFromStore`: %v\n", resp)
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## StoreKeyValueGET
 
-> InlineResponse20032 StoreKeyValueGET(ctx).Key(key).Value(value).Execute()
+> StoreKeyValueGET200Response StoreKeyValueGET(ctx).Key(key).Value(value).Execute()
 
 Store Key Value (GET)
 
@@ -89,25 +89,25 @@ Store Key Value (GET)
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    key := "visitors24h" // string | The key for which the value is stored (max length 255 characters).
-    value := "23578 visitors" // string | The value that is supposed to be stored (max length 10,000 characters).
+	key := "visitors24h" // string | The key for which the value is stored (max length 255 characters).
+	value := "23578 visitors" // string | The value that is supposed to be stored (max length 10,000 characters).
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StorageApi.StoreKeyValueGET(context.Background()).Key(key).Value(value).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `StorageApi.StoreKeyValueGET``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `StoreKeyValueGET`: InlineResponse20032
-    fmt.Fprintf(os.Stdout, "Response from `StorageApi.StoreKeyValueGET`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.StorageAPI.StoreKeyValueGET(context.Background()).Key(key).Value(value).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.StoreKeyValueGET``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StoreKeyValueGET`: StoreKeyValueGET200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.StoreKeyValueGET`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 

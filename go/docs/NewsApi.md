@@ -1,17 +1,17 @@
-# com.apileague.client\NewsApi
+# \NewsAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExtractNews**](NewsApi.md#ExtractNews) | **Get** /extract-news | Extract News
-[**SearchNews**](NewsApi.md#SearchNews) | **Get** /search-news | Search News
+[**ExtractNews**](NewsAPI.md#ExtractNews) | **Get** /extract-news | Extract News
+[**SearchNews**](NewsAPI.md#SearchNews) | **Get** /search-news | Search News
 
 
 
 ## ExtractNews
 
-> InlineResponse2003 ExtractNews(ctx).Url(url).Analyze(analyze).Execute()
+> ExtractNews200Response ExtractNews(ctx).Url(url).Analyze(analyze).Execute()
 
 Extract News
 
@@ -23,25 +23,25 @@ Extract News
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/" // string | The url of the news.
-    analyze := true // bool | Whether to analyze the news (extract entities etc.)
+	url := "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/" // string | The url of the news.
+	analyze := true // bool | Whether to analyze the news (extract entities etc.)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewsApi.ExtractNews(context.Background()).Url(url).Analyze(analyze).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NewsApi.ExtractNews``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractNews`: InlineResponse2003
-    fmt.Fprintf(os.Stdout, "Response from `NewsApi.ExtractNews`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.NewsAPI.ExtractNews(context.Background()).Url(url).Analyze(analyze).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.ExtractNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractNews`: ExtractNews200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.ExtractNews`: %v\n", resp)
 }
 ```
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## SearchNews
 
-> InlineResponse2002 SearchNews(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+> SearchNews200Response SearchNews(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 
 Search News
 
@@ -91,38 +91,38 @@ Search News
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "tesla" // string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
-    sourceCountries := "us,uk" // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
-    language := "en" // string | The ISO 6391 language code of the news. (optional)
-    minSentiment := float64(-0.8) // float64 | The minimal sentiment of the news in range [-1,1]. (optional)
-    maxSentiment := float64(0.8) // float64 | The maximal sentiment of the news in range [-1,1]. (optional)
-    earliestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published after this date. (optional)
-    latestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published before this date. (optional)
-    newsSources := "https://www.bbc.co.uk" // string | A comma-separated list of news sources from which the news should originate. (optional)
-    authors := "John Doe" // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-    entities := "ORG:Tesla" // string | Filter news by entities (see semantic types). (optional)
-    locationFilter := "51.050407, 13.737262, 100" // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
-    sort := "publish-time" // string | The sorting criteria (publish-time or sentiment). (optional)
-    sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
-    offset := int32(0) // int32 | The number of news to skip in range [0,10000] (optional)
-    number := int32(10) // int32 | The number of news to return in range [1,100] (optional)
+	text := "tesla" // string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+	sourceCountries := "us,uk" // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
+	language := "en" // string | The ISO 6391 language code of the news. (optional)
+	minSentiment := float64(-0.8) // float64 | The minimal sentiment of the news in range [-1,1]. (optional)
+	maxSentiment := float64(0.8) // float64 | The maximal sentiment of the news in range [-1,1]. (optional)
+	earliestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published after this date. (optional)
+	latestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published before this date. (optional)
+	newsSources := "https://www.bbc.co.uk" // string | A comma-separated list of news sources from which the news should originate. (optional)
+	authors := "John Doe" // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
+	entities := "ORG:Tesla" // string | Filter news by entities (see semantic types). (optional)
+	locationFilter := "51.050407, 13.737262, 100" // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
+	sort := "publish-time" // string | The sorting criteria (publish-time or sentiment). (optional)
+	sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
+	offset := int32(0) // int32 | The number of news to skip in range [0,10000] (optional)
+	number := int32(10) // int32 | The number of news to return in range [1,100] (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NewsApi.SearchNews(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NewsApi.SearchNews``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchNews`: InlineResponse2002
-    fmt.Fprintf(os.Stdout, "Response from `NewsApi.SearchNews`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.NewsAPI.SearchNews(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.SearchNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchNews`: SearchNews200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.SearchNews`: %v\n", resp)
 }
 ```
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 

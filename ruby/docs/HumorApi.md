@@ -14,7 +14,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## generate_nonsense_word
 
-> <InlineResponse2008> generate_nonsense_word
+> <GenerateNonsenseWord200Response> generate_nonsense_word
 
 Generate Nonsense Word
 
@@ -53,7 +53,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2008>, Integer, Hash)> generate_nonsense_word_with_http_info
+> <Array(<GenerateNonsenseWord200Response>, Integer, Hash)> generate_nonsense_word_with_http_info
 
 ```ruby
 begin
@@ -61,7 +61,7 @@ begin
   data, status_code, headers = api_instance.generate_nonsense_word_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2008>
+  p data # => <GenerateNonsenseWord200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->generate_nonsense_word_with_http_info: #{e}"
 end
@@ -73,7 +73,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -87,7 +87,7 @@ This endpoint does not need any parameter.
 
 ## random_joke
 
-> <InlineResponse2004Jokes> random_joke(opts)
+> <SearchJokes200ResponseJokesInner> random_joke(opts)
 
 Random Joke
 
@@ -132,7 +132,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2004Jokes>, Integer, Hash)> random_joke_with_http_info(opts)
+> <Array(<SearchJokes200ResponseJokesInner>, Integer, Hash)> random_joke_with_http_info(opts)
 
 ```ruby
 begin
@@ -140,7 +140,7 @@ begin
   data, status_code, headers = api_instance.random_joke_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2004Jokes>
+  p data # => <SearchJokes200ResponseJokesInner>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->random_joke_with_http_info: #{e}"
 end
@@ -157,7 +157,7 @@ end
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ end
 
 ## random_meme
 
-> <InlineResponse2006> random_meme(opts)
+> <RandomMeme200Response> random_meme(opts)
 
 Random Meme
 
@@ -217,7 +217,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2006>, Integer, Hash)> random_meme_with_http_info(opts)
+> <Array(<RandomMeme200Response>, Integer, Hash)> random_meme_with_http_info(opts)
 
 ```ruby
 begin
@@ -225,7 +225,7 @@ begin
   data, status_code, headers = api_instance.random_meme_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2006>
+  p data # => <RandomMeme200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->random_meme_with_http_info: #{e}"
 end
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ end
 
 ## search_gifs
 
-> <InlineResponse2007> search_gifs(query, opts)
+> <SearchGifs200Response> search_gifs(query, opts)
 
 Search Gifs
 
@@ -300,7 +300,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2007>, Integer, Hash)> search_gifs_with_http_info(query, opts)
+> <Array(<SearchGifs200Response>, Integer, Hash)> search_gifs_with_http_info(query, opts)
 
 ```ruby
 begin
@@ -308,7 +308,7 @@ begin
   data, status_code, headers = api_instance.search_gifs_with_http_info(query, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2007>
+  p data # => <SearchGifs200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->search_gifs_with_http_info: #{e}"
 end
@@ -323,7 +323,7 @@ end
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ end
 
 ## search_jokes
 
-> <InlineResponse2004> search_jokes(opts)
+> <SearchJokes200Response> search_jokes(opts)
 
 Search Jokes
 
@@ -385,7 +385,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2004>, Integer, Hash)> search_jokes_with_http_info(opts)
+> <Array(<SearchJokes200Response>, Integer, Hash)> search_jokes_with_http_info(opts)
 
 ```ruby
 begin
@@ -393,7 +393,7 @@ begin
   data, status_code, headers = api_instance.search_jokes_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2004>
+  p data # => <SearchJokes200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->search_jokes_with_http_info: #{e}"
 end
@@ -413,7 +413,7 @@ end
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -427,7 +427,7 @@ end
 
 ## search_memes
 
-> <InlineResponse2005> search_memes(opts)
+> <SearchMemes200Response> search_memes(opts)
 
 Search Memes
 
@@ -475,7 +475,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2005>, Integer, Hash)> search_memes_with_http_info(opts)
+> <Array(<SearchMemes200Response>, Integer, Hash)> search_memes_with_http_info(opts)
 
 ```ruby
 begin
@@ -483,7 +483,7 @@ begin
   data, status_code, headers = api_instance.search_memes_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2005>
+  p data # => <SearchMemes200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling HumorApi->search_memes_with_http_info: #{e}"
 end
@@ -503,7 +503,7 @@ end
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

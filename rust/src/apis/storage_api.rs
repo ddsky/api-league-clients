@@ -43,7 +43,7 @@ pub enum StoreKeyValueGetError {
 
 
 /// Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-pub async fn read_key_value_from_store(configuration: &configuration::Configuration, key: &str) -> Result<crate::models::InlineResponse20031, Error<ReadKeyValueFromStoreError>> {
+pub async fn read_key_value_from_store(configuration: &configuration::Configuration, key: &str) -> Result<crate::models::ReadKeyValueFromStore200Response, Error<ReadKeyValueFromStoreError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -88,7 +88,7 @@ pub async fn read_key_value_from_store(configuration: &configuration::Configurat
 }
 
 /// Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-pub async fn store_key_value_get(configuration: &configuration::Configuration, key: &str, value: &str) -> Result<crate::models::InlineResponse20032, Error<StoreKeyValueGetError>> {
+pub async fn store_key_value_get(configuration: &configuration::Configuration, key: &str, value: &str) -> Result<crate::models::StoreKeyValueGet200Response, Error<StoreKeyValueGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

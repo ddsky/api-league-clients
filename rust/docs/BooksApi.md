@@ -1,4 +1,4 @@
-# com.apileague.client\BooksApi
+# \BooksApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## find_similar_books
 
-> crate::models::InlineResponse2001 find_similar_books(id, number)
+> crate::models::FindSimilarBooks200Response find_similar_books(id, number)
 Find Similar Books
 
 Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse2001**](inline_response_200_1.md)
+[**crate::models::FindSimilarBooks200Response**](findSimilarBooks_200_response.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_books
 
-> crate::models::InlineResponse200 search_books(query, earliest_publish_year, latest_publish_year, min_rating, max_rating, genres, authors, isbn, oclc, sort, sort_direction, group_results, offset, number)
+> crate::models::SearchBooks200Response search_books(query, earliest_publish_year, latest_publish_year, min_rating, max_rating, genres, authors, isbn, oclc, sort, sort_direction, group_results, offset, number)
 Search Books
 
 Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
@@ -69,7 +69,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse200**](inline_response_200.md)
+[**crate::models::SearchBooks200Response**](searchBooks_200_response.md)
 
 ### Authorization
 

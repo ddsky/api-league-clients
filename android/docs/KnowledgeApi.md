@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## randomQuote
 
-> InlineResponse20010 randomQuote(minLength, maxLength)
+> RandomQuote200Response randomQuote(minLength, maxLength)
 
 Random Quote
 
@@ -27,7 +27,7 @@ KnowledgeApi apiInstance = new KnowledgeApi();
 Integer minLength = 120; // Integer | The minimum length of the quote in letters.
 Integer maxLength = 300; // Integer | The maximum length of the quote in letters.
 try {
-    InlineResponse20010 result = apiInstance.randomQuote(minLength, maxLength);
+    RandomQuote200Response result = apiInstance.randomQuote(minLength, maxLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#randomQuote");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## randomTrivia
 
-> InlineResponse2009 randomTrivia(maxLength)
+> RandomTrivia200Response randomTrivia(maxLength)
 
 Random Trivia
 
@@ -74,7 +74,7 @@ This endpoint returns a random piece of trivia.
 KnowledgeApi apiInstance = new KnowledgeApi();
 Integer maxLength = 300; // Integer | The maximum length of the trivia in letters.
 try {
-    InlineResponse2009 result = apiInstance.randomTrivia(maxLength);
+    RandomTrivia200Response result = apiInstance.randomTrivia(maxLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#randomTrivia");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

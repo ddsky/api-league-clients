@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## generateNonsenseWord
 
-> InlineResponse2008 generateNonsenseWord()
+> GenerateNonsenseWord200Response generateNonsenseWord()
 
 Generate Nonsense Word
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 
 ## randomJoke
 
-> InlineResponse2004Jokes randomJoke(opts)
+> SearchJokes200ResponseJokesInner randomJoke(opts)
 
 Random Joke
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ## randomMeme
 
-> InlineResponse2006 randomMeme(opts)
+> RandomMeme200Response randomMeme(opts)
 
 Random Meme
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ## searchGifs
 
-> InlineResponse2007 searchGifs(query, opts)
+> SearchGifs200Response searchGifs(query, opts)
 
 Search Gifs
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## searchJokes
 
-> InlineResponse2004 searchJokes(opts)
+> SearchJokes200Response searchJokes(opts)
 
 Search Jokes
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ## searchMemes
 
-> InlineResponse2005 searchMemes(opts)
+> SearchMemes200Response searchMemes(opts)
 
 Search Memes
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

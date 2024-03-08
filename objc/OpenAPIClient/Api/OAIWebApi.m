@@ -1,10 +1,10 @@
 #import "OAIWebApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20012.h"
-#import "OAIInlineResponse20013.h"
-#import "OAIInlineResponse20014.h"
-#import "OAIInlineResponse20015.h"
+#import "OAIExtractAuthors200Response.h"
+#import "OAIExtractContentFromAWebPage200Response.h"
+#import "OAIExtractPublishDate200Response.h"
+#import "OAISearchWeb200Response.h"
 
 
 @interface OAIWebApi ()
@@ -57,10 +57,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
 /// Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 ///  @param url The url with the article from which authors should be extracted. 
 ///
-///  @returns OAIInlineResponse20014*
+///  @returns OAIExtractAuthors200Response*
 ///
 -(NSURLSessionTask*) extractAuthorsWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20014* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractAuthors200Response* output, NSError* error)) handler {
     // verify the required parameter 'url' is set
     if (url == nil) {
         NSParameterAssert(url);
@@ -112,10 +112,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20014*"
+                              responseType: @"OAIExtractAuthors200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20014*)data, error);
+                                    handler((OAIExtractAuthors200Response*)data, error);
                                 }
                             }];
 }
@@ -125,10 +125,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
 /// Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 ///  @param url The url for which the content will be extracted. 
 ///
-///  @returns OAIInlineResponse20012*
+///  @returns OAIExtractContentFromAWebPage200Response*
 ///
 -(NSURLSessionTask*) extractContentFromAWebPageWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20012* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractContentFromAWebPage200Response* output, NSError* error)) handler {
     // verify the required parameter 'url' is set
     if (url == nil) {
         NSParameterAssert(url);
@@ -180,10 +180,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20012*"
+                              responseType: @"OAIExtractContentFromAWebPage200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20012*)data, error);
+                                    handler((OAIExtractContentFromAWebPage200Response*)data, error);
                                 }
                             }];
 }
@@ -193,10 +193,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
 /// Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 ///  @param url The url for which the publish date should be extracted. 
 ///
-///  @returns OAIInlineResponse20013*
+///  @returns OAIExtractPublishDate200Response*
 ///
 -(NSURLSessionTask*) extractPublishDateWithUrl: (NSString*) url
-    completionHandler: (void (^)(OAIInlineResponse20013* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIExtractPublishDate200Response* output, NSError* error)) handler {
     // verify the required parameter 'url' is set
     if (url == nil) {
         NSParameterAssert(url);
@@ -248,10 +248,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20013*"
+                              responseType: @"OAIExtractPublishDate200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20013*)data, error);
+                                    handler((OAIExtractPublishDate200Response*)data, error);
                                 }
                             }];
 }
@@ -263,11 +263,11 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of results to return in range [1,50] (optional)
 ///
-///  @returns OAIInlineResponse20015*
+///  @returns OAISearchWeb200Response*
 ///
 -(NSURLSessionTask*) searchWebWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse20015* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchWeb200Response* output, NSError* error)) handler {
     // verify the required parameter 'query' is set
     if (query == nil) {
         NSParameterAssert(query);
@@ -322,10 +322,10 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20015*"
+                              responseType: @"OAISearchWeb200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20015*)data, error);
+                                    handler((OAISearchWeb200Response*)data, error);
                                 }
                             }];
 }

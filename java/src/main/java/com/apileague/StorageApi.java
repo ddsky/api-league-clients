@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20031;
-import com.apileague.client.model.InlineResponse20032;
+import com.apileague.client.model.ReadKeyValueFromStore200Response;
+import com.apileague.client.model.StoreKeyValueGET200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -95,7 +95,6 @@ public class StorageApi {
      */
     public okhttp3.Call readKeyValueFromStoreCall(String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -132,7 +131,6 @@ public class StorageApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -145,15 +143,12 @@ public class StorageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call readKeyValueFromStoreValidateBeforeCall(String key, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'key' is set
         if (key == null) {
             throw new ApiException("Missing the required parameter 'key' when calling readKeyValueFromStore(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = readKeyValueFromStoreCall(key, _callback);
-        return localVarCall;
+        return readKeyValueFromStoreCall(key, _callback);
 
     }
 
@@ -161,7 +156,7 @@ public class StorageApi {
      * Read Key Value from Store
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters). (required)
-     * @return InlineResponse20031
+     * @return ReadKeyValueFromStore200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -177,8 +172,8 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
      */
-    public InlineResponse20031 readKeyValueFromStore(String key) throws ApiException {
-        ApiResponse<InlineResponse20031> localVarResp = readKeyValueFromStoreWithHttpInfo(key);
+    public ReadKeyValueFromStore200Response readKeyValueFromStore(String key) throws ApiException {
+        ApiResponse<ReadKeyValueFromStore200Response> localVarResp = readKeyValueFromStoreWithHttpInfo(key);
         return localVarResp.getData();
     }
 
@@ -186,7 +181,7 @@ public class StorageApi {
      * Read Key Value from Store
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters). (required)
-     * @return ApiResponse&lt;InlineResponse20031&gt;
+     * @return ApiResponse&lt;ReadKeyValueFromStore200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -202,9 +197,9 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
      */
-    public ApiResponse<InlineResponse20031> readKeyValueFromStoreWithHttpInfo(String key) throws ApiException {
+    public ApiResponse<ReadKeyValueFromStore200Response> readKeyValueFromStoreWithHttpInfo(String key) throws ApiException {
         okhttp3.Call localVarCall = readKeyValueFromStoreValidateBeforeCall(key, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20031>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReadKeyValueFromStore200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -229,10 +224,10 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
      */
-    public okhttp3.Call readKeyValueFromStoreAsync(String key, final ApiCallback<InlineResponse20031> _callback) throws ApiException {
+    public okhttp3.Call readKeyValueFromStoreAsync(String key, final ApiCallback<ReadKeyValueFromStore200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = readKeyValueFromStoreValidateBeforeCall(key, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20031>(){}.getType();
+        Type localVarReturnType = new TypeToken<ReadKeyValueFromStore200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -259,7 +254,6 @@ public class StorageApi {
      */
     public okhttp3.Call storeKeyValueGETCall(String key, String value, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -300,7 +294,6 @@ public class StorageApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -313,20 +306,17 @@ public class StorageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call storeKeyValueGETValidateBeforeCall(String key, String value, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'key' is set
         if (key == null) {
             throw new ApiException("Missing the required parameter 'key' when calling storeKeyValueGET(Async)");
         }
-        
+
         // verify the required parameter 'value' is set
         if (value == null) {
             throw new ApiException("Missing the required parameter 'value' when calling storeKeyValueGET(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = storeKeyValueGETCall(key, value, _callback);
-        return localVarCall;
+        return storeKeyValueGETCall(key, value, _callback);
 
     }
 
@@ -335,7 +325,7 @@ public class StorageApi {
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters). (required)
      * @param value The value that is supposed to be stored (max length 10,000 characters). (required)
-     * @return InlineResponse20032
+     * @return StoreKeyValueGET200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -351,8 +341,8 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
      */
-    public InlineResponse20032 storeKeyValueGET(String key, String value) throws ApiException {
-        ApiResponse<InlineResponse20032> localVarResp = storeKeyValueGETWithHttpInfo(key, value);
+    public StoreKeyValueGET200Response storeKeyValueGET(String key, String value) throws ApiException {
+        ApiResponse<StoreKeyValueGET200Response> localVarResp = storeKeyValueGETWithHttpInfo(key, value);
         return localVarResp.getData();
     }
 
@@ -361,7 +351,7 @@ public class StorageApi {
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters). (required)
      * @param value The value that is supposed to be stored (max length 10,000 characters). (required)
-     * @return ApiResponse&lt;InlineResponse20032&gt;
+     * @return ApiResponse&lt;StoreKeyValueGET200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -377,9 +367,9 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
      */
-    public ApiResponse<InlineResponse20032> storeKeyValueGETWithHttpInfo(String key, String value) throws ApiException {
+    public ApiResponse<StoreKeyValueGET200Response> storeKeyValueGETWithHttpInfo(String key, String value) throws ApiException {
         okhttp3.Call localVarCall = storeKeyValueGETValidateBeforeCall(key, value, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20032>(){}.getType();
+        Type localVarReturnType = new TypeToken<StoreKeyValueGET200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -405,10 +395,10 @@ public class StorageApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
      */
-    public okhttp3.Call storeKeyValueGETAsync(String key, String value, final ApiCallback<InlineResponse20032> _callback) throws ApiException {
+    public okhttp3.Call storeKeyValueGETAsync(String key, String value, final ApiCallback<StoreKeyValueGET200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = storeKeyValueGETValidateBeforeCall(key, value, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20032>(){}.getType();
+        Type localVarReturnType = new TypeToken<StoreKeyValueGET200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -70,7 +70,7 @@ import qualified Prelude as P
 -- 
 findSimilarBooks
   :: Id -- ^ "id" -  The id of the book to which similar books should be found.
-  -> APILeagueRequest FindSimilarBooks MimeNoContent InlineResponse2001 MimeJSON
+  -> APILeagueRequest FindSimilarBooks MimeNoContent FindSimilarBooks200Response MimeJSON
 findSimilarBooks (Id id) =
   _mkRequest "GET" ["/list-similar-books"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -97,7 +97,7 @@ instance Produces FindSimilarBooks MimeJSON
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 searchBooks
-  :: APILeagueRequest SearchBooks MimeNoContent InlineResponse200 MimeJSON
+  :: APILeagueRequest SearchBooks MimeNoContent SearchBooks200Response MimeJSON
 searchBooks =
   _mkRequest "GET" ["/search-books"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

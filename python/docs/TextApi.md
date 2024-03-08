@@ -1,4 +1,4 @@
-# openapi_client.TextApi
+# apileague.TextApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **correct_spelling**
-> InlineResponse20016 correct_spelling(text, language)
+> CorrectSpelling200Response correct_spelling(text, language)
 
 Correct Spelling
 
@@ -31,14 +31,14 @@ The API corrects spelling mistakes in a given text. It returns the corrected tex
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20016 import InlineResponse20016
+import apileague
+from apileague.models.correct_spelling200_response import CorrectSpelling200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -48,44 +48,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "Driving carss is fun." # str | The text to be corrected.
-    language = "en" # str | The language of the text, one of en, de, es, fr, or it.
+    api_instance = apileague.TextApi(api_client)
+    text = 'Driving carss is fun.' # str | The text to be corrected.
+    language = 'en' # str | The language of the text, one of en, de, es, fr, or it.
 
-    # example passing only required values which don't have defaults set
     try:
         # Correct Spelling
         api_response = api_instance.correct_spelling(text, language)
+        print("The response of TextApi->correct_spelling:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->correct_spelling: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to be corrected. |
- **language** | **str**| The language of the text, one of en, de, es, fr, or it. |
+ **text** | **str**| The text to be corrected. | 
+ **language** | **str**| The language of the text, one of en, de, es, fr, or it. | 
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -95,7 +97,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detect_language**
-> [InlineResponse20017] detect_language(text)
+> List[DetectLanguage200ResponseInner] detect_language(text)
 
 Detect Language
 
@@ -124,14 +125,14 @@ Detect the language of the given text. The API returns a list of languages and t
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20017 import InlineResponse20017
+import apileague
+from apileague.models.detect_language200_response_inner import DetectLanguage200ResponseInner
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -141,42 +142,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "Das ist ein Text." # str | The text for which the language should be detected.
+    api_instance = apileague.TextApi(api_client)
+    text = 'Das ist ein Text.' # str | The text for which the language should be detected.
 
-    # example passing only required values which don't have defaults set
     try:
         # Detect Language
         api_response = api_instance.detect_language(text)
+        print("The response of TextApi->detect_language:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->detect_language: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text for which the language should be detected. |
+ **text** | **str**| The text for which the language should be detected. | 
 
 ### Return type
 
-[**[InlineResponse20017]**](InlineResponse20017.md)
+[**List[DetectLanguage200ResponseInner]**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -186,7 +189,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -203,7 +205,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detect_sentiment**
-> InlineResponse20018 detect_sentiment(text)
+> DetectSentiment200Response detect_sentiment(text)
 
 Detect Sentiment
 
@@ -215,14 +217,14 @@ Detect the sentiment (positive or negative) of a given text. The entire document
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20018 import InlineResponse20018
+import apileague
+from apileague.models.detect_sentiment200_response import DetectSentiment200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -232,42 +234,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "Happy times feel so good." # str | The text for which the sentiment should be detected.
+    api_instance = apileague.TextApi(api_client)
+    text = 'Happy times feel so good.' # str | The text for which the sentiment should be detected.
 
-    # example passing only required values which don't have defaults set
     try:
         # Detect Sentiment
         api_response = api_instance.detect_sentiment(text)
+        print("The response of TextApi->detect_sentiment:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->detect_sentiment: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text for which the sentiment should be detected. |
+ **text** | **str**| The text for which the sentiment should be detected. | 
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -277,7 +281,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -294,7 +297,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_dates**
-> InlineResponse20021 extract_dates(text)
+> ExtractDates200Response extract_dates(text)
 
 Extract Dates
 
@@ -306,14 +309,14 @@ Extract dates from a given text. The API will return a list of dates with their 
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20021 import InlineResponse20021
+import apileague
+from apileague.models.extract_dates200_response import ExtractDates200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -323,42 +326,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "On 5th or April, 2035 there will be flying cars - 2023-02-12." # str | The text from which dates should be extracted.
+    api_instance = apileague.TextApi(api_client)
+    text = 'On 5th or April, 2035 there will be flying cars - 2023-02-12.' # str | The text from which dates should be extracted.
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract Dates
         api_response = api_instance.extract_dates(text)
+        print("The response of TextApi->extract_dates:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->extract_dates: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text from which dates should be extracted. |
+ **text** | **str**| The text from which dates should be extracted. | 
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -368,7 +373,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -385,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_entities**
-> InlineResponse20027 extract_entities(text)
+> ExtractEntities200Response extract_entities(text)
 
 Extract Entities
 
@@ -397,14 +401,14 @@ Extract entities from a text. An entity is a word or a group of words that repre
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20027 import InlineResponse20027
+import apileague
+from apileague.models.extract_entities200_response import ExtractEntities200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -414,42 +418,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "Jim Carrey is an actor from Canada" # str | The text from which entities should be extracted.
+    api_instance = apileague.TextApi(api_client)
+    text = 'Jim Carrey is an actor from Canada' # str | The text from which entities should be extracted.
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract Entities
         api_response = api_instance.extract_entities(text)
+        print("The response of TextApi->extract_entities:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->extract_entities: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text from which entities should be extracted. |
+ **text** | **str**| The text from which entities should be extracted. | 
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -459,7 +465,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -476,7 +481,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_word_synonyms**
-> InlineResponse20022 list_word_synonyms(word)
+> ListWordSynonyms200Response list_word_synonyms(word)
 
 List Word Synonyms
 
@@ -488,14 +493,14 @@ Return synonyms of a word.
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20022 import InlineResponse20022
+import apileague
+from apileague.models.list_word_synonyms200_response import ListWordSynonyms200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -505,42 +510,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    word = "airplane" # str | The (noun) word for which a list of synonyms should be returned.
+    api_instance = apileague.TextApi(api_client)
+    word = 'airplane' # str | The (noun) word for which a list of synonyms should be returned.
 
-    # example passing only required values which don't have defaults set
     try:
         # List Word Synonyms
         api_response = api_instance.list_word_synonyms(word)
+        print("The response of TextApi->list_word_synonyms:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->list_word_synonyms: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **word** | **str**| The (noun) word for which a list of synonyms should be returned. |
+ **word** | **str**| The (noun) word for which a list of synonyms should be returned. | 
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -550,7 +557,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -567,7 +573,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **part_of_speech_tagging**
-> InlineResponse20023 part_of_speech_tagging(text)
+> PartOfSpeechTagging200Response part_of_speech_tagging(text)
 
 Part of Speech Tagging
 
@@ -579,14 +585,14 @@ Part of speech tagging is the process of marking up a word in a text as correspo
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20023 import InlineResponse20023
+import apileague
+from apileague.models.part_of_speech_tagging200_response import PartOfSpeechTagging200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -596,42 +602,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "The lazy dog jumps over the quick brown fox." # str | The text to tag the part of speech.
+    api_instance = apileague.TextApi(api_client)
+    text = 'The lazy dog jumps over the quick brown fox.' # str | The text to tag the part of speech.
 
-    # example passing only required values which don't have defaults set
     try:
         # Part of Speech Tagging
         api_response = api_instance.part_of_speech_tagging(text)
+        print("The response of TextApi->part_of_speech_tagging:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->part_of_speech_tagging: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to tag the part of speech. |
+ **text** | **str**| The text to tag the part of speech. | 
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -641,7 +649,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -658,7 +665,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pluralize_word**
-> InlineResponse20026 pluralize_word(word)
+> PluralizeWord200Response pluralize_word(word)
 
 Pluralize Word
 
@@ -670,14 +677,14 @@ Find the plural form of a word.
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20026 import InlineResponse20026
+import apileague
+from apileague.models.pluralize_word200_response import PluralizeWord200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -687,42 +694,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    word = "party" # str | The (noun) word for which the plural form should be found.
+    api_instance = apileague.TextApi(api_client)
+    word = 'party' # str | The (noun) word for which the plural form should be found.
 
-    # example passing only required values which don't have defaults set
     try:
         # Pluralize Word
         api_response = api_instance.pluralize_word(word)
+        print("The response of TextApi->pluralize_word:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->pluralize_word: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **word** | **str**| The (noun) word for which the plural form should be found. |
+ **word** | **str**| The (noun) word for which the plural form should be found. | 
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -732,7 +741,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -749,7 +757,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **score_readability**
-> InlineResponse20020 score_readability(text)
+> ScoreReadability200Response score_readability(text)
 
 Score Readability
 
@@ -761,14 +769,14 @@ Score the readability of a text. The readability score is based on the average l
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20020 import InlineResponse20020
+import apileague
+from apileague.models.score_readability200_response import ScoreReadability200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -778,42 +786,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "A rather complex text, hard to read, and highly convoluted using acronym TERMS." # str | The text to score for readability.
+    api_instance = apileague.TextApi(api_client)
+    text = 'A rather complex text, hard to read, and highly convoluted using acronym TERMS.' # str | The text to score for readability.
 
-    # example passing only required values which don't have defaults set
     try:
         # Score Readability
         api_response = api_instance.score_readability(text)
+        print("The response of TextApi->score_readability:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->score_readability: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to score for readability. |
+ **text** | **str**| The text to score for readability. | 
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -823,7 +833,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -840,7 +849,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **score_text**
-> InlineResponse20019 score_text(title, text)
+> ScoreText200Response score_text(title, text)
 
 Score Text
 
@@ -852,14 +861,14 @@ Score the readability, skimmability, interestingness, and style of a text. The r
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20019 import InlineResponse20019
+import apileague
+from apileague.models.score_text200_response import ScoreText200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -869,44 +878,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    title = "A short story" # str | The title of the text to score.
-    text = "A nice short story to be analyzed" # str | The text to score for multiple metrics.
+    api_instance = apileague.TextApi(api_client)
+    title = 'A short story' # str | The title of the text to score.
+    text = 'A nice short story to be analyzed' # str | The text to score for multiple metrics.
 
-    # example passing only required values which don't have defaults set
     try:
         # Score Text
         api_response = api_instance.score_text(title, text)
+        print("The response of TextApi->score_text:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->score_text: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **title** | **str**| The title of the text to score. |
- **text** | **str**| The text to score for multiple metrics. |
+ **title** | **str**| The title of the text to score. | 
+ **text** | **str**| The text to score for multiple metrics. | 
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -916,7 +927,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -933,7 +943,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **singularize_word**
-> InlineResponse20025 singularize_word(word)
+> SingularizeWord200Response singularize_word(word)
 
 Singularize Word
 
@@ -945,14 +955,14 @@ Find the singular form of a word.
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20025 import InlineResponse20025
+import apileague
+from apileague.models.singularize_word200_response import SingularizeWord200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -962,42 +972,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    word = "airplanes" # str | The (noun) word for which the singular form should be found.
+    api_instance = apileague.TextApi(api_client)
+    word = 'airplanes' # str | The (noun) word for which the singular form should be found.
 
-    # example passing only required values which don't have defaults set
     try:
         # Singularize Word
         api_response = api_instance.singularize_word(word)
+        print("The response of TextApi->singularize_word:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->singularize_word: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **word** | **str**| The (noun) word for which the singular form should be found. |
+ **word** | **str**| The (noun) word for which the singular form should be found. | 
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -1007,7 +1019,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -1024,7 +1035,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **text_stemming**
-> InlineResponse20024 text_stemming(text)
+> TextStemming200Response text_stemming(text)
 
 Text Stemming
 
@@ -1036,14 +1047,14 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import text_api
-from openapi_client.model.inline_response20024 import InlineResponse20024
+import apileague
+from apileague.models.text_stemming200_response import TextStemming200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -1053,42 +1064,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = text_api.TextApi(api_client)
-    text = "The laziest dogs are jumping over the quicker brown foxes." # str | The text to be stemmed.
+    api_instance = apileague.TextApi(api_client)
+    text = 'The laziest dogs are jumping over the quicker brown foxes.' # str | The text to be stemmed.
 
-    # example passing only required values which don't have defaults set
     try:
         # Text Stemming
         api_response = api_instance.text_stemming(text)
+        print("The response of TextApi->text_stemming:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling TextApi->text_stemming: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to be stemmed. |
+ **text** | **str**| The text to be stemmed. | 
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 
@@ -1098,7 +1111,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

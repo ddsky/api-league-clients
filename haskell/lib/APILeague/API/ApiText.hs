@@ -71,7 +71,7 @@ import qualified Prelude as P
 correctSpelling
   :: ParamText -- ^ "text" -  The text to be corrected.
   -> Language -- ^ "language" -  The language of the text, one of en, de, es, fr, or it.
-  -> APILeagueRequest CorrectSpelling MimeNoContent InlineResponse20016 MimeJSON
+  -> APILeagueRequest CorrectSpelling MimeNoContent CorrectSpelling200Response MimeJSON
 correctSpelling (ParamText text) (Language language) =
   _mkRequest "GET" ["/correct-spelling"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -96,7 +96,7 @@ instance Produces CorrectSpelling MimeJSON
 -- 
 detectLanguage
   :: ParamText -- ^ "text" -  The text for which the language should be detected.
-  -> APILeagueRequest DetectLanguage MimeNoContent [InlineResponse20017] MimeJSON
+  -> APILeagueRequest DetectLanguage MimeNoContent [DetectLanguage200ResponseInner] MimeJSON
 detectLanguage (ParamText text) =
   _mkRequest "GET" ["/detect-language"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -120,7 +120,7 @@ instance Produces DetectLanguage MimeJSON
 -- 
 detectSentiment
   :: ParamText -- ^ "text" -  The text for which the sentiment should be detected.
-  -> APILeagueRequest DetectSentiment MimeNoContent InlineResponse20018 MimeJSON
+  -> APILeagueRequest DetectSentiment MimeNoContent DetectSentiment200Response MimeJSON
 detectSentiment (ParamText text) =
   _mkRequest "GET" ["/detect-sentiment"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -144,7 +144,7 @@ instance Produces DetectSentiment MimeJSON
 -- 
 extractDates
   :: ParamText -- ^ "text" -  The text from which dates should be extracted.
-  -> APILeagueRequest ExtractDates MimeNoContent InlineResponse20021 MimeJSON
+  -> APILeagueRequest ExtractDates MimeNoContent ExtractDates200Response MimeJSON
 extractDates (ParamText text) =
   _mkRequest "GET" ["/extract-dates"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -168,7 +168,7 @@ instance Produces ExtractDates MimeJSON
 -- 
 extractEntities
   :: ParamText -- ^ "text" -  The text from which entities should be extracted.
-  -> APILeagueRequest ExtractEntities MimeNoContent InlineResponse20027 MimeJSON
+  -> APILeagueRequest ExtractEntities MimeNoContent ExtractEntities200Response MimeJSON
 extractEntities (ParamText text) =
   _mkRequest "GET" ["/extract-entities"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -192,7 +192,7 @@ instance Produces ExtractEntities MimeJSON
 -- 
 listWordSynonyms
   :: Word -- ^ "word" -  The (noun) word for which a list of synonyms should be returned.
-  -> APILeagueRequest ListWordSynonyms MimeNoContent InlineResponse20022 MimeJSON
+  -> APILeagueRequest ListWordSynonyms MimeNoContent ListWordSynonyms200Response MimeJSON
 listWordSynonyms (Word word) =
   _mkRequest "GET" ["/list-synonyms"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -216,7 +216,7 @@ instance Produces ListWordSynonyms MimeJSON
 -- 
 partOfSpeechTagging
   :: ParamText -- ^ "text" -  The text to tag the part of speech.
-  -> APILeagueRequest PartOfSpeechTagging MimeNoContent InlineResponse20023 MimeJSON
+  -> APILeagueRequest PartOfSpeechTagging MimeNoContent PartOfSpeechTagging200Response MimeJSON
 partOfSpeechTagging (ParamText text) =
   _mkRequest "GET" ["/tag-pos"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -240,7 +240,7 @@ instance Produces PartOfSpeechTagging MimeJSON
 -- 
 pluralizeWord
   :: Word -- ^ "word" -  The (noun) word for which the plural form should be found.
-  -> APILeagueRequest PluralizeWord MimeNoContent InlineResponse20026 MimeJSON
+  -> APILeagueRequest PluralizeWord MimeNoContent PluralizeWord200Response MimeJSON
 pluralizeWord (Word word) =
   _mkRequest "GET" ["/pluralize-word"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -264,7 +264,7 @@ instance Produces PluralizeWord MimeJSON
 -- 
 scoreReadability
   :: ParamText -- ^ "text" -  The text to score for readability.
-  -> APILeagueRequest ScoreReadability MimeNoContent InlineResponse20020 MimeJSON
+  -> APILeagueRequest ScoreReadability MimeNoContent ScoreReadability200Response MimeJSON
 scoreReadability (ParamText text) =
   _mkRequest "GET" ["/score-readability"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -289,7 +289,7 @@ instance Produces ScoreReadability MimeJSON
 scoreText
   :: Title -- ^ "title" -  The title of the text to score.
   -> ParamText -- ^ "text" -  The text to score for multiple metrics.
-  -> APILeagueRequest ScoreText MimeNoContent InlineResponse20019 MimeJSON
+  -> APILeagueRequest ScoreText MimeNoContent ScoreText200Response MimeJSON
 scoreText (Title title) (ParamText text) =
   _mkRequest "GET" ["/score-text"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -314,7 +314,7 @@ instance Produces ScoreText MimeJSON
 -- 
 singularizeWord
   :: Word -- ^ "word" -  The (noun) word for which the singular form should be found.
-  -> APILeagueRequest SingularizeWord MimeNoContent InlineResponse20025 MimeJSON
+  -> APILeagueRequest SingularizeWord MimeNoContent SingularizeWord200Response MimeJSON
 singularizeWord (Word word) =
   _mkRequest "GET" ["/singularize-word"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -338,7 +338,7 @@ instance Produces SingularizeWord MimeJSON
 -- 
 textStemming
   :: ParamText -- ^ "text" -  The text to be stemmed.
-  -> APILeagueRequest TextStemming MimeNoContent InlineResponse20024 MimeJSON
+  -> APILeagueRequest TextStemming MimeNoContent TextStemming200Response MimeJSON
 textStemming (ParamText text) =
   _mkRequest "GET" ["/stem-text"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

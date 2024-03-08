@@ -14,13 +14,12 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import java.math.BigDecimal;
-import com.apileague.client.model.InlineResponse20012;
-import com.apileague.client.model.InlineResponse20013;
-import com.apileague.client.model.InlineResponse20014;
-import com.apileague.client.model.ModelNull;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.ExtractAuthors200Response;
+import com.apileague.client.model.ExtractContentFromAWebPage200Response;
+import com.apileague.client.model.ExtractPublishDate200Response;
+import com.apileague.client.model.SearchWeb200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,71 +29,66 @@ import java.util.Map;
 /**
  * API tests for WebApi
  */
-@Ignore
+@Disabled
 public class WebApiTest {
 
     private final WebApi api = new WebApi();
 
-    
     /**
      * Extract Authors
      *
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void extractAuthorsTest() throws ApiException {
         String url = null;
-                InlineResponse20013 response = api.extractAuthors(url);
+        ExtractAuthors200Response response = api.extractAuthors(url);
         // TODO: test validations
     }
-    
+
     /**
      * Extract Content from a Web Page
      *
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void extractContentFromAWebPageTest() throws ApiException {
         String url = null;
-                ModelNull response = api.extractContentFromAWebPage(url);
+        ExtractContentFromAWebPage200Response response = api.extractContentFromAWebPage(url);
         // TODO: test validations
     }
-    
+
     /**
      * Extract Publish Date
      *
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void extractPublishDateTest() throws ApiException {
         String url = null;
-                InlineResponse20012 response = api.extractPublishDate(url);
+        ExtractPublishDate200Response response = api.extractPublishDate(url);
         // TODO: test validations
     }
-    
+
     /**
      * Search Web
      *
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void searchWebTest() throws ApiException {
         String query = null;
-        BigDecimal number = null;
-                InlineResponse20014 response = api.searchWeb(query, number);
+        Integer number = null;
+        SearchWeb200Response response = api.searchWeb(query, number);
         // TODO: test validations
     }
-    
+
 }

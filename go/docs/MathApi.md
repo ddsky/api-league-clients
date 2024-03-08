@@ -1,16 +1,16 @@
-# com.apileague.client\MathApi
+# \MathAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ConvertUnits**](MathApi.md#ConvertUnits) | **Get** /convert-units | Convert Units
+[**ConvertUnits**](MathAPI.md#ConvertUnits) | **Get** /convert-units | Convert Units
 
 
 
 ## ConvertUnits
 
-> InlineResponse20030 ConvertUnits(ctx).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
+> ConvertUnits200Response ConvertUnits(ctx).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
 
 Convert Units
 
@@ -22,27 +22,27 @@ Convert Units
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    sourceAmount := float64(100) // float64 | The source amount.
-    sourceUnit := "kg" // string | The source unit.
-    targetUnit := "lb" // string | The unit to which should be converted.
-    foodName := "flour" // string | An optional food name. For converting foods the food is relevant as they have different densities. (optional)
+	sourceAmount := float64(100) // float64 | The source amount.
+	sourceUnit := "kg" // string | The source unit.
+	targetUnit := "lb" // string | The unit to which should be converted.
+	foodName := "flour" // string | An optional food name. For converting foods the food is relevant as they have different densities. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MathApi.ConvertUnits(context.Background()).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MathApi.ConvertUnits``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ConvertUnits`: InlineResponse20030
-    fmt.Fprintf(os.Stdout, "Response from `MathApi.ConvertUnits`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MathAPI.ConvertUnits(context.Background()).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MathAPI.ConvertUnits``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ConvertUnits`: ConvertUnits200Response
+	fmt.Fprintf(os.Stdout, "Response from `MathAPI.ConvertUnits`: %v\n", resp)
 }
 ```
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

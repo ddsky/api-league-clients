@@ -1,4 +1,4 @@
-# openapi_client.StorageApi
+# apileague.StorageApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **read_key_value_from_store**
-> InlineResponse20031 read_key_value_from_store(key)
+> ReadKeyValueFromStore200Response read_key_value_from_store(key)
 
 Read Key Value from Store
 
@@ -21,14 +21,14 @@ Read a value from the key-value store. The key-value store is a simple storage s
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import storage_api
-from openapi_client.model.inline_response20031 import InlineResponse20031
+import apileague
+from apileague.models.read_key_value_from_store200_response import ReadKeyValueFromStore200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -38,42 +38,44 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = storage_api.StorageApi(api_client)
-    key = "visitors24h" # str | The key for which the value is stored (max length 255 characters).
+    api_instance = apileague.StorageApi(api_client)
+    key = 'visitors24h' # str | The key for which the value is stored (max length 255 characters).
 
-    # example passing only required values which don't have defaults set
     try:
         # Read Key Value from Store
         api_response = api_instance.read_key_value_from_store(key)
+        print("The response of StorageApi->read_key_value_from_store:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling StorageApi->read_key_value_from_store: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **str**| The key for which the value is stored (max length 255 characters). |
+ **key** | **str**| The key for which the value is stored (max length 255 characters). | 
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -83,7 +85,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -100,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_key_value_get**
-> InlineResponse20032 store_key_value_get(key, value)
+> StoreKeyValueGET200Response store_key_value_get(key, value)
 
 Store Key Value (GET)
 
@@ -112,14 +113,14 @@ Store a value in the key-value store. The key-value store is a simple storage sy
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import storage_api
-from openapi_client.model.inline_response20032 import InlineResponse20032
+import apileague
+from apileague.models.store_key_value_get200_response import StoreKeyValueGET200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -129,44 +130,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = storage_api.StorageApi(api_client)
-    key = "visitors24h" # str | The key for which the value is stored (max length 255 characters).
-    value = "23578 visitors" # str | The value that is supposed to be stored (max length 10,000 characters).
+    api_instance = apileague.StorageApi(api_client)
+    key = 'visitors24h' # str | The key for which the value is stored (max length 255 characters).
+    value = '23578 visitors' # str | The value that is supposed to be stored (max length 10,000 characters).
 
-    # example passing only required values which don't have defaults set
     try:
         # Store Key Value (GET)
         api_response = api_instance.store_key_value_get(key, value)
+        print("The response of StorageApi->store_key_value_get:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling StorageApi->store_key_value_get: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **str**| The key for which the value is stored (max length 255 characters). |
- **value** | **str**| The value that is supposed to be stored (max length 10,000 characters). |
+ **key** | **str**| The key for which the value is stored (max length 255 characters). | 
+ **value** | **str**| The value that is supposed to be stored (max length 10,000 characters). | 
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 
@@ -176,7 +179,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -10,7 +10,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## extract_news
 
-> <InlineResponse2003> extract_news(url, analyze)
+> <ExtractNews200Response> extract_news(url, analyze)
 
 Extract News
 
@@ -51,7 +51,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2003>, Integer, Hash)> extract_news_with_http_info(url, analyze)
+> <Array(<ExtractNews200Response>, Integer, Hash)> extract_news_with_http_info(url, analyze)
 
 ```ruby
 begin
@@ -59,7 +59,7 @@ begin
   data, status_code, headers = api_instance.extract_news_with_http_info(url, analyze)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2003>
+  p data # => <ExtractNews200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NewsApi->extract_news_with_http_info: #{e}"
 end
@@ -74,7 +74,7 @@ end
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ end
 
 ## search_news
 
-> <InlineResponse2002> search_news(opts)
+> <SearchNews200Response> search_news(opts)
 
 Search News
 
@@ -144,7 +144,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse2002>, Integer, Hash)> search_news_with_http_info(opts)
+> <Array(<SearchNews200Response>, Integer, Hash)> search_news_with_http_info(opts)
 
 ```ruby
 begin
@@ -152,7 +152,7 @@ begin
   data, status_code, headers = api_instance.search_news_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse2002>
+  p data # => <SearchNews200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NewsApi->search_news_with_http_info: #{e}"
 end
@@ -180,7 +180,7 @@ end
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 

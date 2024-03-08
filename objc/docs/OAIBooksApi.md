@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) findSimilarBooksWithId: (NSNumber*) _id
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse2001* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIFindSimilarBooks200Response* output, NSError* error)) handler;
 ```
 
 Find Similar Books
@@ -42,7 +42,7 @@ OAIBooksApi*apiInstance = [[OAIBooksApi alloc] init];
 // Find Similar Books
 [apiInstance findSimilarBooksWithId:_id
               number:number
-          completionHandler: ^(OAIInlineResponse2001* output, NSError* error) {
+          completionHandler: ^(OAIFindSimilarBooks200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2001***](OAIInlineResponse2001.md)
+[**OAIFindSimilarBooks200Response***](OAIFindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
     groupResults: (NSNumber*) groupResults
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse200* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchBooks200Response* output, NSError* error)) handler;
 ```
 
 Search Books
@@ -144,7 +144,7 @@ OAIBooksApi*apiInstance = [[OAIBooksApi alloc] init];
               groupResults:groupResults
               offset:offset
               number:number
-          completionHandler: ^(OAIInlineResponse200* output, NSError* error) {
+          completionHandler: ^(OAISearchBooks200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse200***](OAIInlineResponse200.md)
+[**OAISearchBooks200Response***](OAISearchBooks200Response.md)
 
 ### Authorization
 

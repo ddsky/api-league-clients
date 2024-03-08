@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20031.h"
-#import "OAIInlineResponse20032.h"
+#import "OAIReadKeyValueFromStore200Response.h"
+#import "OAIStoreKeyValueGET200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -37,9 +37,9 @@ extern NSInteger kOAIStorageApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20031*
+/// @return OAIReadKeyValueFromStore200Response*
 -(NSURLSessionTask*) readKeyValueFromStoreWithKey: (NSString*) key
-    completionHandler: (void (^)(OAIInlineResponse20031* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIReadKeyValueFromStore200Response* output, NSError* error)) handler;
 
 
 /// Store Key Value (GET)
@@ -56,10 +56,10 @@ extern NSInteger kOAIStorageApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20032*
+/// @return OAIStoreKeyValueGET200Response*
 -(NSURLSessionTask*) storeKeyValueGETWithKey: (NSString*) key
     value: (NSString*) value
-    completionHandler: (void (^)(OAIInlineResponse20032* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIStoreKeyValueGET200Response* output, NSError* error)) handler;
 
 
 

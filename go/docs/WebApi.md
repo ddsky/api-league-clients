@@ -1,19 +1,19 @@
-# com.apileague.client\WebApi
+# \WebAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExtractAuthors**](WebApi.md#ExtractAuthors) | **Get** /extract-authors | Extract Authors
-[**ExtractContentFromAWebPage**](WebApi.md#ExtractContentFromAWebPage) | **Get** /extract-content | Extract Content from a Web Page
-[**ExtractPublishDate**](WebApi.md#ExtractPublishDate) | **Get** /extract-publish-date | Extract Publish Date
-[**SearchWeb**](WebApi.md#SearchWeb) | **Get** /search-web | Search Web
+[**ExtractAuthors**](WebAPI.md#ExtractAuthors) | **Get** /extract-authors | Extract Authors
+[**ExtractContentFromAWebPage**](WebAPI.md#ExtractContentFromAWebPage) | **Get** /extract-content | Extract Content from a Web Page
+[**ExtractPublishDate**](WebAPI.md#ExtractPublishDate) | **Get** /extract-publish-date | Extract Publish Date
+[**SearchWeb**](WebAPI.md#SearchWeb) | **Get** /search-web | Search Web
 
 
 
 ## ExtractAuthors
 
-> InlineResponse20014 ExtractAuthors(ctx).Url(url).Execute()
+> ExtractAuthors200Response ExtractAuthors(ctx).Url(url).Execute()
 
 Extract Authors
 
@@ -25,24 +25,24 @@ Extract Authors
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url with the article from which authors should be extracted.
+	url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url with the article from which authors should be extracted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApi.ExtractAuthors(context.Background()).Url(url).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApi.ExtractAuthors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractAuthors`: InlineResponse20014
-    fmt.Fprintf(os.Stdout, "Response from `WebApi.ExtractAuthors`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebAPI.ExtractAuthors(context.Background()).Url(url).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractAuthors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractAuthors`: ExtractAuthors200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractAuthors`: %v\n", resp)
 }
 ```
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## ExtractContentFromAWebPage
 
-> InlineResponse20012 ExtractContentFromAWebPage(ctx).Url(url).Execute()
+> ExtractContentFromAWebPage200Response ExtractContentFromAWebPage(ctx).Url(url).Execute()
 
 Extract Content from a Web Page
 
@@ -91,24 +91,24 @@ Extract Content from a Web Page
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url for which the content will be extracted.
+	url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url for which the content will be extracted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApi.ExtractContentFromAWebPage(context.Background()).Url(url).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApi.ExtractContentFromAWebPage``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractContentFromAWebPage`: InlineResponse20012
-    fmt.Fprintf(os.Stdout, "Response from `WebApi.ExtractContentFromAWebPage`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebAPI.ExtractContentFromAWebPage(context.Background()).Url(url).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractContentFromAWebPage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractContentFromAWebPage`: ExtractContentFromAWebPage200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractContentFromAWebPage`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ## ExtractPublishDate
 
-> InlineResponse20013 ExtractPublishDate(ctx).Url(url).Execute()
+> ExtractPublishDate200Response ExtractPublishDate(ctx).Url(url).Execute()
 
 Extract Publish Date
 
@@ -157,24 +157,24 @@ Extract Publish Date
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url for which the publish date should be extracted.
+	url := "https://www.bbc.com/news/entertainment-arts-68270826" // string | The url for which the publish date should be extracted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApi.ExtractPublishDate(context.Background()).Url(url).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApi.ExtractPublishDate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractPublishDate`: InlineResponse20013
-    fmt.Fprintf(os.Stdout, "Response from `WebApi.ExtractPublishDate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebAPI.ExtractPublishDate(context.Background()).Url(url).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractPublishDate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractPublishDate`: ExtractPublishDate200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractPublishDate`: %v\n", resp)
 }
 ```
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## SearchWeb
 
-> InlineResponse20015 SearchWeb(ctx).Query(query).Number(number).Execute()
+> SearchWeb200Response SearchWeb(ctx).Query(query).Number(number).Execute()
 
 Search Web
 
@@ -223,25 +223,25 @@ Search Web
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    query := "penguins" // string | The search query.
-    number := int32(5) // int32 | The number of results to return in range [1,50] (optional)
+	query := "penguins" // string | The search query.
+	number := int32(5) // int32 | The number of results to return in range [1,50] (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebApi.SearchWeb(context.Background()).Query(query).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WebApi.SearchWeb``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchWeb`: InlineResponse20015
-    fmt.Fprintf(os.Stdout, "Response from `WebApi.SearchWeb`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebAPI.SearchWeb(context.Background()).Query(query).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.SearchWeb``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchWeb`: SearchWeb200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.SearchWeb`: %v\n", resp)
 }
 ```
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 

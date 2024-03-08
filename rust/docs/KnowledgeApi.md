@@ -1,4 +1,4 @@
-# com.apileague.client\KnowledgeApi
+# \KnowledgeApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## random_quote
 
-> crate::models::InlineResponse20010 random_quote(min_length, max_length)
+> crate::models::RandomQuote200Response random_quote(min_length, max_length)
 Random Quote
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse20010**](inline_response_200_10.md)
+[**crate::models::RandomQuote200Response**](randomQuote_200_response.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## random_trivia
 
-> crate::models::InlineResponse2009 random_trivia(max_length)
+> crate::models::RandomTrivia200Response random_trivia(max_length)
 Random Trivia
 
 This endpoint returns a random piece of trivia.
@@ -56,7 +56,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse2009**](inline_response_200_9.md)
+[**crate::models::RandomTrivia200Response**](randomTrivia_200_response.md)
 
 ### Authorization
 

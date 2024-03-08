@@ -1,4 +1,4 @@
-# com.apileague.client\StorageApi
+# \StorageApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## read_key_value_from_store
 
-> crate::models::InlineResponse20031 read_key_value_from_store(key)
+> crate::models::ReadKeyValueFromStore200Response read_key_value_from_store(key)
 Read Key Value from Store
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse20031**](inline_response_200_31.md)
+[**crate::models::ReadKeyValueFromStore200Response**](readKeyValueFromStore_200_response.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Required | Notes
 
 ## store_key_value_get
 
-> crate::models::InlineResponse20032 store_key_value_get(key, value)
+> crate::models::StoreKeyValueGet200Response store_key_value_get(key, value)
 Store Key Value (GET)
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
@@ -56,7 +56,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse20032**](inline_response_200_32.md)
+[**crate::models::StoreKeyValueGet200Response**](storeKeyValueGET_200_response.md)
 
 ### Authorization
 

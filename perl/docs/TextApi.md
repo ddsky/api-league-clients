@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **correct_spelling**
-> InlineResponse20016 correct_spelling(text => $text, language => $language)
+> CorrectSpelling200Response correct_spelling(text => $text, language => $language)
 
 Correct Spelling
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detect_language**
-> ARRAY[InlineResponse20017] detect_language(text => $text)
+> ARRAY[DetectLanguage200ResponseInner] detect_language(text => $text)
 
 Detect Language
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[InlineResponse20017]**](InlineResponse20017.md)
+[**ARRAY[DetectLanguage200ResponseInner]**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detect_sentiment**
-> InlineResponse20018 detect_sentiment(text => $text)
+> DetectSentiment200Response detect_sentiment(text => $text)
 
 Detect Sentiment
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_dates**
-> InlineResponse20021 extract_dates(text => $text)
+> ExtractDates200Response extract_dates(text => $text)
 
 Extract Dates
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **extract_entities**
-> InlineResponse20027 extract_entities(text => $text)
+> ExtractEntities200Response extract_entities(text => $text)
 
 Extract Entities
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_word_synonyms**
-> InlineResponse20022 list_word_synonyms(word => $word)
+> ListWordSynonyms200Response list_word_synonyms(word => $word)
 
 List Word Synonyms
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **part_of_speech_tagging**
-> InlineResponse20023 part_of_speech_tagging(text => $text)
+> PartOfSpeechTagging200Response part_of_speech_tagging(text => $text)
 
 Part of Speech Tagging
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pluralize_word**
-> InlineResponse20026 pluralize_word(word => $word)
+> PluralizeWord200Response pluralize_word(word => $word)
 
 Pluralize Word
 
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **score_readability**
-> InlineResponse20020 score_readability(text => $text)
+> ScoreReadability200Response score_readability(text => $text)
 
 Score Readability
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **score_text**
-> InlineResponse20019 score_text(title => $title, text => $text)
+> ScoreText200Response score_text(title => $title, text => $text)
 
 Score Text
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **singularize_word**
-> InlineResponse20025 singularize_word(word => $word)
+> SingularizeWord200Response singularize_word(word => $word)
 
 Singularize Word
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **text_stemming**
-> InlineResponse20024 text_stemming(text => $text)
+> TextStemming200Response text_stemming(text => $text)
 
 Text Stemming
 
@@ -674,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 

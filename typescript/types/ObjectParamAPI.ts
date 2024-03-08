@@ -1,63 +1,62 @@
-import { ResponseContext, RequestContext, HttpFile } from '../http/http';
-import * as models from '../models/all';
+import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
-import { InlineResponse200 } from '../models/InlineResponse200';
-import { InlineResponse2001 } from '../models/InlineResponse2001';
-import { InlineResponse20010 } from '../models/InlineResponse20010';
-import { InlineResponse20011 } from '../models/InlineResponse20011';
-import { InlineResponse20012 } from '../models/InlineResponse20012';
-import { InlineResponse20013 } from '../models/InlineResponse20013';
-import { InlineResponse20014 } from '../models/InlineResponse20014';
-import { InlineResponse20014Authors } from '../models/InlineResponse20014Authors';
-import { InlineResponse20015 } from '../models/InlineResponse20015';
-import { InlineResponse20015Results } from '../models/InlineResponse20015Results';
-import { InlineResponse20016 } from '../models/InlineResponse20016';
-import { InlineResponse20017 } from '../models/InlineResponse20017';
-import { InlineResponse20018 } from '../models/InlineResponse20018';
-import { InlineResponse20018Document } from '../models/InlineResponse20018Document';
-import { InlineResponse20018Sentences } from '../models/InlineResponse20018Sentences';
-import { InlineResponse20019 } from '../models/InlineResponse20019';
-import { InlineResponse20019Interestingness } from '../models/InlineResponse20019Interestingness';
-import { InlineResponse20019InterestingnessSubscores } from '../models/InlineResponse20019InterestingnessSubscores';
-import { InlineResponse20019Readability } from '../models/InlineResponse20019Readability';
-import { InlineResponse20019ReadabilityMainscores } from '../models/InlineResponse20019ReadabilityMainscores';
-import { InlineResponse20019ReadabilitySubscores } from '../models/InlineResponse20019ReadabilitySubscores';
-import { InlineResponse20019Skimmability } from '../models/InlineResponse20019Skimmability';
-import { InlineResponse20019SkimmabilityMainscores } from '../models/InlineResponse20019SkimmabilityMainscores';
-import { InlineResponse20019SkimmabilitySubscores } from '../models/InlineResponse20019SkimmabilitySubscores';
-import { InlineResponse20019Style } from '../models/InlineResponse20019Style';
-import { InlineResponse20019StyleSubscores } from '../models/InlineResponse20019StyleSubscores';
-import { InlineResponse2002 } from '../models/InlineResponse2002';
-import { InlineResponse20020 } from '../models/InlineResponse20020';
-import { InlineResponse20021 } from '../models/InlineResponse20021';
-import { InlineResponse20021Dates } from '../models/InlineResponse20021Dates';
-import { InlineResponse20022 } from '../models/InlineResponse20022';
-import { InlineResponse20023 } from '../models/InlineResponse20023';
-import { InlineResponse20024 } from '../models/InlineResponse20024';
-import { InlineResponse20025 } from '../models/InlineResponse20025';
-import { InlineResponse20026 } from '../models/InlineResponse20026';
-import { InlineResponse20027 } from '../models/InlineResponse20027';
-import { InlineResponse20027Entities } from '../models/InlineResponse20027Entities';
-import { InlineResponse20028 } from '../models/InlineResponse20028';
-import { InlineResponse20028Images } from '../models/InlineResponse20028Images';
-import { InlineResponse20028License } from '../models/InlineResponse20028License';
-import { InlineResponse20029 } from '../models/InlineResponse20029';
-import { InlineResponse2002News } from '../models/InlineResponse2002News';
-import { InlineResponse2003 } from '../models/InlineResponse2003';
-import { InlineResponse20030 } from '../models/InlineResponse20030';
-import { InlineResponse20031 } from '../models/InlineResponse20031';
-import { InlineResponse20032 } from '../models/InlineResponse20032';
-import { InlineResponse2004 } from '../models/InlineResponse2004';
-import { InlineResponse2004Jokes } from '../models/InlineResponse2004Jokes';
-import { InlineResponse2005 } from '../models/InlineResponse2005';
-import { InlineResponse2005Memes } from '../models/InlineResponse2005Memes';
-import { InlineResponse2006 } from '../models/InlineResponse2006';
-import { InlineResponse2007 } from '../models/InlineResponse2007';
-import { InlineResponse2007Images } from '../models/InlineResponse2007Images';
-import { InlineResponse2008 } from '../models/InlineResponse2008';
-import { InlineResponse2009 } from '../models/InlineResponse2009';
-import { InlineResponse200Books } from '../models/InlineResponse200Books';
+import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
+import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
+import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
+import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
+import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
+import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
+import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
+import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
+import { ExtractDates200Response } from '../models/ExtractDates200Response';
+import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200ResponseDatesInner';
+import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
+import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
+import { ExtractNews200Response } from '../models/ExtractNews200Response';
+import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
+import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
+import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
+import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
+import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
+import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
+import { RandomMeme200Response } from '../models/RandomMeme200Response';
+import { RandomPoem200Response } from '../models/RandomPoem200Response';
+import { RandomQuote200Response } from '../models/RandomQuote200Response';
+import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
+import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
+import { ScoreText200Response } from '../models/ScoreText200Response';
+import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
+import { ScoreText200ResponseInterestingnessSubscores } from '../models/ScoreText200ResponseInterestingnessSubscores';
+import { ScoreText200ResponseReadability } from '../models/ScoreText200ResponseReadability';
+import { ScoreText200ResponseReadabilityMainscores } from '../models/ScoreText200ResponseReadabilityMainscores';
+import { ScoreText200ResponseReadabilitySubscores } from '../models/ScoreText200ResponseReadabilitySubscores';
+import { ScoreText200ResponseSkimmability } from '../models/ScoreText200ResponseSkimmability';
+import { ScoreText200ResponseSkimmabilityMainscores } from '../models/ScoreText200ResponseSkimmabilityMainscores';
+import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText200ResponseSkimmabilitySubscores';
+import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
+import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
+import { SearchBooks200Response } from '../models/SearchBooks200Response';
+import { SearchBooks200ResponseBooksInner } from '../models/SearchBooks200ResponseBooksInner';
+import { SearchGifs200Response } from '../models/SearchGifs200Response';
+import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
+import { SearchJokes200Response } from '../models/SearchJokes200Response';
+import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
+import { SearchMemes200Response } from '../models/SearchMemes200Response';
+import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
+import { SearchNews200Response } from '../models/SearchNews200Response';
+import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
+import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
+import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
+import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
+import { SearchWeb200Response } from '../models/SearchWeb200Response';
+import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
+import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
+import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
+import { TextStemming200Response } from '../models/TextStemming200Response';
 
 import { ObservableArtApi } from "./ObservableAPI";
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
@@ -110,16 +109,34 @@ export class ObjectArtApi {
      * Image to Ascii Art by URL
      * @param param the request object
      */
+    public imageToAsciiArtByURLWithHttpInfo(param: ArtApiImageToAsciiArtByURLRequest, options?: Configuration): Promise<HttpInfo<string>> {
+        return this.api.imageToAsciiArtByURLWithHttpInfo(param.url, param.width, param.height,  options).toPromise();
+    }
+
+    /**
+     * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
+     * Image to Ascii Art by URL
+     * @param param the request object
+     */
     public imageToAsciiArtByURL(param: ArtApiImageToAsciiArtByURLRequest, options?: Configuration): Promise<string> {
         return this.api.imageToAsciiArtByURL(param.url, param.width, param.height,  options).toPromise();
     }
 
     /**
-     * Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
+     * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
      * Random Poem
      * @param param the request object
      */
-    public randomPoem(param: ArtApiRandomPoemRequest = {}, options?: Configuration): Promise<InlineResponse20011> {
+    public randomPoemWithHttpInfo(param: ArtApiRandomPoemRequest = {}, options?: Configuration): Promise<HttpInfo<RandomPoem200Response>> {
+        return this.api.randomPoemWithHttpInfo(param.minLines, param.maxLines,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
+     * Random Poem
+     * @param param the request object
+     */
+    public randomPoem(param: ArtApiRandomPoemRequest = {}, options?: Configuration): Promise<RandomPoem200Response> {
         return this.api.randomPoem(param.minLines, param.maxLines,  options).toPromise();
     }
 
@@ -181,7 +198,7 @@ export interface BooksApiSearchBooksRequest {
      */
     genres?: string
     /**
-     * A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.
+     * A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\&#39;t disambiguate.
      * @type string
      * @memberof BooksApisearchBooks
      */
@@ -242,7 +259,16 @@ export class ObjectBooksApi {
      * Find Similar Books
      * @param param the request object
      */
-    public findSimilarBooks(param: BooksApiFindSimilarBooksRequest, options?: Configuration): Promise<InlineResponse2001> {
+    public findSimilarBooksWithHttpInfo(param: BooksApiFindSimilarBooksRequest, options?: Configuration): Promise<HttpInfo<FindSimilarBooks200Response>> {
+        return this.api.findSimilarBooksWithHttpInfo(param.id, param.number,  options).toPromise();
+    }
+
+    /**
+     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books
+     * @param param the request object
+     */
+    public findSimilarBooks(param: BooksApiFindSimilarBooksRequest, options?: Configuration): Promise<FindSimilarBooks200Response> {
         return this.api.findSimilarBooks(param.id, param.number,  options).toPromise();
     }
 
@@ -251,7 +277,16 @@ export class ObjectBooksApi {
      * Search Books
      * @param param the request object
      */
-    public searchBooks(param: BooksApiSearchBooksRequest = {}, options?: Configuration): Promise<InlineResponse200> {
+    public searchBooksWithHttpInfo(param: BooksApiSearchBooksRequest = {}, options?: Configuration): Promise<HttpInfo<SearchBooks200Response>> {
+        return this.api.searchBooksWithHttpInfo(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+     * Search Books
+     * @param param the request object
+     */
+    public searchBooks(param: BooksApiSearchBooksRequest = {}, options?: Configuration): Promise<SearchBooks200Response> {
         return this.api.searchBooks(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
     }
 
@@ -304,7 +339,7 @@ export interface HumorApiRandomMemeRequest {
      */
     keywordsInImage?: boolean
     /**
-     * The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
+     * The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @type string
      * @memberof HumorApirandomMeme
      */
@@ -397,7 +432,7 @@ export interface HumorApiSearchMemesRequest {
      */
     keywordsInImage?: boolean
     /**
-     * The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
+     * The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @type string
      * @memberof HumorApisearchMemes
      */
@@ -440,7 +475,16 @@ export class ObjectHumorApi {
      * Generate Nonsense Word
      * @param param the request object
      */
-    public generateNonsenseWord(param: HumorApiGenerateNonsenseWordRequest = {}, options?: Configuration): Promise<InlineResponse2008> {
+    public generateNonsenseWordWithHttpInfo(param: HumorApiGenerateNonsenseWordRequest = {}, options?: Configuration): Promise<HttpInfo<GenerateNonsenseWord200Response>> {
+        return this.api.generateNonsenseWordWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
+     * Generate Nonsense Word
+     * @param param the request object
+     */
+    public generateNonsenseWord(param: HumorApiGenerateNonsenseWordRequest = {}, options?: Configuration): Promise<GenerateNonsenseWord200Response> {
         return this.api.generateNonsenseWord( options).toPromise();
     }
 
@@ -449,7 +493,16 @@ export class ObjectHumorApi {
      * Random Joke
      * @param param the request object
      */
-    public randomJoke(param: HumorApiRandomJokeRequest = {}, options?: Configuration): Promise<InlineResponse2004Jokes> {
+    public randomJokeWithHttpInfo(param: HumorApiRandomJokeRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokes200ResponseJokesInner>> {
+        return this.api.randomJokeWithHttpInfo(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
+    }
+
+    /**
+     * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
+     * Random Joke
+     * @param param the request object
+     */
+    public randomJoke(param: HumorApiRandomJokeRequest = {}, options?: Configuration): Promise<SearchJokes200ResponseJokesInner> {
         return this.api.randomJoke(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
     }
 
@@ -458,7 +511,16 @@ export class ObjectHumorApi {
      * Random Meme
      * @param param the request object
      */
-    public randomMeme(param: HumorApiRandomMemeRequest = {}, options?: Configuration): Promise<InlineResponse2006> {
+    public randomMemeWithHttpInfo(param: HumorApiRandomMemeRequest = {}, options?: Configuration): Promise<HttpInfo<RandomMeme200Response>> {
+        return this.api.randomMemeWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
+    }
+
+    /**
+     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme
+     * @param param the request object
+     */
+    public randomMeme(param: HumorApiRandomMemeRequest = {}, options?: Configuration): Promise<RandomMeme200Response> {
         return this.api.randomMeme(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
     }
 
@@ -467,7 +529,16 @@ export class ObjectHumorApi {
      * Search Gifs
      * @param param the request object
      */
-    public searchGifs(param: HumorApiSearchGifsRequest, options?: Configuration): Promise<InlineResponse2007> {
+    public searchGifsWithHttpInfo(param: HumorApiSearchGifsRequest, options?: Configuration): Promise<HttpInfo<SearchGifs200Response>> {
+        return this.api.searchGifsWithHttpInfo(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
+     * Search Gifs
+     * @param param the request object
+     */
+    public searchGifs(param: HumorApiSearchGifsRequest, options?: Configuration): Promise<SearchGifs200Response> {
         return this.api.searchGifs(param.query, param.number,  options).toPromise();
     }
 
@@ -476,16 +547,34 @@ export class ObjectHumorApi {
      * Search Jokes
      * @param param the request object
      */
-    public searchJokes(param: HumorApiSearchJokesRequest = {}, options?: Configuration): Promise<InlineResponse2004> {
+    public searchJokesWithHttpInfo(param: HumorApiSearchJokesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokes200Response>> {
+        return this.api.searchJokesWithHttpInfo(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
+     * Search Jokes
+     * @param param the request object
+     */
+    public searchJokes(param: HumorApiSearchJokesRequest = {}, options?: Configuration): Promise<SearchJokes200Response> {
         return this.api.searchJokes(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
      * Search Memes
      * @param param the request object
      */
-    public searchMemes(param: HumorApiSearchMemesRequest = {}, options?: Configuration): Promise<InlineResponse2005> {
+    public searchMemesWithHttpInfo(param: HumorApiSearchMemesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchMemes200Response>> {
+        return this.api.searchMemesWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
+     * Search Memes
+     * @param param the request object
+     */
+    public searchMemes(param: HumorApiSearchMemesRequest = {}, options?: Configuration): Promise<SearchMemes200Response> {
         return this.api.searchMemes(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
     }
 
@@ -530,7 +619,16 @@ export class ObjectKnowledgeApi {
      * Random Quote
      * @param param the request object
      */
-    public randomQuote(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<InlineResponse20010> {
+    public randomQuoteWithHttpInfo(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<HttpInfo<RandomQuote200Response>> {
+        return this.api.randomQuoteWithHttpInfo(param.minLength, param.maxLength,  options).toPromise();
+    }
+
+    /**
+     * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
+     * Random Quote
+     * @param param the request object
+     */
+    public randomQuote(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<RandomQuote200Response> {
         return this.api.randomQuote(param.minLength, param.maxLength,  options).toPromise();
     }
 
@@ -539,7 +637,16 @@ export class ObjectKnowledgeApi {
      * Random Trivia
      * @param param the request object
      */
-    public randomTrivia(param: KnowledgeApiRandomTriviaRequest = {}, options?: Configuration): Promise<InlineResponse2009> {
+    public randomTriviaWithHttpInfo(param: KnowledgeApiRandomTriviaRequest = {}, options?: Configuration): Promise<HttpInfo<RandomTrivia200Response>> {
+        return this.api.randomTriviaWithHttpInfo(param.maxLength,  options).toPromise();
+    }
+
+    /**
+     * This endpoint returns a random piece of trivia.
+     * Random Trivia
+     * @param param the request object
+     */
+    public randomTrivia(param: KnowledgeApiRandomTriviaRequest = {}, options?: Configuration): Promise<RandomTrivia200Response> {
         return this.api.randomTrivia(param.maxLength,  options).toPromise();
     }
 
@@ -587,7 +694,16 @@ export class ObjectMathApi {
      * Convert Units
      * @param param the request object
      */
-    public convertUnits(param: MathApiConvertUnitsRequest, options?: Configuration): Promise<InlineResponse20030> {
+    public convertUnitsWithHttpInfo(param: MathApiConvertUnitsRequest, options?: Configuration): Promise<HttpInfo<ConvertUnits200Response>> {
+        return this.api.convertUnitsWithHttpInfo(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
+    }
+
+    /**
+     * Convert units from one to another. The API returns the amount and the unit of the target unit.
+     * Convert Units
+     * @param param the request object
+     */
+    public convertUnits(param: MathApiConvertUnitsRequest, options?: Configuration): Promise<ConvertUnits200Response> {
         return this.api.convertUnits(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
     }
 
@@ -659,8 +775,26 @@ export class ObjectMediaApi {
      * Detect Main Image Color
      * @param param the request object
      */
-    public detectMainImageColor(param: MediaApiDetectMainImageColorRequest, options?: Configuration): Promise<Array<InlineResponse20029>> {
+    public detectMainImageColorWithHttpInfo(param: MediaApiDetectMainImageColorRequest, options?: Configuration): Promise<HttpInfo<Array<DetectMainImageColor200ResponseInner>>> {
+        return this.api.detectMainImageColorWithHttpInfo(param.url,  options).toPromise();
+    }
+
+    /**
+     * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
+     * Detect Main Image Color
+     * @param param the request object
+     */
+    public detectMainImageColor(param: MediaApiDetectMainImageColorRequest, options?: Configuration): Promise<Array<DetectMainImageColor200ResponseInner>> {
         return this.api.detectMainImageColor(param.url,  options).toPromise();
+    }
+
+    /**
+     * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
+     * Rescale Image
+     * @param param the request object
+     */
+    public rescaleImageWithHttpInfo(param: MediaApiRescaleImageRequest, options?: Configuration): Promise<HttpInfo<any>> {
+        return this.api.rescaleImageWithHttpInfo(param.url, param.width, param.height, param.crop,  options).toPromise();
     }
 
     /**
@@ -677,7 +811,16 @@ export class ObjectMediaApi {
      * Search Royalty Free Images
      * @param param the request object
      */
-    public searchRoyaltyFreeImages(param: MediaApiSearchRoyaltyFreeImagesRequest, options?: Configuration): Promise<InlineResponse20028> {
+    public searchRoyaltyFreeImagesWithHttpInfo(param: MediaApiSearchRoyaltyFreeImagesRequest, options?: Configuration): Promise<HttpInfo<SearchRoyaltyFreeImages200Response>> {
+        return this.api.searchRoyaltyFreeImagesWithHttpInfo(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
+     * Search Royalty Free Images
+     * @param param the request object
+     */
+    public searchRoyaltyFreeImages(param: MediaApiSearchRoyaltyFreeImagesRequest, options?: Configuration): Promise<SearchRoyaltyFreeImages200Response> {
         return this.api.searchRoyaltyFreeImages(param.query, param.number,  options).toPromise();
     }
 
@@ -806,7 +949,16 @@ export class ObjectNewsApi {
      * Extract News
      * @param param the request object
      */
-    public extractNews(param: NewsApiExtractNewsRequest, options?: Configuration): Promise<InlineResponse2003> {
+    public extractNewsWithHttpInfo(param: NewsApiExtractNewsRequest, options?: Configuration): Promise<HttpInfo<ExtractNews200Response>> {
+        return this.api.extractNewsWithHttpInfo(param.url, param.analyze,  options).toPromise();
+    }
+
+    /**
+     * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
+     * Extract News
+     * @param param the request object
+     */
+    public extractNews(param: NewsApiExtractNewsRequest, options?: Configuration): Promise<ExtractNews200Response> {
         return this.api.extractNews(param.url, param.analyze,  options).toPromise();
     }
 
@@ -815,7 +967,16 @@ export class ObjectNewsApi {
      * Search News
      * @param param the request object
      */
-    public searchNews(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<InlineResponse2002> {
+    public searchNewsWithHttpInfo(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<HttpInfo<SearchNews200Response>> {
+        return this.api.searchNewsWithHttpInfo(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News
+     * @param param the request object
+     */
+    public searchNews(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<SearchNews200Response> {
         return this.api.searchNews(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
@@ -860,7 +1021,16 @@ export class ObjectStorageApi {
      * Read Key Value from Store
      * @param param the request object
      */
-    public readKeyValueFromStore(param: StorageApiReadKeyValueFromStoreRequest, options?: Configuration): Promise<InlineResponse20031> {
+    public readKeyValueFromStoreWithHttpInfo(param: StorageApiReadKeyValueFromStoreRequest, options?: Configuration): Promise<HttpInfo<ReadKeyValueFromStore200Response>> {
+        return this.api.readKeyValueFromStoreWithHttpInfo(param.key,  options).toPromise();
+    }
+
+    /**
+     * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
+     * Read Key Value from Store
+     * @param param the request object
+     */
+    public readKeyValueFromStore(param: StorageApiReadKeyValueFromStoreRequest, options?: Configuration): Promise<ReadKeyValueFromStore200Response> {
         return this.api.readKeyValueFromStore(param.key,  options).toPromise();
     }
 
@@ -869,7 +1039,16 @@ export class ObjectStorageApi {
      * Store Key Value (GET)
      * @param param the request object
      */
-    public storeKeyValueGET(param: StorageApiStoreKeyValueGETRequest, options?: Configuration): Promise<InlineResponse20032> {
+    public storeKeyValueGETWithHttpInfo(param: StorageApiStoreKeyValueGETRequest, options?: Configuration): Promise<HttpInfo<StoreKeyValueGET200Response>> {
+        return this.api.storeKeyValueGETWithHttpInfo(param.key, param.value,  options).toPromise();
+    }
+
+    /**
+     * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
+     * Store Key Value (GET)
+     * @param param the request object
+     */
+    public storeKeyValueGET(param: StorageApiStoreKeyValueGETRequest, options?: Configuration): Promise<StoreKeyValueGET200Response> {
         return this.api.storeKeyValueGET(param.key, param.value,  options).toPromise();
     }
 
@@ -1010,7 +1189,16 @@ export class ObjectTextApi {
      * Correct Spelling
      * @param param the request object
      */
-    public correctSpelling(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<InlineResponse20016> {
+    public correctSpellingWithHttpInfo(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<HttpInfo<CorrectSpelling200Response>> {
+        return this.api.correctSpellingWithHttpInfo(param.text, param.language,  options).toPromise();
+    }
+
+    /**
+     * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
+     * Correct Spelling
+     * @param param the request object
+     */
+    public correctSpelling(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<CorrectSpelling200Response> {
         return this.api.correctSpelling(param.text, param.language,  options).toPromise();
     }
 
@@ -1019,7 +1207,16 @@ export class ObjectTextApi {
      * Detect Language
      * @param param the request object
      */
-    public detectLanguage(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<Array<InlineResponse20017>> {
+    public detectLanguageWithHttpInfo(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
+        return this.api.detectLanguageWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param param the request object
+     */
+    public detectLanguage(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<Array<DetectLanguage200ResponseInner>> {
         return this.api.detectLanguage(param.text,  options).toPromise();
     }
 
@@ -1028,7 +1225,16 @@ export class ObjectTextApi {
      * Detect Sentiment
      * @param param the request object
      */
-    public detectSentiment(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<InlineResponse20018> {
+    public detectSentimentWithHttpInfo(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<HttpInfo<DetectSentiment200Response>> {
+        return this.api.detectSentimentWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param param the request object
+     */
+    public detectSentiment(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<DetectSentiment200Response> {
         return this.api.detectSentiment(param.text,  options).toPromise();
     }
 
@@ -1037,7 +1243,16 @@ export class ObjectTextApi {
      * Extract Dates
      * @param param the request object
      */
-    public extractDates(param: TextApiExtractDatesRequest, options?: Configuration): Promise<InlineResponse20021> {
+    public extractDatesWithHttpInfo(param: TextApiExtractDatesRequest, options?: Configuration): Promise<HttpInfo<ExtractDates200Response>> {
+        return this.api.extractDatesWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
+     * Extract Dates
+     * @param param the request object
+     */
+    public extractDates(param: TextApiExtractDatesRequest, options?: Configuration): Promise<ExtractDates200Response> {
         return this.api.extractDates(param.text,  options).toPromise();
     }
 
@@ -1046,7 +1261,16 @@ export class ObjectTextApi {
      * Extract Entities
      * @param param the request object
      */
-    public extractEntities(param: TextApiExtractEntitiesRequest, options?: Configuration): Promise<InlineResponse20027> {
+    public extractEntitiesWithHttpInfo(param: TextApiExtractEntitiesRequest, options?: Configuration): Promise<HttpInfo<ExtractEntities200Response>> {
+        return this.api.extractEntitiesWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
+     * Extract Entities
+     * @param param the request object
+     */
+    public extractEntities(param: TextApiExtractEntitiesRequest, options?: Configuration): Promise<ExtractEntities200Response> {
         return this.api.extractEntities(param.text,  options).toPromise();
     }
 
@@ -1055,7 +1279,16 @@ export class ObjectTextApi {
      * List Word Synonyms
      * @param param the request object
      */
-    public listWordSynonyms(param: TextApiListWordSynonymsRequest, options?: Configuration): Promise<InlineResponse20022> {
+    public listWordSynonymsWithHttpInfo(param: TextApiListWordSynonymsRequest, options?: Configuration): Promise<HttpInfo<ListWordSynonyms200Response>> {
+        return this.api.listWordSynonymsWithHttpInfo(param.word,  options).toPromise();
+    }
+
+    /**
+     * Return synonyms of a word.
+     * List Word Synonyms
+     * @param param the request object
+     */
+    public listWordSynonyms(param: TextApiListWordSynonymsRequest, options?: Configuration): Promise<ListWordSynonyms200Response> {
         return this.api.listWordSynonyms(param.word,  options).toPromise();
     }
 
@@ -1064,7 +1297,16 @@ export class ObjectTextApi {
      * Part of Speech Tagging
      * @param param the request object
      */
-    public partOfSpeechTagging(param: TextApiPartOfSpeechTaggingRequest, options?: Configuration): Promise<InlineResponse20023> {
+    public partOfSpeechTaggingWithHttpInfo(param: TextApiPartOfSpeechTaggingRequest, options?: Configuration): Promise<HttpInfo<PartOfSpeechTagging200Response>> {
+        return this.api.partOfSpeechTaggingWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Part of Speech Tagging
+     * @param param the request object
+     */
+    public partOfSpeechTagging(param: TextApiPartOfSpeechTaggingRequest, options?: Configuration): Promise<PartOfSpeechTagging200Response> {
         return this.api.partOfSpeechTagging(param.text,  options).toPromise();
     }
 
@@ -1073,7 +1315,16 @@ export class ObjectTextApi {
      * Pluralize Word
      * @param param the request object
      */
-    public pluralizeWord(param: TextApiPluralizeWordRequest, options?: Configuration): Promise<InlineResponse20026> {
+    public pluralizeWordWithHttpInfo(param: TextApiPluralizeWordRequest, options?: Configuration): Promise<HttpInfo<PluralizeWord200Response>> {
+        return this.api.pluralizeWordWithHttpInfo(param.word,  options).toPromise();
+    }
+
+    /**
+     * Find the plural form of a word.
+     * Pluralize Word
+     * @param param the request object
+     */
+    public pluralizeWord(param: TextApiPluralizeWordRequest, options?: Configuration): Promise<PluralizeWord200Response> {
         return this.api.pluralizeWord(param.word,  options).toPromise();
     }
 
@@ -1082,7 +1333,16 @@ export class ObjectTextApi {
      * Score Readability
      * @param param the request object
      */
-    public scoreReadability(param: TextApiScoreReadabilityRequest, options?: Configuration): Promise<InlineResponse20020> {
+    public scoreReadabilityWithHttpInfo(param: TextApiScoreReadabilityRequest, options?: Configuration): Promise<HttpInfo<ScoreReadability200Response>> {
+        return this.api.scoreReadabilityWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
+     * Score Readability
+     * @param param the request object
+     */
+    public scoreReadability(param: TextApiScoreReadabilityRequest, options?: Configuration): Promise<ScoreReadability200Response> {
         return this.api.scoreReadability(param.text,  options).toPromise();
     }
 
@@ -1091,7 +1351,16 @@ export class ObjectTextApi {
      * Score Text
      * @param param the request object
      */
-    public scoreText(param: TextApiScoreTextRequest, options?: Configuration): Promise<InlineResponse20019> {
+    public scoreTextWithHttpInfo(param: TextApiScoreTextRequest, options?: Configuration): Promise<HttpInfo<ScoreText200Response>> {
+        return this.api.scoreTextWithHttpInfo(param.title, param.text,  options).toPromise();
+    }
+
+    /**
+     * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
+     * Score Text
+     * @param param the request object
+     */
+    public scoreText(param: TextApiScoreTextRequest, options?: Configuration): Promise<ScoreText200Response> {
         return this.api.scoreText(param.title, param.text,  options).toPromise();
     }
 
@@ -1100,7 +1369,16 @@ export class ObjectTextApi {
      * Singularize Word
      * @param param the request object
      */
-    public singularizeWord(param: TextApiSingularizeWordRequest, options?: Configuration): Promise<InlineResponse20025> {
+    public singularizeWordWithHttpInfo(param: TextApiSingularizeWordRequest, options?: Configuration): Promise<HttpInfo<SingularizeWord200Response>> {
+        return this.api.singularizeWordWithHttpInfo(param.word,  options).toPromise();
+    }
+
+    /**
+     * Find the singular form of a word.
+     * Singularize Word
+     * @param param the request object
+     */
+    public singularizeWord(param: TextApiSingularizeWordRequest, options?: Configuration): Promise<SingularizeWord200Response> {
         return this.api.singularizeWord(param.word,  options).toPromise();
     }
 
@@ -1109,7 +1387,16 @@ export class ObjectTextApi {
      * Text Stemming
      * @param param the request object
      */
-    public textStemming(param: TextApiTextStemmingRequest, options?: Configuration): Promise<InlineResponse20024> {
+    public textStemmingWithHttpInfo(param: TextApiTextStemmingRequest, options?: Configuration): Promise<HttpInfo<TextStemming200Response>> {
+        return this.api.textStemmingWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
+     * Text Stemming
+     * @param param the request object
+     */
+    public textStemming(param: TextApiTextStemmingRequest, options?: Configuration): Promise<TextStemming200Response> {
         return this.api.textStemming(param.text,  options).toPromise();
     }
 
@@ -1172,7 +1459,16 @@ export class ObjectWebApi {
      * Extract Authors
      * @param param the request object
      */
-    public extractAuthors(param: WebApiExtractAuthorsRequest, options?: Configuration): Promise<InlineResponse20014> {
+    public extractAuthorsWithHttpInfo(param: WebApiExtractAuthorsRequest, options?: Configuration): Promise<HttpInfo<ExtractAuthors200Response>> {
+        return this.api.extractAuthorsWithHttpInfo(param.url,  options).toPromise();
+    }
+
+    /**
+     * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
+     * Extract Authors
+     * @param param the request object
+     */
+    public extractAuthors(param: WebApiExtractAuthorsRequest, options?: Configuration): Promise<ExtractAuthors200Response> {
         return this.api.extractAuthors(param.url,  options).toPromise();
     }
 
@@ -1181,7 +1477,16 @@ export class ObjectWebApi {
      * Extract Content from a Web Page
      * @param param the request object
      */
-    public extractContentFromAWebPage(param: WebApiExtractContentFromAWebPageRequest, options?: Configuration): Promise<InlineResponse20012> {
+    public extractContentFromAWebPageWithHttpInfo(param: WebApiExtractContentFromAWebPageRequest, options?: Configuration): Promise<HttpInfo<ExtractContentFromAWebPage200Response>> {
+        return this.api.extractContentFromAWebPageWithHttpInfo(param.url,  options).toPromise();
+    }
+
+    /**
+     * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
+     * Extract Content from a Web Page
+     * @param param the request object
+     */
+    public extractContentFromAWebPage(param: WebApiExtractContentFromAWebPageRequest, options?: Configuration): Promise<ExtractContentFromAWebPage200Response> {
         return this.api.extractContentFromAWebPage(param.url,  options).toPromise();
     }
 
@@ -1190,7 +1495,16 @@ export class ObjectWebApi {
      * Extract Publish Date
      * @param param the request object
      */
-    public extractPublishDate(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<InlineResponse20013> {
+    public extractPublishDateWithHttpInfo(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<HttpInfo<ExtractPublishDate200Response>> {
+        return this.api.extractPublishDateWithHttpInfo(param.url,  options).toPromise();
+    }
+
+    /**
+     * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
+     * Extract Publish Date
+     * @param param the request object
+     */
+    public extractPublishDate(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<ExtractPublishDate200Response> {
         return this.api.extractPublishDate(param.url,  options).toPromise();
     }
 
@@ -1199,7 +1513,16 @@ export class ObjectWebApi {
      * Search Web
      * @param param the request object
      */
-    public searchWeb(param: WebApiSearchWebRequest, options?: Configuration): Promise<InlineResponse20015> {
+    public searchWebWithHttpInfo(param: WebApiSearchWebRequest, options?: Configuration): Promise<HttpInfo<SearchWeb200Response>> {
+        return this.api.searchWebWithHttpInfo(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
+     * Search Web
+     * @param param the request object
+     */
+    public searchWeb(param: WebApiSearchWebRequest, options?: Configuration): Promise<SearchWeb200Response> {
         return this.api.searchWeb(param.query, param.number,  options).toPromise();
     }
 

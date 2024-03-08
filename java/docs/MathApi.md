@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
 
 
-<a name="convertUnits"></a>
+<a id="convertUnits"></a>
 # **convertUnits**
-> InlineResponse20030 convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
 
 Convert Units
 
@@ -48,7 +48,7 @@ public class Example {
     String targetUnit = "lb"; // String | The unit to which should be converted.
     String foodName = "flour"; // String | An optional food name. For converting foods the food is relevant as they have different densities.
     try {
-      InlineResponse20030 result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+      ConvertUnits200Response result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MathApi#convertUnits");
@@ -63,16 +63,16 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sourceAmount** | **Double**| The source amount. |
- **sourceUnit** | **String**| The source unit. |
- **targetUnit** | **String**| The unit to which should be converted. |
- **foodName** | **String**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceAmount** | **Double**| The source amount. | |
+| **sourceUnit** | **String**| The source unit. | |
+| **targetUnit** | **String**| The unit to which should be converted. | |
+| **foodName** | **String**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional] |
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 
@@ -86,11 +86,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

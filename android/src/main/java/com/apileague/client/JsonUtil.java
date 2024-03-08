@@ -57,228 +57,228 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("InlineResponse200".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse200>>(){}.getType();
+    if ("ConvertUnits200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ConvertUnits200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2001".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2001>>(){}.getType();
+    if ("CorrectSpelling200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CorrectSpelling200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20010".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20010>>(){}.getType();
+    if ("DetectLanguage200ResponseInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DetectLanguage200ResponseInner>>(){}.getType();
     }
     
-    if ("InlineResponse20011".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20011>>(){}.getType();
+    if ("DetectMainImageColor200ResponseInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DetectMainImageColor200ResponseInner>>(){}.getType();
     }
     
-    if ("InlineResponse20012".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20012>>(){}.getType();
+    if ("DetectSentiment200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DetectSentiment200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20013".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20013>>(){}.getType();
+    if ("DetectSentiment200ResponseDocument".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DetectSentiment200ResponseDocument>>(){}.getType();
     }
     
-    if ("InlineResponse20014".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20014>>(){}.getType();
+    if ("DetectSentiment200ResponseSentencesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DetectSentiment200ResponseSentencesInner>>(){}.getType();
     }
     
-    if ("InlineResponse20014Authors".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20014Authors>>(){}.getType();
+    if ("ExtractAuthors200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractAuthors200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20015".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20015>>(){}.getType();
+    if ("ExtractAuthors200ResponseAuthorsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractAuthors200ResponseAuthorsInner>>(){}.getType();
     }
     
-    if ("InlineResponse20015Results".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20015Results>>(){}.getType();
+    if ("ExtractContentFromAWebPage200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractContentFromAWebPage200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20016".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20016>>(){}.getType();
+    if ("ExtractDates200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractDates200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20017".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20017>>(){}.getType();
+    if ("ExtractDates200ResponseDatesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractDates200ResponseDatesInner>>(){}.getType();
     }
     
-    if ("InlineResponse20018".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20018>>(){}.getType();
+    if ("ExtractEntities200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractEntities200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20018Document".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20018Document>>(){}.getType();
+    if ("ExtractEntities200ResponseEntitiesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractEntities200ResponseEntitiesInner>>(){}.getType();
     }
     
-    if ("InlineResponse20018Sentences".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20018Sentences>>(){}.getType();
+    if ("ExtractNews200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractNews200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019>>(){}.getType();
+    if ("ExtractPublishDate200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ExtractPublishDate200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019Interestingness".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019Interestingness>>(){}.getType();
+    if ("FindSimilarBooks200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FindSimilarBooks200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019InterestingnessSubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019InterestingnessSubscores>>(){}.getType();
+    if ("GenerateNonsenseWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<GenerateNonsenseWord200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019Readability".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019Readability>>(){}.getType();
+    if ("ListWordSynonyms200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ListWordSynonyms200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019ReadabilityMainscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019ReadabilityMainscores>>(){}.getType();
+    if ("PartOfSpeechTagging200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PartOfSpeechTagging200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019ReadabilitySubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019ReadabilitySubscores>>(){}.getType();
+    if ("PluralizeWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PluralizeWord200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019Skimmability".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019Skimmability>>(){}.getType();
+    if ("RandomMeme200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RandomMeme200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019SkimmabilityMainscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019SkimmabilityMainscores>>(){}.getType();
+    if ("RandomPoem200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RandomPoem200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019SkimmabilitySubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019SkimmabilitySubscores>>(){}.getType();
+    if ("RandomQuote200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RandomQuote200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019Style".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019Style>>(){}.getType();
+    if ("RandomTrivia200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RandomTrivia200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20019StyleSubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20019StyleSubscores>>(){}.getType();
+    if ("ReadKeyValueFromStore200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ReadKeyValueFromStore200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2002".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2002>>(){}.getType();
+    if ("ScoreReadability200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreReadability200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20020".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20020>>(){}.getType();
+    if ("ScoreText200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20021".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20021>>(){}.getType();
+    if ("ScoreText200ResponseInterestingness".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseInterestingness>>(){}.getType();
     }
     
-    if ("InlineResponse20021Dates".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20021Dates>>(){}.getType();
+    if ("ScoreText200ResponseInterestingnessSubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseInterestingnessSubscores>>(){}.getType();
     }
     
-    if ("InlineResponse20022".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20022>>(){}.getType();
+    if ("ScoreText200ResponseReadability".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseReadability>>(){}.getType();
     }
     
-    if ("InlineResponse20023".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20023>>(){}.getType();
+    if ("ScoreText200ResponseReadabilityMainscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseReadabilityMainscores>>(){}.getType();
     }
     
-    if ("InlineResponse20024".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20024>>(){}.getType();
+    if ("ScoreText200ResponseReadabilitySubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseReadabilitySubscores>>(){}.getType();
     }
     
-    if ("InlineResponse20025".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20025>>(){}.getType();
+    if ("ScoreText200ResponseSkimmability".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseSkimmability>>(){}.getType();
     }
     
-    if ("InlineResponse20026".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20026>>(){}.getType();
+    if ("ScoreText200ResponseSkimmabilityMainscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseSkimmabilityMainscores>>(){}.getType();
     }
     
-    if ("InlineResponse20027".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20027>>(){}.getType();
+    if ("ScoreText200ResponseSkimmabilitySubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseSkimmabilitySubscores>>(){}.getType();
     }
     
-    if ("InlineResponse20027Entities".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20027Entities>>(){}.getType();
+    if ("ScoreText200ResponseStyle".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseStyle>>(){}.getType();
     }
     
-    if ("InlineResponse20028".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20028>>(){}.getType();
+    if ("ScoreText200ResponseStyleSubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ScoreText200ResponseStyleSubscores>>(){}.getType();
     }
     
-    if ("InlineResponse20028Images".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20028Images>>(){}.getType();
+    if ("SearchBooks200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchBooks200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20028License".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20028License>>(){}.getType();
+    if ("SearchBooks200ResponseBooksInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchBooks200ResponseBooksInner>>(){}.getType();
     }
     
-    if ("InlineResponse20029".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20029>>(){}.getType();
+    if ("SearchGifs200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchGifs200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2002News".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2002News>>(){}.getType();
+    if ("SearchGifs200ResponseImagesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchGifs200ResponseImagesInner>>(){}.getType();
     }
     
-    if ("InlineResponse2003".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2003>>(){}.getType();
+    if ("SearchJokes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchJokes200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20030".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20030>>(){}.getType();
+    if ("SearchJokes200ResponseJokesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchJokes200ResponseJokesInner>>(){}.getType();
     }
     
-    if ("InlineResponse20031".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20031>>(){}.getType();
+    if ("SearchMemes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchMemes200Response>>(){}.getType();
     }
     
-    if ("InlineResponse20032".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse20032>>(){}.getType();
+    if ("SearchMemes200ResponseMemesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchMemes200ResponseMemesInner>>(){}.getType();
     }
     
-    if ("InlineResponse2004".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2004>>(){}.getType();
+    if ("SearchNews200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchNews200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2004Jokes".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2004Jokes>>(){}.getType();
+    if ("SearchNews200ResponseNewsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchNews200ResponseNewsInner>>(){}.getType();
     }
     
-    if ("InlineResponse2005".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2005>>(){}.getType();
+    if ("SearchRoyaltyFreeImages200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRoyaltyFreeImages200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2005Memes".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2005Memes>>(){}.getType();
+    if ("SearchRoyaltyFreeImages200ResponseImagesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRoyaltyFreeImages200ResponseImagesInner>>(){}.getType();
     }
     
-    if ("InlineResponse2006".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2006>>(){}.getType();
+    if ("SearchRoyaltyFreeImages200ResponseImagesInnerLicense".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRoyaltyFreeImages200ResponseImagesInnerLicense>>(){}.getType();
     }
     
-    if ("InlineResponse2007".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2007>>(){}.getType();
+    if ("SearchWeb200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchWeb200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2007Images".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2007Images>>(){}.getType();
+    if ("SearchWeb200ResponseResultsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchWeb200ResponseResultsInner>>(){}.getType();
     }
     
-    if ("InlineResponse2008".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2008>>(){}.getType();
+    if ("SingularizeWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SingularizeWord200Response>>(){}.getType();
     }
     
-    if ("InlineResponse2009".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse2009>>(){}.getType();
+    if ("StoreKeyValueGET200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<StoreKeyValueGET200Response>>(){}.getType();
     }
     
-    if ("InlineResponse200Books".equalsIgnoreCase(className)) {
-      return new TypeToken<List<InlineResponse200Books>>(){}.getType();
+    if ("TextStemming200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TextStemming200Response>>(){}.getType();
     }
     
     return new TypeToken<List<Object>>(){}.getType();
@@ -287,228 +287,228 @@ public class JsonUtil {
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("InlineResponse200".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse200>(){}.getType();
+    if ("ConvertUnits200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ConvertUnits200Response>(){}.getType();
     }
     
-    if ("InlineResponse2001".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2001>(){}.getType();
+    if ("CorrectSpelling200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<CorrectSpelling200Response>(){}.getType();
     }
     
-    if ("InlineResponse20010".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20010>(){}.getType();
+    if ("DetectLanguage200ResponseInner".equalsIgnoreCase(className)) {
+      return new TypeToken<DetectLanguage200ResponseInner>(){}.getType();
     }
     
-    if ("InlineResponse20011".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20011>(){}.getType();
+    if ("DetectMainImageColor200ResponseInner".equalsIgnoreCase(className)) {
+      return new TypeToken<DetectMainImageColor200ResponseInner>(){}.getType();
     }
     
-    if ("InlineResponse20012".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20012>(){}.getType();
+    if ("DetectSentiment200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<DetectSentiment200Response>(){}.getType();
     }
     
-    if ("InlineResponse20013".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20013>(){}.getType();
+    if ("DetectSentiment200ResponseDocument".equalsIgnoreCase(className)) {
+      return new TypeToken<DetectSentiment200ResponseDocument>(){}.getType();
     }
     
-    if ("InlineResponse20014".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20014>(){}.getType();
+    if ("DetectSentiment200ResponseSentencesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<DetectSentiment200ResponseSentencesInner>(){}.getType();
     }
     
-    if ("InlineResponse20014Authors".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20014Authors>(){}.getType();
+    if ("ExtractAuthors200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractAuthors200Response>(){}.getType();
     }
     
-    if ("InlineResponse20015".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20015>(){}.getType();
+    if ("ExtractAuthors200ResponseAuthorsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractAuthors200ResponseAuthorsInner>(){}.getType();
     }
     
-    if ("InlineResponse20015Results".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20015Results>(){}.getType();
+    if ("ExtractContentFromAWebPage200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractContentFromAWebPage200Response>(){}.getType();
     }
     
-    if ("InlineResponse20016".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20016>(){}.getType();
+    if ("ExtractDates200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractDates200Response>(){}.getType();
     }
     
-    if ("InlineResponse20017".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20017>(){}.getType();
+    if ("ExtractDates200ResponseDatesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractDates200ResponseDatesInner>(){}.getType();
     }
     
-    if ("InlineResponse20018".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20018>(){}.getType();
+    if ("ExtractEntities200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractEntities200Response>(){}.getType();
     }
     
-    if ("InlineResponse20018Document".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20018Document>(){}.getType();
+    if ("ExtractEntities200ResponseEntitiesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractEntities200ResponseEntitiesInner>(){}.getType();
     }
     
-    if ("InlineResponse20018Sentences".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20018Sentences>(){}.getType();
+    if ("ExtractNews200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractNews200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019>(){}.getType();
+    if ("ExtractPublishDate200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ExtractPublishDate200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019Interestingness".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019Interestingness>(){}.getType();
+    if ("FindSimilarBooks200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<FindSimilarBooks200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019InterestingnessSubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019InterestingnessSubscores>(){}.getType();
+    if ("GenerateNonsenseWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<GenerateNonsenseWord200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019Readability".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019Readability>(){}.getType();
+    if ("ListWordSynonyms200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ListWordSynonyms200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019ReadabilityMainscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019ReadabilityMainscores>(){}.getType();
+    if ("PartOfSpeechTagging200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<PartOfSpeechTagging200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019ReadabilitySubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019ReadabilitySubscores>(){}.getType();
+    if ("PluralizeWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<PluralizeWord200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019Skimmability".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019Skimmability>(){}.getType();
+    if ("RandomMeme200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<RandomMeme200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019SkimmabilityMainscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019SkimmabilityMainscores>(){}.getType();
+    if ("RandomPoem200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<RandomPoem200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019SkimmabilitySubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019SkimmabilitySubscores>(){}.getType();
+    if ("RandomQuote200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<RandomQuote200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019Style".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019Style>(){}.getType();
+    if ("RandomTrivia200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<RandomTrivia200Response>(){}.getType();
     }
     
-    if ("InlineResponse20019StyleSubscores".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20019StyleSubscores>(){}.getType();
+    if ("ReadKeyValueFromStore200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ReadKeyValueFromStore200Response>(){}.getType();
     }
     
-    if ("InlineResponse2002".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2002>(){}.getType();
+    if ("ScoreReadability200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreReadability200Response>(){}.getType();
     }
     
-    if ("InlineResponse20020".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20020>(){}.getType();
+    if ("ScoreText200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200Response>(){}.getType();
     }
     
-    if ("InlineResponse20021".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20021>(){}.getType();
+    if ("ScoreText200ResponseInterestingness".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseInterestingness>(){}.getType();
     }
     
-    if ("InlineResponse20021Dates".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20021Dates>(){}.getType();
+    if ("ScoreText200ResponseInterestingnessSubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseInterestingnessSubscores>(){}.getType();
     }
     
-    if ("InlineResponse20022".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20022>(){}.getType();
+    if ("ScoreText200ResponseReadability".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseReadability>(){}.getType();
     }
     
-    if ("InlineResponse20023".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20023>(){}.getType();
+    if ("ScoreText200ResponseReadabilityMainscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseReadabilityMainscores>(){}.getType();
     }
     
-    if ("InlineResponse20024".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20024>(){}.getType();
+    if ("ScoreText200ResponseReadabilitySubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseReadabilitySubscores>(){}.getType();
     }
     
-    if ("InlineResponse20025".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20025>(){}.getType();
+    if ("ScoreText200ResponseSkimmability".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseSkimmability>(){}.getType();
     }
     
-    if ("InlineResponse20026".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20026>(){}.getType();
+    if ("ScoreText200ResponseSkimmabilityMainscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseSkimmabilityMainscores>(){}.getType();
     }
     
-    if ("InlineResponse20027".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20027>(){}.getType();
+    if ("ScoreText200ResponseSkimmabilitySubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseSkimmabilitySubscores>(){}.getType();
     }
     
-    if ("InlineResponse20027Entities".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20027Entities>(){}.getType();
+    if ("ScoreText200ResponseStyle".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseStyle>(){}.getType();
     }
     
-    if ("InlineResponse20028".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20028>(){}.getType();
+    if ("ScoreText200ResponseStyleSubscores".equalsIgnoreCase(className)) {
+      return new TypeToken<ScoreText200ResponseStyleSubscores>(){}.getType();
     }
     
-    if ("InlineResponse20028Images".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20028Images>(){}.getType();
+    if ("SearchBooks200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchBooks200Response>(){}.getType();
     }
     
-    if ("InlineResponse20028License".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20028License>(){}.getType();
+    if ("SearchBooks200ResponseBooksInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchBooks200ResponseBooksInner>(){}.getType();
     }
     
-    if ("InlineResponse20029".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20029>(){}.getType();
+    if ("SearchGifs200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchGifs200Response>(){}.getType();
     }
     
-    if ("InlineResponse2002News".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2002News>(){}.getType();
+    if ("SearchGifs200ResponseImagesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchGifs200ResponseImagesInner>(){}.getType();
     }
     
-    if ("InlineResponse2003".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2003>(){}.getType();
+    if ("SearchJokes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchJokes200Response>(){}.getType();
     }
     
-    if ("InlineResponse20030".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20030>(){}.getType();
+    if ("SearchJokes200ResponseJokesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchJokes200ResponseJokesInner>(){}.getType();
     }
     
-    if ("InlineResponse20031".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20031>(){}.getType();
+    if ("SearchMemes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchMemes200Response>(){}.getType();
     }
     
-    if ("InlineResponse20032".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse20032>(){}.getType();
+    if ("SearchMemes200ResponseMemesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchMemes200ResponseMemesInner>(){}.getType();
     }
     
-    if ("InlineResponse2004".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2004>(){}.getType();
+    if ("SearchNews200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchNews200Response>(){}.getType();
     }
     
-    if ("InlineResponse2004Jokes".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2004Jokes>(){}.getType();
+    if ("SearchNews200ResponseNewsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchNews200ResponseNewsInner>(){}.getType();
     }
     
-    if ("InlineResponse2005".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2005>(){}.getType();
+    if ("SearchRoyaltyFreeImages200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRoyaltyFreeImages200Response>(){}.getType();
     }
     
-    if ("InlineResponse2005Memes".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2005Memes>(){}.getType();
+    if ("SearchRoyaltyFreeImages200ResponseImagesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRoyaltyFreeImages200ResponseImagesInner>(){}.getType();
     }
     
-    if ("InlineResponse2006".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2006>(){}.getType();
+    if ("SearchRoyaltyFreeImages200ResponseImagesInnerLicense".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRoyaltyFreeImages200ResponseImagesInnerLicense>(){}.getType();
     }
     
-    if ("InlineResponse2007".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2007>(){}.getType();
+    if ("SearchWeb200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchWeb200Response>(){}.getType();
     }
     
-    if ("InlineResponse2007Images".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2007Images>(){}.getType();
+    if ("SearchWeb200ResponseResultsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchWeb200ResponseResultsInner>(){}.getType();
     }
     
-    if ("InlineResponse2008".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2008>(){}.getType();
+    if ("SingularizeWord200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SingularizeWord200Response>(){}.getType();
     }
     
-    if ("InlineResponse2009".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse2009>(){}.getType();
+    if ("StoreKeyValueGET200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<StoreKeyValueGET200Response>(){}.getType();
     }
     
-    if ("InlineResponse200Books".equalsIgnoreCase(className)) {
-      return new TypeToken<InlineResponse200Books>(){}.getType();
+    if ("TextStemming200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<TextStemming200Response>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

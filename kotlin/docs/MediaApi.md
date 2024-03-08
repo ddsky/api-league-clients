@@ -9,9 +9,9 @@ Method | HTTP request | Description
 [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 
 
-<a name="detectMainImageColor"></a>
+<a id="detectMainImageColor"></a>
 # **detectMainImageColor**
-> kotlin.collections.List&lt;InlineResponse20029&gt; detectMainImageColor(url)
+> kotlin.collections.List&lt;DetectMainImageColor200ResponseInner&gt; detectMainImageColor(url)
 
 Detect Main Image Color
 
@@ -20,13 +20,13 @@ Detect the main color of an image. The API returns a list of colors and their he
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = MediaApi()
 val url : kotlin.String = https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM  // kotlin.String | The url of the image for which the colors should be detected.
 try {
-    val result : kotlin.collections.List<InlineResponse20029> = apiInstance.detectMainImageColor(url)
+    val result : kotlin.collections.List<DetectMainImageColor200ResponseInner> = apiInstance.detectMainImageColor(url)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MediaApi#detectMainImageColor")
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.collections.List&lt;InlineResponse20029&gt;**](InlineResponse20029.md)
+[**kotlin.collections.List&lt;DetectMainImageColor200ResponseInner&gt;**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="rescaleImage"></a>
+<a id="rescaleImage"></a>
 # **rescaleImage**
 > kotlin.Any rescaleImage(url, width, height, crop)
 
@@ -73,7 +73,7 @@ Rescale an image to a specific width and height. The image will be resized to fi
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = MediaApi()
@@ -119,11 +119,11 @@ Configure headerApiKey:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/octet-stream
 
-<a name="searchRoyaltyFreeImages"></a>
+<a id="searchRoyaltyFreeImages"></a>
 # **searchRoyaltyFreeImages**
-> InlineResponse20028 searchRoyaltyFreeImages(query, number)
+> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(query, number)
 
 Search Royalty Free Images
 
@@ -132,14 +132,14 @@ Search through hundreds of thousands of royalty free images to match any topic y
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = MediaApi()
 val query : kotlin.String = dogs // kotlin.String | The search query.
 val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,10]
 try {
-    val result : InlineResponse20028 = apiInstance.searchRoyaltyFreeImages(query, number)
+    val result : SearchRoyaltyFreeImages200Response = apiInstance.searchRoyaltyFreeImages(query, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MediaApi#searchRoyaltyFreeImages")
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

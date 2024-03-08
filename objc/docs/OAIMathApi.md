@@ -13,7 +13,7 @@ Method | HTTP request | Description
     sourceUnit: (NSString*) sourceUnit
     targetUnit: (NSString*) targetUnit
     foodName: (NSString*) foodName
-        completionHandler: (void (^)(OAIInlineResponse20030* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIConvertUnits200Response* output, NSError* error)) handler;
 ```
 
 Convert Units
@@ -47,7 +47,7 @@ OAIMathApi*apiInstance = [[OAIMathApi alloc] init];
               sourceUnit:sourceUnit
               targetUnit:targetUnit
               foodName:foodName
-          completionHandler: ^(OAIInlineResponse20030* output, NSError* error) {
+          completionHandler: ^(OAIConvertUnits200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20030***](OAIInlineResponse20030.md)
+[**OAIConvertUnits200Response***](OAIConvertUnits200Response.md)
 
 ### Authorization
 

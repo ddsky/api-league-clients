@@ -2,25 +2,25 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
-[**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
-[**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
-[**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
-[**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
-[**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging
-[**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
-[**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
-[**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text
-[**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-[**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
+| [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
+| [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
+| [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
+| [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
+| [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
+| [**partOfSpeechTagging**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging |
+| [**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
+| [**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
+| [**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
+| [**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
+| [**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming |
 
 
-<a name="correctSpelling"></a>
+<a id="correctSpelling"></a>
 # **correctSpelling**
-> InlineResponse20016 correctSpelling(text, language)
+> CorrectSpelling200Response correctSpelling(text, language)
 
 Correct Spelling
 
@@ -57,7 +57,7 @@ public class Example {
     String text = "Driving carss is fun."; // String | The text to be corrected.
     String language = "en"; // String | The language of the text, one of en, de, es, fr, or it.
     try {
-      InlineResponse20016 result = apiInstance.correctSpelling(text, language);
+      CorrectSpelling200Response result = apiInstance.correctSpelling(text, language);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#correctSpelling");
@@ -72,14 +72,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to be corrected. |
- **language** | **String**| The language of the text, one of en, de, es, fr, or it. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to be corrected. | |
+| **language** | **String**| The language of the text, one of en, de, es, fr, or it. | |
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -93,17 +93,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="detectLanguage"></a>
+<a id="detectLanguage"></a>
 # **detectLanguage**
-> List&lt;InlineResponse20017&gt; detectLanguage(text)
+> List&lt;DetectLanguage200ResponseInner&gt; detectLanguage(text)
 
 Detect Language
 
@@ -139,7 +139,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "Das ist ein Text."; // String | The text for which the language should be detected.
     try {
-      List<InlineResponse20017> result = apiInstance.detectLanguage(text);
+      List<DetectLanguage200ResponseInner> result = apiInstance.detectLanguage(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#detectLanguage");
@@ -154,13 +154,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text for which the language should be detected. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text for which the language should be detected. | |
 
 ### Return type
 
-[**List&lt;InlineResponse20017&gt;**](InlineResponse20017.md)
+[**List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -174,17 +174,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="detectSentiment"></a>
+<a id="detectSentiment"></a>
 # **detectSentiment**
-> InlineResponse20018 detectSentiment(text)
+> DetectSentiment200Response detectSentiment(text)
 
 Detect Sentiment
 
@@ -220,7 +220,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "Happy times feel so good."; // String | The text for which the sentiment should be detected.
     try {
-      InlineResponse20018 result = apiInstance.detectSentiment(text);
+      DetectSentiment200Response result = apiInstance.detectSentiment(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#detectSentiment");
@@ -235,13 +235,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text for which the sentiment should be detected. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text for which the sentiment should be detected. | |
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -255,17 +255,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="extractDates"></a>
+<a id="extractDates"></a>
 # **extractDates**
-> InlineResponse20021 extractDates(text)
+> ExtractDates200Response extractDates(text)
 
 Extract Dates
 
@@ -301,7 +301,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "On 5th or April, 2035 there will be flying cars - 2023-02-12."; // String | The text from which dates should be extracted.
     try {
-      InlineResponse20021 result = apiInstance.extractDates(text);
+      ExtractDates200Response result = apiInstance.extractDates(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#extractDates");
@@ -316,13 +316,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text from which dates should be extracted. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text from which dates should be extracted. | |
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -336,17 +336,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="extractEntities"></a>
+<a id="extractEntities"></a>
 # **extractEntities**
-> InlineResponse20027 extractEntities(text)
+> ExtractEntities200Response extractEntities(text)
 
 Extract Entities
 
@@ -382,7 +382,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "Jim Carrey is an actor from Canada"; // String | The text from which entities should be extracted.
     try {
-      InlineResponse20027 result = apiInstance.extractEntities(text);
+      ExtractEntities200Response result = apiInstance.extractEntities(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#extractEntities");
@@ -397,13 +397,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text from which entities should be extracted. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text from which entities should be extracted. | |
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -417,17 +417,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="listWordSynonyms"></a>
+<a id="listWordSynonyms"></a>
 # **listWordSynonyms**
-> InlineResponse20022 listWordSynonyms(word)
+> ListWordSynonyms200Response listWordSynonyms(word)
 
 List Word Synonyms
 
@@ -463,7 +463,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String word = "airplane"; // String | The (noun) word for which a list of synonyms should be returned.
     try {
-      InlineResponse20022 result = apiInstance.listWordSynonyms(word);
+      ListWordSynonyms200Response result = apiInstance.listWordSynonyms(word);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#listWordSynonyms");
@@ -478,13 +478,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **String**| The (noun) word for which a list of synonyms should be returned. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **word** | **String**| The (noun) word for which a list of synonyms should be returned. | |
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -498,17 +498,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="partOfSpeechTagging"></a>
+<a id="partOfSpeechTagging"></a>
 # **partOfSpeechTagging**
-> InlineResponse20023 partOfSpeechTagging(text)
+> PartOfSpeechTagging200Response partOfSpeechTagging(text)
 
 Part of Speech Tagging
 
@@ -544,7 +544,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "The lazy dog jumps over the quick brown fox."; // String | The text to tag the part of speech.
     try {
-      InlineResponse20023 result = apiInstance.partOfSpeechTagging(text);
+      PartOfSpeechTagging200Response result = apiInstance.partOfSpeechTagging(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#partOfSpeechTagging");
@@ -559,13 +559,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to tag the part of speech. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to tag the part of speech. | |
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -579,17 +579,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="pluralizeWord"></a>
+<a id="pluralizeWord"></a>
 # **pluralizeWord**
-> InlineResponse20026 pluralizeWord(word)
+> PluralizeWord200Response pluralizeWord(word)
 
 Pluralize Word
 
@@ -625,7 +625,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String word = "party"; // String | The (noun) word for which the plural form should be found.
     try {
-      InlineResponse20026 result = apiInstance.pluralizeWord(word);
+      PluralizeWord200Response result = apiInstance.pluralizeWord(word);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#pluralizeWord");
@@ -640,13 +640,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **String**| The (noun) word for which the plural form should be found. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **word** | **String**| The (noun) word for which the plural form should be found. | |
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -660,17 +660,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="scoreReadability"></a>
+<a id="scoreReadability"></a>
 # **scoreReadability**
-> InlineResponse20020 scoreReadability(text)
+> ScoreReadability200Response scoreReadability(text)
 
 Score Readability
 
@@ -706,7 +706,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "A rather complex text, hard to read, and highly convoluted using acronym TERMS."; // String | The text to score for readability.
     try {
-      InlineResponse20020 result = apiInstance.scoreReadability(text);
+      ScoreReadability200Response result = apiInstance.scoreReadability(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#scoreReadability");
@@ -721,13 +721,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to score for readability. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to score for readability. | |
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -741,17 +741,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="scoreText"></a>
+<a id="scoreText"></a>
 # **scoreText**
-> InlineResponse20019 scoreText(title, text)
+> ScoreText200Response scoreText(title, text)
 
 Score Text
 
@@ -788,7 +788,7 @@ public class Example {
     String title = "A short story"; // String | The title of the text to score.
     String text = "A nice short story to be analyzed"; // String | The text to score for multiple metrics.
     try {
-      InlineResponse20019 result = apiInstance.scoreText(title, text);
+      ScoreText200Response result = apiInstance.scoreText(title, text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#scoreText");
@@ -803,14 +803,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **title** | **String**| The title of the text to score. |
- **text** | **String**| The text to score for multiple metrics. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **title** | **String**| The title of the text to score. | |
+| **text** | **String**| The text to score for multiple metrics. | |
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -824,17 +824,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="singularizeWord"></a>
+<a id="singularizeWord"></a>
 # **singularizeWord**
-> InlineResponse20025 singularizeWord(word)
+> SingularizeWord200Response singularizeWord(word)
 
 Singularize Word
 
@@ -870,7 +870,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String word = "airplanes"; // String | The (noun) word for which the singular form should be found.
     try {
-      InlineResponse20025 result = apiInstance.singularizeWord(word);
+      SingularizeWord200Response result = apiInstance.singularizeWord(word);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#singularizeWord");
@@ -885,13 +885,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **String**| The (noun) word for which the singular form should be found. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **word** | **String**| The (noun) word for which the singular form should be found. | |
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -905,17 +905,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="textStemming"></a>
+<a id="textStemming"></a>
 # **textStemming**
-> InlineResponse20024 textStemming(text)
+> TextStemming200Response textStemming(text)
 
 Text Stemming
 
@@ -951,7 +951,7 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "The laziest dogs are jumping over the quicker brown foxes."; // String | The text to be stemmed.
     try {
-      InlineResponse20024 result = apiInstance.textStemming(text);
+      TextStemming200Response result = apiInstance.textStemming(text);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TextApi#textStemming");
@@ -966,13 +966,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to be stemmed. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to be stemmed. | |
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 
@@ -986,11 +986,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

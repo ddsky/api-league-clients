@@ -11,7 +11,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## detect_main_image_color
 
-> <Array<InlineResponse20029>> detect_main_image_color(url)
+> <Array<DetectMainImageColor200ResponseInner>> detect_main_image_color(url)
 
 Detect Main Image Color
 
@@ -51,7 +51,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<InlineResponse20029>>, Integer, Hash)> detect_main_image_color_with_http_info(url)
+> <Array(<Array<DetectMainImageColor200ResponseInner>>, Integer, Hash)> detect_main_image_color_with_http_info(url)
 
 ```ruby
 begin
@@ -59,7 +59,7 @@ begin
   data, status_code, headers = api_instance.detect_main_image_color_with_http_info(url)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<InlineResponse20029>>
+  p data # => <Array<DetectMainImageColor200ResponseInner>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MediaApi->detect_main_image_color_with_http_info: #{e}"
 end
@@ -73,7 +73,7 @@ end
 
 ### Return type
 
-[**Array&lt;InlineResponse20029&gt;**](InlineResponse20029.md)
+[**Array&lt;DetectMainImageColor200ResponseInner&gt;**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ end
 
 ## search_royalty_free_images
 
-> <InlineResponse20028> search_royalty_free_images(query, opts)
+> <SearchRoyaltyFreeImages200Response> search_royalty_free_images(query, opts)
 
 Search Royalty Free Images
 
@@ -212,7 +212,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20028>, Integer, Hash)> search_royalty_free_images_with_http_info(query, opts)
+> <Array(<SearchRoyaltyFreeImages200Response>, Integer, Hash)> search_royalty_free_images_with_http_info(query, opts)
 
 ```ruby
 begin
@@ -220,7 +220,7 @@ begin
   data, status_code, headers = api_instance.search_royalty_free_images_with_http_info(query, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20028>
+  p data # => <SearchRoyaltyFreeImages200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MediaApi->search_royalty_free_images_with_http_info: #{e}"
 end
@@ -235,7 +235,7 @@ end
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

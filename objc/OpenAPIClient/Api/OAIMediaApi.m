@@ -1,8 +1,8 @@
 #import "OAIMediaApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20028.h"
-#import "OAIInlineResponse20029.h"
+#import "OAIDetectMainImageColor200ResponseInner.h"
+#import "OAISearchRoyaltyFreeImages200Response.h"
 
 
 @interface OAIMediaApi ()
@@ -55,10 +55,10 @@ NSInteger kOAIMediaApiMissingParamErrorCode = 234513;
 /// Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 ///  @param url The url of the image for which the colors should be detected. 
 ///
-///  @returns NSArray<OAIInlineResponse20029>*
+///  @returns NSArray<OAIDetectMainImageColor200ResponseInner>*
 ///
 -(NSURLSessionTask*) detectMainImageColorWithUrl: (NSString*) url
-    completionHandler: (void (^)(NSArray<OAIInlineResponse20029>* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<OAIDetectMainImageColor200ResponseInner>* output, NSError* error)) handler {
     // verify the required parameter 'url' is set
     if (url == nil) {
         NSParameterAssert(url);
@@ -110,10 +110,10 @@ NSInteger kOAIMediaApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<OAIInlineResponse20029>*"
+                              responseType: @"NSArray<OAIDetectMainImageColor200ResponseInner>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((NSArray<OAIInlineResponse20029>*)data, error);
+                                    handler((NSArray<OAIDetectMainImageColor200ResponseInner>*)data, error);
                                 }
                             }];
 }
@@ -244,11 +244,11 @@ NSInteger kOAIMediaApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of images to return in range [1,10] (optional)
 ///
-///  @returns OAIInlineResponse20028*
+///  @returns OAISearchRoyaltyFreeImages200Response*
 ///
 -(NSURLSessionTask*) searchRoyaltyFreeImagesWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse20028* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchRoyaltyFreeImages200Response* output, NSError* error)) handler {
     // verify the required parameter 'query' is set
     if (query == nil) {
         NSParameterAssert(query);
@@ -303,10 +303,10 @@ NSInteger kOAIMediaApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20028*"
+                              responseType: @"OAISearchRoyaltyFreeImages200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20028*)data, error);
+                                    handler((OAISearchRoyaltyFreeImages200Response*)data, error);
                                 }
                             }];
 }

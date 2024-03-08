@@ -23,8 +23,8 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20031;
-import com.apileague.client.model.InlineResponse20032;
+import com.apileague.client.model.ReadKeyValueFromStore200Response;
+import com.apileague.client.model.StoreKeyValueGET200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -60,9 +60,9 @@ public class StorageApi {
   * Read Key Value from Store
   * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
    * @param key The key for which the value is stored (max length 255 characters).
-   * @return InlineResponse20031
+   * @return ReadKeyValueFromStore200Response
   */
-  public InlineResponse20031 readKeyValueFromStore (String key) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ReadKeyValueFromStore200Response readKeyValueFromStore (String key) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'key' is set
     if (key == null) {
@@ -98,7 +98,7 @@ public class StorageApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20031) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20031.class);
+         return (ReadKeyValueFromStore200Response) ApiInvoker.deserialize(localVarResponse, "", ReadKeyValueFromStore200Response.class);
       } else {
          return null;
       }
@@ -124,7 +124,7 @@ public class StorageApi {
    * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
    * @param key The key for which the value is stored (max length 255 characters).
   */
-  public void readKeyValueFromStore (String key, final Response.Listener<InlineResponse20031> responseListener, final Response.ErrorListener errorListener) {
+  public void readKeyValueFromStore (String key, final Response.Listener<ReadKeyValueFromStore200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'key' is set
@@ -170,7 +170,7 @@ public class StorageApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20031) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20031.class));
+              responseListener.onResponse((ReadKeyValueFromStore200Response) ApiInvoker.deserialize(localVarResponse,  "", ReadKeyValueFromStore200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -190,9 +190,9 @@ public class StorageApi {
   * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
    * @param key The key for which the value is stored (max length 255 characters).
    * @param value The value that is supposed to be stored (max length 10,000 characters).
-   * @return InlineResponse20032
+   * @return StoreKeyValueGET200Response
   */
-  public InlineResponse20032 storeKeyValueGET (String key, String value) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public StoreKeyValueGET200Response storeKeyValueGET (String key, String value) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'key' is set
     if (key == null) {
@@ -234,7 +234,7 @@ public class StorageApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20032) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20032.class);
+         return (StoreKeyValueGET200Response) ApiInvoker.deserialize(localVarResponse, "", StoreKeyValueGET200Response.class);
       } else {
          return null;
       }
@@ -260,7 +260,7 @@ public class StorageApi {
    * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
    * @param key The key for which the value is stored (max length 255 characters).   * @param value The value that is supposed to be stored (max length 10,000 characters).
   */
-  public void storeKeyValueGET (String key, String value, final Response.Listener<InlineResponse20032> responseListener, final Response.ErrorListener errorListener) {
+  public void storeKeyValueGET (String key, String value, final Response.Listener<StoreKeyValueGET200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'key' is set
@@ -312,7 +312,7 @@ public class StorageApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20032) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20032.class));
+              responseListener.onResponse((StoreKeyValueGET200Response) ApiInvoker.deserialize(localVarResponse,  "", StoreKeyValueGET200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

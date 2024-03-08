@@ -1,7 +1,7 @@
 #import "OAIMathApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20030.h"
+#import "OAIConvertUnits200Response.h"
 
 
 @interface OAIMathApi ()
@@ -60,13 +60,13 @@ NSInteger kOAIMathApiMissingParamErrorCode = 234513;
 ///
 ///  @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
 ///
-///  @returns OAIInlineResponse20030*
+///  @returns OAIConvertUnits200Response*
 ///
 -(NSURLSessionTask*) convertUnitsWithSourceAmount: (NSNumber*) sourceAmount
     sourceUnit: (NSString*) sourceUnit
     targetUnit: (NSString*) targetUnit
     foodName: (NSString*) foodName
-    completionHandler: (void (^)(OAIInlineResponse20030* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIConvertUnits200Response* output, NSError* error)) handler {
     // verify the required parameter 'sourceAmount' is set
     if (sourceAmount == nil) {
         NSParameterAssert(sourceAmount);
@@ -149,10 +149,10 @@ NSInteger kOAIMathApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20030*"
+                              responseType: @"OAIConvertUnits200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20030*)data, error);
+                                    handler((OAIConvertUnits200Response*)data, error);
                                 }
                             }];
 }

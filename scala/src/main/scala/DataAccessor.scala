@@ -1,4 +1,4 @@
-package org.openapitools
+package apileague
 
 // TODO: properly handle custom imports
 import java.io._
@@ -6,7 +6,7 @@ import java.util.UUID
 import java.time._
 import com.twitter.finagle.http.exp.Multipart.{FileUpload, InMemoryFileUpload, OnDiskFileUpload}
 
-import com.apileague.client.model._
+import org.openapitools.models._
 
 trait DataAccessor {
     // TODO: apiInfo -> apis -> operations = TODO error
@@ -22,81 +22,81 @@ trait DataAccessor {
 
         /**
         * 
-        * @return A InlineResponse20011
+        * @return A RandomPoem200Response
         */
-        def Art_randomPoem(minLines: Option[Int], maxLines: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20011] = Left(TODO)
+        def Art_randomPoem(minLines: Option[Int], maxLines: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,RandomPoem200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2001
+        * @return A FindSimilarBooks200Response
         */
-        def Books_findSimilarBooks(id: Int, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2001] = Left(TODO)
+        def Books_findSimilarBooks(id: Int, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,FindSimilarBooks200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse200
+        * @return A SearchBooks200Response
         */
-        def Books_searchBooks(query: Option[String], earliestPublishYear: Option[Int], latestPublishYear: Option[Int], minRating: Option[Double], maxRating: Option[Double], genres: Option[String], authors: Option[String], isbn: Option[String], oclc: Option[String], sort: Option[String], sortDirection: Option[String], groupResults: Option[Boolean], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse200] = Left(TODO)
+        def Books_searchBooks(query: Option[String], earliestPublishYear: Option[Int], latestPublishYear: Option[Int], minRating: Option[Double], maxRating: Option[Double], genres: Option[String], authors: Option[String], isbn: Option[String], oclc: Option[String], sort: Option[String], sortDirection: Option[String], groupResults: Option[Boolean], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchBooks200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2008
+        * @return A GenerateNonsenseWord200Response
         */
-        def Humor_generateNonsenseWord(authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2008] = Left(TODO)
+        def Humor_generateNonsenseWord(authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,GenerateNonsenseWord200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2004Jokes
+        * @return A SearchJokes200ResponseJokesInner
         */
-        def Humor_randomJoke(includeTags: Option[String], excludeTags: Option[String], minRating: Option[Double], maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2004Jokes] = Left(TODO)
+        def Humor_randomJoke(includeTags: Option[String], excludeTags: Option[String], minRating: Option[Double], maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchJokes200ResponseJokesInner] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2006
+        * @return A RandomMeme200Response
         */
-        def Humor_randomMeme(keywords: Option[String], keywordsInImage: Option[Boolean], mediaType: Option[String], minRating: Option[Double], maxAgeDays: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2006] = Left(TODO)
+        def Humor_randomMeme(keywords: Option[String], keywordsInImage: Option[Boolean], mediaType: Option[String], minRating: Option[Double], maxAgeDays: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,RandomMeme200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2007
+        * @return A SearchGifs200Response
         */
-        def Humor_searchGifs(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2007] = Left(TODO)
+        def Humor_searchGifs(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchGifs200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2004
+        * @return A SearchJokes200Response
         */
-        def Humor_searchJokes(keywords: Option[String], includeTags: Option[String], excludeTags: Option[String], minRating: Option[Double], maxLength: Option[Double], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2004] = Left(TODO)
+        def Humor_searchJokes(keywords: Option[String], includeTags: Option[String], excludeTags: Option[String], minRating: Option[Double], maxLength: Option[Double], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchJokes200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2005
+        * @return A SearchMemes200Response
         */
-        def Humor_searchMemes(keywords: Option[String], keywordsInImage: Option[Boolean], mediaType: Option[String], minRating: Option[Double], maxAgeDays: Option[Int], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2005] = Left(TODO)
+        def Humor_searchMemes(keywords: Option[String], keywordsInImage: Option[Boolean], mediaType: Option[String], minRating: Option[Double], maxAgeDays: Option[Int], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchMemes200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20010
+        * @return A RandomQuote200Response
         */
-        def Knowledge_randomQuote(minLength: Option[Int], maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20010] = Left(TODO)
+        def Knowledge_randomQuote(minLength: Option[Int], maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,RandomQuote200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2009
+        * @return A RandomTrivia200Response
         */
-        def Knowledge_randomTrivia(maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2009] = Left(TODO)
+        def Knowledge_randomTrivia(maxLength: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,RandomTrivia200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20030
+        * @return A ConvertUnits200Response
         */
-        def Math_convertUnits(sourceAmount: Double, sourceUnit: String, targetUnit: String, foodName: Option[String], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20030] = Left(TODO)
+        def Math_convertUnits(sourceAmount: Double, sourceUnit: String, targetUnit: String, foodName: Option[String], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ConvertUnits200Response] = Left(TODO)
 
         /**
         * 
-        * @return A Seq[InlineResponse20029]
+        * @return A Seq[DetectMainImageColor200ResponseInner]
         */
-        def Media_detectMainImageColor(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,Seq[InlineResponse20029]] = Left(TODO)
+        def Media_detectMainImageColor(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,Seq[DetectMainImageColor200ResponseInner]] = Left(TODO)
 
         /**
         * 
@@ -106,128 +106,128 @@ trait DataAccessor {
 
         /**
         * 
-        * @return A InlineResponse20028
+        * @return A SearchRoyaltyFreeImages200Response
         */
-        def Media_searchRoyaltyFreeImages(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20028] = Left(TODO)
+        def Media_searchRoyaltyFreeImages(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchRoyaltyFreeImages200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2003
+        * @return A ExtractNews200Response
         */
-        def News_extractNews(url: String, analyze: Boolean, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2003] = Left(TODO)
+        def News_extractNews(url: String, analyze: Boolean, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractNews200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse2002
+        * @return A SearchNews200Response
         */
-        def News_searchNews(text: Option[String], sourceCountries: Option[String], language: Option[String], minSentiment: Option[Double], maxSentiment: Option[Double], earliestPublishDate: Option[String], latestPublishDate: Option[String], newsSources: Option[String], authors: Option[String], entities: Option[String], locationFilter: Option[String], sort: Option[String], sortDirection: Option[String], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse2002] = Left(TODO)
+        def News_searchNews(text: Option[String], sourceCountries: Option[String], language: Option[String], minSentiment: Option[Double], maxSentiment: Option[Double], earliestPublishDate: Option[String], latestPublishDate: Option[String], newsSources: Option[String], authors: Option[String], entities: Option[String], locationFilter: Option[String], sort: Option[String], sortDirection: Option[String], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchNews200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20031
+        * @return A ReadKeyValueFromStore200Response
         */
-        def Storage_readKeyValueFromStore(key: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20031] = Left(TODO)
+        def Storage_readKeyValueFromStore(key: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ReadKeyValueFromStore200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20032
+        * @return A StoreKeyValueGET200Response
         */
-        def Storage_storeKeyValueGET(key: String, value: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20032] = Left(TODO)
+        def Storage_storeKeyValueGET(key: String, value: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,StoreKeyValueGET200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20016
+        * @return A CorrectSpelling200Response
         */
-        def Text_correctSpelling(text: String, language: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20016] = Left(TODO)
+        def Text_correctSpelling(text: String, language: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,CorrectSpelling200Response] = Left(TODO)
 
         /**
         * 
-        * @return A Seq[InlineResponse20017]
+        * @return A Seq[DetectLanguage200ResponseInner]
         */
-        def Text_detectLanguage(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,Seq[InlineResponse20017]] = Left(TODO)
+        def Text_detectLanguage(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,Seq[DetectLanguage200ResponseInner]] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20018
+        * @return A DetectSentiment200Response
         */
-        def Text_detectSentiment(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20018] = Left(TODO)
+        def Text_detectSentiment(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,DetectSentiment200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20021
+        * @return A ExtractDates200Response
         */
-        def Text_extractDates(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20021] = Left(TODO)
+        def Text_extractDates(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractDates200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20027
+        * @return A ExtractEntities200Response
         */
-        def Text_extractEntities(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20027] = Left(TODO)
+        def Text_extractEntities(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractEntities200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20022
+        * @return A ListWordSynonyms200Response
         */
-        def Text_listWordSynonyms(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20022] = Left(TODO)
+        def Text_listWordSynonyms(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ListWordSynonyms200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20023
+        * @return A PartOfSpeechTagging200Response
         */
-        def Text_partOfSpeechTagging(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20023] = Left(TODO)
+        def Text_partOfSpeechTagging(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,PartOfSpeechTagging200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20026
+        * @return A PluralizeWord200Response
         */
-        def Text_pluralizeWord(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20026] = Left(TODO)
+        def Text_pluralizeWord(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,PluralizeWord200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20020
+        * @return A ScoreReadability200Response
         */
-        def Text_scoreReadability(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20020] = Left(TODO)
+        def Text_scoreReadability(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ScoreReadability200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20019
+        * @return A ScoreText200Response
         */
-        def Text_scoreText(title: String, text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20019] = Left(TODO)
+        def Text_scoreText(title: String, text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ScoreText200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20025
+        * @return A SingularizeWord200Response
         */
-        def Text_singularizeWord(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20025] = Left(TODO)
+        def Text_singularizeWord(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SingularizeWord200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20024
+        * @return A TextStemming200Response
         */
-        def Text_textStemming(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20024] = Left(TODO)
+        def Text_textStemming(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,TextStemming200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20014
+        * @return A ExtractAuthors200Response
         */
-        def Web_extractAuthors(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20014] = Left(TODO)
+        def Web_extractAuthors(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractAuthors200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20012
+        * @return A ExtractContentFromAWebPage200Response
         */
-        def Web_extractContentFromAWebPage(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20012] = Left(TODO)
+        def Web_extractContentFromAWebPage(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractContentFromAWebPage200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20013
+        * @return A ExtractPublishDate200Response
         */
-        def Web_extractPublishDate(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20013] = Left(TODO)
+        def Web_extractPublishDate(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractPublishDate200Response] = Left(TODO)
 
         /**
         * 
-        * @return A InlineResponse20015
+        * @return A SearchWeb200Response
         */
-        def Web_searchWeb(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,InlineResponse20015] = Left(TODO)
+        def Web_searchWeb(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchWeb200Response] = Left(TODO)
 
 }

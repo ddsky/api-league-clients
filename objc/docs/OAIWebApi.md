@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **extractAuthors**
 ```objc
 -(NSURLSessionTask*) extractAuthorsWithUrl: (NSString*) url
-        completionHandler: (void (^)(OAIInlineResponse20014* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractAuthors200Response* output, NSError* error)) handler;
 ```
 
 Extract Authors
@@ -41,7 +41,7 @@ OAIWebApi*apiInstance = [[OAIWebApi alloc] init];
 
 // Extract Authors
 [apiInstance extractAuthorsWithUrl:url
-          completionHandler: ^(OAIInlineResponse20014* output, NSError* error) {
+          completionHandler: ^(OAIExtractAuthors200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20014***](OAIInlineResponse20014.md)
+[**OAIExtractAuthors200Response***](OAIExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 # **extractContentFromAWebPage**
 ```objc
 -(NSURLSessionTask*) extractContentFromAWebPageWithUrl: (NSString*) url
-        completionHandler: (void (^)(OAIInlineResponse20012* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractContentFromAWebPage200Response* output, NSError* error)) handler;
 ```
 
 Extract Content from a Web Page
@@ -103,7 +103,7 @@ OAIWebApi*apiInstance = [[OAIWebApi alloc] init];
 
 // Extract Content from a Web Page
 [apiInstance extractContentFromAWebPageWithUrl:url
-          completionHandler: ^(OAIInlineResponse20012* output, NSError* error) {
+          completionHandler: ^(OAIExtractContentFromAWebPage200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20012***](OAIInlineResponse20012.md)
+[**OAIExtractContentFromAWebPage200Response***](OAIExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 # **extractPublishDate**
 ```objc
 -(NSURLSessionTask*) extractPublishDateWithUrl: (NSString*) url
-        completionHandler: (void (^)(OAIInlineResponse20013* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIExtractPublishDate200Response* output, NSError* error)) handler;
 ```
 
 Extract Publish Date
@@ -165,7 +165,7 @@ OAIWebApi*apiInstance = [[OAIWebApi alloc] init];
 
 // Extract Publish Date
 [apiInstance extractPublishDateWithUrl:url
-          completionHandler: ^(OAIInlineResponse20013* output, NSError* error) {
+          completionHandler: ^(OAIExtractPublishDate200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20013***](OAIInlineResponse20013.md)
+[**OAIExtractPublishDate200Response***](OAIExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) searchWebWithQuery: (NSString*) query
     number: (NSNumber*) number
-        completionHandler: (void (^)(OAIInlineResponse20015* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAISearchWeb200Response* output, NSError* error)) handler;
 ```
 
 Search Web
@@ -230,7 +230,7 @@ OAIWebApi*apiInstance = [[OAIWebApi alloc] init];
 // Search Web
 [apiInstance searchWebWithQuery:query
               number:number
-          completionHandler: ^(OAIInlineResponse20015* output, NSError* error) {
+          completionHandler: ^(OAISearchWeb200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20015***](OAIInlineResponse20015.md)
+[**OAISearchWeb200Response***](OAISearchWeb200Response.md)
 
 ### Authorization
 

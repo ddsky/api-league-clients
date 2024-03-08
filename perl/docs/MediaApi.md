@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **detect_main_image_color**
-> ARRAY[InlineResponse20029] detect_main_image_color(url => $url)
+> ARRAY[DetectMainImageColor200ResponseInner] detect_main_image_color(url => $url)
 
 Detect Main Image Color
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[InlineResponse20029]**](InlineResponse20029.md)
+[**ARRAY[DetectMainImageColor200ResponseInner]**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_royalty_free_images**
-> InlineResponse20028 search_royalty_free_images(query => $query, number => $number)
+> SearchRoyaltyFreeImages200Response search_royalty_free_images(query => $query, number => $number)
 
 Search Royalty Free Images
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

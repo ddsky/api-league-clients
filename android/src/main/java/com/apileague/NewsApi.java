@@ -23,8 +23,8 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse2002;
-import com.apileague.client.model.InlineResponse2003;
+import com.apileague.client.model.ExtractNews200Response;
+import com.apileague.client.model.SearchNews200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -61,9 +61,9 @@ public class NewsApi {
   * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
    * @param url The url of the news.
    * @param analyze Whether to analyze the news (extract entities etc.)
-   * @return InlineResponse2003
+   * @return ExtractNews200Response
   */
-  public InlineResponse2003 extractNews (String url, Boolean analyze) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractNews200Response extractNews (String url, Boolean analyze) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'url' is set
     if (url == null) {
@@ -105,7 +105,7 @@ public class NewsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2003) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2003.class);
+         return (ExtractNews200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractNews200Response.class);
       } else {
          return null;
       }
@@ -131,7 +131,7 @@ public class NewsApi {
    * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
    * @param url The url of the news.   * @param analyze Whether to analyze the news (extract entities etc.)
   */
-  public void extractNews (String url, Boolean analyze, final Response.Listener<InlineResponse2003> responseListener, final Response.ErrorListener errorListener) {
+  public void extractNews (String url, Boolean analyze, final Response.Listener<ExtractNews200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'url' is set
@@ -183,7 +183,7 @@ public class NewsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2003) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2003.class));
+              responseListener.onResponse((ExtractNews200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractNews200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -216,9 +216,9 @@ public class NewsApi {
    * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
    * @param offset The number of news to skip in range [0,10000]
    * @param number The number of news to return in range [1,100]
-   * @return InlineResponse2002
+   * @return SearchNews200Response
   */
-  public InlineResponse2002 searchNews (String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchNews200Response searchNews (String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -263,7 +263,7 @@ public class NewsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2002) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2002.class);
+         return (SearchNews200Response) ApiInvoker.deserialize(localVarResponse, "", SearchNews200Response.class);
       } else {
          return null;
       }
@@ -289,7 +289,7 @@ public class NewsApi {
    * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
    * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford   * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.   * @param language The ISO 6391 language code of the news.   * @param minSentiment The minimal sentiment of the news in range [-1,1].   * @param maxSentiment The maximal sentiment of the news in range [-1,1].   * @param earliestPublishDate The news must have been published after this date.   * @param latestPublishDate The news must have been published before this date.   * @param newsSources A comma-separated list of news sources from which the news should originate.   * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.   * @param entities Filter news by entities (see semantic types).   * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;   * @param sort The sorting criteria (publish-time or sentiment).   * @param sortDirection Whether to sort ascending or descending (ASC or DESC).   * @param offset The number of news to skip in range [0,10000]   * @param number The number of news to return in range [1,100]
   */
-  public void searchNews (String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final Response.Listener<InlineResponse2002> responseListener, final Response.ErrorListener errorListener) {
+  public void searchNews (String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final Response.Listener<SearchNews200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -344,7 +344,7 @@ public class NewsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2002) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2002.class));
+              responseListener.onResponse((SearchNews200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchNews200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

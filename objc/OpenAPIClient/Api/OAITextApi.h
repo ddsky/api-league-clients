@@ -1,16 +1,16 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20016.h"
-#import "OAIInlineResponse20017.h"
-#import "OAIInlineResponse20018.h"
-#import "OAIInlineResponse20019.h"
-#import "OAIInlineResponse20020.h"
-#import "OAIInlineResponse20021.h"
-#import "OAIInlineResponse20022.h"
-#import "OAIInlineResponse20023.h"
-#import "OAIInlineResponse20024.h"
-#import "OAIInlineResponse20025.h"
-#import "OAIInlineResponse20026.h"
-#import "OAIInlineResponse20027.h"
+#import "OAICorrectSpelling200Response.h"
+#import "OAIDetectLanguage200ResponseInner.h"
+#import "OAIDetectSentiment200Response.h"
+#import "OAIExtractDates200Response.h"
+#import "OAIExtractEntities200Response.h"
+#import "OAIListWordSynonyms200Response.h"
+#import "OAIPartOfSpeechTagging200Response.h"
+#import "OAIPluralizeWord200Response.h"
+#import "OAIScoreReadability200Response.h"
+#import "OAIScoreText200Response.h"
+#import "OAISingularizeWord200Response.h"
+#import "OAITextStemming200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -48,10 +48,10 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20016*
+/// @return OAICorrectSpelling200Response*
 -(NSURLSessionTask*) correctSpellingWithText: (NSString*) text
     language: (NSString*) language
-    completionHandler: (void (^)(OAIInlineResponse20016* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAICorrectSpelling200Response* output, NSError* error)) handler;
 
 
 /// Detect Language
@@ -67,9 +67,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return NSArray<OAIInlineResponse20017>*
+/// @return NSArray<OAIDetectLanguage200ResponseInner>*
 -(NSURLSessionTask*) detectLanguageWithText: (NSString*) text
-    completionHandler: (void (^)(NSArray<OAIInlineResponse20017>* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAIDetectLanguage200ResponseInner>* output, NSError* error)) handler;
 
 
 /// Detect Sentiment
@@ -85,9 +85,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20018*
+/// @return OAIDetectSentiment200Response*
 -(NSURLSessionTask*) detectSentimentWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20018* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIDetectSentiment200Response* output, NSError* error)) handler;
 
 
 /// Extract Dates
@@ -103,9 +103,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20021*
+/// @return OAIExtractDates200Response*
 -(NSURLSessionTask*) extractDatesWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20021* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractDates200Response* output, NSError* error)) handler;
 
 
 /// Extract Entities
@@ -121,9 +121,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20027*
+/// @return OAIExtractEntities200Response*
 -(NSURLSessionTask*) extractEntitiesWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20027* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIExtractEntities200Response* output, NSError* error)) handler;
 
 
 /// List Word Synonyms
@@ -139,9 +139,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20022*
+/// @return OAIListWordSynonyms200Response*
 -(NSURLSessionTask*) listWordSynonymsWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20022* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIListWordSynonyms200Response* output, NSError* error)) handler;
 
 
 /// Part of Speech Tagging
@@ -157,9 +157,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20023*
+/// @return OAIPartOfSpeechTagging200Response*
 -(NSURLSessionTask*) partOfSpeechTaggingWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20023* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIPartOfSpeechTagging200Response* output, NSError* error)) handler;
 
 
 /// Pluralize Word
@@ -175,9 +175,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20026*
+/// @return OAIPluralizeWord200Response*
 -(NSURLSessionTask*) pluralizeWordWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20026* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIPluralizeWord200Response* output, NSError* error)) handler;
 
 
 /// Score Readability
@@ -193,9 +193,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20020*
+/// @return OAIScoreReadability200Response*
 -(NSURLSessionTask*) scoreReadabilityWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20020* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIScoreReadability200Response* output, NSError* error)) handler;
 
 
 /// Score Text
@@ -212,10 +212,10 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20019*
+/// @return OAIScoreText200Response*
 -(NSURLSessionTask*) scoreTextWithTitle: (NSString*) title
     text: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20019* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIScoreText200Response* output, NSError* error)) handler;
 
 
 /// Singularize Word
@@ -231,9 +231,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20025*
+/// @return OAISingularizeWord200Response*
 -(NSURLSessionTask*) singularizeWordWithWord: (NSString*) word
-    completionHandler: (void (^)(OAIInlineResponse20025* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISingularizeWord200Response* output, NSError* error)) handler;
 
 
 /// Text Stemming
@@ -249,9 +249,9 @@ extern NSInteger kOAITextApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20024*
+/// @return OAITextStemming200Response*
 -(NSURLSessionTask*) textStemmingWithText: (NSString*) text
-    completionHandler: (void (^)(OAIInlineResponse20024* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAITextStemming200Response* output, NSError* error)) handler;
 
 
 

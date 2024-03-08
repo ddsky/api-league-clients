@@ -1,27 +1,27 @@
-# com.apileague.client\TextApi
+# \TextAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CorrectSpelling**](TextApi.md#CorrectSpelling) | **Get** /correct-spelling | Correct Spelling
-[**DetectLanguage**](TextApi.md#DetectLanguage) | **Get** /detect-language | Detect Language
-[**DetectSentiment**](TextApi.md#DetectSentiment) | **Get** /detect-sentiment | Detect Sentiment
-[**ExtractDates**](TextApi.md#ExtractDates) | **Get** /extract-dates | Extract Dates
-[**ExtractEntities**](TextApi.md#ExtractEntities) | **Get** /extract-entities | Extract Entities
-[**ListWordSynonyms**](TextApi.md#ListWordSynonyms) | **Get** /list-synonyms | List Word Synonyms
-[**PartOfSpeechTagging**](TextApi.md#PartOfSpeechTagging) | **Get** /tag-pos | Part of Speech Tagging
-[**PluralizeWord**](TextApi.md#PluralizeWord) | **Get** /pluralize-word | Pluralize Word
-[**ScoreReadability**](TextApi.md#ScoreReadability) | **Get** /score-readability | Score Readability
-[**ScoreText**](TextApi.md#ScoreText) | **Get** /score-text | Score Text
-[**SingularizeWord**](TextApi.md#SingularizeWord) | **Get** /singularize-word | Singularize Word
-[**TextStemming**](TextApi.md#TextStemming) | **Get** /stem-text | Text Stemming
+[**CorrectSpelling**](TextAPI.md#CorrectSpelling) | **Get** /correct-spelling | Correct Spelling
+[**DetectLanguage**](TextAPI.md#DetectLanguage) | **Get** /detect-language | Detect Language
+[**DetectSentiment**](TextAPI.md#DetectSentiment) | **Get** /detect-sentiment | Detect Sentiment
+[**ExtractDates**](TextAPI.md#ExtractDates) | **Get** /extract-dates | Extract Dates
+[**ExtractEntities**](TextAPI.md#ExtractEntities) | **Get** /extract-entities | Extract Entities
+[**ListWordSynonyms**](TextAPI.md#ListWordSynonyms) | **Get** /list-synonyms | List Word Synonyms
+[**PartOfSpeechTagging**](TextAPI.md#PartOfSpeechTagging) | **Get** /tag-pos | Part of Speech Tagging
+[**PluralizeWord**](TextAPI.md#PluralizeWord) | **Get** /pluralize-word | Pluralize Word
+[**ScoreReadability**](TextAPI.md#ScoreReadability) | **Get** /score-readability | Score Readability
+[**ScoreText**](TextAPI.md#ScoreText) | **Get** /score-text | Score Text
+[**SingularizeWord**](TextAPI.md#SingularizeWord) | **Get** /singularize-word | Singularize Word
+[**TextStemming**](TextAPI.md#TextStemming) | **Get** /stem-text | Text Stemming
 
 
 
 ## CorrectSpelling
 
-> InlineResponse20016 CorrectSpelling(ctx).Text(text).Language(language).Execute()
+> CorrectSpelling200Response CorrectSpelling(ctx).Text(text).Language(language).Execute()
 
 Correct Spelling
 
@@ -33,25 +33,25 @@ Correct Spelling
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "Driving carss is fun." // string | The text to be corrected.
-    language := "en" // string | The language of the text, one of en, de, es, fr, or it.
+	text := "Driving carss is fun." // string | The text to be corrected.
+	language := "en" // string | The language of the text, one of en, de, es, fr, or it.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.CorrectSpelling(context.Background()).Text(text).Language(language).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.CorrectSpelling``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CorrectSpelling`: InlineResponse20016
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.CorrectSpelling`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.CorrectSpelling(context.Background()).Text(text).Language(language).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.CorrectSpelling``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CorrectSpelling`: CorrectSpelling200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.CorrectSpelling`: %v\n", resp)
 }
 ```
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## DetectLanguage
 
-> []InlineResponse20017 DetectLanguage(ctx).Text(text).Execute()
+> []DetectLanguage200ResponseInner DetectLanguage(ctx).Text(text).Execute()
 
 Detect Language
 
@@ -101,24 +101,24 @@ Detect Language
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "Das ist ein Text." // string | The text for which the language should be detected.
+	text := "Das ist ein Text." // string | The text for which the language should be detected.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.DetectLanguage(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.DetectLanguage``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DetectLanguage`: []InlineResponse20017
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.DetectLanguage`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.DetectLanguage(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectLanguage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectLanguage`: []DetectLanguage200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectLanguage`: %v\n", resp)
 }
 ```
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]InlineResponse20017**](InlineResponse20017.md)
+[**[]DetectLanguage200ResponseInner**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ## DetectSentiment
 
-> InlineResponse20018 DetectSentiment(ctx).Text(text).Execute()
+> DetectSentiment200Response DetectSentiment(ctx).Text(text).Execute()
 
 Detect Sentiment
 
@@ -167,24 +167,24 @@ Detect Sentiment
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "Happy times feel so good." // string | The text for which the sentiment should be detected.
+	text := "Happy times feel so good." // string | The text for which the sentiment should be detected.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.DetectSentiment(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.DetectSentiment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DetectSentiment`: InlineResponse20018
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.DetectSentiment`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.DetectSentiment(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectSentiment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectSentiment`: DetectSentiment200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectSentiment`: %v\n", resp)
 }
 ```
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## ExtractDates
 
-> InlineResponse20021 ExtractDates(ctx).Text(text).Execute()
+> ExtractDates200Response ExtractDates(ctx).Text(text).Execute()
 
 Extract Dates
 
@@ -233,24 +233,24 @@ Extract Dates
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "On 5th or April, 2035 there will be flying cars - 2023-02-12." // string | The text from which dates should be extracted.
+	text := "On 5th or April, 2035 there will be flying cars - 2023-02-12." // string | The text from which dates should be extracted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.ExtractDates(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.ExtractDates``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractDates`: InlineResponse20021
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.ExtractDates`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.ExtractDates(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractDates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractDates`: ExtractDates200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractDates`: %v\n", resp)
 }
 ```
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ## ExtractEntities
 
-> InlineResponse20027 ExtractEntities(ctx).Text(text).Execute()
+> ExtractEntities200Response ExtractEntities(ctx).Text(text).Execute()
 
 Extract Entities
 
@@ -299,24 +299,24 @@ Extract Entities
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "Jim Carrey is an actor from Canada" // string | The text from which entities should be extracted.
+	text := "Jim Carrey is an actor from Canada" // string | The text from which entities should be extracted.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.ExtractEntities(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.ExtractEntities``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExtractEntities`: InlineResponse20027
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.ExtractEntities`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.ExtractEntities(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ExtractEntities`: ExtractEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractEntities`: %v\n", resp)
 }
 ```
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ## ListWordSynonyms
 
-> InlineResponse20022 ListWordSynonyms(ctx).Word(word).Execute()
+> ListWordSynonyms200Response ListWordSynonyms(ctx).Word(word).Execute()
 
 List Word Synonyms
 
@@ -365,24 +365,24 @@ List Word Synonyms
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    word := "airplane" // string | The (noun) word for which a list of synonyms should be returned.
+	word := "airplane" // string | The (noun) word for which a list of synonyms should be returned.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.ListWordSynonyms(context.Background()).Word(word).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.ListWordSynonyms``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ListWordSynonyms`: InlineResponse20022
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.ListWordSynonyms`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.ListWordSynonyms(context.Background()).Word(word).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ListWordSynonyms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListWordSynonyms`: ListWordSynonyms200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ListWordSynonyms`: %v\n", resp)
 }
 ```
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## PartOfSpeechTagging
 
-> InlineResponse20023 PartOfSpeechTagging(ctx).Text(text).Execute()
+> PartOfSpeechTagging200Response PartOfSpeechTagging(ctx).Text(text).Execute()
 
 Part of Speech Tagging
 
@@ -431,24 +431,24 @@ Part of Speech Tagging
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "The lazy dog jumps over the quick brown fox." // string | The text to tag the part of speech.
+	text := "The lazy dog jumps over the quick brown fox." // string | The text to tag the part of speech.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.PartOfSpeechTagging(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.PartOfSpeechTagging``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PartOfSpeechTagging`: InlineResponse20023
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.PartOfSpeechTagging`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.PartOfSpeechTagging(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.PartOfSpeechTagging``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PartOfSpeechTagging`: PartOfSpeechTagging200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.PartOfSpeechTagging`: %v\n", resp)
 }
 ```
 
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ## PluralizeWord
 
-> InlineResponse20026 PluralizeWord(ctx).Word(word).Execute()
+> PluralizeWord200Response PluralizeWord(ctx).Word(word).Execute()
 
 Pluralize Word
 
@@ -497,24 +497,24 @@ Pluralize Word
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    word := "party" // string | The (noun) word for which the plural form should be found.
+	word := "party" // string | The (noun) word for which the plural form should be found.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.PluralizeWord(context.Background()).Word(word).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.PluralizeWord``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PluralizeWord`: InlineResponse20026
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.PluralizeWord`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.PluralizeWord(context.Background()).Word(word).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.PluralizeWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PluralizeWord`: PluralizeWord200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.PluralizeWord`: %v\n", resp)
 }
 ```
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ## ScoreReadability
 
-> InlineResponse20020 ScoreReadability(ctx).Text(text).Execute()
+> ScoreReadability200Response ScoreReadability(ctx).Text(text).Execute()
 
 Score Readability
 
@@ -563,24 +563,24 @@ Score Readability
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "A rather complex text, hard to read, and highly convoluted using acronym TERMS." // string | The text to score for readability.
+	text := "A rather complex text, hard to read, and highly convoluted using acronym TERMS." // string | The text to score for readability.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.ScoreReadability(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.ScoreReadability``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ScoreReadability`: InlineResponse20020
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.ScoreReadability`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.ScoreReadability(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreReadability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ScoreReadability`: ScoreReadability200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreReadability`: %v\n", resp)
 }
 ```
 
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ## ScoreText
 
-> InlineResponse20019 ScoreText(ctx).Title(title).Text(text).Execute()
+> ScoreText200Response ScoreText(ctx).Title(title).Text(text).Execute()
 
 Score Text
 
@@ -629,25 +629,25 @@ Score Text
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    title := "A short story" // string | The title of the text to score.
-    text := "A nice short story to be analyzed" // string | The text to score for multiple metrics.
+	title := "A short story" // string | The title of the text to score.
+	text := "A nice short story to be analyzed" // string | The text to score for multiple metrics.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.ScoreText(context.Background()).Title(title).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.ScoreText``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ScoreText`: InlineResponse20019
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.ScoreText`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.ScoreText(context.Background()).Title(title).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ScoreText`: ScoreText200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreText`: %v\n", resp)
 }
 ```
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 ## SingularizeWord
 
-> InlineResponse20025 SingularizeWord(ctx).Word(word).Execute()
+> SingularizeWord200Response SingularizeWord(ctx).Word(word).Execute()
 
 Singularize Word
 
@@ -697,24 +697,24 @@ Singularize Word
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    word := "airplanes" // string | The (noun) word for which the singular form should be found.
+	word := "airplanes" // string | The (noun) word for which the singular form should be found.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.SingularizeWord(context.Background()).Word(word).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.SingularizeWord``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SingularizeWord`: InlineResponse20025
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.SingularizeWord`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.SingularizeWord(context.Background()).Word(word).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.SingularizeWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SingularizeWord`: SingularizeWord200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.SingularizeWord`: %v\n", resp)
 }
 ```
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 
 ## TextStemming
 
-> InlineResponse20024 TextStemming(ctx).Text(text).Execute()
+> TextStemming200Response TextStemming(ctx).Text(text).Execute()
 
 Text Stemming
 
@@ -763,24 +763,24 @@ Text Stemming
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    text := "The laziest dogs are jumping over the quicker brown foxes." // string | The text to be stemmed.
+	text := "The laziest dogs are jumping over the quicker brown foxes." // string | The text to be stemmed.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TextApi.TextStemming(context.Background()).Text(text).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TextApi.TextStemming``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `TextStemming`: InlineResponse20024
-    fmt.Fprintf(os.Stdout, "Response from `TextApi.TextStemming`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.TextStemming(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.TextStemming``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TextStemming`: TextStemming200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.TextStemming`: %v\n", resp)
 }
 ```
 
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 

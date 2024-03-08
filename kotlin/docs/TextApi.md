@@ -18,9 +18,9 @@ Method | HTTP request | Description
 [**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
 
 
-<a name="correctSpelling"></a>
+<a id="correctSpelling"></a>
 # **correctSpelling**
-> InlineResponse20016 correctSpelling(text, language)
+> CorrectSpelling200Response correctSpelling(text, language)
 
 Correct Spelling
 
@@ -29,14 +29,14 @@ The API corrects spelling mistakes in a given text. It returns the corrected tex
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = Driving carss is fun. // kotlin.String | The text to be corrected.
 val language : kotlin.String = en // kotlin.String | The language of the text, one of en, de, es, fr, or it.
 try {
-    val result : InlineResponse20016 = apiInstance.correctSpelling(text, language)
+    val result : CorrectSpelling200Response = apiInstance.correctSpelling(text, language)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#correctSpelling")
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -73,9 +73,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="detectLanguage"></a>
+<a id="detectLanguage"></a>
 # **detectLanguage**
-> kotlin.collections.List&lt;InlineResponse20017&gt; detectLanguage(text)
+> kotlin.collections.List&lt;DetectLanguage200ResponseInner&gt; detectLanguage(text)
 
 Detect Language
 
@@ -84,13 +84,13 @@ Detect the language of the given text. The API returns a list of languages and t
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = Das ist ein Text. // kotlin.String | The text for which the language should be detected.
 try {
-    val result : kotlin.collections.List<InlineResponse20017> = apiInstance.detectLanguage(text)
+    val result : kotlin.collections.List<DetectLanguage200ResponseInner> = apiInstance.detectLanguage(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#detectLanguage")
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.collections.List&lt;InlineResponse20017&gt;**](InlineResponse20017.md)
+[**kotlin.collections.List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -126,9 +126,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="detectSentiment"></a>
+<a id="detectSentiment"></a>
 # **detectSentiment**
-> InlineResponse20018 detectSentiment(text)
+> DetectSentiment200Response detectSentiment(text)
 
 Detect Sentiment
 
@@ -137,13 +137,13 @@ Detect the sentiment (positive or negative) of a given text. The entire document
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = Happy times feel so good. // kotlin.String | The text for which the sentiment should be detected.
 try {
-    val result : InlineResponse20018 = apiInstance.detectSentiment(text)
+    val result : DetectSentiment200Response = apiInstance.detectSentiment(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#detectSentiment")
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -179,9 +179,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="extractDates"></a>
+<a id="extractDates"></a>
 # **extractDates**
-> InlineResponse20021 extractDates(text)
+> ExtractDates200Response extractDates(text)
 
 Extract Dates
 
@@ -190,13 +190,13 @@ Extract dates from a given text. The API will return a list of dates with their 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = On 5th or April, 2035 there will be flying cars - 2023-02-12. // kotlin.String | The text from which dates should be extracted.
 try {
-    val result : InlineResponse20021 = apiInstance.extractDates(text)
+    val result : ExtractDates200Response = apiInstance.extractDates(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#extractDates")
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -232,9 +232,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="extractEntities"></a>
+<a id="extractEntities"></a>
 # **extractEntities**
-> InlineResponse20027 extractEntities(text)
+> ExtractEntities200Response extractEntities(text)
 
 Extract Entities
 
@@ -243,13 +243,13 @@ Extract entities from a text. An entity is a word or a group of words that repre
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = Jim Carrey is an actor from Canada // kotlin.String | The text from which entities should be extracted.
 try {
-    val result : InlineResponse20027 = apiInstance.extractEntities(text)
+    val result : ExtractEntities200Response = apiInstance.extractEntities(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#extractEntities")
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -285,9 +285,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="listWordSynonyms"></a>
+<a id="listWordSynonyms"></a>
 # **listWordSynonyms**
-> InlineResponse20022 listWordSynonyms(word)
+> ListWordSynonyms200Response listWordSynonyms(word)
 
 List Word Synonyms
 
@@ -296,13 +296,13 @@ Return synonyms of a word.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val word : kotlin.String = airplane // kotlin.String | The (noun) word for which a list of synonyms should be returned.
 try {
-    val result : InlineResponse20022 = apiInstance.listWordSynonyms(word)
+    val result : ListWordSynonyms200Response = apiInstance.listWordSynonyms(word)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#listWordSynonyms")
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -338,9 +338,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="partOfSpeechTagging"></a>
+<a id="partOfSpeechTagging"></a>
 # **partOfSpeechTagging**
-> InlineResponse20023 partOfSpeechTagging(text)
+> PartOfSpeechTagging200Response partOfSpeechTagging(text)
 
 Part of Speech Tagging
 
@@ -349,13 +349,13 @@ Part of speech tagging is the process of marking up a word in a text as correspo
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
 try {
-    val result : InlineResponse20023 = apiInstance.partOfSpeechTagging(text)
+    val result : PartOfSpeechTagging200Response = apiInstance.partOfSpeechTagging(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#partOfSpeechTagging")
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -391,9 +391,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="pluralizeWord"></a>
+<a id="pluralizeWord"></a>
 # **pluralizeWord**
-> InlineResponse20026 pluralizeWord(word)
+> PluralizeWord200Response pluralizeWord(word)
 
 Pluralize Word
 
@@ -402,13 +402,13 @@ Find the plural form of a word.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val word : kotlin.String = party // kotlin.String | The (noun) word for which the plural form should be found.
 try {
-    val result : InlineResponse20026 = apiInstance.pluralizeWord(word)
+    val result : PluralizeWord200Response = apiInstance.pluralizeWord(word)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#pluralizeWord")
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -444,9 +444,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="scoreReadability"></a>
+<a id="scoreReadability"></a>
 # **scoreReadability**
-> InlineResponse20020 scoreReadability(text)
+> ScoreReadability200Response scoreReadability(text)
 
 Score Readability
 
@@ -455,13 +455,13 @@ Score the readability of a text. The readability score is based on the average l
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = A rather complex text, hard to read, and highly convoluted using acronym TERMS. // kotlin.String | The text to score for readability.
 try {
-    val result : InlineResponse20020 = apiInstance.scoreReadability(text)
+    val result : ScoreReadability200Response = apiInstance.scoreReadability(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#scoreReadability")
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -497,9 +497,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="scoreText"></a>
+<a id="scoreText"></a>
 # **scoreText**
-> InlineResponse20019 scoreText(title, text)
+> ScoreText200Response scoreText(title, text)
 
 Score Text
 
@@ -508,14 +508,14 @@ Score the readability, skimmability, interestingness, and style of a text. The r
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val title : kotlin.String = A short story // kotlin.String | The title of the text to score.
 val text : kotlin.String = A nice short story to be analyzed // kotlin.String | The text to score for multiple metrics.
 try {
-    val result : InlineResponse20019 = apiInstance.scoreText(title, text)
+    val result : ScoreText200Response = apiInstance.scoreText(title, text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#scoreText")
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -552,9 +552,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="singularizeWord"></a>
+<a id="singularizeWord"></a>
 # **singularizeWord**
-> InlineResponse20025 singularizeWord(word)
+> SingularizeWord200Response singularizeWord(word)
 
 Singularize Word
 
@@ -563,13 +563,13 @@ Find the singular form of a word.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val word : kotlin.String = airplanes // kotlin.String | The (noun) word for which the singular form should be found.
 try {
-    val result : InlineResponse20025 = apiInstance.singularizeWord(word)
+    val result : SingularizeWord200Response = apiInstance.singularizeWord(word)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#singularizeWord")
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -605,9 +605,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="textStemming"></a>
+<a id="textStemming"></a>
 # **textStemming**
-> InlineResponse20024 textStemming(text)
+> TextStemming200Response textStemming(text)
 
 Text Stemming
 
@@ -616,13 +616,13 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = TextApi()
 val text : kotlin.String = The laziest dogs are jumping over the quicker brown foxes. // kotlin.String | The text to be stemmed.
 try {
-    val result : InlineResponse20024 = apiInstance.textStemming(text)
+    val result : TextStemming200Response = apiInstance.textStemming(text)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TextApi#textStemming")
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 

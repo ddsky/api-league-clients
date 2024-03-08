@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **extractAuthors**
-> InlineResponse20014 extractAuthors()
+> ExtractAuthors200Response extractAuthors()
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20014**
+**ExtractAuthors200Response**
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **extractContentFromAWebPage**
-> InlineResponse20012 extractContentFromAWebPage()
+> ExtractContentFromAWebPage200Response extractContentFromAWebPage()
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20012**
+**ExtractContentFromAWebPage200Response**
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **extractPublishDate**
-> InlineResponse20013 extractPublishDate()
+> ExtractPublishDate200Response extractPublishDate()
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20013**
+**ExtractPublishDate200Response**
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchWeb**
-> InlineResponse20015 searchWeb()
+> SearchWeb200Response searchWeb()
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20015**
+**SearchWeb200Response**
 
 ### Authorization
 

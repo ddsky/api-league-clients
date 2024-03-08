@@ -1,21 +1,21 @@
-# com.apileague.client\HumorApi
+# \HumorAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GenerateNonsenseWord**](HumorApi.md#GenerateNonsenseWord) | **Get** /generate-nonsense-word | Generate Nonsense Word
-[**RandomJoke**](HumorApi.md#RandomJoke) | **Get** /retrieve-random-joke | Random Joke
-[**RandomMeme**](HumorApi.md#RandomMeme) | **Get** /retrieve-random-meme | Random Meme
-[**SearchGifs**](HumorApi.md#SearchGifs) | **Get** /search-gifs | Search Gifs
-[**SearchJokes**](HumorApi.md#SearchJokes) | **Get** /search-jokes | Search Jokes
-[**SearchMemes**](HumorApi.md#SearchMemes) | **Get** /search-memes | Search Memes
+[**GenerateNonsenseWord**](HumorAPI.md#GenerateNonsenseWord) | **Get** /generate-nonsense-word | Generate Nonsense Word
+[**RandomJoke**](HumorAPI.md#RandomJoke) | **Get** /retrieve-random-joke | Random Joke
+[**RandomMeme**](HumorAPI.md#RandomMeme) | **Get** /retrieve-random-meme | Random Meme
+[**SearchGifs**](HumorAPI.md#SearchGifs) | **Get** /search-gifs | Search Gifs
+[**SearchJokes**](HumorAPI.md#SearchJokes) | **Get** /search-jokes | Search Jokes
+[**SearchMemes**](HumorAPI.md#SearchMemes) | **Get** /search-memes | Search Memes
 
 
 
 ## GenerateNonsenseWord
 
-> InlineResponse2008 GenerateNonsenseWord(ctx).Execute()
+> GenerateNonsenseWord200Response GenerateNonsenseWord(ctx).Execute()
 
 Generate Nonsense Word
 
@@ -27,23 +27,23 @@ Generate Nonsense Word
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.GenerateNonsenseWord(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.GenerateNonsenseWord``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GenerateNonsenseWord`: InlineResponse2008
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.GenerateNonsenseWord`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.GenerateNonsenseWord(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.GenerateNonsenseWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GenerateNonsenseWord`: GenerateNonsenseWord200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.GenerateNonsenseWord`: %v\n", resp)
 }
 ```
 
@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiGenerateNonsenseWordReques
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Other parameters are passed through a pointer to a apiGenerateNonsenseWordReques
 
 ## RandomJoke
 
-> InlineResponse2004Jokes RandomJoke(ctx).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
+> SearchJokes200ResponseJokesInner RandomJoke(ctx).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
 
 Random Joke
 
@@ -88,27 +88,27 @@ Random Joke
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    includeTags := "animal" // string | A comma-separated list of tags the jokes should have. (optional)
-    excludeTags := "nsfw,dark" // string | A comma-separated list of tags the jokes must not have. (optional)
-    minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the jokes. (optional)
-    maxLength := int32(140) // int32 | The maximum length of the joke in letters. (optional)
+	includeTags := "animal" // string | A comma-separated list of tags the jokes should have. (optional)
+	excludeTags := "nsfw,dark" // string | A comma-separated list of tags the jokes must not have. (optional)
+	minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the jokes. (optional)
+	maxLength := int32(140) // int32 | The maximum length of the joke in letters. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.RandomJoke(context.Background()).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.RandomJoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RandomJoke`: InlineResponse2004Jokes
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.RandomJoke`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.RandomJoke(context.Background()).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomJoke``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomJoke`: SearchJokes200ResponseJokesInner
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomJoke`: %v\n", resp)
 }
 ```
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## RandomMeme
 
-> InlineResponse2006 RandomMeme(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
+> RandomMeme200Response RandomMeme(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
 
 Random Meme
 
@@ -160,28 +160,28 @@ Random Meme
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    keywords := "airplane" // string | A comma-separated list of words that must occur in the meme. (optional)
-    keywordsInImage := true // bool | Whether the keywords must occur in the image. (optional)
-    mediaType := "image" // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
-    minRating := float64(0) // float64 | The minimum rating in range [0.0-1.0] of the meme. (optional)
-    maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
+	keywords := "airplane" // string | A comma-separated list of words that must occur in the meme. (optional)
+	keywordsInImage := true // bool | Whether the keywords must occur in the image. (optional)
+	mediaType := "image" // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+	minRating := float64(0) // float64 | The minimum rating in range [0.0-1.0] of the meme. (optional)
+	maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.RandomMeme(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.RandomMeme``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RandomMeme`: InlineResponse2006
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.RandomMeme`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.RandomMeme(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomMeme``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomMeme`: RandomMeme200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomMeme`: %v\n", resp)
 }
 ```
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## SearchGifs
 
-> InlineResponse2007 SearchGifs(ctx).Query(query).Number(number).Execute()
+> SearchGifs200Response SearchGifs(ctx).Query(query).Number(number).Execute()
 
 Search Gifs
 
@@ -234,25 +234,25 @@ Search Gifs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    query := "dogs" // string | The search query.
-    number := int32(5) // int32 | The number of gifs to return in range [1,10] (optional)
+	query := "dogs" // string | The search query.
+	number := int32(5) // int32 | The number of gifs to return in range [1,10] (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.SearchGifs(context.Background()).Query(query).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.SearchGifs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchGifs`: InlineResponse2007
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.SearchGifs`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.SearchGifs(context.Background()).Query(query).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchGifs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchGifs`: SearchGifs200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchGifs`: %v\n", resp)
 }
 ```
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## SearchJokes
 
-> InlineResponse2004 SearchJokes(ctx).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
+> SearchJokes200Response SearchJokes(ctx).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
 
 Search Jokes
 
@@ -302,30 +302,30 @@ Search Jokes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    keywords := "horse,man" // string | A comma-separated list of words that must occur in the joke. (optional)
-    includeTags := "animal" // string | A comma-separated list of tags the jokes should have. (optional)
-    excludeTags := "nsfw,dark" // string | A comma-separated list of tags the jokes must not have. (optional)
-    minRating := float64(0) // float64 | The minimum rating (0-10) of the jokes. (optional)
-    maxLength := float64(140) // float64 | The maximum length of the joke in letters. (optional)
-    offset := int32(0) // int32 | The number of jokes to skip, between 0 and 1000. (optional)
-    number := int32(3) // int32 | The number of jokes, between 1 and 10. (optional)
+	keywords := "horse,man" // string | A comma-separated list of words that must occur in the joke. (optional)
+	includeTags := "animal" // string | A comma-separated list of tags the jokes should have. (optional)
+	excludeTags := "nsfw,dark" // string | A comma-separated list of tags the jokes must not have. (optional)
+	minRating := float64(0) // float64 | The minimum rating (0-10) of the jokes. (optional)
+	maxLength := float64(140) // float64 | The maximum length of the joke in letters. (optional)
+	offset := int32(0) // int32 | The number of jokes to skip, between 0 and 1000. (optional)
+	number := int32(3) // int32 | The number of jokes, between 1 and 10. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.SearchJokes(context.Background()).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.SearchJokes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchJokes`: InlineResponse2004
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.SearchJokes`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.SearchJokes(context.Background()).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchJokes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchJokes`: SearchJokes200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchJokes`: %v\n", resp)
 }
 ```
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## SearchMemes
 
-> InlineResponse2005 SearchMemes(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
+> SearchMemes200Response SearchMemes(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
 
 Search Memes
 
@@ -380,30 +380,30 @@ Search Memes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    keywords := "rocket" // string | A comma-separated list of words that must occur in the meme. (optional)
-    keywordsInImage := true // bool | Whether the keywords must occur in the image. (optional)
-    mediaType := "image" // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
-    minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the meme. (optional)
-    maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
-    offset := int32(0) // int32 | The number of memes to skip, between 0 and 1000. (optional)
-    number := int32(3) // int32 | The number of memes, between 0 and 10. (optional)
+	keywords := "rocket" // string | A comma-separated list of words that must occur in the meme. (optional)
+	keywordsInImage := true // bool | Whether the keywords must occur in the image. (optional)
+	mediaType := "image" // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+	minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the meme. (optional)
+	maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
+	offset := int32(0) // int32 | The number of memes to skip, between 0 and 1000. (optional)
+	number := int32(3) // int32 | The number of memes, between 0 and 10. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HumorApi.SearchMemes(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HumorApi.SearchMemes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchMemes`: InlineResponse2005
-    fmt.Fprintf(os.Stdout, "Response from `HumorApi.SearchMemes`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HumorAPI.SearchMemes(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchMemes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchMemes`: SearchMemes200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchMemes`: %v\n", resp)
 }
 ```
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

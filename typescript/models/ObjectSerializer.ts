@@ -1,116 +1,116 @@
-export * from './InlineResponse200';
-export * from './InlineResponse2001';
-export * from './InlineResponse20010';
-export * from './InlineResponse20011';
-export * from './InlineResponse20012';
-export * from './InlineResponse20013';
-export * from './InlineResponse20014';
-export * from './InlineResponse20014Authors';
-export * from './InlineResponse20015';
-export * from './InlineResponse20015Results';
-export * from './InlineResponse20016';
-export * from './InlineResponse20017';
-export * from './InlineResponse20018';
-export * from './InlineResponse20018Document';
-export * from './InlineResponse20018Sentences';
-export * from './InlineResponse20019';
-export * from './InlineResponse20019Interestingness';
-export * from './InlineResponse20019InterestingnessSubscores';
-export * from './InlineResponse20019Readability';
-export * from './InlineResponse20019ReadabilityMainscores';
-export * from './InlineResponse20019ReadabilitySubscores';
-export * from './InlineResponse20019Skimmability';
-export * from './InlineResponse20019SkimmabilityMainscores';
-export * from './InlineResponse20019SkimmabilitySubscores';
-export * from './InlineResponse20019Style';
-export * from './InlineResponse20019StyleSubscores';
-export * from './InlineResponse2002';
-export * from './InlineResponse20020';
-export * from './InlineResponse20021';
-export * from './InlineResponse20021Dates';
-export * from './InlineResponse20022';
-export * from './InlineResponse20023';
-export * from './InlineResponse20024';
-export * from './InlineResponse20025';
-export * from './InlineResponse20026';
-export * from './InlineResponse20027';
-export * from './InlineResponse20027Entities';
-export * from './InlineResponse20028';
-export * from './InlineResponse20028Images';
-export * from './InlineResponse20028License';
-export * from './InlineResponse20029';
-export * from './InlineResponse2002News';
-export * from './InlineResponse2003';
-export * from './InlineResponse20030';
-export * from './InlineResponse20031';
-export * from './InlineResponse20032';
-export * from './InlineResponse2004';
-export * from './InlineResponse2004Jokes';
-export * from './InlineResponse2005';
-export * from './InlineResponse2005Memes';
-export * from './InlineResponse2006';
-export * from './InlineResponse2007';
-export * from './InlineResponse2007Images';
-export * from './InlineResponse2008';
-export * from './InlineResponse2009';
-export * from './InlineResponse200Books';
+export * from '../models/ConvertUnits200Response';
+export * from '../models/CorrectSpelling200Response';
+export * from '../models/DetectLanguage200ResponseInner';
+export * from '../models/DetectMainImageColor200ResponseInner';
+export * from '../models/DetectSentiment200Response';
+export * from '../models/DetectSentiment200ResponseDocument';
+export * from '../models/DetectSentiment200ResponseSentencesInner';
+export * from '../models/ExtractAuthors200Response';
+export * from '../models/ExtractAuthors200ResponseAuthorsInner';
+export * from '../models/ExtractContentFromAWebPage200Response';
+export * from '../models/ExtractDates200Response';
+export * from '../models/ExtractDates200ResponseDatesInner';
+export * from '../models/ExtractEntities200Response';
+export * from '../models/ExtractEntities200ResponseEntitiesInner';
+export * from '../models/ExtractNews200Response';
+export * from '../models/ExtractPublishDate200Response';
+export * from '../models/FindSimilarBooks200Response';
+export * from '../models/GenerateNonsenseWord200Response';
+export * from '../models/ListWordSynonyms200Response';
+export * from '../models/PartOfSpeechTagging200Response';
+export * from '../models/PluralizeWord200Response';
+export * from '../models/RandomMeme200Response';
+export * from '../models/RandomPoem200Response';
+export * from '../models/RandomQuote200Response';
+export * from '../models/RandomTrivia200Response';
+export * from '../models/ReadKeyValueFromStore200Response';
+export * from '../models/ScoreReadability200Response';
+export * from '../models/ScoreText200Response';
+export * from '../models/ScoreText200ResponseInterestingness';
+export * from '../models/ScoreText200ResponseInterestingnessSubscores';
+export * from '../models/ScoreText200ResponseReadability';
+export * from '../models/ScoreText200ResponseReadabilityMainscores';
+export * from '../models/ScoreText200ResponseReadabilitySubscores';
+export * from '../models/ScoreText200ResponseSkimmability';
+export * from '../models/ScoreText200ResponseSkimmabilityMainscores';
+export * from '../models/ScoreText200ResponseSkimmabilitySubscores';
+export * from '../models/ScoreText200ResponseStyle';
+export * from '../models/ScoreText200ResponseStyleSubscores';
+export * from '../models/SearchBooks200Response';
+export * from '../models/SearchBooks200ResponseBooksInner';
+export * from '../models/SearchGifs200Response';
+export * from '../models/SearchGifs200ResponseImagesInner';
+export * from '../models/SearchJokes200Response';
+export * from '../models/SearchJokes200ResponseJokesInner';
+export * from '../models/SearchMemes200Response';
+export * from '../models/SearchMemes200ResponseMemesInner';
+export * from '../models/SearchNews200Response';
+export * from '../models/SearchNews200ResponseNewsInner';
+export * from '../models/SearchRoyaltyFreeImages200Response';
+export * from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
+export * from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
+export * from '../models/SearchWeb200Response';
+export * from '../models/SearchWeb200ResponseResultsInner';
+export * from '../models/SingularizeWord200Response';
+export * from '../models/StoreKeyValueGET200Response';
+export * from '../models/TextStemming200Response';
 
-import { InlineResponse200 } from './InlineResponse200';
-import { InlineResponse2001 } from './InlineResponse2001';
-import { InlineResponse20010 } from './InlineResponse20010';
-import { InlineResponse20011 } from './InlineResponse20011';
-import { InlineResponse20012 } from './InlineResponse20012';
-import { InlineResponse20013 } from './InlineResponse20013';
-import { InlineResponse20014 } from './InlineResponse20014';
-import { InlineResponse20014Authors } from './InlineResponse20014Authors';
-import { InlineResponse20015 } from './InlineResponse20015';
-import { InlineResponse20015Results } from './InlineResponse20015Results';
-import { InlineResponse20016 } from './InlineResponse20016';
-import { InlineResponse20017 } from './InlineResponse20017';
-import { InlineResponse20018 } from './InlineResponse20018';
-import { InlineResponse20018Document } from './InlineResponse20018Document';
-import { InlineResponse20018Sentences } from './InlineResponse20018Sentences';
-import { InlineResponse20019 } from './InlineResponse20019';
-import { InlineResponse20019Interestingness } from './InlineResponse20019Interestingness';
-import { InlineResponse20019InterestingnessSubscores } from './InlineResponse20019InterestingnessSubscores';
-import { InlineResponse20019Readability } from './InlineResponse20019Readability';
-import { InlineResponse20019ReadabilityMainscores } from './InlineResponse20019ReadabilityMainscores';
-import { InlineResponse20019ReadabilitySubscores } from './InlineResponse20019ReadabilitySubscores';
-import { InlineResponse20019Skimmability } from './InlineResponse20019Skimmability';
-import { InlineResponse20019SkimmabilityMainscores } from './InlineResponse20019SkimmabilityMainscores';
-import { InlineResponse20019SkimmabilitySubscores } from './InlineResponse20019SkimmabilitySubscores';
-import { InlineResponse20019Style } from './InlineResponse20019Style';
-import { InlineResponse20019StyleSubscores } from './InlineResponse20019StyleSubscores';
-import { InlineResponse2002 } from './InlineResponse2002';
-import { InlineResponse20020 } from './InlineResponse20020';
-import { InlineResponse20021 } from './InlineResponse20021';
-import { InlineResponse20021Dates } from './InlineResponse20021Dates';
-import { InlineResponse20022 } from './InlineResponse20022';
-import { InlineResponse20023 } from './InlineResponse20023';
-import { InlineResponse20024 } from './InlineResponse20024';
-import { InlineResponse20025 } from './InlineResponse20025';
-import { InlineResponse20026 } from './InlineResponse20026';
-import { InlineResponse20027 } from './InlineResponse20027';
-import { InlineResponse20027Entities } from './InlineResponse20027Entities';
-import { InlineResponse20028 } from './InlineResponse20028';
-import { InlineResponse20028Images } from './InlineResponse20028Images';
-import { InlineResponse20028License } from './InlineResponse20028License';
-import { InlineResponse20029 } from './InlineResponse20029';
-import { InlineResponse2002News } from './InlineResponse2002News';
-import { InlineResponse2003 } from './InlineResponse2003';
-import { InlineResponse20030 } from './InlineResponse20030';
-import { InlineResponse20031 } from './InlineResponse20031';
-import { InlineResponse20032 } from './InlineResponse20032';
-import { InlineResponse2004 } from './InlineResponse2004';
-import { InlineResponse2004Jokes } from './InlineResponse2004Jokes';
-import { InlineResponse2005 } from './InlineResponse2005';
-import { InlineResponse2005Memes } from './InlineResponse2005Memes';
-import { InlineResponse2006 } from './InlineResponse2006';
-import { InlineResponse2007 } from './InlineResponse2007';
-import { InlineResponse2007Images } from './InlineResponse2007Images';
-import { InlineResponse2008 } from './InlineResponse2008';
-import { InlineResponse2009 } from './InlineResponse2009';
-import { InlineResponse200Books } from './InlineResponse200Books';
+import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
+import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
+import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
+import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
+import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
+import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
+import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
+import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
+import { ExtractDates200Response } from '../models/ExtractDates200Response';
+import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200ResponseDatesInner';
+import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
+import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
+import { ExtractNews200Response } from '../models/ExtractNews200Response';
+import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
+import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
+import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
+import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
+import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
+import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
+import { RandomMeme200Response } from '../models/RandomMeme200Response';
+import { RandomPoem200Response } from '../models/RandomPoem200Response';
+import { RandomQuote200Response } from '../models/RandomQuote200Response';
+import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
+import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
+import { ScoreText200Response } from '../models/ScoreText200Response';
+import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
+import { ScoreText200ResponseInterestingnessSubscores } from '../models/ScoreText200ResponseInterestingnessSubscores';
+import { ScoreText200ResponseReadability } from '../models/ScoreText200ResponseReadability';
+import { ScoreText200ResponseReadabilityMainscores } from '../models/ScoreText200ResponseReadabilityMainscores';
+import { ScoreText200ResponseReadabilitySubscores } from '../models/ScoreText200ResponseReadabilitySubscores';
+import { ScoreText200ResponseSkimmability } from '../models/ScoreText200ResponseSkimmability';
+import { ScoreText200ResponseSkimmabilityMainscores } from '../models/ScoreText200ResponseSkimmabilityMainscores';
+import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText200ResponseSkimmabilitySubscores';
+import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
+import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
+import { SearchBooks200Response } from '../models/SearchBooks200Response';
+import { SearchBooks200ResponseBooksInner } from '../models/SearchBooks200ResponseBooksInner';
+import { SearchGifs200Response } from '../models/SearchGifs200Response';
+import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
+import { SearchJokes200Response } from '../models/SearchJokes200Response';
+import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
+import { SearchMemes200Response } from '../models/SearchMemes200Response';
+import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
+import { SearchNews200Response } from '../models/SearchNews200Response';
+import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
+import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
+import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
+import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
+import { SearchWeb200Response } from '../models/SearchWeb200Response';
+import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
+import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
+import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
+import { TextStemming200Response } from '../models/TextStemming200Response';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -124,74 +124,119 @@ let primitives = [
                     "any"
                  ];
 
-const supportedMediaTypes: { [mediaType: string]: number } = {
-  "application/json": Infinity,
-  "application/octet-stream": 0,
-  "application/x-www-form-urlencoded": 0
-}
-
-
 let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
-    "InlineResponse200": InlineResponse200,
-    "InlineResponse2001": InlineResponse2001,
-    "InlineResponse20010": InlineResponse20010,
-    "InlineResponse20011": InlineResponse20011,
-    "InlineResponse20012": InlineResponse20012,
-    "InlineResponse20013": InlineResponse20013,
-    "InlineResponse20014": InlineResponse20014,
-    "InlineResponse20014Authors": InlineResponse20014Authors,
-    "InlineResponse20015": InlineResponse20015,
-    "InlineResponse20015Results": InlineResponse20015Results,
-    "InlineResponse20016": InlineResponse20016,
-    "InlineResponse20017": InlineResponse20017,
-    "InlineResponse20018": InlineResponse20018,
-    "InlineResponse20018Document": InlineResponse20018Document,
-    "InlineResponse20018Sentences": InlineResponse20018Sentences,
-    "InlineResponse20019": InlineResponse20019,
-    "InlineResponse20019Interestingness": InlineResponse20019Interestingness,
-    "InlineResponse20019InterestingnessSubscores": InlineResponse20019InterestingnessSubscores,
-    "InlineResponse20019Readability": InlineResponse20019Readability,
-    "InlineResponse20019ReadabilityMainscores": InlineResponse20019ReadabilityMainscores,
-    "InlineResponse20019ReadabilitySubscores": InlineResponse20019ReadabilitySubscores,
-    "InlineResponse20019Skimmability": InlineResponse20019Skimmability,
-    "InlineResponse20019SkimmabilityMainscores": InlineResponse20019SkimmabilityMainscores,
-    "InlineResponse20019SkimmabilitySubscores": InlineResponse20019SkimmabilitySubscores,
-    "InlineResponse20019Style": InlineResponse20019Style,
-    "InlineResponse20019StyleSubscores": InlineResponse20019StyleSubscores,
-    "InlineResponse2002": InlineResponse2002,
-    "InlineResponse20020": InlineResponse20020,
-    "InlineResponse20021": InlineResponse20021,
-    "InlineResponse20021Dates": InlineResponse20021Dates,
-    "InlineResponse20022": InlineResponse20022,
-    "InlineResponse20023": InlineResponse20023,
-    "InlineResponse20024": InlineResponse20024,
-    "InlineResponse20025": InlineResponse20025,
-    "InlineResponse20026": InlineResponse20026,
-    "InlineResponse20027": InlineResponse20027,
-    "InlineResponse20027Entities": InlineResponse20027Entities,
-    "InlineResponse20028": InlineResponse20028,
-    "InlineResponse20028Images": InlineResponse20028Images,
-    "InlineResponse20028License": InlineResponse20028License,
-    "InlineResponse20029": InlineResponse20029,
-    "InlineResponse2002News": InlineResponse2002News,
-    "InlineResponse2003": InlineResponse2003,
-    "InlineResponse20030": InlineResponse20030,
-    "InlineResponse20031": InlineResponse20031,
-    "InlineResponse20032": InlineResponse20032,
-    "InlineResponse2004": InlineResponse2004,
-    "InlineResponse2004Jokes": InlineResponse2004Jokes,
-    "InlineResponse2005": InlineResponse2005,
-    "InlineResponse2005Memes": InlineResponse2005Memes,
-    "InlineResponse2006": InlineResponse2006,
-    "InlineResponse2007": InlineResponse2007,
-    "InlineResponse2007Images": InlineResponse2007Images,
-    "InlineResponse2008": InlineResponse2008,
-    "InlineResponse2009": InlineResponse2009,
-    "InlineResponse200Books": InlineResponse200Books,
+    "ConvertUnits200Response": ConvertUnits200Response,
+    "CorrectSpelling200Response": CorrectSpelling200Response,
+    "DetectLanguage200ResponseInner": DetectLanguage200ResponseInner,
+    "DetectMainImageColor200ResponseInner": DetectMainImageColor200ResponseInner,
+    "DetectSentiment200Response": DetectSentiment200Response,
+    "DetectSentiment200ResponseDocument": DetectSentiment200ResponseDocument,
+    "DetectSentiment200ResponseSentencesInner": DetectSentiment200ResponseSentencesInner,
+    "ExtractAuthors200Response": ExtractAuthors200Response,
+    "ExtractAuthors200ResponseAuthorsInner": ExtractAuthors200ResponseAuthorsInner,
+    "ExtractContentFromAWebPage200Response": ExtractContentFromAWebPage200Response,
+    "ExtractDates200Response": ExtractDates200Response,
+    "ExtractDates200ResponseDatesInner": ExtractDates200ResponseDatesInner,
+    "ExtractEntities200Response": ExtractEntities200Response,
+    "ExtractEntities200ResponseEntitiesInner": ExtractEntities200ResponseEntitiesInner,
+    "ExtractNews200Response": ExtractNews200Response,
+    "ExtractPublishDate200Response": ExtractPublishDate200Response,
+    "FindSimilarBooks200Response": FindSimilarBooks200Response,
+    "GenerateNonsenseWord200Response": GenerateNonsenseWord200Response,
+    "ListWordSynonyms200Response": ListWordSynonyms200Response,
+    "PartOfSpeechTagging200Response": PartOfSpeechTagging200Response,
+    "PluralizeWord200Response": PluralizeWord200Response,
+    "RandomMeme200Response": RandomMeme200Response,
+    "RandomPoem200Response": RandomPoem200Response,
+    "RandomQuote200Response": RandomQuote200Response,
+    "RandomTrivia200Response": RandomTrivia200Response,
+    "ReadKeyValueFromStore200Response": ReadKeyValueFromStore200Response,
+    "ScoreReadability200Response": ScoreReadability200Response,
+    "ScoreText200Response": ScoreText200Response,
+    "ScoreText200ResponseInterestingness": ScoreText200ResponseInterestingness,
+    "ScoreText200ResponseInterestingnessSubscores": ScoreText200ResponseInterestingnessSubscores,
+    "ScoreText200ResponseReadability": ScoreText200ResponseReadability,
+    "ScoreText200ResponseReadabilityMainscores": ScoreText200ResponseReadabilityMainscores,
+    "ScoreText200ResponseReadabilitySubscores": ScoreText200ResponseReadabilitySubscores,
+    "ScoreText200ResponseSkimmability": ScoreText200ResponseSkimmability,
+    "ScoreText200ResponseSkimmabilityMainscores": ScoreText200ResponseSkimmabilityMainscores,
+    "ScoreText200ResponseSkimmabilitySubscores": ScoreText200ResponseSkimmabilitySubscores,
+    "ScoreText200ResponseStyle": ScoreText200ResponseStyle,
+    "ScoreText200ResponseStyleSubscores": ScoreText200ResponseStyleSubscores,
+    "SearchBooks200Response": SearchBooks200Response,
+    "SearchBooks200ResponseBooksInner": SearchBooks200ResponseBooksInner,
+    "SearchGifs200Response": SearchGifs200Response,
+    "SearchGifs200ResponseImagesInner": SearchGifs200ResponseImagesInner,
+    "SearchJokes200Response": SearchJokes200Response,
+    "SearchJokes200ResponseJokesInner": SearchJokes200ResponseJokesInner,
+    "SearchMemes200Response": SearchMemes200Response,
+    "SearchMemes200ResponseMemesInner": SearchMemes200ResponseMemesInner,
+    "SearchNews200Response": SearchNews200Response,
+    "SearchNews200ResponseNewsInner": SearchNews200ResponseNewsInner,
+    "SearchRoyaltyFreeImages200Response": SearchRoyaltyFreeImages200Response,
+    "SearchRoyaltyFreeImages200ResponseImagesInner": SearchRoyaltyFreeImages200ResponseImagesInner,
+    "SearchRoyaltyFreeImages200ResponseImagesInnerLicense": SearchRoyaltyFreeImages200ResponseImagesInnerLicense,
+    "SearchWeb200Response": SearchWeb200Response,
+    "SearchWeb200ResponseResultsInner": SearchWeb200ResponseResultsInner,
+    "SingularizeWord200Response": SingularizeWord200Response,
+    "StoreKeyValueGET200Response": StoreKeyValueGET200Response,
+    "TextStemming200Response": TextStemming200Response,
 }
+
+type MimeTypeDescriptor = {
+    type: string;
+    subtype: string;
+    subtypeTokens: string[];
+};
+
+/**
+ * Every mime-type consists of a type, subtype, and optional parameters.
+ * The subtype can be composite, including information about the content format.
+ * For example: `application/json-patch+json`, `application/merge-patch+json`.
+ *
+ * This helper transforms a string mime-type into an internal representation.
+ * This simplifies the implementation of predicates that in turn define common rules for parsing or stringifying
+ * the payload.
+ */
+const parseMimeType = (mimeType: string): MimeTypeDescriptor => {
+    const [type, subtype] = mimeType.split('/');
+    return {
+        type,
+        subtype,
+        subtypeTokens: subtype.split('+'),
+    };
+};
+
+type MimeTypePredicate = (mimeType: string) => boolean;
+
+// This factory creates a predicate function that checks a string mime-type against defined rules.
+const mimeTypePredicateFactory = (predicate: (descriptor: MimeTypeDescriptor) => boolean): MimeTypePredicate => (mimeType) => predicate(parseMimeType(mimeType));
+
+// Use this factory when you need to define a simple predicate based only on type and, if applicable, subtype.
+const mimeTypeSimplePredicateFactory = (type: string, subtype?: string): MimeTypePredicate => mimeTypePredicateFactory((descriptor) => {
+    if (descriptor.type !== type) return false;
+    if (subtype != null && descriptor.subtype !== subtype) return false;
+    return true;
+});
+
+// Creating a set of named predicates that will help us determine how to handle different mime-types
+const isTextLikeMimeType = mimeTypeSimplePredicateFactory('text');
+const isJsonMimeType = mimeTypeSimplePredicateFactory('application', 'json');
+const isJsonLikeMimeType = mimeTypePredicateFactory((descriptor) => descriptor.type === 'application' && descriptor.subtypeTokens.some((item) => item === 'json'));
+const isOctetStreamMimeType = mimeTypeSimplePredicateFactory('application', 'octet-stream');
+const isFormUrlencodedMimeType = mimeTypeSimplePredicateFactory('application', 'x-www-form-urlencoded');
+
+// Defining a list of mime-types in the order of prioritization for handling.
+const supportedMimeTypePredicatesWithPriority: MimeTypePredicate[] = [
+    isJsonMimeType,
+    isJsonLikeMimeType,
+    isTextLikeMimeType,
+    isOctetStreamMimeType,
+    isFormUrlencodedMimeType,
+];
 
 export class ObjectSerializer {
     public static findCorrectType(data: any, expectedType: string) {
@@ -238,8 +283,7 @@ export class ObjectSerializer {
             let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             subType = subType.substring(0, subType.length - 1); // Type> => Type
             let transformedData: any[] = [];
-            for (let index in data) {
-                let date = data[index];
+            for (let date of data) {
                 transformedData.push(ObjectSerializer.serialize(date, subType, format));
             }
             return transformedData;
@@ -268,8 +312,7 @@ export class ObjectSerializer {
             // get the map for the correct type.
             let attributeTypes = typeMap[type].getAttributeTypeMap();
             let instance: {[index: string]: any} = {};
-            for (let index in attributeTypes) {
-                let attributeType = attributeTypes[index];
+            for (let attributeType of attributeTypes) {
                 instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type, attributeType.format);
             }
             return instance;
@@ -287,8 +330,7 @@ export class ObjectSerializer {
             let subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             subType = subType.substring(0, subType.length - 1); // Type> => Type
             let transformedData: any[] = [];
-            for (let index in data) {
-                let date = data[index];
+            for (let date of data) {
                 transformedData.push(ObjectSerializer.deserialize(date, subType, format));
             }
             return transformedData;
@@ -304,9 +346,11 @@ export class ObjectSerializer {
             }
             let instance = new typeMap[type]();
             let attributeTypes = typeMap[type].getAttributeTypeMap();
-            for (let index in attributeTypes) {
-                let attributeType = attributeTypes[index];
-                instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type, attributeType.format);
+            for (let attributeType of attributeTypes) {
+                let value = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type, attributeType.format);
+                if (value !== undefined) {
+                    instance[attributeType.name] = value;
+                }
             }
             return instance;
         }
@@ -334,32 +378,32 @@ export class ObjectSerializer {
      */
     public static getPreferredMediaType(mediaTypes: Array<string>): string {
         /** According to OAS 3 we should default to json */
-        if (!mediaTypes) {
+        if (mediaTypes.length === 0) {
             return "application/json";
         }
 
         const normalMediaTypes = mediaTypes.map(this.normalizeMediaType);
-        let selectedMediaType: string | undefined = undefined;
-        let selectedRank: number = -Infinity;
-        for (const mediaType of normalMediaTypes) {
-            if (supportedMediaTypes[mediaType!] > selectedRank) {
-                selectedMediaType = mediaType;
-                selectedRank = supportedMediaTypes[mediaType!];
+
+        for (const predicate of supportedMimeTypePredicatesWithPriority) {
+            for (const mediaType of normalMediaTypes) {
+                if (mediaType != null && predicate(mediaType)) {
+                    return mediaType;
+                }
             }
         }
 
-        if (selectedMediaType === undefined) {
-            throw new Error("None of the given media types are supported: " + mediaTypes.join(", "));
-        }
-
-        return selectedMediaType!;
+        throw new Error("None of the given media types are supported: " + mediaTypes.join(", "));
     }
 
     /**
      * Convert data to a string according the given media type
      */
     public static stringify(data: any, mediaType: string): string {
-        if (mediaType === "application/json") {
+        if (isTextLikeMimeType(mediaType)) {
+            return String(data);
+        }
+
+        if (isJsonLikeMimeType(mediaType)) {
             return JSON.stringify(data);
         }
 
@@ -374,7 +418,11 @@ export class ObjectSerializer {
             throw new Error("Cannot parse content. No Content-Type defined.");
         }
 
-        if (mediaType === "application/json") {
+        if (isTextLikeMimeType(mediaType)) {
+            return rawData;
+        }
+
+        if (isJsonLikeMimeType(mediaType)) {
             return JSON.parse(rawData);
         }
 

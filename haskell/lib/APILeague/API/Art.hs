@@ -103,7 +103,7 @@ instance Produces ImageToAsciiArtByURL MimePlainText
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
 randomPoem
-  :: APILeagueRequest RandomPoem MimeNoContent InlineResponse20011 MimeJSON
+  :: APILeagueRequest RandomPoem MimeNoContent RandomPoem200Response MimeJSON
 randomPoem =
   _mkRequest "GET" ["/retrieve-random-poem"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **convertUnits**
-> InlineResponse20030 convertUnits()
+> ConvertUnits200Response convertUnits()
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20030**
+**ConvertUnits200Response**
 
 ### Authorization
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## randomQuote
 
-> InlineResponse20010 randomQuote(opts)
+> RandomQuote200Response randomQuote(opts)
 
 Random Quote
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ## randomTrivia
 
-> InlineResponse2009 randomTrivia(opts)
+> RandomTrivia200Response randomTrivia(opts)
 
 Random Trivia
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

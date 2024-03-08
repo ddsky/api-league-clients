@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **randomQuote**
-> InlineResponse20010 randomQuote(minLength, maxLength)
+> RandomQuote200Response randomQuote(minLength, maxLength)
 
 Random Quote
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **randomTrivia**
-> InlineResponse2009 randomTrivia(maxLength)
+> RandomTrivia200Response randomTrivia(maxLength)
 
 Random Trivia
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 

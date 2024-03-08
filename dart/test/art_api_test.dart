@@ -1,7 +1,7 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.0
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
@@ -14,15 +14,15 @@ import 'package:test/test.dart';
 
 /// tests for ArtApi
 void main() {
-  final instance = ArtApi();
+  // final instance = ArtApi();
 
   group('tests for ArtApi', () {
-    // Image to Ascii Art by Image File
+    // Image to Ascii Art by URL
     //
-    // Convert an image to ASCII art. You can pass the image as body to the API. This endpoint is using the POST method and the actual image file as the body of the request.
+    // Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
     //
-    //Future<String> imageToAsciiArtByImageFile({ num width, num height }) async
-    test('test imageToAsciiArtByImageFile', () async {
+    //Future<String> imageToAsciiArtByURL(String url, { int width, int height }) async
+    test('test imageToAsciiArtByURL', () async {
       // TODO
     });
 
@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
     //
-    //Future<InlineResponse20011> randomPoem({ num minLines, num maxLines }) async
+    //Future<RandomPoem200Response> randomPoem({ int minLines, int maxLines }) async
     test('test randomPoem', () async {
       // TODO
     });

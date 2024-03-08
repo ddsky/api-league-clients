@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books
-[**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books |
+| [**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books |
 
 
-<a name="findSimilarBooks"></a>
+<a id="findSimilarBooks"></a>
 # **findSimilarBooks**
-> InlineResponse2001 findSimilarBooks(id, number)
+> FindSimilarBooks200Response findSimilarBooks(id, number)
 
 Find Similar Books
 
@@ -47,7 +47,7 @@ public class Example {
     Integer id = 8302059; // Integer | The id of the book to which similar books should be found.
     Integer number = 10; // Integer | The number of similar books to return in range [1,100]
     try {
-      InlineResponse2001 result = apiInstance.findSimilarBooks(id, number);
+      FindSimilarBooks200Response result = apiInstance.findSimilarBooks(id, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BooksApi#findSimilarBooks");
@@ -62,14 +62,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| The id of the book to which similar books should be found. |
- **number** | **Integer**| The number of similar books to return in range [1,100] | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| The id of the book to which similar books should be found. | |
+| **number** | **Integer**| The number of similar books to return in range [1,100] | [optional] |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -83,17 +83,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchBooks"></a>
+<a id="searchBooks"></a>
 # **searchBooks**
-> InlineResponse200 searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
 Search Books
 
@@ -142,7 +142,7 @@ public class Example {
     Integer offset = 0; // Integer | The number of books to skip in range [0,1000]
     Integer number = 10; // Integer | The number of books to return in range [1,100]
     try {
-      InlineResponse200 result = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+      SearchBooks200Response result = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BooksApi#searchBooks");
@@ -157,26 +157,26 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **String**| The search query. | [optional]
- **earliestPublishYear** | **Integer**| The books must have been published after this year. | [optional]
- **latestPublishYear** | **Integer**| The books must have been published before this year. | [optional]
- **minRating** | **Double**| The minimum rating the book must have gotten in the interval [0,1]. | [optional]
- **maxRating** | **Double**| The maximum rating the book must have gotten in the interval [0,1]. | [optional]
- **genres** | **String**| A comma-separated list of  genres. Only books from any of the given genres will be returned. | [optional]
- **authors** | **String**| A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | [optional]
- **isbn** | **String**| Only the book matching the ISBN-13 will be returned | [optional]
- **oclc** | **String**| Only the book matching the OCLC will be returned | [optional]
- **sort** | **String**| The sorting criteria (publish-date or rating). | [optional]
- **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **groupResults** | **Boolean**| Whether to group similar editions of the same book. | [optional]
- **offset** | **Integer**| The number of books to skip in range [0,1000] | [optional]
- **number** | **Integer**| The number of books to return in range [1,100] | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **query** | **String**| The search query. | [optional] |
+| **earliestPublishYear** | **Integer**| The books must have been published after this year. | [optional] |
+| **latestPublishYear** | **Integer**| The books must have been published before this year. | [optional] |
+| **minRating** | **Double**| The minimum rating the book must have gotten in the interval [0,1]. | [optional] |
+| **maxRating** | **Double**| The maximum rating the book must have gotten in the interval [0,1]. | [optional] |
+| **genres** | **String**| A comma-separated list of  genres. Only books from any of the given genres will be returned. | [optional] |
+| **authors** | **String**| A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | [optional] |
+| **isbn** | **String**| Only the book matching the ISBN-13 will be returned | [optional] |
+| **oclc** | **String**| Only the book matching the OCLC will be returned | [optional] |
+| **sort** | **String**| The sorting criteria (publish-date or rating). | [optional] |
+| **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **groupResults** | **Boolean**| Whether to group similar editions of the same book. | [optional] |
+| **offset** | **Integer**| The number of books to skip in range [0,1000] | [optional] |
+| **number** | **Integer**| The number of books to return in range [1,100] | [optional] |
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 
@@ -190,11 +190,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

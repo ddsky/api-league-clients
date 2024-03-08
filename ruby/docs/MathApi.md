@@ -9,7 +9,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## convert_units
 
-> <InlineResponse20030> convert_units(source_amount, source_unit, target_unit, opts)
+> <ConvertUnits200Response> convert_units(source_amount, source_unit, target_unit, opts)
 
 Convert Units
 
@@ -54,7 +54,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20030>, Integer, Hash)> convert_units_with_http_info(source_amount, source_unit, target_unit, opts)
+> <Array(<ConvertUnits200Response>, Integer, Hash)> convert_units_with_http_info(source_amount, source_unit, target_unit, opts)
 
 ```ruby
 begin
@@ -62,7 +62,7 @@ begin
   data, status_code, headers = api_instance.convert_units_with_http_info(source_amount, source_unit, target_unit, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20030>
+  p data # => <ConvertUnits200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MathApi->convert_units_with_http_info: #{e}"
 end
@@ -79,7 +79,7 @@ end
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

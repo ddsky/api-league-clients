@@ -217,518 +217,938 @@ newtype Word = Word { unWord :: Text } deriving (P.Eq, P.Show)
 -- * Models
 
 
--- ** InlineResponse200
--- | InlineResponse200
-data InlineResponse200 = InlineResponse200
-  { inlineResponse200Available :: !(Maybe Int) -- ^ "available"
-  , inlineResponse200Number :: !(Maybe Int) -- ^ "number"
-  , inlineResponse200Offset :: !(Maybe Int) -- ^ "offset"
-  , inlineResponse200Books :: !(Maybe [InlineResponse200Books]) -- ^ "books"
+-- ** ConvertUnits200Response
+-- | ConvertUnits200Response
+data ConvertUnits200Response = ConvertUnits200Response
+  { convertUnits200ResponseTargetAmount :: !(Maybe Double) -- ^ "target_amount"
+  , convertUnits200ResponseTargetUnit :: !(Maybe Text) -- ^ "target_unit"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse200
-instance A.FromJSON InlineResponse200 where
-  parseJSON = A.withObject "InlineResponse200" $ \o ->
-    InlineResponse200
-      <$> (o .:? "available")
-      <*> (o .:? "number")
-      <*> (o .:? "offset")
-      <*> (o .:? "books")
+-- | FromJSON ConvertUnits200Response
+instance A.FromJSON ConvertUnits200Response where
+  parseJSON = A.withObject "ConvertUnits200Response" $ \o ->
+    ConvertUnits200Response
+      <$> (o .:? "target_amount")
+      <*> (o .:? "target_unit")
 
--- | ToJSON InlineResponse200
-instance A.ToJSON InlineResponse200 where
-  toJSON InlineResponse200 {..} =
+-- | ToJSON ConvertUnits200Response
+instance A.ToJSON ConvertUnits200Response where
+  toJSON ConvertUnits200Response {..} =
    _omitNulls
-      [ "available" .= inlineResponse200Available
-      , "number" .= inlineResponse200Number
-      , "offset" .= inlineResponse200Offset
-      , "books" .= inlineResponse200Books
+      [ "target_amount" .= convertUnits200ResponseTargetAmount
+      , "target_unit" .= convertUnits200ResponseTargetUnit
       ]
 
 
--- | Construct a value of type 'InlineResponse200' (by applying it's required fields, if any)
-mkInlineResponse200
-  :: InlineResponse200
-mkInlineResponse200 =
-  InlineResponse200
-  { inlineResponse200Available = Nothing
-  , inlineResponse200Number = Nothing
-  , inlineResponse200Offset = Nothing
-  , inlineResponse200Books = Nothing
+-- | Construct a value of type 'ConvertUnits200Response' (by applying it's required fields, if any)
+mkConvertUnits200Response
+  :: ConvertUnits200Response
+mkConvertUnits200Response =
+  ConvertUnits200Response
+  { convertUnits200ResponseTargetAmount = Nothing
+  , convertUnits200ResponseTargetUnit = Nothing
   }
 
--- ** InlineResponse2001
--- | InlineResponse2001
-data InlineResponse2001 = InlineResponse2001
-  { inlineResponse2001SimilarBooks :: !(Maybe [InlineResponse200Books]) -- ^ "similar_books"
+-- ** CorrectSpelling200Response
+-- | CorrectSpelling200Response
+data CorrectSpelling200Response = CorrectSpelling200Response
+  { correctSpelling200ResponseCorrectedText :: !(Maybe Text) -- ^ "corrected_text"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2001
-instance A.FromJSON InlineResponse2001 where
-  parseJSON = A.withObject "InlineResponse2001" $ \o ->
-    InlineResponse2001
-      <$> (o .:? "similar_books")
-
--- | ToJSON InlineResponse2001
-instance A.ToJSON InlineResponse2001 where
-  toJSON InlineResponse2001 {..} =
-   _omitNulls
-      [ "similar_books" .= inlineResponse2001SimilarBooks
-      ]
-
-
--- | Construct a value of type 'InlineResponse2001' (by applying it's required fields, if any)
-mkInlineResponse2001
-  :: InlineResponse2001
-mkInlineResponse2001 =
-  InlineResponse2001
-  { inlineResponse2001SimilarBooks = Nothing
-  }
-
--- ** InlineResponse20010
--- | InlineResponse20010
-data InlineResponse20010 = InlineResponse20010
-  { inlineResponse20010Author :: !(Maybe Text) -- ^ "author"
-  , inlineResponse20010Quote :: !(Maybe Text) -- ^ "quote"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20010
-instance A.FromJSON InlineResponse20010 where
-  parseJSON = A.withObject "InlineResponse20010" $ \o ->
-    InlineResponse20010
-      <$> (o .:? "author")
-      <*> (o .:? "quote")
-
--- | ToJSON InlineResponse20010
-instance A.ToJSON InlineResponse20010 where
-  toJSON InlineResponse20010 {..} =
-   _omitNulls
-      [ "author" .= inlineResponse20010Author
-      , "quote" .= inlineResponse20010Quote
-      ]
-
-
--- | Construct a value of type 'InlineResponse20010' (by applying it's required fields, if any)
-mkInlineResponse20010
-  :: InlineResponse20010
-mkInlineResponse20010 =
-  InlineResponse20010
-  { inlineResponse20010Author = Nothing
-  , inlineResponse20010Quote = Nothing
-  }
-
--- ** InlineResponse20011
--- | InlineResponse20011
-data InlineResponse20011 = InlineResponse20011
-  { inlineResponse20011Title :: !(Maybe Text) -- ^ "title"
-  , inlineResponse20011Author :: !(Maybe Text) -- ^ "author"
-  , inlineResponse20011Poem :: !(Maybe Text) -- ^ "poem"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20011
-instance A.FromJSON InlineResponse20011 where
-  parseJSON = A.withObject "InlineResponse20011" $ \o ->
-    InlineResponse20011
-      <$> (o .:? "title")
-      <*> (o .:? "author")
-      <*> (o .:? "poem")
-
--- | ToJSON InlineResponse20011
-instance A.ToJSON InlineResponse20011 where
-  toJSON InlineResponse20011 {..} =
-   _omitNulls
-      [ "title" .= inlineResponse20011Title
-      , "author" .= inlineResponse20011Author
-      , "poem" .= inlineResponse20011Poem
-      ]
-
-
--- | Construct a value of type 'InlineResponse20011' (by applying it's required fields, if any)
-mkInlineResponse20011
-  :: InlineResponse20011
-mkInlineResponse20011 =
-  InlineResponse20011
-  { inlineResponse20011Title = Nothing
-  , inlineResponse20011Author = Nothing
-  , inlineResponse20011Poem = Nothing
-  }
-
--- ** InlineResponse20012
--- | InlineResponse20012
-data InlineResponse20012 = InlineResponse20012
-  { inlineResponse20012Title :: !(Maybe Text) -- ^ "title"
-  , inlineResponse20012MainText :: !(Maybe Text) -- ^ "main_text"
-  , inlineResponse20012MainHtml :: !(Maybe Text) -- ^ "main_html"
-  , inlineResponse20012Images :: !(Maybe [Text]) -- ^ "images"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20012
-instance A.FromJSON InlineResponse20012 where
-  parseJSON = A.withObject "InlineResponse20012" $ \o ->
-    InlineResponse20012
-      <$> (o .:? "title")
-      <*> (o .:? "main_text")
-      <*> (o .:? "main_html")
-      <*> (o .:? "images")
-
--- | ToJSON InlineResponse20012
-instance A.ToJSON InlineResponse20012 where
-  toJSON InlineResponse20012 {..} =
-   _omitNulls
-      [ "title" .= inlineResponse20012Title
-      , "main_text" .= inlineResponse20012MainText
-      , "main_html" .= inlineResponse20012MainHtml
-      , "images" .= inlineResponse20012Images
-      ]
-
-
--- | Construct a value of type 'InlineResponse20012' (by applying it's required fields, if any)
-mkInlineResponse20012
-  :: InlineResponse20012
-mkInlineResponse20012 =
-  InlineResponse20012
-  { inlineResponse20012Title = Nothing
-  , inlineResponse20012MainText = Nothing
-  , inlineResponse20012MainHtml = Nothing
-  , inlineResponse20012Images = Nothing
-  }
-
--- ** InlineResponse20013
--- | InlineResponse20013
-data InlineResponse20013 = InlineResponse20013
-  { inlineResponse20013PublishDate :: !(Maybe Text) -- ^ "publish_date"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20013
-instance A.FromJSON InlineResponse20013 where
-  parseJSON = A.withObject "InlineResponse20013" $ \o ->
-    InlineResponse20013
-      <$> (o .:? "publish_date")
-
--- | ToJSON InlineResponse20013
-instance A.ToJSON InlineResponse20013 where
-  toJSON InlineResponse20013 {..} =
-   _omitNulls
-      [ "publish_date" .= inlineResponse20013PublishDate
-      ]
-
-
--- | Construct a value of type 'InlineResponse20013' (by applying it's required fields, if any)
-mkInlineResponse20013
-  :: InlineResponse20013
-mkInlineResponse20013 =
-  InlineResponse20013
-  { inlineResponse20013PublishDate = Nothing
-  }
-
--- ** InlineResponse20014
--- | InlineResponse20014
-data InlineResponse20014 = InlineResponse20014
-  { inlineResponse20014Authors :: !(Maybe [InlineResponse20014Authors]) -- ^ "authors"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20014
-instance A.FromJSON InlineResponse20014 where
-  parseJSON = A.withObject "InlineResponse20014" $ \o ->
-    InlineResponse20014
-      <$> (o .:? "authors")
-
--- | ToJSON InlineResponse20014
-instance A.ToJSON InlineResponse20014 where
-  toJSON InlineResponse20014 {..} =
-   _omitNulls
-      [ "authors" .= inlineResponse20014Authors
-      ]
-
-
--- | Construct a value of type 'InlineResponse20014' (by applying it's required fields, if any)
-mkInlineResponse20014
-  :: InlineResponse20014
-mkInlineResponse20014 =
-  InlineResponse20014
-  { inlineResponse20014Authors = Nothing
-  }
-
--- ** InlineResponse20014Authors
--- | InlineResponse20014Authors
-data InlineResponse20014Authors = InlineResponse20014Authors
-  { inlineResponse20014AuthorsLink :: !(Maybe Text) -- ^ "link"
-  , inlineResponse20014AuthorsName :: !(Maybe Text) -- ^ "name"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20014Authors
-instance A.FromJSON InlineResponse20014Authors where
-  parseJSON = A.withObject "InlineResponse20014Authors" $ \o ->
-    InlineResponse20014Authors
-      <$> (o .:? "link")
-      <*> (o .:? "name")
-
--- | ToJSON InlineResponse20014Authors
-instance A.ToJSON InlineResponse20014Authors where
-  toJSON InlineResponse20014Authors {..} =
-   _omitNulls
-      [ "link" .= inlineResponse20014AuthorsLink
-      , "name" .= inlineResponse20014AuthorsName
-      ]
-
-
--- | Construct a value of type 'InlineResponse20014Authors' (by applying it's required fields, if any)
-mkInlineResponse20014Authors
-  :: InlineResponse20014Authors
-mkInlineResponse20014Authors =
-  InlineResponse20014Authors
-  { inlineResponse20014AuthorsLink = Nothing
-  , inlineResponse20014AuthorsName = Nothing
-  }
-
--- ** InlineResponse20015
--- | InlineResponse20015
-data InlineResponse20015 = InlineResponse20015
-  { inlineResponse20015Results :: !(Maybe [InlineResponse20015Results]) -- ^ "results"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20015
-instance A.FromJSON InlineResponse20015 where
-  parseJSON = A.withObject "InlineResponse20015" $ \o ->
-    InlineResponse20015
-      <$> (o .:? "results")
-
--- | ToJSON InlineResponse20015
-instance A.ToJSON InlineResponse20015 where
-  toJSON InlineResponse20015 {..} =
-   _omitNulls
-      [ "results" .= inlineResponse20015Results
-      ]
-
-
--- | Construct a value of type 'InlineResponse20015' (by applying it's required fields, if any)
-mkInlineResponse20015
-  :: InlineResponse20015
-mkInlineResponse20015 =
-  InlineResponse20015
-  { inlineResponse20015Results = Nothing
-  }
-
--- ** InlineResponse20015Results
--- | InlineResponse20015Results
-data InlineResponse20015Results = InlineResponse20015Results
-  { inlineResponse20015ResultsTitle :: !(Maybe Text) -- ^ "title"
-  , inlineResponse20015ResultsSummary :: !(Maybe Text) -- ^ "summary"
-  , inlineResponse20015ResultsUrl :: !(Maybe Text) -- ^ "url"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20015Results
-instance A.FromJSON InlineResponse20015Results where
-  parseJSON = A.withObject "InlineResponse20015Results" $ \o ->
-    InlineResponse20015Results
-      <$> (o .:? "title")
-      <*> (o .:? "summary")
-      <*> (o .:? "url")
-
--- | ToJSON InlineResponse20015Results
-instance A.ToJSON InlineResponse20015Results where
-  toJSON InlineResponse20015Results {..} =
-   _omitNulls
-      [ "title" .= inlineResponse20015ResultsTitle
-      , "summary" .= inlineResponse20015ResultsSummary
-      , "url" .= inlineResponse20015ResultsUrl
-      ]
-
-
--- | Construct a value of type 'InlineResponse20015Results' (by applying it's required fields, if any)
-mkInlineResponse20015Results
-  :: InlineResponse20015Results
-mkInlineResponse20015Results =
-  InlineResponse20015Results
-  { inlineResponse20015ResultsTitle = Nothing
-  , inlineResponse20015ResultsSummary = Nothing
-  , inlineResponse20015ResultsUrl = Nothing
-  }
-
--- ** InlineResponse20016
--- | InlineResponse20016
-data InlineResponse20016 = InlineResponse20016
-  { inlineResponse20016CorrectedText :: !(Maybe Text) -- ^ "corrected_text"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20016
-instance A.FromJSON InlineResponse20016 where
-  parseJSON = A.withObject "InlineResponse20016" $ \o ->
-    InlineResponse20016
+-- | FromJSON CorrectSpelling200Response
+instance A.FromJSON CorrectSpelling200Response where
+  parseJSON = A.withObject "CorrectSpelling200Response" $ \o ->
+    CorrectSpelling200Response
       <$> (o .:? "corrected_text")
 
--- | ToJSON InlineResponse20016
-instance A.ToJSON InlineResponse20016 where
-  toJSON InlineResponse20016 {..} =
+-- | ToJSON CorrectSpelling200Response
+instance A.ToJSON CorrectSpelling200Response where
+  toJSON CorrectSpelling200Response {..} =
    _omitNulls
-      [ "corrected_text" .= inlineResponse20016CorrectedText
+      [ "corrected_text" .= correctSpelling200ResponseCorrectedText
       ]
 
 
--- | Construct a value of type 'InlineResponse20016' (by applying it's required fields, if any)
-mkInlineResponse20016
-  :: InlineResponse20016
-mkInlineResponse20016 =
-  InlineResponse20016
-  { inlineResponse20016CorrectedText = Nothing
+-- | Construct a value of type 'CorrectSpelling200Response' (by applying it's required fields, if any)
+mkCorrectSpelling200Response
+  :: CorrectSpelling200Response
+mkCorrectSpelling200Response =
+  CorrectSpelling200Response
+  { correctSpelling200ResponseCorrectedText = Nothing
   }
 
--- ** InlineResponse20017
--- | InlineResponse20017
-data InlineResponse20017 = InlineResponse20017
-  { inlineResponse20017Language :: !(Maybe Text) -- ^ "language"
-  , inlineResponse20017Confidence :: !(Maybe Double) -- ^ "confidence"
+-- ** DetectLanguage200ResponseInner
+-- | DetectLanguage200ResponseInner
+data DetectLanguage200ResponseInner = DetectLanguage200ResponseInner
+  { detectLanguage200ResponseInnerLanguage :: !(Maybe Text) -- ^ "language"
+  , detectLanguage200ResponseInnerConfidence :: !(Maybe Double) -- ^ "confidence"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20017
-instance A.FromJSON InlineResponse20017 where
-  parseJSON = A.withObject "InlineResponse20017" $ \o ->
-    InlineResponse20017
+-- | FromJSON DetectLanguage200ResponseInner
+instance A.FromJSON DetectLanguage200ResponseInner where
+  parseJSON = A.withObject "DetectLanguage200ResponseInner" $ \o ->
+    DetectLanguage200ResponseInner
       <$> (o .:? "language")
       <*> (o .:? "confidence")
 
--- | ToJSON InlineResponse20017
-instance A.ToJSON InlineResponse20017 where
-  toJSON InlineResponse20017 {..} =
+-- | ToJSON DetectLanguage200ResponseInner
+instance A.ToJSON DetectLanguage200ResponseInner where
+  toJSON DetectLanguage200ResponseInner {..} =
    _omitNulls
-      [ "language" .= inlineResponse20017Language
-      , "confidence" .= inlineResponse20017Confidence
+      [ "language" .= detectLanguage200ResponseInnerLanguage
+      , "confidence" .= detectLanguage200ResponseInnerConfidence
       ]
 
 
--- | Construct a value of type 'InlineResponse20017' (by applying it's required fields, if any)
-mkInlineResponse20017
-  :: InlineResponse20017
-mkInlineResponse20017 =
-  InlineResponse20017
-  { inlineResponse20017Language = Nothing
-  , inlineResponse20017Confidence = Nothing
+-- | Construct a value of type 'DetectLanguage200ResponseInner' (by applying it's required fields, if any)
+mkDetectLanguage200ResponseInner
+  :: DetectLanguage200ResponseInner
+mkDetectLanguage200ResponseInner =
+  DetectLanguage200ResponseInner
+  { detectLanguage200ResponseInnerLanguage = Nothing
+  , detectLanguage200ResponseInnerConfidence = Nothing
   }
 
--- ** InlineResponse20018
--- | InlineResponse20018
-data InlineResponse20018 = InlineResponse20018
-  { inlineResponse20018Document :: !(Maybe InlineResponse20018Document) -- ^ "document"
-  , inlineResponse20018Sentences :: !(Maybe [InlineResponse20018Sentences]) -- ^ "sentences"
+-- ** DetectMainImageColor200ResponseInner
+-- | DetectMainImageColor200ResponseInner
+data DetectMainImageColor200ResponseInner = DetectMainImageColor200ResponseInner
+  { detectMainImageColor200ResponseInnerSpecificColor :: !(Maybe Text) -- ^ "specific_color"
+  , detectMainImageColor200ResponseInnerMainColor :: !(Maybe Text) -- ^ "main_color"
+  , detectMainImageColor200ResponseInnerHexCode :: !(Maybe Text) -- ^ "hex_code"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20018
-instance A.FromJSON InlineResponse20018 where
-  parseJSON = A.withObject "InlineResponse20018" $ \o ->
-    InlineResponse20018
+-- | FromJSON DetectMainImageColor200ResponseInner
+instance A.FromJSON DetectMainImageColor200ResponseInner where
+  parseJSON = A.withObject "DetectMainImageColor200ResponseInner" $ \o ->
+    DetectMainImageColor200ResponseInner
+      <$> (o .:? "specific_color")
+      <*> (o .:? "main_color")
+      <*> (o .:? "hex_code")
+
+-- | ToJSON DetectMainImageColor200ResponseInner
+instance A.ToJSON DetectMainImageColor200ResponseInner where
+  toJSON DetectMainImageColor200ResponseInner {..} =
+   _omitNulls
+      [ "specific_color" .= detectMainImageColor200ResponseInnerSpecificColor
+      , "main_color" .= detectMainImageColor200ResponseInnerMainColor
+      , "hex_code" .= detectMainImageColor200ResponseInnerHexCode
+      ]
+
+
+-- | Construct a value of type 'DetectMainImageColor200ResponseInner' (by applying it's required fields, if any)
+mkDetectMainImageColor200ResponseInner
+  :: DetectMainImageColor200ResponseInner
+mkDetectMainImageColor200ResponseInner =
+  DetectMainImageColor200ResponseInner
+  { detectMainImageColor200ResponseInnerSpecificColor = Nothing
+  , detectMainImageColor200ResponseInnerMainColor = Nothing
+  , detectMainImageColor200ResponseInnerHexCode = Nothing
+  }
+
+-- ** DetectSentiment200Response
+-- | DetectSentiment200Response
+data DetectSentiment200Response = DetectSentiment200Response
+  { detectSentiment200ResponseDocument :: !(Maybe DetectSentiment200ResponseDocument) -- ^ "document"
+  , detectSentiment200ResponseSentences :: !(Maybe [DetectSentiment200ResponseSentencesInner]) -- ^ "sentences"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON DetectSentiment200Response
+instance A.FromJSON DetectSentiment200Response where
+  parseJSON = A.withObject "DetectSentiment200Response" $ \o ->
+    DetectSentiment200Response
       <$> (o .:? "document")
       <*> (o .:? "sentences")
 
--- | ToJSON InlineResponse20018
-instance A.ToJSON InlineResponse20018 where
-  toJSON InlineResponse20018 {..} =
+-- | ToJSON DetectSentiment200Response
+instance A.ToJSON DetectSentiment200Response where
+  toJSON DetectSentiment200Response {..} =
    _omitNulls
-      [ "document" .= inlineResponse20018Document
-      , "sentences" .= inlineResponse20018Sentences
+      [ "document" .= detectSentiment200ResponseDocument
+      , "sentences" .= detectSentiment200ResponseSentences
       ]
 
 
--- | Construct a value of type 'InlineResponse20018' (by applying it's required fields, if any)
-mkInlineResponse20018
-  :: InlineResponse20018
-mkInlineResponse20018 =
-  InlineResponse20018
-  { inlineResponse20018Document = Nothing
-  , inlineResponse20018Sentences = Nothing
+-- | Construct a value of type 'DetectSentiment200Response' (by applying it's required fields, if any)
+mkDetectSentiment200Response
+  :: DetectSentiment200Response
+mkDetectSentiment200Response =
+  DetectSentiment200Response
+  { detectSentiment200ResponseDocument = Nothing
+  , detectSentiment200ResponseSentences = Nothing
   }
 
--- ** InlineResponse20018Document
--- | InlineResponse20018Document
-data InlineResponse20018Document = InlineResponse20018Document
-  { inlineResponse20018DocumentSentiment :: !(Maybe Text) -- ^ "sentiment"
-  , inlineResponse20018DocumentConfidence :: !(Maybe Int) -- ^ "confidence"
-  , inlineResponse20018DocumentAverageConfidence :: !(Maybe Int) -- ^ "average_confidence"
+-- ** DetectSentiment200ResponseDocument
+-- | DetectSentiment200ResponseDocument
+data DetectSentiment200ResponseDocument = DetectSentiment200ResponseDocument
+  { detectSentiment200ResponseDocumentSentiment :: !(Maybe Text) -- ^ "sentiment"
+  , detectSentiment200ResponseDocumentConfidence :: !(Maybe Int) -- ^ "confidence"
+  , detectSentiment200ResponseDocumentAverageConfidence :: !(Maybe Int) -- ^ "average_confidence"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20018Document
-instance A.FromJSON InlineResponse20018Document where
-  parseJSON = A.withObject "InlineResponse20018Document" $ \o ->
-    InlineResponse20018Document
+-- | FromJSON DetectSentiment200ResponseDocument
+instance A.FromJSON DetectSentiment200ResponseDocument where
+  parseJSON = A.withObject "DetectSentiment200ResponseDocument" $ \o ->
+    DetectSentiment200ResponseDocument
       <$> (o .:? "sentiment")
       <*> (o .:? "confidence")
       <*> (o .:? "average_confidence")
 
--- | ToJSON InlineResponse20018Document
-instance A.ToJSON InlineResponse20018Document where
-  toJSON InlineResponse20018Document {..} =
+-- | ToJSON DetectSentiment200ResponseDocument
+instance A.ToJSON DetectSentiment200ResponseDocument where
+  toJSON DetectSentiment200ResponseDocument {..} =
    _omitNulls
-      [ "sentiment" .= inlineResponse20018DocumentSentiment
-      , "confidence" .= inlineResponse20018DocumentConfidence
-      , "average_confidence" .= inlineResponse20018DocumentAverageConfidence
+      [ "sentiment" .= detectSentiment200ResponseDocumentSentiment
+      , "confidence" .= detectSentiment200ResponseDocumentConfidence
+      , "average_confidence" .= detectSentiment200ResponseDocumentAverageConfidence
       ]
 
 
--- | Construct a value of type 'InlineResponse20018Document' (by applying it's required fields, if any)
-mkInlineResponse20018Document
-  :: InlineResponse20018Document
-mkInlineResponse20018Document =
-  InlineResponse20018Document
-  { inlineResponse20018DocumentSentiment = Nothing
-  , inlineResponse20018DocumentConfidence = Nothing
-  , inlineResponse20018DocumentAverageConfidence = Nothing
+-- | Construct a value of type 'DetectSentiment200ResponseDocument' (by applying it's required fields, if any)
+mkDetectSentiment200ResponseDocument
+  :: DetectSentiment200ResponseDocument
+mkDetectSentiment200ResponseDocument =
+  DetectSentiment200ResponseDocument
+  { detectSentiment200ResponseDocumentSentiment = Nothing
+  , detectSentiment200ResponseDocumentConfidence = Nothing
+  , detectSentiment200ResponseDocumentAverageConfidence = Nothing
   }
 
--- ** InlineResponse20018Sentences
--- | InlineResponse20018Sentences
-data InlineResponse20018Sentences = InlineResponse20018Sentences
-  { inlineResponse20018SentencesLength :: !(Maybe Int) -- ^ "length"
-  , inlineResponse20018SentencesSentiment :: !(Maybe Text) -- ^ "sentiment"
-  , inlineResponse20018SentencesOffset :: !(Maybe Int) -- ^ "offset"
-  , inlineResponse20018SentencesConfidence :: !(Maybe Int) -- ^ "confidence"
+-- ** DetectSentiment200ResponseSentencesInner
+-- | DetectSentiment200ResponseSentencesInner
+data DetectSentiment200ResponseSentencesInner = DetectSentiment200ResponseSentencesInner
+  { detectSentiment200ResponseSentencesInnerLength :: !(Maybe Int) -- ^ "length"
+  , detectSentiment200ResponseSentencesInnerSentiment :: !(Maybe Text) -- ^ "sentiment"
+  , detectSentiment200ResponseSentencesInnerOffset :: !(Maybe Int) -- ^ "offset"
+  , detectSentiment200ResponseSentencesInnerConfidence :: !(Maybe Int) -- ^ "confidence"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20018Sentences
-instance A.FromJSON InlineResponse20018Sentences where
-  parseJSON = A.withObject "InlineResponse20018Sentences" $ \o ->
-    InlineResponse20018Sentences
+-- | FromJSON DetectSentiment200ResponseSentencesInner
+instance A.FromJSON DetectSentiment200ResponseSentencesInner where
+  parseJSON = A.withObject "DetectSentiment200ResponseSentencesInner" $ \o ->
+    DetectSentiment200ResponseSentencesInner
       <$> (o .:? "length")
       <*> (o .:? "sentiment")
       <*> (o .:? "offset")
       <*> (o .:? "confidence")
 
--- | ToJSON InlineResponse20018Sentences
-instance A.ToJSON InlineResponse20018Sentences where
-  toJSON InlineResponse20018Sentences {..} =
+-- | ToJSON DetectSentiment200ResponseSentencesInner
+instance A.ToJSON DetectSentiment200ResponseSentencesInner where
+  toJSON DetectSentiment200ResponseSentencesInner {..} =
    _omitNulls
-      [ "length" .= inlineResponse20018SentencesLength
-      , "sentiment" .= inlineResponse20018SentencesSentiment
-      , "offset" .= inlineResponse20018SentencesOffset
-      , "confidence" .= inlineResponse20018SentencesConfidence
+      [ "length" .= detectSentiment200ResponseSentencesInnerLength
+      , "sentiment" .= detectSentiment200ResponseSentencesInnerSentiment
+      , "offset" .= detectSentiment200ResponseSentencesInnerOffset
+      , "confidence" .= detectSentiment200ResponseSentencesInnerConfidence
       ]
 
 
--- | Construct a value of type 'InlineResponse20018Sentences' (by applying it's required fields, if any)
-mkInlineResponse20018Sentences
-  :: InlineResponse20018Sentences
-mkInlineResponse20018Sentences =
-  InlineResponse20018Sentences
-  { inlineResponse20018SentencesLength = Nothing
-  , inlineResponse20018SentencesSentiment = Nothing
-  , inlineResponse20018SentencesOffset = Nothing
-  , inlineResponse20018SentencesConfidence = Nothing
+-- | Construct a value of type 'DetectSentiment200ResponseSentencesInner' (by applying it's required fields, if any)
+mkDetectSentiment200ResponseSentencesInner
+  :: DetectSentiment200ResponseSentencesInner
+mkDetectSentiment200ResponseSentencesInner =
+  DetectSentiment200ResponseSentencesInner
+  { detectSentiment200ResponseSentencesInnerLength = Nothing
+  , detectSentiment200ResponseSentencesInnerSentiment = Nothing
+  , detectSentiment200ResponseSentencesInnerOffset = Nothing
+  , detectSentiment200ResponseSentencesInnerConfidence = Nothing
   }
 
--- ** InlineResponse20019
--- | InlineResponse20019
-data InlineResponse20019 = InlineResponse20019
-  { inlineResponse20019NumberOfWords :: !(Maybe Int) -- ^ "number_of_words"
-  , inlineResponse20019NumberOfSentences :: !(Maybe Int) -- ^ "number_of_sentences"
-  , inlineResponse20019Readability :: !(Maybe InlineResponse20019Readability) -- ^ "readability"
-  , inlineResponse20019Skimmability :: !(Maybe InlineResponse20019Skimmability) -- ^ "skimmability"
-  , inlineResponse20019Interestingness :: !(Maybe InlineResponse20019Interestingness) -- ^ "interestingness"
-  , inlineResponse20019Style :: !(Maybe InlineResponse20019Style) -- ^ "style"
-  , inlineResponse20019TotalScore :: !(Maybe Double) -- ^ "total_score"
+-- ** ExtractAuthors200Response
+-- | ExtractAuthors200Response
+data ExtractAuthors200Response = ExtractAuthors200Response
+  { extractAuthors200ResponseAuthors :: !(Maybe [ExtractAuthors200ResponseAuthorsInner]) -- ^ "authors"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019
-instance A.FromJSON InlineResponse20019 where
-  parseJSON = A.withObject "InlineResponse20019" $ \o ->
-    InlineResponse20019
+-- | FromJSON ExtractAuthors200Response
+instance A.FromJSON ExtractAuthors200Response where
+  parseJSON = A.withObject "ExtractAuthors200Response" $ \o ->
+    ExtractAuthors200Response
+      <$> (o .:? "authors")
+
+-- | ToJSON ExtractAuthors200Response
+instance A.ToJSON ExtractAuthors200Response where
+  toJSON ExtractAuthors200Response {..} =
+   _omitNulls
+      [ "authors" .= extractAuthors200ResponseAuthors
+      ]
+
+
+-- | Construct a value of type 'ExtractAuthors200Response' (by applying it's required fields, if any)
+mkExtractAuthors200Response
+  :: ExtractAuthors200Response
+mkExtractAuthors200Response =
+  ExtractAuthors200Response
+  { extractAuthors200ResponseAuthors = Nothing
+  }
+
+-- ** ExtractAuthors200ResponseAuthorsInner
+-- | ExtractAuthors200ResponseAuthorsInner
+data ExtractAuthors200ResponseAuthorsInner = ExtractAuthors200ResponseAuthorsInner
+  { extractAuthors200ResponseAuthorsInnerLink :: !(Maybe Text) -- ^ "link"
+  , extractAuthors200ResponseAuthorsInnerName :: !(Maybe Text) -- ^ "name"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractAuthors200ResponseAuthorsInner
+instance A.FromJSON ExtractAuthors200ResponseAuthorsInner where
+  parseJSON = A.withObject "ExtractAuthors200ResponseAuthorsInner" $ \o ->
+    ExtractAuthors200ResponseAuthorsInner
+      <$> (o .:? "link")
+      <*> (o .:? "name")
+
+-- | ToJSON ExtractAuthors200ResponseAuthorsInner
+instance A.ToJSON ExtractAuthors200ResponseAuthorsInner where
+  toJSON ExtractAuthors200ResponseAuthorsInner {..} =
+   _omitNulls
+      [ "link" .= extractAuthors200ResponseAuthorsInnerLink
+      , "name" .= extractAuthors200ResponseAuthorsInnerName
+      ]
+
+
+-- | Construct a value of type 'ExtractAuthors200ResponseAuthorsInner' (by applying it's required fields, if any)
+mkExtractAuthors200ResponseAuthorsInner
+  :: ExtractAuthors200ResponseAuthorsInner
+mkExtractAuthors200ResponseAuthorsInner =
+  ExtractAuthors200ResponseAuthorsInner
+  { extractAuthors200ResponseAuthorsInnerLink = Nothing
+  , extractAuthors200ResponseAuthorsInnerName = Nothing
+  }
+
+-- ** ExtractContentFromAWebPage200Response
+-- | ExtractContentFromAWebPage200Response
+data ExtractContentFromAWebPage200Response = ExtractContentFromAWebPage200Response
+  { extractContentFromAWebPage200ResponseTitle :: !(Maybe Text) -- ^ "title"
+  , extractContentFromAWebPage200ResponseMainText :: !(Maybe Text) -- ^ "main_text"
+  , extractContentFromAWebPage200ResponseMainHtml :: !(Maybe Text) -- ^ "main_html"
+  , extractContentFromAWebPage200ResponseImages :: !(Maybe [Text]) -- ^ "images"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractContentFromAWebPage200Response
+instance A.FromJSON ExtractContentFromAWebPage200Response where
+  parseJSON = A.withObject "ExtractContentFromAWebPage200Response" $ \o ->
+    ExtractContentFromAWebPage200Response
+      <$> (o .:? "title")
+      <*> (o .:? "main_text")
+      <*> (o .:? "main_html")
+      <*> (o .:? "images")
+
+-- | ToJSON ExtractContentFromAWebPage200Response
+instance A.ToJSON ExtractContentFromAWebPage200Response where
+  toJSON ExtractContentFromAWebPage200Response {..} =
+   _omitNulls
+      [ "title" .= extractContentFromAWebPage200ResponseTitle
+      , "main_text" .= extractContentFromAWebPage200ResponseMainText
+      , "main_html" .= extractContentFromAWebPage200ResponseMainHtml
+      , "images" .= extractContentFromAWebPage200ResponseImages
+      ]
+
+
+-- | Construct a value of type 'ExtractContentFromAWebPage200Response' (by applying it's required fields, if any)
+mkExtractContentFromAWebPage200Response
+  :: ExtractContentFromAWebPage200Response
+mkExtractContentFromAWebPage200Response =
+  ExtractContentFromAWebPage200Response
+  { extractContentFromAWebPage200ResponseTitle = Nothing
+  , extractContentFromAWebPage200ResponseMainText = Nothing
+  , extractContentFromAWebPage200ResponseMainHtml = Nothing
+  , extractContentFromAWebPage200ResponseImages = Nothing
+  }
+
+-- ** ExtractDates200Response
+-- | ExtractDates200Response
+data ExtractDates200Response = ExtractDates200Response
+  { extractDates200ResponseDates :: !(Maybe [ExtractDates200ResponseDatesInner]) -- ^ "dates"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractDates200Response
+instance A.FromJSON ExtractDates200Response where
+  parseJSON = A.withObject "ExtractDates200Response" $ \o ->
+    ExtractDates200Response
+      <$> (o .:? "dates")
+
+-- | ToJSON ExtractDates200Response
+instance A.ToJSON ExtractDates200Response where
+  toJSON ExtractDates200Response {..} =
+   _omitNulls
+      [ "dates" .= extractDates200ResponseDates
+      ]
+
+
+-- | Construct a value of type 'ExtractDates200Response' (by applying it's required fields, if any)
+mkExtractDates200Response
+  :: ExtractDates200Response
+mkExtractDates200Response =
+  ExtractDates200Response
+  { extractDates200ResponseDates = Nothing
+  }
+
+-- ** ExtractDates200ResponseDatesInner
+-- | ExtractDates200ResponseDatesInner
+data ExtractDates200ResponseDatesInner = ExtractDates200ResponseDatesInner
+  { extractDates200ResponseDatesInnerStartPosition :: !(Maybe Int) -- ^ "start_position"
+  , extractDates200ResponseDatesInnerDate :: !(Maybe Text) -- ^ "date"
+  , extractDates200ResponseDatesInnerNormalizedDate :: !(Maybe Double) -- ^ "normalized_date"
+  , extractDates200ResponseDatesInnerTag :: !(Maybe Text) -- ^ "tag"
+  , extractDates200ResponseDatesInnerEndPosition :: !(Maybe Int) -- ^ "end_position"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractDates200ResponseDatesInner
+instance A.FromJSON ExtractDates200ResponseDatesInner where
+  parseJSON = A.withObject "ExtractDates200ResponseDatesInner" $ \o ->
+    ExtractDates200ResponseDatesInner
+      <$> (o .:? "start_position")
+      <*> (o .:? "date")
+      <*> (o .:? "normalized_date")
+      <*> (o .:? "tag")
+      <*> (o .:? "end_position")
+
+-- | ToJSON ExtractDates200ResponseDatesInner
+instance A.ToJSON ExtractDates200ResponseDatesInner where
+  toJSON ExtractDates200ResponseDatesInner {..} =
+   _omitNulls
+      [ "start_position" .= extractDates200ResponseDatesInnerStartPosition
+      , "date" .= extractDates200ResponseDatesInnerDate
+      , "normalized_date" .= extractDates200ResponseDatesInnerNormalizedDate
+      , "tag" .= extractDates200ResponseDatesInnerTag
+      , "end_position" .= extractDates200ResponseDatesInnerEndPosition
+      ]
+
+
+-- | Construct a value of type 'ExtractDates200ResponseDatesInner' (by applying it's required fields, if any)
+mkExtractDates200ResponseDatesInner
+  :: ExtractDates200ResponseDatesInner
+mkExtractDates200ResponseDatesInner =
+  ExtractDates200ResponseDatesInner
+  { extractDates200ResponseDatesInnerStartPosition = Nothing
+  , extractDates200ResponseDatesInnerDate = Nothing
+  , extractDates200ResponseDatesInnerNormalizedDate = Nothing
+  , extractDates200ResponseDatesInnerTag = Nothing
+  , extractDates200ResponseDatesInnerEndPosition = Nothing
+  }
+
+-- ** ExtractEntities200Response
+-- | ExtractEntities200Response
+data ExtractEntities200Response = ExtractEntities200Response
+  { extractEntities200ResponseEntities :: !(Maybe [ExtractEntities200ResponseEntitiesInner]) -- ^ "entities"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractEntities200Response
+instance A.FromJSON ExtractEntities200Response where
+  parseJSON = A.withObject "ExtractEntities200Response" $ \o ->
+    ExtractEntities200Response
+      <$> (o .:? "entities")
+
+-- | ToJSON ExtractEntities200Response
+instance A.ToJSON ExtractEntities200Response where
+  toJSON ExtractEntities200Response {..} =
+   _omitNulls
+      [ "entities" .= extractEntities200ResponseEntities
+      ]
+
+
+-- | Construct a value of type 'ExtractEntities200Response' (by applying it's required fields, if any)
+mkExtractEntities200Response
+  :: ExtractEntities200Response
+mkExtractEntities200Response =
+  ExtractEntities200Response
+  { extractEntities200ResponseEntities = Nothing
+  }
+
+-- ** ExtractEntities200ResponseEntitiesInner
+-- | ExtractEntities200ResponseEntitiesInner
+data ExtractEntities200ResponseEntitiesInner = ExtractEntities200ResponseEntitiesInner
+  { extractEntities200ResponseEntitiesInnerStartPosition :: !(Maybe Int) -- ^ "start_position"
+  , extractEntities200ResponseEntitiesInnerImage :: !(Maybe Text) -- ^ "image"
+  , extractEntities200ResponseEntitiesInnerType :: !(Maybe Text) -- ^ "type"
+  , extractEntities200ResponseEntitiesInnerValue :: !(Maybe Text) -- ^ "value"
+  , extractEntities200ResponseEntitiesInnerEndPosition :: !(Maybe Int) -- ^ "end_position"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractEntities200ResponseEntitiesInner
+instance A.FromJSON ExtractEntities200ResponseEntitiesInner where
+  parseJSON = A.withObject "ExtractEntities200ResponseEntitiesInner" $ \o ->
+    ExtractEntities200ResponseEntitiesInner
+      <$> (o .:? "start_position")
+      <*> (o .:? "image")
+      <*> (o .:? "type")
+      <*> (o .:? "value")
+      <*> (o .:? "end_position")
+
+-- | ToJSON ExtractEntities200ResponseEntitiesInner
+instance A.ToJSON ExtractEntities200ResponseEntitiesInner where
+  toJSON ExtractEntities200ResponseEntitiesInner {..} =
+   _omitNulls
+      [ "start_position" .= extractEntities200ResponseEntitiesInnerStartPosition
+      , "image" .= extractEntities200ResponseEntitiesInnerImage
+      , "type" .= extractEntities200ResponseEntitiesInnerType
+      , "value" .= extractEntities200ResponseEntitiesInnerValue
+      , "end_position" .= extractEntities200ResponseEntitiesInnerEndPosition
+      ]
+
+
+-- | Construct a value of type 'ExtractEntities200ResponseEntitiesInner' (by applying it's required fields, if any)
+mkExtractEntities200ResponseEntitiesInner
+  :: ExtractEntities200ResponseEntitiesInner
+mkExtractEntities200ResponseEntitiesInner =
+  ExtractEntities200ResponseEntitiesInner
+  { extractEntities200ResponseEntitiesInnerStartPosition = Nothing
+  , extractEntities200ResponseEntitiesInnerImage = Nothing
+  , extractEntities200ResponseEntitiesInnerType = Nothing
+  , extractEntities200ResponseEntitiesInnerValue = Nothing
+  , extractEntities200ResponseEntitiesInnerEndPosition = Nothing
+  }
+
+-- ** ExtractNews200Response
+-- | ExtractNews200Response
+data ExtractNews200Response = ExtractNews200Response
+  { extractNews200ResponseTitle :: !(Maybe Text) -- ^ "title"
+  , extractNews200ResponseText :: !(Maybe Text) -- ^ "text"
+  , extractNews200ResponseUrl :: !(Maybe Text) -- ^ "url"
+  , extractNews200ResponseImage :: !(Maybe Text) -- ^ "image"
+  , extractNews200ResponsePublishDate :: !(Maybe Text) -- ^ "publish_date"
+  , extractNews200ResponseAuthor :: !(Maybe Text) -- ^ "author"
+  , extractNews200ResponseLanguage :: !(Maybe Text) -- ^ "language"
+  , extractNews200ResponseSourceCountry :: !(Maybe Text) -- ^ "source_country"
+  , extractNews200ResponseSentiment :: !(Maybe Double) -- ^ "sentiment"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractNews200Response
+instance A.FromJSON ExtractNews200Response where
+  parseJSON = A.withObject "ExtractNews200Response" $ \o ->
+    ExtractNews200Response
+      <$> (o .:? "title")
+      <*> (o .:? "text")
+      <*> (o .:? "url")
+      <*> (o .:? "image")
+      <*> (o .:? "publish_date")
+      <*> (o .:? "author")
+      <*> (o .:? "language")
+      <*> (o .:? "source_country")
+      <*> (o .:? "sentiment")
+
+-- | ToJSON ExtractNews200Response
+instance A.ToJSON ExtractNews200Response where
+  toJSON ExtractNews200Response {..} =
+   _omitNulls
+      [ "title" .= extractNews200ResponseTitle
+      , "text" .= extractNews200ResponseText
+      , "url" .= extractNews200ResponseUrl
+      , "image" .= extractNews200ResponseImage
+      , "publish_date" .= extractNews200ResponsePublishDate
+      , "author" .= extractNews200ResponseAuthor
+      , "language" .= extractNews200ResponseLanguage
+      , "source_country" .= extractNews200ResponseSourceCountry
+      , "sentiment" .= extractNews200ResponseSentiment
+      ]
+
+
+-- | Construct a value of type 'ExtractNews200Response' (by applying it's required fields, if any)
+mkExtractNews200Response
+  :: ExtractNews200Response
+mkExtractNews200Response =
+  ExtractNews200Response
+  { extractNews200ResponseTitle = Nothing
+  , extractNews200ResponseText = Nothing
+  , extractNews200ResponseUrl = Nothing
+  , extractNews200ResponseImage = Nothing
+  , extractNews200ResponsePublishDate = Nothing
+  , extractNews200ResponseAuthor = Nothing
+  , extractNews200ResponseLanguage = Nothing
+  , extractNews200ResponseSourceCountry = Nothing
+  , extractNews200ResponseSentiment = Nothing
+  }
+
+-- ** ExtractPublishDate200Response
+-- | ExtractPublishDate200Response
+data ExtractPublishDate200Response = ExtractPublishDate200Response
+  { extractPublishDate200ResponsePublishDate :: !(Maybe Text) -- ^ "publish_date"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ExtractPublishDate200Response
+instance A.FromJSON ExtractPublishDate200Response where
+  parseJSON = A.withObject "ExtractPublishDate200Response" $ \o ->
+    ExtractPublishDate200Response
+      <$> (o .:? "publish_date")
+
+-- | ToJSON ExtractPublishDate200Response
+instance A.ToJSON ExtractPublishDate200Response where
+  toJSON ExtractPublishDate200Response {..} =
+   _omitNulls
+      [ "publish_date" .= extractPublishDate200ResponsePublishDate
+      ]
+
+
+-- | Construct a value of type 'ExtractPublishDate200Response' (by applying it's required fields, if any)
+mkExtractPublishDate200Response
+  :: ExtractPublishDate200Response
+mkExtractPublishDate200Response =
+  ExtractPublishDate200Response
+  { extractPublishDate200ResponsePublishDate = Nothing
+  }
+
+-- ** FindSimilarBooks200Response
+-- | FindSimilarBooks200Response
+data FindSimilarBooks200Response = FindSimilarBooks200Response
+  { findSimilarBooks200ResponseSimilarBooks :: !(Maybe [SearchBooks200ResponseBooksInner]) -- ^ "similar_books"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON FindSimilarBooks200Response
+instance A.FromJSON FindSimilarBooks200Response where
+  parseJSON = A.withObject "FindSimilarBooks200Response" $ \o ->
+    FindSimilarBooks200Response
+      <$> (o .:? "similar_books")
+
+-- | ToJSON FindSimilarBooks200Response
+instance A.ToJSON FindSimilarBooks200Response where
+  toJSON FindSimilarBooks200Response {..} =
+   _omitNulls
+      [ "similar_books" .= findSimilarBooks200ResponseSimilarBooks
+      ]
+
+
+-- | Construct a value of type 'FindSimilarBooks200Response' (by applying it's required fields, if any)
+mkFindSimilarBooks200Response
+  :: FindSimilarBooks200Response
+mkFindSimilarBooks200Response =
+  FindSimilarBooks200Response
+  { findSimilarBooks200ResponseSimilarBooks = Nothing
+  }
+
+-- ** GenerateNonsenseWord200Response
+-- | GenerateNonsenseWord200Response
+data GenerateNonsenseWord200Response = GenerateNonsenseWord200Response
+  { generateNonsenseWord200ResponseWord :: !(Maybe Text) -- ^ "word"
+  , generateNonsenseWord200ResponseRating :: !(Maybe Double) -- ^ "rating"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON GenerateNonsenseWord200Response
+instance A.FromJSON GenerateNonsenseWord200Response where
+  parseJSON = A.withObject "GenerateNonsenseWord200Response" $ \o ->
+    GenerateNonsenseWord200Response
+      <$> (o .:? "word")
+      <*> (o .:? "rating")
+
+-- | ToJSON GenerateNonsenseWord200Response
+instance A.ToJSON GenerateNonsenseWord200Response where
+  toJSON GenerateNonsenseWord200Response {..} =
+   _omitNulls
+      [ "word" .= generateNonsenseWord200ResponseWord
+      , "rating" .= generateNonsenseWord200ResponseRating
+      ]
+
+
+-- | Construct a value of type 'GenerateNonsenseWord200Response' (by applying it's required fields, if any)
+mkGenerateNonsenseWord200Response
+  :: GenerateNonsenseWord200Response
+mkGenerateNonsenseWord200Response =
+  GenerateNonsenseWord200Response
+  { generateNonsenseWord200ResponseWord = Nothing
+  , generateNonsenseWord200ResponseRating = Nothing
+  }
+
+-- ** ListWordSynonyms200Response
+-- | ListWordSynonyms200Response
+data ListWordSynonyms200Response = ListWordSynonyms200Response
+  { listWordSynonyms200ResponseSynonyms :: !(Maybe [Text]) -- ^ "synonyms"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ListWordSynonyms200Response
+instance A.FromJSON ListWordSynonyms200Response where
+  parseJSON = A.withObject "ListWordSynonyms200Response" $ \o ->
+    ListWordSynonyms200Response
+      <$> (o .:? "synonyms")
+
+-- | ToJSON ListWordSynonyms200Response
+instance A.ToJSON ListWordSynonyms200Response where
+  toJSON ListWordSynonyms200Response {..} =
+   _omitNulls
+      [ "synonyms" .= listWordSynonyms200ResponseSynonyms
+      ]
+
+
+-- | Construct a value of type 'ListWordSynonyms200Response' (by applying it's required fields, if any)
+mkListWordSynonyms200Response
+  :: ListWordSynonyms200Response
+mkListWordSynonyms200Response =
+  ListWordSynonyms200Response
+  { listWordSynonyms200ResponseSynonyms = Nothing
+  }
+
+-- ** PartOfSpeechTagging200Response
+-- | PartOfSpeechTagging200Response
+data PartOfSpeechTagging200Response = PartOfSpeechTagging200Response
+  { partOfSpeechTagging200ResponseTaggedText :: !(Maybe Text) -- ^ "tagged_text"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON PartOfSpeechTagging200Response
+instance A.FromJSON PartOfSpeechTagging200Response where
+  parseJSON = A.withObject "PartOfSpeechTagging200Response" $ \o ->
+    PartOfSpeechTagging200Response
+      <$> (o .:? "tagged_text")
+
+-- | ToJSON PartOfSpeechTagging200Response
+instance A.ToJSON PartOfSpeechTagging200Response where
+  toJSON PartOfSpeechTagging200Response {..} =
+   _omitNulls
+      [ "tagged_text" .= partOfSpeechTagging200ResponseTaggedText
+      ]
+
+
+-- | Construct a value of type 'PartOfSpeechTagging200Response' (by applying it's required fields, if any)
+mkPartOfSpeechTagging200Response
+  :: PartOfSpeechTagging200Response
+mkPartOfSpeechTagging200Response =
+  PartOfSpeechTagging200Response
+  { partOfSpeechTagging200ResponseTaggedText = Nothing
+  }
+
+-- ** PluralizeWord200Response
+-- | PluralizeWord200Response
+data PluralizeWord200Response = PluralizeWord200Response
+  { pluralizeWord200ResponseOriginal :: !(Maybe Text) -- ^ "original"
+  , pluralizeWord200ResponsePlural :: !(Maybe Text) -- ^ "plural"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON PluralizeWord200Response
+instance A.FromJSON PluralizeWord200Response where
+  parseJSON = A.withObject "PluralizeWord200Response" $ \o ->
+    PluralizeWord200Response
+      <$> (o .:? "original")
+      <*> (o .:? "plural")
+
+-- | ToJSON PluralizeWord200Response
+instance A.ToJSON PluralizeWord200Response where
+  toJSON PluralizeWord200Response {..} =
+   _omitNulls
+      [ "original" .= pluralizeWord200ResponseOriginal
+      , "plural" .= pluralizeWord200ResponsePlural
+      ]
+
+
+-- | Construct a value of type 'PluralizeWord200Response' (by applying it's required fields, if any)
+mkPluralizeWord200Response
+  :: PluralizeWord200Response
+mkPluralizeWord200Response =
+  PluralizeWord200Response
+  { pluralizeWord200ResponseOriginal = Nothing
+  , pluralizeWord200ResponsePlural = Nothing
+  }
+
+-- ** RandomMeme200Response
+-- | RandomMeme200Response
+data RandomMeme200Response = RandomMeme200Response
+  { randomMeme200ResponseDescription :: !(Maybe Text) -- ^ "description"
+  , randomMeme200ResponseUrl :: !(Maybe Text) -- ^ "url"
+  , randomMeme200ResponseType :: !(Maybe Text) -- ^ "type"
+  , randomMeme200ResponseWidth :: !(Maybe Int) -- ^ "width"
+  , randomMeme200ResponseHeight :: !(Maybe Int) -- ^ "height"
+  , randomMeme200ResponseRatio :: !(Maybe Double) -- ^ "ratio"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RandomMeme200Response
+instance A.FromJSON RandomMeme200Response where
+  parseJSON = A.withObject "RandomMeme200Response" $ \o ->
+    RandomMeme200Response
+      <$> (o .:? "description")
+      <*> (o .:? "url")
+      <*> (o .:? "type")
+      <*> (o .:? "width")
+      <*> (o .:? "height")
+      <*> (o .:? "ratio")
+
+-- | ToJSON RandomMeme200Response
+instance A.ToJSON RandomMeme200Response where
+  toJSON RandomMeme200Response {..} =
+   _omitNulls
+      [ "description" .= randomMeme200ResponseDescription
+      , "url" .= randomMeme200ResponseUrl
+      , "type" .= randomMeme200ResponseType
+      , "width" .= randomMeme200ResponseWidth
+      , "height" .= randomMeme200ResponseHeight
+      , "ratio" .= randomMeme200ResponseRatio
+      ]
+
+
+-- | Construct a value of type 'RandomMeme200Response' (by applying it's required fields, if any)
+mkRandomMeme200Response
+  :: RandomMeme200Response
+mkRandomMeme200Response =
+  RandomMeme200Response
+  { randomMeme200ResponseDescription = Nothing
+  , randomMeme200ResponseUrl = Nothing
+  , randomMeme200ResponseType = Nothing
+  , randomMeme200ResponseWidth = Nothing
+  , randomMeme200ResponseHeight = Nothing
+  , randomMeme200ResponseRatio = Nothing
+  }
+
+-- ** RandomPoem200Response
+-- | RandomPoem200Response
+data RandomPoem200Response = RandomPoem200Response
+  { randomPoem200ResponseTitle :: !(Maybe Text) -- ^ "title"
+  , randomPoem200ResponseAuthor :: !(Maybe Text) -- ^ "author"
+  , randomPoem200ResponsePoem :: !(Maybe Text) -- ^ "poem"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RandomPoem200Response
+instance A.FromJSON RandomPoem200Response where
+  parseJSON = A.withObject "RandomPoem200Response" $ \o ->
+    RandomPoem200Response
+      <$> (o .:? "title")
+      <*> (o .:? "author")
+      <*> (o .:? "poem")
+
+-- | ToJSON RandomPoem200Response
+instance A.ToJSON RandomPoem200Response where
+  toJSON RandomPoem200Response {..} =
+   _omitNulls
+      [ "title" .= randomPoem200ResponseTitle
+      , "author" .= randomPoem200ResponseAuthor
+      , "poem" .= randomPoem200ResponsePoem
+      ]
+
+
+-- | Construct a value of type 'RandomPoem200Response' (by applying it's required fields, if any)
+mkRandomPoem200Response
+  :: RandomPoem200Response
+mkRandomPoem200Response =
+  RandomPoem200Response
+  { randomPoem200ResponseTitle = Nothing
+  , randomPoem200ResponseAuthor = Nothing
+  , randomPoem200ResponsePoem = Nothing
+  }
+
+-- ** RandomQuote200Response
+-- | RandomQuote200Response
+data RandomQuote200Response = RandomQuote200Response
+  { randomQuote200ResponseAuthor :: !(Maybe Text) -- ^ "author"
+  , randomQuote200ResponseQuote :: !(Maybe Text) -- ^ "quote"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RandomQuote200Response
+instance A.FromJSON RandomQuote200Response where
+  parseJSON = A.withObject "RandomQuote200Response" $ \o ->
+    RandomQuote200Response
+      <$> (o .:? "author")
+      <*> (o .:? "quote")
+
+-- | ToJSON RandomQuote200Response
+instance A.ToJSON RandomQuote200Response where
+  toJSON RandomQuote200Response {..} =
+   _omitNulls
+      [ "author" .= randomQuote200ResponseAuthor
+      , "quote" .= randomQuote200ResponseQuote
+      ]
+
+
+-- | Construct a value of type 'RandomQuote200Response' (by applying it's required fields, if any)
+mkRandomQuote200Response
+  :: RandomQuote200Response
+mkRandomQuote200Response =
+  RandomQuote200Response
+  { randomQuote200ResponseAuthor = Nothing
+  , randomQuote200ResponseQuote = Nothing
+  }
+
+-- ** RandomTrivia200Response
+-- | RandomTrivia200Response
+data RandomTrivia200Response = RandomTrivia200Response
+  { randomTrivia200ResponseTrivia :: !(Maybe Text) -- ^ "trivia"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RandomTrivia200Response
+instance A.FromJSON RandomTrivia200Response where
+  parseJSON = A.withObject "RandomTrivia200Response" $ \o ->
+    RandomTrivia200Response
+      <$> (o .:? "trivia")
+
+-- | ToJSON RandomTrivia200Response
+instance A.ToJSON RandomTrivia200Response where
+  toJSON RandomTrivia200Response {..} =
+   _omitNulls
+      [ "trivia" .= randomTrivia200ResponseTrivia
+      ]
+
+
+-- | Construct a value of type 'RandomTrivia200Response' (by applying it's required fields, if any)
+mkRandomTrivia200Response
+  :: RandomTrivia200Response
+mkRandomTrivia200Response =
+  RandomTrivia200Response
+  { randomTrivia200ResponseTrivia = Nothing
+  }
+
+-- ** ReadKeyValueFromStore200Response
+-- | ReadKeyValueFromStore200Response
+data ReadKeyValueFromStore200Response = ReadKeyValueFromStore200Response
+  { readKeyValueFromStore200ResponseValue :: !(Maybe Text) -- ^ "value"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ReadKeyValueFromStore200Response
+instance A.FromJSON ReadKeyValueFromStore200Response where
+  parseJSON = A.withObject "ReadKeyValueFromStore200Response" $ \o ->
+    ReadKeyValueFromStore200Response
+      <$> (o .:? "value")
+
+-- | ToJSON ReadKeyValueFromStore200Response
+instance A.ToJSON ReadKeyValueFromStore200Response where
+  toJSON ReadKeyValueFromStore200Response {..} =
+   _omitNulls
+      [ "value" .= readKeyValueFromStore200ResponseValue
+      ]
+
+
+-- | Construct a value of type 'ReadKeyValueFromStore200Response' (by applying it's required fields, if any)
+mkReadKeyValueFromStore200Response
+  :: ReadKeyValueFromStore200Response
+mkReadKeyValueFromStore200Response =
+  ReadKeyValueFromStore200Response
+  { readKeyValueFromStore200ResponseValue = Nothing
+  }
+
+-- ** ScoreReadability200Response
+-- | ScoreReadability200Response
+data ScoreReadability200Response = ScoreReadability200Response
+  { scoreReadability200ResponseReadability :: !(Maybe ScoreText200ResponseReadability) -- ^ "readability"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ScoreReadability200Response
+instance A.FromJSON ScoreReadability200Response where
+  parseJSON = A.withObject "ScoreReadability200Response" $ \o ->
+    ScoreReadability200Response
+      <$> (o .:? "readability")
+
+-- | ToJSON ScoreReadability200Response
+instance A.ToJSON ScoreReadability200Response where
+  toJSON ScoreReadability200Response {..} =
+   _omitNulls
+      [ "readability" .= scoreReadability200ResponseReadability
+      ]
+
+
+-- | Construct a value of type 'ScoreReadability200Response' (by applying it's required fields, if any)
+mkScoreReadability200Response
+  :: ScoreReadability200Response
+mkScoreReadability200Response =
+  ScoreReadability200Response
+  { scoreReadability200ResponseReadability = Nothing
+  }
+
+-- ** ScoreText200Response
+-- | ScoreText200Response
+data ScoreText200Response = ScoreText200Response
+  { scoreText200ResponseNumberOfWords :: !(Maybe Int) -- ^ "number_of_words"
+  , scoreText200ResponseNumberOfSentences :: !(Maybe Int) -- ^ "number_of_sentences"
+  , scoreText200ResponseReadability :: !(Maybe ScoreText200ResponseReadability) -- ^ "readability"
+  , scoreText200ResponseSkimmability :: !(Maybe ScoreText200ResponseSkimmability) -- ^ "skimmability"
+  , scoreText200ResponseInterestingness :: !(Maybe ScoreText200ResponseInterestingness) -- ^ "interestingness"
+  , scoreText200ResponseStyle :: !(Maybe ScoreText200ResponseStyle) -- ^ "style"
+  , scoreText200ResponseTotalScore :: !(Maybe Double) -- ^ "total_score"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ScoreText200Response
+instance A.FromJSON ScoreText200Response where
+  parseJSON = A.withObject "ScoreText200Response" $ \o ->
+    ScoreText200Response
       <$> (o .:? "number_of_words")
       <*> (o .:? "number_of_sentences")
       <*> (o .:? "readability")
@@ -737,192 +1157,192 @@ instance A.FromJSON InlineResponse20019 where
       <*> (o .:? "style")
       <*> (o .:? "total_score")
 
--- | ToJSON InlineResponse20019
-instance A.ToJSON InlineResponse20019 where
-  toJSON InlineResponse20019 {..} =
+-- | ToJSON ScoreText200Response
+instance A.ToJSON ScoreText200Response where
+  toJSON ScoreText200Response {..} =
    _omitNulls
-      [ "number_of_words" .= inlineResponse20019NumberOfWords
-      , "number_of_sentences" .= inlineResponse20019NumberOfSentences
-      , "readability" .= inlineResponse20019Readability
-      , "skimmability" .= inlineResponse20019Skimmability
-      , "interestingness" .= inlineResponse20019Interestingness
-      , "style" .= inlineResponse20019Style
-      , "total_score" .= inlineResponse20019TotalScore
+      [ "number_of_words" .= scoreText200ResponseNumberOfWords
+      , "number_of_sentences" .= scoreText200ResponseNumberOfSentences
+      , "readability" .= scoreText200ResponseReadability
+      , "skimmability" .= scoreText200ResponseSkimmability
+      , "interestingness" .= scoreText200ResponseInterestingness
+      , "style" .= scoreText200ResponseStyle
+      , "total_score" .= scoreText200ResponseTotalScore
       ]
 
 
--- | Construct a value of type 'InlineResponse20019' (by applying it's required fields, if any)
-mkInlineResponse20019
-  :: InlineResponse20019
-mkInlineResponse20019 =
-  InlineResponse20019
-  { inlineResponse20019NumberOfWords = Nothing
-  , inlineResponse20019NumberOfSentences = Nothing
-  , inlineResponse20019Readability = Nothing
-  , inlineResponse20019Skimmability = Nothing
-  , inlineResponse20019Interestingness = Nothing
-  , inlineResponse20019Style = Nothing
-  , inlineResponse20019TotalScore = Nothing
+-- | Construct a value of type 'ScoreText200Response' (by applying it's required fields, if any)
+mkScoreText200Response
+  :: ScoreText200Response
+mkScoreText200Response =
+  ScoreText200Response
+  { scoreText200ResponseNumberOfWords = Nothing
+  , scoreText200ResponseNumberOfSentences = Nothing
+  , scoreText200ResponseReadability = Nothing
+  , scoreText200ResponseSkimmability = Nothing
+  , scoreText200ResponseInterestingness = Nothing
+  , scoreText200ResponseStyle = Nothing
+  , scoreText200ResponseTotalScore = Nothing
   }
 
--- ** InlineResponse20019Interestingness
--- | InlineResponse20019Interestingness
-data InlineResponse20019Interestingness = InlineResponse20019Interestingness
-  { inlineResponse20019InterestingnessMainscores :: !(Maybe InlineResponse20019SkimmabilityMainscores) -- ^ "mainscores"
-  , inlineResponse20019InterestingnessSubscores :: !(Maybe InlineResponse20019InterestingnessSubscores) -- ^ "subscores"
+-- ** ScoreText200ResponseInterestingness
+-- | ScoreText200ResponseInterestingness
+data ScoreText200ResponseInterestingness = ScoreText200ResponseInterestingness
+  { scoreText200ResponseInterestingnessMainscores :: !(Maybe ScoreText200ResponseSkimmabilityMainscores) -- ^ "mainscores"
+  , scoreText200ResponseInterestingnessSubscores :: !(Maybe ScoreText200ResponseInterestingnessSubscores) -- ^ "subscores"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019Interestingness
-instance A.FromJSON InlineResponse20019Interestingness where
-  parseJSON = A.withObject "InlineResponse20019Interestingness" $ \o ->
-    InlineResponse20019Interestingness
+-- | FromJSON ScoreText200ResponseInterestingness
+instance A.FromJSON ScoreText200ResponseInterestingness where
+  parseJSON = A.withObject "ScoreText200ResponseInterestingness" $ \o ->
+    ScoreText200ResponseInterestingness
       <$> (o .:? "mainscores")
       <*> (o .:? "subscores")
 
--- | ToJSON InlineResponse20019Interestingness
-instance A.ToJSON InlineResponse20019Interestingness where
-  toJSON InlineResponse20019Interestingness {..} =
+-- | ToJSON ScoreText200ResponseInterestingness
+instance A.ToJSON ScoreText200ResponseInterestingness where
+  toJSON ScoreText200ResponseInterestingness {..} =
    _omitNulls
-      [ "mainscores" .= inlineResponse20019InterestingnessMainscores
-      , "subscores" .= inlineResponse20019InterestingnessSubscores
+      [ "mainscores" .= scoreText200ResponseInterestingnessMainscores
+      , "subscores" .= scoreText200ResponseInterestingnessSubscores
       ]
 
 
--- | Construct a value of type 'InlineResponse20019Interestingness' (by applying it's required fields, if any)
-mkInlineResponse20019Interestingness
-  :: InlineResponse20019Interestingness
-mkInlineResponse20019Interestingness =
-  InlineResponse20019Interestingness
-  { inlineResponse20019InterestingnessMainscores = Nothing
-  , inlineResponse20019InterestingnessSubscores = Nothing
+-- | Construct a value of type 'ScoreText200ResponseInterestingness' (by applying it's required fields, if any)
+mkScoreText200ResponseInterestingness
+  :: ScoreText200ResponseInterestingness
+mkScoreText200ResponseInterestingness =
+  ScoreText200ResponseInterestingness
+  { scoreText200ResponseInterestingnessMainscores = Nothing
+  , scoreText200ResponseInterestingnessSubscores = Nothing
   }
 
--- ** InlineResponse20019InterestingnessSubscores
--- | InlineResponse20019InterestingnessSubscores
-data InlineResponse20019InterestingnessSubscores = InlineResponse20019InterestingnessSubscores
-  { inlineResponse20019InterestingnessSubscoresTitleRatingScore :: !(Maybe [Int]) -- ^ "title_rating_score"
-  , inlineResponse20019InterestingnessSubscoresQuoteScore :: !(Maybe [Int]) -- ^ "quote_score"
-  , inlineResponse20019InterestingnessSubscoresLengthScore :: !(Maybe [Int]) -- ^ "length_score"
-  , inlineResponse20019InterestingnessSubscoresLinkScore :: !(Maybe [Int]) -- ^ "link_score"
-  , inlineResponse20019InterestingnessSubscoresGoogleHitsScore :: !(Maybe [Int]) -- ^ "google_hits_score"
+-- ** ScoreText200ResponseInterestingnessSubscores
+-- | ScoreText200ResponseInterestingnessSubscores
+data ScoreText200ResponseInterestingnessSubscores = ScoreText200ResponseInterestingnessSubscores
+  { scoreText200ResponseInterestingnessSubscoresTitleRatingScore :: !(Maybe [Int]) -- ^ "title_rating_score"
+  , scoreText200ResponseInterestingnessSubscoresQuoteScore :: !(Maybe [Int]) -- ^ "quote_score"
+  , scoreText200ResponseInterestingnessSubscoresLengthScore :: !(Maybe [Int]) -- ^ "length_score"
+  , scoreText200ResponseInterestingnessSubscoresLinkScore :: !(Maybe [Int]) -- ^ "link_score"
+  , scoreText200ResponseInterestingnessSubscoresGoogleHitsScore :: !(Maybe [Int]) -- ^ "google_hits_score"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019InterestingnessSubscores
-instance A.FromJSON InlineResponse20019InterestingnessSubscores where
-  parseJSON = A.withObject "InlineResponse20019InterestingnessSubscores" $ \o ->
-    InlineResponse20019InterestingnessSubscores
+-- | FromJSON ScoreText200ResponseInterestingnessSubscores
+instance A.FromJSON ScoreText200ResponseInterestingnessSubscores where
+  parseJSON = A.withObject "ScoreText200ResponseInterestingnessSubscores" $ \o ->
+    ScoreText200ResponseInterestingnessSubscores
       <$> (o .:? "title_rating_score")
       <*> (o .:? "quote_score")
       <*> (o .:? "length_score")
       <*> (o .:? "link_score")
       <*> (o .:? "google_hits_score")
 
--- | ToJSON InlineResponse20019InterestingnessSubscores
-instance A.ToJSON InlineResponse20019InterestingnessSubscores where
-  toJSON InlineResponse20019InterestingnessSubscores {..} =
+-- | ToJSON ScoreText200ResponseInterestingnessSubscores
+instance A.ToJSON ScoreText200ResponseInterestingnessSubscores where
+  toJSON ScoreText200ResponseInterestingnessSubscores {..} =
    _omitNulls
-      [ "title_rating_score" .= inlineResponse20019InterestingnessSubscoresTitleRatingScore
-      , "quote_score" .= inlineResponse20019InterestingnessSubscoresQuoteScore
-      , "length_score" .= inlineResponse20019InterestingnessSubscoresLengthScore
-      , "link_score" .= inlineResponse20019InterestingnessSubscoresLinkScore
-      , "google_hits_score" .= inlineResponse20019InterestingnessSubscoresGoogleHitsScore
+      [ "title_rating_score" .= scoreText200ResponseInterestingnessSubscoresTitleRatingScore
+      , "quote_score" .= scoreText200ResponseInterestingnessSubscoresQuoteScore
+      , "length_score" .= scoreText200ResponseInterestingnessSubscoresLengthScore
+      , "link_score" .= scoreText200ResponseInterestingnessSubscoresLinkScore
+      , "google_hits_score" .= scoreText200ResponseInterestingnessSubscoresGoogleHitsScore
       ]
 
 
--- | Construct a value of type 'InlineResponse20019InterestingnessSubscores' (by applying it's required fields, if any)
-mkInlineResponse20019InterestingnessSubscores
-  :: InlineResponse20019InterestingnessSubscores
-mkInlineResponse20019InterestingnessSubscores =
-  InlineResponse20019InterestingnessSubscores
-  { inlineResponse20019InterestingnessSubscoresTitleRatingScore = Nothing
-  , inlineResponse20019InterestingnessSubscoresQuoteScore = Nothing
-  , inlineResponse20019InterestingnessSubscoresLengthScore = Nothing
-  , inlineResponse20019InterestingnessSubscoresLinkScore = Nothing
-  , inlineResponse20019InterestingnessSubscoresGoogleHitsScore = Nothing
+-- | Construct a value of type 'ScoreText200ResponseInterestingnessSubscores' (by applying it's required fields, if any)
+mkScoreText200ResponseInterestingnessSubscores
+  :: ScoreText200ResponseInterestingnessSubscores
+mkScoreText200ResponseInterestingnessSubscores =
+  ScoreText200ResponseInterestingnessSubscores
+  { scoreText200ResponseInterestingnessSubscoresTitleRatingScore = Nothing
+  , scoreText200ResponseInterestingnessSubscoresQuoteScore = Nothing
+  , scoreText200ResponseInterestingnessSubscoresLengthScore = Nothing
+  , scoreText200ResponseInterestingnessSubscoresLinkScore = Nothing
+  , scoreText200ResponseInterestingnessSubscoresGoogleHitsScore = Nothing
   }
 
--- ** InlineResponse20019Readability
--- | InlineResponse20019Readability
-data InlineResponse20019Readability = InlineResponse20019Readability
-  { inlineResponse20019ReadabilityMainscores :: !(Maybe InlineResponse20019ReadabilityMainscores) -- ^ "mainscores"
-  , inlineResponse20019ReadabilitySubscores :: !(Maybe InlineResponse20019ReadabilitySubscores) -- ^ "subscores"
+-- ** ScoreText200ResponseReadability
+-- | ScoreText200ResponseReadability
+data ScoreText200ResponseReadability = ScoreText200ResponseReadability
+  { scoreText200ResponseReadabilityMainscores :: !(Maybe ScoreText200ResponseReadabilityMainscores) -- ^ "mainscores"
+  , scoreText200ResponseReadabilitySubscores :: !(Maybe ScoreText200ResponseReadabilitySubscores) -- ^ "subscores"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019Readability
-instance A.FromJSON InlineResponse20019Readability where
-  parseJSON = A.withObject "InlineResponse20019Readability" $ \o ->
-    InlineResponse20019Readability
+-- | FromJSON ScoreText200ResponseReadability
+instance A.FromJSON ScoreText200ResponseReadability where
+  parseJSON = A.withObject "ScoreText200ResponseReadability" $ \o ->
+    ScoreText200ResponseReadability
       <$> (o .:? "mainscores")
       <*> (o .:? "subscores")
 
--- | ToJSON InlineResponse20019Readability
-instance A.ToJSON InlineResponse20019Readability where
-  toJSON InlineResponse20019Readability {..} =
+-- | ToJSON ScoreText200ResponseReadability
+instance A.ToJSON ScoreText200ResponseReadability where
+  toJSON ScoreText200ResponseReadability {..} =
    _omitNulls
-      [ "mainscores" .= inlineResponse20019ReadabilityMainscores
-      , "subscores" .= inlineResponse20019ReadabilitySubscores
+      [ "mainscores" .= scoreText200ResponseReadabilityMainscores
+      , "subscores" .= scoreText200ResponseReadabilitySubscores
       ]
 
 
--- | Construct a value of type 'InlineResponse20019Readability' (by applying it's required fields, if any)
-mkInlineResponse20019Readability
-  :: InlineResponse20019Readability
-mkInlineResponse20019Readability =
-  InlineResponse20019Readability
-  { inlineResponse20019ReadabilityMainscores = Nothing
-  , inlineResponse20019ReadabilitySubscores = Nothing
+-- | Construct a value of type 'ScoreText200ResponseReadability' (by applying it's required fields, if any)
+mkScoreText200ResponseReadability
+  :: ScoreText200ResponseReadability
+mkScoreText200ResponseReadability =
+  ScoreText200ResponseReadability
+  { scoreText200ResponseReadabilityMainscores = Nothing
+  , scoreText200ResponseReadabilitySubscores = Nothing
   }
 
--- ** InlineResponse20019ReadabilityMainscores
--- | InlineResponse20019ReadabilityMainscores
-data InlineResponse20019ReadabilityMainscores = InlineResponse20019ReadabilityMainscores
-  { inlineResponse20019ReadabilityMainscoresTotalPossible :: !(Maybe Int) -- ^ "total_possible"
-  , inlineResponse20019ReadabilityMainscoresTotal :: !(Maybe Int) -- ^ "total"
+-- ** ScoreText200ResponseReadabilityMainscores
+-- | ScoreText200ResponseReadabilityMainscores
+data ScoreText200ResponseReadabilityMainscores = ScoreText200ResponseReadabilityMainscores
+  { scoreText200ResponseReadabilityMainscoresTotalPossible :: !(Maybe Int) -- ^ "total_possible"
+  , scoreText200ResponseReadabilityMainscoresTotal :: !(Maybe Int) -- ^ "total"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019ReadabilityMainscores
-instance A.FromJSON InlineResponse20019ReadabilityMainscores where
-  parseJSON = A.withObject "InlineResponse20019ReadabilityMainscores" $ \o ->
-    InlineResponse20019ReadabilityMainscores
+-- | FromJSON ScoreText200ResponseReadabilityMainscores
+instance A.FromJSON ScoreText200ResponseReadabilityMainscores where
+  parseJSON = A.withObject "ScoreText200ResponseReadabilityMainscores" $ \o ->
+    ScoreText200ResponseReadabilityMainscores
       <$> (o .:? "total_possible")
       <*> (o .:? "total")
 
--- | ToJSON InlineResponse20019ReadabilityMainscores
-instance A.ToJSON InlineResponse20019ReadabilityMainscores where
-  toJSON InlineResponse20019ReadabilityMainscores {..} =
+-- | ToJSON ScoreText200ResponseReadabilityMainscores
+instance A.ToJSON ScoreText200ResponseReadabilityMainscores where
+  toJSON ScoreText200ResponseReadabilityMainscores {..} =
    _omitNulls
-      [ "total_possible" .= inlineResponse20019ReadabilityMainscoresTotalPossible
-      , "total" .= inlineResponse20019ReadabilityMainscoresTotal
+      [ "total_possible" .= scoreText200ResponseReadabilityMainscoresTotalPossible
+      , "total" .= scoreText200ResponseReadabilityMainscoresTotal
       ]
 
 
--- | Construct a value of type 'InlineResponse20019ReadabilityMainscores' (by applying it's required fields, if any)
-mkInlineResponse20019ReadabilityMainscores
-  :: InlineResponse20019ReadabilityMainscores
-mkInlineResponse20019ReadabilityMainscores =
-  InlineResponse20019ReadabilityMainscores
-  { inlineResponse20019ReadabilityMainscoresTotalPossible = Nothing
-  , inlineResponse20019ReadabilityMainscoresTotal = Nothing
+-- | Construct a value of type 'ScoreText200ResponseReadabilityMainscores' (by applying it's required fields, if any)
+mkScoreText200ResponseReadabilityMainscores
+  :: ScoreText200ResponseReadabilityMainscores
+mkScoreText200ResponseReadabilityMainscores =
+  ScoreText200ResponseReadabilityMainscores
+  { scoreText200ResponseReadabilityMainscoresTotalPossible = Nothing
+  , scoreText200ResponseReadabilityMainscoresTotal = Nothing
   }
 
--- ** InlineResponse20019ReadabilitySubscores
--- | InlineResponse20019ReadabilitySubscores
-data InlineResponse20019ReadabilitySubscores = InlineResponse20019ReadabilitySubscores
-  { inlineResponse20019ReadabilitySubscoresReadingTimeSeconds :: !(Maybe Int) -- ^ "reading_time_seconds"
-  , inlineResponse20019ReadabilitySubscoresForcast :: !(Maybe Double) -- ^ "forcast"
-  , inlineResponse20019ReadabilitySubscoresFlesch :: !(Maybe Double) -- ^ "flesch"
-  , inlineResponse20019ReadabilitySubscoresSmog :: !(Maybe Double) -- ^ "smog"
-  , inlineResponse20019ReadabilitySubscoresAri :: !(Maybe Double) -- ^ "ari"
-  , inlineResponse20019ReadabilitySubscoresLix :: !(Maybe Double) -- ^ "lix"
-  , inlineResponse20019ReadabilitySubscoresColemanLiau :: !(Maybe Double) -- ^ "coleman_liau"
-  , inlineResponse20019ReadabilitySubscoresKincaid :: !(Maybe Double) -- ^ "kincaid"
-  , inlineResponse20019ReadabilitySubscoresFog :: !(Maybe Double) -- ^ "fog"
+-- ** ScoreText200ResponseReadabilitySubscores
+-- | ScoreText200ResponseReadabilitySubscores
+data ScoreText200ResponseReadabilitySubscores = ScoreText200ResponseReadabilitySubscores
+  { scoreText200ResponseReadabilitySubscoresReadingTimeSeconds :: !(Maybe Int) -- ^ "reading_time_seconds"
+  , scoreText200ResponseReadabilitySubscoresForcast :: !(Maybe Double) -- ^ "forcast"
+  , scoreText200ResponseReadabilitySubscoresFlesch :: !(Maybe Double) -- ^ "flesch"
+  , scoreText200ResponseReadabilitySubscoresSmog :: !(Maybe Double) -- ^ "smog"
+  , scoreText200ResponseReadabilitySubscoresAri :: !(Maybe Double) -- ^ "ari"
+  , scoreText200ResponseReadabilitySubscoresLix :: !(Maybe Double) -- ^ "lix"
+  , scoreText200ResponseReadabilitySubscoresColemanLiau :: !(Maybe Double) -- ^ "coleman_liau"
+  , scoreText200ResponseReadabilitySubscoresKincaid :: !(Maybe Double) -- ^ "kincaid"
+  , scoreText200ResponseReadabilitySubscoresFog :: !(Maybe Double) -- ^ "fog"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019ReadabilitySubscores
-instance A.FromJSON InlineResponse20019ReadabilitySubscores where
-  parseJSON = A.withObject "InlineResponse20019ReadabilitySubscores" $ \o ->
-    InlineResponse20019ReadabilitySubscores
+-- | FromJSON ScoreText200ResponseReadabilitySubscores
+instance A.FromJSON ScoreText200ResponseReadabilitySubscores where
+  parseJSON = A.withObject "ScoreText200ResponseReadabilitySubscores" $ \o ->
+    ScoreText200ResponseReadabilitySubscores
       <$> (o .:? "reading_time_seconds")
       <*> (o .:? "forcast")
       <*> (o .:? "flesch")
@@ -933,117 +1353,117 @@ instance A.FromJSON InlineResponse20019ReadabilitySubscores where
       <*> (o .:? "kincaid")
       <*> (o .:? "fog")
 
--- | ToJSON InlineResponse20019ReadabilitySubscores
-instance A.ToJSON InlineResponse20019ReadabilitySubscores where
-  toJSON InlineResponse20019ReadabilitySubscores {..} =
+-- | ToJSON ScoreText200ResponseReadabilitySubscores
+instance A.ToJSON ScoreText200ResponseReadabilitySubscores where
+  toJSON ScoreText200ResponseReadabilitySubscores {..} =
    _omitNulls
-      [ "reading_time_seconds" .= inlineResponse20019ReadabilitySubscoresReadingTimeSeconds
-      , "forcast" .= inlineResponse20019ReadabilitySubscoresForcast
-      , "flesch" .= inlineResponse20019ReadabilitySubscoresFlesch
-      , "smog" .= inlineResponse20019ReadabilitySubscoresSmog
-      , "ari" .= inlineResponse20019ReadabilitySubscoresAri
-      , "lix" .= inlineResponse20019ReadabilitySubscoresLix
-      , "coleman_liau" .= inlineResponse20019ReadabilitySubscoresColemanLiau
-      , "kincaid" .= inlineResponse20019ReadabilitySubscoresKincaid
-      , "fog" .= inlineResponse20019ReadabilitySubscoresFog
+      [ "reading_time_seconds" .= scoreText200ResponseReadabilitySubscoresReadingTimeSeconds
+      , "forcast" .= scoreText200ResponseReadabilitySubscoresForcast
+      , "flesch" .= scoreText200ResponseReadabilitySubscoresFlesch
+      , "smog" .= scoreText200ResponseReadabilitySubscoresSmog
+      , "ari" .= scoreText200ResponseReadabilitySubscoresAri
+      , "lix" .= scoreText200ResponseReadabilitySubscoresLix
+      , "coleman_liau" .= scoreText200ResponseReadabilitySubscoresColemanLiau
+      , "kincaid" .= scoreText200ResponseReadabilitySubscoresKincaid
+      , "fog" .= scoreText200ResponseReadabilitySubscoresFog
       ]
 
 
--- | Construct a value of type 'InlineResponse20019ReadabilitySubscores' (by applying it's required fields, if any)
-mkInlineResponse20019ReadabilitySubscores
-  :: InlineResponse20019ReadabilitySubscores
-mkInlineResponse20019ReadabilitySubscores =
-  InlineResponse20019ReadabilitySubscores
-  { inlineResponse20019ReadabilitySubscoresReadingTimeSeconds = Nothing
-  , inlineResponse20019ReadabilitySubscoresForcast = Nothing
-  , inlineResponse20019ReadabilitySubscoresFlesch = Nothing
-  , inlineResponse20019ReadabilitySubscoresSmog = Nothing
-  , inlineResponse20019ReadabilitySubscoresAri = Nothing
-  , inlineResponse20019ReadabilitySubscoresLix = Nothing
-  , inlineResponse20019ReadabilitySubscoresColemanLiau = Nothing
-  , inlineResponse20019ReadabilitySubscoresKincaid = Nothing
-  , inlineResponse20019ReadabilitySubscoresFog = Nothing
+-- | Construct a value of type 'ScoreText200ResponseReadabilitySubscores' (by applying it's required fields, if any)
+mkScoreText200ResponseReadabilitySubscores
+  :: ScoreText200ResponseReadabilitySubscores
+mkScoreText200ResponseReadabilitySubscores =
+  ScoreText200ResponseReadabilitySubscores
+  { scoreText200ResponseReadabilitySubscoresReadingTimeSeconds = Nothing
+  , scoreText200ResponseReadabilitySubscoresForcast = Nothing
+  , scoreText200ResponseReadabilitySubscoresFlesch = Nothing
+  , scoreText200ResponseReadabilitySubscoresSmog = Nothing
+  , scoreText200ResponseReadabilitySubscoresAri = Nothing
+  , scoreText200ResponseReadabilitySubscoresLix = Nothing
+  , scoreText200ResponseReadabilitySubscoresColemanLiau = Nothing
+  , scoreText200ResponseReadabilitySubscoresKincaid = Nothing
+  , scoreText200ResponseReadabilitySubscoresFog = Nothing
   }
 
--- ** InlineResponse20019Skimmability
--- | InlineResponse20019Skimmability
-data InlineResponse20019Skimmability = InlineResponse20019Skimmability
-  { inlineResponse20019SkimmabilityMainscores :: !(Maybe InlineResponse20019SkimmabilityMainscores) -- ^ "mainscores"
-  , inlineResponse20019SkimmabilitySubscores :: !(Maybe InlineResponse20019SkimmabilitySubscores) -- ^ "subscores"
+-- ** ScoreText200ResponseSkimmability
+-- | ScoreText200ResponseSkimmability
+data ScoreText200ResponseSkimmability = ScoreText200ResponseSkimmability
+  { scoreText200ResponseSkimmabilityMainscores :: !(Maybe ScoreText200ResponseSkimmabilityMainscores) -- ^ "mainscores"
+  , scoreText200ResponseSkimmabilitySubscores :: !(Maybe ScoreText200ResponseSkimmabilitySubscores) -- ^ "subscores"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019Skimmability
-instance A.FromJSON InlineResponse20019Skimmability where
-  parseJSON = A.withObject "InlineResponse20019Skimmability" $ \o ->
-    InlineResponse20019Skimmability
+-- | FromJSON ScoreText200ResponseSkimmability
+instance A.FromJSON ScoreText200ResponseSkimmability where
+  parseJSON = A.withObject "ScoreText200ResponseSkimmability" $ \o ->
+    ScoreText200ResponseSkimmability
       <$> (o .:? "mainscores")
       <*> (o .:? "subscores")
 
--- | ToJSON InlineResponse20019Skimmability
-instance A.ToJSON InlineResponse20019Skimmability where
-  toJSON InlineResponse20019Skimmability {..} =
+-- | ToJSON ScoreText200ResponseSkimmability
+instance A.ToJSON ScoreText200ResponseSkimmability where
+  toJSON ScoreText200ResponseSkimmability {..} =
    _omitNulls
-      [ "mainscores" .= inlineResponse20019SkimmabilityMainscores
-      , "subscores" .= inlineResponse20019SkimmabilitySubscores
+      [ "mainscores" .= scoreText200ResponseSkimmabilityMainscores
+      , "subscores" .= scoreText200ResponseSkimmabilitySubscores
       ]
 
 
--- | Construct a value of type 'InlineResponse20019Skimmability' (by applying it's required fields, if any)
-mkInlineResponse20019Skimmability
-  :: InlineResponse20019Skimmability
-mkInlineResponse20019Skimmability =
-  InlineResponse20019Skimmability
-  { inlineResponse20019SkimmabilityMainscores = Nothing
-  , inlineResponse20019SkimmabilitySubscores = Nothing
+-- | Construct a value of type 'ScoreText200ResponseSkimmability' (by applying it's required fields, if any)
+mkScoreText200ResponseSkimmability
+  :: ScoreText200ResponseSkimmability
+mkScoreText200ResponseSkimmability =
+  ScoreText200ResponseSkimmability
+  { scoreText200ResponseSkimmabilityMainscores = Nothing
+  , scoreText200ResponseSkimmabilitySubscores = Nothing
   }
 
--- ** InlineResponse20019SkimmabilityMainscores
--- | InlineResponse20019SkimmabilityMainscores
-data InlineResponse20019SkimmabilityMainscores = InlineResponse20019SkimmabilityMainscores
-  { inlineResponse20019SkimmabilityMainscoresTotalPossible :: !(Maybe Int) -- ^ "total_possible"
-  , inlineResponse20019SkimmabilityMainscoresTotal :: !(Maybe Double) -- ^ "total"
+-- ** ScoreText200ResponseSkimmabilityMainscores
+-- | ScoreText200ResponseSkimmabilityMainscores
+data ScoreText200ResponseSkimmabilityMainscores = ScoreText200ResponseSkimmabilityMainscores
+  { scoreText200ResponseSkimmabilityMainscoresTotalPossible :: !(Maybe Int) -- ^ "total_possible"
+  , scoreText200ResponseSkimmabilityMainscoresTotal :: !(Maybe Double) -- ^ "total"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019SkimmabilityMainscores
-instance A.FromJSON InlineResponse20019SkimmabilityMainscores where
-  parseJSON = A.withObject "InlineResponse20019SkimmabilityMainscores" $ \o ->
-    InlineResponse20019SkimmabilityMainscores
+-- | FromJSON ScoreText200ResponseSkimmabilityMainscores
+instance A.FromJSON ScoreText200ResponseSkimmabilityMainscores where
+  parseJSON = A.withObject "ScoreText200ResponseSkimmabilityMainscores" $ \o ->
+    ScoreText200ResponseSkimmabilityMainscores
       <$> (o .:? "total_possible")
       <*> (o .:? "total")
 
--- | ToJSON InlineResponse20019SkimmabilityMainscores
-instance A.ToJSON InlineResponse20019SkimmabilityMainscores where
-  toJSON InlineResponse20019SkimmabilityMainscores {..} =
+-- | ToJSON ScoreText200ResponseSkimmabilityMainscores
+instance A.ToJSON ScoreText200ResponseSkimmabilityMainscores where
+  toJSON ScoreText200ResponseSkimmabilityMainscores {..} =
    _omitNulls
-      [ "total_possible" .= inlineResponse20019SkimmabilityMainscoresTotalPossible
-      , "total" .= inlineResponse20019SkimmabilityMainscoresTotal
+      [ "total_possible" .= scoreText200ResponseSkimmabilityMainscoresTotalPossible
+      , "total" .= scoreText200ResponseSkimmabilityMainscoresTotal
       ]
 
 
--- | Construct a value of type 'InlineResponse20019SkimmabilityMainscores' (by applying it's required fields, if any)
-mkInlineResponse20019SkimmabilityMainscores
-  :: InlineResponse20019SkimmabilityMainscores
-mkInlineResponse20019SkimmabilityMainscores =
-  InlineResponse20019SkimmabilityMainscores
-  { inlineResponse20019SkimmabilityMainscoresTotalPossible = Nothing
-  , inlineResponse20019SkimmabilityMainscoresTotal = Nothing
+-- | Construct a value of type 'ScoreText200ResponseSkimmabilityMainscores' (by applying it's required fields, if any)
+mkScoreText200ResponseSkimmabilityMainscores
+  :: ScoreText200ResponseSkimmabilityMainscores
+mkScoreText200ResponseSkimmabilityMainscores =
+  ScoreText200ResponseSkimmabilityMainscores
+  { scoreText200ResponseSkimmabilityMainscoresTotalPossible = Nothing
+  , scoreText200ResponseSkimmabilityMainscoresTotal = Nothing
   }
 
--- ** InlineResponse20019SkimmabilitySubscores
--- | InlineResponse20019SkimmabilitySubscores
-data InlineResponse20019SkimmabilitySubscores = InlineResponse20019SkimmabilitySubscores
-  { inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore :: !(Maybe [Int]) -- ^ "bullet_point_ratio_score"
-  , inlineResponse20019SkimmabilitySubscoresImageScore :: !(Maybe [Int]) -- ^ "image_score"
-  , inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore :: !(Maybe [Int]) -- ^ "highlighted_word_ratio_score"
-  , inlineResponse20019SkimmabilitySubscoresVideoScore :: !(Maybe [Int]) -- ^ "video_score"
-  , inlineResponse20019SkimmabilitySubscoresParagraphScore :: !(Maybe [Int]) -- ^ "paragraph_score"
-  , inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore :: !(Maybe [Int]) -- ^ "paragraph_headline_ratio_score"
+-- ** ScoreText200ResponseSkimmabilitySubscores
+-- | ScoreText200ResponseSkimmabilitySubscores
+data ScoreText200ResponseSkimmabilitySubscores = ScoreText200ResponseSkimmabilitySubscores
+  { scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore :: !(Maybe [Int]) -- ^ "bullet_point_ratio_score"
+  , scoreText200ResponseSkimmabilitySubscoresImageScore :: !(Maybe [Int]) -- ^ "image_score"
+  , scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore :: !(Maybe [Int]) -- ^ "highlighted_word_ratio_score"
+  , scoreText200ResponseSkimmabilitySubscoresVideoScore :: !(Maybe [Int]) -- ^ "video_score"
+  , scoreText200ResponseSkimmabilitySubscoresParagraphScore :: !(Maybe [Int]) -- ^ "paragraph_score"
+  , scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore :: !(Maybe [Int]) -- ^ "paragraph_headline_ratio_score"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019SkimmabilitySubscores
-instance A.FromJSON InlineResponse20019SkimmabilitySubscores where
-  parseJSON = A.withObject "InlineResponse20019SkimmabilitySubscores" $ \o ->
-    InlineResponse20019SkimmabilitySubscores
+-- | FromJSON ScoreText200ResponseSkimmabilitySubscores
+instance A.FromJSON ScoreText200ResponseSkimmabilitySubscores where
+  parseJSON = A.withObject "ScoreText200ResponseSkimmabilitySubscores" $ \o ->
+    ScoreText200ResponseSkimmabilitySubscores
       <$> (o .:? "bullet_point_ratio_score")
       <*> (o .:? "image_score")
       <*> (o .:? "highlighted_word_ratio_score")
@@ -1051,628 +1471,428 @@ instance A.FromJSON InlineResponse20019SkimmabilitySubscores where
       <*> (o .:? "paragraph_score")
       <*> (o .:? "paragraph_headline_ratio_score")
 
--- | ToJSON InlineResponse20019SkimmabilitySubscores
-instance A.ToJSON InlineResponse20019SkimmabilitySubscores where
-  toJSON InlineResponse20019SkimmabilitySubscores {..} =
+-- | ToJSON ScoreText200ResponseSkimmabilitySubscores
+instance A.ToJSON ScoreText200ResponseSkimmabilitySubscores where
+  toJSON ScoreText200ResponseSkimmabilitySubscores {..} =
    _omitNulls
-      [ "bullet_point_ratio_score" .= inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore
-      , "image_score" .= inlineResponse20019SkimmabilitySubscoresImageScore
-      , "highlighted_word_ratio_score" .= inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore
-      , "video_score" .= inlineResponse20019SkimmabilitySubscoresVideoScore
-      , "paragraph_score" .= inlineResponse20019SkimmabilitySubscoresParagraphScore
-      , "paragraph_headline_ratio_score" .= inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore
+      [ "bullet_point_ratio_score" .= scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore
+      , "image_score" .= scoreText200ResponseSkimmabilitySubscoresImageScore
+      , "highlighted_word_ratio_score" .= scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore
+      , "video_score" .= scoreText200ResponseSkimmabilitySubscoresVideoScore
+      , "paragraph_score" .= scoreText200ResponseSkimmabilitySubscoresParagraphScore
+      , "paragraph_headline_ratio_score" .= scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore
       ]
 
 
--- | Construct a value of type 'InlineResponse20019SkimmabilitySubscores' (by applying it's required fields, if any)
-mkInlineResponse20019SkimmabilitySubscores
-  :: InlineResponse20019SkimmabilitySubscores
-mkInlineResponse20019SkimmabilitySubscores =
-  InlineResponse20019SkimmabilitySubscores
-  { inlineResponse20019SkimmabilitySubscoresBulletPointRatioScore = Nothing
-  , inlineResponse20019SkimmabilitySubscoresImageScore = Nothing
-  , inlineResponse20019SkimmabilitySubscoresHighlightedWordRatioScore = Nothing
-  , inlineResponse20019SkimmabilitySubscoresVideoScore = Nothing
-  , inlineResponse20019SkimmabilitySubscoresParagraphScore = Nothing
-  , inlineResponse20019SkimmabilitySubscoresParagraphHeadlineRatioScore = Nothing
+-- | Construct a value of type 'ScoreText200ResponseSkimmabilitySubscores' (by applying it's required fields, if any)
+mkScoreText200ResponseSkimmabilitySubscores
+  :: ScoreText200ResponseSkimmabilitySubscores
+mkScoreText200ResponseSkimmabilitySubscores =
+  ScoreText200ResponseSkimmabilitySubscores
+  { scoreText200ResponseSkimmabilitySubscoresBulletPointRatioScore = Nothing
+  , scoreText200ResponseSkimmabilitySubscoresImageScore = Nothing
+  , scoreText200ResponseSkimmabilitySubscoresHighlightedWordRatioScore = Nothing
+  , scoreText200ResponseSkimmabilitySubscoresVideoScore = Nothing
+  , scoreText200ResponseSkimmabilitySubscoresParagraphScore = Nothing
+  , scoreText200ResponseSkimmabilitySubscoresParagraphHeadlineRatioScore = Nothing
   }
 
--- ** InlineResponse20019Style
--- | InlineResponse20019Style
-data InlineResponse20019Style = InlineResponse20019Style
-  { inlineResponse20019StyleMainscores :: !(Maybe InlineResponse20019ReadabilityMainscores) -- ^ "mainscores"
-  , inlineResponse20019StyleSubscores :: !(Maybe InlineResponse20019StyleSubscores) -- ^ "subscores"
+-- ** ScoreText200ResponseStyle
+-- | ScoreText200ResponseStyle
+data ScoreText200ResponseStyle = ScoreText200ResponseStyle
+  { scoreText200ResponseStyleMainscores :: !(Maybe ScoreText200ResponseReadabilityMainscores) -- ^ "mainscores"
+  , scoreText200ResponseStyleSubscores :: !(Maybe ScoreText200ResponseStyleSubscores) -- ^ "subscores"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019Style
-instance A.FromJSON InlineResponse20019Style where
-  parseJSON = A.withObject "InlineResponse20019Style" $ \o ->
-    InlineResponse20019Style
+-- | FromJSON ScoreText200ResponseStyle
+instance A.FromJSON ScoreText200ResponseStyle where
+  parseJSON = A.withObject "ScoreText200ResponseStyle" $ \o ->
+    ScoreText200ResponseStyle
       <$> (o .:? "mainscores")
       <*> (o .:? "subscores")
 
--- | ToJSON InlineResponse20019Style
-instance A.ToJSON InlineResponse20019Style where
-  toJSON InlineResponse20019Style {..} =
+-- | ToJSON ScoreText200ResponseStyle
+instance A.ToJSON ScoreText200ResponseStyle where
+  toJSON ScoreText200ResponseStyle {..} =
    _omitNulls
-      [ "mainscores" .= inlineResponse20019StyleMainscores
-      , "subscores" .= inlineResponse20019StyleSubscores
+      [ "mainscores" .= scoreText200ResponseStyleMainscores
+      , "subscores" .= scoreText200ResponseStyleSubscores
       ]
 
 
--- | Construct a value of type 'InlineResponse20019Style' (by applying it's required fields, if any)
-mkInlineResponse20019Style
-  :: InlineResponse20019Style
-mkInlineResponse20019Style =
-  InlineResponse20019Style
-  { inlineResponse20019StyleMainscores = Nothing
-  , inlineResponse20019StyleSubscores = Nothing
+-- | Construct a value of type 'ScoreText200ResponseStyle' (by applying it's required fields, if any)
+mkScoreText200ResponseStyle
+  :: ScoreText200ResponseStyle
+mkScoreText200ResponseStyle =
+  ScoreText200ResponseStyle
+  { scoreText200ResponseStyleMainscores = Nothing
+  , scoreText200ResponseStyleSubscores = Nothing
   }
 
--- ** InlineResponse20019StyleSubscores
--- | InlineResponse20019StyleSubscores
-data InlineResponse20019StyleSubscores = InlineResponse20019StyleSubscores
-  { inlineResponse20019StyleSubscoresAbbreviationScore :: !(Maybe [Int]) -- ^ "abbreviation_score"
-  , inlineResponse20019StyleSubscoresStyleScore :: !(Maybe [Int]) -- ^ "style_score"
-  , inlineResponse20019StyleSubscoresSpellingScore :: !(Maybe [Int]) -- ^ "spelling_score"
+-- ** ScoreText200ResponseStyleSubscores
+-- | ScoreText200ResponseStyleSubscores
+data ScoreText200ResponseStyleSubscores = ScoreText200ResponseStyleSubscores
+  { scoreText200ResponseStyleSubscoresAbbreviationScore :: !(Maybe [Int]) -- ^ "abbreviation_score"
+  , scoreText200ResponseStyleSubscoresStyleScore :: !(Maybe [Int]) -- ^ "style_score"
+  , scoreText200ResponseStyleSubscoresSpellingScore :: !(Maybe [Int]) -- ^ "spelling_score"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20019StyleSubscores
-instance A.FromJSON InlineResponse20019StyleSubscores where
-  parseJSON = A.withObject "InlineResponse20019StyleSubscores" $ \o ->
-    InlineResponse20019StyleSubscores
+-- | FromJSON ScoreText200ResponseStyleSubscores
+instance A.FromJSON ScoreText200ResponseStyleSubscores where
+  parseJSON = A.withObject "ScoreText200ResponseStyleSubscores" $ \o ->
+    ScoreText200ResponseStyleSubscores
       <$> (o .:? "abbreviation_score")
       <*> (o .:? "style_score")
       <*> (o .:? "spelling_score")
 
--- | ToJSON InlineResponse20019StyleSubscores
-instance A.ToJSON InlineResponse20019StyleSubscores where
-  toJSON InlineResponse20019StyleSubscores {..} =
+-- | ToJSON ScoreText200ResponseStyleSubscores
+instance A.ToJSON ScoreText200ResponseStyleSubscores where
+  toJSON ScoreText200ResponseStyleSubscores {..} =
    _omitNulls
-      [ "abbreviation_score" .= inlineResponse20019StyleSubscoresAbbreviationScore
-      , "style_score" .= inlineResponse20019StyleSubscoresStyleScore
-      , "spelling_score" .= inlineResponse20019StyleSubscoresSpellingScore
+      [ "abbreviation_score" .= scoreText200ResponseStyleSubscoresAbbreviationScore
+      , "style_score" .= scoreText200ResponseStyleSubscoresStyleScore
+      , "spelling_score" .= scoreText200ResponseStyleSubscoresSpellingScore
       ]
 
 
--- | Construct a value of type 'InlineResponse20019StyleSubscores' (by applying it's required fields, if any)
-mkInlineResponse20019StyleSubscores
-  :: InlineResponse20019StyleSubscores
-mkInlineResponse20019StyleSubscores =
-  InlineResponse20019StyleSubscores
-  { inlineResponse20019StyleSubscoresAbbreviationScore = Nothing
-  , inlineResponse20019StyleSubscoresStyleScore = Nothing
-  , inlineResponse20019StyleSubscoresSpellingScore = Nothing
+-- | Construct a value of type 'ScoreText200ResponseStyleSubscores' (by applying it's required fields, if any)
+mkScoreText200ResponseStyleSubscores
+  :: ScoreText200ResponseStyleSubscores
+mkScoreText200ResponseStyleSubscores =
+  ScoreText200ResponseStyleSubscores
+  { scoreText200ResponseStyleSubscoresAbbreviationScore = Nothing
+  , scoreText200ResponseStyleSubscoresStyleScore = Nothing
+  , scoreText200ResponseStyleSubscoresSpellingScore = Nothing
   }
 
--- ** InlineResponse2002
--- | InlineResponse2002
-data InlineResponse2002 = InlineResponse2002
-  { inlineResponse2002Offset :: !(Maybe Int) -- ^ "offset"
-  , inlineResponse2002Number :: !(Maybe Int) -- ^ "number"
-  , inlineResponse2002Available :: !(Maybe Int) -- ^ "available"
-  , inlineResponse2002News :: !(Maybe [InlineResponse2002News]) -- ^ "news"
+-- ** SearchBooks200Response
+-- | SearchBooks200Response
+data SearchBooks200Response = SearchBooks200Response
+  { searchBooks200ResponseAvailable :: !(Maybe Int) -- ^ "available"
+  , searchBooks200ResponseNumber :: !(Maybe Int) -- ^ "number"
+  , searchBooks200ResponseOffset :: !(Maybe Int) -- ^ "offset"
+  , searchBooks200ResponseBooks :: !(Maybe [SearchBooks200ResponseBooksInner]) -- ^ "books"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2002
-instance A.FromJSON InlineResponse2002 where
-  parseJSON = A.withObject "InlineResponse2002" $ \o ->
-    InlineResponse2002
+-- | FromJSON SearchBooks200Response
+instance A.FromJSON SearchBooks200Response where
+  parseJSON = A.withObject "SearchBooks200Response" $ \o ->
+    SearchBooks200Response
+      <$> (o .:? "available")
+      <*> (o .:? "number")
+      <*> (o .:? "offset")
+      <*> (o .:? "books")
+
+-- | ToJSON SearchBooks200Response
+instance A.ToJSON SearchBooks200Response where
+  toJSON SearchBooks200Response {..} =
+   _omitNulls
+      [ "available" .= searchBooks200ResponseAvailable
+      , "number" .= searchBooks200ResponseNumber
+      , "offset" .= searchBooks200ResponseOffset
+      , "books" .= searchBooks200ResponseBooks
+      ]
+
+
+-- | Construct a value of type 'SearchBooks200Response' (by applying it's required fields, if any)
+mkSearchBooks200Response
+  :: SearchBooks200Response
+mkSearchBooks200Response =
+  SearchBooks200Response
+  { searchBooks200ResponseAvailable = Nothing
+  , searchBooks200ResponseNumber = Nothing
+  , searchBooks200ResponseOffset = Nothing
+  , searchBooks200ResponseBooks = Nothing
+  }
+
+-- ** SearchBooks200ResponseBooksInner
+-- | SearchBooks200ResponseBooksInner
+data SearchBooks200ResponseBooksInner = SearchBooks200ResponseBooksInner
+  { searchBooks200ResponseBooksInnerTitle :: !(Maybe Text) -- ^ "title"
+  , searchBooks200ResponseBooksInnerImage :: !(Maybe Text) -- ^ "image"
+  , searchBooks200ResponseBooksInnerId :: !(Maybe Int) -- ^ "id"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchBooks200ResponseBooksInner
+instance A.FromJSON SearchBooks200ResponseBooksInner where
+  parseJSON = A.withObject "SearchBooks200ResponseBooksInner" $ \o ->
+    SearchBooks200ResponseBooksInner
+      <$> (o .:? "title")
+      <*> (o .:? "image")
+      <*> (o .:? "id")
+
+-- | ToJSON SearchBooks200ResponseBooksInner
+instance A.ToJSON SearchBooks200ResponseBooksInner where
+  toJSON SearchBooks200ResponseBooksInner {..} =
+   _omitNulls
+      [ "title" .= searchBooks200ResponseBooksInnerTitle
+      , "image" .= searchBooks200ResponseBooksInnerImage
+      , "id" .= searchBooks200ResponseBooksInnerId
+      ]
+
+
+-- | Construct a value of type 'SearchBooks200ResponseBooksInner' (by applying it's required fields, if any)
+mkSearchBooks200ResponseBooksInner
+  :: SearchBooks200ResponseBooksInner
+mkSearchBooks200ResponseBooksInner =
+  SearchBooks200ResponseBooksInner
+  { searchBooks200ResponseBooksInnerTitle = Nothing
+  , searchBooks200ResponseBooksInnerImage = Nothing
+  , searchBooks200ResponseBooksInnerId = Nothing
+  }
+
+-- ** SearchGifs200Response
+-- | SearchGifs200Response
+data SearchGifs200Response = SearchGifs200Response
+  { searchGifs200ResponseImages :: !(Maybe [SearchGifs200ResponseImagesInner]) -- ^ "images"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchGifs200Response
+instance A.FromJSON SearchGifs200Response where
+  parseJSON = A.withObject "SearchGifs200Response" $ \o ->
+    SearchGifs200Response
+      <$> (o .:? "images")
+
+-- | ToJSON SearchGifs200Response
+instance A.ToJSON SearchGifs200Response where
+  toJSON SearchGifs200Response {..} =
+   _omitNulls
+      [ "images" .= searchGifs200ResponseImages
+      ]
+
+
+-- | Construct a value of type 'SearchGifs200Response' (by applying it's required fields, if any)
+mkSearchGifs200Response
+  :: SearchGifs200Response
+mkSearchGifs200Response =
+  SearchGifs200Response
+  { searchGifs200ResponseImages = Nothing
+  }
+
+-- ** SearchGifs200ResponseImagesInner
+-- | SearchGifs200ResponseImagesInner
+data SearchGifs200ResponseImagesInner = SearchGifs200ResponseImagesInner
+  { searchGifs200ResponseImagesInnerWidth :: !(Maybe Int) -- ^ "width"
+  , searchGifs200ResponseImagesInnerUrl :: !(Maybe Text) -- ^ "url"
+  , searchGifs200ResponseImagesInnerHeight :: !(Maybe Int) -- ^ "height"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchGifs200ResponseImagesInner
+instance A.FromJSON SearchGifs200ResponseImagesInner where
+  parseJSON = A.withObject "SearchGifs200ResponseImagesInner" $ \o ->
+    SearchGifs200ResponseImagesInner
+      <$> (o .:? "width")
+      <*> (o .:? "url")
+      <*> (o .:? "height")
+
+-- | ToJSON SearchGifs200ResponseImagesInner
+instance A.ToJSON SearchGifs200ResponseImagesInner where
+  toJSON SearchGifs200ResponseImagesInner {..} =
+   _omitNulls
+      [ "width" .= searchGifs200ResponseImagesInnerWidth
+      , "url" .= searchGifs200ResponseImagesInnerUrl
+      , "height" .= searchGifs200ResponseImagesInnerHeight
+      ]
+
+
+-- | Construct a value of type 'SearchGifs200ResponseImagesInner' (by applying it's required fields, if any)
+mkSearchGifs200ResponseImagesInner
+  :: SearchGifs200ResponseImagesInner
+mkSearchGifs200ResponseImagesInner =
+  SearchGifs200ResponseImagesInner
+  { searchGifs200ResponseImagesInnerWidth = Nothing
+  , searchGifs200ResponseImagesInnerUrl = Nothing
+  , searchGifs200ResponseImagesInnerHeight = Nothing
+  }
+
+-- ** SearchJokes200Response
+-- | SearchJokes200Response
+data SearchJokes200Response = SearchJokes200Response
+  { searchJokes200ResponseJokes :: !(Maybe [SearchJokes200ResponseJokesInner]) -- ^ "jokes"
+  , searchJokes200ResponseAvailable :: !(Maybe Int) -- ^ "available"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchJokes200Response
+instance A.FromJSON SearchJokes200Response where
+  parseJSON = A.withObject "SearchJokes200Response" $ \o ->
+    SearchJokes200Response
+      <$> (o .:? "jokes")
+      <*> (o .:? "available")
+
+-- | ToJSON SearchJokes200Response
+instance A.ToJSON SearchJokes200Response where
+  toJSON SearchJokes200Response {..} =
+   _omitNulls
+      [ "jokes" .= searchJokes200ResponseJokes
+      , "available" .= searchJokes200ResponseAvailable
+      ]
+
+
+-- | Construct a value of type 'SearchJokes200Response' (by applying it's required fields, if any)
+mkSearchJokes200Response
+  :: SearchJokes200Response
+mkSearchJokes200Response =
+  SearchJokes200Response
+  { searchJokes200ResponseJokes = Nothing
+  , searchJokes200ResponseAvailable = Nothing
+  }
+
+-- ** SearchJokes200ResponseJokesInner
+-- | SearchJokes200ResponseJokesInner
+data SearchJokes200ResponseJokesInner = SearchJokes200ResponseJokesInner
+  { searchJokes200ResponseJokesInnerJoke :: !(Maybe Text) -- ^ "joke"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchJokes200ResponseJokesInner
+instance A.FromJSON SearchJokes200ResponseJokesInner where
+  parseJSON = A.withObject "SearchJokes200ResponseJokesInner" $ \o ->
+    SearchJokes200ResponseJokesInner
+      <$> (o .:? "joke")
+
+-- | ToJSON SearchJokes200ResponseJokesInner
+instance A.ToJSON SearchJokes200ResponseJokesInner where
+  toJSON SearchJokes200ResponseJokesInner {..} =
+   _omitNulls
+      [ "joke" .= searchJokes200ResponseJokesInnerJoke
+      ]
+
+
+-- | Construct a value of type 'SearchJokes200ResponseJokesInner' (by applying it's required fields, if any)
+mkSearchJokes200ResponseJokesInner
+  :: SearchJokes200ResponseJokesInner
+mkSearchJokes200ResponseJokesInner =
+  SearchJokes200ResponseJokesInner
+  { searchJokes200ResponseJokesInnerJoke = Nothing
+  }
+
+-- ** SearchMemes200Response
+-- | SearchMemes200Response
+data SearchMemes200Response = SearchMemes200Response
+  { searchMemes200ResponseMemes :: !(Maybe [SearchMemes200ResponseMemesInner]) -- ^ "memes"
+  , searchMemes200ResponseAvailable :: !(Maybe Int) -- ^ "available"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchMemes200Response
+instance A.FromJSON SearchMemes200Response where
+  parseJSON = A.withObject "SearchMemes200Response" $ \o ->
+    SearchMemes200Response
+      <$> (o .:? "memes")
+      <*> (o .:? "available")
+
+-- | ToJSON SearchMemes200Response
+instance A.ToJSON SearchMemes200Response where
+  toJSON SearchMemes200Response {..} =
+   _omitNulls
+      [ "memes" .= searchMemes200ResponseMemes
+      , "available" .= searchMemes200ResponseAvailable
+      ]
+
+
+-- | Construct a value of type 'SearchMemes200Response' (by applying it's required fields, if any)
+mkSearchMemes200Response
+  :: SearchMemes200Response
+mkSearchMemes200Response =
+  SearchMemes200Response
+  { searchMemes200ResponseMemes = Nothing
+  , searchMemes200ResponseAvailable = Nothing
+  }
+
+-- ** SearchMemes200ResponseMemesInner
+-- | SearchMemes200ResponseMemesInner
+data SearchMemes200ResponseMemesInner = SearchMemes200ResponseMemesInner
+  { searchMemes200ResponseMemesInnerType :: !(Maybe Text) -- ^ "type"
+  , searchMemes200ResponseMemesInnerDescription :: !(Maybe Text) -- ^ "description"
+  , searchMemes200ResponseMemesInnerUrl :: !(Maybe Text) -- ^ "url"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchMemes200ResponseMemesInner
+instance A.FromJSON SearchMemes200ResponseMemesInner where
+  parseJSON = A.withObject "SearchMemes200ResponseMemesInner" $ \o ->
+    SearchMemes200ResponseMemesInner
+      <$> (o .:? "type")
+      <*> (o .:? "description")
+      <*> (o .:? "url")
+
+-- | ToJSON SearchMemes200ResponseMemesInner
+instance A.ToJSON SearchMemes200ResponseMemesInner where
+  toJSON SearchMemes200ResponseMemesInner {..} =
+   _omitNulls
+      [ "type" .= searchMemes200ResponseMemesInnerType
+      , "description" .= searchMemes200ResponseMemesInnerDescription
+      , "url" .= searchMemes200ResponseMemesInnerUrl
+      ]
+
+
+-- | Construct a value of type 'SearchMemes200ResponseMemesInner' (by applying it's required fields, if any)
+mkSearchMemes200ResponseMemesInner
+  :: SearchMemes200ResponseMemesInner
+mkSearchMemes200ResponseMemesInner =
+  SearchMemes200ResponseMemesInner
+  { searchMemes200ResponseMemesInnerType = Nothing
+  , searchMemes200ResponseMemesInnerDescription = Nothing
+  , searchMemes200ResponseMemesInnerUrl = Nothing
+  }
+
+-- ** SearchNews200Response
+-- | SearchNews200Response
+data SearchNews200Response = SearchNews200Response
+  { searchNews200ResponseOffset :: !(Maybe Int) -- ^ "offset"
+  , searchNews200ResponseNumber :: !(Maybe Int) -- ^ "number"
+  , searchNews200ResponseAvailable :: !(Maybe Int) -- ^ "available"
+  , searchNews200ResponseNews :: !(Maybe [SearchNews200ResponseNewsInner]) -- ^ "news"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchNews200Response
+instance A.FromJSON SearchNews200Response where
+  parseJSON = A.withObject "SearchNews200Response" $ \o ->
+    SearchNews200Response
       <$> (o .:? "offset")
       <*> (o .:? "number")
       <*> (o .:? "available")
       <*> (o .:? "news")
 
--- | ToJSON InlineResponse2002
-instance A.ToJSON InlineResponse2002 where
-  toJSON InlineResponse2002 {..} =
+-- | ToJSON SearchNews200Response
+instance A.ToJSON SearchNews200Response where
+  toJSON SearchNews200Response {..} =
    _omitNulls
-      [ "offset" .= inlineResponse2002Offset
-      , "number" .= inlineResponse2002Number
-      , "available" .= inlineResponse2002Available
-      , "news" .= inlineResponse2002News
+      [ "offset" .= searchNews200ResponseOffset
+      , "number" .= searchNews200ResponseNumber
+      , "available" .= searchNews200ResponseAvailable
+      , "news" .= searchNews200ResponseNews
       ]
 
 
--- | Construct a value of type 'InlineResponse2002' (by applying it's required fields, if any)
-mkInlineResponse2002
-  :: InlineResponse2002
-mkInlineResponse2002 =
-  InlineResponse2002
-  { inlineResponse2002Offset = Nothing
-  , inlineResponse2002Number = Nothing
-  , inlineResponse2002Available = Nothing
-  , inlineResponse2002News = Nothing
+-- | Construct a value of type 'SearchNews200Response' (by applying it's required fields, if any)
+mkSearchNews200Response
+  :: SearchNews200Response
+mkSearchNews200Response =
+  SearchNews200Response
+  { searchNews200ResponseOffset = Nothing
+  , searchNews200ResponseNumber = Nothing
+  , searchNews200ResponseAvailable = Nothing
+  , searchNews200ResponseNews = Nothing
   }
 
--- ** InlineResponse20020
--- | InlineResponse20020
-data InlineResponse20020 = InlineResponse20020
-  { inlineResponse20020Readability :: !(Maybe InlineResponse20019Readability) -- ^ "readability"
+-- ** SearchNews200ResponseNewsInner
+-- | SearchNews200ResponseNewsInner
+data SearchNews200ResponseNewsInner = SearchNews200ResponseNewsInner
+  { searchNews200ResponseNewsInnerSummary :: !(Maybe Text) -- ^ "summary"
+  , searchNews200ResponseNewsInnerImage :: !(Maybe Text) -- ^ "image"
+  , searchNews200ResponseNewsInnerSentiment :: !(Maybe Double) -- ^ "sentiment"
+  , searchNews200ResponseNewsInnerSourceCountry :: !(Maybe Text) -- ^ "source_country"
+  , searchNews200ResponseNewsInnerLanguage :: !(Maybe Text) -- ^ "language"
+  , searchNews200ResponseNewsInnerId :: !(Maybe Int) -- ^ "id"
+  , searchNews200ResponseNewsInnerText :: !(Maybe Text) -- ^ "text"
+  , searchNews200ResponseNewsInnerTitle :: !(Maybe Text) -- ^ "title"
+  , searchNews200ResponseNewsInnerPublishDate :: !(Maybe Text) -- ^ "publish_date"
+  , searchNews200ResponseNewsInnerUrl :: !(Maybe Text) -- ^ "url"
+  , searchNews200ResponseNewsInnerAuthors :: !(Maybe [Text]) -- ^ "authors"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse20020
-instance A.FromJSON InlineResponse20020 where
-  parseJSON = A.withObject "InlineResponse20020" $ \o ->
-    InlineResponse20020
-      <$> (o .:? "readability")
-
--- | ToJSON InlineResponse20020
-instance A.ToJSON InlineResponse20020 where
-  toJSON InlineResponse20020 {..} =
-   _omitNulls
-      [ "readability" .= inlineResponse20020Readability
-      ]
-
-
--- | Construct a value of type 'InlineResponse20020' (by applying it's required fields, if any)
-mkInlineResponse20020
-  :: InlineResponse20020
-mkInlineResponse20020 =
-  InlineResponse20020
-  { inlineResponse20020Readability = Nothing
-  }
-
--- ** InlineResponse20021
--- | InlineResponse20021
-data InlineResponse20021 = InlineResponse20021
-  { inlineResponse20021Dates :: !(Maybe [InlineResponse20021Dates]) -- ^ "dates"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20021
-instance A.FromJSON InlineResponse20021 where
-  parseJSON = A.withObject "InlineResponse20021" $ \o ->
-    InlineResponse20021
-      <$> (o .:? "dates")
-
--- | ToJSON InlineResponse20021
-instance A.ToJSON InlineResponse20021 where
-  toJSON InlineResponse20021 {..} =
-   _omitNulls
-      [ "dates" .= inlineResponse20021Dates
-      ]
-
-
--- | Construct a value of type 'InlineResponse20021' (by applying it's required fields, if any)
-mkInlineResponse20021
-  :: InlineResponse20021
-mkInlineResponse20021 =
-  InlineResponse20021
-  { inlineResponse20021Dates = Nothing
-  }
-
--- ** InlineResponse20021Dates
--- | InlineResponse20021Dates
-data InlineResponse20021Dates = InlineResponse20021Dates
-  { inlineResponse20021DatesStartPosition :: !(Maybe Int) -- ^ "start_position"
-  , inlineResponse20021DatesDate :: !(Maybe Text) -- ^ "date"
-  , inlineResponse20021DatesNormalizedDate :: !(Maybe Double) -- ^ "normalized_date"
-  , inlineResponse20021DatesTag :: !(Maybe Text) -- ^ "tag"
-  , inlineResponse20021DatesEndPosition :: !(Maybe Int) -- ^ "end_position"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20021Dates
-instance A.FromJSON InlineResponse20021Dates where
-  parseJSON = A.withObject "InlineResponse20021Dates" $ \o ->
-    InlineResponse20021Dates
-      <$> (o .:? "start_position")
-      <*> (o .:? "date")
-      <*> (o .:? "normalized_date")
-      <*> (o .:? "tag")
-      <*> (o .:? "end_position")
-
--- | ToJSON InlineResponse20021Dates
-instance A.ToJSON InlineResponse20021Dates where
-  toJSON InlineResponse20021Dates {..} =
-   _omitNulls
-      [ "start_position" .= inlineResponse20021DatesStartPosition
-      , "date" .= inlineResponse20021DatesDate
-      , "normalized_date" .= inlineResponse20021DatesNormalizedDate
-      , "tag" .= inlineResponse20021DatesTag
-      , "end_position" .= inlineResponse20021DatesEndPosition
-      ]
-
-
--- | Construct a value of type 'InlineResponse20021Dates' (by applying it's required fields, if any)
-mkInlineResponse20021Dates
-  :: InlineResponse20021Dates
-mkInlineResponse20021Dates =
-  InlineResponse20021Dates
-  { inlineResponse20021DatesStartPosition = Nothing
-  , inlineResponse20021DatesDate = Nothing
-  , inlineResponse20021DatesNormalizedDate = Nothing
-  , inlineResponse20021DatesTag = Nothing
-  , inlineResponse20021DatesEndPosition = Nothing
-  }
-
--- ** InlineResponse20022
--- | InlineResponse20022
-data InlineResponse20022 = InlineResponse20022
-  { inlineResponse20022Synonyms :: !(Maybe [Text]) -- ^ "synonyms"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20022
-instance A.FromJSON InlineResponse20022 where
-  parseJSON = A.withObject "InlineResponse20022" $ \o ->
-    InlineResponse20022
-      <$> (o .:? "synonyms")
-
--- | ToJSON InlineResponse20022
-instance A.ToJSON InlineResponse20022 where
-  toJSON InlineResponse20022 {..} =
-   _omitNulls
-      [ "synonyms" .= inlineResponse20022Synonyms
-      ]
-
-
--- | Construct a value of type 'InlineResponse20022' (by applying it's required fields, if any)
-mkInlineResponse20022
-  :: InlineResponse20022
-mkInlineResponse20022 =
-  InlineResponse20022
-  { inlineResponse20022Synonyms = Nothing
-  }
-
--- ** InlineResponse20023
--- | InlineResponse20023
-data InlineResponse20023 = InlineResponse20023
-  { inlineResponse20023TaggedText :: !(Maybe Text) -- ^ "tagged_text"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20023
-instance A.FromJSON InlineResponse20023 where
-  parseJSON = A.withObject "InlineResponse20023" $ \o ->
-    InlineResponse20023
-      <$> (o .:? "tagged_text")
-
--- | ToJSON InlineResponse20023
-instance A.ToJSON InlineResponse20023 where
-  toJSON InlineResponse20023 {..} =
-   _omitNulls
-      [ "tagged_text" .= inlineResponse20023TaggedText
-      ]
-
-
--- | Construct a value of type 'InlineResponse20023' (by applying it's required fields, if any)
-mkInlineResponse20023
-  :: InlineResponse20023
-mkInlineResponse20023 =
-  InlineResponse20023
-  { inlineResponse20023TaggedText = Nothing
-  }
-
--- ** InlineResponse20024
--- | InlineResponse20024
-data InlineResponse20024 = InlineResponse20024
-  { inlineResponse20024Original :: !(Maybe Text) -- ^ "original"
-  , inlineResponse20024Stemmed :: !(Maybe Text) -- ^ "stemmed"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20024
-instance A.FromJSON InlineResponse20024 where
-  parseJSON = A.withObject "InlineResponse20024" $ \o ->
-    InlineResponse20024
-      <$> (o .:? "original")
-      <*> (o .:? "stemmed")
-
--- | ToJSON InlineResponse20024
-instance A.ToJSON InlineResponse20024 where
-  toJSON InlineResponse20024 {..} =
-   _omitNulls
-      [ "original" .= inlineResponse20024Original
-      , "stemmed" .= inlineResponse20024Stemmed
-      ]
-
-
--- | Construct a value of type 'InlineResponse20024' (by applying it's required fields, if any)
-mkInlineResponse20024
-  :: InlineResponse20024
-mkInlineResponse20024 =
-  InlineResponse20024
-  { inlineResponse20024Original = Nothing
-  , inlineResponse20024Stemmed = Nothing
-  }
-
--- ** InlineResponse20025
--- | InlineResponse20025
-data InlineResponse20025 = InlineResponse20025
-  { inlineResponse20025Original :: !(Maybe Text) -- ^ "original"
-  , inlineResponse20025Singular :: !(Maybe Text) -- ^ "singular"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20025
-instance A.FromJSON InlineResponse20025 where
-  parseJSON = A.withObject "InlineResponse20025" $ \o ->
-    InlineResponse20025
-      <$> (o .:? "original")
-      <*> (o .:? "singular")
-
--- | ToJSON InlineResponse20025
-instance A.ToJSON InlineResponse20025 where
-  toJSON InlineResponse20025 {..} =
-   _omitNulls
-      [ "original" .= inlineResponse20025Original
-      , "singular" .= inlineResponse20025Singular
-      ]
-
-
--- | Construct a value of type 'InlineResponse20025' (by applying it's required fields, if any)
-mkInlineResponse20025
-  :: InlineResponse20025
-mkInlineResponse20025 =
-  InlineResponse20025
-  { inlineResponse20025Original = Nothing
-  , inlineResponse20025Singular = Nothing
-  }
-
--- ** InlineResponse20026
--- | InlineResponse20026
-data InlineResponse20026 = InlineResponse20026
-  { inlineResponse20026Original :: !(Maybe Text) -- ^ "original"
-  , inlineResponse20026Plural :: !(Maybe Text) -- ^ "plural"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20026
-instance A.FromJSON InlineResponse20026 where
-  parseJSON = A.withObject "InlineResponse20026" $ \o ->
-    InlineResponse20026
-      <$> (o .:? "original")
-      <*> (o .:? "plural")
-
--- | ToJSON InlineResponse20026
-instance A.ToJSON InlineResponse20026 where
-  toJSON InlineResponse20026 {..} =
-   _omitNulls
-      [ "original" .= inlineResponse20026Original
-      , "plural" .= inlineResponse20026Plural
-      ]
-
-
--- | Construct a value of type 'InlineResponse20026' (by applying it's required fields, if any)
-mkInlineResponse20026
-  :: InlineResponse20026
-mkInlineResponse20026 =
-  InlineResponse20026
-  { inlineResponse20026Original = Nothing
-  , inlineResponse20026Plural = Nothing
-  }
-
--- ** InlineResponse20027
--- | InlineResponse20027
-data InlineResponse20027 = InlineResponse20027
-  { inlineResponse20027Entities :: !(Maybe [InlineResponse20027Entities]) -- ^ "entities"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20027
-instance A.FromJSON InlineResponse20027 where
-  parseJSON = A.withObject "InlineResponse20027" $ \o ->
-    InlineResponse20027
-      <$> (o .:? "entities")
-
--- | ToJSON InlineResponse20027
-instance A.ToJSON InlineResponse20027 where
-  toJSON InlineResponse20027 {..} =
-   _omitNulls
-      [ "entities" .= inlineResponse20027Entities
-      ]
-
-
--- | Construct a value of type 'InlineResponse20027' (by applying it's required fields, if any)
-mkInlineResponse20027
-  :: InlineResponse20027
-mkInlineResponse20027 =
-  InlineResponse20027
-  { inlineResponse20027Entities = Nothing
-  }
-
--- ** InlineResponse20027Entities
--- | InlineResponse20027Entities
-data InlineResponse20027Entities = InlineResponse20027Entities
-  { inlineResponse20027EntitiesStartPosition :: !(Maybe Int) -- ^ "start_position"
-  , inlineResponse20027EntitiesImage :: !(Maybe Text) -- ^ "image"
-  , inlineResponse20027EntitiesType :: !(Maybe Text) -- ^ "type"
-  , inlineResponse20027EntitiesValue :: !(Maybe Text) -- ^ "value"
-  , inlineResponse20027EntitiesEndPosition :: !(Maybe Int) -- ^ "end_position"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20027Entities
-instance A.FromJSON InlineResponse20027Entities where
-  parseJSON = A.withObject "InlineResponse20027Entities" $ \o ->
-    InlineResponse20027Entities
-      <$> (o .:? "start_position")
-      <*> (o .:? "image")
-      <*> (o .:? "type")
-      <*> (o .:? "value")
-      <*> (o .:? "end_position")
-
--- | ToJSON InlineResponse20027Entities
-instance A.ToJSON InlineResponse20027Entities where
-  toJSON InlineResponse20027Entities {..} =
-   _omitNulls
-      [ "start_position" .= inlineResponse20027EntitiesStartPosition
-      , "image" .= inlineResponse20027EntitiesImage
-      , "type" .= inlineResponse20027EntitiesType
-      , "value" .= inlineResponse20027EntitiesValue
-      , "end_position" .= inlineResponse20027EntitiesEndPosition
-      ]
-
-
--- | Construct a value of type 'InlineResponse20027Entities' (by applying it's required fields, if any)
-mkInlineResponse20027Entities
-  :: InlineResponse20027Entities
-mkInlineResponse20027Entities =
-  InlineResponse20027Entities
-  { inlineResponse20027EntitiesStartPosition = Nothing
-  , inlineResponse20027EntitiesImage = Nothing
-  , inlineResponse20027EntitiesType = Nothing
-  , inlineResponse20027EntitiesValue = Nothing
-  , inlineResponse20027EntitiesEndPosition = Nothing
-  }
-
--- ** InlineResponse20028
--- | InlineResponse20028
-data InlineResponse20028 = InlineResponse20028
-  { inlineResponse20028Images :: !(Maybe [InlineResponse20028Images]) -- ^ "images"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20028
-instance A.FromJSON InlineResponse20028 where
-  parseJSON = A.withObject "InlineResponse20028" $ \o ->
-    InlineResponse20028
-      <$> (o .:? "images")
-
--- | ToJSON InlineResponse20028
-instance A.ToJSON InlineResponse20028 where
-  toJSON InlineResponse20028 {..} =
-   _omitNulls
-      [ "images" .= inlineResponse20028Images
-      ]
-
-
--- | Construct a value of type 'InlineResponse20028' (by applying it's required fields, if any)
-mkInlineResponse20028
-  :: InlineResponse20028
-mkInlineResponse20028 =
-  InlineResponse20028
-  { inlineResponse20028Images = Nothing
-  }
-
--- ** InlineResponse20028Images
--- | InlineResponse20028Images
-data InlineResponse20028Images = InlineResponse20028Images
-  { inlineResponse20028ImagesWidth :: !(Maybe Int) -- ^ "width"
-  , inlineResponse20028ImagesLicense :: !(Maybe InlineResponse20028License) -- ^ "license"
-  , inlineResponse20028ImagesThumbnail :: !(Maybe Text) -- ^ "thumbnail"
-  , inlineResponse20028ImagesId :: !(Maybe Text) -- ^ "id"
-  , inlineResponse20028ImagesUrl :: !(Maybe Text) -- ^ "url"
-  , inlineResponse20028ImagesHeight :: !(Maybe Int) -- ^ "height"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20028Images
-instance A.FromJSON InlineResponse20028Images where
-  parseJSON = A.withObject "InlineResponse20028Images" $ \o ->
-    InlineResponse20028Images
-      <$> (o .:? "width")
-      <*> (o .:? "license")
-      <*> (o .:? "thumbnail")
-      <*> (o .:? "id")
-      <*> (o .:? "url")
-      <*> (o .:? "height")
-
--- | ToJSON InlineResponse20028Images
-instance A.ToJSON InlineResponse20028Images where
-  toJSON InlineResponse20028Images {..} =
-   _omitNulls
-      [ "width" .= inlineResponse20028ImagesWidth
-      , "license" .= inlineResponse20028ImagesLicense
-      , "thumbnail" .= inlineResponse20028ImagesThumbnail
-      , "id" .= inlineResponse20028ImagesId
-      , "url" .= inlineResponse20028ImagesUrl
-      , "height" .= inlineResponse20028ImagesHeight
-      ]
-
-
--- | Construct a value of type 'InlineResponse20028Images' (by applying it's required fields, if any)
-mkInlineResponse20028Images
-  :: InlineResponse20028Images
-mkInlineResponse20028Images =
-  InlineResponse20028Images
-  { inlineResponse20028ImagesWidth = Nothing
-  , inlineResponse20028ImagesLicense = Nothing
-  , inlineResponse20028ImagesThumbnail = Nothing
-  , inlineResponse20028ImagesId = Nothing
-  , inlineResponse20028ImagesUrl = Nothing
-  , inlineResponse20028ImagesHeight = Nothing
-  }
-
--- ** InlineResponse20028License
--- | InlineResponse20028License
-data InlineResponse20028License = InlineResponse20028License
-  { inlineResponse20028LicenseName :: !(Maybe Text) -- ^ "name"
-  , inlineResponse20028LicenseLink :: !(Maybe Text) -- ^ "link"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20028License
-instance A.FromJSON InlineResponse20028License where
-  parseJSON = A.withObject "InlineResponse20028License" $ \o ->
-    InlineResponse20028License
-      <$> (o .:? "name")
-      <*> (o .:? "link")
-
--- | ToJSON InlineResponse20028License
-instance A.ToJSON InlineResponse20028License where
-  toJSON InlineResponse20028License {..} =
-   _omitNulls
-      [ "name" .= inlineResponse20028LicenseName
-      , "link" .= inlineResponse20028LicenseLink
-      ]
-
-
--- | Construct a value of type 'InlineResponse20028License' (by applying it's required fields, if any)
-mkInlineResponse20028License
-  :: InlineResponse20028License
-mkInlineResponse20028License =
-  InlineResponse20028License
-  { inlineResponse20028LicenseName = Nothing
-  , inlineResponse20028LicenseLink = Nothing
-  }
-
--- ** InlineResponse20029
--- | InlineResponse20029
-data InlineResponse20029 = InlineResponse20029
-  { inlineResponse20029SpecificColor :: !(Maybe Text) -- ^ "specific_color"
-  , inlineResponse20029MainColor :: !(Maybe Text) -- ^ "main_color"
-  , inlineResponse20029HexCode :: !(Maybe Text) -- ^ "hex_code"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20029
-instance A.FromJSON InlineResponse20029 where
-  parseJSON = A.withObject "InlineResponse20029" $ \o ->
-    InlineResponse20029
-      <$> (o .:? "specific_color")
-      <*> (o .:? "main_color")
-      <*> (o .:? "hex_code")
-
--- | ToJSON InlineResponse20029
-instance A.ToJSON InlineResponse20029 where
-  toJSON InlineResponse20029 {..} =
-   _omitNulls
-      [ "specific_color" .= inlineResponse20029SpecificColor
-      , "main_color" .= inlineResponse20029MainColor
-      , "hex_code" .= inlineResponse20029HexCode
-      ]
-
-
--- | Construct a value of type 'InlineResponse20029' (by applying it's required fields, if any)
-mkInlineResponse20029
-  :: InlineResponse20029
-mkInlineResponse20029 =
-  InlineResponse20029
-  { inlineResponse20029SpecificColor = Nothing
-  , inlineResponse20029MainColor = Nothing
-  , inlineResponse20029HexCode = Nothing
-  }
-
--- ** InlineResponse2002News
--- | InlineResponse2002News
-data InlineResponse2002News = InlineResponse2002News
-  { inlineResponse2002NewsSummary :: !(Maybe Text) -- ^ "summary"
-  , inlineResponse2002NewsImage :: !(Maybe Text) -- ^ "image"
-  , inlineResponse2002NewsSentiment :: !(Maybe Double) -- ^ "sentiment"
-  , inlineResponse2002NewsSourceCountry :: !(Maybe Text) -- ^ "source_country"
-  , inlineResponse2002NewsLanguage :: !(Maybe Text) -- ^ "language"
-  , inlineResponse2002NewsId :: !(Maybe Int) -- ^ "id"
-  , inlineResponse2002NewsText :: !(Maybe Text) -- ^ "text"
-  , inlineResponse2002NewsTitle :: !(Maybe Text) -- ^ "title"
-  , inlineResponse2002NewsPublishDate :: !(Maybe Text) -- ^ "publish_date"
-  , inlineResponse2002NewsUrl :: !(Maybe Text) -- ^ "url"
-  , inlineResponse2002NewsAuthors :: !(Maybe [Text]) -- ^ "authors"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2002News
-instance A.FromJSON InlineResponse2002News where
-  parseJSON = A.withObject "InlineResponse2002News" $ \o ->
-    InlineResponse2002News
+-- | FromJSON SearchNews200ResponseNewsInner
+instance A.FromJSON SearchNews200ResponseNewsInner where
+  parseJSON = A.withObject "SearchNews200ResponseNewsInner" $ \o ->
+    SearchNews200ResponseNewsInner
       <$> (o .:? "summary")
       <*> (o .:? "image")
       <*> (o .:? "sentiment")
@@ -1685,524 +1905,304 @@ instance A.FromJSON InlineResponse2002News where
       <*> (o .:? "url")
       <*> (o .:? "authors")
 
--- | ToJSON InlineResponse2002News
-instance A.ToJSON InlineResponse2002News where
-  toJSON InlineResponse2002News {..} =
+-- | ToJSON SearchNews200ResponseNewsInner
+instance A.ToJSON SearchNews200ResponseNewsInner where
+  toJSON SearchNews200ResponseNewsInner {..} =
    _omitNulls
-      [ "summary" .= inlineResponse2002NewsSummary
-      , "image" .= inlineResponse2002NewsImage
-      , "sentiment" .= inlineResponse2002NewsSentiment
-      , "source_country" .= inlineResponse2002NewsSourceCountry
-      , "language" .= inlineResponse2002NewsLanguage
-      , "id" .= inlineResponse2002NewsId
-      , "text" .= inlineResponse2002NewsText
-      , "title" .= inlineResponse2002NewsTitle
-      , "publish_date" .= inlineResponse2002NewsPublishDate
-      , "url" .= inlineResponse2002NewsUrl
-      , "authors" .= inlineResponse2002NewsAuthors
+      [ "summary" .= searchNews200ResponseNewsInnerSummary
+      , "image" .= searchNews200ResponseNewsInnerImage
+      , "sentiment" .= searchNews200ResponseNewsInnerSentiment
+      , "source_country" .= searchNews200ResponseNewsInnerSourceCountry
+      , "language" .= searchNews200ResponseNewsInnerLanguage
+      , "id" .= searchNews200ResponseNewsInnerId
+      , "text" .= searchNews200ResponseNewsInnerText
+      , "title" .= searchNews200ResponseNewsInnerTitle
+      , "publish_date" .= searchNews200ResponseNewsInnerPublishDate
+      , "url" .= searchNews200ResponseNewsInnerUrl
+      , "authors" .= searchNews200ResponseNewsInnerAuthors
       ]
 
 
--- | Construct a value of type 'InlineResponse2002News' (by applying it's required fields, if any)
-mkInlineResponse2002News
-  :: InlineResponse2002News
-mkInlineResponse2002News =
-  InlineResponse2002News
-  { inlineResponse2002NewsSummary = Nothing
-  , inlineResponse2002NewsImage = Nothing
-  , inlineResponse2002NewsSentiment = Nothing
-  , inlineResponse2002NewsSourceCountry = Nothing
-  , inlineResponse2002NewsLanguage = Nothing
-  , inlineResponse2002NewsId = Nothing
-  , inlineResponse2002NewsText = Nothing
-  , inlineResponse2002NewsTitle = Nothing
-  , inlineResponse2002NewsPublishDate = Nothing
-  , inlineResponse2002NewsUrl = Nothing
-  , inlineResponse2002NewsAuthors = Nothing
+-- | Construct a value of type 'SearchNews200ResponseNewsInner' (by applying it's required fields, if any)
+mkSearchNews200ResponseNewsInner
+  :: SearchNews200ResponseNewsInner
+mkSearchNews200ResponseNewsInner =
+  SearchNews200ResponseNewsInner
+  { searchNews200ResponseNewsInnerSummary = Nothing
+  , searchNews200ResponseNewsInnerImage = Nothing
+  , searchNews200ResponseNewsInnerSentiment = Nothing
+  , searchNews200ResponseNewsInnerSourceCountry = Nothing
+  , searchNews200ResponseNewsInnerLanguage = Nothing
+  , searchNews200ResponseNewsInnerId = Nothing
+  , searchNews200ResponseNewsInnerText = Nothing
+  , searchNews200ResponseNewsInnerTitle = Nothing
+  , searchNews200ResponseNewsInnerPublishDate = Nothing
+  , searchNews200ResponseNewsInnerUrl = Nothing
+  , searchNews200ResponseNewsInnerAuthors = Nothing
   }
 
--- ** InlineResponse2003
--- | InlineResponse2003
-data InlineResponse2003 = InlineResponse2003
-  { inlineResponse2003Title :: !(Maybe Text) -- ^ "title"
-  , inlineResponse2003Text :: !(Maybe Text) -- ^ "text"
-  , inlineResponse2003Url :: !(Maybe Text) -- ^ "url"
-  , inlineResponse2003Image :: !(Maybe Text) -- ^ "image"
-  , inlineResponse2003PublishDate :: !(Maybe Text) -- ^ "publish_date"
-  , inlineResponse2003Author :: !(Maybe Text) -- ^ "author"
-  , inlineResponse2003Language :: !(Maybe Text) -- ^ "language"
-  , inlineResponse2003SourceCountry :: !(Maybe Text) -- ^ "source_country"
-  , inlineResponse2003Sentiment :: !(Maybe Double) -- ^ "sentiment"
+-- ** SearchRoyaltyFreeImages200Response
+-- | SearchRoyaltyFreeImages200Response
+data SearchRoyaltyFreeImages200Response = SearchRoyaltyFreeImages200Response
+  { searchRoyaltyFreeImages200ResponseImages :: !(Maybe [SearchRoyaltyFreeImages200ResponseImagesInner]) -- ^ "images"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2003
-instance A.FromJSON InlineResponse2003 where
-  parseJSON = A.withObject "InlineResponse2003" $ \o ->
-    InlineResponse2003
-      <$> (o .:? "title")
-      <*> (o .:? "text")
-      <*> (o .:? "url")
-      <*> (o .:? "image")
-      <*> (o .:? "publish_date")
-      <*> (o .:? "author")
-      <*> (o .:? "language")
-      <*> (o .:? "source_country")
-      <*> (o .:? "sentiment")
-
--- | ToJSON InlineResponse2003
-instance A.ToJSON InlineResponse2003 where
-  toJSON InlineResponse2003 {..} =
-   _omitNulls
-      [ "title" .= inlineResponse2003Title
-      , "text" .= inlineResponse2003Text
-      , "url" .= inlineResponse2003Url
-      , "image" .= inlineResponse2003Image
-      , "publish_date" .= inlineResponse2003PublishDate
-      , "author" .= inlineResponse2003Author
-      , "language" .= inlineResponse2003Language
-      , "source_country" .= inlineResponse2003SourceCountry
-      , "sentiment" .= inlineResponse2003Sentiment
-      ]
-
-
--- | Construct a value of type 'InlineResponse2003' (by applying it's required fields, if any)
-mkInlineResponse2003
-  :: InlineResponse2003
-mkInlineResponse2003 =
-  InlineResponse2003
-  { inlineResponse2003Title = Nothing
-  , inlineResponse2003Text = Nothing
-  , inlineResponse2003Url = Nothing
-  , inlineResponse2003Image = Nothing
-  , inlineResponse2003PublishDate = Nothing
-  , inlineResponse2003Author = Nothing
-  , inlineResponse2003Language = Nothing
-  , inlineResponse2003SourceCountry = Nothing
-  , inlineResponse2003Sentiment = Nothing
-  }
-
--- ** InlineResponse20030
--- | InlineResponse20030
-data InlineResponse20030 = InlineResponse20030
-  { inlineResponse20030TargetAmount :: !(Maybe Double) -- ^ "target_amount"
-  , inlineResponse20030TargetUnit :: !(Maybe Text) -- ^ "target_unit"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20030
-instance A.FromJSON InlineResponse20030 where
-  parseJSON = A.withObject "InlineResponse20030" $ \o ->
-    InlineResponse20030
-      <$> (o .:? "target_amount")
-      <*> (o .:? "target_unit")
-
--- | ToJSON InlineResponse20030
-instance A.ToJSON InlineResponse20030 where
-  toJSON InlineResponse20030 {..} =
-   _omitNulls
-      [ "target_amount" .= inlineResponse20030TargetAmount
-      , "target_unit" .= inlineResponse20030TargetUnit
-      ]
-
-
--- | Construct a value of type 'InlineResponse20030' (by applying it's required fields, if any)
-mkInlineResponse20030
-  :: InlineResponse20030
-mkInlineResponse20030 =
-  InlineResponse20030
-  { inlineResponse20030TargetAmount = Nothing
-  , inlineResponse20030TargetUnit = Nothing
-  }
-
--- ** InlineResponse20031
--- | InlineResponse20031
-data InlineResponse20031 = InlineResponse20031
-  { inlineResponse20031Value :: !(Maybe Text) -- ^ "value"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20031
-instance A.FromJSON InlineResponse20031 where
-  parseJSON = A.withObject "InlineResponse20031" $ \o ->
-    InlineResponse20031
-      <$> (o .:? "value")
-
--- | ToJSON InlineResponse20031
-instance A.ToJSON InlineResponse20031 where
-  toJSON InlineResponse20031 {..} =
-   _omitNulls
-      [ "value" .= inlineResponse20031Value
-      ]
-
-
--- | Construct a value of type 'InlineResponse20031' (by applying it's required fields, if any)
-mkInlineResponse20031
-  :: InlineResponse20031
-mkInlineResponse20031 =
-  InlineResponse20031
-  { inlineResponse20031Value = Nothing
-  }
-
--- ** InlineResponse20032
--- | InlineResponse20032
-data InlineResponse20032 = InlineResponse20032
-  { inlineResponse20032Status :: !(Maybe Text) -- ^ "status"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse20032
-instance A.FromJSON InlineResponse20032 where
-  parseJSON = A.withObject "InlineResponse20032" $ \o ->
-    InlineResponse20032
-      <$> (o .:? "status")
-
--- | ToJSON InlineResponse20032
-instance A.ToJSON InlineResponse20032 where
-  toJSON InlineResponse20032 {..} =
-   _omitNulls
-      [ "status" .= inlineResponse20032Status
-      ]
-
-
--- | Construct a value of type 'InlineResponse20032' (by applying it's required fields, if any)
-mkInlineResponse20032
-  :: InlineResponse20032
-mkInlineResponse20032 =
-  InlineResponse20032
-  { inlineResponse20032Status = Nothing
-  }
-
--- ** InlineResponse2004
--- | InlineResponse2004
-data InlineResponse2004 = InlineResponse2004
-  { inlineResponse2004Jokes :: !(Maybe [InlineResponse2004Jokes]) -- ^ "jokes"
-  , inlineResponse2004Available :: !(Maybe Int) -- ^ "available"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2004
-instance A.FromJSON InlineResponse2004 where
-  parseJSON = A.withObject "InlineResponse2004" $ \o ->
-    InlineResponse2004
-      <$> (o .:? "jokes")
-      <*> (o .:? "available")
-
--- | ToJSON InlineResponse2004
-instance A.ToJSON InlineResponse2004 where
-  toJSON InlineResponse2004 {..} =
-   _omitNulls
-      [ "jokes" .= inlineResponse2004Jokes
-      , "available" .= inlineResponse2004Available
-      ]
-
-
--- | Construct a value of type 'InlineResponse2004' (by applying it's required fields, if any)
-mkInlineResponse2004
-  :: InlineResponse2004
-mkInlineResponse2004 =
-  InlineResponse2004
-  { inlineResponse2004Jokes = Nothing
-  , inlineResponse2004Available = Nothing
-  }
-
--- ** InlineResponse2004Jokes
--- | InlineResponse2004Jokes
-data InlineResponse2004Jokes = InlineResponse2004Jokes
-  { inlineResponse2004JokesJoke :: !(Maybe Text) -- ^ "joke"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2004Jokes
-instance A.FromJSON InlineResponse2004Jokes where
-  parseJSON = A.withObject "InlineResponse2004Jokes" $ \o ->
-    InlineResponse2004Jokes
-      <$> (o .:? "joke")
-
--- | ToJSON InlineResponse2004Jokes
-instance A.ToJSON InlineResponse2004Jokes where
-  toJSON InlineResponse2004Jokes {..} =
-   _omitNulls
-      [ "joke" .= inlineResponse2004JokesJoke
-      ]
-
-
--- | Construct a value of type 'InlineResponse2004Jokes' (by applying it's required fields, if any)
-mkInlineResponse2004Jokes
-  :: InlineResponse2004Jokes
-mkInlineResponse2004Jokes =
-  InlineResponse2004Jokes
-  { inlineResponse2004JokesJoke = Nothing
-  }
-
--- ** InlineResponse2005
--- | InlineResponse2005
-data InlineResponse2005 = InlineResponse2005
-  { inlineResponse2005Memes :: !(Maybe [InlineResponse2005Memes]) -- ^ "memes"
-  , inlineResponse2005Available :: !(Maybe Int) -- ^ "available"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2005
-instance A.FromJSON InlineResponse2005 where
-  parseJSON = A.withObject "InlineResponse2005" $ \o ->
-    InlineResponse2005
-      <$> (o .:? "memes")
-      <*> (o .:? "available")
-
--- | ToJSON InlineResponse2005
-instance A.ToJSON InlineResponse2005 where
-  toJSON InlineResponse2005 {..} =
-   _omitNulls
-      [ "memes" .= inlineResponse2005Memes
-      , "available" .= inlineResponse2005Available
-      ]
-
-
--- | Construct a value of type 'InlineResponse2005' (by applying it's required fields, if any)
-mkInlineResponse2005
-  :: InlineResponse2005
-mkInlineResponse2005 =
-  InlineResponse2005
-  { inlineResponse2005Memes = Nothing
-  , inlineResponse2005Available = Nothing
-  }
-
--- ** InlineResponse2005Memes
--- | InlineResponse2005Memes
-data InlineResponse2005Memes = InlineResponse2005Memes
-  { inlineResponse2005MemesType :: !(Maybe Text) -- ^ "type"
-  , inlineResponse2005MemesDescription :: !(Maybe Text) -- ^ "description"
-  , inlineResponse2005MemesUrl :: !(Maybe Text) -- ^ "url"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2005Memes
-instance A.FromJSON InlineResponse2005Memes where
-  parseJSON = A.withObject "InlineResponse2005Memes" $ \o ->
-    InlineResponse2005Memes
-      <$> (o .:? "type")
-      <*> (o .:? "description")
-      <*> (o .:? "url")
-
--- | ToJSON InlineResponse2005Memes
-instance A.ToJSON InlineResponse2005Memes where
-  toJSON InlineResponse2005Memes {..} =
-   _omitNulls
-      [ "type" .= inlineResponse2005MemesType
-      , "description" .= inlineResponse2005MemesDescription
-      , "url" .= inlineResponse2005MemesUrl
-      ]
-
-
--- | Construct a value of type 'InlineResponse2005Memes' (by applying it's required fields, if any)
-mkInlineResponse2005Memes
-  :: InlineResponse2005Memes
-mkInlineResponse2005Memes =
-  InlineResponse2005Memes
-  { inlineResponse2005MemesType = Nothing
-  , inlineResponse2005MemesDescription = Nothing
-  , inlineResponse2005MemesUrl = Nothing
-  }
-
--- ** InlineResponse2006
--- | InlineResponse2006
-data InlineResponse2006 = InlineResponse2006
-  { inlineResponse2006Description :: !(Maybe Text) -- ^ "description"
-  , inlineResponse2006Url :: !(Maybe Text) -- ^ "url"
-  , inlineResponse2006Type :: !(Maybe Text) -- ^ "type"
-  , inlineResponse2006Width :: !(Maybe Int) -- ^ "width"
-  , inlineResponse2006Height :: !(Maybe Int) -- ^ "height"
-  , inlineResponse2006Ratio :: !(Maybe Double) -- ^ "ratio"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2006
-instance A.FromJSON InlineResponse2006 where
-  parseJSON = A.withObject "InlineResponse2006" $ \o ->
-    InlineResponse2006
-      <$> (o .:? "description")
-      <*> (o .:? "url")
-      <*> (o .:? "type")
-      <*> (o .:? "width")
-      <*> (o .:? "height")
-      <*> (o .:? "ratio")
-
--- | ToJSON InlineResponse2006
-instance A.ToJSON InlineResponse2006 where
-  toJSON InlineResponse2006 {..} =
-   _omitNulls
-      [ "description" .= inlineResponse2006Description
-      , "url" .= inlineResponse2006Url
-      , "type" .= inlineResponse2006Type
-      , "width" .= inlineResponse2006Width
-      , "height" .= inlineResponse2006Height
-      , "ratio" .= inlineResponse2006Ratio
-      ]
-
-
--- | Construct a value of type 'InlineResponse2006' (by applying it's required fields, if any)
-mkInlineResponse2006
-  :: InlineResponse2006
-mkInlineResponse2006 =
-  InlineResponse2006
-  { inlineResponse2006Description = Nothing
-  , inlineResponse2006Url = Nothing
-  , inlineResponse2006Type = Nothing
-  , inlineResponse2006Width = Nothing
-  , inlineResponse2006Height = Nothing
-  , inlineResponse2006Ratio = Nothing
-  }
-
--- ** InlineResponse2007
--- | InlineResponse2007
-data InlineResponse2007 = InlineResponse2007
-  { inlineResponse2007Images :: !(Maybe [InlineResponse2007Images]) -- ^ "images"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON InlineResponse2007
-instance A.FromJSON InlineResponse2007 where
-  parseJSON = A.withObject "InlineResponse2007" $ \o ->
-    InlineResponse2007
+-- | FromJSON SearchRoyaltyFreeImages200Response
+instance A.FromJSON SearchRoyaltyFreeImages200Response where
+  parseJSON = A.withObject "SearchRoyaltyFreeImages200Response" $ \o ->
+    SearchRoyaltyFreeImages200Response
       <$> (o .:? "images")
 
--- | ToJSON InlineResponse2007
-instance A.ToJSON InlineResponse2007 where
-  toJSON InlineResponse2007 {..} =
+-- | ToJSON SearchRoyaltyFreeImages200Response
+instance A.ToJSON SearchRoyaltyFreeImages200Response where
+  toJSON SearchRoyaltyFreeImages200Response {..} =
    _omitNulls
-      [ "images" .= inlineResponse2007Images
+      [ "images" .= searchRoyaltyFreeImages200ResponseImages
       ]
 
 
--- | Construct a value of type 'InlineResponse2007' (by applying it's required fields, if any)
-mkInlineResponse2007
-  :: InlineResponse2007
-mkInlineResponse2007 =
-  InlineResponse2007
-  { inlineResponse2007Images = Nothing
+-- | Construct a value of type 'SearchRoyaltyFreeImages200Response' (by applying it's required fields, if any)
+mkSearchRoyaltyFreeImages200Response
+  :: SearchRoyaltyFreeImages200Response
+mkSearchRoyaltyFreeImages200Response =
+  SearchRoyaltyFreeImages200Response
+  { searchRoyaltyFreeImages200ResponseImages = Nothing
   }
 
--- ** InlineResponse2007Images
--- | InlineResponse2007Images
-data InlineResponse2007Images = InlineResponse2007Images
-  { inlineResponse2007ImagesWidth :: !(Maybe Int) -- ^ "width"
-  , inlineResponse2007ImagesUrl :: !(Maybe Text) -- ^ "url"
-  , inlineResponse2007ImagesHeight :: !(Maybe Int) -- ^ "height"
+-- ** SearchRoyaltyFreeImages200ResponseImagesInner
+-- | SearchRoyaltyFreeImages200ResponseImagesInner
+data SearchRoyaltyFreeImages200ResponseImagesInner = SearchRoyaltyFreeImages200ResponseImagesInner
+  { searchRoyaltyFreeImages200ResponseImagesInnerWidth :: !(Maybe Int) -- ^ "width"
+  , searchRoyaltyFreeImages200ResponseImagesInnerLicense :: !(Maybe SearchRoyaltyFreeImages200ResponseImagesInnerLicense) -- ^ "license"
+  , searchRoyaltyFreeImages200ResponseImagesInnerThumbnail :: !(Maybe Text) -- ^ "thumbnail"
+  , searchRoyaltyFreeImages200ResponseImagesInnerId :: !(Maybe Text) -- ^ "id"
+  , searchRoyaltyFreeImages200ResponseImagesInnerUrl :: !(Maybe Text) -- ^ "url"
+  , searchRoyaltyFreeImages200ResponseImagesInnerHeight :: !(Maybe Int) -- ^ "height"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2007Images
-instance A.FromJSON InlineResponse2007Images where
-  parseJSON = A.withObject "InlineResponse2007Images" $ \o ->
-    InlineResponse2007Images
+-- | FromJSON SearchRoyaltyFreeImages200ResponseImagesInner
+instance A.FromJSON SearchRoyaltyFreeImages200ResponseImagesInner where
+  parseJSON = A.withObject "SearchRoyaltyFreeImages200ResponseImagesInner" $ \o ->
+    SearchRoyaltyFreeImages200ResponseImagesInner
       <$> (o .:? "width")
+      <*> (o .:? "license")
+      <*> (o .:? "thumbnail")
+      <*> (o .:? "id")
       <*> (o .:? "url")
       <*> (o .:? "height")
 
--- | ToJSON InlineResponse2007Images
-instance A.ToJSON InlineResponse2007Images where
-  toJSON InlineResponse2007Images {..} =
+-- | ToJSON SearchRoyaltyFreeImages200ResponseImagesInner
+instance A.ToJSON SearchRoyaltyFreeImages200ResponseImagesInner where
+  toJSON SearchRoyaltyFreeImages200ResponseImagesInner {..} =
    _omitNulls
-      [ "width" .= inlineResponse2007ImagesWidth
-      , "url" .= inlineResponse2007ImagesUrl
-      , "height" .= inlineResponse2007ImagesHeight
+      [ "width" .= searchRoyaltyFreeImages200ResponseImagesInnerWidth
+      , "license" .= searchRoyaltyFreeImages200ResponseImagesInnerLicense
+      , "thumbnail" .= searchRoyaltyFreeImages200ResponseImagesInnerThumbnail
+      , "id" .= searchRoyaltyFreeImages200ResponseImagesInnerId
+      , "url" .= searchRoyaltyFreeImages200ResponseImagesInnerUrl
+      , "height" .= searchRoyaltyFreeImages200ResponseImagesInnerHeight
       ]
 
 
--- | Construct a value of type 'InlineResponse2007Images' (by applying it's required fields, if any)
-mkInlineResponse2007Images
-  :: InlineResponse2007Images
-mkInlineResponse2007Images =
-  InlineResponse2007Images
-  { inlineResponse2007ImagesWidth = Nothing
-  , inlineResponse2007ImagesUrl = Nothing
-  , inlineResponse2007ImagesHeight = Nothing
+-- | Construct a value of type 'SearchRoyaltyFreeImages200ResponseImagesInner' (by applying it's required fields, if any)
+mkSearchRoyaltyFreeImages200ResponseImagesInner
+  :: SearchRoyaltyFreeImages200ResponseImagesInner
+mkSearchRoyaltyFreeImages200ResponseImagesInner =
+  SearchRoyaltyFreeImages200ResponseImagesInner
+  { searchRoyaltyFreeImages200ResponseImagesInnerWidth = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerLicense = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerThumbnail = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerId = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerUrl = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerHeight = Nothing
   }
 
--- ** InlineResponse2008
--- | InlineResponse2008
-data InlineResponse2008 = InlineResponse2008
-  { inlineResponse2008Word :: !(Maybe Text) -- ^ "word"
-  , inlineResponse2008Rating :: !(Maybe Double) -- ^ "rating"
+-- ** SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+-- | SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+data SearchRoyaltyFreeImages200ResponseImagesInnerLicense = SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+  { searchRoyaltyFreeImages200ResponseImagesInnerLicenseName :: !(Maybe Text) -- ^ "name"
+  , searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink :: !(Maybe Text) -- ^ "link"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2008
-instance A.FromJSON InlineResponse2008 where
-  parseJSON = A.withObject "InlineResponse2008" $ \o ->
-    InlineResponse2008
-      <$> (o .:? "word")
-      <*> (o .:? "rating")
+-- | FromJSON SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+instance A.FromJSON SearchRoyaltyFreeImages200ResponseImagesInnerLicense where
+  parseJSON = A.withObject "SearchRoyaltyFreeImages200ResponseImagesInnerLicense" $ \o ->
+    SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+      <$> (o .:? "name")
+      <*> (o .:? "link")
 
--- | ToJSON InlineResponse2008
-instance A.ToJSON InlineResponse2008 where
-  toJSON InlineResponse2008 {..} =
+-- | ToJSON SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+instance A.ToJSON SearchRoyaltyFreeImages200ResponseImagesInnerLicense where
+  toJSON SearchRoyaltyFreeImages200ResponseImagesInnerLicense {..} =
    _omitNulls
-      [ "word" .= inlineResponse2008Word
-      , "rating" .= inlineResponse2008Rating
+      [ "name" .= searchRoyaltyFreeImages200ResponseImagesInnerLicenseName
+      , "link" .= searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink
       ]
 
 
--- | Construct a value of type 'InlineResponse2008' (by applying it's required fields, if any)
-mkInlineResponse2008
-  :: InlineResponse2008
-mkInlineResponse2008 =
-  InlineResponse2008
-  { inlineResponse2008Word = Nothing
-  , inlineResponse2008Rating = Nothing
+-- | Construct a value of type 'SearchRoyaltyFreeImages200ResponseImagesInnerLicense' (by applying it's required fields, if any)
+mkSearchRoyaltyFreeImages200ResponseImagesInnerLicense
+  :: SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+mkSearchRoyaltyFreeImages200ResponseImagesInnerLicense =
+  SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+  { searchRoyaltyFreeImages200ResponseImagesInnerLicenseName = Nothing
+  , searchRoyaltyFreeImages200ResponseImagesInnerLicenseLink = Nothing
   }
 
--- ** InlineResponse2009
--- | InlineResponse2009
-data InlineResponse2009 = InlineResponse2009
-  { inlineResponse2009Trivia :: !(Maybe Text) -- ^ "trivia"
+-- ** SearchWeb200Response
+-- | SearchWeb200Response
+data SearchWeb200Response = SearchWeb200Response
+  { searchWeb200ResponseResults :: !(Maybe [SearchWeb200ResponseResultsInner]) -- ^ "results"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse2009
-instance A.FromJSON InlineResponse2009 where
-  parseJSON = A.withObject "InlineResponse2009" $ \o ->
-    InlineResponse2009
-      <$> (o .:? "trivia")
+-- | FromJSON SearchWeb200Response
+instance A.FromJSON SearchWeb200Response where
+  parseJSON = A.withObject "SearchWeb200Response" $ \o ->
+    SearchWeb200Response
+      <$> (o .:? "results")
 
--- | ToJSON InlineResponse2009
-instance A.ToJSON InlineResponse2009 where
-  toJSON InlineResponse2009 {..} =
+-- | ToJSON SearchWeb200Response
+instance A.ToJSON SearchWeb200Response where
+  toJSON SearchWeb200Response {..} =
    _omitNulls
-      [ "trivia" .= inlineResponse2009Trivia
+      [ "results" .= searchWeb200ResponseResults
       ]
 
 
--- | Construct a value of type 'InlineResponse2009' (by applying it's required fields, if any)
-mkInlineResponse2009
-  :: InlineResponse2009
-mkInlineResponse2009 =
-  InlineResponse2009
-  { inlineResponse2009Trivia = Nothing
+-- | Construct a value of type 'SearchWeb200Response' (by applying it's required fields, if any)
+mkSearchWeb200Response
+  :: SearchWeb200Response
+mkSearchWeb200Response =
+  SearchWeb200Response
+  { searchWeb200ResponseResults = Nothing
   }
 
--- ** InlineResponse200Books
--- | InlineResponse200Books
-data InlineResponse200Books = InlineResponse200Books
-  { inlineResponse200BooksTitle :: !(Maybe Text) -- ^ "title"
-  , inlineResponse200BooksImage :: !(Maybe Text) -- ^ "image"
-  , inlineResponse200BooksId :: !(Maybe Int) -- ^ "id"
+-- ** SearchWeb200ResponseResultsInner
+-- | SearchWeb200ResponseResultsInner
+data SearchWeb200ResponseResultsInner = SearchWeb200ResponseResultsInner
+  { searchWeb200ResponseResultsInnerTitle :: !(Maybe Text) -- ^ "title"
+  , searchWeb200ResponseResultsInnerSummary :: !(Maybe Text) -- ^ "summary"
+  , searchWeb200ResponseResultsInnerUrl :: !(Maybe Text) -- ^ "url"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON InlineResponse200Books
-instance A.FromJSON InlineResponse200Books where
-  parseJSON = A.withObject "InlineResponse200Books" $ \o ->
-    InlineResponse200Books
+-- | FromJSON SearchWeb200ResponseResultsInner
+instance A.FromJSON SearchWeb200ResponseResultsInner where
+  parseJSON = A.withObject "SearchWeb200ResponseResultsInner" $ \o ->
+    SearchWeb200ResponseResultsInner
       <$> (o .:? "title")
-      <*> (o .:? "image")
-      <*> (o .:? "id")
+      <*> (o .:? "summary")
+      <*> (o .:? "url")
 
--- | ToJSON InlineResponse200Books
-instance A.ToJSON InlineResponse200Books where
-  toJSON InlineResponse200Books {..} =
+-- | ToJSON SearchWeb200ResponseResultsInner
+instance A.ToJSON SearchWeb200ResponseResultsInner where
+  toJSON SearchWeb200ResponseResultsInner {..} =
    _omitNulls
-      [ "title" .= inlineResponse200BooksTitle
-      , "image" .= inlineResponse200BooksImage
-      , "id" .= inlineResponse200BooksId
+      [ "title" .= searchWeb200ResponseResultsInnerTitle
+      , "summary" .= searchWeb200ResponseResultsInnerSummary
+      , "url" .= searchWeb200ResponseResultsInnerUrl
       ]
 
 
--- | Construct a value of type 'InlineResponse200Books' (by applying it's required fields, if any)
-mkInlineResponse200Books
-  :: InlineResponse200Books
-mkInlineResponse200Books =
-  InlineResponse200Books
-  { inlineResponse200BooksTitle = Nothing
-  , inlineResponse200BooksImage = Nothing
-  , inlineResponse200BooksId = Nothing
+-- | Construct a value of type 'SearchWeb200ResponseResultsInner' (by applying it's required fields, if any)
+mkSearchWeb200ResponseResultsInner
+  :: SearchWeb200ResponseResultsInner
+mkSearchWeb200ResponseResultsInner =
+  SearchWeb200ResponseResultsInner
+  { searchWeb200ResponseResultsInnerTitle = Nothing
+  , searchWeb200ResponseResultsInnerSummary = Nothing
+  , searchWeb200ResponseResultsInnerUrl = Nothing
+  }
+
+-- ** SingularizeWord200Response
+-- | SingularizeWord200Response
+data SingularizeWord200Response = SingularizeWord200Response
+  { singularizeWord200ResponseOriginal :: !(Maybe Text) -- ^ "original"
+  , singularizeWord200ResponseSingular :: !(Maybe Text) -- ^ "singular"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SingularizeWord200Response
+instance A.FromJSON SingularizeWord200Response where
+  parseJSON = A.withObject "SingularizeWord200Response" $ \o ->
+    SingularizeWord200Response
+      <$> (o .:? "original")
+      <*> (o .:? "singular")
+
+-- | ToJSON SingularizeWord200Response
+instance A.ToJSON SingularizeWord200Response where
+  toJSON SingularizeWord200Response {..} =
+   _omitNulls
+      [ "original" .= singularizeWord200ResponseOriginal
+      , "singular" .= singularizeWord200ResponseSingular
+      ]
+
+
+-- | Construct a value of type 'SingularizeWord200Response' (by applying it's required fields, if any)
+mkSingularizeWord200Response
+  :: SingularizeWord200Response
+mkSingularizeWord200Response =
+  SingularizeWord200Response
+  { singularizeWord200ResponseOriginal = Nothing
+  , singularizeWord200ResponseSingular = Nothing
+  }
+
+-- ** StoreKeyValueGET200Response
+-- | StoreKeyValueGET200Response
+data StoreKeyValueGET200Response = StoreKeyValueGET200Response
+  { storeKeyValueGET200ResponseStatus :: !(Maybe Text) -- ^ "status"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON StoreKeyValueGET200Response
+instance A.FromJSON StoreKeyValueGET200Response where
+  parseJSON = A.withObject "StoreKeyValueGET200Response" $ \o ->
+    StoreKeyValueGET200Response
+      <$> (o .:? "status")
+
+-- | ToJSON StoreKeyValueGET200Response
+instance A.ToJSON StoreKeyValueGET200Response where
+  toJSON StoreKeyValueGET200Response {..} =
+   _omitNulls
+      [ "status" .= storeKeyValueGET200ResponseStatus
+      ]
+
+
+-- | Construct a value of type 'StoreKeyValueGET200Response' (by applying it's required fields, if any)
+mkStoreKeyValueGET200Response
+  :: StoreKeyValueGET200Response
+mkStoreKeyValueGET200Response =
+  StoreKeyValueGET200Response
+  { storeKeyValueGET200ResponseStatus = Nothing
+  }
+
+-- ** TextStemming200Response
+-- | TextStemming200Response
+data TextStemming200Response = TextStemming200Response
+  { textStemming200ResponseOriginal :: !(Maybe Text) -- ^ "original"
+  , textStemming200ResponseStemmed :: !(Maybe Text) -- ^ "stemmed"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON TextStemming200Response
+instance A.FromJSON TextStemming200Response where
+  parseJSON = A.withObject "TextStemming200Response" $ \o ->
+    TextStemming200Response
+      <$> (o .:? "original")
+      <*> (o .:? "stemmed")
+
+-- | ToJSON TextStemming200Response
+instance A.ToJSON TextStemming200Response where
+  toJSON TextStemming200Response {..} =
+   _omitNulls
+      [ "original" .= textStemming200ResponseOriginal
+      , "stemmed" .= textStemming200ResponseStemmed
+      ]
+
+
+-- | Construct a value of type 'TextStemming200Response' (by applying it's required fields, if any)
+mkTextStemming200Response
+  :: TextStemming200Response
+mkTextStemming200Response =
+  TextStemming200Response
+  { textStemming200ResponseOriginal = Nothing
+  , textStemming200ResponseStemmed = Nothing
   }
 
 

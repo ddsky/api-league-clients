@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**storeKeyValueGET**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
 
 
-<a name="readKeyValueFromStore"></a>
+<a id="readKeyValueFromStore"></a>
 # **readKeyValueFromStore**
-> InlineResponse20031 readKeyValueFromStore(key)
+> ReadKeyValueFromStore200Response readKeyValueFromStore(key)
 
 Read Key Value from Store
 
@@ -19,13 +19,13 @@ Read a value from the key-value store. The key-value store is a simple storage s
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = StorageApi()
 val key : kotlin.String = visitors24h // kotlin.String | The key for which the value is stored (max length 255 characters).
 try {
-    val result : InlineResponse20031 = apiInstance.readKeyValueFromStore(key)
+    val result : ReadKeyValueFromStore200Response = apiInstance.readKeyValueFromStore(key)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling StorageApi#readKeyValueFromStore")
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -61,9 +61,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="storeKeyValueGET"></a>
+<a id="storeKeyValueGET"></a>
 # **storeKeyValueGET**
-> InlineResponse20032 storeKeyValueGET(key, `value`)
+> StoreKeyValueGET200Response storeKeyValueGET(key, `value`)
 
 Store Key Value (GET)
 
@@ -72,14 +72,14 @@ Store a value in the key-value store. The key-value store is a simple storage sy
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = StorageApi()
 val key : kotlin.String = visitors24h // kotlin.String | The key for which the value is stored (max length 255 characters).
 val `value` : kotlin.String = 23578 visitors // kotlin.String | The value that is supposed to be stored (max length 10,000 characters).
 try {
-    val result : InlineResponse20032 = apiInstance.storeKeyValueGET(key, `value`)
+    val result : StoreKeyValueGET200Response = apiInstance.storeKeyValueGET(key, `value`)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling StorageApi#storeKeyValueGET")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 

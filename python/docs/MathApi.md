@@ -1,4 +1,4 @@
-# openapi_client.MathApi
+# apileague.MathApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **convert_units**
-> InlineResponse20030 convert_units(source_amount, source_unit, target_unit)
+> ConvertUnits200Response convert_units(source_amount, source_unit, target_unit, food_name=food_name)
 
 Convert Units
 
@@ -20,14 +20,14 @@ Convert units from one to another. The API returns the amount and the unit of th
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import math_api
-from openapi_client.model.inline_response20030 import InlineResponse20030
+import apileague
+from apileague.models.convert_units200_response import ConvertUnits200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -37,57 +37,50 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = math_api.MathApi(api_client)
+    api_instance = apileague.MathApi(api_client)
     source_amount = 100 # float | The source amount.
-    source_unit = "kg" # str | The source unit.
-    target_unit = "lb" # str | The unit to which should be converted.
-    food_name = "flour" # str | An optional food name. For converting foods the food is relevant as they have different densities. (optional)
+    source_unit = 'kg' # str | The source unit.
+    target_unit = 'lb' # str | The unit to which should be converted.
+    food_name = 'flour' # str | An optional food name. For converting foods the food is relevant as they have different densities. (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Convert Units
-        api_response = api_instance.convert_units(source_amount, source_unit, target_unit)
-        pprint(api_response)
-    except openapi_client.ApiException as e:
-        print("Exception when calling MathApi->convert_units: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Convert Units
         api_response = api_instance.convert_units(source_amount, source_unit, target_unit, food_name=food_name)
+        print("The response of MathApi->convert_units:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling MathApi->convert_units: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source_amount** | **float**| The source amount. |
- **source_unit** | **str**| The source unit. |
- **target_unit** | **str**| The unit to which should be converted. |
- **food_name** | **str**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional]
+ **source_amount** | **float**| The source amount. | 
+ **source_unit** | **str**| The source unit. | 
+ **target_unit** | **str**| The unit to which should be converted. | 
+ **food_name** | **str**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional] 
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 
@@ -97,7 +90,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

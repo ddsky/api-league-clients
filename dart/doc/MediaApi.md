@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **detectMainImageColor**
-> List<InlineResponse20029> detectMainImageColor(url)
+> List<DetectMainImageColor200ResponseInner> detectMainImageColor(url)
 
 Detect Main Image Color
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<InlineResponse20029>**](InlineResponse20029.md)
+[**List<DetectMainImageColor200ResponseInner>**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchRoyaltyFreeImages**
-> InlineResponse20028 searchRoyaltyFreeImages(query, number)
+> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(query, number)
 
 Search Royalty Free Images
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

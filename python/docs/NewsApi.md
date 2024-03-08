@@ -1,4 +1,4 @@
-# openapi_client.NewsApi
+# apileague.NewsApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **extract_news**
-> InlineResponse2003 extract_news(url, analyze)
+> ExtractNews200Response extract_news(url, analyze)
 
 Extract News
 
@@ -21,14 +21,14 @@ Extract a news article from a website to a well structure JSON object. The API w
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import news_api
-from openapi_client.model.inline_response2003 import InlineResponse2003
+import apileague
+from apileague.models.extract_news200_response import ExtractNews200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -38,44 +38,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    url = "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/" # str | The url of the news.
-    analyze = True # bool | Whether to analyze the news (extract entities etc.)
+    api_instance = apileague.NewsApi(api_client)
+    url = 'https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/' # str | The url of the news.
+    analyze = true # bool | Whether to analyze the news (extract entities etc.)
 
-    # example passing only required values which don't have defaults set
     try:
         # Extract News
         api_response = api_instance.extract_news(url, analyze)
+        print("The response of NewsApi->extract_news:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->extract_news: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **url** | **str**| The url of the news. |
- **analyze** | **bool**| Whether to analyze the news (extract entities etc.) |
+ **url** | **str**| The url of the news. | 
+ **analyze** | **bool**| Whether to analyze the news (extract entities etc.) | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -85,7 +87,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -102,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_news**
-> InlineResponse2002 search_news()
+> SearchNews200Response search_news(text=text, source_countries=source_countries, language=language, min_sentiment=min_sentiment, max_sentiment=max_sentiment, earliest_publish_date=earliest_publish_date, latest_publish_date=latest_publish_date, news_sources=news_sources, authors=authors, entities=entities, location_filter=location_filter, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
 
 Search News
 
@@ -114,14 +115,14 @@ Search and filter news by text, date, location, language, and more. The API retu
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import news_api
-from openapi_client.model.inline_response2002 import InlineResponse2002
+import apileague
+from apileague.models.search_news200_response import SearchNews200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -131,71 +132,72 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
-    text = "tesla" # str | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
-    source_countries = "us,uk" # str | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
-    language = "en" # str | The ISO 6391 language code of the news. (optional)
+    api_instance = apileague.NewsApi(api_client)
+    text = 'tesla' # str | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+    source_countries = 'us,uk' # str | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
+    language = 'en' # str | The ISO 6391 language code of the news. (optional)
     min_sentiment = -0.8 # float | The minimal sentiment of the news in range [-1,1]. (optional)
     max_sentiment = 0.8 # float | The maximal sentiment of the news in range [-1,1]. (optional)
-    earliest_publish_date = "2022-04-22 16:12:35" # str | The news must have been published after this date. (optional)
-    latest_publish_date = "2022-04-22 16:12:35" # str | The news must have been published before this date. (optional)
-    news_sources = "https://www.bbc.co.uk" # str | A comma-separated list of news sources from which the news should originate. (optional)
-    authors = "John Doe" # str | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-    entities = "ORG:Tesla" # str | Filter news by entities (see semantic types). (optional)
-    location_filter = "51.050407, 13.737262, 100" # str | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
-    sort = "publish-time" # str | The sorting criteria (publish-time or sentiment). (optional)
-    sort_direction = "ASC" # str | Whether to sort ascending or descending (ASC or DESC). (optional)
+    earliest_publish_date = '2022-04-22 16:12:35' # str | The news must have been published after this date. (optional)
+    latest_publish_date = '2022-04-22 16:12:35' # str | The news must have been published before this date. (optional)
+    news_sources = 'https://www.bbc.co.uk' # str | A comma-separated list of news sources from which the news should originate. (optional)
+    authors = 'John Doe' # str | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
+    entities = 'ORG:Tesla' # str | Filter news by entities (see semantic types). (optional)
+    location_filter = '51.050407, 13.737262, 100' # str | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
+    sort = 'publish-time' # str | The sorting criteria (publish-time or sentiment). (optional)
+    sort_direction = 'ASC' # str | Whether to sort ascending or descending (ASC or DESC). (optional)
     offset = 0 # int | The number of news to skip in range [0,10000] (optional)
     number = 10 # int | The number of news to return in range [1,100] (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Search News
         api_response = api_instance.search_news(text=text, source_countries=source_countries, language=language, min_sentiment=min_sentiment, max_sentiment=max_sentiment, earliest_publish_date=earliest_publish_date, latest_publish_date=latest_publish_date, news_sources=news_sources, authors=authors, entities=entities, location_filter=location_filter, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+        print("The response of NewsApi->search_news:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling NewsApi->search_news: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
- **source_countries** | **str**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]
- **language** | **str**| The ISO 6391 language code of the news. | [optional]
- **min_sentiment** | **float**| The minimal sentiment of the news in range [-1,1]. | [optional]
- **max_sentiment** | **float**| The maximal sentiment of the news in range [-1,1]. | [optional]
- **earliest_publish_date** | **str**| The news must have been published after this date. | [optional]
- **latest_publish_date** | **str**| The news must have been published before this date. | [optional]
- **news_sources** | **str**| A comma-separated list of news sources from which the news should originate. | [optional]
- **authors** | **str**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
- **entities** | **str**| Filter news by entities (see semantic types). | [optional]
- **location_filter** | **str**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
- **sort** | **str**| The sorting criteria (publish-time or sentiment). | [optional]
- **sort_direction** | **str**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **offset** | **int**| The number of news to skip in range [0,10000] | [optional]
- **number** | **int**| The number of news to return in range [1,100] | [optional]
+ **text** | **str**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **source_countries** | **str**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
+ **language** | **str**| The ISO 6391 language code of the news. | [optional] 
+ **min_sentiment** | **float**| The minimal sentiment of the news in range [-1,1]. | [optional] 
+ **max_sentiment** | **float**| The maximal sentiment of the news in range [-1,1]. | [optional] 
+ **earliest_publish_date** | **str**| The news must have been published after this date. | [optional] 
+ **latest_publish_date** | **str**| The news must have been published before this date. | [optional] 
+ **news_sources** | **str**| A comma-separated list of news sources from which the news should originate. | [optional] 
+ **authors** | **str**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
+ **entities** | **str**| Filter news by entities (see semantic types). | [optional] 
+ **location_filter** | **str**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
+ **sort** | **str**| The sorting criteria (publish-time or sentiment). | [optional] 
+ **sort_direction** | **str**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
+ **offset** | **int**| The number of news to skip in range [0,10000] | [optional] 
+ **number** | **int**| The number of news to return in range [1,100] | [optional] 
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 
@@ -205,7 +207,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

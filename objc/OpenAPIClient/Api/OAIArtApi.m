@@ -1,7 +1,7 @@
 #import "OAIArtApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20011.h"
+#import "OAIRandomPoem200Response.h"
 
 
 @interface OAIArtApi ()
@@ -136,11 +136,11 @@ NSInteger kOAIArtApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxLines The maximum number of lines of the poem. (optional)
 ///
-///  @returns OAIInlineResponse20011*
+///  @returns OAIRandomPoem200Response*
 ///
 -(NSURLSessionTask*) randomPoemWithMinLines: (NSNumber*) minLines
     maxLines: (NSNumber*) maxLines
-    completionHandler: (void (^)(OAIInlineResponse20011* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIRandomPoem200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-random-poem"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -184,10 +184,10 @@ NSInteger kOAIArtApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20011*"
+                              responseType: @"OAIRandomPoem200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20011*)data, error);
+                                    handler((OAIRandomPoem200Response*)data, error);
                                 }
                             }];
 }

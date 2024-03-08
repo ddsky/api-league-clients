@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse200.h"
-#import "OAIInlineResponse2001.h"
+#import "OAIFindSimilarBooks200Response.h"
+#import "OAISearchBooks200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -38,10 +38,10 @@ extern NSInteger kOAIBooksApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2001*
+/// @return OAIFindSimilarBooks200Response*
 -(NSURLSessionTask*) findSimilarBooksWithId: (NSNumber*) _id
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2001* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIFindSimilarBooks200Response* output, NSError* error)) handler;
 
 
 /// Search Books
@@ -70,7 +70,7 @@ extern NSInteger kOAIBooksApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse200*
+/// @return OAISearchBooks200Response*
 -(NSURLSessionTask*) searchBooksWithQuery: (NSString*) query
     earliestPublishYear: (NSNumber*) earliestPublishYear
     latestPublishYear: (NSNumber*) latestPublishYear
@@ -85,7 +85,7 @@ extern NSInteger kOAIBooksApiMissingParamErrorCode;
     groupResults: (NSNumber*) groupResults
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse200* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchBooks200Response* output, NSError* error)) handler;
 
 
 

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20011;
+import com.apileague.client.model.RandomPoem200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,7 +96,6 @@ public class ArtApi {
      */
     public okhttp3.Call imageToAsciiArtByURLCall(String url, Integer width, Integer height, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -141,7 +140,6 @@ public class ArtApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -154,15 +152,12 @@ public class ArtApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call imageToAsciiArtByURLValidateBeforeCall(String url, Integer width, Integer height, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling imageToAsciiArtByURL(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = imageToAsciiArtByURLCall(url, width, height, _callback);
-        return localVarCall;
+        return imageToAsciiArtByURLCall(url, width, height, _callback);
 
     }
 
@@ -274,7 +269,6 @@ public class ArtApi {
      */
     public okhttp3.Call randomPoemCall(Integer minLines, Integer maxLines, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -315,7 +309,6 @@ public class ArtApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -328,10 +321,7 @@ public class ArtApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call randomPoemValidateBeforeCall(Integer minLines, Integer maxLines, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = randomPoemCall(minLines, maxLines, _callback);
-        return localVarCall;
+        return randomPoemCall(minLines, maxLines, _callback);
 
     }
 
@@ -340,7 +330,7 @@ public class ArtApi {
      * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
      * @param minLines The minimum number of lines of the poem. (optional)
      * @param maxLines The maximum number of lines of the poem. (optional)
-     * @return InlineResponse20011
+     * @return RandomPoem200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -356,8 +346,8 @@ public class ArtApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
      */
-    public InlineResponse20011 randomPoem(Integer minLines, Integer maxLines) throws ApiException {
-        ApiResponse<InlineResponse20011> localVarResp = randomPoemWithHttpInfo(minLines, maxLines);
+    public RandomPoem200Response randomPoem(Integer minLines, Integer maxLines) throws ApiException {
+        ApiResponse<RandomPoem200Response> localVarResp = randomPoemWithHttpInfo(minLines, maxLines);
         return localVarResp.getData();
     }
 
@@ -366,7 +356,7 @@ public class ArtApi {
      * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
      * @param minLines The minimum number of lines of the poem. (optional)
      * @param maxLines The maximum number of lines of the poem. (optional)
-     * @return ApiResponse&lt;InlineResponse20011&gt;
+     * @return ApiResponse&lt;RandomPoem200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -382,9 +372,9 @@ public class ArtApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
      */
-    public ApiResponse<InlineResponse20011> randomPoemWithHttpInfo(Integer minLines, Integer maxLines) throws ApiException {
+    public ApiResponse<RandomPoem200Response> randomPoemWithHttpInfo(Integer minLines, Integer maxLines) throws ApiException {
         okhttp3.Call localVarCall = randomPoemValidateBeforeCall(minLines, maxLines, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomPoem200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -410,10 +400,10 @@ public class ArtApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
      */
-    public okhttp3.Call randomPoemAsync(Integer minLines, Integer maxLines, final ApiCallback<InlineResponse20011> _callback) throws ApiException {
+    public okhttp3.Call randomPoemAsync(Integer minLines, Integer maxLines, final ApiCallback<RandomPoem200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = randomPoemValidateBeforeCall(minLines, maxLines, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20011>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomPoem200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

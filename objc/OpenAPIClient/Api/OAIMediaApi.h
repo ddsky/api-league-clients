@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20028.h"
-#import "OAIInlineResponse20029.h"
+#import "OAIDetectMainImageColor200ResponseInner.h"
+#import "OAISearchRoyaltyFreeImages200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -37,9 +37,9 @@ extern NSInteger kOAIMediaApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return NSArray<OAIInlineResponse20029>*
+/// @return NSArray<OAIDetectMainImageColor200ResponseInner>*
 -(NSURLSessionTask*) detectMainImageColorWithUrl: (NSString*) url
-    completionHandler: (void (^)(NSArray<OAIInlineResponse20029>* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<OAIDetectMainImageColor200ResponseInner>* output, NSError* error)) handler;
 
 
 /// Rescale Image
@@ -80,10 +80,10 @@ extern NSInteger kOAIMediaApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20028*
+/// @return OAISearchRoyaltyFreeImages200Response*
 -(NSURLSessionTask*) searchRoyaltyFreeImagesWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse20028* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchRoyaltyFreeImages200Response* output, NSError* error)) handler;
 
 
 

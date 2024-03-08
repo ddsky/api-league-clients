@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20028;
-import com.apileague.client.model.InlineResponse20029;
+import com.apileague.client.model.DetectMainImageColor200ResponseInner;
+import com.apileague.client.model.SearchRoyaltyFreeImages200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -95,7 +95,6 @@ public class MediaApi {
      */
     public okhttp3.Call detectMainImageColorCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -132,7 +131,6 @@ public class MediaApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -145,15 +143,12 @@ public class MediaApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call detectMainImageColorValidateBeforeCall(String url, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling detectMainImageColor(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = detectMainImageColorCall(url, _callback);
-        return localVarCall;
+        return detectMainImageColorCall(url, _callback);
 
     }
 
@@ -161,7 +156,7 @@ public class MediaApi {
      * Detect Main Image Color
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
      * @param url The url of the image for which the colors should be detected. (required)
-     * @return List&lt;InlineResponse20029&gt;
+     * @return List&lt;DetectMainImageColor200ResponseInner&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -177,8 +172,8 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
      */
-    public List<InlineResponse20029> detectMainImageColor(String url) throws ApiException {
-        ApiResponse<List<InlineResponse20029>> localVarResp = detectMainImageColorWithHttpInfo(url);
+    public List<DetectMainImageColor200ResponseInner> detectMainImageColor(String url) throws ApiException {
+        ApiResponse<List<DetectMainImageColor200ResponseInner>> localVarResp = detectMainImageColorWithHttpInfo(url);
         return localVarResp.getData();
     }
 
@@ -186,7 +181,7 @@ public class MediaApi {
      * Detect Main Image Color
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
      * @param url The url of the image for which the colors should be detected. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse20029&gt;&gt;
+     * @return ApiResponse&lt;List&lt;DetectMainImageColor200ResponseInner&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -202,9 +197,9 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
      */
-    public ApiResponse<List<InlineResponse20029>> detectMainImageColorWithHttpInfo(String url) throws ApiException {
+    public ApiResponse<List<DetectMainImageColor200ResponseInner>> detectMainImageColorWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = detectMainImageColorValidateBeforeCall(url, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20029>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DetectMainImageColor200ResponseInner>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -229,10 +224,10 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
      */
-    public okhttp3.Call detectMainImageColorAsync(String url, final ApiCallback<List<InlineResponse20029>> _callback) throws ApiException {
+    public okhttp3.Call detectMainImageColorAsync(String url, final ApiCallback<List<DetectMainImageColor200ResponseInner>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detectMainImageColorValidateBeforeCall(url, _callback);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20029>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DetectMainImageColor200ResponseInner>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -261,7 +256,6 @@ public class MediaApi {
      */
     public okhttp3.Call rescaleImageCall(String url, Integer width, Integer height, Boolean crop, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -310,7 +304,6 @@ public class MediaApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -323,30 +316,27 @@ public class MediaApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call rescaleImageValidateBeforeCall(String url, Integer width, Integer height, Boolean crop, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling rescaleImage(Async)");
         }
-        
+
         // verify the required parameter 'width' is set
         if (width == null) {
             throw new ApiException("Missing the required parameter 'width' when calling rescaleImage(Async)");
         }
-        
+
         // verify the required parameter 'height' is set
         if (height == null) {
             throw new ApiException("Missing the required parameter 'height' when calling rescaleImage(Async)");
         }
-        
+
         // verify the required parameter 'crop' is set
         if (crop == null) {
             throw new ApiException("Missing the required parameter 'crop' when calling rescaleImage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = rescaleImageCall(url, width, height, crop, _callback);
-        return localVarCall;
+        return rescaleImageCall(url, width, height, crop, _callback);
 
     }
 
@@ -461,7 +451,6 @@ public class MediaApi {
      */
     public okhttp3.Call searchRoyaltyFreeImagesCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -502,7 +491,6 @@ public class MediaApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -515,15 +503,12 @@ public class MediaApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchRoyaltyFreeImagesValidateBeforeCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'query' is set
         if (query == null) {
             throw new ApiException("Missing the required parameter 'query' when calling searchRoyaltyFreeImages(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = searchRoyaltyFreeImagesCall(query, number, _callback);
-        return localVarCall;
+        return searchRoyaltyFreeImagesCall(query, number, _callback);
 
     }
 
@@ -532,7 +517,7 @@ public class MediaApi {
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * @param query The search query. (required)
      * @param number The number of images to return in range [1,10] (optional)
-     * @return InlineResponse20028
+     * @return SearchRoyaltyFreeImages200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -548,8 +533,8 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
      */
-    public InlineResponse20028 searchRoyaltyFreeImages(String query, Integer number) throws ApiException {
-        ApiResponse<InlineResponse20028> localVarResp = searchRoyaltyFreeImagesWithHttpInfo(query, number);
+    public SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(String query, Integer number) throws ApiException {
+        ApiResponse<SearchRoyaltyFreeImages200Response> localVarResp = searchRoyaltyFreeImagesWithHttpInfo(query, number);
         return localVarResp.getData();
     }
 
@@ -558,7 +543,7 @@ public class MediaApi {
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * @param query The search query. (required)
      * @param number The number of images to return in range [1,10] (optional)
-     * @return ApiResponse&lt;InlineResponse20028&gt;
+     * @return ApiResponse&lt;SearchRoyaltyFreeImages200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -574,9 +559,9 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
      */
-    public ApiResponse<InlineResponse20028> searchRoyaltyFreeImagesWithHttpInfo(String query, Integer number) throws ApiException {
+    public ApiResponse<SearchRoyaltyFreeImages200Response> searchRoyaltyFreeImagesWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchRoyaltyFreeImagesValidateBeforeCall(query, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchRoyaltyFreeImages200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -602,10 +587,10 @@ public class MediaApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
      */
-    public okhttp3.Call searchRoyaltyFreeImagesAsync(String query, Integer number, final ApiCallback<InlineResponse20028> _callback) throws ApiException {
+    public okhttp3.Call searchRoyaltyFreeImagesAsync(String query, Integer number, final ApiCallback<SearchRoyaltyFreeImages200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchRoyaltyFreeImagesValidateBeforeCall(query, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20028>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchRoyaltyFreeImages200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

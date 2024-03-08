@@ -1,21 +1,21 @@
-# com.apileague.client\HumorApi
+# OpenAPI\Client\HumorApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**generateNonsenseWord()**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke()**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme()**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs()**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes()**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes()**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**generateNonsenseWord()**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word |
+| [**randomJoke()**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke |
+| [**randomMeme()**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme |
+| [**searchGifs()**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs |
+| [**searchJokes()**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes |
+| [**searchMemes()**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes |
 
 
 ## `generateNonsenseWord()`
 
 ```php
-generateNonsenseWord(): \com.apileague.client\com.apileague.client.model\InlineResponse2008
+generateNonsenseWord(): \OpenAPI\Client\Model\GenerateNonsenseWord200Response
 ```
 
 Generate Nonsense Word
@@ -30,17 +30,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\OpenAPI\Client\Model\GenerateNonsenseWord200Response**](../Model/GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 ## `randomJoke()`
 
 ```php
-randomJoke($include_tags, $exclude_tags, $min_rating, $max_length): \com.apileague.client\com.apileague.client.model\InlineResponse2004Jokes
+randomJoke($include_tags, $exclude_tags, $min_rating, $max_length): \OpenAPI\Client\Model\SearchJokes200ResponseJokesInner
 ```
 
 Random Joke
@@ -94,17 +94,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -112,7 +112,7 @@ $apiInstance = new com.apileague.client\Api\HumorApi(
 );
 $include_tags = animal; // string | A comma-separated list of tags the jokes should have.
 $exclude_tags = nsfw,dark; // string | A comma-separated list of tags the jokes must not have.
-$min_rating = 0; // double | The minimum rating in range [0.0,1.0] of the jokes.
+$min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the jokes.
 $max_length = 140; // int | The maximum length of the joke in letters.
 
 try {
@@ -125,16 +125,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **include_tags** | **string**| A comma-separated list of tags the jokes should have. | [optional]
- **exclude_tags** | **string**| A comma-separated list of tags the jokes must not have. | [optional]
- **min_rating** | **double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
- **max_length** | **int**| The maximum length of the joke in letters. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **include_tags** | **string**| A comma-separated list of tags the jokes should have. | [optional] |
+| **exclude_tags** | **string**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
+| **max_length** | **int**| The maximum length of the joke in letters. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2004Jokes**](../Model/InlineResponse2004Jokes.md)
+[**\OpenAPI\Client\Model\SearchJokes200ResponseJokesInner**](../Model/SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ## `randomMeme()`
 
 ```php
-randomMeme($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days): \com.apileague.client\com.apileague.client.model\InlineResponse2006
+randomMeme($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days): \OpenAPI\Client\Model\RandomMeme200Response
 ```
 
 Random Meme
@@ -167,17 +167,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -186,7 +186,7 @@ $apiInstance = new com.apileague.client\Api\HumorApi(
 $keywords = airplane; // string | A comma-separated list of words that must occur in the meme.
 $keywords_in_image = true; // bool | Whether the keywords must occur in the image.
 $media_type = image; // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-$min_rating = 0; // double | The minimum rating in range [0.0-1.0] of the meme.
+$min_rating = 0; // float | The minimum rating in range [0.0-1.0] of the meme.
 $max_age_days = 30; // int | The maximum age of the meme in days.
 
 try {
@@ -199,17 +199,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **string**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional]
- **media_type** | **string**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **min_rating** | **double**| The minimum rating in range [0.0-1.0] of the meme. | [optional]
- **max_age_days** | **int**| The maximum age of the meme in days. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywords** | **string**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] |
+| **media_type** | **string**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **min_rating** | **float**| The minimum rating in range [0.0-1.0] of the meme. | [optional] |
+| **max_age_days** | **int**| The maximum age of the meme in days. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\OpenAPI\Client\Model\RandomMeme200Response**](../Model/RandomMeme200Response.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 ## `searchGifs()`
 
 ```php
-searchGifs($query, $number): \com.apileague.client\com.apileague.client.model\InlineResponse2007
+searchGifs($query, $number): \OpenAPI\Client\Model\SearchGifs200Response
 ```
 
 Search Gifs
@@ -242,17 +242,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,14 +271,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| The search query. |
- **number** | **int**| The number of gifs to return in range [1,10] | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| The search query. | |
+| **number** | **int**| The number of gifs to return in range [1,10] | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\OpenAPI\Client\Model\SearchGifs200Response**](../Model/SearchGifs200Response.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 ## `searchJokes()`
 
 ```php
-searchJokes($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number): \com.apileague.client\com.apileague.client.model\InlineResponse2004
+searchJokes($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number): \OpenAPI\Client\Model\SearchJokes200Response
 ```
 
 Search Jokes
@@ -311,17 +311,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -330,8 +330,8 @@ $apiInstance = new com.apileague.client\Api\HumorApi(
 $keywords = horse,man; // string | A comma-separated list of words that must occur in the joke.
 $include_tags = animal; // string | A comma-separated list of tags the jokes should have.
 $exclude_tags = nsfw,dark; // string | A comma-separated list of tags the jokes must not have.
-$min_rating = 0; // double | The minimum rating (0-10) of the jokes.
-$max_length = 140; // double | The maximum length of the joke in letters.
+$min_rating = 0; // float | The minimum rating (0-10) of the jokes.
+$max_length = 140; // float | The maximum length of the joke in letters.
 $offset = 0; // int | The number of jokes to skip, between 0 and 1000.
 $number = 3; // int | The number of jokes, between 1 and 10.
 
@@ -345,19 +345,19 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **string**| A comma-separated list of words that must occur in the joke. | [optional]
- **include_tags** | **string**| A comma-separated list of tags the jokes should have. | [optional]
- **exclude_tags** | **string**| A comma-separated list of tags the jokes must not have. | [optional]
- **min_rating** | **double**| The minimum rating (0-10) of the jokes. | [optional]
- **max_length** | **double**| The maximum length of the joke in letters. | [optional]
- **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional]
- **number** | **int**| The number of jokes, between 1 and 10. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywords** | **string**| A comma-separated list of words that must occur in the joke. | [optional] |
+| **include_tags** | **string**| A comma-separated list of tags the jokes should have. | [optional] |
+| **exclude_tags** | **string**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **min_rating** | **float**| The minimum rating (0-10) of the jokes. | [optional] |
+| **max_length** | **float**| The maximum length of the joke in letters. | [optional] |
+| **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional] |
+| **number** | **int**| The number of jokes, between 1 and 10. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\OpenAPI\Client\Model\SearchJokes200Response**](../Model/SearchJokes200Response.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 ## `searchMemes()`
 
 ```php
-searchMemes($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number): \com.apileague.client\com.apileague.client.model\InlineResponse2005
+searchMemes($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number): \OpenAPI\Client\Model\SearchMemes200Response
 ```
 
 Search Memes
@@ -390,17 +390,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\HumorApi(
+$apiInstance = new OpenAPI\Client\Api\HumorApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -409,7 +409,7 @@ $apiInstance = new com.apileague.client\Api\HumorApi(
 $keywords = rocket; // string | A comma-separated list of words that must occur in the meme.
 $keywords_in_image = true; // bool | Whether the keywords must occur in the image.
 $media_type = image; // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-$min_rating = 0; // double | The minimum rating in range [0.0,1.0] of the meme.
+$min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the meme.
 $max_age_days = 30; // int | The maximum age of the meme in days.
 $offset = 0; // int | The number of memes to skip, between 0 and 1000.
 $number = 3; // int | The number of memes, between 0 and 10.
@@ -424,19 +424,19 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **string**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional]
- **media_type** | **string**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **min_rating** | **double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
- **max_age_days** | **int**| The maximum age of the meme in days. | [optional]
- **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional]
- **number** | **int**| The number of memes, between 0 and 10. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **keywords** | **string**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] |
+| **media_type** | **string**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
+| **max_age_days** | **int**| The maximum age of the meme in days. | [optional] |
+| **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional] |
+| **number** | **int**| The number of memes, between 0 and 10. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\OpenAPI\Client\Model\SearchMemes200Response**](../Model/SearchMemes200Response.md)
 
 ### Authorization
 

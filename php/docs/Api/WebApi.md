@@ -1,19 +1,19 @@
-# com.apileague.client\WebApi
+# OpenAPI\Client\WebApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractAuthors()**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
-[**extractContentFromAWebPage()**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
-[**extractPublishDate()**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
-[**searchWeb()**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**extractAuthors()**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors |
+| [**extractContentFromAWebPage()**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page |
+| [**extractPublishDate()**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**searchWeb()**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
 
 
 ## `extractAuthors()`
 
 ```php
-extractAuthors($url): \com.apileague.client\com.apileague.client.model\InlineResponse20014
+extractAuthors($url): \OpenAPI\Client\Model\ExtractAuthors200Response
 ```
 
 Extract Authors
@@ -28,17 +28,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\WebApi(
+$apiInstance = new OpenAPI\Client\Api\WebApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -56,13 +56,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The url with the article from which authors should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **string**| The url with the article from which authors should be extracted. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\OpenAPI\Client\Model\ExtractAuthors200Response**](../Model/ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 ## `extractContentFromAWebPage()`
 
 ```php
-extractContentFromAWebPage($url): \com.apileague.client\com.apileague.client.model\InlineResponse20012
+extractContentFromAWebPage($url): \OpenAPI\Client\Model\ExtractContentFromAWebPage200Response
 ```
 
 Extract Content from a Web Page
@@ -95,17 +95,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\WebApi(
+$apiInstance = new OpenAPI\Client\Api\WebApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -123,13 +123,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The url for which the content will be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **string**| The url for which the content will be extracted. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\OpenAPI\Client\Model\ExtractContentFromAWebPage200Response**](../Model/ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ## `extractPublishDate()`
 
 ```php
-extractPublishDate($url): \com.apileague.client\com.apileague.client.model\InlineResponse20013
+extractPublishDate($url): \OpenAPI\Client\Model\ExtractPublishDate200Response
 ```
 
 Extract Publish Date
@@ -162,17 +162,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\WebApi(
+$apiInstance = new OpenAPI\Client\Api\WebApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -190,13 +190,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**| The url for which the publish date should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **string**| The url for which the publish date should be extracted. | |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\OpenAPI\Client\Model\ExtractPublishDate200Response**](../Model/ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 ## `searchWeb()`
 
 ```php
-searchWeb($query, $number): \com.apileague.client\com.apileague.client.model\InlineResponse20015
+searchWeb($query, $number): \OpenAPI\Client\Model\SearchWeb200Response
 ```
 
 Search Web
@@ -229,17 +229,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\WebApi(
+$apiInstance = new OpenAPI\Client\Api\WebApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -258,14 +258,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| The search query. |
- **number** | **int**| The number of results to return in range [1,50] | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| The search query. | |
+| **number** | **int**| The number of results to return in range [1,50] | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\OpenAPI\Client\Model\SearchWeb200Response**](../Model/SearchWeb200Response.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# OpenAPIClient-php
+# apileague
 
 API League is a Hub for World Class APIs.
 
@@ -7,8 +7,8 @@ API League is a Hub for World Class APIs.
 
 ### Requirements
 
-PHP 7.3 and later.
-Should also work with PHP 8.0 but has not been tested.
+PHP 7.4 and later.
+Should also work with PHP 8.0.
 
 ### Composer
 
@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/ddsky/api-league-clients/tree/master/php/.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "ddsky/api-league-clients/tree/master/php/": "*@dev"
   }
 }
 ```
@@ -36,7 +36,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
+require_once('/path/to/apileague/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -50,17 +50,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\ArtApi(
+$apiInstance = new OpenAPI\Client\Api\ArtApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -124,71 +124,71 @@ Class | Method | HTTP request | Description
 
 ## Models
 
-- [InlineResponse200](docs/Model/InlineResponse200.md)
-- [InlineResponse2001](docs/Model/InlineResponse2001.md)
-- [InlineResponse20010](docs/Model/InlineResponse20010.md)
-- [InlineResponse20011](docs/Model/InlineResponse20011.md)
-- [InlineResponse20012](docs/Model/InlineResponse20012.md)
-- [InlineResponse20013](docs/Model/InlineResponse20013.md)
-- [InlineResponse20014](docs/Model/InlineResponse20014.md)
-- [InlineResponse20014Authors](docs/Model/InlineResponse20014Authors.md)
-- [InlineResponse20015](docs/Model/InlineResponse20015.md)
-- [InlineResponse20015Results](docs/Model/InlineResponse20015Results.md)
-- [InlineResponse20016](docs/Model/InlineResponse20016.md)
-- [InlineResponse20017](docs/Model/InlineResponse20017.md)
-- [InlineResponse20018](docs/Model/InlineResponse20018.md)
-- [InlineResponse20018Document](docs/Model/InlineResponse20018Document.md)
-- [InlineResponse20018Sentences](docs/Model/InlineResponse20018Sentences.md)
-- [InlineResponse20019](docs/Model/InlineResponse20019.md)
-- [InlineResponse20019Interestingness](docs/Model/InlineResponse20019Interestingness.md)
-- [InlineResponse20019InterestingnessSubscores](docs/Model/InlineResponse20019InterestingnessSubscores.md)
-- [InlineResponse20019Readability](docs/Model/InlineResponse20019Readability.md)
-- [InlineResponse20019ReadabilityMainscores](docs/Model/InlineResponse20019ReadabilityMainscores.md)
-- [InlineResponse20019ReadabilitySubscores](docs/Model/InlineResponse20019ReadabilitySubscores.md)
-- [InlineResponse20019Skimmability](docs/Model/InlineResponse20019Skimmability.md)
-- [InlineResponse20019SkimmabilityMainscores](docs/Model/InlineResponse20019SkimmabilityMainscores.md)
-- [InlineResponse20019SkimmabilitySubscores](docs/Model/InlineResponse20019SkimmabilitySubscores.md)
-- [InlineResponse20019Style](docs/Model/InlineResponse20019Style.md)
-- [InlineResponse20019StyleSubscores](docs/Model/InlineResponse20019StyleSubscores.md)
-- [InlineResponse2002](docs/Model/InlineResponse2002.md)
-- [InlineResponse20020](docs/Model/InlineResponse20020.md)
-- [InlineResponse20021](docs/Model/InlineResponse20021.md)
-- [InlineResponse20021Dates](docs/Model/InlineResponse20021Dates.md)
-- [InlineResponse20022](docs/Model/InlineResponse20022.md)
-- [InlineResponse20023](docs/Model/InlineResponse20023.md)
-- [InlineResponse20024](docs/Model/InlineResponse20024.md)
-- [InlineResponse20025](docs/Model/InlineResponse20025.md)
-- [InlineResponse20026](docs/Model/InlineResponse20026.md)
-- [InlineResponse20027](docs/Model/InlineResponse20027.md)
-- [InlineResponse20027Entities](docs/Model/InlineResponse20027Entities.md)
-- [InlineResponse20028](docs/Model/InlineResponse20028.md)
-- [InlineResponse20028Images](docs/Model/InlineResponse20028Images.md)
-- [InlineResponse20028License](docs/Model/InlineResponse20028License.md)
-- [InlineResponse20029](docs/Model/InlineResponse20029.md)
-- [InlineResponse2002News](docs/Model/InlineResponse2002News.md)
-- [InlineResponse2003](docs/Model/InlineResponse2003.md)
-- [InlineResponse20030](docs/Model/InlineResponse20030.md)
-- [InlineResponse20031](docs/Model/InlineResponse20031.md)
-- [InlineResponse20032](docs/Model/InlineResponse20032.md)
-- [InlineResponse2004](docs/Model/InlineResponse2004.md)
-- [InlineResponse2004Jokes](docs/Model/InlineResponse2004Jokes.md)
-- [InlineResponse2005](docs/Model/InlineResponse2005.md)
-- [InlineResponse2005Memes](docs/Model/InlineResponse2005Memes.md)
-- [InlineResponse2006](docs/Model/InlineResponse2006.md)
-- [InlineResponse2007](docs/Model/InlineResponse2007.md)
-- [InlineResponse2007Images](docs/Model/InlineResponse2007Images.md)
-- [InlineResponse2008](docs/Model/InlineResponse2008.md)
-- [InlineResponse2009](docs/Model/InlineResponse2009.md)
-- [InlineResponse200Books](docs/Model/InlineResponse200Books.md)
+- [ConvertUnits200Response](docs/Model/ConvertUnits200Response.md)
+- [CorrectSpelling200Response](docs/Model/CorrectSpelling200Response.md)
+- [DetectLanguage200ResponseInner](docs/Model/DetectLanguage200ResponseInner.md)
+- [DetectMainImageColor200ResponseInner](docs/Model/DetectMainImageColor200ResponseInner.md)
+- [DetectSentiment200Response](docs/Model/DetectSentiment200Response.md)
+- [DetectSentiment200ResponseDocument](docs/Model/DetectSentiment200ResponseDocument.md)
+- [DetectSentiment200ResponseSentencesInner](docs/Model/DetectSentiment200ResponseSentencesInner.md)
+- [ExtractAuthors200Response](docs/Model/ExtractAuthors200Response.md)
+- [ExtractAuthors200ResponseAuthorsInner](docs/Model/ExtractAuthors200ResponseAuthorsInner.md)
+- [ExtractContentFromAWebPage200Response](docs/Model/ExtractContentFromAWebPage200Response.md)
+- [ExtractDates200Response](docs/Model/ExtractDates200Response.md)
+- [ExtractDates200ResponseDatesInner](docs/Model/ExtractDates200ResponseDatesInner.md)
+- [ExtractEntities200Response](docs/Model/ExtractEntities200Response.md)
+- [ExtractEntities200ResponseEntitiesInner](docs/Model/ExtractEntities200ResponseEntitiesInner.md)
+- [ExtractNews200Response](docs/Model/ExtractNews200Response.md)
+- [ExtractPublishDate200Response](docs/Model/ExtractPublishDate200Response.md)
+- [FindSimilarBooks200Response](docs/Model/FindSimilarBooks200Response.md)
+- [GenerateNonsenseWord200Response](docs/Model/GenerateNonsenseWord200Response.md)
+- [ListWordSynonyms200Response](docs/Model/ListWordSynonyms200Response.md)
+- [PartOfSpeechTagging200Response](docs/Model/PartOfSpeechTagging200Response.md)
+- [PluralizeWord200Response](docs/Model/PluralizeWord200Response.md)
+- [RandomMeme200Response](docs/Model/RandomMeme200Response.md)
+- [RandomPoem200Response](docs/Model/RandomPoem200Response.md)
+- [RandomQuote200Response](docs/Model/RandomQuote200Response.md)
+- [RandomTrivia200Response](docs/Model/RandomTrivia200Response.md)
+- [ReadKeyValueFromStore200Response](docs/Model/ReadKeyValueFromStore200Response.md)
+- [ScoreReadability200Response](docs/Model/ScoreReadability200Response.md)
+- [ScoreText200Response](docs/Model/ScoreText200Response.md)
+- [ScoreText200ResponseInterestingness](docs/Model/ScoreText200ResponseInterestingness.md)
+- [ScoreText200ResponseInterestingnessSubscores](docs/Model/ScoreText200ResponseInterestingnessSubscores.md)
+- [ScoreText200ResponseReadability](docs/Model/ScoreText200ResponseReadability.md)
+- [ScoreText200ResponseReadabilityMainscores](docs/Model/ScoreText200ResponseReadabilityMainscores.md)
+- [ScoreText200ResponseReadabilitySubscores](docs/Model/ScoreText200ResponseReadabilitySubscores.md)
+- [ScoreText200ResponseSkimmability](docs/Model/ScoreText200ResponseSkimmability.md)
+- [ScoreText200ResponseSkimmabilityMainscores](docs/Model/ScoreText200ResponseSkimmabilityMainscores.md)
+- [ScoreText200ResponseSkimmabilitySubscores](docs/Model/ScoreText200ResponseSkimmabilitySubscores.md)
+- [ScoreText200ResponseStyle](docs/Model/ScoreText200ResponseStyle.md)
+- [ScoreText200ResponseStyleSubscores](docs/Model/ScoreText200ResponseStyleSubscores.md)
+- [SearchBooks200Response](docs/Model/SearchBooks200Response.md)
+- [SearchBooks200ResponseBooksInner](docs/Model/SearchBooks200ResponseBooksInner.md)
+- [SearchGifs200Response](docs/Model/SearchGifs200Response.md)
+- [SearchGifs200ResponseImagesInner](docs/Model/SearchGifs200ResponseImagesInner.md)
+- [SearchJokes200Response](docs/Model/SearchJokes200Response.md)
+- [SearchJokes200ResponseJokesInner](docs/Model/SearchJokes200ResponseJokesInner.md)
+- [SearchMemes200Response](docs/Model/SearchMemes200Response.md)
+- [SearchMemes200ResponseMemesInner](docs/Model/SearchMemes200ResponseMemesInner.md)
+- [SearchNews200Response](docs/Model/SearchNews200Response.md)
+- [SearchNews200ResponseNewsInner](docs/Model/SearchNews200ResponseNewsInner.md)
+- [SearchRoyaltyFreeImages200Response](docs/Model/SearchRoyaltyFreeImages200Response.md)
+- [SearchRoyaltyFreeImages200ResponseImagesInner](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInner.md)
+- [SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)
+- [SearchWeb200Response](docs/Model/SearchWeb200Response.md)
+- [SearchWeb200ResponseResultsInner](docs/Model/SearchWeb200ResponseResultsInner.md)
+- [SingularizeWord200Response](docs/Model/SingularizeWord200Response.md)
+- [StoreKeyValueGET200Response](docs/Model/StoreKeyValueGET200Response.md)
+- [TextStemming200Response](docs/Model/TextStemming200Response.md)
 
 ## Authorization
 
+Authentication schemes defined for the API:
 ### apiKey
 
 - **Type**: API key
 - **API key parameter name**: api-key
 - **Location**: URL query string
-
 
 
 ### headerApiKey
@@ -216,5 +216,5 @@ mail@apileague.com
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `1.0`
-    - Package version: `1.0`
+    - Package version: `1.0.1`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -94,7 +94,7 @@ pub async fn image_to_ascii_art_by_url(configuration: &configuration::Configurat
 }
 
 /// Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
-pub async fn random_poem(configuration: &configuration::Configuration, min_lines: Option<i32>, max_lines: Option<i32>) -> Result<crate::models::InlineResponse20011, Error<RandomPoemError>> {
+pub async fn random_poem(configuration: &configuration::Configuration, min_lines: Option<i32>, max_lines: Option<i32>) -> Result<crate::models::RandomPoem200Response, Error<RandomPoemError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

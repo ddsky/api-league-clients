@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## correctSpelling
 
-> InlineResponse20016 correctSpelling(text, language)
+> CorrectSpelling200Response correctSpelling(text, language)
 
 Correct Spelling
 
@@ -37,7 +37,7 @@ TextApi apiInstance = new TextApi();
 String text = Driving carss is fun.; // String | The text to be corrected.
 String language = en; // String | The language of the text, one of en, de, es, fr, or it.
 try {
-    InlineResponse20016 result = apiInstance.correctSpelling(text, language);
+    CorrectSpelling200Response result = apiInstance.correctSpelling(text, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#correctSpelling");
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## detectLanguage
 
-> List&lt;InlineResponse20017&gt; detectLanguage(text)
+> List&lt;DetectLanguage200ResponseInner&gt; detectLanguage(text)
 
 Detect Language
 
@@ -84,7 +84,7 @@ Detect the language of the given text. The API returns a list of languages and t
 TextApi apiInstance = new TextApi();
 String text = Das ist ein Text.; // String | The text for which the language should be detected.
 try {
-    List<InlineResponse20017> result = apiInstance.detectLanguage(text);
+    List<DetectLanguage200ResponseInner> result = apiInstance.detectLanguage(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#detectLanguage");
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20017&gt;**](InlineResponse20017.md)
+[**List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ## detectSentiment
 
-> InlineResponse20018 detectSentiment(text)
+> DetectSentiment200Response detectSentiment(text)
 
 Detect Sentiment
 
@@ -130,7 +130,7 @@ Detect the sentiment (positive or negative) of a given text. The entire document
 TextApi apiInstance = new TextApi();
 String text = Happy times feel so good.; // String | The text for which the sentiment should be detected.
 try {
-    InlineResponse20018 result = apiInstance.detectSentiment(text);
+    DetectSentiment200Response result = apiInstance.detectSentiment(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#detectSentiment");
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## extractDates
 
-> InlineResponse20021 extractDates(text)
+> ExtractDates200Response extractDates(text)
 
 Extract Dates
 
@@ -176,7 +176,7 @@ Extract dates from a given text. The API will return a list of dates with their 
 TextApi apiInstance = new TextApi();
 String text = On 5th or April, 2035 there will be flying cars - 2023-02-12.; // String | The text from which dates should be extracted.
 try {
-    InlineResponse20021 result = apiInstance.extractDates(text);
+    ExtractDates200Response result = apiInstance.extractDates(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#extractDates");
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ## extractEntities
 
-> InlineResponse20027 extractEntities(text)
+> ExtractEntities200Response extractEntities(text)
 
 Extract Entities
 
@@ -222,7 +222,7 @@ Extract entities from a text. An entity is a word or a group of words that repre
 TextApi apiInstance = new TextApi();
 String text = Jim Carrey is an actor from Canada; // String | The text from which entities should be extracted.
 try {
-    InlineResponse20027 result = apiInstance.extractEntities(text);
+    ExtractEntities200Response result = apiInstance.extractEntities(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#extractEntities");
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ## listWordSynonyms
 
-> InlineResponse20022 listWordSynonyms(word)
+> ListWordSynonyms200Response listWordSynonyms(word)
 
 List Word Synonyms
 
@@ -268,7 +268,7 @@ Return synonyms of a word.
 TextApi apiInstance = new TextApi();
 String word = airplane; // String | The (noun) word for which a list of synonyms should be returned.
 try {
-    InlineResponse20022 result = apiInstance.listWordSynonyms(word);
+    ListWordSynonyms200Response result = apiInstance.listWordSynonyms(word);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#listWordSynonyms");
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## partOfSpeechTagging
 
-> InlineResponse20023 partOfSpeechTagging(text)
+> PartOfSpeechTagging200Response partOfSpeechTagging(text)
 
 Part of Speech Tagging
 
@@ -314,7 +314,7 @@ Part of speech tagging is the process of marking up a word in a text as correspo
 TextApi apiInstance = new TextApi();
 String text = The lazy dog jumps over the quick brown fox.; // String | The text to tag the part of speech.
 try {
-    InlineResponse20023 result = apiInstance.partOfSpeechTagging(text);
+    PartOfSpeechTagging200Response result = apiInstance.partOfSpeechTagging(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#partOfSpeechTagging");
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ## pluralizeWord
 
-> InlineResponse20026 pluralizeWord(word)
+> PluralizeWord200Response pluralizeWord(word)
 
 Pluralize Word
 
@@ -360,7 +360,7 @@ Find the plural form of a word.
 TextApi apiInstance = new TextApi();
 String word = party; // String | The (noun) word for which the plural form should be found.
 try {
-    InlineResponse20026 result = apiInstance.pluralizeWord(word);
+    PluralizeWord200Response result = apiInstance.pluralizeWord(word);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#pluralizeWord");
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ## scoreReadability
 
-> InlineResponse20020 scoreReadability(text)
+> ScoreReadability200Response scoreReadability(text)
 
 Score Readability
 
@@ -406,7 +406,7 @@ Score the readability of a text. The readability score is based on the average l
 TextApi apiInstance = new TextApi();
 String text = A rather complex text, hard to read, and highly convoluted using acronym TERMS.; // String | The text to score for readability.
 try {
-    InlineResponse20020 result = apiInstance.scoreReadability(text);
+    ScoreReadability200Response result = apiInstance.scoreReadability(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#scoreReadability");
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ## scoreText
 
-> InlineResponse20019 scoreText(title, text)
+> ScoreText200Response scoreText(title, text)
 
 Score Text
 
@@ -453,7 +453,7 @@ TextApi apiInstance = new TextApi();
 String title = A short story; // String | The title of the text to score.
 String text = A nice short story to be analyzed; // String | The text to score for multiple metrics.
 try {
-    InlineResponse20019 result = apiInstance.scoreText(title, text);
+    ScoreText200Response result = apiInstance.scoreText(title, text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#scoreText");
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ## singularizeWord
 
-> InlineResponse20025 singularizeWord(word)
+> SingularizeWord200Response singularizeWord(word)
 
 Singularize Word
 
@@ -500,7 +500,7 @@ Find the singular form of a word.
 TextApi apiInstance = new TextApi();
 String word = airplanes; // String | The (noun) word for which the singular form should be found.
 try {
-    InlineResponse20025 result = apiInstance.singularizeWord(word);
+    SingularizeWord200Response result = apiInstance.singularizeWord(word);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#singularizeWord");
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ## textStemming
 
-> InlineResponse20024 textStemming(text)
+> TextStemming200Response textStemming(text)
 
 Text Stemming
 
@@ -546,7 +546,7 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 TextApi apiInstance = new TextApi();
 String text = The laziest dogs are jumping over the quicker brown foxes.; // String | The text to be stemmed.
 try {
-    InlineResponse20024 result = apiInstance.textStemming(text);
+    TextStemming200Response result = apiInstance.textStemming(text);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextApi#textStemming");
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 

@@ -1,16 +1,15 @@
-# com.apileague.KnowledgeApi
+# apileague.Api.KnowledgeApi
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**RandomQuote**](KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote
-[**RandomTrivia**](KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**RandomQuote**](KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote |
+| [**RandomTrivia**](KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
-
-<a name="randomquote"></a>
+<a id="randomquote"></a>
 # **RandomQuote**
-> InlineResponse20010 RandomQuote (int? minLength, int? maxLength)
+> RandomQuote200Response RandomQuote (int? minLength = null, int? maxLength = null)
 
 Random Quote
 
@@ -18,56 +17,80 @@ This API returns a random quote from a collection of quotes. The quotes are from
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class RandomQuoteExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new KnowledgeApi();
+            var apiInstance = new KnowledgeApi(config);
             var minLength = 120;  // int? | The minimum length of the quote in letters. (optional) 
             var maxLength = 300;  // int? | The maximum length of the quote in letters. (optional) 
 
             try
             {
                 // Random Quote
-                InlineResponse20010 result = apiInstance.RandomQuote(minLength, maxLength);
+                RandomQuote200Response result = apiInstance.RandomQuote(minLength, maxLength);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling KnowledgeApi.RandomQuote: " + e.Message );
+                Debug.Print("Exception when calling KnowledgeApi.RandomQuote: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the RandomQuoteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Random Quote
+    ApiResponse<RandomQuote200Response> response = apiInstance.RandomQuoteWithHttpInfo(minLength, maxLength);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KnowledgeApi.RandomQuoteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **minLength** | **int?**| The minimum length of the quote in letters. | [optional] 
- **maxLength** | **int?**| The maximum length of the quote in letters. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **minLength** | **int?** | The minimum length of the quote in letters. | [optional]  |
+| **maxLength** | **int?** | The maximum length of the quote in letters. | [optional]  |
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**RandomQuote200Response**](RandomQuote200Response.md)
 
 ### Authorization
 
@@ -78,11 +101,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="randomtrivia"></a>
+<a id="randomtrivia"></a>
 # **RandomTrivia**
-> InlineResponse2009 RandomTrivia (int? maxLength)
+> RandomTrivia200Response RandomTrivia (int? maxLength = null)
 
 Random Trivia
 
@@ -90,54 +125,78 @@ This endpoint returns a random piece of trivia.
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class RandomTriviaExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new KnowledgeApi();
+            var apiInstance = new KnowledgeApi(config);
             var maxLength = 300;  // int? | The maximum length of the trivia in letters. (optional) 
 
             try
             {
                 // Random Trivia
-                InlineResponse2009 result = apiInstance.RandomTrivia(maxLength);
+                RandomTrivia200Response result = apiInstance.RandomTrivia(maxLength);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling KnowledgeApi.RandomTrivia: " + e.Message );
+                Debug.Print("Exception when calling KnowledgeApi.RandomTrivia: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the RandomTriviaWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Random Trivia
+    ApiResponse<RandomTrivia200Response> response = apiInstance.RandomTriviaWithHttpInfo(maxLength);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KnowledgeApi.RandomTriviaWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **maxLength** | **int?**| The maximum length of the trivia in letters. | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **maxLength** | **int?** | The maximum length of the trivia in letters. | [optional]  |
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**RandomTrivia200Response**](RandomTrivia200Response.md)
 
 ### Authorization
 
@@ -147,6 +206,18 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

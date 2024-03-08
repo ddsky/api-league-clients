@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## findSimilarBooks
 
-> InlineResponse2001 findSimilarBooks(id, opts)
+> FindSimilarBooks200Response findSimilarBooks(id, opts)
 
 Find Similar Books
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ## searchBooks
 
-> InlineResponse200 searchBooks(opts)
+> SearchBooks200Response searchBooks(opts)
 
 Search Books
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

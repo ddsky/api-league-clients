@@ -70,7 +70,7 @@ import qualified Prelude as P
 -- 
 extractAuthors
   :: Url -- ^ "url" -  The url with the article from which authors should be extracted.
-  -> APILeagueRequest ExtractAuthors MimeNoContent InlineResponse20014 MimeJSON
+  -> APILeagueRequest ExtractAuthors MimeNoContent ExtractAuthors200Response MimeJSON
 extractAuthors (Url url) =
   _mkRequest "GET" ["/extract-authors"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -94,7 +94,7 @@ instance Produces ExtractAuthors MimeJSON
 -- 
 extractContentFromAWebPage
   :: Url -- ^ "url" -  The url for which the content will be extracted.
-  -> APILeagueRequest ExtractContentFromAWebPage MimeNoContent InlineResponse20012 MimeJSON
+  -> APILeagueRequest ExtractContentFromAWebPage MimeNoContent ExtractContentFromAWebPage200Response MimeJSON
 extractContentFromAWebPage (Url url) =
   _mkRequest "GET" ["/extract-content"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -118,7 +118,7 @@ instance Produces ExtractContentFromAWebPage MimeJSON
 -- 
 extractPublishDate
   :: Url -- ^ "url" -  The url for which the publish date should be extracted.
-  -> APILeagueRequest ExtractPublishDate MimeNoContent InlineResponse20013 MimeJSON
+  -> APILeagueRequest ExtractPublishDate MimeNoContent ExtractPublishDate200Response MimeJSON
 extractPublishDate (Url url) =
   _mkRequest "GET" ["/extract-publish-date"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -142,7 +142,7 @@ instance Produces ExtractPublishDate MimeJSON
 -- 
 searchWeb
   :: Query -- ^ "query" -  The search query.
-  -> APILeagueRequest SearchWeb MimeNoContent InlineResponse20015 MimeJSON
+  -> APILeagueRequest SearchWeb MimeNoContent SearchWeb200Response MimeJSON
 searchWeb (Query query) =
   _mkRequest "GET" ["/search-web"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

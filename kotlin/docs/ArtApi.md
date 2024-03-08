@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
 
 
-<a name="imageToAsciiArtByURL"></a>
+<a id="imageToAsciiArtByURL"></a>
 # **imageToAsciiArtByURL**
 > kotlin.String imageToAsciiArtByURL(url, width, height)
 
@@ -19,7 +19,7 @@ Convert an image to ASCII art. You can pass the image URL as a query parameter. 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = ArtApi()
@@ -65,9 +65,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="randomPoem"></a>
+<a id="randomPoem"></a>
 # **randomPoem**
-> InlineResponse20011 randomPoem(minLines, maxLines)
+> RandomPoem200Response randomPoem(minLines, maxLines)
 
 Random Poem
 
@@ -76,14 +76,14 @@ Retrieve a random poem by many famous authors. You can filter poem&#39;s by leng
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = ArtApi()
 val minLines : kotlin.Int = 5 // kotlin.Int | The minimum number of lines of the poem.
 val maxLines : kotlin.Int = 20 // kotlin.Int | The maximum number of lines of the poem.
 try {
-    val result : InlineResponse20011 = apiInstance.randomPoem(minLines, maxLines)
+    val result : RandomPoem200Response = apiInstance.randomPoem(minLines, maxLines)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ArtApi#randomPoem")
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**RandomPoem200Response**](RandomPoem200Response.md)
 
 ### Authorization
 

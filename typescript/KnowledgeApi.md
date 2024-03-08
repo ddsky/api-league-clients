@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **randomQuote**
-> InlineResponse20010 randomQuote()
+> RandomQuote200Response randomQuote()
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse20010**
+**RandomQuote200Response**
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **randomTrivia**
-> InlineResponse2009 randomTrivia()
+> RandomTrivia200Response randomTrivia()
 
 This endpoint returns a random piece of trivia.
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2009**
+**RandomTrivia200Response**
 
 ### Authorization
 

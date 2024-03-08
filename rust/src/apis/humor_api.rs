@@ -95,7 +95,7 @@ pub enum SearchMemesError {
 
 
 /// Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-pub async fn generate_nonsense_word(configuration: &configuration::Configuration, ) -> Result<crate::models::InlineResponse2008, Error<GenerateNonsenseWordError>> {
+pub async fn generate_nonsense_word(configuration: &configuration::Configuration, ) -> Result<crate::models::GenerateNonsenseWord200Response, Error<GenerateNonsenseWordError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -139,7 +139,7 @@ pub async fn generate_nonsense_word(configuration: &configuration::Configuration
 }
 
 /// This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-pub async fn random_joke(configuration: &configuration::Configuration, include_tags: Option<&str>, exclude_tags: Option<&str>, min_rating: Option<f64>, max_length: Option<i32>) -> Result<crate::models::InlineResponse2004Jokes, Error<RandomJokeError>> {
+pub async fn random_joke(configuration: &configuration::Configuration, include_tags: Option<&str>, exclude_tags: Option<&str>, min_rating: Option<f64>, max_length: Option<i32>) -> Result<crate::models::SearchJokes200ResponseJokesInner, Error<RandomJokeError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -195,7 +195,7 @@ pub async fn random_joke(configuration: &configuration::Configuration, include_t
 }
 
 /// Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-pub async fn random_meme(configuration: &configuration::Configuration, keywords: Option<&str>, keywords_in_image: Option<bool>, media_type: Option<&str>, min_rating: Option<f64>, max_age_days: Option<i32>) -> Result<crate::models::InlineResponse2006, Error<RandomMemeError>> {
+pub async fn random_meme(configuration: &configuration::Configuration, keywords: Option<&str>, keywords_in_image: Option<bool>, media_type: Option<&str>, min_rating: Option<f64>, max_age_days: Option<i32>) -> Result<crate::models::RandomMeme200Response, Error<RandomMemeError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -254,7 +254,7 @@ pub async fn random_meme(configuration: &configuration::Configuration, keywords:
 }
 
 /// Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-pub async fn search_gifs(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::InlineResponse2007, Error<SearchGifsError>> {
+pub async fn search_gifs(configuration: &configuration::Configuration, query: &str, number: Option<i32>) -> Result<crate::models::SearchGifs200Response, Error<SearchGifsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -302,7 +302,7 @@ pub async fn search_gifs(configuration: &configuration::Configuration, query: &s
 }
 
 /// With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-pub async fn search_jokes(configuration: &configuration::Configuration, keywords: Option<&str>, include_tags: Option<&str>, exclude_tags: Option<&str>, min_rating: Option<f64>, max_length: Option<f64>, offset: Option<i32>, number: Option<i32>) -> Result<crate::models::InlineResponse2004, Error<SearchJokesError>> {
+pub async fn search_jokes(configuration: &configuration::Configuration, keywords: Option<&str>, include_tags: Option<&str>, exclude_tags: Option<&str>, min_rating: Option<f64>, max_length: Option<f64>, offset: Option<i32>, number: Option<i32>) -> Result<crate::models::SearchJokes200Response, Error<SearchJokesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -367,7 +367,7 @@ pub async fn search_jokes(configuration: &configuration::Configuration, keywords
 }
 
 /// With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
-pub async fn search_memes(configuration: &configuration::Configuration, keywords: Option<&str>, keywords_in_image: Option<bool>, media_type: Option<&str>, min_rating: Option<f64>, max_age_days: Option<i32>, offset: Option<i32>, number: Option<i32>) -> Result<crate::models::InlineResponse2005, Error<SearchMemesError>> {
+pub async fn search_memes(configuration: &configuration::Configuration, keywords: Option<&str>, keywords_in_image: Option<bool>, media_type: Option<&str>, min_rating: Option<f64>, max_age_days: Option<i32>, offset: Option<i32>, number: Option<i32>) -> Result<crate::models::SearchMemes200Response, Error<SearchMemesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

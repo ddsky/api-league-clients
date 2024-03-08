@@ -72,7 +72,7 @@ convertUnits
   :: SourceAmount -- ^ "sourceAmount" -  The source amount.
   -> SourceUnit -- ^ "sourceUnit" -  The source unit.
   -> TargetUnit -- ^ "targetUnit" -  The unit to which should be converted.
-  -> APILeagueRequest ConvertUnits MimeNoContent InlineResponse20030 MimeJSON
+  -> APILeagueRequest ConvertUnits MimeNoContent ConvertUnits200Response MimeJSON
 convertUnits (SourceAmount sourceAmount) (SourceUnit sourceUnit) (TargetUnit targetUnit) =
   _mkRequest "GET" ["/convert-units"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

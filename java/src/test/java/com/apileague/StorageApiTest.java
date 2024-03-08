@@ -14,10 +14,10 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import com.apileague.client.model.InlineResponse20030;
-import com.apileague.client.model.InlineResponse20031;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.ReadKeyValueFromStore200Response;
+import com.apileague.client.model.StoreKeyValueGET200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,41 +27,38 @@ import java.util.Map;
 /**
  * API tests for StorageApi
  */
-@Ignore
+@Disabled
 public class StorageApiTest {
 
     private final StorageApi api = new StorageApi();
 
-    
     /**
      * Read Key Value from Store
      *
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void readKeyValueFromStoreTest() throws ApiException {
         String key = null;
-                InlineResponse20030 response = api.readKeyValueFromStore(key);
+        ReadKeyValueFromStore200Response response = api.readKeyValueFromStore(key);
         // TODO: test validations
     }
-    
+
     /**
      * Store Key Value (GET)
      *
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void storeKeyValueGETTest() throws ApiException {
         String key = null;
         String value = null;
-                InlineResponse20031 response = api.storeKeyValueGET(key, value);
+        StoreKeyValueGET200Response response = api.storeKeyValueGET(key, value);
         // TODO: test validations
     }
-    
+
 }

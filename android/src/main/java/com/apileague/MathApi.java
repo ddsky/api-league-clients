@@ -23,7 +23,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20030;
+import com.apileague.client.model.ConvertUnits200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -62,9 +62,9 @@ public class MathApi {
    * @param sourceUnit The source unit.
    * @param targetUnit The unit to which should be converted.
    * @param foodName An optional food name. For converting foods the food is relevant as they have different densities.
-   * @return InlineResponse20030
+   * @return ConvertUnits200Response
   */
-  public InlineResponse20030 convertUnits (Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ConvertUnits200Response convertUnits (Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'sourceAmount' is set
     if (sourceAmount == null) {
@@ -113,7 +113,7 @@ public class MathApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20030) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20030.class);
+         return (ConvertUnits200Response) ApiInvoker.deserialize(localVarResponse, "", ConvertUnits200Response.class);
       } else {
          return null;
       }
@@ -139,7 +139,7 @@ public class MathApi {
    * Convert units from one to another. The API returns the amount and the unit of the target unit.
    * @param sourceAmount The source amount.   * @param sourceUnit The source unit.   * @param targetUnit The unit to which should be converted.   * @param foodName An optional food name. For converting foods the food is relevant as they have different densities.
   */
-  public void convertUnits (Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final Response.Listener<InlineResponse20030> responseListener, final Response.ErrorListener errorListener) {
+  public void convertUnits (Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final Response.Listener<ConvertUnits200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'sourceAmount' is set
@@ -198,7 +198,7 @@ public class MathApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20030) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20030.class));
+              responseListener.onResponse((ConvertUnits200Response) ApiInvoker.deserialize(localVarResponse,  "", ConvertUnits200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

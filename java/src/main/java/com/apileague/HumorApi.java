@@ -27,12 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse2004;
-import com.apileague.client.model.InlineResponse2004Jokes;
-import com.apileague.client.model.InlineResponse2005;
-import com.apileague.client.model.InlineResponse2006;
-import com.apileague.client.model.InlineResponse2007;
-import com.apileague.client.model.InlineResponse2008;
+import com.apileague.client.model.GenerateNonsenseWord200Response;
+import com.apileague.client.model.RandomMeme200Response;
+import com.apileague.client.model.SearchGifs200Response;
+import com.apileague.client.model.SearchJokes200Response;
+import com.apileague.client.model.SearchJokes200ResponseJokesInner;
+import com.apileague.client.model.SearchMemes200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -98,7 +98,6 @@ public class HumorApi {
      */
     public okhttp3.Call generateNonsenseWordCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -131,7 +130,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -144,17 +142,14 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call generateNonsenseWordValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = generateNonsenseWordCall(_callback);
-        return localVarCall;
+        return generateNonsenseWordCall(_callback);
 
     }
 
     /**
      * Generate Nonsense Word
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * @return InlineResponse2008
+     * @return GenerateNonsenseWord200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -170,15 +165,15 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
      */
-    public InlineResponse2008 generateNonsenseWord() throws ApiException {
-        ApiResponse<InlineResponse2008> localVarResp = generateNonsenseWordWithHttpInfo();
+    public GenerateNonsenseWord200Response generateNonsenseWord() throws ApiException {
+        ApiResponse<GenerateNonsenseWord200Response> localVarResp = generateNonsenseWordWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Generate Nonsense Word
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * @return ApiResponse&lt;InlineResponse2008&gt;
+     * @return ApiResponse&lt;GenerateNonsenseWord200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -194,9 +189,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
      */
-    public ApiResponse<InlineResponse2008> generateNonsenseWordWithHttpInfo() throws ApiException {
+    public ApiResponse<GenerateNonsenseWord200Response> generateNonsenseWordWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = generateNonsenseWordValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<GenerateNonsenseWord200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -220,10 +215,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
      */
-    public okhttp3.Call generateNonsenseWordAsync(final ApiCallback<InlineResponse2008> _callback) throws ApiException {
+    public okhttp3.Call generateNonsenseWordAsync(final ApiCallback<GenerateNonsenseWord200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generateNonsenseWordValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2008>(){}.getType();
+        Type localVarReturnType = new TypeToken<GenerateNonsenseWord200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -252,7 +247,6 @@ public class HumorApi {
      */
     public okhttp3.Call randomJokeCall(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -301,7 +295,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -314,10 +307,7 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call randomJokeValidateBeforeCall(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = randomJokeCall(includeTags, excludeTags, minRating, maxLength, _callback);
-        return localVarCall;
+        return randomJokeCall(includeTags, excludeTags, minRating, maxLength, _callback);
 
     }
 
@@ -328,7 +318,7 @@ public class HumorApi {
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
-     * @return InlineResponse2004Jokes
+     * @return SearchJokes200ResponseJokesInner
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -344,8 +334,8 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
      */
-    public InlineResponse2004Jokes randomJoke(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
-        ApiResponse<InlineResponse2004Jokes> localVarResp = randomJokeWithHttpInfo(includeTags, excludeTags, minRating, maxLength);
+    public SearchJokes200ResponseJokesInner randomJoke(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
+        ApiResponse<SearchJokes200ResponseJokesInner> localVarResp = randomJokeWithHttpInfo(includeTags, excludeTags, minRating, maxLength);
         return localVarResp.getData();
     }
 
@@ -356,7 +346,7 @@ public class HumorApi {
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
-     * @return ApiResponse&lt;InlineResponse2004Jokes&gt;
+     * @return ApiResponse&lt;SearchJokes200ResponseJokesInner&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -372,9 +362,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
      */
-    public ApiResponse<InlineResponse2004Jokes> randomJokeWithHttpInfo(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
+    public ApiResponse<SearchJokes200ResponseJokesInner> randomJokeWithHttpInfo(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomJokeValidateBeforeCall(includeTags, excludeTags, minRating, maxLength, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004Jokes>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchJokes200ResponseJokesInner>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -402,10 +392,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
      */
-    public okhttp3.Call randomJokeAsync(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback<InlineResponse2004Jokes> _callback) throws ApiException {
+    public okhttp3.Call randomJokeAsync(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback<SearchJokes200ResponseJokesInner> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = randomJokeValidateBeforeCall(includeTags, excludeTags, minRating, maxLength, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2004Jokes>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchJokes200ResponseJokesInner>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -435,7 +425,6 @@ public class HumorApi {
      */
     public okhttp3.Call randomMemeCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -488,7 +477,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -501,10 +489,7 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call randomMemeValidateBeforeCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = randomMemeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _callback);
-        return localVarCall;
+        return randomMemeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _callback);
 
     }
 
@@ -516,7 +501,7 @@ public class HumorApi {
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
      * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
-     * @return InlineResponse2006
+     * @return RandomMeme200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -532,8 +517,8 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
      */
-    public InlineResponse2006 randomMeme(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
-        ApiResponse<InlineResponse2006> localVarResp = randomMemeWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+    public RandomMeme200Response randomMeme(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
+        ApiResponse<RandomMeme200Response> localVarResp = randomMemeWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
         return localVarResp.getData();
     }
 
@@ -545,7 +530,7 @@ public class HumorApi {
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
      * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
-     * @return ApiResponse&lt;InlineResponse2006&gt;
+     * @return ApiResponse&lt;RandomMeme200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -561,9 +546,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
      */
-    public ApiResponse<InlineResponse2006> randomMemeWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
+    public ApiResponse<RandomMeme200Response> randomMemeWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
         okhttp3.Call localVarCall = randomMemeValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomMeme200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -592,10 +577,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
      */
-    public okhttp3.Call randomMemeAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback<InlineResponse2006> _callback) throws ApiException {
+    public okhttp3.Call randomMemeAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback<RandomMeme200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = randomMemeValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2006>(){}.getType();
+        Type localVarReturnType = new TypeToken<RandomMeme200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -622,7 +607,6 @@ public class HumorApi {
      */
     public okhttp3.Call searchGifsCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -663,7 +647,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -676,15 +659,12 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchGifsValidateBeforeCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'query' is set
         if (query == null) {
             throw new ApiException("Missing the required parameter 'query' when calling searchGifs(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = searchGifsCall(query, number, _callback);
-        return localVarCall;
+        return searchGifsCall(query, number, _callback);
 
     }
 
@@ -693,7 +673,7 @@ public class HumorApi {
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
      * @param query The search query. (required)
      * @param number The number of gifs to return in range [1,10] (optional)
-     * @return InlineResponse2007
+     * @return SearchGifs200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -709,8 +689,8 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
      */
-    public InlineResponse2007 searchGifs(String query, Integer number) throws ApiException {
-        ApiResponse<InlineResponse2007> localVarResp = searchGifsWithHttpInfo(query, number);
+    public SearchGifs200Response searchGifs(String query, Integer number) throws ApiException {
+        ApiResponse<SearchGifs200Response> localVarResp = searchGifsWithHttpInfo(query, number);
         return localVarResp.getData();
     }
 
@@ -719,7 +699,7 @@ public class HumorApi {
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
      * @param query The search query. (required)
      * @param number The number of gifs to return in range [1,10] (optional)
-     * @return ApiResponse&lt;InlineResponse2007&gt;
+     * @return ApiResponse&lt;SearchGifs200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -735,9 +715,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
      */
-    public ApiResponse<InlineResponse2007> searchGifsWithHttpInfo(String query, Integer number) throws ApiException {
+    public ApiResponse<SearchGifs200Response> searchGifsWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchGifsValidateBeforeCall(query, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchGifs200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -763,10 +743,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
      */
-    public okhttp3.Call searchGifsAsync(String query, Integer number, final ApiCallback<InlineResponse2007> _callback) throws ApiException {
+    public okhttp3.Call searchGifsAsync(String query, Integer number, final ApiCallback<SearchGifs200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchGifsValidateBeforeCall(query, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2007>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchGifs200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -798,7 +778,6 @@ public class HumorApi {
      */
     public okhttp3.Call searchJokesCall(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -859,7 +838,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -872,10 +850,7 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchJokesValidateBeforeCall(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = searchJokesCall(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _callback);
-        return localVarCall;
+        return searchJokesCall(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _callback);
 
     }
 
@@ -889,7 +864,7 @@ public class HumorApi {
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
-     * @return InlineResponse2004
+     * @return SearchJokes200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -905,8 +880,8 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
      */
-    public InlineResponse2004 searchJokes(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
-        ApiResponse<InlineResponse2004> localVarResp = searchJokesWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+    public SearchJokes200Response searchJokes(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
+        ApiResponse<SearchJokes200Response> localVarResp = searchJokesWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
         return localVarResp.getData();
     }
 
@@ -920,7 +895,7 @@ public class HumorApi {
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
-     * @return ApiResponse&lt;InlineResponse2004&gt;
+     * @return ApiResponse&lt;SearchJokes200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -936,9 +911,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
      */
-    public ApiResponse<InlineResponse2004> searchJokesWithHttpInfo(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
+    public ApiResponse<SearchJokes200Response> searchJokesWithHttpInfo(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchJokesValidateBeforeCall(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchJokes200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -969,10 +944,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
      */
-    public okhttp3.Call searchJokesAsync(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback<InlineResponse2004> _callback) throws ApiException {
+    public okhttp3.Call searchJokesAsync(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback<SearchJokes200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchJokesValidateBeforeCall(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2004>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchJokes200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1004,7 +979,6 @@ public class HumorApi {
      */
     public okhttp3.Call searchMemesCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1065,7 +1039,6 @@ public class HumorApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1078,10 +1051,7 @@ public class HumorApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchMemesValidateBeforeCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = searchMemesCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _callback);
-        return localVarCall;
+        return searchMemesCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _callback);
 
     }
 
@@ -1095,7 +1065,7 @@ public class HumorApi {
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
      * @param number The number of memes, between 0 and 10. (optional)
-     * @return InlineResponse2005
+     * @return SearchMemes200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1111,8 +1081,8 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
      */
-    public InlineResponse2005 searchMemes(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
-        ApiResponse<InlineResponse2005> localVarResp = searchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+    public SearchMemes200Response searchMemes(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
+        ApiResponse<SearchMemes200Response> localVarResp = searchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
         return localVarResp.getData();
     }
 
@@ -1126,7 +1096,7 @@ public class HumorApi {
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
      * @param number The number of memes, between 0 and 10. (optional)
-     * @return ApiResponse&lt;InlineResponse2005&gt;
+     * @return ApiResponse&lt;SearchMemes200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1142,9 +1112,9 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
      */
-    public ApiResponse<InlineResponse2005> searchMemesWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
+    public ApiResponse<SearchMemes200Response> searchMemesWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchMemesValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchMemes200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1175,10 +1145,10 @@ public class HumorApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
      */
-    public okhttp3.Call searchMemesAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback<InlineResponse2005> _callback) throws ApiException {
+    public okhttp3.Call searchMemesAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback<SearchMemes200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchMemesValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2005>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchMemes200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

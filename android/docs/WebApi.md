@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## extractAuthors
 
-> InlineResponse20014 extractAuthors(url)
+> ExtractAuthors200Response extractAuthors(url)
 
 Extract Authors
 
@@ -28,7 +28,7 @@ Extracts the authors from a given URL. This API is useful for extracting the aut
 WebApi apiInstance = new WebApi();
 String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url with the article from which authors should be extracted.
 try {
-    InlineResponse20014 result = apiInstance.extractAuthors(url);
+    ExtractAuthors200Response result = apiInstance.extractAuthors(url);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebApi#extractAuthors");
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## extractContentFromAWebPage
 
-> InlineResponse20012 extractContentFromAWebPage(url)
+> ExtractContentFromAWebPage200Response extractContentFromAWebPage(url)
 
 Extract Content from a Web Page
 
@@ -74,7 +74,7 @@ Extract the main content from a web page. This API is useful for extracting the 
 WebApi apiInstance = new WebApi();
 String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the content will be extracted.
 try {
-    InlineResponse20012 result = apiInstance.extractContentFromAWebPage(url);
+    ExtractContentFromAWebPage200Response result = apiInstance.extractContentFromAWebPage(url);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebApi#extractContentFromAWebPage");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ## extractPublishDate
 
-> InlineResponse20013 extractPublishDate(url)
+> ExtractPublishDate200Response extractPublishDate(url)
 
 Extract Publish Date
 
@@ -120,7 +120,7 @@ Extract the publish date of an article (news or blog). The API will return the p
 WebApi apiInstance = new WebApi();
 String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the publish date should be extracted.
 try {
-    InlineResponse20013 result = apiInstance.extractPublishDate(url);
+    ExtractPublishDate200Response result = apiInstance.extractPublishDate(url);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebApi#extractPublishDate");
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## searchWeb
 
-> InlineResponse20015 searchWeb(query, number)
+> SearchWeb200Response searchWeb(query, number)
 
 Search Web
 
@@ -167,7 +167,7 @@ WebApi apiInstance = new WebApi();
 String query = penguins; // String | The search query.
 Integer number = 5; // Integer | The number of results to return in range [1,50]
 try {
-    InlineResponse20015 result = apiInstance.searchWeb(query, number);
+    SearchWeb200Response result = apiInstance.searchWeb(query, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebApi#searchWeb");
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 

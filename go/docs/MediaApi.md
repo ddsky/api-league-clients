@@ -1,18 +1,18 @@
-# com.apileague.client\MediaApi
+# \MediaAPI
 
 All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DetectMainImageColor**](MediaApi.md#DetectMainImageColor) | **Get** /detect-color | Detect Main Image Color
-[**RescaleImage**](MediaApi.md#RescaleImage) | **Get** /rescale-image | Rescale Image
-[**SearchRoyaltyFreeImages**](MediaApi.md#SearchRoyaltyFreeImages) | **Get** /search-images | Search Royalty Free Images
+[**DetectMainImageColor**](MediaAPI.md#DetectMainImageColor) | **Get** /detect-color | Detect Main Image Color
+[**RescaleImage**](MediaAPI.md#RescaleImage) | **Get** /rescale-image | Rescale Image
+[**SearchRoyaltyFreeImages**](MediaAPI.md#SearchRoyaltyFreeImages) | **Get** /search-images | Search Royalty Free Images
 
 
 
 ## DetectMainImageColor
 
-> []InlineResponse20029 DetectMainImageColor(ctx).Url(url).Execute()
+> []DetectMainImageColor200ResponseInner DetectMainImageColor(ctx).Url(url).Execute()
 
 Detect Main Image Color
 
@@ -24,24 +24,24 @@ Detect Main Image Color
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM " // string | The url of the image for which the colors should be detected.
+	url := "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM " // string | The url of the image for which the colors should be detected.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaApi.DetectMainImageColor(context.Background()).Url(url).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaApi.DetectMainImageColor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `DetectMainImageColor`: []InlineResponse20029
-    fmt.Fprintf(os.Stdout, "Response from `MediaApi.DetectMainImageColor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.DetectMainImageColor(context.Background()).Url(url).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.DetectMainImageColor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectMainImageColor`: []DetectMainImageColor200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.DetectMainImageColor`: %v\n", resp)
 }
 ```
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]InlineResponse20029**](InlineResponse20029.md)
+[**[]DetectMainImageColor200ResponseInner**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -90,27 +90,27 @@ Rescale Image
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    url := "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM " // string | The url of the image to be rescaled.
-    width := int32(200) // int32 | The desired width of the rescaled image.
-    height := int32(200) // int32 | The desired height of the rescaled image.
-    crop := true // bool | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
+	url := "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM " // string | The url of the image to be rescaled.
+	width := int32(200) // int32 | The desired width of the rescaled image.
+	height := int32(200) // int32 | The desired height of the rescaled image.
+	crop := true // bool | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaApi.RescaleImage(context.Background()).Url(url).Width(width).Height(height).Crop(crop).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaApi.RescaleImage``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `RescaleImage`: map[string]interface{}
-    fmt.Fprintf(os.Stdout, "Response from `MediaApi.RescaleImage`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.RescaleImage(context.Background()).Url(url).Width(width).Height(height).Crop(crop).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.RescaleImage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RescaleImage`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.RescaleImage`: %v\n", resp)
 }
 ```
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## SearchRoyaltyFreeImages
 
-> InlineResponse20028 SearchRoyaltyFreeImages(ctx).Query(query).Number(number).Execute()
+> SearchRoyaltyFreeImages200Response SearchRoyaltyFreeImages(ctx).Query(query).Number(number).Execute()
 
 Search Royalty Free Images
 
@@ -162,25 +162,25 @@ Search Royalty Free Images
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
 )
 
 func main() {
-    query := "dogs" // string | The search query.
-    number := int32(3) // int32 | The number of images to return in range [1,10] (optional)
+	query := "dogs" // string | The search query.
+	number := int32(3) // int32 | The number of images to return in range [1,10] (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaApi.SearchRoyaltyFreeImages(context.Background()).Query(query).Number(number).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaApi.SearchRoyaltyFreeImages``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SearchRoyaltyFreeImages`: InlineResponse20028
-    fmt.Fprintf(os.Stdout, "Response from `MediaApi.SearchRoyaltyFreeImages`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.SearchRoyaltyFreeImages(context.Background()).Query(query).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchRoyaltyFreeImages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchRoyaltyFreeImages`: SearchRoyaltyFreeImages200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchRoyaltyFreeImages`: %v\n", resp)
 }
 ```
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

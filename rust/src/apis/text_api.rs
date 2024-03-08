@@ -173,7 +173,7 @@ pub enum TextStemmingError {
 
 
 /// The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-pub async fn correct_spelling(configuration: &configuration::Configuration, text: &str, language: &str) -> Result<crate::models::InlineResponse20016, Error<CorrectSpellingError>> {
+pub async fn correct_spelling(configuration: &configuration::Configuration, text: &str, language: &str) -> Result<crate::models::CorrectSpelling200Response, Error<CorrectSpellingError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -219,7 +219,7 @@ pub async fn correct_spelling(configuration: &configuration::Configuration, text
 }
 
 /// Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-pub async fn detect_language(configuration: &configuration::Configuration, text: &str) -> Result<Vec<crate::models::InlineResponse20017>, Error<DetectLanguageError>> {
+pub async fn detect_language(configuration: &configuration::Configuration, text: &str) -> Result<Vec<crate::models::DetectLanguage200ResponseInner>, Error<DetectLanguageError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -264,7 +264,7 @@ pub async fn detect_language(configuration: &configuration::Configuration, text:
 }
 
 /// Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-pub async fn detect_sentiment(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20018, Error<DetectSentimentError>> {
+pub async fn detect_sentiment(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::DetectSentiment200Response, Error<DetectSentimentError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -309,7 +309,7 @@ pub async fn detect_sentiment(configuration: &configuration::Configuration, text
 }
 
 /// Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-pub async fn extract_dates(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20021, Error<ExtractDatesError>> {
+pub async fn extract_dates(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::ExtractDates200Response, Error<ExtractDatesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -354,7 +354,7 @@ pub async fn extract_dates(configuration: &configuration::Configuration, text: &
 }
 
 /// Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-pub async fn extract_entities(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20027, Error<ExtractEntitiesError>> {
+pub async fn extract_entities(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::ExtractEntities200Response, Error<ExtractEntitiesError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -399,7 +399,7 @@ pub async fn extract_entities(configuration: &configuration::Configuration, text
 }
 
 /// Return synonyms of a word.
-pub async fn list_word_synonyms(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::InlineResponse20022, Error<ListWordSynonymsError>> {
+pub async fn list_word_synonyms(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::ListWordSynonyms200Response, Error<ListWordSynonymsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -444,7 +444,7 @@ pub async fn list_word_synonyms(configuration: &configuration::Configuration, wo
 }
 
 /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-pub async fn part_of_speech_tagging(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20023, Error<PartOfSpeechTaggingError>> {
+pub async fn part_of_speech_tagging(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::PartOfSpeechTagging200Response, Error<PartOfSpeechTaggingError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -489,7 +489,7 @@ pub async fn part_of_speech_tagging(configuration: &configuration::Configuration
 }
 
 /// Find the plural form of a word.
-pub async fn pluralize_word(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::InlineResponse20026, Error<PluralizeWordError>> {
+pub async fn pluralize_word(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::PluralizeWord200Response, Error<PluralizeWordError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -534,7 +534,7 @@ pub async fn pluralize_word(configuration: &configuration::Configuration, word: 
 }
 
 /// Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-pub async fn score_readability(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20020, Error<ScoreReadabilityError>> {
+pub async fn score_readability(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::ScoreReadability200Response, Error<ScoreReadabilityError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -579,7 +579,7 @@ pub async fn score_readability(configuration: &configuration::Configuration, tex
 }
 
 /// Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-pub async fn score_text(configuration: &configuration::Configuration, title: &str, text: &str) -> Result<crate::models::InlineResponse20019, Error<ScoreTextError>> {
+pub async fn score_text(configuration: &configuration::Configuration, title: &str, text: &str) -> Result<crate::models::ScoreText200Response, Error<ScoreTextError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -625,7 +625,7 @@ pub async fn score_text(configuration: &configuration::Configuration, title: &st
 }
 
 /// Find the singular form of a word.
-pub async fn singularize_word(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::InlineResponse20025, Error<SingularizeWordError>> {
+pub async fn singularize_word(configuration: &configuration::Configuration, word: &str) -> Result<crate::models::SingularizeWord200Response, Error<SingularizeWordError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -670,7 +670,7 @@ pub async fn singularize_word(configuration: &configuration::Configuration, word
 }
 
 /// The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-pub async fn text_stemming(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::InlineResponse20024, Error<TextStemmingError>> {
+pub async fn text_stemming(configuration: &configuration::Configuration, text: &str) -> Result<crate::models::TextStemming200Response, Error<TextStemmingError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

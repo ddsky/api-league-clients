@@ -11,7 +11,7 @@ Method | HTTP request | Description
 # **readKeyValueFromStore**
 ```objc
 -(NSURLSessionTask*) readKeyValueFromStoreWithKey: (NSString*) key
-        completionHandler: (void (^)(OAIInlineResponse20031* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIReadKeyValueFromStore200Response* output, NSError* error)) handler;
 ```
 
 Read Key Value from Store
@@ -39,7 +39,7 @@ OAIStorageApi*apiInstance = [[OAIStorageApi alloc] init];
 
 // Read Key Value from Store
 [apiInstance readKeyValueFromStoreWithKey:key
-          completionHandler: ^(OAIInlineResponse20031* output, NSError* error) {
+          completionHandler: ^(OAIReadKeyValueFromStore200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20031***](OAIInlineResponse20031.md)
+[**OAIReadKeyValueFromStore200Response***](OAIReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSURLSessionTask*) storeKeyValueGETWithKey: (NSString*) key
     value: (NSString*) value
-        completionHandler: (void (^)(OAIInlineResponse20032* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIStoreKeyValueGET200Response* output, NSError* error)) handler;
 ```
 
 Store Key Value (GET)
@@ -104,7 +104,7 @@ OAIStorageApi*apiInstance = [[OAIStorageApi alloc] init];
 // Store Key Value (GET)
 [apiInstance storeKeyValueGETWithKey:key
               value:value
-          completionHandler: ^(OAIInlineResponse20032* output, NSError* error) {
+          completionHandler: ^(OAIStoreKeyValueGET200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20032***](OAIInlineResponse20032.md)
+[**OAIStoreKeyValueGET200Response***](OAIStoreKeyValueGET200Response.md)
 
 ### Authorization
 

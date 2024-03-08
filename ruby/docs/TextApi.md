@@ -20,7 +20,7 @@ All URIs are relative to *https://api.apileague.com*
 
 ## correct_spelling
 
-> <InlineResponse20016> correct_spelling(text, language)
+> <CorrectSpelling200Response> correct_spelling(text, language)
 
 Correct Spelling
 
@@ -61,7 +61,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20016>, Integer, Hash)> correct_spelling_with_http_info(text, language)
+> <Array(<CorrectSpelling200Response>, Integer, Hash)> correct_spelling_with_http_info(text, language)
 
 ```ruby
 begin
@@ -69,7 +69,7 @@ begin
   data, status_code, headers = api_instance.correct_spelling_with_http_info(text, language)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20016>
+  p data # => <CorrectSpelling200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->correct_spelling_with_http_info: #{e}"
 end
@@ -84,7 +84,7 @@ end
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ end
 
 ## detect_language
 
-> <Array<InlineResponse20017>> detect_language(text)
+> <Array<DetectLanguage200ResponseInner>> detect_language(text)
 
 Detect Language
 
@@ -138,7 +138,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<InlineResponse20017>>, Integer, Hash)> detect_language_with_http_info(text)
+> <Array(<Array<DetectLanguage200ResponseInner>>, Integer, Hash)> detect_language_with_http_info(text)
 
 ```ruby
 begin
@@ -146,7 +146,7 @@ begin
   data, status_code, headers = api_instance.detect_language_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<InlineResponse20017>>
+  p data # => <Array<DetectLanguage200ResponseInner>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->detect_language_with_http_info: #{e}"
 end
@@ -160,7 +160,7 @@ end
 
 ### Return type
 
-[**Array&lt;InlineResponse20017&gt;**](InlineResponse20017.md)
+[**Array&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ end
 
 ## detect_sentiment
 
-> <InlineResponse20018> detect_sentiment(text)
+> <DetectSentiment200Response> detect_sentiment(text)
 
 Detect Sentiment
 
@@ -214,7 +214,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20018>, Integer, Hash)> detect_sentiment_with_http_info(text)
+> <Array(<DetectSentiment200Response>, Integer, Hash)> detect_sentiment_with_http_info(text)
 
 ```ruby
 begin
@@ -222,7 +222,7 @@ begin
   data, status_code, headers = api_instance.detect_sentiment_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20018>
+  p data # => <DetectSentiment200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->detect_sentiment_with_http_info: #{e}"
 end
@@ -236,7 +236,7 @@ end
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ end
 
 ## extract_dates
 
-> <InlineResponse20021> extract_dates(text)
+> <ExtractDates200Response> extract_dates(text)
 
 Extract Dates
 
@@ -290,7 +290,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20021>, Integer, Hash)> extract_dates_with_http_info(text)
+> <Array(<ExtractDates200Response>, Integer, Hash)> extract_dates_with_http_info(text)
 
 ```ruby
 begin
@@ -298,7 +298,7 @@ begin
   data, status_code, headers = api_instance.extract_dates_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20021>
+  p data # => <ExtractDates200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->extract_dates_with_http_info: #{e}"
 end
@@ -312,7 +312,7 @@ end
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -326,7 +326,7 @@ end
 
 ## extract_entities
 
-> <InlineResponse20027> extract_entities(text)
+> <ExtractEntities200Response> extract_entities(text)
 
 Extract Entities
 
@@ -366,7 +366,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20027>, Integer, Hash)> extract_entities_with_http_info(text)
+> <Array(<ExtractEntities200Response>, Integer, Hash)> extract_entities_with_http_info(text)
 
 ```ruby
 begin
@@ -374,7 +374,7 @@ begin
   data, status_code, headers = api_instance.extract_entities_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20027>
+  p data # => <ExtractEntities200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->extract_entities_with_http_info: #{e}"
 end
@@ -388,7 +388,7 @@ end
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ end
 
 ## list_word_synonyms
 
-> <InlineResponse20022> list_word_synonyms(word)
+> <ListWordSynonyms200Response> list_word_synonyms(word)
 
 List Word Synonyms
 
@@ -442,7 +442,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20022>, Integer, Hash)> list_word_synonyms_with_http_info(word)
+> <Array(<ListWordSynonyms200Response>, Integer, Hash)> list_word_synonyms_with_http_info(word)
 
 ```ruby
 begin
@@ -450,7 +450,7 @@ begin
   data, status_code, headers = api_instance.list_word_synonyms_with_http_info(word)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20022>
+  p data # => <ListWordSynonyms200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->list_word_synonyms_with_http_info: #{e}"
 end
@@ -464,7 +464,7 @@ end
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ end
 
 ## part_of_speech_tagging
 
-> <InlineResponse20023> part_of_speech_tagging(text)
+> <PartOfSpeechTagging200Response> part_of_speech_tagging(text)
 
 Part of Speech Tagging
 
@@ -518,7 +518,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20023>, Integer, Hash)> part_of_speech_tagging_with_http_info(text)
+> <Array(<PartOfSpeechTagging200Response>, Integer, Hash)> part_of_speech_tagging_with_http_info(text)
 
 ```ruby
 begin
@@ -526,7 +526,7 @@ begin
   data, status_code, headers = api_instance.part_of_speech_tagging_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20023>
+  p data # => <PartOfSpeechTagging200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->part_of_speech_tagging_with_http_info: #{e}"
 end
@@ -540,7 +540,7 @@ end
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -554,7 +554,7 @@ end
 
 ## pluralize_word
 
-> <InlineResponse20026> pluralize_word(word)
+> <PluralizeWord200Response> pluralize_word(word)
 
 Pluralize Word
 
@@ -594,7 +594,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20026>, Integer, Hash)> pluralize_word_with_http_info(word)
+> <Array(<PluralizeWord200Response>, Integer, Hash)> pluralize_word_with_http_info(word)
 
 ```ruby
 begin
@@ -602,7 +602,7 @@ begin
   data, status_code, headers = api_instance.pluralize_word_with_http_info(word)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20026>
+  p data # => <PluralizeWord200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->pluralize_word_with_http_info: #{e}"
 end
@@ -616,7 +616,7 @@ end
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ end
 
 ## score_readability
 
-> <InlineResponse20020> score_readability(text)
+> <ScoreReadability200Response> score_readability(text)
 
 Score Readability
 
@@ -670,7 +670,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20020>, Integer, Hash)> score_readability_with_http_info(text)
+> <Array(<ScoreReadability200Response>, Integer, Hash)> score_readability_with_http_info(text)
 
 ```ruby
 begin
@@ -678,7 +678,7 @@ begin
   data, status_code, headers = api_instance.score_readability_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20020>
+  p data # => <ScoreReadability200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->score_readability_with_http_info: #{e}"
 end
@@ -692,7 +692,7 @@ end
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -706,7 +706,7 @@ end
 
 ## score_text
 
-> <InlineResponse20019> score_text(title, text)
+> <ScoreText200Response> score_text(title, text)
 
 Score Text
 
@@ -747,7 +747,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20019>, Integer, Hash)> score_text_with_http_info(title, text)
+> <Array(<ScoreText200Response>, Integer, Hash)> score_text_with_http_info(title, text)
 
 ```ruby
 begin
@@ -755,7 +755,7 @@ begin
   data, status_code, headers = api_instance.score_text_with_http_info(title, text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20019>
+  p data # => <ScoreText200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->score_text_with_http_info: #{e}"
 end
@@ -770,7 +770,7 @@ end
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -784,7 +784,7 @@ end
 
 ## singularize_word
 
-> <InlineResponse20025> singularize_word(word)
+> <SingularizeWord200Response> singularize_word(word)
 
 Singularize Word
 
@@ -824,7 +824,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20025>, Integer, Hash)> singularize_word_with_http_info(word)
+> <Array(<SingularizeWord200Response>, Integer, Hash)> singularize_word_with_http_info(word)
 
 ```ruby
 begin
@@ -832,7 +832,7 @@ begin
   data, status_code, headers = api_instance.singularize_word_with_http_info(word)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20025>
+  p data # => <SingularizeWord200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->singularize_word_with_http_info: #{e}"
 end
@@ -846,7 +846,7 @@ end
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -860,7 +860,7 @@ end
 
 ## text_stemming
 
-> <InlineResponse20024> text_stemming(text)
+> <TextStemming200Response> text_stemming(text)
 
 Text Stemming
 
@@ -900,7 +900,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InlineResponse20024>, Integer, Hash)> text_stemming_with_http_info(text)
+> <Array(<TextStemming200Response>, Integer, Hash)> text_stemming_with_http_info(text)
 
 ```ruby
 begin
@@ -908,7 +908,7 @@ begin
   data, status_code, headers = api_instance.text_stemming_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <InlineResponse20024>
+  p data # => <TextStemming200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TextApi->text_stemming_with_http_info: #{e}"
 end
@@ -922,7 +922,7 @@ end
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 

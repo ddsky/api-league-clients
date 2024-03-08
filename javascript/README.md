@@ -56,11 +56,11 @@ npm run build
 
 #### git
 
-If the library is hosted at a git repository, e.g.https://github.com/GIT_USER_ID/GIT_REPO_ID
+If the library is hosted at a git repository, e.g.https://github.com/ddsky/api-league-clients/tree/master/javascript/
 then install it via:
 
 ```shell
-    npm install GIT_USER_ID/GIT_REPO_ID --save
+    npm install ddsky/api-league-clients/tree/master/javascript/ --save
 ```
 
 ### For browser
@@ -175,76 +175,74 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [ApiLeague.InlineResponse200](docs/InlineResponse200.md)
- - [ApiLeague.InlineResponse2001](docs/InlineResponse2001.md)
- - [ApiLeague.InlineResponse20010](docs/InlineResponse20010.md)
- - [ApiLeague.InlineResponse20011](docs/InlineResponse20011.md)
- - [ApiLeague.InlineResponse20012](docs/InlineResponse20012.md)
- - [ApiLeague.InlineResponse20013](docs/InlineResponse20013.md)
- - [ApiLeague.InlineResponse20014](docs/InlineResponse20014.md)
- - [ApiLeague.InlineResponse20014Authors](docs/InlineResponse20014Authors.md)
- - [ApiLeague.InlineResponse20015](docs/InlineResponse20015.md)
- - [ApiLeague.InlineResponse20015Results](docs/InlineResponse20015Results.md)
- - [ApiLeague.InlineResponse20016](docs/InlineResponse20016.md)
- - [ApiLeague.InlineResponse20017](docs/InlineResponse20017.md)
- - [ApiLeague.InlineResponse20018](docs/InlineResponse20018.md)
- - [ApiLeague.InlineResponse20018Document](docs/InlineResponse20018Document.md)
- - [ApiLeague.InlineResponse20018Sentences](docs/InlineResponse20018Sentences.md)
- - [ApiLeague.InlineResponse20019](docs/InlineResponse20019.md)
- - [ApiLeague.InlineResponse20019Interestingness](docs/InlineResponse20019Interestingness.md)
- - [ApiLeague.InlineResponse20019InterestingnessSubscores](docs/InlineResponse20019InterestingnessSubscores.md)
- - [ApiLeague.InlineResponse20019Readability](docs/InlineResponse20019Readability.md)
- - [ApiLeague.InlineResponse20019ReadabilityMainscores](docs/InlineResponse20019ReadabilityMainscores.md)
- - [ApiLeague.InlineResponse20019ReadabilitySubscores](docs/InlineResponse20019ReadabilitySubscores.md)
- - [ApiLeague.InlineResponse20019Skimmability](docs/InlineResponse20019Skimmability.md)
- - [ApiLeague.InlineResponse20019SkimmabilityMainscores](docs/InlineResponse20019SkimmabilityMainscores.md)
- - [ApiLeague.InlineResponse20019SkimmabilitySubscores](docs/InlineResponse20019SkimmabilitySubscores.md)
- - [ApiLeague.InlineResponse20019Style](docs/InlineResponse20019Style.md)
- - [ApiLeague.InlineResponse20019StyleSubscores](docs/InlineResponse20019StyleSubscores.md)
- - [ApiLeague.InlineResponse2002](docs/InlineResponse2002.md)
- - [ApiLeague.InlineResponse20020](docs/InlineResponse20020.md)
- - [ApiLeague.InlineResponse20021](docs/InlineResponse20021.md)
- - [ApiLeague.InlineResponse20021Dates](docs/InlineResponse20021Dates.md)
- - [ApiLeague.InlineResponse20022](docs/InlineResponse20022.md)
- - [ApiLeague.InlineResponse20023](docs/InlineResponse20023.md)
- - [ApiLeague.InlineResponse20024](docs/InlineResponse20024.md)
- - [ApiLeague.InlineResponse20025](docs/InlineResponse20025.md)
- - [ApiLeague.InlineResponse20026](docs/InlineResponse20026.md)
- - [ApiLeague.InlineResponse20027](docs/InlineResponse20027.md)
- - [ApiLeague.InlineResponse20027Entities](docs/InlineResponse20027Entities.md)
- - [ApiLeague.InlineResponse20028](docs/InlineResponse20028.md)
- - [ApiLeague.InlineResponse20028Images](docs/InlineResponse20028Images.md)
- - [ApiLeague.InlineResponse20028License](docs/InlineResponse20028License.md)
- - [ApiLeague.InlineResponse20029](docs/InlineResponse20029.md)
- - [ApiLeague.InlineResponse2002News](docs/InlineResponse2002News.md)
- - [ApiLeague.InlineResponse2003](docs/InlineResponse2003.md)
- - [ApiLeague.InlineResponse20030](docs/InlineResponse20030.md)
- - [ApiLeague.InlineResponse20031](docs/InlineResponse20031.md)
- - [ApiLeague.InlineResponse20032](docs/InlineResponse20032.md)
- - [ApiLeague.InlineResponse2004](docs/InlineResponse2004.md)
- - [ApiLeague.InlineResponse2004Jokes](docs/InlineResponse2004Jokes.md)
- - [ApiLeague.InlineResponse2005](docs/InlineResponse2005.md)
- - [ApiLeague.InlineResponse2005Memes](docs/InlineResponse2005Memes.md)
- - [ApiLeague.InlineResponse2006](docs/InlineResponse2006.md)
- - [ApiLeague.InlineResponse2007](docs/InlineResponse2007.md)
- - [ApiLeague.InlineResponse2007Images](docs/InlineResponse2007Images.md)
- - [ApiLeague.InlineResponse2008](docs/InlineResponse2008.md)
- - [ApiLeague.InlineResponse2009](docs/InlineResponse2009.md)
- - [ApiLeague.InlineResponse200Books](docs/InlineResponse200Books.md)
+ - [ApiLeague.ConvertUnits200Response](docs/ConvertUnits200Response.md)
+ - [ApiLeague.CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
+ - [ApiLeague.DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
+ - [ApiLeague.DetectMainImageColor200ResponseInner](docs/DetectMainImageColor200ResponseInner.md)
+ - [ApiLeague.DetectSentiment200Response](docs/DetectSentiment200Response.md)
+ - [ApiLeague.DetectSentiment200ResponseDocument](docs/DetectSentiment200ResponseDocument.md)
+ - [ApiLeague.DetectSentiment200ResponseSentencesInner](docs/DetectSentiment200ResponseSentencesInner.md)
+ - [ApiLeague.ExtractAuthors200Response](docs/ExtractAuthors200Response.md)
+ - [ApiLeague.ExtractAuthors200ResponseAuthorsInner](docs/ExtractAuthors200ResponseAuthorsInner.md)
+ - [ApiLeague.ExtractContentFromAWebPage200Response](docs/ExtractContentFromAWebPage200Response.md)
+ - [ApiLeague.ExtractDates200Response](docs/ExtractDates200Response.md)
+ - [ApiLeague.ExtractDates200ResponseDatesInner](docs/ExtractDates200ResponseDatesInner.md)
+ - [ApiLeague.ExtractEntities200Response](docs/ExtractEntities200Response.md)
+ - [ApiLeague.ExtractEntities200ResponseEntitiesInner](docs/ExtractEntities200ResponseEntitiesInner.md)
+ - [ApiLeague.ExtractNews200Response](docs/ExtractNews200Response.md)
+ - [ApiLeague.ExtractPublishDate200Response](docs/ExtractPublishDate200Response.md)
+ - [ApiLeague.FindSimilarBooks200Response](docs/FindSimilarBooks200Response.md)
+ - [ApiLeague.GenerateNonsenseWord200Response](docs/GenerateNonsenseWord200Response.md)
+ - [ApiLeague.ListWordSynonyms200Response](docs/ListWordSynonyms200Response.md)
+ - [ApiLeague.PartOfSpeechTagging200Response](docs/PartOfSpeechTagging200Response.md)
+ - [ApiLeague.PluralizeWord200Response](docs/PluralizeWord200Response.md)
+ - [ApiLeague.RandomMeme200Response](docs/RandomMeme200Response.md)
+ - [ApiLeague.RandomPoem200Response](docs/RandomPoem200Response.md)
+ - [ApiLeague.RandomQuote200Response](docs/RandomQuote200Response.md)
+ - [ApiLeague.RandomTrivia200Response](docs/RandomTrivia200Response.md)
+ - [ApiLeague.ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [ApiLeague.ScoreReadability200Response](docs/ScoreReadability200Response.md)
+ - [ApiLeague.ScoreText200Response](docs/ScoreText200Response.md)
+ - [ApiLeague.ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
+ - [ApiLeague.ScoreText200ResponseInterestingnessSubscores](docs/ScoreText200ResponseInterestingnessSubscores.md)
+ - [ApiLeague.ScoreText200ResponseReadability](docs/ScoreText200ResponseReadability.md)
+ - [ApiLeague.ScoreText200ResponseReadabilityMainscores](docs/ScoreText200ResponseReadabilityMainscores.md)
+ - [ApiLeague.ScoreText200ResponseReadabilitySubscores](docs/ScoreText200ResponseReadabilitySubscores.md)
+ - [ApiLeague.ScoreText200ResponseSkimmability](docs/ScoreText200ResponseSkimmability.md)
+ - [ApiLeague.ScoreText200ResponseSkimmabilityMainscores](docs/ScoreText200ResponseSkimmabilityMainscores.md)
+ - [ApiLeague.ScoreText200ResponseSkimmabilitySubscores](docs/ScoreText200ResponseSkimmabilitySubscores.md)
+ - [ApiLeague.ScoreText200ResponseStyle](docs/ScoreText200ResponseStyle.md)
+ - [ApiLeague.ScoreText200ResponseStyleSubscores](docs/ScoreText200ResponseStyleSubscores.md)
+ - [ApiLeague.SearchBooks200Response](docs/SearchBooks200Response.md)
+ - [ApiLeague.SearchBooks200ResponseBooksInner](docs/SearchBooks200ResponseBooksInner.md)
+ - [ApiLeague.SearchGifs200Response](docs/SearchGifs200Response.md)
+ - [ApiLeague.SearchGifs200ResponseImagesInner](docs/SearchGifs200ResponseImagesInner.md)
+ - [ApiLeague.SearchJokes200Response](docs/SearchJokes200Response.md)
+ - [ApiLeague.SearchJokes200ResponseJokesInner](docs/SearchJokes200ResponseJokesInner.md)
+ - [ApiLeague.SearchMemes200Response](docs/SearchMemes200Response.md)
+ - [ApiLeague.SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
+ - [ApiLeague.SearchNews200Response](docs/SearchNews200Response.md)
+ - [ApiLeague.SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [ApiLeague.SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
+ - [ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
+ - [ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)
+ - [ApiLeague.SearchWeb200Response](docs/SearchWeb200Response.md)
+ - [ApiLeague.SearchWeb200ResponseResultsInner](docs/SearchWeb200ResponseResultsInner.md)
+ - [ApiLeague.SingularizeWord200Response](docs/SingularizeWord200Response.md)
+ - [ApiLeague.StoreKeyValueGET200Response](docs/StoreKeyValueGET200Response.md)
+ - [ApiLeague.TextStemming200Response](docs/TextStemming200Response.md)
 
 
 ## Documentation for Authorization
 
 
-
+Authentication schemes defined for the API:
 ### apiKey
 
 
 - **Type**: API key
 - **API key parameter name**: api-key
 - **Location**: URL query string
-
-
 
 ### headerApiKey
 

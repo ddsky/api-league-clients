@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20011.h"
+#import "OAIRandomPoem200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -59,10 +59,10 @@ extern NSInteger kOAIArtApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20011*
+/// @return OAIRandomPoem200Response*
 -(NSURLSessionTask*) randomPoemWithMinLines: (NSNumber*) minLines
     maxLines: (NSNumber*) maxLines
-    completionHandler: (void (^)(OAIInlineResponse20011* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIRandomPoem200Response* output, NSError* error)) handler;
 
 
 

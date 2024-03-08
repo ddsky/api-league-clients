@@ -70,7 +70,7 @@ import qualified Prelude as P
 -- 
 readKeyValueFromStore
   :: Key -- ^ "key" -  The key for which the value is stored (max length 255 characters).
-  -> APILeagueRequest ReadKeyValueFromStore MimeNoContent InlineResponse20031 MimeJSON
+  -> APILeagueRequest ReadKeyValueFromStore MimeNoContent ReadKeyValueFromStore200Response MimeJSON
 readKeyValueFromStore (Key key) =
   _mkRequest "GET" ["/read-key-value"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)
@@ -95,7 +95,7 @@ instance Produces ReadKeyValueFromStore MimeJSON
 storeKeyValueGET
   :: Key -- ^ "key" -  The key for which the value is stored (max length 255 characters).
   -> Value -- ^ "value" -  The value that is supposed to be stored (max length 10,000 characters).
-  -> APILeagueRequest StoreKeyValueGET MimeNoContent InlineResponse20032 MimeJSON
+  -> APILeagueRequest StoreKeyValueGET MimeNoContent StoreKeyValueGET200Response MimeJSON
 storeKeyValueGET (Key key) (Value value) =
   _mkRequest "GET" ["/store-key-value"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyApiKey)

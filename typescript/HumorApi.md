@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **generateNonsenseWord**
-> InlineResponse2008 generateNonsenseWord()
+> GenerateNonsenseWord200Response generateNonsenseWord()
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**InlineResponse2008**
+**GenerateNonsenseWord200Response**
 
 ### Authorization
 
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **randomJoke**
-> InlineResponse2004Jokes randomJoke()
+> SearchJokes200ResponseJokesInner randomJoke()
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2004Jokes**
+**SearchJokes200ResponseJokesInner**
 
 ### Authorization
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **randomMeme**
-> InlineResponse2006 randomMeme()
+> RandomMeme200Response randomMeme()
 
 Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
@@ -155,7 +155,7 @@ let body:.HumorApiRandomMemeRequest = {
   keywords: "airplane",
   // boolean | Whether the keywords must occur in the image. (optional)
   keywordsInImage: true,
-  // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+  // string | The media type (either \'image\', \'video\' or even specific format such as \'jpg\', \'png\', or \'gif\'). (optional)
   mediaType: "image",
   // number | The minimum rating in range [0.0-1.0] of the meme. (optional)
   minRating: 0,
@@ -175,14 +175,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keywords** | [**string**] | A comma-separated list of words that must occur in the meme. | (optional) defaults to undefined
  **keywordsInImage** | [**boolean**] | Whether the keywords must occur in the image. | (optional) defaults to undefined
- **mediaType** | [**string**] | The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | (optional) defaults to undefined
+ **mediaType** | [**string**] | The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;). | (optional) defaults to undefined
  **minRating** | [**number**] | The minimum rating in range [0.0-1.0] of the meme. | (optional) defaults to undefined
  **maxAgeDays** | [**number**] | The maximum age of the meme in days. | (optional) defaults to undefined
 
 
 ### Return type
 
-**InlineResponse2006**
+**RandomMeme200Response**
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchGifs**
-> InlineResponse2007 searchGifs()
+> SearchGifs200Response searchGifs()
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2007**
+**SearchGifs200Response**
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchJokes**
-> InlineResponse2004 searchJokes()
+> SearchJokes200Response searchJokes()
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2004**
+**SearchJokes200Response**
 
 ### Authorization
 
@@ -349,9 +349,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **searchMemes**
-> InlineResponse2005 searchMemes()
+> SearchMemes200Response searchMemes()
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
 
 ### Example
 
@@ -368,7 +368,7 @@ let body:.HumorApiSearchMemesRequest = {
   keywords: "rocket",
   // boolean | Whether the keywords must occur in the image. (optional)
   keywordsInImage: true,
-  // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+  // string | The media type (either \'image\', \'video\' or even specific format such as \'jpg\', \'png\', or \'gif\'). (optional)
   mediaType: "image",
   // number | The minimum rating in range [0.0,1.0] of the meme. (optional)
   minRating: 0,
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keywords** | [**string**] | A comma-separated list of words that must occur in the meme. | (optional) defaults to undefined
  **keywordsInImage** | [**boolean**] | Whether the keywords must occur in the image. | (optional) defaults to undefined
- **mediaType** | [**string**] | The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | (optional) defaults to undefined
+ **mediaType** | [**string**] | The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;). | (optional) defaults to undefined
  **minRating** | [**number**] | The minimum rating in range [0.0,1.0] of the meme. | (optional) defaults to undefined
  **maxAgeDays** | [**number**] | The maximum age of the meme in days. | (optional) defaults to undefined
  **offset** | [**number**] | The number of memes to skip, between 0 and 1000. | (optional) defaults to undefined
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**InlineResponse2005**
+**SearchMemes200Response**
 
 ### Authorization
 

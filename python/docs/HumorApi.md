@@ -1,4 +1,4 @@
-# openapi_client.HumorApi
+# apileague.HumorApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **generate_nonsense_word**
-> InlineResponse2008 generate_nonsense_word()
+> GenerateNonsenseWord200Response generate_nonsense_word()
 
 Generate Nonsense Word
 
@@ -25,14 +25,14 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2008 import InlineResponse2008
+import apileague
+from apileague.models.generate_nonsense_word200_response import GenerateNonsenseWord200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -42,38 +42,40 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
+    api_instance = apileague.HumorApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
     try:
         # Generate Nonsense Word
         api_response = api_instance.generate_nonsense_word()
+        print("The response of HumorApi->generate_nonsense_word:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->generate_nonsense_word: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -83,7 +85,6 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -100,7 +101,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_joke**
-> InlineResponse2004Jokes random_joke()
+> SearchJokes200ResponseJokesInner random_joke(include_tags=include_tags, exclude_tags=exclude_tags, min_rating=min_rating, max_length=max_length)
 
 Random Joke
 
@@ -112,14 +113,14 @@ This is a simple API that returns a random joke. You can filter the jokes by tag
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2004_jokes import InlineResponse2004Jokes
+import apileague
+from apileague.models.search_jokes200_response_jokes_inner import SearchJokes200ResponseJokesInner
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -129,49 +130,50 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
-    include_tags = "animal" # str | A comma-separated list of tags the jokes should have. (optional)
-    exclude_tags = "nsfw,dark" # str | A comma-separated list of tags the jokes must not have. (optional)
+    api_instance = apileague.HumorApi(api_client)
+    include_tags = 'animal' # str | A comma-separated list of tags the jokes should have. (optional)
+    exclude_tags = 'nsfw,dark' # str | A comma-separated list of tags the jokes must not have. (optional)
     min_rating = 0 # float | The minimum rating in range [0.0,1.0] of the jokes. (optional)
     max_length = 140 # int | The maximum length of the joke in letters. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Random Joke
         api_response = api_instance.random_joke(include_tags=include_tags, exclude_tags=exclude_tags, min_rating=min_rating, max_length=max_length)
+        print("The response of HumorApi->random_joke:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->random_joke: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include_tags** | **str**| A comma-separated list of tags the jokes should have. | [optional]
- **exclude_tags** | **str**| A comma-separated list of tags the jokes must not have. | [optional]
- **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
- **max_length** | **int**| The maximum length of the joke in letters. | [optional]
+ **include_tags** | **str**| A comma-separated list of tags the jokes should have. | [optional] 
+ **exclude_tags** | **str**| A comma-separated list of tags the jokes must not have. | [optional] 
+ **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] 
+ **max_length** | **int**| The maximum length of the joke in letters. | [optional] 
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -181,7 +183,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -198,7 +199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_meme**
-> InlineResponse2006 random_meme()
+> RandomMeme200Response random_meme(keywords=keywords, keywords_in_image=keywords_in_image, media_type=media_type, min_rating=min_rating, max_age_days=max_age_days)
 
 Random Meme
 
@@ -210,14 +211,14 @@ Get a random meme out of over 200,000+ memes. To get the latest memes, you can u
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2006 import InlineResponse2006
+import apileague
+from apileague.models.random_meme200_response import RandomMeme200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -227,51 +228,52 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
-    keywords = "airplane" # str | A comma-separated list of words that must occur in the meme. (optional)
-    keywords_in_image = True # bool | Whether the keywords must occur in the image. (optional)
-    media_type = "image" # str | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+    api_instance = apileague.HumorApi(api_client)
+    keywords = 'airplane' # str | A comma-separated list of words that must occur in the meme. (optional)
+    keywords_in_image = true # bool | Whether the keywords must occur in the image. (optional)
+    media_type = 'image' # str | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
     min_rating = 0 # float | The minimum rating in range [0.0-1.0] of the meme. (optional)
     max_age_days = 30 # int | The maximum age of the meme in days. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Random Meme
         api_response = api_instance.random_meme(keywords=keywords, keywords_in_image=keywords_in_image, media_type=media_type, min_rating=min_rating, max_age_days=max_age_days)
+        print("The response of HumorApi->random_meme:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->random_meme: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords** | **str**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional]
- **media_type** | **str**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **min_rating** | **float**| The minimum rating in range [0.0-1.0] of the meme. | [optional]
- **max_age_days** | **int**| The maximum age of the meme in days. | [optional]
+ **keywords** | **str**| A comma-separated list of words that must occur in the meme. | [optional] 
+ **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] 
+ **media_type** | **str**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] 
+ **min_rating** | **float**| The minimum rating in range [0.0-1.0] of the meme. | [optional] 
+ **max_age_days** | **int**| The maximum age of the meme in days. | [optional] 
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -281,7 +283,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -298,7 +299,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_gifs**
-> InlineResponse2007 search_gifs(query)
+> SearchGifs200Response search_gifs(query, number=number)
 
 Search Gifs
 
@@ -310,14 +311,14 @@ Search through hundreds of thousands of gifs to match any reaction you want. The
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2007 import InlineResponse2007
+import apileague
+from apileague.models.search_gifs200_response import SearchGifs200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -327,53 +328,46 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
-    query = "dogs" # str | The search query.
+    api_instance = apileague.HumorApi(api_client)
+    query = 'dogs' # str | The search query.
     number = 5 # int | The number of gifs to return in range [1,10] (optional)
 
-    # example passing only required values which don't have defaults set
-    try:
-        # Search Gifs
-        api_response = api_instance.search_gifs(query)
-        pprint(api_response)
-    except openapi_client.ApiException as e:
-        print("Exception when calling HumorApi->search_gifs: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Search Gifs
         api_response = api_instance.search_gifs(query, number=number)
+        print("The response of HumorApi->search_gifs:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->search_gifs: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**| The search query. |
- **number** | **int**| The number of gifs to return in range [1,10] | [optional]
+ **query** | **str**| The search query. | 
+ **number** | **int**| The number of gifs to return in range [1,10] | [optional] 
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -383,7 +377,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -400,7 +393,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_jokes**
-> InlineResponse2004 search_jokes()
+> SearchJokes200Response search_jokes(keywords=keywords, include_tags=include_tags, exclude_tags=exclude_tags, min_rating=min_rating, max_length=max_length, offset=offset, number=number)
 
 Search Jokes
 
@@ -412,14 +405,14 @@ With over 50,000 jokes, you should find something for any occasion. There are 27
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2004 import InlineResponse2004
+import apileague
+from apileague.models.search_jokes200_response import SearchJokes200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -429,55 +422,56 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
-    keywords = "horse,man" # str | A comma-separated list of words that must occur in the joke. (optional)
-    include_tags = "animal" # str | A comma-separated list of tags the jokes should have. (optional)
-    exclude_tags = "nsfw,dark" # str | A comma-separated list of tags the jokes must not have. (optional)
+    api_instance = apileague.HumorApi(api_client)
+    keywords = 'horse,man' # str | A comma-separated list of words that must occur in the joke. (optional)
+    include_tags = 'animal' # str | A comma-separated list of tags the jokes should have. (optional)
+    exclude_tags = 'nsfw,dark' # str | A comma-separated list of tags the jokes must not have. (optional)
     min_rating = 0 # float | The minimum rating (0-10) of the jokes. (optional)
     max_length = 140 # float | The maximum length of the joke in letters. (optional)
     offset = 0 # int | The number of jokes to skip, between 0 and 1000. (optional)
     number = 3 # int | The number of jokes, between 1 and 10. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Search Jokes
         api_response = api_instance.search_jokes(keywords=keywords, include_tags=include_tags, exclude_tags=exclude_tags, min_rating=min_rating, max_length=max_length, offset=offset, number=number)
+        print("The response of HumorApi->search_jokes:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->search_jokes: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords** | **str**| A comma-separated list of words that must occur in the joke. | [optional]
- **include_tags** | **str**| A comma-separated list of tags the jokes should have. | [optional]
- **exclude_tags** | **str**| A comma-separated list of tags the jokes must not have. | [optional]
- **min_rating** | **float**| The minimum rating (0-10) of the jokes. | [optional]
- **max_length** | **float**| The maximum length of the joke in letters. | [optional]
- **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional]
- **number** | **int**| The number of jokes, between 1 and 10. | [optional]
+ **keywords** | **str**| A comma-separated list of words that must occur in the joke. | [optional] 
+ **include_tags** | **str**| A comma-separated list of tags the jokes should have. | [optional] 
+ **exclude_tags** | **str**| A comma-separated list of tags the jokes must not have. | [optional] 
+ **min_rating** | **float**| The minimum rating (0-10) of the jokes. | [optional] 
+ **max_length** | **float**| The maximum length of the joke in letters. | [optional] 
+ **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional] 
+ **number** | **int**| The number of jokes, between 1 and 10. | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -487,7 +481,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 
@@ -504,7 +497,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_memes**
-> InlineResponse2005 search_memes()
+> SearchMemes200Response search_memes(keywords=keywords, keywords_in_image=keywords_in_image, media_type=media_type, min_rating=min_rating, max_age_days=max_age_days, offset=offset, number=number)
 
 Search Memes
 
@@ -516,14 +509,14 @@ With over 200,000 memes, you'll surely find something funny. You can even search
 * Api Key Authentication (headerApiKey):
 
 ```python
-import time
-import openapi_client
-from com.apileague import humor_api
-from openapi_client.model.inline_response2005 import InlineResponse2005
+import apileague
+from apileague.models.search_memes200_response import SearchMemes200Response
+from apileague.rest import ApiException
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.apileague.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = apileague.Configuration(
     host = "https://api.apileague.com"
 )
 
@@ -533,55 +526,56 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = 'YOUR_API_KEY'
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
 
 # Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = 'YOUR_API_KEY'
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['headerApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = humor_api.HumorApi(api_client)
-    keywords = "rocket" # str | A comma-separated list of words that must occur in the meme. (optional)
-    keywords_in_image = True # bool | Whether the keywords must occur in the image. (optional)
-    media_type = "image" # str | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
+    api_instance = apileague.HumorApi(api_client)
+    keywords = 'rocket' # str | A comma-separated list of words that must occur in the meme. (optional)
+    keywords_in_image = true # bool | Whether the keywords must occur in the image. (optional)
+    media_type = 'image' # str | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
     min_rating = 0 # float | The minimum rating in range [0.0,1.0] of the meme. (optional)
     max_age_days = 30 # int | The maximum age of the meme in days. (optional)
     offset = 0 # int | The number of memes to skip, between 0 and 1000. (optional)
     number = 3 # int | The number of memes, between 0 and 10. (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # Search Memes
         api_response = api_instance.search_memes(keywords=keywords, keywords_in_image=keywords_in_image, media_type=media_type, min_rating=min_rating, max_age_days=max_age_days, offset=offset, number=number)
+        print("The response of HumorApi->search_memes:\n")
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except Exception as e:
         print("Exception when calling HumorApi->search_memes: %s\n" % e)
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keywords** | **str**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional]
- **media_type** | **str**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
- **max_age_days** | **int**| The maximum age of the meme in days. | [optional]
- **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional]
- **number** | **int**| The number of memes, between 0 and 10. | [optional]
+ **keywords** | **str**| A comma-separated list of words that must occur in the meme. | [optional] 
+ **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] 
+ **media_type** | **str**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] 
+ **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
+ **max_age_days** | **int**| The maximum age of the meme in days. | [optional] 
+ **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional] 
+ **number** | **int**| The number of memes, between 0 and 10. | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 
@@ -591,7 +585,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
 
 ### HTTP response details
 

@@ -1,4 +1,4 @@
-# com.apileague.client\ArtApi
+# \ArtApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Required | Notes
 
 ## random_poem
 
-> crate::models::InlineResponse20011 random_poem(min_lines, max_lines)
+> crate::models::RandomPoem200Response random_poem(min_lines, max_lines)
 Random Poem
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InlineResponse20011**](inline_response_200_11.md)
+[**crate::models::RandomPoem200Response**](randomPoem_200_response.md)
 
 ### Authorization
 

@@ -27,18 +27,18 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse20016;
-import com.apileague.client.model.InlineResponse20017;
-import com.apileague.client.model.InlineResponse20018;
-import com.apileague.client.model.InlineResponse20019;
-import com.apileague.client.model.InlineResponse20020;
-import com.apileague.client.model.InlineResponse20021;
-import com.apileague.client.model.InlineResponse20022;
-import com.apileague.client.model.InlineResponse20023;
-import com.apileague.client.model.InlineResponse20024;
-import com.apileague.client.model.InlineResponse20025;
-import com.apileague.client.model.InlineResponse20026;
-import com.apileague.client.model.InlineResponse20027;
+import com.apileague.client.model.CorrectSpelling200Response;
+import com.apileague.client.model.DetectLanguage200ResponseInner;
+import com.apileague.client.model.DetectSentiment200Response;
+import com.apileague.client.model.ExtractDates200Response;
+import com.apileague.client.model.ExtractEntities200Response;
+import com.apileague.client.model.ListWordSynonyms200Response;
+import com.apileague.client.model.PartOfSpeechTagging200Response;
+import com.apileague.client.model.PluralizeWord200Response;
+import com.apileague.client.model.ScoreReadability200Response;
+import com.apileague.client.model.ScoreText200Response;
+import com.apileague.client.model.SingularizeWord200Response;
+import com.apileague.client.model.TextStemming200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -106,7 +106,6 @@ public class TextApi {
      */
     public okhttp3.Call correctSpellingCall(String text, String language, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -147,7 +146,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -160,20 +158,17 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call correctSpellingValidateBeforeCall(String text, String language, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling correctSpelling(Async)");
         }
-        
+
         // verify the required parameter 'language' is set
         if (language == null) {
             throw new ApiException("Missing the required parameter 'language' when calling correctSpelling(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = correctSpellingCall(text, language, _callback);
-        return localVarCall;
+        return correctSpellingCall(text, language, _callback);
 
     }
 
@@ -182,7 +177,7 @@ public class TextApi {
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
      * @param text The text to be corrected. (required)
      * @param language The language of the text, one of en, de, es, fr, or it. (required)
-     * @return InlineResponse20016
+     * @return CorrectSpelling200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -198,8 +193,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
      */
-    public InlineResponse20016 correctSpelling(String text, String language) throws ApiException {
-        ApiResponse<InlineResponse20016> localVarResp = correctSpellingWithHttpInfo(text, language);
+    public CorrectSpelling200Response correctSpelling(String text, String language) throws ApiException {
+        ApiResponse<CorrectSpelling200Response> localVarResp = correctSpellingWithHttpInfo(text, language);
         return localVarResp.getData();
     }
 
@@ -208,7 +203,7 @@ public class TextApi {
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
      * @param text The text to be corrected. (required)
      * @param language The language of the text, one of en, de, es, fr, or it. (required)
-     * @return ApiResponse&lt;InlineResponse20016&gt;
+     * @return ApiResponse&lt;CorrectSpelling200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -224,9 +219,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
      */
-    public ApiResponse<InlineResponse20016> correctSpellingWithHttpInfo(String text, String language) throws ApiException {
+    public ApiResponse<CorrectSpelling200Response> correctSpellingWithHttpInfo(String text, String language) throws ApiException {
         okhttp3.Call localVarCall = correctSpellingValidateBeforeCall(text, language, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<CorrectSpelling200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -252,10 +247,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
      */
-    public okhttp3.Call correctSpellingAsync(String text, String language, final ApiCallback<InlineResponse20016> _callback) throws ApiException {
+    public okhttp3.Call correctSpellingAsync(String text, String language, final ApiCallback<CorrectSpelling200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = correctSpellingValidateBeforeCall(text, language, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20016>(){}.getType();
+        Type localVarReturnType = new TypeToken<CorrectSpelling200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -281,7 +276,6 @@ public class TextApi {
      */
     public okhttp3.Call detectLanguageCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -318,7 +312,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -331,15 +324,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call detectLanguageValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling detectLanguage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = detectLanguageCall(text, _callback);
-        return localVarCall;
+        return detectLanguageCall(text, _callback);
 
     }
 
@@ -347,7 +337,7 @@ public class TextApi {
      * Detect Language
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
      * @param text The text for which the language should be detected. (required)
-     * @return List&lt;InlineResponse20017&gt;
+     * @return List&lt;DetectLanguage200ResponseInner&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -363,8 +353,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
      */
-    public List<InlineResponse20017> detectLanguage(String text) throws ApiException {
-        ApiResponse<List<InlineResponse20017>> localVarResp = detectLanguageWithHttpInfo(text);
+    public List<DetectLanguage200ResponseInner> detectLanguage(String text) throws ApiException {
+        ApiResponse<List<DetectLanguage200ResponseInner>> localVarResp = detectLanguageWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -372,7 +362,7 @@ public class TextApi {
      * Detect Language
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
      * @param text The text for which the language should be detected. (required)
-     * @return ApiResponse&lt;List&lt;InlineResponse20017&gt;&gt;
+     * @return ApiResponse&lt;List&lt;DetectLanguage200ResponseInner&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -388,9 +378,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
      */
-    public ApiResponse<List<InlineResponse20017>> detectLanguageWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<List<DetectLanguage200ResponseInner>> detectLanguageWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = detectLanguageValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20017>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DetectLanguage200ResponseInner>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -415,10 +405,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
      */
-    public okhttp3.Call detectLanguageAsync(String text, final ApiCallback<List<InlineResponse20017>> _callback) throws ApiException {
+    public okhttp3.Call detectLanguageAsync(String text, final ApiCallback<List<DetectLanguage200ResponseInner>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detectLanguageValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<List<InlineResponse20017>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DetectLanguage200ResponseInner>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -444,7 +434,6 @@ public class TextApi {
      */
     public okhttp3.Call detectSentimentCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -481,7 +470,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -494,15 +482,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call detectSentimentValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling detectSentiment(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = detectSentimentCall(text, _callback);
-        return localVarCall;
+        return detectSentimentCall(text, _callback);
 
     }
 
@@ -510,7 +495,7 @@ public class TextApi {
      * Detect Sentiment
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
      * @param text The text for which the sentiment should be detected. (required)
-     * @return InlineResponse20018
+     * @return DetectSentiment200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -526,8 +511,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
      */
-    public InlineResponse20018 detectSentiment(String text) throws ApiException {
-        ApiResponse<InlineResponse20018> localVarResp = detectSentimentWithHttpInfo(text);
+    public DetectSentiment200Response detectSentiment(String text) throws ApiException {
+        ApiResponse<DetectSentiment200Response> localVarResp = detectSentimentWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -535,7 +520,7 @@ public class TextApi {
      * Detect Sentiment
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
      * @param text The text for which the sentiment should be detected. (required)
-     * @return ApiResponse&lt;InlineResponse20018&gt;
+     * @return ApiResponse&lt;DetectSentiment200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -551,9 +536,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
      */
-    public ApiResponse<InlineResponse20018> detectSentimentWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<DetectSentiment200Response> detectSentimentWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = detectSentimentValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<DetectSentiment200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -578,10 +563,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
      */
-    public okhttp3.Call detectSentimentAsync(String text, final ApiCallback<InlineResponse20018> _callback) throws ApiException {
+    public okhttp3.Call detectSentimentAsync(String text, final ApiCallback<DetectSentiment200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detectSentimentValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20018>(){}.getType();
+        Type localVarReturnType = new TypeToken<DetectSentiment200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -607,7 +592,6 @@ public class TextApi {
      */
     public okhttp3.Call extractDatesCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -644,7 +628,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -657,15 +640,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractDatesValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling extractDates(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractDatesCall(text, _callback);
-        return localVarCall;
+        return extractDatesCall(text, _callback);
 
     }
 
@@ -673,7 +653,7 @@ public class TextApi {
      * Extract Dates
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
      * @param text The text from which dates should be extracted. (required)
-     * @return InlineResponse20021
+     * @return ExtractDates200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -689,8 +669,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
      */
-    public InlineResponse20021 extractDates(String text) throws ApiException {
-        ApiResponse<InlineResponse20021> localVarResp = extractDatesWithHttpInfo(text);
+    public ExtractDates200Response extractDates(String text) throws ApiException {
+        ApiResponse<ExtractDates200Response> localVarResp = extractDatesWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -698,7 +678,7 @@ public class TextApi {
      * Extract Dates
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
      * @param text The text from which dates should be extracted. (required)
-     * @return ApiResponse&lt;InlineResponse20021&gt;
+     * @return ApiResponse&lt;ExtractDates200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -714,9 +694,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
      */
-    public ApiResponse<InlineResponse20021> extractDatesWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<ExtractDates200Response> extractDatesWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = extractDatesValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractDates200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -741,10 +721,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
      */
-    public okhttp3.Call extractDatesAsync(String text, final ApiCallback<InlineResponse20021> _callback) throws ApiException {
+    public okhttp3.Call extractDatesAsync(String text, final ApiCallback<ExtractDates200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractDatesValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20021>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractDates200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -770,7 +750,6 @@ public class TextApi {
      */
     public okhttp3.Call extractEntitiesCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -807,7 +786,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -820,15 +798,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call extractEntitiesValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling extractEntities(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = extractEntitiesCall(text, _callback);
-        return localVarCall;
+        return extractEntitiesCall(text, _callback);
 
     }
 
@@ -836,7 +811,7 @@ public class TextApi {
      * Extract Entities
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
      * @param text The text from which entities should be extracted. (required)
-     * @return InlineResponse20027
+     * @return ExtractEntities200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -852,8 +827,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
      */
-    public InlineResponse20027 extractEntities(String text) throws ApiException {
-        ApiResponse<InlineResponse20027> localVarResp = extractEntitiesWithHttpInfo(text);
+    public ExtractEntities200Response extractEntities(String text) throws ApiException {
+        ApiResponse<ExtractEntities200Response> localVarResp = extractEntitiesWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -861,7 +836,7 @@ public class TextApi {
      * Extract Entities
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
      * @param text The text from which entities should be extracted. (required)
-     * @return ApiResponse&lt;InlineResponse20027&gt;
+     * @return ApiResponse&lt;ExtractEntities200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -877,9 +852,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
      */
-    public ApiResponse<InlineResponse20027> extractEntitiesWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<ExtractEntities200Response> extractEntitiesWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = extractEntitiesValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractEntities200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -904,10 +879,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
      */
-    public okhttp3.Call extractEntitiesAsync(String text, final ApiCallback<InlineResponse20027> _callback) throws ApiException {
+    public okhttp3.Call extractEntitiesAsync(String text, final ApiCallback<ExtractEntities200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = extractEntitiesValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20027>(){}.getType();
+        Type localVarReturnType = new TypeToken<ExtractEntities200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -933,7 +908,6 @@ public class TextApi {
      */
     public okhttp3.Call listWordSynonymsCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -970,7 +944,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -983,15 +956,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listWordSynonymsValidateBeforeCall(String word, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'word' is set
         if (word == null) {
             throw new ApiException("Missing the required parameter 'word' when calling listWordSynonyms(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listWordSynonymsCall(word, _callback);
-        return localVarCall;
+        return listWordSynonymsCall(word, _callback);
 
     }
 
@@ -999,7 +969,7 @@ public class TextApi {
      * List Word Synonyms
      * Return synonyms of a word.
      * @param word The (noun) word for which a list of synonyms should be returned. (required)
-     * @return InlineResponse20022
+     * @return ListWordSynonyms200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1015,8 +985,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
      */
-    public InlineResponse20022 listWordSynonyms(String word) throws ApiException {
-        ApiResponse<InlineResponse20022> localVarResp = listWordSynonymsWithHttpInfo(word);
+    public ListWordSynonyms200Response listWordSynonyms(String word) throws ApiException {
+        ApiResponse<ListWordSynonyms200Response> localVarResp = listWordSynonymsWithHttpInfo(word);
         return localVarResp.getData();
     }
 
@@ -1024,7 +994,7 @@ public class TextApi {
      * List Word Synonyms
      * Return synonyms of a word.
      * @param word The (noun) word for which a list of synonyms should be returned. (required)
-     * @return ApiResponse&lt;InlineResponse20022&gt;
+     * @return ApiResponse&lt;ListWordSynonyms200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1040,9 +1010,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
      */
-    public ApiResponse<InlineResponse20022> listWordSynonymsWithHttpInfo(String word) throws ApiException {
+    public ApiResponse<ListWordSynonyms200Response> listWordSynonymsWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = listWordSynonymsValidateBeforeCall(word, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20022>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListWordSynonyms200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1067,10 +1037,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
      */
-    public okhttp3.Call listWordSynonymsAsync(String word, final ApiCallback<InlineResponse20022> _callback) throws ApiException {
+    public okhttp3.Call listWordSynonymsAsync(String word, final ApiCallback<ListWordSynonyms200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWordSynonymsValidateBeforeCall(word, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20022>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListWordSynonyms200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1096,7 +1066,6 @@ public class TextApi {
      */
     public okhttp3.Call partOfSpeechTaggingCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1133,7 +1102,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1146,15 +1114,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call partOfSpeechTaggingValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling partOfSpeechTagging(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = partOfSpeechTaggingCall(text, _callback);
-        return localVarCall;
+        return partOfSpeechTaggingCall(text, _callback);
 
     }
 
@@ -1162,7 +1127,7 @@ public class TextApi {
      * Part of Speech Tagging
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
      * @param text The text to tag the part of speech. (required)
-     * @return InlineResponse20023
+     * @return PartOfSpeechTagging200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1178,8 +1143,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
      */
-    public InlineResponse20023 partOfSpeechTagging(String text) throws ApiException {
-        ApiResponse<InlineResponse20023> localVarResp = partOfSpeechTaggingWithHttpInfo(text);
+    public PartOfSpeechTagging200Response partOfSpeechTagging(String text) throws ApiException {
+        ApiResponse<PartOfSpeechTagging200Response> localVarResp = partOfSpeechTaggingWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -1187,7 +1152,7 @@ public class TextApi {
      * Part of Speech Tagging
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
      * @param text The text to tag the part of speech. (required)
-     * @return ApiResponse&lt;InlineResponse20023&gt;
+     * @return ApiResponse&lt;PartOfSpeechTagging200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1203,9 +1168,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
      */
-    public ApiResponse<InlineResponse20023> partOfSpeechTaggingWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<PartOfSpeechTagging200Response> partOfSpeechTaggingWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = partOfSpeechTaggingValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20023>(){}.getType();
+        Type localVarReturnType = new TypeToken<PartOfSpeechTagging200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1230,10 +1195,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
      */
-    public okhttp3.Call partOfSpeechTaggingAsync(String text, final ApiCallback<InlineResponse20023> _callback) throws ApiException {
+    public okhttp3.Call partOfSpeechTaggingAsync(String text, final ApiCallback<PartOfSpeechTagging200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = partOfSpeechTaggingValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20023>(){}.getType();
+        Type localVarReturnType = new TypeToken<PartOfSpeechTagging200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1259,7 +1224,6 @@ public class TextApi {
      */
     public okhttp3.Call pluralizeWordCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1296,7 +1260,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1309,15 +1272,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call pluralizeWordValidateBeforeCall(String word, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'word' is set
         if (word == null) {
             throw new ApiException("Missing the required parameter 'word' when calling pluralizeWord(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = pluralizeWordCall(word, _callback);
-        return localVarCall;
+        return pluralizeWordCall(word, _callback);
 
     }
 
@@ -1325,7 +1285,7 @@ public class TextApi {
      * Pluralize Word
      * Find the plural form of a word.
      * @param word The (noun) word for which the plural form should be found. (required)
-     * @return InlineResponse20026
+     * @return PluralizeWord200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1341,8 +1301,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
      */
-    public InlineResponse20026 pluralizeWord(String word) throws ApiException {
-        ApiResponse<InlineResponse20026> localVarResp = pluralizeWordWithHttpInfo(word);
+    public PluralizeWord200Response pluralizeWord(String word) throws ApiException {
+        ApiResponse<PluralizeWord200Response> localVarResp = pluralizeWordWithHttpInfo(word);
         return localVarResp.getData();
     }
 
@@ -1350,7 +1310,7 @@ public class TextApi {
      * Pluralize Word
      * Find the plural form of a word.
      * @param word The (noun) word for which the plural form should be found. (required)
-     * @return ApiResponse&lt;InlineResponse20026&gt;
+     * @return ApiResponse&lt;PluralizeWord200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1366,9 +1326,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
      */
-    public ApiResponse<InlineResponse20026> pluralizeWordWithHttpInfo(String word) throws ApiException {
+    public ApiResponse<PluralizeWord200Response> pluralizeWordWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = pluralizeWordValidateBeforeCall(word, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<PluralizeWord200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1393,10 +1353,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
      */
-    public okhttp3.Call pluralizeWordAsync(String word, final ApiCallback<InlineResponse20026> _callback) throws ApiException {
+    public okhttp3.Call pluralizeWordAsync(String word, final ApiCallback<PluralizeWord200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = pluralizeWordValidateBeforeCall(word, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20026>(){}.getType();
+        Type localVarReturnType = new TypeToken<PluralizeWord200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1422,7 +1382,6 @@ public class TextApi {
      */
     public okhttp3.Call scoreReadabilityCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1459,7 +1418,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1472,15 +1430,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call scoreReadabilityValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling scoreReadability(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = scoreReadabilityCall(text, _callback);
-        return localVarCall;
+        return scoreReadabilityCall(text, _callback);
 
     }
 
@@ -1488,7 +1443,7 @@ public class TextApi {
      * Score Readability
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
      * @param text The text to score for readability. (required)
-     * @return InlineResponse20020
+     * @return ScoreReadability200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1504,8 +1459,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
      */
-    public InlineResponse20020 scoreReadability(String text) throws ApiException {
-        ApiResponse<InlineResponse20020> localVarResp = scoreReadabilityWithHttpInfo(text);
+    public ScoreReadability200Response scoreReadability(String text) throws ApiException {
+        ApiResponse<ScoreReadability200Response> localVarResp = scoreReadabilityWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -1513,7 +1468,7 @@ public class TextApi {
      * Score Readability
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
      * @param text The text to score for readability. (required)
-     * @return ApiResponse&lt;InlineResponse20020&gt;
+     * @return ApiResponse&lt;ScoreReadability200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1529,9 +1484,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
      */
-    public ApiResponse<InlineResponse20020> scoreReadabilityWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<ScoreReadability200Response> scoreReadabilityWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = scoreReadabilityValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20020>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScoreReadability200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1556,10 +1511,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
      */
-    public okhttp3.Call scoreReadabilityAsync(String text, final ApiCallback<InlineResponse20020> _callback) throws ApiException {
+    public okhttp3.Call scoreReadabilityAsync(String text, final ApiCallback<ScoreReadability200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = scoreReadabilityValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20020>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScoreReadability200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1586,7 +1541,6 @@ public class TextApi {
      */
     public okhttp3.Call scoreTextCall(String title, String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1627,7 +1581,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1640,20 +1593,17 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call scoreTextValidateBeforeCall(String title, String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'title' is set
         if (title == null) {
             throw new ApiException("Missing the required parameter 'title' when calling scoreText(Async)");
         }
-        
+
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling scoreText(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = scoreTextCall(title, text, _callback);
-        return localVarCall;
+        return scoreTextCall(title, text, _callback);
 
     }
 
@@ -1662,7 +1612,7 @@ public class TextApi {
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
      * @param title The title of the text to score. (required)
      * @param text The text to score for multiple metrics. (required)
-     * @return InlineResponse20019
+     * @return ScoreText200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1678,8 +1628,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
      */
-    public InlineResponse20019 scoreText(String title, String text) throws ApiException {
-        ApiResponse<InlineResponse20019> localVarResp = scoreTextWithHttpInfo(title, text);
+    public ScoreText200Response scoreText(String title, String text) throws ApiException {
+        ApiResponse<ScoreText200Response> localVarResp = scoreTextWithHttpInfo(title, text);
         return localVarResp.getData();
     }
 
@@ -1688,7 +1638,7 @@ public class TextApi {
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
      * @param title The title of the text to score. (required)
      * @param text The text to score for multiple metrics. (required)
-     * @return ApiResponse&lt;InlineResponse20019&gt;
+     * @return ApiResponse&lt;ScoreText200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1704,9 +1654,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
      */
-    public ApiResponse<InlineResponse20019> scoreTextWithHttpInfo(String title, String text) throws ApiException {
+    public ApiResponse<ScoreText200Response> scoreTextWithHttpInfo(String title, String text) throws ApiException {
         okhttp3.Call localVarCall = scoreTextValidateBeforeCall(title, text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20019>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScoreText200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1732,10 +1682,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
      */
-    public okhttp3.Call scoreTextAsync(String title, String text, final ApiCallback<InlineResponse20019> _callback) throws ApiException {
+    public okhttp3.Call scoreTextAsync(String title, String text, final ApiCallback<ScoreText200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = scoreTextValidateBeforeCall(title, text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20019>(){}.getType();
+        Type localVarReturnType = new TypeToken<ScoreText200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1761,7 +1711,6 @@ public class TextApi {
      */
     public okhttp3.Call singularizeWordCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1798,7 +1747,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1811,15 +1759,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call singularizeWordValidateBeforeCall(String word, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'word' is set
         if (word == null) {
             throw new ApiException("Missing the required parameter 'word' when calling singularizeWord(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = singularizeWordCall(word, _callback);
-        return localVarCall;
+        return singularizeWordCall(word, _callback);
 
     }
 
@@ -1827,7 +1772,7 @@ public class TextApi {
      * Singularize Word
      * Find the singular form of a word.
      * @param word The (noun) word for which the singular form should be found. (required)
-     * @return InlineResponse20025
+     * @return SingularizeWord200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1843,8 +1788,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
      */
-    public InlineResponse20025 singularizeWord(String word) throws ApiException {
-        ApiResponse<InlineResponse20025> localVarResp = singularizeWordWithHttpInfo(word);
+    public SingularizeWord200Response singularizeWord(String word) throws ApiException {
+        ApiResponse<SingularizeWord200Response> localVarResp = singularizeWordWithHttpInfo(word);
         return localVarResp.getData();
     }
 
@@ -1852,7 +1797,7 @@ public class TextApi {
      * Singularize Word
      * Find the singular form of a word.
      * @param word The (noun) word for which the singular form should be found. (required)
-     * @return ApiResponse&lt;InlineResponse20025&gt;
+     * @return ApiResponse&lt;SingularizeWord200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1868,9 +1813,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
      */
-    public ApiResponse<InlineResponse20025> singularizeWordWithHttpInfo(String word) throws ApiException {
+    public ApiResponse<SingularizeWord200Response> singularizeWordWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = singularizeWordValidateBeforeCall(word, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20025>(){}.getType();
+        Type localVarReturnType = new TypeToken<SingularizeWord200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1895,10 +1840,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
      */
-    public okhttp3.Call singularizeWordAsync(String word, final ApiCallback<InlineResponse20025> _callback) throws ApiException {
+    public okhttp3.Call singularizeWordAsync(String word, final ApiCallback<SingularizeWord200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = singularizeWordValidateBeforeCall(word, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20025>(){}.getType();
+        Type localVarReturnType = new TypeToken<SingularizeWord200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1924,7 +1869,6 @@ public class TextApi {
      */
     public okhttp3.Call textStemmingCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1961,7 +1905,6 @@ public class TextApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1974,15 +1917,12 @@ public class TextApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call textStemmingValidateBeforeCall(String text, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'text' is set
         if (text == null) {
             throw new ApiException("Missing the required parameter 'text' when calling textStemming(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = textStemmingCall(text, _callback);
-        return localVarCall;
+        return textStemmingCall(text, _callback);
 
     }
 
@@ -1990,7 +1930,7 @@ public class TextApi {
      * Text Stemming
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed. (required)
-     * @return InlineResponse20024
+     * @return TextStemming200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2006,8 +1946,8 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
      */
-    public InlineResponse20024 textStemming(String text) throws ApiException {
-        ApiResponse<InlineResponse20024> localVarResp = textStemmingWithHttpInfo(text);
+    public TextStemming200Response textStemming(String text) throws ApiException {
+        ApiResponse<TextStemming200Response> localVarResp = textStemmingWithHttpInfo(text);
         return localVarResp.getData();
     }
 
@@ -2015,7 +1955,7 @@ public class TextApi {
      * Text Stemming
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed. (required)
-     * @return ApiResponse&lt;InlineResponse20024&gt;
+     * @return ApiResponse&lt;TextStemming200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -2031,9 +1971,9 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
      */
-    public ApiResponse<InlineResponse20024> textStemmingWithHttpInfo(String text) throws ApiException {
+    public ApiResponse<TextStemming200Response> textStemmingWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = textStemmingValidateBeforeCall(text, null);
-        Type localVarReturnType = new TypeToken<InlineResponse20024>(){}.getType();
+        Type localVarReturnType = new TypeToken<TextStemming200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -2058,10 +1998,10 @@ public class TextApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
      */
-    public okhttp3.Call textStemmingAsync(String text, final ApiCallback<InlineResponse20024> _callback) throws ApiException {
+    public okhttp3.Call textStemmingAsync(String text, final ApiCallback<TextStemming200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = textStemmingValidateBeforeCall(text, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse20024>(){}.getType();
+        Type localVarReturnType = new TypeToken<TextStemming200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse20010.h"
-#import "OAIInlineResponse2009.h"
+#import "OAIRandomQuote200Response.h"
+#import "OAIRandomTrivia200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -38,10 +38,10 @@ extern NSInteger kOAIKnowledgeApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse20010*
+/// @return OAIRandomQuote200Response*
 -(NSURLSessionTask*) randomQuoteWithMinLength: (NSNumber*) minLength
     maxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse20010* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIRandomQuote200Response* output, NSError* error)) handler;
 
 
 /// Random Trivia
@@ -57,9 +57,9 @@ extern NSInteger kOAIKnowledgeApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2009*
+/// @return OAIRandomTrivia200Response*
 -(NSURLSessionTask*) randomTriviaWithMaxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse2009* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIRandomTrivia200Response* output, NSError* error)) handler;
 
 
 

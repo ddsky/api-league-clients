@@ -1,26 +1,25 @@
-# com.apileague.TextApi
+# apileague.Api.TextApi
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CorrectSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling
-[**DetectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language
-[**DetectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment
-[**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
-[**ExtractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities
-[**ListWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**PartOfSpeechTagging**](TextApi.md#partofspeechtagging) | **GET** /tag-pos | Part of Speech Tagging
-[**PluralizeWord**](TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word
-[**ScoreReadability**](TextApi.md#scorereadability) | **GET** /score-readability | Score Readability
-[**ScoreText**](TextApi.md#scoretext) | **GET** /score-text | Score Text
-[**SingularizeWord**](TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word
-[**TextStemming**](TextApi.md#textstemming) | **GET** /stem-text | Text Stemming
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CorrectSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling |
+| [**DetectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language |
+| [**DetectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment |
+| [**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates |
+| [**ExtractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities |
+| [**ListWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms |
+| [**PartOfSpeechTagging**](TextApi.md#partofspeechtagging) | **GET** /tag-pos | Part of Speech Tagging |
+| [**PluralizeWord**](TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word |
+| [**ScoreReadability**](TextApi.md#scorereadability) | **GET** /score-readability | Score Readability |
+| [**ScoreText**](TextApi.md#scoretext) | **GET** /score-text | Score Text |
+| [**SingularizeWord**](TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word |
+| [**TextStemming**](TextApi.md#textstemming) | **GET** /stem-text | Text Stemming |
 
-
-<a name="correctspelling"></a>
+<a id="correctspelling"></a>
 # **CorrectSpelling**
-> InlineResponse20016 CorrectSpelling (string text, string language)
+> CorrectSpelling200Response CorrectSpelling (string text, string language)
 
 Correct Spelling
 
@@ -28,56 +27,80 @@ The API corrects spelling mistakes in a given text. It returns the corrected tex
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class CorrectSpellingExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = Driving carss is fun.;  // string | The text to be corrected.
             var language = en;  // string | The language of the text, one of en, de, es, fr, or it.
 
             try
             {
                 // Correct Spelling
-                InlineResponse20016 result = apiInstance.CorrectSpelling(text, language);
+                CorrectSpelling200Response result = apiInstance.CorrectSpelling(text, language);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.CorrectSpelling: " + e.Message );
+                Debug.Print("Exception when calling TextApi.CorrectSpelling: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the CorrectSpellingWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Correct Spelling
+    ApiResponse<CorrectSpelling200Response> response = apiInstance.CorrectSpellingWithHttpInfo(text, language);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.CorrectSpellingWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to be corrected. | 
- **language** | **string**| The language of the text, one of en, de, es, fr, or it. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text to be corrected. |  |
+| **language** | **string** | The language of the text, one of en, de, es, fr, or it. |  |
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
 
 ### Authorization
 
@@ -88,11 +111,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="detectlanguage"></a>
+<a id="detectlanguage"></a>
 # **DetectLanguage**
-> List<InlineResponse20017> DetectLanguage (string text)
+> List&lt;DetectLanguage200ResponseInner&gt; DetectLanguage (string text)
 
 Detect Language
 
@@ -100,54 +135,78 @@ Detect the language of the given text. The API returns a list of languages and t
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class DetectLanguageExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = Das ist ein Text.;  // string | The text for which the language should be detected.
 
             try
             {
                 // Detect Language
-                List&lt;InlineResponse20017&gt; result = apiInstance.DetectLanguage(text);
+                List<DetectLanguage200ResponseInner> result = apiInstance.DetectLanguage(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.DetectLanguage: " + e.Message );
+                Debug.Print("Exception when calling TextApi.DetectLanguage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the DetectLanguageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Detect Language
+    ApiResponse<List<DetectLanguage200ResponseInner>> response = apiInstance.DetectLanguageWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.DetectLanguageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text for which the language should be detected. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text for which the language should be detected. |  |
 
 ### Return type
 
-[**List<InlineResponse20017>**](InlineResponse20017.md)
+[**List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
 
 ### Authorization
 
@@ -158,11 +217,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="detectsentiment"></a>
+<a id="detectsentiment"></a>
 # **DetectSentiment**
-> InlineResponse20018 DetectSentiment (string text)
+> DetectSentiment200Response DetectSentiment (string text)
 
 Detect Sentiment
 
@@ -170,54 +241,78 @@ Detect the sentiment (positive or negative) of a given text. The entire document
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class DetectSentimentExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = Happy times feel so good.;  // string | The text for which the sentiment should be detected.
 
             try
             {
                 // Detect Sentiment
-                InlineResponse20018 result = apiInstance.DetectSentiment(text);
+                DetectSentiment200Response result = apiInstance.DetectSentiment(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.DetectSentiment: " + e.Message );
+                Debug.Print("Exception when calling TextApi.DetectSentiment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the DetectSentimentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Detect Sentiment
+    ApiResponse<DetectSentiment200Response> response = apiInstance.DetectSentimentWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.DetectSentimentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text for which the sentiment should be detected. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text for which the sentiment should be detected. |  |
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 
@@ -228,11 +323,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="extractdates"></a>
+<a id="extractdates"></a>
 # **ExtractDates**
-> InlineResponse20021 ExtractDates (string text)
+> ExtractDates200Response ExtractDates (string text)
 
 Extract Dates
 
@@ -240,54 +347,78 @@ Extract dates from a given text. The API will return a list of dates with their 
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ExtractDatesExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = On 5th or April, 2035 there will be flying cars - 2023-02-12.;  // string | The text from which dates should be extracted.
 
             try
             {
                 // Extract Dates
-                InlineResponse20021 result = apiInstance.ExtractDates(text);
+                ExtractDates200Response result = apiInstance.ExtractDates(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ExtractDates: " + e.Message );
+                Debug.Print("Exception when calling TextApi.ExtractDates: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ExtractDatesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Extract Dates
+    ApiResponse<ExtractDates200Response> response = apiInstance.ExtractDatesWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.ExtractDatesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text from which dates should be extracted. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text from which dates should be extracted. |  |
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ExtractDates200Response**](ExtractDates200Response.md)
 
 ### Authorization
 
@@ -298,11 +429,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="extractentities"></a>
+<a id="extractentities"></a>
 # **ExtractEntities**
-> InlineResponse20027 ExtractEntities (string text)
+> ExtractEntities200Response ExtractEntities (string text)
 
 Extract Entities
 
@@ -310,54 +453,78 @@ Extract entities from a text. An entity is a word or a group of words that repre
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ExtractEntitiesExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = Jim Carrey is an actor from Canada;  // string | The text from which entities should be extracted.
 
             try
             {
                 // Extract Entities
-                InlineResponse20027 result = apiInstance.ExtractEntities(text);
+                ExtractEntities200Response result = apiInstance.ExtractEntities(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ExtractEntities: " + e.Message );
+                Debug.Print("Exception when calling TextApi.ExtractEntities: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ExtractEntitiesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Extract Entities
+    ApiResponse<ExtractEntities200Response> response = apiInstance.ExtractEntitiesWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.ExtractEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text from which entities should be extracted. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text from which entities should be extracted. |  |
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ExtractEntities200Response**](ExtractEntities200Response.md)
 
 ### Authorization
 
@@ -368,11 +535,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listwordsynonyms"></a>
+<a id="listwordsynonyms"></a>
 # **ListWordSynonyms**
-> InlineResponse20022 ListWordSynonyms (string word)
+> ListWordSynonyms200Response ListWordSynonyms (string word)
 
 List Word Synonyms
 
@@ -380,54 +559,78 @@ Return synonyms of a word.
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ListWordSynonymsExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var word = airplane;  // string | The (noun) word for which a list of synonyms should be returned.
 
             try
             {
                 // List Word Synonyms
-                InlineResponse20022 result = apiInstance.ListWordSynonyms(word);
+                ListWordSynonyms200Response result = apiInstance.ListWordSynonyms(word);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ListWordSynonyms: " + e.Message );
+                Debug.Print("Exception when calling TextApi.ListWordSynonyms: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ListWordSynonymsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List Word Synonyms
+    ApiResponse<ListWordSynonyms200Response> response = apiInstance.ListWordSynonymsWithHttpInfo(word);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.ListWordSynonymsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which a list of synonyms should be returned. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **word** | **string** | The (noun) word for which a list of synonyms should be returned. |  |
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
 
 ### Authorization
 
@@ -438,11 +641,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="partofspeechtagging"></a>
+<a id="partofspeechtagging"></a>
 # **PartOfSpeechTagging**
-> InlineResponse20023 PartOfSpeechTagging (string text)
+> PartOfSpeechTagging200Response PartOfSpeechTagging (string text)
 
 Part of Speech Tagging
 
@@ -450,54 +665,78 @@ Part of speech tagging is the process of marking up a word in a text as correspo
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class PartOfSpeechTaggingExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = The lazy dog jumps over the quick brown fox.;  // string | The text to tag the part of speech.
 
             try
             {
                 // Part of Speech Tagging
-                InlineResponse20023 result = apiInstance.PartOfSpeechTagging(text);
+                PartOfSpeechTagging200Response result = apiInstance.PartOfSpeechTagging(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.PartOfSpeechTagging: " + e.Message );
+                Debug.Print("Exception when calling TextApi.PartOfSpeechTagging: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the PartOfSpeechTaggingWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Part of Speech Tagging
+    ApiResponse<PartOfSpeechTagging200Response> response = apiInstance.PartOfSpeechTaggingWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.PartOfSpeechTaggingWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to tag the part of speech. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text to tag the part of speech. |  |
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
 
 ### Authorization
 
@@ -508,11 +747,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="pluralizeword"></a>
+<a id="pluralizeword"></a>
 # **PluralizeWord**
-> InlineResponse20026 PluralizeWord (string word)
+> PluralizeWord200Response PluralizeWord (string word)
 
 Pluralize Word
 
@@ -520,54 +771,78 @@ Find the plural form of a word.
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class PluralizeWordExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var word = party;  // string | The (noun) word for which the plural form should be found.
 
             try
             {
                 // Pluralize Word
-                InlineResponse20026 result = apiInstance.PluralizeWord(word);
+                PluralizeWord200Response result = apiInstance.PluralizeWord(word);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.PluralizeWord: " + e.Message );
+                Debug.Print("Exception when calling TextApi.PluralizeWord: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the PluralizeWordWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Pluralize Word
+    ApiResponse<PluralizeWord200Response> response = apiInstance.PluralizeWordWithHttpInfo(word);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.PluralizeWordWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which the plural form should be found. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **word** | **string** | The (noun) word for which the plural form should be found. |  |
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**PluralizeWord200Response**](PluralizeWord200Response.md)
 
 ### Authorization
 
@@ -578,11 +853,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="scorereadability"></a>
+<a id="scorereadability"></a>
 # **ScoreReadability**
-> InlineResponse20020 ScoreReadability (string text)
+> ScoreReadability200Response ScoreReadability (string text)
 
 Score Readability
 
@@ -590,54 +877,78 @@ Score the readability of a text. The readability score is based on the average l
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ScoreReadabilityExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = A rather complex text, hard to read, and highly convoluted using acronym TERMS.;  // string | The text to score for readability.
 
             try
             {
                 // Score Readability
-                InlineResponse20020 result = apiInstance.ScoreReadability(text);
+                ScoreReadability200Response result = apiInstance.ScoreReadability(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ScoreReadability: " + e.Message );
+                Debug.Print("Exception when calling TextApi.ScoreReadability: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ScoreReadabilityWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Score Readability
+    ApiResponse<ScoreReadability200Response> response = apiInstance.ScoreReadabilityWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.ScoreReadabilityWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to score for readability. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text to score for readability. |  |
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**ScoreReadability200Response**](ScoreReadability200Response.md)
 
 ### Authorization
 
@@ -648,11 +959,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="scoretext"></a>
+<a id="scoretext"></a>
 # **ScoreText**
-> InlineResponse20019 ScoreText (string title, string text)
+> ScoreText200Response ScoreText (string title, string text)
 
 Score Text
 
@@ -660,56 +983,80 @@ Score the readability, skimmability, interestingness, and style of a text. The r
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class ScoreTextExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var title = A short story;  // string | The title of the text to score.
             var text = A nice short story to be analyzed;  // string | The text to score for multiple metrics.
 
             try
             {
                 // Score Text
-                InlineResponse20019 result = apiInstance.ScoreText(title, text);
+                ScoreText200Response result = apiInstance.ScoreText(title, text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ScoreText: " + e.Message );
+                Debug.Print("Exception when calling TextApi.ScoreText: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the ScoreTextWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Score Text
+    ApiResponse<ScoreText200Response> response = apiInstance.ScoreTextWithHttpInfo(title, text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.ScoreTextWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **title** | **string**| The title of the text to score. | 
- **text** | **string**| The text to score for multiple metrics. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **title** | **string** | The title of the text to score. |  |
+| **text** | **string** | The text to score for multiple metrics. |  |
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**ScoreText200Response**](ScoreText200Response.md)
 
 ### Authorization
 
@@ -720,11 +1067,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="singularizeword"></a>
+<a id="singularizeword"></a>
 # **SingularizeWord**
-> InlineResponse20025 SingularizeWord (string word)
+> SingularizeWord200Response SingularizeWord (string word)
 
 Singularize Word
 
@@ -732,54 +1091,78 @@ Find the singular form of a word.
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class SingularizeWordExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var word = airplanes;  // string | The (noun) word for which the singular form should be found.
 
             try
             {
                 // Singularize Word
-                InlineResponse20025 result = apiInstance.SingularizeWord(word);
+                SingularizeWord200Response result = apiInstance.SingularizeWord(word);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.SingularizeWord: " + e.Message );
+                Debug.Print("Exception when calling TextApi.SingularizeWord: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the SingularizeWordWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Singularize Word
+    ApiResponse<SingularizeWord200Response> response = apiInstance.SingularizeWordWithHttpInfo(word);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.SingularizeWordWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **string**| The (noun) word for which the singular form should be found. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **word** | **string** | The (noun) word for which the singular form should be found. |  |
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**SingularizeWord200Response**](SingularizeWord200Response.md)
 
 ### Authorization
 
@@ -790,11 +1173,23 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="textstemming"></a>
+<a id="textstemming"></a>
 # **TextStemming**
-> InlineResponse20024 TextStemming (string text)
+> TextStemming200Response TextStemming (string text)
 
 Text Stemming
 
@@ -802,54 +1197,78 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using com.apileague;
-using Org.OpenAPITools.Client;
-using com.apileague.client.model;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
 
 namespace Example
 {
     public class TextStemmingExample
     {
-        public void main()
+        public static void Main()
         {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
             // Configure API key authorization: apiKey
-            Configuration.Default.ApiKey.Add("api-key", "YOUR_API_KEY");
+            config.AddApiKey("api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("api-key", "Bearer");
+            // config.AddApiKeyPrefix("api-key", "Bearer");
             // Configure API key authorization: headerApiKey
-            Configuration.Default.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-api-key", "Bearer");
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
-            var apiInstance = new TextApi();
+            var apiInstance = new TextApi(config);
             var text = The laziest dogs are jumping over the quicker brown foxes.;  // string | The text to be stemmed.
 
             try
             {
                 // Text Stemming
-                InlineResponse20024 result = apiInstance.TextStemming(text);
+                TextStemming200Response result = apiInstance.TextStemming(text);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.TextStemming: " + e.Message );
+                Debug.Print("Exception when calling TextApi.TextStemming: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the TextStemmingWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Text Stemming
+    ApiResponse<TextStemming200Response> response = apiInstance.TextStemmingWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.TextStemmingWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to be stemmed. | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text to be stemmed. |  |
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**TextStemming200Response**](TextStemming200Response.md)
 
 ### Authorization
 
@@ -859,6 +1278,18 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

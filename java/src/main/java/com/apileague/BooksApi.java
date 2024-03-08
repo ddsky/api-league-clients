@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.apileague.client.model.InlineResponse200;
-import com.apileague.client.model.InlineResponse2001;
+import com.apileague.client.model.FindSimilarBooks200Response;
+import com.apileague.client.model.SearchBooks200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,7 +96,6 @@ public class BooksApi {
      */
     public okhttp3.Call findSimilarBooksCall(Integer id, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -113,7 +112,7 @@ public class BooksApi {
 
         // create path and map variables
         String localVarPath = "/list-similar-books"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -134,7 +133,6 @@ public class BooksApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -147,15 +145,12 @@ public class BooksApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call findSimilarBooksValidateBeforeCall(Integer id, Integer number, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling findSimilarBooks(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = findSimilarBooksCall(id, number, _callback);
-        return localVarCall;
+        return findSimilarBooksCall(id, number, _callback);
 
     }
 
@@ -164,7 +159,7 @@ public class BooksApi {
      * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
      * @param id The id of the book to which similar books should be found. (required)
      * @param number The number of similar books to return in range [1,100] (optional)
-     * @return InlineResponse2001
+     * @return FindSimilarBooks200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -180,8 +175,8 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
      */
-    public InlineResponse2001 findSimilarBooks(Integer id, Integer number) throws ApiException {
-        ApiResponse<InlineResponse2001> localVarResp = findSimilarBooksWithHttpInfo(id, number);
+    public FindSimilarBooks200Response findSimilarBooks(Integer id, Integer number) throws ApiException {
+        ApiResponse<FindSimilarBooks200Response> localVarResp = findSimilarBooksWithHttpInfo(id, number);
         return localVarResp.getData();
     }
 
@@ -190,7 +185,7 @@ public class BooksApi {
      * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
      * @param id The id of the book to which similar books should be found. (required)
      * @param number The number of similar books to return in range [1,100] (optional)
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;FindSimilarBooks200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -206,9 +201,9 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
      */
-    public ApiResponse<InlineResponse2001> findSimilarBooksWithHttpInfo(Integer id, Integer number) throws ApiException {
+    public ApiResponse<FindSimilarBooks200Response> findSimilarBooksWithHttpInfo(Integer id, Integer number) throws ApiException {
         okhttp3.Call localVarCall = findSimilarBooksValidateBeforeCall(id, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<FindSimilarBooks200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -234,10 +229,10 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
      */
-    public okhttp3.Call findSimilarBooksAsync(Integer id, Integer number, final ApiCallback<InlineResponse2001> _callback) throws ApiException {
+    public okhttp3.Call findSimilarBooksAsync(Integer id, Integer number, final ApiCallback<FindSimilarBooks200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = findSimilarBooksValidateBeforeCall(id, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<FindSimilarBooks200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -276,7 +271,6 @@ public class BooksApi {
      */
     public okhttp3.Call searchBooksCall(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -365,7 +359,6 @@ public class BooksApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -378,10 +371,7 @@ public class BooksApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call searchBooksValidateBeforeCall(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = searchBooksCall(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _callback);
-        return localVarCall;
+        return searchBooksCall(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _callback);
 
     }
 
@@ -402,7 +392,7 @@ public class BooksApi {
      * @param groupResults Whether to group similar editions of the same book. (optional)
      * @param offset The number of books to skip in range [0,1000] (optional)
      * @param number The number of books to return in range [1,100] (optional)
-     * @return InlineResponse200
+     * @return SearchBooks200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -418,8 +408,8 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
      */
-    public InlineResponse200 searchBooks(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = searchBooksWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+    public SearchBooks200Response searchBooks(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
+        ApiResponse<SearchBooks200Response> localVarResp = searchBooksWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
         return localVarResp.getData();
     }
 
@@ -440,7 +430,7 @@ public class BooksApi {
      * @param groupResults Whether to group similar editions of the same book. (optional)
      * @param offset The number of books to skip in range [0,1000] (optional)
      * @param number The number of books to return in range [1,100] (optional)
-     * @return ApiResponse&lt;InlineResponse200&gt;
+     * @return ApiResponse&lt;SearchBooks200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -456,9 +446,9 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
      */
-    public ApiResponse<InlineResponse200> searchBooksWithHttpInfo(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
+    public ApiResponse<SearchBooks200Response> searchBooksWithHttpInfo(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchBooksValidateBeforeCall(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, null);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchBooks200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -496,10 +486,10 @@ public class BooksApi {
      * Read entire docs
      * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
      */
-    public okhttp3.Call searchBooksAsync(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call searchBooksAsync(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback<SearchBooks200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = searchBooksValidateBeforeCall(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _callback);
-        Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchBooks200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

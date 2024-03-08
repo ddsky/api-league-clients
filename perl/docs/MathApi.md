@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **convert_units**
-> InlineResponse20030 convert_units(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name)
+> ConvertUnits200Response convert_units(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name)
 
 Convert Units
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**ConvertUnits200Response**](ConvertUnits200Response.md)
 
 ### Authorization
 

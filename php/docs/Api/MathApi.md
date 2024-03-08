@@ -1,16 +1,16 @@
-# com.apileague.client\MathApi
+# OpenAPI\Client\MathApi
 
-All URIs are relative to https://api.apileague.com.
+All URIs are relative to https://api.apileague.com, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**convertUnits()**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**convertUnits()**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
 
 
 ## `convertUnits()`
 
 ```php
-convertUnits($source_amount, $source_unit, $target_unit, $food_name): \com.apileague.client\com.apileague.client.model\InlineResponse20030
+convertUnits($source_amount, $source_unit, $target_unit, $food_name): \OpenAPI\Client\Model\ConvertUnits200Response
 ```
 
 Convert Units
@@ -25,23 +25,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 
 // Configure API key authorization: headerApiKey
-$config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = com.apileague.client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new com.apileague.client\Api\MathApi(
+$apiInstance = new OpenAPI\Client\Api\MathApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$source_amount = 100; // double | The source amount.
+$source_amount = 100; // float | The source amount.
 $source_unit = kg; // string | The source unit.
 $target_unit = lb; // string | The unit to which should be converted.
 $food_name = flour; // string | An optional food name. For converting foods the food is relevant as they have different densities.
@@ -56,16 +56,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source_amount** | **double**| The source amount. |
- **source_unit** | **string**| The source unit. |
- **target_unit** | **string**| The unit to which should be converted. |
- **food_name** | **string**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **source_amount** | **float**| The source amount. | |
+| **source_unit** | **string**| The source unit. | |
+| **target_unit** | **string**| The unit to which should be converted. | |
+| **food_name** | **string**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional] |
 
 ### Return type
 
-[**\com.apileague.client\com.apileague.client.model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\OpenAPI\Client\Model\ConvertUnits200Response**](../Model/ConvertUnits200Response.md)
 
 ### Authorization
 

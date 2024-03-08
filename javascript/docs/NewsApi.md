@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## extractNews
 
-> InlineResponse2003 extractNews(url, analyze)
+> ExtractNews200Response extractNews(url, analyze)
 
 Extract News
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## searchNews
 
-> InlineResponse2002 searchNews(opts)
+> SearchNews200Response searchNews(opts)
 
 Search News
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 

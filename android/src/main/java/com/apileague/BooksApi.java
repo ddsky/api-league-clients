@@ -23,8 +23,8 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse200;
-import com.apileague.client.model.InlineResponse2001;
+import com.apileague.client.model.FindSimilarBooks200Response;
+import com.apileague.client.model.SearchBooks200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -61,9 +61,9 @@ public class BooksApi {
   * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
    * @param id The id of the book to which similar books should be found.
    * @param number The number of similar books to return in range [1,100]
-   * @return InlineResponse2001
+   * @return FindSimilarBooks200Response
   */
-  public InlineResponse2001 findSimilarBooks (Integer id, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public FindSimilarBooks200Response findSimilarBooks (Integer id, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'id' is set
     if (id == null) {
@@ -99,7 +99,7 @@ public class BooksApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2001) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2001.class);
+         return (FindSimilarBooks200Response) ApiInvoker.deserialize(localVarResponse, "", FindSimilarBooks200Response.class);
       } else {
          return null;
       }
@@ -125,7 +125,7 @@ public class BooksApi {
    * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
    * @param id The id of the book to which similar books should be found.   * @param number The number of similar books to return in range [1,100]
   */
-  public void findSimilarBooks (Integer id, Integer number, final Response.Listener<InlineResponse2001> responseListener, final Response.ErrorListener errorListener) {
+  public void findSimilarBooks (Integer id, Integer number, final Response.Listener<FindSimilarBooks200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'id' is set
@@ -171,7 +171,7 @@ public class BooksApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2001) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2001.class));
+              responseListener.onResponse((FindSimilarBooks200Response) ApiInvoker.deserialize(localVarResponse,  "", FindSimilarBooks200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -203,9 +203,9 @@ public class BooksApi {
    * @param groupResults Whether to group similar editions of the same book.
    * @param offset The number of books to skip in range [0,1000]
    * @param number The number of books to return in range [1,100]
-   * @return InlineResponse200
+   * @return SearchBooks200Response
   */
-  public InlineResponse200 searchBooks (String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SearchBooks200Response searchBooks (String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -249,7 +249,7 @@ public class BooksApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse200) ApiInvoker.deserialize(localVarResponse, "", InlineResponse200.class);
+         return (SearchBooks200Response) ApiInvoker.deserialize(localVarResponse, "", SearchBooks200Response.class);
       } else {
          return null;
       }
@@ -275,7 +275,7 @@ public class BooksApi {
    * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
    * @param query The search query.   * @param earliestPublishYear The books must have been published after this year.   * @param latestPublishYear The books must have been published before this year.   * @param minRating The minimum rating the book must have gotten in the interval [0,1].   * @param maxRating The maximum rating the book must have gotten in the interval [0,1].   * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned.   * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.   * @param isbn Only the book matching the ISBN-13 will be returned   * @param oclc Only the book matching the OCLC will be returned   * @param sort The sorting criteria (publish-date or rating).   * @param sortDirection Whether to sort ascending or descending (ASC or DESC).   * @param groupResults Whether to group similar editions of the same book.   * @param offset The number of books to skip in range [0,1000]   * @param number The number of books to return in range [1,100]
   */
-  public void searchBooks (String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final Response.Listener<InlineResponse200> responseListener, final Response.ErrorListener errorListener) {
+  public void searchBooks (String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final Response.Listener<SearchBooks200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -329,7 +329,7 @@ public class BooksApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse200) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse200.class));
+              responseListener.onResponse((SearchBooks200Response) ApiInvoker.deserialize(localVarResponse,  "", SearchBooks200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

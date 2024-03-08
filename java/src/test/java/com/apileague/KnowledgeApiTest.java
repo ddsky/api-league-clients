@@ -14,11 +14,10 @@
 package com.apileague;
 
 import com.apileague.client.ApiException;
-import java.math.BigDecimal;
-import com.apileague.client.model.InlineResponse20010;
-import com.apileague.client.model.InlineResponse2009;
-import org.junit.Test;
-import org.junit.Ignore;
+import com.apileague.client.model.RandomQuote200Response;
+import com.apileague.client.model.RandomTrivia200Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,41 +27,38 @@ import java.util.Map;
 /**
  * API tests for KnowledgeApi
  */
-@Ignore
+@Disabled
 public class KnowledgeApiTest {
 
     private final KnowledgeApi api = new KnowledgeApi();
 
-    
     /**
      * Random Quote
      *
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void randomQuoteTest() throws ApiException {
-        BigDecimal minLength = null;
-        BigDecimal maxLength = null;
-                InlineResponse20010 response = api.randomQuote(minLength, maxLength);
+        Integer minLength = null;
+        Integer maxLength = null;
+        RandomQuote200Response response = api.randomQuote(minLength, maxLength);
         // TODO: test validations
     }
-    
+
     /**
      * Random Trivia
      *
      * This endpoint returns a random piece of trivia.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void randomTriviaTest() throws ApiException {
-        BigDecimal maxLength = null;
-                InlineResponse2009 response = api.randomTrivia(maxLength);
+        Integer maxLength = null;
+        RandomTrivia200Response response = api.randomTrivia(maxLength);
         // TODO: test validations
     }
-    
+
 }

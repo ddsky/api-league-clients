@@ -1,7 +1,6 @@
-module github.com/GIT_USER_ID/GIT_REPO_ID
+module github.com/ddsky/api-league-clients/tree/master/go/
 
-go 1.13
+go 1.18
 
 require (
-	golang.org/x/oauth2 v0.0.0-20210323180902-22b0adad7558
 )

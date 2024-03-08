@@ -1,8 +1,8 @@
 #import "OAIBooksApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse200.h"
-#import "OAIInlineResponse2001.h"
+#import "OAIFindSimilarBooks200Response.h"
+#import "OAISearchBooks200Response.h"
 
 
 @interface OAIBooksApi ()
@@ -57,11 +57,11 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of similar books to return in range [1,100] (optional)
 ///
-///  @returns OAIInlineResponse2001*
+///  @returns OAIFindSimilarBooks200Response*
 ///
 -(NSURLSessionTask*) findSimilarBooksWithId: (NSNumber*) _id
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2001* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIFindSimilarBooks200Response* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -116,10 +116,10 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2001*"
+                              responseType: @"OAIFindSimilarBooks200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2001*)data, error);
+                                    handler((OAIFindSimilarBooks200Response*)data, error);
                                 }
                             }];
 }
@@ -155,7 +155,7 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
 ///
 ///  @param number The number of books to return in range [1,100] (optional)
 ///
-///  @returns OAIInlineResponse200*
+///  @returns OAISearchBooks200Response*
 ///
 -(NSURLSessionTask*) searchBooksWithQuery: (NSString*) query
     earliestPublishYear: (NSNumber*) earliestPublishYear
@@ -171,7 +171,7 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
     groupResults: (NSNumber*) groupResults
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse200* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAISearchBooks200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/search-books"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -251,10 +251,10 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse200*"
+                              responseType: @"OAISearchBooks200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse200*)data, error);
+                                    handler((OAISearchBooks200Response*)data, error);
                                 }
                             }];
 }

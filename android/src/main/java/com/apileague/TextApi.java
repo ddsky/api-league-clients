@@ -23,18 +23,19 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20016;
-import com.apileague.client.model.InlineResponse20017;
-import com.apileague.client.model.InlineResponse20018;
-import com.apileague.client.model.InlineResponse20019;
-import com.apileague.client.model.InlineResponse20020;
-import com.apileague.client.model.InlineResponse20021;
-import com.apileague.client.model.InlineResponse20022;
-import com.apileague.client.model.InlineResponse20023;
-import com.apileague.client.model.InlineResponse20024;
-import com.apileague.client.model.InlineResponse20025;
-import com.apileague.client.model.InlineResponse20026;
-import com.apileague.client.model.InlineResponse20027;
+import com.apileague.client.model.CorrectSpelling200Response;
+import com.apileague.client.model.DetectLanguage200ResponseInner;
+import com.apileague.client.model.DetectSentiment200Response;
+import com.apileague.client.model.ExtractDates200Response;
+import com.apileague.client.model.ExtractEntities200Response;
+import java.util.*;
+import com.apileague.client.model.ListWordSynonyms200Response;
+import com.apileague.client.model.PartOfSpeechTagging200Response;
+import com.apileague.client.model.PluralizeWord200Response;
+import com.apileague.client.model.ScoreReadability200Response;
+import com.apileague.client.model.ScoreText200Response;
+import com.apileague.client.model.SingularizeWord200Response;
+import com.apileague.client.model.TextStemming200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -71,9 +72,9 @@ public class TextApi {
   * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
    * @param text The text to be corrected.
    * @param language The language of the text, one of en, de, es, fr, or it.
-   * @return InlineResponse20016
+   * @return CorrectSpelling200Response
   */
-  public InlineResponse20016 correctSpelling (String text, String language) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public CorrectSpelling200Response correctSpelling (String text, String language) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -115,7 +116,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20016) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20016.class);
+         return (CorrectSpelling200Response) ApiInvoker.deserialize(localVarResponse, "", CorrectSpelling200Response.class);
       } else {
          return null;
       }
@@ -141,7 +142,7 @@ public class TextApi {
    * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
    * @param text The text to be corrected.   * @param language The language of the text, one of en, de, es, fr, or it.
   */
-  public void correctSpelling (String text, String language, final Response.Listener<InlineResponse20016> responseListener, final Response.ErrorListener errorListener) {
+  public void correctSpelling (String text, String language, final Response.Listener<CorrectSpelling200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -193,7 +194,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20016) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20016.class));
+              responseListener.onResponse((CorrectSpelling200Response) ApiInvoker.deserialize(localVarResponse,  "", CorrectSpelling200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -212,9 +213,9 @@ public class TextApi {
   * Detect Language
   * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
    * @param text The text for which the language should be detected.
-   * @return List<InlineResponse20017>
+   * @return List<DetectLanguage200ResponseInner>
   */
-  public List<InlineResponse20017> detectLanguage (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<DetectLanguage200ResponseInner> detectLanguage (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -250,7 +251,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<InlineResponse20017>) ApiInvoker.deserialize(localVarResponse, "array", InlineResponse20017.class);
+         return (List<DetectLanguage200ResponseInner>) ApiInvoker.deserialize(localVarResponse, "array", DetectLanguage200ResponseInner.class);
       } else {
          return null;
       }
@@ -276,7 +277,7 @@ public class TextApi {
    * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
    * @param text The text for which the language should be detected.
   */
-  public void detectLanguage (String text, final Response.Listener<List<InlineResponse20017>> responseListener, final Response.ErrorListener errorListener) {
+  public void detectLanguage (String text, final Response.Listener<List<DetectLanguage200ResponseInner>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -322,7 +323,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<InlineResponse20017>) ApiInvoker.deserialize(localVarResponse,  "array", InlineResponse20017.class));
+              responseListener.onResponse((List<DetectLanguage200ResponseInner>) ApiInvoker.deserialize(localVarResponse,  "array", DetectLanguage200ResponseInner.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -341,9 +342,9 @@ public class TextApi {
   * Detect Sentiment
   * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
    * @param text The text for which the sentiment should be detected.
-   * @return InlineResponse20018
+   * @return DetectSentiment200Response
   */
-  public InlineResponse20018 detectSentiment (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public DetectSentiment200Response detectSentiment (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -379,7 +380,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20018) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20018.class);
+         return (DetectSentiment200Response) ApiInvoker.deserialize(localVarResponse, "", DetectSentiment200Response.class);
       } else {
          return null;
       }
@@ -405,7 +406,7 @@ public class TextApi {
    * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
    * @param text The text for which the sentiment should be detected.
   */
-  public void detectSentiment (String text, final Response.Listener<InlineResponse20018> responseListener, final Response.ErrorListener errorListener) {
+  public void detectSentiment (String text, final Response.Listener<DetectSentiment200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -451,7 +452,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20018) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20018.class));
+              responseListener.onResponse((DetectSentiment200Response) ApiInvoker.deserialize(localVarResponse,  "", DetectSentiment200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -470,9 +471,9 @@ public class TextApi {
   * Extract Dates
   * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
    * @param text The text from which dates should be extracted.
-   * @return InlineResponse20021
+   * @return ExtractDates200Response
   */
-  public InlineResponse20021 extractDates (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractDates200Response extractDates (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -508,7 +509,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20021) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20021.class);
+         return (ExtractDates200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractDates200Response.class);
       } else {
          return null;
       }
@@ -534,7 +535,7 @@ public class TextApi {
    * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
    * @param text The text from which dates should be extracted.
   */
-  public void extractDates (String text, final Response.Listener<InlineResponse20021> responseListener, final Response.ErrorListener errorListener) {
+  public void extractDates (String text, final Response.Listener<ExtractDates200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -580,7 +581,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20021) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20021.class));
+              responseListener.onResponse((ExtractDates200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractDates200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -599,9 +600,9 @@ public class TextApi {
   * Extract Entities
   * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
    * @param text The text from which entities should be extracted.
-   * @return InlineResponse20027
+   * @return ExtractEntities200Response
   */
-  public InlineResponse20027 extractEntities (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ExtractEntities200Response extractEntities (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -637,7 +638,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20027) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20027.class);
+         return (ExtractEntities200Response) ApiInvoker.deserialize(localVarResponse, "", ExtractEntities200Response.class);
       } else {
          return null;
       }
@@ -663,7 +664,7 @@ public class TextApi {
    * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
    * @param text The text from which entities should be extracted.
   */
-  public void extractEntities (String text, final Response.Listener<InlineResponse20027> responseListener, final Response.ErrorListener errorListener) {
+  public void extractEntities (String text, final Response.Listener<ExtractEntities200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -709,7 +710,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20027) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20027.class));
+              responseListener.onResponse((ExtractEntities200Response) ApiInvoker.deserialize(localVarResponse,  "", ExtractEntities200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -728,9 +729,9 @@ public class TextApi {
   * List Word Synonyms
   * Return synonyms of a word.
    * @param word The (noun) word for which a list of synonyms should be returned.
-   * @return InlineResponse20022
+   * @return ListWordSynonyms200Response
   */
-  public InlineResponse20022 listWordSynonyms (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ListWordSynonyms200Response listWordSynonyms (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'word' is set
     if (word == null) {
@@ -766,7 +767,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20022) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20022.class);
+         return (ListWordSynonyms200Response) ApiInvoker.deserialize(localVarResponse, "", ListWordSynonyms200Response.class);
       } else {
          return null;
       }
@@ -792,7 +793,7 @@ public class TextApi {
    * Return synonyms of a word.
    * @param word The (noun) word for which a list of synonyms should be returned.
   */
-  public void listWordSynonyms (String word, final Response.Listener<InlineResponse20022> responseListener, final Response.ErrorListener errorListener) {
+  public void listWordSynonyms (String word, final Response.Listener<ListWordSynonyms200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'word' is set
@@ -838,7 +839,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20022) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20022.class));
+              responseListener.onResponse((ListWordSynonyms200Response) ApiInvoker.deserialize(localVarResponse,  "", ListWordSynonyms200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -857,9 +858,9 @@ public class TextApi {
   * Part of Speech Tagging
   * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
    * @param text The text to tag the part of speech.
-   * @return InlineResponse20023
+   * @return PartOfSpeechTagging200Response
   */
-  public InlineResponse20023 partOfSpeechTagging (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PartOfSpeechTagging200Response partOfSpeechTagging (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -895,7 +896,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20023) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20023.class);
+         return (PartOfSpeechTagging200Response) ApiInvoker.deserialize(localVarResponse, "", PartOfSpeechTagging200Response.class);
       } else {
          return null;
       }
@@ -921,7 +922,7 @@ public class TextApi {
    * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
    * @param text The text to tag the part of speech.
   */
-  public void partOfSpeechTagging (String text, final Response.Listener<InlineResponse20023> responseListener, final Response.ErrorListener errorListener) {
+  public void partOfSpeechTagging (String text, final Response.Listener<PartOfSpeechTagging200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -967,7 +968,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20023) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20023.class));
+              responseListener.onResponse((PartOfSpeechTagging200Response) ApiInvoker.deserialize(localVarResponse,  "", PartOfSpeechTagging200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -986,9 +987,9 @@ public class TextApi {
   * Pluralize Word
   * Find the plural form of a word.
    * @param word The (noun) word for which the plural form should be found.
-   * @return InlineResponse20026
+   * @return PluralizeWord200Response
   */
-  public InlineResponse20026 pluralizeWord (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PluralizeWord200Response pluralizeWord (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'word' is set
     if (word == null) {
@@ -1024,7 +1025,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20026) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20026.class);
+         return (PluralizeWord200Response) ApiInvoker.deserialize(localVarResponse, "", PluralizeWord200Response.class);
       } else {
          return null;
       }
@@ -1050,7 +1051,7 @@ public class TextApi {
    * Find the plural form of a word.
    * @param word The (noun) word for which the plural form should be found.
   */
-  public void pluralizeWord (String word, final Response.Listener<InlineResponse20026> responseListener, final Response.ErrorListener errorListener) {
+  public void pluralizeWord (String word, final Response.Listener<PluralizeWord200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'word' is set
@@ -1096,7 +1097,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20026) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20026.class));
+              responseListener.onResponse((PluralizeWord200Response) ApiInvoker.deserialize(localVarResponse,  "", PluralizeWord200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1115,9 +1116,9 @@ public class TextApi {
   * Score Readability
   * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
    * @param text The text to score for readability.
-   * @return InlineResponse20020
+   * @return ScoreReadability200Response
   */
-  public InlineResponse20020 scoreReadability (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ScoreReadability200Response scoreReadability (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -1153,7 +1154,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20020) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20020.class);
+         return (ScoreReadability200Response) ApiInvoker.deserialize(localVarResponse, "", ScoreReadability200Response.class);
       } else {
          return null;
       }
@@ -1179,7 +1180,7 @@ public class TextApi {
    * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
    * @param text The text to score for readability.
   */
-  public void scoreReadability (String text, final Response.Listener<InlineResponse20020> responseListener, final Response.ErrorListener errorListener) {
+  public void scoreReadability (String text, final Response.Listener<ScoreReadability200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -1225,7 +1226,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20020) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20020.class));
+              responseListener.onResponse((ScoreReadability200Response) ApiInvoker.deserialize(localVarResponse,  "", ScoreReadability200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1245,9 +1246,9 @@ public class TextApi {
   * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
    * @param title The title of the text to score.
    * @param text The text to score for multiple metrics.
-   * @return InlineResponse20019
+   * @return ScoreText200Response
   */
-  public InlineResponse20019 scoreText (String title, String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ScoreText200Response scoreText (String title, String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'title' is set
     if (title == null) {
@@ -1289,7 +1290,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20019) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20019.class);
+         return (ScoreText200Response) ApiInvoker.deserialize(localVarResponse, "", ScoreText200Response.class);
       } else {
          return null;
       }
@@ -1315,7 +1316,7 @@ public class TextApi {
    * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
    * @param title The title of the text to score.   * @param text The text to score for multiple metrics.
   */
-  public void scoreText (String title, String text, final Response.Listener<InlineResponse20019> responseListener, final Response.ErrorListener errorListener) {
+  public void scoreText (String title, String text, final Response.Listener<ScoreText200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'title' is set
@@ -1367,7 +1368,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20019) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20019.class));
+              responseListener.onResponse((ScoreText200Response) ApiInvoker.deserialize(localVarResponse,  "", ScoreText200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1386,9 +1387,9 @@ public class TextApi {
   * Singularize Word
   * Find the singular form of a word.
    * @param word The (noun) word for which the singular form should be found.
-   * @return InlineResponse20025
+   * @return SingularizeWord200Response
   */
-  public InlineResponse20025 singularizeWord (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public SingularizeWord200Response singularizeWord (String word) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'word' is set
     if (word == null) {
@@ -1424,7 +1425,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20025) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20025.class);
+         return (SingularizeWord200Response) ApiInvoker.deserialize(localVarResponse, "", SingularizeWord200Response.class);
       } else {
          return null;
       }
@@ -1450,7 +1451,7 @@ public class TextApi {
    * Find the singular form of a word.
    * @param word The (noun) word for which the singular form should be found.
   */
-  public void singularizeWord (String word, final Response.Listener<InlineResponse20025> responseListener, final Response.ErrorListener errorListener) {
+  public void singularizeWord (String word, final Response.Listener<SingularizeWord200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'word' is set
@@ -1496,7 +1497,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20025) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20025.class));
+              responseListener.onResponse((SingularizeWord200Response) ApiInvoker.deserialize(localVarResponse,  "", SingularizeWord200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1515,9 +1516,9 @@ public class TextApi {
   * Text Stemming
   * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
    * @param text The text to be stemmed.
-   * @return InlineResponse20024
+   * @return TextStemming200Response
   */
-  public InlineResponse20024 textStemming (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public TextStemming200Response textStemming (String text) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'text' is set
     if (text == null) {
@@ -1553,7 +1554,7 @@ public class TextApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20024) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20024.class);
+         return (TextStemming200Response) ApiInvoker.deserialize(localVarResponse, "", TextStemming200Response.class);
       } else {
          return null;
       }
@@ -1579,7 +1580,7 @@ public class TextApi {
    * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
    * @param text The text to be stemmed.
   */
-  public void textStemming (String text, final Response.Listener<InlineResponse20024> responseListener, final Response.ErrorListener errorListener) {
+  public void textStemming (String text, final Response.Listener<TextStemming200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'text' is set
@@ -1625,7 +1626,7 @@ public class TextApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20024) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20024.class));
+              responseListener.onResponse((TextStemming200Response) ApiInvoker.deserialize(localVarResponse,  "", TextStemming200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

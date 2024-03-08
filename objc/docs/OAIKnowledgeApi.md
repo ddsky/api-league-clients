@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ```objc
 -(NSURLSessionTask*) randomQuoteWithMinLength: (NSNumber*) minLength
     maxLength: (NSNumber*) maxLength
-        completionHandler: (void (^)(OAIInlineResponse20010* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIRandomQuote200Response* output, NSError* error)) handler;
 ```
 
 Random Quote
@@ -42,7 +42,7 @@ OAIKnowledgeApi*apiInstance = [[OAIKnowledgeApi alloc] init];
 // Random Quote
 [apiInstance randomQuoteWithMinLength:minLength
               maxLength:maxLength
-          completionHandler: ^(OAIInlineResponse20010* output, NSError* error) {
+          completionHandler: ^(OAIRandomQuote200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse20010***](OAIInlineResponse20010.md)
+[**OAIRandomQuote200Response***](OAIRandomQuote200Response.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 # **randomTrivia**
 ```objc
 -(NSURLSessionTask*) randomTriviaWithMaxLength: (NSNumber*) maxLength
-        completionHandler: (void (^)(OAIInlineResponse2009* output, NSError* error)) handler;
+        completionHandler: (void (^)(OAIRandomTrivia200Response* output, NSError* error)) handler;
 ```
 
 Random Trivia
@@ -105,7 +105,7 @@ OAIKnowledgeApi*apiInstance = [[OAIKnowledgeApi alloc] init];
 
 // Random Trivia
 [apiInstance randomTriviaWithMaxLength:maxLength
-          completionHandler: ^(OAIInlineResponse2009* output, NSError* error) {
+          completionHandler: ^(OAIRandomTrivia200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAIInlineResponse2009***](OAIInlineResponse2009.md)
+[**OAIRandomTrivia200Response***](OAIRandomTrivia200Response.md)
 
 ### Authorization
 

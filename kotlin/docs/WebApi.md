@@ -10,9 +10,9 @@ Method | HTTP request | Description
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
 
 
-<a name="extractAuthors"></a>
+<a id="extractAuthors"></a>
 # **extractAuthors**
-> InlineResponse20014 extractAuthors(url)
+> ExtractAuthors200Response extractAuthors(url)
 
 Extract Authors
 
@@ -21,13 +21,13 @@ Extracts the authors from a given URL. This API is useful for extracting the aut
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = WebApi()
 val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url with the article from which authors should be extracted.
 try {
-    val result : InlineResponse20014 = apiInstance.extractAuthors(url)
+    val result : ExtractAuthors200Response = apiInstance.extractAuthors(url)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebApi#extractAuthors")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
 
 ### Authorization
 
@@ -63,9 +63,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="extractContentFromAWebPage"></a>
+<a id="extractContentFromAWebPage"></a>
 # **extractContentFromAWebPage**
-> InlineResponse20012 extractContentFromAWebPage(url)
+> ExtractContentFromAWebPage200Response extractContentFromAWebPage(url)
 
 Extract Content from a Web Page
 
@@ -74,13 +74,13 @@ Extract the main content from a web page. This API is useful for extracting the 
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = WebApi()
 val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url for which the content will be extracted.
 try {
-    val result : InlineResponse20012 = apiInstance.extractContentFromAWebPage(url)
+    val result : ExtractContentFromAWebPage200Response = apiInstance.extractContentFromAWebPage(url)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebApi#extractContentFromAWebPage")
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
 
 ### Authorization
 
@@ -116,9 +116,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="extractPublishDate"></a>
+<a id="extractPublishDate"></a>
 # **extractPublishDate**
-> InlineResponse20013 extractPublishDate(url)
+> ExtractPublishDate200Response extractPublishDate(url)
 
 Extract Publish Date
 
@@ -127,13 +127,13 @@ Extract the publish date of an article (news or blog). The API will return the p
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = WebApi()
 val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url for which the publish date should be extracted.
 try {
-    val result : InlineResponse20013 = apiInstance.extractPublishDate(url)
+    val result : ExtractPublishDate200Response = apiInstance.extractPublishDate(url)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebApi#extractPublishDate")
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
 
 ### Authorization
 
@@ -169,9 +169,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchWeb"></a>
+<a id="searchWeb"></a>
 # **searchWeb**
-> InlineResponse20015 searchWeb(query, number)
+> SearchWeb200Response searchWeb(query, number)
 
 Search Web
 
@@ -180,14 +180,14 @@ Search the web for a given query. The API returns a list of results with the tit
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = WebApi()
 val query : kotlin.String = penguins // kotlin.String | The search query.
 val number : kotlin.Int = 5 // kotlin.Int | The number of results to return in range [1,50]
 try {
-    val result : InlineResponse20015 = apiInstance.searchWeb(query, number)
+    val result : SearchWeb200Response = apiInstance.searchWeb(query, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebApi#searchWeb")
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**SearchWeb200Response**](SearchWeb200Response.md)
 
 ### Authorization
 

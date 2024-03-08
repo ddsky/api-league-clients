@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## readKeyValueFromStore
 
-> InlineResponse20031 readKeyValueFromStore(key)
+> ReadKeyValueFromStore200Response readKeyValueFromStore(key)
 
 Read Key Value from Store
 
@@ -26,7 +26,7 @@ Read a value from the key-value store. The key-value store is a simple storage s
 StorageApi apiInstance = new StorageApi();
 String key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
 try {
-    InlineResponse20031 result = apiInstance.readKeyValueFromStore(key);
+    ReadKeyValueFromStore200Response result = apiInstance.readKeyValueFromStore(key);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readKeyValueFromStore");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ## storeKeyValueGET
 
-> InlineResponse20032 storeKeyValueGET(key, value)
+> StoreKeyValueGET200Response storeKeyValueGET(key, value)
 
 Store Key Value (GET)
 
@@ -73,7 +73,7 @@ StorageApi apiInstance = new StorageApi();
 String key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
 String value = 23578 visitors; // String | The value that is supposed to be stored (max length 10,000 characters).
 try {
-    InlineResponse20032 result = apiInstance.storeKeyValueGET(key, value);
+    StoreKeyValueGET200Response result = apiInstance.storeKeyValueGET(key, value);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#storeKeyValueGET");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20032**](InlineResponse20032.md)
+[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
 
 ### Authorization
 

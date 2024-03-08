@@ -23,8 +23,8 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.apileague.client.model.InlineResponse20010;
-import com.apileague.client.model.InlineResponse2009;
+import com.apileague.client.model.RandomQuote200Response;
+import com.apileague.client.model.RandomTrivia200Response;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -61,9 +61,9 @@ public class KnowledgeApi {
   * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
    * @param minLength The minimum length of the quote in letters.
    * @param maxLength The maximum length of the quote in letters.
-   * @return InlineResponse20010
+   * @return RandomQuote200Response
   */
-  public InlineResponse20010 randomQuote (Integer minLength, Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public RandomQuote200Response randomQuote (Integer minLength, Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -95,7 +95,7 @@ public class KnowledgeApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse20010) ApiInvoker.deserialize(localVarResponse, "", InlineResponse20010.class);
+         return (RandomQuote200Response) ApiInvoker.deserialize(localVarResponse, "", RandomQuote200Response.class);
       } else {
          return null;
       }
@@ -121,7 +121,7 @@ public class KnowledgeApi {
    * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
    * @param minLength The minimum length of the quote in letters.   * @param maxLength The maximum length of the quote in letters.
   */
-  public void randomQuote (Integer minLength, Integer maxLength, final Response.Listener<InlineResponse20010> responseListener, final Response.ErrorListener errorListener) {
+  public void randomQuote (Integer minLength, Integer maxLength, final Response.Listener<RandomQuote200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -163,7 +163,7 @@ public class KnowledgeApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse20010) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse20010.class));
+              responseListener.onResponse((RandomQuote200Response) ApiInvoker.deserialize(localVarResponse,  "", RandomQuote200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -182,9 +182,9 @@ public class KnowledgeApi {
   * Random Trivia
   * This endpoint returns a random piece of trivia.
    * @param maxLength The maximum length of the trivia in letters.
-   * @return InlineResponse2009
+   * @return RandomTrivia200Response
   */
-  public InlineResponse2009 randomTrivia (Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public RandomTrivia200Response randomTrivia (Integer maxLength) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -215,7 +215,7 @@ public class KnowledgeApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (InlineResponse2009) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2009.class);
+         return (RandomTrivia200Response) ApiInvoker.deserialize(localVarResponse, "", RandomTrivia200Response.class);
       } else {
          return null;
       }
@@ -241,7 +241,7 @@ public class KnowledgeApi {
    * This endpoint returns a random piece of trivia.
    * @param maxLength The maximum length of the trivia in letters.
   */
-  public void randomTrivia (Integer maxLength, final Response.Listener<InlineResponse2009> responseListener, final Response.ErrorListener errorListener) {
+  public void randomTrivia (Integer maxLength, final Response.Listener<RandomTrivia200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -282,7 +282,7 @@ public class KnowledgeApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((InlineResponse2009) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2009.class));
+              responseListener.onResponse((RandomTrivia200Response) ApiInvoker.deserialize(localVarResponse,  "", RandomTrivia200Response.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

@@ -2,15 +2,15 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
-[**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News |
+| [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News |
 
 
-<a name="extractNews"></a>
+<a id="extractNews"></a>
 # **extractNews**
-> InlineResponse2003 extractNews(url, analyze)
+> ExtractNews200Response extractNews(url, analyze)
 
 Extract News
 
@@ -47,7 +47,7 @@ public class Example {
     String url = "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/"; // String | The url of the news.
     Boolean analyze = true; // Boolean | Whether to analyze the news (extract entities etc.)
     try {
-      InlineResponse2003 result = apiInstance.extractNews(url, analyze);
+      ExtractNews200Response result = apiInstance.extractNews(url, analyze);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NewsApi#extractNews");
@@ -62,14 +62,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **String**| The url of the news. |
- **analyze** | **Boolean**| Whether to analyze the news (extract entities etc.) |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **url** | **String**| The url of the news. | |
+| **analyze** | **Boolean**| Whether to analyze the news (extract entities etc.) | |
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ExtractNews200Response**](ExtractNews200Response.md)
 
 ### Authorization
 
@@ -83,17 +83,17 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 
-<a name="searchNews"></a>
+<a id="searchNews"></a>
 # **searchNews**
-> InlineResponse2002 searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
 
 Search News
 
@@ -143,7 +143,7 @@ public class Example {
     Integer offset = 0; // Integer | The number of news to skip in range [0,10000]
     Integer number = 10; // Integer | The number of news to return in range [1,100]
     try {
-      InlineResponse2002 result = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+      SearchNews200Response result = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NewsApi#searchNews");
@@ -158,27 +158,27 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
- **sourceCountries** | **String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]
- **language** | **String**| The ISO 6391 language code of the news. | [optional]
- **minSentiment** | **Double**| The minimal sentiment of the news in range [-1,1]. | [optional]
- **maxSentiment** | **Double**| The maximal sentiment of the news in range [-1,1]. | [optional]
- **earliestPublishDate** | **String**| The news must have been published after this date. | [optional]
- **latestPublishDate** | **String**| The news must have been published before this date. | [optional]
- **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional]
- **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
- **entities** | **String**| Filter news by entities (see semantic types). | [optional]
- **locationFilter** | **String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
- **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional]
- **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **offset** | **Integer**| The number of news to skip in range [0,10000] | [optional]
- **number** | **Integer**| The number of news to return in range [1,100] | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **sourceCountries** | **String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
+| **language** | **String**| The ISO 6391 language code of the news. | [optional] |
+| **minSentiment** | **Double**| The minimal sentiment of the news in range [-1,1]. | [optional] |
+| **maxSentiment** | **Double**| The maximal sentiment of the news in range [-1,1]. | [optional] |
+| **earliestPublishDate** | **String**| The news must have been published after this date. | [optional] |
+| **latestPublishDate** | **String**| The news must have been published before this date. | [optional] |
+| **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] |
+| **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
+| **entities** | **String**| Filter news by entities (see semantic types). | [optional] |
+| **locationFilter** | **String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
+| **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] |
+| **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **Integer**| The number of news to skip in range [0,10000] | [optional] |
+| **number** | **Integer**| The number of news to return in range [1,100] | [optional] |
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**SearchNews200Response**](SearchNews200Response.md)
 
 ### Authorization
 
@@ -192,11 +192,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
 

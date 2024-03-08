@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books
 
 
-<a name="findSimilarBooks"></a>
+<a id="findSimilarBooks"></a>
 # **findSimilarBooks**
-> InlineResponse2001 findSimilarBooks(id, number)
+> FindSimilarBooks200Response findSimilarBooks(id, number)
 
 Find Similar Books
 
@@ -19,14 +19,14 @@ Find books that are similar to the given book. This is useful for recommending b
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = BooksApi()
 val id : kotlin.Int = 8302059 // kotlin.Int | The id of the book to which similar books should be found.
 val number : kotlin.Int = 10 // kotlin.Int | The number of similar books to return in range [1,100]
 try {
-    val result : InlineResponse2001 = apiInstance.findSimilarBooks(id, number)
+    val result : FindSimilarBooks200Response = apiInstance.findSimilarBooks(id, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BooksApi#findSimilarBooks")
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
 
 ### Authorization
 
@@ -63,9 +63,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchBooks"></a>
+<a id="searchBooks"></a>
 # **searchBooks**
-> InlineResponse200 searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
 Search Books
 
@@ -74,7 +74,7 @@ Search and filter books based on matching a query, the ISBN, rating, and more fi
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = BooksApi()
@@ -93,7 +93,7 @@ val groupResults : kotlin.Boolean = false // kotlin.Boolean | Whether to group s
 val offset : kotlin.Int = 0 // kotlin.Int | The number of books to skip in range [0,1000]
 val number : kotlin.Int = 10 // kotlin.Int | The number of books to return in range [1,100]
 try {
-    val result : InlineResponse200 = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+    val result : SearchBooks200Response = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BooksApi#searchBooks")
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**SearchBooks200Response**](SearchBooks200Response.md)
 
 ### Authorization
 

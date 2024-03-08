@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
 
 
-<a name="generateNonsenseWord"></a>
+<a id="generateNonsenseWord"></a>
 # **generateNonsenseWord**
-> InlineResponse2008 generateNonsenseWord()
+> GenerateNonsenseWord200Response generateNonsenseWord()
 
 Generate Nonsense Word
 
@@ -23,12 +23,12 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
 try {
-    val result : InlineResponse2008 = apiInstance.generateNonsenseWord()
+    val result : GenerateNonsenseWord200Response = apiInstance.generateNonsenseWord()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#generateNonsenseWord")
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
 
 ### Authorization
 
@@ -61,9 +61,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="randomJoke"></a>
+<a id="randomJoke"></a>
 # **randomJoke**
-> InlineResponse2004Jokes randomJoke(includeTags, excludeTags, minRating, maxLength)
+> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
 
 Random Joke
 
@@ -72,7 +72,7 @@ This is a simple API that returns a random joke. You can filter the jokes by tag
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
@@ -81,7 +81,7 @@ val excludeTags : kotlin.String = nsfw,dark // kotlin.String | A comma-separated
 val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the jokes.
 val maxLength : kotlin.Int = 140 // kotlin.Int | The maximum length of the joke in letters.
 try {
-    val result : InlineResponse2004Jokes = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength)
+    val result : SearchJokes200ResponseJokesInner = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#randomJoke")
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004Jokes**](InlineResponse2004Jokes.md)
+[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -120,9 +120,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="randomMeme"></a>
+<a id="randomMeme"></a>
 # **randomMeme**
-> InlineResponse2006 randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
 Random Meme
 
@@ -131,7 +131,7 @@ Get a random meme out of over 200,000+ memes. To get the latest memes, you can u
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
@@ -141,7 +141,7 @@ val mediaType : kotlin.String = image // kotlin.String | The media type (either 
 val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0-1.0] of the meme.
 val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
 try {
-    val result : InlineResponse2006 = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+    val result : RandomMeme200Response = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#randomMeme")
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**RandomMeme200Response**](RandomMeme200Response.md)
 
 ### Authorization
 
@@ -181,9 +181,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchGifs"></a>
+<a id="searchGifs"></a>
 # **searchGifs**
-> InlineResponse2007 searchGifs(query, number)
+> SearchGifs200Response searchGifs(query, number)
 
 Search Gifs
 
@@ -192,14 +192,14 @@ Search through hundreds of thousands of gifs to match any reaction you want. The
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
 val query : kotlin.String = dogs // kotlin.String | The search query.
 val number : kotlin.Int = 5 // kotlin.Int | The number of gifs to return in range [1,10]
 try {
-    val result : InlineResponse2007 = apiInstance.searchGifs(query, number)
+    val result : SearchGifs200Response = apiInstance.searchGifs(query, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#searchGifs")
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**SearchGifs200Response**](SearchGifs200Response.md)
 
 ### Authorization
 
@@ -236,9 +236,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchJokes"></a>
+<a id="searchJokes"></a>
 # **searchJokes**
-> InlineResponse2004 searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
 Search Jokes
 
@@ -247,7 +247,7 @@ With over 50,000 jokes, you should find something for any occasion. There are 27
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
@@ -259,7 +259,7 @@ val maxLength : kotlin.Double = 140 // kotlin.Double | The maximum length of the
 val offset : kotlin.Int = 0 // kotlin.Int | The number of jokes to skip, between 0 and 1000.
 val number : kotlin.Int = 3 // kotlin.Int | The number of jokes, between 1 and 10.
 try {
-    val result : InlineResponse2004 = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+    val result : SearchJokes200Response = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#searchJokes")
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SearchJokes200Response**](SearchJokes200Response.md)
 
 ### Authorization
 
@@ -301,9 +301,9 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="searchMemes"></a>
+<a id="searchMemes"></a>
 # **searchMemes**
-> InlineResponse2005 searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
 Search Memes
 
@@ -312,7 +312,7 @@ With over 200,000 memes, you&#39;ll surely find something funny. You can even se
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
+//import apileague.infrastructure.*
 //import com.apileague.client.model.*
 
 val apiInstance = HumorApi()
@@ -324,7 +324,7 @@ val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in 
 val offset : kotlin.Int = 0 // kotlin.Int | The number of memes to skip, between 0 and 1000.
 val number : kotlin.Int = 3 // kotlin.Int | The number of memes, between 0 and 10.
 try {
-    val result : InlineResponse2005 = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+    val result : SearchMemes200Response = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling HumorApi#searchMemes")
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**SearchMemes200Response**](SearchMemes200Response.md)
 
 ### Authorization
 

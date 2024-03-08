@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "OAIInlineResponse2004.h"
-#import "OAIInlineResponse2004Jokes.h"
-#import "OAIInlineResponse2005.h"
-#import "OAIInlineResponse2006.h"
-#import "OAIInlineResponse2007.h"
-#import "OAIInlineResponse2008.h"
+#import "OAIGenerateNonsenseWord200Response.h"
+#import "OAIRandomMeme200Response.h"
+#import "OAISearchGifs200Response.h"
+#import "OAISearchJokes200Response.h"
+#import "OAISearchJokes200ResponseJokesInner.h"
+#import "OAISearchMemes200Response.h"
 #import "OAIApi.h"
 
 /**
@@ -40,9 +40,9 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2008*
+/// @return OAIGenerateNonsenseWord200Response*
 -(NSURLSessionTask*) generateNonsenseWordWithCompletionHandler: 
-    (void (^)(OAIInlineResponse2008* output, NSError* error)) handler;
+    (void (^)(OAIGenerateNonsenseWord200Response* output, NSError* error)) handler;
 
 
 /// Random Joke
@@ -61,12 +61,12 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2004Jokes*
+/// @return OAISearchJokes200ResponseJokesInner*
 -(NSURLSessionTask*) randomJokeWithIncludeTags: (NSString*) includeTags
     excludeTags: (NSString*) excludeTags
     minRating: (NSNumber*) minRating
     maxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse2004Jokes* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchJokes200ResponseJokesInner* output, NSError* error)) handler;
 
 
 /// Random Meme
@@ -86,13 +86,13 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2006*
+/// @return OAIRandomMeme200Response*
 -(NSURLSessionTask*) randomMemeWithKeywords: (NSString*) keywords
     keywordsInImage: (NSNumber*) keywordsInImage
     mediaType: (NSString*) mediaType
     minRating: (NSNumber*) minRating
     maxAgeDays: (NSNumber*) maxAgeDays
-    completionHandler: (void (^)(OAIInlineResponse2006* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAIRandomMeme200Response* output, NSError* error)) handler;
 
 
 /// Search Gifs
@@ -109,10 +109,10 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2007*
+/// @return OAISearchGifs200Response*
 -(NSURLSessionTask*) searchGifsWithQuery: (NSString*) query
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2007* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchGifs200Response* output, NSError* error)) handler;
 
 
 /// Search Jokes
@@ -134,7 +134,7 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2004*
+/// @return OAISearchJokes200Response*
 -(NSURLSessionTask*) searchJokesWithKeywords: (NSString*) keywords
     includeTags: (NSString*) includeTags
     excludeTags: (NSString*) excludeTags
@@ -142,7 +142,7 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
     maxLength: (NSNumber*) maxLength
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2004* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchJokes200Response* output, NSError* error)) handler;
 
 
 /// Search Memes
@@ -164,7 +164,7 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
 ///  code:406 message:"Not Acceptable",
 ///  code:429 message:"Too Many Requests"
 ///
-/// @return OAIInlineResponse2005*
+/// @return OAISearchMemes200Response*
 -(NSURLSessionTask*) searchMemesWithKeywords: (NSString*) keywords
     keywordsInImage: (NSNumber*) keywordsInImage
     mediaType: (NSString*) mediaType
@@ -172,7 +172,7 @@ extern NSInteger kOAIHumorApiMissingParamErrorCode;
     maxAgeDays: (NSNumber*) maxAgeDays
     offset: (NSNumber*) offset
     number: (NSNumber*) number
-    completionHandler: (void (^)(OAIInlineResponse2005* output, NSError* error)) handler;
+    completionHandler: (void (^)(OAISearchMemes200Response* output, NSError* error)) handler;
 
 
 

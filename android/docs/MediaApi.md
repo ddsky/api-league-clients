@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## detectMainImageColor
 
-> List&lt;InlineResponse20029&gt; detectMainImageColor(url)
+> List&lt;DetectMainImageColor200ResponseInner&gt; detectMainImageColor(url)
 
 Detect Main Image Color
 
@@ -27,7 +27,7 @@ Detect the main color of an image. The API returns a list of colors and their he
 MediaApi apiInstance = new MediaApi();
 String url = https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM ; // String | The url of the image for which the colors should be detected.
 try {
-    List<InlineResponse20029> result = apiInstance.detectMainImageColor(url);
+    List<DetectMainImageColor200ResponseInner> result = apiInstance.detectMainImageColor(url);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaApi#detectMainImageColor");
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;InlineResponse20029&gt;**](InlineResponse20029.md)
+[**List&lt;DetectMainImageColor200ResponseInner&gt;**](DetectMainImageColor200ResponseInner.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ## searchRoyaltyFreeImages
 
-> InlineResponse20028 searchRoyaltyFreeImages(query, number)
+> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(query, number)
 
 Search Royalty Free Images
 
@@ -126,7 +126,7 @@ MediaApi apiInstance = new MediaApi();
 String query = dogs; // String | The search query.
 Integer number = 3; // Integer | The number of images to return in range [1,10]
 try {
-    InlineResponse20028 result = apiInstance.searchRoyaltyFreeImages(query, number);
+    SearchRoyaltyFreeImages200Response result = apiInstance.searchRoyaltyFreeImages(query, number);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaApi#searchRoyaltyFreeImages");
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
 
 ### Authorization
 

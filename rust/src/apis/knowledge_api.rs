@@ -43,7 +43,7 @@ pub enum RandomTriviaError {
 
 
 /// This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-pub async fn random_quote(configuration: &configuration::Configuration, min_length: Option<i32>, max_length: Option<i32>) -> Result<crate::models::InlineResponse20010, Error<RandomQuoteError>> {
+pub async fn random_quote(configuration: &configuration::Configuration, min_length: Option<i32>, max_length: Option<i32>) -> Result<crate::models::RandomQuote200Response, Error<RandomQuoteError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -93,7 +93,7 @@ pub async fn random_quote(configuration: &configuration::Configuration, min_leng
 }
 
 /// This endpoint returns a random piece of trivia.
-pub async fn random_trivia(configuration: &configuration::Configuration, max_length: Option<i32>) -> Result<crate::models::InlineResponse2009, Error<RandomTriviaError>> {
+pub async fn random_trivia(configuration: &configuration::Configuration, max_length: Option<i32>) -> Result<crate::models::RandomTrivia200Response, Error<RandomTriviaError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

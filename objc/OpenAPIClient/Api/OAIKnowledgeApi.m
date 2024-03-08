@@ -1,8 +1,8 @@
 #import "OAIKnowledgeApi.h"
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
-#import "OAIInlineResponse20010.h"
-#import "OAIInlineResponse2009.h"
+#import "OAIRandomQuote200Response.h"
+#import "OAIRandomTrivia200Response.h"
 
 
 @interface OAIKnowledgeApi ()
@@ -57,11 +57,11 @@ NSInteger kOAIKnowledgeApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxLength The maximum length of the quote in letters. (optional)
 ///
-///  @returns OAIInlineResponse20010*
+///  @returns OAIRandomQuote200Response*
 ///
 -(NSURLSessionTask*) randomQuoteWithMinLength: (NSNumber*) minLength
     maxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse20010* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIRandomQuote200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-random-quote"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -105,10 +105,10 @@ NSInteger kOAIKnowledgeApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse20010*"
+                              responseType: @"OAIRandomQuote200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse20010*)data, error);
+                                    handler((OAIRandomQuote200Response*)data, error);
                                 }
                             }];
 }
@@ -118,10 +118,10 @@ NSInteger kOAIKnowledgeApiMissingParamErrorCode = 234513;
 /// This endpoint returns a random piece of trivia.
 ///  @param maxLength The maximum length of the trivia in letters. (optional)
 ///
-///  @returns OAIInlineResponse2009*
+///  @returns OAIRandomTrivia200Response*
 ///
 -(NSURLSessionTask*) randomTriviaWithMaxLength: (NSNumber*) maxLength
-    completionHandler: (void (^)(OAIInlineResponse2009* output, NSError* error)) handler {
+    completionHandler: (void (^)(OAIRandomTrivia200Response* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-random-trivia"];
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
@@ -162,10 +162,10 @@ NSInteger kOAIKnowledgeApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAIInlineResponse2009*"
+                              responseType: @"OAIRandomTrivia200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAIInlineResponse2009*)data, error);
+                                    handler((OAIRandomTrivia200Response*)data, error);
                                 }
                             }];
 }
