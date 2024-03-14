@@ -261,7 +261,7 @@ namespace Example
             var keywords = airplane;  // string? | A comma-separated list of words that must occur in the meme. (optional) 
             var keywordsInImage = true;  // bool? | Whether the keywords must occur in the image. (optional) 
             var mediaType = image;  // string? | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional) 
-            var minRating = 0;  // double? | The minimum rating in range [0.0-1.0] of the meme. (optional) 
+            var minRating = 0;  // double? | The minimum rating in range [0.0,1.0] of the meme. (optional) 
             var maxAgeDays = 30;  // int? | The maximum age of the meme in days. (optional) 
 
             try
@@ -308,7 +308,7 @@ catch (ApiException e)
 | **keywords** | **string?** | A comma-separated list of words that must occur in the meme. | [optional]  |
 | **keywordsInImage** | **bool?** | Whether the keywords must occur in the image. | [optional]  |
 | **mediaType** | **string?** | The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]  |
-| **minRating** | **double?** | The minimum rating in range [0.0-1.0] of the meme. | [optional]  |
+| **minRating** | **double?** | The minimum rating in range [0.0,1.0] of the meme. | [optional]  |
 | **maxAgeDays** | **int?** | The maximum age of the meme in days. | [optional]  |
 
 ### Return type
@@ -483,7 +483,7 @@ namespace Example
             var keywords = horse,man;  // string? | A comma-separated list of words that must occur in the joke. (optional) 
             var includeTags = animal;  // string? | A comma-separated list of tags the jokes should have. (optional) 
             var excludeTags = nsfw,dark;  // string? | A comma-separated list of tags the jokes must not have. (optional) 
-            var minRating = 0;  // double? | The minimum rating (0-10) of the jokes. (optional) 
+            var minRating = 0;  // double? | The minimum rating in range [0.0,1.0] of the jokes. (optional) 
             var maxLength = 140;  // double? | The maximum length of the joke in letters. (optional) 
             var offset = 0;  // int? | The number of jokes to skip, between 0 and 1000. (optional) 
             var number = 3;  // int? | The number of jokes, between 1 and 10. (optional) 
@@ -532,7 +532,7 @@ catch (ApiException e)
 | **keywords** | **string?** | A comma-separated list of words that must occur in the joke. | [optional]  |
 | **includeTags** | **string?** | A comma-separated list of tags the jokes should have. | [optional]  |
 | **excludeTags** | **string?** | A comma-separated list of tags the jokes must not have. | [optional]  |
-| **minRating** | **double?** | The minimum rating (0-10) of the jokes. | [optional]  |
+| **minRating** | **double?** | The minimum rating in range [0.0,1.0] of the jokes. | [optional]  |
 | **maxLength** | **double?** | The maximum length of the joke in letters. | [optional]  |
 | **offset** | **int?** | The number of jokes to skip, between 0 and 1000. | [optional]  |
 | **number** | **int?** | The number of jokes, between 1 and 10. | [optional]  |
@@ -604,7 +604,7 @@ namespace Example
             var minRating = 0;  // double? | The minimum rating in range [0.0,1.0] of the meme. (optional) 
             var maxAgeDays = 30;  // int? | The maximum age of the meme in days. (optional) 
             var offset = 0;  // int? | The number of memes to skip, between 0 and 1000. (optional) 
-            var number = 3;  // int? | The number of memes, between 0 and 10. (optional) 
+            var number = 3;  // int? | The number of memes, between 1 and 10. (optional) 
 
             try
             {
@@ -653,7 +653,7 @@ catch (ApiException e)
 | **minRating** | **double?** | The minimum rating in range [0.0,1.0] of the meme. | [optional]  |
 | **maxAgeDays** | **int?** | The maximum age of the meme in days. | [optional]  |
 | **offset** | **int?** | The number of memes to skip, between 0 and 1000. | [optional]  |
-| **number** | **int?** | The number of memes, between 0 and 10. | [optional]  |
+| **number** | **int?** | The number of memes, between 1 and 10. | [optional]  |
 
 ### Return type
 

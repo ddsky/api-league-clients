@@ -643,7 +643,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the meme.")] = None,
         keywords_in_image: Annotated[Optional[StrictBool], Field(description="Whether the keywords must occur in the image.")] = None,
         media_type: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10)]], Field(description="The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0-1.0] of the meme.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         _request_timeout: Union[
             None,
@@ -668,7 +668,7 @@ class HumorApi:
         :type keywords_in_image: bool
         :param media_type: The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
         :type media_type: str
-        :param min_rating: The minimum rating in range [0.0-1.0] of the meme.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the meme.
         :type min_rating: float
         :param max_age_days: The maximum age of the meme in days.
         :type max_age_days: int
@@ -732,7 +732,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the meme.")] = None,
         keywords_in_image: Annotated[Optional[StrictBool], Field(description="Whether the keywords must occur in the image.")] = None,
         media_type: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10)]], Field(description="The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0-1.0] of the meme.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         _request_timeout: Union[
             None,
@@ -757,7 +757,7 @@ class HumorApi:
         :type keywords_in_image: bool
         :param media_type: The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
         :type media_type: str
-        :param min_rating: The minimum rating in range [0.0-1.0] of the meme.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the meme.
         :type min_rating: float
         :param max_age_days: The maximum age of the meme in days.
         :type max_age_days: int
@@ -821,7 +821,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the meme.")] = None,
         keywords_in_image: Annotated[Optional[StrictBool], Field(description="Whether the keywords must occur in the image.")] = None,
         media_type: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10)]], Field(description="The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0-1.0] of the meme.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         _request_timeout: Union[
             None,
@@ -846,7 +846,7 @@ class HumorApi:
         :type keywords_in_image: bool
         :param media_type: The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
         :type media_type: str
-        :param min_rating: The minimum rating in range [0.0-1.0] of the meme.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the meme.
         :type min_rating: float
         :param max_age_days: The maximum age of the meme in days.
         :type max_age_days: int
@@ -1286,7 +1286,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the joke.")] = None,
         include_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes should have.")] = None,
         exclude_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes must not have.")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating (0-10) of the jokes.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the jokes.")] = None,
         max_length: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The maximum length of the joke in letters.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of jokes to skip, between 0 and 1000.")] = None,
         number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of jokes, between 1 and 10.")] = None,
@@ -1313,7 +1313,7 @@ class HumorApi:
         :type include_tags: str
         :param exclude_tags: A comma-separated list of tags the jokes must not have.
         :type exclude_tags: str
-        :param min_rating: The minimum rating (0-10) of the jokes.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the jokes.
         :type min_rating: float
         :param max_length: The maximum length of the joke in letters.
         :type max_length: float
@@ -1383,7 +1383,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the joke.")] = None,
         include_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes should have.")] = None,
         exclude_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes must not have.")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating (0-10) of the jokes.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the jokes.")] = None,
         max_length: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The maximum length of the joke in letters.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of jokes to skip, between 0 and 1000.")] = None,
         number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of jokes, between 1 and 10.")] = None,
@@ -1410,7 +1410,7 @@ class HumorApi:
         :type include_tags: str
         :param exclude_tags: A comma-separated list of tags the jokes must not have.
         :type exclude_tags: str
-        :param min_rating: The minimum rating (0-10) of the jokes.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the jokes.
         :type min_rating: float
         :param max_length: The maximum length of the joke in letters.
         :type max_length: float
@@ -1480,7 +1480,7 @@ class HumorApi:
         keywords: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of words that must occur in the joke.")] = None,
         include_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes should have.")] = None,
         exclude_tags: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of tags the jokes must not have.")] = None,
-        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating (0-10) of the jokes.")] = None,
+        min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the jokes.")] = None,
         max_length: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The maximum length of the joke in letters.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of jokes to skip, between 0 and 1000.")] = None,
         number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of jokes, between 1 and 10.")] = None,
@@ -1507,7 +1507,7 @@ class HumorApi:
         :type include_tags: str
         :param exclude_tags: A comma-separated list of tags the jokes must not have.
         :type exclude_tags: str
-        :param min_rating: The minimum rating (0-10) of the jokes.
+        :param min_rating: The minimum rating in range [0.0,1.0] of the jokes.
         :type min_rating: float
         :param max_length: The maximum length of the joke in letters.
         :type max_length: float
@@ -1670,7 +1670,7 @@ class HumorApi:
         min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=10000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of memes to skip, between 0 and 1000.")] = None,
-        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=0)]], Field(description="The number of memes, between 0 and 10.")] = None,
+        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of memes, between 1 and 10.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1700,7 +1700,7 @@ class HumorApi:
         :type max_age_days: int
         :param offset: The number of memes to skip, between 0 and 1000.
         :type offset: int
-        :param number: The number of memes, between 0 and 10.
+        :param number: The number of memes, between 1 and 10.
         :type number: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1767,7 +1767,7 @@ class HumorApi:
         min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=10000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of memes to skip, between 0 and 1000.")] = None,
-        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=0)]], Field(description="The number of memes, between 0 and 10.")] = None,
+        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of memes, between 1 and 10.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1797,7 +1797,7 @@ class HumorApi:
         :type max_age_days: int
         :param offset: The number of memes to skip, between 0 and 1000.
         :type offset: int
-        :param number: The number of memes, between 0 and 10.
+        :param number: The number of memes, between 1 and 10.
         :type number: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1864,7 +1864,7 @@ class HumorApi:
         min_rating: Annotated[Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]], Field(description="The minimum rating in range [0.0,1.0] of the meme.")] = None,
         max_age_days: Annotated[Optional[Annotated[int, Field(le=10000, strict=True, ge=0)]], Field(description="The maximum age of the meme in days.")] = None,
         offset: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=0)]], Field(description="The number of memes to skip, between 0 and 1000.")] = None,
-        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=0)]], Field(description="The number of memes, between 0 and 10.")] = None,
+        number: Annotated[Optional[Annotated[int, Field(le=10, strict=True, ge=1)]], Field(description="The number of memes, between 1 and 10.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1894,7 +1894,7 @@ class HumorApi:
         :type max_age_days: int
         :param offset: The number of memes to skip, between 0 and 1000.
         :type offset: int
-        :param number: The number of memes, between 0 and 10.
+        :param number: The number of memes, between 1 and 10.
         :type number: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

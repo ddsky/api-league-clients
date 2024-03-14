@@ -107,7 +107,7 @@ func main() {
 	latestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published before this date. (optional)
 	newsSources := "https://www.bbc.co.uk" // string | A comma-separated list of news sources from which the news should originate. (optional)
 	authors := "John Doe" // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-	entities := "ORG:Tesla" // string | Filter news by entities (see semantic types). (optional)
+	entities := "ORG:Tesla" // string | Filter news by entities (ORG, PER, or LOC). (optional)
 	locationFilter := "51.050407, 13.737262, 100" // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
 	sort := "publish-time" // string | The sorting criteria (publish-time or sentiment). (optional)
 	sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **string** | The news must have been published before this date. | 
  **newsSources** | **string** | A comma-separated list of news sources from which the news should originate. | 
  **authors** | **string** | A comma-separated list of author names. Only news from any of the given authors will be returned. | 
- **entities** | **string** | Filter news by entities (see semantic types). | 
+ **entities** | **string** | Filter news by entities (ORG, PER, or LOC). | 
  **locationFilter** | **string** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | 
  **sort** | **string** | The sorting criteria (publish-time or sentiment). | 
  **sortDirection** | **string** | Whether to sort ascending or descending (ASC or DESC). | 

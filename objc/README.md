@@ -41,6 +41,9 @@ Import the following:
 #import <OpenAPIClient/OAIApiClient.h>
 #import <OpenAPIClient/OAIDefaultConfiguration.h>
 // load models
+#import <OpenAPIClient/OAIComputeNutrition200Response.h>
+#import <OpenAPIClient/OAIComputeNutrition200ResponseIngredientBreakdownInner.h>
+#import <OpenAPIClient/OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.h>
 #import <OpenAPIClient/OAIConvertUnits200Response.h>
 #import <OpenAPIClient/OAICorrectSpelling200Response.h>
 #import <OpenAPIClient/OAIDetectLanguage200ResponseInner.h>
@@ -67,6 +70,24 @@ Import the following:
 #import <OpenAPIClient/OAIRandomQuote200Response.h>
 #import <OpenAPIClient/OAIRandomTrivia200Response.h>
 #import <OpenAPIClient/OAIReadKeyValueFromStore200Response.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200Response.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseCredits.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseDietaryProperties.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseIngredientsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasures.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseInstructionsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutrition.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseNutritionWeightPerServing.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseScores.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseTaste.h>
+#import <OpenAPIClient/OAIRetrieveRecipeInformation200ResponseTimes.h>
 #import <OpenAPIClient/OAIScoreReadability200Response.h>
 #import <OpenAPIClient/OAIScoreText200Response.h>
 #import <OpenAPIClient/OAIScoreText200ResponseInterestingness.h>
@@ -89,6 +110,15 @@ Import the following:
 #import <OpenAPIClient/OAISearchMemes200ResponseMemesInner.h>
 #import <OpenAPIClient/OAISearchNews200Response.h>
 #import <OpenAPIClient/OAISearchNews200ResponseNewsInner.h>
+#import <OpenAPIClient/OAISearchRecipes200Response.h>
+#import <OpenAPIClient/OAISearchRecipes200ResponseRecipesInner.h>
+#import <OpenAPIClient/OAISearchRecipes200ResponseRecipesInnerNutrition.h>
+#import <OpenAPIClient/OAISearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.h>
+#import <OpenAPIClient/OAISearchRestaurants200Response.h>
+#import <OpenAPIClient/OAISearchRestaurants200ResponseRestaurantsInner.h>
+#import <OpenAPIClient/OAISearchRestaurants200ResponseRestaurantsInnerAddress.h>
+#import <OpenAPIClient/OAISearchRestaurants200ResponseRestaurantsInnerLocalHours.h>
+#import <OpenAPIClient/OAISearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.h>
 #import <OpenAPIClient/OAISearchRoyaltyFreeImages200Response.h>
 #import <OpenAPIClient/OAISearchRoyaltyFreeImages200ResponseImagesInner.h>
 #import <OpenAPIClient/OAISearchRoyaltyFreeImages200ResponseImagesInnerLicense.h>
@@ -100,6 +130,7 @@ Import the following:
 // load API classes for accessing endpoints
 #import <OpenAPIClient/OAIArtApi.h>
 #import <OpenAPIClient/OAIBooksApi.h>
+#import <OpenAPIClient/OAIFoodApi.h>
 #import <OpenAPIClient/OAIHumorApi.h>
 #import <OpenAPIClient/OAIKnowledgeApi.h>
 #import <OpenAPIClient/OAIMathApi.h>
@@ -165,6 +196,10 @@ Class | Method | HTTP request | Description
 *OAIArtApi* | [**randomPoem**](docs/OAIArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem
 *OAIBooksApi* | [**findSimilarBooks**](docs/OAIBooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books
 *OAIBooksApi* | [**searchBooks**](docs/OAIBooksApi.md#searchbooks) | **GET** /search-books | Search Books
+*OAIFoodApi* | [**computeNutrition**](docs/OAIFoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
+*OAIFoodApi* | [**retrieveRecipeInformation**](docs/OAIFoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*OAIFoodApi* | [**searchRecipes**](docs/OAIFoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
+*OAIFoodApi* | [**searchRestaurants**](docs/OAIFoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
 *OAIHumorApi* | [**generateNonsenseWord**](docs/OAIHumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *OAIHumorApi* | [**randomJoke**](docs/OAIHumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke
 *OAIHumorApi* | [**randomMeme**](docs/OAIHumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme
@@ -201,6 +236,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [OAIComputeNutrition200Response](docs/OAIComputeNutrition200Response.md)
+ - [OAIComputeNutrition200ResponseIngredientBreakdownInner](docs/OAIComputeNutrition200ResponseIngredientBreakdownInner.md)
+ - [OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [OAIConvertUnits200Response](docs/OAIConvertUnits200Response.md)
  - [OAICorrectSpelling200Response](docs/OAICorrectSpelling200Response.md)
  - [OAIDetectLanguage200ResponseInner](docs/OAIDetectLanguage200ResponseInner.md)
@@ -227,6 +265,24 @@ Class | Method | HTTP request | Description
  - [OAIRandomQuote200Response](docs/OAIRandomQuote200Response.md)
  - [OAIRandomTrivia200Response](docs/OAIRandomTrivia200Response.md)
  - [OAIReadKeyValueFromStore200Response](docs/OAIReadKeyValueFromStore200Response.md)
+ - [OAIRetrieveRecipeInformation200Response](docs/OAIRetrieveRecipeInformation200Response.md)
+ - [OAIRetrieveRecipeInformation200ResponseCredits](docs/OAIRetrieveRecipeInformation200ResponseCredits.md)
+ - [OAIRetrieveRecipeInformation200ResponseDietaryProperties](docs/OAIRetrieveRecipeInformation200ResponseDietaryProperties.md)
+ - [OAIRetrieveRecipeInformation200ResponseIngredientsInner](docs/OAIRetrieveRecipeInformation200ResponseIngredientsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+ - [OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/OAIRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+ - [OAIRetrieveRecipeInformation200ResponseInstructionsInner](docs/OAIRetrieveRecipeInformation200ResponseInstructionsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/OAIRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutrition](docs/OAIRetrieveRecipeInformation200ResponseNutrition.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/OAIRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/OAIRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/OAIRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [OAIRetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/OAIRetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+ - [OAIRetrieveRecipeInformation200ResponseScores](docs/OAIRetrieveRecipeInformation200ResponseScores.md)
+ - [OAIRetrieveRecipeInformation200ResponseTaste](docs/OAIRetrieveRecipeInformation200ResponseTaste.md)
+ - [OAIRetrieveRecipeInformation200ResponseTimes](docs/OAIRetrieveRecipeInformation200ResponseTimes.md)
  - [OAIScoreReadability200Response](docs/OAIScoreReadability200Response.md)
  - [OAIScoreText200Response](docs/OAIScoreText200Response.md)
  - [OAIScoreText200ResponseInterestingness](docs/OAIScoreText200ResponseInterestingness.md)
@@ -249,6 +305,15 @@ Class | Method | HTTP request | Description
  - [OAISearchMemes200ResponseMemesInner](docs/OAISearchMemes200ResponseMemesInner.md)
  - [OAISearchNews200Response](docs/OAISearchNews200Response.md)
  - [OAISearchNews200ResponseNewsInner](docs/OAISearchNews200ResponseNewsInner.md)
+ - [OAISearchRecipes200Response](docs/OAISearchRecipes200Response.md)
+ - [OAISearchRecipes200ResponseRecipesInner](docs/OAISearchRecipes200ResponseRecipesInner.md)
+ - [OAISearchRecipes200ResponseRecipesInnerNutrition](docs/OAISearchRecipes200ResponseRecipesInnerNutrition.md)
+ - [OAISearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/OAISearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+ - [OAISearchRestaurants200Response](docs/OAISearchRestaurants200Response.md)
+ - [OAISearchRestaurants200ResponseRestaurantsInner](docs/OAISearchRestaurants200ResponseRestaurantsInner.md)
+ - [OAISearchRestaurants200ResponseRestaurantsInnerAddress](docs/OAISearchRestaurants200ResponseRestaurantsInnerAddress.md)
+ - [OAISearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/OAISearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+ - [OAISearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/OAISearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [OAISearchRoyaltyFreeImages200Response](docs/OAISearchRoyaltyFreeImages200Response.md)
  - [OAISearchRoyaltyFreeImages200ResponseImagesInner](docs/OAISearchRoyaltyFreeImages200ResponseImagesInner.md)
  - [OAISearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/OAISearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

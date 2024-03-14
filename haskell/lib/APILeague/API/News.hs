@@ -148,7 +148,7 @@ instance HasOptionalParam SearchNews Authors where
   applyOptionalParam req (Authors xs) =
     req `addQuery` toQuery ("authors", Just xs)
 
--- | /Optional Param/ "entities" - Filter news by entities (see semantic types).
+-- | /Optional Param/ "entities" - Filter news by entities (ORG, PER, or LOC).
 instance HasOptionalParam SearchNews Entities where
   applyOptionalParam req (Entities xs) =
     req `addQuery` toQuery ("entities", Just xs)

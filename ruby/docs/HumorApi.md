@@ -200,7 +200,7 @@ opts = {
   keywords: 'airplane', # String | A comma-separated list of words that must occur in the meme.
   keywords_in_image: true, # Boolean | Whether the keywords must occur in the image.
   media_type: 'image', # String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-  min_rating: 0, # Float | The minimum rating in range [0.0-1.0] of the meme.
+  min_rating: 0, # Float | The minimum rating in range [0.0,1.0] of the meme.
   max_age_days: 30 # Integer | The maximum age of the meme in days.
 }
 
@@ -238,7 +238,7 @@ end
 | **keywords** | **String** | A comma-separated list of words that must occur in the meme. | [optional] |
 | **keywords_in_image** | **Boolean** | Whether the keywords must occur in the image. | [optional] |
 | **media_type** | **String** | The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
-| **min_rating** | **Float** | The minimum rating in range [0.0-1.0] of the meme. | [optional] |
+| **min_rating** | **Float** | The minimum rating in range [0.0,1.0] of the meme. | [optional] |
 | **max_age_days** | **Integer** | The maximum age of the meme in days. | [optional] |
 
 ### Return type
@@ -366,7 +366,7 @@ opts = {
   keywords: 'horse,man', # String | A comma-separated list of words that must occur in the joke.
   include_tags: 'animal', # String | A comma-separated list of tags the jokes should have.
   exclude_tags: 'nsfw,dark', # String | A comma-separated list of tags the jokes must not have.
-  min_rating: 0, # Float | The minimum rating (0-10) of the jokes.
+  min_rating: 0, # Float | The minimum rating in range [0.0,1.0] of the jokes.
   max_length: 140, # Float | The maximum length of the joke in letters.
   offset: 0, # Integer | The number of jokes to skip, between 0 and 1000.
   number: 3 # Integer | The number of jokes, between 1 and 10.
@@ -406,7 +406,7 @@ end
 | **keywords** | **String** | A comma-separated list of words that must occur in the joke. | [optional] |
 | **include_tags** | **String** | A comma-separated list of tags the jokes should have. | [optional] |
 | **exclude_tags** | **String** | A comma-separated list of tags the jokes must not have. | [optional] |
-| **min_rating** | **Float** | The minimum rating (0-10) of the jokes. | [optional] |
+| **min_rating** | **Float** | The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
 | **max_length** | **Float** | The maximum length of the joke in letters. | [optional] |
 | **offset** | **Integer** | The number of jokes to skip, between 0 and 1000. | [optional] |
 | **number** | **Integer** | The number of jokes, between 1 and 10. | [optional] |
@@ -459,7 +459,7 @@ opts = {
   min_rating: 0, # Float | The minimum rating in range [0.0,1.0] of the meme.
   max_age_days: 30, # Integer | The maximum age of the meme in days.
   offset: 0, # Integer | The number of memes to skip, between 0 and 1000.
-  number: 3 # Integer | The number of memes, between 0 and 10.
+  number: 3 # Integer | The number of memes, between 1 and 10.
 }
 
 begin
@@ -499,7 +499,7 @@ end
 | **min_rating** | **Float** | The minimum rating in range [0.0,1.0] of the meme. | [optional] |
 | **max_age_days** | **Integer** | The maximum age of the meme in days. | [optional] |
 | **offset** | **Integer** | The number of memes to skip, between 0 and 1000. | [optional] |
-| **number** | **Integer** | The number of memes, between 0 and 10. | [optional] |
+| **number** | **Integer** | The number of memes, between 1 and 10. | [optional] |
 
 ### Return type
 

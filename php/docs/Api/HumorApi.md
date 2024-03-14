@@ -186,7 +186,7 @@ $apiInstance = new OpenAPI\Client\Api\HumorApi(
 $keywords = airplane; // string | A comma-separated list of words that must occur in the meme.
 $keywords_in_image = true; // bool | Whether the keywords must occur in the image.
 $media_type = image; // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-$min_rating = 0; // float | The minimum rating in range [0.0-1.0] of the meme.
+$min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the meme.
 $max_age_days = 30; // int | The maximum age of the meme in days.
 
 try {
@@ -204,7 +204,7 @@ try {
 | **keywords** | **string**| A comma-separated list of words that must occur in the meme. | [optional] |
 | **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] |
 | **media_type** | **string**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
-| **min_rating** | **float**| The minimum rating in range [0.0-1.0] of the meme. | [optional] |
+| **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
 | **max_age_days** | **int**| The maximum age of the meme in days. | [optional] |
 
 ### Return type
@@ -330,7 +330,7 @@ $apiInstance = new OpenAPI\Client\Api\HumorApi(
 $keywords = horse,man; // string | A comma-separated list of words that must occur in the joke.
 $include_tags = animal; // string | A comma-separated list of tags the jokes should have.
 $exclude_tags = nsfw,dark; // string | A comma-separated list of tags the jokes must not have.
-$min_rating = 0; // float | The minimum rating (0-10) of the jokes.
+$min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the jokes.
 $max_length = 140; // float | The maximum length of the joke in letters.
 $offset = 0; // int | The number of jokes to skip, between 0 and 1000.
 $number = 3; // int | The number of jokes, between 1 and 10.
@@ -350,7 +350,7 @@ try {
 | **keywords** | **string**| A comma-separated list of words that must occur in the joke. | [optional] |
 | **include_tags** | **string**| A comma-separated list of tags the jokes should have. | [optional] |
 | **exclude_tags** | **string**| A comma-separated list of tags the jokes must not have. | [optional] |
-| **min_rating** | **float**| The minimum rating (0-10) of the jokes. | [optional] |
+| **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
 | **max_length** | **float**| The maximum length of the joke in letters. | [optional] |
 | **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional] |
 | **number** | **int**| The number of jokes, between 1 and 10. | [optional] |
@@ -412,7 +412,7 @@ $media_type = image; // string | The media type (either 'image', 'video' or even
 $min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the meme.
 $max_age_days = 30; // int | The maximum age of the meme in days.
 $offset = 0; // int | The number of memes to skip, between 0 and 1000.
-$number = 3; // int | The number of memes, between 0 and 10.
+$number = 3; // int | The number of memes, between 1 and 10.
 
 try {
     $result = $apiInstance->searchMemes($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number);
@@ -432,7 +432,7 @@ try {
 | **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
 | **max_age_days** | **int**| The maximum age of the meme in days. | [optional] |
 | **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional] |
-| **number** | **int**| The number of memes, between 0 and 10. | [optional] |
+| **number** | **int**| The number of memes, between 1 and 10. | [optional] |
 
 ### Return type
 

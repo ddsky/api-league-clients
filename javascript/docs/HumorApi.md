@@ -158,7 +158,7 @@ let opts = {
   'keywords': airplane, // String | A comma-separated list of words that must occur in the meme.
   'keywordsInImage': true, // Boolean | Whether the keywords must occur in the image.
   'mediaType': image, // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-  'minRating': 0, // Number | The minimum rating in range [0.0-1.0] of the meme.
+  'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the meme.
   'maxAgeDays': 30 // Number | The maximum age of the meme in days.
 };
 apiInstance.randomMeme(opts, (error, data, response) => {
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional] 
  **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional] 
  **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] 
- **minRating** | **Number**| The minimum rating in range [0.0-1.0] of the meme. | [optional] 
+ **minRating** | **Number**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **Number**| The maximum age of the meme in days. | [optional] 
 
 ### Return type
@@ -284,7 +284,7 @@ let opts = {
   'keywords': horse,man, // String | A comma-separated list of words that must occur in the joke.
   'includeTags': animal, // String | A comma-separated list of tags the jokes should have.
   'excludeTags': nsfw,dark, // String | A comma-separated list of tags the jokes must not have.
-  'minRating': 0, // Number | The minimum rating (0-10) of the jokes.
+  'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the jokes.
   'maxLength': 140, // Number | The maximum length of the joke in letters.
   'offset': 0, // Number | The number of jokes to skip, between 0 and 1000.
   'number': 3 // Number | The number of jokes, between 1 and 10.
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the joke. | [optional] 
  **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional] 
  **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional] 
- **minRating** | **Number**| The minimum rating (0-10) of the jokes. | [optional] 
+ **minRating** | **Number**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] 
  **maxLength** | **Number**| The maximum length of the joke in letters. | [optional] 
  **offset** | **Number**| The number of jokes to skip, between 0 and 1000. | [optional] 
  **number** | **Number**| The number of jokes, between 1 and 10. | [optional] 
@@ -357,7 +357,7 @@ let opts = {
   'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the meme.
   'maxAgeDays': 30, // Number | The maximum age of the meme in days.
   'offset': 0, // Number | The number of memes to skip, between 0 and 1000.
-  'number': 3 // Number | The number of memes, between 0 and 10.
+  'number': 3 // Number | The number of memes, between 1 and 10.
 };
 apiInstance.searchMemes(opts, (error, data, response) => {
   if (error) {
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
  **minRating** | **Number**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **Number**| The maximum age of the meme in days. | [optional] 
  **offset** | **Number**| The number of memes to skip, between 0 and 1000. | [optional] 
- **number** | **Number**| The number of memes, between 0 and 10. | [optional] 
+ **number** | **Number**| The number of memes, between 1 and 10. | [optional] 
 
 ### Return type
 

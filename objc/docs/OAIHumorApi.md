@@ -176,7 +176,7 @@ OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
 NSString* keywords = airplane; // A comma-separated list of words that must occur in the meme. (optional)
 NSNumber* keywordsInImage = true; // Whether the keywords must occur in the image. (optional)
 NSString* mediaType = image; // The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
-NSNumber* minRating = 0; // The minimum rating in range [0.0-1.0] of the meme. (optional)
+NSNumber* minRating = 0; // The minimum rating in range [0.0,1.0] of the meme. (optional)
 NSNumber* maxAgeDays = 30; // The maximum age of the meme in days. (optional)
 
 OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
  **keywords** | **NSString***| A comma-separated list of words that must occur in the meme. | [optional] 
  **keywordsInImage** | **NSNumber***| Whether the keywords must occur in the image. | [optional] 
  **mediaType** | **NSString***| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] 
- **minRating** | **NSNumber***| The minimum rating in range [0.0-1.0] of the meme. | [optional] 
+ **minRating** | **NSNumber***| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **NSNumber***| The maximum age of the meme in days. | [optional] 
 
 ### Return type
@@ -322,7 +322,7 @@ OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
 NSString* keywords = horse,man; // A comma-separated list of words that must occur in the joke. (optional)
 NSString* includeTags = animal; // A comma-separated list of tags the jokes should have. (optional)
 NSString* excludeTags = nsfw,dark; // A comma-separated list of tags the jokes must not have. (optional)
-NSNumber* minRating = 0; // The minimum rating (0-10) of the jokes. (optional)
+NSNumber* minRating = 0; // The minimum rating in range [0.0,1.0] of the jokes. (optional)
 NSNumber* maxLength = 140; // The maximum length of the joke in letters. (optional)
 NSNumber* offset = 0; // The number of jokes to skip, between 0 and 1000. (optional)
 NSNumber* number = 3; // The number of jokes, between 1 and 10. (optional)
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
  **keywords** | **NSString***| A comma-separated list of words that must occur in the joke. | [optional] 
  **includeTags** | **NSString***| A comma-separated list of tags the jokes should have. | [optional] 
  **excludeTags** | **NSString***| A comma-separated list of tags the jokes must not have. | [optional] 
- **minRating** | **NSNumber***| The minimum rating (0-10) of the jokes. | [optional] 
+ **minRating** | **NSNumber***| The minimum rating in range [0.0,1.0] of the jokes. | [optional] 
  **maxLength** | **NSNumber***| The maximum length of the joke in letters. | [optional] 
  **offset** | **NSNumber***| The number of jokes to skip, between 0 and 1000. | [optional] 
  **number** | **NSNumber***| The number of jokes, between 1 and 10. | [optional] 
@@ -411,7 +411,7 @@ NSString* mediaType = image; // The media type (either 'image', 'video' or even 
 NSNumber* minRating = 0; // The minimum rating in range [0.0,1.0] of the meme. (optional)
 NSNumber* maxAgeDays = 30; // The maximum age of the meme in days. (optional)
 NSNumber* offset = 0; // The number of memes to skip, between 0 and 1000. (optional)
-NSNumber* number = 3; // The number of memes, between 0 and 10. (optional)
+NSNumber* number = 3; // The number of memes, between 1 and 10. (optional)
 
 OAIHumorApi*apiInstance = [[OAIHumorApi alloc] init];
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
  **minRating** | **NSNumber***| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **NSNumber***| The maximum age of the meme in days. | [optional] 
  **offset** | **NSNumber***| The number of memes to skip, between 0 and 1000. | [optional] 
- **number** | **NSNumber***| The number of memes, between 0 and 10. | [optional] 
+ **number** | **NSNumber***| The number of memes, between 1 and 10. | [optional] 
 
 ### Return type
 

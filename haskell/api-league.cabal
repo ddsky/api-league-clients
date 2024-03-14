@@ -66,6 +66,7 @@ library
       APILeague.API
       APILeague.API.Art
       APILeague.API.Books
+      APILeague.API.Food
       APILeague.API.Humor
       APILeague.API.Knowledge
       APILeague.API.Math

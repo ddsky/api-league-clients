@@ -89,6 +89,10 @@ Class | Method | HTTP request | Description
 *ArtApi* | [**randomPoem**](docs/Api/ArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem
 *BooksApi* | [**findSimilarBooks**](docs/Api/BooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books
 *BooksApi* | [**searchBooks**](docs/Api/BooksApi.md#searchbooks) | **GET** /search-books | Search Books
+*FoodApi* | [**computeNutrition**](docs/Api/FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
+*FoodApi* | [**retrieveRecipeInformation**](docs/Api/FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*FoodApi* | [**searchRecipes**](docs/Api/FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
+*FoodApi* | [**searchRestaurants**](docs/Api/FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
 *HumorApi* | [**generateNonsenseWord**](docs/Api/HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *HumorApi* | [**randomJoke**](docs/Api/HumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke
 *HumorApi* | [**randomMeme**](docs/Api/HumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme
@@ -124,6 +128,9 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [ComputeNutrition200Response](docs/Model/ComputeNutrition200Response.md)
+- [ComputeNutrition200ResponseIngredientBreakdownInner](docs/Model/ComputeNutrition200ResponseIngredientBreakdownInner.md)
+- [ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
 - [ConvertUnits200Response](docs/Model/ConvertUnits200Response.md)
 - [CorrectSpelling200Response](docs/Model/CorrectSpelling200Response.md)
 - [DetectLanguage200ResponseInner](docs/Model/DetectLanguage200ResponseInner.md)
@@ -150,6 +157,24 @@ Class | Method | HTTP request | Description
 - [RandomQuote200Response](docs/Model/RandomQuote200Response.md)
 - [RandomTrivia200Response](docs/Model/RandomTrivia200Response.md)
 - [ReadKeyValueFromStore200Response](docs/Model/ReadKeyValueFromStore200Response.md)
+- [RetrieveRecipeInformation200Response](docs/Model/RetrieveRecipeInformation200Response.md)
+- [RetrieveRecipeInformation200ResponseCredits](docs/Model/RetrieveRecipeInformation200ResponseCredits.md)
+- [RetrieveRecipeInformation200ResponseDietaryProperties](docs/Model/RetrieveRecipeInformation200ResponseDietaryProperties.md)
+- [RetrieveRecipeInformation200ResponseIngredientsInner](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInner.md)
+- [RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+- [RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+- [RetrieveRecipeInformation200ResponseInstructionsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInner.md)
+- [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+- [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+- [RetrieveRecipeInformation200ResponseNutrition](docs/Model/RetrieveRecipeInformation200ResponseNutrition.md)
+- [RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/Model/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+- [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+- [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+- [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+- [RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/Model/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+- [RetrieveRecipeInformation200ResponseScores](docs/Model/RetrieveRecipeInformation200ResponseScores.md)
+- [RetrieveRecipeInformation200ResponseTaste](docs/Model/RetrieveRecipeInformation200ResponseTaste.md)
+- [RetrieveRecipeInformation200ResponseTimes](docs/Model/RetrieveRecipeInformation200ResponseTimes.md)
 - [ScoreReadability200Response](docs/Model/ScoreReadability200Response.md)
 - [ScoreText200Response](docs/Model/ScoreText200Response.md)
 - [ScoreText200ResponseInterestingness](docs/Model/ScoreText200ResponseInterestingness.md)
@@ -172,6 +197,15 @@ Class | Method | HTTP request | Description
 - [SearchMemes200ResponseMemesInner](docs/Model/SearchMemes200ResponseMemesInner.md)
 - [SearchNews200Response](docs/Model/SearchNews200Response.md)
 - [SearchNews200ResponseNewsInner](docs/Model/SearchNews200ResponseNewsInner.md)
+- [SearchRecipes200Response](docs/Model/SearchRecipes200Response.md)
+- [SearchRecipes200ResponseRecipesInner](docs/Model/SearchRecipes200ResponseRecipesInner.md)
+- [SearchRecipes200ResponseRecipesInnerNutrition](docs/Model/SearchRecipes200ResponseRecipesInnerNutrition.md)
+- [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/Model/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+- [SearchRestaurants200Response](docs/Model/SearchRestaurants200Response.md)
+- [SearchRestaurants200ResponseRestaurantsInner](docs/Model/SearchRestaurants200ResponseRestaurantsInner.md)
+- [SearchRestaurants200ResponseRestaurantsInnerAddress](docs/Model/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
+- [SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/Model/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+- [SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/Model/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
 - [SearchRoyaltyFreeImages200Response](docs/Model/SearchRoyaltyFreeImages200Response.md)
 - [SearchRoyaltyFreeImages200ResponseImagesInner](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInner.md)
 - [SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

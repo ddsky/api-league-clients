@@ -57,6 +57,18 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("ComputeNutrition200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ComputeNutrition200Response>>(){}.getType();
+    }
+    
+    if ("ComputeNutrition200ResponseIngredientBreakdownInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ComputeNutrition200ResponseIngredientBreakdownInner>>(){}.getType();
+    }
+    
+    if ("ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner>>(){}.getType();
+    }
+    
     if ("ConvertUnits200Response".equalsIgnoreCase(className)) {
       return new TypeToken<List<ConvertUnits200Response>>(){}.getType();
     }
@@ -161,6 +173,78 @@ public class JsonUtil {
       return new TypeToken<List<ReadKeyValueFromStore200Response>>(){}.getType();
     }
     
+    if ("RetrieveRecipeInformation200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200Response>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseCredits".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseCredits>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseDietaryProperties".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseDietaryProperties>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseIngredientsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInnerMeasures".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseIngredientsInnerMeasures>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseInstructionsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutrition".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutrition>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionWeightPerServing".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseNutritionWeightPerServing>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseScores".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseScores>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseTaste".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseTaste>>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseTimes".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RetrieveRecipeInformation200ResponseTimes>>(){}.getType();
+    }
+    
     if ("ScoreReadability200Response".equalsIgnoreCase(className)) {
       return new TypeToken<List<ScoreReadability200Response>>(){}.getType();
     }
@@ -249,6 +333,42 @@ public class JsonUtil {
       return new TypeToken<List<SearchNews200ResponseNewsInner>>(){}.getType();
     }
     
+    if ("SearchRecipes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRecipes200Response>>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRecipes200ResponseRecipesInner>>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInnerNutrition".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRecipes200ResponseRecipesInnerNutrition>>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner>>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRestaurants200Response>>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRestaurants200ResponseRestaurantsInner>>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRestaurants200ResponseRestaurantsInnerAddress>>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerLocalHours".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRestaurants200ResponseRestaurantsInnerLocalHours>>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational>>(){}.getType();
+    }
+    
     if ("SearchRoyaltyFreeImages200Response".equalsIgnoreCase(className)) {
       return new TypeToken<List<SearchRoyaltyFreeImages200Response>>(){}.getType();
     }
@@ -286,6 +406,18 @@ public class JsonUtil {
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
+    
+    if ("ComputeNutrition200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<ComputeNutrition200Response>(){}.getType();
+    }
+    
+    if ("ComputeNutrition200ResponseIngredientBreakdownInner".equalsIgnoreCase(className)) {
+      return new TypeToken<ComputeNutrition200ResponseIngredientBreakdownInner>(){}.getType();
+    }
+    
+    if ("ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner>(){}.getType();
+    }
     
     if ("ConvertUnits200Response".equalsIgnoreCase(className)) {
       return new TypeToken<ConvertUnits200Response>(){}.getType();
@@ -391,6 +523,78 @@ public class JsonUtil {
       return new TypeToken<ReadKeyValueFromStore200Response>(){}.getType();
     }
     
+    if ("RetrieveRecipeInformation200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200Response>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseCredits".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseCredits>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseDietaryProperties".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseDietaryProperties>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseIngredientsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInnerMeasures".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseIngredientsInnerMeasures>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseInstructionsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutrition".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutrition>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseNutritionWeightPerServing".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseNutritionWeightPerServing>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseScores".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseScores>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseTaste".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseTaste>(){}.getType();
+    }
+    
+    if ("RetrieveRecipeInformation200ResponseTimes".equalsIgnoreCase(className)) {
+      return new TypeToken<RetrieveRecipeInformation200ResponseTimes>(){}.getType();
+    }
+    
     if ("ScoreReadability200Response".equalsIgnoreCase(className)) {
       return new TypeToken<ScoreReadability200Response>(){}.getType();
     }
@@ -477,6 +681,42 @@ public class JsonUtil {
     
     if ("SearchNews200ResponseNewsInner".equalsIgnoreCase(className)) {
       return new TypeToken<SearchNews200ResponseNewsInner>(){}.getType();
+    }
+    
+    if ("SearchRecipes200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRecipes200Response>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRecipes200ResponseRecipesInner>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInnerNutrition".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRecipes200ResponseRecipesInnerNutrition>(){}.getType();
+    }
+    
+    if ("SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200Response".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRestaurants200Response>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInner".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRestaurants200ResponseRestaurantsInner>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerAddress".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRestaurants200ResponseRestaurantsInnerAddress>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerLocalHours".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRestaurants200ResponseRestaurantsInnerLocalHours>(){}.getType();
+    }
+    
+    if ("SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational".equalsIgnoreCase(className)) {
+      return new TypeToken<SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational>(){}.getType();
     }
     
     if ("SearchRoyaltyFreeImages200Response".equalsIgnoreCase(className)) {

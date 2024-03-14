@@ -48,6 +48,10 @@ Class | Method | HTTP request | Description
 *ArtApi* | [**randomPoem**](docs/ArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem
 *BooksApi* | [**findSimilarBooks**](docs/BooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books
 *BooksApi* | [**searchBooks**](docs/BooksApi.md#searchbooks) | **GET** /search-books | Search Books
+*FoodApi* | [**computeNutrition**](docs/FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
+*FoodApi* | [**retrieveRecipeInformation**](docs/FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*FoodApi* | [**searchRecipes**](docs/FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
+*FoodApi* | [**searchRestaurants**](docs/FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
 *HumorApi* | [**generateNonsenseWord**](docs/HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *HumorApi* | [**randomJoke**](docs/HumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke
 *HumorApi* | [**randomMeme**](docs/HumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme
@@ -85,6 +89,9 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [com.apileague.client.model.ComputeNutrition200Response](docs/ComputeNutrition200Response.md)
+ - [com.apileague.client.model.ComputeNutrition200ResponseIngredientBreakdownInner](docs/ComputeNutrition200ResponseIngredientBreakdownInner.md)
+ - [com.apileague.client.model.ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [com.apileague.client.model.ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [com.apileague.client.model.CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [com.apileague.client.model.DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
@@ -111,6 +118,24 @@ Class | Method | HTTP request | Description
  - [com.apileague.client.model.RandomQuote200Response](docs/RandomQuote200Response.md)
  - [com.apileague.client.model.RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [com.apileague.client.model.ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200Response](docs/RetrieveRecipeInformation200Response.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseCredits](docs/RetrieveRecipeInformation200ResponseCredits.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseIngredientsInner](docs/RetrieveRecipeInformation200ResponseIngredientsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseInstructionsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutrition](docs/RetrieveRecipeInformation200ResponseNutrition.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseScores](docs/RetrieveRecipeInformation200ResponseScores.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseTaste](docs/RetrieveRecipeInformation200ResponseTaste.md)
+ - [com.apileague.client.model.RetrieveRecipeInformation200ResponseTimes](docs/RetrieveRecipeInformation200ResponseTimes.md)
  - [com.apileague.client.model.ScoreReadability200Response](docs/ScoreReadability200Response.md)
  - [com.apileague.client.model.ScoreText200Response](docs/ScoreText200Response.md)
  - [com.apileague.client.model.ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
@@ -133,6 +158,15 @@ Class | Method | HTTP request | Description
  - [com.apileague.client.model.SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
  - [com.apileague.client.model.SearchNews200Response](docs/SearchNews200Response.md)
  - [com.apileague.client.model.SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [com.apileague.client.model.SearchRecipes200Response](docs/SearchRecipes200Response.md)
+ - [com.apileague.client.model.SearchRecipes200ResponseRecipesInner](docs/SearchRecipes200ResponseRecipesInner.md)
+ - [com.apileague.client.model.SearchRecipes200ResponseRecipesInnerNutrition](docs/SearchRecipes200ResponseRecipesInnerNutrition.md)
+ - [com.apileague.client.model.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+ - [com.apileague.client.model.SearchRestaurants200Response](docs/SearchRestaurants200Response.md)
+ - [com.apileague.client.model.SearchRestaurants200ResponseRestaurantsInner](docs/SearchRestaurants200ResponseRestaurantsInner.md)
+ - [com.apileague.client.model.SearchRestaurants200ResponseRestaurantsInnerAddress](docs/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
+ - [com.apileague.client.model.SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+ - [com.apileague.client.model.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [com.apileague.client.model.SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
  - [com.apileague.client.model.SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
  - [com.apileague.client.model.SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

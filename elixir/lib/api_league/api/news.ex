@@ -65,7 +65,7 @@ defmodule APILeague.Api.News do
     - `:"latest-publish-date"` (String.t): The news must have been published before this date.
     - `:"news-sources"` (String.t): A comma-separated list of news sources from which the news should originate.
     - `:authors` (String.t): A comma-separated list of author names. Only news from any of the given authors will be returned.
-    - `:entities` (String.t): Filter news by entities (see semantic types).
+    - `:entities` (String.t): Filter news by entities (ORG, PER, or LOC).
     - `:"location-filter"` (String.t): Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
     - `:sort` (String.t): The sorting criteria (publish-time or sentiment).
     - `:"sort-direction"` (String.t): Whether to sort ascending or descending (ASC or DESC).

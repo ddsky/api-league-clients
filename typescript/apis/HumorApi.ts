@@ -124,7 +124,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme.
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
     public async randomMeme(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Promise<RequestContext> {
@@ -248,7 +248,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
-     * @param minRating The minimum rating (0-10) of the jokes.
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
@@ -335,7 +335,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      * @param offset The number of memes to skip, between 0 and 1000.
-     * @param number The number of memes, between 0 and 10.
+     * @param number The number of memes, between 1 and 10.
      */
     public async searchMemes(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;

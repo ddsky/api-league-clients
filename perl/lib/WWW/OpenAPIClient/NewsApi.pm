@@ -143,7 +143,7 @@ sub extract_news {
 # @param string $latest_publish_date The news must have been published before this date. (optional)
 # @param string $news_sources A comma-separated list of news sources from which the news should originate. (optional)
 # @param string $authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-# @param string $entities Filter news by entities (see semantic types). (optional)
+# @param string $entities Filter news by entities (ORG, PER, or LOC). (optional)
 # @param string $location_filter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)
 # @param string $sort The sorting criteria (publish-time or sentiment). (optional)
 # @param string $sort_direction Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -198,7 +198,7 @@ sub extract_news {
     },
     'entities' => {
         data_type => 'string',
-        description => 'Filter news by entities (see semantic types).',
+        description => 'Filter news by entities (ORG, PER, or LOC).',
         required => '0',
     },
     'location_filter' => {

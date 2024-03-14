@@ -11,6 +11,9 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 add_library(${PROJECT_NAME}
+  OAIComputeNutrition_200_response.h
+  OAIComputeNutrition_200_response_ingredient_breakdown_inner.h
+  OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.h
   OAIConvertUnits_200_response.h
   OAICorrectSpelling_200_response.h
   OAIDetectLanguage_200_response_inner.h
@@ -37,6 +40,24 @@ add_library(${PROJECT_NAME}
   OAIRandomQuote_200_response.h
   OAIRandomTrivia_200_response.h
   OAIReadKeyValueFromStore_200_response.h
+  OAIRetrieveRecipeInformation_200_response.h
+  OAIRetrieveRecipeInformation_200_response_credits.h
+  OAIRetrieveRecipeInformation_200_response_dietary_properties.h
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner.h
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.h
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.h
+  OAIRetrieveRecipeInformation_200_response_instructions_inner.h
+  OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.h
+  OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.h
+  OAIRetrieveRecipeInformation_200_response_nutrition.h
+  OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.h
+  OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.h
+  OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.h
+  OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.h
+  OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.h
+  OAIRetrieveRecipeInformation_200_response_scores.h
+  OAIRetrieveRecipeInformation_200_response_taste.h
+  OAIRetrieveRecipeInformation_200_response_times.h
   OAIScoreReadability_200_response.h
   OAIScoreText_200_response.h
   OAIScoreText_200_response_interestingness.h
@@ -59,6 +80,15 @@ add_library(${PROJECT_NAME}
   OAISearchMemes_200_response_memes_inner.h
   OAISearchNews_200_response.h
   OAISearchNews_200_response_news_inner.h
+  OAISearchRecipes_200_response.h
+  OAISearchRecipes_200_response_recipes_inner.h
+  OAISearchRecipes_200_response_recipes_inner_nutrition.h
+  OAISearchRecipes_200_response_recipes_inner_nutrition_nutrients_inner.h
+  OAISearchRestaurants_200_response.h
+  OAISearchRestaurants_200_response_restaurants_inner.h
+  OAISearchRestaurants_200_response_restaurants_inner_address.h
+  OAISearchRestaurants_200_response_restaurants_inner_local_hours.h
+  OAISearchRestaurants_200_response_restaurants_inner_local_hours_operational.h
   OAISearchRoyaltyFreeImages_200_response.h
   OAISearchRoyaltyFreeImages_200_response_images_inner.h
   OAISearchRoyaltyFreeImages_200_response_images_inner_license.h
@@ -69,6 +99,7 @@ add_library(${PROJECT_NAME}
   OAITextStemming_200_response.h
   OAIArtApi.h
   OAIBooksApi.h
+  OAIFoodApi.h
   OAIHumorApi.h
   OAIKnowledgeApi.h
   OAIMathApi.h
@@ -85,6 +116,9 @@ add_library(${PROJECT_NAME}
   OAIServerConfiguration.h
   OAIServerVariable.h
   OAIOauth.h
+  OAIComputeNutrition_200_response.cpp
+  OAIComputeNutrition_200_response_ingredient_breakdown_inner.cpp
+  OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.cpp
   OAIConvertUnits_200_response.cpp
   OAICorrectSpelling_200_response.cpp
   OAIDetectLanguage_200_response_inner.cpp
@@ -111,6 +145,24 @@ add_library(${PROJECT_NAME}
   OAIRandomQuote_200_response.cpp
   OAIRandomTrivia_200_response.cpp
   OAIReadKeyValueFromStore_200_response.cpp
+  OAIRetrieveRecipeInformation_200_response.cpp
+  OAIRetrieveRecipeInformation_200_response_credits.cpp
+  OAIRetrieveRecipeInformation_200_response_dietary_properties.cpp
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.cpp
+  OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.cpp
+  OAIRetrieveRecipeInformation_200_response_instructions_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp
+  OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.cpp
+  OAIRetrieveRecipeInformation_200_response_scores.cpp
+  OAIRetrieveRecipeInformation_200_response_taste.cpp
+  OAIRetrieveRecipeInformation_200_response_times.cpp
   OAIScoreReadability_200_response.cpp
   OAIScoreText_200_response.cpp
   OAIScoreText_200_response_interestingness.cpp
@@ -133,6 +185,15 @@ add_library(${PROJECT_NAME}
   OAISearchMemes_200_response_memes_inner.cpp
   OAISearchNews_200_response.cpp
   OAISearchNews_200_response_news_inner.cpp
+  OAISearchRecipes_200_response.cpp
+  OAISearchRecipes_200_response_recipes_inner.cpp
+  OAISearchRecipes_200_response_recipes_inner_nutrition.cpp
+  OAISearchRecipes_200_response_recipes_inner_nutrition_nutrients_inner.cpp
+  OAISearchRestaurants_200_response.cpp
+  OAISearchRestaurants_200_response_restaurants_inner.cpp
+  OAISearchRestaurants_200_response_restaurants_inner_address.cpp
+  OAISearchRestaurants_200_response_restaurants_inner_local_hours.cpp
+  OAISearchRestaurants_200_response_restaurants_inner_local_hours_operational.cpp
   OAISearchRoyaltyFreeImages_200_response.cpp
   OAISearchRoyaltyFreeImages_200_response_images_inner.cpp
   OAISearchRoyaltyFreeImages_200_response_images_inner_license.cpp
@@ -143,6 +204,7 @@ add_library(${PROJECT_NAME}
   OAITextStemming_200_response.cpp
   OAIArtApi.cpp
   OAIBooksApi.cpp
+  OAIFoodApi.cpp
   OAIHumorApi.cpp
   OAIKnowledgeApi.cpp
   OAIMathApi.cpp

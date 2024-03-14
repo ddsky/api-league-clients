@@ -28,7 +28,7 @@ void main() {
 
     // Search Books
     //
-    // Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+    // Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
     //
     //Future<SearchBooks200Response> searchBooks({ String query, int earliestPublishYear, int latestPublishYear, double minRating, double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, bool groupResults, int offset, int number }) async
     test('test searchBooks', () async {

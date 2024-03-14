@@ -349,7 +349,7 @@ class NewsApi:
         latest_publish_date: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The news must have been published before this date.")] = None,
         news_sources: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="A comma-separated list of news sources from which the news should originate.")] = None,
         authors: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of author names. Only news from any of the given authors will be returned.")] = None,
-        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (see semantic types).")] = None,
+        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (ORG, PER, or LOC).")] = None,
         location_filter: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"")] = None,
         sort: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The sorting criteria (publish-time or sentiment).")] = None,
         sort_direction: Annotated[Optional[Annotated[str, Field(strict=True, max_length=4)]], Field(description="Whether to sort ascending or descending (ASC or DESC).")] = None,
@@ -390,7 +390,7 @@ class NewsApi:
         :type news_sources: str
         :param authors: A comma-separated list of author names. Only news from any of the given authors will be returned.
         :type authors: str
-        :param entities: Filter news by entities (see semantic types).
+        :param entities: Filter news by entities (ORG, PER, or LOC).
         :type entities: str
         :param location_filter: Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
         :type location_filter: str
@@ -478,7 +478,7 @@ class NewsApi:
         latest_publish_date: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The news must have been published before this date.")] = None,
         news_sources: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="A comma-separated list of news sources from which the news should originate.")] = None,
         authors: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of author names. Only news from any of the given authors will be returned.")] = None,
-        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (see semantic types).")] = None,
+        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (ORG, PER, or LOC).")] = None,
         location_filter: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"")] = None,
         sort: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The sorting criteria (publish-time or sentiment).")] = None,
         sort_direction: Annotated[Optional[Annotated[str, Field(strict=True, max_length=4)]], Field(description="Whether to sort ascending or descending (ASC or DESC).")] = None,
@@ -519,7 +519,7 @@ class NewsApi:
         :type news_sources: str
         :param authors: A comma-separated list of author names. Only news from any of the given authors will be returned.
         :type authors: str
-        :param entities: Filter news by entities (see semantic types).
+        :param entities: Filter news by entities (ORG, PER, or LOC).
         :type entities: str
         :param location_filter: Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
         :type location_filter: str
@@ -607,7 +607,7 @@ class NewsApi:
         latest_publish_date: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The news must have been published before this date.")] = None,
         news_sources: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="A comma-separated list of news sources from which the news should originate.")] = None,
         authors: Annotated[Optional[Annotated[str, Field(strict=True, max_length=300)]], Field(description="A comma-separated list of author names. Only news from any of the given authors will be returned.")] = None,
-        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (see semantic types).")] = None,
+        entities: Annotated[Optional[Annotated[str, Field(strict=True, max_length=10000)]], Field(description="Filter news by entities (ORG, PER, or LOC).")] = None,
         location_filter: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"")] = None,
         sort: Annotated[Optional[Annotated[str, Field(strict=True, max_length=100)]], Field(description="The sorting criteria (publish-time or sentiment).")] = None,
         sort_direction: Annotated[Optional[Annotated[str, Field(strict=True, max_length=4)]], Field(description="Whether to sort ascending or descending (ASC or DESC).")] = None,
@@ -648,7 +648,7 @@ class NewsApi:
         :type news_sources: str
         :param authors: A comma-separated list of author names. Only news from any of the given authors will be returned.
         :type authors: str
-        :param entities: Filter news by entities (see semantic types).
+        :param entities: Filter news by entities (ORG, PER, or LOC).
         :type entities: str
         :param location_filter: Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
         :type location_filter: str

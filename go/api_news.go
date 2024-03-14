@@ -249,7 +249,7 @@ func (r ApiSearchNewsRequest) Authors(authors string) ApiSearchNewsRequest {
 	return r
 }
 
-// Filter news by entities (see semantic types).
+// Filter news by entities (ORG, PER, or LOC).
 func (r ApiSearchNewsRequest) Entities(entities string) ApiSearchNewsRequest {
 	r.entities = &entities
 	return r

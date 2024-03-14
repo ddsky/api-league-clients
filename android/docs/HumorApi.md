@@ -125,7 +125,7 @@ HumorApi apiInstance = new HumorApi();
 String keywords = airplane; // String | A comma-separated list of words that must occur in the meme.
 Boolean keywordsInImage = true; // Boolean | Whether the keywords must occur in the image.
 String mediaType = image; // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-Double minRating = 0; // Double | The minimum rating in range [0.0-1.0] of the meme.
+Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the meme.
 Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 try {
     RandomMeme200Response result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional] [default to null]
  **keywordsInImage** | **Boolean**| Whether the keywords must occur in the image. | [optional] [default to null]
  **mediaType** | **String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] [default to null]
- **minRating** | **Double**| The minimum rating in range [0.0-1.0] of the meme. | [optional] [default to null]
+ **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] [default to null]
  **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional] [default to null]
 
 ### Return type
@@ -227,7 +227,7 @@ HumorApi apiInstance = new HumorApi();
 String keywords = horse,man; // String | A comma-separated list of words that must occur in the joke.
 String includeTags = animal; // String | A comma-separated list of tags the jokes should have.
 String excludeTags = nsfw,dark; // String | A comma-separated list of tags the jokes must not have.
-Double minRating = 0; // Double | The minimum rating (0-10) of the jokes.
+Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the jokes.
 Double maxLength = 140; // Double | The maximum length of the joke in letters.
 Integer offset = 0; // Integer | The number of jokes to skip, between 0 and 1000.
 Integer number = 3; // Integer | The number of jokes, between 1 and 10.
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the joke. | [optional] [default to null]
  **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional] [default to null]
  **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional] [default to null]
- **minRating** | **Double**| The minimum rating (0-10) of the jokes. | [optional] [default to null]
+ **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] [default to null]
  **maxLength** | **Double**| The maximum length of the joke in letters. | [optional] [default to null]
  **offset** | **Integer**| The number of jokes to skip, between 0 and 1000. | [optional] [default to null]
  **number** | **Integer**| The number of jokes, between 1 and 10. | [optional] [default to null]
@@ -288,7 +288,7 @@ String mediaType = image; // String | The media type (either 'image', 'video' or
 Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the meme.
 Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 Integer offset = 0; // Integer | The number of memes to skip, between 0 and 1000.
-Integer number = 3; // Integer | The number of memes, between 0 and 10.
+Integer number = 3; // Integer | The number of memes, between 1 and 10.
 try {
     SearchMemes200Response result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
     System.out.println(result);
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
  **minRating** | **Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] [default to null]
  **maxAgeDays** | **Integer**| The maximum age of the meme in days. | [optional] [default to null]
  **offset** | **Integer**| The number of memes to skip, between 0 and 1000. | [optional] [default to null]
- **number** | **Integer**| The number of memes, between 0 and 10. | [optional] [default to null]
+ **number** | **Integer**| The number of memes, between 1 and 10. | [optional] [default to null]
 
 ### Return type
 

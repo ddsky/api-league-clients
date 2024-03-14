@@ -198,7 +198,7 @@ sub random_joke {
 # @param string $keywords A comma-separated list of words that must occur in the meme. (optional)
 # @param boolean $keywords_in_image Whether the keywords must occur in the image. (optional)
 # @param string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-# @param double $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+# @param double $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
 # @param int $max_age_days The maximum age of the meme in days. (optional)
 {
     my $params = {
@@ -219,7 +219,7 @@ sub random_joke {
     },
     'min_rating' => {
         data_type => 'double',
-        description => 'The minimum rating in range [0.0-1.0] of the meme.',
+        description => 'The minimum rating in range [0.0,1.0] of the meme.',
         required => '0',
     },
     'max_age_days' => {
@@ -378,7 +378,7 @@ sub search_gifs {
 # @param string $keywords A comma-separated list of words that must occur in the joke. (optional)
 # @param string $include_tags A comma-separated list of tags the jokes should have. (optional)
 # @param string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-# @param double $min_rating The minimum rating (0-10) of the jokes. (optional)
+# @param double $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
 # @param double $max_length The maximum length of the joke in letters. (optional)
 # @param int $offset The number of jokes to skip, between 0 and 1000. (optional)
 # @param int $number The number of jokes, between 1 and 10. (optional)
@@ -401,7 +401,7 @@ sub search_gifs {
     },
     'min_rating' => {
         data_type => 'double',
-        description => 'The minimum rating (0-10) of the jokes.',
+        description => 'The minimum rating in range [0.0,1.0] of the jokes.',
         required => '0',
     },
     'max_length' => {
@@ -507,7 +507,7 @@ sub search_jokes {
 # @param double $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
 # @param int $max_age_days The maximum age of the meme in days. (optional)
 # @param int $offset The number of memes to skip, between 0 and 1000. (optional)
-# @param int $number The number of memes, between 0 and 10. (optional)
+# @param int $number The number of memes, between 1 and 10. (optional)
 {
     my $params = {
     'keywords' => {
@@ -542,7 +542,7 @@ sub search_jokes {
     },
     'number' => {
         data_type => 'int',
-        description => 'The number of memes, between 0 and 10.',
+        description => 'The number of memes, between 1 and 10.',
         required => '0',
     },
     };

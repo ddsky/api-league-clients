@@ -138,7 +138,7 @@ export default class HumorApi {
      * @param {String} [keywords] A comma-separated list of words that must occur in the meme.
      * @param {Boolean} [keywordsInImage] Whether the keywords must occur in the image.
      * @param {String} [mediaType] The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-     * @param {Number} [minRating] The minimum rating in range [0.0-1.0] of the meme.
+     * @param {Number} [minRating] The minimum rating in range [0.0,1.0] of the meme.
      * @param {Number} [maxAgeDays] The maximum age of the meme in days.
      * @param {module:api/HumorApi~randomMemeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RandomMeme200Response}
@@ -234,7 +234,7 @@ export default class HumorApi {
      * @param {String} [keywords] A comma-separated list of words that must occur in the joke.
      * @param {String} [includeTags] A comma-separated list of tags the jokes should have.
      * @param {String} [excludeTags] A comma-separated list of tags the jokes must not have.
-     * @param {Number} [minRating] The minimum rating (0-10) of the jokes.
+     * @param {Number} [minRating] The minimum rating in range [0.0,1.0] of the jokes.
      * @param {Number} [maxLength] The maximum length of the joke in letters.
      * @param {Number} [offset] The number of jokes to skip, between 0 and 1000.
      * @param {Number} [number] The number of jokes, between 1 and 10.
@@ -290,7 +290,7 @@ export default class HumorApi {
      * @param {Number} [minRating] The minimum rating in range [0.0,1.0] of the meme.
      * @param {Number} [maxAgeDays] The maximum age of the meme in days.
      * @param {Number} [offset] The number of memes to skip, between 0 and 1000.
-     * @param {Number} [number] The number of memes, between 0 and 10.
+     * @param {Number} [number] The number of memes, between 1 and 10.
      * @param {module:api/HumorApi~searchMemesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchMemes200Response}
      */

@@ -171,7 +171,7 @@ class HumorApi {
   ///   The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
   ///
   /// * [double] minRating:
-  ///   The minimum rating in range [0.0-1.0] of the meme.
+  ///   The minimum rating in range [0.0,1.0] of the meme.
   ///
   /// * [int] maxAgeDays:
   ///   The maximum age of the meme in days.
@@ -232,7 +232,7 @@ class HumorApi {
   ///   The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
   ///
   /// * [double] minRating:
-  ///   The minimum rating in range [0.0-1.0] of the meme.
+  ///   The minimum rating in range [0.0,1.0] of the meme.
   ///
   /// * [int] maxAgeDays:
   ///   The maximum age of the meme in days.
@@ -338,7 +338,7 @@ class HumorApi {
   ///   A comma-separated list of tags the jokes must not have.
   ///
   /// * [double] minRating:
-  ///   The minimum rating (0-10) of the jokes.
+  ///   The minimum rating in range [0.0,1.0] of the jokes.
   ///
   /// * [double] maxLength:
   ///   The maximum length of the joke in letters.
@@ -411,7 +411,7 @@ class HumorApi {
   ///   A comma-separated list of tags the jokes must not have.
   ///
   /// * [double] minRating:
-  ///   The minimum rating (0-10) of the jokes.
+  ///   The minimum rating in range [0.0,1.0] of the jokes.
   ///
   /// * [double] maxLength:
   ///   The maximum length of the joke in letters.
@@ -463,7 +463,7 @@ class HumorApi {
   ///   The number of memes to skip, between 0 and 1000.
   ///
   /// * [int] number:
-  ///   The number of memes, between 0 and 10.
+  ///   The number of memes, between 1 and 10.
   Future<Response> searchMemesWithHttpInfo({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-memes';
@@ -536,7 +536,7 @@ class HumorApi {
   ///   The number of memes to skip, between 0 and 1000.
   ///
   /// * [int] number:
-  ///   The number of memes, between 0 and 10.
+  ///   The number of memes, between 1 and 10.
   Future<SearchMemes200Response?> searchMemes({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
     final response = await searchMemesWithHttpInfo( keywords: keywords, keywordsInImage: keywordsInImage, mediaType: mediaType, minRating: minRating, maxAgeDays: maxAgeDays, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {

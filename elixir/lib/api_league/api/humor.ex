@@ -102,7 +102,7 @@ defmodule APILeague.Api.Humor do
     - `:keywords` (String.t): A comma-separated list of words that must occur in the meme.
     - `:"keywords-in-image"` (boolean()): Whether the keywords must occur in the image.
     - `:"media-type"` (String.t): The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-    - `:"min-rating"` (float()): The minimum rating in range [0.0-1.0] of the meme.
+    - `:"min-rating"` (float()): The minimum rating in range [0.0,1.0] of the meme.
     - `:"max-age-days"` (integer()): The maximum age of the meme in days.
 
   ### Returns
@@ -194,7 +194,7 @@ defmodule APILeague.Api.Humor do
     - `:keywords` (String.t): A comma-separated list of words that must occur in the joke.
     - `:"include-tags"` (String.t): A comma-separated list of tags the jokes should have.
     - `:"exclude-tags"` (String.t): A comma-separated list of tags the jokes must not have.
-    - `:"min-rating"` (float()): The minimum rating (0-10) of the jokes.
+    - `:"min-rating"` (float()): The minimum rating in range [0.0,1.0] of the jokes.
     - `:"max-length"` (float()): The maximum length of the joke in letters.
     - `:offset` (integer()): The number of jokes to skip, between 0 and 1000.
     - `:number` (integer()): The number of jokes, between 1 and 10.
@@ -250,7 +250,7 @@ defmodule APILeague.Api.Humor do
     - `:"min-rating"` (float()): The minimum rating in range [0.0,1.0] of the meme.
     - `:"max-age-days"` (integer()): The maximum age of the meme in days.
     - `:offset` (integer()): The number of memes to skip, between 0 and 1000.
-    - `:number` (integer()): The number of memes, between 0 and 10.
+    - `:number` (integer()): The number of memes, between 1 and 10.
 
   ### Returns
 

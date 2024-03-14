@@ -68,7 +68,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -94,7 +94,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -155,7 +155,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -182,7 +182,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -495,7 +495,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -522,7 +522,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -656,7 +656,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>
@@ -684,7 +684,7 @@ namespace apileague.Api
         /// <param name="latestPublishDate">The news must have been published before this date. (optional)</param>
         /// <param name="newsSources">A comma-separated list of news sources from which the news should originate. (optional)</param>
         /// <param name="authors">A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)</param>
-        /// <param name="entities">Filter news by entities (see semantic types). (optional)</param>
+        /// <param name="entities">Filter news by entities (ORG, PER, or LOC). (optional)</param>
         /// <param name="locationFilter">Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)</param>
         /// <param name="sort">The sorting criteria (publish-time or sentiment). (optional)</param>
         /// <param name="sortDirection">Whether to sort ascending or descending (ASC or DESC). (optional)</param>

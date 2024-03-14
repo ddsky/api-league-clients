@@ -157,7 +157,7 @@ let body:.HumorApiRandomMemeRequest = {
   keywordsInImage: true,
   // string | The media type (either \'image\', \'video\' or even specific format such as \'jpg\', \'png\', or \'gif\'). (optional)
   mediaType: "image",
-  // number | The minimum rating in range [0.0-1.0] of the meme. (optional)
+  // number | The minimum rating in range [0.0,1.0] of the meme. (optional)
   minRating: 0,
   // number | The maximum age of the meme in days. (optional)
   maxAgeDays: 30,
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
  **keywords** | [**string**] | A comma-separated list of words that must occur in the meme. | (optional) defaults to undefined
  **keywordsInImage** | [**boolean**] | Whether the keywords must occur in the image. | (optional) defaults to undefined
  **mediaType** | [**string**] | The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;). | (optional) defaults to undefined
- **minRating** | [**number**] | The minimum rating in range [0.0-1.0] of the meme. | (optional) defaults to undefined
+ **minRating** | [**number**] | The minimum rating in range [0.0,1.0] of the meme. | (optional) defaults to undefined
  **maxAgeDays** | [**number**] | The maximum age of the meme in days. | (optional) defaults to undefined
 
 
@@ -292,7 +292,7 @@ let body:.HumorApiSearchJokesRequest = {
   includeTags: "animal",
   // string | A comma-separated list of tags the jokes must not have. (optional)
   excludeTags: "nsfw,dark",
-  // number | The minimum rating (0-10) of the jokes. (optional)
+  // number | The minimum rating in range [0.0,1.0] of the jokes. (optional)
   minRating: 0,
   // number | The maximum length of the joke in letters. (optional)
   maxLength: 140,
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
  **keywords** | [**string**] | A comma-separated list of words that must occur in the joke. | (optional) defaults to undefined
  **includeTags** | [**string**] | A comma-separated list of tags the jokes should have. | (optional) defaults to undefined
  **excludeTags** | [**string**] | A comma-separated list of tags the jokes must not have. | (optional) defaults to undefined
- **minRating** | [**number**] | The minimum rating (0-10) of the jokes. | (optional) defaults to undefined
+ **minRating** | [**number**] | The minimum rating in range [0.0,1.0] of the jokes. | (optional) defaults to undefined
  **maxLength** | [**number**] | The maximum length of the joke in letters. | (optional) defaults to undefined
  **offset** | [**number**] | The number of jokes to skip, between 0 and 1000. | (optional) defaults to undefined
  **number** | [**number**] | The number of jokes, between 1 and 10. | (optional) defaults to undefined
@@ -376,7 +376,7 @@ let body:.HumorApiSearchMemesRequest = {
   maxAgeDays: 30,
   // number | The number of memes to skip, between 0 and 1000. (optional)
   offset: 0,
-  // number | The number of memes, between 0 and 10. (optional)
+  // number | The number of memes, between 1 and 10. (optional)
   number: 3,
 };
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
  **minRating** | [**number**] | The minimum rating in range [0.0,1.0] of the meme. | (optional) defaults to undefined
  **maxAgeDays** | [**number**] | The maximum age of the meme in days. | (optional) defaults to undefined
  **offset** | [**number**] | The number of memes to skip, between 0 and 1000. | (optional) defaults to undefined
- **number** | [**number**] | The number of memes, between 0 and 10. | (optional) defaults to undefined
+ **number** | [**number**] | The number of memes, between 1 and 10. | (optional) defaults to undefined
 
 
 ### Return type

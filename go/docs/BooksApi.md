@@ -107,7 +107,7 @@ func main() {
 	latestPublishYear := int32(2023) // int32 | The books must have been published before this year. (optional)
 	minRating := float64(0.8) // float64 | The minimum rating the book must have gotten in the interval [0,1]. (optional)
 	maxRating := float64(0.99) // float64 | The maximum rating the book must have gotten in the interval [0,1]. (optional)
-	genres := "nonfiction" // string | A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+	genres := "nonfiction" // string | A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
 	authors := "J.K. Rowling" // string | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate. (optional)
 	isbn := "9781781257654" // string | Only the book matching the ISBN-13 will be returned (optional)
 	oclc := "864418200" // string | Only the book matching the OCLC will be returned (optional)
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
  **latestPublishYear** | **int32** | The books must have been published before this year. | 
  **minRating** | **float64** | The minimum rating the book must have gotten in the interval [0,1]. | 
  **maxRating** | **float64** | The maximum rating the book must have gotten in the interval [0,1]. | 
- **genres** | **string** | A comma-separated list of  genres. Only books from any of the given genres will be returned. | 
+ **genres** | **string** | A comma-separated list of genres. Only books from any of the given genres will be returned. | 
  **authors** | **string** | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | 
  **isbn** | **string** | Only the book matching the ISBN-13 will be returned | 
  **oclc** | **string** | Only the book matching the OCLC will be returned | 

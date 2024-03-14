@@ -92,14 +92,14 @@ export default class BooksApi {
 
     /**
      * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param {Object} opts Optional parameters
      * @param {String} [query] The search query.
      * @param {Number} [earliestPublishYear] The books must have been published after this year.
      * @param {Number} [latestPublishYear] The books must have been published before this year.
      * @param {Number} [minRating] The minimum rating the book must have gotten in the interval [0,1].
      * @param {Number} [maxRating] The maximum rating the book must have gotten in the interval [0,1].
-     * @param {String} [genres] A comma-separated list of  genres. Only books from any of the given genres will be returned.
+     * @param {String} [genres] A comma-separated list of genres. Only books from any of the given genres will be returned.
      * @param {String} [authors] A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.
      * @param {String} [isbn] Only the book matching the ISBN-13 will be returned
      * @param {String} [oclc] Only the book matching the OCLC will be returned

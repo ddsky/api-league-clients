@@ -93,7 +93,7 @@ public class MathApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
+     * @see <a href="https://apileague.com/apis/convert-units-api/">Convert Units Documentation</a>
      */
     public okhttp3.Call convertUnitsCall(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -197,7 +197,7 @@ public class MathApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
+     * @see <a href="https://apileague.com/apis/convert-units-api/">Convert Units Documentation</a>
      */
     public ConvertUnits200Response convertUnits(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
         ApiResponse<ConvertUnits200Response> localVarResp = convertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
@@ -225,7 +225,7 @@ public class MathApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
+     * @see <a href="https://apileague.com/apis/convert-units-api/">Convert Units Documentation</a>
      */
     public ApiResponse<ConvertUnits200Response> convertUnitsWithHttpInfo(Double sourceAmount, String sourceUnit, String targetUnit, String foodName) throws ApiException {
         okhttp3.Call localVarCall = convertUnitsValidateBeforeCall(sourceAmount, sourceUnit, targetUnit, foodName, null);
@@ -255,7 +255,7 @@ public class MathApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/convert-units-api">Convert Units Documentation</a>
+     * @see <a href="https://apileague.com/apis/convert-units-api/">Convert Units Documentation</a>
      */
     public okhttp3.Call convertUnitsAsync(Double sourceAmount, String sourceUnit, String targetUnit, String foodName, final ApiCallback<ConvertUnits200Response> _callback) throws ApiException {
 

@@ -92,7 +92,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/find-similar-books-api/">Find Similar Books Documentation</a>
      */
     public okhttp3.Call findSimilarBooksCall(Integer id, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -173,7 +173,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/find-similar-books-api/">Find Similar Books Documentation</a>
      */
     public FindSimilarBooks200Response findSimilarBooks(Integer id, Integer number) throws ApiException {
         ApiResponse<FindSimilarBooks200Response> localVarResp = findSimilarBooksWithHttpInfo(id, number);
@@ -199,7 +199,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/find-similar-books-api/">Find Similar Books Documentation</a>
      */
     public ApiResponse<FindSimilarBooks200Response> findSimilarBooksWithHttpInfo(Integer id, Integer number) throws ApiException {
         okhttp3.Call localVarCall = findSimilarBooksValidateBeforeCall(id, number, null);
@@ -227,7 +227,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/find-similar-books-api">Find Similar Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/find-similar-books-api/">Find Similar Books Documentation</a>
      */
     public okhttp3.Call findSimilarBooksAsync(Integer id, Integer number, final ApiCallback<FindSimilarBooks200Response> _callback) throws ApiException {
 
@@ -243,7 +243,7 @@ public class BooksApi {
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -267,7 +267,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-books-api/">Search Books Documentation</a>
      */
     public okhttp3.Call searchBooksCall(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -377,13 +377,13 @@ public class BooksApi {
 
     /**
      * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -406,7 +406,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-books-api/">Search Books Documentation</a>
      */
     public SearchBooks200Response searchBooks(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
         ApiResponse<SearchBooks200Response> localVarResp = searchBooksWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
@@ -415,13 +415,13 @@ public class BooksApi {
 
     /**
      * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -444,7 +444,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-books-api/">Search Books Documentation</a>
      */
     public ApiResponse<SearchBooks200Response> searchBooksWithHttpInfo(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchBooksValidateBeforeCall(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, null);
@@ -454,13 +454,13 @@ public class BooksApi {
 
     /**
      * Search Books (asynchronously)
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -484,7 +484,7 @@ public class BooksApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-books-api">Search Books Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-books-api/">Search Books Documentation</a>
      */
     public okhttp3.Call searchBooksAsync(String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final ApiCallback<SearchBooks200Response> _callback) throws ApiException {
 

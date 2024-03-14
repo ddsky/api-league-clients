@@ -92,7 +92,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-quote-api/">Random Quote Documentation</a>
      */
     public okhttp3.Call randomQuoteCall(Integer minLength, Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -171,7 +171,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-quote-api/">Random Quote Documentation</a>
      */
     public RandomQuote200Response randomQuote(Integer minLength, Integer maxLength) throws ApiException {
         ApiResponse<RandomQuote200Response> localVarResp = randomQuoteWithHttpInfo(minLength, maxLength);
@@ -197,7 +197,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-quote-api/">Random Quote Documentation</a>
      */
     public ApiResponse<RandomQuote200Response> randomQuoteWithHttpInfo(Integer minLength, Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomQuoteValidateBeforeCall(minLength, maxLength, null);
@@ -225,7 +225,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-quote-api">Random Quote Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-quote-api/">Random Quote Documentation</a>
      */
     public okhttp3.Call randomQuoteAsync(Integer minLength, Integer maxLength, final ApiCallback<RandomQuote200Response> _callback) throws ApiException {
 
@@ -252,7 +252,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-trivia-api/">Random Trivia Documentation</a>
      */
     public okhttp3.Call randomTriviaCall(Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -326,7 +326,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-trivia-api/">Random Trivia Documentation</a>
      */
     public RandomTrivia200Response randomTrivia(Integer maxLength) throws ApiException {
         ApiResponse<RandomTrivia200Response> localVarResp = randomTriviaWithHttpInfo(maxLength);
@@ -351,7 +351,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-trivia-api/">Random Trivia Documentation</a>
      */
     public ApiResponse<RandomTrivia200Response> randomTriviaWithHttpInfo(Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomTriviaValidateBeforeCall(maxLength, null);
@@ -378,7 +378,7 @@ public class KnowledgeApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-trivia-api">Random Trivia Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-trivia-api/">Random Trivia Documentation</a>
      */
     public okhttp3.Call randomTriviaAsync(Integer maxLength, final ApiCallback<RandomTrivia200Response> _callback) throws ApiException {
 

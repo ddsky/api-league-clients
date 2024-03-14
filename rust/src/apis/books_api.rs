@@ -89,7 +89,7 @@ pub async fn find_similar_books(configuration: &configuration::Configuration, id
     }
 }
 
-/// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+/// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 pub async fn search_books(configuration: &configuration::Configuration, query: Option<&str>, earliest_publish_year: Option<i32>, latest_publish_year: Option<i32>, min_rating: Option<f64>, max_rating: Option<f64>, genres: Option<&str>, authors: Option<&str>, isbn: Option<&str>, oclc: Option<&str>, sort: Option<&str>, sort_direction: Option<&str>, group_results: Option<bool>, offset: Option<i32>, number: Option<i32>) -> Result<crate::models::SearchBooks200Response, Error<SearchBooksError>> {
     let local_var_configuration = configuration;
 

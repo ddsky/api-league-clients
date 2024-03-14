@@ -156,7 +156,7 @@ with apileague.ApiClient(configuration) as api_client:
     latest_publish_date = '2022-04-22 16:12:35' # str | The news must have been published before this date. (optional)
     news_sources = 'https://www.bbc.co.uk' # str | A comma-separated list of news sources from which the news should originate. (optional)
     authors = 'John Doe' # str | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-    entities = 'ORG:Tesla' # str | Filter news by entities (see semantic types). (optional)
+    entities = 'ORG:Tesla' # str | Filter news by entities (ORG, PER, or LOC). (optional)
     location_filter = '51.050407, 13.737262, 100' # str | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
     sort = 'publish-time' # str | The sorting criteria (publish-time or sentiment). (optional)
     sort_direction = 'ASC' # str | Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
  **latest_publish_date** | **str**| The news must have been published before this date. | [optional] 
  **news_sources** | **str**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **str**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **str**| Filter news by entities (see semantic types). | [optional] 
+ **entities** | **str**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **location_filter** | **str**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
  **sort** | **str**| The sorting criteria (publish-time or sentiment). | [optional] 
  **sort_direction** | **str**| Whether to sort ascending or descending (ASC or DESC). | [optional] 

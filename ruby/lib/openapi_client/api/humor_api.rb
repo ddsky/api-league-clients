@@ -185,7 +185,7 @@ module OpenapiClient
     # @option opts [String] :keywords A comma-separated list of words that must occur in the meme.
     # @option opts [Boolean] :keywords_in_image Whether the keywords must occur in the image.
     # @option opts [String] :media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
-    # @option opts [Float] :min_rating The minimum rating in range [0.0-1.0] of the meme.
+    # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the meme.
     # @option opts [Integer] :max_age_days The maximum age of the meme in days.
     # @return [RandomMeme200Response]
     def random_meme(opts = {})
@@ -199,7 +199,7 @@ module OpenapiClient
     # @option opts [String] :keywords A comma-separated list of words that must occur in the meme.
     # @option opts [Boolean] :keywords_in_image Whether the keywords must occur in the image.
     # @option opts [String] :media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
-    # @option opts [Float] :min_rating The minimum rating in range [0.0-1.0] of the meme.
+    # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the meme.
     # @option opts [Integer] :max_age_days The maximum age of the meme in days.
     # @return [Array<(RandomMeme200Response, Integer, Hash)>] RandomMeme200Response data, response status code and response headers
     def random_meme_with_http_info(opts = {})
@@ -375,7 +375,7 @@ module OpenapiClient
     # @option opts [String] :keywords A comma-separated list of words that must occur in the joke.
     # @option opts [String] :include_tags A comma-separated list of tags the jokes should have.
     # @option opts [String] :exclude_tags A comma-separated list of tags the jokes must not have.
-    # @option opts [Float] :min_rating The minimum rating (0-10) of the jokes.
+    # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the jokes.
     # @option opts [Float] :max_length The maximum length of the joke in letters.
     # @option opts [Integer] :offset The number of jokes to skip, between 0 and 1000.
     # @option opts [Integer] :number The number of jokes, between 1 and 10.
@@ -391,7 +391,7 @@ module OpenapiClient
     # @option opts [String] :keywords A comma-separated list of words that must occur in the joke.
     # @option opts [String] :include_tags A comma-separated list of tags the jokes should have.
     # @option opts [String] :exclude_tags A comma-separated list of tags the jokes must not have.
-    # @option opts [Float] :min_rating The minimum rating (0-10) of the jokes.
+    # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the jokes.
     # @option opts [Float] :max_length The maximum length of the joke in letters.
     # @option opts [Integer] :offset The number of jokes to skip, between 0 and 1000.
     # @option opts [Integer] :number The number of jokes, between 1 and 10.
@@ -515,7 +515,7 @@ module OpenapiClient
     # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the meme.
     # @option opts [Integer] :max_age_days The maximum age of the meme in days.
     # @option opts [Integer] :offset The number of memes to skip, between 0 and 1000.
-    # @option opts [Integer] :number The number of memes, between 0 and 10.
+    # @option opts [Integer] :number The number of memes, between 1 and 10.
     # @return [SearchMemes200Response]
     def search_memes(opts = {})
       data, _status_code, _headers = search_memes_with_http_info(opts)
@@ -531,7 +531,7 @@ module OpenapiClient
     # @option opts [Float] :min_rating The minimum rating in range [0.0,1.0] of the meme.
     # @option opts [Integer] :max_age_days The maximum age of the meme in days.
     # @option opts [Integer] :offset The number of memes to skip, between 0 and 1000.
-    # @option opts [Integer] :number The number of memes, between 0 and 10.
+    # @option opts [Integer] :number The number of memes, between 1 and 10.
     # @return [Array<(SearchMemes200Response, Integer, Hash)>] SearchMemes200Response data, response status code and response headers
     def search_memes_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -583,8 +583,8 @@ module OpenapiClient
         fail ArgumentError, 'invalid value for "opts[:"number"]" when calling HumorApi.search_memes, must be smaller than or equal to 10.'
       end
 
-      if @api_client.config.client_side_validation && !opts[:'number'].nil? && opts[:'number'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"number"]" when calling HumorApi.search_memes, must be greater than or equal to 0.'
+      if @api_client.config.client_side_validation && !opts[:'number'].nil? && opts[:'number'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"number"]" when calling HumorApi.search_memes, must be greater than or equal to 1.'
       end
 
       # resource path

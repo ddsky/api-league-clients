@@ -50,7 +50,7 @@ import com.apileague.client.JSON;
 /**
  * ScoreText200ResponseReadabilitySubscores
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-08T10:10:25.367252+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-14T17:14:09.298081600+01:00[Europe/Berlin]")
 public class ScoreText200ResponseReadabilitySubscores {
   public static final String SERIALIZED_NAME_READING_TIME_SECONDS = "reading_time_seconds";
   @SerializedName(SERIALIZED_NAME_READING_TIME_SECONDS)

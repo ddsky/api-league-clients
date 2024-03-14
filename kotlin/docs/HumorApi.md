@@ -138,7 +138,7 @@ val apiInstance = HumorApi()
 val keywords : kotlin.String = airplane // kotlin.String | A comma-separated list of words that must occur in the meme.
 val keywordsInImage : kotlin.Boolean = true // kotlin.Boolean | Whether the keywords must occur in the image.
 val mediaType : kotlin.String = image // kotlin.String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0-1.0] of the meme.
+val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the meme.
 val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
 try {
     val result : RandomMeme200Response = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
  **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the meme. | [optional]
  **keywordsInImage** | **kotlin.Boolean**| Whether the keywords must occur in the image. | [optional]
  **mediaType** | **kotlin.String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **minRating** | **kotlin.Double**| The minimum rating in range [0.0-1.0] of the meme. | [optional]
+ **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
  **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional]
 
 ### Return type
@@ -254,7 +254,7 @@ val apiInstance = HumorApi()
 val keywords : kotlin.String = horse,man // kotlin.String | A comma-separated list of words that must occur in the joke.
 val includeTags : kotlin.String = animal // kotlin.String | A comma-separated list of tags the jokes should have.
 val excludeTags : kotlin.String = nsfw,dark // kotlin.String | A comma-separated list of tags the jokes must not have.
-val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating (0-10) of the jokes.
+val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the jokes.
 val maxLength : kotlin.Double = 140 // kotlin.Double | The maximum length of the joke in letters.
 val offset : kotlin.Int = 0 // kotlin.Int | The number of jokes to skip, between 0 and 1000.
 val number : kotlin.Int = 3 // kotlin.Int | The number of jokes, between 1 and 10.
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
  **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the joke. | [optional]
  **includeTags** | **kotlin.String**| A comma-separated list of tags the jokes should have. | [optional]
  **excludeTags** | **kotlin.String**| A comma-separated list of tags the jokes must not have. | [optional]
- **minRating** | **kotlin.Double**| The minimum rating (0-10) of the jokes. | [optional]
+ **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
  **maxLength** | **kotlin.Double**| The maximum length of the joke in letters. | [optional]
  **offset** | **kotlin.Int**| The number of jokes to skip, between 0 and 1000. | [optional]
  **number** | **kotlin.Int**| The number of jokes, between 1 and 10. | [optional]
@@ -322,7 +322,7 @@ val mediaType : kotlin.String = image // kotlin.String | The media type (either 
 val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the meme.
 val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
 val offset : kotlin.Int = 0 // kotlin.Int | The number of memes to skip, between 0 and 1000.
-val number : kotlin.Int = 3 // kotlin.Int | The number of memes, between 0 and 10.
+val number : kotlin.Int = 3 // kotlin.Int | The number of memes, between 1 and 10.
 try {
     val result : SearchMemes200Response = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
     println(result)
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
  **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
  **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional]
  **offset** | **kotlin.Int**| The number of memes to skip, between 0 and 1000. | [optional]
- **number** | **kotlin.Int**| The number of memes, between 0 and 10. | [optional]
+ **number** | **kotlin.Int**| The number of memes, between 1 and 10. | [optional]
 
 ### Return type
 

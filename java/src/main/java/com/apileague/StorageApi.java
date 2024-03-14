@@ -91,7 +91,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Read Key Value from Store Documentation</a>
      */
     public okhttp3.Call readKeyValueFromStoreCall(String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -170,7 +170,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Read Key Value from Store Documentation</a>
      */
     public ReadKeyValueFromStore200Response readKeyValueFromStore(String key) throws ApiException {
         ApiResponse<ReadKeyValueFromStore200Response> localVarResp = readKeyValueFromStoreWithHttpInfo(key);
@@ -195,7 +195,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Read Key Value from Store Documentation</a>
      */
     public ApiResponse<ReadKeyValueFromStore200Response> readKeyValueFromStoreWithHttpInfo(String key) throws ApiException {
         okhttp3.Call localVarCall = readKeyValueFromStoreValidateBeforeCall(key, null);
@@ -222,7 +222,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Read Key Value from Store Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Read Key Value from Store Documentation</a>
      */
     public okhttp3.Call readKeyValueFromStoreAsync(String key, final ApiCallback<ReadKeyValueFromStore200Response> _callback) throws ApiException {
 
@@ -250,7 +250,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Store Key Value (GET) Documentation</a>
      */
     public okhttp3.Call storeKeyValueGETCall(String key, String value, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -339,7 +339,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Store Key Value (GET) Documentation</a>
      */
     public StoreKeyValueGET200Response storeKeyValueGET(String key, String value) throws ApiException {
         ApiResponse<StoreKeyValueGET200Response> localVarResp = storeKeyValueGETWithHttpInfo(key, value);
@@ -365,7 +365,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Store Key Value (GET) Documentation</a>
      */
     public ApiResponse<StoreKeyValueGET200Response> storeKeyValueGETWithHttpInfo(String key, String value) throws ApiException {
         okhttp3.Call localVarCall = storeKeyValueGETValidateBeforeCall(key, value, null);
@@ -393,7 +393,7 @@ public class StorageApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/key-value-storage-api">Store Key Value (GET) Documentation</a>
+     * @see <a href="https://apileague.com/apis/key-value-storage-api/">Store Key Value (GET) Documentation</a>
      */
     public okhttp3.Call storeKeyValueGETAsync(String key, String value, final ApiCallback<StoreKeyValueGET200Response> _callback) throws ApiException {
 

@@ -92,7 +92,7 @@ instance Produces FindSimilarBooks MimeJSON
 -- 
 -- Search Books
 -- 
--- Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+-- Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 -- 
 -- AuthMethod: 'AuthApiKeyApiKey', 'AuthApiKeyHeaderApiKey'
 -- 
@@ -130,7 +130,7 @@ instance HasOptionalParam SearchBooks MaxRating where
   applyOptionalParam req (MaxRating xs) =
     req `addQuery` toQuery ("max-rating", Just xs)
 
--- | /Optional Param/ "genres" - A comma-separated list of  genres. Only books from any of the given genres will be returned.
+-- | /Optional Param/ "genres" - A comma-separated list of genres. Only books from any of the given genres will be returned.
 instance HasOptionalParam SearchBooks Genres where
   applyOptionalParam req (Genres xs) =
     req `addQuery` toQuery ("genres", Just xs)

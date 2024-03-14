@@ -92,7 +92,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api">Image to Ascii Art by URL Documentation</a>
+     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api/">Image to Ascii Art by URL Documentation</a>
      */
     public okhttp3.Call imageToAsciiArtByURLCall(String url, Integer width, Integer height, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -181,7 +181,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api">Image to Ascii Art by URL Documentation</a>
+     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api/">Image to Ascii Art by URL Documentation</a>
      */
     public String imageToAsciiArtByURL(String url, Integer width, Integer height) throws ApiException {
         ApiResponse<String> localVarResp = imageToAsciiArtByURLWithHttpInfo(url, width, height);
@@ -208,7 +208,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api">Image to Ascii Art by URL Documentation</a>
+     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api/">Image to Ascii Art by URL Documentation</a>
      */
     public ApiResponse<String> imageToAsciiArtByURLWithHttpInfo(String url, Integer width, Integer height) throws ApiException {
         okhttp3.Call localVarCall = imageToAsciiArtByURLValidateBeforeCall(url, width, height, null);
@@ -237,7 +237,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api">Image to Ascii Art by URL Documentation</a>
+     * @see <a href="https://apileague.com/apis/image-to-ascii-art-api/">Image to Ascii Art by URL Documentation</a>
      */
     public okhttp3.Call imageToAsciiArtByURLAsync(String url, Integer width, Integer height, final ApiCallback<String> _callback) throws ApiException {
 
@@ -265,7 +265,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-poem-api/">Random Poem Documentation</a>
      */
     public okhttp3.Call randomPoemCall(Integer minLines, Integer maxLines, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -344,7 +344,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-poem-api/">Random Poem Documentation</a>
      */
     public RandomPoem200Response randomPoem(Integer minLines, Integer maxLines) throws ApiException {
         ApiResponse<RandomPoem200Response> localVarResp = randomPoemWithHttpInfo(minLines, maxLines);
@@ -370,7 +370,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-poem-api/">Random Poem Documentation</a>
      */
     public ApiResponse<RandomPoem200Response> randomPoemWithHttpInfo(Integer minLines, Integer maxLines) throws ApiException {
         okhttp3.Call localVarCall = randomPoemValidateBeforeCall(minLines, maxLines, null);
@@ -398,7 +398,7 @@ public class ArtApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-poem-api">Random Poem Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-poem-api/">Random Poem Documentation</a>
      */
     public okhttp3.Call randomPoemAsync(Integer minLines, Integer maxLines, final ApiCallback<RandomPoem200Response> _callback) throws ApiException {
 

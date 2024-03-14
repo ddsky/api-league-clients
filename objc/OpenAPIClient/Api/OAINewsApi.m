@@ -156,7 +156,7 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
 ///
 ///  @param authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
 ///
-///  @param entities Filter news by entities (see semantic types). (optional)
+///  @param entities Filter news by entities (ORG, PER, or LOC). (optional)
 ///
 ///  @param locationFilter Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
 ///

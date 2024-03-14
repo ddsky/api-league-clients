@@ -136,7 +136,7 @@ public class Example {
     String latestPublishDate = "2022-04-22 16:12:35"; // String | The news must have been published before this date.
     String newsSources = "https://www.bbc.co.uk"; // String | A comma-separated list of news sources from which the news should originate.
     String authors = "John Doe"; // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-    String entities = "ORG:Tesla"; // String | Filter news by entities (see semantic types).
+    String entities = "ORG:Tesla"; // String | Filter news by entities (ORG, PER, or LOC).
     String locationFilter = "51.050407, 13.737262, 100"; // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
     String sort = "publish-time"; // String | The sorting criteria (publish-time or sentiment).
     String sortDirection = "ASC"; // String | Whether to sort ascending or descending (ASC or DESC).
@@ -169,7 +169,7 @@ public class Example {
 | **latestPublishDate** | **String**| The news must have been published before this date. | [optional] |
 | **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] |
 | **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
-| **entities** | **String**| Filter news by entities (see semantic types). | [optional] |
+| **entities** | **String**| Filter news by entities (ORG, PER, or LOC). | [optional] |
 | **locationFilter** | **String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
 | **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] |
 | **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |

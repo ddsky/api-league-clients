@@ -220,7 +220,7 @@ func (r ApiSearchBooksRequest) MaxRating(maxRating float64) ApiSearchBooksReques
 	return r
 }
 
-// A comma-separated list of  genres. Only books from any of the given genres will be returned.
+// A comma-separated list of genres. Only books from any of the given genres will be returned.
 func (r ApiSearchBooksRequest) Genres(genres string) ApiSearchBooksRequest {
 	r.genres = &genres
 	return r
@@ -281,7 +281,7 @@ func (r ApiSearchBooksRequest) Execute() (*SearchBooks200Response, *http.Respons
 /*
 SearchBooks Search Books
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for "books about dogs" and will automatically also find books about "border collies" and other types without specifying them in the query.
+Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiSearchBooksRequest

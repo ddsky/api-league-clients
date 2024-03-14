@@ -111,7 +111,7 @@ module OpenapiClient
     # @option opts [String] :latest_publish_date The news must have been published before this date.
     # @option opts [String] :news_sources A comma-separated list of news sources from which the news should originate.
     # @option opts [String] :authors A comma-separated list of author names. Only news from any of the given authors will be returned.
-    # @option opts [String] :entities Filter news by entities (see semantic types).
+    # @option opts [String] :entities Filter news by entities (ORG, PER, or LOC).
     # @option opts [String] :location_filter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
     # @option opts [String] :sort The sorting criteria (publish-time or sentiment).
     # @option opts [String] :sort_direction Whether to sort ascending or descending (ASC or DESC).
@@ -135,7 +135,7 @@ module OpenapiClient
     # @option opts [String] :latest_publish_date The news must have been published before this date.
     # @option opts [String] :news_sources A comma-separated list of news sources from which the news should originate.
     # @option opts [String] :authors A comma-separated list of author names. Only news from any of the given authors will be returned.
-    # @option opts [String] :entities Filter news by entities (see semantic types).
+    # @option opts [String] :entities Filter news by entities (ORG, PER, or LOC).
     # @option opts [String] :location_filter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
     # @option opts [String] :sort The sorting criteria (publish-time or sentiment).
     # @option opts [String] :sort_direction Whether to sort ascending or descending (ASC or DESC).

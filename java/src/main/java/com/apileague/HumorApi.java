@@ -94,7 +94,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api/">Generate Nonsense Word Documentation</a>
      */
     public okhttp3.Call generateNonsenseWordCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -163,7 +163,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api/">Generate Nonsense Word Documentation</a>
      */
     public GenerateNonsenseWord200Response generateNonsenseWord() throws ApiException {
         ApiResponse<GenerateNonsenseWord200Response> localVarResp = generateNonsenseWordWithHttpInfo();
@@ -187,7 +187,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api/">Generate Nonsense Word Documentation</a>
      */
     public ApiResponse<GenerateNonsenseWord200Response> generateNonsenseWordWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = generateNonsenseWordValidateBeforeCall(null);
@@ -213,7 +213,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api">Generate Nonsense Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/generate-nonsense-word-api/">Generate Nonsense Word Documentation</a>
      */
     public okhttp3.Call generateNonsenseWordAsync(final ApiCallback<GenerateNonsenseWord200Response> _callback) throws ApiException {
 
@@ -243,7 +243,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-joke-api/">Random Joke Documentation</a>
      */
     public okhttp3.Call randomJokeCall(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -332,7 +332,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-joke-api/">Random Joke Documentation</a>
      */
     public SearchJokes200ResponseJokesInner randomJoke(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
         ApiResponse<SearchJokes200ResponseJokesInner> localVarResp = randomJokeWithHttpInfo(includeTags, excludeTags, minRating, maxLength);
@@ -360,7 +360,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-joke-api/">Random Joke Documentation</a>
      */
     public ApiResponse<SearchJokes200ResponseJokesInner> randomJokeWithHttpInfo(String includeTags, String excludeTags, Double minRating, Integer maxLength) throws ApiException {
         okhttp3.Call localVarCall = randomJokeValidateBeforeCall(includeTags, excludeTags, minRating, maxLength, null);
@@ -390,7 +390,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-joke-api">Random Joke Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-joke-api/">Random Joke Documentation</a>
      */
     public okhttp3.Call randomJokeAsync(String includeTags, String excludeTags, Double minRating, Integer maxLength, final ApiCallback<SearchJokes200ResponseJokesInner> _callback) throws ApiException {
 
@@ -404,7 +404,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -421,7 +421,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-meme-api/">Random Meme Documentation</a>
      */
     public okhttp3.Call randomMemeCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -499,7 +499,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return RandomMeme200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -515,7 +515,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-meme-api/">Random Meme Documentation</a>
      */
     public RandomMeme200Response randomMeme(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
         ApiResponse<RandomMeme200Response> localVarResp = randomMemeWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
@@ -528,7 +528,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return ApiResponse&lt;RandomMeme200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -544,7 +544,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-meme-api/">Random Meme Documentation</a>
      */
     public ApiResponse<RandomMeme200Response> randomMemeWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays) throws ApiException {
         okhttp3.Call localVarCall = randomMemeValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, null);
@@ -558,7 +558,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -575,7 +575,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/random-meme-api">Random Meme Documentation</a>
+     * @see <a href="https://apileague.com/apis/random-meme-api/">Random Meme Documentation</a>
      */
     public okhttp3.Call randomMemeAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final ApiCallback<RandomMeme200Response> _callback) throws ApiException {
 
@@ -603,7 +603,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-gifs-api/">Search Gifs Documentation</a>
      */
     public okhttp3.Call searchGifsCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -687,7 +687,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-gifs-api/">Search Gifs Documentation</a>
      */
     public SearchGifs200Response searchGifs(String query, Integer number) throws ApiException {
         ApiResponse<SearchGifs200Response> localVarResp = searchGifsWithHttpInfo(query, number);
@@ -713,7 +713,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-gifs-api/">Search Gifs Documentation</a>
      */
     public ApiResponse<SearchGifs200Response> searchGifsWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchGifsValidateBeforeCall(query, number, null);
@@ -741,7 +741,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-gifs-api">Search Gifs Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-gifs-api/">Search Gifs Documentation</a>
      */
     public okhttp3.Call searchGifsAsync(String query, Integer number, final ApiCallback<SearchGifs200Response> _callback) throws ApiException {
 
@@ -755,7 +755,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -774,7 +774,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-jokes-api/">Search Jokes Documentation</a>
      */
     public okhttp3.Call searchJokesCall(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -860,7 +860,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -878,7 +878,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-jokes-api/">Search Jokes Documentation</a>
      */
     public SearchJokes200Response searchJokes(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
         ApiResponse<SearchJokes200Response> localVarResp = searchJokesWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
@@ -891,7 +891,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -909,7 +909,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-jokes-api/">Search Jokes Documentation</a>
      */
     public ApiResponse<SearchJokes200Response> searchJokesWithHttpInfo(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchJokesValidateBeforeCall(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, null);
@@ -923,7 +923,7 @@ public class HumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -942,7 +942,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-jokes-api">Search Jokes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-jokes-api/">Search Jokes Documentation</a>
      */
     public okhttp3.Call searchJokesAsync(String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final ApiCallback<SearchJokes200Response> _callback) throws ApiException {
 
@@ -959,7 +959,7 @@ public class HumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -975,7 +975,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-memes-api/">Search Memes Documentation</a>
      */
     public okhttp3.Call searchMemesCall(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1064,7 +1064,7 @@ public class HumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @return SearchMemes200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1079,7 +1079,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-memes-api/">Search Memes Documentation</a>
      */
     public SearchMemes200Response searchMemes(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
         ApiResponse<SearchMemes200Response> localVarResp = searchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
@@ -1095,7 +1095,7 @@ public class HumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @return ApiResponse&lt;SearchMemes200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1110,7 +1110,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-memes-api/">Search Memes Documentation</a>
      */
     public ApiResponse<SearchMemes200Response> searchMemesWithHttpInfo(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchMemesValidateBeforeCall(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, null);
@@ -1127,7 +1127,7 @@ public class HumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1143,7 +1143,7 @@ public class HumorApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-memes-api">Search Memes Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-memes-api/">Search Memes Documentation</a>
      */
     public okhttp3.Call searchMemesAsync(String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final ApiCallback<SearchMemes200Response> _callback) throws ApiException {
 

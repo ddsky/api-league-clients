@@ -105,7 +105,7 @@ export default class NewsApi {
      * @param {String} [latestPublishDate] The news must have been published before this date.
      * @param {String} [newsSources] A comma-separated list of news sources from which the news should originate.
      * @param {String} [authors] A comma-separated list of author names. Only news from any of the given authors will be returned.
-     * @param {String} [entities] Filter news by entities (see semantic types).
+     * @param {String} [entities] Filter news by entities (ORG, PER, or LOC).
      * @param {String} [locationFilter] Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
      * @param {String} [sort] The sorting criteria (publish-time or sentiment).
      * @param {String} [sortDirection] Whether to sort ascending or descending (ASC or DESC).

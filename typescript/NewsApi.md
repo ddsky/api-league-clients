@@ -105,7 +105,7 @@ let body:.NewsApiSearchNewsRequest = {
   newsSources: "https://www.bbc.co.uk",
   // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
   authors: "John Doe",
-  // string | Filter news by entities (see semantic types). (optional)
+  // string | Filter news by entities (ORG, PER, or LOC). (optional)
   entities: "ORG:Tesla",
   // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
   locationFilter: "51.050407, 13.737262, 100",
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | [**string**] | The news must have been published before this date. | (optional) defaults to undefined
  **newsSources** | [**string**] | A comma-separated list of news sources from which the news should originate. | (optional) defaults to undefined
  **authors** | [**string**] | A comma-separated list of author names. Only news from any of the given authors will be returned. | (optional) defaults to undefined
- **entities** | [**string**] | Filter news by entities (see semantic types). | (optional) defaults to undefined
+ **entities** | [**string**] | Filter news by entities (ORG, PER, or LOC). | (optional) defaults to undefined
  **locationFilter** | [**string**] | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | (optional) defaults to undefined
  **sort** | [**string**] | The sorting criteria (publish-time or sentiment). | (optional) defaults to undefined
  **sortDirection** | [**string**] | Whether to sort ascending or descending (ASC or DESC). | (optional) defaults to undefined

@@ -310,7 +310,7 @@ public class HumorApi {
    * @param keywords A comma-separated list of words that must occur in the meme.
    * @param keywordsInImage Whether the keywords must occur in the image.
    * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
-   * @param minRating The minimum rating in range [0.0-1.0] of the meme.
+   * @param minRating The minimum rating in range [0.0,1.0] of the meme.
    * @param maxAgeDays The maximum age of the meme in days.
    * @return RandomMeme200Response
   */
@@ -373,7 +373,7 @@ public class HumorApi {
       /**
    * Random Meme
    * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-   * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0-1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.
+   * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0,1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.
   */
   public void randomMeme (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, final Response.Listener<RandomMeme200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
@@ -573,7 +573,7 @@ public class HumorApi {
    * @param keywords A comma-separated list of words that must occur in the joke.
    * @param includeTags A comma-separated list of tags the jokes should have.
    * @param excludeTags A comma-separated list of tags the jokes must not have.
-   * @param minRating The minimum rating (0-10) of the jokes.
+   * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
    * @param maxLength The maximum length of the joke in letters.
    * @param offset The number of jokes to skip, between 0 and 1000.
    * @param number The number of jokes, between 1 and 10.
@@ -640,7 +640,7 @@ public class HumorApi {
       /**
    * Search Jokes
    * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-   * @param keywords A comma-separated list of words that must occur in the joke.   * @param includeTags A comma-separated list of tags the jokes should have.   * @param excludeTags A comma-separated list of tags the jokes must not have.   * @param minRating The minimum rating (0-10) of the jokes.   * @param maxLength The maximum length of the joke in letters.   * @param offset The number of jokes to skip, between 0 and 1000.   * @param number The number of jokes, between 1 and 10.
+   * @param keywords A comma-separated list of words that must occur in the joke.   * @param includeTags A comma-separated list of tags the jokes should have.   * @param excludeTags A comma-separated list of tags the jokes must not have.   * @param minRating The minimum rating in range [0.0,1.0] of the jokes.   * @param maxLength The maximum length of the joke in letters.   * @param offset The number of jokes to skip, between 0 and 1000.   * @param number The number of jokes, between 1 and 10.
   */
   public void searchJokes (String keywords, String includeTags, String excludeTags, Double minRating, Double maxLength, Integer offset, Integer number, final Response.Listener<SearchJokes200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
@@ -713,7 +713,7 @@ public class HumorApi {
    * @param minRating The minimum rating in range [0.0,1.0] of the meme.
    * @param maxAgeDays The maximum age of the meme in days.
    * @param offset The number of memes to skip, between 0 and 1000.
-   * @param number The number of memes, between 0 and 10.
+   * @param number The number of memes, between 1 and 10.
    * @return SearchMemes200Response
   */
   public SearchMemes200Response searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
@@ -777,7 +777,7 @@ public class HumorApi {
       /**
    * Search Memes
    * With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
-   * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0,1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.   * @param offset The number of memes to skip, between 0 and 1000.   * @param number The number of memes, between 0 and 10.
+   * @param keywords A comma-separated list of words that must occur in the meme.   * @param keywordsInImage Whether the keywords must occur in the image.   * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).   * @param minRating The minimum rating in range [0.0,1.0] of the meme.   * @param maxAgeDays The maximum age of the meme in days.   * @param offset The number of memes to skip, between 0 and 1000.   * @param number The number of memes, between 1 and 10.
   */
   public void searchMemes (String keywords, Boolean keywordsInImage, String mediaType, Double minRating, Integer maxAgeDays, Integer offset, Integer number, final Response.Listener<SearchMemes200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;

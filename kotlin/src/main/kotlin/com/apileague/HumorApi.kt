@@ -218,7 +218,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return RandomMeme200Response
      * @throws IllegalStateException If the request is not correctly configured
@@ -253,7 +253,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return ApiResponse<RandomMeme200Response?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -275,7 +275,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return RequestConfig
      */
@@ -398,7 +398,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -435,7 +435,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -459,7 +459,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
-     * @param minRating The minimum rating (0-10) of the jokes. (optional)
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
@@ -513,7 +513,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @return SearchMemes200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -550,7 +550,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @return ApiResponse<SearchMemes200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -574,7 +574,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param number The number of memes, between 0 and 10. (optional)
+     * @param number The number of memes, between 1 and 10. (optional)
      * @return RequestConfig
      */
     fun searchMemesRequestConfig(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {

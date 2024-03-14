@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 Search Books
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```dart
@@ -91,7 +91,7 @@ final earliestPublishYear = 2022; // int | The books must have been published af
 final latestPublishYear = 2023; // int | The books must have been published before this year.
 final minRating = 0.8; // double | The minimum rating the book must have gotten in the interval [0,1].
 final maxRating = 0.99; // double | The maximum rating the book must have gotten in the interval [0,1].
-final genres = nonfiction; // String | A comma-separated list of  genres. Only books from any of the given genres will be returned.
+final genres = nonfiction; // String | A comma-separated list of genres. Only books from any of the given genres will be returned.
 final authors = J.K. Rowling; // String | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.
 final isbn = 9781781257654; // String | Only the book matching the ISBN-13 will be returned
 final oclc = 864418200; // String | Only the book matching the OCLC will be returned
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
  **latestPublishYear** | **int**| The books must have been published before this year. | [optional] 
  **minRating** | **double**| The minimum rating the book must have gotten in the interval [0,1]. | [optional] 
  **maxRating** | **double**| The maximum rating the book must have gotten in the interval [0,1]. | [optional] 
- **genres** | **String**| A comma-separated list of  genres. Only books from any of the given genres will be returned. | [optional] 
+ **genres** | **String**| A comma-separated list of genres. Only books from any of the given genres will be returned. | [optional] 
  **authors** | **String**| A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate. | [optional] 
  **isbn** | **String**| Only the book matching the ISBN-13 will be returned | [optional] 
  **oclc** | **String**| Only the book matching the OCLC will be returned | [optional] 

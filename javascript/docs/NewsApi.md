@@ -102,7 +102,7 @@ let opts = {
   'latestPublishDate': 2022-04-22 16:12:35, // String | The news must have been published before this date.
   'newsSources': https://www.bbc.co.uk, // String | A comma-separated list of news sources from which the news should originate.
   'authors': John Doe, // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-  'entities': ORG:Tesla, // String | Filter news by entities (see semantic types).
+  'entities': ORG:Tesla, // String | Filter news by entities (ORG, PER, or LOC).
   'locationFilter': 51.050407, 13.737262, 100, // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
   'sort': publish-time, // String | The sorting criteria (publish-time or sentiment).
   'sortDirection': ASC, // String | Whether to sort ascending or descending (ASC or DESC).
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **String**| The news must have been published before this date. | [optional] 
  **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **String**| Filter news by entities (see semantic types). | [optional] 
+ **entities** | **String**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **locationFilter** | **String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
  **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] 
  **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] 

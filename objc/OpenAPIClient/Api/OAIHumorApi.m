@@ -190,7 +190,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param mediaType The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
 ///
-///  @param minRating The minimum rating in range [0.0-1.0] of the meme. (optional)
+///  @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
 ///
 ///  @param maxAgeDays The maximum age of the meme in days. (optional)
 ///
@@ -345,7 +345,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
 ///
-///  @param minRating The minimum rating (0-10) of the jokes. (optional)
+///  @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
 ///
 ///  @param maxLength The maximum length of the joke in letters. (optional)
 ///
@@ -444,7 +444,7 @@ NSInteger kOAIHumorApiMissingParamErrorCode = 234513;
 ///
 ///  @param offset The number of memes to skip, between 0 and 1000. (optional)
 ///
-///  @param number The number of memes, between 0 and 10. (optional)
+///  @param number The number of memes, between 1 and 10. (optional)
 ///
 ///  @returns OAISearchMemes200Response*
 ///

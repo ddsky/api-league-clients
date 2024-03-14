@@ -88,7 +88,7 @@ Name | Type | Description  | Required | Notes
 **keywords** | Option<**String**> | A comma-separated list of words that must occur in the meme. |  |
 **keywords_in_image** | Option<**bool**> | Whether the keywords must occur in the image. |  |
 **media_type** | Option<**String**> | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). |  |
-**min_rating** | Option<**f64**> | The minimum rating in range [0.0-1.0] of the meme. |  |
+**min_rating** | Option<**f64**> | The minimum rating in range [0.0,1.0] of the meme. |  |
 **max_age_days** | Option<**i32**> | The maximum age of the meme in days. |  |
 
 ### Return type
@@ -153,7 +153,7 @@ Name | Type | Description  | Required | Notes
 **keywords** | Option<**String**> | A comma-separated list of words that must occur in the joke. |  |
 **include_tags** | Option<**String**> | A comma-separated list of tags the jokes should have. |  |
 **exclude_tags** | Option<**String**> | A comma-separated list of tags the jokes must not have. |  |
-**min_rating** | Option<**f64**> | The minimum rating (0-10) of the jokes. |  |
+**min_rating** | Option<**f64**> | The minimum rating in range [0.0,1.0] of the jokes. |  |
 **max_length** | Option<**f64**> | The maximum length of the joke in letters. |  |
 **offset** | Option<**i32**> | The number of jokes to skip, between 0 and 1000. |  |
 **number** | Option<**i32**> | The number of jokes, between 1 and 10. |  |
@@ -192,7 +192,7 @@ Name | Type | Description  | Required | Notes
 **min_rating** | Option<**f64**> | The minimum rating in range [0.0,1.0] of the meme. |  |
 **max_age_days** | Option<**i32**> | The maximum age of the meme in days. |  |
 **offset** | Option<**i32**> | The number of memes to skip, between 0 and 1000. |  |
-**number** | Option<**i32**> | The number of memes, between 0 and 10. |  |
+**number** | Option<**i32**> | The number of memes, between 1 and 10. |  |
 
 ### Return type
 

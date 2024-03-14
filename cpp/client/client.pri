@@ -2,6 +2,9 @@ QT += network
 
 HEADERS += \
 # Models
+    $${PWD}/OAIComputeNutrition_200_response.h \
+    $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner.h \
+    $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.h \
     $${PWD}/OAIConvertUnits_200_response.h \
     $${PWD}/OAICorrectSpelling_200_response.h \
     $${PWD}/OAIDetectLanguage_200_response_inner.h \
@@ -28,6 +31,24 @@ HEADERS += \
     $${PWD}/OAIRandomQuote_200_response.h \
     $${PWD}/OAIRandomTrivia_200_response.h \
     $${PWD}/OAIReadKeyValueFromStore_200_response.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_credits.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_scores.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_taste.h \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_times.h \
     $${PWD}/OAIScoreReadability_200_response.h \
     $${PWD}/OAIScoreText_200_response.h \
     $${PWD}/OAIScoreText_200_response_interestingness.h \
@@ -50,6 +71,15 @@ HEADERS += \
     $${PWD}/OAISearchMemes_200_response_memes_inner.h \
     $${PWD}/OAISearchNews_200_response.h \
     $${PWD}/OAISearchNews_200_response_news_inner.h \
+    $${PWD}/OAISearchRecipes_200_response.h \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner.h \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner_nutrition.h \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner_nutrition_nutrients_inner.h \
+    $${PWD}/OAISearchRestaurants_200_response.h \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner.h \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_address.h \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_local_hours.h \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_local_hours_operational.h \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response.h \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response_images_inner.h \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response_images_inner_license.h \
@@ -61,6 +91,7 @@ HEADERS += \
 # APIs
     $${PWD}/OAIArtApi.h \
     $${PWD}/OAIBooksApi.h \
+    $${PWD}/OAIFoodApi.h \
     $${PWD}/OAIHumorApi.h \
     $${PWD}/OAIKnowledgeApi.h \
     $${PWD}/OAIMathApi.h \
@@ -81,6 +112,9 @@ HEADERS += \
 
 SOURCES += \
 # Models
+    $${PWD}/OAIComputeNutrition_200_response.cpp \
+    $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner.cpp \
+    $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.cpp \
     $${PWD}/OAIConvertUnits_200_response.cpp \
     $${PWD}/OAICorrectSpelling_200_response.cpp \
     $${PWD}/OAIDetectLanguage_200_response_inner.cpp \
@@ -107,6 +141,24 @@ SOURCES += \
     $${PWD}/OAIRandomQuote_200_response.cpp \
     $${PWD}/OAIRandomTrivia_200_response.cpp \
     $${PWD}/OAIReadKeyValueFromStore_200_response.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_credits.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_scores.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_taste.cpp \
+    $${PWD}/OAIRetrieveRecipeInformation_200_response_times.cpp \
     $${PWD}/OAIScoreReadability_200_response.cpp \
     $${PWD}/OAIScoreText_200_response.cpp \
     $${PWD}/OAIScoreText_200_response_interestingness.cpp \
@@ -129,6 +181,15 @@ SOURCES += \
     $${PWD}/OAISearchMemes_200_response_memes_inner.cpp \
     $${PWD}/OAISearchNews_200_response.cpp \
     $${PWD}/OAISearchNews_200_response_news_inner.cpp \
+    $${PWD}/OAISearchRecipes_200_response.cpp \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner.cpp \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner_nutrition.cpp \
+    $${PWD}/OAISearchRecipes_200_response_recipes_inner_nutrition_nutrients_inner.cpp \
+    $${PWD}/OAISearchRestaurants_200_response.cpp \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner.cpp \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_address.cpp \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_local_hours.cpp \
+    $${PWD}/OAISearchRestaurants_200_response_restaurants_inner_local_hours_operational.cpp \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response.cpp \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response_images_inner.cpp \
     $${PWD}/OAISearchRoyaltyFreeImages_200_response_images_inner_license.cpp \
@@ -140,6 +201,7 @@ SOURCES += \
 # APIs
     $${PWD}/OAIArtApi.cpp \
     $${PWD}/OAIBooksApi.cpp \
+    $${PWD}/OAIFoodApi.cpp \
     $${PWD}/OAIHumorApi.cpp \
     $${PWD}/OAIKnowledgeApi.cpp \
     $${PWD}/OAIMathApi.cpp \

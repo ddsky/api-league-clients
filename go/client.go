@@ -54,6 +54,8 @@ type APIClient struct {
 
 	BooksAPI *BooksAPIService
 
+	FoodAPI *FoodAPIService
+
 	HumorAPI *HumorAPIService
 
 	KnowledgeAPI *KnowledgeAPIService
@@ -89,6 +91,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ArtAPI = (*ArtAPIService)(&c.common)
 	c.BooksAPI = (*BooksAPIService)(&c.common)
+	c.FoodAPI = (*FoodAPIService)(&c.common)
 	c.HumorAPI = (*HumorAPIService)(&c.common)
 	c.KnowledgeAPI = (*KnowledgeAPIService)(&c.common)
 	c.MathAPI = (*MathAPIService)(&c.common)

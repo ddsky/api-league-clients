@@ -87,7 +87,7 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
-     * @param entities Filter news by entities (see semantic types).
+     * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
      * @param sort The sorting criteria (publish-time or sentiment).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).

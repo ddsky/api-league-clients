@@ -91,7 +91,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-main-image-color-api/">Detect Main Image Color Documentation</a>
      */
     public okhttp3.Call detectMainImageColorCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -170,7 +170,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-main-image-color-api/">Detect Main Image Color Documentation</a>
      */
     public List<DetectMainImageColor200ResponseInner> detectMainImageColor(String url) throws ApiException {
         ApiResponse<List<DetectMainImageColor200ResponseInner>> localVarResp = detectMainImageColorWithHttpInfo(url);
@@ -195,7 +195,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-main-image-color-api/">Detect Main Image Color Documentation</a>
      */
     public ApiResponse<List<DetectMainImageColor200ResponseInner>> detectMainImageColorWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = detectMainImageColorValidateBeforeCall(url, null);
@@ -222,7 +222,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-main-image-color-api">Detect Main Image Color Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-main-image-color-api/">Detect Main Image Color Documentation</a>
      */
     public okhttp3.Call detectMainImageColorAsync(String url, final ApiCallback<List<DetectMainImageColor200ResponseInner>> _callback) throws ApiException {
 
@@ -252,7 +252,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/rescale-image-api">Rescale Image Documentation</a>
+     * @see <a href="https://apileague.com/apis/rescale-image-api/">Rescale Image Documentation</a>
      */
     public okhttp3.Call rescaleImageCall(String url, Integer width, Integer height, Boolean crop, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -361,7 +361,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/rescale-image-api">Rescale Image Documentation</a>
+     * @see <a href="https://apileague.com/apis/rescale-image-api/">Rescale Image Documentation</a>
      */
     public Object rescaleImage(String url, Integer width, Integer height, Boolean crop) throws ApiException {
         ApiResponse<Object> localVarResp = rescaleImageWithHttpInfo(url, width, height, crop);
@@ -389,7 +389,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/rescale-image-api">Rescale Image Documentation</a>
+     * @see <a href="https://apileague.com/apis/rescale-image-api/">Rescale Image Documentation</a>
      */
     public ApiResponse<Object> rescaleImageWithHttpInfo(String url, Integer width, Integer height, Boolean crop) throws ApiException {
         okhttp3.Call localVarCall = rescaleImageValidateBeforeCall(url, width, height, crop, null);
@@ -419,7 +419,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/rescale-image-api">Rescale Image Documentation</a>
+     * @see <a href="https://apileague.com/apis/rescale-image-api/">Rescale Image Documentation</a>
      */
     public okhttp3.Call rescaleImageAsync(String url, Integer width, Integer height, Boolean crop, final ApiCallback<Object> _callback) throws ApiException {
 
@@ -447,7 +447,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-images-api/">Search Royalty Free Images Documentation</a>
      */
     public okhttp3.Call searchRoyaltyFreeImagesCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -531,7 +531,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-images-api/">Search Royalty Free Images Documentation</a>
      */
     public SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(String query, Integer number) throws ApiException {
         ApiResponse<SearchRoyaltyFreeImages200Response> localVarResp = searchRoyaltyFreeImagesWithHttpInfo(query, number);
@@ -557,7 +557,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-images-api/">Search Royalty Free Images Documentation</a>
      */
     public ApiResponse<SearchRoyaltyFreeImages200Response> searchRoyaltyFreeImagesWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchRoyaltyFreeImagesValidateBeforeCall(query, number, null);
@@ -585,7 +585,7 @@ public class MediaApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-images-api">Search Royalty Free Images Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-images-api/">Search Royalty Free Images Documentation</a>
      */
     public okhttp3.Call searchRoyaltyFreeImagesAsync(String query, Integer number, final ApiCallback<SearchRoyaltyFreeImages200Response> _callback) throws ApiException {
 

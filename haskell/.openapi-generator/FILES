@@ -10,6 +10,7 @@ lib/APILeague/API.hs
 lib/APILeague/API/ApiText.hs
 lib/APILeague/API/Art.hs
 lib/APILeague/API/Books.hs
+lib/APILeague/API/Food.hs
 lib/APILeague/API/Humor.hs
 lib/APILeague/API/Knowledge.hs
 lib/APILeague/API/Math.hs

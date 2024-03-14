@@ -67,14 +67,35 @@ import qualified Prelude as P
 -- * Parameter newtypes
 
 
+-- ** AddRecipeInformation
+newtype AddRecipeInformation = AddRecipeInformation { unAddRecipeInformation :: Bool } deriving (P.Eq, P.Show)
+
+-- ** AddWinePairing
+newtype AddWinePairing = AddWinePairing { unAddWinePairing :: Bool } deriving (P.Eq, P.Show)
+
 -- ** Analyze
 newtype Analyze = Analyze { unAnalyze :: Bool } deriving (P.Eq, P.Show)
 
 -- ** Authors
 newtype Authors = Authors { unAuthors :: Text } deriving (P.Eq, P.Show)
 
+-- ** Budget
+newtype Budget = Budget { unBudget :: Double } deriving (P.Eq, P.Show)
+
 -- ** Crop
 newtype Crop = Crop { unCrop :: Bool } deriving (P.Eq, P.Show)
+
+-- ** Cuisine
+newtype Cuisine = Cuisine { unCuisine :: Text } deriving (P.Eq, P.Show)
+
+-- ** Cuisines
+newtype Cuisines = Cuisines { unCuisines :: Text } deriving (P.Eq, P.Show)
+
+-- ** Diet
+newtype Diet = Diet { unDiet :: Text } deriving (P.Eq, P.Show)
+
+-- ** Distance
+newtype Distance = Distance { unDistance :: Int } deriving (P.Eq, P.Show)
 
 -- ** EarliestPublishDate
 newtype EarliestPublishDate = EarliestPublishDate { unEarliestPublishDate :: Text } deriving (P.Eq, P.Show)
@@ -85,8 +106,20 @@ newtype EarliestPublishYear = EarliestPublishYear { unEarliestPublishYear :: Int
 -- ** Entities
 newtype Entities = Entities { unEntities :: Text } deriving (P.Eq, P.Show)
 
+-- ** Equipment
+newtype Equipment = Equipment { unEquipment :: Text } deriving (P.Eq, P.Show)
+
+-- ** ExcludeCuisines
+newtype ExcludeCuisines = ExcludeCuisines { unExcludeCuisines :: Text } deriving (P.Eq, P.Show)
+
+-- ** ExcludeIngredients
+newtype ExcludeIngredients = ExcludeIngredients { unExcludeIngredients :: Text } deriving (P.Eq, P.Show)
+
 -- ** ExcludeTags
 newtype ExcludeTags = ExcludeTags { unExcludeTags :: Text } deriving (P.Eq, P.Show)
+
+-- ** FillIngredients
+newtype FillIngredients = FillIngredients { unFillIngredients :: Bool } deriving (P.Eq, P.Show)
 
 -- ** FoodName
 newtype FoodName = FoodName { unFoodName :: Text } deriving (P.Eq, P.Show)
@@ -103,8 +136,20 @@ newtype Height = Height { unHeight :: Int } deriving (P.Eq, P.Show)
 -- ** Id
 newtype Id = Id { unId :: Int } deriving (P.Eq, P.Show)
 
+-- ** IncludeIngredients
+newtype IncludeIngredients = IncludeIngredients { unIncludeIngredients :: Text } deriving (P.Eq, P.Show)
+
 -- ** IncludeTags
 newtype IncludeTags = IncludeTags { unIncludeTags :: Text } deriving (P.Eq, P.Show)
+
+-- ** Ingredients
+newtype Ingredients = Ingredients { unIngredients :: Text } deriving (P.Eq, P.Show)
+
+-- ** Intolerances
+newtype Intolerances = Intolerances { unIntolerances :: Text } deriving (P.Eq, P.Show)
+
+-- ** IsOpen
+newtype IsOpen = IsOpen { unIsOpen :: Bool } deriving (P.Eq, P.Show)
 
 -- ** Isbn
 newtype Isbn = Isbn { unIsbn :: Text } deriving (P.Eq, P.Show)
@@ -121,6 +166,9 @@ newtype KeywordsInImage = KeywordsInImage { unKeywordsInImage :: Bool } deriving
 -- ** Language
 newtype Language = Language { unLanguage :: Text } deriving (P.Eq, P.Show)
 
+-- ** Lat
+newtype Lat = Lat { unLat :: Double } deriving (P.Eq, P.Show)
+
 -- ** LatestPublishDate
 newtype LatestPublishDate = LatestPublishDate { unLatestPublishDate :: Text } deriving (P.Eq, P.Show)
 
@@ -130,8 +178,56 @@ newtype LatestPublishYear = LatestPublishYear { unLatestPublishYear :: Int } der
 -- ** LocationFilter
 newtype LocationFilter = LocationFilter { unLocationFilter :: Text } deriving (P.Eq, P.Show)
 
+-- ** Lon
+newtype Lon = Lon { unLon :: Double } deriving (P.Eq, P.Show)
+
 -- ** MaxAgeDays
 newtype MaxAgeDays = MaxAgeDays { unMaxAgeDays :: Int } deriving (P.Eq, P.Show)
+
+-- ** MaxAlcohol
+newtype MaxAlcohol = MaxAlcohol { unMaxAlcohol :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCaffeine
+newtype MaxCaffeine = MaxCaffeine { unMaxCaffeine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCalcium
+newtype MaxCalcium = MaxCalcium { unMaxCalcium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCalories
+newtype MaxCalories = MaxCalories { unMaxCalories :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCarbs
+newtype MaxCarbs = MaxCarbs { unMaxCarbs :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCholesterol
+newtype MaxCholesterol = MaxCholesterol { unMaxCholesterol :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCholine
+newtype MaxCholine = MaxCholine { unMaxCholine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxCopper
+newtype MaxCopper = MaxCopper { unMaxCopper :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxFat
+newtype MaxFat = MaxFat { unMaxFat :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxFiber
+newtype MaxFiber = MaxFiber { unMaxFiber :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxFluoride
+newtype MaxFluoride = MaxFluoride { unMaxFluoride :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxFolate
+newtype MaxFolate = MaxFolate { unMaxFolate :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxFolicAcid
+newtype MaxFolicAcid = MaxFolicAcid { unMaxFolicAcid :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxIodine
+newtype MaxIodine = MaxIodine { unMaxIodine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxIron
+newtype MaxIron = MaxIron { unMaxIron :: Double } deriving (P.Eq, P.Show)
 
 -- ** MaxLength
 newtype MaxLength = MaxLength { unMaxLength :: Double } deriving (P.Eq, P.Show)
@@ -142,14 +238,128 @@ newtype MaxLengthInt = MaxLengthInt { unMaxLengthInt :: Int } deriving (P.Eq, P.
 -- ** MaxLines
 newtype MaxLines = MaxLines { unMaxLines :: Int } deriving (P.Eq, P.Show)
 
+-- ** MaxMagnesium
+newtype MaxMagnesium = MaxMagnesium { unMaxMagnesium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxManganese
+newtype MaxManganese = MaxManganese { unMaxManganese :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxPhosphorus
+newtype MaxPhosphorus = MaxPhosphorus { unMaxPhosphorus :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxPotassium
+newtype MaxPotassium = MaxPotassium { unMaxPotassium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxProtein
+newtype MaxProtein = MaxProtein { unMaxProtein :: Double } deriving (P.Eq, P.Show)
+
 -- ** MaxRating
 newtype MaxRating = MaxRating { unMaxRating :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxSaturatedFat
+newtype MaxSaturatedFat = MaxSaturatedFat { unMaxSaturatedFat :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxSelenium
+newtype MaxSelenium = MaxSelenium { unMaxSelenium :: Double } deriving (P.Eq, P.Show)
 
 -- ** MaxSentiment
 newtype MaxSentiment = MaxSentiment { unMaxSentiment :: Double } deriving (P.Eq, P.Show)
 
+-- ** MaxSodium
+newtype MaxSodium = MaxSodium { unMaxSodium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxSugar
+newtype MaxSugar = MaxSugar { unMaxSugar :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxTime
+newtype MaxTime = MaxTime { unMaxTime :: Int } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminA
+newtype MaxVitaminA = MaxVitaminA { unMaxVitaminA :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB1
+newtype MaxVitaminB1 = MaxVitaminB1 { unMaxVitaminB1 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB12
+newtype MaxVitaminB12 = MaxVitaminB12 { unMaxVitaminB12 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB2
+newtype MaxVitaminB2 = MaxVitaminB2 { unMaxVitaminB2 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB3
+newtype MaxVitaminB3 = MaxVitaminB3 { unMaxVitaminB3 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB5
+newtype MaxVitaminB5 = MaxVitaminB5 { unMaxVitaminB5 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminB6
+newtype MaxVitaminB6 = MaxVitaminB6 { unMaxVitaminB6 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminC
+newtype MaxVitaminC = MaxVitaminC { unMaxVitaminC :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminD
+newtype MaxVitaminD = MaxVitaminD { unMaxVitaminD :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminE
+newtype MaxVitaminE = MaxVitaminE { unMaxVitaminE :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxVitaminK
+newtype MaxVitaminK = MaxVitaminK { unMaxVitaminK :: Double } deriving (P.Eq, P.Show)
+
+-- ** MaxZinc
+newtype MaxZinc = MaxZinc { unMaxZinc :: Double } deriving (P.Eq, P.Show)
+
+-- ** MealType
+newtype MealType = MealType { unMealType :: Text } deriving (P.Eq, P.Show)
+
 -- ** MediaType
 newtype MediaType = MediaType { unMediaType :: Text } deriving (P.Eq, P.Show)
+
+-- ** MinAlcohol
+newtype MinAlcohol = MinAlcohol { unMinAlcohol :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCaffeine
+newtype MinCaffeine = MinCaffeine { unMinCaffeine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCalcium
+newtype MinCalcium = MinCalcium { unMinCalcium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCalories
+newtype MinCalories = MinCalories { unMinCalories :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCarbs
+newtype MinCarbs = MinCarbs { unMinCarbs :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCholesterol
+newtype MinCholesterol = MinCholesterol { unMinCholesterol :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCholine
+newtype MinCholine = MinCholine { unMinCholine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinCopper
+newtype MinCopper = MinCopper { unMinCopper :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinFat
+newtype MinFat = MinFat { unMinFat :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinFiber
+newtype MinFiber = MinFiber { unMinFiber :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinFluoride
+newtype MinFluoride = MinFluoride { unMinFluoride :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinFolate
+newtype MinFolate = MinFolate { unMinFolate :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinFolicAcid
+newtype MinFolicAcid = MinFolicAcid { unMinFolicAcid :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinIodine
+newtype MinIodine = MinIodine { unMinIodine :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinIron
+newtype MinIron = MinIron { unMinIron :: Double } deriving (P.Eq, P.Show)
 
 -- ** MinLength
 newtype MinLength = MinLength { unMinLength :: Int } deriving (P.Eq, P.Show)
@@ -157,11 +367,74 @@ newtype MinLength = MinLength { unMinLength :: Int } deriving (P.Eq, P.Show)
 -- ** MinLines
 newtype MinLines = MinLines { unMinLines :: Int } deriving (P.Eq, P.Show)
 
+-- ** MinMagnesium
+newtype MinMagnesium = MinMagnesium { unMinMagnesium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinManganese
+newtype MinManganese = MinManganese { unMinManganese :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinPhosphorus
+newtype MinPhosphorus = MinPhosphorus { unMinPhosphorus :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinPotassium
+newtype MinPotassium = MinPotassium { unMinPotassium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinProtein
+newtype MinProtein = MinProtein { unMinProtein :: Double } deriving (P.Eq, P.Show)
+
 -- ** MinRating
 newtype MinRating = MinRating { unMinRating :: Double } deriving (P.Eq, P.Show)
 
+-- ** MinSaturatedFat
+newtype MinSaturatedFat = MinSaturatedFat { unMinSaturatedFat :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinSelenium
+newtype MinSelenium = MinSelenium { unMinSelenium :: Double } deriving (P.Eq, P.Show)
+
 -- ** MinSentiment
 newtype MinSentiment = MinSentiment { unMinSentiment :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinSodium
+newtype MinSodium = MinSodium { unMinSodium :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinSugar
+newtype MinSugar = MinSugar { unMinSugar :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminA
+newtype MinVitaminA = MinVitaminA { unMinVitaminA :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB1
+newtype MinVitaminB1 = MinVitaminB1 { unMinVitaminB1 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB12
+newtype MinVitaminB12 = MinVitaminB12 { unMinVitaminB12 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB2
+newtype MinVitaminB2 = MinVitaminB2 { unMinVitaminB2 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB3
+newtype MinVitaminB3 = MinVitaminB3 { unMinVitaminB3 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB5
+newtype MinVitaminB5 = MinVitaminB5 { unMinVitaminB5 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminB6
+newtype MinVitaminB6 = MinVitaminB6 { unMinVitaminB6 :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminC
+newtype MinVitaminC = MinVitaminC { unMinVitaminC :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminD
+newtype MinVitaminD = MinVitaminD { unMinVitaminD :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminE
+newtype MinVitaminE = MinVitaminE { unMinVitaminE :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinVitaminK
+newtype MinVitaminK = MinVitaminK { unMinVitaminK :: Double } deriving (P.Eq, P.Show)
+
+-- ** MinZinc
+newtype MinZinc = MinZinc { unMinZinc :: Double } deriving (P.Eq, P.Show)
 
 -- ** NewsSources
 newtype NewsSources = NewsSources { unNewsSources :: Text } deriving (P.Eq, P.Show)
@@ -175,11 +448,20 @@ newtype Oclc = Oclc { unOclc :: Text } deriving (P.Eq, P.Show)
 -- ** Offset
 newtype Offset = Offset { unOffset :: Int } deriving (P.Eq, P.Show)
 
+-- ** Page
+newtype Page = Page { unPage :: Int } deriving (P.Eq, P.Show)
+
 -- ** ParamText
 newtype ParamText = ParamText { unParamText :: Text } deriving (P.Eq, P.Show)
 
 -- ** Query
 newtype Query = Query { unQuery :: Text } deriving (P.Eq, P.Show)
+
+-- ** ReduceOils
+newtype ReduceOils = ReduceOils { unReduceOils :: Bool } deriving (P.Eq, P.Show)
+
+-- ** Servings
+newtype Servings = Servings { unServings :: Int } deriving (P.Eq, P.Show)
 
 -- ** Sort
 newtype Sort = Sort { unSort :: Text } deriving (P.Eq, P.Show)
@@ -216,6 +498,138 @@ newtype Word = Word { unWord :: Text } deriving (P.Eq, P.Show)
 
 -- * Models
 
+
+-- ** ComputeNutrition200Response
+-- | ComputeNutrition200Response
+data ComputeNutrition200Response = ComputeNutrition200Response
+  { computeNutrition200ResponseNutrients :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]) -- ^ "nutrients"
+  , computeNutrition200ResponseProperties :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner]) -- ^ "properties"
+  , computeNutrition200ResponseFlavonoids :: !(Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]) -- ^ "flavonoids"
+  , computeNutrition200ResponseIngredientBreakdown :: !(Maybe [ComputeNutrition200ResponseIngredientBreakdownInner]) -- ^ "ingredient_breakdown"
+  , computeNutrition200ResponseCaloricBreakdown :: !(Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown) -- ^ "caloric_breakdown"
+  , computeNutrition200ResponseWeightPerServing :: !(Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing) -- ^ "weight_per_serving"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ComputeNutrition200Response
+instance A.FromJSON ComputeNutrition200Response where
+  parseJSON = A.withObject "ComputeNutrition200Response" $ \o ->
+    ComputeNutrition200Response
+      <$> (o .:? "nutrients")
+      <*> (o .:? "properties")
+      <*> (o .:? "flavonoids")
+      <*> (o .:? "ingredient_breakdown")
+      <*> (o .:? "caloric_breakdown")
+      <*> (o .:? "weight_per_serving")
+
+-- | ToJSON ComputeNutrition200Response
+instance A.ToJSON ComputeNutrition200Response where
+  toJSON ComputeNutrition200Response {..} =
+   _omitNulls
+      [ "nutrients" .= computeNutrition200ResponseNutrients
+      , "properties" .= computeNutrition200ResponseProperties
+      , "flavonoids" .= computeNutrition200ResponseFlavonoids
+      , "ingredient_breakdown" .= computeNutrition200ResponseIngredientBreakdown
+      , "caloric_breakdown" .= computeNutrition200ResponseCaloricBreakdown
+      , "weight_per_serving" .= computeNutrition200ResponseWeightPerServing
+      ]
+
+
+-- | Construct a value of type 'ComputeNutrition200Response' (by applying it's required fields, if any)
+mkComputeNutrition200Response
+  :: ComputeNutrition200Response
+mkComputeNutrition200Response =
+  ComputeNutrition200Response
+  { computeNutrition200ResponseNutrients = Nothing
+  , computeNutrition200ResponseProperties = Nothing
+  , computeNutrition200ResponseFlavonoids = Nothing
+  , computeNutrition200ResponseIngredientBreakdown = Nothing
+  , computeNutrition200ResponseCaloricBreakdown = Nothing
+  , computeNutrition200ResponseWeightPerServing = Nothing
+  }
+
+-- ** ComputeNutrition200ResponseIngredientBreakdownInner
+-- | ComputeNutrition200ResponseIngredientBreakdownInner
+data ComputeNutrition200ResponseIngredientBreakdownInner = ComputeNutrition200ResponseIngredientBreakdownInner
+  { computeNutrition200ResponseIngredientBreakdownInnerName :: !(Maybe Text) -- ^ "name"
+  , computeNutrition200ResponseIngredientBreakdownInnerAmount :: !(Maybe Int) -- ^ "amount"
+  , computeNutrition200ResponseIngredientBreakdownInnerUnit :: !(Maybe Text) -- ^ "unit"
+  , computeNutrition200ResponseIngredientBreakdownInnerId :: !(Maybe Int) -- ^ "id"
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrients :: !(Maybe [ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner]) -- ^ "nutrients"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ComputeNutrition200ResponseIngredientBreakdownInner
+instance A.FromJSON ComputeNutrition200ResponseIngredientBreakdownInner where
+  parseJSON = A.withObject "ComputeNutrition200ResponseIngredientBreakdownInner" $ \o ->
+    ComputeNutrition200ResponseIngredientBreakdownInner
+      <$> (o .:? "name")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+      <*> (o .:? "id")
+      <*> (o .:? "nutrients")
+
+-- | ToJSON ComputeNutrition200ResponseIngredientBreakdownInner
+instance A.ToJSON ComputeNutrition200ResponseIngredientBreakdownInner where
+  toJSON ComputeNutrition200ResponseIngredientBreakdownInner {..} =
+   _omitNulls
+      [ "name" .= computeNutrition200ResponseIngredientBreakdownInnerName
+      , "amount" .= computeNutrition200ResponseIngredientBreakdownInnerAmount
+      , "unit" .= computeNutrition200ResponseIngredientBreakdownInnerUnit
+      , "id" .= computeNutrition200ResponseIngredientBreakdownInnerId
+      , "nutrients" .= computeNutrition200ResponseIngredientBreakdownInnerNutrients
+      ]
+
+
+-- | Construct a value of type 'ComputeNutrition200ResponseIngredientBreakdownInner' (by applying it's required fields, if any)
+mkComputeNutrition200ResponseIngredientBreakdownInner
+  :: ComputeNutrition200ResponseIngredientBreakdownInner
+mkComputeNutrition200ResponseIngredientBreakdownInner =
+  ComputeNutrition200ResponseIngredientBreakdownInner
+  { computeNutrition200ResponseIngredientBreakdownInnerName = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerAmount = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerUnit = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerId = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrients = Nothing
+  }
+
+-- ** ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+-- | ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+data ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner = ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+  { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName :: !(Maybe Text) -- ^ "name"
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds :: !(Maybe Int) -- ^ "percent_of_daily_needs"
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount :: !(Maybe Int) -- ^ "amount"
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit :: !(Maybe Text) -- ^ "unit"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+instance A.FromJSON ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner where
+  parseJSON = A.withObject "ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner" $ \o ->
+    ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+      <$> (o .:? "name")
+      <*> (o .:? "percent_of_daily_needs")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+
+-- | ToJSON ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+instance A.ToJSON ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner where
+  toJSON ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner {..} =
+   _omitNulls
+      [ "name" .= computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName
+      , "percent_of_daily_needs" .= computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds
+      , "amount" .= computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount
+      , "unit" .= computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit
+      ]
+
+
+-- | Construct a value of type 'ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner' (by applying it's required fields, if any)
+mkComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+  :: ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+mkComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner =
+  ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+  { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount = Nothing
+  , computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit = Nothing
+  }
 
 -- ** ConvertUnits200Response
 -- | ConvertUnits200Response
@@ -1105,6 +1519,786 @@ mkReadKeyValueFromStore200Response =
   { readKeyValueFromStore200ResponseValue = Nothing
   }
 
+-- ** RetrieveRecipeInformation200Response
+-- | RetrieveRecipeInformation200Response
+data RetrieveRecipeInformation200Response = RetrieveRecipeInformation200Response
+  { retrieveRecipeInformation200ResponseId :: !(Maybe Int) -- ^ "id"
+  , retrieveRecipeInformation200ResponseTitle :: !(Maybe Text) -- ^ "title"
+  , retrieveRecipeInformation200ResponseServings :: !(Maybe Int) -- ^ "servings"
+  , retrieveRecipeInformation200ResponseImages :: !(Maybe [Text]) -- ^ "images"
+  , retrieveRecipeInformation200ResponseDietaryProperties :: !(Maybe RetrieveRecipeInformation200ResponseDietaryProperties) -- ^ "dietary_properties"
+  , retrieveRecipeInformation200ResponsePricePerServing :: !(Maybe Double) -- ^ "price_per_serving"
+  , retrieveRecipeInformation200ResponseTimes :: !(Maybe RetrieveRecipeInformation200ResponseTimes) -- ^ "times"
+  , retrieveRecipeInformation200ResponseNutrition :: !(Maybe RetrieveRecipeInformation200ResponseNutrition) -- ^ "nutrition"
+  , retrieveRecipeInformation200ResponseTaste :: !(Maybe RetrieveRecipeInformation200ResponseTaste) -- ^ "taste"
+  , retrieveRecipeInformation200ResponseCuisines :: !(Maybe [Text]) -- ^ "cuisines"
+  , retrieveRecipeInformation200ResponseMealTypes :: !(Maybe [Text]) -- ^ "meal_types"
+  , retrieveRecipeInformation200ResponseOccasions :: !(Maybe [Text]) -- ^ "occasions"
+  , retrieveRecipeInformation200ResponseIngredients :: !(Maybe [RetrieveRecipeInformation200ResponseIngredientsInner]) -- ^ "ingredients"
+  , retrieveRecipeInformation200ResponseInstructions :: !(Maybe [RetrieveRecipeInformation200ResponseInstructionsInner]) -- ^ "instructions"
+  , retrieveRecipeInformation200ResponseCredits :: !(Maybe RetrieveRecipeInformation200ResponseCredits) -- ^ "credits"
+  , retrieveRecipeInformation200ResponseScores :: !(Maybe RetrieveRecipeInformation200ResponseScores) -- ^ "scores"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200Response
+instance A.FromJSON RetrieveRecipeInformation200Response where
+  parseJSON = A.withObject "RetrieveRecipeInformation200Response" $ \o ->
+    RetrieveRecipeInformation200Response
+      <$> (o .:? "id")
+      <*> (o .:? "title")
+      <*> (o .:? "servings")
+      <*> (o .:? "images")
+      <*> (o .:? "dietary_properties")
+      <*> (o .:? "price_per_serving")
+      <*> (o .:? "times")
+      <*> (o .:? "nutrition")
+      <*> (o .:? "taste")
+      <*> (o .:? "cuisines")
+      <*> (o .:? "meal_types")
+      <*> (o .:? "occasions")
+      <*> (o .:? "ingredients")
+      <*> (o .:? "instructions")
+      <*> (o .:? "credits")
+      <*> (o .:? "scores")
+
+-- | ToJSON RetrieveRecipeInformation200Response
+instance A.ToJSON RetrieveRecipeInformation200Response where
+  toJSON RetrieveRecipeInformation200Response {..} =
+   _omitNulls
+      [ "id" .= retrieveRecipeInformation200ResponseId
+      , "title" .= retrieveRecipeInformation200ResponseTitle
+      , "servings" .= retrieveRecipeInformation200ResponseServings
+      , "images" .= retrieveRecipeInformation200ResponseImages
+      , "dietary_properties" .= retrieveRecipeInformation200ResponseDietaryProperties
+      , "price_per_serving" .= retrieveRecipeInformation200ResponsePricePerServing
+      , "times" .= retrieveRecipeInformation200ResponseTimes
+      , "nutrition" .= retrieveRecipeInformation200ResponseNutrition
+      , "taste" .= retrieveRecipeInformation200ResponseTaste
+      , "cuisines" .= retrieveRecipeInformation200ResponseCuisines
+      , "meal_types" .= retrieveRecipeInformation200ResponseMealTypes
+      , "occasions" .= retrieveRecipeInformation200ResponseOccasions
+      , "ingredients" .= retrieveRecipeInformation200ResponseIngredients
+      , "instructions" .= retrieveRecipeInformation200ResponseInstructions
+      , "credits" .= retrieveRecipeInformation200ResponseCredits
+      , "scores" .= retrieveRecipeInformation200ResponseScores
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200Response' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200Response
+  :: RetrieveRecipeInformation200Response
+mkRetrieveRecipeInformation200Response =
+  RetrieveRecipeInformation200Response
+  { retrieveRecipeInformation200ResponseId = Nothing
+  , retrieveRecipeInformation200ResponseTitle = Nothing
+  , retrieveRecipeInformation200ResponseServings = Nothing
+  , retrieveRecipeInformation200ResponseImages = Nothing
+  , retrieveRecipeInformation200ResponseDietaryProperties = Nothing
+  , retrieveRecipeInformation200ResponsePricePerServing = Nothing
+  , retrieveRecipeInformation200ResponseTimes = Nothing
+  , retrieveRecipeInformation200ResponseNutrition = Nothing
+  , retrieveRecipeInformation200ResponseTaste = Nothing
+  , retrieveRecipeInformation200ResponseCuisines = Nothing
+  , retrieveRecipeInformation200ResponseMealTypes = Nothing
+  , retrieveRecipeInformation200ResponseOccasions = Nothing
+  , retrieveRecipeInformation200ResponseIngredients = Nothing
+  , retrieveRecipeInformation200ResponseInstructions = Nothing
+  , retrieveRecipeInformation200ResponseCredits = Nothing
+  , retrieveRecipeInformation200ResponseScores = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseCredits
+-- | RetrieveRecipeInformation200ResponseCredits
+data RetrieveRecipeInformation200ResponseCredits = RetrieveRecipeInformation200ResponseCredits
+  { retrieveRecipeInformation200ResponseCreditsLicense :: !(Maybe Text) -- ^ "license"
+  , retrieveRecipeInformation200ResponseCreditsText :: !(Maybe Text) -- ^ "text"
+  , retrieveRecipeInformation200ResponseCreditsSourceName :: !(Maybe Text) -- ^ "source_name"
+  , retrieveRecipeInformation200ResponseCreditsSourceUrl :: !(Maybe Text) -- ^ "source_url"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseCredits
+instance A.FromJSON RetrieveRecipeInformation200ResponseCredits where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseCredits" $ \o ->
+    RetrieveRecipeInformation200ResponseCredits
+      <$> (o .:? "license")
+      <*> (o .:? "text")
+      <*> (o .:? "source_name")
+      <*> (o .:? "source_url")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseCredits
+instance A.ToJSON RetrieveRecipeInformation200ResponseCredits where
+  toJSON RetrieveRecipeInformation200ResponseCredits {..} =
+   _omitNulls
+      [ "license" .= retrieveRecipeInformation200ResponseCreditsLicense
+      , "text" .= retrieveRecipeInformation200ResponseCreditsText
+      , "source_name" .= retrieveRecipeInformation200ResponseCreditsSourceName
+      , "source_url" .= retrieveRecipeInformation200ResponseCreditsSourceUrl
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseCredits' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseCredits
+  :: RetrieveRecipeInformation200ResponseCredits
+mkRetrieveRecipeInformation200ResponseCredits =
+  RetrieveRecipeInformation200ResponseCredits
+  { retrieveRecipeInformation200ResponseCreditsLicense = Nothing
+  , retrieveRecipeInformation200ResponseCreditsText = Nothing
+  , retrieveRecipeInformation200ResponseCreditsSourceName = Nothing
+  , retrieveRecipeInformation200ResponseCreditsSourceUrl = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseDietaryProperties
+-- | RetrieveRecipeInformation200ResponseDietaryProperties
+data RetrieveRecipeInformation200ResponseDietaryProperties = RetrieveRecipeInformation200ResponseDietaryProperties
+  { retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap :: !(Maybe Bool) -- ^ "low_fodmap"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian :: !(Maybe Bool) -- ^ "vegetarian"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesVegan :: !(Maybe Bool) -- ^ "vegan"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree :: !(Maybe Bool) -- ^ "gluten_free"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree :: !(Maybe Bool) -- ^ "dairy_free"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesGaps :: !(Maybe Text) -- ^ "gaps"
+  , retrieveRecipeInformation200ResponseDietaryPropertiesDiets :: !(Maybe [Text]) -- ^ "diets"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseDietaryProperties
+instance A.FromJSON RetrieveRecipeInformation200ResponseDietaryProperties where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseDietaryProperties" $ \o ->
+    RetrieveRecipeInformation200ResponseDietaryProperties
+      <$> (o .:? "low_fodmap")
+      <*> (o .:? "vegetarian")
+      <*> (o .:? "vegan")
+      <*> (o .:? "gluten_free")
+      <*> (o .:? "dairy_free")
+      <*> (o .:? "gaps")
+      <*> (o .:? "diets")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseDietaryProperties
+instance A.ToJSON RetrieveRecipeInformation200ResponseDietaryProperties where
+  toJSON RetrieveRecipeInformation200ResponseDietaryProperties {..} =
+   _omitNulls
+      [ "low_fodmap" .= retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap
+      , "vegetarian" .= retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian
+      , "vegan" .= retrieveRecipeInformation200ResponseDietaryPropertiesVegan
+      , "gluten_free" .= retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree
+      , "dairy_free" .= retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree
+      , "gaps" .= retrieveRecipeInformation200ResponseDietaryPropertiesGaps
+      , "diets" .= retrieveRecipeInformation200ResponseDietaryPropertiesDiets
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseDietaryProperties' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseDietaryProperties
+  :: RetrieveRecipeInformation200ResponseDietaryProperties
+mkRetrieveRecipeInformation200ResponseDietaryProperties =
+  RetrieveRecipeInformation200ResponseDietaryProperties
+  { retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesVegan = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesGaps = Nothing
+  , retrieveRecipeInformation200ResponseDietaryPropertiesDiets = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseIngredientsInner
+-- | RetrieveRecipeInformation200ResponseIngredientsInner
+data RetrieveRecipeInformation200ResponseIngredientsInner = RetrieveRecipeInformation200ResponseIngredientsInner
+  { retrieveRecipeInformation200ResponseIngredientsInnerImage :: !(Maybe Text) -- ^ "image"
+  , retrieveRecipeInformation200ResponseIngredientsInnerNameClean :: !(Maybe Text) -- ^ "name_clean"
+  , retrieveRecipeInformation200ResponseIngredientsInnerAmount :: !(Maybe Double) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseIngredientsInnerUnit :: !(Maybe Text) -- ^ "unit"
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasures :: !(Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) -- ^ "measures"
+  , retrieveRecipeInformation200ResponseIngredientsInnerOriginal :: !(Maybe Text) -- ^ "original"
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeta :: !(Maybe [Text]) -- ^ "meta"
+  , retrieveRecipeInformation200ResponseIngredientsInnerOriginalName :: !(Maybe Text) -- ^ "original_name"
+  , retrieveRecipeInformation200ResponseIngredientsInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseIngredientsInnerId :: !(Maybe Int) -- ^ "id"
+  , retrieveRecipeInformation200ResponseIngredientsInnerAisle :: !(Maybe Text) -- ^ "aisle"
+  , retrieveRecipeInformation200ResponseIngredientsInnerConsistency :: !(Maybe Text) -- ^ "consistency"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseIngredientsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseIngredientsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseIngredientsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseIngredientsInner
+      <$> (o .:? "image")
+      <*> (o .:? "name_clean")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+      <*> (o .:? "measures")
+      <*> (o .:? "original")
+      <*> (o .:? "meta")
+      <*> (o .:? "original_name")
+      <*> (o .:? "name")
+      <*> (o .:? "id")
+      <*> (o .:? "aisle")
+      <*> (o .:? "consistency")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseIngredientsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseIngredientsInner where
+  toJSON RetrieveRecipeInformation200ResponseIngredientsInner {..} =
+   _omitNulls
+      [ "image" .= retrieveRecipeInformation200ResponseIngredientsInnerImage
+      , "name_clean" .= retrieveRecipeInformation200ResponseIngredientsInnerNameClean
+      , "amount" .= retrieveRecipeInformation200ResponseIngredientsInnerAmount
+      , "unit" .= retrieveRecipeInformation200ResponseIngredientsInnerUnit
+      , "measures" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasures
+      , "original" .= retrieveRecipeInformation200ResponseIngredientsInnerOriginal
+      , "meta" .= retrieveRecipeInformation200ResponseIngredientsInnerMeta
+      , "original_name" .= retrieveRecipeInformation200ResponseIngredientsInnerOriginalName
+      , "name" .= retrieveRecipeInformation200ResponseIngredientsInnerName
+      , "id" .= retrieveRecipeInformation200ResponseIngredientsInnerId
+      , "aisle" .= retrieveRecipeInformation200ResponseIngredientsInnerAisle
+      , "consistency" .= retrieveRecipeInformation200ResponseIngredientsInnerConsistency
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseIngredientsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseIngredientsInner
+  :: RetrieveRecipeInformation200ResponseIngredientsInner
+mkRetrieveRecipeInformation200ResponseIngredientsInner =
+  RetrieveRecipeInformation200ResponseIngredientsInner
+  { retrieveRecipeInformation200ResponseIngredientsInnerImage = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerNameClean = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerAmount = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerUnit = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasures = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerOriginal = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeta = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerOriginalName = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerName = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerId = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerAisle = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerConsistency = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+-- | RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+data RetrieveRecipeInformation200ResponseIngredientsInnerMeasures = RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+  { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric :: !(Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric) -- ^ "metric"
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs :: !(Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric) -- ^ "us"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+instance A.FromJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasures where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseIngredientsInnerMeasures" $ \o ->
+    RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+      <$> (o .:? "metric")
+      <*> (o .:? "us")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+instance A.ToJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasures where
+  toJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasures {..} =
+   _omitNulls
+      [ "metric" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+      , "us" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseIngredientsInnerMeasures' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+  :: RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+mkRetrieveRecipeInformation200ResponseIngredientsInnerMeasures =
+  RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+  { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+-- | RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+data RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric = RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+  { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort :: !(Maybe Text) -- ^ "unit_short"
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount :: !(Maybe Double) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong :: !(Maybe Text) -- ^ "unit_long"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+instance A.FromJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric" $ \o ->
+    RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+      <$> (o .:? "unit_short")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit_long")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+instance A.ToJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric where
+  toJSON RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric {..} =
+   _omitNulls
+      [ "unit_short" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort
+      , "amount" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount
+      , "unit_long" .= retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+  :: RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+mkRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric =
+  RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+  { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount = Nothing
+  , retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseInstructionsInner
+-- | RetrieveRecipeInformation200ResponseInstructionsInner
+data RetrieveRecipeInformation200ResponseInstructionsInner = RetrieveRecipeInformation200ResponseInstructionsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseInstructionsInnerSteps :: !(Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner]) -- ^ "steps"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseInstructionsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseInstructionsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseInstructionsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseInstructionsInner
+      <$> (o .:? "name")
+      <*> (o .:? "steps")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseInstructionsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseInstructionsInner where
+  toJSON RetrieveRecipeInformation200ResponseInstructionsInner {..} =
+   _omitNulls
+      [ "name" .= retrieveRecipeInformation200ResponseInstructionsInnerName
+      , "steps" .= retrieveRecipeInformation200ResponseInstructionsInnerSteps
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseInstructionsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseInstructionsInner
+  :: RetrieveRecipeInformation200ResponseInstructionsInner
+mkRetrieveRecipeInformation200ResponseInstructionsInner =
+  RetrieveRecipeInformation200ResponseInstructionsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerName = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerSteps = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+-- | RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+data RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner = RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber :: !(Maybe Int) -- ^ "number"
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients :: !(Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]) -- ^ "ingredients"
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment :: !(Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]) -- ^ "equipment"
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep :: !(Maybe Text) -- ^ "step"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+      <$> (o .:? "number")
+      <*> (o .:? "ingredients")
+      <*> (o .:? "equipment")
+      <*> (o .:? "step")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner where
+  toJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner {..} =
+   _omitNulls
+      [ "number" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber
+      , "ingredients" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients
+      , "equipment" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment
+      , "step" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+  :: RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+mkRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner =
+  RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+-- | RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+data RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner = RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage :: !(Maybe Text) -- ^ "image"
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId :: !(Maybe Int) -- ^ "id"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+      <$> (o .:? "name")
+      <*> (o .:? "image")
+      <*> (o .:? "id")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner where
+  toJSON RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner {..} =
+   _omitNulls
+      [ "name" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName
+      , "image" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage
+      , "id" .= retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+  :: RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+mkRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner =
+  RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+  { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage = Nothing
+  , retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutrition
+-- | RetrieveRecipeInformation200ResponseNutrition
+data RetrieveRecipeInformation200ResponseNutrition = RetrieveRecipeInformation200ResponseNutrition
+  { retrieveRecipeInformation200ResponseNutritionWeightPerServing :: !(Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing) -- ^ "weight_per_serving"
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdown :: !(Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown) -- ^ "caloric_breakdown"
+  , retrieveRecipeInformation200ResponseNutritionFlavonoids :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner]) -- ^ "flavonoids"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdown :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner]) -- ^ "ingredient_breakdown"
+  , retrieveRecipeInformation200ResponseNutritionProperties :: !(Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]) -- ^ "properties"
+  , retrieveRecipeInformation200ResponseNutritionNutrients :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]) -- ^ "nutrients"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutrition
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutrition where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutrition" $ \o ->
+    RetrieveRecipeInformation200ResponseNutrition
+      <$> (o .:? "weight_per_serving")
+      <*> (o .:? "caloric_breakdown")
+      <*> (o .:? "flavonoids")
+      <*> (o .:? "ingredient_breakdown")
+      <*> (o .:? "properties")
+      <*> (o .:? "nutrients")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutrition
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutrition where
+  toJSON RetrieveRecipeInformation200ResponseNutrition {..} =
+   _omitNulls
+      [ "weight_per_serving" .= retrieveRecipeInformation200ResponseNutritionWeightPerServing
+      , "caloric_breakdown" .= retrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+      , "flavonoids" .= retrieveRecipeInformation200ResponseNutritionFlavonoids
+      , "ingredient_breakdown" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdown
+      , "properties" .= retrieveRecipeInformation200ResponseNutritionProperties
+      , "nutrients" .= retrieveRecipeInformation200ResponseNutritionNutrients
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutrition' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutrition
+  :: RetrieveRecipeInformation200ResponseNutrition
+mkRetrieveRecipeInformation200ResponseNutrition =
+  RetrieveRecipeInformation200ResponseNutrition
+  { retrieveRecipeInformation200ResponseNutritionWeightPerServing = Nothing
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdown = Nothing
+  , retrieveRecipeInformation200ResponseNutritionFlavonoids = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdown = Nothing
+  , retrieveRecipeInformation200ResponseNutritionProperties = Nothing
+  , retrieveRecipeInformation200ResponseNutritionNutrients = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+-- | RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+data RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown = RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+  { retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat :: !(Maybe Double) -- ^ "percent_fat"
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs :: !(Maybe Double) -- ^ "percent_carbs"
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein :: !(Maybe Double) -- ^ "percent_protein"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown" $ \o ->
+    RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+      <$> (o .:? "percent_fat")
+      <*> (o .:? "percent_carbs")
+      <*> (o .:? "percent_protein")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown where
+  toJSON RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown {..} =
+   _omitNulls
+      [ "percent_fat" .= retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat
+      , "percent_carbs" .= retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs
+      , "percent_protein" .= retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+  :: RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+mkRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown =
+  RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+  { retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat = Nothing
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs = Nothing
+  , retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+-- | RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+data RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner = RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+  { retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount :: !(Maybe Int) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit :: !(Maybe Text) -- ^ "unit"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+      <$> (o .:? "name")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner where
+  toJSON RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner {..} =
+   _omitNulls
+      [ "name" .= retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName
+      , "amount" .= retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount
+      , "unit" .= retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+  :: RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+mkRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner =
+  RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+  { retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName = Nothing
+  , retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount = Nothing
+  , retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+-- | RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+data RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner = RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+  { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount :: !(Maybe Double) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit :: !(Maybe Text) -- ^ "unit"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId :: !(Maybe Int) -- ^ "id"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients :: !(Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]) -- ^ "nutrients"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner" $ \o ->
+    RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+      <$> (o .:? "name")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+      <*> (o .:? "id")
+      <*> (o .:? "nutrients")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner where
+  toJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner {..} =
+   _omitNulls
+      [ "name" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName
+      , "amount" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount
+      , "unit" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit
+      , "id" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId
+      , "nutrients" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+  :: RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+mkRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner =
+  RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+  { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+-- | RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+data RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner = RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+  { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName :: !(Maybe Text) -- ^ "name"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds :: !(Maybe Double) -- ^ "percent_of_daily_needs"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount :: !(Maybe Double) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit :: !(Maybe Text) -- ^ "unit"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner" $ \o ->
+    RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+      <$> (o .:? "name")
+      <*> (o .:? "percent_of_daily_needs")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner where
+  toJSON RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner {..} =
+   _omitNulls
+      [ "name" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName
+      , "percent_of_daily_needs" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds
+      , "amount" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount
+      , "unit" .= retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+  :: RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+mkRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner =
+  RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+  { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount = Nothing
+  , retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+-- | RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+data RetrieveRecipeInformation200ResponseNutritionWeightPerServing = RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+  { retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount :: !(Maybe Int) -- ^ "amount"
+  , retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit :: !(Maybe Text) -- ^ "unit"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+instance A.FromJSON RetrieveRecipeInformation200ResponseNutritionWeightPerServing where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseNutritionWeightPerServing" $ \o ->
+    RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+      <$> (o .:? "amount")
+      <*> (o .:? "unit")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+instance A.ToJSON RetrieveRecipeInformation200ResponseNutritionWeightPerServing where
+  toJSON RetrieveRecipeInformation200ResponseNutritionWeightPerServing {..} =
+   _omitNulls
+      [ "amount" .= retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount
+      , "unit" .= retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseNutritionWeightPerServing' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseNutritionWeightPerServing
+  :: RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+mkRetrieveRecipeInformation200ResponseNutritionWeightPerServing =
+  RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+  { retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount = Nothing
+  , retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseScores
+-- | RetrieveRecipeInformation200ResponseScores
+data RetrieveRecipeInformation200ResponseScores = RetrieveRecipeInformation200ResponseScores
+  { retrieveRecipeInformation200ResponseScoresMetaScore :: !(Maybe Double) -- ^ "meta_score"
+  , retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints :: !(Maybe Int) -- ^ "weight_watcher_smart_points"
+  , retrieveRecipeInformation200ResponseScoresHealthScore :: !(Maybe Int) -- ^ "health_score"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseScores
+instance A.FromJSON RetrieveRecipeInformation200ResponseScores where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseScores" $ \o ->
+    RetrieveRecipeInformation200ResponseScores
+      <$> (o .:? "meta_score")
+      <*> (o .:? "weight_watcher_smart_points")
+      <*> (o .:? "health_score")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseScores
+instance A.ToJSON RetrieveRecipeInformation200ResponseScores where
+  toJSON RetrieveRecipeInformation200ResponseScores {..} =
+   _omitNulls
+      [ "meta_score" .= retrieveRecipeInformation200ResponseScoresMetaScore
+      , "weight_watcher_smart_points" .= retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints
+      , "health_score" .= retrieveRecipeInformation200ResponseScoresHealthScore
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseScores' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseScores
+  :: RetrieveRecipeInformation200ResponseScores
+mkRetrieveRecipeInformation200ResponseScores =
+  RetrieveRecipeInformation200ResponseScores
+  { retrieveRecipeInformation200ResponseScoresMetaScore = Nothing
+  , retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints = Nothing
+  , retrieveRecipeInformation200ResponseScoresHealthScore = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseTaste
+-- | RetrieveRecipeInformation200ResponseTaste
+data RetrieveRecipeInformation200ResponseTaste = RetrieveRecipeInformation200ResponseTaste
+  { retrieveRecipeInformation200ResponseTasteFattiness :: !(Maybe Double) -- ^ "fattiness"
+  , retrieveRecipeInformation200ResponseTasteSpiciness :: !(Maybe Int) -- ^ "spiciness"
+  , retrieveRecipeInformation200ResponseTasteSaltiness :: !(Maybe Int) -- ^ "saltiness"
+  , retrieveRecipeInformation200ResponseTasteBitterness :: !(Maybe Double) -- ^ "bitterness"
+  , retrieveRecipeInformation200ResponseTasteSavoriness :: !(Maybe Double) -- ^ "savoriness"
+  , retrieveRecipeInformation200ResponseTasteSweetness :: !(Maybe Double) -- ^ "sweetness"
+  , retrieveRecipeInformation200ResponseTasteSourness :: !(Maybe Double) -- ^ "sourness"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseTaste
+instance A.FromJSON RetrieveRecipeInformation200ResponseTaste where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseTaste" $ \o ->
+    RetrieveRecipeInformation200ResponseTaste
+      <$> (o .:? "fattiness")
+      <*> (o .:? "spiciness")
+      <*> (o .:? "saltiness")
+      <*> (o .:? "bitterness")
+      <*> (o .:? "savoriness")
+      <*> (o .:? "sweetness")
+      <*> (o .:? "sourness")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseTaste
+instance A.ToJSON RetrieveRecipeInformation200ResponseTaste where
+  toJSON RetrieveRecipeInformation200ResponseTaste {..} =
+   _omitNulls
+      [ "fattiness" .= retrieveRecipeInformation200ResponseTasteFattiness
+      , "spiciness" .= retrieveRecipeInformation200ResponseTasteSpiciness
+      , "saltiness" .= retrieveRecipeInformation200ResponseTasteSaltiness
+      , "bitterness" .= retrieveRecipeInformation200ResponseTasteBitterness
+      , "savoriness" .= retrieveRecipeInformation200ResponseTasteSavoriness
+      , "sweetness" .= retrieveRecipeInformation200ResponseTasteSweetness
+      , "sourness" .= retrieveRecipeInformation200ResponseTasteSourness
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseTaste' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseTaste
+  :: RetrieveRecipeInformation200ResponseTaste
+mkRetrieveRecipeInformation200ResponseTaste =
+  RetrieveRecipeInformation200ResponseTaste
+  { retrieveRecipeInformation200ResponseTasteFattiness = Nothing
+  , retrieveRecipeInformation200ResponseTasteSpiciness = Nothing
+  , retrieveRecipeInformation200ResponseTasteSaltiness = Nothing
+  , retrieveRecipeInformation200ResponseTasteBitterness = Nothing
+  , retrieveRecipeInformation200ResponseTasteSavoriness = Nothing
+  , retrieveRecipeInformation200ResponseTasteSweetness = Nothing
+  , retrieveRecipeInformation200ResponseTasteSourness = Nothing
+  }
+
+-- ** RetrieveRecipeInformation200ResponseTimes
+-- | RetrieveRecipeInformation200ResponseTimes
+data RetrieveRecipeInformation200ResponseTimes = RetrieveRecipeInformation200ResponseTimes
+  { retrieveRecipeInformation200ResponseTimesTotalMinutes :: !(Maybe Int) -- ^ "total_minutes"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON RetrieveRecipeInformation200ResponseTimes
+instance A.FromJSON RetrieveRecipeInformation200ResponseTimes where
+  parseJSON = A.withObject "RetrieveRecipeInformation200ResponseTimes" $ \o ->
+    RetrieveRecipeInformation200ResponseTimes
+      <$> (o .:? "total_minutes")
+
+-- | ToJSON RetrieveRecipeInformation200ResponseTimes
+instance A.ToJSON RetrieveRecipeInformation200ResponseTimes where
+  toJSON RetrieveRecipeInformation200ResponseTimes {..} =
+   _omitNulls
+      [ "total_minutes" .= retrieveRecipeInformation200ResponseTimesTotalMinutes
+      ]
+
+
+-- | Construct a value of type 'RetrieveRecipeInformation200ResponseTimes' (by applying it's required fields, if any)
+mkRetrieveRecipeInformation200ResponseTimes
+  :: RetrieveRecipeInformation200ResponseTimes
+mkRetrieveRecipeInformation200ResponseTimes =
+  RetrieveRecipeInformation200ResponseTimes
+  { retrieveRecipeInformation200ResponseTimesTotalMinutes = Nothing
+  }
+
 -- ** ScoreReadability200Response
 -- | ScoreReadability200Response
 data ScoreReadability200Response = ScoreReadability200Response
@@ -1939,6 +3133,430 @@ mkSearchNews200ResponseNewsInner =
   , searchNews200ResponseNewsInnerPublishDate = Nothing
   , searchNews200ResponseNewsInnerUrl = Nothing
   , searchNews200ResponseNewsInnerAuthors = Nothing
+  }
+
+-- ** SearchRecipes200Response
+-- | SearchRecipes200Response
+data SearchRecipes200Response = SearchRecipes200Response
+  { searchRecipes200ResponseOffset :: !(Maybe Int) -- ^ "offset"
+  , searchRecipes200ResponseNumber :: !(Maybe Int) -- ^ "number"
+  , searchRecipes200ResponseRecipes :: !(Maybe [SearchRecipes200ResponseRecipesInner]) -- ^ "recipes"
+  , searchRecipes200ResponseTotalResults :: !(Maybe Int) -- ^ "total_results"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRecipes200Response
+instance A.FromJSON SearchRecipes200Response where
+  parseJSON = A.withObject "SearchRecipes200Response" $ \o ->
+    SearchRecipes200Response
+      <$> (o .:? "offset")
+      <*> (o .:? "number")
+      <*> (o .:? "recipes")
+      <*> (o .:? "total_results")
+
+-- | ToJSON SearchRecipes200Response
+instance A.ToJSON SearchRecipes200Response where
+  toJSON SearchRecipes200Response {..} =
+   _omitNulls
+      [ "offset" .= searchRecipes200ResponseOffset
+      , "number" .= searchRecipes200ResponseNumber
+      , "recipes" .= searchRecipes200ResponseRecipes
+      , "total_results" .= searchRecipes200ResponseTotalResults
+      ]
+
+
+-- | Construct a value of type 'SearchRecipes200Response' (by applying it's required fields, if any)
+mkSearchRecipes200Response
+  :: SearchRecipes200Response
+mkSearchRecipes200Response =
+  SearchRecipes200Response
+  { searchRecipes200ResponseOffset = Nothing
+  , searchRecipes200ResponseNumber = Nothing
+  , searchRecipes200ResponseRecipes = Nothing
+  , searchRecipes200ResponseTotalResults = Nothing
+  }
+
+-- ** SearchRecipes200ResponseRecipesInner
+-- | SearchRecipes200ResponseRecipesInner
+data SearchRecipes200ResponseRecipesInner = SearchRecipes200ResponseRecipesInner
+  { searchRecipes200ResponseRecipesInnerImages :: !(Maybe [Text]) -- ^ "images"
+  , searchRecipes200ResponseRecipesInnerNutrition :: !(Maybe SearchRecipes200ResponseRecipesInnerNutrition) -- ^ "nutrition"
+  , searchRecipes200ResponseRecipesInnerId :: !(Maybe Int) -- ^ "id"
+  , searchRecipes200ResponseRecipesInnerTitle :: !(Maybe Text) -- ^ "title"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRecipes200ResponseRecipesInner
+instance A.FromJSON SearchRecipes200ResponseRecipesInner where
+  parseJSON = A.withObject "SearchRecipes200ResponseRecipesInner" $ \o ->
+    SearchRecipes200ResponseRecipesInner
+      <$> (o .:? "images")
+      <*> (o .:? "nutrition")
+      <*> (o .:? "id")
+      <*> (o .:? "title")
+
+-- | ToJSON SearchRecipes200ResponseRecipesInner
+instance A.ToJSON SearchRecipes200ResponseRecipesInner where
+  toJSON SearchRecipes200ResponseRecipesInner {..} =
+   _omitNulls
+      [ "images" .= searchRecipes200ResponseRecipesInnerImages
+      , "nutrition" .= searchRecipes200ResponseRecipesInnerNutrition
+      , "id" .= searchRecipes200ResponseRecipesInnerId
+      , "title" .= searchRecipes200ResponseRecipesInnerTitle
+      ]
+
+
+-- | Construct a value of type 'SearchRecipes200ResponseRecipesInner' (by applying it's required fields, if any)
+mkSearchRecipes200ResponseRecipesInner
+  :: SearchRecipes200ResponseRecipesInner
+mkSearchRecipes200ResponseRecipesInner =
+  SearchRecipes200ResponseRecipesInner
+  { searchRecipes200ResponseRecipesInnerImages = Nothing
+  , searchRecipes200ResponseRecipesInnerNutrition = Nothing
+  , searchRecipes200ResponseRecipesInnerId = Nothing
+  , searchRecipes200ResponseRecipesInnerTitle = Nothing
+  }
+
+-- ** SearchRecipes200ResponseRecipesInnerNutrition
+-- | SearchRecipes200ResponseRecipesInnerNutrition
+data SearchRecipes200ResponseRecipesInnerNutrition = SearchRecipes200ResponseRecipesInnerNutrition
+  { searchRecipes200ResponseRecipesInnerNutritionNutrients :: !(Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]) -- ^ "nutrients"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRecipes200ResponseRecipesInnerNutrition
+instance A.FromJSON SearchRecipes200ResponseRecipesInnerNutrition where
+  parseJSON = A.withObject "SearchRecipes200ResponseRecipesInnerNutrition" $ \o ->
+    SearchRecipes200ResponseRecipesInnerNutrition
+      <$> (o .:? "nutrients")
+
+-- | ToJSON SearchRecipes200ResponseRecipesInnerNutrition
+instance A.ToJSON SearchRecipes200ResponseRecipesInnerNutrition where
+  toJSON SearchRecipes200ResponseRecipesInnerNutrition {..} =
+   _omitNulls
+      [ "nutrients" .= searchRecipes200ResponseRecipesInnerNutritionNutrients
+      ]
+
+
+-- | Construct a value of type 'SearchRecipes200ResponseRecipesInnerNutrition' (by applying it's required fields, if any)
+mkSearchRecipes200ResponseRecipesInnerNutrition
+  :: SearchRecipes200ResponseRecipesInnerNutrition
+mkSearchRecipes200ResponseRecipesInnerNutrition =
+  SearchRecipes200ResponseRecipesInnerNutrition
+  { searchRecipes200ResponseRecipesInnerNutritionNutrients = Nothing
+  }
+
+-- ** SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+-- | SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+data SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner = SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+  { searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName :: !(Maybe Text) -- ^ "name"
+  , searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount :: !(Maybe Double) -- ^ "amount"
+  , searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit :: !(Maybe Text) -- ^ "unit"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+instance A.FromJSON SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner where
+  parseJSON = A.withObject "SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner" $ \o ->
+    SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+      <$> (o .:? "name")
+      <*> (o .:? "amount")
+      <*> (o .:? "unit")
+
+-- | ToJSON SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+instance A.ToJSON SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner where
+  toJSON SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner {..} =
+   _omitNulls
+      [ "name" .= searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName
+      , "amount" .= searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount
+      , "unit" .= searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit
+      ]
+
+
+-- | Construct a value of type 'SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner' (by applying it's required fields, if any)
+mkSearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+  :: SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+mkSearchRecipes200ResponseRecipesInnerNutritionNutrientsInner =
+  SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+  { searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName = Nothing
+  , searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount = Nothing
+  , searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit = Nothing
+  }
+
+-- ** SearchRestaurants200Response
+-- | SearchRestaurants200Response
+data SearchRestaurants200Response = SearchRestaurants200Response
+  { searchRestaurants200ResponseRestaurants :: !(Maybe [SearchRestaurants200ResponseRestaurantsInner]) -- ^ "restaurants"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRestaurants200Response
+instance A.FromJSON SearchRestaurants200Response where
+  parseJSON = A.withObject "SearchRestaurants200Response" $ \o ->
+    SearchRestaurants200Response
+      <$> (o .:? "restaurants")
+
+-- | ToJSON SearchRestaurants200Response
+instance A.ToJSON SearchRestaurants200Response where
+  toJSON SearchRestaurants200Response {..} =
+   _omitNulls
+      [ "restaurants" .= searchRestaurants200ResponseRestaurants
+      ]
+
+
+-- | Construct a value of type 'SearchRestaurants200Response' (by applying it's required fields, if any)
+mkSearchRestaurants200Response
+  :: SearchRestaurants200Response
+mkSearchRestaurants200Response =
+  SearchRestaurants200Response
+  { searchRestaurants200ResponseRestaurants = Nothing
+  }
+
+-- ** SearchRestaurants200ResponseRestaurantsInner
+-- | SearchRestaurants200ResponseRestaurantsInner
+data SearchRestaurants200ResponseRestaurantsInner = SearchRestaurants200ResponseRestaurantsInner
+  { searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery :: !(Maybe Bool) -- ^ "offers_third_party_delivery"
+  , searchRestaurants200ResponseRestaurantsInnerAddress :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerAddress) -- ^ "address"
+  , searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes :: !(Maybe Bool) -- ^ "supports_upc_codes"
+  , searchRestaurants200ResponseRestaurantsInnerIsOpen :: !(Maybe Bool) -- ^ "is_open"
+  , searchRestaurants200ResponseRestaurantsInnerDescription :: !(Maybe Text) -- ^ "description"
+  , searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue :: !(Maybe Int) -- ^ "weighted_rating_value"
+  , searchRestaurants200ResponseRestaurantsInnerType :: !(Maybe Text) -- ^ "type"
+  , searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery :: !(Maybe Bool) -- ^ "offers_first_party_delivery"
+  , searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount :: !(Maybe Int) -- ^ "aggregated_rating_count"
+  , searchRestaurants200ResponseRestaurantsInnerPickupEnabled :: !(Maybe Bool) -- ^ "pickup_enabled"
+  , searchRestaurants200ResponseRestaurantsInnerCuisines :: !(Maybe [Text]) -- ^ "cuisines"
+  , searchRestaurants200ResponseRestaurantsInnerMiles :: !(Maybe Double) -- ^ "miles"
+  , searchRestaurants200ResponseRestaurantsInnerDollarSigns :: !(Maybe Int) -- ^ "dollar_signs"
+  , searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled :: !(Maybe Bool) -- ^ "delivery_enabled"
+  , searchRestaurants200ResponseRestaurantsInnerName :: !(Maybe Text) -- ^ "name"
+  , searchRestaurants200ResponseRestaurantsInnerPhoneNumber :: !(Maybe Double) -- ^ "phone_number"
+  , searchRestaurants200ResponseRestaurantsInnerId :: !(Maybe Text) -- ^ "_id"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHours :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHours) -- ^ "local_hours"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRestaurants200ResponseRestaurantsInner
+instance A.FromJSON SearchRestaurants200ResponseRestaurantsInner where
+  parseJSON = A.withObject "SearchRestaurants200ResponseRestaurantsInner" $ \o ->
+    SearchRestaurants200ResponseRestaurantsInner
+      <$> (o .:? "offers_third_party_delivery")
+      <*> (o .:? "address")
+      <*> (o .:? "supports_upc_codes")
+      <*> (o .:? "is_open")
+      <*> (o .:? "description")
+      <*> (o .:? "weighted_rating_value")
+      <*> (o .:? "type")
+      <*> (o .:? "offers_first_party_delivery")
+      <*> (o .:? "aggregated_rating_count")
+      <*> (o .:? "pickup_enabled")
+      <*> (o .:? "cuisines")
+      <*> (o .:? "miles")
+      <*> (o .:? "dollar_signs")
+      <*> (o .:? "delivery_enabled")
+      <*> (o .:? "name")
+      <*> (o .:? "phone_number")
+      <*> (o .:? "_id")
+      <*> (o .:? "local_hours")
+
+-- | ToJSON SearchRestaurants200ResponseRestaurantsInner
+instance A.ToJSON SearchRestaurants200ResponseRestaurantsInner where
+  toJSON SearchRestaurants200ResponseRestaurantsInner {..} =
+   _omitNulls
+      [ "offers_third_party_delivery" .= searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery
+      , "address" .= searchRestaurants200ResponseRestaurantsInnerAddress
+      , "supports_upc_codes" .= searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes
+      , "is_open" .= searchRestaurants200ResponseRestaurantsInnerIsOpen
+      , "description" .= searchRestaurants200ResponseRestaurantsInnerDescription
+      , "weighted_rating_value" .= searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue
+      , "type" .= searchRestaurants200ResponseRestaurantsInnerType
+      , "offers_first_party_delivery" .= searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery
+      , "aggregated_rating_count" .= searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount
+      , "pickup_enabled" .= searchRestaurants200ResponseRestaurantsInnerPickupEnabled
+      , "cuisines" .= searchRestaurants200ResponseRestaurantsInnerCuisines
+      , "miles" .= searchRestaurants200ResponseRestaurantsInnerMiles
+      , "dollar_signs" .= searchRestaurants200ResponseRestaurantsInnerDollarSigns
+      , "delivery_enabled" .= searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled
+      , "name" .= searchRestaurants200ResponseRestaurantsInnerName
+      , "phone_number" .= searchRestaurants200ResponseRestaurantsInnerPhoneNumber
+      , "_id" .= searchRestaurants200ResponseRestaurantsInnerId
+      , "local_hours" .= searchRestaurants200ResponseRestaurantsInnerLocalHours
+      ]
+
+
+-- | Construct a value of type 'SearchRestaurants200ResponseRestaurantsInner' (by applying it's required fields, if any)
+mkSearchRestaurants200ResponseRestaurantsInner
+  :: SearchRestaurants200ResponseRestaurantsInner
+mkSearchRestaurants200ResponseRestaurantsInner =
+  SearchRestaurants200ResponseRestaurantsInner
+  { searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddress = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerIsOpen = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerDescription = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerType = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerPickupEnabled = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerCuisines = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerMiles = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerDollarSigns = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerName = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerPhoneNumber = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerId = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHours = Nothing
+  }
+
+-- ** SearchRestaurants200ResponseRestaurantsInnerAddress
+-- | SearchRestaurants200ResponseRestaurantsInnerAddress
+data SearchRestaurants200ResponseRestaurantsInnerAddress = SearchRestaurants200ResponseRestaurantsInnerAddress
+  { searchRestaurants200ResponseRestaurantsInnerAddressZipcode :: !(Maybe Text) -- ^ "zipcode"
+  , searchRestaurants200ResponseRestaurantsInnerAddressCountry :: !(Maybe Text) -- ^ "country"
+  , searchRestaurants200ResponseRestaurantsInnerAddressCity :: !(Maybe Text) -- ^ "city"
+  , searchRestaurants200ResponseRestaurantsInnerAddressLatitude :: !(Maybe Double) -- ^ "latitude"
+  , searchRestaurants200ResponseRestaurantsInnerAddressLon :: !(Maybe Double) -- ^ "lon"
+  , searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2 :: !(Maybe Text) -- ^ "street_addr_2"
+  , searchRestaurants200ResponseRestaurantsInnerAddressState :: !(Maybe Text) -- ^ "state"
+  , searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr :: !(Maybe Text) -- ^ "street_addr"
+  , searchRestaurants200ResponseRestaurantsInnerAddressLat :: !(Maybe Double) -- ^ "lat"
+  , searchRestaurants200ResponseRestaurantsInnerAddressLongitude :: !(Maybe Double) -- ^ "longitude"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRestaurants200ResponseRestaurantsInnerAddress
+instance A.FromJSON SearchRestaurants200ResponseRestaurantsInnerAddress where
+  parseJSON = A.withObject "SearchRestaurants200ResponseRestaurantsInnerAddress" $ \o ->
+    SearchRestaurants200ResponseRestaurantsInnerAddress
+      <$> (o .:? "zipcode")
+      <*> (o .:? "country")
+      <*> (o .:? "city")
+      <*> (o .:? "latitude")
+      <*> (o .:? "lon")
+      <*> (o .:? "street_addr_2")
+      <*> (o .:? "state")
+      <*> (o .:? "street_addr")
+      <*> (o .:? "lat")
+      <*> (o .:? "longitude")
+
+-- | ToJSON SearchRestaurants200ResponseRestaurantsInnerAddress
+instance A.ToJSON SearchRestaurants200ResponseRestaurantsInnerAddress where
+  toJSON SearchRestaurants200ResponseRestaurantsInnerAddress {..} =
+   _omitNulls
+      [ "zipcode" .= searchRestaurants200ResponseRestaurantsInnerAddressZipcode
+      , "country" .= searchRestaurants200ResponseRestaurantsInnerAddressCountry
+      , "city" .= searchRestaurants200ResponseRestaurantsInnerAddressCity
+      , "latitude" .= searchRestaurants200ResponseRestaurantsInnerAddressLatitude
+      , "lon" .= searchRestaurants200ResponseRestaurantsInnerAddressLon
+      , "street_addr_2" .= searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2
+      , "state" .= searchRestaurants200ResponseRestaurantsInnerAddressState
+      , "street_addr" .= searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr
+      , "lat" .= searchRestaurants200ResponseRestaurantsInnerAddressLat
+      , "longitude" .= searchRestaurants200ResponseRestaurantsInnerAddressLongitude
+      ]
+
+
+-- | Construct a value of type 'SearchRestaurants200ResponseRestaurantsInnerAddress' (by applying it's required fields, if any)
+mkSearchRestaurants200ResponseRestaurantsInnerAddress
+  :: SearchRestaurants200ResponseRestaurantsInnerAddress
+mkSearchRestaurants200ResponseRestaurantsInnerAddress =
+  SearchRestaurants200ResponseRestaurantsInnerAddress
+  { searchRestaurants200ResponseRestaurantsInnerAddressZipcode = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressCountry = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressCity = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressLatitude = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressLon = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2 = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressState = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressLat = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerAddressLongitude = Nothing
+  }
+
+-- ** SearchRestaurants200ResponseRestaurantsInnerLocalHours
+-- | SearchRestaurants200ResponseRestaurantsInnerLocalHours
+data SearchRestaurants200ResponseRestaurantsInnerLocalHours = SearchRestaurants200ResponseRestaurantsInnerLocalHours
+  { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational) -- ^ "operational"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational) -- ^ "delivery"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational) -- ^ "pickup"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn :: !(Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational) -- ^ "dine_in"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRestaurants200ResponseRestaurantsInnerLocalHours
+instance A.FromJSON SearchRestaurants200ResponseRestaurantsInnerLocalHours where
+  parseJSON = A.withObject "SearchRestaurants200ResponseRestaurantsInnerLocalHours" $ \o ->
+    SearchRestaurants200ResponseRestaurantsInnerLocalHours
+      <$> (o .:? "operational")
+      <*> (o .:? "delivery")
+      <*> (o .:? "pickup")
+      <*> (o .:? "dine_in")
+
+-- | ToJSON SearchRestaurants200ResponseRestaurantsInnerLocalHours
+instance A.ToJSON SearchRestaurants200ResponseRestaurantsInnerLocalHours where
+  toJSON SearchRestaurants200ResponseRestaurantsInnerLocalHours {..} =
+   _omitNulls
+      [ "operational" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+      , "delivery" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery
+      , "pickup" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup
+      , "dine_in" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn
+      ]
+
+
+-- | Construct a value of type 'SearchRestaurants200ResponseRestaurantsInnerLocalHours' (by applying it's required fields, if any)
+mkSearchRestaurants200ResponseRestaurantsInnerLocalHours
+  :: SearchRestaurants200ResponseRestaurantsInnerLocalHours
+mkSearchRestaurants200ResponseRestaurantsInnerLocalHours =
+  SearchRestaurants200ResponseRestaurantsInnerLocalHours
+  { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn = Nothing
+  }
+
+-- ** SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+-- | SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+data SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational = SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+  { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday :: !(Maybe Text) -- ^ "sunday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday :: !(Maybe Text) -- ^ "saturday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday :: !(Maybe Text) -- ^ "tuesday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday :: !(Maybe Text) -- ^ "thursday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday :: !(Maybe Text) -- ^ "friday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday :: !(Maybe Text) -- ^ "wednesday"
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday :: !(Maybe Text) -- ^ "monday"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+instance A.FromJSON SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational where
+  parseJSON = A.withObject "SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational" $ \o ->
+    SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+      <$> (o .:? "sunday")
+      <*> (o .:? "saturday")
+      <*> (o .:? "tuesday")
+      <*> (o .:? "thursday")
+      <*> (o .:? "friday")
+      <*> (o .:? "wednesday")
+      <*> (o .:? "monday")
+
+-- | ToJSON SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+instance A.ToJSON SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational where
+  toJSON SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational {..} =
+   _omitNulls
+      [ "sunday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday
+      , "saturday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday
+      , "tuesday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday
+      , "thursday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday
+      , "friday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday
+      , "wednesday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday
+      , "monday" .= searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday
+      ]
+
+
+-- | Construct a value of type 'SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational' (by applying it's required fields, if any)
+mkSearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+  :: SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+mkSearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational =
+  SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+  { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday = Nothing
+  , searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday = Nothing
   }
 
 -- ** SearchRoyaltyFreeImages200Response

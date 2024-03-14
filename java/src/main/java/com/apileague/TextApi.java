@@ -102,7 +102,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
+     * @see <a href="https://apileague.com/apis/correct-spelling-api/">Correct Spelling Documentation</a>
      */
     public okhttp3.Call correctSpellingCall(String text, String language, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -191,7 +191,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
+     * @see <a href="https://apileague.com/apis/correct-spelling-api/">Correct Spelling Documentation</a>
      */
     public CorrectSpelling200Response correctSpelling(String text, String language) throws ApiException {
         ApiResponse<CorrectSpelling200Response> localVarResp = correctSpellingWithHttpInfo(text, language);
@@ -217,7 +217,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
+     * @see <a href="https://apileague.com/apis/correct-spelling-api/">Correct Spelling Documentation</a>
      */
     public ApiResponse<CorrectSpelling200Response> correctSpellingWithHttpInfo(String text, String language) throws ApiException {
         okhttp3.Call localVarCall = correctSpellingValidateBeforeCall(text, language, null);
@@ -245,7 +245,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/correct-spelling-api">Correct Spelling Documentation</a>
+     * @see <a href="https://apileague.com/apis/correct-spelling-api/">Correct Spelling Documentation</a>
      */
     public okhttp3.Call correctSpellingAsync(String text, String language, final ApiCallback<CorrectSpelling200Response> _callback) throws ApiException {
 
@@ -272,7 +272,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-language-api/">Detect Language Documentation</a>
      */
     public okhttp3.Call detectLanguageCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -351,7 +351,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-language-api/">Detect Language Documentation</a>
      */
     public List<DetectLanguage200ResponseInner> detectLanguage(String text) throws ApiException {
         ApiResponse<List<DetectLanguage200ResponseInner>> localVarResp = detectLanguageWithHttpInfo(text);
@@ -376,7 +376,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-language-api/">Detect Language Documentation</a>
      */
     public ApiResponse<List<DetectLanguage200ResponseInner>> detectLanguageWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = detectLanguageValidateBeforeCall(text, null);
@@ -403,7 +403,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-language-api">Detect Language Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-language-api/">Detect Language Documentation</a>
      */
     public okhttp3.Call detectLanguageAsync(String text, final ApiCallback<List<DetectLanguage200ResponseInner>> _callback) throws ApiException {
 
@@ -430,7 +430,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-sentiment-api/">Detect Sentiment Documentation</a>
      */
     public okhttp3.Call detectSentimentCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -509,7 +509,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-sentiment-api/">Detect Sentiment Documentation</a>
      */
     public DetectSentiment200Response detectSentiment(String text) throws ApiException {
         ApiResponse<DetectSentiment200Response> localVarResp = detectSentimentWithHttpInfo(text);
@@ -534,7 +534,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-sentiment-api/">Detect Sentiment Documentation</a>
      */
     public ApiResponse<DetectSentiment200Response> detectSentimentWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = detectSentimentValidateBeforeCall(text, null);
@@ -561,7 +561,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/detect-sentiment-api">Detect Sentiment Documentation</a>
+     * @see <a href="https://apileague.com/apis/detect-sentiment-api/">Detect Sentiment Documentation</a>
      */
     public okhttp3.Call detectSentimentAsync(String text, final ApiCallback<DetectSentiment200Response> _callback) throws ApiException {
 
@@ -588,7 +588,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-dates-api/">Extract Dates Documentation</a>
      */
     public okhttp3.Call extractDatesCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -667,7 +667,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-dates-api/">Extract Dates Documentation</a>
      */
     public ExtractDates200Response extractDates(String text) throws ApiException {
         ApiResponse<ExtractDates200Response> localVarResp = extractDatesWithHttpInfo(text);
@@ -692,7 +692,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-dates-api/">Extract Dates Documentation</a>
      */
     public ApiResponse<ExtractDates200Response> extractDatesWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = extractDatesValidateBeforeCall(text, null);
@@ -719,7 +719,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-dates-api">Extract Dates Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-dates-api/">Extract Dates Documentation</a>
      */
     public okhttp3.Call extractDatesAsync(String text, final ApiCallback<ExtractDates200Response> _callback) throws ApiException {
 
@@ -746,7 +746,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-entities-api/">Extract Entities Documentation</a>
      */
     public okhttp3.Call extractEntitiesCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -825,7 +825,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-entities-api/">Extract Entities Documentation</a>
      */
     public ExtractEntities200Response extractEntities(String text) throws ApiException {
         ApiResponse<ExtractEntities200Response> localVarResp = extractEntitiesWithHttpInfo(text);
@@ -850,7 +850,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-entities-api/">Extract Entities Documentation</a>
      */
     public ApiResponse<ExtractEntities200Response> extractEntitiesWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = extractEntitiesValidateBeforeCall(text, null);
@@ -877,7 +877,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-entities-api">Extract Entities Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-entities-api/">Extract Entities Documentation</a>
      */
     public okhttp3.Call extractEntitiesAsync(String text, final ApiCallback<ExtractEntities200Response> _callback) throws ApiException {
 
@@ -904,7 +904,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
+     * @see <a href="https://apileague.com/apis/synonyms-api/">List Word Synonyms Documentation</a>
      */
     public okhttp3.Call listWordSynonymsCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -983,7 +983,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
+     * @see <a href="https://apileague.com/apis/synonyms-api/">List Word Synonyms Documentation</a>
      */
     public ListWordSynonyms200Response listWordSynonyms(String word) throws ApiException {
         ApiResponse<ListWordSynonyms200Response> localVarResp = listWordSynonymsWithHttpInfo(word);
@@ -1008,7 +1008,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
+     * @see <a href="https://apileague.com/apis/synonyms-api/">List Word Synonyms Documentation</a>
      */
     public ApiResponse<ListWordSynonyms200Response> listWordSynonymsWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = listWordSynonymsValidateBeforeCall(word, null);
@@ -1035,7 +1035,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/synonyms-api">List Word Synonyms Documentation</a>
+     * @see <a href="https://apileague.com/apis/synonyms-api/">List Word Synonyms Documentation</a>
      */
     public okhttp3.Call listWordSynonymsAsync(String word, final ApiCallback<ListWordSynonyms200Response> _callback) throws ApiException {
 
@@ -1062,7 +1062,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
+     * @see <a href="https://apileague.com/apis/pos-tagging-api/">Part of Speech Tagging Documentation</a>
      */
     public okhttp3.Call partOfSpeechTaggingCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1141,7 +1141,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
+     * @see <a href="https://apileague.com/apis/pos-tagging-api/">Part of Speech Tagging Documentation</a>
      */
     public PartOfSpeechTagging200Response partOfSpeechTagging(String text) throws ApiException {
         ApiResponse<PartOfSpeechTagging200Response> localVarResp = partOfSpeechTaggingWithHttpInfo(text);
@@ -1166,7 +1166,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
+     * @see <a href="https://apileague.com/apis/pos-tagging-api/">Part of Speech Tagging Documentation</a>
      */
     public ApiResponse<PartOfSpeechTagging200Response> partOfSpeechTaggingWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = partOfSpeechTaggingValidateBeforeCall(text, null);
@@ -1193,7 +1193,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/pos-tagging-api">Part of Speech Tagging Documentation</a>
+     * @see <a href="https://apileague.com/apis/pos-tagging-api/">Part of Speech Tagging Documentation</a>
      */
     public okhttp3.Call partOfSpeechTaggingAsync(String text, final ApiCallback<PartOfSpeechTagging200Response> _callback) throws ApiException {
 
@@ -1220,7 +1220,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Pluralize Word Documentation</a>
      */
     public okhttp3.Call pluralizeWordCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1299,7 +1299,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Pluralize Word Documentation</a>
      */
     public PluralizeWord200Response pluralizeWord(String word) throws ApiException {
         ApiResponse<PluralizeWord200Response> localVarResp = pluralizeWordWithHttpInfo(word);
@@ -1324,7 +1324,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Pluralize Word Documentation</a>
      */
     public ApiResponse<PluralizeWord200Response> pluralizeWordWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = pluralizeWordValidateBeforeCall(word, null);
@@ -1351,7 +1351,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Pluralize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Pluralize Word Documentation</a>
      */
     public okhttp3.Call pluralizeWordAsync(String word, final ApiCallback<PluralizeWord200Response> _callback) throws ApiException {
 
@@ -1378,7 +1378,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-readability-api/">Score Readability Documentation</a>
      */
     public okhttp3.Call scoreReadabilityCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1457,7 +1457,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-readability-api/">Score Readability Documentation</a>
      */
     public ScoreReadability200Response scoreReadability(String text) throws ApiException {
         ApiResponse<ScoreReadability200Response> localVarResp = scoreReadabilityWithHttpInfo(text);
@@ -1482,7 +1482,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-readability-api/">Score Readability Documentation</a>
      */
     public ApiResponse<ScoreReadability200Response> scoreReadabilityWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = scoreReadabilityValidateBeforeCall(text, null);
@@ -1509,7 +1509,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-readability-api">Score Readability Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-readability-api/">Score Readability Documentation</a>
      */
     public okhttp3.Call scoreReadabilityAsync(String text, final ApiCallback<ScoreReadability200Response> _callback) throws ApiException {
 
@@ -1537,7 +1537,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-text-api/">Score Text Documentation</a>
      */
     public okhttp3.Call scoreTextCall(String title, String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1626,7 +1626,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-text-api/">Score Text Documentation</a>
      */
     public ScoreText200Response scoreText(String title, String text) throws ApiException {
         ApiResponse<ScoreText200Response> localVarResp = scoreTextWithHttpInfo(title, text);
@@ -1652,7 +1652,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-text-api/">Score Text Documentation</a>
      */
     public ApiResponse<ScoreText200Response> scoreTextWithHttpInfo(String title, String text) throws ApiException {
         okhttp3.Call localVarCall = scoreTextValidateBeforeCall(title, text, null);
@@ -1680,7 +1680,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/score-text-api">Score Text Documentation</a>
+     * @see <a href="https://apileague.com/apis/score-text-api/">Score Text Documentation</a>
      */
     public okhttp3.Call scoreTextAsync(String title, String text, final ApiCallback<ScoreText200Response> _callback) throws ApiException {
 
@@ -1707,7 +1707,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Singularize Word Documentation</a>
      */
     public okhttp3.Call singularizeWordCall(String word, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1786,7 +1786,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Singularize Word Documentation</a>
      */
     public SingularizeWord200Response singularizeWord(String word) throws ApiException {
         ApiResponse<SingularizeWord200Response> localVarResp = singularizeWordWithHttpInfo(word);
@@ -1811,7 +1811,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Singularize Word Documentation</a>
      */
     public ApiResponse<SingularizeWord200Response> singularizeWordWithHttpInfo(String word) throws ApiException {
         okhttp3.Call localVarCall = singularizeWordValidateBeforeCall(word, null);
@@ -1838,7 +1838,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api">Singularize Word Documentation</a>
+     * @see <a href="https://apileague.com/apis/word-singularization-pluralization-api/">Singularize Word Documentation</a>
      */
     public okhttp3.Call singularizeWordAsync(String word, final ApiCallback<SingularizeWord200Response> _callback) throws ApiException {
 
@@ -1865,7 +1865,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
+     * @see <a href="https://apileague.com/apis/stemming-api/">Text Stemming Documentation</a>
      */
     public okhttp3.Call textStemmingCall(String text, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -1944,7 +1944,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
+     * @see <a href="https://apileague.com/apis/stemming-api/">Text Stemming Documentation</a>
      */
     public TextStemming200Response textStemming(String text) throws ApiException {
         ApiResponse<TextStemming200Response> localVarResp = textStemmingWithHttpInfo(text);
@@ -1969,7 +1969,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
+     * @see <a href="https://apileague.com/apis/stemming-api/">Text Stemming Documentation</a>
      */
     public ApiResponse<TextStemming200Response> textStemmingWithHttpInfo(String text) throws ApiException {
         okhttp3.Call localVarCall = textStemmingValidateBeforeCall(text, null);
@@ -1996,7 +1996,7 @@ public class TextApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/stemming-api">Text Stemming Documentation</a>
+     * @see <a href="https://apileague.com/apis/stemming-api/">Text Stemming Documentation</a>
      */
     public okhttp3.Call textStemmingAsync(String text, final ApiCallback<TextStemming200Response> _callback) throws ApiException {
 

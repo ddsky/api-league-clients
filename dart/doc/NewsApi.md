@@ -95,7 +95,7 @@ final earliestPublishDate = 2022-04-22 16:12:35; // String | The news must have 
 final latestPublishDate = 2022-04-22 16:12:35; // String | The news must have been published before this date.
 final newsSources = https://www.bbc.co.uk; // String | A comma-separated list of news sources from which the news should originate.
 final authors = John Doe; // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-final entities = ORG:Tesla; // String | Filter news by entities (see semantic types).
+final entities = ORG:Tesla; // String | Filter news by entities (ORG, PER, or LOC).
 final locationFilter = 51.050407, 13.737262, 100; // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
 final sort = publish-time; // String | The sorting criteria (publish-time or sentiment).
 final sortDirection = ASC; // String | Whether to sort ascending or descending (ASC or DESC).
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **String**| The news must have been published before this date. | [optional] 
  **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **String**| Filter news by entities (see semantic types). | [optional] 
+ **entities** | **String**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **locationFilter** | **String**| Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" | [optional] 
  **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] 
  **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] 

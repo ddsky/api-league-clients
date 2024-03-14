@@ -246,7 +246,7 @@ with apileague.ApiClient(configuration) as api_client:
     keywords = 'airplane' # str | A comma-separated list of words that must occur in the meme. (optional)
     keywords_in_image = true # bool | Whether the keywords must occur in the image. (optional)
     media_type = 'image' # str | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
-    min_rating = 0 # float | The minimum rating in range [0.0-1.0] of the meme. (optional)
+    min_rating = 0 # float | The minimum rating in range [0.0,1.0] of the meme. (optional)
     max_age_days = 30 # int | The maximum age of the meme in days. (optional)
 
     try:
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
  **keywords** | **str**| A comma-separated list of words that must occur in the meme. | [optional] 
  **keywords_in_image** | **bool**| Whether the keywords must occur in the image. | [optional] 
  **media_type** | **str**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] 
- **min_rating** | **float**| The minimum rating in range [0.0-1.0] of the meme. | [optional] 
+ **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **max_age_days** | **int**| The maximum age of the meme in days. | [optional] 
 
 ### Return type
@@ -440,7 +440,7 @@ with apileague.ApiClient(configuration) as api_client:
     keywords = 'horse,man' # str | A comma-separated list of words that must occur in the joke. (optional)
     include_tags = 'animal' # str | A comma-separated list of tags the jokes should have. (optional)
     exclude_tags = 'nsfw,dark' # str | A comma-separated list of tags the jokes must not have. (optional)
-    min_rating = 0 # float | The minimum rating (0-10) of the jokes. (optional)
+    min_rating = 0 # float | The minimum rating in range [0.0,1.0] of the jokes. (optional)
     max_length = 140 # float | The maximum length of the joke in letters. (optional)
     offset = 0 # int | The number of jokes to skip, between 0 and 1000. (optional)
     number = 3 # int | The number of jokes, between 1 and 10. (optional)
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
  **keywords** | **str**| A comma-separated list of words that must occur in the joke. | [optional] 
  **include_tags** | **str**| A comma-separated list of tags the jokes should have. | [optional] 
  **exclude_tags** | **str**| A comma-separated list of tags the jokes must not have. | [optional] 
- **min_rating** | **float**| The minimum rating (0-10) of the jokes. | [optional] 
+ **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] 
  **max_length** | **float**| The maximum length of the joke in letters. | [optional] 
  **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional] 
  **number** | **int**| The number of jokes, between 1 and 10. | [optional] 
@@ -547,7 +547,7 @@ with apileague.ApiClient(configuration) as api_client:
     min_rating = 0 # float | The minimum rating in range [0.0,1.0] of the meme. (optional)
     max_age_days = 30 # int | The maximum age of the meme in days. (optional)
     offset = 0 # int | The number of memes to skip, between 0 and 1000. (optional)
-    number = 3 # int | The number of memes, between 0 and 10. (optional)
+    number = 3 # int | The number of memes, between 1 and 10. (optional)
 
     try:
         # Search Memes
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
  **min_rating** | **float**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **max_age_days** | **int**| The maximum age of the meme in days. | [optional] 
  **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional] 
- **number** | **int**| The number of memes, between 0 and 10. | [optional] 
+ **number** | **int**| The number of memes, between 1 and 10. | [optional] 
 
 ### Return type
 

@@ -37,6 +37,93 @@ import APILeague.Model
 import APILeague.Core
 
 
+-- * ComputeNutrition200Response
+
+-- | 'computeNutrition200ResponseNutrients' Lens
+computeNutrition200ResponseNutrientsL :: Lens_' ComputeNutrition200Response (Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner])
+computeNutrition200ResponseNutrientsL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseNutrients -> ComputeNutrition200Response { computeNutrition200ResponseNutrients, ..} ) <$> f computeNutrition200ResponseNutrients
+{-# INLINE computeNutrition200ResponseNutrientsL #-}
+
+-- | 'computeNutrition200ResponseProperties' Lens
+computeNutrition200ResponsePropertiesL :: Lens_' ComputeNutrition200Response (Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner])
+computeNutrition200ResponsePropertiesL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseProperties -> ComputeNutrition200Response { computeNutrition200ResponseProperties, ..} ) <$> f computeNutrition200ResponseProperties
+{-# INLINE computeNutrition200ResponsePropertiesL #-}
+
+-- | 'computeNutrition200ResponseFlavonoids' Lens
+computeNutrition200ResponseFlavonoidsL :: Lens_' ComputeNutrition200Response (Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner])
+computeNutrition200ResponseFlavonoidsL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseFlavonoids -> ComputeNutrition200Response { computeNutrition200ResponseFlavonoids, ..} ) <$> f computeNutrition200ResponseFlavonoids
+{-# INLINE computeNutrition200ResponseFlavonoidsL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdown' Lens
+computeNutrition200ResponseIngredientBreakdownL :: Lens_' ComputeNutrition200Response (Maybe [ComputeNutrition200ResponseIngredientBreakdownInner])
+computeNutrition200ResponseIngredientBreakdownL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseIngredientBreakdown -> ComputeNutrition200Response { computeNutrition200ResponseIngredientBreakdown, ..} ) <$> f computeNutrition200ResponseIngredientBreakdown
+{-# INLINE computeNutrition200ResponseIngredientBreakdownL #-}
+
+-- | 'computeNutrition200ResponseCaloricBreakdown' Lens
+computeNutrition200ResponseCaloricBreakdownL :: Lens_' ComputeNutrition200Response (Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown)
+computeNutrition200ResponseCaloricBreakdownL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseCaloricBreakdown -> ComputeNutrition200Response { computeNutrition200ResponseCaloricBreakdown, ..} ) <$> f computeNutrition200ResponseCaloricBreakdown
+{-# INLINE computeNutrition200ResponseCaloricBreakdownL #-}
+
+-- | 'computeNutrition200ResponseWeightPerServing' Lens
+computeNutrition200ResponseWeightPerServingL :: Lens_' ComputeNutrition200Response (Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing)
+computeNutrition200ResponseWeightPerServingL f ComputeNutrition200Response{..} = (\computeNutrition200ResponseWeightPerServing -> ComputeNutrition200Response { computeNutrition200ResponseWeightPerServing, ..} ) <$> f computeNutrition200ResponseWeightPerServing
+{-# INLINE computeNutrition200ResponseWeightPerServingL #-}
+
+
+
+-- * ComputeNutrition200ResponseIngredientBreakdownInner
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerName' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNameL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInner (Maybe Text)
+computeNutrition200ResponseIngredientBreakdownInnerNameL f ComputeNutrition200ResponseIngredientBreakdownInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerName -> ComputeNutrition200ResponseIngredientBreakdownInner { computeNutrition200ResponseIngredientBreakdownInnerName, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerName
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNameL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerAmount' Lens
+computeNutrition200ResponseIngredientBreakdownInnerAmountL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInner (Maybe Int)
+computeNutrition200ResponseIngredientBreakdownInnerAmountL f ComputeNutrition200ResponseIngredientBreakdownInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerAmount -> ComputeNutrition200ResponseIngredientBreakdownInner { computeNutrition200ResponseIngredientBreakdownInnerAmount, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerAmount
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerAmountL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerUnit' Lens
+computeNutrition200ResponseIngredientBreakdownInnerUnitL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInner (Maybe Text)
+computeNutrition200ResponseIngredientBreakdownInnerUnitL f ComputeNutrition200ResponseIngredientBreakdownInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerUnit -> ComputeNutrition200ResponseIngredientBreakdownInner { computeNutrition200ResponseIngredientBreakdownInnerUnit, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerUnit
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerUnitL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerId' Lens
+computeNutrition200ResponseIngredientBreakdownInnerIdL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInner (Maybe Int)
+computeNutrition200ResponseIngredientBreakdownInnerIdL f ComputeNutrition200ResponseIngredientBreakdownInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerId -> ComputeNutrition200ResponseIngredientBreakdownInner { computeNutrition200ResponseIngredientBreakdownInnerId, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerId
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerIdL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerNutrients' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInner (Maybe [ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner])
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsL f ComputeNutrition200ResponseIngredientBreakdownInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerNutrients -> ComputeNutrition200ResponseIngredientBreakdownInner { computeNutrition200ResponseIngredientBreakdownInnerNutrients, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerNutrients
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNutrientsL #-}
+
+
+
+-- * ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerNameL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner (Maybe Text)
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerNameL f ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName -> ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerName
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerNameL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner (Maybe Int)
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL f ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds -> ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmountL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner (Maybe Int)
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmountL f ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount -> ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmount
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerAmountL #-}
+
+-- | 'computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit' Lens
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnitL :: Lens_' ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner (Maybe Text)
+computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnitL f ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner{..} = (\computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit -> ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner { computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit, ..} ) <$> f computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnit
+{-# INLINE computeNutrition200ResponseIngredientBreakdownInnerNutrientsInnerUnitL #-}
+
+
+
 -- * ConvertUnits200Response
 
 -- | 'convertUnits200ResponseTargetAmount' Lens
@@ -468,6 +555,513 @@ randomTrivia200ResponseTriviaL f RandomTrivia200Response{..} = (\randomTrivia200
 readKeyValueFromStore200ResponseValueL :: Lens_' ReadKeyValueFromStore200Response (Maybe Text)
 readKeyValueFromStore200ResponseValueL f ReadKeyValueFromStore200Response{..} = (\readKeyValueFromStore200ResponseValue -> ReadKeyValueFromStore200Response { readKeyValueFromStore200ResponseValue, ..} ) <$> f readKeyValueFromStore200ResponseValue
 {-# INLINE readKeyValueFromStore200ResponseValueL #-}
+
+
+
+-- * RetrieveRecipeInformation200Response
+
+-- | 'retrieveRecipeInformation200ResponseId' Lens
+retrieveRecipeInformation200ResponseIdL :: Lens_' RetrieveRecipeInformation200Response (Maybe Int)
+retrieveRecipeInformation200ResponseIdL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseId -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseId, ..} ) <$> f retrieveRecipeInformation200ResponseId
+{-# INLINE retrieveRecipeInformation200ResponseIdL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTitle' Lens
+retrieveRecipeInformation200ResponseTitleL :: Lens_' RetrieveRecipeInformation200Response (Maybe Text)
+retrieveRecipeInformation200ResponseTitleL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseTitle -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseTitle, ..} ) <$> f retrieveRecipeInformation200ResponseTitle
+{-# INLINE retrieveRecipeInformation200ResponseTitleL #-}
+
+-- | 'retrieveRecipeInformation200ResponseServings' Lens
+retrieveRecipeInformation200ResponseServingsL :: Lens_' RetrieveRecipeInformation200Response (Maybe Int)
+retrieveRecipeInformation200ResponseServingsL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseServings -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseServings, ..} ) <$> f retrieveRecipeInformation200ResponseServings
+{-# INLINE retrieveRecipeInformation200ResponseServingsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseImages' Lens
+retrieveRecipeInformation200ResponseImagesL :: Lens_' RetrieveRecipeInformation200Response (Maybe [Text])
+retrieveRecipeInformation200ResponseImagesL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseImages -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseImages, ..} ) <$> f retrieveRecipeInformation200ResponseImages
+{-# INLINE retrieveRecipeInformation200ResponseImagesL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryProperties' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseDietaryProperties)
+retrieveRecipeInformation200ResponseDietaryPropertiesL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseDietaryProperties -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseDietaryProperties, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryProperties
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesL #-}
+
+-- | 'retrieveRecipeInformation200ResponsePricePerServing' Lens
+retrieveRecipeInformation200ResponsePricePerServingL :: Lens_' RetrieveRecipeInformation200Response (Maybe Double)
+retrieveRecipeInformation200ResponsePricePerServingL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponsePricePerServing -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponsePricePerServing, ..} ) <$> f retrieveRecipeInformation200ResponsePricePerServing
+{-# INLINE retrieveRecipeInformation200ResponsePricePerServingL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTimes' Lens
+retrieveRecipeInformation200ResponseTimesL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseTimes)
+retrieveRecipeInformation200ResponseTimesL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseTimes -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseTimes, ..} ) <$> f retrieveRecipeInformation200ResponseTimes
+{-# INLINE retrieveRecipeInformation200ResponseTimesL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutrition' Lens
+retrieveRecipeInformation200ResponseNutritionL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseNutrition)
+retrieveRecipeInformation200ResponseNutritionL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseNutrition -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseNutrition, ..} ) <$> f retrieveRecipeInformation200ResponseNutrition
+{-# INLINE retrieveRecipeInformation200ResponseNutritionL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTaste' Lens
+retrieveRecipeInformation200ResponseTasteL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseTaste)
+retrieveRecipeInformation200ResponseTasteL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseTaste -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseTaste, ..} ) <$> f retrieveRecipeInformation200ResponseTaste
+{-# INLINE retrieveRecipeInformation200ResponseTasteL #-}
+
+-- | 'retrieveRecipeInformation200ResponseCuisines' Lens
+retrieveRecipeInformation200ResponseCuisinesL :: Lens_' RetrieveRecipeInformation200Response (Maybe [Text])
+retrieveRecipeInformation200ResponseCuisinesL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseCuisines -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseCuisines, ..} ) <$> f retrieveRecipeInformation200ResponseCuisines
+{-# INLINE retrieveRecipeInformation200ResponseCuisinesL #-}
+
+-- | 'retrieveRecipeInformation200ResponseMealTypes' Lens
+retrieveRecipeInformation200ResponseMealTypesL :: Lens_' RetrieveRecipeInformation200Response (Maybe [Text])
+retrieveRecipeInformation200ResponseMealTypesL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseMealTypes -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseMealTypes, ..} ) <$> f retrieveRecipeInformation200ResponseMealTypes
+{-# INLINE retrieveRecipeInformation200ResponseMealTypesL #-}
+
+-- | 'retrieveRecipeInformation200ResponseOccasions' Lens
+retrieveRecipeInformation200ResponseOccasionsL :: Lens_' RetrieveRecipeInformation200Response (Maybe [Text])
+retrieveRecipeInformation200ResponseOccasionsL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseOccasions -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseOccasions, ..} ) <$> f retrieveRecipeInformation200ResponseOccasions
+{-# INLINE retrieveRecipeInformation200ResponseOccasionsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredients' Lens
+retrieveRecipeInformation200ResponseIngredientsL :: Lens_' RetrieveRecipeInformation200Response (Maybe [RetrieveRecipeInformation200ResponseIngredientsInner])
+retrieveRecipeInformation200ResponseIngredientsL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseIngredients -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseIngredients, ..} ) <$> f retrieveRecipeInformation200ResponseIngredients
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructions' Lens
+retrieveRecipeInformation200ResponseInstructionsL :: Lens_' RetrieveRecipeInformation200Response (Maybe [RetrieveRecipeInformation200ResponseInstructionsInner])
+retrieveRecipeInformation200ResponseInstructionsL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseInstructions -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseInstructions, ..} ) <$> f retrieveRecipeInformation200ResponseInstructions
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseCredits' Lens
+retrieveRecipeInformation200ResponseCreditsL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseCredits)
+retrieveRecipeInformation200ResponseCreditsL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseCredits -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseCredits, ..} ) <$> f retrieveRecipeInformation200ResponseCredits
+{-# INLINE retrieveRecipeInformation200ResponseCreditsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseScores' Lens
+retrieveRecipeInformation200ResponseScoresL :: Lens_' RetrieveRecipeInformation200Response (Maybe RetrieveRecipeInformation200ResponseScores)
+retrieveRecipeInformation200ResponseScoresL f RetrieveRecipeInformation200Response{..} = (\retrieveRecipeInformation200ResponseScores -> RetrieveRecipeInformation200Response { retrieveRecipeInformation200ResponseScores, ..} ) <$> f retrieveRecipeInformation200ResponseScores
+{-# INLINE retrieveRecipeInformation200ResponseScoresL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseCredits
+
+-- | 'retrieveRecipeInformation200ResponseCreditsLicense' Lens
+retrieveRecipeInformation200ResponseCreditsLicenseL :: Lens_' RetrieveRecipeInformation200ResponseCredits (Maybe Text)
+retrieveRecipeInformation200ResponseCreditsLicenseL f RetrieveRecipeInformation200ResponseCredits{..} = (\retrieveRecipeInformation200ResponseCreditsLicense -> RetrieveRecipeInformation200ResponseCredits { retrieveRecipeInformation200ResponseCreditsLicense, ..} ) <$> f retrieveRecipeInformation200ResponseCreditsLicense
+{-# INLINE retrieveRecipeInformation200ResponseCreditsLicenseL #-}
+
+-- | 'retrieveRecipeInformation200ResponseCreditsText' Lens
+retrieveRecipeInformation200ResponseCreditsTextL :: Lens_' RetrieveRecipeInformation200ResponseCredits (Maybe Text)
+retrieveRecipeInformation200ResponseCreditsTextL f RetrieveRecipeInformation200ResponseCredits{..} = (\retrieveRecipeInformation200ResponseCreditsText -> RetrieveRecipeInformation200ResponseCredits { retrieveRecipeInformation200ResponseCreditsText, ..} ) <$> f retrieveRecipeInformation200ResponseCreditsText
+{-# INLINE retrieveRecipeInformation200ResponseCreditsTextL #-}
+
+-- | 'retrieveRecipeInformation200ResponseCreditsSourceName' Lens
+retrieveRecipeInformation200ResponseCreditsSourceNameL :: Lens_' RetrieveRecipeInformation200ResponseCredits (Maybe Text)
+retrieveRecipeInformation200ResponseCreditsSourceNameL f RetrieveRecipeInformation200ResponseCredits{..} = (\retrieveRecipeInformation200ResponseCreditsSourceName -> RetrieveRecipeInformation200ResponseCredits { retrieveRecipeInformation200ResponseCreditsSourceName, ..} ) <$> f retrieveRecipeInformation200ResponseCreditsSourceName
+{-# INLINE retrieveRecipeInformation200ResponseCreditsSourceNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseCreditsSourceUrl' Lens
+retrieveRecipeInformation200ResponseCreditsSourceUrlL :: Lens_' RetrieveRecipeInformation200ResponseCredits (Maybe Text)
+retrieveRecipeInformation200ResponseCreditsSourceUrlL f RetrieveRecipeInformation200ResponseCredits{..} = (\retrieveRecipeInformation200ResponseCreditsSourceUrl -> RetrieveRecipeInformation200ResponseCredits { retrieveRecipeInformation200ResponseCreditsSourceUrl, ..} ) <$> f retrieveRecipeInformation200ResponseCreditsSourceUrl
+{-# INLINE retrieveRecipeInformation200ResponseCreditsSourceUrlL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseDietaryProperties
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmapL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Bool)
+retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmapL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmap
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesLowFodmapL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesVegetarianL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Bool)
+retrieveRecipeInformation200ResponseDietaryPropertiesVegetarianL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesVegetarian
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesVegetarianL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesVegan' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesVeganL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Bool)
+retrieveRecipeInformation200ResponseDietaryPropertiesVeganL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesVegan -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesVegan, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesVegan
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesVeganL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFreeL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Bool)
+retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFreeL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFree
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesGlutenFreeL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesDairyFreeL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Bool)
+retrieveRecipeInformation200ResponseDietaryPropertiesDairyFreeL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesDairyFree
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesDairyFreeL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesGaps' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesGapsL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe Text)
+retrieveRecipeInformation200ResponseDietaryPropertiesGapsL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesGaps -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesGaps, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesGaps
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesGapsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseDietaryPropertiesDiets' Lens
+retrieveRecipeInformation200ResponseDietaryPropertiesDietsL :: Lens_' RetrieveRecipeInformation200ResponseDietaryProperties (Maybe [Text])
+retrieveRecipeInformation200ResponseDietaryPropertiesDietsL f RetrieveRecipeInformation200ResponseDietaryProperties{..} = (\retrieveRecipeInformation200ResponseDietaryPropertiesDiets -> RetrieveRecipeInformation200ResponseDietaryProperties { retrieveRecipeInformation200ResponseDietaryPropertiesDiets, ..} ) <$> f retrieveRecipeInformation200ResponseDietaryPropertiesDiets
+{-# INLINE retrieveRecipeInformation200ResponseDietaryPropertiesDietsL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseIngredientsInner
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerImage' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerImageL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerImageL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerImage -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerImage, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerImage
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerImageL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerNameClean' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerNameCleanL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerNameCleanL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerNameClean -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerNameClean, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerNameClean
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerNameCleanL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerAmount' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerAmountL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Double)
+retrieveRecipeInformation200ResponseIngredientsInnerAmountL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerAmount -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerAmount, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerAmount
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerUnit' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerUnitL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerUnitL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerUnit -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerUnit, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerUnit
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerUnitL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasures' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasures)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasures -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerMeasures, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasures
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerOriginal' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerOriginalL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerOriginalL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerOriginal -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerOriginal, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerOriginal
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerOriginalL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeta' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMetaL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe [Text])
+retrieveRecipeInformation200ResponseIngredientsInnerMetaL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeta -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerMeta, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeta
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMetaL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerOriginalName' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerOriginalNameL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerOriginalNameL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerOriginalName -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerOriginalName, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerOriginalName
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerOriginalNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerName' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerNameL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerName -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerName
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerId' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerIdL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Int)
+retrieveRecipeInformation200ResponseIngredientsInnerIdL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerId -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerId, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerId
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerIdL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerAisle' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerAisleL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerAisleL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerAisle -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerAisle, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerAisle
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerAisleL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerConsistency' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerConsistencyL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerConsistencyL f RetrieveRecipeInformation200ResponseIngredientsInner{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerConsistency -> RetrieveRecipeInformation200ResponseIngredientsInner { retrieveRecipeInformation200ResponseIngredientsInnerConsistency, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerConsistency
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerConsistencyL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInnerMeasures (Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricL f RetrieveRecipeInformation200ResponseIngredientsInnerMeasures{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric -> RetrieveRecipeInformation200ResponseIngredientsInnerMeasures { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUsL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInnerMeasures (Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUsL f RetrieveRecipeInformation200ResponseIngredientsInnerMeasures{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs -> RetrieveRecipeInformation200ResponseIngredientsInnerMeasures { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUsL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShortL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShortL f RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort -> RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShortL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmountL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric (Maybe Double)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmountL f RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount -> RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong' Lens
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLongL :: Lens_' RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric (Maybe Text)
+retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLongL f RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric{..} = (\retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong -> RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric { retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong, ..} ) <$> f retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong
+{-# INLINE retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLongL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseInstructionsInner
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerName' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInner (Maybe Text)
+retrieveRecipeInformation200ResponseInstructionsInnerNameL f RetrieveRecipeInformation200ResponseInstructionsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerName -> RetrieveRecipeInformation200ResponseInstructionsInner { retrieveRecipeInformation200ResponseInstructionsInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerName
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerSteps' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInner (Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner])
+retrieveRecipeInformation200ResponseInstructionsInnerStepsL f RetrieveRecipeInformation200ResponseInstructionsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerSteps -> RetrieveRecipeInformation200ResponseInstructionsInner { retrieveRecipeInformation200ResponseInstructionsInnerSteps, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerSteps
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumberL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner (Maybe Int)
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumberL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumberL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner (Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner])
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipmentL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner (Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner])
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipmentL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipmentL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStepL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner (Maybe Text)
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStepL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStepL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerNameL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImageL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImageL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImageL #-}
+
+-- | 'retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId' Lens
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerIdL :: Lens_' RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner (Maybe Int)
+retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerIdL f RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner{..} = (\retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId -> RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner { retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId, ..} ) <$> f retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId
+{-# INLINE retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerIdL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutrition
+
+-- | 'retrieveRecipeInformation200ResponseNutritionWeightPerServing' Lens
+retrieveRecipeInformation200ResponseNutritionWeightPerServingL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing)
+retrieveRecipeInformation200ResponseNutritionWeightPerServingL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionWeightPerServing -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionWeightPerServing, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionWeightPerServing
+{-# INLINE retrieveRecipeInformation200ResponseNutritionWeightPerServingL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionCaloricBreakdown' Lens
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown)
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionCaloricBreakdown -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionCaloricBreakdown, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+{-# INLINE retrieveRecipeInformation200ResponseNutritionCaloricBreakdownL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionFlavonoids' Lens
+retrieveRecipeInformation200ResponseNutritionFlavonoidsL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner])
+retrieveRecipeInformation200ResponseNutritionFlavonoidsL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionFlavonoids -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionFlavonoids, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionFlavonoids
+{-# INLINE retrieveRecipeInformation200ResponseNutritionFlavonoidsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdown' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner])
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdown -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionIngredientBreakdown, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdown
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionProperties' Lens
+retrieveRecipeInformation200ResponseNutritionPropertiesL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner])
+retrieveRecipeInformation200ResponseNutritionPropertiesL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionProperties -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionProperties, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionProperties
+{-# INLINE retrieveRecipeInformation200ResponseNutritionPropertiesL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionNutrients' Lens
+retrieveRecipeInformation200ResponseNutritionNutrientsL :: Lens_' RetrieveRecipeInformation200ResponseNutrition (Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner])
+retrieveRecipeInformation200ResponseNutritionNutrientsL f RetrieveRecipeInformation200ResponseNutrition{..} = (\retrieveRecipeInformation200ResponseNutritionNutrients -> RetrieveRecipeInformation200ResponseNutrition { retrieveRecipeInformation200ResponseNutritionNutrients, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionNutrients
+{-# INLINE retrieveRecipeInformation200ResponseNutritionNutrientsL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+
+-- | 'retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat' Lens
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFatL :: Lens_' RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFatL f RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown{..} = (\retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat -> RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown { retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat
+{-# INLINE retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFatL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs' Lens
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbsL :: Lens_' RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbsL f RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown{..} = (\retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs -> RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown { retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs
+{-# INLINE retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein' Lens
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProteinL :: Lens_' RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProteinL f RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown{..} = (\retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein -> RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown { retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein
+{-# INLINE retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProteinL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+
+-- | 'retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName' Lens
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerNameL f RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner{..} = (\retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName -> RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner { retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName
+{-# INLINE retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount' Lens
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmountL :: Lens_' RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner (Maybe Int)
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmountL f RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner{..} = (\retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount -> RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner { retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount
+{-# INLINE retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit' Lens
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnitL :: Lens_' RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnitL f RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner{..} = (\retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit -> RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner { retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit
+{-# INLINE retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnitL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNameL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerName
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmountL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmountL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnitL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnitL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnitL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerIdL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner (Maybe Int)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerIdL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerIdL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner (Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner])
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerNameL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerNameL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerNameL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeedsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmountL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner (Maybe Double)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmountL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit' Lens
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnitL :: Lens_' RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnitL f RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner{..} = (\retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit -> RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner { retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit
+{-# INLINE retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnitL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+
+-- | 'retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount' Lens
+retrieveRecipeInformation200ResponseNutritionWeightPerServingAmountL :: Lens_' RetrieveRecipeInformation200ResponseNutritionWeightPerServing (Maybe Int)
+retrieveRecipeInformation200ResponseNutritionWeightPerServingAmountL f RetrieveRecipeInformation200ResponseNutritionWeightPerServing{..} = (\retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount -> RetrieveRecipeInformation200ResponseNutritionWeightPerServing { retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount
+{-# INLINE retrieveRecipeInformation200ResponseNutritionWeightPerServingAmountL #-}
+
+-- | 'retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit' Lens
+retrieveRecipeInformation200ResponseNutritionWeightPerServingUnitL :: Lens_' RetrieveRecipeInformation200ResponseNutritionWeightPerServing (Maybe Text)
+retrieveRecipeInformation200ResponseNutritionWeightPerServingUnitL f RetrieveRecipeInformation200ResponseNutritionWeightPerServing{..} = (\retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit -> RetrieveRecipeInformation200ResponseNutritionWeightPerServing { retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit, ..} ) <$> f retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit
+{-# INLINE retrieveRecipeInformation200ResponseNutritionWeightPerServingUnitL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseScores
+
+-- | 'retrieveRecipeInformation200ResponseScoresMetaScore' Lens
+retrieveRecipeInformation200ResponseScoresMetaScoreL :: Lens_' RetrieveRecipeInformation200ResponseScores (Maybe Double)
+retrieveRecipeInformation200ResponseScoresMetaScoreL f RetrieveRecipeInformation200ResponseScores{..} = (\retrieveRecipeInformation200ResponseScoresMetaScore -> RetrieveRecipeInformation200ResponseScores { retrieveRecipeInformation200ResponseScoresMetaScore, ..} ) <$> f retrieveRecipeInformation200ResponseScoresMetaScore
+{-# INLINE retrieveRecipeInformation200ResponseScoresMetaScoreL #-}
+
+-- | 'retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints' Lens
+retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPointsL :: Lens_' RetrieveRecipeInformation200ResponseScores (Maybe Int)
+retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPointsL f RetrieveRecipeInformation200ResponseScores{..} = (\retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints -> RetrieveRecipeInformation200ResponseScores { retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints, ..} ) <$> f retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPoints
+{-# INLINE retrieveRecipeInformation200ResponseScoresWeightWatcherSmartPointsL #-}
+
+-- | 'retrieveRecipeInformation200ResponseScoresHealthScore' Lens
+retrieveRecipeInformation200ResponseScoresHealthScoreL :: Lens_' RetrieveRecipeInformation200ResponseScores (Maybe Int)
+retrieveRecipeInformation200ResponseScoresHealthScoreL f RetrieveRecipeInformation200ResponseScores{..} = (\retrieveRecipeInformation200ResponseScoresHealthScore -> RetrieveRecipeInformation200ResponseScores { retrieveRecipeInformation200ResponseScoresHealthScore, ..} ) <$> f retrieveRecipeInformation200ResponseScoresHealthScore
+{-# INLINE retrieveRecipeInformation200ResponseScoresHealthScoreL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseTaste
+
+-- | 'retrieveRecipeInformation200ResponseTasteFattiness' Lens
+retrieveRecipeInformation200ResponseTasteFattinessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Double)
+retrieveRecipeInformation200ResponseTasteFattinessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteFattiness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteFattiness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteFattiness
+{-# INLINE retrieveRecipeInformation200ResponseTasteFattinessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteSpiciness' Lens
+retrieveRecipeInformation200ResponseTasteSpicinessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Int)
+retrieveRecipeInformation200ResponseTasteSpicinessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteSpiciness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteSpiciness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteSpiciness
+{-# INLINE retrieveRecipeInformation200ResponseTasteSpicinessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteSaltiness' Lens
+retrieveRecipeInformation200ResponseTasteSaltinessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Int)
+retrieveRecipeInformation200ResponseTasteSaltinessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteSaltiness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteSaltiness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteSaltiness
+{-# INLINE retrieveRecipeInformation200ResponseTasteSaltinessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteBitterness' Lens
+retrieveRecipeInformation200ResponseTasteBitternessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Double)
+retrieveRecipeInformation200ResponseTasteBitternessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteBitterness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteBitterness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteBitterness
+{-# INLINE retrieveRecipeInformation200ResponseTasteBitternessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteSavoriness' Lens
+retrieveRecipeInformation200ResponseTasteSavorinessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Double)
+retrieveRecipeInformation200ResponseTasteSavorinessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteSavoriness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteSavoriness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteSavoriness
+{-# INLINE retrieveRecipeInformation200ResponseTasteSavorinessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteSweetness' Lens
+retrieveRecipeInformation200ResponseTasteSweetnessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Double)
+retrieveRecipeInformation200ResponseTasteSweetnessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteSweetness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteSweetness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteSweetness
+{-# INLINE retrieveRecipeInformation200ResponseTasteSweetnessL #-}
+
+-- | 'retrieveRecipeInformation200ResponseTasteSourness' Lens
+retrieveRecipeInformation200ResponseTasteSournessL :: Lens_' RetrieveRecipeInformation200ResponseTaste (Maybe Double)
+retrieveRecipeInformation200ResponseTasteSournessL f RetrieveRecipeInformation200ResponseTaste{..} = (\retrieveRecipeInformation200ResponseTasteSourness -> RetrieveRecipeInformation200ResponseTaste { retrieveRecipeInformation200ResponseTasteSourness, ..} ) <$> f retrieveRecipeInformation200ResponseTasteSourness
+{-# INLINE retrieveRecipeInformation200ResponseTasteSournessL #-}
+
+
+
+-- * RetrieveRecipeInformation200ResponseTimes
+
+-- | 'retrieveRecipeInformation200ResponseTimesTotalMinutes' Lens
+retrieveRecipeInformation200ResponseTimesTotalMinutesL :: Lens_' RetrieveRecipeInformation200ResponseTimes (Maybe Int)
+retrieveRecipeInformation200ResponseTimesTotalMinutesL f RetrieveRecipeInformation200ResponseTimes{..} = (\retrieveRecipeInformation200ResponseTimesTotalMinutes -> RetrieveRecipeInformation200ResponseTimes { retrieveRecipeInformation200ResponseTimesTotalMinutes, ..} ) <$> f retrieveRecipeInformation200ResponseTimesTotalMinutes
+{-# INLINE retrieveRecipeInformation200ResponseTimesTotalMinutesL #-}
 
 
 
@@ -941,6 +1535,302 @@ searchNews200ResponseNewsInnerUrlL f SearchNews200ResponseNewsInner{..} = (\sear
 searchNews200ResponseNewsInnerAuthorsL :: Lens_' SearchNews200ResponseNewsInner (Maybe [Text])
 searchNews200ResponseNewsInnerAuthorsL f SearchNews200ResponseNewsInner{..} = (\searchNews200ResponseNewsInnerAuthors -> SearchNews200ResponseNewsInner { searchNews200ResponseNewsInnerAuthors, ..} ) <$> f searchNews200ResponseNewsInnerAuthors
 {-# INLINE searchNews200ResponseNewsInnerAuthorsL #-}
+
+
+
+-- * SearchRecipes200Response
+
+-- | 'searchRecipes200ResponseOffset' Lens
+searchRecipes200ResponseOffsetL :: Lens_' SearchRecipes200Response (Maybe Int)
+searchRecipes200ResponseOffsetL f SearchRecipes200Response{..} = (\searchRecipes200ResponseOffset -> SearchRecipes200Response { searchRecipes200ResponseOffset, ..} ) <$> f searchRecipes200ResponseOffset
+{-# INLINE searchRecipes200ResponseOffsetL #-}
+
+-- | 'searchRecipes200ResponseNumber' Lens
+searchRecipes200ResponseNumberL :: Lens_' SearchRecipes200Response (Maybe Int)
+searchRecipes200ResponseNumberL f SearchRecipes200Response{..} = (\searchRecipes200ResponseNumber -> SearchRecipes200Response { searchRecipes200ResponseNumber, ..} ) <$> f searchRecipes200ResponseNumber
+{-# INLINE searchRecipes200ResponseNumberL #-}
+
+-- | 'searchRecipes200ResponseRecipes' Lens
+searchRecipes200ResponseRecipesL :: Lens_' SearchRecipes200Response (Maybe [SearchRecipes200ResponseRecipesInner])
+searchRecipes200ResponseRecipesL f SearchRecipes200Response{..} = (\searchRecipes200ResponseRecipes -> SearchRecipes200Response { searchRecipes200ResponseRecipes, ..} ) <$> f searchRecipes200ResponseRecipes
+{-# INLINE searchRecipes200ResponseRecipesL #-}
+
+-- | 'searchRecipes200ResponseTotalResults' Lens
+searchRecipes200ResponseTotalResultsL :: Lens_' SearchRecipes200Response (Maybe Int)
+searchRecipes200ResponseTotalResultsL f SearchRecipes200Response{..} = (\searchRecipes200ResponseTotalResults -> SearchRecipes200Response { searchRecipes200ResponseTotalResults, ..} ) <$> f searchRecipes200ResponseTotalResults
+{-# INLINE searchRecipes200ResponseTotalResultsL #-}
+
+
+
+-- * SearchRecipes200ResponseRecipesInner
+
+-- | 'searchRecipes200ResponseRecipesInnerImages' Lens
+searchRecipes200ResponseRecipesInnerImagesL :: Lens_' SearchRecipes200ResponseRecipesInner (Maybe [Text])
+searchRecipes200ResponseRecipesInnerImagesL f SearchRecipes200ResponseRecipesInner{..} = (\searchRecipes200ResponseRecipesInnerImages -> SearchRecipes200ResponseRecipesInner { searchRecipes200ResponseRecipesInnerImages, ..} ) <$> f searchRecipes200ResponseRecipesInnerImages
+{-# INLINE searchRecipes200ResponseRecipesInnerImagesL #-}
+
+-- | 'searchRecipes200ResponseRecipesInnerNutrition' Lens
+searchRecipes200ResponseRecipesInnerNutritionL :: Lens_' SearchRecipes200ResponseRecipesInner (Maybe SearchRecipes200ResponseRecipesInnerNutrition)
+searchRecipes200ResponseRecipesInnerNutritionL f SearchRecipes200ResponseRecipesInner{..} = (\searchRecipes200ResponseRecipesInnerNutrition -> SearchRecipes200ResponseRecipesInner { searchRecipes200ResponseRecipesInnerNutrition, ..} ) <$> f searchRecipes200ResponseRecipesInnerNutrition
+{-# INLINE searchRecipes200ResponseRecipesInnerNutritionL #-}
+
+-- | 'searchRecipes200ResponseRecipesInnerId' Lens
+searchRecipes200ResponseRecipesInnerIdL :: Lens_' SearchRecipes200ResponseRecipesInner (Maybe Int)
+searchRecipes200ResponseRecipesInnerIdL f SearchRecipes200ResponseRecipesInner{..} = (\searchRecipes200ResponseRecipesInnerId -> SearchRecipes200ResponseRecipesInner { searchRecipes200ResponseRecipesInnerId, ..} ) <$> f searchRecipes200ResponseRecipesInnerId
+{-# INLINE searchRecipes200ResponseRecipesInnerIdL #-}
+
+-- | 'searchRecipes200ResponseRecipesInnerTitle' Lens
+searchRecipes200ResponseRecipesInnerTitleL :: Lens_' SearchRecipes200ResponseRecipesInner (Maybe Text)
+searchRecipes200ResponseRecipesInnerTitleL f SearchRecipes200ResponseRecipesInner{..} = (\searchRecipes200ResponseRecipesInnerTitle -> SearchRecipes200ResponseRecipesInner { searchRecipes200ResponseRecipesInnerTitle, ..} ) <$> f searchRecipes200ResponseRecipesInnerTitle
+{-# INLINE searchRecipes200ResponseRecipesInnerTitleL #-}
+
+
+
+-- * SearchRecipes200ResponseRecipesInnerNutrition
+
+-- | 'searchRecipes200ResponseRecipesInnerNutritionNutrients' Lens
+searchRecipes200ResponseRecipesInnerNutritionNutrientsL :: Lens_' SearchRecipes200ResponseRecipesInnerNutrition (Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner])
+searchRecipes200ResponseRecipesInnerNutritionNutrientsL f SearchRecipes200ResponseRecipesInnerNutrition{..} = (\searchRecipes200ResponseRecipesInnerNutritionNutrients -> SearchRecipes200ResponseRecipesInnerNutrition { searchRecipes200ResponseRecipesInnerNutritionNutrients, ..} ) <$> f searchRecipes200ResponseRecipesInnerNutritionNutrients
+{-# INLINE searchRecipes200ResponseRecipesInnerNutritionNutrientsL #-}
+
+
+
+-- * SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+
+-- | 'searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName' Lens
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerNameL :: Lens_' SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner (Maybe Text)
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerNameL f SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner{..} = (\searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName -> SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner { searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName, ..} ) <$> f searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerName
+{-# INLINE searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerNameL #-}
+
+-- | 'searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount' Lens
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmountL :: Lens_' SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner (Maybe Double)
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmountL f SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner{..} = (\searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount -> SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner { searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount, ..} ) <$> f searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmount
+{-# INLINE searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerAmountL #-}
+
+-- | 'searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit' Lens
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnitL :: Lens_' SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner (Maybe Text)
+searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnitL f SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner{..} = (\searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit -> SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner { searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit, ..} ) <$> f searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnit
+{-# INLINE searchRecipes200ResponseRecipesInnerNutritionNutrientsInnerUnitL #-}
+
+
+
+-- * SearchRestaurants200Response
+
+-- | 'searchRestaurants200ResponseRestaurants' Lens
+searchRestaurants200ResponseRestaurantsL :: Lens_' SearchRestaurants200Response (Maybe [SearchRestaurants200ResponseRestaurantsInner])
+searchRestaurants200ResponseRestaurantsL f SearchRestaurants200Response{..} = (\searchRestaurants200ResponseRestaurants -> SearchRestaurants200Response { searchRestaurants200ResponseRestaurants, ..} ) <$> f searchRestaurants200ResponseRestaurants
+{-# INLINE searchRestaurants200ResponseRestaurantsL #-}
+
+
+
+-- * SearchRestaurants200ResponseRestaurantsInner
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery' Lens
+searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDeliveryL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDeliveryL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDelivery
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerOffersThirdPartyDeliveryL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddress' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe SearchRestaurants200ResponseRestaurantsInnerAddress)
+searchRestaurants200ResponseRestaurantsInnerAddressL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerAddress -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerAddress, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddress
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes' Lens
+searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodesL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodesL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodes
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerSupportsUpcCodesL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerIsOpen' Lens
+searchRestaurants200ResponseRestaurantsInnerIsOpenL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerIsOpenL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerIsOpen -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerIsOpen, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerIsOpen
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerIsOpenL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerDescription' Lens
+searchRestaurants200ResponseRestaurantsInnerDescriptionL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerDescriptionL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerDescription -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerDescription, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerDescription
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerDescriptionL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue' Lens
+searchRestaurants200ResponseRestaurantsInnerWeightedRatingValueL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Int)
+searchRestaurants200ResponseRestaurantsInnerWeightedRatingValueL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerWeightedRatingValue
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerWeightedRatingValueL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerType' Lens
+searchRestaurants200ResponseRestaurantsInnerTypeL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerTypeL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerType -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerType, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerType
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerTypeL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery' Lens
+searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDeliveryL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDeliveryL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDelivery
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerOffersFirstPartyDeliveryL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount' Lens
+searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCountL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Int)
+searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCountL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCount
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAggregatedRatingCountL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerPickupEnabled' Lens
+searchRestaurants200ResponseRestaurantsInnerPickupEnabledL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerPickupEnabledL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerPickupEnabled -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerPickupEnabled, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerPickupEnabled
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerPickupEnabledL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerCuisines' Lens
+searchRestaurants200ResponseRestaurantsInnerCuisinesL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe [Text])
+searchRestaurants200ResponseRestaurantsInnerCuisinesL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerCuisines -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerCuisines, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerCuisines
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerCuisinesL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerMiles' Lens
+searchRestaurants200ResponseRestaurantsInnerMilesL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerMilesL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerMiles -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerMiles, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerMiles
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerMilesL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerDollarSigns' Lens
+searchRestaurants200ResponseRestaurantsInnerDollarSignsL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Int)
+searchRestaurants200ResponseRestaurantsInnerDollarSignsL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerDollarSigns -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerDollarSigns, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerDollarSigns
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerDollarSignsL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled' Lens
+searchRestaurants200ResponseRestaurantsInnerDeliveryEnabledL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Bool)
+searchRestaurants200ResponseRestaurantsInnerDeliveryEnabledL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerDeliveryEnabled
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerDeliveryEnabledL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerName' Lens
+searchRestaurants200ResponseRestaurantsInnerNameL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerNameL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerName -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerName, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerName
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerNameL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerPhoneNumber' Lens
+searchRestaurants200ResponseRestaurantsInnerPhoneNumberL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerPhoneNumberL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerPhoneNumber -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerPhoneNumber, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerPhoneNumber
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerPhoneNumberL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerId' Lens
+searchRestaurants200ResponseRestaurantsInnerIdL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerIdL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerId -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerId, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerId
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerIdL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHours' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursL :: Lens_' SearchRestaurants200ResponseRestaurantsInner (Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHours)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursL f SearchRestaurants200ResponseRestaurantsInner{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHours -> SearchRestaurants200ResponseRestaurantsInner { searchRestaurants200ResponseRestaurantsInnerLocalHours, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHours
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursL #-}
+
+
+
+-- * SearchRestaurants200ResponseRestaurantsInnerAddress
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressZipcode' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressZipcodeL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressZipcodeL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressZipcode -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressZipcode, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressZipcode
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressZipcodeL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressCountry' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressCountryL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressCountryL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressCountry -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressCountry, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressCountry
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressCountryL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressCity' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressCityL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressCityL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressCity -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressCity, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressCity
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressCityL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressLatitude' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressLatitudeL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerAddressLatitudeL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressLatitude -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressLatitude, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressLatitude
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressLatitudeL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressLon' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressLonL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerAddressLonL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressLon -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressLon, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressLon
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressLonL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2L :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2L f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2 -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr2L #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressState' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressStateL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressStateL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressState -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressState, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressState
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressStateL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressStreetAddrL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerAddressStreetAddrL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressStreetAddr
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressStreetAddrL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressLat' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressLatL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerAddressLatL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressLat -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressLat, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressLat
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressLatL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerAddressLongitude' Lens
+searchRestaurants200ResponseRestaurantsInnerAddressLongitudeL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerAddress (Maybe Double)
+searchRestaurants200ResponseRestaurantsInnerAddressLongitudeL f SearchRestaurants200ResponseRestaurantsInnerAddress{..} = (\searchRestaurants200ResponseRestaurantsInnerAddressLongitude -> SearchRestaurants200ResponseRestaurantsInnerAddress { searchRestaurants200ResponseRestaurantsInnerAddressLongitude, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerAddressLongitude
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerAddressLongitudeL #-}
+
+
+
+-- * SearchRestaurants200ResponseRestaurantsInnerLocalHours
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHours (Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalL f SearchRestaurants200ResponseRestaurantsInnerLocalHours{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational -> SearchRestaurants200ResponseRestaurantsInnerLocalHours { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursDeliveryL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHours (Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursDeliveryL f SearchRestaurants200ResponseRestaurantsInnerLocalHours{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery -> SearchRestaurants200ResponseRestaurantsInnerLocalHours { searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursDelivery
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursDeliveryL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursPickupL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHours (Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursPickupL f SearchRestaurants200ResponseRestaurantsInnerLocalHours{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup -> SearchRestaurants200ResponseRestaurantsInnerLocalHours { searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursPickup
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursPickupL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursDineInL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHours (Maybe SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursDineInL f SearchRestaurants200ResponseRestaurantsInnerLocalHours{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn -> SearchRestaurants200ResponseRestaurantsInnerLocalHours { searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursDineIn
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursDineInL #-}
+
+
+
+-- * SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSundayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSundayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSunday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSundayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturdayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturdayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalSaturdayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesdayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesdayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalTuesdayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursdayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursdayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalThursdayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFridayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFridayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFriday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalFridayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesdayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesdayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalWednesdayL #-}
+
+-- | 'searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday' Lens
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMondayL :: Lens_' SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational (Maybe Text)
+searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMondayL f SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational{..} = (\searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday -> SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational { searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday, ..} ) <$> f searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMonday
+{-# INLINE searchRestaurants200ResponseRestaurantsInnerLocalHoursOperationalMondayL #-}
 
 
 

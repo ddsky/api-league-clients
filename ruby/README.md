@@ -96,6 +96,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::ArtApi* | [**random_poem**](docs/ArtApi.md#random_poem) | **GET** /retrieve-random-poem | Random Poem
 *OpenapiClient::BooksApi* | [**find_similar_books**](docs/BooksApi.md#find_similar_books) | **GET** /list-similar-books | Find Similar Books
 *OpenapiClient::BooksApi* | [**search_books**](docs/BooksApi.md#search_books) | **GET** /search-books | Search Books
+*OpenapiClient::FoodApi* | [**compute_nutrition**](docs/FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
+*OpenapiClient::FoodApi* | [**retrieve_recipe_information**](docs/FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*OpenapiClient::FoodApi* | [**search_recipes**](docs/FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
+*OpenapiClient::FoodApi* | [**search_restaurants**](docs/FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
 *OpenapiClient::HumorApi* | [**generate_nonsense_word**](docs/HumorApi.md#generate_nonsense_word) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *OpenapiClient::HumorApi* | [**random_joke**](docs/HumorApi.md#random_joke) | **GET** /retrieve-random-joke | Random Joke
 *OpenapiClient::HumorApi* | [**random_meme**](docs/HumorApi.md#random_meme) | **GET** /retrieve-random-meme | Random Meme
@@ -132,6 +136,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [OpenapiClient::ComputeNutrition200Response](docs/ComputeNutrition200Response.md)
+ - [OpenapiClient::ComputeNutrition200ResponseIngredientBreakdownInner](docs/ComputeNutrition200ResponseIngredientBreakdownInner.md)
+ - [OpenapiClient::ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [OpenapiClient::ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [OpenapiClient::CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [OpenapiClient::DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
@@ -158,6 +165,24 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::RandomQuote200Response](docs/RandomQuote200Response.md)
  - [OpenapiClient::RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [OpenapiClient::ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [OpenapiClient::RetrieveRecipeInformation200Response](docs/RetrieveRecipeInformation200Response.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseCredits](docs/RetrieveRecipeInformation200ResponseCredits.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseIngredientsInner](docs/RetrieveRecipeInformation200ResponseIngredientsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseInstructionsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutrition](docs/RetrieveRecipeInformation200ResponseNutrition.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseScores](docs/RetrieveRecipeInformation200ResponseScores.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseTaste](docs/RetrieveRecipeInformation200ResponseTaste.md)
+ - [OpenapiClient::RetrieveRecipeInformation200ResponseTimes](docs/RetrieveRecipeInformation200ResponseTimes.md)
  - [OpenapiClient::ScoreReadability200Response](docs/ScoreReadability200Response.md)
  - [OpenapiClient::ScoreText200Response](docs/ScoreText200Response.md)
  - [OpenapiClient::ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
@@ -180,6 +205,15 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
  - [OpenapiClient::SearchNews200Response](docs/SearchNews200Response.md)
  - [OpenapiClient::SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [OpenapiClient::SearchRecipes200Response](docs/SearchRecipes200Response.md)
+ - [OpenapiClient::SearchRecipes200ResponseRecipesInner](docs/SearchRecipes200ResponseRecipesInner.md)
+ - [OpenapiClient::SearchRecipes200ResponseRecipesInnerNutrition](docs/SearchRecipes200ResponseRecipesInnerNutrition.md)
+ - [OpenapiClient::SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+ - [OpenapiClient::SearchRestaurants200Response](docs/SearchRestaurants200Response.md)
+ - [OpenapiClient::SearchRestaurants200ResponseRestaurantsInner](docs/SearchRestaurants200ResponseRestaurantsInner.md)
+ - [OpenapiClient::SearchRestaurants200ResponseRestaurantsInnerAddress](docs/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
+ - [OpenapiClient::SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+ - [OpenapiClient::SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [OpenapiClient::SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
  - [OpenapiClient::SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
  - [OpenapiClient::SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

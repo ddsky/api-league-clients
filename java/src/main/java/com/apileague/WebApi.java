@@ -93,7 +93,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-authors-api/">Extract Authors Documentation</a>
      */
     public okhttp3.Call extractAuthorsCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -172,7 +172,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-authors-api/">Extract Authors Documentation</a>
      */
     public ExtractAuthors200Response extractAuthors(String url) throws ApiException {
         ApiResponse<ExtractAuthors200Response> localVarResp = extractAuthorsWithHttpInfo(url);
@@ -197,7 +197,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-authors-api/">Extract Authors Documentation</a>
      */
     public ApiResponse<ExtractAuthors200Response> extractAuthorsWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractAuthorsValidateBeforeCall(url, null);
@@ -224,7 +224,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-authors-api">Extract Authors Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-authors-api/">Extract Authors Documentation</a>
      */
     public okhttp3.Call extractAuthorsAsync(String url, final ApiCallback<ExtractAuthors200Response> _callback) throws ApiException {
 
@@ -251,7 +251,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-web-content-api/">Extract Content from a Web Page Documentation</a>
      */
     public okhttp3.Call extractContentFromAWebPageCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -330,7 +330,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-web-content-api/">Extract Content from a Web Page Documentation</a>
      */
     public ExtractContentFromAWebPage200Response extractContentFromAWebPage(String url) throws ApiException {
         ApiResponse<ExtractContentFromAWebPage200Response> localVarResp = extractContentFromAWebPageWithHttpInfo(url);
@@ -355,7 +355,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-web-content-api/">Extract Content from a Web Page Documentation</a>
      */
     public ApiResponse<ExtractContentFromAWebPage200Response> extractContentFromAWebPageWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractContentFromAWebPageValidateBeforeCall(url, null);
@@ -382,7 +382,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-web-content-api">Extract Content from a Web Page Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-web-content-api/">Extract Content from a Web Page Documentation</a>
      */
     public okhttp3.Call extractContentFromAWebPageAsync(String url, final ApiCallback<ExtractContentFromAWebPage200Response> _callback) throws ApiException {
 
@@ -409,7 +409,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-publish-date-api/">Extract Publish Date Documentation</a>
      */
     public okhttp3.Call extractPublishDateCall(String url, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -488,7 +488,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-publish-date-api/">Extract Publish Date Documentation</a>
      */
     public ExtractPublishDate200Response extractPublishDate(String url) throws ApiException {
         ApiResponse<ExtractPublishDate200Response> localVarResp = extractPublishDateWithHttpInfo(url);
@@ -513,7 +513,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-publish-date-api/">Extract Publish Date Documentation</a>
      */
     public ApiResponse<ExtractPublishDate200Response> extractPublishDateWithHttpInfo(String url) throws ApiException {
         okhttp3.Call localVarCall = extractPublishDateValidateBeforeCall(url, null);
@@ -540,7 +540,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-publish-date-api">Extract Publish Date Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-publish-date-api/">Extract Publish Date Documentation</a>
      */
     public okhttp3.Call extractPublishDateAsync(String url, final ApiCallback<ExtractPublishDate200Response> _callback) throws ApiException {
 
@@ -568,7 +568,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
+     * @see <a href="https://apileague.com/apis/web-search-api/">Search Web Documentation</a>
      */
     public okhttp3.Call searchWebCall(String query, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -652,7 +652,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
+     * @see <a href="https://apileague.com/apis/web-search-api/">Search Web Documentation</a>
      */
     public SearchWeb200Response searchWeb(String query, Integer number) throws ApiException {
         ApiResponse<SearchWeb200Response> localVarResp = searchWebWithHttpInfo(query, number);
@@ -678,7 +678,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
+     * @see <a href="https://apileague.com/apis/web-search-api/">Search Web Documentation</a>
      */
     public ApiResponse<SearchWeb200Response> searchWebWithHttpInfo(String query, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchWebValidateBeforeCall(query, number, null);
@@ -706,7 +706,7 @@ public class WebApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/web-search-api">Search Web Documentation</a>
+     * @see <a href="https://apileague.com/apis/web-search-api/">Search Web Documentation</a>
      */
     public okhttp3.Call searchWebAsync(String query, Integer number, final ApiCallback<SearchWeb200Response> _callback) throws ApiException {
 

@@ -87,7 +87,7 @@ val earliestPublishDate : kotlin.String = 2022-04-22 16:12:35 // kotlin.String |
 val latestPublishDate : kotlin.String = 2022-04-22 16:12:35 // kotlin.String | The news must have been published before this date.
 val newsSources : kotlin.String = https://www.bbc.co.uk // kotlin.String | A comma-separated list of news sources from which the news should originate.
 val authors : kotlin.String = John Doe // kotlin.String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-val entities : kotlin.String = ORG:Tesla // kotlin.String | Filter news by entities (see semantic types).
+val entities : kotlin.String = ORG:Tesla // kotlin.String | Filter news by entities (ORG, PER, or LOC).
 val locationFilter : kotlin.String = 51.050407, 13.737262, 100 // kotlin.String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
 val sort : kotlin.String = publish-time // kotlin.String | The sorting criteria (publish-time or sentiment).
 val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **kotlin.String**| The news must have been published before this date. | [optional]
  **newsSources** | **kotlin.String**| A comma-separated list of news sources from which the news should originate. | [optional]
  **authors** | **kotlin.String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
- **entities** | **kotlin.String**| Filter news by entities (see semantic types). | [optional]
+ **entities** | **kotlin.String**| Filter news by entities (ORG, PER, or LOC). | [optional]
  **locationFilter** | **kotlin.String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
  **sort** | **kotlin.String**| The sorting criteria (publish-time or sentiment). | [optional]
  **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional]

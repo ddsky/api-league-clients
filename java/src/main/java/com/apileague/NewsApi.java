@@ -92,7 +92,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-news-api/">Extract News Documentation</a>
      */
     public okhttp3.Call extractNewsCall(String url, Boolean analyze, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -181,7 +181,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-news-api/">Extract News Documentation</a>
      */
     public ExtractNews200Response extractNews(String url, Boolean analyze) throws ApiException {
         ApiResponse<ExtractNews200Response> localVarResp = extractNewsWithHttpInfo(url, analyze);
@@ -207,7 +207,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-news-api/">Extract News Documentation</a>
      */
     public ApiResponse<ExtractNews200Response> extractNewsWithHttpInfo(String url, Boolean analyze) throws ApiException {
         okhttp3.Call localVarCall = extractNewsValidateBeforeCall(url, analyze, null);
@@ -235,7 +235,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/extract-news-api">Extract News Documentation</a>
+     * @see <a href="https://apileague.com/apis/extract-news-api/">Extract News Documentation</a>
      */
     public okhttp3.Call extractNewsAsync(String url, Boolean analyze, final ApiCallback<ExtractNews200Response> _callback) throws ApiException {
 
@@ -255,7 +255,7 @@ public class NewsApi {
      * @param latestPublishDate The news must have been published before this date. (optional)
      * @param newsSources A comma-separated list of news sources from which the news should originate. (optional)
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-     * @param entities Filter news by entities (see semantic types). (optional)
+     * @param entities Filter news by entities (ORG, PER, or LOC). (optional)
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)
      * @param sort The sorting criteria (publish-time or sentiment). (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -276,7 +276,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-news-api/">Search News Documentation</a>
      */
     public okhttp3.Call searchNewsCall(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback _callback) throws ApiException {
         String basePath = null;
@@ -400,7 +400,7 @@ public class NewsApi {
      * @param latestPublishDate The news must have been published before this date. (optional)
      * @param newsSources A comma-separated list of news sources from which the news should originate. (optional)
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-     * @param entities Filter news by entities (see semantic types). (optional)
+     * @param entities Filter news by entities (ORG, PER, or LOC). (optional)
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)
      * @param sort The sorting criteria (publish-time or sentiment). (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -420,7 +420,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-news-api/">Search News Documentation</a>
      */
     public SearchNews200Response searchNews(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
         ApiResponse<SearchNews200Response> localVarResp = searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
@@ -439,7 +439,7 @@ public class NewsApi {
      * @param latestPublishDate The news must have been published before this date. (optional)
      * @param newsSources A comma-separated list of news sources from which the news should originate. (optional)
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-     * @param entities Filter news by entities (see semantic types). (optional)
+     * @param entities Filter news by entities (ORG, PER, or LOC). (optional)
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)
      * @param sort The sorting criteria (publish-time or sentiment). (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -459,7 +459,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-news-api/">Search News Documentation</a>
      */
     public ApiResponse<SearchNews200Response> searchNewsWithHttpInfo(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number) throws ApiException {
         okhttp3.Call localVarCall = searchNewsValidateBeforeCall(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, null);
@@ -479,7 +479,7 @@ public class NewsApi {
      * @param latestPublishDate The news must have been published before this date. (optional)
      * @param newsSources A comma-separated list of news sources from which the news should originate. (optional)
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-     * @param entities Filter news by entities (see semantic types). (optional)
+     * @param entities Filter news by entities (ORG, PER, or LOC). (optional)
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; (optional)
      * @param sort The sorting criteria (publish-time or sentiment). (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -500,7 +500,7 @@ public class NewsApi {
         <tr><td> 429 </td><td> Too Many Requests </td><td>  -  </td></tr>
      </table>
      * Read entire docs
-     * @see <a href="https://apileague.com/apis/search-news-api">Search News Documentation</a>
+     * @see <a href="https://apileague.com/apis/search-news-api/">Search News Documentation</a>
      */
     public okhttp3.Call searchNewsAsync(String text, String sourceCountries, String language, Double minSentiment, Double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String entities, String locationFilter, String sort, String sortDirection, Integer offset, Integer number, final ApiCallback<SearchNews200Response> _callback) throws ApiException {
 

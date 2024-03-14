@@ -1,6 +1,9 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
+import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
+import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
+import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
@@ -27,6 +30,24 @@ import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
+import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
+import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
+import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
+import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
+import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric';
+import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
+import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
+import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner';
+import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
+import { RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown } from '../models/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown';
+import { RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner';
+import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
+import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner';
+import { RetrieveRecipeInformation200ResponseNutritionWeightPerServing } from '../models/RetrieveRecipeInformation200ResponseNutritionWeightPerServing';
+import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
+import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
+import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
 import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
 import { ScoreText200Response } from '../models/ScoreText200Response';
 import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
@@ -49,6 +70,15 @@ import { SearchMemes200Response } from '../models/SearchMemes200Response';
 import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
 import { SearchNews200Response } from '../models/SearchNews200Response';
 import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
+import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
+import { SearchRecipes200ResponseRecipesInner } from '../models/SearchRecipes200ResponseRecipesInner';
+import { SearchRecipes200ResponseRecipesInnerNutrition } from '../models/SearchRecipes200ResponseRecipesInnerNutrition';
+import { SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
+import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
+import { SearchRestaurants200ResponseRestaurantsInner } from '../models/SearchRestaurants200ResponseRestaurantsInner';
+import { SearchRestaurants200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurants200ResponseRestaurantsInnerAddress';
+import { SearchRestaurants200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
+import { SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
 import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
 import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
 import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
@@ -159,14 +189,14 @@ export class PromiseBooksApi {
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * Search Books
      * @param query The search query.
      * @param earliestPublishYear The books must have been published after this year.
      * @param latestPublishYear The books must have been published before this year.
      * @param minRating The minimum rating the book must have gotten in the interval [0,1].
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1].
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned.
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned.
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\&#39;t disambiguate.
      * @param isbn Only the book matching the ISBN-13 will be returned
      * @param oclc Only the book matching the OCLC will be returned
@@ -182,14 +212,14 @@ export class PromiseBooksApi {
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * Search Books
      * @param query The search query.
      * @param earliestPublishYear The books must have been published after this year.
      * @param latestPublishYear The books must have been published before this year.
      * @param minRating The minimum rating the book must have gotten in the interval [0,1].
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1].
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned.
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned.
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\&#39;t disambiguate.
      * @param isbn Only the book matching the ISBN-13 will be returned
      * @param oclc Only the book matching the OCLC will be returned
@@ -201,6 +231,303 @@ export class PromiseBooksApi {
      */
     public searchBooks(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Promise<SearchBooks200Response> {
         const result = this.api.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _options);
+        return result.toPromise();
+    }
+
+
+}
+
+
+
+import { ObservableFoodApi } from './ObservableAPI';
+
+import { FoodApiRequestFactory, FoodApiResponseProcessor} from "../apis/FoodApi";
+export class PromiseFoodApi {
+    private api: ObservableFoodApi
+
+    public constructor(
+        configuration: Configuration,
+        requestFactory?: FoodApiRequestFactory,
+        responseProcessor?: FoodApiResponseProcessor
+    ) {
+        this.api = new ObservableFoodApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
+     * Compute Nutrition
+     * @param ingredients A comma-separated list of the ingredients of the recipe.
+     * @param servings The number of servings the ingredients make. Nutrition is computed per serving.
+     * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
+     */
+    public computeNutritionWithHttpInfo(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Promise<HttpInfo<ComputeNutrition200Response>> {
+        const result = this.api.computeNutritionWithHttpInfo(ingredients, servings, reduceOils, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
+     * Compute Nutrition
+     * @param ingredients A comma-separated list of the ingredients of the recipe.
+     * @param servings The number of servings the ingredients make. Nutrition is computed per serving.
+     * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
+     */
+    public computeNutrition(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Promise<ComputeNutrition200Response> {
+        const result = this.api.computeNutrition(ingredients, servings, reduceOils, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
+     * Retrieve Recipe Information
+     * @param id The id of the recipe to retrieve.
+     * @param addWinePairing Whether to pair a wine to the recipe.
+     */
+    public retrieveRecipeInformationWithHttpInfo(id: number, addWinePairing?: boolean, _options?: Configuration): Promise<HttpInfo<RetrieveRecipeInformation200Response>> {
+        const result = this.api.retrieveRecipeInformationWithHttpInfo(id, addWinePairing, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
+     * Retrieve Recipe Information
+     * @param id The id of the recipe to retrieve.
+     * @param addWinePairing Whether to pair a wine to the recipe.
+     */
+    public retrieveRecipeInformation(id: number, addWinePairing?: boolean, _options?: Configuration): Promise<RetrieveRecipeInformation200Response> {
+        const result = this.api.retrieveRecipeInformation(id, addWinePairing, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
+     * Search Recipes
+     * @param query The search query.
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \&#39;OR\&#39;).
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \&#39;AND\&#39;).
+     * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
+     * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
+     * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
+     * @param equipment The equipment required. Multiple values will be interpreted as \&#39;OR\&#39;.
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the recipes.
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the recipes must not contain.
+     * @param fillIngredients Add information about the ingredients and whether they are used or missing in relation to the query.
+     * @param addRecipeInformation If set to true, you get more information about the recipes returned.
+     * @param maxTime The maximum time in minutes it should take to prepare and cook the recipe.
+     * @param minCalories The minimum amount of calories the recipe must have per serving.
+     * @param maxCalories The maximum amount of calories the recipe can have per serving.
+     * @param minCarbs The minimum amount of carbohydrates in grams the recipe must have per serving.
+     * @param maxCarbs The maximum amount of carbohydrates in grams the recipe can have per serving.
+     * @param minProtein The minimum amount of protein in grams the recipe must have per serving.
+     * @param maxProtein The maximum amount of protein in grams the recipe can have per serving.
+     * @param minFat The minimum amount of fat in grams the recipe must have per serving.
+     * @param maxFat The maximum amount of fat in grams the recipe can have per serving.
+     * @param minSugar The minimum amount of sugar in grams the recipe must have per serving.
+     * @param maxSugar The maximum amount of sugar in grams the recipe can have per serving.
+     * @param minFiber The minimum amount of fiber in grams the recipe must have per serving.
+     * @param maxFiber The maximum amount of fiber in grams the recipe can have per serving.
+     * @param minFolate The minimum amount of folate in micrograms the recipe must have per serving.
+     * @param maxFolate The maximum amount of folate in micrograms the recipe can have per serving.
+     * @param minFolicAcid The minimum amount of folic acid in micrograms the recipe must have per serving.
+     * @param maxFolicAcid The maximum amount of folic acid in micrograms the recipe can have per serving.
+     * @param minIodine The minimum amount of iodine in micrograms the recipe must have per serving.
+     * @param maxIodine The maximum amount of iodine in micrograms the recipe can have per serving.
+     * @param minIron The minimum amount of iron in milligrams the recipe must have per serving.
+     * @param maxIron The maximum amount of iron in milligrams the recipe can have per serving.
+     * @param minZinc The minimum amount of zinc in milligrams the recipe must have per serving.
+     * @param maxZinc The maximum amount of zinc in milligrams the recipe can have per serving.
+     * @param minMagnesium The minimum amount of magnesium in milligrams the recipe must have per serving.
+     * @param maxMagnesium The maximum amount of magnesium in milligrams the recipe can have per serving.
+     * @param minManganese The minimum amount of manganese in milligrams the recipe must have per serving.
+     * @param maxManganese The maximum amount of manganese in milligrams the recipe can have per serving.
+     * @param minPhosphorus The minimum amount of phosphorus in milligrams the recipe must have per serving.
+     * @param maxPhosphorus The maximum amount of phosphorus in milligrams the recipe can have per serving.
+     * @param minPotassium The minimum amount of potassium in milligrams the recipe must have per serving.
+     * @param maxPotassium The maximum amount of potassium in milligrams the recipe can have per serving.
+     * @param minSodium The minimum amount of sodium in milligrams the recipe must have per serving.
+     * @param maxSodium The maximum amount of sodium in milligrams the recipe can have per serving.
+     * @param minSelenium The minimum amount of selenium in micrograms the recipe must have per serving.
+     * @param maxSelenium The maximum amount of selenium in micrograms the recipe can have per serving.
+     * @param minCopper The minimum amount of copper in milligrams the recipe must have per serving.
+     * @param maxCopper The maximum amount of copper in milligrams the recipe can have per serving.
+     * @param minCalcium The minimum amount of calcium in milligrams the recipe must have per serving.
+     * @param maxCalcium The maximum amount of calcium in milligrams the recipe can have per serving.
+     * @param minCholine The minimum amount of choline in milligrams the recipe must have per serving.
+     * @param maxCholine The maximum amount of choline in milligrams the recipe can have per serving.
+     * @param minCholesterol The minimum amount of cholesterol in milligrams the recipe must have per serving.
+     * @param maxCholesterol The maximum amount of cholesterol in milligrams the recipe can have per serving.
+     * @param minFluoride The minimum amount of fluoride in milligrams the recipe must have per serving.
+     * @param maxFluoride The maximum amount of fluoride in milligrams the recipe can have per serving.
+     * @param minAlcohol The minimum amount of alcohol in grams the recipe must have per serving.
+     * @param maxAlcohol The maximum amount of alcohol in grams the recipe can have per serving.
+     * @param minCaffeine The minimum amount of caffeine in milligrams the recipe must have per serving.
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the recipe can have per serving.
+     * @param minSaturatedFat The minimum amount of saturated fat in grams the recipe must have per serving.
+     * @param maxSaturatedFat The maximum amount of saturated fat in grams the recipe can have per serving.
+     * @param minVitaminA The minimum amount of Vitamin A in IU the recipe must have per serving.
+     * @param maxVitaminA The maximum amount of Vitamin A in IU the recipe can have per serving.
+     * @param minVitaminC The minimum amount of Vitamin C in milligrams the recipe must have per serving.
+     * @param maxVitaminC The maximum amount of Vitamin C in milligrams the recipe can have per serving.
+     * @param minVitaminD The minimum amount of Vitamin D in micrograms the recipe must have per serving.
+     * @param maxVitaminD The maximum amount of Vitamin D in micrograms the recipe can have per serving.
+     * @param minVitaminE The minimum amount of Vitamin E in milligrams the recipe must have per serving.
+     * @param maxVitaminE The maximum amount of Vitamin E in milligrams the recipe can have per serving.
+     * @param minVitaminK The minimum amount of Vitamin K in micrograms the recipe must have per serving.
+     * @param maxVitaminK The maximum amount of Vitamin K in micrograms the recipe can have per serving.
+     * @param minVitaminB1 The minimum amount of Vitamin B1 in milligrams the recipe must have per serving.
+     * @param maxVitaminB1 The maximum amount of Vitamin B1 in milligrams the recipe can have per serving.
+     * @param minVitaminB2 The minimum amount of Vitamin B2 in milligrams the recipe must have per serving.
+     * @param maxVitaminB2 The maximum amount of Vitamin B2 in milligrams the recipe can have per serving.
+     * @param minVitaminB3 The minimum amount of Vitamin B3 in milligrams the recipe must have per serving.
+     * @param maxVitaminB3 The maximum amount of Vitamin B3 in milligrams the recipe can have per serving.
+     * @param minVitaminB5 The minimum amount of Vitamin B5 in milligrams the recipe must have per serving.
+     * @param maxVitaminB5 The maximum amount of Vitamin B5 in milligrams the recipe can have per serving.
+     * @param minVitaminB6 The minimum amount of Vitamin B6 in milligrams the recipe must have per serving.
+     * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
+     * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
+     * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
+     * @param sort The strategy to sort recipes by. See a full list of supported sorting options.
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
+     * @param offset The number of recipes to skip, between 0 and 900.
+     * @param number The number of recipes, between 1 and 100.
+     */
+    public searchRecipesWithHttpInfo(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<HttpInfo<SearchRecipes200Response>> {
+        const result = this.api.searchRecipesWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
+     * Search Recipes
+     * @param query The search query.
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \&#39;OR\&#39;).
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \&#39;AND\&#39;).
+     * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
+     * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
+     * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
+     * @param equipment The equipment required. Multiple values will be interpreted as \&#39;OR\&#39;.
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the recipes.
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the recipes must not contain.
+     * @param fillIngredients Add information about the ingredients and whether they are used or missing in relation to the query.
+     * @param addRecipeInformation If set to true, you get more information about the recipes returned.
+     * @param maxTime The maximum time in minutes it should take to prepare and cook the recipe.
+     * @param minCalories The minimum amount of calories the recipe must have per serving.
+     * @param maxCalories The maximum amount of calories the recipe can have per serving.
+     * @param minCarbs The minimum amount of carbohydrates in grams the recipe must have per serving.
+     * @param maxCarbs The maximum amount of carbohydrates in grams the recipe can have per serving.
+     * @param minProtein The minimum amount of protein in grams the recipe must have per serving.
+     * @param maxProtein The maximum amount of protein in grams the recipe can have per serving.
+     * @param minFat The minimum amount of fat in grams the recipe must have per serving.
+     * @param maxFat The maximum amount of fat in grams the recipe can have per serving.
+     * @param minSugar The minimum amount of sugar in grams the recipe must have per serving.
+     * @param maxSugar The maximum amount of sugar in grams the recipe can have per serving.
+     * @param minFiber The minimum amount of fiber in grams the recipe must have per serving.
+     * @param maxFiber The maximum amount of fiber in grams the recipe can have per serving.
+     * @param minFolate The minimum amount of folate in micrograms the recipe must have per serving.
+     * @param maxFolate The maximum amount of folate in micrograms the recipe can have per serving.
+     * @param minFolicAcid The minimum amount of folic acid in micrograms the recipe must have per serving.
+     * @param maxFolicAcid The maximum amount of folic acid in micrograms the recipe can have per serving.
+     * @param minIodine The minimum amount of iodine in micrograms the recipe must have per serving.
+     * @param maxIodine The maximum amount of iodine in micrograms the recipe can have per serving.
+     * @param minIron The minimum amount of iron in milligrams the recipe must have per serving.
+     * @param maxIron The maximum amount of iron in milligrams the recipe can have per serving.
+     * @param minZinc The minimum amount of zinc in milligrams the recipe must have per serving.
+     * @param maxZinc The maximum amount of zinc in milligrams the recipe can have per serving.
+     * @param minMagnesium The minimum amount of magnesium in milligrams the recipe must have per serving.
+     * @param maxMagnesium The maximum amount of magnesium in milligrams the recipe can have per serving.
+     * @param minManganese The minimum amount of manganese in milligrams the recipe must have per serving.
+     * @param maxManganese The maximum amount of manganese in milligrams the recipe can have per serving.
+     * @param minPhosphorus The minimum amount of phosphorus in milligrams the recipe must have per serving.
+     * @param maxPhosphorus The maximum amount of phosphorus in milligrams the recipe can have per serving.
+     * @param minPotassium The minimum amount of potassium in milligrams the recipe must have per serving.
+     * @param maxPotassium The maximum amount of potassium in milligrams the recipe can have per serving.
+     * @param minSodium The minimum amount of sodium in milligrams the recipe must have per serving.
+     * @param maxSodium The maximum amount of sodium in milligrams the recipe can have per serving.
+     * @param minSelenium The minimum amount of selenium in micrograms the recipe must have per serving.
+     * @param maxSelenium The maximum amount of selenium in micrograms the recipe can have per serving.
+     * @param minCopper The minimum amount of copper in milligrams the recipe must have per serving.
+     * @param maxCopper The maximum amount of copper in milligrams the recipe can have per serving.
+     * @param minCalcium The minimum amount of calcium in milligrams the recipe must have per serving.
+     * @param maxCalcium The maximum amount of calcium in milligrams the recipe can have per serving.
+     * @param minCholine The minimum amount of choline in milligrams the recipe must have per serving.
+     * @param maxCholine The maximum amount of choline in milligrams the recipe can have per serving.
+     * @param minCholesterol The minimum amount of cholesterol in milligrams the recipe must have per serving.
+     * @param maxCholesterol The maximum amount of cholesterol in milligrams the recipe can have per serving.
+     * @param minFluoride The minimum amount of fluoride in milligrams the recipe must have per serving.
+     * @param maxFluoride The maximum amount of fluoride in milligrams the recipe can have per serving.
+     * @param minAlcohol The minimum amount of alcohol in grams the recipe must have per serving.
+     * @param maxAlcohol The maximum amount of alcohol in grams the recipe can have per serving.
+     * @param minCaffeine The minimum amount of caffeine in milligrams the recipe must have per serving.
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the recipe can have per serving.
+     * @param minSaturatedFat The minimum amount of saturated fat in grams the recipe must have per serving.
+     * @param maxSaturatedFat The maximum amount of saturated fat in grams the recipe can have per serving.
+     * @param minVitaminA The minimum amount of Vitamin A in IU the recipe must have per serving.
+     * @param maxVitaminA The maximum amount of Vitamin A in IU the recipe can have per serving.
+     * @param minVitaminC The minimum amount of Vitamin C in milligrams the recipe must have per serving.
+     * @param maxVitaminC The maximum amount of Vitamin C in milligrams the recipe can have per serving.
+     * @param minVitaminD The minimum amount of Vitamin D in micrograms the recipe must have per serving.
+     * @param maxVitaminD The maximum amount of Vitamin D in micrograms the recipe can have per serving.
+     * @param minVitaminE The minimum amount of Vitamin E in milligrams the recipe must have per serving.
+     * @param maxVitaminE The maximum amount of Vitamin E in milligrams the recipe can have per serving.
+     * @param minVitaminK The minimum amount of Vitamin K in micrograms the recipe must have per serving.
+     * @param maxVitaminK The maximum amount of Vitamin K in micrograms the recipe can have per serving.
+     * @param minVitaminB1 The minimum amount of Vitamin B1 in milligrams the recipe must have per serving.
+     * @param maxVitaminB1 The maximum amount of Vitamin B1 in milligrams the recipe can have per serving.
+     * @param minVitaminB2 The minimum amount of Vitamin B2 in milligrams the recipe must have per serving.
+     * @param maxVitaminB2 The maximum amount of Vitamin B2 in milligrams the recipe can have per serving.
+     * @param minVitaminB3 The minimum amount of Vitamin B3 in milligrams the recipe must have per serving.
+     * @param maxVitaminB3 The maximum amount of Vitamin B3 in milligrams the recipe can have per serving.
+     * @param minVitaminB5 The minimum amount of Vitamin B5 in milligrams the recipe must have per serving.
+     * @param maxVitaminB5 The maximum amount of Vitamin B5 in milligrams the recipe can have per serving.
+     * @param minVitaminB6 The minimum amount of Vitamin B6 in milligrams the recipe must have per serving.
+     * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
+     * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
+     * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
+     * @param sort The strategy to sort recipes by. See a full list of supported sorting options.
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
+     * @param offset The number of recipes to skip, between 0 and 900.
+     * @param number The number of recipes, between 1 and 100.
+     */
+    public searchRecipes(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<SearchRecipes200Response> {
+        const result = this.api.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
+     * Search Restaurants
+     * @param lat The latitude to search around.
+     * @param lon The longitude to search around.
+     * @param query The search query.
+     * @param distance The maximum distance of the restaurant in miles around the given location.
+     * @param budget The budget in USD for the meal.
+     * @param minRating The minimum rating of the restaurants in range [0,5].
+     * @param cuisine The cuisine that the restaurants should support.
+     * @param isOpen Whether the restaurants have to be open now.
+     * @param page The page of the results.
+     * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
+     */
+    public searchRestaurantsWithHttpInfo(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Promise<HttpInfo<SearchRestaurants200Response>> {
+        const result = this.api.searchRestaurantsWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
+     * Search Restaurants
+     * @param lat The latitude to search around.
+     * @param lon The longitude to search around.
+     * @param query The search query.
+     * @param distance The maximum distance of the restaurant in miles around the given location.
+     * @param budget The budget in USD for the meal.
+     * @param minRating The minimum rating of the restaurants in range [0,5].
+     * @param cuisine The cuisine that the restaurants should support.
+     * @param isOpen Whether the restaurants have to be open now.
+     * @param page The page of the results.
+     * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
+     */
+    public searchRestaurants(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Promise<SearchRestaurants200Response> {
+        const result = this.api.searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options);
         return result.toPromise();
     }
 
@@ -273,7 +600,7 @@ export class PromiseHumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme.
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
     public randomMemeWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Promise<HttpInfo<RandomMeme200Response>> {
@@ -287,7 +614,7 @@ export class PromiseHumorApi {
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme.
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
     public randomMeme(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Promise<RandomMeme200Response> {
@@ -323,7 +650,7 @@ export class PromiseHumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
-     * @param minRating The minimum rating (0-10) of the jokes.
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
@@ -339,7 +666,7 @@ export class PromiseHumorApi {
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
-     * @param minRating The minimum rating (0-10) of the jokes.
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
@@ -358,7 +685,7 @@ export class PromiseHumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      * @param offset The number of memes to skip, between 0 and 1000.
-     * @param number The number of memes, between 0 and 10.
+     * @param number The number of memes, between 1 and 10.
      */
     public searchMemesWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Promise<HttpInfo<SearchMemes200Response>> {
         const result = this.api.searchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options);
@@ -374,7 +701,7 @@ export class PromiseHumorApi {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      * @param offset The number of memes to skip, between 0 and 1000.
-     * @param number The number of memes, between 0 and 10.
+     * @param number The number of memes, between 1 and 10.
      */
     public searchMemes(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Promise<SearchMemes200Response> {
         const result = this.api.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options);
@@ -627,7 +954,7 @@ export class PromiseNewsApi {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
-     * @param entities Filter news by entities (see semantic types).
+     * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
      * @param sort The sorting criteria (publish-time or sentiment).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
@@ -651,7 +978,7 @@ export class PromiseNewsApi {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
-     * @param entities Filter news by entities (see semantic types).
+     * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
      * @param sort The sorting criteria (publish-time or sentiment).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).

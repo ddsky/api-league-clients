@@ -127,13 +127,13 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
 
     /**
      * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -171,13 +171,13 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
 
     /**
      * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)
@@ -208,7 +208,7 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param latestPublishYear The books must have been published before this year. (optional)
      * @param minRating The minimum rating the book must have gotten in the interval [0,1]. (optional)
      * @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
-     * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+     * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
      * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. (optional)
      * @param isbn Only the book matching the ISBN-13 will be returned (optional)
      * @param oclc Only the book matching the OCLC will be returned (optional)

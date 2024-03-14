@@ -126,7 +126,7 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
 
 ///
 /// Search Books
-/// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+/// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 ///  @param query The search query. (optional)
 ///
 ///  @param earliestPublishYear The books must have been published after this year. (optional)
@@ -137,7 +137,7 @@ NSInteger kOAIBooksApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxRating The maximum rating the book must have gotten in the interval [0,1]. (optional)
 ///
-///  @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned. (optional)
+///  @param genres A comma-separated list of genres. Only books from any of the given genres will be returned. (optional)
 ///
 ///  @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate. (optional)
 ///

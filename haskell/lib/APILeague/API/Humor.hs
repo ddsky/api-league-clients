@@ -156,7 +156,7 @@ instance HasOptionalParam RandomMeme MediaType where
   applyOptionalParam req (MediaType xs) =
     req `addQuery` toQuery ("media-type", Just xs)
 
--- | /Optional Param/ "min-rating" - The minimum rating in range [0.0-1.0] of the meme.
+-- | /Optional Param/ "min-rating" - The minimum rating in range [0.0,1.0] of the meme.
 instance HasOptionalParam RandomMeme MinRating where
   applyOptionalParam req (MinRating xs) =
     req `addQuery` toQuery ("min-rating", Just xs)
@@ -232,7 +232,7 @@ instance HasOptionalParam SearchJokes ExcludeTags where
   applyOptionalParam req (ExcludeTags xs) =
     req `addQuery` toQuery ("exclude-tags", Just xs)
 
--- | /Optional Param/ "min-rating" - The minimum rating (0-10) of the jokes.
+-- | /Optional Param/ "min-rating" - The minimum rating in range [0.0,1.0] of the jokes.
 instance HasOptionalParam SearchJokes MinRating where
   applyOptionalParam req (MinRating xs) =
     req `addQuery` toQuery ("min-rating", Just xs)
@@ -304,7 +304,7 @@ instance HasOptionalParam SearchMemes Offset where
   applyOptionalParam req (Offset xs) =
     req `addQuery` toQuery ("offset", Just xs)
 
--- | /Optional Param/ "number" - The number of memes, between 0 and 10.
+-- | /Optional Param/ "number" - The number of memes, between 1 and 10.
 instance HasOptionalParam SearchMemes Number where
   applyOptionalParam req (Number xs) =
     req `addQuery` toQuery ("number", Just xs)

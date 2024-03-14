@@ -281,7 +281,7 @@ export class HumorService {
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
-     * @param minRating The minimum rating in range [0.0-1.0] of the meme.
+     * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -473,7 +473,7 @@ export class HumorService {
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
-     * @param minRating The minimum rating (0-10) of the jokes.
+     * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
@@ -588,7 +588,7 @@ export class HumorService {
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      * @param offset The number of memes to skip, between 0 and 1000.
-     * @param number The number of memes, between 0 and 10.
+     * @param number The number of memes, between 1 and 10.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */

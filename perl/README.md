@@ -232,6 +232,7 @@ To load the API packages:
 ```perl
 use WWW::OpenAPIClient::ArtApi;
 use WWW::OpenAPIClient::BooksApi;
+use WWW::OpenAPIClient::FoodApi;
 use WWW::OpenAPIClient::HumorApi;
 use WWW::OpenAPIClient::KnowledgeApi;
 use WWW::OpenAPIClient::MathApi;
@@ -245,6 +246,9 @@ use WWW::OpenAPIClient::WebApi;
 
 To load the models:
 ```perl
+use WWW::OpenAPIClient::Object::ComputeNutrition200Response;
+use WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInner;
+use WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner;
 use WWW::OpenAPIClient::Object::ConvertUnits200Response;
 use WWW::OpenAPIClient::Object::CorrectSpelling200Response;
 use WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner;
@@ -271,6 +275,24 @@ use WWW::OpenAPIClient::Object::RandomPoem200Response;
 use WWW::OpenAPIClient::Object::RandomQuote200Response;
 use WWW::OpenAPIClient::Object::RandomTrivia200Response;
 use WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200Response;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseCredits;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseDietaryProperties;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutrition;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionWeightPerServing;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseScores;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTaste;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTimes;
 use WWW::OpenAPIClient::Object::ScoreReadability200Response;
 use WWW::OpenAPIClient::Object::ScoreText200Response;
 use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness;
@@ -293,6 +315,15 @@ use WWW::OpenAPIClient::Object::SearchMemes200Response;
 use WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner;
 use WWW::OpenAPIClient::Object::SearchNews200Response;
 use WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner;
+use WWW::OpenAPIClient::Object::SearchRecipes200Response;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInner;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutrition;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner;
+use WWW::OpenAPIClient::Object::SearchRestaurants200Response;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInner;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerAddress;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHours;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense;
@@ -314,6 +345,7 @@ use warnings;
 # load the API package
 use WWW::OpenAPIClient::ArtApi;
 use WWW::OpenAPIClient::BooksApi;
+use WWW::OpenAPIClient::FoodApi;
 use WWW::OpenAPIClient::HumorApi;
 use WWW::OpenAPIClient::KnowledgeApi;
 use WWW::OpenAPIClient::MathApi;
@@ -324,6 +356,9 @@ use WWW::OpenAPIClient::TextApi;
 use WWW::OpenAPIClient::WebApi;
 
 # load the models
+use WWW::OpenAPIClient::Object::ComputeNutrition200Response;
+use WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInner;
+use WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner;
 use WWW::OpenAPIClient::Object::ConvertUnits200Response;
 use WWW::OpenAPIClient::Object::CorrectSpelling200Response;
 use WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner;
@@ -350,6 +385,24 @@ use WWW::OpenAPIClient::Object::RandomPoem200Response;
 use WWW::OpenAPIClient::Object::RandomQuote200Response;
 use WWW::OpenAPIClient::Object::RandomTrivia200Response;
 use WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200Response;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseCredits;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseDietaryProperties;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutrition;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionWeightPerServing;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseScores;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTaste;
+use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTimes;
 use WWW::OpenAPIClient::Object::ScoreReadability200Response;
 use WWW::OpenAPIClient::Object::ScoreText200Response;
 use WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness;
@@ -372,6 +425,15 @@ use WWW::OpenAPIClient::Object::SearchMemes200Response;
 use WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner;
 use WWW::OpenAPIClient::Object::SearchNews200Response;
 use WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner;
+use WWW::OpenAPIClient::Object::SearchRecipes200Response;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInner;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutrition;
+use WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner;
+use WWW::OpenAPIClient::Object::SearchRestaurants200Response;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInner;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerAddress;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHours;
+use WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner;
 use WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense;
@@ -420,6 +482,10 @@ Class | Method | HTTP request | Description
 *ArtApi* | [**random_poem**](docs/ArtApi.md#random_poem) | **GET** /retrieve-random-poem | Random Poem
 *BooksApi* | [**find_similar_books**](docs/BooksApi.md#find_similar_books) | **GET** /list-similar-books | Find Similar Books
 *BooksApi* | [**search_books**](docs/BooksApi.md#search_books) | **GET** /search-books | Search Books
+*FoodApi* | [**compute_nutrition**](docs/FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
+*FoodApi* | [**retrieve_recipe_information**](docs/FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*FoodApi* | [**search_recipes**](docs/FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
+*FoodApi* | [**search_restaurants**](docs/FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
 *HumorApi* | [**generate_nonsense_word**](docs/HumorApi.md#generate_nonsense_word) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *HumorApi* | [**random_joke**](docs/HumorApi.md#random_joke) | **GET** /retrieve-random-joke | Random Joke
 *HumorApi* | [**random_meme**](docs/HumorApi.md#random_meme) | **GET** /retrieve-random-meme | Random Meme
@@ -455,6 +521,9 @@ Class | Method | HTTP request | Description
 
 
 # DOCUMENTATION FOR MODELS
+ - [WWW::OpenAPIClient::Object::ComputeNutrition200Response](docs/ComputeNutrition200Response.md)
+ - [WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInner](docs/ComputeNutrition200ResponseIngredientBreakdownInner.md)
+ - [WWW::OpenAPIClient::Object::ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [WWW::OpenAPIClient::Object::ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [WWW::OpenAPIClient::Object::CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [WWW::OpenAPIClient::Object::DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
@@ -481,6 +550,24 @@ Class | Method | HTTP request | Description
  - [WWW::OpenAPIClient::Object::RandomQuote200Response](docs/RandomQuote200Response.md)
  - [WWW::OpenAPIClient::Object::RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [WWW::OpenAPIClient::Object::ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200Response](docs/RetrieveRecipeInformation200Response.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseCredits](docs/RetrieveRecipeInformation200ResponseCredits.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInner](docs/RetrieveRecipeInformation200ResponseIngredientsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutrition](docs/RetrieveRecipeInformation200ResponseNutrition.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseScores](docs/RetrieveRecipeInformation200ResponseScores.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTaste](docs/RetrieveRecipeInformation200ResponseTaste.md)
+ - [WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseTimes](docs/RetrieveRecipeInformation200ResponseTimes.md)
  - [WWW::OpenAPIClient::Object::ScoreReadability200Response](docs/ScoreReadability200Response.md)
  - [WWW::OpenAPIClient::Object::ScoreText200Response](docs/ScoreText200Response.md)
  - [WWW::OpenAPIClient::Object::ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
@@ -503,6 +590,15 @@ Class | Method | HTTP request | Description
  - [WWW::OpenAPIClient::Object::SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
  - [WWW::OpenAPIClient::Object::SearchNews200Response](docs/SearchNews200Response.md)
  - [WWW::OpenAPIClient::Object::SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRecipes200Response](docs/SearchRecipes200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInner](docs/SearchRecipes200ResponseRecipesInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutrition](docs/SearchRecipes200ResponseRecipesInnerNutrition.md)
+ - [WWW::OpenAPIClient::Object::SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRestaurants200Response](docs/SearchRestaurants200Response.md)
+ - [WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInner](docs/SearchRestaurants200ResponseRestaurantsInner.md)
+ - [WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerAddress](docs/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
+ - [WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+ - [WWW::OpenAPIClient::Object::SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
  - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
  - [WWW::OpenAPIClient::Object::SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

@@ -188,13 +188,13 @@ public class BooksApi {
   }
   /**
   * Search Books
-  * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
+  * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
    * @param query The search query.
    * @param earliestPublishYear The books must have been published after this year.
    * @param latestPublishYear The books must have been published before this year.
    * @param minRating The minimum rating the book must have gotten in the interval [0,1].
    * @param maxRating The maximum rating the book must have gotten in the interval [0,1].
-   * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned.
+   * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned.
    * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.
    * @param isbn Only the book matching the ISBN-13 will be returned
    * @param oclc Only the book matching the OCLC will be returned
@@ -272,8 +272,8 @@ public class BooksApi {
 
       /**
    * Search Books
-   * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \&quot;books about dogs\&quot; and will automatically also find books about \&quot;border collies\&quot; and other types without specifying them in the query.
-   * @param query The search query.   * @param earliestPublishYear The books must have been published after this year.   * @param latestPublishYear The books must have been published before this year.   * @param minRating The minimum rating the book must have gotten in the interval [0,1].   * @param maxRating The maximum rating the book must have gotten in the interval [0,1].   * @param genres A comma-separated list of  genres. Only books from any of the given genres will be returned.   * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.   * @param isbn Only the book matching the ISBN-13 will be returned   * @param oclc Only the book matching the OCLC will be returned   * @param sort The sorting criteria (publish-date or rating).   * @param sortDirection Whether to sort ascending or descending (ASC or DESC).   * @param groupResults Whether to group similar editions of the same book.   * @param offset The number of books to skip in range [0,1000]   * @param number The number of books to return in range [1,100]
+   * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+   * @param query The search query.   * @param earliestPublishYear The books must have been published after this year.   * @param latestPublishYear The books must have been published before this year.   * @param minRating The minimum rating the book must have gotten in the interval [0,1].   * @param maxRating The maximum rating the book must have gotten in the interval [0,1].   * @param genres A comma-separated list of genres. Only books from any of the given genres will be returned.   * @param authors A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.   * @param isbn Only the book matching the ISBN-13 will be returned   * @param oclc Only the book matching the OCLC will be returned   * @param sort The sorting criteria (publish-date or rating).   * @param sortDirection Whether to sort ascending or descending (ASC or DESC).   * @param groupResults Whether to group similar editions of the same book.   * @param offset The number of books to skip in range [0,1000]   * @param number The number of books to return in range [1,100]
   */
   public void searchBooks (String query, Integer earliestPublishYear, Integer latestPublishYear, Double minRating, Double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, Boolean groupResults, Integer offset, Integer number, final Response.Listener<SearchBooks200Response> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;

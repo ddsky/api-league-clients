@@ -170,7 +170,7 @@ func main() {
 	keywords := "airplane" // string | A comma-separated list of words that must occur in the meme. (optional)
 	keywordsInImage := true // bool | Whether the keywords must occur in the image. (optional)
 	mediaType := "image" // string | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). (optional)
-	minRating := float64(0) // float64 | The minimum rating in range [0.0-1.0] of the meme. (optional)
+	minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the meme. (optional)
 	maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
  **keywords** | **string** | A comma-separated list of words that must occur in the meme. | 
  **keywordsInImage** | **bool** | Whether the keywords must occur in the image. | 
  **mediaType** | **string** | The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | 
- **minRating** | **float64** | The minimum rating in range [0.0-1.0] of the meme. | 
+ **minRating** | **float64** | The minimum rating in range [0.0,1.0] of the meme. | 
  **maxAgeDays** | **int32** | The maximum age of the meme in days. | 
 
 ### Return type
@@ -312,7 +312,7 @@ func main() {
 	keywords := "horse,man" // string | A comma-separated list of words that must occur in the joke. (optional)
 	includeTags := "animal" // string | A comma-separated list of tags the jokes should have. (optional)
 	excludeTags := "nsfw,dark" // string | A comma-separated list of tags the jokes must not have. (optional)
-	minRating := float64(0) // float64 | The minimum rating (0-10) of the jokes. (optional)
+	minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the jokes. (optional)
 	maxLength := float64(140) // float64 | The maximum length of the joke in letters. (optional)
 	offset := int32(0) // int32 | The number of jokes to skip, between 0 and 1000. (optional)
 	number := int32(3) // int32 | The number of jokes, between 1 and 10. (optional)
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
  **keywords** | **string** | A comma-separated list of words that must occur in the joke. | 
  **includeTags** | **string** | A comma-separated list of tags the jokes should have. | 
  **excludeTags** | **string** | A comma-separated list of tags the jokes must not have. | 
- **minRating** | **float64** | The minimum rating (0-10) of the jokes. | 
+ **minRating** | **float64** | The minimum rating in range [0.0,1.0] of the jokes. | 
  **maxLength** | **float64** | The maximum length of the joke in letters. | 
  **offset** | **int32** | The number of jokes to skip, between 0 and 1000. | 
  **number** | **int32** | The number of jokes, between 1 and 10. | 
@@ -393,7 +393,7 @@ func main() {
 	minRating := float64(0) // float64 | The minimum rating in range [0.0,1.0] of the meme. (optional)
 	maxAgeDays := int32(30) // int32 | The maximum age of the meme in days. (optional)
 	offset := int32(0) // int32 | The number of memes to skip, between 0 and 1000. (optional)
-	number := int32(3) // int32 | The number of memes, between 0 and 10. (optional)
+	number := int32(3) // int32 | The number of memes, between 1 and 10. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
  **minRating** | **float64** | The minimum rating in range [0.0,1.0] of the meme. | 
  **maxAgeDays** | **int32** | The maximum age of the meme in days. | 
  **offset** | **int32** | The number of memes to skip, between 0 and 1000. | 
- **number** | **int32** | The number of memes, between 0 and 10. | 
+ **number** | **int32** | The number of memes, between 1 and 10. | 
 
 ### Return type
 

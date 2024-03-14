@@ -144,7 +144,7 @@ final api_instance = HumorApi();
 final keywords = airplane; // String | A comma-separated list of words that must occur in the meme.
 final keywordsInImage = true; // bool | Whether the keywords must occur in the image.
 final mediaType = image; // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
-final minRating = 0; // double | The minimum rating in range [0.0-1.0] of the meme.
+final minRating = 0; // double | The minimum rating in range [0.0,1.0] of the meme.
 final maxAgeDays = 30; // int | The maximum age of the meme in days.
 
 try {
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the meme. | [optional] 
  **keywordsInImage** | **bool**| Whether the keywords must occur in the image. | [optional] 
  **mediaType** | **String**| The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif'). | [optional] 
- **minRating** | **double**| The minimum rating in range [0.0-1.0] of the meme. | [optional] 
+ **minRating** | **double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **int**| The maximum age of the meme in days. | [optional] 
 
 ### Return type
@@ -256,7 +256,7 @@ final api_instance = HumorApi();
 final keywords = horse,man; // String | A comma-separated list of words that must occur in the joke.
 final includeTags = animal; // String | A comma-separated list of tags the jokes should have.
 final excludeTags = nsfw,dark; // String | A comma-separated list of tags the jokes must not have.
-final minRating = 0; // double | The minimum rating (0-10) of the jokes.
+final minRating = 0; // double | The minimum rating in range [0.0,1.0] of the jokes.
 final maxLength = 140; // double | The maximum length of the joke in letters.
 final offset = 0; // int | The number of jokes to skip, between 0 and 1000.
 final number = 3; // int | The number of jokes, between 1 and 10.
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
  **keywords** | **String**| A comma-separated list of words that must occur in the joke. | [optional] 
  **includeTags** | **String**| A comma-separated list of tags the jokes should have. | [optional] 
  **excludeTags** | **String**| A comma-separated list of tags the jokes must not have. | [optional] 
- **minRating** | **double**| The minimum rating (0-10) of the jokes. | [optional] 
+ **minRating** | **double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] 
  **maxLength** | **double**| The maximum length of the joke in letters. | [optional] 
  **offset** | **int**| The number of jokes to skip, between 0 and 1000. | [optional] 
  **number** | **int**| The number of jokes, between 1 and 10. | [optional] 
@@ -322,7 +322,7 @@ final mediaType = image; // String | The media type (either 'image', 'video' or 
 final minRating = 0; // double | The minimum rating in range [0.0,1.0] of the meme.
 final maxAgeDays = 30; // int | The maximum age of the meme in days.
 final offset = 0; // int | The number of memes to skip, between 0 and 1000.
-final number = 3; // int | The number of memes, between 0 and 10.
+final number = 3; // int | The number of memes, between 1 and 10.
 
 try {
     final result = api_instance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
  **minRating** | **double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] 
  **maxAgeDays** | **int**| The maximum age of the meme in days. | [optional] 
  **offset** | **int**| The number of memes to skip, between 0 and 1000. | [optional] 
- **number** | **int**| The number of memes, between 0 and 10. | [optional] 
+ **number** | **int**| The number of memes, between 1 and 10. | [optional] 
 
 ### Return type
 

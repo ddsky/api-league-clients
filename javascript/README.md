@@ -139,6 +139,10 @@ Class | Method | HTTP request | Description
 *ApiLeague.ArtApi* | [**randomPoem**](docs/ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
 *ApiLeague.BooksApi* | [**findSimilarBooks**](docs/BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books
 *ApiLeague.BooksApi* | [**searchBooks**](docs/BooksApi.md#searchBooks) | **GET** /search-books | Search Books
+*ApiLeague.FoodApi* | [**computeNutrition**](docs/FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
+*ApiLeague.FoodApi* | [**retrieveRecipeInformation**](docs/FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*ApiLeague.FoodApi* | [**searchRecipes**](docs/FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
+*ApiLeague.FoodApi* | [**searchRestaurants**](docs/FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
 *ApiLeague.HumorApi* | [**generateNonsenseWord**](docs/HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
 *ApiLeague.HumorApi* | [**randomJoke**](docs/HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
 *ApiLeague.HumorApi* | [**randomMeme**](docs/HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
@@ -175,6 +179,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ApiLeague.ComputeNutrition200Response](docs/ComputeNutrition200Response.md)
+ - [ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner](docs/ComputeNutrition200ResponseIngredientBreakdownInner.md)
+ - [ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [ApiLeague.ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [ApiLeague.CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [ApiLeague.DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
@@ -201,6 +208,24 @@ Class | Method | HTTP request | Description
  - [ApiLeague.RandomQuote200Response](docs/RandomQuote200Response.md)
  - [ApiLeague.RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [ApiLeague.ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [ApiLeague.RetrieveRecipeInformation200Response](docs/RetrieveRecipeInformation200Response.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseCredits](docs/RetrieveRecipeInformation200ResponseCredits.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInner](docs/RetrieveRecipeInformation200ResponseIngredientsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutrition](docs/RetrieveRecipeInformation200ResponseNutrition.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseScores](docs/RetrieveRecipeInformation200ResponseScores.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseTaste](docs/RetrieveRecipeInformation200ResponseTaste.md)
+ - [ApiLeague.RetrieveRecipeInformation200ResponseTimes](docs/RetrieveRecipeInformation200ResponseTimes.md)
  - [ApiLeague.ScoreReadability200Response](docs/ScoreReadability200Response.md)
  - [ApiLeague.ScoreText200Response](docs/ScoreText200Response.md)
  - [ApiLeague.ScoreText200ResponseInterestingness](docs/ScoreText200ResponseInterestingness.md)
@@ -223,6 +248,15 @@ Class | Method | HTTP request | Description
  - [ApiLeague.SearchMemes200ResponseMemesInner](docs/SearchMemes200ResponseMemesInner.md)
  - [ApiLeague.SearchNews200Response](docs/SearchNews200Response.md)
  - [ApiLeague.SearchNews200ResponseNewsInner](docs/SearchNews200ResponseNewsInner.md)
+ - [ApiLeague.SearchRecipes200Response](docs/SearchRecipes200Response.md)
+ - [ApiLeague.SearchRecipes200ResponseRecipesInner](docs/SearchRecipes200ResponseRecipesInner.md)
+ - [ApiLeague.SearchRecipes200ResponseRecipesInnerNutrition](docs/SearchRecipes200ResponseRecipesInnerNutrition.md)
+ - [ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
+ - [ApiLeague.SearchRestaurants200Response](docs/SearchRestaurants200Response.md)
+ - [ApiLeague.SearchRestaurants200ResponseRestaurantsInner](docs/SearchRestaurants200ResponseRestaurantsInner.md)
+ - [ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress](docs/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
+ - [ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
+ - [ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [ApiLeague.SearchRoyaltyFreeImages200Response](docs/SearchRoyaltyFreeImages200Response.md)
  - [ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner](docs/SearchRoyaltyFreeImages200ResponseImagesInner.md)
  - [ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)

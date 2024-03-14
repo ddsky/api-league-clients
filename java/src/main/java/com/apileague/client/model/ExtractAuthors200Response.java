@@ -52,7 +52,7 @@ import com.apileague.client.JSON;
 /**
  * ExtractAuthors200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-08T10:10:25.367252+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-14T17:14:09.298081600+01:00[Europe/Berlin]")
 public class ExtractAuthors200Response {
   public static final String SERIALIZED_NAME_AUTHORS = "authors";
   @SerializedName(SERIALIZED_NAME_AUTHORS)

@@ -345,7 +345,7 @@ func (r ApiRandomMemeRequest) MediaType(mediaType string) ApiRandomMemeRequest {
 	return r
 }
 
-// The minimum rating in range [0.0-1.0] of the meme.
+// The minimum rating in range [0.0,1.0] of the meme.
 func (r ApiRandomMemeRequest) MinRating(minRating float64) ApiRandomMemeRequest {
 	r.minRating = &minRating
 	return r
@@ -675,7 +675,7 @@ func (r ApiSearchJokesRequest) ExcludeTags(excludeTags string) ApiSearchJokesReq
 	return r
 }
 
-// The minimum rating (0-10) of the jokes.
+// The minimum rating in range [0.0,1.0] of the jokes.
 func (r ApiSearchJokesRequest) MinRating(minRating float64) ApiSearchJokesRequest {
 	r.minRating = &minRating
 	return r
@@ -890,7 +890,7 @@ func (r ApiSearchMemesRequest) Offset(offset int32) ApiSearchMemesRequest {
 	return r
 }
 
-// The number of memes, between 0 and 10.
+// The number of memes, between 1 and 10.
 func (r ApiSearchMemesRequest) Number(number int32) ApiSearchMemesRequest {
 	r.number = &number
 	return r

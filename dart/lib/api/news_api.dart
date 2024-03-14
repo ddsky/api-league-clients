@@ -119,7 +119,7 @@ class NewsApi {
   ///   A comma-separated list of author names. Only news from any of the given authors will be returned.
   ///
   /// * [String] entities:
-  ///   Filter news by entities (see semantic types).
+  ///   Filter news by entities (ORG, PER, or LOC).
   ///
   /// * [String] locationFilter:
   ///   Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
@@ -240,7 +240,7 @@ class NewsApi {
   ///   A comma-separated list of author names. Only news from any of the given authors will be returned.
   ///
   /// * [String] entities:
-  ///   Filter news by entities (see semantic types).
+  ///   Filter news by entities (ORG, PER, or LOC).
   ///
   /// * [String] locationFilter:
   ///   Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"

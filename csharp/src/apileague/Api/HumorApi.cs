@@ -87,7 +87,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RandomMeme200Response</returns>
@@ -103,7 +103,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RandomMeme200Response</returns>
@@ -143,7 +143,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -161,7 +161,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -181,7 +181,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchMemes200Response</returns>
         SearchMemes200Response SearchMemes(string? keywords = default(string?), bool? keywordsInImage = default(bool?), string? mediaType = default(string?), double? minRating = default(double?), int? maxAgeDays = default(int?), int? offset = default(int?), int? number = default(int?), int operationIndex = 0);
@@ -199,7 +199,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchMemes200Response</returns>
         ApiResponse<SearchMemes200Response> SearchMemesWithHttpInfo(string? keywords = default(string?), bool? keywordsInImage = default(bool?), string? mediaType = default(string?), double? minRating = default(double?), int? maxAgeDays = default(int?), int? offset = default(int?), int? number = default(int?), int operationIndex = 0);
@@ -276,7 +276,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -293,7 +293,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -336,7 +336,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -355,7 +355,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -376,7 +376,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchMemes200Response</returns>
@@ -395,7 +395,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchMemes200Response)</returns>
@@ -867,7 +867,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RandomMeme200Response</returns>
@@ -884,7 +884,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RandomMeme200Response</returns>
@@ -968,7 +968,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -986,7 +986,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the meme. (optional)</param>
         /// <param name="keywordsInImage">Whether the keywords must occur in the image. (optional)</param>
         /// <param name="mediaType">The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)</param>
-        /// <param name="minRating">The minimum rating in range [0.0-1.0] of the meme. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1249,7 +1249,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -1268,7 +1268,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -1362,7 +1362,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -1382,7 +1382,7 @@ namespace apileague.Api
         /// <param name="keywords">A comma-separated list of words that must occur in the joke. (optional)</param>
         /// <param name="includeTags">A comma-separated list of tags the jokes should have. (optional)</param>
         /// <param name="excludeTags">A comma-separated list of tags the jokes must not have. (optional)</param>
-        /// <param name="minRating">The minimum rating (0-10) of the jokes. (optional)</param>
+        /// <param name="minRating">The minimum rating in range [0.0,1.0] of the jokes. (optional)</param>
         /// <param name="maxLength">The maximum length of the joke in letters. (optional)</param>
         /// <param name="offset">The number of jokes to skip, between 0 and 1000. (optional)</param>
         /// <param name="number">The number of jokes, between 1 and 10. (optional)</param>
@@ -1482,7 +1482,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SearchMemes200Response</returns>
         public SearchMemes200Response SearchMemes(string? keywords = default(string?), bool? keywordsInImage = default(bool?), string? mediaType = default(string?), double? minRating = default(double?), int? maxAgeDays = default(int?), int? offset = default(int?), int? number = default(int?), int operationIndex = 0)
@@ -1501,7 +1501,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SearchMemes200Response</returns>
         public apileague.Client.ApiResponse<SearchMemes200Response> SearchMemesWithHttpInfo(string? keywords = default(string?), bool? keywordsInImage = default(bool?), string? mediaType = default(string?), double? minRating = default(double?), int? maxAgeDays = default(int?), int? offset = default(int?), int? number = default(int?), int operationIndex = 0)
@@ -1595,7 +1595,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchMemes200Response</returns>
@@ -1615,7 +1615,7 @@ namespace apileague.Api
         /// <param name="minRating">The minimum rating in range [0.0,1.0] of the meme. (optional)</param>
         /// <param name="maxAgeDays">The maximum age of the meme in days. (optional)</param>
         /// <param name="offset">The number of memes to skip, between 0 and 1000. (optional)</param>
-        /// <param name="number">The number of memes, between 0 and 10. (optional)</param>
+        /// <param name="number">The number of memes, between 1 and 10. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchMemes200Response)</returns>

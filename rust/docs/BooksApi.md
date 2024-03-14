@@ -45,7 +45,7 @@ Name | Type | Description  | Required | Notes
 > crate::models::SearchBooks200Response search_books(query, earliest_publish_year, latest_publish_year, min_rating, max_rating, genres, authors, isbn, oclc, sort, sort_direction, group_results, offset, number)
 Search Books
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Parameters
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Required | Notes
 **latest_publish_year** | Option<**i32**> | The books must have been published before this year. |  |
 **min_rating** | Option<**f64**> | The minimum rating the book must have gotten in the interval [0,1]. |  |
 **max_rating** | Option<**f64**> | The maximum rating the book must have gotten in the interval [0,1]. |  |
-**genres** | Option<**String**> | A comma-separated list of  genres. Only books from any of the given genres will be returned. |  |
+**genres** | Option<**String**> | A comma-separated list of genres. Only books from any of the given genres will be returned. |  |
 **authors** | Option<**String**> | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate. |  |
 **isbn** | Option<**String**> | Only the book matching the ISBN-13 will be returned |  |
 **oclc** | Option<**String**> | Only the book matching the OCLC will be returned |  |

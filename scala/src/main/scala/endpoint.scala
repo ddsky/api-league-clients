@@ -40,6 +40,7 @@ object endpoint {
   def makeService(da: DataAccessor): Service[Request, Response] = (
           ArtApi.endpoints(da)  :+:
           BooksApi.endpoints(da)  :+:
+          FoodApi.endpoints(da)  :+:
           HumorApi.endpoints(da)  :+:
           KnowledgeApi.endpoints(da)  :+:
           MathApi.endpoints(da)  :+:

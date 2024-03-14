@@ -40,7 +40,7 @@ findSimilarBooks id_path number_query =
         Api.Data.findSimilarBooks200ResponseDecoder
 
 
-{-| Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search for \"books about dogs\" and will automatically also find books about \"border collies\" and other types without specifying them in the query.
+{-| Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 -}
 searchBooks : Maybe String -> Maybe Int -> Maybe Int -> Maybe Float -> Maybe Float -> Maybe String -> Maybe String -> Maybe String -> Maybe String -> Maybe String -> Maybe String -> Maybe Bool -> Maybe Int -> Maybe Int -> Api.Request Api.Data.SearchBooks200Response
 searchBooks query_query earliestPublishYear_query latestPublishYear_query minRating_query maxRating_query genres_query authors_query isbn_query oclc_query sort_query sortDirection_query groupResults_query offset_query number_query =

@@ -54,7 +54,7 @@ import com.apileague.client.JSON;
 /**
  * ScoreText200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-08T10:10:25.367252+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-14T17:14:09.298081600+01:00[Europe/Berlin]")
 public class ScoreText200Response {
   public static final String SERIALIZED_NAME_NUMBER_OF_WORDS = "number_of_words";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_WORDS)

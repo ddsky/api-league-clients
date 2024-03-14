@@ -6,6 +6,7 @@ src/Api.elm
 src/Api/Data.elm
 src/Api/Request/Art.elm
 src/Api/Request/Books.elm
+src/Api/Request/Food.elm
 src/Api/Request/Humor.elm
 src/Api/Request/Knowledge.elm
 src/Api/Request/Math.elm

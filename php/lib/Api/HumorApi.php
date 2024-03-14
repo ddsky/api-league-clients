@@ -824,7 +824,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param  bool $keywords_in_image Whether the keywords must occur in the image. (optional)
      * @param  string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param  float $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['randomMeme'] to see the possible values for this operation
      *
@@ -846,7 +846,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param  bool $keywords_in_image Whether the keywords must occur in the image. (optional)
      * @param  string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param  float $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['randomMeme'] to see the possible values for this operation
      *
@@ -974,7 +974,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param  bool $keywords_in_image Whether the keywords must occur in the image. (optional)
      * @param  string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param  float $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['randomMeme'] to see the possible values for this operation
      *
@@ -999,7 +999,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param  bool $keywords_in_image Whether the keywords must occur in the image. (optional)
      * @param  string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param  float $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['randomMeme'] to see the possible values for this operation
      *
@@ -1053,7 +1053,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param  bool $keywords_in_image Whether the keywords must occur in the image. (optional)
      * @param  string $media_type The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
-     * @param  float $min_rating The minimum rating in range [0.0-1.0] of the meme. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['randomMeme'] to see the possible values for this operation
      *
@@ -1565,7 +1565,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param  string $include_tags A comma-separated list of tags the jokes should have. (optional)
      * @param  string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-     * @param  float $min_rating The minimum rating (0-10) of the jokes. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param  float $max_length The maximum length of the joke in letters. (optional)
      * @param  int $offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param  int $number The number of jokes, between 1 and 10. (optional)
@@ -1589,7 +1589,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param  string $include_tags A comma-separated list of tags the jokes should have. (optional)
      * @param  string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-     * @param  float $min_rating The minimum rating (0-10) of the jokes. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param  float $max_length The maximum length of the joke in letters. (optional)
      * @param  int $offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param  int $number The number of jokes, between 1 and 10. (optional)
@@ -1719,7 +1719,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param  string $include_tags A comma-separated list of tags the jokes should have. (optional)
      * @param  string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-     * @param  float $min_rating The minimum rating (0-10) of the jokes. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param  float $max_length The maximum length of the joke in letters. (optional)
      * @param  int $offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param  int $number The number of jokes, between 1 and 10. (optional)
@@ -1746,7 +1746,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param  string $include_tags A comma-separated list of tags the jokes should have. (optional)
      * @param  string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-     * @param  float $min_rating The minimum rating (0-10) of the jokes. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param  float $max_length The maximum length of the joke in letters. (optional)
      * @param  int $offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param  int $number The number of jokes, between 1 and 10. (optional)
@@ -1802,7 +1802,7 @@ class HumorApi
      * @param  string $keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param  string $include_tags A comma-separated list of tags the jokes should have. (optional)
      * @param  string $exclude_tags A comma-separated list of tags the jokes must not have. (optional)
-     * @param  float $min_rating The minimum rating (0-10) of the jokes. (optional)
+     * @param  float $min_rating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param  float $max_length The maximum length of the joke in letters. (optional)
      * @param  int $offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param  int $number The number of jokes, between 1 and 10. (optional)
@@ -2012,7 +2012,7 @@ class HumorApi
      * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  int $offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param  int $number The number of memes, between 0 and 10. (optional)
+     * @param  int $number The number of memes, between 1 and 10. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchMemes'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2036,7 +2036,7 @@ class HumorApi
      * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  int $offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param  int $number The number of memes, between 0 and 10. (optional)
+     * @param  int $number The number of memes, between 1 and 10. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchMemes'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2166,7 +2166,7 @@ class HumorApi
      * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  int $offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param  int $number The number of memes, between 0 and 10. (optional)
+     * @param  int $number The number of memes, between 1 and 10. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchMemes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2193,7 +2193,7 @@ class HumorApi
      * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  int $offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param  int $number The number of memes, between 0 and 10. (optional)
+     * @param  int $number The number of memes, between 1 and 10. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchMemes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2249,7 +2249,7 @@ class HumorApi
      * @param  float $min_rating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param  int $max_age_days The maximum age of the meme in days. (optional)
      * @param  int $offset The number of memes to skip, between 0 and 1000. (optional)
-     * @param  int $number The number of memes, between 0 and 10. (optional)
+     * @param  int $number The number of memes, between 1 and 10. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchMemes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2297,8 +2297,8 @@ class HumorApi
         if ($number !== null && $number > 10) {
             throw new \InvalidArgumentException('invalid value for "$number" when calling HumorApi.searchMemes, must be smaller than or equal to 10.');
         }
-        if ($number !== null && $number < 0) {
-            throw new \InvalidArgumentException('invalid value for "$number" when calling HumorApi.searchMemes, must be bigger than or equal to 0.');
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling HumorApi.searchMemes, must be bigger than or equal to 1.');
         }
         
 

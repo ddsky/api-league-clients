@@ -81,7 +81,7 @@ String earliestPublishDate = 2022-04-22 16:12:35; // String | The news must have
 String latestPublishDate = 2022-04-22 16:12:35; // String | The news must have been published before this date.
 String newsSources = https://www.bbc.co.uk; // String | A comma-separated list of news sources from which the news should originate.
 String authors = John Doe; // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-String entities = ORG:Tesla; // String | Filter news by entities (see semantic types).
+String entities = ORG:Tesla; // String | Filter news by entities (ORG, PER, or LOC).
 String locationFilter = 51.050407, 13.737262, 100; // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
 String sort = publish-time; // String | The sorting criteria (publish-time or sentiment).
 String sortDirection = ASC; // String | Whether to sort ascending or descending (ASC or DESC).
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **String**| The news must have been published before this date. | [optional] [default to null]
  **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] [default to null]
  **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] [default to null]
- **entities** | **String**| Filter news by entities (see semantic types). | [optional] [default to null]
+ **entities** | **String**| Filter news by entities (ORG, PER, or LOC). | [optional] [default to null]
  **locationFilter** | **String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] [default to null]
  **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] [default to null]
  **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] [default to null]

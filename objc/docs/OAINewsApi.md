@@ -122,7 +122,7 @@ NSString* earliestPublishDate = 2022-04-22 16:12:35; // The news must have been 
 NSString* latestPublishDate = 2022-04-22 16:12:35; // The news must have been published before this date. (optional)
 NSString* varNewsSources = https://www.bbc.co.uk; // A comma-separated list of news sources from which the news should originate. (optional)
 NSString* authors = John Doe; // A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
-NSString* entities = ORG:Tesla; // Filter news by entities (see semantic types). (optional)
+NSString* entities = ORG:Tesla; // Filter news by entities (ORG, PER, or LOC). (optional)
 NSString* locationFilter = 51.050407, 13.737262, 100; // Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
 NSString* sort = publish-time; // The sorting criteria (publish-time or sentiment). (optional)
 NSString* sortDirection = ASC; // Whether to sort ascending or descending (ASC or DESC). (optional)
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **NSString***| The news must have been published before this date. | [optional] 
  **varNewsSources** | **NSString***| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **NSString***| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **NSString***| Filter news by entities (see semantic types). | [optional] 
+ **entities** | **NSString***| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **locationFilter** | **NSString***| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
  **sort** | **NSString***| The sorting criteria (publish-time or sentiment). | [optional] 
  **sortDirection** | **NSString***| Whether to sort ascending or descending (ASC or DESC). | [optional] 

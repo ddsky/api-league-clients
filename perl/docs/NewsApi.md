@@ -102,7 +102,7 @@ my $earliest_publish_date = 2022-04-22 16:12:35; # string | The news must have b
 my $latest_publish_date = 2022-04-22 16:12:35; # string | The news must have been published before this date.
 my $news_sources = https://www.bbc.co.uk; # string | A comma-separated list of news sources from which the news should originate.
 my $authors = John Doe; # string | A comma-separated list of author names. Only news from any of the given authors will be returned.
-my $entities = ORG:Tesla; # string | Filter news by entities (see semantic types).
+my $entities = ORG:Tesla; # string | Filter news by entities (ORG, PER, or LOC).
 my $location_filter = 51.050407, 13.737262, 100; # string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
 my $sort = publish-time; # string | The sorting criteria (publish-time or sentiment).
 my $sort_direction = ASC; # string | Whether to sort ascending or descending (ASC or DESC).
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
  **latest_publish_date** | **string**| The news must have been published before this date. | [optional] 
  **news_sources** | **string**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **string**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
- **entities** | **string**| Filter news by entities (see semantic types). | [optional] 
+ **entities** | **string**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **location_filter** | **string**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
  **sort** | **string**| The sorting criteria (publish-time or sentiment). | [optional] 
  **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] 

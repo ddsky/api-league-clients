@@ -61,7 +61,7 @@ Name | Type | Description  | Required | Notes
 **latest_publish_date** | Option<**String**> | The news must have been published before this date. |  |
 **news_sources** | Option<**String**> | A comma-separated list of news sources from which the news should originate. |  |
 **authors** | Option<**String**> | A comma-separated list of author names. Only news from any of the given authors will be returned. |  |
-**entities** | Option<**String**> | Filter news by entities (see semantic types). |  |
+**entities** | Option<**String**> | Filter news by entities (ORG, PER, or LOC). |  |
 **location_filter** | Option<**String**> | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" |  |
 **sort** | Option<**String**> | The sorting criteria (publish-time or sentiment). |  |
 **sort_direction** | Option<**String**> | Whether to sort ascending or descending (ASC or DESC). |  |

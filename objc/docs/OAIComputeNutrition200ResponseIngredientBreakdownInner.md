@@ -1,0 +1,14 @@
+# OAIComputeNutrition200ResponseIngredientBreakdownInner
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **NSString*** |  | [optional] 
+**amount** | **NSNumber*** |  | [optional] 
+**unit** | **NSString*** |  | [optional] 
+**_id** | **NSNumber*** |  | [optional] 
+**nutrients** | [**NSArray&lt;OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner&gt;***](OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

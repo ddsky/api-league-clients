@@ -13,6 +13,9 @@
 
 
 import ApiClient from './ApiClient';
+import ComputeNutrition200Response from './model/ComputeNutrition200Response';
+import ComputeNutrition200ResponseIngredientBreakdownInner from './model/ComputeNutrition200ResponseIngredientBreakdownInner';
+import ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner from './model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 import ConvertUnits200Response from './model/ConvertUnits200Response';
 import CorrectSpelling200Response from './model/CorrectSpelling200Response';
 import DetectLanguage200ResponseInner from './model/DetectLanguage200ResponseInner';
@@ -39,6 +42,24 @@ import RandomPoem200Response from './model/RandomPoem200Response';
 import RandomQuote200Response from './model/RandomQuote200Response';
 import RandomTrivia200Response from './model/RandomTrivia200Response';
 import ReadKeyValueFromStore200Response from './model/ReadKeyValueFromStore200Response';
+import RetrieveRecipeInformation200Response from './model/RetrieveRecipeInformation200Response';
+import RetrieveRecipeInformation200ResponseCredits from './model/RetrieveRecipeInformation200ResponseCredits';
+import RetrieveRecipeInformation200ResponseDietaryProperties from './model/RetrieveRecipeInformation200ResponseDietaryProperties';
+import RetrieveRecipeInformation200ResponseIngredientsInner from './model/RetrieveRecipeInformation200ResponseIngredientsInner';
+import RetrieveRecipeInformation200ResponseIngredientsInnerMeasures from './model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
+import RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric from './model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric';
+import RetrieveRecipeInformation200ResponseInstructionsInner from './model/RetrieveRecipeInformation200ResponseInstructionsInner';
+import RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner from './model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
+import RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner from './model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner';
+import RetrieveRecipeInformation200ResponseNutrition from './model/RetrieveRecipeInformation200ResponseNutrition';
+import RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown from './model/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown';
+import RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner from './model/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner';
+import RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner from './model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
+import RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner from './model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner';
+import RetrieveRecipeInformation200ResponseNutritionWeightPerServing from './model/RetrieveRecipeInformation200ResponseNutritionWeightPerServing';
+import RetrieveRecipeInformation200ResponseScores from './model/RetrieveRecipeInformation200ResponseScores';
+import RetrieveRecipeInformation200ResponseTaste from './model/RetrieveRecipeInformation200ResponseTaste';
+import RetrieveRecipeInformation200ResponseTimes from './model/RetrieveRecipeInformation200ResponseTimes';
 import ScoreReadability200Response from './model/ScoreReadability200Response';
 import ScoreText200Response from './model/ScoreText200Response';
 import ScoreText200ResponseInterestingness from './model/ScoreText200ResponseInterestingness';
@@ -61,6 +82,15 @@ import SearchMemes200Response from './model/SearchMemes200Response';
 import SearchMemes200ResponseMemesInner from './model/SearchMemes200ResponseMemesInner';
 import SearchNews200Response from './model/SearchNews200Response';
 import SearchNews200ResponseNewsInner from './model/SearchNews200ResponseNewsInner';
+import SearchRecipes200Response from './model/SearchRecipes200Response';
+import SearchRecipes200ResponseRecipesInner from './model/SearchRecipes200ResponseRecipesInner';
+import SearchRecipes200ResponseRecipesInnerNutrition from './model/SearchRecipes200ResponseRecipesInnerNutrition';
+import SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner from './model/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
+import SearchRestaurants200Response from './model/SearchRestaurants200Response';
+import SearchRestaurants200ResponseRestaurantsInner from './model/SearchRestaurants200ResponseRestaurantsInner';
+import SearchRestaurants200ResponseRestaurantsInnerAddress from './model/SearchRestaurants200ResponseRestaurantsInnerAddress';
+import SearchRestaurants200ResponseRestaurantsInnerLocalHours from './model/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
+import SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational from './model/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
 import SearchRoyaltyFreeImages200Response from './model/SearchRoyaltyFreeImages200Response';
 import SearchRoyaltyFreeImages200ResponseImagesInner from './model/SearchRoyaltyFreeImages200ResponseImagesInner';
 import SearchRoyaltyFreeImages200ResponseImagesInnerLicense from './model/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
@@ -71,6 +101,7 @@ import StoreKeyValueGET200Response from './model/StoreKeyValueGET200Response';
 import TextStemming200Response from './model/TextStemming200Response';
 import ArtApi from './api/ArtApi';
 import BooksApi from './api/BooksApi';
+import FoodApi from './api/FoodApi';
 import HumorApi from './api/HumorApi';
 import KnowledgeApi from './api/KnowledgeApi';
 import MathApi from './api/MathApi';
@@ -118,6 +149,24 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The ComputeNutrition200Response model constructor.
+     * @property {module:model/ComputeNutrition200Response}
+     */
+    ComputeNutrition200Response,
+
+    /**
+     * The ComputeNutrition200ResponseIngredientBreakdownInner model constructor.
+     * @property {module:model/ComputeNutrition200ResponseIngredientBreakdownInner}
+     */
+    ComputeNutrition200ResponseIngredientBreakdownInner,
+
+    /**
+     * The ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner model constructor.
+     * @property {module:model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner}
+     */
+    ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner,
 
     /**
      * The ConvertUnits200Response model constructor.
@@ -276,6 +325,114 @@ export {
     ReadKeyValueFromStore200Response,
 
     /**
+     * The RetrieveRecipeInformation200Response model constructor.
+     * @property {module:model/RetrieveRecipeInformation200Response}
+     */
+    RetrieveRecipeInformation200Response,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseCredits model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseCredits}
+     */
+    RetrieveRecipeInformation200ResponseCredits,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseDietaryProperties model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseDietaryProperties}
+     */
+    RetrieveRecipeInformation200ResponseDietaryProperties,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseIngredientsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseIngredientsInner}
+     */
+    RetrieveRecipeInformation200ResponseIngredientsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseIngredientsInnerMeasures model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures}
+     */
+    RetrieveRecipeInformation200ResponseIngredientsInnerMeasures,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric}
+     */
+    RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseInstructionsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseInstructionsInner}
+     */
+    RetrieveRecipeInformation200ResponseInstructionsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner}
+     */
+    RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner}
+     */
+    RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutrition model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutrition}
+     */
+    RetrieveRecipeInformation200ResponseNutrition,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown}
+     */
+    RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner}
+     */
+    RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner}
+     */
+    RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner}
+     */
+    RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseNutritionWeightPerServing model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseNutritionWeightPerServing}
+     */
+    RetrieveRecipeInformation200ResponseNutritionWeightPerServing,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseScores model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseScores}
+     */
+    RetrieveRecipeInformation200ResponseScores,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseTaste model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseTaste}
+     */
+    RetrieveRecipeInformation200ResponseTaste,
+
+    /**
+     * The RetrieveRecipeInformation200ResponseTimes model constructor.
+     * @property {module:model/RetrieveRecipeInformation200ResponseTimes}
+     */
+    RetrieveRecipeInformation200ResponseTimes,
+
+    /**
      * The ScoreReadability200Response model constructor.
      * @property {module:model/ScoreReadability200Response}
      */
@@ -408,6 +565,60 @@ export {
     SearchNews200ResponseNewsInner,
 
     /**
+     * The SearchRecipes200Response model constructor.
+     * @property {module:model/SearchRecipes200Response}
+     */
+    SearchRecipes200Response,
+
+    /**
+     * The SearchRecipes200ResponseRecipesInner model constructor.
+     * @property {module:model/SearchRecipes200ResponseRecipesInner}
+     */
+    SearchRecipes200ResponseRecipesInner,
+
+    /**
+     * The SearchRecipes200ResponseRecipesInnerNutrition model constructor.
+     * @property {module:model/SearchRecipes200ResponseRecipesInnerNutrition}
+     */
+    SearchRecipes200ResponseRecipesInnerNutrition,
+
+    /**
+     * The SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner model constructor.
+     * @property {module:model/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner}
+     */
+    SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner,
+
+    /**
+     * The SearchRestaurants200Response model constructor.
+     * @property {module:model/SearchRestaurants200Response}
+     */
+    SearchRestaurants200Response,
+
+    /**
+     * The SearchRestaurants200ResponseRestaurantsInner model constructor.
+     * @property {module:model/SearchRestaurants200ResponseRestaurantsInner}
+     */
+    SearchRestaurants200ResponseRestaurantsInner,
+
+    /**
+     * The SearchRestaurants200ResponseRestaurantsInnerAddress model constructor.
+     * @property {module:model/SearchRestaurants200ResponseRestaurantsInnerAddress}
+     */
+    SearchRestaurants200ResponseRestaurantsInnerAddress,
+
+    /**
+     * The SearchRestaurants200ResponseRestaurantsInnerLocalHours model constructor.
+     * @property {module:model/SearchRestaurants200ResponseRestaurantsInnerLocalHours}
+     */
+    SearchRestaurants200ResponseRestaurantsInnerLocalHours,
+
+    /**
+     * The SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational model constructor.
+     * @property {module:model/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational}
+     */
+    SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational,
+
+    /**
      * The SearchRoyaltyFreeImages200Response model constructor.
      * @property {module:model/SearchRoyaltyFreeImages200Response}
      */
@@ -466,6 +677,12 @@ export {
     * @property {module:api/BooksApi}
     */
     BooksApi,
+
+    /**
+    * The FoodApi service constructor.
+    * @property {module:api/FoodApi}
+    */
+    FoodApi,
 
     /**
     * The HumorApi service constructor.
