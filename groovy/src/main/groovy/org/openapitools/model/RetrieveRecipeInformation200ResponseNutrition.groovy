@@ -19,11 +19,11 @@ class RetrieveRecipeInformation200ResponseNutrition {
     
     RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown caloricBreakdown
     
-    List<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner> flavonoids
+    List<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner> flavonoids = new ArrayList<>()
     
-    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner> ingredientBreakdown
+    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner> ingredientBreakdown = new ArrayList<>()
     
-    List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner> properties
+    List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner> properties = new ArrayList<>()
     
-    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients
+    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients = new ArrayList<>()
 }

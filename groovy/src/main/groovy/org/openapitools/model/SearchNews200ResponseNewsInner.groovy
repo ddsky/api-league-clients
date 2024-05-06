@@ -31,5 +31,5 @@ class SearchNews200ResponseNewsInner {
     
     String url
     
-    List<String> authors
+    List<String> authors = new ArrayList<>()
 }

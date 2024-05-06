@@ -34,7 +34,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.ArtApi();
-let url = https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png; // String | The URL to the image.
+let url = "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png"; // String | The URL to the image.
 let opts = {
   'width': 200, // Number | The maximum width of the image (default 400, max. 500).
   'height': 200 // Number | The maximum height of the image (default 400, max. 500).

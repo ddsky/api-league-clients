@@ -18,12 +18,12 @@ json = "{}"
 # create an instance of ScoreText200ResponseInterestingness from a JSON string
 score_text200_response_interestingness_instance = ScoreText200ResponseInterestingness.from_json(json)
 # print the JSON string representation of the object
-print ScoreText200ResponseInterestingness.to_json()
+print(ScoreText200ResponseInterestingness.to_json())
 
 # convert the object into a dict
 score_text200_response_interestingness_dict = score_text200_response_interestingness_instance.to_dict()
 # create an instance of ScoreText200ResponseInterestingness from a dict
-score_text200_response_interestingness_form_dict = score_text200_response_interestingness.from_dict(score_text200_response_interestingness_dict)
+score_text200_response_interestingness_from_dict = ScoreText200ResponseInterestingness.from_dict(score_text200_response_interestingness_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

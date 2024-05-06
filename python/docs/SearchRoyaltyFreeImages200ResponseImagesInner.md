@@ -22,12 +22,12 @@ json = "{}"
 # create an instance of SearchRoyaltyFreeImages200ResponseImagesInner from a JSON string
 search_royalty_free_images200_response_images_inner_instance = SearchRoyaltyFreeImages200ResponseImagesInner.from_json(json)
 # print the JSON string representation of the object
-print SearchRoyaltyFreeImages200ResponseImagesInner.to_json()
+print(SearchRoyaltyFreeImages200ResponseImagesInner.to_json())
 
 # convert the object into a dict
 search_royalty_free_images200_response_images_inner_dict = search_royalty_free_images200_response_images_inner_instance.to_dict()
 # create an instance of SearchRoyaltyFreeImages200ResponseImagesInner from a dict
-search_royalty_free_images200_response_images_inner_form_dict = search_royalty_free_images200_response_images_inner.from_dict(search_royalty_free_images200_response_images_inner_dict)
+search_royalty_free_images200_response_images_inner_from_dict = SearchRoyaltyFreeImages200ResponseImagesInner.from_dict(search_royalty_free_images200_response_images_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

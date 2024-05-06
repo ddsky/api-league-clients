@@ -9,5 +9,5 @@ import java.util.Arrays;
 @Canonical
 class ListWordSynonyms200Response {
     
-    List<String> synonyms
+    List<String> synonyms = new ArrayList<>()
 }

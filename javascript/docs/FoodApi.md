@@ -36,7 +36,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.FoodApi();
-let ingredients = 1 cup apples,3oz milk,35g butter; // String | A comma-separated list of the ingredients of the recipe.
+let ingredients = "1 cup apples,3oz milk,35g butter"; // String | A comma-separated list of the ingredients of the recipe.
 let opts = {
   'servings': 1, // Number | The number of servings the ingredients make. Nutrition is computed per serving.
   'reduceOils': true // Boolean | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
@@ -159,15 +159,15 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.FoodApi();
 let opts = {
-  'query': pasta with mushrooms but without nuts, // String | The search query.
-  'cuisines': mexican, // String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-  'excludeCuisines': indian,japanese, // String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
-  'mealType': dessert, // String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
-  'diet': paleo, // String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
-  'intolerances': gluten,dairy,shellfish, // String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
-  'equipment': blender,frying pan,bowl, // String | The equipment required. Multiple values will be interpreted as 'OR'.
-  'includeIngredients': tomato,cheese, // String | A comma-separated list of ingredients that should/must be used in the recipes.
-  'excludeIngredients': olives,capers, // String | A comma-separated list of ingredients or ingredient types that the recipes must not contain.
+  'query': "pasta with mushrooms but without nuts", // String | The search query.
+  'cuisines': "mexican", // String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
+  'excludeCuisines': "indian,japanese", // String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+  'mealType': "dessert", // String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
+  'diet': "paleo", // String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
+  'intolerances': "gluten,dairy,shellfish", // String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
+  'equipment': "blender,frying pan,bowl", // String | The equipment required. Multiple values will be interpreted as 'OR'.
+  'includeIngredients': "tomato,cheese", // String | A comma-separated list of ingredients that should/must be used in the recipes.
+  'excludeIngredients': "olives,capers", // String | A comma-separated list of ingredients or ingredient types that the recipes must not contain.
   'fillIngredients': true, // Boolean | Add information about the ingredients and whether they are used or missing in relation to the query.
   'addRecipeInformation': true, // Boolean | If set to true, you get more information about the recipes returned.
   'maxTime': 45, // Number | The maximum time in minutes it should take to prepare and cook the recipe.
@@ -243,8 +243,8 @@ let opts = {
   'maxVitaminB6': 80.9, // Number | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
   'minVitaminB12': 30.4, // Number | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
   'maxVitaminB12': 80.9, // Number | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-  'sort': meta-score, // String | The strategy to sort recipes by. See a full list of supported sorting options.
-  'sortDirection': ASC, // String | Whether to sort ascending or descending (ASC or DESC).
+  'sort': "meta-score", // String | The strategy to sort recipes by. See a full list of supported sorting options.
+  'sortDirection': "ASC", // String | Whether to sort ascending or descending (ASC or DESC).
   'offset': 0, // Number | The number of recipes to skip, between 0 and 900.
   'number': 3 // Number | The number of recipes, between 1 and 100.
 };
@@ -393,14 +393,14 @@ let apiInstance = new ApiLeague.FoodApi();
 let lat = 32.715736; // Number | The latitude to search around.
 let lon = -117.161087; // Number | The longitude to search around.
 let opts = {
-  'query': burger, // String | The search query.
+  'query': "burger", // String | The search query.
   'distance': 5, // Number | The maximum distance of the restaurant in miles around the given location.
   'budget': 25, // Number | The budget in USD for the meal.
   'minRating': 4.4, // Number | The minimum rating of the restaurants in range [0,5].
-  'cuisine': Mexican, // String | The cuisine that the restaurants should support.
+  'cuisine': "Mexican", // String | The cuisine that the restaurants should support.
   'isOpen': true, // Boolean | Whether the restaurants have to be open now.
   'page': 0, // Number | The page of the results.
-  'sort': rating // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
+  'sort': "rating" // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
 };
 apiInstance.searchRestaurants(lat, lon, opts, (error, data, response) => {
   if (error) {

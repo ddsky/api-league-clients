@@ -10,7 +10,7 @@ import org.openapitools.model.SearchJokes200ResponseJokesInner;
 @Canonical
 class SearchJokes200Response {
     
-    List<SearchJokes200ResponseJokesInner> jokes
+    List<SearchJokes200ResponseJokesInner> jokes = new ArrayList<>()
     
     Integer available
 }

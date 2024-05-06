@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary** | Option<**String**> |  | [optional]
 **image** | Option<**String**> |  | [optional]
-**sentiment** | Option<**f32**> |  | [optional]
+**sentiment** | Option<**f64**> |  | [optional]
 **source_country** | Option<**String**> |  | [optional]
 **language** | Option<**String**> |  | [optional]
 **id** | Option<**i32**> |  | [optional]

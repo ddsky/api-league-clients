@@ -13,5 +13,5 @@ class RetrieveRecipeInformation200ResponseInstructionsInner {
     
     String name
     
-    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner> steps
+    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner> steps = new ArrayList<>()
 }

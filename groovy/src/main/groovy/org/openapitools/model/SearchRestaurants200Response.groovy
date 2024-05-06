@@ -10,5 +10,5 @@ import org.openapitools.model.SearchRestaurants200ResponseRestaurantsInner;
 @Canonical
 class SearchRestaurants200Response {
     
-    List<SearchRestaurants200ResponseRestaurantsInner> restaurants
+    List<SearchRestaurants200ResponseRestaurantsInner> restaurants = new ArrayList<>()
 }

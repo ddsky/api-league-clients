@@ -44,8 +44,8 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = Driving carss is fun.; // String | The text to be corrected.
-let language = en; // String | The language of the text, one of en, de, es, fr, or it.
+let text = "Driving carss is fun."; // String | The text to be corrected.
+let language = "en"; // String | The language of the text, one of en, de, es, fr, or it.
 apiInstance.correctSpelling(text, language, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -102,7 +102,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = Das ist ein Text.; // String | The text for which the language should be detected.
+let text = "Das ist ein Text."; // String | The text for which the language should be detected.
 apiInstance.detectLanguage(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -158,7 +158,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = Happy times feel so good.; // String | The text for which the sentiment should be detected.
+let text = "Happy times feel so good."; // String | The text for which the sentiment should be detected.
 apiInstance.detectSentiment(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -214,7 +214,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = On 5th or April, 2035 there will be flying cars - 2023-02-12.; // String | The text from which dates should be extracted.
+let text = "On 5th or April, 2035 there will be flying cars - 2023-02-12."; // String | The text from which dates should be extracted.
 apiInstance.extractDates(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -270,7 +270,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = Jim Carrey is an actor from Canada; // String | The text from which entities should be extracted.
+let text = "Jim Carrey is an actor from Canada"; // String | The text from which entities should be extracted.
 apiInstance.extractEntities(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -326,7 +326,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let word = airplane; // String | The (noun) word for which a list of synonyms should be returned.
+let word = "airplane"; // String | The (noun) word for which a list of synonyms should be returned.
 apiInstance.listWordSynonyms(word, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -382,7 +382,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = The lazy dog jumps over the quick brown fox.; // String | The text to tag the part of speech.
+let text = "The lazy dog jumps over the quick brown fox."; // String | The text to tag the part of speech.
 apiInstance.partOfSpeechTagging(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -438,7 +438,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let word = party; // String | The (noun) word for which the plural form should be found.
+let word = "party"; // String | The (noun) word for which the plural form should be found.
 apiInstance.pluralizeWord(word, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -494,7 +494,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = A rather complex text, hard to read, and highly convoluted using acronym TERMS.; // String | The text to score for readability.
+let text = "A rather complex text, hard to read, and highly convoluted using acronym TERMS."; // String | The text to score for readability.
 apiInstance.scoreReadability(text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -550,8 +550,8 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let title = A short story; // String | The title of the text to score.
-let text = A nice short story to be analyzed; // String | The text to score for multiple metrics.
+let title = "A short story"; // String | The title of the text to score.
+let text = "A nice short story to be analyzed"; // String | The text to score for multiple metrics.
 apiInstance.scoreText(title, text, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -608,7 +608,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let word = airplanes; // String | The (noun) word for which the singular form should be found.
+let word = "airplanes"; // String | The (noun) word for which the singular form should be found.
 apiInstance.singularizeWord(word, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -664,7 +664,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.TextApi();
-let text = The laziest dogs are jumping over the quicker brown foxes.; // String | The text to be stemmed.
+let text = "The laziest dogs are jumping over the quicker brown foxes."; // String | The text to be stemmed.
 apiInstance.textStemming(text, (error, data, response) => {
   if (error) {
     console.error(error);

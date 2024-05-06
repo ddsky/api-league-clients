@@ -33,7 +33,7 @@ class SearchRestaurants200ResponseRestaurantsInner {
     
     Boolean pickupEnabled
     
-    List<String> cuisines
+    List<String> cuisines = new ArrayList<>()
     
     BigDecimal miles
     

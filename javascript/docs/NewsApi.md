@@ -34,7 +34,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.NewsApi();
-let url = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/; // String | The url of the news.
+let url = "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/"; // String | The url of the news.
 let analyze = true; // Boolean | Whether to analyze the news (extract entities etc.)
 apiInstance.extractNews(url, analyze, (error, data, response) => {
   if (error) {
@@ -93,19 +93,19 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.NewsApi();
 let opts = {
-  'text': tesla, // String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
-  'sourceCountries': us,uk, // String | A comma-separated list of ISO 3166 country codes from which the news should originate.
-  'language': en, // String | The ISO 6391 language code of the news.
+  'text': "tesla", // String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  'sourceCountries': "us,uk", // String | A comma-separated list of ISO 3166 country codes from which the news should originate.
+  'language': "en", // String | The ISO 6391 language code of the news.
   'minSentiment': -0.8, // Number | The minimal sentiment of the news in range [-1,1].
   'maxSentiment': 0.8, // Number | The maximal sentiment of the news in range [-1,1].
-  'earliestPublishDate': 2022-04-22 16:12:35, // String | The news must have been published after this date.
-  'latestPublishDate': 2022-04-22 16:12:35, // String | The news must have been published before this date.
-  'newsSources': https://www.bbc.co.uk, // String | A comma-separated list of news sources from which the news should originate.
-  'authors': John Doe, // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
-  'entities': ORG:Tesla, // String | Filter news by entities (ORG, PER, or LOC).
-  'locationFilter': 51.050407, 13.737262, 100, // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-  'sort': publish-time, // String | The sorting criteria (publish-time or sentiment).
-  'sortDirection': ASC, // String | Whether to sort ascending or descending (ASC or DESC).
+  'earliestPublishDate': "2022-04-22 16:12:35", // String | The news must have been published after this date.
+  'latestPublishDate': "2022-04-22 16:12:35", // String | The news must have been published before this date.
+  'newsSources': "https://www.bbc.co.uk", // String | A comma-separated list of news sources from which the news should originate.
+  'authors': "John Doe", // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
+  'entities': "ORG:Tesla", // String | Filter news by entities (ORG, PER, or LOC).
+  'locationFilter': "51.050407, 13.737262, 100", // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
+  'sort': "publish-time", // String | The sorting criteria (publish-time or sentiment).
+  'sortDirection': "ASC", // String | Whether to sort ascending or descending (ASC or DESC).
   'offset': 0, // Number | The number of news to skip in range [0,10000]
   'number': 10 // Number | The number of news to return in range [1,100]
 };

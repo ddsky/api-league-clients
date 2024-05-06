@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## compute_nutrition
 
-> crate::models::ComputeNutrition200Response compute_nutrition(ingredients, servings, reduce_oils)
+> models::ComputeNutrition200Response compute_nutrition(ingredients, servings, reduce_oils)
 Compute Nutrition
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
@@ -29,7 +29,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ComputeNutrition200Response**](computeNutrition_200_response.md)
+[**models::ComputeNutrition200Response**](computeNutrition_200_response.md)
 
 ### Authorization
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Required | Notes
 
 ## retrieve_recipe_information
 
-> crate::models::RetrieveRecipeInformation200Response retrieve_recipe_information(id, add_wine_pairing)
+> models::RetrieveRecipeInformation200Response retrieve_recipe_information(id, add_wine_pairing)
 Retrieve Recipe Information
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
@@ -60,7 +60,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveRecipeInformation200Response**](retrieveRecipeInformation_200_response.md)
+[**models::RetrieveRecipeInformation200Response**](retrieveRecipeInformation_200_response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_recipes
 
-> crate::models::SearchRecipes200Response search_recipes(query, cuisines, exclude_cuisines, meal_type, diet, intolerances, equipment, include_ingredients, exclude_ingredients, fill_ingredients, add_recipe_information, max_time, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_sugar, max_sugar, min_fiber, max_fiber, min_folate, max_folate, min_folic_acid, max_folic_acid, min_iodine, max_iodine, min_iron, max_iron, min_zinc, max_zinc, min_magnesium, max_magnesium, min_manganese, max_manganese, min_phosphorus, max_phosphorus, min_potassium, max_potassium, min_sodium, max_sodium, min_selenium, max_selenium, min_copper, max_copper, min_calcium, max_calcium, min_choline, max_choline, min_cholesterol, max_cholesterol, min_fluoride, max_fluoride, min_alcohol, max_alcohol, min_caffeine, max_caffeine, min_saturated_fat, max_saturated_fat, min_vitamin_a, max_vitamin_a, min_vitamin_c, max_vitamin_c, min_vitamin_d, max_vitamin_d, min_vitamin_e, max_vitamin_e, min_vitamin_k, max_vitamin_k, min_vitamin_b1, max_vitamin_b1, min_vitamin_b2, max_vitamin_b2, min_vitamin_b3, max_vitamin_b3, min_vitamin_b5, max_vitamin_b5, min_vitamin_b6, max_vitamin_b6, min_vitamin_b12, max_vitamin_b12, sort, sort_direction, offset, number)
+> models::SearchRecipes200Response search_recipes(query, cuisines, exclude_cuisines, meal_type, diet, intolerances, equipment, include_ingredients, exclude_ingredients, fill_ingredients, add_recipe_information, max_time, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_sugar, max_sugar, min_fiber, max_fiber, min_folate, max_folate, min_folic_acid, max_folic_acid, min_iodine, max_iodine, min_iron, max_iron, min_zinc, max_zinc, min_magnesium, max_magnesium, min_manganese, max_manganese, min_phosphorus, max_phosphorus, min_potassium, max_potassium, min_sodium, max_sodium, min_selenium, max_selenium, min_copper, max_copper, min_calcium, max_calcium, min_choline, max_choline, min_cholesterol, max_cholesterol, min_fluoride, max_fluoride, min_alcohol, max_alcohol, min_caffeine, max_caffeine, min_saturated_fat, max_saturated_fat, min_vitamin_a, max_vitamin_a, min_vitamin_c, max_vitamin_c, min_vitamin_d, max_vitamin_d, min_vitamin_e, max_vitamin_e, min_vitamin_k, max_vitamin_k, min_vitamin_b1, max_vitamin_b1, min_vitamin_b2, max_vitamin_b2, min_vitamin_b3, max_vitamin_b3, min_vitamin_b5, max_vitamin_b5, min_vitamin_b6, max_vitamin_b6, min_vitamin_b12, max_vitamin_b12, sort, sort_direction, offset, number)
 Search Recipes
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
@@ -177,7 +177,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchRecipes200Response**](searchRecipes_200_response.md)
+[**models::SearchRecipes200Response**](searchRecipes_200_response.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_restaurants
 
-> crate::models::SearchRestaurants200Response search_restaurants(lat, lon, query, distance, budget, min_rating, cuisine, is_open, page, sort)
+> models::SearchRestaurants200Response search_restaurants(lat, lon, query, distance, budget, min_rating, cuisine, is_open, page, sort)
 Search Restaurants
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
@@ -216,7 +216,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchRestaurants200Response**](searchRestaurants_200_response.md)
+[**models::SearchRestaurants200Response**](searchRestaurants_200_response.md)
 
 ### Authorization
 

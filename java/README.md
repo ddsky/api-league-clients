@@ -1,8 +1,8 @@
 # java-client
 
 API League
-- API version: 1.0
-  - Build date: 2024-03-14T17:14:09.298081600+01:00[Europe/Berlin]
+- API version: 1.0.0
+  - Generator version: 7.5.0
 
 API League is a Hub for World Class APIs.
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.apileague</groupId>
   <artifactId>java-client</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.apileague:java-client:1.0.1"
+     implementation "com.apileague:java-client:1.1.0"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/java-client-1.0.1.jar`
+* `target/java-client-1.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

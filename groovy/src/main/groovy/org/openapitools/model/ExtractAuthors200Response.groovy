@@ -10,5 +10,5 @@ import org.openapitools.model.ExtractAuthors200ResponseAuthorsInner;
 @Canonical
 class ExtractAuthors200Response {
     
-    List<ExtractAuthors200ResponseAuthorsInner> authors
+    List<ExtractAuthors200ResponseAuthorsInner> authors = new ArrayList<>()
 }

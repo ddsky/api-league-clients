@@ -95,17 +95,17 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.BooksApi();
 let opts = {
-  'query': books about wizards, // String | The search query.
+  'query': "books about wizards", // String | The search query.
   'earliestPublishYear': 2022, // Number | The books must have been published after this year.
   'latestPublishYear': 2023, // Number | The books must have been published before this year.
   'minRating': 0.8, // Number | The minimum rating the book must have gotten in the interval [0,1].
   'maxRating': 0.99, // Number | The maximum rating the book must have gotten in the interval [0,1].
-  'genres': nonfiction, // String | A comma-separated list of genres. Only books from any of the given genres will be returned.
-  'authors': J.K. Rowling, // String | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.
-  'isbn': 9781781257654, // String | Only the book matching the ISBN-13 will be returned
-  'oclc': 864418200, // String | Only the book matching the OCLC will be returned
-  'sort': rating, // String | The sorting criteria (publish-date or rating).
-  'sortDirection': DESC, // String | Whether to sort ascending or descending (ASC or DESC).
+  'genres': "nonfiction", // String | A comma-separated list of genres. Only books from any of the given genres will be returned.
+  'authors': "J.K. Rowling", // String | A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can't disambiguate.
+  'isbn': "9781781257654", // String | Only the book matching the ISBN-13 will be returned
+  'oclc': "864418200", // String | Only the book matching the OCLC will be returned
+  'sort': "rating", // String | The sorting criteria (publish-date or rating).
+  'sortDirection': "DESC", // String | Whether to sort ascending or descending (ASC or DESC).
   'groupResults': false, // Boolean | Whether to group similar editions of the same book.
   'offset': 0, // Number | The number of books to skip in range [0,1000]
   'number': 10 // Number | The number of books to return in range [1,100]

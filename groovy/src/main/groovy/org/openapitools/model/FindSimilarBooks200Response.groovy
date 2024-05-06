@@ -10,5 +10,5 @@ import org.openapitools.model.SearchBooks200ResponseBooksInner;
 @Canonical
 class FindSimilarBooks200Response {
     
-    List<SearchBooks200ResponseBooksInner> similarBooks
+    List<SearchBooks200ResponseBooksInner> similarBooks = new ArrayList<>()
 }

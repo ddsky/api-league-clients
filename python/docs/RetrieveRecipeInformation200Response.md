@@ -32,12 +32,12 @@ json = "{}"
 # create an instance of RetrieveRecipeInformation200Response from a JSON string
 retrieve_recipe_information200_response_instance = RetrieveRecipeInformation200Response.from_json(json)
 # print the JSON string representation of the object
-print RetrieveRecipeInformation200Response.to_json()
+print(RetrieveRecipeInformation200Response.to_json())
 
 # convert the object into a dict
 retrieve_recipe_information200_response_dict = retrieve_recipe_information200_response_instance.to_dict()
 # create an instance of RetrieveRecipeInformation200Response from a dict
-retrieve_recipe_information200_response_form_dict = retrieve_recipe_information200_response.from_dict(retrieve_recipe_information200_response_dict)
+retrieve_recipe_information200_response_from_dict = RetrieveRecipeInformation200Response.from_dict(retrieve_recipe_information200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

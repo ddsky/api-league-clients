@@ -10,5 +10,5 @@ import org.openapitools.model.ExtractEntities200ResponseEntitiesInner;
 @Canonical
 class ExtractEntities200Response {
     
-    List<ExtractEntities200ResponseEntitiesInner> entities
+    List<ExtractEntities200ResponseEntitiesInner> entities = new ArrayList<>()
 }

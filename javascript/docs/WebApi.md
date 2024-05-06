@@ -36,7 +36,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.WebApi();
-let url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url with the article from which authors should be extracted.
+let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url with the article from which authors should be extracted.
 apiInstance.extractAuthors(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -92,7 +92,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.WebApi();
-let url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the content will be extracted.
+let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the content will be extracted.
 apiInstance.extractContentFromAWebPage(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -148,7 +148,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.WebApi();
-let url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the publish date should be extracted.
+let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the publish date should be extracted.
 apiInstance.extractPublishDate(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -204,7 +204,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.WebApi();
-let query = penguins; // String | The search query.
+let query = "penguins"; // String | The search query.
 let opts = {
   'number': 5 // Number | The number of results to return in range [1,50]
 };

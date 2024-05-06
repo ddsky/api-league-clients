@@ -1,5 +1,5 @@
 package = "apileague"
-version = "1.0.1"
+version = "1.1.0"
 source = {
 	url = "https://github.com/ddsky/api-league-clients/tree/master/lua/.git"
 }

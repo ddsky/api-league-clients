@@ -24,7 +24,7 @@ class RetrieveRecipeInformation200ResponseIngredientsInner {
     
     String original
     
-    List<String> meta
+    List<String> meta = new ArrayList<>()
     
     String originalName
     

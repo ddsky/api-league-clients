@@ -20,5 +20,5 @@ class RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner {
     
     Integer id
     
-    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients
+    List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients = new ArrayList<>()
 }

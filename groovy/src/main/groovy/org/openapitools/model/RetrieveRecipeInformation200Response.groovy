@@ -25,7 +25,7 @@ class RetrieveRecipeInformation200Response {
     
     Integer servings
     
-    List<String> images
+    List<String> images = new ArrayList<>()
     
     RetrieveRecipeInformation200ResponseDietaryProperties dietaryProperties
     
@@ -37,15 +37,15 @@ class RetrieveRecipeInformation200Response {
     
     RetrieveRecipeInformation200ResponseTaste taste
     
-    List<String> cuisines
+    List<String> cuisines = new ArrayList<>()
     
-    List<String> mealTypes
+    List<String> mealTypes = new ArrayList<>()
     
-    List<String> occasions
+    List<String> occasions = new ArrayList<>()
     
-    List<RetrieveRecipeInformation200ResponseIngredientsInner> ingredients
+    List<RetrieveRecipeInformation200ResponseIngredientsInner> ingredients = new ArrayList<>()
     
-    List<RetrieveRecipeInformation200ResponseInstructionsInner> instructions
+    List<RetrieveRecipeInformation200ResponseInstructionsInner> instructions = new ArrayList<>()
     
     RetrieveRecipeInformation200ResponseCredits credits
     

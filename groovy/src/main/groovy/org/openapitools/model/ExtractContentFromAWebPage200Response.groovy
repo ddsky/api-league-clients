@@ -16,5 +16,5 @@ class ExtractContentFromAWebPage200Response {
     
     String mainHtml
     
-    List<String> images
+    List<String> images = new ArrayList<>()
 }

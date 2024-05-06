@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## detect_main_image_color
 
-> Vec<crate::models::DetectMainImageColor200ResponseInner> detect_main_image_color(url)
+> Vec<models::DetectMainImageColor200ResponseInner> detect_main_image_color(url)
 Detect Main Image Color
 
 Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<crate::models::DetectMainImageColor200ResponseInner>**](detectMainImageColor_200_response_inner.md)
+[**Vec<models::DetectMainImageColor200ResponseInner>**](detectMainImageColor_200_response_inner.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_royalty_free_images
 
-> crate::models::SearchRoyaltyFreeImages200Response search_royalty_free_images(query, number)
+> models::SearchRoyaltyFreeImages200Response search_royalty_free_images(query, number)
 Search Royalty Free Images
 
 Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
@@ -90,7 +90,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchRoyaltyFreeImages200Response**](searchRoyaltyFreeImages_200_response.md)
+[**models::SearchRoyaltyFreeImages200Response**](searchRoyaltyFreeImages_200_response.md)
 
 ### Authorization
 

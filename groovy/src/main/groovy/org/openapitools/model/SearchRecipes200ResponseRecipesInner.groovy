@@ -11,7 +11,7 @@ import org.openapitools.model.SearchRecipes200ResponseRecipesInnerNutrition;
 @Canonical
 class SearchRecipes200ResponseRecipesInner {
     
-    List<String> images
+    List<String> images = new ArrayList<>()
     
     SearchRecipes200ResponseRecipesInnerNutrition nutrition
     

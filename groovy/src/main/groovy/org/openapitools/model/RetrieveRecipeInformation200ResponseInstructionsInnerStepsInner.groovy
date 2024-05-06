@@ -13,9 +13,9 @@ class RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner {
     
     Integer number
     
-    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> ingredients
+    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> ingredients = new ArrayList<>()
     
-    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> equipment
+    List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> equipment = new ArrayList<>()
     
     String step
 }

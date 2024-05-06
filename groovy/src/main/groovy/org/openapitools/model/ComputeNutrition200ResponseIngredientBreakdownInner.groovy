@@ -19,5 +19,5 @@ class ComputeNutrition200ResponseIngredientBreakdownInner {
     
     Integer id
     
-    List<ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner> nutrients
+    List<ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner> nutrients = new ArrayList<>()
 }

@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: "1.0"
+  version: 1.0.0
 servers:
 - url: https://api.apileague.com
 security:
@@ -252,7 +252,8 @@ paths:
       summary: Search Books
       tags:
       - Books
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /list-similar-books:
     get:
       deprecated: false
@@ -345,7 +346,8 @@ paths:
       summary: Find Similar Books
       tags:
       - Books
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-news:
     get:
       deprecated: false
@@ -604,7 +606,8 @@ paths:
       summary: Search News
       tags:
       - News
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /extract-news:
     get:
       deprecated: false
@@ -696,7 +699,8 @@ paths:
       summary: Extract News
       tags:
       - News
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-jokes:
     get:
       deprecated: false
@@ -847,7 +851,8 @@ paths:
       summary: Search Jokes
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-random-joke:
     get:
       deprecated: false
@@ -934,7 +939,8 @@ paths:
       summary: Random Joke
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-memes:
     get:
       deprecated: false
@@ -1066,7 +1072,8 @@ paths:
       summary: Search Memes
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-random-meme:
     get:
       deprecated: false
@@ -1164,7 +1171,8 @@ paths:
       summary: Random Meme
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-gifs:
     get:
       deprecated: false
@@ -1234,7 +1242,8 @@ paths:
       summary: Search Gifs
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /generate-nonsense-word:
     get:
       deprecated: false
@@ -1273,7 +1282,8 @@ paths:
       summary: Generate Nonsense Word
       tags:
       - Humor
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-recipes:
     get:
       deprecated: false
@@ -2460,7 +2470,8 @@ paths:
       summary: Search Recipes
       tags:
       - Food
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-recipe:
     get:
       deprecated: false
@@ -4946,7 +4957,8 @@ paths:
       summary: Retrieve Recipe Information
       tags:
       - Food
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /compute-nutrition:
     get:
       deprecated: false
@@ -5726,7 +5738,8 @@ paths:
       summary: Compute Nutrition
       tags:
       - Food
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-restaurants:
     get:
       deprecated: false
@@ -5943,7 +5956,8 @@ paths:
       summary: Search Restaurants
       tags:
       - Food
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-random-trivia:
     get:
       deprecated: false
@@ -5991,7 +6005,8 @@ paths:
       summary: Random Trivia
       tags:
       - Knowledge
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-random-quote:
     get:
       deprecated: false
@@ -6054,7 +6069,8 @@ paths:
       summary: Random Quote
       tags:
       - Knowledge
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /retrieve-random-poem:
     get:
       deprecated: false
@@ -6141,7 +6157,8 @@ paths:
       summary: Random Poem
       tags:
       - Art
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /convert-image-to-ascii-txt:
     get:
       deprecated: false
@@ -6393,7 +6410,8 @@ paths:
       summary: Image to Ascii Art by URL
       tags:
       - Art
-      x-accepts: text/plain
+      x-accepts:
+      - text/plain
   /extract-content:
     get:
       deprecated: false
@@ -6478,7 +6496,8 @@ paths:
       summary: Extract Content from a Web Page
       tags:
       - Web
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /extract-publish-date:
     get:
       deprecated: false
@@ -6527,7 +6546,8 @@ paths:
       summary: Extract Publish Date
       tags:
       - Web
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /extract-authors:
     get:
       deprecated: false
@@ -6578,7 +6598,8 @@ paths:
       summary: Extract Authors
       tags:
       - Web
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-web:
     get:
       deprecated: false
@@ -6676,7 +6697,8 @@ paths:
       summary: Search Web
       tags:
       - Web
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /correct-spelling:
     get:
       deprecated: false
@@ -6737,7 +6759,8 @@ paths:
       summary: Correct Spelling
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /detect-language:
     get:
       deprecated: false
@@ -6804,7 +6827,8 @@ paths:
       summary: Detect Language
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /detect-sentiment:
     get:
       deprecated: false
@@ -6860,7 +6884,8 @@ paths:
       summary: Detect Sentiment
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /score-text:
     get:
       deprecated: false
@@ -6996,7 +7021,8 @@ paths:
       summary: Score Text
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /score-readability:
     get:
       deprecated: false
@@ -7060,7 +7086,8 @@ paths:
       summary: Score Readability
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /extract-dates:
     get:
       deprecated: false
@@ -7117,7 +7144,8 @@ paths:
       summary: Extract Dates
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /list-synonyms:
     get:
       deprecated: false
@@ -7167,7 +7195,8 @@ paths:
       summary: List Word Synonyms
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /tag-pos:
     get:
       deprecated: false
@@ -7218,7 +7247,8 @@ paths:
       summary: Part of Speech Tagging
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /stem-text:
     get:
       deprecated: false
@@ -7268,7 +7298,8 @@ paths:
       summary: Text Stemming
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /singularize-word:
     get:
       deprecated: false
@@ -7316,7 +7347,8 @@ paths:
       summary: Singularize Word
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /pluralize-word:
     get:
       deprecated: false
@@ -7364,7 +7396,8 @@ paths:
       summary: Pluralize Word
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /extract-entities:
     get:
       deprecated: false
@@ -7425,7 +7458,8 @@ paths:
       summary: Extract Entities
       tags:
       - Text
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /search-images:
     get:
       deprecated: false
@@ -7511,7 +7545,8 @@ paths:
       summary: Search Royalty Free Images
       tags:
       - Media
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /rescale-image:
     get:
       deprecated: false
@@ -7594,7 +7629,8 @@ paths:
       summary: Rescale Image
       tags:
       - Media
-      x-accepts: application/octet-stream
+      x-accepts:
+      - application/octet-stream
   /detect-color:
     get:
       deprecated: false
@@ -7653,7 +7689,8 @@ paths:
       summary: Detect Main Image Color
       tags:
       - Media
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /convert-units:
     get:
       deprecated: false
@@ -7737,7 +7774,8 @@ paths:
       summary: Convert Units
       tags:
       - Math
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /read-key-value:
     get:
       deprecated: false
@@ -7789,7 +7827,8 @@ paths:
       summary: Read Key Value from Store
       tags:
       - Storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /store-key-value:
     get:
       deprecated: false
@@ -7852,7 +7891,8 @@ paths:
       summary: Store Key Value (GET)
       tags:
       - Storage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
     searchBooks_200_response_books_inner:

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **images** | Option<**Vec<String>**> |  | [optional]
-**nutrition** | Option<[**crate::models::SearchRecipes200ResponseRecipesInnerNutrition**](searchRecipes_200_response_recipes_inner_nutrition.md)> |  | [optional]
+**nutrition** | Option<[**models::SearchRecipes200ResponseRecipesInnerNutrition**](searchRecipes_200_response_recipes_inner_nutrition.md)> |  | [optional]
 **id** | Option<**i32**> |  | [optional]
 **title** | Option<**String**> |  | [optional]
 

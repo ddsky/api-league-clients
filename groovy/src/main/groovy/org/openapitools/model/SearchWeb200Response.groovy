@@ -10,5 +10,5 @@ import org.openapitools.model.SearchWeb200ResponseResultsInner;
 @Canonical
 class SearchWeb200Response {
     
-    List<SearchWeb200ResponseResultsInner> results
+    List<SearchWeb200ResponseResultsInner> results = new ArrayList<>()
 }

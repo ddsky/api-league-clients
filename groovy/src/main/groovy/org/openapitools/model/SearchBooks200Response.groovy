@@ -16,5 +16,5 @@ class SearchBooks200Response {
     
     Integer offset
     
-    List<SearchBooks200ResponseBooksInner> books
+    List<SearchBooks200ResponseBooksInner> books = new ArrayList<>()
 }

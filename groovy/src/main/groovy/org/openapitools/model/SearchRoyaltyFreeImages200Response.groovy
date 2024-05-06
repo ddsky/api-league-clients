@@ -10,5 +10,5 @@ import org.openapitools.model.SearchRoyaltyFreeImages200ResponseImagesInner;
 @Canonical
 class SearchRoyaltyFreeImages200Response {
     
-    List<SearchRoyaltyFreeImages200ResponseImagesInner> images
+    List<SearchRoyaltyFreeImages200ResponseImagesInner> images = new ArrayList<>()
 }

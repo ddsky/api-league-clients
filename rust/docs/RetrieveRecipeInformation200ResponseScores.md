@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta_score** | Option<**f32**> |  | [optional]
+**meta_score** | Option<**f64**> |  | [optional]
 **weight_watcher_smart_points** | Option<**i32**> |  | [optional]
 **health_score** | Option<**i32**> |  | [optional]
 

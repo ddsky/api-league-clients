@@ -10,5 +10,5 @@ import org.openapitools.model.ExtractDates200ResponseDatesInner;
 @Canonical
 class ExtractDates200Response {
     
-    List<ExtractDates200ResponseDatesInner> dates
+    List<ExtractDates200ResponseDatesInner> dates = new ArrayList<>()
 }

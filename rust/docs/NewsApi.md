@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## extract_news
 
-> crate::models::ExtractNews200Response extract_news(url, analyze)
+> models::ExtractNews200Response extract_news(url, analyze)
 Extract News
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ExtractNews200Response**](extractNews_200_response.md)
+[**models::ExtractNews200Response**](extractNews_200_response.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_news
 
-> crate::models::SearchNews200Response search_news(text, source_countries, language, min_sentiment, max_sentiment, earliest_publish_date, latest_publish_date, news_sources, authors, entities, location_filter, sort, sort_direction, offset, number)
+> models::SearchNews200Response search_news(text, source_countries, language, min_sentiment, max_sentiment, earliest_publish_date, latest_publish_date, news_sources, authors, entities, location_filter, sort, sort_direction, offset, number)
 Search News
 
 Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
@@ -70,7 +70,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchNews200Response**](searchNews_200_response.md)
+[**models::SearchNews200Response**](searchNews_200_response.md)
 
 ### Authorization
 

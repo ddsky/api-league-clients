@@ -43,7 +43,7 @@ Name | Type | Description  | Required | Notes
 
 ## random_poem
 
-> crate::models::RandomPoem200Response random_poem(min_lines, max_lines)
+> models::RandomPoem200Response random_poem(min_lines, max_lines)
 Random Poem
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RandomPoem200Response**](randomPoem_200_response.md)
+[**models::RandomPoem200Response**](randomPoem_200_response.md)
 
 ### Authorization
 

@@ -34,7 +34,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.StorageApi();
-let key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
+let key = "visitors24h"; // String | The key for which the value is stored (max length 255 characters).
 apiInstance.readKeyValueFromStore(key, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -90,8 +90,8 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.StorageApi();
-let key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
-let value = 23578 visitors; // String | The value that is supposed to be stored (max length 10,000 characters).
+let key = "visitors24h"; // String | The key for which the value is stored (max length 255 characters).
+let value = "23578 visitors"; // String | The value that is supposed to be stored (max length 10,000 characters).
 apiInstance.storeKeyValueGET(key, value, (error, data, response) => {
   if (error) {
     console.error(error);

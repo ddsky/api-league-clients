@@ -21,12 +21,12 @@ json = "{}"
 # create an instance of ExtractDates200ResponseDatesInner from a JSON string
 extract_dates200_response_dates_inner_instance = ExtractDates200ResponseDatesInner.from_json(json)
 # print the JSON string representation of the object
-print ExtractDates200ResponseDatesInner.to_json()
+print(ExtractDates200ResponseDatesInner.to_json())
 
 # convert the object into a dict
 extract_dates200_response_dates_inner_dict = extract_dates200_response_dates_inner_instance.to_dict()
 # create an instance of ExtractDates200ResponseDatesInner from a dict
-extract_dates200_response_dates_inner_form_dict = extract_dates200_response_dates_inner.from_dict(extract_dates200_response_dates_inner_dict)
+extract_dates200_response_dates_inner_from_dict = ExtractDates200ResponseDatesInner.from_dict(extract_dates200_response_dates_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

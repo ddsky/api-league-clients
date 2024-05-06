@@ -22,5 +22,5 @@ class RetrieveRecipeInformation200ResponseDietaryProperties {
     
     String gaps
     
-    List<String> diets
+    List<String> diets = new ArrayList<>()
 }

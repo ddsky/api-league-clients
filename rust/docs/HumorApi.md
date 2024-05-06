@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## generate_nonsense_word
 
-> crate::models::GenerateNonsenseWord200Response generate_nonsense_word()
+> models::GenerateNonsenseWord200Response generate_nonsense_word()
 Generate Nonsense Word
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
@@ -26,7 +26,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::GenerateNonsenseWord200Response**](generateNonsenseWord_200_response.md)
+[**models::GenerateNonsenseWord200Response**](generateNonsenseWord_200_response.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ## random_joke
 
-> crate::models::SearchJokes200ResponseJokesInner random_joke(include_tags, exclude_tags, min_rating, max_length)
+> models::SearchJokes200ResponseJokesInner random_joke(include_tags, exclude_tags, min_rating, max_length)
 Random Joke
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
@@ -59,7 +59,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchJokes200ResponseJokesInner**](searchJokes_200_response_jokes_inner.md)
+[**models::SearchJokes200ResponseJokesInner**](searchJokes_200_response_jokes_inner.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Required | Notes
 
 ## random_meme
 
-> crate::models::RandomMeme200Response random_meme(keywords, keywords_in_image, media_type, min_rating, max_age_days)
+> models::RandomMeme200Response random_meme(keywords, keywords_in_image, media_type, min_rating, max_age_days)
 Random Meme
 
 Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RandomMeme200Response**](randomMeme_200_response.md)
+[**models::RandomMeme200Response**](randomMeme_200_response.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_gifs
 
-> crate::models::SearchGifs200Response search_gifs(query, number)
+> models::SearchGifs200Response search_gifs(query, number)
 Search Gifs
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
@@ -124,7 +124,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchGifs200Response**](searchGifs_200_response.md)
+[**models::SearchGifs200Response**](searchGifs_200_response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_jokes
 
-> crate::models::SearchJokes200Response search_jokes(keywords, include_tags, exclude_tags, min_rating, max_length, offset, number)
+> models::SearchJokes200Response search_jokes(keywords, include_tags, exclude_tags, min_rating, max_length, offset, number)
 Search Jokes
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
@@ -160,7 +160,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchJokes200Response**](searchJokes_200_response.md)
+[**models::SearchJokes200Response**](searchJokes_200_response.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_memes
 
-> crate::models::SearchMemes200Response search_memes(keywords, keywords_in_image, media_type, min_rating, max_age_days, offset, number)
+> models::SearchMemes200Response search_memes(keywords, keywords_in_image, media_type, min_rating, max_age_days, offset, number)
 Search Memes
 
 With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
@@ -196,7 +196,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchMemes200Response**](searchMemes_200_response.md)
+[**models::SearchMemes200Response**](searchMemes_200_response.md)
 
 ### Authorization
 

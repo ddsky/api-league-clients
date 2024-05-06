@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **width** | Option<**i32**> |  | [optional]
-**license** | Option<[**crate::models::SearchRoyaltyFreeImages200ResponseImagesInnerLicense**](searchRoyaltyFreeImages_200_response_images_inner_license.md)> |  | [optional]
+**license** | Option<[**models::SearchRoyaltyFreeImages200ResponseImagesInnerLicense**](searchRoyaltyFreeImages_200_response_images_inner_license.md)> |  | [optional]
 **thumbnail** | Option<**String**> |  | [optional]
 **id** | Option<**String**> |  | [optional]
 **url** | Option<**String**> |  | [optional]

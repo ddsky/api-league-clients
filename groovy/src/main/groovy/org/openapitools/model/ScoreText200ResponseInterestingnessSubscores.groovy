@@ -9,13 +9,13 @@ import java.util.Arrays;
 @Canonical
 class ScoreText200ResponseInterestingnessSubscores {
     
-    List<Integer> titleRatingScore
+    List<Integer> titleRatingScore = new ArrayList<>()
     
-    List<Integer> quoteScore
+    List<Integer> quoteScore = new ArrayList<>()
     
-    List<Integer> lengthScore
+    List<Integer> lengthScore = new ArrayList<>()
     
-    List<Integer> linkScore
+    List<Integer> linkScore = new ArrayList<>()
     
-    List<Integer> googleHitsScore
+    List<Integer> googleHitsScore = new ArrayList<>()
 }

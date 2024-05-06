@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## convert_units
 
-> crate::models::ConvertUnits200Response convert_units(source_amount, source_unit, target_unit, food_name)
+> models::ConvertUnits200Response convert_units(source_amount, source_unit, target_unit, food_name)
 Convert Units
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ConvertUnits200Response**](convertUnits_200_response.md)
+[**models::ConvertUnits200Response**](convertUnits_200_response.md)
 
 ### Authorization
 

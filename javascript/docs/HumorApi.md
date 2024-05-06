@@ -91,8 +91,8 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.HumorApi();
 let opts = {
-  'includeTags': animal, // String | A comma-separated list of tags the jokes should have.
-  'excludeTags': nsfw,dark, // String | A comma-separated list of tags the jokes must not have.
+  'includeTags': "animal", // String | A comma-separated list of tags the jokes should have.
+  'excludeTags': "nsfw,dark", // String | A comma-separated list of tags the jokes must not have.
   'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the jokes.
   'maxLength': 140 // Number | The maximum length of the joke in letters.
 };
@@ -155,9 +155,9 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.HumorApi();
 let opts = {
-  'keywords': airplane, // String | A comma-separated list of words that must occur in the meme.
+  'keywords': "airplane", // String | A comma-separated list of words that must occur in the meme.
   'keywordsInImage': true, // Boolean | Whether the keywords must occur in the image.
-  'mediaType': image, // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
+  'mediaType': "image", // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
   'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the meme.
   'maxAgeDays': 30 // Number | The maximum age of the meme in days.
 };
@@ -220,7 +220,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApiLeague.HumorApi();
-let query = dogs; // String | The search query.
+let query = "dogs"; // String | The search query.
 let opts = {
   'number': 5 // Number | The number of gifs to return in range [1,10]
 };
@@ -281,9 +281,9 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.HumorApi();
 let opts = {
-  'keywords': horse,man, // String | A comma-separated list of words that must occur in the joke.
-  'includeTags': animal, // String | A comma-separated list of tags the jokes should have.
-  'excludeTags': nsfw,dark, // String | A comma-separated list of tags the jokes must not have.
+  'keywords': "horse,man", // String | A comma-separated list of words that must occur in the joke.
+  'includeTags': "animal", // String | A comma-separated list of tags the jokes should have.
+  'excludeTags': "nsfw,dark", // String | A comma-separated list of tags the jokes must not have.
   'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the jokes.
   'maxLength': 140, // Number | The maximum length of the joke in letters.
   'offset': 0, // Number | The number of jokes to skip, between 0 and 1000.
@@ -351,9 +351,9 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.HumorApi();
 let opts = {
-  'keywords': rocket, // String | A comma-separated list of words that must occur in the meme.
+  'keywords': "rocket", // String | A comma-separated list of words that must occur in the meme.
   'keywordsInImage': true, // Boolean | Whether the keywords must occur in the image.
-  'mediaType': image, // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
+  'mediaType': "image", // String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
   'minRating': 0, // Number | The minimum rating in range [0.0,1.0] of the meme.
   'maxAgeDays': 30, // Number | The maximum age of the meme in days.
   'offset': 0, // Number | The number of memes to skip, between 0 and 1000.

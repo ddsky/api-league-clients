@@ -10,7 +10,7 @@ import org.openapitools.model.SearchMemes200ResponseMemesInner;
 @Canonical
 class SearchMemes200Response {
     
-    List<SearchMemes200ResponseMemesInner> memes
+    List<SearchMemes200ResponseMemesInner> memes = new ArrayList<>()
     
     Integer available
 }

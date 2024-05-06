@@ -16,5 +16,5 @@ class SearchNews200Response {
     
     Integer available
     
-    List<SearchNews200ResponseNewsInner> news
+    List<SearchNews200ResponseNewsInner> news = new ArrayList<>()
 }

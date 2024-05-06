@@ -9,9 +9,9 @@ import java.util.Arrays;
 @Canonical
 class ScoreText200ResponseStyleSubscores {
     
-    List<Integer> abbreviationScore
+    List<Integer> abbreviationScore = new ArrayList<>()
     
-    List<Integer> styleScore
+    List<Integer> styleScore = new ArrayList<>()
     
-    List<Integer> spellingScore
+    List<Integer> spellingScore = new ArrayList<>()
 }

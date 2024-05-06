@@ -9,15 +9,15 @@ import java.util.Arrays;
 @Canonical
 class ScoreText200ResponseSkimmabilitySubscores {
     
-    List<Integer> bulletPointRatioScore
+    List<Integer> bulletPointRatioScore = new ArrayList<>()
     
-    List<Integer> imageScore
+    List<Integer> imageScore = new ArrayList<>()
     
-    List<Integer> highlightedWordRatioScore
+    List<Integer> highlightedWordRatioScore = new ArrayList<>()
     
-    List<Integer> videoScore
+    List<Integer> videoScore = new ArrayList<>()
     
-    List<Integer> paragraphScore
+    List<Integer> paragraphScore = new ArrayList<>()
     
-    List<Integer> paragraphHeadlineRatioScore
+    List<Integer> paragraphHeadlineRatioScore = new ArrayList<>()
 }

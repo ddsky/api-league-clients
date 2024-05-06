@@ -20,12 +20,12 @@ json = "{}"
 # create an instance of ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner from a JSON string
 compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_instance = ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.from_json(json)
 # print the JSON string representation of the object
-print ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.to_json()
+print(ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.to_json())
 
 # convert the object into a dict
 compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_dict = compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_instance.to_dict()
 # create an instance of ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner from a dict
-compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_form_dict = compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.from_dict(compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_dict)
+compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_from_dict = ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.from_dict(compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

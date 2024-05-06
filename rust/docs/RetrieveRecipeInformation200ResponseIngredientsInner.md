@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **image** | Option<**String**> |  | [optional]
 **name_clean** | Option<**String**> |  | [optional]
-**amount** | Option<**f32**> |  | [optional]
+**amount** | Option<**f64**> |  | [optional]
 **unit** | Option<**String**> |  | [optional]
-**measures** | Option<[**crate::models::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures**](retrieveRecipeInformation_200_response_ingredients_inner_measures.md)> |  | [optional]
+**measures** | Option<[**models::RetrieveRecipeInformation200ResponseIngredientsInnerMeasures**](retrieveRecipeInformation_200_response_ingredients_inner_measures.md)> |  | [optional]
 **original** | Option<**String**> |  | [optional]
 **meta** | Option<**Vec<String>**> |  | [optional]
 **original_name** | Option<**String**> |  | [optional]

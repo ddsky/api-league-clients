@@ -14,7 +14,7 @@ class SearchRecipes200Response {
     
     Integer number
     
-    List<SearchRecipes200ResponseRecipesInner> recipes
+    List<SearchRecipes200ResponseRecipesInner> recipes = new ArrayList<>()
     
     Integer totalResults
 }

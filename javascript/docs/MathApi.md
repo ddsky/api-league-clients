@@ -34,10 +34,10 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApiLeague.MathApi();
 let sourceAmount = 100; // Number | The source amount.
-let sourceUnit = kg; // String | The source unit.
-let targetUnit = lb; // String | The unit to which should be converted.
+let sourceUnit = "kg"; // String | The source unit.
+let targetUnit = "lb"; // String | The unit to which should be converted.
 let opts = {
-  'foodName': flour // String | An optional food name. For converting foods the food is relevant as they have different densities.
+  'foodName': "flour" // String | An optional food name. For converting foods the food is relevant as they have different densities.
 };
 apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, opts, (error, data, response) => {
   if (error) {

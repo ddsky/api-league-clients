@@ -10,5 +10,5 @@ import org.openapitools.model.SearchRecipes200ResponseRecipesInnerNutritionNutri
 @Canonical
 class SearchRecipes200ResponseRecipesInnerNutrition {
     
-    List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner> nutrients
+    List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner> nutrients = new ArrayList<>()
 }

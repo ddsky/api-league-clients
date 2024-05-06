@@ -1,6 +1,6 @@
 .gitignore
 .openapi-generator-ignore
-apileague-1.0.1.rockspec
+apileague-1.1.0.rockspec
 apileague/api/art_api.lua
 apileague/api/books_api.lua
 apileague/api/food_api.lua

@@ -10,5 +10,5 @@ import org.openapitools.model.SearchGifs200ResponseImagesInner;
 @Canonical
 class SearchGifs200Response {
     
-    List<SearchGifs200ResponseImagesInner> images
+    List<SearchGifs200ResponseImagesInner> images = new ArrayList<>()
 }

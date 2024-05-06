@@ -13,5 +13,5 @@ class DetectSentiment200Response {
     
     DetectSentiment200ResponseDocument document
     
-    List<DetectSentiment200ResponseSentencesInner> sentences
+    List<DetectSentiment200ResponseSentencesInner> sentences = new ArrayList<>()
 }

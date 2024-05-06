@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## extract_authors
 
-> crate::models::ExtractAuthors200Response extract_authors(url)
+> models::ExtractAuthors200Response extract_authors(url)
 Extract Authors
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ExtractAuthors200Response**](extractAuthors_200_response.md)
+[**models::ExtractAuthors200Response**](extractAuthors_200_response.md)
 
 ### Authorization
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Required | Notes
 
 ## extract_content_from_a_web_page
 
-> crate::models::ExtractContentFromAWebPage200Response extract_content_from_a_web_page(url)
+> models::ExtractContentFromAWebPage200Response extract_content_from_a_web_page(url)
 Extract Content from a Web Page
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
@@ -57,7 +57,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ExtractContentFromAWebPage200Response**](extractContentFromAWebPage_200_response.md)
+[**models::ExtractContentFromAWebPage200Response**](extractContentFromAWebPage_200_response.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Required | Notes
 
 ## extract_publish_date
 
-> crate::models::ExtractPublishDate200Response extract_publish_date(url)
+> models::ExtractPublishDate200Response extract_publish_date(url)
 Extract Publish Date
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
@@ -87,7 +87,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ExtractPublishDate200Response**](extractPublishDate_200_response.md)
+[**models::ExtractPublishDate200Response**](extractPublishDate_200_response.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Required | Notes
 
 ## search_web
 
-> crate::models::SearchWeb200Response search_web(query, number)
+> models::SearchWeb200Response search_web(query, number)
 Search Web
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
@@ -118,7 +118,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchWeb200Response**](searchWeb_200_response.md)
+[**models::SearchWeb200Response**](searchWeb_200_response.md)
 
 ### Authorization
 
