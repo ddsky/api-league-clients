@@ -1,4 +1,4 @@
-# ApiLeague.MediaApi
+# ApileagueJs.MediaApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -21,8 +21,8 @@ Detect the main color of an image. The API returns a list of colors and their he
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -34,7 +34,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.MediaApi();
+let apiInstance = new ApileagueJs.MediaApi();
 let url = "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM "; // String | The url of the image for which the colors should be detected.
 apiInstance.detectMainImageColor(url, (error, data, response) => {
   if (error) {
@@ -77,8 +77,8 @@ Rescale an image to a specific width and height. The image will be resized to fi
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -90,7 +90,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.MediaApi();
+let apiInstance = new ApileagueJs.MediaApi();
 let url = "https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM "; // String | The url of the image to be rescaled.
 let width = 200; // Number | The desired width of the rescaled image.
 let height = 200; // Number | The desired height of the rescaled image.
@@ -139,8 +139,8 @@ Search through hundreds of thousands of royalty free images to match any topic y
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -152,7 +152,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.MediaApi();
+let apiInstance = new ApileagueJs.MediaApi();
 let query = "dogs"; // String | The search query.
 let opts = {
   'number': 3 // Number | The number of images to return in range [1,10]

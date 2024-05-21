@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric);
     });
 
     it('should have the property unitShort (base name: "unit_short")', function() {
       // uncomment below and update the code to test the property unitShort
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
       //expect(instance).to.be();
     });
 
     it('should have the property unitLong (base name: "unit_long")', function() {
       // uncomment below and update the code to test the property unitLong
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric();
       //expect(instance).to.be();
     });
 

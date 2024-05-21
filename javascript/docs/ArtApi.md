@@ -1,4 +1,4 @@
-# ApiLeague.ArtApi
+# ApileagueJs.ArtApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -20,8 +20,8 @@ Convert an image to ASCII art. You can pass the image URL as a query parameter. 
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.ArtApi();
+let apiInstance = new ApileagueJs.ArtApi();
 let url = "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png"; // String | The URL to the image.
 let opts = {
   'width': 200, // Number | The maximum width of the image (default 400, max. 500).
@@ -82,8 +82,8 @@ Retrieve a random poem by many famous authors. You can filter poem&#39;s by leng
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -95,7 +95,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.ArtApi();
+let apiInstance = new ApileagueJs.ArtApi();
 let opts = {
   'minLines': 5, // Number | The minimum number of lines of the poem.
   'maxLines': 20 // Number | The maximum number of lines of the poem.

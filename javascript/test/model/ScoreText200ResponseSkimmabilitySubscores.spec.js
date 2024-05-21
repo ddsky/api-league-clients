@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+    instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('ScoreText200ResponseSkimmabilitySubscores', function() {
     it('should create an instance of ScoreText200ResponseSkimmabilitySubscores', function() {
       // uncomment below and update the code to test ScoreText200ResponseSkimmabilitySubscores
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
-      //expect(instance).to.be.a(ApiLeague.ScoreText200ResponseSkimmabilitySubscores);
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
+      //expect(instance).to.be.a(ApileagueJs.ScoreText200ResponseSkimmabilitySubscores);
     });
 
     it('should have the property bulletPointRatioScore (base name: "bullet_point_ratio_score")', function() {
       // uncomment below and update the code to test the property bulletPointRatioScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property imageScore (base name: "image_score")', function() {
       // uncomment below and update the code to test the property imageScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property highlightedWordRatioScore (base name: "highlighted_word_ratio_score")', function() {
       // uncomment below and update the code to test the property highlightedWordRatioScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property videoScore (base name: "video_score")', function() {
       // uncomment below and update the code to test the property videoScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property paragraphScore (base name: "paragraph_score")', function() {
       // uncomment below and update the code to test the property paragraphScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property paragraphHeadlineRatioScore (base name: "paragraph_headline_ratio_score")', function() {
       // uncomment below and update the code to test the property paragraphHeadlineRatioScore
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilitySubscores();
       //expect(instance).to.be();
     });
 

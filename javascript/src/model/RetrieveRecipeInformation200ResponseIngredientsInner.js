@@ -17,7 +17,7 @@ import RetrieveRecipeInformation200ResponseIngredientsInnerMeasures from './Retr
 /**
  * The RetrieveRecipeInformation200ResponseIngredientsInner model module.
  * @module model/RetrieveRecipeInformation200ResponseIngredientsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseIngredientsInner {
     /**

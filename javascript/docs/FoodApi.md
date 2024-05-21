@@ -1,4 +1,4 @@
-# ApiLeague.FoodApi
+# ApileagueJs.FoodApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -22,8 +22,8 @@ Compute detailed nutritional information for a given recipe (list of ingredients
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -35,7 +35,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.FoodApi();
+let apiInstance = new ApileagueJs.FoodApi();
 let ingredients = "1 cup apples,3oz milk,35g butter"; // String | A comma-separated list of the ingredients of the recipe.
 let opts = {
   'servings': 1, // Number | The number of servings the ingredients make. Nutrition is computed per serving.
@@ -84,8 +84,8 @@ Get detailed recipe information such as dietary properties, macro and micro nutr
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -97,7 +97,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.FoodApi();
+let apiInstance = new ApileagueJs.FoodApi();
 let id = 74987; // Number | The id of the recipe to retrieve.
 let opts = {
   'addWinePairing': true // Boolean | Whether to pair a wine to the recipe.
@@ -144,8 +144,8 @@ Search and filter thousands of recipes with natural language, e.g. pasta recipes
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -157,7 +157,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.FoodApi();
+let apiInstance = new ApileagueJs.FoodApi();
 let opts = {
   'query': "pasta with mushrooms but without nuts", // String | The search query.
   'cuisines': "mexican", // String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
@@ -376,8 +376,8 @@ Search through thousands of restaurants (in North America) by location, cuisine,
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -389,7 +389,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.FoodApi();
+let apiInstance = new ApileagueJs.FoodApi();
 let lat = 32.715736; // Number | The latitude to search around.
 let lon = -117.161087; // Number | The longitude to search around.
 let opts = {

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractEntities200Response();
+    instance = new ApileagueJs.ExtractEntities200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ExtractEntities200Response', function() {
     it('should create an instance of ExtractEntities200Response', function() {
       // uncomment below and update the code to test ExtractEntities200Response
-      //var instance = new ApiLeague.ExtractEntities200Response();
-      //expect(instance).to.be.a(ApiLeague.ExtractEntities200Response);
+      //var instance = new ApileagueJs.ExtractEntities200Response();
+      //expect(instance).to.be.a(ApileagueJs.ExtractEntities200Response);
     });
 
     it('should have the property entities (base name: "entities")', function() {
       // uncomment below and update the code to test the property entities
-      //var instance = new ApiLeague.ExtractEntities200Response();
+      //var instance = new ApileagueJs.ExtractEntities200Response();
       //expect(instance).to.be();
     });
 

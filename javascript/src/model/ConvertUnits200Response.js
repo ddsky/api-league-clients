@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConvertUnits200Response model module.
  * @module model/ConvertUnits200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ConvertUnits200Response {
     /**

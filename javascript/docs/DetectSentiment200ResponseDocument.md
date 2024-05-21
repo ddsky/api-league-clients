@@ -1,4 +1,4 @@
-# ApiLeague.DetectSentiment200ResponseDocument
+# ApileagueJs.DetectSentiment200ResponseDocument
 
 ## Properties
 

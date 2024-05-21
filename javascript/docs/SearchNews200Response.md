@@ -1,4 +1,4 @@
-# ApiLeague.SearchNews200Response
+# ApileagueJs.SearchNews200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# ApiLeague.ListWordSynonyms200Response
+# ApileagueJs.ListWordSynonyms200Response
 
 ## Properties
 

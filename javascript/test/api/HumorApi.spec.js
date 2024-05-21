@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.HumorApi();
+    instance = new ApileagueJs.HumorApi();
   });
 
   var getProperty = function(object, getter, property) {

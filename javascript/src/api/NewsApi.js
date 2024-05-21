@@ -19,7 +19,7 @@ import SearchNews200Response from '../model/SearchNews200Response';
 /**
 * News service.
 * @module api/NewsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class NewsApi {
 

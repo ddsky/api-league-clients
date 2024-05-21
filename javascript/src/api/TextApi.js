@@ -29,7 +29,7 @@ import TextStemming200Response from '../model/TextStemming200Response';
 /**
 * Text service.
 * @module api/TextApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class TextApi {
 

@@ -1,4 +1,4 @@
-# ApiLeague.WebApi
+# ApileagueJs.WebApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -22,8 +22,8 @@ Extracts the authors from a given URL. This API is useful for extracting the aut
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -35,7 +35,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.WebApi();
+let apiInstance = new ApileagueJs.WebApi();
 let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url with the article from which authors should be extracted.
 apiInstance.extractAuthors(url, (error, data, response) => {
   if (error) {
@@ -78,8 +78,8 @@ Extract the main content from a web page. This API is useful for extracting the 
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -91,7 +91,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.WebApi();
+let apiInstance = new ApileagueJs.WebApi();
 let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the content will be extracted.
 apiInstance.extractContentFromAWebPage(url, (error, data, response) => {
   if (error) {
@@ -134,8 +134,8 @@ Extract the publish date of an article (news or blog). The API will return the p
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -147,7 +147,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.WebApi();
+let apiInstance = new ApileagueJs.WebApi();
 let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the publish date should be extracted.
 apiInstance.extractPublishDate(url, (error, data, response) => {
   if (error) {
@@ -190,8 +190,8 @@ Search the web for a given query. The API returns a list of results with the tit
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -203,7 +203,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.WebApi();
+let apiInstance = new ApileagueJs.WebApi();
 let query = "penguins"; // String | The search query.
 let opts = {
   'number': 5 // Number | The number of results to return in range [1,50]

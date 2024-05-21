@@ -1,4 +1,4 @@
-# ApiLeague.ExtractAuthors200Response
+# ApileagueJs.ExtractAuthors200Response
 
 ## Properties
 

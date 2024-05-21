@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchRestaurants200ResponseRestaurantsInnerAddress model module.
  * @module model/SearchRestaurants200ResponseRestaurantsInnerAddress
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRestaurants200ResponseRestaurantsInnerAddress {
     /**

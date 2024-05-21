@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreText200ResponseStyle();
+    instance = new ApileagueJs.ScoreText200ResponseStyle();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ScoreText200ResponseStyle', function() {
     it('should create an instance of ScoreText200ResponseStyle', function() {
       // uncomment below and update the code to test ScoreText200ResponseStyle
-      //var instance = new ApiLeague.ScoreText200ResponseStyle();
-      //expect(instance).to.be.a(ApiLeague.ScoreText200ResponseStyle);
+      //var instance = new ApileagueJs.ScoreText200ResponseStyle();
+      //expect(instance).to.be.a(ApileagueJs.ScoreText200ResponseStyle);
     });
 
     it('should have the property mainscores (base name: "mainscores")', function() {
       // uncomment below and update the code to test the property mainscores
-      //var instance = new ApiLeague.ScoreText200ResponseStyle();
+      //var instance = new ApileagueJs.ScoreText200ResponseStyle();
       //expect(instance).to.be();
     });
 
     it('should have the property subscores (base name: "subscores")', function() {
       // uncomment below and update the code to test the property subscores
-      //var instance = new ApiLeague.ScoreText200ResponseStyle();
+      //var instance = new ApileagueJs.ScoreText200ResponseStyle();
       //expect(instance).to.be();
     });
 

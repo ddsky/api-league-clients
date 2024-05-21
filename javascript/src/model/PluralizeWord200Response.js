@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PluralizeWord200Response model module.
  * @module model/PluralizeWord200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PluralizeWord200Response {
     /**

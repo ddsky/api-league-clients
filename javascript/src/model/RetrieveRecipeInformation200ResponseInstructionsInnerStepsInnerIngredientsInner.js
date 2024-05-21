@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner model module.
  * @module model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner {
     /**

@@ -1,4 +1,4 @@
-# ApiLeague.ScoreReadability200Response
+# ApileagueJs.ScoreReadability200Response
 
 ## Properties
 

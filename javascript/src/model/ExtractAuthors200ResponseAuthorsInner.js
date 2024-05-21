@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExtractAuthors200ResponseAuthorsInner model module.
  * @module model/ExtractAuthors200ResponseAuthorsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractAuthors200ResponseAuthorsInner {
     /**

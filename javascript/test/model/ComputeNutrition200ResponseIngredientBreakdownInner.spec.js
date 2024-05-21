@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+    instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ComputeNutrition200ResponseIngredientBreakdownInner', function() {
     it('should create an instance of ComputeNutrition200ResponseIngredientBreakdownInner', function() {
       // uncomment below and update the code to test ComputeNutrition200ResponseIngredientBreakdownInner
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
-      //expect(instance).to.be.a(ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner);
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //expect(instance).to.be.a(ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
       //expect(instance).to.be();
     });
 
     it('should have the property nutrients (base name: "nutrients")', function() {
       // uncomment below and update the code to test the property nutrients
-      //var instance = new ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner();
+      //var instance = new ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner();
       //expect(instance).to.be();
     });
 

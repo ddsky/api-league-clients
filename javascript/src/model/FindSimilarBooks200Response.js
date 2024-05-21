@@ -17,7 +17,7 @@ import SearchBooks200ResponseBooksInner from './SearchBooks200ResponseBooksInner
 /**
  * The FindSimilarBooks200Response model module.
  * @module model/FindSimilarBooks200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FindSimilarBooks200Response {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListWordSynonyms200Response model module.
  * @module model/ListWordSynonyms200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ListWordSynonyms200Response {
     /**

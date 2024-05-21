@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.DetectMainImageColor200ResponseInner();
+    instance = new ApileagueJs.DetectMainImageColor200ResponseInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('DetectMainImageColor200ResponseInner', function() {
     it('should create an instance of DetectMainImageColor200ResponseInner', function() {
       // uncomment below and update the code to test DetectMainImageColor200ResponseInner
-      //var instance = new ApiLeague.DetectMainImageColor200ResponseInner();
-      //expect(instance).to.be.a(ApiLeague.DetectMainImageColor200ResponseInner);
+      //var instance = new ApileagueJs.DetectMainImageColor200ResponseInner();
+      //expect(instance).to.be.a(ApileagueJs.DetectMainImageColor200ResponseInner);
     });
 
     it('should have the property specificColor (base name: "specific_color")', function() {
       // uncomment below and update the code to test the property specificColor
-      //var instance = new ApiLeague.DetectMainImageColor200ResponseInner();
+      //var instance = new ApileagueJs.DetectMainImageColor200ResponseInner();
       //expect(instance).to.be();
     });
 
     it('should have the property mainColor (base name: "main_color")', function() {
       // uncomment below and update the code to test the property mainColor
-      //var instance = new ApiLeague.DetectMainImageColor200ResponseInner();
+      //var instance = new ApileagueJs.DetectMainImageColor200ResponseInner();
       //expect(instance).to.be();
     });
 
     it('should have the property hexCode (base name: "hex_code")', function() {
       // uncomment below and update the code to test the property hexCode
-      //var instance = new ApiLeague.DetectMainImageColor200ResponseInner();
+      //var instance = new ApileagueJs.DetectMainImageColor200ResponseInner();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200ResponseTaste
+# ApileagueJs.RetrieveRecipeInformation200ResponseTaste
 
 ## Properties
 

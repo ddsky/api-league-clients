@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner();
       //expect(instance).to.be();
     });
 

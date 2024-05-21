@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
+    instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('DetectSentiment200ResponseSentencesInner', function() {
     it('should create an instance of DetectSentiment200ResponseSentencesInner', function() {
       // uncomment below and update the code to test DetectSentiment200ResponseSentencesInner
-      //var instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
-      //expect(instance).to.be.a(ApiLeague.DetectSentiment200ResponseSentencesInner);
+      //var instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
+      //expect(instance).to.be.a(ApileagueJs.DetectSentiment200ResponseSentencesInner);
     });
 
     it('should have the property length (base name: "length")', function() {
       // uncomment below and update the code to test the property length
-      //var instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property sentiment (base name: "sentiment")', function() {
       // uncomment below and update the code to test the property sentiment
-      //var instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property confidence (base name: "confidence")', function() {
       // uncomment below and update the code to test the property confidence
-      //var instance = new ApiLeague.DetectSentiment200ResponseSentencesInner();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseSentencesInner();
       //expect(instance).to.be();
     });
 

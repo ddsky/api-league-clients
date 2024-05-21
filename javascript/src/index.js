@@ -118,9 +118,9 @@ import WebApi from './api/WebApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var ApiLeague = require('index'); // See note below*.
-* var xxxSvc = new ApiLeague.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new ApiLeague.Yyy(); // Construct a model instance.
+* var ApileagueJs = require('index'); // See note below*.
+* var xxxSvc = new ApileagueJs.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new ApileagueJs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -132,8 +132,8 @@ import WebApi from './api/WebApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new ApiLeague.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new ApiLeague.Yyy(); // Construct a model instance.
+* var xxxSvc = new ApileagueJs.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new ApileagueJs.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -141,7 +141,7 @@ import WebApi from './api/WebApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.0
+* @version 1.1.0
 */
 export {
     /**

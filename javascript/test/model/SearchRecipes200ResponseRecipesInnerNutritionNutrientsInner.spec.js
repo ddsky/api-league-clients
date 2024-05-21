@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
+    instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner', function() {
     it('should create an instance of SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner', function() {
       // uncomment below and update the code to test SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
-      //expect(instance).to.be.a(ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner);
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner();
       //expect(instance).to.be();
     });
 

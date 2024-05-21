@@ -1,4 +1,4 @@
-# ApiLeague.KnowledgeApi
+# ApileagueJs.KnowledgeApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -20,8 +20,8 @@ This API returns a random quote from a collection of quotes. The quotes are from
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.KnowledgeApi();
+let apiInstance = new ApileagueJs.KnowledgeApi();
 let opts = {
   'minLength': 120, // Number | The minimum length of the quote in letters.
   'maxLength': 300 // Number | The maximum length of the quote in letters.
@@ -80,8 +80,8 @@ This endpoint returns a random piece of trivia.
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -93,7 +93,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.KnowledgeApi();
+let apiInstance = new ApileagueJs.KnowledgeApi();
 let opts = {
   'maxLength': 300 // Number | The maximum length of the trivia in letters.
 };

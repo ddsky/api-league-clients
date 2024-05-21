@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational model module.
  * @module model/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational {
     /**

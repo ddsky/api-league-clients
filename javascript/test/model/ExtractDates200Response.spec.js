@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractDates200Response();
+    instance = new ApileagueJs.ExtractDates200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ExtractDates200Response', function() {
     it('should create an instance of ExtractDates200Response', function() {
       // uncomment below and update the code to test ExtractDates200Response
-      //var instance = new ApiLeague.ExtractDates200Response();
-      //expect(instance).to.be.a(ApiLeague.ExtractDates200Response);
+      //var instance = new ApileagueJs.ExtractDates200Response();
+      //expect(instance).to.be.a(ApileagueJs.ExtractDates200Response);
     });
 
     it('should have the property dates (base name: "dates")', function() {
       // uncomment below and update the code to test the property dates
-      //var instance = new ApiLeague.ExtractDates200Response();
+      //var instance = new ApileagueJs.ExtractDates200Response();
       //expect(instance).to.be();
     });
 

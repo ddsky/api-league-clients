@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
+# ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
 
 ## Properties
 

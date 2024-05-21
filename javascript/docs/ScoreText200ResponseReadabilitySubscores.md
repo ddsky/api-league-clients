@@ -1,4 +1,4 @@
-# ApiLeague.ScoreText200ResponseReadabilitySubscores
+# ApileagueJs.ScoreText200ResponseReadabilitySubscores
 
 ## Properties
 

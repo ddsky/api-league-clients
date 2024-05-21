@@ -19,7 +19,7 @@ import SearchBooks200Response from '../model/SearchBooks200Response';
 /**
 * Books service.
 * @module api/BooksApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class BooksApi {
 

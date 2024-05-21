@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreReadability200Response();
+    instance = new ApileagueJs.ScoreReadability200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ScoreReadability200Response', function() {
     it('should create an instance of ScoreReadability200Response', function() {
       // uncomment below and update the code to test ScoreReadability200Response
-      //var instance = new ApiLeague.ScoreReadability200Response();
-      //expect(instance).to.be.a(ApiLeague.ScoreReadability200Response);
+      //var instance = new ApileagueJs.ScoreReadability200Response();
+      //expect(instance).to.be.a(ApileagueJs.ScoreReadability200Response);
     });
 
     it('should have the property readability (base name: "readability")', function() {
       // uncomment below and update the code to test the property readability
-      //var instance = new ApiLeague.ScoreReadability200Response();
+      //var instance = new ApileagueJs.ScoreReadability200Response();
       //expect(instance).to.be();
     });
 

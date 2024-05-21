@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RandomMeme200Response model module.
  * @module model/RandomMeme200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RandomMeme200Response {
     /**

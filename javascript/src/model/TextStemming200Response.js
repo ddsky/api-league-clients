@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TextStemming200Response model module.
  * @module model/TextStemming200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TextStemming200Response {
     /**

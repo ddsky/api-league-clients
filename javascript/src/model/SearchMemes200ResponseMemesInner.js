@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchMemes200ResponseMemesInner model module.
  * @module model/SearchMemes200ResponseMemesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchMemes200ResponseMemesInner {
     /**

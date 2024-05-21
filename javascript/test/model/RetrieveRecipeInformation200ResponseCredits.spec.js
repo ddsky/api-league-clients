@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('RetrieveRecipeInformation200ResponseCredits', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseCredits', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseCredits
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseCredits);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseCredits);
     });
 
     it('should have the property license (base name: "license")', function() {
       // uncomment below and update the code to test the property license
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
       //expect(instance).to.be();
     });
 
     it('should have the property sourceName (base name: "source_name")', function() {
       // uncomment below and update the code to test the property sourceName
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
       //expect(instance).to.be();
     });
 
     it('should have the property sourceUrl (base name: "source_url")', function() {
       // uncomment below and update the code to test the property sourceUrl
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseCredits();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseCredits();
       //expect(instance).to.be();
     });
 

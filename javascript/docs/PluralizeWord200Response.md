@@ -1,4 +1,4 @@
-# ApiLeague.PluralizeWord200Response
+# ApileagueJs.PluralizeWord200Response
 
 ## Properties
 

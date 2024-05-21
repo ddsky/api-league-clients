@@ -1,4 +1,4 @@
-# ApiLeague.PartOfSpeechTagging200Response
+# ApileagueJs.PartOfSpeechTagging200Response
 
 ## Properties
 

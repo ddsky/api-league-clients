@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+# ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing
 
 ## Properties
 

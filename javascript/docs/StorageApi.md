@@ -1,4 +1,4 @@
-# ApiLeague.StorageApi
+# ApileagueJs.StorageApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -20,8 +20,8 @@ Read a value from the key-value store. The key-value store is a simple storage s
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.StorageApi();
+let apiInstance = new ApileagueJs.StorageApi();
 let key = "visitors24h"; // String | The key for which the value is stored (max length 255 characters).
 apiInstance.readKeyValueFromStore(key, (error, data, response) => {
   if (error) {
@@ -76,8 +76,8 @@ Store a value in the key-value store. The key-value store is a simple storage sy
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -89,7 +89,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.StorageApi();
+let apiInstance = new ApileagueJs.StorageApi();
 let key = "visitors24h"; // String | The key for which the value is stored (max length 255 characters).
 let value = "23578 visitors"; // String | The value that is supposed to be stored (max length 10,000 characters).
 apiInstance.storeKeyValueGET(key, value, (error, data, response) => {

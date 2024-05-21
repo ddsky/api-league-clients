@@ -18,7 +18,7 @@ import ScoreText200ResponseSkimmabilitySubscores from './ScoreText200ResponseSki
 /**
  * The ScoreText200ResponseSkimmability model module.
  * @module model/ScoreText200ResponseSkimmability
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseSkimmability {
     /**

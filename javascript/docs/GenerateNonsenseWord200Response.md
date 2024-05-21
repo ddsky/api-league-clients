@@ -1,4 +1,4 @@
-# ApiLeague.GenerateNonsenseWord200Response
+# ApileagueJs.GenerateNonsenseWord200Response
 
 ## Properties
 

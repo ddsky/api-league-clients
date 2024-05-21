@@ -17,7 +17,7 @@ import SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational from '.
 /**
  * The SearchRestaurants200ResponseRestaurantsInnerLocalHours model module.
  * @module model/SearchRestaurants200ResponseRestaurantsInnerLocalHours
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRestaurants200ResponseRestaurantsInnerLocalHours {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseScores();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseScores();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RetrieveRecipeInformation200ResponseScores', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseScores', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseScores
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseScores();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseScores);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseScores();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseScores);
     });
 
     it('should have the property metaScore (base name: "meta_score")', function() {
       // uncomment below and update the code to test the property metaScore
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseScores();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseScores();
       //expect(instance).to.be();
     });
 
     it('should have the property weightWatcherSmartPoints (base name: "weight_watcher_smart_points")', function() {
       // uncomment below and update the code to test the property weightWatcherSmartPoints
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseScores();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseScores();
       //expect(instance).to.be();
     });
 
     it('should have the property healthScore (base name: "health_score")', function() {
       // uncomment below and update the code to test the property healthScore
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseScores();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseScores();
       //expect(instance).to.be();
     });
 

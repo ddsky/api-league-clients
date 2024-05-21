@@ -1,4 +1,4 @@
-# ApiLeague.ScoreText200ResponseInterestingness
+# ApileagueJs.ScoreText200ResponseInterestingness
 
 ## Properties
 

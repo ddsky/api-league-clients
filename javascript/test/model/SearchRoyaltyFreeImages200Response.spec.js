@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRoyaltyFreeImages200Response();
+    instance = new ApileagueJs.SearchRoyaltyFreeImages200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('SearchRoyaltyFreeImages200Response', function() {
     it('should create an instance of SearchRoyaltyFreeImages200Response', function() {
       // uncomment below and update the code to test SearchRoyaltyFreeImages200Response
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchRoyaltyFreeImages200Response);
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchRoyaltyFreeImages200Response);
     });
 
     it('should have the property images (base name: "images")', function() {
       // uncomment below and update the code to test the property images
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200Response();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200Response();
       //expect(instance).to.be();
     });
 

@@ -17,7 +17,7 @@ import SearchJokes200ResponseJokesInner from './SearchJokes200ResponseJokesInner
 /**
  * The SearchJokes200Response model module.
  * @module model/SearchJokes200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchJokes200Response {
     /**

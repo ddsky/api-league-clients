@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ConvertUnits200Response();
+    instance = new ApileagueJs.ConvertUnits200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ConvertUnits200Response', function() {
     it('should create an instance of ConvertUnits200Response', function() {
       // uncomment below and update the code to test ConvertUnits200Response
-      //var instance = new ApiLeague.ConvertUnits200Response();
-      //expect(instance).to.be.a(ApiLeague.ConvertUnits200Response);
+      //var instance = new ApileagueJs.ConvertUnits200Response();
+      //expect(instance).to.be.a(ApileagueJs.ConvertUnits200Response);
     });
 
     it('should have the property targetAmount (base name: "target_amount")', function() {
       // uncomment below and update the code to test the property targetAmount
-      //var instance = new ApiLeague.ConvertUnits200Response();
+      //var instance = new ApileagueJs.ConvertUnits200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property targetUnit (base name: "target_unit")', function() {
       // uncomment below and update the code to test the property targetUnit
-      //var instance = new ApiLeague.ConvertUnits200Response();
+      //var instance = new ApileagueJs.ConvertUnits200Response();
       //expect(instance).to.be();
     });
 

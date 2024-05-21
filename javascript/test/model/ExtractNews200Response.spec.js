@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractNews200Response();
+    instance = new ApileagueJs.ExtractNews200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('ExtractNews200Response', function() {
     it('should create an instance of ExtractNews200Response', function() {
       // uncomment below and update the code to test ExtractNews200Response
-      //var instance = new ApiLeague.ExtractNews200Response();
-      //expect(instance).to.be.a(ApiLeague.ExtractNews200Response);
+      //var instance = new ApileagueJs.ExtractNews200Response();
+      //expect(instance).to.be.a(ApileagueJs.ExtractNews200Response);
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property publishDate (base name: "publish_date")', function() {
       // uncomment below and update the code to test the property publishDate
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property language (base name: "language")', function() {
       // uncomment below and update the code to test the property language
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property sourceCountry (base name: "source_country")', function() {
       // uncomment below and update the code to test the property sourceCountry
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property sentiment (base name: "sentiment")', function() {
       // uncomment below and update the code to test the property sentiment
-      //var instance = new ApiLeague.ExtractNews200Response();
+      //var instance = new ApileagueJs.ExtractNews200Response();
       //expect(instance).to.be();
     });
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetectMainImageColor200ResponseInner model module.
  * @module model/DetectMainImageColor200ResponseInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetectMainImageColor200ResponseInner {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RandomPoem200Response model module.
  * @module model/RandomPoem200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RandomPoem200Response {
     /**

@@ -22,7 +22,7 @@ import SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner from './Searc
 /**
  * The RetrieveRecipeInformation200ResponseNutrition model module.
  * @module model/RetrieveRecipeInformation200ResponseNutrition
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseNutrition {
     /**

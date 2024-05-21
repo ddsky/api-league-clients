@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RandomTrivia200Response();
+    instance = new ApileagueJs.RandomTrivia200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('RandomTrivia200Response', function() {
     it('should create an instance of RandomTrivia200Response', function() {
       // uncomment below and update the code to test RandomTrivia200Response
-      //var instance = new ApiLeague.RandomTrivia200Response();
-      //expect(instance).to.be.a(ApiLeague.RandomTrivia200Response);
+      //var instance = new ApileagueJs.RandomTrivia200Response();
+      //expect(instance).to.be.a(ApileagueJs.RandomTrivia200Response);
     });
 
     it('should have the property trivia (base name: "trivia")', function() {
       // uncomment below and update the code to test the property trivia
-      //var instance = new ApiLeague.RandomTrivia200Response();
+      //var instance = new ApileagueJs.RandomTrivia200Response();
       //expect(instance).to.be();
     });
 

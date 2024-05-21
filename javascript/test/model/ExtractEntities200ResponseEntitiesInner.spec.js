@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+    instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ExtractEntities200ResponseEntitiesInner', function() {
     it('should create an instance of ExtractEntities200ResponseEntitiesInner', function() {
       // uncomment below and update the code to test ExtractEntities200ResponseEntitiesInner
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
-      //expect(instance).to.be.a(ApiLeague.ExtractEntities200ResponseEntitiesInner);
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
+      //expect(instance).to.be.a(ApileagueJs.ExtractEntities200ResponseEntitiesInner);
     });
 
     it('should have the property startPosition (base name: "start_position")', function() {
       // uncomment below and update the code to test the property startPosition
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property endPosition (base name: "end_position")', function() {
       // uncomment below and update the code to test the property endPosition
-      //var instance = new ApiLeague.ExtractEntities200ResponseEntitiesInner();
+      //var instance = new ApileagueJs.ExtractEntities200ResponseEntitiesInner();
       //expect(instance).to.be();
     });
 

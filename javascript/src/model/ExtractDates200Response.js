@@ -17,7 +17,7 @@ import ExtractDates200ResponseDatesInner from './ExtractDates200ResponseDatesInn
 /**
  * The ExtractDates200Response model module.
  * @module model/ExtractDates200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractDates200Response {
     /**

@@ -18,7 +18,7 @@ import SearchRestaurants200ResponseRestaurantsInnerLocalHours from './SearchRest
 /**
  * The SearchRestaurants200ResponseRestaurantsInner model module.
  * @module model/SearchRestaurants200ResponseRestaurantsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRestaurants200ResponseRestaurantsInner {
     /**

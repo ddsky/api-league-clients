@@ -17,7 +17,7 @@ import ExtractAuthors200ResponseAuthorsInner from './ExtractAuthors200ResponseAu
 /**
  * The ExtractAuthors200Response model module.
  * @module model/ExtractAuthors200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractAuthors200Response {
     /**

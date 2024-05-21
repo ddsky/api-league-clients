@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200Response
+# ApileagueJs.RetrieveRecipeInformation200Response
 
 ## Properties
 

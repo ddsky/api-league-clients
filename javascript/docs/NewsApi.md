@@ -1,4 +1,4 @@
-# ApiLeague.NewsApi
+# ApileagueJs.NewsApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -20,8 +20,8 @@ Extract a news article from a website to a well structure JSON object. The API w
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.NewsApi();
+let apiInstance = new ApileagueJs.NewsApi();
 let url = "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/"; // String | The url of the news.
 let analyze = true; // Boolean | Whether to analyze the news (extract entities etc.)
 apiInstance.extractNews(url, analyze, (error, data, response) => {
@@ -78,8 +78,8 @@ Search and filter news by text, date, location, language, and more. The API retu
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -91,7 +91,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.NewsApi();
+let apiInstance = new ApileagueJs.NewsApi();
 let opts = {
   'text': "tesla", // String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
   'sourceCountries': "us,uk", // String | A comma-separated list of ISO 3166 country codes from which the news should originate.

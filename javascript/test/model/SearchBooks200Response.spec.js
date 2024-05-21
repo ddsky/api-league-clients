@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchBooks200Response();
+    instance = new ApileagueJs.SearchBooks200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('SearchBooks200Response', function() {
     it('should create an instance of SearchBooks200Response', function() {
       // uncomment below and update the code to test SearchBooks200Response
-      //var instance = new ApiLeague.SearchBooks200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchBooks200Response);
+      //var instance = new ApileagueJs.SearchBooks200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchBooks200Response);
     });
 
     it('should have the property available (base name: "available")', function() {
       // uncomment below and update the code to test the property available
-      //var instance = new ApiLeague.SearchBooks200Response();
+      //var instance = new ApileagueJs.SearchBooks200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property number (base name: "number")', function() {
       // uncomment below and update the code to test the property number
-      //var instance = new ApiLeague.SearchBooks200Response();
+      //var instance = new ApileagueJs.SearchBooks200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instance = new ApiLeague.SearchBooks200Response();
+      //var instance = new ApileagueJs.SearchBooks200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property books (base name: "books")', function() {
       // uncomment below and update the code to test the property books
-      //var instance = new ApiLeague.SearchBooks200Response();
+      //var instance = new ApileagueJs.SearchBooks200Response();
       //expect(instance).to.be();
     });
 

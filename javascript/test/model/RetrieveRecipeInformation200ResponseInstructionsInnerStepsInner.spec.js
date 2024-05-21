@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner);
     });
 
     it('should have the property number (base name: "number")', function() {
       // uncomment below and update the code to test the property number
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property ingredients (base name: "ingredients")', function() {
       // uncomment below and update the code to test the property ingredients
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property equipment (base name: "equipment")', function() {
       // uncomment below and update the code to test the property equipment
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property step (base name: "step")', function() {
       // uncomment below and update the code to test the property step
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner();
       //expect(instance).to.be();
     });
 

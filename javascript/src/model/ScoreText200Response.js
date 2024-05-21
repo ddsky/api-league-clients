@@ -20,7 +20,7 @@ import ScoreText200ResponseStyle from './ScoreText200ResponseStyle';
 /**
  * The ScoreText200Response model module.
  * @module model/ScoreText200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200Response {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+    instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ExtractDates200ResponseDatesInner', function() {
     it('should create an instance of ExtractDates200ResponseDatesInner', function() {
       // uncomment below and update the code to test ExtractDates200ResponseDatesInner
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
-      //expect(instance).to.be.a(ApiLeague.ExtractDates200ResponseDatesInner);
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
+      //expect(instance).to.be.a(ApileagueJs.ExtractDates200ResponseDatesInner);
     });
 
     it('should have the property startPosition (base name: "start_position")', function() {
       // uncomment below and update the code to test the property startPosition
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property date (base name: "date")', function() {
       // uncomment below and update the code to test the property date
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property normalizedDate (base name: "normalized_date")', function() {
       // uncomment below and update the code to test the property normalizedDate
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property tag (base name: "tag")', function() {
       // uncomment below and update the code to test the property tag
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property endPosition (base name: "end_position")', function() {
       // uncomment below and update the code to test the property endPosition
-      //var instance = new ApiLeague.ExtractDates200ResponseDatesInner();
+      //var instance = new ApileagueJs.ExtractDates200ResponseDatesInner();
       //expect(instance).to.be();
     });
 

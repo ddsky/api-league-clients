@@ -1,4 +1,4 @@
-# ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense
+# ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense
 
 ## Properties
 

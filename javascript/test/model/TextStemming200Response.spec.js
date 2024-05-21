@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.TextStemming200Response();
+    instance = new ApileagueJs.TextStemming200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TextStemming200Response', function() {
     it('should create an instance of TextStemming200Response', function() {
       // uncomment below and update the code to test TextStemming200Response
-      //var instance = new ApiLeague.TextStemming200Response();
-      //expect(instance).to.be.a(ApiLeague.TextStemming200Response);
+      //var instance = new ApileagueJs.TextStemming200Response();
+      //expect(instance).to.be.a(ApileagueJs.TextStemming200Response);
     });
 
     it('should have the property original (base name: "original")', function() {
       // uncomment below and update the code to test the property original
-      //var instance = new ApiLeague.TextStemming200Response();
+      //var instance = new ApileagueJs.TextStemming200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property stemmed (base name: "stemmed")', function() {
       // uncomment below and update the code to test the property stemmed
-      //var instance = new ApiLeague.TextStemming200Response();
+      //var instance = new ApileagueJs.TextStemming200Response();
       //expect(instance).to.be();
     });
 

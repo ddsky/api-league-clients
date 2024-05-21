@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchBooks200ResponseBooksInner model module.
  * @module model/SearchBooks200ResponseBooksInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchBooks200ResponseBooksInner {
     /**

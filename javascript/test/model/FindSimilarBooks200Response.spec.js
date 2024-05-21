@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.FindSimilarBooks200Response();
+    instance = new ApileagueJs.FindSimilarBooks200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('FindSimilarBooks200Response', function() {
     it('should create an instance of FindSimilarBooks200Response', function() {
       // uncomment below and update the code to test FindSimilarBooks200Response
-      //var instance = new ApiLeague.FindSimilarBooks200Response();
-      //expect(instance).to.be.a(ApiLeague.FindSimilarBooks200Response);
+      //var instance = new ApileagueJs.FindSimilarBooks200Response();
+      //expect(instance).to.be.a(ApileagueJs.FindSimilarBooks200Response);
     });
 
     it('should have the property similarBooks (base name: "similar_books")', function() {
       // uncomment below and update the code to test the property similarBooks
-      //var instance = new ApiLeague.FindSimilarBooks200Response();
+      //var instance = new ApileagueJs.FindSimilarBooks200Response();
       //expect(instance).to.be();
     });
 

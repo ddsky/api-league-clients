@@ -18,7 +18,7 @@ import ConvertUnits200Response from '../model/ConvertUnits200Response';
 /**
 * Math service.
 * @module api/MathApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class MathApi {
 

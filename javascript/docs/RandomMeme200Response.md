@@ -1,4 +1,4 @@
-# ApiLeague.RandomMeme200Response
+# ApileagueJs.RandomMeme200Response
 
 ## Properties
 

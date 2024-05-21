@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.PluralizeWord200Response();
+    instance = new ApileagueJs.PluralizeWord200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('PluralizeWord200Response', function() {
     it('should create an instance of PluralizeWord200Response', function() {
       // uncomment below and update the code to test PluralizeWord200Response
-      //var instance = new ApiLeague.PluralizeWord200Response();
-      //expect(instance).to.be.a(ApiLeague.PluralizeWord200Response);
+      //var instance = new ApileagueJs.PluralizeWord200Response();
+      //expect(instance).to.be.a(ApileagueJs.PluralizeWord200Response);
     });
 
     it('should have the property original (base name: "original")', function() {
       // uncomment below and update the code to test the property original
-      //var instance = new ApiLeague.PluralizeWord200Response();
+      //var instance = new ApileagueJs.PluralizeWord200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property plural (base name: "plural")', function() {
       // uncomment below and update the code to test the property plural
-      //var instance = new ApiLeague.PluralizeWord200Response();
+      //var instance = new ApileagueJs.PluralizeWord200Response();
       //expect(instance).to.be();
     });
 

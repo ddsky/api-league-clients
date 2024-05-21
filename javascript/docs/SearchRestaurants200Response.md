@@ -1,4 +1,4 @@
-# ApiLeague.SearchRestaurants200Response
+# ApileagueJs.SearchRestaurants200Response
 
 ## Properties
 

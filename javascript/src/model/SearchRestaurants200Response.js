@@ -17,7 +17,7 @@ import SearchRestaurants200ResponseRestaurantsInner from './SearchRestaurants200
 /**
  * The SearchRestaurants200Response model module.
  * @module model/SearchRestaurants200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRestaurants200Response {
     /**

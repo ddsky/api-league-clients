@@ -17,7 +17,7 @@ import SearchWeb200ResponseResultsInner from './SearchWeb200ResponseResultsInner
 /**
  * The SearchWeb200Response model module.
  * @module model/SearchWeb200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchWeb200Response {
     /**

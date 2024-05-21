@@ -18,7 +18,7 @@ import RandomPoem200Response from '../model/RandomPoem200Response';
 /**
 * Art service.
 * @module api/ArtApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class ArtApi {
 

@@ -17,7 +17,7 @@ import SearchMemes200ResponseMemesInner from './SearchMemes200ResponseMemesInner
 /**
  * The SearchMemes200Response model module.
  * @module model/SearchMemes200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchMemes200Response {
     /**

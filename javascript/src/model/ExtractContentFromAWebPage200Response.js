@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExtractContentFromAWebPage200Response model module.
  * @module model/ExtractContentFromAWebPage200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractContentFromAWebPage200Response {
     /**

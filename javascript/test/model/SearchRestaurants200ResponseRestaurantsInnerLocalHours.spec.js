@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+    instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('SearchRestaurants200ResponseRestaurantsInnerLocalHours', function() {
     it('should create an instance of SearchRestaurants200ResponseRestaurantsInnerLocalHours', function() {
       // uncomment below and update the code to test SearchRestaurants200ResponseRestaurantsInnerLocalHours
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
-      //expect(instance).to.be.a(ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours);
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+      //expect(instance).to.be.a(ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours);
     });
 
     it('should have the property operational (base name: "operational")', function() {
       // uncomment below and update the code to test the property operational
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
       //expect(instance).to.be();
     });
 
     it('should have the property delivery (base name: "delivery")', function() {
       // uncomment below and update the code to test the property delivery
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
       //expect(instance).to.be();
     });
 
     it('should have the property pickup (base name: "pickup")', function() {
       // uncomment below and update the code to test the property pickup
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
       //expect(instance).to.be();
     });
 
     it('should have the property dineIn (base name: "dine_in")', function() {
       // uncomment below and update the code to test the property dineIn
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHours();
       //expect(instance).to.be();
     });
 

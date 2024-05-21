@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PartOfSpeechTagging200Response model module.
  * @module model/PartOfSpeechTagging200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PartOfSpeechTagging200Response {
     /**

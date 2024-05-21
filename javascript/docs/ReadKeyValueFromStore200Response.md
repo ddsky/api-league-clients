@@ -1,4 +1,4 @@
-# ApiLeague.ReadKeyValueFromStore200Response
+# ApileagueJs.ReadKeyValueFromStore200Response
 
 ## Properties
 

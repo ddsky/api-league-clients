@@ -17,7 +17,7 @@ import SearchBooks200ResponseBooksInner from './SearchBooks200ResponseBooksInner
 /**
  * The SearchBooks200Response model module.
  * @module model/SearchBooks200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchBooks200Response {
     /**

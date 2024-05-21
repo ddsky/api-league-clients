@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner model module.
  * @module model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner {
     /**

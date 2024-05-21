@@ -1,4 +1,4 @@
-# ApiLeague.ExtractContentFromAWebPage200Response
+# ApileagueJs.ExtractContentFromAWebPage200Response
 
 ## Properties
 

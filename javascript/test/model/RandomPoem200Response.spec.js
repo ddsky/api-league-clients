@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RandomPoem200Response();
+    instance = new ApileagueJs.RandomPoem200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RandomPoem200Response', function() {
     it('should create an instance of RandomPoem200Response', function() {
       // uncomment below and update the code to test RandomPoem200Response
-      //var instance = new ApiLeague.RandomPoem200Response();
-      //expect(instance).to.be.a(ApiLeague.RandomPoem200Response);
+      //var instance = new ApileagueJs.RandomPoem200Response();
+      //expect(instance).to.be.a(ApileagueJs.RandomPoem200Response);
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new ApiLeague.RandomPoem200Response();
+      //var instance = new ApileagueJs.RandomPoem200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instance = new ApiLeague.RandomPoem200Response();
+      //var instance = new ApileagueJs.RandomPoem200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property poem (base name: "poem")', function() {
       // uncomment below and update the code to test the property poem
-      //var instance = new ApiLeague.RandomPoem200Response();
+      //var instance = new ApileagueJs.RandomPoem200Response();
       //expect(instance).to.be();
     });
 

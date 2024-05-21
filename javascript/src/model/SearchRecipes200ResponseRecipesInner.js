@@ -17,7 +17,7 @@ import SearchRecipes200ResponseRecipesInnerNutrition from './SearchRecipes200Res
 /**
  * The SearchRecipes200ResponseRecipesInner model module.
  * @module model/SearchRecipes200ResponseRecipesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRecipes200ResponseRecipesInner {
     /**

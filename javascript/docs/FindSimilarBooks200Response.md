@@ -1,4 +1,4 @@
-# ApiLeague.FindSimilarBooks200Response
+# ApileagueJs.FindSimilarBooks200Response
 
 ## Properties
 

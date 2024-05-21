@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+    instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('SearchRoyaltyFreeImages200ResponseImagesInner', function() {
     it('should create an instance of SearchRoyaltyFreeImages200ResponseImagesInner', function() {
       // uncomment below and update the code to test SearchRoyaltyFreeImages200ResponseImagesInner
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
-      //expect(instance).to.be.a(ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner);
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner);
     });
 
     it('should have the property width (base name: "width")', function() {
       // uncomment below and update the code to test the property width
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property license (base name: "license")', function() {
       // uncomment below and update the code to test the property license
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property thumbnail (base name: "thumbnail")', function() {
       // uncomment below and update the code to test the property thumbnail
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property height (base name: "height")', function() {
       // uncomment below and update the code to test the property height
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInner();
       //expect(instance).to.be();
     });
 

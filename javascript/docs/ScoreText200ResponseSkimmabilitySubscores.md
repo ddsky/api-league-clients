@@ -1,4 +1,4 @@
-# ApiLeague.ScoreText200ResponseSkimmabilitySubscores
+# ApileagueJs.ScoreText200ResponseSkimmabilitySubscores
 
 ## Properties
 

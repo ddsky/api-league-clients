@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.CorrectSpelling200Response();
+    instance = new ApileagueJs.CorrectSpelling200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('CorrectSpelling200Response', function() {
     it('should create an instance of CorrectSpelling200Response', function() {
       // uncomment below and update the code to test CorrectSpelling200Response
-      //var instance = new ApiLeague.CorrectSpelling200Response();
-      //expect(instance).to.be.a(ApiLeague.CorrectSpelling200Response);
+      //var instance = new ApileagueJs.CorrectSpelling200Response();
+      //expect(instance).to.be.a(ApileagueJs.CorrectSpelling200Response);
     });
 
     it('should have the property correctedText (base name: "corrected_text")', function() {
       // uncomment below and update the code to test the property correctedText
-      //var instance = new ApiLeague.CorrectSpelling200Response();
+      //var instance = new ApileagueJs.CorrectSpelling200Response();
       //expect(instance).to.be();
     });
 

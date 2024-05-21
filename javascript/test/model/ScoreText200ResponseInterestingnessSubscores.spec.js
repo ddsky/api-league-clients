@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+    instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ScoreText200ResponseInterestingnessSubscores', function() {
     it('should create an instance of ScoreText200ResponseInterestingnessSubscores', function() {
       // uncomment below and update the code to test ScoreText200ResponseInterestingnessSubscores
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
-      //expect(instance).to.be.a(ApiLeague.ScoreText200ResponseInterestingnessSubscores);
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
+      //expect(instance).to.be.a(ApileagueJs.ScoreText200ResponseInterestingnessSubscores);
     });
 
     it('should have the property titleRatingScore (base name: "title_rating_score")', function() {
       // uncomment below and update the code to test the property titleRatingScore
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property quoteScore (base name: "quote_score")', function() {
       // uncomment below and update the code to test the property quoteScore
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property lengthScore (base name: "length_score")', function() {
       // uncomment below and update the code to test the property lengthScore
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property linkScore (base name: "link_score")', function() {
       // uncomment below and update the code to test the property linkScore
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property googleHitsScore (base name: "google_hits_score")', function() {
       // uncomment below and update the code to test the property googleHitsScore
-      //var instance = new ApiLeague.ScoreText200ResponseInterestingnessSubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseInterestingnessSubscores();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# ApiLeague.RandomTrivia200Response
+# ApileagueJs.RandomTrivia200Response
 
 ## Properties
 

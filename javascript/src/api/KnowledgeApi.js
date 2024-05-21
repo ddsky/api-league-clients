@@ -19,7 +19,7 @@ import RandomTrivia200Response from '../model/RandomTrivia200Response';
 /**
 * Knowledge service.
 * @module api/KnowledgeApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class KnowledgeApi {
 

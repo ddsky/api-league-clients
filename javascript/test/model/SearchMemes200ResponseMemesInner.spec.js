@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchMemes200ResponseMemesInner();
+    instance = new ApileagueJs.SearchMemes200ResponseMemesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SearchMemes200ResponseMemesInner', function() {
     it('should create an instance of SearchMemes200ResponseMemesInner', function() {
       // uncomment below and update the code to test SearchMemes200ResponseMemesInner
-      //var instance = new ApiLeague.SearchMemes200ResponseMemesInner();
-      //expect(instance).to.be.a(ApiLeague.SearchMemes200ResponseMemesInner);
+      //var instance = new ApileagueJs.SearchMemes200ResponseMemesInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchMemes200ResponseMemesInner);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instance = new ApiLeague.SearchMemes200ResponseMemesInner();
+      //var instance = new ApileagueJs.SearchMemes200ResponseMemesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instance = new ApiLeague.SearchMemes200ResponseMemesInner();
+      //var instance = new ApileagueJs.SearchMemes200ResponseMemesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instance = new ApiLeague.SearchMemes200ResponseMemesInner();
+      //var instance = new ApileagueJs.SearchMemes200ResponseMemesInner();
       //expect(instance).to.be();
     });
 

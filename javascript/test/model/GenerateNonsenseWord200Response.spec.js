@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.GenerateNonsenseWord200Response();
+    instance = new ApileagueJs.GenerateNonsenseWord200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('GenerateNonsenseWord200Response', function() {
     it('should create an instance of GenerateNonsenseWord200Response', function() {
       // uncomment below and update the code to test GenerateNonsenseWord200Response
-      //var instance = new ApiLeague.GenerateNonsenseWord200Response();
-      //expect(instance).to.be.a(ApiLeague.GenerateNonsenseWord200Response);
+      //var instance = new ApileagueJs.GenerateNonsenseWord200Response();
+      //expect(instance).to.be.a(ApileagueJs.GenerateNonsenseWord200Response);
     });
 
     it('should have the property word (base name: "word")', function() {
       // uncomment below and update the code to test the property word
-      //var instance = new ApiLeague.GenerateNonsenseWord200Response();
+      //var instance = new ApileagueJs.GenerateNonsenseWord200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property rating (base name: "rating")', function() {
       // uncomment below and update the code to test the property rating
-      //var instance = new ApiLeague.GenerateNonsenseWord200Response();
+      //var instance = new ApileagueJs.GenerateNonsenseWord200Response();
       //expect(instance).to.be();
     });
 

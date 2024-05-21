@@ -17,7 +17,7 @@ import SearchNews200ResponseNewsInner from './SearchNews200ResponseNewsInner';
 /**
  * The SearchNews200Response model module.
  * @module model/SearchNews200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchNews200Response {
     /**

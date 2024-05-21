@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property percentOfDailyNeeds (base name: "percent_of_daily_needs")', function() {
       // uncomment below and update the code to test the property percentOfDailyNeeds
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner();
       //expect(instance).to.be();
     });
 

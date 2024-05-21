@@ -1,4 +1,4 @@
-# ApiLeague.ExtractNews200Response
+# ApileagueJs.ExtractNews200Response
 
 ## Properties
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReadKeyValueFromStore200Response model module.
  * @module model/ReadKeyValueFromStore200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReadKeyValueFromStore200Response {
     /**

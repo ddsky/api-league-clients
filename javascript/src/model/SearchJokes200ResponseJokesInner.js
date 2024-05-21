@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchJokes200ResponseJokesInner model module.
  * @module model/SearchJokes200ResponseJokesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchJokes200ResponseJokesInner {
     /**

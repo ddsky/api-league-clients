@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RetrieveRecipeInformation200ResponseInstructionsInner', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseInstructionsInner', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseInstructionsInner
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInner();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInner);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property steps (base name: "steps")', function() {
       // uncomment below and update the code to test the property steps
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseInstructionsInner();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseInstructionsInner();
       //expect(instance).to.be();
     });
 

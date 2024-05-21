@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchJokes200Response();
+    instance = new ApileagueJs.SearchJokes200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SearchJokes200Response', function() {
     it('should create an instance of SearchJokes200Response', function() {
       // uncomment below and update the code to test SearchJokes200Response
-      //var instance = new ApiLeague.SearchJokes200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchJokes200Response);
+      //var instance = new ApileagueJs.SearchJokes200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchJokes200Response);
     });
 
     it('should have the property jokes (base name: "jokes")', function() {
       // uncomment below and update the code to test the property jokes
-      //var instance = new ApiLeague.SearchJokes200Response();
+      //var instance = new ApileagueJs.SearchJokes200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property available (base name: "available")', function() {
       // uncomment below and update the code to test the property available
-      //var instance = new ApiLeague.SearchJokes200Response();
+      //var instance = new ApileagueJs.SearchJokes200Response();
       //expect(instance).to.be();
     });
 

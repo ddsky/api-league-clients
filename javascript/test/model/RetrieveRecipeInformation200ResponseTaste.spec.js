@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('RetrieveRecipeInformation200ResponseTaste', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseTaste', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseTaste
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseTaste);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseTaste);
     });
 
     it('should have the property fattiness (base name: "fattiness")', function() {
       // uncomment below and update the code to test the property fattiness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property spiciness (base name: "spiciness")', function() {
       // uncomment below and update the code to test the property spiciness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property saltiness (base name: "saltiness")', function() {
       // uncomment below and update the code to test the property saltiness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property bitterness (base name: "bitterness")', function() {
       // uncomment below and update the code to test the property bitterness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property savoriness (base name: "savoriness")', function() {
       // uncomment below and update the code to test the property savoriness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property sweetness (base name: "sweetness")', function() {
       // uncomment below and update the code to test the property sweetness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 
     it('should have the property sourness (base name: "sourness")', function() {
       // uncomment below and update the code to test the property sourness
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTaste();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTaste();
       //expect(instance).to.be();
     });
 

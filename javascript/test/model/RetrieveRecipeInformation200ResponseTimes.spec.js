@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseTimes();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTimes();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('RetrieveRecipeInformation200ResponseTimes', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseTimes', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseTimes
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTimes();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseTimes);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTimes();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseTimes);
     });
 
     it('should have the property totalMinutes (base name: "total_minutes")', function() {
       // uncomment below and update the code to test the property totalMinutes
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseTimes();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseTimes();
       //expect(instance).to.be();
     });
 

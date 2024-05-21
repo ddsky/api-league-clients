@@ -1,4 +1,4 @@
-# ApiLeague.CorrectSpelling200Response
+# ApileagueJs.CorrectSpelling200Response
 
 ## Properties
 

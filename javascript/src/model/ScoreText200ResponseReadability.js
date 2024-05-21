@@ -18,7 +18,7 @@ import ScoreText200ResponseReadabilitySubscores from './ScoreText200ResponseRead
 /**
  * The ScoreText200ResponseReadability model module.
  * @module model/ScoreText200ResponseReadability
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseReadability {
     /**

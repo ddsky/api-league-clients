@@ -1,4 +1,4 @@
-# ApiLeague.SingularizeWord200Response
+# ApileagueJs.SingularizeWord200Response
 
 ## Properties
 

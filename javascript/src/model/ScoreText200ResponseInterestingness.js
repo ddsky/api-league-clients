@@ -18,7 +18,7 @@ import ScoreText200ResponseSkimmabilityMainscores from './ScoreText200ResponseSk
 /**
  * The ScoreText200ResponseInterestingness model module.
  * @module model/ScoreText200ResponseInterestingness
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseInterestingness {
     /**

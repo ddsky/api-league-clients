@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+    instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('ScoreText200ResponseReadabilitySubscores', function() {
     it('should create an instance of ScoreText200ResponseReadabilitySubscores', function() {
       // uncomment below and update the code to test ScoreText200ResponseReadabilitySubscores
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
-      //expect(instance).to.be.a(ApiLeague.ScoreText200ResponseReadabilitySubscores);
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
+      //expect(instance).to.be.a(ApileagueJs.ScoreText200ResponseReadabilitySubscores);
     });
 
     it('should have the property readingTimeSeconds (base name: "reading_time_seconds")', function() {
       // uncomment below and update the code to test the property readingTimeSeconds
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property forcast (base name: "forcast")', function() {
       // uncomment below and update the code to test the property forcast
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property flesch (base name: "flesch")', function() {
       // uncomment below and update the code to test the property flesch
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property smog (base name: "smog")', function() {
       // uncomment below and update the code to test the property smog
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property ari (base name: "ari")', function() {
       // uncomment below and update the code to test the property ari
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property lix (base name: "lix")', function() {
       // uncomment below and update the code to test the property lix
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property colemanLiau (base name: "coleman_liau")', function() {
       // uncomment below and update the code to test the property colemanLiau
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property kincaid (base name: "kincaid")', function() {
       // uncomment below and update the code to test the property kincaid
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 
     it('should have the property fog (base name: "fog")', function() {
       // uncomment below and update the code to test the property fog
-      //var instance = new ApiLeague.ScoreText200ResponseReadabilitySubscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseReadabilitySubscores();
       //expect(instance).to.be();
     });
 

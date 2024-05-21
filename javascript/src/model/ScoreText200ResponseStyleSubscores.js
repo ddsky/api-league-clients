@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScoreText200ResponseStyleSubscores model module.
  * @module model/ScoreText200ResponseStyleSubscores
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseStyleSubscores {
     /**

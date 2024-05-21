@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExtractEntities200ResponseEntitiesInner model module.
  * @module model/ExtractEntities200ResponseEntitiesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractEntities200ResponseEntitiesInner {
     /**

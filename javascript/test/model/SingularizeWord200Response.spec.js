@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SingularizeWord200Response();
+    instance = new ApileagueJs.SingularizeWord200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SingularizeWord200Response', function() {
     it('should create an instance of SingularizeWord200Response', function() {
       // uncomment below and update the code to test SingularizeWord200Response
-      //var instance = new ApiLeague.SingularizeWord200Response();
-      //expect(instance).to.be.a(ApiLeague.SingularizeWord200Response);
+      //var instance = new ApileagueJs.SingularizeWord200Response();
+      //expect(instance).to.be.a(ApileagueJs.SingularizeWord200Response);
     });
 
     it('should have the property original (base name: "original")', function() {
       // uncomment below and update the code to test the property original
-      //var instance = new ApiLeague.SingularizeWord200Response();
+      //var instance = new ApileagueJs.SingularizeWord200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property singular (base name: "singular")', function() {
       // uncomment below and update the code to test the property singular
-      //var instance = new ApiLeague.SingularizeWord200Response();
+      //var instance = new ApileagueJs.SingularizeWord200Response();
       //expect(instance).to.be();
     });
 

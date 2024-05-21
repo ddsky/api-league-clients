@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoreKeyValueGET200Response model module.
  * @module model/StoreKeyValueGET200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class StoreKeyValueGET200Response {
     /**

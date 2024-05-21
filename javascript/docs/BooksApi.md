@@ -1,4 +1,4 @@
-# ApiLeague.BooksApi
+# ApileagueJs.BooksApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -20,8 +20,8 @@ Find books that are similar to the given book. This is useful for recommending b
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -33,7 +33,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.BooksApi();
+let apiInstance = new ApileagueJs.BooksApi();
 let id = 8302059; // Number | The id of the book to which similar books should be found.
 let opts = {
   'number': 10 // Number | The number of similar books to return in range [1,100]
@@ -80,8 +80,8 @@ Search and filter books based on matching a query, the ISBN, rating, and more fi
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -93,7 +93,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.BooksApi();
+let apiInstance = new ApileagueJs.BooksApi();
 let opts = {
   'query': "books about wizards", // String | The search query.
   'earliestPublishYear': 2022, // Number | The books must have been published after this year.

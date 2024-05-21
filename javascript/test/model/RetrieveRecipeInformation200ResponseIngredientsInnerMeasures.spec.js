@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RetrieveRecipeInformation200ResponseIngredientsInnerMeasures', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseIngredientsInnerMeasures', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures);
     });
 
     it('should have the property metric (base name: "metric")', function() {
       // uncomment below and update the code to test the property metric
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
       //expect(instance).to.be();
     });
 
     it('should have the property us (base name: "us")', function() {
       // uncomment below and update the code to test the property us
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
+# ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
 
 ## Properties
 

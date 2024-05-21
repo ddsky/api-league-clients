@@ -1,4 +1,4 @@
-# ApiLeague.TextStemming200Response
+# ApileagueJs.TextStemming200Response
 
 ## Properties
 

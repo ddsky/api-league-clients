@@ -1,4 +1,4 @@
-# ApiLeague.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
+# ApileagueJs.SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
 
 ## Properties
 

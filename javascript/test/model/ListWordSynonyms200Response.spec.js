@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ListWordSynonyms200Response();
+    instance = new ApileagueJs.ListWordSynonyms200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ListWordSynonyms200Response', function() {
     it('should create an instance of ListWordSynonyms200Response', function() {
       // uncomment below and update the code to test ListWordSynonyms200Response
-      //var instance = new ApiLeague.ListWordSynonyms200Response();
-      //expect(instance).to.be.a(ApiLeague.ListWordSynonyms200Response);
+      //var instance = new ApileagueJs.ListWordSynonyms200Response();
+      //expect(instance).to.be.a(ApileagueJs.ListWordSynonyms200Response);
     });
 
     it('should have the property synonyms (base name: "synonyms")', function() {
       // uncomment below and update the code to test the property synonyms
-      //var instance = new ApiLeague.ListWordSynonyms200Response();
+      //var instance = new ApileagueJs.ListWordSynonyms200Response();
       //expect(instance).to.be();
     });
 

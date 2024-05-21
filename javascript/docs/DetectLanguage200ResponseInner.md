@@ -1,4 +1,4 @@
-# ApiLeague.DetectLanguage200ResponseInner
+# ApileagueJs.DetectLanguage200ResponseInner
 
 ## Properties
 

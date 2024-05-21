@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchWeb200ResponseResultsInner();
+    instance = new ApileagueJs.SearchWeb200ResponseResultsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SearchWeb200ResponseResultsInner', function() {
     it('should create an instance of SearchWeb200ResponseResultsInner', function() {
       // uncomment below and update the code to test SearchWeb200ResponseResultsInner
-      //var instance = new ApiLeague.SearchWeb200ResponseResultsInner();
-      //expect(instance).to.be.a(ApiLeague.SearchWeb200ResponseResultsInner);
+      //var instance = new ApileagueJs.SearchWeb200ResponseResultsInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchWeb200ResponseResultsInner);
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new ApiLeague.SearchWeb200ResponseResultsInner();
+      //var instance = new ApileagueJs.SearchWeb200ResponseResultsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property summary (base name: "summary")', function() {
       // uncomment below and update the code to test the property summary
-      //var instance = new ApiLeague.SearchWeb200ResponseResultsInner();
+      //var instance = new ApileagueJs.SearchWeb200ResponseResultsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instance = new ApiLeague.SearchWeb200ResponseResultsInner();
+      //var instance = new ApileagueJs.SearchWeb200ResponseResultsInner();
       //expect(instance).to.be();
     });
 

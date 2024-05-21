@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+# ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
 
 ## Properties
 

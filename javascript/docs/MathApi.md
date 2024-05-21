@@ -1,4 +1,4 @@
-# ApiLeague.MathApi
+# ApileagueJs.MathApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -19,8 +19,8 @@ Convert units from one to another. The API returns the amount and the unit of th
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -32,7 +32,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.MathApi();
+let apiInstance = new ApileagueJs.MathApi();
 let sourceAmount = 100; // Number | The source amount.
 let sourceUnit = "kg"; // String | The source unit.
 let targetUnit = "lb"; // String | The unit to which should be converted.

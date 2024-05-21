@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
+    instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('SearchRecipes200ResponseRecipesInner', function() {
     it('should create an instance of SearchRecipes200ResponseRecipesInner', function() {
       // uncomment below and update the code to test SearchRecipes200ResponseRecipesInner
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
-      //expect(instance).to.be.a(ApiLeague.SearchRecipes200ResponseRecipesInner);
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchRecipes200ResponseRecipesInner);
     });
 
     it('should have the property images (base name: "images")', function() {
       // uncomment below and update the code to test the property images
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property nutrition (base name: "nutrition")', function() {
       // uncomment below and update the code to test the property nutrition
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInner();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInner();
       //expect(instance).to.be();
     });
 

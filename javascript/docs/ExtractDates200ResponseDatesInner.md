@@ -1,4 +1,4 @@
-# ApiLeague.ExtractDates200ResponseDatesInner
+# ApileagueJs.ExtractDates200ResponseDatesInner
 
 ## Properties
 

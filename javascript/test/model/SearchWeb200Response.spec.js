@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchWeb200Response();
+    instance = new ApileagueJs.SearchWeb200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('SearchWeb200Response', function() {
     it('should create an instance of SearchWeb200Response', function() {
       // uncomment below and update the code to test SearchWeb200Response
-      //var instance = new ApiLeague.SearchWeb200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchWeb200Response);
+      //var instance = new ApileagueJs.SearchWeb200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchWeb200Response);
     });
 
     it('should have the property results (base name: "results")', function() {
       // uncomment below and update the code to test the property results
-      //var instance = new ApiLeague.SearchWeb200Response();
+      //var instance = new ApileagueJs.SearchWeb200Response();
       //expect(instance).to.be();
     });
 

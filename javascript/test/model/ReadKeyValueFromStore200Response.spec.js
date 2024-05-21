@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ReadKeyValueFromStore200Response();
+    instance = new ApileagueJs.ReadKeyValueFromStore200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ReadKeyValueFromStore200Response', function() {
     it('should create an instance of ReadKeyValueFromStore200Response', function() {
       // uncomment below and update the code to test ReadKeyValueFromStore200Response
-      //var instance = new ApiLeague.ReadKeyValueFromStore200Response();
-      //expect(instance).to.be.a(ApiLeague.ReadKeyValueFromStore200Response);
+      //var instance = new ApileagueJs.ReadKeyValueFromStore200Response();
+      //expect(instance).to.be.a(ApileagueJs.ReadKeyValueFromStore200Response);
     });
 
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
-      //var instance = new ApiLeague.ReadKeyValueFromStore200Response();
+      //var instance = new ApileagueJs.ReadKeyValueFromStore200Response();
       //expect(instance).to.be();
     });
 

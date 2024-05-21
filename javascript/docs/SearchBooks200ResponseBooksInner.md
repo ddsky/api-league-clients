@@ -1,4 +1,4 @@
-# ApiLeague.SearchBooks200ResponseBooksInner
+# ApileagueJs.SearchBooks200ResponseBooksInner
 
 ## Properties
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
+    instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SearchRoyaltyFreeImages200ResponseImagesInnerLicense', function() {
     it('should create an instance of SearchRoyaltyFreeImages200ResponseImagesInnerLicense', function() {
       // uncomment below and update the code to test SearchRoyaltyFreeImages200ResponseImagesInnerLicense
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
-      //expect(instance).to.be.a(ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense);
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
+      //expect(instance).to.be.a(ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
       //expect(instance).to.be();
     });
 
     it('should have the property link (base name: "link")', function() {
       // uncomment below and update the code to test the property link
-      //var instance = new ApiLeague.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
+      //var instance = new ApileagueJs.SearchRoyaltyFreeImages200ResponseImagesInnerLicense();
       //expect(instance).to.be();
     });
 

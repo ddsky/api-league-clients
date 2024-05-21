@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchNews200Response();
+    instance = new ApileagueJs.SearchNews200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('SearchNews200Response', function() {
     it('should create an instance of SearchNews200Response', function() {
       // uncomment below and update the code to test SearchNews200Response
-      //var instance = new ApiLeague.SearchNews200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchNews200Response);
+      //var instance = new ApileagueJs.SearchNews200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchNews200Response);
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instance = new ApiLeague.SearchNews200Response();
+      //var instance = new ApileagueJs.SearchNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property number (base name: "number")', function() {
       // uncomment below and update the code to test the property number
-      //var instance = new ApiLeague.SearchNews200Response();
+      //var instance = new ApileagueJs.SearchNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property available (base name: "available")', function() {
       // uncomment below and update the code to test the property available
-      //var instance = new ApiLeague.SearchNews200Response();
+      //var instance = new ApileagueJs.SearchNews200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property news (base name: "news")', function() {
       // uncomment below and update the code to test the property news
-      //var instance = new ApiLeague.SearchNews200Response();
+      //var instance = new ApileagueJs.SearchNews200Response();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.PartOfSpeechTagging200Response();
+    instance = new ApileagueJs.PartOfSpeechTagging200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('PartOfSpeechTagging200Response', function() {
     it('should create an instance of PartOfSpeechTagging200Response', function() {
       // uncomment below and update the code to test PartOfSpeechTagging200Response
-      //var instance = new ApiLeague.PartOfSpeechTagging200Response();
-      //expect(instance).to.be.a(ApiLeague.PartOfSpeechTagging200Response);
+      //var instance = new ApileagueJs.PartOfSpeechTagging200Response();
+      //expect(instance).to.be.a(ApileagueJs.PartOfSpeechTagging200Response);
     });
 
     it('should have the property taggedText (base name: "tagged_text")', function() {
       // uncomment below and update the code to test the property taggedText
-      //var instance = new ApiLeague.PartOfSpeechTagging200Response();
+      //var instance = new ApileagueJs.PartOfSpeechTagging200Response();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ExtractAuthors200ResponseAuthorsInner();
+    instance = new ApileagueJs.ExtractAuthors200ResponseAuthorsInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ExtractAuthors200ResponseAuthorsInner', function() {
     it('should create an instance of ExtractAuthors200ResponseAuthorsInner', function() {
       // uncomment below and update the code to test ExtractAuthors200ResponseAuthorsInner
-      //var instance = new ApiLeague.ExtractAuthors200ResponseAuthorsInner();
-      //expect(instance).to.be.a(ApiLeague.ExtractAuthors200ResponseAuthorsInner);
+      //var instance = new ApileagueJs.ExtractAuthors200ResponseAuthorsInner();
+      //expect(instance).to.be.a(ApileagueJs.ExtractAuthors200ResponseAuthorsInner);
     });
 
     it('should have the property link (base name: "link")', function() {
       // uncomment below and update the code to test the property link
-      //var instance = new ApiLeague.ExtractAuthors200ResponseAuthorsInner();
+      //var instance = new ApileagueJs.ExtractAuthors200ResponseAuthorsInner();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new ApiLeague.ExtractAuthors200ResponseAuthorsInner();
+      //var instance = new ApileagueJs.ExtractAuthors200ResponseAuthorsInner();
       //expect(instance).to.be();
     });
 

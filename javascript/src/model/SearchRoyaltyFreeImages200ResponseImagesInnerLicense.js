@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchRoyaltyFreeImages200ResponseImagesInnerLicense model module.
  * @module model/SearchRoyaltyFreeImages200ResponseImagesInnerLicense
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRoyaltyFreeImages200ResponseImagesInnerLicense {
     /**

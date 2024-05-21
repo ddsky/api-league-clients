@@ -1,4 +1,4 @@
-# ApiLeague.ExtractEntities200ResponseEntitiesInner
+# ApileagueJs.ExtractEntities200ResponseEntitiesInner
 
 ## Properties
 

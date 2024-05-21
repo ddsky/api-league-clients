@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetectLanguage200ResponseInner model module.
  * @module model/DetectLanguage200ResponseInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetectLanguage200ResponseInner {
     /**

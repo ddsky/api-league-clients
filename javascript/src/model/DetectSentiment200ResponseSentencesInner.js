@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetectSentiment200ResponseSentencesInner model module.
  * @module model/DetectSentiment200ResponseSentencesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetectSentiment200ResponseSentencesInner {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScoreText200ResponseSkimmabilityMainscores model module.
  * @module model/ScoreText200ResponseSkimmabilityMainscores
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseSkimmabilityMainscores {
     /**

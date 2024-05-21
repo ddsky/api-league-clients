@@ -17,7 +17,7 @@ import SearchRoyaltyFreeImages200ResponseImagesInner from './SearchRoyaltyFreeIm
 /**
  * The SearchRoyaltyFreeImages200Response model module.
  * @module model/SearchRoyaltyFreeImages200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRoyaltyFreeImages200Response {
     /**

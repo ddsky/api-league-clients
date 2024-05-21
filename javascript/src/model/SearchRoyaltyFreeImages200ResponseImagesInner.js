@@ -17,7 +17,7 @@ import SearchRoyaltyFreeImages200ResponseImagesInnerLicense from './SearchRoyalt
 /**
  * The SearchRoyaltyFreeImages200ResponseImagesInner model module.
  * @module model/SearchRoyaltyFreeImages200ResponseImagesInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRoyaltyFreeImages200ResponseImagesInner {
     /**

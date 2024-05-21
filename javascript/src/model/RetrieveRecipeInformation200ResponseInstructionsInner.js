@@ -17,7 +17,7 @@ import RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner from './R
 /**
  * The RetrieveRecipeInformation200ResponseInstructionsInner model module.
  * @module model/RetrieveRecipeInformation200ResponseInstructionsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseInstructionsInner {
     /**

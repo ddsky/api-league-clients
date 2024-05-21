@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+    instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational', function() {
     it('should create an instance of SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational', function() {
       // uncomment below and update the code to test SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
-      //expect(instance).to.be.a(ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational);
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //expect(instance).to.be.a(ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational);
     });
 
     it('should have the property sunday (base name: "sunday")', function() {
       // uncomment below and update the code to test the property sunday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property saturday (base name: "saturday")', function() {
       // uncomment below and update the code to test the property saturday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property tuesday (base name: "tuesday")', function() {
       // uncomment below and update the code to test the property tuesday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property thursday (base name: "thursday")', function() {
       // uncomment below and update the code to test the property thursday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property friday (base name: "friday")', function() {
       // uncomment below and update the code to test the property friday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property wednesday (base name: "wednesday")', function() {
       // uncomment below and update the code to test the property wednesday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 
     it('should have the property monday (base name: "monday")', function() {
       // uncomment below and update the code to test the property monday
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational();
       //expect(instance).to.be();
     });
 

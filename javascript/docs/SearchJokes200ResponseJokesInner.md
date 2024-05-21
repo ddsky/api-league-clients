@@ -1,4 +1,4 @@
-# ApiLeague.SearchJokes200ResponseJokesInner
+# ApileagueJs.SearchJokes200ResponseJokesInner
 
 ## Properties
 

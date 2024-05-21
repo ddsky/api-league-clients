@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RetrieveRecipeInformation200ResponseNutritionWeightPerServing', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseNutritionWeightPerServing', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseNutritionWeightPerServing
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing);
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
       //expect(instance).to.be();
     });
 
     it('should have the property unit (base name: "unit")', function() {
       // uncomment below and update the code to test the property unit
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionWeightPerServing();
       //expect(instance).to.be();
     });
 

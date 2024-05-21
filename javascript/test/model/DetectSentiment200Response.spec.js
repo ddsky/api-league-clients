@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.DetectSentiment200Response();
+    instance = new ApileagueJs.DetectSentiment200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('DetectSentiment200Response', function() {
     it('should create an instance of DetectSentiment200Response', function() {
       // uncomment below and update the code to test DetectSentiment200Response
-      //var instance = new ApiLeague.DetectSentiment200Response();
-      //expect(instance).to.be.a(ApiLeague.DetectSentiment200Response);
+      //var instance = new ApileagueJs.DetectSentiment200Response();
+      //expect(instance).to.be.a(ApileagueJs.DetectSentiment200Response);
     });
 
     it('should have the property document (base name: "document")', function() {
       // uncomment below and update the code to test the property document
-      //var instance = new ApiLeague.DetectSentiment200Response();
+      //var instance = new ApileagueJs.DetectSentiment200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property sentences (base name: "sentences")', function() {
       // uncomment below and update the code to test the property sentences
-      //var instance = new ApiLeague.DetectSentiment200Response();
+      //var instance = new ApileagueJs.DetectSentiment200Response();
       //expect(instance).to.be();
     });
 

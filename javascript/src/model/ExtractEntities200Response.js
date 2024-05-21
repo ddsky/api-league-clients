@@ -17,7 +17,7 @@ import ExtractEntities200ResponseEntitiesInner from './ExtractEntities200Respons
 /**
  * The ExtractEntities200Response model module.
  * @module model/ExtractEntities200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractEntities200Response {
     /**

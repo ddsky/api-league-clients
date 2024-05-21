@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RandomQuote200Response model module.
  * @module model/RandomQuote200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RandomQuote200Response {
     /**

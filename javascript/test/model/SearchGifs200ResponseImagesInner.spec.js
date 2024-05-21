@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchGifs200ResponseImagesInner();
+    instance = new ApileagueJs.SearchGifs200ResponseImagesInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('SearchGifs200ResponseImagesInner', function() {
     it('should create an instance of SearchGifs200ResponseImagesInner', function() {
       // uncomment below and update the code to test SearchGifs200ResponseImagesInner
-      //var instance = new ApiLeague.SearchGifs200ResponseImagesInner();
-      //expect(instance).to.be.a(ApiLeague.SearchGifs200ResponseImagesInner);
+      //var instance = new ApileagueJs.SearchGifs200ResponseImagesInner();
+      //expect(instance).to.be.a(ApileagueJs.SearchGifs200ResponseImagesInner);
     });
 
     it('should have the property width (base name: "width")', function() {
       // uncomment below and update the code to test the property width
-      //var instance = new ApiLeague.SearchGifs200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchGifs200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instance = new ApiLeague.SearchGifs200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchGifs200ResponseImagesInner();
       //expect(instance).to.be();
     });
 
     it('should have the property height (base name: "height")', function() {
       // uncomment below and update the code to test the property height
-      //var instance = new ApiLeague.SearchGifs200ResponseImagesInner();
+      //var instance = new ApileagueJs.SearchGifs200ResponseImagesInner();
       //expect(instance).to.be();
     });
 

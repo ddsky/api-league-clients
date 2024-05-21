@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+    instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,67 +50,67 @@
   describe('SearchRestaurants200ResponseRestaurantsInnerAddress', function() {
     it('should create an instance of SearchRestaurants200ResponseRestaurantsInnerAddress', function() {
       // uncomment below and update the code to test SearchRestaurants200ResponseRestaurantsInnerAddress
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
-      //expect(instance).to.be.a(ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress);
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //expect(instance).to.be.a(ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress);
     });
 
     it('should have the property zipcode (base name: "zipcode")', function() {
       // uncomment below and update the code to test the property zipcode
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property country (base name: "country")', function() {
       // uncomment below and update the code to test the property country
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property city (base name: "city")', function() {
       // uncomment below and update the code to test the property city
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property latitude (base name: "latitude")', function() {
       // uncomment below and update the code to test the property latitude
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property lon (base name: "lon")', function() {
       // uncomment below and update the code to test the property lon
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property streetAddr2 (base name: "street_addr_2")', function() {
       // uncomment below and update the code to test the property streetAddr2
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property streetAddr (base name: "street_addr")', function() {
       // uncomment below and update the code to test the property streetAddr
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property lat (base name: "lat")', function() {
       // uncomment below and update the code to test the property lat
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 
     it('should have the property longitude (base name: "longitude")', function() {
       // uncomment below and update the code to test the property longitude
-      //var instance = new ApiLeague.SearchRestaurants200ResponseRestaurantsInnerAddress();
+      //var instance = new ApileagueJs.SearchRestaurants200ResponseRestaurantsInnerAddress();
       //expect(instance).to.be();
     });
 

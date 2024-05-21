@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner model module.
  * @module model/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner {
     /**

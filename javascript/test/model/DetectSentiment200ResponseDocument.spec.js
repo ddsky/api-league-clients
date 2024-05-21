@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.DetectSentiment200ResponseDocument();
+    instance = new ApileagueJs.DetectSentiment200ResponseDocument();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('DetectSentiment200ResponseDocument', function() {
     it('should create an instance of DetectSentiment200ResponseDocument', function() {
       // uncomment below and update the code to test DetectSentiment200ResponseDocument
-      //var instance = new ApiLeague.DetectSentiment200ResponseDocument();
-      //expect(instance).to.be.a(ApiLeague.DetectSentiment200ResponseDocument);
+      //var instance = new ApileagueJs.DetectSentiment200ResponseDocument();
+      //expect(instance).to.be.a(ApileagueJs.DetectSentiment200ResponseDocument);
     });
 
     it('should have the property sentiment (base name: "sentiment")', function() {
       // uncomment below and update the code to test the property sentiment
-      //var instance = new ApiLeague.DetectSentiment200ResponseDocument();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property confidence (base name: "confidence")', function() {
       // uncomment below and update the code to test the property confidence
-      //var instance = new ApiLeague.DetectSentiment200ResponseDocument();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseDocument();
       //expect(instance).to.be();
     });
 
     it('should have the property averageConfidence (base name: "average_confidence")', function() {
       // uncomment below and update the code to test the property averageConfidence
-      //var instance = new ApiLeague.DetectSentiment200ResponseDocument();
+      //var instance = new ApileagueJs.DetectSentiment200ResponseDocument();
       //expect(instance).to.be();
     });
 

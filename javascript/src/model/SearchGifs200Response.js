@@ -17,7 +17,7 @@ import SearchGifs200ResponseImagesInner from './SearchGifs200ResponseImagesInner
 /**
  * The SearchGifs200Response model module.
  * @module model/SearchGifs200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchGifs200Response {
     /**

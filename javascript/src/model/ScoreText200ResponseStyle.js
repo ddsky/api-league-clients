@@ -18,7 +18,7 @@ import ScoreText200ResponseStyleSubscores from './ScoreText200ResponseStyleSubsc
 /**
  * The ScoreText200ResponseStyle model module.
  * @module model/ScoreText200ResponseStyle
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScoreText200ResponseStyle {
     /**

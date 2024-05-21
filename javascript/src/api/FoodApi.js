@@ -21,7 +21,7 @@ import SearchRestaurants200Response from '../model/SearchRestaurants200Response'
 /**
 * Food service.
 * @module api/FoodApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class FoodApi {
 

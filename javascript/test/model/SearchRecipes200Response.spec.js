@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRecipes200Response();
+    instance = new ApileagueJs.SearchRecipes200Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('SearchRecipes200Response', function() {
     it('should create an instance of SearchRecipes200Response', function() {
       // uncomment below and update the code to test SearchRecipes200Response
-      //var instance = new ApiLeague.SearchRecipes200Response();
-      //expect(instance).to.be.a(ApiLeague.SearchRecipes200Response);
+      //var instance = new ApileagueJs.SearchRecipes200Response();
+      //expect(instance).to.be.a(ApileagueJs.SearchRecipes200Response);
     });
 
     it('should have the property offset (base name: "offset")', function() {
       // uncomment below and update the code to test the property offset
-      //var instance = new ApiLeague.SearchRecipes200Response();
+      //var instance = new ApileagueJs.SearchRecipes200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property number (base name: "number")', function() {
       // uncomment below and update the code to test the property number
-      //var instance = new ApiLeague.SearchRecipes200Response();
+      //var instance = new ApileagueJs.SearchRecipes200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property recipes (base name: "recipes")', function() {
       // uncomment below and update the code to test the property recipes
-      //var instance = new ApiLeague.SearchRecipes200Response();
+      //var instance = new ApileagueJs.SearchRecipes200Response();
       //expect(instance).to.be();
     });
 
     it('should have the property totalResults (base name: "total_results")', function() {
       // uncomment below and update the code to test the property totalResults
-      //var instance = new ApiLeague.SearchRecipes200Response();
+      //var instance = new ApileagueJs.SearchRecipes200Response();
       //expect(instance).to.be();
     });
 

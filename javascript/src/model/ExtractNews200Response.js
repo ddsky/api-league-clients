@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExtractNews200Response model module.
  * @module model/ExtractNews200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExtractNews200Response {
     /**

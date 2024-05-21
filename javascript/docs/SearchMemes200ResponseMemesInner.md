@@ -1,4 +1,4 @@
-# ApiLeague.SearchMemes200ResponseMemesInner
+# ApileagueJs.SearchMemes200ResponseMemesInner
 
 ## Properties
 

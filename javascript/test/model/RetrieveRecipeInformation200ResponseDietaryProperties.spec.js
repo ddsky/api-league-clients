@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('RetrieveRecipeInformation200ResponseDietaryProperties', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseDietaryProperties', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseDietaryProperties
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties);
     });
 
     it('should have the property lowFodmap (base name: "low_fodmap")', function() {
       // uncomment below and update the code to test the property lowFodmap
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property vegetarian (base name: "vegetarian")', function() {
       // uncomment below and update the code to test the property vegetarian
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property vegan (base name: "vegan")', function() {
       // uncomment below and update the code to test the property vegan
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property glutenFree (base name: "gluten_free")', function() {
       // uncomment below and update the code to test the property glutenFree
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property dairyFree (base name: "dairy_free")', function() {
       // uncomment below and update the code to test the property dairyFree
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property gaps (base name: "gaps")', function() {
       // uncomment below and update the code to test the property gaps
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 
     it('should have the property diets (base name: "diets")', function() {
       // uncomment below and update the code to test the property diets
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseDietaryProperties();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseDietaryProperties();
       //expect(instance).to.be();
     });
 

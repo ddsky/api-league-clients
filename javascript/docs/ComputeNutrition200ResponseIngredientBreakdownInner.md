@@ -1,4 +1,4 @@
-# ApiLeague.ComputeNutrition200ResponseIngredientBreakdownInner
+# ApileagueJs.ComputeNutrition200ResponseIngredientBreakdownInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# ApiLeague.SearchGifs200Response
+# ApileagueJs.SearchGifs200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# ApiLeague.ScoreText200ResponseStyle
+# ApileagueJs.ScoreText200ResponseStyle
 
 ## Properties
 

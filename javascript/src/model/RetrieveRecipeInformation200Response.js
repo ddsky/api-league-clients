@@ -24,7 +24,7 @@ import RetrieveRecipeInformation200ResponseTimes from './RetrieveRecipeInformati
 /**
  * The RetrieveRecipeInformation200Response model module.
  * @module model/RetrieveRecipeInformation200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200Response {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner model module.
  * @module model/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner {
     /**

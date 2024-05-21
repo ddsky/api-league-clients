@@ -1,4 +1,4 @@
-# ApiLeague.SearchWeb200ResponseResultsInner
+# ApileagueJs.SearchWeb200ResponseResultsInner
 
 ## Properties
 

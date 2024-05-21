@@ -1,4 +1,4 @@
-# ApiLeague.RandomQuote200Response
+# ApileagueJs.RandomQuote200Response
 
 ## Properties
 

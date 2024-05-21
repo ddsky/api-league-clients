@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchNews200ResponseNewsInner model module.
  * @module model/SearchNews200ResponseNewsInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchNews200ResponseNewsInner {
     /**

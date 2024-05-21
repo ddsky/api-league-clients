@@ -17,7 +17,7 @@ import ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner from '.
 /**
  * The ComputeNutrition200ResponseIngredientBreakdownInner model module.
  * @module model/ComputeNutrition200ResponseIngredientBreakdownInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ComputeNutrition200ResponseIngredientBreakdownInner {
     /**

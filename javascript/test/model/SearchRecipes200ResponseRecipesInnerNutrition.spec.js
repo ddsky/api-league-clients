@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutrition();
+    instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutrition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('SearchRecipes200ResponseRecipesInnerNutrition', function() {
     it('should create an instance of SearchRecipes200ResponseRecipesInnerNutrition', function() {
       // uncomment below and update the code to test SearchRecipes200ResponseRecipesInnerNutrition
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutrition();
-      //expect(instance).to.be.a(ApiLeague.SearchRecipes200ResponseRecipesInnerNutrition);
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutrition();
+      //expect(instance).to.be.a(ApileagueJs.SearchRecipes200ResponseRecipesInnerNutrition);
     });
 
     it('should have the property nutrients (base name: "nutrients")', function() {
       // uncomment below and update the code to test the property nutrients
-      //var instance = new ApiLeague.SearchRecipes200ResponseRecipesInnerNutrition();
+      //var instance = new ApileagueJs.SearchRecipes200ResponseRecipesInnerNutrition();
       //expect(instance).to.be();
     });
 

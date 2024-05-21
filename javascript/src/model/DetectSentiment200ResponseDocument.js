@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetectSentiment200ResponseDocument model module.
  * @module model/DetectSentiment200ResponseDocument
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetectSentiment200ResponseDocument {
     /**

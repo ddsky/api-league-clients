@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.DetectLanguage200ResponseInner();
+    instance = new ApileagueJs.DetectLanguage200ResponseInner();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('DetectLanguage200ResponseInner', function() {
     it('should create an instance of DetectLanguage200ResponseInner', function() {
       // uncomment below and update the code to test DetectLanguage200ResponseInner
-      //var instance = new ApiLeague.DetectLanguage200ResponseInner();
-      //expect(instance).to.be.a(ApiLeague.DetectLanguage200ResponseInner);
+      //var instance = new ApileagueJs.DetectLanguage200ResponseInner();
+      //expect(instance).to.be.a(ApileagueJs.DetectLanguage200ResponseInner);
     });
 
     it('should have the property language (base name: "language")', function() {
       // uncomment below and update the code to test the property language
-      //var instance = new ApiLeague.DetectLanguage200ResponseInner();
+      //var instance = new ApileagueJs.DetectLanguage200ResponseInner();
       //expect(instance).to.be();
     });
 
     it('should have the property confidence (base name: "confidence")', function() {
       // uncomment below and update the code to test the property confidence
-      //var instance = new ApiLeague.DetectLanguage200ResponseInner();
+      //var instance = new ApileagueJs.DetectLanguage200ResponseInner();
       //expect(instance).to.be();
     });
 

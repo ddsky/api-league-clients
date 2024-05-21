@@ -18,7 +18,7 @@ import DetectSentiment200ResponseSentencesInner from './DetectSentiment200Respon
 /**
  * The DetectSentiment200Response model module.
  * @module model/DetectSentiment200Response
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetectSentiment200Response {
     /**

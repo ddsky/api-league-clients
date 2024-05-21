@@ -19,7 +19,7 @@ import SearchRoyaltyFreeImages200Response from '../model/SearchRoyaltyFreeImages
 /**
 * Media service.
 * @module api/MediaApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class MediaApi {
 

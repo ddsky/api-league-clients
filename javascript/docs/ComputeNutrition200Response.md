@@ -1,4 +1,4 @@
-# ApiLeague.ComputeNutrition200Response
+# ApileagueJs.ComputeNutrition200Response
 
 ## Properties
 

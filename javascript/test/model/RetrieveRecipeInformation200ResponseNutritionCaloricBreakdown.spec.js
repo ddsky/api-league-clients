@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
+    instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown', function() {
     it('should create an instance of RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown', function() {
       // uncomment below and update the code to test RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
-      //expect(instance).to.be.a(ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown);
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
+      //expect(instance).to.be.a(ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown);
     });
 
     it('should have the property percentFat (base name: "percent_fat")', function() {
       // uncomment below and update the code to test the property percentFat
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
       //expect(instance).to.be();
     });
 
     it('should have the property percentCarbs (base name: "percent_carbs")', function() {
       // uncomment below and update the code to test the property percentCarbs
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
       //expect(instance).to.be();
     });
 
     it('should have the property percentProtein (base name: "percent_protein")', function() {
       // uncomment below and update the code to test the property percentProtein
-      //var instance = new ApiLeague.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
+      //var instance = new ApileagueJs.RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown();
       //expect(instance).to.be();
     });
 

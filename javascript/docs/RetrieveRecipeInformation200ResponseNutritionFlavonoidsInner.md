@@ -1,4 +1,4 @@
-# ApiLeague.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+# ApileagueJs.RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
 
 ## Properties
 

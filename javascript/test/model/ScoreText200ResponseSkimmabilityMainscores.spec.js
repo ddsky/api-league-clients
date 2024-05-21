@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.ApiLeague);
+    factory(root.expect, root.ApileagueJs);
   }
-}(this, function(expect, ApiLeague) {
+}(this, function(expect, ApileagueJs) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new ApiLeague.ScoreText200ResponseSkimmabilityMainscores();
+    instance = new ApileagueJs.ScoreText200ResponseSkimmabilityMainscores();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ScoreText200ResponseSkimmabilityMainscores', function() {
     it('should create an instance of ScoreText200ResponseSkimmabilityMainscores', function() {
       // uncomment below and update the code to test ScoreText200ResponseSkimmabilityMainscores
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilityMainscores();
-      //expect(instance).to.be.a(ApiLeague.ScoreText200ResponseSkimmabilityMainscores);
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilityMainscores();
+      //expect(instance).to.be.a(ApileagueJs.ScoreText200ResponseSkimmabilityMainscores);
     });
 
     it('should have the property totalPossible (base name: "total_possible")', function() {
       // uncomment below and update the code to test the property totalPossible
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilityMainscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilityMainscores();
       //expect(instance).to.be();
     });
 
     it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      //var instance = new ApiLeague.ScoreText200ResponseSkimmabilityMainscores();
+      //var instance = new ApileagueJs.ScoreText200ResponseSkimmabilityMainscores();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# ApiLeague.DetectMainImageColor200ResponseInner
+# ApileagueJs.DetectMainImageColor200ResponseInner
 
 ## Properties
 

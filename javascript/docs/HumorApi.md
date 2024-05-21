@@ -1,4 +1,4 @@
-# ApiLeague.HumorApi
+# ApileagueJs.HumorApi
 
 All URIs are relative to *https://api.apileague.com*
 
@@ -24,8 +24,8 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -37,7 +37,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 apiInstance.generateNonsenseWord((error, data, response) => {
   if (error) {
     console.error(error);
@@ -76,8 +76,8 @@ This is a simple API that returns a random joke. You can filter the jokes by tag
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -89,7 +89,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 let opts = {
   'includeTags': "animal", // String | A comma-separated list of tags the jokes should have.
   'excludeTags': "nsfw,dark", // String | A comma-separated list of tags the jokes must not have.
@@ -140,8 +140,8 @@ Get a random meme out of over 200,000+ memes. To get the latest memes, you can u
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -153,7 +153,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 let opts = {
   'keywords': "airplane", // String | A comma-separated list of words that must occur in the meme.
   'keywordsInImage': true, // Boolean | Whether the keywords must occur in the image.
@@ -206,8 +206,8 @@ Search through hundreds of thousands of gifs to match any reaction you want. The
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -219,7 +219,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 let query = "dogs"; // String | The search query.
 let opts = {
   'number': 5 // Number | The number of gifs to return in range [1,10]
@@ -266,8 +266,8 @@ With over 50,000 jokes, you should find something for any occasion. There are 27
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -279,7 +279,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 let opts = {
   'keywords': "horse,man", // String | A comma-separated list of words that must occur in the joke.
   'includeTags': "animal", // String | A comma-separated list of tags the jokes should have.
@@ -336,8 +336,8 @@ With over 200,000 memes, you&#39;ll surely find something funny. You can even se
 ### Example
 
 ```javascript
-import ApiLeague from 'api_league';
-let defaultClient = ApiLeague.ApiClient.instance;
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
 // Configure API key authorization: apiKey
 let apiKey = defaultClient.authentications['apiKey'];
 apiKey.apiKey = 'YOUR API KEY';
@@ -349,7 +349,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //headerApiKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new ApiLeague.HumorApi();
+let apiInstance = new ApileagueJs.HumorApi();
 let opts = {
   'keywords': "rocket", // String | A comma-separated list of words that must occur in the meme.
   'keywordsInImage': true, // Boolean | Whether the keywords must occur in the image.

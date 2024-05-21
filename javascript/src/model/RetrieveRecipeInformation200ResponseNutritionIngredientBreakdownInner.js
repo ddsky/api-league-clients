@@ -17,7 +17,7 @@ import RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutr
 /**
  * The RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner model module.
  * @module model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner {
     /**
