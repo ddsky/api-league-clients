@@ -234,43 +234,6 @@ defmodule APILeague.Api.Text do
   end
 
   @doc """
-  Part of Speech Tagging
-  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-  ### Parameters
-
-  - `connection` (APILeague.Connection): Connection to server
-  - `text` (String.t): The text to tag the part of speech.
-  - `opts` (keyword): Optional parameters
-
-  ### Returns
-
-  - `{:ok, APILeague.Model.PartOfSpeechTagging200Response.t}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec part_of_speech_tagging(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.PartOfSpeechTagging200Response.t} | {:error, Tesla.Env.t}
-  def part_of_speech_tagging(connection, text, _opts \\ []) do
-    request =
-      %{}
-      |> method(:get)
-      |> url("/tag-pos")
-      |> add_param(:query, :text, text)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {200, APILeague.Model.PartOfSpeechTagging200Response},
-      {401, false},
-      {402, false},
-      {403, false},
-      {404, false},
-      {406, false},
-      {429, false}
-    ])
-  end
-
-  @doc """
   Pluralize Word
   Find the plural form of a word.
 
@@ -421,7 +384,7 @@ defmodule APILeague.Api.Text do
   end
 
   @doc """
-  Text Stemming
+  Stem Text
   The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
   ### Parameters
@@ -432,11 +395,11 @@ defmodule APILeague.Api.Text do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.TextStemming200Response.t}` on success
+  - `{:ok, APILeague.Model.StemText200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec text_stemming(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.TextStemming200Response.t} | {:error, Tesla.Env.t}
-  def text_stemming(connection, text, _opts \\ []) do
+  @spec stem_text(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.StemText200Response.t} | {:error, Tesla.Env.t}
+  def stem_text(connection, text, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -447,7 +410,44 @@ defmodule APILeague.Api.Text do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.TextStemming200Response},
+      {200, APILeague.Model.StemText200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Tag Part of Speech
+  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `text` (String.t): The text to tag the part of speech.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.TagPartOfSpeech200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec tag_part_of_speech(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.TagPartOfSpeech200Response.t} | {:error, Tesla.Env.t}
+  def tag_part_of_speech(connection, text, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/tag-pos")
+      |> add_param(:query, :text, text)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.TagPartOfSpeech200Response},
       {401, false},
       {402, false},
       {403, false},

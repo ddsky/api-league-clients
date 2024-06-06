@@ -5,6 +5,7 @@ import apileague._
 import org.openapitools.models._
 import org.openapitools.models.ExtractNews200Response
 import org.openapitools.models.SearchNews200Response
+import org.openapitools.models.TopNews200Response
 import io.finch.circe._
 import io.circe.generic.semiauto._
 import com.twitter.concurrent.AsyncStream
@@ -26,7 +27,8 @@ object NewsApi {
     */
     def endpoints(da: DataAccessor) =
         extractNews(da) :+:
-        searchNews(da)
+        searchNews(da) :+:
+        topNews(da)
 
 
     private def checkError(e: CommonError) = e match {
@@ -70,6 +72,20 @@ object NewsApi {
         private def searchNews(da: DataAccessor): Endpoint[SearchNews200Response] =
         get("search-news" :: paramOption("text") :: paramOption("source-countries") :: paramOption("language") :: paramOption("min-sentiment").map(_.map(_.toDouble)) :: paramOption("max-sentiment").map(_.map(_.toDouble)) :: paramOption("earliest-publish-date") :: paramOption("latest-publish-date") :: paramOption("news-sources") :: paramOption("authors") :: paramOption("entities") :: paramOption("location-filter") :: paramOption("sort") :: paramOption("sort-direction") :: paramOption("offset").map(_.map(_.toInt)) :: paramOption("number").map(_.map(_.toInt)) :: param("api-key") :: header("x-api-key")) { (text: Option[String], sourceCountries: Option[String], language: Option[String], minSentiment: Option[Double], maxSentiment: Option[Double], earliestPublishDate: Option[String], latestPublishDate: Option[String], newsSources: Option[String], authors: Option[String], entities: Option[String], locationFilter: Option[String], sort: Option[String], sortDirection: Option[String], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String) =>
           da.News_searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, authParamapiKey, authParamheaderApiKey) match {
+            case Left(error) => checkError(error)
+            case Right(data) => Ok(data)
+          }
+        } handle {
+          case e: Exception => BadRequest(e)
+        }
+
+        /**
+        * 
+        * @return An endpoint representing a TopNews200Response
+        */
+        private def topNews(da: DataAccessor): Endpoint[TopNews200Response] =
+        get("retrieve-top-news" :: param("source-country") :: param("language") :: paramOption("date") :: paramOption("headlines-only").map(_.map(_.toBoolean)) :: param("api-key") :: header("x-api-key")) { (sourceCountry: String, language: String, date: Option[String], headlinesOnly: Option[Boolean], authParamapiKey: String, authParamheaderApiKey: String) =>
+          da.News_topNews(sourceCountry, language, date, headlinesOnly, authParamapiKey, authParamheaderApiKey) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

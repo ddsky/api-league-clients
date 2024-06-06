@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**extractAuthors**](WebApi.md#extractauthors) | **GET** /extract-authors | Extract Authors
 [**extractContentFromAWebPage**](WebApi.md#extractcontentfromawebpage) | **GET** /extract-content | Extract Content from a Web Page
 [**extractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date
+[**retrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web
 
 
@@ -35,7 +36,7 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
 
 final api_instance = WebApi();
-final url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url with the article from which authors should be extracted.
+final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url with the article from which authors should be extracted.
 
 try {
     final result = api_instance.extractAuthors(url);
@@ -86,7 +87,7 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
 
 final api_instance = WebApi();
-final url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the content will be extracted.
+final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the content will be extracted.
 
 try {
     final result = api_instance.extractContentFromAWebPage(url);
@@ -137,7 +138,7 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
 
 final api_instance = WebApi();
-final url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the publish date should be extracted.
+final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the publish date should be extracted.
 
 try {
     final result = api_instance.extractPublishDate(url);
@@ -156,6 +157,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **retrievePageRank**
+> RetrievePageRank200Response retrievePageRank(domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = WebApi();
+final domain = amazon.com; // String | The domain for which the page rank should be returned.
+
+try {
+    final result = api_instance.retrievePageRank(domain);
+    print(result);
+} catch (e) {
+    print('Exception when calling WebApi->retrievePageRank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **String**| The domain for which the page rank should be returned. | 
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

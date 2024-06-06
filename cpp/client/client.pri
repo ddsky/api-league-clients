@@ -24,13 +24,13 @@ HEADERS += \
     $${PWD}/OAIFindSimilarBooks_200_response.h \
     $${PWD}/OAIGenerateNonsenseWord_200_response.h \
     $${PWD}/OAIListWordSynonyms_200_response.h \
-    $${PWD}/OAIPartOfSpeechTagging_200_response.h \
     $${PWD}/OAIPluralizeWord_200_response.h \
     $${PWD}/OAIRandomMeme_200_response.h \
     $${PWD}/OAIRandomPoem_200_response.h \
     $${PWD}/OAIRandomQuote_200_response.h \
     $${PWD}/OAIRandomTrivia_200_response.h \
     $${PWD}/OAIReadKeyValueFromStore_200_response.h \
+    $${PWD}/OAIRetrievePageRank_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_credits.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.h \
@@ -86,8 +86,12 @@ HEADERS += \
     $${PWD}/OAISearchWeb_200_response.h \
     $${PWD}/OAISearchWeb_200_response_results_inner.h \
     $${PWD}/OAISingularizeWord_200_response.h \
+    $${PWD}/OAIStemText_200_response.h \
     $${PWD}/OAIStoreKeyValueGET_200_response.h \
-    $${PWD}/OAITextStemming_200_response.h \
+    $${PWD}/OAITagPartOfSpeech_200_response.h \
+    $${PWD}/OAITopNews_200_response.h \
+    $${PWD}/OAITopNews_200_response_top_news_inner.h \
+    $${PWD}/OAITopNews_200_response_top_news_inner_news_inner.h \
 # APIs
     $${PWD}/OAIArtApi.h \
     $${PWD}/OAIBooksApi.h \
@@ -134,13 +138,13 @@ SOURCES += \
     $${PWD}/OAIFindSimilarBooks_200_response.cpp \
     $${PWD}/OAIGenerateNonsenseWord_200_response.cpp \
     $${PWD}/OAIListWordSynonyms_200_response.cpp \
-    $${PWD}/OAIPartOfSpeechTagging_200_response.cpp \
     $${PWD}/OAIPluralizeWord_200_response.cpp \
     $${PWD}/OAIRandomMeme_200_response.cpp \
     $${PWD}/OAIRandomPoem_200_response.cpp \
     $${PWD}/OAIRandomQuote_200_response.cpp \
     $${PWD}/OAIRandomTrivia_200_response.cpp \
     $${PWD}/OAIReadKeyValueFromStore_200_response.cpp \
+    $${PWD}/OAIRetrievePageRank_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_credits.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.cpp \
@@ -196,8 +200,12 @@ SOURCES += \
     $${PWD}/OAISearchWeb_200_response.cpp \
     $${PWD}/OAISearchWeb_200_response_results_inner.cpp \
     $${PWD}/OAISingularizeWord_200_response.cpp \
+    $${PWD}/OAIStemText_200_response.cpp \
     $${PWD}/OAIStoreKeyValueGET_200_response.cpp \
-    $${PWD}/OAITextStemming_200_response.cpp \
+    $${PWD}/OAITagPartOfSpeech_200_response.cpp \
+    $${PWD}/OAITopNews_200_response.cpp \
+    $${PWD}/OAITopNews_200_response_top_news_inner.cpp \
+    $${PWD}/OAITopNews_200_response_top_news_inner_news_inner.cpp \
 # APIs
     $${PWD}/OAIArtApi.cpp \
     $${PWD}/OAIBooksApi.cpp \

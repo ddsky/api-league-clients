@@ -116,4 +116,51 @@ defmodule APILeague.Api.News do
       {429, false}
     ])
   end
+
+  @doc """
+  Top News
+  Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `source_country` (String.t): The ISO 3166 country code of the country for which top news should be retrieved.
+  - `language` (String.t): The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+  - `opts` (keyword): Optional parameters
+    - `:date` (String.t): The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+    - `:"headlines-only"` (boolean()): Whether to only return basic information such as id, title, and url of the news.
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.TopNews200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec top_news(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.TopNews200Response.t} | {:error, Tesla.Env.t}
+  def top_news(connection, source_country, language, opts \\ []) do
+    optional_params = %{
+      :date => :query,
+      :"headlines-only" => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-top-news")
+      |> add_param(:query, :"source-country", source_country)
+      |> add_param(:query, :language, language)
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.TopNews200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
 end

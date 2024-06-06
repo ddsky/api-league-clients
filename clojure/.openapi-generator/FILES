@@ -36,13 +36,13 @@ src/api_league/specs/extract_publish_date_200_response.clj
 src/api_league/specs/find_similar_books_200_response.clj
 src/api_league/specs/generate_nonsense_word_200_response.clj
 src/api_league/specs/list_word_synonyms_200_response.clj
-src/api_league/specs/part_of_speech_tagging_200_response.clj
 src/api_league/specs/pluralize_word_200_response.clj
 src/api_league/specs/random_meme_200_response.clj
 src/api_league/specs/random_poem_200_response.clj
 src/api_league/specs/random_quote_200_response.clj
 src/api_league/specs/random_trivia_200_response.clj
 src/api_league/specs/read_key_value_from_store_200_response.clj
+src/api_league/specs/retrieve_page_rank_200_response.clj
 src/api_league/specs/retrieve_recipe_information_200_response.clj
 src/api_league/specs/retrieve_recipe_information_200_response_credits.clj
 src/api_league/specs/retrieve_recipe_information_200_response_dietary_properties.clj
@@ -98,5 +98,9 @@ src/api_league/specs/search_royalty_free_images_200_response_images_inner_licens
 src/api_league/specs/search_web_200_response.clj
 src/api_league/specs/search_web_200_response_results_inner.clj
 src/api_league/specs/singularize_word_200_response.clj
+src/api_league/specs/stem_text_200_response.clj
 src/api_league/specs/store_key_value_get_200_response.clj
-src/api_league/specs/text_stemming_200_response.clj
+src/api_league/specs/tag_part_of_speech_200_response.clj
+src/api_league/specs/top_news_200_response.clj
+src/api_league/specs/top_news_200_response_top_news_inner.clj
+src/api_league/specs/top_news_200_response_top_news_inner_news_inner.clj

@@ -41,13 +41,13 @@ model/findSimilarBooks200Response.ts
 model/generateNonsenseWord200Response.ts
 model/listWordSynonyms200Response.ts
 model/models.ts
-model/partOfSpeechTagging200Response.ts
 model/pluralizeWord200Response.ts
 model/randomMeme200Response.ts
 model/randomPoem200Response.ts
 model/randomQuote200Response.ts
 model/randomTrivia200Response.ts
 model/readKeyValueFromStore200Response.ts
+model/retrievePageRank200Response.ts
 model/retrieveRecipeInformation200Response.ts
 model/retrieveRecipeInformation200ResponseCredits.ts
 model/retrieveRecipeInformation200ResponseDietaryProperties.ts
@@ -103,7 +103,11 @@ model/searchRoyaltyFreeImages200ResponseImagesInnerLicense.ts
 model/searchWeb200Response.ts
 model/searchWeb200ResponseResultsInner.ts
 model/singularizeWord200Response.ts
+model/stemText200Response.ts
 model/storeKeyValueGET200Response.ts
-model/textStemming200Response.ts
+model/tagPartOfSpeech200Response.ts
+model/topNews200Response.ts
+model/topNews200ResponseTopNewsInner.ts
+model/topNews200ResponseTopNewsInnerNewsInner.ts
 param.ts
 variables.ts

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |------------- | ------------- | -------------|
 | [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News |
 | [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News |
+| [**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News |
 
 
 <a id="extractNews"></a>
@@ -179,6 +180,93 @@ public class Example {
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+<a id="topNews"></a>
+# **topNews**
+> TopNews200Response topNews(sourceCountry, language, date, headlinesOnly)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.NewsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    NewsApi apiInstance = new NewsApi(defaultClient);
+    String sourceCountry = "us"; // String | The ISO 3166 country code of the country for which top news should be retrieved.
+    String language = "en"; // String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+    String date = "2024-05-30"; // String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+    Boolean headlinesOnly = false; // Boolean | Whether to only return basic information such as id, title, and url of the news.
+    try {
+      TopNews200Response result = apiInstance.topNews(sourceCountry, language, date, headlinesOnly);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling NewsApi#topNews");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sourceCountry** | **String**| The ISO 3166 country code of the country for which top news should be retrieved. | |
+| **language** | **String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | |
+| **date** | **String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] |
+| **headlinesOnly** | **Boolean**| Whether to only return basic information such as id, title, and url of the news. | [optional] |
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

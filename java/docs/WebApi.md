@@ -7,6 +7,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors |
 | [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page |
 | [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
 
 
@@ -46,7 +47,7 @@ public class Example {
     //headerApiKey.setApiKeyPrefix("Token");
 
     WebApi apiInstance = new WebApi(defaultClient);
-    String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url with the article from which authors should be extracted.
+    String url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url with the article from which authors should be extracted.
     try {
       ExtractAuthors200Response result = apiInstance.extractAuthors(url);
       System.out.println(result);
@@ -127,7 +128,7 @@ public class Example {
     //headerApiKey.setApiKeyPrefix("Token");
 
     WebApi apiInstance = new WebApi(defaultClient);
-    String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the content will be extracted.
+    String url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url for which the content will be extracted.
     try {
       ExtractContentFromAWebPage200Response result = apiInstance.extractContentFromAWebPage(url);
       System.out.println(result);
@@ -208,7 +209,7 @@ public class Example {
     //headerApiKey.setApiKeyPrefix("Token");
 
     WebApi apiInstance = new WebApi(defaultClient);
-    String url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the publish date should be extracted.
+    String url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url for which the publish date should be extracted.
     try {
       ExtractPublishDate200Response result = apiInstance.extractPublishDate(url);
       System.out.println(result);
@@ -232,6 +233,87 @@ public class Example {
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+<a id="retrievePageRank"></a>
+# **retrievePageRank**
+> RetrievePageRank200Response retrievePageRank(domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.WebApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    WebApi apiInstance = new WebApi(defaultClient);
+    String domain = "amazon.com"; // String | The domain for which the page rank should be returned.
+    try {
+      RetrievePageRank200Response result = apiInstance.retrievePageRank(domain);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebApi#retrievePageRank");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domain** | **String**| The domain for which the page rank should be returned. | |
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

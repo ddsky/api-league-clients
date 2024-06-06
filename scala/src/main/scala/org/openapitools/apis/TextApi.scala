@@ -9,13 +9,13 @@ import org.openapitools.models.DetectSentiment200Response
 import org.openapitools.models.ExtractDates200Response
 import org.openapitools.models.ExtractEntities200Response
 import org.openapitools.models.ListWordSynonyms200Response
-import org.openapitools.models.PartOfSpeechTagging200Response
 import org.openapitools.models.PluralizeWord200Response
 import org.openapitools.models.ScoreReadability200Response
 import org.openapitools.models.ScoreText200Response
 import scala.collection.immutable.Seq
 import org.openapitools.models.SingularizeWord200Response
-import org.openapitools.models.TextStemming200Response
+import org.openapitools.models.StemText200Response
+import org.openapitools.models.TagPartOfSpeech200Response
 import io.finch.circe._
 import io.circe.generic.semiauto._
 import com.twitter.concurrent.AsyncStream
@@ -42,12 +42,12 @@ object TextApi {
         extractDates(da) :+:
         extractEntities(da) :+:
         listWordSynonyms(da) :+:
-        partOfSpeechTagging(da) :+:
         pluralizeWord(da) :+:
         scoreReadability(da) :+:
         scoreText(da) :+:
         singularizeWord(da) :+:
-        textStemming(da)
+        stemText(da) :+:
+        tagPartOfSpeech(da)
 
 
     private def checkError(e: CommonError) = e match {
@@ -156,20 +156,6 @@ object TextApi {
 
         /**
         * 
-        * @return An endpoint representing a PartOfSpeechTagging200Response
-        */
-        private def partOfSpeechTagging(da: DataAccessor): Endpoint[PartOfSpeechTagging200Response] =
-        get("tag-pos" :: param("text") :: param("api-key") :: header("x-api-key")) { (text: String, authParamapiKey: String, authParamheaderApiKey: String) =>
-          da.Text_partOfSpeechTagging(text, authParamapiKey, authParamheaderApiKey) match {
-            case Left(error) => checkError(error)
-            case Right(data) => Ok(data)
-          }
-        } handle {
-          case e: Exception => BadRequest(e)
-        }
-
-        /**
-        * 
         * @return An endpoint representing a PluralizeWord200Response
         */
         private def pluralizeWord(da: DataAccessor): Endpoint[PluralizeWord200Response] =
@@ -226,11 +212,25 @@ object TextApi {
 
         /**
         * 
-        * @return An endpoint representing a TextStemming200Response
+        * @return An endpoint representing a StemText200Response
         */
-        private def textStemming(da: DataAccessor): Endpoint[TextStemming200Response] =
+        private def stemText(da: DataAccessor): Endpoint[StemText200Response] =
         get("stem-text" :: param("text") :: param("api-key") :: header("x-api-key")) { (text: String, authParamapiKey: String, authParamheaderApiKey: String) =>
-          da.Text_textStemming(text, authParamapiKey, authParamheaderApiKey) match {
+          da.Text_stemText(text, authParamapiKey, authParamheaderApiKey) match {
+            case Left(error) => checkError(error)
+            case Right(data) => Ok(data)
+          }
+        } handle {
+          case e: Exception => BadRequest(e)
+        }
+
+        /**
+        * 
+        * @return An endpoint representing a TagPartOfSpeech200Response
+        */
+        private def tagPartOfSpeech(da: DataAccessor): Endpoint[TagPartOfSpeech200Response] =
+        get("tag-pos" :: param("text") :: param("api-key") :: header("x-api-key")) { (text: String, authParamapiKey: String, authParamheaderApiKey: String) =>
+          da.Text_tagPartOfSpeech(text, authParamapiKey, authParamheaderApiKey) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

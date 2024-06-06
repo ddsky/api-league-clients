@@ -1,7 +1,7 @@
 # java-client
 
 API League
-- API version: 1.0.0
+- API version: 1.2.0
   - Generator version: 7.5.0
 
 API League is a Hub for World Class APIs.
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.apileague</groupId>
   <artifactId>java-client</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.apileague:java-client:1.1.0"
+     implementation "com.apileague:java-client:1.2.0"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/java-client-1.1.0.jar`
+* `target/java-client-1.2.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
 *MediaApi* | [**searchRoyaltyFreeImages**](docs/MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 *NewsApi* | [**extractNews**](docs/NewsApi.md#extractNews) | **GET** /extract-news | Extract News
 *NewsApi* | [**searchNews**](docs/NewsApi.md#searchNews) | **GET** /search-news | Search News
+*NewsApi* | [**topNews**](docs/NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
 *StorageApi* | [**readKeyValueFromStore**](docs/StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store
 *StorageApi* | [**storeKeyValueGET**](docs/StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
 *TextApi* | [**correctSpelling**](docs/TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
@@ -159,15 +160,16 @@ Class | Method | HTTP request | Description
 *TextApi* | [**extractDates**](docs/TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
 *TextApi* | [**extractEntities**](docs/TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
 *TextApi* | [**listWordSynonyms**](docs/TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-*TextApi* | [**partOfSpeechTagging**](docs/TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging
 *TextApi* | [**pluralizeWord**](docs/TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
 *TextApi* | [**scoreReadability**](docs/TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
 *TextApi* | [**scoreText**](docs/TextApi.md#scoreText) | **GET** /score-text | Score Text
 *TextApi* | [**singularizeWord**](docs/TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-*TextApi* | [**textStemming**](docs/TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
+*TextApi* | [**stemText**](docs/TextApi.md#stemText) | **GET** /stem-text | Stem Text
+*TextApi* | [**tagPartOfSpeech**](docs/TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech
 *WebApi* | [**extractAuthors**](docs/WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
 *WebApi* | [**extractContentFromAWebPage**](docs/WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
 *WebApi* | [**extractPublishDate**](docs/WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
+*WebApi* | [**retrievePageRank**](docs/WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 *WebApi* | [**searchWeb**](docs/WebApi.md#searchWeb) | **GET** /search-web | Search Web
 
 
@@ -195,13 +197,13 @@ Class | Method | HTTP request | Description
  - [FindSimilarBooks200Response](docs/FindSimilarBooks200Response.md)
  - [GenerateNonsenseWord200Response](docs/GenerateNonsenseWord200Response.md)
  - [ListWordSynonyms200Response](docs/ListWordSynonyms200Response.md)
- - [PartOfSpeechTagging200Response](docs/PartOfSpeechTagging200Response.md)
  - [PluralizeWord200Response](docs/PluralizeWord200Response.md)
  - [RandomMeme200Response](docs/RandomMeme200Response.md)
  - [RandomPoem200Response](docs/RandomPoem200Response.md)
  - [RandomQuote200Response](docs/RandomQuote200Response.md)
  - [RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
+ - [RetrievePageRank200Response](docs/RetrievePageRank200Response.md)
  - [RetrieveRecipeInformation200Response](docs/RetrieveRecipeInformation200Response.md)
  - [RetrieveRecipeInformation200ResponseCredits](docs/RetrieveRecipeInformation200ResponseCredits.md)
  - [RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
@@ -257,8 +259,12 @@ Class | Method | HTTP request | Description
  - [SearchWeb200Response](docs/SearchWeb200Response.md)
  - [SearchWeb200ResponseResultsInner](docs/SearchWeb200ResponseResultsInner.md)
  - [SingularizeWord200Response](docs/SingularizeWord200Response.md)
+ - [StemText200Response](docs/StemText200Response.md)
  - [StoreKeyValueGET200Response](docs/StoreKeyValueGET200Response.md)
- - [TextStemming200Response](docs/TextStemming200Response.md)
+ - [TagPartOfSpeech200Response](docs/TagPartOfSpeech200Response.md)
+ - [TopNews200Response](docs/TopNews200Response.md)
+ - [TopNews200ResponseTopNewsInner](docs/TopNews200ResponseTopNewsInner.md)
+ - [TopNews200ResponseTopNewsInnerNewsInner](docs/TopNews200ResponseTopNewsInnerNewsInner.md)
 
 
 <a id="documentation-for-authorization"></a>

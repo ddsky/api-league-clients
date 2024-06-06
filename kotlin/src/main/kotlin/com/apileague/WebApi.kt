@@ -22,6 +22,7 @@ import okhttp3.HttpUrl
 import com.apileague.client.model.ExtractAuthors200Response
 import com.apileague.client.model.ExtractContentFromAWebPage200Response
 import com.apileague.client.model.ExtractPublishDate200Response
+import com.apileague.client.model.RetrievePageRank200Response
 import com.apileague.client.model.SearchWeb200Response
 
 import com.squareup.moshi.Json
@@ -263,6 +264,80 @@ class WebApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/extract-publish-date",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Retrieve Page Rank
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * @param domain The domain for which the page rank should be returned.
+     * @return RetrievePageRank200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun retrievePageRank(domain: kotlin.String) : RetrievePageRank200Response {
+        val localVarResponse = retrievePageRankWithHttpInfo(domain = domain)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RetrievePageRank200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Retrieve Page Rank
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * @param domain The domain for which the page rank should be returned.
+     * @return ApiResponse<RetrievePageRank200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun retrievePageRankWithHttpInfo(domain: kotlin.String) : ApiResponse<RetrievePageRank200Response?> {
+        val localVariableConfig = retrievePageRankRequestConfig(domain = domain)
+
+        return request<Unit, RetrievePageRank200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation retrievePageRank
+     *
+     * @param domain The domain for which the page rank should be returned.
+     * @return RequestConfig
+     */
+    fun retrievePageRankRequestConfig(domain: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("domain", listOf(domain.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/retrieve-page-rank",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

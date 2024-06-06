@@ -3,6 +3,7 @@ package org.openapitools.api;
 import org.openapitools.api.ApiUtils
 import org.openapitools.model.ExtractNews200Response
 import org.openapitools.model.SearchNews200Response
+import org.openapitools.model.TopNews200Response
 
 class NewsApi {
     String basePath = "https://api.apileague.com"
@@ -105,6 +106,46 @@ class NewsApi {
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "GET", "",
                     SearchNews200Response.class )
+
+    }
+
+    def topNews ( String sourceCountry, String language, String date, Boolean headlinesOnly, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/retrieve-top-news"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (sourceCountry == null) {
+            throw new RuntimeException("missing required params sourceCountry")
+        }
+        // verify required params are set
+        if (language == null) {
+            throw new RuntimeException("missing required params language")
+        }
+
+        if (sourceCountry != null) {
+            queryParams.put("source-country", sourceCountry)
+        }
+        if (language != null) {
+            queryParams.put("language", language)
+        }
+        if (date != null) {
+            queryParams.put("date", date)
+        }
+        if (headlinesOnly != null) {
+            queryParams.put("headlines-only", headlinesOnly)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "",
+                    TopNews200Response.class )
 
     }
 

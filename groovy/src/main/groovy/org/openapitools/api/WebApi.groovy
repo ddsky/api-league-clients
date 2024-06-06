@@ -4,6 +4,7 @@ import org.openapitools.api.ApiUtils
 import org.openapitools.model.ExtractAuthors200Response
 import org.openapitools.model.ExtractContentFromAWebPage200Response
 import org.openapitools.model.ExtractPublishDate200Response
+import org.openapitools.model.RetrievePageRank200Response
 import org.openapitools.model.SearchWeb200Response
 
 class WebApi {
@@ -89,6 +90,33 @@ class WebApi {
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "GET", "",
                     ExtractPublishDate200Response.class )
+
+    }
+
+    def retrievePageRank ( String domain, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/retrieve-page-rank"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (domain == null) {
+            throw new RuntimeException("missing required params domain")
+        }
+
+        if (domain != null) {
+            queryParams.put("domain", domain)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "",
+                    RetrievePageRank200Response.class )
 
     }
 

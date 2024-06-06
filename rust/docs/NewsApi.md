@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News
 [**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News
+[**top_news**](NewsApi.md#top_news) | **GET** /retrieve-top-news | Top News
 
 
 
@@ -71,6 +72,39 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::SearchNews200Response**](searchNews_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## top_news
+
+> models::TopNews200Response top_news(source_country, language, date, headlines_only)
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**source_country** | **String** | The ISO 3166 country code of the country for which top news should be retrieved. | [required] |
+**language** | **String** | The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | [required] |
+**date** | Option<**String**> | The date for which the top news should be retrieved. If no date is given, the current day is assumed. |  |
+**headlines_only** | Option<**bool**> | Whether to only return basic information such as id, title, and url of the news. |  |
+
+### Return type
+
+[**models::TopNews200Response**](topNews_200_response.md)
 
 ### Authorization
 

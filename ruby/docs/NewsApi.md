@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------ | ------------ | ----------- |
 | [**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News |
 | [**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News |
+| [**top_news**](NewsApi.md#top_news) | **GET** /retrieve-top-news | Top News |
 
 
 ## extract_news
@@ -181,6 +182,90 @@ end
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## top_news
+
+> <TopNews200Response> top_news(source_country, language, opts)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::NewsApi.new
+source_country = 'us' # String | The ISO 3166 country code of the country for which top news should be retrieved.
+language = 'en' # String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+opts = {
+  date: '2024-05-30', # String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+  headlines_only: false # Boolean | Whether to only return basic information such as id, title, and url of the news.
+}
+
+begin
+  # Top News
+  result = api_instance.top_news(source_country, language, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->top_news: #{e}"
+end
+```
+
+#### Using the top_news_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<TopNews200Response>, Integer, Hash)> top_news_with_http_info(source_country, language, opts)
+
+```ruby
+begin
+  # Top News
+  data, status_code, headers = api_instance.top_news_with_http_info(source_country, language, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <TopNews200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling NewsApi->top_news_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **source_country** | **String** | The ISO 3166 country code of the country for which top news should be retrieved. |  |
+| **language** | **String** | The ISO 6391 language code of the top news. The language must be one spoken in the source-country. |  |
+| **date** | **String** | The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] |
+| **headlines_only** | **Boolean** | Whether to only return basic information such as id, title, and url of the news. | [optional] |
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**extractDates**](OAITextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
 [**extractEntities**](OAITextApi.md#extractentities) | **GET** /extract-entities | Extract Entities
 [**listWordSynonyms**](OAITextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging**](OAITextApi.md#partofspeechtagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralizeWord**](OAITextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word
 [**scoreReadability**](OAITextApi.md#scorereadability) | **GET** /score-readability | Score Readability
 [**scoreText**](OAITextApi.md#scoretext) | **GET** /score-text | Score Text
 [**singularizeWord**](OAITextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word
-[**textStemming**](OAITextApi.md#textstemming) | **GET** /stem-text | Text Stemming
+[**stemText**](OAITextApi.md#stemtext) | **GET** /stem-text | Stem Text
+[**tagPartOfSpeech**](OAITextApi.md#tagpartofspeech) | **GET** /tag-pos | Tag Part of Speech
 
 
 # **correctSpelling**
@@ -394,68 +394,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partOfSpeechTagging**
-```objc
--(NSURLSessionTask*) partOfSpeechTaggingWithText: (NSString*) text
-        completionHandler: (void (^)(OAIPartOfSpeechTagging200Response* output, NSError* error)) handler;
-```
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```objc
-OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
-
-// Configure API key authorization: (authentication scheme: apiKey)
-[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
-
-// Configure API key authorization: (authentication scheme: headerApiKey)
-[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
-
-
-NSString* text = The lazy dog jumps over the quick brown fox.; // The text to tag the part of speech.
-
-OAITextApi*apiInstance = [[OAITextApi alloc] init];
-
-// Part of Speech Tagging
-[apiInstance partOfSpeechTaggingWithText:text
-          completionHandler: ^(OAIPartOfSpeechTagging200Response* output, NSError* error) {
-                        if (output) {
-                            NSLog(@"%@", output);
-                        }
-                        if (error) {
-                            NSLog(@"Error calling OAITextApi->partOfSpeechTagging: %@", error);
-                        }
-                    }];
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **NSString***| The text to tag the part of speech. | 
-
-### Return type
-
-[**OAIPartOfSpeechTagging200Response***](OAIPartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **pluralizeWord**
 ```objc
 -(NSURLSessionTask*) pluralizeWordWithWord: (NSString*) word
@@ -708,13 +646,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **textStemming**
+# **stemText**
 ```objc
--(NSURLSessionTask*) textStemmingWithText: (NSString*) text
-        completionHandler: (void (^)(OAITextStemming200Response* output, NSError* error)) handler;
+-(NSURLSessionTask*) stemTextWithText: (NSString*) text
+        completionHandler: (void (^)(OAIStemText200Response* output, NSError* error)) handler;
 ```
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -737,14 +675,14 @@ NSString* text = The laziest dogs are jumping over the quicker brown foxes.; // 
 
 OAITextApi*apiInstance = [[OAITextApi alloc] init];
 
-// Text Stemming
-[apiInstance textStemmingWithText:text
-          completionHandler: ^(OAITextStemming200Response* output, NSError* error) {
+// Stem Text
+[apiInstance stemTextWithText:text
+          completionHandler: ^(OAIStemText200Response* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling OAITextApi->textStemming: %@", error);
+                            NSLog(@"Error calling OAITextApi->stemText: %@", error);
                         }
                     }];
 ```
@@ -757,7 +695,69 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OAITextStemming200Response***](OAITextStemming200Response.md)
+[**OAIStemText200Response***](OAIStemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tagPartOfSpeech**
+```objc
+-(NSURLSessionTask*) tagPartOfSpeechWithText: (NSString*) text
+        completionHandler: (void (^)(OAITagPartOfSpeech200Response* output, NSError* error)) handler;
+```
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* text = The lazy dog jumps over the quick brown fox.; // The text to tag the part of speech.
+
+OAITextApi*apiInstance = [[OAITextApi alloc] init];
+
+// Tag Part of Speech
+[apiInstance tagPartOfSpeechWithText:text
+          completionHandler: ^(OAITagPartOfSpeech200Response* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAITextApi->tagPartOfSpeech: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **NSString***| The text to tag the part of speech. | 
+
+### Return type
+
+[**OAITagPartOfSpeech200Response***](OAITagPartOfSpeech200Response.md)
 
 ### Authorization
 

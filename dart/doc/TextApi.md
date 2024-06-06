@@ -15,12 +15,12 @@ Method | HTTP request | Description
 [**extractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
 [**extractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities
 [**listWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging**](TextApi.md#partofspeechtagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralizeWord**](TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word
 [**scoreReadability**](TextApi.md#scorereadability) | **GET** /score-readability | Score Readability
 [**scoreText**](TextApi.md#scoretext) | **GET** /score-text | Score Text
 [**singularizeWord**](TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word
-[**textStemming**](TextApi.md#textstemming) | **GET** /stem-text | Text Stemming
+[**stemText**](TextApi.md#stemtext) | **GET** /stem-text | Stem Text
+[**tagPartOfSpeech**](TextApi.md#tagpartofspeech) | **GET** /tag-pos | Tag Part of Speech
 
 
 # **correctSpelling**
@@ -331,57 +331,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partOfSpeechTagging**
-> PartOfSpeechTagging200Response partOfSpeechTagging(text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure API key authorization: apiKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: headerApiKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
-
-final api_instance = TextApi();
-final text = The lazy dog jumps over the quick brown fox.; // String | The text to tag the part of speech.
-
-try {
-    final result = api_instance.partOfSpeechTagging(text);
-    print(result);
-} catch (e) {
-    print('Exception when calling TextApi->partOfSpeechTagging: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to tag the part of speech. | 
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **pluralizeWord**
 > PluralizeWord200Response pluralizeWord(word)
 
@@ -588,10 +537,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **textStemming**
-> TextStemming200Response textStemming(text)
+# **stemText**
+> StemText200Response stemText(text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -611,10 +560,10 @@ final api_instance = TextApi();
 final text = The laziest dogs are jumping over the quicker brown foxes.; // String | The text to be stemmed.
 
 try {
-    final result = api_instance.textStemming(text);
+    final result = api_instance.stemText(text);
     print(result);
 } catch (e) {
-    print('Exception when calling TextApi->textStemming: $e\n');
+    print('Exception when calling TextApi->stemText: $e\n');
 }
 ```
 
@@ -626,7 +575,58 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tagPartOfSpeech**
+> TagPartOfSpeech200Response tagPartOfSpeech(text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = TextApi();
+final text = The lazy dog jumps over the quick brown fox.; // String | The text to tag the part of speech.
+
+try {
+    final result = api_instance.tagPartOfSpeech(text);
+    print(result);
+} catch (e) {
+    print('Exception when calling TextApi->tagPartOfSpeech: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **String**| The text to tag the part of speech. | 
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

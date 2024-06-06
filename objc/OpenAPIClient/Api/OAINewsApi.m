@@ -3,6 +3,7 @@
 #import "OAIApiClient.h"
 #import "OAIExtractNews200Response.h"
 #import "OAISearchNews200Response.h"
+#import "OAITopNews200Response.h"
 
 
 @interface OAINewsApi ()
@@ -272,6 +273,103 @@ NSInteger kOAINewsApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((OAISearchNews200Response*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Top News
+/// Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+///  @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved. 
+///
+///  @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country. 
+///
+///  @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+///
+///  @param headlinesOnly Whether to only return basic information such as id, title, and url of the news. (optional)
+///
+///  @returns OAITopNews200Response*
+///
+-(NSURLSessionTask*) topNewsWithSourceCountry: (NSString*) sourceCountry
+    language: (NSString*) language
+    date: (NSString*) date
+    headlinesOnly: (NSNumber*) headlinesOnly
+    completionHandler: (void (^)(OAITopNews200Response* output, NSError* error)) handler {
+    // verify the required parameter 'sourceCountry' is set
+    if (sourceCountry == nil) {
+        NSParameterAssert(sourceCountry);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"sourceCountry"] };
+            NSError* error = [NSError errorWithDomain:kOAINewsApiErrorDomain code:kOAINewsApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    // verify the required parameter 'language' is set
+    if (language == nil) {
+        NSParameterAssert(language);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"language"] };
+            NSError* error = [NSError errorWithDomain:kOAINewsApiErrorDomain code:kOAINewsApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-top-news"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sourceCountry != nil) {
+        queryParams[@"source-country"] = sourceCountry;
+    }
+    if (language != nil) {
+        queryParams[@"language"] = language;
+    }
+    if (date != nil) {
+        queryParams[@"date"] = date;
+    }
+    if (headlinesOnly != nil) {
+        queryParams[@"headlines-only"] = [headlinesOnly isEqual:@(YES)] ? @"true" : @"false";
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAITopNews200Response*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAITopNews200Response*)data, error);
                                 }
                             }];
 }

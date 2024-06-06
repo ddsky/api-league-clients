@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**extract_authors**](WebApi.md#extract_authors) | **GET** /extract-authors | Extract Authors
 [**extract_content_from_a_web_page**](WebApi.md#extract_content_from_a_web_page) | **GET** /extract-content | Extract Content from a Web Page
 [**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date
+[**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web
 
 
@@ -88,6 +89,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::ExtractPublishDate200Response**](extractPublishDate_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## retrieve_page_rank
+
+> models::RetrievePageRank200Response retrieve_page_rank(domain)
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**domain** | **String** | The domain for which the page rank should be returned. | [required] |
+
+### Return type
+
+[**models::RetrievePageRank200Response**](retrievePageRank_200_response.md)
 
 ### Authorization
 

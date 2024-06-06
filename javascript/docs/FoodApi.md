@@ -171,6 +171,8 @@ let opts = {
   'fillIngredients': true, // Boolean | Add information about the ingredients and whether they are used or missing in relation to the query.
   'addRecipeInformation': true, // Boolean | If set to true, you get more information about the recipes returned.
   'maxTime': 45, // Number | The maximum time in minutes it should take to prepare and cook the recipe.
+  'minServings': 1, // Number | The minimum amount of servings the recipe is for.
+  'maxServings': 8, // Number | The maximum amount of servings the recipe is for.
   'minCalories': 100, // Number | The minimum amount of calories the recipe must have per serving.
   'maxCalories': 655, // Number | The maximum amount of calories the recipe can have per serving.
   'minCarbs': 10.1, // Number | The minimum amount of carbohydrates in grams the recipe must have per serving.
@@ -274,6 +276,8 @@ Name | Type | Description  | Notes
  **fillIngredients** | **Boolean**| Add information about the ingredients and whether they are used or missing in relation to the query. | [optional] 
  **addRecipeInformation** | **Boolean**| If set to true, you get more information about the recipes returned. | [optional] 
  **maxTime** | **Number**| The maximum time in minutes it should take to prepare and cook the recipe. | [optional] 
+ **minServings** | **Number**| The minimum amount of servings the recipe is for. | [optional] 
+ **maxServings** | **Number**| The maximum amount of servings the recipe is for. | [optional] 
  **minCalories** | **Number**| The minimum amount of calories the recipe must have per serving. | [optional] 
  **maxCalories** | **Number**| The maximum amount of calories the recipe can have per serving. | [optional] 
  **minCarbs** | **Number**| The minimum amount of carbohydrates in grams the recipe must have per serving. | [optional] 

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.0.0
+API version: 1.2.0
 Contact: mail@apileague.com
 */
 
@@ -369,6 +369,181 @@ func (a *NewsAPIService) SearchNewsExecute(r ApiSearchNewsRequest) (*SearchNews2
 	}
 	if r.number != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiTopNewsRequest struct {
+	ctx context.Context
+	ApiService *NewsAPIService
+	sourceCountry *string
+	language *string
+	date *string
+	headlinesOnly *bool
+}
+
+// The ISO 3166 country code of the country for which top news should be retrieved.
+func (r ApiTopNewsRequest) SourceCountry(sourceCountry string) ApiTopNewsRequest {
+	r.sourceCountry = &sourceCountry
+	return r
+}
+
+// The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+func (r ApiTopNewsRequest) Language(language string) ApiTopNewsRequest {
+	r.language = &language
+	return r
+}
+
+// The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+func (r ApiTopNewsRequest) Date(date string) ApiTopNewsRequest {
+	r.date = &date
+	return r
+}
+
+// Whether to only return basic information such as id, title, and url of the news.
+func (r ApiTopNewsRequest) HeadlinesOnly(headlinesOnly bool) ApiTopNewsRequest {
+	r.headlinesOnly = &headlinesOnly
+	return r
+}
+
+func (r ApiTopNewsRequest) Execute() (*TopNews200Response, *http.Response, error) {
+	return r.ApiService.TopNewsExecute(r)
+}
+
+/*
+TopNews Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiTopNewsRequest
+*/
+func (a *NewsAPIService) TopNews(ctx context.Context) ApiTopNewsRequest {
+	return ApiTopNewsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return TopNews200Response
+func (a *NewsAPIService) TopNewsExecute(r ApiTopNewsRequest) (*TopNews200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TopNews200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.TopNews")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/retrieve-top-news"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.sourceCountry == nil {
+		return localVarReturnValue, nil, reportError("sourceCountry is required and must be specified")
+	}
+	if strlen(*r.sourceCountry) > 2 {
+		return localVarReturnValue, nil, reportError("sourceCountry must have less than 2 elements")
+	}
+	if r.language == nil {
+		return localVarReturnValue, nil, reportError("language is required and must be specified")
+	}
+	if strlen(*r.language) > 2 {
+		return localVarReturnValue, nil, reportError("language must have less than 2 elements")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "source-country", r.sourceCountry, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "language", r.language, "")
+	if r.date != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
+	}
+	if r.headlinesOnly != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "headlines-only", r.headlinesOnly, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

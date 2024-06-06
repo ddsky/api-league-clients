@@ -22,6 +22,7 @@ import com.apileague.WebApi
 import com.apileague.client.model.ExtractAuthors200Response
 import com.apileague.client.model.ExtractContentFromAWebPage200Response
 import com.apileague.client.model.ExtractPublishDate200Response
+import com.apileague.client.model.RetrievePageRank200Response
 import com.apileague.client.model.SearchWeb200Response
 
 class WebApiTest : ShouldSpec() {
@@ -32,7 +33,7 @@ class WebApiTest : ShouldSpec() {
         // to test extractAuthors
         should("test extractAuthors") {
             // uncomment below to test extractAuthors
-            //val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url with the article from which authors should be extracted.
+            //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url with the article from which authors should be extracted.
             //val result : ExtractAuthors200Response = apiInstance.extractAuthors(url)
             //result shouldBe ("TODO")
         }
@@ -40,7 +41,7 @@ class WebApiTest : ShouldSpec() {
         // to test extractContentFromAWebPage
         should("test extractContentFromAWebPage") {
             // uncomment below to test extractContentFromAWebPage
-            //val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url for which the content will be extracted.
+            //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url for which the content will be extracted.
             //val result : ExtractContentFromAWebPage200Response = apiInstance.extractContentFromAWebPage(url)
             //result shouldBe ("TODO")
         }
@@ -48,8 +49,16 @@ class WebApiTest : ShouldSpec() {
         // to test extractPublishDate
         should("test extractPublishDate") {
             // uncomment below to test extractPublishDate
-            //val url : kotlin.String = https://www.bbc.com/news/entertainment-arts-68270826 // kotlin.String | The url for which the publish date should be extracted.
+            //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url for which the publish date should be extracted.
             //val result : ExtractPublishDate200Response = apiInstance.extractPublishDate(url)
+            //result shouldBe ("TODO")
+        }
+
+        // to test retrievePageRank
+        should("test retrievePageRank") {
+            // uncomment below to test retrievePageRank
+            //val domain : kotlin.String = amazon.com // kotlin.String | The domain for which the page rank should be returned.
+            //val result : RetrievePageRank200Response = apiInstance.retrievePageRank(domain)
             //result shouldBe ("TODO")
         }
 

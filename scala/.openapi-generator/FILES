@@ -41,13 +41,13 @@ src/main/scala/org/openapitools/models/ExtractPublishDate200Response.scala
 src/main/scala/org/openapitools/models/FindSimilarBooks200Response.scala
 src/main/scala/org/openapitools/models/GenerateNonsenseWord200Response.scala
 src/main/scala/org/openapitools/models/ListWordSynonyms200Response.scala
-src/main/scala/org/openapitools/models/PartOfSpeechTagging200Response.scala
 src/main/scala/org/openapitools/models/PluralizeWord200Response.scala
 src/main/scala/org/openapitools/models/RandomMeme200Response.scala
 src/main/scala/org/openapitools/models/RandomPoem200Response.scala
 src/main/scala/org/openapitools/models/RandomQuote200Response.scala
 src/main/scala/org/openapitools/models/RandomTrivia200Response.scala
 src/main/scala/org/openapitools/models/ReadKeyValueFromStore200Response.scala
+src/main/scala/org/openapitools/models/RetrievePageRank200Response.scala
 src/main/scala/org/openapitools/models/RetrieveRecipeInformation200Response.scala
 src/main/scala/org/openapitools/models/RetrieveRecipeInformation200ResponseCredits.scala
 src/main/scala/org/openapitools/models/RetrieveRecipeInformation200ResponseDietaryProperties.scala
@@ -103,5 +103,9 @@ src/main/scala/org/openapitools/models/SearchRoyaltyFreeImages200ResponseImagesI
 src/main/scala/org/openapitools/models/SearchWeb200Response.scala
 src/main/scala/org/openapitools/models/SearchWeb200ResponseResultsInner.scala
 src/main/scala/org/openapitools/models/SingularizeWord200Response.scala
+src/main/scala/org/openapitools/models/StemText200Response.scala
 src/main/scala/org/openapitools/models/StoreKeyValueGET200Response.scala
-src/main/scala/org/openapitools/models/TextStemming200Response.scala
+src/main/scala/org/openapitools/models/TagPartOfSpeech200Response.scala
+src/main/scala/org/openapitools/models/TopNews200Response.scala
+src/main/scala/org/openapitools/models/TopNews200ResponseTopNewsInner.scala
+src/main/scala/org/openapitools/models/TopNews200ResponseTopNewsInnerNewsInner.scala

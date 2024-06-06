@@ -15,9 +15,11 @@
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner :refer :all]
             [api-league.specs.detect-language-200-response-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner-measures :refer :all]
+            [api-league.specs.tag-part-of-speech-200-response :refer :all]
             [api-league.specs.random-meme-200-response :refer :all]
             [api-league.specs.random-trivia-200-response :refer :all]
             [api-league.specs.extract-authors-200-response :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner :refer :all]
             [api-league.specs.extract-news-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-scores :refer :all]
             [api-league.specs.search-news-200-response :refer :all]
@@ -46,6 +48,7 @@
             [api-league.specs.search-gifs-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.search-books-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-weight-per-serving :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
@@ -55,9 +58,9 @@
             [api-league.specs.store-key-value-get-200-response :refer :all]
             [api-league.specs.search-books-200-response-books-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
-            [api-league.specs.text-stemming-200-response :refer :all]
             [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
+            [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
@@ -73,7 +76,6 @@
             [api-league.specs.score-text-200-response-readability :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition :refer :all]
             [api-league.specs.score-text-200-response-style :refer :all]
-            [api-league.specs.part-of-speech-tagging-200-response :refer :all]
             [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
             [api-league.specs.search-recipes-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.search-web-200-response-results-inner :refer :all]
@@ -85,6 +87,8 @@
             [api-league.specs.score-readability-200-response :refer :all]
             [api-league.specs.extract-publish-date-200-response :refer :all]
             [api-league.specs.score-text-200-response-readability-mainscores :refer :all]
+            [api-league.specs.retrieve-page-rank-200-response :refer :all]
+            [api-league.specs.stem-text-200-response :refer :all]
             [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours-operational :refer :all]
             [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
@@ -149,11 +153,11 @@
   "Search Recipes
   Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more."
   ([] (search-recipes-with-http-info nil))
-  ([{:keys [query cuisines exclude-cuisines meal-type diet intolerances equipment include-ingredients exclude-ingredients fill-ingredients add-recipe-information max-time min-calories max-calories min-carbs max-carbs min-protein max-protein min-fat max-fat min-sugar max-sugar min-fiber max-fiber min-folate max-folate min-folic-acid max-folic-acid min-iodine max-iodine min-iron max-iron min-zinc max-zinc min-magnesium max-magnesium min-manganese max-manganese min-phosphorus max-phosphorus min-potassium max-potassium min-sodium max-sodium min-selenium max-selenium min-copper max-copper min-calcium max-calcium min-choline max-choline min-cholesterol max-cholesterol min-fluoride max-fluoride min-alcohol max-alcohol min-caffeine max-caffeine min-saturated-fat max-saturated-fat min-vitamin-a max-vitamin-a min-vitamin-c max-vitamin-c min-vitamin-d max-vitamin-d min-vitamin-e max-vitamin-e min-vitamin-k max-vitamin-k min-vitamin-b1 max-vitamin-b1 min-vitamin-b2 max-vitamin-b2 min-vitamin-b3 max-vitamin-b3 min-vitamin-b5 max-vitamin-b5 min-vitamin-b6 max-vitamin-b6 min-vitamin-b12 max-vitamin-b12 sort sort-direction offset number]} (s/map-of keyword? any?)]
+  ([{:keys [query cuisines exclude-cuisines meal-type diet intolerances equipment include-ingredients exclude-ingredients fill-ingredients add-recipe-information max-time min-servings max-servings min-calories max-calories min-carbs max-carbs min-protein max-protein min-fat max-fat min-sugar max-sugar min-fiber max-fiber min-folate max-folate min-folic-acid max-folic-acid min-iodine max-iodine min-iron max-iron min-zinc max-zinc min-magnesium max-magnesium min-manganese max-manganese min-phosphorus max-phosphorus min-potassium max-potassium min-sodium max-sodium min-selenium max-selenium min-copper max-copper min-calcium max-calcium min-choline max-choline min-cholesterol max-cholesterol min-fluoride max-fluoride min-alcohol max-alcohol min-caffeine max-caffeine min-saturated-fat max-saturated-fat min-vitamin-a max-vitamin-a min-vitamin-c max-vitamin-c min-vitamin-d max-vitamin-d min-vitamin-e max-vitamin-e min-vitamin-k max-vitamin-k min-vitamin-b1 max-vitamin-b1 min-vitamin-b2 max-vitamin-b2 min-vitamin-b3 max-vitamin-b3 min-vitamin-b5 max-vitamin-b5 min-vitamin-b6 max-vitamin-b6 min-vitamin-b12 max-vitamin-b12 sort sort-direction offset number]} (s/map-of keyword? any?)]
    (call-api "/search-recipes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"query" query "cuisines" cuisines "exclude-cuisines" exclude-cuisines "meal-type" meal-type "diet" diet "intolerances" intolerances "equipment" equipment "include-ingredients" include-ingredients "exclude-ingredients" exclude-ingredients "fill-ingredients" fill-ingredients "add-recipe-information" add-recipe-information "max-time" max-time "min-calories" min-calories "max-calories" max-calories "min-carbs" min-carbs "max-carbs" max-carbs "min-protein" min-protein "max-protein" max-protein "min-fat" min-fat "max-fat" max-fat "min-sugar" min-sugar "max-sugar" max-sugar "min-fiber" min-fiber "max-fiber" max-fiber "min-folate" min-folate "max-folate" max-folate "min-folic-acid" min-folic-acid "max-folic-acid" max-folic-acid "min-iodine" min-iodine "max-iodine" max-iodine "min-iron" min-iron "max-iron" max-iron "min-zinc" min-zinc "max-zinc" max-zinc "min-magnesium" min-magnesium "max-magnesium" max-magnesium "min-manganese" min-manganese "max-manganese" max-manganese "min-phosphorus" min-phosphorus "max-phosphorus" max-phosphorus "min-potassium" min-potassium "max-potassium" max-potassium "min-sodium" min-sodium "max-sodium" max-sodium "min-selenium" min-selenium "max-selenium" max-selenium "min-copper" min-copper "max-copper" max-copper "min-calcium" min-calcium "max-calcium" max-calcium "min-choline" min-choline "max-choline" max-choline "min-cholesterol" min-cholesterol "max-cholesterol" max-cholesterol "min-fluoride" min-fluoride "max-fluoride" max-fluoride "min-alcohol" min-alcohol "max-alcohol" max-alcohol "min-caffeine" min-caffeine "max-caffeine" max-caffeine "min-saturated-fat" min-saturated-fat "max-saturated-fat" max-saturated-fat "min-vitamin-a" min-vitamin-a "max-vitamin-a" max-vitamin-a "min-vitamin-c" min-vitamin-c "max-vitamin-c" max-vitamin-c "min-vitamin-d" min-vitamin-d "max-vitamin-d" max-vitamin-d "min-vitamin-e" min-vitamin-e "max-vitamin-e" max-vitamin-e "min-vitamin-k" min-vitamin-k "max-vitamin-k" max-vitamin-k "min-vitamin-b1" min-vitamin-b1 "max-vitamin-b1" max-vitamin-b1 "min-vitamin-b2" min-vitamin-b2 "max-vitamin-b2" max-vitamin-b2 "min-vitamin-b3" min-vitamin-b3 "max-vitamin-b3" max-vitamin-b3 "min-vitamin-b5" min-vitamin-b5 "max-vitamin-b5" max-vitamin-b5 "min-vitamin-b6" min-vitamin-b6 "max-vitamin-b6" max-vitamin-b6 "min-vitamin-b12" min-vitamin-b12 "max-vitamin-b12" max-vitamin-b12 "sort" sort "sort-direction" sort-direction "offset" offset "number" number }
+              :query-params  {"query" query "cuisines" cuisines "exclude-cuisines" exclude-cuisines "meal-type" meal-type "diet" diet "intolerances" intolerances "equipment" equipment "include-ingredients" include-ingredients "exclude-ingredients" exclude-ingredients "fill-ingredients" fill-ingredients "add-recipe-information" add-recipe-information "max-time" max-time "min-servings" min-servings "max-servings" max-servings "min-calories" min-calories "max-calories" max-calories "min-carbs" min-carbs "max-carbs" max-carbs "min-protein" min-protein "max-protein" max-protein "min-fat" min-fat "max-fat" max-fat "min-sugar" min-sugar "max-sugar" max-sugar "min-fiber" min-fiber "max-fiber" max-fiber "min-folate" min-folate "max-folate" max-folate "min-folic-acid" min-folic-acid "max-folic-acid" max-folic-acid "min-iodine" min-iodine "max-iodine" max-iodine "min-iron" min-iron "max-iron" max-iron "min-zinc" min-zinc "max-zinc" max-zinc "min-magnesium" min-magnesium "max-magnesium" max-magnesium "min-manganese" min-manganese "max-manganese" max-manganese "min-phosphorus" min-phosphorus "max-phosphorus" max-phosphorus "min-potassium" min-potassium "max-potassium" max-potassium "min-sodium" min-sodium "max-sodium" max-sodium "min-selenium" min-selenium "max-selenium" max-selenium "min-copper" min-copper "max-copper" max-copper "min-calcium" min-calcium "max-calcium" max-calcium "min-choline" min-choline "max-choline" max-choline "min-cholesterol" min-cholesterol "max-cholesterol" max-cholesterol "min-fluoride" min-fluoride "max-fluoride" max-fluoride "min-alcohol" min-alcohol "max-alcohol" max-alcohol "min-caffeine" min-caffeine "max-caffeine" max-caffeine "min-saturated-fat" min-saturated-fat "max-saturated-fat" max-saturated-fat "min-vitamin-a" min-vitamin-a "max-vitamin-a" max-vitamin-a "min-vitamin-c" min-vitamin-c "max-vitamin-c" max-vitamin-c "min-vitamin-d" min-vitamin-d "max-vitamin-d" max-vitamin-d "min-vitamin-e" min-vitamin-e "max-vitamin-e" max-vitamin-e "min-vitamin-k" min-vitamin-k "max-vitamin-k" max-vitamin-k "min-vitamin-b1" min-vitamin-b1 "max-vitamin-b1" max-vitamin-b1 "min-vitamin-b2" min-vitamin-b2 "max-vitamin-b2" max-vitamin-b2 "min-vitamin-b3" min-vitamin-b3 "max-vitamin-b3" max-vitamin-b3 "min-vitamin-b5" min-vitamin-b5 "max-vitamin-b5" max-vitamin-b5 "min-vitamin-b6" min-vitamin-b6 "max-vitamin-b6" max-vitamin-b6 "min-vitamin-b12" min-vitamin-b12 "max-vitamin-b12" max-vitamin-b12 "sort" sort "sort-direction" sort-direction "offset" offset "number" number }
               :form-params   {}
               :content-types []
               :accepts       ["application/json"]

@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
 [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
 [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
 [**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
 [**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text
 [**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-[**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
+[**stemText**](TextApi.md#stemText) | **GET** /stem-text | Stem Text
+[**tagPartOfSpeech**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech
 
 
 # **correctSpelling**
@@ -381,66 +381,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **partOfSpeechTagging**
-> PartOfSpeechTagging200Response partOfSpeechTagging()
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-
-
-```typescript
-import {  } from '';
-import * as fs from 'fs';
-
-const configuration = .createConfiguration();
-const apiInstance = new .TextApi(configuration);
-
-let body:.TextApiPartOfSpeechTaggingRequest = {
-  // string | The text to tag the part of speech.
-  text: "The lazy dog jumps over the quick brown fox.",
-};
-
-apiInstance.partOfSpeechTagging(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | [**string**] | The text to tag the part of speech. | defaults to undefined
-
-
-### Return type
-
-**PartOfSpeechTagging200Response**
-
-### Authorization
-
-[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
 # **pluralizeWord**
 > PluralizeWord200Response pluralizeWord()
 
@@ -684,8 +624,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **textStemming**
-> TextStemming200Response textStemming()
+# **stemText**
+> StemText200Response stemText()
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -699,12 +639,12 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .TextApi(configuration);
 
-let body:.TextApiTextStemmingRequest = {
+let body:.TextApiStemTextRequest = {
   // string | The text to be stemmed.
   text: "The laziest dogs are jumping over the quicker brown foxes.",
 };
 
-apiInstance.textStemming(body).then((data:any) => {
+apiInstance.stemText(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -719,7 +659,67 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**TextStemming200Response**
+**StemText200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **tagPartOfSpeech**
+> TagPartOfSpeech200Response tagPartOfSpeech()
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .TextApi(configuration);
+
+let body:.TextApiTagPartOfSpeechRequest = {
+  // string | The text to tag the part of speech.
+  text: "The lazy dog jumps over the quick brown fox.",
+};
+
+apiInstance.tagPartOfSpeech(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | [**string**] | The text to tag the part of speech. | defaults to undefined
+
+
+### Return type
+
+**TagPartOfSpeech200Response**
 
 ### Authorization
 

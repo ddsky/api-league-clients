@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
 [**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities
 [**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms
-[**part_of_speech_tagging**](TextApi.md#part_of_speech_tagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralize_word**](TextApi.md#pluralize_word) | **GET** /pluralize-word | Pluralize Word
 [**score_readability**](TextApi.md#score_readability) | **GET** /score-readability | Score Readability
 [**score_text**](TextApi.md#score_text) | **GET** /score-text | Score Text
 [**singularize_word**](TextApi.md#singularize_word) | **GET** /singularize-word | Singularize Word
-[**text_stemming**](TextApi.md#text_stemming) | **GET** /stem-text | Text Stemming
+[**stem_text**](TextApi.md#stem_text) | **GET** /stem-text | Stem Text
+[**tag_part_of_speech**](TextApi.md#tag_part_of_speech) | **GET** /tag-pos | Tag Part of Speech
 
 
 # **correct_spelling**
@@ -572,98 +572,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **part_of_speech_tagging**
-> PartOfSpeechTagging200Response part_of_speech_tagging(text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-
-* Api Key Authentication (apiKey):
-* Api Key Authentication (headerApiKey):
-
-```python
-import apileague
-from apileague.models.part_of_speech_tagging200_response import PartOfSpeechTagging200Response
-from apileague.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.apileague.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = apileague.Configuration(
-    host = "https://api.apileague.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with apileague.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = apileague.TextApi(api_client)
-    text = 'The lazy dog jumps over the quick brown fox.' # str | The text to tag the part of speech.
-
-    try:
-        # Part of Speech Tagging
-        api_response = api_instance.part_of_speech_tagging(text)
-        print("The response of TextApi->part_of_speech_tagging:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TextApi->part_of_speech_tagging: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to tag the part of speech. | 
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **pluralize_word**
 > PluralizeWord200Response pluralize_word(word)
 
@@ -1034,10 +942,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **text_stemming**
-> TextStemming200Response text_stemming(text)
+# **stem_text**
+> StemText200Response stem_text(text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -1048,7 +956,7 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 
 ```python
 import apileague
-from apileague.models.text_stemming200_response import TextStemming200Response
+from apileague.models.stem_text200_response import StemText200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -1082,12 +990,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'The laziest dogs are jumping over the quicker brown foxes.' # str | The text to be stemmed.
 
     try:
-        # Text Stemming
-        api_response = api_instance.text_stemming(text)
-        print("The response of TextApi->text_stemming:\n")
+        # Stem Text
+        api_response = api_instance.stem_text(text)
+        print("The response of TextApi->stem_text:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->text_stemming: %s\n" % e)
+        print("Exception when calling TextApi->stem_text: %s\n" % e)
 ```
 
 
@@ -1101,7 +1009,99 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tag_part_of_speech**
+> TagPartOfSpeech200Response tag_part_of_speech(text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.tag_part_of_speech200_response import TagPartOfSpeech200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.TextApi(api_client)
+    text = 'The lazy dog jumps over the quick brown fox.' # str | The text to tag the part of speech.
+
+    try:
+        # Tag Part of Speech
+        api_response = api_instance.tag_part_of_speech(text)
+        print("The response of TextApi->tag_part_of_speech:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TextApi->tag_part_of_speech: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **str**| The text to tag the part of speech. | 
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

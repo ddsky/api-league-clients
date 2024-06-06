@@ -44,6 +44,15 @@ void main() {
       // TODO
     });
 
+    // Retrieve Page Rank
+    //
+    // This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+    //
+    //Future<RetrievePageRank200Response> retrievePageRank(String domain) async
+    test('test retrievePageRank', () async {
+      // TODO
+    });
+
     // Search Web
     //
     // Search the web for a given query. The API returns a list of results with the title, summary, and URL.

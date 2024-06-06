@@ -7,12 +7,12 @@
 #import "OAIExtractDates200Response.h"
 #import "OAIExtractEntities200Response.h"
 #import "OAIListWordSynonyms200Response.h"
-#import "OAIPartOfSpeechTagging200Response.h"
 #import "OAIPluralizeWord200Response.h"
 #import "OAIScoreReadability200Response.h"
 #import "OAIScoreText200Response.h"
 #import "OAISingularizeWord200Response.h"
-#import "OAITextStemming200Response.h"
+#import "OAIStemText200Response.h"
+#import "OAITagPartOfSpeech200Response.h"
 
 
 @interface OAITextApi ()
@@ -486,74 +486,6 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Part of Speech Tagging
-/// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-///  @param text The text to tag the part of speech. 
-///
-///  @returns OAIPartOfSpeechTagging200Response*
-///
--(NSURLSessionTask*) partOfSpeechTaggingWithText: (NSString*) text
-    completionHandler: (void (^)(OAIPartOfSpeechTagging200Response* output, NSError* error)) handler {
-    // verify the required parameter 'text' is set
-    if (text == nil) {
-        NSParameterAssert(text);
-        if(handler) {
-            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"text"] };
-            NSError* error = [NSError errorWithDomain:kOAITextApiErrorDomain code:kOAITextApiMissingParamErrorCode userInfo:userInfo];
-            handler(nil, error);
-        }
-        return nil;
-    }
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/tag-pos"];
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (text != nil) {
-        queryParams[@"text"] = text;
-    }
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
-    [headerParams addEntriesFromDictionary:self.defaultHeaders];
-    // HTTP header `Accept`
-    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
-    if(acceptHeader.length > 0) {
-        headerParams[@"Accept"] = acceptHeader;
-    }
-
-    // response content type
-    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
-
-    // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"OAIPartOfSpeechTagging200Response*"
-                           completionBlock: ^(id data, NSError *error) {
-                                if(handler) {
-                                    handler((OAIPartOfSpeechTagging200Response*)data, error);
-                                }
-                            }];
-}
-
-///
 /// Pluralize Word
 /// Find the plural form of a word.
 ///  @param word The (noun) word for which the plural form should be found. 
@@ -843,14 +775,14 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
 }
 
 ///
-/// Text Stemming
+/// Stem Text
 /// The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 ///  @param text The text to be stemmed. 
 ///
-///  @returns OAITextStemming200Response*
+///  @returns OAIStemText200Response*
 ///
--(NSURLSessionTask*) textStemmingWithText: (NSString*) text
-    completionHandler: (void (^)(OAITextStemming200Response* output, NSError* error)) handler {
+-(NSURLSessionTask*) stemTextWithText: (NSString*) text
+    completionHandler: (void (^)(OAIStemText200Response* output, NSError* error)) handler {
     // verify the required parameter 'text' is set
     if (text == nil) {
         NSParameterAssert(text);
@@ -902,10 +834,78 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"OAITextStemming200Response*"
+                              responseType: @"OAIStemText200Response*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((OAITextStemming200Response*)data, error);
+                                    handler((OAIStemText200Response*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Tag Part of Speech
+/// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+///  @param text The text to tag the part of speech. 
+///
+///  @returns OAITagPartOfSpeech200Response*
+///
+-(NSURLSessionTask*) tagPartOfSpeechWithText: (NSString*) text
+    completionHandler: (void (^)(OAITagPartOfSpeech200Response* output, NSError* error)) handler {
+    // verify the required parameter 'text' is set
+    if (text == nil) {
+        NSParameterAssert(text);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"text"] };
+            NSError* error = [NSError errorWithDomain:kOAITextApiErrorDomain code:kOAITextApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/tag-pos"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (text != nil) {
+        queryParams[@"text"] = text;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAITagPartOfSpeech200Response*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAITagPartOfSpeech200Response*)data, error);
                                 }
                             }];
 }

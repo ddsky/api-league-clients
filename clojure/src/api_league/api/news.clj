@@ -15,9 +15,11 @@
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner :refer :all]
             [api-league.specs.detect-language-200-response-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner-measures :refer :all]
+            [api-league.specs.tag-part-of-speech-200-response :refer :all]
             [api-league.specs.random-meme-200-response :refer :all]
             [api-league.specs.random-trivia-200-response :refer :all]
             [api-league.specs.extract-authors-200-response :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner :refer :all]
             [api-league.specs.extract-news-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-scores :refer :all]
             [api-league.specs.search-news-200-response :refer :all]
@@ -46,6 +48,7 @@
             [api-league.specs.search-gifs-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.search-books-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-weight-per-serving :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
@@ -55,9 +58,9 @@
             [api-league.specs.store-key-value-get-200-response :refer :all]
             [api-league.specs.search-books-200-response-books-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
-            [api-league.specs.text-stemming-200-response :refer :all]
             [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
+            [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
@@ -73,7 +76,6 @@
             [api-league.specs.score-text-200-response-readability :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition :refer :all]
             [api-league.specs.score-text-200-response-style :refer :all]
-            [api-league.specs.part-of-speech-tagging-200-response :refer :all]
             [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
             [api-league.specs.search-recipes-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.search-web-200-response-results-inner :refer :all]
@@ -85,6 +87,8 @@
             [api-league.specs.score-readability-200-response :refer :all]
             [api-league.specs.extract-publish-date-200-response :refer :all]
             [api-league.specs.score-text-200-response-readability-mainscores :refer :all]
+            [api-league.specs.retrieve-page-rank-200-response :refer :all]
+            [api-league.specs.stem-text-200-response :refer :all]
             [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours-operational :refer :all]
             [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
@@ -139,6 +143,32 @@
    (let [res (:data (search-news-with-http-info optional-params))]
      (if (:decode-models *api-context*)
         (st/decode search-news-200-response-spec res st/string-transformer)
+        res))))
+
+
+(defn-spec top-news-with-http-info any?
+  "Top News
+  Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked."
+  ([source-country string?, language string?, ] (top-news-with-http-info source-country language nil))
+  ([source-country string?, language string?, {:keys [date headlines-only]} (s/map-of keyword? any?)]
+   (check-required-params source-country language)
+   (call-api "/retrieve-top-news" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"source-country" source-country "language" language "date" date "headlines-only" headlines-only }
+              :form-params   {}
+              :content-types []
+              :accepts       ["application/json"]
+              :auth-names    ["apiKey" "headerApiKey"]})))
+
+(defn-spec top-news top-news-200-response-spec
+  "Top News
+  Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked."
+  ([source-country string?, language string?, ] (top-news source-country language nil))
+  ([source-country string?, language string?, optional-params any?]
+   (let [res (:data (top-news-with-http-info source-country language optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode top-news-200-response-spec res st/string-transformer)
         res))))
 
 

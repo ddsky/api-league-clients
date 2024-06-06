@@ -10,12 +10,12 @@ All URIs are relative to *https://api.apileague.com*
 | [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
 | [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
 | [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**partOfSpeechTagging**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging |
 | [**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
 | [**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
 | [**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
 | [**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
-| [**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming |
+| [**stemText**](TextApi.md#stemText) | **GET** /stem-text | Stem Text |
+| [**tagPartOfSpeech**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech |
 
 
 <a id="correctSpelling"></a>
@@ -506,87 +506,6 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="partOfSpeechTagging"></a>
-# **partOfSpeechTagging**
-> PartOfSpeechTagging200Response partOfSpeechTagging(text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```java
-// Import classes:
-import com.apileague.client.ApiClient;
-import com.apileague.client.ApiException;
-import com.apileague.client.Configuration;
-import com.apileague.client.auth.*;
-import com.apileague.client.models.*;
-import com.apileague.TextApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.apileague.com");
-    
-    // Configure API key authorization: apiKey
-    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
-    apiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apiKey.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: headerApiKey
-    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
-    headerApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //headerApiKey.setApiKeyPrefix("Token");
-
-    TextApi apiInstance = new TextApi(defaultClient);
-    String text = "The lazy dog jumps over the quick brown fox."; // String | The text to tag the part of speech.
-    try {
-      PartOfSpeechTagging200Response result = apiInstance.partOfSpeechTagging(text);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling TextApi#partOfSpeechTagging");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **text** | **String**| The text to tag the part of speech. | |
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **401** | Unauthorized |  -  |
-| **402** | Payment Required |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **406** | Not Acceptable |  -  |
-| **429** | Too Many Requests |  -  |
-
 <a id="pluralizeWord"></a>
 # **pluralizeWord**
 > PluralizeWord200Response pluralizeWord(word)
@@ -913,11 +832,11 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="textStemming"></a>
-# **textStemming**
-> TextStemming200Response textStemming(text)
+<a id="stemText"></a>
+# **stemText**
+> StemText200Response stemText(text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -951,10 +870,10 @@ public class Example {
     TextApi apiInstance = new TextApi(defaultClient);
     String text = "The laziest dogs are jumping over the quicker brown foxes."; // String | The text to be stemmed.
     try {
-      TextStemming200Response result = apiInstance.textStemming(text);
+      StemText200Response result = apiInstance.stemText(text);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TextApi#textStemming");
+      System.err.println("Exception when calling TextApi#stemText");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -972,7 +891,88 @@ public class Example {
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+<a id="tagPartOfSpeech"></a>
+# **tagPartOfSpeech**
+> TagPartOfSpeech200Response tagPartOfSpeech(text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.TextApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    TextApi apiInstance = new TextApi(defaultClient);
+    String text = "The lazy dog jumps over the quick brown fox."; // String | The text to tag the part of speech.
+    try {
+      TagPartOfSpeech200Response result = apiInstance.tagPartOfSpeech(text);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TextApi#tagPartOfSpeech");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **text** | **String**| The text to tag the part of speech. | |
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

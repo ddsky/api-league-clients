@@ -196,6 +196,66 @@ class WebApi {
     return null;
   }
 
+  /// Retrieve Page Rank
+  ///
+  /// This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] domain (required):
+  ///   The domain for which the page rank should be returned.
+  Future<Response> retrievePageRankWithHttpInfo(String domain,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/retrieve-page-rank';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'domain', domain));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Retrieve Page Rank
+  ///
+  /// This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] domain (required):
+  ///   The domain for which the page rank should be returned.
+  Future<RetrievePageRank200Response?> retrievePageRank(String domain,) async {
+    final response = await retrievePageRankWithHttpInfo(domain,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RetrievePageRank200Response',) as RetrievePageRank200Response;
+    
+    }
+    return null;
+  }
+
   /// Search Web
   ///
   /// Search the web for a given query. The API returns a list of results with the title, summary, and URL.

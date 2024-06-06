@@ -121,6 +121,43 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
+  Retrieve Page Rank
+  This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `domain` (String.t): The domain for which the page rank should be returned.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.RetrievePageRank200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec retrieve_page_rank(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrievePageRank200Response.t} | {:error, Tesla.Env.t}
+  def retrieve_page_rank(connection, domain, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-page-rank")
+      |> add_param(:query, :domain, domain)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.RetrievePageRank200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Search Web
   Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 

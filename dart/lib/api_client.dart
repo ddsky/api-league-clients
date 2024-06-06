@@ -226,8 +226,6 @@ class ApiClient {
           return GenerateNonsenseWord200Response.fromJson(value);
         case 'ListWordSynonyms200Response':
           return ListWordSynonyms200Response.fromJson(value);
-        case 'PartOfSpeechTagging200Response':
-          return PartOfSpeechTagging200Response.fromJson(value);
         case 'PluralizeWord200Response':
           return PluralizeWord200Response.fromJson(value);
         case 'RandomMeme200Response':
@@ -240,6 +238,8 @@ class ApiClient {
           return RandomTrivia200Response.fromJson(value);
         case 'ReadKeyValueFromStore200Response':
           return ReadKeyValueFromStore200Response.fromJson(value);
+        case 'RetrievePageRank200Response':
+          return RetrievePageRank200Response.fromJson(value);
         case 'RetrieveRecipeInformation200Response':
           return RetrieveRecipeInformation200Response.fromJson(value);
         case 'RetrieveRecipeInformation200ResponseCredits':
@@ -350,10 +350,18 @@ class ApiClient {
           return SearchWeb200ResponseResultsInner.fromJson(value);
         case 'SingularizeWord200Response':
           return SingularizeWord200Response.fromJson(value);
+        case 'StemText200Response':
+          return StemText200Response.fromJson(value);
         case 'StoreKeyValueGET200Response':
           return StoreKeyValueGET200Response.fromJson(value);
-        case 'TextStemming200Response':
-          return TextStemming200Response.fromJson(value);
+        case 'TagPartOfSpeech200Response':
+          return TagPartOfSpeech200Response.fromJson(value);
+        case 'TopNews200Response':
+          return TopNews200Response.fromJson(value);
+        case 'TopNews200ResponseTopNewsInner':
+          return TopNews200ResponseTopNewsInner.fromJson(value);
+        case 'TopNews200ResponseTopNewsInnerNewsInner':
+          return TopNews200ResponseTopNewsInnerNewsInner.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

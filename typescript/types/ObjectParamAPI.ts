@@ -23,13 +23,13 @@ import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Re
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
 import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
 import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
 import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
 import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
 import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
@@ -85,8 +85,12 @@ import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/
 import { SearchWeb200Response } from '../models/SearchWeb200Response';
 import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
 import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
+import { StemText200Response } from '../models/StemText200Response';
 import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TextStemming200Response } from '../models/TextStemming200Response';
+import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
+import { TopNews200Response } from '../models/TopNews200Response';
+import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
+import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
 
 import { ObservableArtApi } from "./ObservableAPI";
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
@@ -434,6 +438,18 @@ export interface FoodApiSearchRecipesRequest {
      * @memberof FoodApisearchRecipes
      */
     maxTime?: number
+    /**
+     * The minimum amount of servings the recipe is for.
+     * @type number
+     * @memberof FoodApisearchRecipes
+     */
+    minServings?: number
+    /**
+     * The maximum amount of servings the recipe is for.
+     * @type number
+     * @memberof FoodApisearchRecipes
+     */
+    maxServings?: number
     /**
      * The minimum amount of calories the recipe must have per serving.
      * @type number
@@ -1004,7 +1020,7 @@ export class ObjectFoodApi {
      * @param param the request object
      */
     public searchRecipesWithHttpInfo(param: FoodApiSearchRecipesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchRecipes200Response>> {
-        return this.api.searchRecipesWithHttpInfo(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+        return this.api.searchRecipesWithHttpInfo(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
@@ -1013,7 +1029,7 @@ export class ObjectFoodApi {
      * @param param the request object
      */
     public searchRecipes(param: FoodApiSearchRecipesRequest = {}, options?: Configuration): Promise<SearchRecipes200Response> {
-        return this.api.searchRecipes(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+        return this.api.searchRecipes(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
@@ -1681,6 +1697,33 @@ export interface NewsApiSearchNewsRequest {
     number?: number
 }
 
+export interface NewsApiTopNewsRequest {
+    /**
+     * The ISO 3166 country code of the country for which top news should be retrieved.
+     * @type string
+     * @memberof NewsApitopNews
+     */
+    sourceCountry: string
+    /**
+     * The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @type string
+     * @memberof NewsApitopNews
+     */
+    language: string
+    /**
+     * The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+     * @type string
+     * @memberof NewsApitopNews
+     */
+    date?: string
+    /**
+     * Whether to only return basic information such as id, title, and url of the news.
+     * @type boolean
+     * @memberof NewsApitopNews
+     */
+    headlinesOnly?: boolean
+}
+
 export class ObjectNewsApi {
     private api: ObservableNewsApi
 
@@ -1722,6 +1765,24 @@ export class ObjectNewsApi {
      */
     public searchNews(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<SearchNews200Response> {
         return this.api.searchNews(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News
+     * @param param the request object
+     */
+    public topNewsWithHttpInfo(param: NewsApiTopNewsRequest, options?: Configuration): Promise<HttpInfo<TopNews200Response>> {
+        return this.api.topNewsWithHttpInfo(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
+    }
+
+    /**
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News
+     * @param param the request object
+     */
+    public topNews(param: NewsApiTopNewsRequest, options?: Configuration): Promise<TopNews200Response> {
+        return this.api.topNews(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
     }
 
 }
@@ -1861,15 +1922,6 @@ export interface TextApiListWordSynonymsRequest {
     word: string
 }
 
-export interface TextApiPartOfSpeechTaggingRequest {
-    /**
-     * The text to tag the part of speech.
-     * @type string
-     * @memberof TextApipartOfSpeechTagging
-     */
-    text: string
-}
-
 export interface TextApiPluralizeWordRequest {
     /**
      * The (noun) word for which the plural form should be found.
@@ -1912,11 +1964,20 @@ export interface TextApiSingularizeWordRequest {
     word: string
 }
 
-export interface TextApiTextStemmingRequest {
+export interface TextApiStemTextRequest {
     /**
      * The text to be stemmed.
      * @type string
-     * @memberof TextApitextStemming
+     * @memberof TextApistemText
+     */
+    text: string
+}
+
+export interface TextApiTagPartOfSpeechRequest {
+    /**
+     * The text to tag the part of speech.
+     * @type string
+     * @memberof TextApitagPartOfSpeech
      */
     text: string
 }
@@ -2037,24 +2098,6 @@ export class ObjectTextApi {
     }
 
     /**
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Part of Speech Tagging
-     * @param param the request object
-     */
-    public partOfSpeechTaggingWithHttpInfo(param: TextApiPartOfSpeechTaggingRequest, options?: Configuration): Promise<HttpInfo<PartOfSpeechTagging200Response>> {
-        return this.api.partOfSpeechTaggingWithHttpInfo(param.text,  options).toPromise();
-    }
-
-    /**
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Part of Speech Tagging
-     * @param param the request object
-     */
-    public partOfSpeechTagging(param: TextApiPartOfSpeechTaggingRequest, options?: Configuration): Promise<PartOfSpeechTagging200Response> {
-        return this.api.partOfSpeechTagging(param.text,  options).toPromise();
-    }
-
-    /**
      * Find the plural form of a word.
      * Pluralize Word
      * @param param the request object
@@ -2128,20 +2171,38 @@ export class ObjectTextApi {
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Text Stemming
+     * Stem Text
      * @param param the request object
      */
-    public textStemmingWithHttpInfo(param: TextApiTextStemmingRequest, options?: Configuration): Promise<HttpInfo<TextStemming200Response>> {
-        return this.api.textStemmingWithHttpInfo(param.text,  options).toPromise();
+    public stemTextWithHttpInfo(param: TextApiStemTextRequest, options?: Configuration): Promise<HttpInfo<StemText200Response>> {
+        return this.api.stemTextWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Text Stemming
+     * Stem Text
      * @param param the request object
      */
-    public textStemming(param: TextApiTextStemmingRequest, options?: Configuration): Promise<TextStemming200Response> {
-        return this.api.textStemming(param.text,  options).toPromise();
+    public stemText(param: TextApiStemTextRequest, options?: Configuration): Promise<StemText200Response> {
+        return this.api.stemText(param.text,  options).toPromise();
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Tag Part of Speech
+     * @param param the request object
+     */
+    public tagPartOfSpeechWithHttpInfo(param: TextApiTagPartOfSpeechRequest, options?: Configuration): Promise<HttpInfo<TagPartOfSpeech200Response>> {
+        return this.api.tagPartOfSpeechWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Tag Part of Speech
+     * @param param the request object
+     */
+    public tagPartOfSpeech(param: TextApiTagPartOfSpeechRequest, options?: Configuration): Promise<TagPartOfSpeech200Response> {
+        return this.api.tagPartOfSpeech(param.text,  options).toPromise();
     }
 
 }
@@ -2174,6 +2235,15 @@ export interface WebApiExtractPublishDateRequest {
      * @memberof WebApiextractPublishDate
      */
     url: string
+}
+
+export interface WebApiRetrievePageRankRequest {
+    /**
+     * The domain for which the page rank should be returned.
+     * @type string
+     * @memberof WebApiretrievePageRank
+     */
+    domain: string
 }
 
 export interface WebApiSearchWebRequest {
@@ -2250,6 +2320,24 @@ export class ObjectWebApi {
      */
     public extractPublishDate(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<ExtractPublishDate200Response> {
         return this.api.extractPublishDate(param.url,  options).toPromise();
+    }
+
+    /**
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * Retrieve Page Rank
+     * @param param the request object
+     */
+    public retrievePageRankWithHttpInfo(param: WebApiRetrievePageRankRequest, options?: Configuration): Promise<HttpInfo<RetrievePageRank200Response>> {
+        return this.api.retrievePageRankWithHttpInfo(param.domain,  options).toPromise();
+    }
+
+    /**
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * Retrieve Page Rank
+     * @param param the request object
+     */
+    public retrievePageRank(param: WebApiRetrievePageRankRequest, options?: Configuration): Promise<RetrievePageRank200Response> {
+        return this.api.retrievePageRank(param.domain,  options).toPromise();
     }
 
     /**

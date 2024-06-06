@@ -212,6 +212,8 @@ opts = {
   fill_ingredients: true, # Boolean | Add information about the ingredients and whether they are used or missing in relation to the query.
   add_recipe_information: true, # Boolean | If set to true, you get more information about the recipes returned.
   max_time: 45, # Integer | The maximum time in minutes it should take to prepare and cook the recipe.
+  min_servings: 1, # Integer | The minimum amount of servings the recipe is for.
+  max_servings: 8, # Integer | The maximum amount of servings the recipe is for.
   min_calories: 100, # Float | The minimum amount of calories the recipe must have per serving.
   max_calories: 655, # Float | The maximum amount of calories the recipe can have per serving.
   min_carbs: 10.1, # Float | The minimum amount of carbohydrates in grams the recipe must have per serving.
@@ -333,6 +335,8 @@ end
 | **fill_ingredients** | **Boolean** | Add information about the ingredients and whether they are used or missing in relation to the query. | [optional] |
 | **add_recipe_information** | **Boolean** | If set to true, you get more information about the recipes returned. | [optional] |
 | **max_time** | **Integer** | The maximum time in minutes it should take to prepare and cook the recipe. | [optional] |
+| **min_servings** | **Integer** | The minimum amount of servings the recipe is for. | [optional] |
+| **max_servings** | **Integer** | The maximum amount of servings the recipe is for. | [optional] |
 | **min_calories** | **Float** | The minimum amount of calories the recipe must have per serving. | [optional] |
 | **max_calories** | **Float** | The maximum amount of calories the recipe can have per serving. | [optional] |
 | **min_carbs** | **Float** | The minimum amount of carbohydrates in grams the recipe must have per serving. | [optional] |

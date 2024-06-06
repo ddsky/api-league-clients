@@ -20,13 +20,13 @@ export * from '../models/ExtractPublishDate200Response';
 export * from '../models/FindSimilarBooks200Response';
 export * from '../models/GenerateNonsenseWord200Response';
 export * from '../models/ListWordSynonyms200Response';
-export * from '../models/PartOfSpeechTagging200Response';
 export * from '../models/PluralizeWord200Response';
 export * from '../models/RandomMeme200Response';
 export * from '../models/RandomPoem200Response';
 export * from '../models/RandomQuote200Response';
 export * from '../models/RandomTrivia200Response';
 export * from '../models/ReadKeyValueFromStore200Response';
+export * from '../models/RetrievePageRank200Response';
 export * from '../models/RetrieveRecipeInformation200Response';
 export * from '../models/RetrieveRecipeInformation200ResponseCredits';
 export * from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
@@ -82,8 +82,12 @@ export * from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
 export * from '../models/SearchWeb200Response';
 export * from '../models/SearchWeb200ResponseResultsInner';
 export * from '../models/SingularizeWord200Response';
+export * from '../models/StemText200Response';
 export * from '../models/StoreKeyValueGET200Response';
-export * from '../models/TextStemming200Response';
+export * from '../models/TagPartOfSpeech200Response';
+export * from '../models/TopNews200Response';
+export * from '../models/TopNews200ResponseTopNewsInner';
+export * from '../models/TopNews200ResponseTopNewsInnerNewsInner';
 
 import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
 import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
@@ -107,13 +111,13 @@ import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Re
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
 import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
 import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
 import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
 import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
 import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
@@ -169,8 +173,12 @@ import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/
 import { SearchWeb200Response } from '../models/SearchWeb200Response';
 import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
 import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
+import { StemText200Response } from '../models/StemText200Response';
 import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TextStemming200Response } from '../models/TextStemming200Response';
+import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
+import { TopNews200Response } from '../models/TopNews200Response';
+import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
+import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -210,13 +218,13 @@ let typeMap: {[index: string]: any} = {
     "FindSimilarBooks200Response": FindSimilarBooks200Response,
     "GenerateNonsenseWord200Response": GenerateNonsenseWord200Response,
     "ListWordSynonyms200Response": ListWordSynonyms200Response,
-    "PartOfSpeechTagging200Response": PartOfSpeechTagging200Response,
     "PluralizeWord200Response": PluralizeWord200Response,
     "RandomMeme200Response": RandomMeme200Response,
     "RandomPoem200Response": RandomPoem200Response,
     "RandomQuote200Response": RandomQuote200Response,
     "RandomTrivia200Response": RandomTrivia200Response,
     "ReadKeyValueFromStore200Response": ReadKeyValueFromStore200Response,
+    "RetrievePageRank200Response": RetrievePageRank200Response,
     "RetrieveRecipeInformation200Response": RetrieveRecipeInformation200Response,
     "RetrieveRecipeInformation200ResponseCredits": RetrieveRecipeInformation200ResponseCredits,
     "RetrieveRecipeInformation200ResponseDietaryProperties": RetrieveRecipeInformation200ResponseDietaryProperties,
@@ -272,8 +280,12 @@ let typeMap: {[index: string]: any} = {
     "SearchWeb200Response": SearchWeb200Response,
     "SearchWeb200ResponseResultsInner": SearchWeb200ResponseResultsInner,
     "SingularizeWord200Response": SingularizeWord200Response,
+    "StemText200Response": StemText200Response,
     "StoreKeyValueGET200Response": StoreKeyValueGET200Response,
-    "TextStemming200Response": TextStemming200Response,
+    "TagPartOfSpeech200Response": TagPartOfSpeech200Response,
+    "TopNews200Response": TopNews200Response,
+    "TopNews200ResponseTopNewsInner": TopNews200ResponseTopNewsInner,
+    "TopNews200ResponseTopNewsInnerNewsInner": TopNews200ResponseTopNewsInnerNewsInner,
 }
 
 type MimeTypeDescriptor = {

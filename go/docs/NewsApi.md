@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ExtractNews**](NewsAPI.md#ExtractNews) | **Get** /extract-news | Extract News
 [**SearchNews**](NewsAPI.md#SearchNews) | **Get** /search-news | Search News
+[**TopNews**](NewsAPI.md#TopNews) | **Get** /retrieve-top-news | Top News
 
 
 
@@ -156,6 +157,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TopNews
+
+> TopNews200Response TopNews(ctx).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
+
+Top News
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	sourceCountry := "us" // string | The ISO 3166 country code of the country for which top news should be retrieved.
+	language := "en" // string | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+	date := "2024-05-30" // string | The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+	headlinesOnly := false // bool | Whether to only return basic information such as id, title, and url of the news. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.NewsAPI.TopNews(context.Background()).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.TopNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TopNews`: TopNews200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.TopNews`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTopNewsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | **string** | The ISO 3166 country code of the country for which top news should be retrieved. | 
+ **language** | **string** | The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | 
+ **date** | **string** | The date for which the top news should be retrieved. If no date is given, the current day is assumed. | 
+ **headlinesOnly** | **bool** | Whether to only return basic information such as id, title, and url of the news. | 
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

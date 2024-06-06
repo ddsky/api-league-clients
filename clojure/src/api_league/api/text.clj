@@ -15,9 +15,11 @@
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner :refer :all]
             [api-league.specs.detect-language-200-response-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner-measures :refer :all]
+            [api-league.specs.tag-part-of-speech-200-response :refer :all]
             [api-league.specs.random-meme-200-response :refer :all]
             [api-league.specs.random-trivia-200-response :refer :all]
             [api-league.specs.extract-authors-200-response :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner :refer :all]
             [api-league.specs.extract-news-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-scores :refer :all]
             [api-league.specs.search-news-200-response :refer :all]
@@ -46,6 +48,7 @@
             [api-league.specs.search-gifs-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability :refer :all]
+            [api-league.specs.top-news-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.search-books-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-weight-per-serving :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
@@ -55,9 +58,9 @@
             [api-league.specs.store-key-value-get-200-response :refer :all]
             [api-league.specs.search-books-200-response-books-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
-            [api-league.specs.text-stemming-200-response :refer :all]
             [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
+            [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
@@ -73,7 +76,6 @@
             [api-league.specs.score-text-200-response-readability :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition :refer :all]
             [api-league.specs.score-text-200-response-style :refer :all]
-            [api-league.specs.part-of-speech-tagging-200-response :refer :all]
             [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
             [api-league.specs.search-recipes-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.search-web-200-response-results-inner :refer :all]
@@ -85,6 +87,8 @@
             [api-league.specs.score-readability-200-response :refer :all]
             [api-league.specs.extract-publish-date-200-response :refer :all]
             [api-league.specs.score-text-200-response-readability-mainscores :refer :all]
+            [api-league.specs.retrieve-page-rank-200-response :refer :all]
+            [api-league.specs.stem-text-200-response :refer :all]
             [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours-operational :refer :all]
             [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
@@ -237,30 +241,6 @@
        res)))
 
 
-(defn-spec part-of-speech-tagging-with-http-info any?
-  "Part of Speech Tagging
-  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text."
-  [text string?]
-  (check-required-params text)
-  (call-api "/tag-pos" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"text" text }
-             :form-params   {}
-             :content-types []
-             :accepts       ["application/json"]
-             :auth-names    ["apiKey" "headerApiKey"]}))
-
-(defn-spec part-of-speech-tagging part-of-speech-tagging-200-response-spec
-  "Part of Speech Tagging
-  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text."
-  [text string?]
-  (let [res (:data (part-of-speech-tagging-with-http-info text))]
-    (if (:decode-models *api-context*)
-       (st/decode part-of-speech-tagging-200-response-spec res st/string-transformer)
-       res)))
-
-
 (defn-spec pluralize-word-with-http-info any?
   "Pluralize Word
   Find the plural form of a word."
@@ -357,8 +337,8 @@
        res)))
 
 
-(defn-spec text-stemming-with-http-info any?
-  "Text Stemming
+(defn-spec stem-text-with-http-info any?
+  "Stem Text
   The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing."
   [text string?]
   (check-required-params text)
@@ -371,13 +351,37 @@
              :accepts       ["application/json"]
              :auth-names    ["apiKey" "headerApiKey"]}))
 
-(defn-spec text-stemming text-stemming-200-response-spec
-  "Text Stemming
+(defn-spec stem-text stem-text-200-response-spec
+  "Stem Text
   The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing."
   [text string?]
-  (let [res (:data (text-stemming-with-http-info text))]
+  (let [res (:data (stem-text-with-http-info text))]
     (if (:decode-models *api-context*)
-       (st/decode text-stemming-200-response-spec res st/string-transformer)
+       (st/decode stem-text-200-response-spec res st/string-transformer)
+       res)))
+
+
+(defn-spec tag-part-of-speech-with-http-info any?
+  "Tag Part of Speech
+  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text."
+  [text string?]
+  (check-required-params text)
+  (call-api "/tag-pos" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"text" text }
+             :form-params   {}
+             :content-types []
+             :accepts       ["application/json"]
+             :auth-names    ["apiKey" "headerApiKey"]}))
+
+(defn-spec tag-part-of-speech tag-part-of-speech-200-response-spec
+  "Tag Part of Speech
+  Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text."
+  [text string?]
+  (let [res (:data (tag-part-of-speech-with-http-info text))]
+    (if (:decode-models *api-context*)
+       (st/decode tag-part-of-speech-200-response-spec res st/string-transformer)
        res)))
 
 

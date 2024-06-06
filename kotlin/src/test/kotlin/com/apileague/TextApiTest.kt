@@ -25,12 +25,12 @@ import com.apileague.client.model.DetectSentiment200Response
 import com.apileague.client.model.ExtractDates200Response
 import com.apileague.client.model.ExtractEntities200Response
 import com.apileague.client.model.ListWordSynonyms200Response
-import com.apileague.client.model.PartOfSpeechTagging200Response
 import com.apileague.client.model.PluralizeWord200Response
 import com.apileague.client.model.ScoreReadability200Response
 import com.apileague.client.model.ScoreText200Response
 import com.apileague.client.model.SingularizeWord200Response
-import com.apileague.client.model.TextStemming200Response
+import com.apileague.client.model.StemText200Response
+import com.apileague.client.model.TagPartOfSpeech200Response
 
 class TextApiTest : ShouldSpec() {
     init {
@@ -86,14 +86,6 @@ class TextApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test partOfSpeechTagging
-        should("test partOfSpeechTagging") {
-            // uncomment below to test partOfSpeechTagging
-            //val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
-            //val result : PartOfSpeechTagging200Response = apiInstance.partOfSpeechTagging(text)
-            //result shouldBe ("TODO")
-        }
-
         // to test pluralizeWord
         should("test pluralizeWord") {
             // uncomment below to test pluralizeWord
@@ -127,11 +119,19 @@ class TextApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test textStemming
-        should("test textStemming") {
-            // uncomment below to test textStemming
+        // to test stemText
+        should("test stemText") {
+            // uncomment below to test stemText
             //val text : kotlin.String = The laziest dogs are jumping over the quicker brown foxes. // kotlin.String | The text to be stemmed.
-            //val result : TextStemming200Response = apiInstance.textStemming(text)
+            //val result : StemText200Response = apiInstance.stemText(text)
+            //result shouldBe ("TODO")
+        }
+
+        // to test tagPartOfSpeech
+        should("test tagPartOfSpeech") {
+            // uncomment below to test tagPartOfSpeech
+            //val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
+            //val result : TagPartOfSpeech200Response = apiInstance.tagPartOfSpeech(text)
             //result shouldBe ("TODO")
         }
 

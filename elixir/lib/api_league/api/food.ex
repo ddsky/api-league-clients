@@ -117,6 +117,8 @@ defmodule APILeague.Api.Food do
     - `:"fill-ingredients"` (boolean()): Add information about the ingredients and whether they are used or missing in relation to the query.
     - `:"add-recipe-information"` (boolean()): If set to true, you get more information about the recipes returned.
     - `:"max-time"` (integer()): The maximum time in minutes it should take to prepare and cook the recipe.
+    - `:"min-servings"` (integer()): The minimum amount of servings the recipe is for.
+    - `:"max-servings"` (integer()): The maximum amount of servings the recipe is for.
     - `:"min-calories"` (float()): The minimum amount of calories the recipe must have per serving.
     - `:"max-calories"` (float()): The maximum amount of calories the recipe can have per serving.
     - `:"min-carbs"` (float()): The minimum amount of carbohydrates in grams the recipe must have per serving.
@@ -214,6 +216,8 @@ defmodule APILeague.Api.Food do
       :"fill-ingredients" => :query,
       :"add-recipe-information" => :query,
       :"max-time" => :query,
+      :"min-servings" => :query,
+      :"max-servings" => :query,
       :"min-calories" => :query,
       :"max-calories" => :query,
       :"min-carbs" => :query,

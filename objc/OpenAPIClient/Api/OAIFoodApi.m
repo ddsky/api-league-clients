@@ -233,6 +233,10 @@ NSInteger kOAIFoodApiMissingParamErrorCode = 234513;
 ///
 ///  @param maxTime The maximum time in minutes it should take to prepare and cook the recipe. (optional)
 ///
+///  @param minServings The minimum amount of servings the recipe is for. (optional)
+///
+///  @param maxServings The maximum amount of servings the recipe is for. (optional)
+///
 ///  @param minCalories The minimum amount of calories the recipe must have per serving. (optional)
 ///
 ///  @param maxCalories The maximum amount of calories the recipe can have per serving. (optional)
@@ -399,6 +403,8 @@ NSInteger kOAIFoodApiMissingParamErrorCode = 234513;
     fillIngredients: (NSNumber*) fillIngredients
     addRecipeInformation: (NSNumber*) addRecipeInformation
     maxTime: (NSNumber*) maxTime
+    minServings: (NSNumber*) minServings
+    maxServings: (NSNumber*) maxServings
     minCalories: (NSNumber*) minCalories
     maxCalories: (NSNumber*) maxCalories
     minCarbs: (NSNumber*) minCarbs
@@ -516,6 +522,12 @@ NSInteger kOAIFoodApiMissingParamErrorCode = 234513;
     }
     if (maxTime != nil) {
         queryParams[@"max-time"] = maxTime;
+    }
+    if (minServings != nil) {
+        queryParams[@"min-servings"] = minServings;
+    }
+    if (maxServings != nil) {
+        queryParams[@"max-servings"] = maxServings;
     }
     if (minCalories != nil) {
         queryParams[@"min-calories"] = minCalories;

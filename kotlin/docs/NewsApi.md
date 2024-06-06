@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
 [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
+[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
 
 
 <a id="extractNews"></a>
@@ -128,6 +129,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="topNews"></a>
+# **topNews**
+> TopNews200Response topNews(sourceCountry, language, date, headlinesOnly)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = NewsApi()
+val sourceCountry : kotlin.String = us // kotlin.String | The ISO 3166 country code of the country for which top news should be retrieved.
+val language : kotlin.String = en // kotlin.String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+val date : kotlin.String = 2024-05-30 // kotlin.String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+val headlinesOnly : kotlin.Boolean = false // kotlin.Boolean | Whether to only return basic information such as id, title, and url of the news.
+try {
+    val result : TopNews200Response = apiInstance.topNews(sourceCountry, language, date, headlinesOnly)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling NewsApi#topNews")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling NewsApi#topNews")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | **kotlin.String**| The ISO 3166 country code of the country for which top news should be retrieved. |
+ **language** | **kotlin.String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. |
+ **date** | **kotlin.String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional]
+ **headlinesOnly** | **kotlin.Boolean**| Whether to only return basic information such as id, title, and url of the news. | [optional]
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

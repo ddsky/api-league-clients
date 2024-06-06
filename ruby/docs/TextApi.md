@@ -10,12 +10,12 @@ All URIs are relative to *https://api.apileague.com*
 | [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates |
 | [**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities |
 | [**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**part_of_speech_tagging**](TextApi.md#part_of_speech_tagging) | **GET** /tag-pos | Part of Speech Tagging |
 | [**pluralize_word**](TextApi.md#pluralize_word) | **GET** /pluralize-word | Pluralize Word |
 | [**score_readability**](TextApi.md#score_readability) | **GET** /score-readability | Score Readability |
 | [**score_text**](TextApi.md#score_text) | **GET** /score-text | Score Text |
 | [**singularize_word**](TextApi.md#singularize_word) | **GET** /singularize-word | Singularize Word |
-| [**text_stemming**](TextApi.md#text_stemming) | **GET** /stem-text | Text Stemming |
+| [**stem_text**](TextApi.md#stem_text) | **GET** /stem-text | Stem Text |
+| [**tag_part_of_speech**](TextApi.md#tag_part_of_speech) | **GET** /tag-pos | Tag Part of Speech |
 
 
 ## correct_spelling
@@ -476,82 +476,6 @@ end
 - **Accept**: application/json
 
 
-## part_of_speech_tagging
-
-> <PartOfSpeechTagging200Response> part_of_speech_tagging(text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: apiKey
-  config.api_key['apiKey'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['apiKey'] = 'Bearer'
-
-  # Configure API key authorization: headerApiKey
-  config.api_key['headerApiKey'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['headerApiKey'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::TextApi.new
-text = 'The lazy dog jumps over the quick brown fox.' # String | The text to tag the part of speech.
-
-begin
-  # Part of Speech Tagging
-  result = api_instance.part_of_speech_tagging(text)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TextApi->part_of_speech_tagging: #{e}"
-end
-```
-
-#### Using the part_of_speech_tagging_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PartOfSpeechTagging200Response>, Integer, Hash)> part_of_speech_tagging_with_http_info(text)
-
-```ruby
-begin
-  # Part of Speech Tagging
-  data, status_code, headers = api_instance.part_of_speech_tagging_with_http_info(text)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PartOfSpeechTagging200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TextApi->part_of_speech_tagging_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **text** | **String** | The text to tag the part of speech. |  |
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## pluralize_word
 
 > <PluralizeWord200Response> pluralize_word(word)
@@ -858,11 +782,11 @@ end
 - **Accept**: application/json
 
 
-## text_stemming
+## stem_text
 
-> <TextStemming200Response> text_stemming(text)
+> <StemText200Response> stem_text(text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -888,29 +812,29 @@ api_instance = OpenapiClient::TextApi.new
 text = 'The laziest dogs are jumping over the quicker brown foxes.' # String | The text to be stemmed.
 
 begin
-  # Text Stemming
-  result = api_instance.text_stemming(text)
+  # Stem Text
+  result = api_instance.stem_text(text)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling TextApi->text_stemming: #{e}"
+  puts "Error when calling TextApi->stem_text: #{e}"
 end
 ```
 
-#### Using the text_stemming_with_http_info variant
+#### Using the stem_text_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<TextStemming200Response>, Integer, Hash)> text_stemming_with_http_info(text)
+> <Array(<StemText200Response>, Integer, Hash)> stem_text_with_http_info(text)
 
 ```ruby
 begin
-  # Text Stemming
-  data, status_code, headers = api_instance.text_stemming_with_http_info(text)
+  # Stem Text
+  data, status_code, headers = api_instance.stem_text_with_http_info(text)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <TextStemming200Response>
+  p data # => <StemText200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling TextApi->text_stemming_with_http_info: #{e}"
+  puts "Error when calling TextApi->stem_text_with_http_info: #{e}"
 end
 ```
 
@@ -922,7 +846,83 @@ end
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## tag_part_of_speech
+
+> <TagPartOfSpeech200Response> tag_part_of_speech(text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::TextApi.new
+text = 'The lazy dog jumps over the quick brown fox.' # String | The text to tag the part of speech.
+
+begin
+  # Tag Part of Speech
+  result = api_instance.tag_part_of_speech(text)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TextApi->tag_part_of_speech: #{e}"
+end
+```
+
+#### Using the tag_part_of_speech_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<TagPartOfSpeech200Response>, Integer, Hash)> tag_part_of_speech_with_http_info(text)
+
+```ruby
+begin
+  # Tag Part of Speech
+  data, status_code, headers = api_instance.tag_part_of_speech_with_http_info(text)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <TagPartOfSpeech200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TextApi->tag_part_of_speech_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **text** | **String** | The text to tag the part of speech. |  |
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

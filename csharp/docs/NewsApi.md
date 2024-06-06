@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |--------|--------------|-------------|
 | [**ExtractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News |
 | [**SearchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News |
+| [**TopNews**](NewsApi.md#topnews) | **GET** /retrieve-top-news | Top News |
 
 <a id="extractnews"></a>
 # **ExtractNews**
@@ -225,6 +226,118 @@ catch (ApiException e)
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="topnews"></a>
+# **TopNews**
+> TopNews200Response TopNews (string sourceCountry, string language, string? date = null, bool? headlinesOnly = null)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class TopNewsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new NewsApi(config);
+            var sourceCountry = us;  // string | The ISO 3166 country code of the country for which top news should be retrieved.
+            var language = en;  // string | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+            var date = 2024-05-30;  // string? | The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional) 
+            var headlinesOnly = false;  // bool? | Whether to only return basic information such as id, title, and url of the news. (optional) 
+
+            try
+            {
+                // Top News
+                TopNews200Response result = apiInstance.TopNews(sourceCountry, language, date, headlinesOnly);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling NewsApi.TopNews: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TopNewsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Top News
+    ApiResponse<TopNews200Response> response = apiInstance.TopNewsWithHttpInfo(sourceCountry, language, date, headlinesOnly);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling NewsApi.TopNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sourceCountry** | **string** | The ISO 3166 country code of the country for which top news should be retrieved. |  |
+| **language** | **string** | The ISO 6391 language code of the top news. The language must be one spoken in the source-country. |  |
+| **date** | **string?** | The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional]  |
+| **headlinesOnly** | **bool?** | Whether to only return basic information such as id, title, and url of the news. | [optional]  |
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

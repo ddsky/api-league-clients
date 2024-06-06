@@ -332,14 +332,6 @@ genListWordSynonyms200Response n =
   ListWordSynonyms200Response
     <$> arbitraryReducedMaybe n -- listWordSynonyms200ResponseSynonyms :: Maybe [Text]
   
-instance Arbitrary PartOfSpeechTagging200Response where
-  arbitrary = sized genPartOfSpeechTagging200Response
-
-genPartOfSpeechTagging200Response :: Int -> Gen PartOfSpeechTagging200Response
-genPartOfSpeechTagging200Response n =
-  PartOfSpeechTagging200Response
-    <$> arbitraryReducedMaybe n -- partOfSpeechTagging200ResponseTaggedText :: Maybe Text
-  
 instance Arbitrary PluralizeWord200Response where
   arbitrary = sized genPluralizeWord200Response
 
@@ -396,6 +388,16 @@ genReadKeyValueFromStore200Response :: Int -> Gen ReadKeyValueFromStore200Respon
 genReadKeyValueFromStore200Response n =
   ReadKeyValueFromStore200Response
     <$> arbitraryReducedMaybe n -- readKeyValueFromStore200ResponseValue :: Maybe Text
+  
+instance Arbitrary RetrievePageRank200Response where
+  arbitrary = sized genRetrievePageRank200Response
+
+genRetrievePageRank200Response :: Int -> Gen RetrievePageRank200Response
+genRetrievePageRank200Response n =
+  RetrievePageRank200Response
+    <$> arbitraryReducedMaybe n -- retrievePageRank200ResponsePageRank :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrievePageRank200ResponsePosition :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrievePageRank200ResponsePercentile :: Maybe Double
   
 instance Arbitrary RetrieveRecipeInformation200Response where
   arbitrary = sized genRetrieveRecipeInformation200Response
@@ -1013,6 +1015,15 @@ genSingularizeWord200Response n =
     <$> arbitraryReducedMaybe n -- singularizeWord200ResponseOriginal :: Maybe Text
     <*> arbitraryReducedMaybe n -- singularizeWord200ResponseSingular :: Maybe Text
   
+instance Arbitrary StemText200Response where
+  arbitrary = sized genStemText200Response
+
+genStemText200Response :: Int -> Gen StemText200Response
+genStemText200Response n =
+  StemText200Response
+    <$> arbitraryReducedMaybe n -- stemText200ResponseOriginal :: Maybe Text
+    <*> arbitraryReducedMaybe n -- stemText200ResponseStemmed :: Maybe Text
+  
 instance Arbitrary StoreKeyValueGET200Response where
   arbitrary = sized genStoreKeyValueGET200Response
 
@@ -1021,14 +1032,47 @@ genStoreKeyValueGET200Response n =
   StoreKeyValueGET200Response
     <$> arbitraryReducedMaybe n -- storeKeyValueGET200ResponseStatus :: Maybe Text
   
-instance Arbitrary TextStemming200Response where
-  arbitrary = sized genTextStemming200Response
+instance Arbitrary TagPartOfSpeech200Response where
+  arbitrary = sized genTagPartOfSpeech200Response
 
-genTextStemming200Response :: Int -> Gen TextStemming200Response
-genTextStemming200Response n =
-  TextStemming200Response
-    <$> arbitraryReducedMaybe n -- textStemming200ResponseOriginal :: Maybe Text
-    <*> arbitraryReducedMaybe n -- textStemming200ResponseStemmed :: Maybe Text
+genTagPartOfSpeech200Response :: Int -> Gen TagPartOfSpeech200Response
+genTagPartOfSpeech200Response n =
+  TagPartOfSpeech200Response
+    <$> arbitraryReducedMaybe n -- tagPartOfSpeech200ResponseTaggedText :: Maybe Text
+  
+instance Arbitrary TopNews200Response where
+  arbitrary = sized genTopNews200Response
+
+genTopNews200Response :: Int -> Gen TopNews200Response
+genTopNews200Response n =
+  TopNews200Response
+    <$> arbitraryReducedMaybe n -- topNews200ResponseTopNews :: Maybe [TopNews200ResponseTopNewsInner]
+    <*> arbitraryReducedMaybe n -- topNews200ResponseLanguage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseCountry :: Maybe Text
+  
+instance Arbitrary TopNews200ResponseTopNewsInner where
+  arbitrary = sized genTopNews200ResponseTopNewsInner
+
+genTopNews200ResponseTopNewsInner :: Int -> Gen TopNews200ResponseTopNewsInner
+genTopNews200ResponseTopNewsInner n =
+  TopNews200ResponseTopNewsInner
+    <$> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNews :: Maybe [TopNews200ResponseTopNewsInnerNewsInner]
+  
+instance Arbitrary TopNews200ResponseTopNewsInnerNewsInner where
+  arbitrary = sized genTopNews200ResponseTopNewsInnerNewsInner
+
+genTopNews200ResponseTopNewsInnerNewsInner :: Int -> Gen TopNews200ResponseTopNewsInnerNewsInner
+genTopNews200ResponseTopNewsInnerNewsInner n =
+  TopNews200ResponseTopNewsInnerNewsInner
+    <$> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerSummary :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerAuthor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerPublishDate :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerAuthors :: Maybe [Text]
   
 
 

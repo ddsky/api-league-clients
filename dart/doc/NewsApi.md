@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News
 [**searchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News
+[**topNews**](NewsApi.md#topnews) | **GET** /retrieve-top-news | Top News
 
 
 # **extractNews**
@@ -133,6 +134,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **topNews**
+> TopNews200Response topNews(sourceCountry, language, date, headlinesOnly)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = NewsApi();
+final sourceCountry = us; // String | The ISO 3166 country code of the country for which top news should be retrieved.
+final language = en; // String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+final date = 2024-05-30; // String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+final headlinesOnly = false; // bool | Whether to only return basic information such as id, title, and url of the news.
+
+try {
+    final result = api_instance.topNews(sourceCountry, language, date, headlinesOnly);
+    print(result);
+} catch (e) {
+    print('Exception when calling NewsApi->topNews: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | **String**| The ISO 3166 country code of the country for which top news should be retrieved. | 
+ **language** | **String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | 
+ **date** | **String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] 
+ **headlinesOnly** | **bool**| Whether to only return basic information such as id, title, and url of the news. | [optional] 
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

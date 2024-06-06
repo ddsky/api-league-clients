@@ -160,6 +160,8 @@ Name | Type | Description  | Notes
     fillIngredients: (NSNumber*) fillIngredients
     addRecipeInformation: (NSNumber*) addRecipeInformation
     maxTime: (NSNumber*) maxTime
+    minServings: (NSNumber*) minServings
+    maxServings: (NSNumber*) maxServings
     minCalories: (NSNumber*) minCalories
     maxCalories: (NSNumber*) maxCalories
     minCarbs: (NSNumber*) minCarbs
@@ -270,6 +272,8 @@ NSString* excludeIngredients = olives,capers; // A comma-separated list of ingre
 NSNumber* fillIngredients = true; // Add information about the ingredients and whether they are used or missing in relation to the query. (optional)
 NSNumber* addRecipeInformation = true; // If set to true, you get more information about the recipes returned. (optional)
 NSNumber* maxTime = 45; // The maximum time in minutes it should take to prepare and cook the recipe. (optional)
+NSNumber* minServings = 1; // The minimum amount of servings the recipe is for. (optional)
+NSNumber* maxServings = 8; // The maximum amount of servings the recipe is for. (optional)
 NSNumber* minCalories = 100; // The minimum amount of calories the recipe must have per serving. (optional)
 NSNumber* maxCalories = 655; // The maximum amount of calories the recipe can have per serving. (optional)
 NSNumber* minCarbs = 10.1; // The minimum amount of carbohydrates in grams the recipe must have per serving. (optional)
@@ -362,6 +366,8 @@ OAIFoodApi*apiInstance = [[OAIFoodApi alloc] init];
               fillIngredients:fillIngredients
               addRecipeInformation:addRecipeInformation
               maxTime:maxTime
+              minServings:minServings
+              maxServings:maxServings
               minCalories:minCalories
               maxCalories:maxCalories
               minCarbs:minCarbs
@@ -464,6 +470,8 @@ Name | Type | Description  | Notes
  **fillIngredients** | **NSNumber***| Add information about the ingredients and whether they are used or missing in relation to the query. | [optional] 
  **addRecipeInformation** | **NSNumber***| If set to true, you get more information about the recipes returned. | [optional] 
  **maxTime** | **NSNumber***| The maximum time in minutes it should take to prepare and cook the recipe. | [optional] 
+ **minServings** | **NSNumber***| The minimum amount of servings the recipe is for. | [optional] 
+ **maxServings** | **NSNumber***| The maximum amount of servings the recipe is for. | [optional] 
  **minCalories** | **NSNumber***| The minimum amount of calories the recipe must have per serving. | [optional] 
  **maxCalories** | **NSNumber***| The maximum amount of calories the recipe can have per serving. | [optional] 
  **minCarbs** | **NSNumber***| The minimum amount of carbohydrates in grams the recipe must have per serving. | [optional] 

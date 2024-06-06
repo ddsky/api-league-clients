@@ -71,15 +71,6 @@ void main() {
       // TODO
     });
 
-    // Part of Speech Tagging
-    //
-    // Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-    //
-    //Future<PartOfSpeechTagging200Response> partOfSpeechTagging(String text) async
-    test('test partOfSpeechTagging', () async {
-      // TODO
-    });
-
     // Pluralize Word
     //
     // Find the plural form of a word.
@@ -116,12 +107,21 @@ void main() {
       // TODO
     });
 
-    // Text Stemming
+    // Stem Text
     //
     // The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
     //
-    //Future<TextStemming200Response> textStemming(String text) async
-    test('test textStemming', () async {
+    //Future<StemText200Response> stemText(String text) async
+    test('test stemText', () async {
+      // TODO
+    });
+
+    // Tag Part of Speech
+    //
+    // Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+    //
+    //Future<TagPartOfSpeech200Response> tagPartOfSpeech(String text) async
+    test('test tagPartOfSpeech', () async {
       // TODO
     });
 

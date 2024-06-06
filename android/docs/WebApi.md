@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
 [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
+[**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
 
 
@@ -26,7 +27,7 @@ Extracts the authors from a given URL. This API is useful for extracting the aut
 //import com.apileague.WebApi;
 
 WebApi apiInstance = new WebApi();
-String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url with the article from which authors should be extracted.
+String url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url with the article from which authors should be extracted.
 try {
     ExtractAuthors200Response result = apiInstance.extractAuthors(url);
     System.out.println(result);
@@ -72,7 +73,7 @@ Extract the main content from a web page. This API is useful for extracting the 
 //import com.apileague.WebApi;
 
 WebApi apiInstance = new WebApi();
-String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the content will be extracted.
+String url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the content will be extracted.
 try {
     ExtractContentFromAWebPage200Response result = apiInstance.extractContentFromAWebPage(url);
     System.out.println(result);
@@ -118,7 +119,7 @@ Extract the publish date of an article (news or blog). The API will return the p
 //import com.apileague.WebApi;
 
 WebApi apiInstance = new WebApi();
-String url = https://www.bbc.com/news/entertainment-arts-68270826; // String | The url for which the publish date should be extracted.
+String url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the publish date should be extracted.
 try {
     ExtractPublishDate200Response result = apiInstance.extractPublishDate(url);
     System.out.println(result);
@@ -138,6 +139,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrievePageRank
+
+> RetrievePageRank200Response retrievePageRank(domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+
+```java
+// Import classes:
+//import com.apileague.WebApi;
+
+WebApi apiInstance = new WebApi();
+String domain = amazon.com; // String | The domain for which the page rank should be returned.
+try {
+    RetrievePageRank200Response result = apiInstance.retrievePageRank(domain);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebApi#retrievePageRank");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **String**| The domain for which the page rank should be returned. | [default to null]
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

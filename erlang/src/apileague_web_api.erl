@@ -3,6 +3,7 @@
 -export([extract_authors/2, extract_authors/3,
          extract_content_from_a_web_page/2, extract_content_from_a_web_page/3,
          extract_publish_date/2, extract_publish_date/3,
+         retrieve_page_rank/2, retrieve_page_rank/3,
          search_web/2, search_web/3]).
 
 -define(BASE_URL, <<"">>).
@@ -63,6 +64,27 @@ extract_publish_date(Ctx, Url, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/extract-publish-date"],
     QS = lists:flatten([{<<"url">>, Url}])++apileague_utils:optional_params([], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Retrieve Page Rank
+%% This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+-spec retrieve_page_rank(ctx:ctx(), binary()) -> {ok, apileague_retrieve_page_rank_200_response:apileague_retrieve_page_rank_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+retrieve_page_rank(Ctx, Domain) ->
+    retrieve_page_rank(Ctx, Domain, #{}).
+
+-spec retrieve_page_rank(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_retrieve_page_rank_200_response:apileague_retrieve_page_rank_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+retrieve_page_rank(Ctx, Domain, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/retrieve-page-rank"],
+    QS = lists:flatten([{<<"domain">>, Domain}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

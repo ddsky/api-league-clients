@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.0.0
+  version: 1.2.0
 servers:
 - url: https://api.apileague.com
 security:
@@ -604,6 +604,213 @@ paths:
         "429":
           description: Too Many Requests
       summary: Search News
+      tags:
+      - News
+      x-accepts:
+      - application/json
+  /retrieve-top-news:
+    get:
+      deprecated: false
+      description: Get the top news from a country in a language for a specific date.
+        The top news are clustered from multiple sources in the given country. The
+        more news in a cluster the higher the cluster is ranked.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/top-news-api/
+      operationId: topNews
+      parameters:
+      - description: The ISO 3166 country code of the country for which top news should
+          be retrieved.
+        explode: false
+        in: query
+        name: source-country
+        required: true
+        schema:
+          example: us
+          maxLength: 2
+          pattern: "."
+          type: string
+        style: form
+      - description: The ISO 6391 language code of the top news. The language must
+          be one spoken in the source-country.
+        explode: false
+        in: query
+        name: language
+        required: true
+        schema:
+          example: en
+          maxLength: 2
+          pattern: "."
+          type: string
+        style: form
+      - description: "The date for which the top news should be retrieved. If no date\
+          \ is given, the current day is assumed."
+        explode: false
+        in: query
+        name: date
+        required: false
+        schema:
+          example: 2024-05-30
+          maxLength: 10
+          pattern: "."
+          type: string
+        style: form
+      - description: "Whether to only return basic information such as id, title,\
+          \ and url of the news."
+        explode: false
+        in: query
+        name: headlines-only
+        required: false
+        schema:
+          example: false
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    top_news:
+                    - news:
+                      - summary: '...'
+                        image: https://politicalwire.com/wp-content/uploads/2018/02/PW-podcast-logo.jpg
+                        author: Taegan Goddard
+                        id: 224767206
+                        text: '...'
+                        title: Jury to Begin Deliberations In Trump Trial
+                        publish_date: 2024-05-29 00:10:48
+                        url: https://politicalwire.com/2024/05/28/jury-to-begin-deliberations-in-trump-trial/
+                        authors:
+                        - Taegan Goddard
+                      - summary: '...'
+                        image: https://dims.apnews.com/dims4/default/3446536/2147483647/strip/true/crop/6195x3485+0+323/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fec%2Fd5%2Ff56fdc38f86e38b6217b50083d19%2Fd5ef4afe1cb64825be1349de8fd40df0
+                        id: 224839780
+                        text: '...'
+                        title: Jury in Donald Trump's hush money case to begin deliberations
+                        publish_date: 2024-05-29 04:30:08
+                        url: https://apnews.com/article/trump-trial-deliberations-jury-judge-verdict-390f045e9e8a37f069e82576edd7a842
+                        authors: []
+                      - summary: '...'
+                        image: https://whdh.com/wp-content/uploads/sites/3/2024/05/WHDH_2024-05-27_15h27-33-cover.jpg?quality=60&strip=color
+                        id: 224936214
+                        text: '...'
+                        title: Jury in Trump's hush money case to begin deliberations
+                          after hearing instructions from judge
+                        publish_date: 2024-05-29 08:47:26
+                        url: https://whdh.com/news/jury-in-trumps-hush-money-case-to-begin-deliberations-after-hearing-instructions-from-judge/
+                        authors: []
+                      - summary: '...'
+                        image: https://assets3.cbsnewsstatic.com/hub/i/r/2024/05/29/66524a85-576c-4c40-94ba-cfb04cbb7950/thumbnail/1200x630g3/d2d9c8ea35b659db292c371bdc0a47e8/gettyimages-2154550679.jpg?v=c5044be0004eac09882c007ac02fef6d
+                        id: 224956968
+                        text: '...'
+                        video: https://prod.vodvideo.cbsnews.com/cbsnews/vr/hls/2942696_hls/master.m3u8
+                        title: Trump trial jury set to begin deliberating verdict
+                          today after judge issues instructions
+                        publish_date: 2024-05-29 10:00:18
+                        url: https://www.cbsnews.com/live-updates/trump-trial-verdict-jury-deliberations-judge-instructions/
+                        authors: []
+                      - summary: '...'
+                        image: https://static01.nyt.com/images/2024/05/29/multimedia/29trump-trial-pinned-qzmh/29trump-trial-pinned-qzmh-facebookJumbo-v2.jpg
+                        id: 224957034
+                        text: '...'
+                        title: Jury in Trump’s Hush-Money Trial to Begin Deliberations
+                          on Wednesday
+                        publish_date: 2024-05-29 10:12:08
+                        url: https://www.nytimes.com/2024/05/29/nyregion/trump-trial-jury-charges.html
+                        authors: []
+                      - summary: '...'
+                        image: https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/05/931/524/judge-trump.png?ve=1&tl=1
+                        id: 224961802
+                        text: '...'
+                        title: Jury to begin deliberations in Trump trial and more
+                          top headlines
+                        publish_date: 2024-05-29 10:22:36
+                        url: https://www.foxnews.com/us/judge-outline-framework-jury-trial-decide-trumps-fate-more-top-headlines
+                        authors: []
+                    - news:
+                      - image: https://cdn.vox-cdn.com/thumbor/WBEMdSSOD_jHJGnNV7hLX88zANk=/0x444:5601x3376/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/25469085/2152809074.jpg
+                        author: Brendan Porath
+                        id: 225109966
+                        text: '...'
+                        title: Scottie Scheffler PGA Championship charges set to get
+                          dropped
+                        publish_date: 2024-05-29 15:24:34
+                        url: https://www.sbnation.com/golf/2024/5/29/24167024/scottie-scheffler-pga-championship-louisville-police-drop-charges
+                        authors:
+                        - Brendan Porath
+                      - summary: '...'
+                        image: https://www.pilotonline.com/wp-content/uploads/2024/05/Scheffler_Arrest_Golf_86723_6d56d8.jpg?w=1024
+                        id: 225118216
+                        text: '...'
+                        title: Charges against world’s top golfer Scottie Scheffler
+                          dropped after arrest outside PGA Championship
+                        publish_date: 2024-05-29 17:05:55
+                        url: https://www.pilotonline.com/2024/05/29/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/
+                        authors: []
+                      - summary: '...'
+                        image: https://www.twincities.com/wp-content/uploads/2024/05/Scheffler_Arrest_Golf_86723_6d56d8.jpg?w=1024
+                        id: 225118304
+                        text: '...'
+                        title: Charges against world’s top golfer Scottie Scheffler
+                          dropped after arrest outside PGA Championship
+                        publish_date: 2024-05-29 17:05:55
+                        url: https://www.twincities.com/2024/05/29/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/
+                        authors: []
+                      - summary: '...'
+                        image: https://wsvn.com/wp-content/uploads/sites/2/2024/04/240414_Scottie_Scheffler.jpg?quality=60&strip=color
+                        id: 225119550
+                        text: '...'
+                        title: Charges against world's top golfer Scottie Scheffler
+                          dropped after arrest outside PGA Championship
+                        publish_date: 2024-05-29 17:10:09
+                        url: https://wsvn.com/sports/charges-against-worlds-top-golfer-scottie-scheffler-dropped-after-arrest-outside-pga-championship/
+                        authors: []
+                    - news:
+                      - summary: '...'
+                        image: https://media.nbcwashington.com/2019/09/AP163564666366.jpg?quality=85&strip=all&fit=722%2C406
+                        id: 225012756
+                        text: '...'
+                        title: Pandas to return to DC's National Zoo
+                        publish_date: 2024-05-29 12:37:10
+                        url: https://www.nbcwashington.com/news/local/national-zoo-expected-to-make-announcement-about-panda-program/3627045/
+                        authors: []
+                      - summary: '...'
+                        image: https://dims.apnews.com/dims4/default/1f5b9aa/2147483647/strip/true/crop/3382x1902+0+176/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fc4%2F1e%2F69094cc265243956d243348db814%2F71b160bbb0204eb594474a4934fb0df6
+                        id: 225017360
+                        text: '...'
+                        title: Giant pandas are returning to D.C.'s National Zoo
+                        publish_date: 2024-05-29 12:51:08
+                        url: https://apnews.com/article/giant-pandas-washington-zoo-china-764f8016d98c01ab579bdbb6dcc3dd6b
+                        authors: []
+                      - summary: '...'
+                        image: https://www.baltimoresun.com/wp-content/uploads/2024/05/Giant_Pandas_89303.jpg?w=1024
+                        id: 225017634
+                        text: '...'
+                        title: 2 new giant pandas are returning to Washington’s National
+                          Zoo from China by the end of the year
+                        publish_date: 2024-05-29 12:52:08
+                        url: https://www.baltimoresun.com/2024/05/29/2-new-giant-pandas-are-returning-to-washingtons-national-zoo-from-china-by-the-end-of-the-year/
+                        authors: []
+                    language: en
+                    country: us
+              schema:
+                $ref: '#/components/schemas/topNews_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Top News
       tags:
       - News
       x-accepts:
@@ -1433,6 +1640,30 @@ paths:
           format: int32
           maximum: 10000
           minimum: 0
+          type: integer
+        style: form
+      - description: The minimum amount of servings the recipe is for.
+        explode: false
+        in: query
+        name: min-servings
+        required: false
+        schema:
+          example: 1
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: The maximum amount of servings the recipe is for.
+        explode: false
+        in: query
+        name: max-servings
+        required: false
+        schema:
+          example: 8
+          format: int32
+          maximum: 100
+          minimum: 1
           type: integer
         style: form
       - description: The minimum amount of calories the recipe must have per serving.
@@ -2425,7 +2656,7 @@ paths:
                     number: 3
                     recipes:
                     - images:
-                      - https://spoonacular.com/recipeImages/654913-312x231.jpg
+                      - https://img.spoonacular.com/recipes/654913-312x231.jpg
                       nutrition:
                         nutrients:
                         - name: Protein
@@ -2434,7 +2665,7 @@ paths:
                       id: 654913
                       title: Pasta With Chicken and Mushrooms
                     - images:
-                      - https://spoonacular.com/recipeImages/655582-312x231.jpg
+                      - https://img.spoonacular.com/recipes/655582-312x231.jpg
                       nutrition:
                         nutrients:
                         - name: Protein
@@ -2443,7 +2674,7 @@ paths:
                       id: 655582
                       title: Penne Pasta With Chicken And Mushrooms
                     - images:
-                      - https://spoonacular.com/recipeImages/1096241-312x231.jpg
+                      - https://img.spoonacular.com/recipes/1096241-312x231.jpg
                       nutrition:
                         nutrients:
                         - name: Protein
@@ -2514,10 +2745,10 @@ paths:
                     title: Pasta With Chicken and Mushrooms
                     servings: 6
                     images:
-                    - https://spoonacular.com/recipeImages/654913-90x90.jpg
-                    - https://spoonacular.com/recipeImages/654913-312x231.jpg
-                    - https://spoonacular.com/recipeImages/654913-556x370.jpg
-                    - https://spoonacular.com/recipeImages/654913-636x393.jpg
+                    - https://img.spoonacular.com/recipes/654913-90x90.jpg
+                    - https://img.spoonacular.com/recipes/654913-312x231.jpg
+                    - https://img.spoonacular.com/recipes/654913-556x370.jpg
+                    - https://img.spoonacular.com/recipes/654913-636x393.jpg
                     dietary_properties:
                       low_fodmap: false
                       vegetarian: false
@@ -4522,7 +4753,7 @@ paths:
                     - MAIN_DISH
                     occasions: []
                     ingredients:
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/balsamic-vinegar.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/balsamic-vinegar.jpg
                       name_clean: balsamic vinegar
                       amount: 0.25
                       unit: cup
@@ -4542,7 +4773,7 @@ paths:
                       id: 2069
                       aisle: "Oil, Vinegar, Salad Dressing"
                       consistency: LIQUID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/bay-leaves.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/bay-leaves.jpg
                       name_clean: bay leaves
                       amount: 1
                       unit: ""
@@ -4562,7 +4793,7 @@ paths:
                       id: 2004
                       aisle: Produce
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/chicken-breasts.png
+                    - image: https://img.spoonacular.com/ingredients_100x100/chicken-breasts.png
                       name_clean: chicken breast halves
                       amount: 6
                       unit: ""
@@ -4582,7 +4813,7 @@ paths:
                       id: 1045062
                       aisle: Meat
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/chicken-broth.png
+                    - image: https://img.spoonacular.com/ingredients_100x100/chicken-broth.png
                       name_clean: chicken broth
                       amount: 2
                       unit: cups
@@ -4602,7 +4833,7 @@ paths:
                       id: 6194
                       aisle: Canned and Jarred
                       consistency: LIQUID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/flour.png
+                    - image: https://img.spoonacular.com/ingredients_100x100/flour.png
                       name_clean: wheat flour
                       amount: 0.25
                       unit: cup
@@ -4622,7 +4853,7 @@ paths:
                       id: 20081
                       aisle: Baking
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/spaghetti.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/spaghetti.jpg
                       name_clean: linguine
                       amount: 1
                       unit: pound
@@ -4643,7 +4874,7 @@ paths:
                       id: 10720420
                       aisle: Pasta and Rice
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/mushrooms.png
+                    - image: https://img.spoonacular.com/ingredients_100x100/mushrooms.png
                       name_clean: fresh mushrooms
                       amount: 0.5
                       unit: pound
@@ -4664,7 +4895,7 @@ paths:
                       id: 11260
                       aisle: Produce
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/mushrooms-white.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/mushrooms-white.jpg
                       name_clean: fresh mushrooms
                       amount: 0.5
                       unit: pound
@@ -4685,7 +4916,7 @@ paths:
                       id: 11260
                       aisle: Produce
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/olive-oil.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/olive-oil.jpg
                       name_clean: olive oil
                       amount: 2
                       unit: teaspoons
@@ -4705,7 +4936,7 @@ paths:
                       id: 4053
                       aisle: "Oil, Vinegar, Salad Dressing"
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/pepper.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/pepper.jpg
                       name_clean: black pepper
                       amount: 0.5
                       unit: teaspoon
@@ -4725,7 +4956,7 @@ paths:
                       id: 1002030
                       aisle: Spices and Seasonings
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/salt.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/salt.jpg
                       name_clean: table salt
                       amount: 0.25
                       unit: teaspoon
@@ -4745,7 +4976,7 @@ paths:
                       id: 2047
                       aisle: Spices and Seasonings
                       consistency: SOLID
-                    - image: https://spoonacular.com/cdn/ingredients_100x100/thyme.jpg
+                    - image: https://img.spoonacular.com/ingredients_100x100/thyme.jpg
                       name_clean: thyme
                       amount: 0.25
                       unit: teaspoon
@@ -4771,16 +5002,16 @@ paths:
                       - number: 1
                         ingredients:
                         - name: salt and pepper
-                          image: https://spoonacular.com/cdn/ingredients_100x100/salt-and-pepper.jpg
+                          image: https://img.spoonacular.com/ingredients_100x100/salt-and-pepper.jpg
                           id: 1102047
                         - name: seasoned flour
-                          image: https://spoonacular.com/cdn/ingredients_100x100/flour.png
+                          image: https://img.spoonacular.com/ingredients_100x100/flour.png
                           id: 98980
                         - name: chicken
-                          image: https://spoonacular.com/cdn/ingredients_100x100/whole-chicken.jpg
+                          image: https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg
                           id: 1015006
                         - name: all purpose flour
-                          image: https://spoonacular.com/cdn/ingredients_100x100/flour.png
+                          image: https://img.spoonacular.com/ingredients_100x100/flour.png
                           id: 20081
                         - name: shake
                           image: https://spoonacular.com/cdn/ingredients_100x100/
@@ -6430,7 +6661,7 @@ paths:
         name: url
         required: true
         schema:
-          example: https://www.bbc.com/news/entertainment-arts-68270826
+          example: https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html
           maxLength: 1000
           pattern: "."
           type: string
@@ -6442,42 +6673,14 @@ paths:
               examples:
                 Response:
                   value:
-                    title: Usher joined by Alicia Keys and will.i.am at Super Bowl
-                      half-time show
-                    main_text: "R&B star Usher delivered a hit-heavy half-time show\
-                      \ at Sunday's Super Bowl - with help from will.i.am, Alicia\
-                      \ Keys, Ludacris... and a pair of roller skates.\n\nA disclaimer\
-                      \ shown before the performance jokingly warned viewers it may\
-                      \ cause \"singing, dancing, sweating, gyrating, and possible\
-                      \ relationship issues\". It would go on to deliver on all fronts.\
-                      \ \n\nDressed in all-white and surrounded by a swarm of energetic\
-                      \ dancers, Usher emerged on the stage at the Allegiant Stadium\
-                      \ in Las Vegas and launched straight into one of his best-known\
-                      \ songs, Caught Up.\n\nIt kicked off a dynamic performance which\
-                      \ took advantage of the 45-year-old's dancing skills and sizeable\
-                      \ back catalogue. \n\nBefore his half-time show, Usher admitted\
-                      \ it had been \"a challenge to squeeze 30 years in to 13 minutes\"\
-                      . But the singer did an admirable job of cramming in as many\
-                      \ of his most recognisable songs as possible. \n\nThe set featured\
-                      \ acrobats and a brass band so large there were enough members\
-                      \ to spell out \"USHER\" on the grounds of the stadium as he\
-                      \ was performing.\n\nThe singer switched effortlessly between\
-                      \ the two apexes of his music: club anthems and sex jams. \n\
-                      \nSome songs ran for a full verse and a chorus, others for just\
-                      \ a few seconds. A tiny snippet of Superstar appropriately saw\
-                      \ him sing only the lyrics: \"Spotlight / big stage / 50,000\
-                      \ fans screaming in a rage\" - as if to hammer home the magnitude\
-                      \ of his Super Bowl show. \n\nThe dancers who surrounded him\
-                      \ - many of whom had only travelled a short distance from his\
-                      \ Vegas residency - wore colourful, even outlandish outfits,\
-                      \ perfectly complementing his central performance and adding\
-                      \ to the sense of spectacle.\n\nOnce Usher was a few songs deep\
-                      \ and well into his groove, [...]"
+                    title: "Happy-Go-Lucky Australia Is Feeling Neither Happy, Nor\
+                      \ Lucky"
+                    main_text: "For nearly three decades, Australia seemed to have\
+                      \ a sort of get-out-of-jail card that allowed it to glide through\
+                      \ [...]"
                     main_html: "<article>[...]</article>"
                     images:
-                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/FDEA/production/_132620056_crgettyimages-2003966267.jpg
-                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/C802/production/_132620215_crgettyimages-1996271673.jpg
-                    - https://ichef.bbci.co.uk/news/976/cpsprodpb/88BA/production/_132620053_crgettyimages-2003935602.jpg
+                    - https://static01.nyt.com/images/2024/03/19/multimedia/00oz-misery-kbjt/00oz-misery-kbjt-superJumbo.jpg?quality=75&auto=webp
               schema:
                 $ref: '#/components/schemas/extractContentFromAWebPage_200_response'
           description: Success
@@ -6515,7 +6718,7 @@ paths:
         name: url
         required: true
         schema:
-          example: https://www.bbc.com/news/entertainment-arts-68270826
+          example: https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html
           maxLength: 1000
           pattern: "."
           type: string
@@ -6527,7 +6730,7 @@ paths:
               examples:
                 Response:
                   value:
-                    publish_date: 2023-02-13
+                    publish_date: 2023-03-27
               schema:
                 $ref: '#/components/schemas/extractPublishDate_200_response'
           description: Success
@@ -6565,7 +6768,7 @@ paths:
         name: url
         required: true
         schema:
-          example: https://www.bbc.com/news/entertainment-arts-68270826
+          example: https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html
           maxLength: 1000
           pattern: "."
           type: string
@@ -6578,8 +6781,8 @@ paths:
                 Response:
                   value:
                     authors:
-                    - link: ""
-                      name: Steven McIntosh
+                    - link: https://www.nytimes.com/by/natasha-frost
+                      name: Natasha Frost
               schema:
                 $ref: '#/components/schemas/extractAuthors_200_response'
           description: Success
@@ -6695,6 +6898,58 @@ paths:
         "429":
           description: Too Many Requests
       summary: Search Web
+      tags:
+      - Web
+      x-accepts:
+      - application/json
+  /retrieve-page-rank:
+    get:
+      deprecated: false
+      description: "This API allows you to retrieve the page rank of a given URL.\
+        \ The API returns the page rank, the position of the URL in the search results,\
+        \ and the percentile of the page rank."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/page-rank-api/
+      operationId: retrievePageRank
+      parameters:
+      - description: The domain for which the page rank should be returned.
+        explode: false
+        in: query
+        name: domain
+        required: true
+        schema:
+          example: amazon.com
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    page_rank: 9.13
+                    position: 30
+                    percentile: 0.999997
+              schema:
+                $ref: '#/components/schemas/retrievePageRank_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Retrieve Page Rank
       tags:
       - Web
       x-accepts:
@@ -7207,7 +7462,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/pos-tagging-api/
-      operationId: partOfSpeechTagging
+      operationId: tagPartOfSpeech
       parameters:
       - description: The text to tag the part of speech.
         explode: false
@@ -7230,7 +7485,7 @@ paths:
                     tagged_text: The/AT lazy/JJ dog/NN jumps/NNS over/UNDER the/AT
                       quick/RB brown/JJ fox/NN
               schema:
-                $ref: '#/components/schemas/partOfSpeechTagging_200_response'
+                $ref: '#/components/schemas/tagPartOfSpeech_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7244,7 +7499,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Part of Speech Tagging
+      summary: Tag Part of Speech
       tags:
       - Text
       x-accepts:
@@ -7257,7 +7512,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/stemming-api/
-      operationId: textStemming
+      operationId: stemText
       parameters:
       - description: The text to be stemmed.
         explode: false
@@ -7281,7 +7536,7 @@ paths:
                       foxes
                     stemmed: The laziest dog are jump over the quicker brown fox
               schema:
-                $ref: '#/components/schemas/textStemming_200_response'
+                $ref: '#/components/schemas/stemText_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7295,7 +7550,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Text Stemming
+      summary: Stem Text
       tags:
       - Text
       x-accepts:
@@ -8042,6 +8297,143 @@ components:
           items:
             $ref: '#/components/schemas/searchNews_200_response_news_inner'
           type: array
+      type: object
+    topNews_200_response_top_news_inner_news_inner:
+      example:
+        summary: summary
+        image: image
+        author: author
+        id: 0
+        text: text
+        title: title
+        publish_date: publish_date
+        url: url
+        authors:
+        - authors
+        - authors
+      properties:
+        summary:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        author:
+          nullable: true
+          type: string
+        id:
+          type: integer
+        text:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        publish_date:
+          nullable: true
+          type: string
+        url:
+          nullable: true
+          type: string
+        authors:
+          items:
+            nullable: true
+            type: string
+          type: array
+      type: object
+    topNews_200_response_top_news_inner:
+      example:
+        news:
+        - summary: summary
+          image: image
+          author: author
+          id: 0
+          text: text
+          title: title
+          publish_date: publish_date
+          url: url
+          authors:
+          - authors
+          - authors
+        - summary: summary
+          image: image
+          author: author
+          id: 0
+          text: text
+          title: title
+          publish_date: publish_date
+          url: url
+          authors:
+          - authors
+          - authors
+      properties:
+        news:
+          items:
+            $ref: '#/components/schemas/topNews_200_response_top_news_inner_news_inner'
+          type: array
+      type: object
+    topNews_200_response:
+      example:
+        country: country
+        top_news:
+        - news:
+          - summary: summary
+            image: image
+            author: author
+            id: 0
+            text: text
+            title: title
+            publish_date: publish_date
+            url: url
+            authors:
+            - authors
+            - authors
+          - summary: summary
+            image: image
+            author: author
+            id: 0
+            text: text
+            title: title
+            publish_date: publish_date
+            url: url
+            authors:
+            - authors
+            - authors
+        - news:
+          - summary: summary
+            image: image
+            author: author
+            id: 0
+            text: text
+            title: title
+            publish_date: publish_date
+            url: url
+            authors:
+            - authors
+            - authors
+          - summary: summary
+            image: image
+            author: author
+            id: 0
+            text: text
+            title: title
+            publish_date: publish_date
+            url: url
+            authors:
+            - authors
+            - authors
+        language: language
+      properties:
+        top_news:
+          items:
+            $ref: '#/components/schemas/topNews_200_response_top_news_inner'
+          type: array
+        language:
+          nullable: true
+          type: string
+        country:
+          nullable: true
+          type: string
       type: object
     extractNews_200_response:
       example:
@@ -9638,6 +10030,19 @@ components:
             $ref: '#/components/schemas/searchWeb_200_response_results_inner'
           type: array
       type: object
+    retrievePageRank_200_response:
+      example:
+        page_rank: 0.8008281904610115
+        percentile: 1.4658129805029452
+        position: 6
+      properties:
+        page_rank:
+          type: number
+        position:
+          type: integer
+        percentile:
+          type: number
+      type: object
     correctSpelling_200_response:
       example:
         corrected_text: corrected_text
@@ -10135,7 +10540,7 @@ components:
             type: string
           type: array
       type: object
-    partOfSpeechTagging_200_response:
+    tagPartOfSpeech_200_response:
       example:
         tagged_text: tagged_text
       properties:
@@ -10143,7 +10548,7 @@ components:
           nullable: true
           type: string
       type: object
-    textStemming_200_response:
+    stemText_200_response:
       example:
         stemmed: stemmed
         original: original

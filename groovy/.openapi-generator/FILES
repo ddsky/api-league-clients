@@ -35,13 +35,13 @@ src/main/groovy/org/openapitools/model/ExtractPublishDate200Response.groovy
 src/main/groovy/org/openapitools/model/FindSimilarBooks200Response.groovy
 src/main/groovy/org/openapitools/model/GenerateNonsenseWord200Response.groovy
 src/main/groovy/org/openapitools/model/ListWordSynonyms200Response.groovy
-src/main/groovy/org/openapitools/model/PartOfSpeechTagging200Response.groovy
 src/main/groovy/org/openapitools/model/PluralizeWord200Response.groovy
 src/main/groovy/org/openapitools/model/RandomMeme200Response.groovy
 src/main/groovy/org/openapitools/model/RandomPoem200Response.groovy
 src/main/groovy/org/openapitools/model/RandomQuote200Response.groovy
 src/main/groovy/org/openapitools/model/RandomTrivia200Response.groovy
 src/main/groovy/org/openapitools/model/ReadKeyValueFromStore200Response.groovy
+src/main/groovy/org/openapitools/model/RetrievePageRank200Response.groovy
 src/main/groovy/org/openapitools/model/RetrieveRecipeInformation200Response.groovy
 src/main/groovy/org/openapitools/model/RetrieveRecipeInformation200ResponseCredits.groovy
 src/main/groovy/org/openapitools/model/RetrieveRecipeInformation200ResponseDietaryProperties.groovy
@@ -97,5 +97,9 @@ src/main/groovy/org/openapitools/model/SearchRoyaltyFreeImages200ResponseImagesI
 src/main/groovy/org/openapitools/model/SearchWeb200Response.groovy
 src/main/groovy/org/openapitools/model/SearchWeb200ResponseResultsInner.groovy
 src/main/groovy/org/openapitools/model/SingularizeWord200Response.groovy
+src/main/groovy/org/openapitools/model/StemText200Response.groovy
 src/main/groovy/org/openapitools/model/StoreKeyValueGET200Response.groovy
-src/main/groovy/org/openapitools/model/TextStemming200Response.groovy
+src/main/groovy/org/openapitools/model/TagPartOfSpeech200Response.groovy
+src/main/groovy/org/openapitools/model/TopNews200Response.groovy
+src/main/groovy/org/openapitools/model/TopNews200ResponseTopNewsInner.groovy
+src/main/groovy/org/openapitools/model/TopNews200ResponseTopNewsInnerNewsInner.groovy

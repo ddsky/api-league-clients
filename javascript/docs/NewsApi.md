@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
 [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
+[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
 
 
 
@@ -142,6 +143,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## topNews
+
+> TopNews200Response topNews(sourceCountry, language, opts)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.NewsApi();
+let sourceCountry = "us"; // String | The ISO 3166 country code of the country for which top news should be retrieved.
+let language = "en"; // String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+let opts = {
+  'date': "2024-05-30", // String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+  'headlinesOnly': false // Boolean | Whether to only return basic information such as id, title, and url of the news.
+};
+apiInstance.topNews(sourceCountry, language, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | **String**| The ISO 3166 country code of the country for which top news should be retrieved. | 
+ **language** | **String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | 
+ **date** | **String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] 
+ **headlinesOnly** | **Boolean**| Whether to only return basic information such as id, title, and url of the news. | [optional] 
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

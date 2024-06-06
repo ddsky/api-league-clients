@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
 [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
+[**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
 
 
@@ -27,7 +28,7 @@ const apiInstance = new .WebApi(configuration);
 
 let body:.WebApiExtractAuthorsRequest = {
   // string | The url with the article from which authors should be extracted.
-  url: "https://www.bbc.com/news/entertainment-arts-68270826",
+  url: "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html",
 };
 
 apiInstance.extractAuthors(body).then((data:any) => {
@@ -87,7 +88,7 @@ const apiInstance = new .WebApi(configuration);
 
 let body:.WebApiExtractContentFromAWebPageRequest = {
   // string | The url for which the content will be extracted.
-  url: "https://www.bbc.com/news/entertainment-arts-68270826",
+  url: "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html",
 };
 
 apiInstance.extractContentFromAWebPage(body).then((data:any) => {
@@ -147,7 +148,7 @@ const apiInstance = new .WebApi(configuration);
 
 let body:.WebApiExtractPublishDateRequest = {
   // string | The url for which the publish date should be extracted.
-  url: "https://www.bbc.com/news/entertainment-arts-68270826",
+  url: "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html",
 };
 
 apiInstance.extractPublishDate(body).then((data:any) => {
@@ -166,6 +167,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 **ExtractPublishDate200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **retrievePageRank**
+> RetrievePageRank200Response retrievePageRank()
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .WebApi(configuration);
+
+let body:.WebApiRetrievePageRankRequest = {
+  // string | The domain for which the page rank should be returned.
+  domain: "amazon.com",
+};
+
+apiInstance.retrievePageRank(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | [**string**] | The domain for which the page rank should be returned. | defaults to undefined
+
+
+### Return type
+
+**RetrievePageRank200Response**
 
 ### Authorization
 

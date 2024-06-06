@@ -15,12 +15,12 @@ Method | HTTP request | Description
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
 [**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities
 [**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms
-[**part_of_speech_tagging**](TextApi.md#part_of_speech_tagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralize_word**](TextApi.md#pluralize_word) | **GET** /pluralize-word | Pluralize Word
 [**score_readability**](TextApi.md#score_readability) | **GET** /score-readability | Score Readability
 [**score_text**](TextApi.md#score_text) | **GET** /score-text | Score Text
 [**singularize_word**](TextApi.md#singularize_word) | **GET** /singularize-word | Singularize Word
-[**text_stemming**](TextApi.md#text_stemming) | **GET** /stem-text | Text Stemming
+[**stem_text**](TextApi.md#stem_text) | **GET** /stem-text | Stem Text
+[**tag_part_of_speech**](TextApi.md#tag_part_of_speech) | **GET** /tag-pos | Tag Part of Speech
 
 
 # **correct_spelling**
@@ -355,61 +355,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **part_of_speech_tagging**
-> PartOfSpeechTagging200Response part_of_speech_tagging(text => $text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```perl
-use Data::Dumper;
-use WWW::OpenAPIClient::TextApi;
-my $api_instance = WWW::OpenAPIClient::TextApi->new(
-
-    # Configure API key authorization: apiKey
-    api_key => {'api-key' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'api-key' => 'Bearer'},
-    # Configure API key authorization: headerApiKey
-    api_key => {'x-api-key' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'x-api-key' => 'Bearer'},
-);
-
-my $text = The lazy dog jumps over the quick brown fox.; # string | The text to tag the part of speech.
-
-eval {
-    my $result = $api_instance->part_of_speech_tagging(text => $text);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling TextApi->part_of_speech_tagging: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to tag the part of speech. | 
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **pluralize_word**
 > PluralizeWord200Response pluralize_word(word => $word)
 
@@ -632,10 +577,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **text_stemming**
-> TextStemming200Response text_stemming(text => $text)
+# **stem_text**
+> StemText200Response stem_text(text => $text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -658,11 +603,11 @@ my $api_instance = WWW::OpenAPIClient::TextApi->new(
 my $text = The laziest dogs are jumping over the quicker brown foxes.; # string | The text to be stemmed.
 
 eval {
-    my $result = $api_instance->text_stemming(text => $text);
+    my $result = $api_instance->stem_text(text => $text);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling TextApi->text_stemming: $@\n";
+    warn "Exception when calling TextApi->stem_text: $@\n";
 }
 ```
 
@@ -674,7 +619,62 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tag_part_of_speech**
+> TagPartOfSpeech200Response tag_part_of_speech(text => $text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::TextApi;
+my $api_instance = WWW::OpenAPIClient::TextApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $text = The lazy dog jumps over the quick brown fox.; # string | The text to tag the part of speech.
+
+eval {
+    my $result = $api_instance->tag_part_of_speech(text => $text);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TextApi->tag_part_of_speech: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string**| The text to tag the part of speech. | 
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

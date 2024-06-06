@@ -270,4 +270,89 @@ class NewsApi {
     }
     return null;
   }
+
+  /// Top News
+  ///
+  /// Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] sourceCountry (required):
+  ///   The ISO 3166 country code of the country for which top news should be retrieved.
+  ///
+  /// * [String] language (required):
+  ///   The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+  ///
+  /// * [String] date:
+  ///   The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+  ///
+  /// * [bool] headlinesOnly:
+  ///   Whether to only return basic information such as id, title, and url of the news.
+  Future<Response> topNewsWithHttpInfo(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/retrieve-top-news';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'source-country', sourceCountry));
+      queryParams.addAll(_queryParams('', 'language', language));
+    if (date != null) {
+      queryParams.addAll(_queryParams('', 'date', date));
+    }
+    if (headlinesOnly != null) {
+      queryParams.addAll(_queryParams('', 'headlines-only', headlinesOnly));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Top News
+  ///
+  /// Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] sourceCountry (required):
+  ///   The ISO 3166 country code of the country for which top news should be retrieved.
+  ///
+  /// * [String] language (required):
+  ///   The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+  ///
+  /// * [String] date:
+  ///   The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+  ///
+  /// * [bool] headlinesOnly:
+  ///   Whether to only return basic information such as id, title, and url of the news.
+  Future<TopNews200Response?> topNews(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
+    final response = await topNewsWithHttpInfo(sourceCountry, language,  date: date, headlinesOnly: headlinesOnly, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TopNews200Response',) as TopNews200Response;
+    
+    }
+    return null;
+  }
 }

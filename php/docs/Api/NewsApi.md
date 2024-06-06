@@ -6,6 +6,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | ------------- | ------------- | ------------- |
 | [**extractNews()**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News |
 | [**searchNews()**](NewsApi.md#searchNews) | **GET** /search-news | Search News |
+| [**topNews()**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News |
 
 
 ## `extractNews()`
@@ -158,6 +159,79 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\SearchNews200Response**](../Model/SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `topNews()`
+
+```php
+topNews($source_country, $language, $date, $headlines_only): \OpenAPI\Client\Model\TopNews200Response
+```
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\NewsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$source_country = us; // string | The ISO 3166 country code of the country for which top news should be retrieved.
+$language = en; // string | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+$date = 2024-05-30; // string | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+$headlines_only = false; // bool | Whether to only return basic information such as id, title, and url of the news.
+
+try {
+    $result = $apiInstance->topNews($source_country, $language, $date, $headlines_only);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NewsApi->topNews: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **source_country** | **string**| The ISO 3166 country code of the country for which top news should be retrieved. | |
+| **language** | **string**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | |
+| **date** | **string**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] |
+| **headlines_only** | **bool**| Whether to only return basic information such as id, title, and url of the news. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\TopNews200Response**](../Model/TopNews200Response.md)
 
 ### Authorization
 

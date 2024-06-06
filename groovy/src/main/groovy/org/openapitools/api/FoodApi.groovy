@@ -74,7 +74,7 @@ class FoodApi {
 
     }
 
-    def searchRecipes ( String query, String cuisines, String excludeCuisines, String mealType, String diet, String intolerances, String equipment, String includeIngredients, String excludeIngredients, Boolean fillIngredients, Boolean addRecipeInformation, Integer maxTime, Double minCalories, Double maxCalories, Double minCarbs, Double maxCarbs, Double minProtein, Double maxProtein, Double minFat, Double maxFat, Double minSugar, Double maxSugar, Double minFiber, Double maxFiber, Double minFolate, Double maxFolate, Double minFolicAcid, Double maxFolicAcid, Double minIodine, Double maxIodine, Double minIron, Double maxIron, Double minZinc, Double maxZinc, Double minMagnesium, Double maxMagnesium, Double minManganese, Double maxManganese, Double minPhosphorus, Double maxPhosphorus, Double minPotassium, Double maxPotassium, Double minSodium, Double maxSodium, Double minSelenium, Double maxSelenium, Double minCopper, Double maxCopper, Double minCalcium, Double maxCalcium, Double minCholine, Double maxCholine, Double minCholesterol, Double maxCholesterol, Double minFluoride, Double maxFluoride, Double minAlcohol, Double maxAlcohol, Double minCaffeine, Double maxCaffeine, Double minSaturatedFat, Double maxSaturatedFat, Double minVitaminA, Double maxVitaminA, Double minVitaminC, Double maxVitaminC, Double minVitaminD, Double maxVitaminD, Double minVitaminE, Double maxVitaminE, Double minVitaminK, Double maxVitaminK, Double minVitaminB1, Double maxVitaminB1, Double minVitaminB2, Double maxVitaminB2, Double minVitaminB3, Double maxVitaminB3, Double minVitaminB5, Double maxVitaminB5, Double minVitaminB6, Double maxVitaminB6, Double minVitaminB12, Double maxVitaminB12, String sort, String sortDirection, Integer offset, Integer number, Closure onSuccess, Closure onFailure)  {
+    def searchRecipes ( String query, String cuisines, String excludeCuisines, String mealType, String diet, String intolerances, String equipment, String includeIngredients, String excludeIngredients, Boolean fillIngredients, Boolean addRecipeInformation, Integer maxTime, Integer minServings, Integer maxServings, Double minCalories, Double maxCalories, Double minCarbs, Double maxCarbs, Double minProtein, Double maxProtein, Double minFat, Double maxFat, Double minSugar, Double maxSugar, Double minFiber, Double maxFiber, Double minFolate, Double maxFolate, Double minFolicAcid, Double maxFolicAcid, Double minIodine, Double maxIodine, Double minIron, Double maxIron, Double minZinc, Double maxZinc, Double minMagnesium, Double maxMagnesium, Double minManganese, Double maxManganese, Double minPhosphorus, Double maxPhosphorus, Double minPotassium, Double maxPotassium, Double minSodium, Double maxSodium, Double minSelenium, Double maxSelenium, Double minCopper, Double maxCopper, Double minCalcium, Double maxCalcium, Double minCholine, Double maxCholine, Double minCholesterol, Double maxCholesterol, Double minFluoride, Double maxFluoride, Double minAlcohol, Double maxAlcohol, Double minCaffeine, Double maxCaffeine, Double minSaturatedFat, Double maxSaturatedFat, Double minVitaminA, Double maxVitaminA, Double minVitaminC, Double maxVitaminC, Double minVitaminD, Double maxVitaminD, Double minVitaminE, Double maxVitaminE, Double minVitaminK, Double maxVitaminK, Double minVitaminB1, Double maxVitaminB1, Double minVitaminB2, Double maxVitaminB2, Double minVitaminB3, Double maxVitaminB3, Double minVitaminB5, Double maxVitaminB5, Double minVitaminB6, Double maxVitaminB6, Double minVitaminB12, Double maxVitaminB12, String sort, String sortDirection, Integer offset, Integer number, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/search-recipes"
 
         // params
@@ -119,6 +119,12 @@ class FoodApi {
         }
         if (maxTime != null) {
             queryParams.put("max-time", maxTime)
+        }
+        if (minServings != null) {
+            queryParams.put("min-servings", minServings)
+        }
+        if (maxServings != null) {
+            queryParams.put("max-servings", maxServings)
         }
         if (minCalories != null) {
             queryParams.put("min-calories", minCalories)

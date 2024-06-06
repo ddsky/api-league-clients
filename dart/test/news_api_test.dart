@@ -35,5 +35,14 @@ void main() {
       // TODO
     });
 
+    // Top News
+    //
+    // Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+    //
+    //Future<TopNews200Response> topNews(String sourceCountry, String language, { String date, bool headlinesOnly }) async
+    test('test topNews', () async {
+      // TODO
+    });
+
   });
 }

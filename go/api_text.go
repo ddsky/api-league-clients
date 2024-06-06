@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.0.0
+API version: 1.2.0
 Contact: mail@apileague.com
 */
 
@@ -883,147 +883,6 @@ func (a *TextAPIService) ListWordSynonymsExecute(r ApiListWordSynonymsRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPartOfSpeechTaggingRequest struct {
-	ctx context.Context
-	ApiService *TextAPIService
-	text *string
-}
-
-// The text to tag the part of speech.
-func (r ApiPartOfSpeechTaggingRequest) Text(text string) ApiPartOfSpeechTaggingRequest {
-	r.text = &text
-	return r
-}
-
-func (r ApiPartOfSpeechTaggingRequest) Execute() (*PartOfSpeechTagging200Response, *http.Response, error) {
-	return r.ApiService.PartOfSpeechTaggingExecute(r)
-}
-
-/*
-PartOfSpeechTagging Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPartOfSpeechTaggingRequest
-*/
-func (a *TextAPIService) PartOfSpeechTagging(ctx context.Context) ApiPartOfSpeechTaggingRequest {
-	return ApiPartOfSpeechTaggingRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return PartOfSpeechTagging200Response
-func (a *TextAPIService) PartOfSpeechTaggingExecute(r ApiPartOfSpeechTaggingRequest) (*PartOfSpeechTagging200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PartOfSpeechTagging200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.PartOfSpeechTagging")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/tag-pos"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.text == nil {
-		return localVarReturnValue, nil, reportError("text is required and must be specified")
-	}
-	if strlen(*r.text) > 10000 {
-		return localVarReturnValue, nil, reportError("text must have less than 10000 elements")
-	}
-
-	parameterAddToHeaderOrQuery(localVarQueryParams, "text", r.text, "")
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["apiKey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarQueryParams.Add("api-key", key)
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["headerApiKey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["x-api-key"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApiPluralizeWordRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
@@ -1602,53 +1461,194 @@ func (a *TextAPIService) SingularizeWordExecute(r ApiSingularizeWordRequest) (*S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTextStemmingRequest struct {
+type ApiStemTextRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text to be stemmed.
-func (r ApiTextStemmingRequest) Text(text string) ApiTextStemmingRequest {
+func (r ApiStemTextRequest) Text(text string) ApiStemTextRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiTextStemmingRequest) Execute() (*TextStemming200Response, *http.Response, error) {
-	return r.ApiService.TextStemmingExecute(r)
+func (r ApiStemTextRequest) Execute() (*StemText200Response, *http.Response, error) {
+	return r.ApiService.StemTextExecute(r)
 }
 
 /*
-TextStemming Text Stemming
+StemText Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTextStemmingRequest
+ @return ApiStemTextRequest
 */
-func (a *TextAPIService) TextStemming(ctx context.Context) ApiTextStemmingRequest {
-	return ApiTextStemmingRequest{
+func (a *TextAPIService) StemText(ctx context.Context) ApiStemTextRequest {
+	return ApiStemTextRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TextStemming200Response
-func (a *TextAPIService) TextStemmingExecute(r ApiTextStemmingRequest) (*TextStemming200Response, *http.Response, error) {
+//  @return StemText200Response
+func (a *TextAPIService) StemTextExecute(r ApiStemTextRequest) (*StemText200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TextStemming200Response
+		localVarReturnValue  *StemText200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.TextStemming")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.StemText")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stem-text"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.text == nil {
+		return localVarReturnValue, nil, reportError("text is required and must be specified")
+	}
+	if strlen(*r.text) > 10000 {
+		return localVarReturnValue, nil, reportError("text must have less than 10000 elements")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "text", r.text, "")
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiTagPartOfSpeechRequest struct {
+	ctx context.Context
+	ApiService *TextAPIService
+	text *string
+}
+
+// The text to tag the part of speech.
+func (r ApiTagPartOfSpeechRequest) Text(text string) ApiTagPartOfSpeechRequest {
+	r.text = &text
+	return r
+}
+
+func (r ApiTagPartOfSpeechRequest) Execute() (*TagPartOfSpeech200Response, *http.Response, error) {
+	return r.ApiService.TagPartOfSpeechExecute(r)
+}
+
+/*
+TagPartOfSpeech Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiTagPartOfSpeechRequest
+*/
+func (a *TextAPIService) TagPartOfSpeech(ctx context.Context) ApiTagPartOfSpeechRequest {
+	return ApiTagPartOfSpeechRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return TagPartOfSpeech200Response
+func (a *TextAPIService) TagPartOfSpeechExecute(r ApiTagPartOfSpeechRequest) (*TagPartOfSpeech200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *TagPartOfSpeech200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.TagPartOfSpeech")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tag-pos"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

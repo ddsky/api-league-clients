@@ -62,13 +62,13 @@ part 'model/extract_publish_date200_response.dart';
 part 'model/find_similar_books200_response.dart';
 part 'model/generate_nonsense_word200_response.dart';
 part 'model/list_word_synonyms200_response.dart';
-part 'model/part_of_speech_tagging200_response.dart';
 part 'model/pluralize_word200_response.dart';
 part 'model/random_meme200_response.dart';
 part 'model/random_poem200_response.dart';
 part 'model/random_quote200_response.dart';
 part 'model/random_trivia200_response.dart';
 part 'model/read_key_value_from_store200_response.dart';
+part 'model/retrieve_page_rank200_response.dart';
 part 'model/retrieve_recipe_information200_response.dart';
 part 'model/retrieve_recipe_information200_response_credits.dart';
 part 'model/retrieve_recipe_information200_response_dietary_properties.dart';
@@ -124,8 +124,12 @@ part 'model/search_royalty_free_images200_response_images_inner_license.dart';
 part 'model/search_web200_response.dart';
 part 'model/search_web200_response_results_inner.dart';
 part 'model/singularize_word200_response.dart';
+part 'model/stem_text200_response.dart';
 part 'model/store_key_value_get200_response.dart';
-part 'model/text_stemming200_response.dart';
+part 'model/tag_part_of_speech200_response.dart';
+part 'model/top_news200_response.dart';
+part 'model/top_news200_response_top_news_inner.dart';
+part 'model/top_news200_response_top_news_inner_news_inner.dart';
 
 
 /// An [ApiClient] instance that uses the default values obtained from

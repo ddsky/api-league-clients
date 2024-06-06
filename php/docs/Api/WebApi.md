@@ -7,6 +7,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | [**extractAuthors()**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors |
 | [**extractContentFromAWebPage()**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page |
 | [**extractPublishDate()**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**retrievePageRank()**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**searchWeb()**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
 
 
@@ -44,7 +45,7 @@ $apiInstance = new OpenAPI\Client\Api\WebApi(
     new GuzzleHttp\Client(),
     $config
 );
-$url = https://www.bbc.com/news/entertainment-arts-68270826; // string | The url with the article from which authors should be extracted.
+$url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // string | The url with the article from which authors should be extracted.
 
 try {
     $result = $apiInstance->extractAuthors($url);
@@ -111,7 +112,7 @@ $apiInstance = new OpenAPI\Client\Api\WebApi(
     new GuzzleHttp\Client(),
     $config
 );
-$url = https://www.bbc.com/news/entertainment-arts-68270826; // string | The url for which the content will be extracted.
+$url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // string | The url for which the content will be extracted.
 
 try {
     $result = $apiInstance->extractContentFromAWebPage($url);
@@ -178,7 +179,7 @@ $apiInstance = new OpenAPI\Client\Api\WebApi(
     new GuzzleHttp\Client(),
     $config
 );
-$url = https://www.bbc.com/news/entertainment-arts-68270826; // string | The url for which the publish date should be extracted.
+$url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // string | The url for which the publish date should be extracted.
 
 try {
     $result = $apiInstance->extractPublishDate($url);
@@ -197,6 +198,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\ExtractPublishDate200Response**](../Model/ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `retrievePageRank()`
+
+```php
+retrievePageRank($domain): \OpenAPI\Client\Model\RetrievePageRank200Response
+```
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\WebApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domain = amazon.com; // string | The domain for which the page rank should be returned.
+
+try {
+    $result = $apiInstance->retrievePageRank($domain);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WebApi->retrievePageRank: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain** | **string**| The domain for which the page rank should be returned. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\RetrievePageRank200Response**](../Model/RetrievePageRank200Response.md)
 
 ### Authorization
 

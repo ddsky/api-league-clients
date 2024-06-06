@@ -386,66 +386,6 @@ class TextApi {
     return null;
   }
 
-  /// Part of Speech Tagging
-  ///
-  /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [String] text (required):
-  ///   The text to tag the part of speech.
-  Future<Response> partOfSpeechTaggingWithHttpInfo(String text,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/tag-pos';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-      queryParams.addAll(_queryParams('', 'text', text));
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Part of Speech Tagging
-  ///
-  /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-  ///
-  /// Parameters:
-  ///
-  /// * [String] text (required):
-  ///   The text to tag the part of speech.
-  Future<PartOfSpeechTagging200Response?> partOfSpeechTagging(String text,) async {
-    final response = await partOfSpeechTaggingWithHttpInfo(text,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PartOfSpeechTagging200Response',) as PartOfSpeechTagging200Response;
-    
-    }
-    return null;
-  }
-
   /// Pluralize Word
   ///
   /// Find the plural form of a word.
@@ -693,7 +633,7 @@ class TextApi {
     return null;
   }
 
-  /// Text Stemming
+  /// Stem Text
   ///
   /// The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
   ///
@@ -703,7 +643,7 @@ class TextApi {
   ///
   /// * [String] text (required):
   ///   The text to be stemmed.
-  Future<Response> textStemmingWithHttpInfo(String text,) async {
+  Future<Response> stemTextWithHttpInfo(String text,) async {
     // ignore: prefer_const_declarations
     final path = r'/stem-text';
 
@@ -730,7 +670,7 @@ class TextApi {
     );
   }
 
-  /// Text Stemming
+  /// Stem Text
   ///
   /// The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
   ///
@@ -738,8 +678,8 @@ class TextApi {
   ///
   /// * [String] text (required):
   ///   The text to be stemmed.
-  Future<TextStemming200Response?> textStemming(String text,) async {
-    final response = await textStemmingWithHttpInfo(text,);
+  Future<StemText200Response?> stemText(String text,) async {
+    final response = await stemTextWithHttpInfo(text,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -747,7 +687,67 @@ class TextApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TextStemming200Response',) as TextStemming200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StemText200Response',) as StemText200Response;
+    
+    }
+    return null;
+  }
+
+  /// Tag Part of Speech
+  ///
+  /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text to tag the part of speech.
+  Future<Response> tagPartOfSpeechWithHttpInfo(String text,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/tag-pos';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'text', text));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Tag Part of Speech
+  ///
+  /// Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text to tag the part of speech.
+  Future<TagPartOfSpeech200Response?> tagPartOfSpeech(String text,) async {
+    final response = await tagPartOfSpeechWithHttpInfo(text,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TagPartOfSpeech200Response',) as TagPartOfSpeech200Response;
     
     }
     return null;

@@ -25,12 +25,12 @@ import com.apileague.client.model.DetectSentiment200Response
 import com.apileague.client.model.ExtractDates200Response
 import com.apileague.client.model.ExtractEntities200Response
 import com.apileague.client.model.ListWordSynonyms200Response
-import com.apileague.client.model.PartOfSpeechTagging200Response
 import com.apileague.client.model.PluralizeWord200Response
 import com.apileague.client.model.ScoreReadability200Response
 import com.apileague.client.model.ScoreText200Response
 import com.apileague.client.model.SingularizeWord200Response
-import com.apileague.client.model.TextStemming200Response
+import com.apileague.client.model.StemText200Response
+import com.apileague.client.model.TagPartOfSpeech200Response
 
 import com.squareup.moshi.Json
 
@@ -505,80 +505,6 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Part of Speech Tagging
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * @param text The text to tag the part of speech.
-     * @return PartOfSpeechTagging200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun partOfSpeechTagging(text: kotlin.String) : PartOfSpeechTagging200Response {
-        val localVarResponse = partOfSpeechTaggingWithHttpInfo(text = text)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as PartOfSpeechTagging200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Part of Speech Tagging
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * @param text The text to tag the part of speech.
-     * @return ApiResponse<PartOfSpeechTagging200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun partOfSpeechTaggingWithHttpInfo(text: kotlin.String) : ApiResponse<PartOfSpeechTagging200Response?> {
-        val localVariableConfig = partOfSpeechTaggingRequestConfig(text = text)
-
-        return request<Unit, PartOfSpeechTagging200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation partOfSpeechTagging
-     *
-     * @param text The text to tag the part of speech.
-     * @return RequestConfig
-     */
-    fun partOfSpeechTaggingRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                put("text", listOf(text.toString()))
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/tag-pos",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * Pluralize Word
      * Find the plural form of a word.
      * @param word The (noun) word for which the plural form should be found.
@@ -879,10 +805,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Text Stemming
+     * Stem Text
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed.
-     * @return TextStemming200Response
+     * @return StemText200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -891,11 +817,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun textStemming(text: kotlin.String) : TextStemming200Response {
-        val localVarResponse = textStemmingWithHttpInfo(text = text)
+    fun stemText(text: kotlin.String) : StemText200Response {
+        val localVarResponse = stemTextWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TextStemming200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as StemText200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -910,30 +836,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Text Stemming
+     * Stem Text
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed.
-     * @return ApiResponse<TextStemming200Response?>
+     * @return ApiResponse<StemText200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun textStemmingWithHttpInfo(text: kotlin.String) : ApiResponse<TextStemming200Response?> {
-        val localVariableConfig = textStemmingRequestConfig(text = text)
+    fun stemTextWithHttpInfo(text: kotlin.String) : ApiResponse<StemText200Response?> {
+        val localVariableConfig = stemTextRequestConfig(text = text)
 
-        return request<Unit, TextStemming200Response>(
+        return request<Unit, StemText200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation textStemming
+     * To obtain the request config of the operation stemText
      *
      * @param text The text to be stemmed.
      * @return RequestConfig
      */
-    fun textStemmingRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun stemTextRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -945,6 +871,80 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/stem-text",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Tag Part of Speech
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * @param text The text to tag the part of speech.
+     * @return TagPartOfSpeech200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun tagPartOfSpeech(text: kotlin.String) : TagPartOfSpeech200Response {
+        val localVarResponse = tagPartOfSpeechWithHttpInfo(text = text)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TagPartOfSpeech200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Tag Part of Speech
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * @param text The text to tag the part of speech.
+     * @return ApiResponse<TagPartOfSpeech200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun tagPartOfSpeechWithHttpInfo(text: kotlin.String) : ApiResponse<TagPartOfSpeech200Response?> {
+        val localVariableConfig = tagPartOfSpeechRequestConfig(text = text)
+
+        return request<Unit, TagPartOfSpeech200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation tagPartOfSpeech
+     *
+     * @param text The text to tag the part of speech.
+     * @return RequestConfig
+     */
+    fun tagPartOfSpeechRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("text", listOf(text.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/tag-pos",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

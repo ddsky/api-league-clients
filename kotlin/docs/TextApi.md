@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
 [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
 [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**partOfSpeechTagging**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
 [**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
 [**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text
 [**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-[**textStemming**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming
+[**stemText**](TextApi.md#stemText) | **GET** /stem-text | Stem Text
+[**tagPartOfSpeech**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech
 
 
 <a id="correctSpelling"></a>
@@ -338,59 +338,6 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="partOfSpeechTagging"></a>
-# **partOfSpeechTagging**
-> PartOfSpeechTagging200Response partOfSpeechTagging(text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```kotlin
-// Import classes:
-//import apileague.infrastructure.*
-//import com.apileague.client.model.*
-
-val apiInstance = TextApi()
-val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
-try {
-    val result : PartOfSpeechTagging200Response = apiInstance.partOfSpeechTagging(text)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling TextApi#partOfSpeechTagging")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling TextApi#partOfSpeechTagging")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to tag the part of speech. |
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-
-Configure apiKey:
-    ApiClient.apiKey["api-key"] = ""
-    ApiClient.apiKeyPrefix["api-key"] = ""
-Configure headerApiKey:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a id="pluralizeWord"></a>
 # **pluralizeWord**
 > PluralizeWord200Response pluralizeWord(word)
@@ -605,11 +552,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="textStemming"></a>
-# **textStemming**
-> TextStemming200Response textStemming(text)
+<a id="stemText"></a>
+# **stemText**
+> StemText200Response stemText(text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -622,13 +569,13 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 val apiInstance = TextApi()
 val text : kotlin.String = The laziest dogs are jumping over the quicker brown foxes. // kotlin.String | The text to be stemmed.
 try {
-    val result : TextStemming200Response = apiInstance.textStemming(text)
+    val result : StemText200Response = apiInstance.stemText(text)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling TextApi#textStemming")
+    println("4xx response calling TextApi#stemText")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling TextApi#textStemming")
+    println("5xx response calling TextApi#stemText")
     e.printStackTrace()
 }
 ```
@@ -641,7 +588,60 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="tagPartOfSpeech"></a>
+# **tagPartOfSpeech**
+> TagPartOfSpeech200Response tagPartOfSpeech(text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = TextApi()
+val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
+try {
+    val result : TagPartOfSpeech200Response = apiInstance.tagPartOfSpeech(text)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TextApi#tagPartOfSpeech")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TextApi#tagPartOfSpeech")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **kotlin.String**| The text to tag the part of speech. |
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

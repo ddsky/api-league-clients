@@ -4,6 +4,7 @@
 #import "OAIExtractAuthors200Response.h"
 #import "OAIExtractContentFromAWebPage200Response.h"
 #import "OAIExtractPublishDate200Response.h"
+#import "OAIRetrievePageRank200Response.h"
 #import "OAISearchWeb200Response.h"
 
 
@@ -252,6 +253,74 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((OAIExtractPublishDate200Response*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Retrieve Page Rank
+/// This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+///  @param domain The domain for which the page rank should be returned. 
+///
+///  @returns OAIRetrievePageRank200Response*
+///
+-(NSURLSessionTask*) retrievePageRankWithDomain: (NSString*) domain
+    completionHandler: (void (^)(OAIRetrievePageRank200Response* output, NSError* error)) handler {
+    // verify the required parameter 'domain' is set
+    if (domain == nil) {
+        NSParameterAssert(domain);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"domain"] };
+            NSError* error = [NSError errorWithDomain:kOAIWebApiErrorDomain code:kOAIWebApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/retrieve-page-rank"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (domain != nil) {
+        queryParams[@"domain"] = domain;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAIRetrievePageRank200Response*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAIRetrievePageRank200Response*)data, error);
                                 }
                             }];
 }

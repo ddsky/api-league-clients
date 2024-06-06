@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
 [**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities
 [**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms
-[**part_of_speech_tagging**](TextApi.md#part_of_speech_tagging) | **GET** /tag-pos | Part of Speech Tagging
 [**pluralize_word**](TextApi.md#pluralize_word) | **GET** /pluralize-word | Pluralize Word
 [**score_readability**](TextApi.md#score_readability) | **GET** /score-readability | Score Readability
 [**score_text**](TextApi.md#score_text) | **GET** /score-text | Score Text
 [**singularize_word**](TextApi.md#singularize_word) | **GET** /singularize-word | Singularize Word
-[**text_stemming**](TextApi.md#text_stemming) | **GET** /stem-text | Text Stemming
+[**stem_text**](TextApi.md#stem_text) | **GET** /stem-text | Stem Text
+[**tag_part_of_speech**](TextApi.md#tag_part_of_speech) | **GET** /tag-pos | Tag Part of Speech
 
 
 
@@ -200,36 +200,6 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## part_of_speech_tagging
-
-> models::PartOfSpeechTagging200Response part_of_speech_tagging(text)
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**text** | **String** | The text to tag the part of speech. | [required] |
-
-### Return type
-
-[**models::PartOfSpeechTagging200Response**](partOfSpeechTagging_200_response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## pluralize_word
 
 > models::PluralizeWord200Response pluralize_word(word)
@@ -351,10 +321,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## text_stemming
+## stem_text
 
-> models::TextStemming200Response text_stemming(text)
-Text Stemming
+> models::StemText200Response stem_text(text)
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -367,7 +337,37 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::TextStemming200Response**](textStemming_200_response.md)
+[**models::StemText200Response**](stemText_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## tag_part_of_speech
+
+> models::TagPartOfSpeech200Response tag_part_of_speech(text)
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**text** | **String** | The text to tag the part of speech. | [required] |
+
+### Return type
+
+[**models::TagPartOfSpeech200Response**](tagPartOfSpeech_200_response.md)
 
 ### Authorization
 

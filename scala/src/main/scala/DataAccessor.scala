@@ -54,7 +54,7 @@ trait DataAccessor {
         * 
         * @return A SearchRecipes200Response
         */
-        def Food_searchRecipes(query: Option[String], cuisines: Option[String], excludeCuisines: Option[String], mealType: Option[String], diet: Option[String], intolerances: Option[String], equipment: Option[String], includeIngredients: Option[String], excludeIngredients: Option[String], fillIngredients: Option[Boolean], addRecipeInformation: Option[Boolean], maxTime: Option[Int], minCalories: Option[Double], maxCalories: Option[Double], minCarbs: Option[Double], maxCarbs: Option[Double], minProtein: Option[Double], maxProtein: Option[Double], minFat: Option[Double], maxFat: Option[Double], minSugar: Option[Double], maxSugar: Option[Double], minFiber: Option[Double], maxFiber: Option[Double], minFolate: Option[Double], maxFolate: Option[Double], minFolicAcid: Option[Double], maxFolicAcid: Option[Double], minIodine: Option[Double], maxIodine: Option[Double], minIron: Option[Double], maxIron: Option[Double], minZinc: Option[Double], maxZinc: Option[Double], minMagnesium: Option[Double], maxMagnesium: Option[Double], minManganese: Option[Double], maxManganese: Option[Double], minPhosphorus: Option[Double], maxPhosphorus: Option[Double], minPotassium: Option[Double], maxPotassium: Option[Double], minSodium: Option[Double], maxSodium: Option[Double], minSelenium: Option[Double], maxSelenium: Option[Double], minCopper: Option[Double], maxCopper: Option[Double], minCalcium: Option[Double], maxCalcium: Option[Double], minCholine: Option[Double], maxCholine: Option[Double], minCholesterol: Option[Double], maxCholesterol: Option[Double], minFluoride: Option[Double], maxFluoride: Option[Double], minAlcohol: Option[Double], maxAlcohol: Option[Double], minCaffeine: Option[Double], maxCaffeine: Option[Double], minSaturatedFat: Option[Double], maxSaturatedFat: Option[Double], minVitaminA: Option[Double], maxVitaminA: Option[Double], minVitaminC: Option[Double], maxVitaminC: Option[Double], minVitaminD: Option[Double], maxVitaminD: Option[Double], minVitaminE: Option[Double], maxVitaminE: Option[Double], minVitaminK: Option[Double], maxVitaminK: Option[Double], minVitaminB1: Option[Double], maxVitaminB1: Option[Double], minVitaminB2: Option[Double], maxVitaminB2: Option[Double], minVitaminB3: Option[Double], maxVitaminB3: Option[Double], minVitaminB5: Option[Double], maxVitaminB5: Option[Double], minVitaminB6: Option[Double], maxVitaminB6: Option[Double], minVitaminB12: Option[Double], maxVitaminB12: Option[Double], sort: Option[String], sortDirection: Option[String], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchRecipes200Response] = Left(TODO)
+        def Food_searchRecipes(query: Option[String], cuisines: Option[String], excludeCuisines: Option[String], mealType: Option[String], diet: Option[String], intolerances: Option[String], equipment: Option[String], includeIngredients: Option[String], excludeIngredients: Option[String], fillIngredients: Option[Boolean], addRecipeInformation: Option[Boolean], maxTime: Option[Int], minServings: Option[Int], maxServings: Option[Int], minCalories: Option[Double], maxCalories: Option[Double], minCarbs: Option[Double], maxCarbs: Option[Double], minProtein: Option[Double], maxProtein: Option[Double], minFat: Option[Double], maxFat: Option[Double], minSugar: Option[Double], maxSugar: Option[Double], minFiber: Option[Double], maxFiber: Option[Double], minFolate: Option[Double], maxFolate: Option[Double], minFolicAcid: Option[Double], maxFolicAcid: Option[Double], minIodine: Option[Double], maxIodine: Option[Double], minIron: Option[Double], maxIron: Option[Double], minZinc: Option[Double], maxZinc: Option[Double], minMagnesium: Option[Double], maxMagnesium: Option[Double], minManganese: Option[Double], maxManganese: Option[Double], minPhosphorus: Option[Double], maxPhosphorus: Option[Double], minPotassium: Option[Double], maxPotassium: Option[Double], minSodium: Option[Double], maxSodium: Option[Double], minSelenium: Option[Double], maxSelenium: Option[Double], minCopper: Option[Double], maxCopper: Option[Double], minCalcium: Option[Double], maxCalcium: Option[Double], minCholine: Option[Double], maxCholine: Option[Double], minCholesterol: Option[Double], maxCholesterol: Option[Double], minFluoride: Option[Double], maxFluoride: Option[Double], minAlcohol: Option[Double], maxAlcohol: Option[Double], minCaffeine: Option[Double], maxCaffeine: Option[Double], minSaturatedFat: Option[Double], maxSaturatedFat: Option[Double], minVitaminA: Option[Double], maxVitaminA: Option[Double], minVitaminC: Option[Double], maxVitaminC: Option[Double], minVitaminD: Option[Double], maxVitaminD: Option[Double], minVitaminE: Option[Double], maxVitaminE: Option[Double], minVitaminK: Option[Double], maxVitaminK: Option[Double], minVitaminB1: Option[Double], maxVitaminB1: Option[Double], minVitaminB2: Option[Double], maxVitaminB2: Option[Double], minVitaminB3: Option[Double], maxVitaminB3: Option[Double], minVitaminB5: Option[Double], maxVitaminB5: Option[Double], minVitaminB6: Option[Double], maxVitaminB6: Option[Double], minVitaminB12: Option[Double], maxVitaminB12: Option[Double], sort: Option[String], sortDirection: Option[String], offset: Option[Int], number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchRecipes200Response] = Left(TODO)
 
         /**
         * 
@@ -148,6 +148,12 @@ trait DataAccessor {
 
         /**
         * 
+        * @return A TopNews200Response
+        */
+        def News_topNews(sourceCountry: String, language: String, date: Option[String], headlinesOnly: Option[Boolean], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,TopNews200Response] = Left(TODO)
+
+        /**
+        * 
         * @return A ReadKeyValueFromStore200Response
         */
         def Storage_readKeyValueFromStore(key: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ReadKeyValueFromStore200Response] = Left(TODO)
@@ -196,12 +202,6 @@ trait DataAccessor {
 
         /**
         * 
-        * @return A PartOfSpeechTagging200Response
-        */
-        def Text_partOfSpeechTagging(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,PartOfSpeechTagging200Response] = Left(TODO)
-
-        /**
-        * 
         * @return A PluralizeWord200Response
         */
         def Text_pluralizeWord(word: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,PluralizeWord200Response] = Left(TODO)
@@ -226,9 +226,15 @@ trait DataAccessor {
 
         /**
         * 
-        * @return A TextStemming200Response
+        * @return A StemText200Response
         */
-        def Text_textStemming(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,TextStemming200Response] = Left(TODO)
+        def Text_stemText(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,StemText200Response] = Left(TODO)
+
+        /**
+        * 
+        * @return A TagPartOfSpeech200Response
+        */
+        def Text_tagPartOfSpeech(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,TagPartOfSpeech200Response] = Left(TODO)
 
         /**
         * 
@@ -247,6 +253,12 @@ trait DataAccessor {
         * @return A ExtractPublishDate200Response
         */
         def Web_extractPublishDate(url: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,ExtractPublishDate200Response] = Left(TODO)
+
+        /**
+        * 
+        * @return A RetrievePageRank200Response
+        */
+        def Web_retrievePageRank(domain: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,RetrievePageRank200Response] = Left(TODO)
 
         /**
         * 

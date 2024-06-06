@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extractNews**](OAINewsApi.md#extractnews) | **GET** /extract-news | Extract News
 [**searchNews**](OAINewsApi.md#searchnews) | **GET** /search-news | Search News
+[**topNews**](OAINewsApi.md#topnews) | **GET** /retrieve-top-news | Top News
 
 
 # **extractNews**
@@ -180,6 +181,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAISearchNews200Response***](OAISearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **topNews**
+```objc
+-(NSURLSessionTask*) topNewsWithSourceCountry: (NSString*) sourceCountry
+    language: (NSString*) language
+    date: (NSString*) date
+    headlinesOnly: (NSNumber*) headlinesOnly
+        completionHandler: (void (^)(OAITopNews200Response* output, NSError* error)) handler;
+```
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* sourceCountry = us; // The ISO 3166 country code of the country for which top news should be retrieved.
+NSString* language = en; // The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+NSString* date = 2024-05-30; // The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+NSNumber* headlinesOnly = false; // Whether to only return basic information such as id, title, and url of the news. (optional)
+
+OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
+
+// Top News
+[apiInstance topNewsWithSourceCountry:sourceCountry
+              language:language
+              date:date
+              headlinesOnly:headlinesOnly
+          completionHandler: ^(OAITopNews200Response* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAINewsApi->topNews: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | **NSString***| The ISO 3166 country code of the country for which top news should be retrieved. | 
+ **language** | **NSString***| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | 
+ **date** | **NSString***| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] 
+ **headlinesOnly** | **NSNumber***| Whether to only return basic information such as id, title, and url of the news. | [optional] 
+
+### Return type
+
+[**OAITopNews200Response***](OAITopNews200Response.md)
 
 ### Authorization
 

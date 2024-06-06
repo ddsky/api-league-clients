@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News
 [**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News
+[**top_news**](NewsApi.md#top_news) | **GET** /retrieve-top-news | Top News
 
 
 # **extract_news**
@@ -198,6 +199,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchNews200Response**](SearchNews200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **top_news**
+> TopNews200Response top_news(source_country, language, var_date=var_date, headlines_only=headlines_only)
+
+Top News
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.top_news200_response import TopNews200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.NewsApi(api_client)
+    source_country = 'us' # str | The ISO 3166 country code of the country for which top news should be retrieved.
+    language = 'en' # str | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+    var_date = '2024-05-30' # str | The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+    headlines_only = false # bool | Whether to only return basic information such as id, title, and url of the news. (optional)
+
+    try:
+        # Top News
+        api_response = api_instance.top_news(source_country, language, var_date=var_date, headlines_only=headlines_only)
+        print("The response of NewsApi->top_news:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NewsApi->top_news: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_country** | **str**| The ISO 3166 country code of the country for which top news should be retrieved. | 
+ **language** | **str**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | 
+ **var_date** | **str**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] 
+ **headlines_only** | **bool**| Whether to only return basic information such as id, title, and url of the news. | [optional] 
+
+### Return type
+
+[**TopNews200Response**](TopNews200Response.md)
 
 ### Authorization
 

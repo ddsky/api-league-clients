@@ -6,6 +6,7 @@ import org.openapitools.models._
 import org.openapitools.models.ExtractAuthors200Response
 import org.openapitools.models.ExtractContentFromAWebPage200Response
 import org.openapitools.models.ExtractPublishDate200Response
+import org.openapitools.models.RetrievePageRank200Response
 import org.openapitools.models.SearchWeb200Response
 import io.finch.circe._
 import io.circe.generic.semiauto._
@@ -30,6 +31,7 @@ object WebApi {
         extractAuthors(da) :+:
         extractContentFromAWebPage(da) :+:
         extractPublishDate(da) :+:
+        retrievePageRank(da) :+:
         searchWeb(da)
 
 
@@ -88,6 +90,20 @@ object WebApi {
         private def extractPublishDate(da: DataAccessor): Endpoint[ExtractPublishDate200Response] =
         get("extract-publish-date" :: param("url") :: param("api-key") :: header("x-api-key")) { (url: String, authParamapiKey: String, authParamheaderApiKey: String) =>
           da.Web_extractPublishDate(url, authParamapiKey, authParamheaderApiKey) match {
+            case Left(error) => checkError(error)
+            case Right(data) => Ok(data)
+          }
+        } handle {
+          case e: Exception => BadRequest(e)
+        }
+
+        /**
+        * 
+        * @return An endpoint representing a RetrievePageRank200Response
+        */
+        private def retrievePageRank(da: DataAccessor): Endpoint[RetrievePageRank200Response] =
+        get("retrieve-page-rank" :: param("domain") :: param("api-key") :: header("x-api-key")) { (domain: String, authParamapiKey: String, authParamheaderApiKey: String) =>
+          da.Web_retrievePageRank(domain, authParamapiKey, authParamheaderApiKey) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

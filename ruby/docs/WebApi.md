@@ -7,6 +7,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**extract_authors**](WebApi.md#extract_authors) | **GET** /extract-authors | Extract Authors |
 | [**extract_content_from_a_web_page**](WebApi.md#extract_content_from_a_web_page) | **GET** /extract-content | Extract Content from a Web Page |
 | [**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date |
+| [**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web |
 
 
@@ -37,7 +38,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::WebApi.new
-url = 'https://www.bbc.com/news/entertainment-arts-68270826' # String | The url with the article from which authors should be extracted.
+url = 'https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html' # String | The url with the article from which authors should be extracted.
 
 begin
   # Extract Authors
@@ -113,7 +114,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::WebApi.new
-url = 'https://www.bbc.com/news/entertainment-arts-68270826' # String | The url for which the content will be extracted.
+url = 'https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html' # String | The url for which the content will be extracted.
 
 begin
   # Extract Content from a Web Page
@@ -189,7 +190,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::WebApi.new
-url = 'https://www.bbc.com/news/entertainment-arts-68270826' # String | The url for which the publish date should be extracted.
+url = 'https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html' # String | The url for which the publish date should be extracted.
 
 begin
   # Extract Publish Date
@@ -227,6 +228,82 @@ end
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrieve_page_rank
+
+> <RetrievePageRank200Response> retrieve_page_rank(domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::WebApi.new
+domain = 'amazon.com' # String | The domain for which the page rank should be returned.
+
+begin
+  # Retrieve Page Rank
+  result = api_instance.retrieve_page_rank(domain)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebApi->retrieve_page_rank: #{e}"
+end
+```
+
+#### Using the retrieve_page_rank_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RetrievePageRank200Response>, Integer, Hash)> retrieve_page_rank_with_http_info(domain)
+
+```ruby
+begin
+  # Retrieve Page Rank
+  data, status_code, headers = api_instance.retrieve_page_rank_with_http_info(domain)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RetrievePageRank200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebApi->retrieve_page_rank_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **domain** | **String** | The domain for which the page rank should be returned. |  |
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

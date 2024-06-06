@@ -24,13 +24,13 @@ import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Re
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
 import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
 import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
+import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
 import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
 import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
 import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
@@ -86,8 +86,12 @@ import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/
 import { SearchWeb200Response } from '../models/SearchWeb200Response';
 import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
 import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
+import { StemText200Response } from '../models/StemText200Response';
 import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TextStemming200Response } from '../models/TextStemming200Response';
+import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
+import { TopNews200Response } from '../models/TopNews200Response';
+import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
+import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
 
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
 export class ObservableArtApi {
@@ -394,6 +398,8 @@ export class ObservableFoodApi {
      * @param fillIngredients Add information about the ingredients and whether they are used or missing in relation to the query.
      * @param addRecipeInformation If set to true, you get more information about the recipes returned.
      * @param maxTime The maximum time in minutes it should take to prepare and cook the recipe.
+     * @param minServings The minimum amount of servings the recipe is for.
+     * @param maxServings The maximum amount of servings the recipe is for.
      * @param minCalories The minimum amount of calories the recipe must have per serving.
      * @param maxCalories The maximum amount of calories the recipe can have per serving.
      * @param minCarbs The minimum amount of carbohydrates in grams the recipe must have per serving.
@@ -471,8 +477,8 @@ export class ObservableFoodApi {
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
      */
-    public searchRecipesWithHttpInfo(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRecipes200Response>> {
-        const requestContextPromise = this.requestFactory.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
+    public searchRecipesWithHttpInfo(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRecipes200Response>> {
+        const requestContextPromise = this.requestFactory.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -505,6 +511,8 @@ export class ObservableFoodApi {
      * @param fillIngredients Add information about the ingredients and whether they are used or missing in relation to the query.
      * @param addRecipeInformation If set to true, you get more information about the recipes returned.
      * @param maxTime The maximum time in minutes it should take to prepare and cook the recipe.
+     * @param minServings The minimum amount of servings the recipe is for.
+     * @param maxServings The maximum amount of servings the recipe is for.
      * @param minCalories The minimum amount of calories the recipe must have per serving.
      * @param maxCalories The maximum amount of calories the recipe can have per serving.
      * @param minCarbs The minimum amount of carbohydrates in grams the recipe must have per serving.
@@ -582,8 +590,8 @@ export class ObservableFoodApi {
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
      */
-    public searchRecipes(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchRecipes200Response> {
-        return this.searchRecipesWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchRecipes200Response>) => apiResponse.data));
+    public searchRecipes(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchRecipes200Response> {
+        return this.searchRecipesWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchRecipes200Response>) => apiResponse.data));
     }
 
     /**
@@ -1273,6 +1281,45 @@ export class ObservableNewsApi {
         return this.searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchNews200Response>) => apiResponse.data));
     }
 
+    /**
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News
+     * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
+     * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+     * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news.
+     */
+    public topNewsWithHttpInfo(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<HttpInfo<TopNews200Response>> {
+        const requestContextPromise = this.requestFactory.topNews(sourceCountry, language, date, headlinesOnly, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.topNewsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News
+     * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
+     * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed.
+     * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news.
+     */
+    public topNews(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<TopNews200Response> {
+        return this.topNewsWithHttpInfo(sourceCountry, language, date, headlinesOnly, _options).pipe(map((apiResponse: HttpInfo<TopNews200Response>) => apiResponse.data));
+    }
+
 }
 
 import { StorageApiRequestFactory, StorageApiResponseProcessor} from "../apis/StorageApi";
@@ -1578,39 +1625,6 @@ export class ObservableTextApi {
     }
 
     /**
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Part of Speech Tagging
-     * @param text The text to tag the part of speech.
-     */
-    public partOfSpeechTaggingWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<PartOfSpeechTagging200Response>> {
-        const requestContextPromise = this.requestFactory.partOfSpeechTagging(text, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.partOfSpeechTaggingWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Part of Speech Tagging
-     * @param text The text to tag the part of speech.
-     */
-    public partOfSpeechTagging(text: string, _options?: Configuration): Observable<PartOfSpeechTagging200Response> {
-        return this.partOfSpeechTaggingWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<PartOfSpeechTagging200Response>) => apiResponse.data));
-    }
-
-    /**
      * Find the plural form of a word.
      * Pluralize Word
      * @param word The (noun) word for which the plural form should be found.
@@ -1746,11 +1760,11 @@ export class ObservableTextApi {
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Text Stemming
+     * Stem Text
      * @param text The text to be stemmed.
      */
-    public textStemmingWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<TextStemming200Response>> {
-        const requestContextPromise = this.requestFactory.textStemming(text, _options);
+    public stemTextWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<StemText200Response>> {
+        const requestContextPromise = this.requestFactory.stemText(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1764,17 +1778,50 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.textStemmingWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.stemTextWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Text Stemming
+     * Stem Text
      * @param text The text to be stemmed.
      */
-    public textStemming(text: string, _options?: Configuration): Observable<TextStemming200Response> {
-        return this.textStemmingWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<TextStemming200Response>) => apiResponse.data));
+    public stemText(text: string, _options?: Configuration): Observable<StemText200Response> {
+        return this.stemTextWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<StemText200Response>) => apiResponse.data));
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Tag Part of Speech
+     * @param text The text to tag the part of speech.
+     */
+    public tagPartOfSpeechWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<TagPartOfSpeech200Response>> {
+        const requestContextPromise = this.requestFactory.tagPartOfSpeech(text, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.tagPartOfSpeechWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Tag Part of Speech
+     * @param text The text to tag the part of speech.
+     */
+    public tagPartOfSpeech(text: string, _options?: Configuration): Observable<TagPartOfSpeech200Response> {
+        return this.tagPartOfSpeechWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<TagPartOfSpeech200Response>) => apiResponse.data));
     }
 
 }
@@ -1892,6 +1939,39 @@ export class ObservableWebApi {
      */
     public extractPublishDate(url: string, _options?: Configuration): Observable<ExtractPublishDate200Response> {
         return this.extractPublishDateWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractPublishDate200Response>) => apiResponse.data));
+    }
+
+    /**
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * Retrieve Page Rank
+     * @param domain The domain for which the page rank should be returned.
+     */
+    public retrievePageRankWithHttpInfo(domain: string, _options?: Configuration): Observable<HttpInfo<RetrievePageRank200Response>> {
+        const requestContextPromise = this.requestFactory.retrievePageRank(domain, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.retrievePageRankWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * Retrieve Page Rank
+     * @param domain The domain for which the page rank should be returned.
+     */
+    public retrievePageRank(domain: string, _options?: Configuration): Observable<RetrievePageRank200Response> {
+        return this.retrievePageRankWithHttpInfo(domain, _options).pipe(map((apiResponse: HttpInfo<RetrievePageRank200Response>) => apiResponse.data));
     }
 
     /**

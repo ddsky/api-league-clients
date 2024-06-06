@@ -179,6 +179,10 @@ let body:.FoodApiSearchRecipesRequest = {
   addRecipeInformation: true,
   // number | The maximum time in minutes it should take to prepare and cook the recipe. (optional)
   maxTime: 45,
+  // number | The minimum amount of servings the recipe is for. (optional)
+  minServings: 1,
+  // number | The maximum amount of servings the recipe is for. (optional)
+  maxServings: 8,
   // number | The minimum amount of calories the recipe must have per serving. (optional)
   minCalories: 100,
   // number | The maximum amount of calories the recipe can have per serving. (optional)
@@ -355,6 +359,8 @@ Name | Type | Description  | Notes
  **fillIngredients** | [**boolean**] | Add information about the ingredients and whether they are used or missing in relation to the query. | (optional) defaults to undefined
  **addRecipeInformation** | [**boolean**] | If set to true, you get more information about the recipes returned. | (optional) defaults to undefined
  **maxTime** | [**number**] | The maximum time in minutes it should take to prepare and cook the recipe. | (optional) defaults to undefined
+ **minServings** | [**number**] | The minimum amount of servings the recipe is for. | (optional) defaults to undefined
+ **maxServings** | [**number**] | The maximum amount of servings the recipe is for. | (optional) defaults to undefined
  **minCalories** | [**number**] | The minimum amount of calories the recipe must have per serving. | (optional) defaults to undefined
  **maxCalories** | [**number**] | The maximum amount of calories the recipe can have per serving. | (optional) defaults to undefined
  **minCarbs** | [**number**] | The minimum amount of carbohydrates in grams the recipe must have per serving. | (optional) defaults to undefined

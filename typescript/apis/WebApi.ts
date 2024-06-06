@@ -11,6 +11,7 @@ import {SecurityAuthentication} from '../auth/auth';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
 import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
+import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
 import { SearchWeb200Response } from '../models/SearchWeb200Response';
 
 /**
@@ -136,6 +137,53 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (url !== undefined) {
             requestContext.setQueryParam("url", ObjectSerializer.serialize(url, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+     * Retrieve Page Rank
+     * @param domain The domain for which the page rank should be returned.
+     */
+    public async retrievePageRank(domain: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'domain' is not null or undefined
+        if (domain === null || domain === undefined) {
+            throw new RequiredError("WebApi", "retrievePageRank", "domain");
+        }
+
+
+        // Path Params
+        const localVarPath = '/retrieve-page-rank';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (domain !== undefined) {
+            requestContext.setQueryParam("domain", ObjectSerializer.serialize(domain, "string", ""));
         }
 
 
@@ -352,6 +400,53 @@ export class WebApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "ExtractPublishDate200Response", ""
             ) as ExtractPublishDate200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to retrievePageRank
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async retrievePageRankWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RetrievePageRank200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: RetrievePageRank200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RetrievePageRank200Response", ""
+            ) as RetrievePageRank200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: RetrievePageRank200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "RetrievePageRank200Response", ""
+            ) as RetrievePageRank200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

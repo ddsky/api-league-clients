@@ -21,6 +21,7 @@ import okhttp3.HttpUrl
 
 import com.apileague.client.model.ExtractNews200Response
 import com.apileague.client.model.SearchNews200Response
+import com.apileague.client.model.TopNews200Response
 
 import com.squareup.moshi.Json
 
@@ -277,6 +278,96 @@ class NewsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/search-news",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Top News
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
+     * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+     * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news. (optional)
+     * @return TopNews200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun topNews(sourceCountry: kotlin.String, language: kotlin.String, date: kotlin.String? = null, headlinesOnly: kotlin.Boolean? = null) : TopNews200Response {
+        val localVarResponse = topNewsWithHttpInfo(sourceCountry = sourceCountry, language = language, date = date, headlinesOnly = headlinesOnly)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TopNews200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Top News
+     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
+     * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+     * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news. (optional)
+     * @return ApiResponse<TopNews200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun topNewsWithHttpInfo(sourceCountry: kotlin.String, language: kotlin.String, date: kotlin.String?, headlinesOnly: kotlin.Boolean?) : ApiResponse<TopNews200Response?> {
+        val localVariableConfig = topNewsRequestConfig(sourceCountry = sourceCountry, language = language, date = date, headlinesOnly = headlinesOnly)
+
+        return request<Unit, TopNews200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation topNews
+     *
+     * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
+     * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+     * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+     * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news. (optional)
+     * @return RequestConfig
+     */
+    fun topNewsRequestConfig(sourceCountry: kotlin.String, language: kotlin.String, date: kotlin.String?, headlinesOnly: kotlin.Boolean?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("source-country", listOf(sourceCountry.toString()))
+                put("language", listOf(language.toString()))
+                if (date != null) {
+                    put("date", listOf(date.toString()))
+                }
+                if (headlinesOnly != null) {
+                    put("headlines-only", listOf(headlinesOnly.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/retrieve-top-news",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

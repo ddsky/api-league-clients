@@ -7,6 +7,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**ExtractAuthors**](WebApi.md#extractauthors) | **GET** /extract-authors | Extract Authors |
 | [**ExtractContentFromAWebPage**](WebApi.md#extractcontentfromawebpage) | **GET** /extract-content | Extract Content from a Web Page |
 | [**ExtractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**RetrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**SearchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web |
 
 <a id="extractauthors"></a>
@@ -43,7 +44,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
             var apiInstance = new WebApi(config);
-            var url = https://www.bbc.com/news/entertainment-arts-68270826;  // string | The url with the article from which authors should be extracted.
+            var url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html;  // string | The url with the article from which authors should be extracted.
 
             try
             {
@@ -149,7 +150,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
             var apiInstance = new WebApi(config);
-            var url = https://www.bbc.com/news/entertainment-arts-68270826;  // string | The url for which the content will be extracted.
+            var url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html;  // string | The url for which the content will be extracted.
 
             try
             {
@@ -255,7 +256,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
             var apiInstance = new WebApi(config);
-            var url = https://www.bbc.com/news/entertainment-arts-68270826;  // string | The url for which the publish date should be extracted.
+            var url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html;  // string | The url for which the publish date should be extracted.
 
             try
             {
@@ -303,6 +304,112 @@ catch (ApiException e)
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="retrievepagerank"></a>
+# **RetrievePageRank**
+> RetrievePageRank200Response RetrievePageRank (string domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class RetrievePageRankExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new WebApi(config);
+            var domain = amazon.com;  // string | The domain for which the page rank should be returned.
+
+            try
+            {
+                // Retrieve Page Rank
+                RetrievePageRank200Response result = apiInstance.RetrievePageRank(domain);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WebApi.RetrievePageRank: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RetrievePageRankWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieve Page Rank
+    ApiResponse<RetrievePageRank200Response> response = apiInstance.RetrievePageRankWithHttpInfo(domain);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WebApi.RetrievePageRankWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **domain** | **string** | The domain for which the page rank should be returned. |  |
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

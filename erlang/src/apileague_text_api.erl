@@ -6,12 +6,12 @@
          extract_dates/2, extract_dates/3,
          extract_entities/2, extract_entities/3,
          list_word_synonyms/2, list_word_synonyms/3,
-         part_of_speech_tagging/2, part_of_speech_tagging/3,
          pluralize_word/2, pluralize_word/3,
          score_readability/2, score_readability/3,
          score_text/3, score_text/4,
          singularize_word/2, singularize_word/3,
-         text_stemming/2, text_stemming/3]).
+         stem_text/2, stem_text/3,
+         tag_part_of_speech/2, tag_part_of_speech/3]).
 
 -define(BASE_URL, <<"">>).
 
@@ -141,27 +141,6 @@ list_word_synonyms(Ctx, Word, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Part of Speech Tagging
-%% Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
--spec part_of_speech_tagging(ctx:ctx(), binary()) -> {ok, apileague_part_of_speech_tagging_200_response:apileague_part_of_speech_tagging_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-part_of_speech_tagging(Ctx, Text) ->
-    part_of_speech_tagging(Ctx, Text, #{}).
-
--spec part_of_speech_tagging(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_part_of_speech_tagging_200_response:apileague_part_of_speech_tagging_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-part_of_speech_tagging(Ctx, Text, Optional) ->
-    _OptionalParams = maps:get(params, Optional, #{}),
-    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
-
-    Method = get,
-    Path = [?BASE_URL, "/tag-pos"],
-    QS = lists:flatten([{<<"text">>, Text}])++apileague_utils:optional_params([], _OptionalParams),
-    Headers = [],
-    Body1 = [],
-    ContentTypeHeader = apileague_utils:select_header_content_type([]),
-    Opts = maps:get(hackney_opts, Optional, []),
-
-    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
-
 %% @doc Pluralize Word
 %% Find the plural form of a word.
 -spec pluralize_word(ctx:ctx(), binary()) -> {ok, apileague_pluralize_word_200_response:apileague_pluralize_word_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
@@ -246,19 +225,40 @@ singularize_word(Ctx, Word, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Text Stemming
+%% @doc Stem Text
 %% The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
--spec text_stemming(ctx:ctx(), binary()) -> {ok, apileague_text_stemming_200_response:apileague_text_stemming_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-text_stemming(Ctx, Text) ->
-    text_stemming(Ctx, Text, #{}).
+-spec stem_text(ctx:ctx(), binary()) -> {ok, apileague_stem_text_200_response:apileague_stem_text_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+stem_text(Ctx, Text) ->
+    stem_text(Ctx, Text, #{}).
 
--spec text_stemming(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_text_stemming_200_response:apileague_text_stemming_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-text_stemming(Ctx, Text, Optional) ->
+-spec stem_text(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_stem_text_200_response:apileague_stem_text_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+stem_text(Ctx, Text, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
     Method = get,
     Path = [?BASE_URL, "/stem-text"],
+    QS = lists:flatten([{<<"text">>, Text}])++apileague_utils:optional_params([], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Tag Part of Speech
+%% Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+-spec tag_part_of_speech(ctx:ctx(), binary()) -> {ok, apileague_tag_part_of_speech_200_response:apileague_tag_part_of_speech_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+tag_part_of_speech(Ctx, Text) ->
+    tag_part_of_speech(Ctx, Text, #{}).
+
+-spec tag_part_of_speech(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_tag_part_of_speech_200_response:apileague_tag_part_of_speech_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+tag_part_of_speech(Ctx, Text, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/tag-pos"],
     QS = lists:flatten([{<<"text">>, Text}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],

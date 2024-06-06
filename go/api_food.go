@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.0.0
+API version: 1.2.0
 Contact: mail@apileague.com
 */
 
@@ -353,6 +353,8 @@ type ApiSearchRecipesRequest struct {
 	fillIngredients *bool
 	addRecipeInformation *bool
 	maxTime *int32
+	minServings *int32
+	maxServings *int32
 	minCalories *float64
 	maxCalories *float64
 	minCarbs *float64
@@ -500,6 +502,18 @@ func (r ApiSearchRecipesRequest) AddRecipeInformation(addRecipeInformation bool)
 // The maximum time in minutes it should take to prepare and cook the recipe.
 func (r ApiSearchRecipesRequest) MaxTime(maxTime int32) ApiSearchRecipesRequest {
 	r.maxTime = &maxTime
+	return r
+}
+
+// The minimum amount of servings the recipe is for.
+func (r ApiSearchRecipesRequest) MinServings(minServings int32) ApiSearchRecipesRequest {
+	r.minServings = &minServings
+	return r
+}
+
+// The maximum amount of servings the recipe is for.
+func (r ApiSearchRecipesRequest) MaxServings(maxServings int32) ApiSearchRecipesRequest {
+	r.maxServings = &maxServings
 	return r
 }
 
@@ -1034,6 +1048,12 @@ func (a *FoodAPIService) SearchRecipesExecute(r ApiSearchRecipesRequest) (*Searc
 	}
 	if r.maxTime != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "max-time", r.maxTime, "")
+	}
+	if r.minServings != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-servings", r.minServings, "")
+	}
+	if r.maxServings != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-servings", r.maxServings, "")
 	}
 	if r.minCalories != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "min-calories", r.minCalories, "")

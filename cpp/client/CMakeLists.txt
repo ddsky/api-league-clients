@@ -33,13 +33,13 @@ add_library(${PROJECT_NAME}
   OAIFindSimilarBooks_200_response.h
   OAIGenerateNonsenseWord_200_response.h
   OAIListWordSynonyms_200_response.h
-  OAIPartOfSpeechTagging_200_response.h
   OAIPluralizeWord_200_response.h
   OAIRandomMeme_200_response.h
   OAIRandomPoem_200_response.h
   OAIRandomQuote_200_response.h
   OAIRandomTrivia_200_response.h
   OAIReadKeyValueFromStore_200_response.h
+  OAIRetrievePageRank_200_response.h
   OAIRetrieveRecipeInformation_200_response.h
   OAIRetrieveRecipeInformation_200_response_credits.h
   OAIRetrieveRecipeInformation_200_response_dietary_properties.h
@@ -95,8 +95,12 @@ add_library(${PROJECT_NAME}
   OAISearchWeb_200_response.h
   OAISearchWeb_200_response_results_inner.h
   OAISingularizeWord_200_response.h
+  OAIStemText_200_response.h
   OAIStoreKeyValueGET_200_response.h
-  OAITextStemming_200_response.h
+  OAITagPartOfSpeech_200_response.h
+  OAITopNews_200_response.h
+  OAITopNews_200_response_top_news_inner.h
+  OAITopNews_200_response_top_news_inner_news_inner.h
   OAIArtApi.h
   OAIBooksApi.h
   OAIFoodApi.h
@@ -138,13 +142,13 @@ add_library(${PROJECT_NAME}
   OAIFindSimilarBooks_200_response.cpp
   OAIGenerateNonsenseWord_200_response.cpp
   OAIListWordSynonyms_200_response.cpp
-  OAIPartOfSpeechTagging_200_response.cpp
   OAIPluralizeWord_200_response.cpp
   OAIRandomMeme_200_response.cpp
   OAIRandomPoem_200_response.cpp
   OAIRandomQuote_200_response.cpp
   OAIRandomTrivia_200_response.cpp
   OAIReadKeyValueFromStore_200_response.cpp
+  OAIRetrievePageRank_200_response.cpp
   OAIRetrieveRecipeInformation_200_response.cpp
   OAIRetrieveRecipeInformation_200_response_credits.cpp
   OAIRetrieveRecipeInformation_200_response_dietary_properties.cpp
@@ -200,8 +204,12 @@ add_library(${PROJECT_NAME}
   OAISearchWeb_200_response.cpp
   OAISearchWeb_200_response_results_inner.cpp
   OAISingularizeWord_200_response.cpp
+  OAIStemText_200_response.cpp
   OAIStoreKeyValueGET_200_response.cpp
-  OAITextStemming_200_response.cpp
+  OAITagPartOfSpeech_200_response.cpp
+  OAITopNews_200_response.cpp
+  OAITopNews_200_response_top_news_inner.cpp
+  OAITopNews_200_response_top_news_inner_news_inner.cpp
   OAIArtApi.cpp
   OAIBooksApi.cpp
   OAIFoodApi.cpp

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
 [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
+[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
 
 
 # **extractNews**
@@ -149,6 +150,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 **SearchNews200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **topNews**
+> TopNews200Response topNews()
+
+Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .NewsApi(configuration);
+
+let body:.NewsApiTopNewsRequest = {
+  // string | The ISO 3166 country code of the country for which top news should be retrieved.
+  sourceCountry: "us",
+  // string | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
+  language: "en",
+  // string | The date for which the top news should be retrieved. If no date is given, the current day is assumed. (optional)
+  date: "2024-05-30",
+  // boolean | Whether to only return basic information such as id, title, and url of the news. (optional)
+  headlinesOnly: false,
+};
+
+apiInstance.topNews(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceCountry** | [**string**] | The ISO 3166 country code of the country for which top news should be retrieved. | defaults to undefined
+ **language** | [**string**] | The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | defaults to undefined
+ **date** | [**string**] | The date for which the top news should be retrieved. If no date is given, the current day is assumed. | (optional) defaults to undefined
+ **headlinesOnly** | [**boolean**] | Whether to only return basic information such as id, title, and url of the news. | (optional) defaults to undefined
+
+
+### Return type
+
+**TopNews200Response**
 
 ### Authorization
 

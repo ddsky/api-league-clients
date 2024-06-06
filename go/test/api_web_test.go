@@ -58,6 +58,18 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test WebAPIService RetrievePageRank", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.WebAPI.RetrievePageRank(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test WebAPIService SearchWeb", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

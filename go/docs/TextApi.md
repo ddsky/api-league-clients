@@ -10,12 +10,12 @@ Method | HTTP request | Description
 [**ExtractDates**](TextAPI.md#ExtractDates) | **Get** /extract-dates | Extract Dates
 [**ExtractEntities**](TextAPI.md#ExtractEntities) | **Get** /extract-entities | Extract Entities
 [**ListWordSynonyms**](TextAPI.md#ListWordSynonyms) | **Get** /list-synonyms | List Word Synonyms
-[**PartOfSpeechTagging**](TextAPI.md#PartOfSpeechTagging) | **Get** /tag-pos | Part of Speech Tagging
 [**PluralizeWord**](TextAPI.md#PluralizeWord) | **Get** /pluralize-word | Pluralize Word
 [**ScoreReadability**](TextAPI.md#ScoreReadability) | **Get** /score-readability | Score Readability
 [**ScoreText**](TextAPI.md#ScoreText) | **Get** /score-text | Score Text
 [**SingularizeWord**](TextAPI.md#SingularizeWord) | **Get** /singularize-word | Singularize Word
-[**TextStemming**](TextAPI.md#TextStemming) | **Get** /stem-text | Text Stemming
+[**StemText**](TextAPI.md#StemText) | **Get** /stem-text | Stem Text
+[**TagPartOfSpeech**](TextAPI.md#TagPartOfSpeech) | **Get** /tag-pos | Tag Part of Speech
 
 
 
@@ -417,72 +417,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PartOfSpeechTagging
-
-> PartOfSpeechTagging200Response PartOfSpeechTagging(ctx).Text(text).Execute()
-
-Part of Speech Tagging
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
-)
-
-func main() {
-	text := "The lazy dog jumps over the quick brown fox." // string | The text to tag the part of speech.
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.PartOfSpeechTagging(context.Background()).Text(text).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.PartOfSpeechTagging``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PartOfSpeechTagging`: PartOfSpeechTagging200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.PartOfSpeechTagging`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPartOfSpeechTaggingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **string** | The text to tag the part of speech. | 
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PluralizeWord
 
 > PluralizeWord200Response PluralizeWord(ctx).Word(word).Execute()
@@ -749,11 +683,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TextStemming
+## StemText
 
-> TextStemming200Response TextStemming(ctx).Text(text).Execute()
+> StemText200Response StemText(ctx).Text(text).Execute()
 
-Text Stemming
+Stem Text
 
 
 
@@ -774,13 +708,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.TextStemming(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.StemText(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.TextStemming``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.StemText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TextStemming`: TextStemming200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.TextStemming`: %v\n", resp)
+	// response from `StemText`: StemText200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.StemText`: %v\n", resp)
 }
 ```
 
@@ -790,7 +724,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTextStemmingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStemTextRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -799,7 +733,73 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TagPartOfSpeech
+
+> TagPartOfSpeech200Response TagPartOfSpeech(ctx).Text(text).Execute()
+
+Tag Part of Speech
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	text := "The lazy dog jumps over the quick brown fox." // string | The text to tag the part of speech.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.TagPartOfSpeech(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.TagPartOfSpeech``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TagPartOfSpeech`: TagPartOfSpeech200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.TagPartOfSpeech`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTagPartOfSpeechRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string** | The text to tag the part of speech. | 
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

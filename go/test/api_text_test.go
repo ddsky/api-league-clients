@@ -94,18 +94,6 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService PartOfSpeechTagging", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.TextAPI.PartOfSpeechTagging(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test TextAPIService PluralizeWord", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -154,11 +142,23 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService TextStemming", func(t *testing.T) {
+	t.Run("Test TextAPIService StemText", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.TextStemming(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.StemText(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TextAPIService TagPartOfSpeech", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.TextAPI.TagPartOfSpeech(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

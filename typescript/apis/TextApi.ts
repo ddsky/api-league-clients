@@ -14,12 +14,12 @@ import { DetectSentiment200Response } from '../models/DetectSentiment200Response
 import { ExtractDates200Response } from '../models/ExtractDates200Response';
 import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
 import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PartOfSpeechTagging200Response } from '../models/PartOfSpeechTagging200Response';
 import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
 import { ScoreText200Response } from '../models/ScoreText200Response';
 import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
-import { TextStemming200Response } from '../models/TextStemming200Response';
+import { StemText200Response } from '../models/StemText200Response';
+import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
 
 /**
  * no description
@@ -321,53 +321,6 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Part of Speech Tagging
-     * @param text The text to tag the part of speech.
-     */
-    public async partOfSpeechTagging(text: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'text' is not null or undefined
-        if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "partOfSpeechTagging", "text");
-        }
-
-
-        // Path Params
-        const localVarPath = '/tag-pos';
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (text !== undefined) {
-            requestContext.setQueryParam("text", ObjectSerializer.serialize(text, "string", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["apiKey"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["headerApiKey"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
-    /**
      * Find the plural form of a word.
      * Pluralize Word
      * @param word The (noun) word for which the plural form should be found.
@@ -569,20 +522,67 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Text Stemming
+     * Stem Text
      * @param text The text to be stemmed.
      */
-    public async textStemming(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async stemText(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "textStemming", "text");
+            throw new RequiredError("TextApi", "stemText", "text");
         }
 
 
         // Path Params
         const localVarPath = '/stem-text';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (text !== undefined) {
+            requestContext.setQueryParam("text", ObjectSerializer.serialize(text, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+     * Tag Part of Speech
+     * @param text The text to tag the part of speech.
+     */
+    public async tagPartOfSpeech(text: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'text' is not null or undefined
+        if (text === null || text === undefined) {
+            throw new RequiredError("TextApi", "tagPartOfSpeech", "text");
+        }
+
+
+        // Path Params
+        const localVarPath = '/tag-pos';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
@@ -904,53 +904,6 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to partOfSpeechTagging
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async partOfSpeechTaggingWithHttpInfo(response: ResponseContext): Promise<HttpInfo<PartOfSpeechTagging200Response >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: PartOfSpeechTagging200Response = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "PartOfSpeechTagging200Response", ""
-            ) as PartOfSpeechTagging200Response;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("401", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
-        }
-        if (isCodeInRange("402", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
-        }
-        if (isCodeInRange("403", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
-        }
-        if (isCodeInRange("406", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
-        }
-        if (isCodeInRange("429", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: PartOfSpeechTagging200Response = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "PartOfSpeechTagging200Response", ""
-            ) as PartOfSpeechTagging200Response;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
      * @params response Response returned by the server for a request to pluralizeWord
      * @throws ApiException if the response code was not in [200, 299]
      */
@@ -1139,16 +1092,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to textStemming
+     * @params response Response returned by the server for a request to stemText
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async textStemmingWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TextStemming200Response >> {
+     public async stemTextWithHttpInfo(response: ResponseContext): Promise<HttpInfo<StemText200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: TextStemming200Response = ObjectSerializer.deserialize(
+            const body: StemText200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TextStemming200Response", ""
-            ) as TextStemming200Response;
+                "StemText200Response", ""
+            ) as StemText200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1172,10 +1125,57 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: TextStemming200Response = ObjectSerializer.deserialize(
+            const body: StemText200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TextStemming200Response", ""
-            ) as TextStemming200Response;
+                "StemText200Response", ""
+            ) as StemText200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to tagPartOfSpeech
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async tagPartOfSpeechWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TagPartOfSpeech200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: TagPartOfSpeech200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "TagPartOfSpeech200Response", ""
+            ) as TagPartOfSpeech200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: TagPartOfSpeech200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "TagPartOfSpeech200Response", ""
+            ) as TagPartOfSpeech200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

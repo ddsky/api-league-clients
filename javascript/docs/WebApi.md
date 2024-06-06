@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
 [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
+[**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
 
 
@@ -36,7 +37,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApileagueJs.WebApi();
-let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url with the article from which authors should be extracted.
+let url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url with the article from which authors should be extracted.
 apiInstance.extractAuthors(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -92,7 +93,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApileagueJs.WebApi();
-let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the content will be extracted.
+let url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url for which the content will be extracted.
 apiInstance.extractContentFromAWebPage(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -148,7 +149,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 //headerApiKey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ApileagueJs.WebApi();
-let url = "https://www.bbc.com/news/entertainment-arts-68270826"; // String | The url for which the publish date should be extracted.
+let url = "https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html"; // String | The url for which the publish date should be extracted.
 apiInstance.extractPublishDate(url, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -168,6 +169,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## retrievePageRank
+
+> RetrievePageRank200Response retrievePageRank(domain)
+
+Retrieve Page Rank
+
+This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.WebApi();
+let domain = "amazon.com"; // String | The domain for which the page rank should be returned.
+apiInstance.retrievePageRank(domain, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **String**| The domain for which the page rank should be returned. | 
+
+### Return type
+
+[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
 
 ### Authorization
 

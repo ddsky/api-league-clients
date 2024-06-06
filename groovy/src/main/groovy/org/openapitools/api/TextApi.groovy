@@ -7,12 +7,12 @@ import org.openapitools.model.DetectSentiment200Response
 import org.openapitools.model.ExtractDates200Response
 import org.openapitools.model.ExtractEntities200Response
 import org.openapitools.model.ListWordSynonyms200Response
-import org.openapitools.model.PartOfSpeechTagging200Response
 import org.openapitools.model.PluralizeWord200Response
 import org.openapitools.model.ScoreReadability200Response
 import org.openapitools.model.ScoreText200Response
 import org.openapitools.model.SingularizeWord200Response
-import org.openapitools.model.TextStemming200Response
+import org.openapitools.model.StemText200Response
+import org.openapitools.model.TagPartOfSpeech200Response
 
 class TextApi {
     String basePath = "https://api.apileague.com"
@@ -188,33 +188,6 @@ class TextApi {
 
     }
 
-    def partOfSpeechTagging ( String text, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/tag-pos"
-
-        // params
-        def queryParams = [:]
-        def headerParams = [:]
-        def bodyParams
-        def contentType
-
-        // verify required params are set
-        if (text == null) {
-            throw new RuntimeException("missing required params text")
-        }
-
-        if (text != null) {
-            queryParams.put("text", text)
-        }
-
-
-
-
-        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
-                    "GET", "",
-                    PartOfSpeechTagging200Response.class )
-
-    }
-
     def pluralizeWord ( String word, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/pluralize-word"
 
@@ -330,7 +303,7 @@ class TextApi {
 
     }
 
-    def textStemming ( String text, Closure onSuccess, Closure onFailure)  {
+    def stemText ( String text, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/stem-text"
 
         // params
@@ -353,7 +326,34 @@ class TextApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "GET", "",
-                    TextStemming200Response.class )
+                    StemText200Response.class )
+
+    }
+
+    def tagPartOfSpeech ( String text, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/tag-pos"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (text == null) {
+            throw new RuntimeException("missing required params text")
+        }
+
+        if (text != null) {
+            queryParams.put("text", text)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "",
+                    TagPartOfSpeech200Response.class )
 
     }
 

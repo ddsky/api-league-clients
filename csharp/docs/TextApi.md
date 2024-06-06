@@ -10,12 +10,12 @@ All URIs are relative to *https://api.apileague.com*
 | [**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates |
 | [**ExtractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities |
 | [**ListWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**PartOfSpeechTagging**](TextApi.md#partofspeechtagging) | **GET** /tag-pos | Part of Speech Tagging |
 | [**PluralizeWord**](TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word |
 | [**ScoreReadability**](TextApi.md#scorereadability) | **GET** /score-readability | Score Readability |
 | [**ScoreText**](TextApi.md#scoretext) | **GET** /score-text | Score Text |
 | [**SingularizeWord**](TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word |
-| [**TextStemming**](TextApi.md#textstemming) | **GET** /stem-text | Text Stemming |
+| [**StemText**](TextApi.md#stemtext) | **GET** /stem-text | Stem Text |
+| [**TagPartOfSpeech**](TextApi.md#tagpartofspeech) | **GET** /tag-pos | Tag Part of Speech |
 
 <a id="correctspelling"></a>
 # **CorrectSpelling**
@@ -655,112 +655,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="partofspeechtagging"></a>
-# **PartOfSpeechTagging**
-> PartOfSpeechTagging200Response PartOfSpeechTagging (string text)
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using apileague.Api;
-using apileague.Client;
-using apileague.Model;
-
-namespace Example
-{
-    public class PartOfSpeechTaggingExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.apileague.com";
-            // Configure API key authorization: apiKey
-            config.AddApiKey("api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("api-key", "Bearer");
-            // Configure API key authorization: headerApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-
-            var apiInstance = new TextApi(config);
-            var text = The lazy dog jumps over the quick brown fox.;  // string | The text to tag the part of speech.
-
-            try
-            {
-                // Part of Speech Tagging
-                PartOfSpeechTagging200Response result = apiInstance.PartOfSpeechTagging(text);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling TextApi.PartOfSpeechTagging: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PartOfSpeechTaggingWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Part of Speech Tagging
-    ApiResponse<PartOfSpeechTagging200Response> response = apiInstance.PartOfSpeechTaggingWithHttpInfo(text);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling TextApi.PartOfSpeechTaggingWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **text** | **string** | The text to tag the part of speech. |  |
-
-### Return type
-
-[**PartOfSpeechTagging200Response**](PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **401** | Unauthorized |  -  |
-| **402** | Payment Required |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **406** | Not Acceptable |  -  |
-| **429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a id="pluralizeword"></a>
 # **PluralizeWord**
 > PluralizeWord200Response PluralizeWord (string word)
@@ -1187,11 +1081,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="textstemming"></a>
-# **TextStemming**
-> TextStemming200Response TextStemming (string text)
+<a id="stemtext"></a>
+# **StemText**
+> StemText200Response StemText (string text)
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -1205,7 +1099,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class TextStemmingExample
+    public class StemTextExample
     {
         public static void Main()
         {
@@ -1225,13 +1119,13 @@ namespace Example
 
             try
             {
-                // Text Stemming
-                TextStemming200Response result = apiInstance.TextStemming(text);
+                // Stem Text
+                StemText200Response result = apiInstance.StemText(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.TextStemming: " + e.Message);
+                Debug.Print("Exception when calling TextApi.StemText: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1240,21 +1134,21 @@ namespace Example
 }
 ```
 
-#### Using the TextStemmingWithHttpInfo variant
+#### Using the StemTextWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Text Stemming
-    ApiResponse<TextStemming200Response> response = apiInstance.TextStemmingWithHttpInfo(text);
+    // Stem Text
+    ApiResponse<StemText200Response> response = apiInstance.StemTextWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.TextStemmingWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.StemTextWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1268,7 +1162,113 @@ catch (ApiException e)
 
 ### Return type
 
-[**TextStemming200Response**](TextStemming200Response.md)
+[**StemText200Response**](StemText200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="tagpartofspeech"></a>
+# **TagPartOfSpeech**
+> TagPartOfSpeech200Response TagPartOfSpeech (string text)
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class TagPartOfSpeechExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new TextApi(config);
+            var text = The lazy dog jumps over the quick brown fox.;  // string | The text to tag the part of speech.
+
+            try
+            {
+                // Tag Part of Speech
+                TagPartOfSpeech200Response result = apiInstance.TagPartOfSpeech(text);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TextApi.TagPartOfSpeech: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the TagPartOfSpeechWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Tag Part of Speech
+    ApiResponse<TagPartOfSpeech200Response> response = apiInstance.TagPartOfSpeechWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.TagPartOfSpeechWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text to tag the part of speech. |  |
+
+### Return type
+
+[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
 
 ### Authorization
 

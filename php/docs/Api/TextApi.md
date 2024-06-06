@@ -10,12 +10,12 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | [**extractDates()**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
 | [**extractEntities()**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
 | [**listWordSynonyms()**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**partOfSpeechTagging()**](TextApi.md#partOfSpeechTagging) | **GET** /tag-pos | Part of Speech Tagging |
 | [**pluralizeWord()**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
 | [**scoreReadability()**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
 | [**scoreText()**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
 | [**singularizeWord()**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
-| [**textStemming()**](TextApi.md#textStemming) | **GET** /stem-text | Text Stemming |
+| [**stemText()**](TextApi.md#stemText) | **GET** /stem-text | Stem Text |
+| [**tagPartOfSpeech()**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech |
 
 
 ## `correctSpelling()`
@@ -422,73 +422,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `partOfSpeechTagging()`
-
-```php
-partOfSpeechTagging($text): \OpenAPI\Client\Model\PartOfSpeechTagging200Response
-```
-
-Part of Speech Tagging
-
-Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: apiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-
-// Configure API key authorization: headerApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\TextApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$text = The lazy dog jumps over the quick brown fox.; // string | The text to tag the part of speech.
-
-try {
-    $result = $apiInstance->partOfSpeechTagging($text);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling TextApi->partOfSpeechTagging: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **text** | **string**| The text to tag the part of speech. | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\PartOfSpeechTagging200Response**](../Model/PartOfSpeechTagging200Response.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `pluralizeWord()`
 
 ```php
@@ -759,13 +692,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `textStemming()`
+## `stemText()`
 
 ```php
-textStemming($text): \OpenAPI\Client\Model\TextStemming200Response
+stemText($text): \OpenAPI\Client\Model\StemText200Response
 ```
 
-Text Stemming
+Stem Text
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -796,10 +729,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = The laziest dogs are jumping over the quicker brown foxes.; // string | The text to be stemmed.
 
 try {
-    $result = $apiInstance->textStemming($text);
+    $result = $apiInstance->stemText($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->textStemming: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->stemText: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -811,7 +744,74 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TextStemming200Response**](../Model/TextStemming200Response.md)
+[**\OpenAPI\Client\Model\StemText200Response**](../Model/StemText200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `tagPartOfSpeech()`
+
+```php
+tagPartOfSpeech($text): \OpenAPI\Client\Model\TagPartOfSpeech200Response
+```
+
+Tag Part of Speech
+
+Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\TextApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$text = The lazy dog jumps over the quick brown fox.; // string | The text to tag the part of speech.
+
+try {
+    $result = $apiInstance->tagPartOfSpeech($text);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TextApi->tagPartOfSpeech: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **string**| The text to tag the part of speech. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\TagPartOfSpeech200Response**](../Model/TagPartOfSpeech200Response.md)
 
 ### Authorization
 
