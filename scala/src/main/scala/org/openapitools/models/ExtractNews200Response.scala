@@ -5,29 +5,29 @@ import io.finch.circe._
 import io.circe.generic.semiauto._
 import io.circe.java8.time._
 import apileague._
-import org.openapitools.models.BigDecimal
+import org.openapitools.models.ExtractNews200ResponseImagesInner
+import org.openapitools.models.ExtractNews200ResponseVideosInner
+import scala.collection.immutable.Seq
 
 /**
  * 
  * @param title 
  * @param text 
  * @param url 
- * @param image 
+ * @param images 
+ * @param videos 
  * @param publishUnderscoredate 
- * @param author 
+ * @param authors 
  * @param language 
- * @param sourceUnderscorecountry 
- * @param sentiment 
  */
 case class ExtractNews200Response(title: Option[String],
                 text: Option[String],
                 url: Option[String],
-                image: Option[String],
+                images: Option[Seq[ExtractNews200ResponseImagesInner]],
+                videos: Option[Seq[ExtractNews200ResponseVideosInner]],
                 publishUnderscoredate: Option[String],
-                author: Option[String],
-                language: Option[String],
-                sourceUnderscorecountry: Option[String],
-                sentiment: Option[BigDecimal]
+                authors: Option[Seq[String]],
+                language: Option[String]
                 )
 
 object ExtractNews200Response {

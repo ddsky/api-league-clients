@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
+[**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
 [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
 [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
@@ -66,6 +67,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## detectGenderByName
+
+> DetectGenderByName200Response detectGenderByName(name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.TextApi();
+let name = "Alex"; // String | The name of the perso for which the sentiment should be detected.
+apiInstance.detectGenderByName(name, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| The name of the perso for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

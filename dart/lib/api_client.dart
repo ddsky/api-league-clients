@@ -192,6 +192,8 @@ class ApiClient {
           return ConvertUnits200Response.fromJson(value);
         case 'CorrectSpelling200Response':
           return CorrectSpelling200Response.fromJson(value);
+        case 'DetectGenderByName200Response':
+          return DetectGenderByName200Response.fromJson(value);
         case 'DetectLanguage200ResponseInner':
           return DetectLanguage200ResponseInner.fromJson(value);
         case 'DetectMainImageColor200ResponseInner':
@@ -218,6 +220,10 @@ class ApiClient {
           return ExtractEntities200ResponseEntitiesInner.fromJson(value);
         case 'ExtractNews200Response':
           return ExtractNews200Response.fromJson(value);
+        case 'ExtractNews200ResponseImagesInner':
+          return ExtractNews200ResponseImagesInner.fromJson(value);
+        case 'ExtractNews200ResponseVideosInner':
+          return ExtractNews200ResponseVideosInner.fromJson(value);
         case 'ExtractPublishDate200Response':
           return ExtractPublishDate200Response.fromJson(value);
         case 'FindSimilarBooks200Response':
@@ -362,6 +368,8 @@ class ApiClient {
           return TopNews200ResponseTopNewsInner.fromJson(value);
         case 'TopNews200ResponseTopNewsInnerNewsInner':
           return TopNews200ResponseTopNewsInnerNewsInner.fromJson(value);
+        case 'VerifyEmailAddress200Response':
+          return VerifyEmailAddress200Response.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

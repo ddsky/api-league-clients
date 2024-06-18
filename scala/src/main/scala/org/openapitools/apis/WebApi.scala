@@ -8,6 +8,7 @@ import org.openapitools.models.ExtractContentFromAWebPage200Response
 import org.openapitools.models.ExtractPublishDate200Response
 import org.openapitools.models.RetrievePageRank200Response
 import org.openapitools.models.SearchWeb200Response
+import org.openapitools.models.VerifyEmailAddress200Response
 import io.finch.circe._
 import io.circe.generic.semiauto._
 import com.twitter.concurrent.AsyncStream
@@ -32,7 +33,8 @@ object WebApi {
         extractContentFromAWebPage(da) :+:
         extractPublishDate(da) :+:
         retrievePageRank(da) :+:
-        searchWeb(da)
+        searchWeb(da) :+:
+        verifyEmailAddress(da)
 
 
     private def checkError(e: CommonError) = e match {
@@ -118,6 +120,20 @@ object WebApi {
         private def searchWeb(da: DataAccessor): Endpoint[SearchWeb200Response] =
         get("search-web" :: param("query") :: paramOption("number").map(_.map(_.toInt)) :: param("api-key") :: header("x-api-key")) { (query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String) =>
           da.Web_searchWeb(query, number, authParamapiKey, authParamheaderApiKey) match {
+            case Left(error) => checkError(error)
+            case Right(data) => Ok(data)
+          }
+        } handle {
+          case e: Exception => BadRequest(e)
+        }
+
+        /**
+        * 
+        * @return An endpoint representing a VerifyEmailAddress200Response
+        */
+        private def verifyEmailAddress(da: DataAccessor): Endpoint[VerifyEmailAddress200Response] =
+        get("verify-email" :: param("email") :: param("api-key") :: header("x-api-key")) { (email: String, authParamapiKey: String, authParamheaderApiKey: String) =>
+          da.Web_verifyEmailAddress(email, authParamapiKey, authParamheaderApiKey) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

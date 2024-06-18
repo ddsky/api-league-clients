@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.2.0
+API version: 1.3.0
 Contact: mail@apileague.com
 */
 
@@ -27,6 +27,7 @@ type SearchNews200ResponseNewsInner struct {
 	Language NullableString `json:"language,omitempty"`
 	Id *int32 `json:"id,omitempty"`
 	Text NullableString `json:"text,omitempty"`
+	Video NullableString `json:"video,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	PublishDate NullableString `json:"publish_date,omitempty"`
 	Url NullableString `json:"url,omitempty"`
@@ -324,6 +325,48 @@ func (o *SearchNews200ResponseNewsInner) UnsetText() {
 	o.Text.Unset()
 }
 
+// GetVideo returns the Video field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNews200ResponseNewsInner) GetVideo() string {
+	if o == nil || IsNil(o.Video.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Video.Get()
+}
+
+// GetVideoOk returns a tuple with the Video field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNews200ResponseNewsInner) GetVideoOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Video.Get(), o.Video.IsSet()
+}
+
+// HasVideo returns a boolean if a field has been set.
+func (o *SearchNews200ResponseNewsInner) HasVideo() bool {
+	if o != nil && o.Video.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVideo gets a reference to the given NullableString and assigns it to the Video field.
+func (o *SearchNews200ResponseNewsInner) SetVideo(v string) {
+	o.Video.Set(&v)
+}
+// SetVideoNil sets the value for Video to be an explicit nil
+func (o *SearchNews200ResponseNewsInner) SetVideoNil() {
+	o.Video.Set(nil)
+}
+
+// UnsetVideo ensures that no value is present for Video, not even an explicit nil
+func (o *SearchNews200ResponseNewsInner) UnsetVideo() {
+	o.Video.Unset()
+}
+
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchNews200ResponseNewsInner) GetTitle() string {
 	if o == nil || IsNil(o.Title.Get()) {
@@ -512,6 +555,9 @@ func (o SearchNews200ResponseNewsInner) ToMap() (map[string]interface{}, error) 
 	}
 	if o.Text.IsSet() {
 		toSerialize["text"] = o.Text.Get()
+	}
+	if o.Video.IsSet() {
+		toSerialize["video"] = o.Video.Get()
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()

@@ -199,4 +199,41 @@ defmodule APILeague.Api.Web do
       {429, false}
     ])
   end
+
+  @doc """
+  Verify Email Address
+  This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `email` (String.t): The email address to verify.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.VerifyEmailAddress200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec verify_email_address(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.VerifyEmailAddress200Response.t} | {:error, Tesla.Env.t}
+  def verify_email_address(connection, email, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/verify-email")
+      |> add_param(:query, :email, email)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.VerifyEmailAddress200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
 end

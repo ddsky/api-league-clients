@@ -24,7 +24,6 @@ import com.squareup.moshi.JsonClass
  *
  * @param summary 
  * @param image 
- * @param author 
  * @param id 
  * @param text 
  * @param title 
@@ -41,9 +40,6 @@ data class TopNews200ResponseTopNewsInnerNewsInner (
 
     @Json(name = "image")
     val image: kotlin.String? = null,
-
-    @Json(name = "author")
-    val author: kotlin.String? = null,
 
     @Json(name = "id")
     val id: kotlin.Int? = null,

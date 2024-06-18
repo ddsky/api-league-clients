@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](WebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address
 
 
 # **extractAuthors**
@@ -261,6 +262,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verifyEmailAddress**
+> VerifyEmailAddress200Response verifyEmailAddress(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = WebApi();
+final email = maxtest@gmail.com; // String | The email address to verify.
+
+try {
+    final result = api_instance.verifyEmailAddress(email);
+    print(result);
+} catch (e) {
+    print('Exception when calling WebApi->verifyEmailAddress: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| The email address to verify. | 
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

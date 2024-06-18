@@ -148,7 +148,7 @@ configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
 with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = apileague.NewsApi(api_client)
-    text = 'tesla' # str | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+    text = 'tesla' # str | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
     source_countries = 'us,uk' # str | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
     language = 'en' # str | The ISO 6391 language code of the news. (optional)
     min_sentiment = -0.8 # float | The minimal sentiment of the news in range [-1,1]. (optional)
@@ -180,7 +180,7 @@ with apileague.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **text** | **str**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
  **source_countries** | **str**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
  **language** | **str**| The ISO 6391 language code of the news. | [optional] 
  **min_sentiment** | **float**| The minimal sentiment of the news in range [-1,1]. | [optional] 

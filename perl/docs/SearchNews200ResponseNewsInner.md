@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **language** | **string** |  | [optional] 
 **id** | **int** |  | [optional] 
 **text** | **string** |  | [optional] 
+**video** | **string** |  | [optional] 
 **title** | **string** |  | [optional] 
 **publish_date** | **string** |  | [optional] 
 **url** | **string** |  | [optional] 

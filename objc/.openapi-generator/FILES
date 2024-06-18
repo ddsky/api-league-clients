@@ -55,6 +55,8 @@ OpenAPIClient/Model/OAIConvertUnits200Response.h
 OpenAPIClient/Model/OAIConvertUnits200Response.m
 OpenAPIClient/Model/OAICorrectSpelling200Response.h
 OpenAPIClient/Model/OAICorrectSpelling200Response.m
+OpenAPIClient/Model/OAIDetectGenderByName200Response.h
+OpenAPIClient/Model/OAIDetectGenderByName200Response.m
 OpenAPIClient/Model/OAIDetectLanguage200ResponseInner.h
 OpenAPIClient/Model/OAIDetectLanguage200ResponseInner.m
 OpenAPIClient/Model/OAIDetectMainImageColor200ResponseInner.h
@@ -81,6 +83,10 @@ OpenAPIClient/Model/OAIExtractEntities200ResponseEntitiesInner.h
 OpenAPIClient/Model/OAIExtractEntities200ResponseEntitiesInner.m
 OpenAPIClient/Model/OAIExtractNews200Response.h
 OpenAPIClient/Model/OAIExtractNews200Response.m
+OpenAPIClient/Model/OAIExtractNews200ResponseImagesInner.h
+OpenAPIClient/Model/OAIExtractNews200ResponseImagesInner.m
+OpenAPIClient/Model/OAIExtractNews200ResponseVideosInner.h
+OpenAPIClient/Model/OAIExtractNews200ResponseVideosInner.m
 OpenAPIClient/Model/OAIExtractPublishDate200Response.h
 OpenAPIClient/Model/OAIExtractPublishDate200Response.m
 OpenAPIClient/Model/OAIFindSimilarBooks200Response.h
@@ -225,6 +231,8 @@ OpenAPIClient/Model/OAITopNews200ResponseTopNewsInner.h
 OpenAPIClient/Model/OAITopNews200ResponseTopNewsInner.m
 OpenAPIClient/Model/OAITopNews200ResponseTopNewsInnerNewsInner.h
 OpenAPIClient/Model/OAITopNews200ResponseTopNewsInnerNewsInner.m
+OpenAPIClient/Model/OAIVerifyEmailAddress200Response.h
+OpenAPIClient/Model/OAIVerifyEmailAddress200Response.m
 README.md
 docs/OAIArtApi.md
 docs/OAIBooksApi.md
@@ -233,6 +241,7 @@ docs/OAIComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/OAIComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/OAIConvertUnits200Response.md
 docs/OAICorrectSpelling200Response.md
+docs/OAIDetectGenderByName200Response.md
 docs/OAIDetectLanguage200ResponseInner.md
 docs/OAIDetectMainImageColor200ResponseInner.md
 docs/OAIDetectSentiment200Response.md
@@ -246,6 +255,8 @@ docs/OAIExtractDates200ResponseDatesInner.md
 docs/OAIExtractEntities200Response.md
 docs/OAIExtractEntities200ResponseEntitiesInner.md
 docs/OAIExtractNews200Response.md
+docs/OAIExtractNews200ResponseImagesInner.md
+docs/OAIExtractNews200ResponseVideosInner.md
 docs/OAIExtractPublishDate200Response.md
 docs/OAIFindSimilarBooks200Response.md
 docs/OAIFoodApi.md
@@ -326,5 +337,6 @@ docs/OAITextApi.md
 docs/OAITopNews200Response.md
 docs/OAITopNews200ResponseTopNewsInner.md
 docs/OAITopNews200ResponseTopNewsInnerNewsInner.md
+docs/OAIVerifyEmailAddress200Response.md
 docs/OAIWebApi.md
 git_push.sh

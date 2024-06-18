@@ -31,8 +31,13 @@ void main() {
       // TODO
     });
 
-    // String image
-    test('to test the property `image`', () async {
+    // List<ExtractNews200ResponseImagesInner> images (default value: const [])
+    test('to test the property `images`', () async {
+      // TODO
+    });
+
+    // List<ExtractNews200ResponseVideosInner> videos (default value: const [])
+    test('to test the property `videos`', () async {
       // TODO
     });
 
@@ -41,23 +46,13 @@ void main() {
       // TODO
     });
 
-    // String author
-    test('to test the property `author`', () async {
+    // List<String> authors (default value: const [])
+    test('to test the property `authors`', () async {
       // TODO
     });
 
     // String language
     test('to test the property `language`', () async {
-      // TODO
-    });
-
-    // String sourceCountry
-    test('to test the property `sourceCountry`', () async {
-      // TODO
-    });
-
-    // num sentiment
-    test('to test the property `sentiment`', () async {
       // TODO
     });
 

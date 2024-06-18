@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
 
 
 
@@ -285,6 +286,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## verifyEmailAddress
+
+> VerifyEmailAddress200Response verifyEmailAddress(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.WebApi();
+let email = "maxtest@gmail.com"; // String | The email address to verify.
+apiInstance.verifyEmailAddress(email, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| The email address to verify. | 
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

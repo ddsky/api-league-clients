@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.2.0"
+compile "com.apileague:android-client:1.3.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.2.0.jar
+- target/android-client-1.3.0.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**readKeyValueFromStore**](docs/StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store
 *StorageApi* | [**storeKeyValueGET**](docs/StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
 *TextApi* | [**correctSpelling**](docs/TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
+*TextApi* | [**detectGenderByName**](docs/TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
 *TextApi* | [**detectLanguage**](docs/TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
 *TextApi* | [**detectSentiment**](docs/TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 *TextApi* | [**extractDates**](docs/TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
@@ -127,6 +128,7 @@ Class | Method | HTTP request | Description
 *WebApi* | [**extractPublishDate**](docs/WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
 *WebApi* | [**retrievePageRank**](docs/WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 *WebApi* | [**searchWeb**](docs/WebApi.md#searchWeb) | **GET** /search-web | Search Web
+*WebApi* | [**verifyEmailAddress**](docs/WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
 
 
 ## Documentation for Models
@@ -136,6 +138,7 @@ Class | Method | HTTP request | Description
  - [ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
  - [ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
+ - [DetectGenderByName200Response](docs/DetectGenderByName200Response.md)
  - [DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
  - [DetectMainImageColor200ResponseInner](docs/DetectMainImageColor200ResponseInner.md)
  - [DetectSentiment200Response](docs/DetectSentiment200Response.md)
@@ -149,6 +152,8 @@ Class | Method | HTTP request | Description
  - [ExtractEntities200Response](docs/ExtractEntities200Response.md)
  - [ExtractEntities200ResponseEntitiesInner](docs/ExtractEntities200ResponseEntitiesInner.md)
  - [ExtractNews200Response](docs/ExtractNews200Response.md)
+ - [ExtractNews200ResponseImagesInner](docs/ExtractNews200ResponseImagesInner.md)
+ - [ExtractNews200ResponseVideosInner](docs/ExtractNews200ResponseVideosInner.md)
  - [ExtractPublishDate200Response](docs/ExtractPublishDate200Response.md)
  - [FindSimilarBooks200Response](docs/FindSimilarBooks200Response.md)
  - [GenerateNonsenseWord200Response](docs/GenerateNonsenseWord200Response.md)
@@ -221,6 +226,7 @@ Class | Method | HTTP request | Description
  - [TopNews200Response](docs/TopNews200Response.md)
  - [TopNews200ResponseTopNewsInner](docs/TopNews200ResponseTopNewsInner.md)
  - [TopNews200ResponseTopNewsInnerNewsInner](docs/TopNews200ResponseTopNewsInnerNewsInner.md)
+ - [VerifyEmailAddress200Response](docs/VerifyEmailAddress200Response.md)
 
 
 ## Documentation for Authorization

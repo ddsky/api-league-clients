@@ -4,6 +4,7 @@ import java.io._
 import apileague._
 import org.openapitools.models._
 import org.openapitools.models.CorrectSpelling200Response
+import org.openapitools.models.DetectGenderByName200Response
 import org.openapitools.models.DetectLanguage200ResponseInner
 import org.openapitools.models.DetectSentiment200Response
 import org.openapitools.models.ExtractDates200Response
@@ -37,6 +38,7 @@ object TextApi {
     */
     def endpoints(da: DataAccessor) =
         correctSpelling(da) :+:
+        detectGenderByName(da) :+:
         detectLanguage(da) :+:
         detectSentiment(da) :+:
         extractDates(da) :+:
@@ -77,6 +79,20 @@ object TextApi {
         private def correctSpelling(da: DataAccessor): Endpoint[CorrectSpelling200Response] =
         get("correct-spelling" :: param("text") :: param("language") :: param("api-key") :: header("x-api-key")) { (text: String, language: String, authParamapiKey: String, authParamheaderApiKey: String) =>
           da.Text_correctSpelling(text, language, authParamapiKey, authParamheaderApiKey) match {
+            case Left(error) => checkError(error)
+            case Right(data) => Ok(data)
+          }
+        } handle {
+          case e: Exception => BadRequest(e)
+        }
+
+        /**
+        * 
+        * @return An endpoint representing a DetectGenderByName200Response
+        */
+        private def detectGenderByName(da: DataAccessor): Endpoint[DetectGenderByName200Response] =
+        get("detect-gender" :: param("name") :: param("api-key") :: header("x-api-key")) { (name: String, authParamapiKey: String, authParamheaderApiKey: String) =>
+          da.Text_detectGenderByName(name, authParamapiKey, authParamheaderApiKey) match {
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

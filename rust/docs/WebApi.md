@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date
 [**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web
+[**verify_email_address**](WebApi.md#verify_email_address) | **GET** /verify-email | Verify Email Address
 
 
 
@@ -150,6 +151,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::SearchWeb200Response**](searchWeb_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## verify_email_address
+
+> models::VerifyEmailAddress200Response verify_email_address(email)
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**email** | **String** | The email address to verify. | [required] |
+
+### Return type
+
+[**models::VerifyEmailAddress200Response**](verifyEmailAddress_200_response.md)
 
 ### Authorization
 

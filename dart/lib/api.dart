@@ -45,6 +45,7 @@ part 'model/compute_nutrition200_response_ingredient_breakdown_inner.dart';
 part 'model/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.dart';
 part 'model/convert_units200_response.dart';
 part 'model/correct_spelling200_response.dart';
+part 'model/detect_gender_by_name200_response.dart';
 part 'model/detect_language200_response_inner.dart';
 part 'model/detect_main_image_color200_response_inner.dart';
 part 'model/detect_sentiment200_response.dart';
@@ -58,6 +59,8 @@ part 'model/extract_dates200_response_dates_inner.dart';
 part 'model/extract_entities200_response.dart';
 part 'model/extract_entities200_response_entities_inner.dart';
 part 'model/extract_news200_response.dart';
+part 'model/extract_news200_response_images_inner.dart';
+part 'model/extract_news200_response_videos_inner.dart';
 part 'model/extract_publish_date200_response.dart';
 part 'model/find_similar_books200_response.dart';
 part 'model/generate_nonsense_word200_response.dart';
@@ -130,6 +133,7 @@ part 'model/tag_part_of_speech200_response.dart';
 part 'model/top_news200_response.dart';
 part 'model/top_news200_response_top_news_inner.dart';
 part 'model/top_news200_response_top_news_inner_news_inner.dart';
+part 'model/verify_email_address200_response.dart';
 
 
 /// An [ApiClient] instance that uses the default values obtained from

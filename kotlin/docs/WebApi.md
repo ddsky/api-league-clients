@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
 
 
 <a id="extractAuthors"></a>
@@ -262,6 +263,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="verifyEmailAddress"></a>
+# **verifyEmailAddress**
+> VerifyEmailAddress200Response verifyEmailAddress(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = WebApi()
+val email : kotlin.String = maxtest@gmail.com // kotlin.String | The email address to verify.
+try {
+    val result : VerifyEmailAddress200Response = apiInstance.verifyEmailAddress(email)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebApi#verifyEmailAddress")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebApi#verifyEmailAddress")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **kotlin.String**| The email address to verify. |
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

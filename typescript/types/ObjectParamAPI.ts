@@ -6,6 +6,7 @@ import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/C
 import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
 import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
 import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
@@ -19,6 +20,8 @@ import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200Resp
 import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
 import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
 import { ExtractNews200Response } from '../models/ExtractNews200Response';
+import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
+import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
 import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
@@ -91,6 +94,7 @@ import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response
 import { TopNews200Response } from '../models/TopNews200Response';
 import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
 import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
+import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
 
 import { ObservableArtApi } from "./ObservableAPI";
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
@@ -1606,7 +1610,7 @@ export interface NewsApiExtractNewsRequest {
 
 export interface NewsApiSearchNewsRequest {
     /**
-     * The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @type string
      * @memberof NewsApisearchNews
      */
@@ -1877,6 +1881,15 @@ export interface TextApiCorrectSpellingRequest {
     language: string
 }
 
+export interface TextApiDetectGenderByNameRequest {
+    /**
+     * The name of the perso for which the sentiment should be detected.
+     * @type string
+     * @memberof TextApidetectGenderByName
+     */
+    name: string
+}
+
 export interface TextApiDetectLanguageRequest {
     /**
      * The text for which the language should be detected.
@@ -2005,6 +2018,24 @@ export class ObjectTextApi {
      */
     public correctSpelling(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<CorrectSpelling200Response> {
         return this.api.correctSpelling(param.text, param.language,  options).toPromise();
+    }
+
+    /**
+     * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+     * Detect Gender by Name
+     * @param param the request object
+     */
+    public detectGenderByNameWithHttpInfo(param: TextApiDetectGenderByNameRequest, options?: Configuration): Promise<HttpInfo<DetectGenderByName200Response>> {
+        return this.api.detectGenderByNameWithHttpInfo(param.name,  options).toPromise();
+    }
+
+    /**
+     * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+     * Detect Gender by Name
+     * @param param the request object
+     */
+    public detectGenderByName(param: TextApiDetectGenderByNameRequest, options?: Configuration): Promise<DetectGenderByName200Response> {
+        return this.api.detectGenderByName(param.name,  options).toPromise();
     }
 
     /**
@@ -2261,6 +2292,15 @@ export interface WebApiSearchWebRequest {
     number?: number
 }
 
+export interface WebApiVerifyEmailAddressRequest {
+    /**
+     * The email address to verify.
+     * @type string
+     * @memberof WebApiverifyEmailAddress
+     */
+    email: string
+}
+
 export class ObjectWebApi {
     private api: ObservableWebApi
 
@@ -2356,6 +2396,24 @@ export class ObjectWebApi {
      */
     public searchWeb(param: WebApiSearchWebRequest, options?: Configuration): Promise<SearchWeb200Response> {
         return this.api.searchWeb(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * Verify Email Address
+     * @param param the request object
+     */
+    public verifyEmailAddressWithHttpInfo(param: WebApiVerifyEmailAddressRequest, options?: Configuration): Promise<HttpInfo<VerifyEmailAddress200Response>> {
+        return this.api.verifyEmailAddressWithHttpInfo(param.email,  options).toPromise();
+    }
+
+    /**
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * Verify Email Address
+     * @param param the request object
+     */
+    public verifyEmailAddress(param: WebApiVerifyEmailAddressRequest, options?: Configuration): Promise<VerifyEmailAddress200Response> {
+        return this.api.verifyEmailAddress(param.email,  options).toPromise();
     }
 
 }

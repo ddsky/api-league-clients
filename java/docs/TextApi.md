@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
+| [**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name |
 | [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
 | [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
 | [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
@@ -80,6 +81,87 @@ public class Example {
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+<a id="detectGenderByName"></a>
+# **detectGenderByName**
+> DetectGenderByName200Response detectGenderByName(name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.TextApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    TextApi apiInstance = new TextApi(defaultClient);
+    String name = "Alex"; // String | The name of the perso for which the sentiment should be detected.
+    try {
+      DetectGenderByName200Response result = apiInstance.detectGenderByName(name);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TextApi#detectGenderByName");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| The name of the perso for which the sentiment should be detected. | |
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

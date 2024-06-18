@@ -7,12 +7,11 @@ Name | Type | Description | Notes
 **Title** | Pointer to **NullableString** |  | [optional] 
 **Text** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
-**Image** | Pointer to **NullableString** |  | [optional] 
+**Images** | Pointer to [**[]ExtractNews200ResponseImagesInner**](ExtractNews200ResponseImagesInner.md) |  | [optional] 
+**Videos** | Pointer to [**[]ExtractNews200ResponseVideosInner**](ExtractNews200ResponseVideosInner.md) |  | [optional] 
 **PublishDate** | Pointer to **NullableString** |  | [optional] 
-**Author** | Pointer to **NullableString** |  | [optional] 
+**Authors** | Pointer to **[]string** |  | [optional] 
 **Language** | Pointer to **NullableString** |  | [optional] 
-**SourceCountry** | Pointer to **NullableString** |  | [optional] 
-**Sentiment** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -138,41 +137,56 @@ HasUrl returns a boolean if a field has been set.
 `func (o *ExtractNews200Response) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
-### GetImage
+### GetImages
 
-`func (o *ExtractNews200Response) GetImage() string`
+`func (o *ExtractNews200Response) GetImages() []ExtractNews200ResponseImagesInner`
 
-GetImage returns the Image field if non-nil, zero value otherwise.
+GetImages returns the Images field if non-nil, zero value otherwise.
 
-### GetImageOk
+### GetImagesOk
 
-`func (o *ExtractNews200Response) GetImageOk() (*string, bool)`
+`func (o *ExtractNews200Response) GetImagesOk() (*[]ExtractNews200ResponseImagesInner, bool)`
 
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
+GetImagesOk returns a tuple with the Images field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetImage
+### SetImages
 
-`func (o *ExtractNews200Response) SetImage(v string)`
+`func (o *ExtractNews200Response) SetImages(v []ExtractNews200ResponseImagesInner)`
 
-SetImage sets Image field to given value.
+SetImages sets Images field to given value.
 
-### HasImage
+### HasImages
 
-`func (o *ExtractNews200Response) HasImage() bool`
+`func (o *ExtractNews200Response) HasImages() bool`
 
-HasImage returns a boolean if a field has been set.
+HasImages returns a boolean if a field has been set.
 
-### SetImageNil
+### GetVideos
 
-`func (o *ExtractNews200Response) SetImageNil(b bool)`
+`func (o *ExtractNews200Response) GetVideos() []ExtractNews200ResponseVideosInner`
 
- SetImageNil sets the value for Image to be an explicit nil
+GetVideos returns the Videos field if non-nil, zero value otherwise.
 
-### UnsetImage
-`func (o *ExtractNews200Response) UnsetImage()`
+### GetVideosOk
 
-UnsetImage ensures that no value is present for Image, not even an explicit nil
+`func (o *ExtractNews200Response) GetVideosOk() (*[]ExtractNews200ResponseVideosInner, bool)`
+
+GetVideosOk returns a tuple with the Videos field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVideos
+
+`func (o *ExtractNews200Response) SetVideos(v []ExtractNews200ResponseVideosInner)`
+
+SetVideos sets Videos field to given value.
+
+### HasVideos
+
+`func (o *ExtractNews200Response) HasVideos() bool`
+
+HasVideos returns a boolean if a field has been set.
+
 ### GetPublishDate
 
 `func (o *ExtractNews200Response) GetPublishDate() string`
@@ -208,41 +222,31 @@ HasPublishDate returns a boolean if a field has been set.
 `func (o *ExtractNews200Response) UnsetPublishDate()`
 
 UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
-### GetAuthor
+### GetAuthors
 
-`func (o *ExtractNews200Response) GetAuthor() string`
+`func (o *ExtractNews200Response) GetAuthors() []*string`
 
-GetAuthor returns the Author field if non-nil, zero value otherwise.
+GetAuthors returns the Authors field if non-nil, zero value otherwise.
 
-### GetAuthorOk
+### GetAuthorsOk
 
-`func (o *ExtractNews200Response) GetAuthorOk() (*string, bool)`
+`func (o *ExtractNews200Response) GetAuthorsOk() (*[]*string, bool)`
 
-GetAuthorOk returns a tuple with the Author field if it's non-nil, zero value otherwise
+GetAuthorsOk returns a tuple with the Authors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthor
+### SetAuthors
 
-`func (o *ExtractNews200Response) SetAuthor(v string)`
+`func (o *ExtractNews200Response) SetAuthors(v []*string)`
 
-SetAuthor sets Author field to given value.
+SetAuthors sets Authors field to given value.
 
-### HasAuthor
+### HasAuthors
 
-`func (o *ExtractNews200Response) HasAuthor() bool`
+`func (o *ExtractNews200Response) HasAuthors() bool`
 
-HasAuthor returns a boolean if a field has been set.
+HasAuthors returns a boolean if a field has been set.
 
-### SetAuthorNil
-
-`func (o *ExtractNews200Response) SetAuthorNil(b bool)`
-
- SetAuthorNil sets the value for Author to be an explicit nil
-
-### UnsetAuthor
-`func (o *ExtractNews200Response) UnsetAuthor()`
-
-UnsetAuthor ensures that no value is present for Author, not even an explicit nil
 ### GetLanguage
 
 `func (o *ExtractNews200Response) GetLanguage() string`
@@ -278,66 +282,6 @@ HasLanguage returns a boolean if a field has been set.
 `func (o *ExtractNews200Response) UnsetLanguage()`
 
 UnsetLanguage ensures that no value is present for Language, not even an explicit nil
-### GetSourceCountry
-
-`func (o *ExtractNews200Response) GetSourceCountry() string`
-
-GetSourceCountry returns the SourceCountry field if non-nil, zero value otherwise.
-
-### GetSourceCountryOk
-
-`func (o *ExtractNews200Response) GetSourceCountryOk() (*string, bool)`
-
-GetSourceCountryOk returns a tuple with the SourceCountry field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceCountry
-
-`func (o *ExtractNews200Response) SetSourceCountry(v string)`
-
-SetSourceCountry sets SourceCountry field to given value.
-
-### HasSourceCountry
-
-`func (o *ExtractNews200Response) HasSourceCountry() bool`
-
-HasSourceCountry returns a boolean if a field has been set.
-
-### SetSourceCountryNil
-
-`func (o *ExtractNews200Response) SetSourceCountryNil(b bool)`
-
- SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
-
-### UnsetSourceCountry
-`func (o *ExtractNews200Response) UnsetSourceCountry()`
-
-UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
-### GetSentiment
-
-`func (o *ExtractNews200Response) GetSentiment() float32`
-
-GetSentiment returns the Sentiment field if non-nil, zero value otherwise.
-
-### GetSentimentOk
-
-`func (o *ExtractNews200Response) GetSentimentOk() (*float32, bool)`
-
-GetSentimentOk returns a tuple with the Sentiment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSentiment
-
-`func (o *ExtractNews200Response) SetSentiment(v float32)`
-
-SetSentiment sets Sentiment field to given value.
-
-### HasSentiment
-
-`func (o *ExtractNews200Response) HasSentiment() bool`
-
-HasSentiment returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **language** | **String** |  |  [optional]
 **id** | **Integer** |  |  [optional]
 **text** | **String** |  |  [optional]
+**video** | **String** |  |  [optional]
 **title** | **String** |  |  [optional]
 **publishDate** | **String** |  |  [optional]
 **url** | **String** |  |  [optional]

@@ -53,7 +53,7 @@ Search and filter news by text, date, location, language, and more. The API retu
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**text** | Option<**String**> | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford |  |
+**text** | Option<**String**> | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford |  |
 **source_countries** | Option<**String**> | A comma-separated list of ISO 3166 country codes from which the news should originate. |  |
 **language** | Option<**String**> | The ISO 6391 language code of the news. |  |
 **min_sentiment** | Option<**f64**> | The minimal sentiment of the news in range [-1,1]. |  |

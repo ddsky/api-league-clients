@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](OAITextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling
+[**detectGenderByName**](OAITextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name
 [**detectLanguage**](OAITextApi.md#detectlanguage) | **GET** /detect-language | Detect Language
 [**detectSentiment**](OAITextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](OAITextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
@@ -72,6 +73,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAICorrectSpelling200Response***](OAICorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detectGenderByName**
+```objc
+-(NSURLSessionTask*) detectGenderByNameWithName: (NSString*) name
+        completionHandler: (void (^)(OAIDetectGenderByName200Response* output, NSError* error)) handler;
+```
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* name = Alex; // The name of the perso for which the sentiment should be detected.
+
+OAITextApi*apiInstance = [[OAITextApi alloc] init];
+
+// Detect Gender by Name
+[apiInstance detectGenderByNameWithName:name
+          completionHandler: ^(OAIDetectGenderByName200Response* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAITextApi->detectGenderByName: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **NSString***| The name of the perso for which the sentiment should be detected. | 
+
+### Return type
+
+[**OAIDetectGenderByName200Response***](OAIDetectGenderByName200Response.md)
 
 ### Authorization
 

@@ -49,6 +49,43 @@ defmodule APILeague.Api.Text do
   end
 
   @doc """
+  Detect Gender by Name
+  Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `name` (String.t): The name of the perso for which the sentiment should be detected.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.DetectGenderByName200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec detect_gender_by_name(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.DetectGenderByName200Response.t} | {:error, Tesla.Env.t}
+  def detect_gender_by_name(connection, name, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/detect-gender")
+      |> add_param(:query, :name, name)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.DetectGenderByName200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Detect Language
   Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 

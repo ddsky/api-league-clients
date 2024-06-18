@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
 
 
 
@@ -233,6 +234,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## verifyEmailAddress
+
+> VerifyEmailAddress200Response verifyEmailAddress(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+
+```java
+// Import classes:
+//import com.apileague.WebApi;
+
+WebApi apiInstance = new WebApi();
+String email = maxtest@gmail.com; // String | The email address to verify.
+try {
+    VerifyEmailAddress200Response result = apiInstance.verifyEmailAddress(email);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WebApi#verifyEmailAddress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **String**| The email address to verify. | [default to null]
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

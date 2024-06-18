@@ -67,6 +67,12 @@ class SearchNews200ResponseNewsInnerTest : ShouldSpec() {
             //modelInstance.text shouldBe ("TODO")
         }
 
+        // to test the property `video`
+        should("test video") {
+            // uncomment below to test the property
+            //modelInstance.video shouldBe ("TODO")
+        }
+
         // to test the property `title`
         should("test title") {
             // uncomment below to test the property

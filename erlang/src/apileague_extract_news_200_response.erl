@@ -8,31 +8,28 @@
     #{ 'title' => binary(),
        'text' => binary(),
        'url' => binary(),
-       'image' => binary(),
+       'images' => list(),
+       'videos' => list(),
        'publish_date' => binary(),
-       'author' => binary(),
-       'language' => binary(),
-       'source_country' => binary(),
-       'sentiment' => integer()
+       'authors' => list(),
+       'language' => binary()
      }.
 
 encode(#{ 'title' := Title,
           'text' := Text,
           'url' := Url,
-          'image' := Image,
+          'images' := Images,
+          'videos' := Videos,
           'publish_date' := PublishDate,
-          'author' := Author,
-          'language' := Language,
-          'source_country' := SourceCountry,
-          'sentiment' := Sentiment
+          'authors' := Authors,
+          'language' := Language
         }) ->
     #{ 'title' => Title,
        'text' => Text,
        'url' => Url,
-       'image' => Image,
+       'images' => Images,
+       'videos' => Videos,
        'publish_date' => PublishDate,
-       'author' => Author,
-       'language' => Language,
-       'source_country' => SourceCountry,
-       'sentiment' => Sentiment
+       'authors' => Authors,
+       'language' => Language
      }.

@@ -24,6 +24,7 @@ src/main/scala/org/openapitools/models/ComputeNutrition200ResponseIngredientBrea
 src/main/scala/org/openapitools/models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.scala
 src/main/scala/org/openapitools/models/ConvertUnits200Response.scala
 src/main/scala/org/openapitools/models/CorrectSpelling200Response.scala
+src/main/scala/org/openapitools/models/DetectGenderByName200Response.scala
 src/main/scala/org/openapitools/models/DetectLanguage200ResponseInner.scala
 src/main/scala/org/openapitools/models/DetectMainImageColor200ResponseInner.scala
 src/main/scala/org/openapitools/models/DetectSentiment200Response.scala
@@ -37,6 +38,8 @@ src/main/scala/org/openapitools/models/ExtractDates200ResponseDatesInner.scala
 src/main/scala/org/openapitools/models/ExtractEntities200Response.scala
 src/main/scala/org/openapitools/models/ExtractEntities200ResponseEntitiesInner.scala
 src/main/scala/org/openapitools/models/ExtractNews200Response.scala
+src/main/scala/org/openapitools/models/ExtractNews200ResponseImagesInner.scala
+src/main/scala/org/openapitools/models/ExtractNews200ResponseVideosInner.scala
 src/main/scala/org/openapitools/models/ExtractPublishDate200Response.scala
 src/main/scala/org/openapitools/models/FindSimilarBooks200Response.scala
 src/main/scala/org/openapitools/models/GenerateNonsenseWord200Response.scala
@@ -109,3 +112,4 @@ src/main/scala/org/openapitools/models/TagPartOfSpeech200Response.scala
 src/main/scala/org/openapitools/models/TopNews200Response.scala
 src/main/scala/org/openapitools/models/TopNews200ResponseTopNewsInner.scala
 src/main/scala/org/openapitools/models/TopNews200ResponseTopNewsInnerNewsInner.scala
+src/main/scala/org/openapitools/models/VerifyEmailAddress200Response.scala

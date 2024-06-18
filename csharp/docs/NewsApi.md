@@ -150,7 +150,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
             var apiInstance = new NewsApi(config);
-            var text = tesla;  // string? | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional) 
+            var text = tesla;  // string? | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional) 
             var sourceCountries = us,uk;  // string? | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional) 
             var language = en;  // string? | The ISO 6391 language code of the news. (optional) 
             var minSentiment = -0.8;  // double? | The minimal sentiment of the news in range [-1,1]. (optional) 
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **text** | **string?** | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]  |
+| **text** | **string?** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]  |
 | **sourceCountries** | **string?** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]  |
 | **language** | **string?** | The ISO 6391 language code of the news. | [optional]  |
 | **minSentiment** | **double?** | The minimal sentiment of the news in range [-1,1]. | [optional]  |

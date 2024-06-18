@@ -13,6 +13,7 @@ import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentF
 import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
 import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
 import { SearchWeb200Response } from '../models/SearchWeb200Response';
+import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
 
 /**
  * no description
@@ -238,6 +239,53 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (number !== undefined) {
             requestContext.setQueryParam("number", ObjectSerializer.serialize(number, "number", "int32"));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * Verify Email Address
+     * @param email The email address to verify.
+     */
+    public async verifyEmailAddress(email: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'email' is not null or undefined
+        if (email === null || email === undefined) {
+            throw new RequiredError("WebApi", "verifyEmailAddress", "email");
+        }
+
+
+        // Path Params
+        const localVarPath = '/verify-email';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (email !== undefined) {
+            requestContext.setQueryParam("email", ObjectSerializer.serialize(email, "string", ""));
         }
 
 
@@ -494,6 +542,53 @@ export class WebApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "SearchWeb200Response", ""
             ) as SearchWeb200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to verifyEmailAddress
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async verifyEmailAddressWithHttpInfo(response: ResponseContext): Promise<HttpInfo<VerifyEmailAddress200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: VerifyEmailAddress200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "VerifyEmailAddress200Response", ""
+            ) as VerifyEmailAddress200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: VerifyEmailAddress200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "VerifyEmailAddress200Response", ""
+            ) as VerifyEmailAddress200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

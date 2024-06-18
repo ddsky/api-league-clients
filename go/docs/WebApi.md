@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ExtractPublishDate**](WebAPI.md#ExtractPublishDate) | **Get** /extract-publish-date | Extract Publish Date
 [**RetrievePageRank**](WebAPI.md#RetrievePageRank) | **Get** /retrieve-page-rank | Retrieve Page Rank
 [**SearchWeb**](WebAPI.md#SearchWeb) | **Get** /search-web | Search Web
+[**VerifyEmailAddress**](WebAPI.md#VerifyEmailAddress) | **Get** /verify-email | Verify Email Address
 
 
 
@@ -329,6 +330,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VerifyEmailAddress
+
+> VerifyEmailAddress200Response VerifyEmailAddress(ctx).Email(email).Execute()
+
+Verify Email Address
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	email := "maxtest@gmail.com" // string | The email address to verify.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.WebAPI.VerifyEmailAddress(context.Background()).Email(email).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.VerifyEmailAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VerifyEmailAddress`: VerifyEmailAddress200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.VerifyEmailAddress`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVerifyEmailAddressRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string** | The email address to verify. | 
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

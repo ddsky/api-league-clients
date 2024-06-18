@@ -6,6 +6,7 @@ import org.openapitools.model.ExtractContentFromAWebPage200Response
 import org.openapitools.model.ExtractPublishDate200Response
 import org.openapitools.model.RetrievePageRank200Response
 import org.openapitools.model.SearchWeb200Response
+import org.openapitools.model.VerifyEmailAddress200Response
 
 class WebApi {
     String basePath = "https://api.apileague.com"
@@ -147,6 +148,33 @@ class WebApi {
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "GET", "",
                     SearchWeb200Response.class )
+
+    }
+
+    def verifyEmailAddress ( String email, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/verify-email"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (email == null) {
+            throw new RuntimeException("missing required params email")
+        }
+
+        if (email != null) {
+            queryParams.put("email", email)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "",
+                    VerifyEmailAddress200Response.class )
 
     }
 

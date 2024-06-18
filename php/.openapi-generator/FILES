@@ -20,6 +20,7 @@ docs/Model/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/Model/ConvertUnits200Response.md
 docs/Model/CorrectSpelling200Response.md
+docs/Model/DetectGenderByName200Response.md
 docs/Model/DetectLanguage200ResponseInner.md
 docs/Model/DetectMainImageColor200ResponseInner.md
 docs/Model/DetectSentiment200Response.md
@@ -33,6 +34,8 @@ docs/Model/ExtractDates200ResponseDatesInner.md
 docs/Model/ExtractEntities200Response.md
 docs/Model/ExtractEntities200ResponseEntitiesInner.md
 docs/Model/ExtractNews200Response.md
+docs/Model/ExtractNews200ResponseImagesInner.md
+docs/Model/ExtractNews200ResponseVideosInner.md
 docs/Model/ExtractPublishDate200Response.md
 docs/Model/FindSimilarBooks200Response.md
 docs/Model/GenerateNonsenseWord200Response.md
@@ -105,6 +108,7 @@ docs/Model/TagPartOfSpeech200Response.md
 docs/Model/TopNews200Response.md
 docs/Model/TopNews200ResponseTopNewsInner.md
 docs/Model/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/Model/VerifyEmailAddress200Response.md
 git_push.sh
 lib/ApiException.php
 lib/Api/ArtApi.php
@@ -125,6 +129,7 @@ lib/Model/ComputeNutrition200ResponseIngredientBreakdownInner.php
 lib/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.php
 lib/Model/ConvertUnits200Response.php
 lib/Model/CorrectSpelling200Response.php
+lib/Model/DetectGenderByName200Response.php
 lib/Model/DetectLanguage200ResponseInner.php
 lib/Model/DetectMainImageColor200ResponseInner.php
 lib/Model/DetectSentiment200Response.php
@@ -138,6 +143,8 @@ lib/Model/ExtractDates200ResponseDatesInner.php
 lib/Model/ExtractEntities200Response.php
 lib/Model/ExtractEntities200ResponseEntitiesInner.php
 lib/Model/ExtractNews200Response.php
+lib/Model/ExtractNews200ResponseImagesInner.php
+lib/Model/ExtractNews200ResponseVideosInner.php
 lib/Model/ExtractPublishDate200Response.php
 lib/Model/FindSimilarBooks200Response.php
 lib/Model/GenerateNonsenseWord200Response.php
@@ -211,6 +218,7 @@ lib/Model/TagPartOfSpeech200Response.php
 lib/Model/TopNews200Response.php
 lib/Model/TopNews200ResponseTopNewsInner.php
 lib/Model/TopNews200ResponseTopNewsInnerNewsInner.php
+lib/Model/VerifyEmailAddress200Response.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/ArtApiTest.php
@@ -229,6 +237,7 @@ test/Model/ComputeNutrition200ResponseIngredientBreakdownInnerTest.php
 test/Model/ComputeNutrition200ResponseTest.php
 test/Model/ConvertUnits200ResponseTest.php
 test/Model/CorrectSpelling200ResponseTest.php
+test/Model/DetectGenderByName200ResponseTest.php
 test/Model/DetectLanguage200ResponseInnerTest.php
 test/Model/DetectMainImageColor200ResponseInnerTest.php
 test/Model/DetectSentiment200ResponseDocumentTest.php
@@ -241,7 +250,9 @@ test/Model/ExtractDates200ResponseDatesInnerTest.php
 test/Model/ExtractDates200ResponseTest.php
 test/Model/ExtractEntities200ResponseEntitiesInnerTest.php
 test/Model/ExtractEntities200ResponseTest.php
+test/Model/ExtractNews200ResponseImagesInnerTest.php
 test/Model/ExtractNews200ResponseTest.php
+test/Model/ExtractNews200ResponseVideosInnerTest.php
 test/Model/ExtractPublishDate200ResponseTest.php
 test/Model/FindSimilarBooks200ResponseTest.php
 test/Model/GenerateNonsenseWord200ResponseTest.php
@@ -314,3 +325,4 @@ test/Model/TagPartOfSpeech200ResponseTest.php
 test/Model/TopNews200ResponseTest.php
 test/Model/TopNews200ResponseTopNewsInnerNewsInnerTest.php
 test/Model/TopNews200ResponseTopNewsInnerTest.php
+test/Model/VerifyEmailAddress200ResponseTest.php

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correct_spelling**](TextApi.md#correct_spelling) | **GET** /correct-spelling | Correct Spelling
+[**detect_gender_by_name**](TextApi.md#detect_gender_by_name) | **GET** /detect-gender | Detect Gender by Name
 [**detect_language**](TextApi.md#detect_language) | **GET** /detect-language | Detect Language
 [**detect_sentiment**](TextApi.md#detect_sentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
@@ -37,6 +38,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::CorrectSpelling200Response**](correctSpelling_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## detect_gender_by_name
+
+> models::DetectGenderByName200Response detect_gender_by_name(name)
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** | The name of the perso for which the sentiment should be detected. | [required] |
+
+### Return type
+
+[**models::DetectGenderByName200Response**](detectGenderByName_200_response.md)
 
 ### Authorization
 

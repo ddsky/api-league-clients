@@ -11,28 +11,30 @@ defmodule APILeague.Model.ExtractNews200Response do
     :title,
     :text,
     :url,
-    :image,
+    :images,
+    :videos,
     :publish_date,
-    :author,
-    :language,
-    :source_country,
-    :sentiment
+    :authors,
+    :language
   ]
 
   @type t :: %__MODULE__{
     :title => String.t | nil,
     :text => String.t | nil,
     :url => String.t | nil,
-    :image => String.t | nil,
+    :images => [APILeague.Model.ExtractNews200ResponseImagesInner.t] | nil,
+    :videos => [APILeague.Model.ExtractNews200ResponseVideosInner.t] | nil,
     :publish_date => String.t | nil,
-    :author => String.t | nil,
-    :language => String.t | nil,
-    :source_country => String.t | nil,
-    :sentiment => float() | nil
+    :authors => [String.t] | nil,
+    :language => String.t | nil
   }
+
+  alias APILeague.Deserializer
 
   def decode(value) do
     value
+     |> Deserializer.deserialize(:images, :list, APILeague.Model.ExtractNews200ResponseImagesInner)
+     |> Deserializer.deserialize(:videos, :list, APILeague.Model.ExtractNews200ResponseVideosInner)
   end
 end
 

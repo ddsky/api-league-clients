@@ -9,6 +9,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date |
 | [**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web |
+| [**verify_email_address**](WebApi.md#verify_email_address) | **GET** /verify-email | Verify Email Address |
 
 
 ## extract_authors
@@ -384,6 +385,82 @@ end
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## verify_email_address
+
+> <VerifyEmailAddress200Response> verify_email_address(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::WebApi.new
+email = 'maxtest@gmail.com' # String | The email address to verify.
+
+begin
+  # Verify Email Address
+  result = api_instance.verify_email_address(email)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebApi->verify_email_address: #{e}"
+end
+```
+
+#### Using the verify_email_address_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<VerifyEmailAddress200Response>, Integer, Hash)> verify_email_address_with_http_info(email)
+
+```ruby
+begin
+  # Verify Email Address
+  data, status_code, headers = api_instance.verify_email_address_with_http_info(email)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <VerifyEmailAddress200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebApi->verify_email_address_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **email** | **String** | The email address to verify. |  |
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

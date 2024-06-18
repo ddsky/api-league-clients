@@ -14,6 +14,7 @@
    (ds/opt :language) string?
    (ds/opt :id) int?
    (ds/opt :text) string?
+   (ds/opt :video) string?
    (ds/opt :title) string?
    (ds/opt :publish_date) string?
    (ds/opt :url) string?

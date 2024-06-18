@@ -18,6 +18,7 @@ src/main/groovy/org/openapitools/model/ComputeNutrition200ResponseIngredientBrea
 src/main/groovy/org/openapitools/model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.groovy
 src/main/groovy/org/openapitools/model/ConvertUnits200Response.groovy
 src/main/groovy/org/openapitools/model/CorrectSpelling200Response.groovy
+src/main/groovy/org/openapitools/model/DetectGenderByName200Response.groovy
 src/main/groovy/org/openapitools/model/DetectLanguage200ResponseInner.groovy
 src/main/groovy/org/openapitools/model/DetectMainImageColor200ResponseInner.groovy
 src/main/groovy/org/openapitools/model/DetectSentiment200Response.groovy
@@ -31,6 +32,8 @@ src/main/groovy/org/openapitools/model/ExtractDates200ResponseDatesInner.groovy
 src/main/groovy/org/openapitools/model/ExtractEntities200Response.groovy
 src/main/groovy/org/openapitools/model/ExtractEntities200ResponseEntitiesInner.groovy
 src/main/groovy/org/openapitools/model/ExtractNews200Response.groovy
+src/main/groovy/org/openapitools/model/ExtractNews200ResponseImagesInner.groovy
+src/main/groovy/org/openapitools/model/ExtractNews200ResponseVideosInner.groovy
 src/main/groovy/org/openapitools/model/ExtractPublishDate200Response.groovy
 src/main/groovy/org/openapitools/model/FindSimilarBooks200Response.groovy
 src/main/groovy/org/openapitools/model/GenerateNonsenseWord200Response.groovy
@@ -103,3 +106,4 @@ src/main/groovy/org/openapitools/model/TagPartOfSpeech200Response.groovy
 src/main/groovy/org/openapitools/model/TopNews200Response.groovy
 src/main/groovy/org/openapitools/model/TopNews200ResponseTopNewsInner.groovy
 src/main/groovy/org/openapitools/model/TopNews200ResponseTopNewsInnerNewsInner.groovy
+src/main/groovy/org/openapitools/model/VerifyEmailAddress200Response.groovy

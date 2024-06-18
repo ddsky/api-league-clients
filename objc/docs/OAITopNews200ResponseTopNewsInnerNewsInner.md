@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary** | **NSString*** |  | [optional] 
 **image** | **NSString*** |  | [optional] 
-**author** | **NSString*** |  | [optional] 
 **_id** | **NSNumber*** |  | [optional] 
 **text** | **NSString*** |  | [optional] 
 **title** | **NSString*** |  | [optional] 

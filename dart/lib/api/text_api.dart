@@ -83,6 +83,66 @@ class TextApi {
     return null;
   }
 
+  /// Detect Gender by Name
+  ///
+  /// Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] name (required):
+  ///   The name of the perso for which the sentiment should be detected.
+  Future<Response> detectGenderByNameWithHttpInfo(String name,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/detect-gender';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'name', name));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Detect Gender by Name
+  ///
+  /// Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] name (required):
+  ///   The name of the perso for which the sentiment should be detected.
+  Future<DetectGenderByName200Response?> detectGenderByName(String name,) async {
+    final response = await detectGenderByNameWithHttpInfo(name,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'DetectGenderByName200Response',) as DetectGenderByName200Response;
+    
+    }
+    return null;
+  }
+
   /// Detect Language
   ///
   /// Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.

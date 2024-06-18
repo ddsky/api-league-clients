@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-	text := "tesla" // string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+	text := "tesla" // string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
 	sourceCountries := "us,uk" // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
 	language := "en" // string | The ISO 6391 language code of the news. (optional)
 	minSentiment := float64(-0.8) // float64 | The minimal sentiment of the news in range [-1,1]. (optional)
@@ -138,7 +138,7 @@ Other parameters are passed through a pointer to a apiSearchNewsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **string** | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | 
+ **text** | **string** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | 
  **sourceCountries** | **string** | A comma-separated list of ISO 3166 country codes from which the news should originate. | 
  **language** | **string** | The ISO 6391 language code of the news. | 
  **minSentiment** | **float64** | The minimal sentiment of the news in range [-1,1]. | 

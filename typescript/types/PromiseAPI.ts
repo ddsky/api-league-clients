@@ -6,6 +6,7 @@ import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/C
 import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
 import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
 import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
@@ -19,6 +20,8 @@ import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200Resp
 import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
 import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
 import { ExtractNews200Response } from '../models/ExtractNews200Response';
+import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
+import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
 import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
@@ -91,6 +94,7 @@ import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response
 import { TopNews200Response } from '../models/TopNews200Response';
 import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
 import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
+import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
 import { ObservableArtApi } from './ObservableAPI';
 
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
@@ -953,7 +957,7 @@ export class PromiseNewsApi {
     /**
      * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
-     * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @param language The ISO 6391 language code of the news.
      * @param minSentiment The minimal sentiment of the news in range [-1,1].
@@ -977,7 +981,7 @@ export class PromiseNewsApi {
     /**
      * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
-     * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @param language The ISO 6391 language code of the news.
      * @param minSentiment The minimal sentiment of the news in range [-1,1].
@@ -1123,6 +1127,26 @@ export class PromiseTextApi {
      */
     public correctSpelling(text: string, language: string, _options?: Configuration): Promise<CorrectSpelling200Response> {
         const result = this.api.correctSpelling(text, language, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+     * Detect Gender by Name
+     * @param name The name of the perso for which the sentiment should be detected.
+     */
+    public detectGenderByNameWithHttpInfo(name: string, _options?: Configuration): Promise<HttpInfo<DetectGenderByName200Response>> {
+        const result = this.api.detectGenderByNameWithHttpInfo(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+     * Detect Gender by Name
+     * @param name The name of the perso for which the sentiment should be detected.
+     */
+    public detectGenderByName(name: string, _options?: Configuration): Promise<DetectGenderByName200Response> {
+        const result = this.api.detectGenderByName(name, _options);
         return result.toPromise();
     }
 
@@ -1466,6 +1490,26 @@ export class PromiseWebApi {
      */
     public searchWeb(query: string, number?: number, _options?: Configuration): Promise<SearchWeb200Response> {
         const result = this.api.searchWeb(query, number, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * Verify Email Address
+     * @param email The email address to verify.
+     */
+    public verifyEmailAddressWithHttpInfo(email: string, _options?: Configuration): Promise<HttpInfo<VerifyEmailAddress200Response>> {
+        const result = this.api.verifyEmailAddressWithHttpInfo(email, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * Verify Email Address
+     * @param email The email address to verify.
+     */
+    public verifyEmailAddress(email: string, _options?: Configuration): Promise<VerifyEmailAddress200Response> {
+        const result = this.api.verifyEmailAddress(email, _options);
         return result.toPromise();
     }
 

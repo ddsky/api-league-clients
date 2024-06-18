@@ -324,4 +324,64 @@ class WebApi {
     }
     return null;
   }
+
+  /// Verify Email Address
+  ///
+  /// This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] email (required):
+  ///   The email address to verify.
+  Future<Response> verifyEmailAddressWithHttpInfo(String email,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/verify-email';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'email', email));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Verify Email Address
+  ///
+  /// This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] email (required):
+  ///   The email address to verify.
+  Future<VerifyEmailAddress200Response?> verifyEmailAddress(String email,) async {
+    final response = await verifyEmailAddressWithHttpInfo(email,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'VerifyEmailAddress200Response',) as VerifyEmailAddress200Response;
+    
+    }
+    return null;
+  }
 }

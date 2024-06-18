@@ -17,6 +17,7 @@ import scala.collection.immutable.Seq
  * @param language 
  * @param id 
  * @param text 
+ * @param video 
  * @param title 
  * @param publishUnderscoredate 
  * @param url 
@@ -29,6 +30,7 @@ case class SearchNews200ResponseNewsInner(summary: Option[String],
                 language: Option[String],
                 id: Option[Int],
                 text: Option[String],
+                video: Option[String],
                 title: Option[String],
                 publishUnderscoredate: Option[String],
                 url: Option[String],

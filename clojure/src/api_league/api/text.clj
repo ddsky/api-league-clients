@@ -8,6 +8,7 @@
             [api-league.specs.search-gifs-200-response-images-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-flavonoids-inner :refer :all]
             [api-league.specs.search-memes-200-response-memes-inner :refer :all]
+            [api-league.specs.extract-news-200-response-videos-inner :refer :all]
             [api-league.specs.singularize-word-200-response :refer :all]
             [api-league.specs.generate-nonsense-word-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-taste :refer :all]
@@ -73,8 +74,10 @@
             [api-league.specs.extract-content-from-a-web-page-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.compute-nutrition-200-response :refer :all]
+            [api-league.specs.verify-email-address-200-response :refer :all]
             [api-league.specs.score-text-200-response-readability :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition :refer :all]
+            [api-league.specs.extract-news-200-response-images-inner :refer :all]
             [api-league.specs.score-text-200-response-style :refer :all]
             [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
             [api-league.specs.search-recipes-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
@@ -91,6 +94,7 @@
             [api-league.specs.stem-text-200-response :refer :all]
             [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours-operational :refer :all]
+            [api-league.specs.detect-gender-by-name-200-response :refer :all]
             [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
             [api-league.specs.correct-spelling-200-response :refer :all]
             )
@@ -118,6 +122,30 @@
   (let [res (:data (correct-spelling-with-http-info text language))]
     (if (:decode-models *api-context*)
        (st/decode correct-spelling-200-response-spec res st/string-transformer)
+       res)))
+
+
+(defn-spec detect-gender-by-name-with-http-info any?
+  "Detect Gender by Name
+  Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known."
+  [name string?]
+  (check-required-params name)
+  (call-api "/detect-gender" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"name" name }
+             :form-params   {}
+             :content-types []
+             :accepts       ["application/json"]
+             :auth-names    ["apiKey" "headerApiKey"]}))
+
+(defn-spec detect-gender-by-name detect-gender-by-name-200-response-spec
+  "Detect Gender by Name
+  Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known."
+  [name string?]
+  (let [res (:data (detect-gender-by-name-with-http-info name))]
+    (if (:decode-models *api-context*)
+       (st/decode detect-gender-by-name-200-response-spec res st/string-transformer)
        res)))
 
 

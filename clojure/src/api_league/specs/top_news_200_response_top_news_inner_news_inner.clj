@@ -9,7 +9,6 @@
   {
    (ds/opt :summary) string?
    (ds/opt :image) string?
-   (ds/opt :author) string?
    (ds/opt :id) int?
    (ds/opt :text) string?
    (ds/opt :title) string?

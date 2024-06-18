@@ -16,12 +16,11 @@ class ExtractNews200Response {
     this.title,
     this.text,
     this.url,
-    this.image,
+    this.images = const [],
+    this.videos = const [],
     this.publishDate,
-    this.author,
+    this.authors = const [],
     this.language,
-    this.sourceCountry,
-    this.sentiment,
   });
 
   String? title;
@@ -30,35 +29,26 @@ class ExtractNews200Response {
 
   String? url;
 
-  String? image;
+  List<ExtractNews200ResponseImagesInner> images;
+
+  List<ExtractNews200ResponseVideosInner> videos;
 
   String? publishDate;
 
-  String? author;
+  List<String> authors;
 
   String? language;
-
-  String? sourceCountry;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? sentiment;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ExtractNews200Response &&
     other.title == title &&
     other.text == text &&
     other.url == url &&
-    other.image == image &&
+    _deepEquality.equals(other.images, images) &&
+    _deepEquality.equals(other.videos, videos) &&
     other.publishDate == publishDate &&
-    other.author == author &&
-    other.language == language &&
-    other.sourceCountry == sourceCountry &&
-    other.sentiment == sentiment;
+    _deepEquality.equals(other.authors, authors) &&
+    other.language == language;
 
   @override
   int get hashCode =>
@@ -66,15 +56,14 @@ class ExtractNews200Response {
     (title == null ? 0 : title!.hashCode) +
     (text == null ? 0 : text!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
-    (image == null ? 0 : image!.hashCode) +
+    (images.hashCode) +
+    (videos.hashCode) +
     (publishDate == null ? 0 : publishDate!.hashCode) +
-    (author == null ? 0 : author!.hashCode) +
-    (language == null ? 0 : language!.hashCode) +
-    (sourceCountry == null ? 0 : sourceCountry!.hashCode) +
-    (sentiment == null ? 0 : sentiment!.hashCode);
+    (authors.hashCode) +
+    (language == null ? 0 : language!.hashCode);
 
   @override
-  String toString() => 'ExtractNews200Response[title=$title, text=$text, url=$url, image=$image, publishDate=$publishDate, author=$author, language=$language, sourceCountry=$sourceCountry, sentiment=$sentiment]';
+  String toString() => 'ExtractNews200Response[title=$title, text=$text, url=$url, images=$images, videos=$videos, publishDate=$publishDate, authors=$authors, language=$language]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -93,35 +82,18 @@ class ExtractNews200Response {
     } else {
       json[r'url'] = null;
     }
-    if (this.image != null) {
-      json[r'image'] = this.image;
-    } else {
-      json[r'image'] = null;
-    }
+      json[r'images'] = this.images;
+      json[r'videos'] = this.videos;
     if (this.publishDate != null) {
       json[r'publish_date'] = this.publishDate;
     } else {
       json[r'publish_date'] = null;
     }
-    if (this.author != null) {
-      json[r'author'] = this.author;
-    } else {
-      json[r'author'] = null;
-    }
+      json[r'authors'] = this.authors;
     if (this.language != null) {
       json[r'language'] = this.language;
     } else {
       json[r'language'] = null;
-    }
-    if (this.sourceCountry != null) {
-      json[r'source_country'] = this.sourceCountry;
-    } else {
-      json[r'source_country'] = null;
-    }
-    if (this.sentiment != null) {
-      json[r'sentiment'] = this.sentiment;
-    } else {
-      json[r'sentiment'] = null;
     }
     return json;
   }
@@ -148,12 +120,13 @@ class ExtractNews200Response {
         title: mapValueOfType<String>(json, r'title'),
         text: mapValueOfType<String>(json, r'text'),
         url: mapValueOfType<String>(json, r'url'),
-        image: mapValueOfType<String>(json, r'image'),
+        images: ExtractNews200ResponseImagesInner.listFromJson(json[r'images']),
+        videos: ExtractNews200ResponseVideosInner.listFromJson(json[r'videos']),
         publishDate: mapValueOfType<String>(json, r'publish_date'),
-        author: mapValueOfType<String>(json, r'author'),
+        authors: json[r'authors'] is Iterable
+            ? (json[r'authors'] as Iterable).cast<String>().toList(growable: false)
+            : const [],
         language: mapValueOfType<String>(json, r'language'),
-        sourceCountry: mapValueOfType<String>(json, r'source_country'),
-        sentiment: num.parse('${json[r'sentiment']}'),
       );
     }
     return null;

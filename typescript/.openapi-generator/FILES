@@ -37,6 +37,7 @@ models/ComputeNutrition200ResponseIngredientBreakdownInner.ts
 models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.ts
 models/ConvertUnits200Response.ts
 models/CorrectSpelling200Response.ts
+models/DetectGenderByName200Response.ts
 models/DetectLanguage200ResponseInner.ts
 models/DetectMainImageColor200ResponseInner.ts
 models/DetectSentiment200Response.ts
@@ -50,6 +51,8 @@ models/ExtractDates200ResponseDatesInner.ts
 models/ExtractEntities200Response.ts
 models/ExtractEntities200ResponseEntitiesInner.ts
 models/ExtractNews200Response.ts
+models/ExtractNews200ResponseImagesInner.ts
+models/ExtractNews200ResponseVideosInner.ts
 models/ExtractPublishDate200Response.ts
 models/FindSimilarBooks200Response.ts
 models/GenerateNonsenseWord200Response.ts
@@ -123,6 +126,7 @@ models/TagPartOfSpeech200Response.ts
 models/TopNews200Response.ts
 models/TopNews200ResponseTopNewsInner.ts
 models/TopNews200ResponseTopNewsInnerNewsInner.ts
+models/VerifyEmailAddress200Response.ts
 models/all.ts
 package.json
 rxjsStub.ts

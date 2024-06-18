@@ -6,7 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **summary** | **String** |  | [optional] |
 | **image** | **String** |  | [optional] |
-| **author** | **String** |  | [optional] |
 | **id** | **Integer** |  | [optional] |
 | **text** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
@@ -22,7 +21,6 @@ require 'openapi_client'
 instance = OpenapiClient::TopNews200ResponseTopNewsInnerNewsInner.new(
   summary: null,
   image: null,
-  author: null,
   id: null,
   text: null,
   title: null,

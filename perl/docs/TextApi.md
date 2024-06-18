@@ -10,6 +10,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correct_spelling**](TextApi.md#correct_spelling) | **GET** /correct-spelling | Correct Spelling
+[**detect_gender_by_name**](TextApi.md#detect_gender_by_name) | **GET** /detect-gender | Detect Gender by Name
 [**detect_language**](TextApi.md#detect_language) | **GET** /detect-language | Detect Language
 [**detect_sentiment**](TextApi.md#detect_sentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
@@ -68,6 +69,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detect_gender_by_name**
+> DetectGenderByName200Response detect_gender_by_name(name => $name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::TextApi;
+my $api_instance = WWW::OpenAPIClient::TextApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $name = Alex; # string | The name of the perso for which the sentiment should be detected.
+
+eval {
+    my $result = $api_instance->detect_gender_by_name(name => $name);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TextApi->detect_gender_by_name: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| The name of the perso for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

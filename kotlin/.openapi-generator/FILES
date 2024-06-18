@@ -8,6 +8,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -21,6 +22,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -101,6 +104,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
@@ -140,6 +144,7 @@ src/main/kotlin/com/apileague/client/model/ComputeNutrition200ResponseIngredient
 src/main/kotlin/com/apileague/client/model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.kt
 src/main/kotlin/com/apileague/client/model/ConvertUnits200Response.kt
 src/main/kotlin/com/apileague/client/model/CorrectSpelling200Response.kt
+src/main/kotlin/com/apileague/client/model/DetectGenderByName200Response.kt
 src/main/kotlin/com/apileague/client/model/DetectLanguage200ResponseInner.kt
 src/main/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInner.kt
 src/main/kotlin/com/apileague/client/model/DetectSentiment200Response.kt
@@ -153,6 +158,8 @@ src/main/kotlin/com/apileague/client/model/ExtractDates200ResponseDatesInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractEntities200Response.kt
 src/main/kotlin/com/apileague/client/model/ExtractEntities200ResponseEntitiesInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractNews200Response.kt
+src/main/kotlin/com/apileague/client/model/ExtractNews200ResponseImagesInner.kt
+src/main/kotlin/com/apileague/client/model/ExtractNews200ResponseVideosInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractPublishDate200Response.kt
 src/main/kotlin/com/apileague/client/model/FindSimilarBooks200Response.kt
 src/main/kotlin/com/apileague/client/model/GenerateNonsenseWord200Response.kt
@@ -225,6 +232,7 @@ src/main/kotlin/com/apileague/client/model/TagPartOfSpeech200Response.kt
 src/main/kotlin/com/apileague/client/model/TopNews200Response.kt
 src/main/kotlin/com/apileague/client/model/TopNews200ResponseTopNewsInner.kt
 src/main/kotlin/com/apileague/client/model/TopNews200ResponseTopNewsInnerNewsInner.kt
+src/main/kotlin/com/apileague/client/model/VerifyEmailAddress200Response.kt
 src/test/kotlin/com/apileague/ArtApiTest.kt
 src/test/kotlin/com/apileague/BooksApiTest.kt
 src/test/kotlin/com/apileague/FoodApiTest.kt
@@ -241,6 +249,7 @@ src/test/kotlin/com/apileague/client/model/ComputeNutrition200ResponseIngredient
 src/test/kotlin/com/apileague/client/model/ComputeNutrition200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ConvertUnits200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/CorrectSpelling200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/DetectGenderByName200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/DetectLanguage200ResponseInnerTest.kt
 src/test/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInnerTest.kt
 src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseDocumentTest.kt
@@ -253,7 +262,9 @@ src/test/kotlin/com/apileague/client/model/ExtractDates200ResponseDatesInnerTest
 src/test/kotlin/com/apileague/client/model/ExtractDates200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractEntities200ResponseEntitiesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractEntities200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/ExtractNews200ResponseImagesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractNews200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/ExtractNews200ResponseVideosInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractPublishDate200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/FindSimilarBooks200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/GenerateNonsenseWord200ResponseTest.kt
@@ -326,3 +337,4 @@ src/test/kotlin/com/apileague/client/model/TagPartOfSpeech200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/TopNews200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/TopNews200ResponseTopNewsInnerNewsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/TopNews200ResponseTopNewsInnerTest.kt
+src/test/kotlin/com/apileague/client/model/VerifyEmailAddress200ResponseTest.kt

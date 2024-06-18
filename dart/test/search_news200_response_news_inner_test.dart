@@ -51,6 +51,11 @@ void main() {
       // TODO
     });
 
+    // String video
+    test('to test the property `video`', () async {
+      // TODO
+    });
+
     // String title
     test('to test the property `title`', () async {
       // TODO

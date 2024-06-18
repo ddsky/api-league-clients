@@ -128,7 +128,7 @@ class NewsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     /**
      * Search News
      * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
      * @param language The ISO 6391 language code of the news. (optional)
      * @param minSentiment The minimal sentiment of the news in range [-1,1]. (optional)
@@ -173,7 +173,7 @@ class NewsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     /**
      * Search News
      * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
      * @param language The ISO 6391 language code of the news. (optional)
      * @param minSentiment The minimal sentiment of the news in range [-1,1]. (optional)
@@ -205,7 +205,7 @@ class NewsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     /**
      * To obtain the request config of the operation searchNews
      *
-     * @param text The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
      * @param language The ISO 6391 language code of the news. (optional)
      * @param minSentiment The minimal sentiment of the news in range [-1,1]. (optional)

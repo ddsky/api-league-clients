@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CorrectSpelling**](TextAPI.md#CorrectSpelling) | **Get** /correct-spelling | Correct Spelling
+[**DetectGenderByName**](TextAPI.md#DetectGenderByName) | **Get** /detect-gender | Detect Gender by Name
 [**DetectLanguage**](TextAPI.md#DetectLanguage) | **Get** /detect-language | Detect Language
 [**DetectSentiment**](TextAPI.md#DetectSentiment) | **Get** /detect-sentiment | Detect Sentiment
 [**ExtractDates**](TextAPI.md#ExtractDates) | **Get** /extract-dates | Extract Dates
@@ -72,6 +73,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DetectGenderByName
+
+> DetectGenderByName200Response DetectGenderByName(ctx).Name(name).Execute()
+
+Detect Gender by Name
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	name := "Alex" // string | The name of the perso for which the sentiment should be detected.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.DetectGenderByName(context.Background()).Name(name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectGenderByName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectGenderByName`: DetectGenderByName200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectGenderByName`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDetectGenderByNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string** | The name of the perso for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

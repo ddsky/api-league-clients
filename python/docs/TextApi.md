@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correct_spelling**](TextApi.md#correct_spelling) | **GET** /correct-spelling | Correct Spelling
+[**detect_gender_by_name**](TextApi.md#detect_gender_by_name) | **GET** /detect-gender | Detect Gender by Name
 [**detect_language**](TextApi.md#detect_language) | **GET** /detect-language | Detect Language
 [**detect_sentiment**](TextApi.md#detect_sentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
@@ -88,6 +89,98 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detect_gender_by_name**
+> DetectGenderByName200Response detect_gender_by_name(name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.detect_gender_by_name200_response import DetectGenderByName200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.TextApi(api_client)
+    name = 'Alex' # str | The name of the perso for which the sentiment should be detected.
+
+    try:
+        # Detect Gender by Name
+        api_response = api_instance.detect_gender_by_name(name)
+        print("The response of TextApi->detect_gender_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TextApi->detect_gender_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The name of the perso for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

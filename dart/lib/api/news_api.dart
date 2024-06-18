@@ -92,7 +92,7 @@ class NewsApi {
   /// Parameters:
   ///
   /// * [String] text:
-  ///   The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
   ///
   /// * [String] sourceCountries:
   ///   A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -213,7 +213,7 @@ class NewsApi {
   /// Parameters:
   ///
   /// * [String] text:
-  ///   The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
   ///
   /// * [String] sourceCountries:
   ///   A comma-separated list of ISO 3166 country codes from which the news should originate.

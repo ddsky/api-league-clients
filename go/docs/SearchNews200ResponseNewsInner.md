@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Language** | Pointer to **NullableString** |  | [optional] 
 **Id** | Pointer to **int32** |  | [optional] 
 **Text** | Pointer to **NullableString** |  | [optional] 
+**Video** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **PublishDate** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
@@ -260,6 +261,41 @@ HasText returns a boolean if a field has been set.
 `func (o *SearchNews200ResponseNewsInner) UnsetText()`
 
 UnsetText ensures that no value is present for Text, not even an explicit nil
+### GetVideo
+
+`func (o *SearchNews200ResponseNewsInner) GetVideo() string`
+
+GetVideo returns the Video field if non-nil, zero value otherwise.
+
+### GetVideoOk
+
+`func (o *SearchNews200ResponseNewsInner) GetVideoOk() (*string, bool)`
+
+GetVideoOk returns a tuple with the Video field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVideo
+
+`func (o *SearchNews200ResponseNewsInner) SetVideo(v string)`
+
+SetVideo sets Video field to given value.
+
+### HasVideo
+
+`func (o *SearchNews200ResponseNewsInner) HasVideo() bool`
+
+HasVideo returns a boolean if a field has been set.
+
+### SetVideoNil
+
+`func (o *SearchNews200ResponseNewsInner) SetVideoNil(b bool)`
+
+ SetVideoNil sets the value for Video to be an explicit nil
+
+### UnsetVideo
+`func (o *SearchNews200ResponseNewsInner) UnsetVideo()`
+
+UnsetVideo ensures that no value is present for Video, not even an explicit nil
 ### GetTitle
 
 `func (o *SearchNews200ResponseNewsInner) GetTitle() string`

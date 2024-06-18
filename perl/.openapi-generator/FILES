@@ -11,6 +11,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -24,6 +25,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -104,6 +107,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 git_push.sh
 lib/WWW/OpenAPIClient/ApiClient.pm
@@ -122,6 +126,7 @@ lib/WWW/OpenAPIClient/Object/ComputeNutrition200ResponseIngredientBreakdownInner
 lib/WWW/OpenAPIClient/Object/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.pm
 lib/WWW/OpenAPIClient/Object/ConvertUnits200Response.pm
 lib/WWW/OpenAPIClient/Object/CorrectSpelling200Response.pm
+lib/WWW/OpenAPIClient/Object/DetectGenderByName200Response.pm
 lib/WWW/OpenAPIClient/Object/DetectLanguage200ResponseInner.pm
 lib/WWW/OpenAPIClient/Object/DetectMainImageColor200ResponseInner.pm
 lib/WWW/OpenAPIClient/Object/DetectSentiment200Response.pm
@@ -135,6 +140,8 @@ lib/WWW/OpenAPIClient/Object/ExtractDates200ResponseDatesInner.pm
 lib/WWW/OpenAPIClient/Object/ExtractEntities200Response.pm
 lib/WWW/OpenAPIClient/Object/ExtractEntities200ResponseEntitiesInner.pm
 lib/WWW/OpenAPIClient/Object/ExtractNews200Response.pm
+lib/WWW/OpenAPIClient/Object/ExtractNews200ResponseImagesInner.pm
+lib/WWW/OpenAPIClient/Object/ExtractNews200ResponseVideosInner.pm
 lib/WWW/OpenAPIClient/Object/ExtractPublishDate200Response.pm
 lib/WWW/OpenAPIClient/Object/FindSimilarBooks200Response.pm
 lib/WWW/OpenAPIClient/Object/GenerateNonsenseWord200Response.pm
@@ -207,6 +214,7 @@ lib/WWW/OpenAPIClient/Object/TagPartOfSpeech200Response.pm
 lib/WWW/OpenAPIClient/Object/TopNews200Response.pm
 lib/WWW/OpenAPIClient/Object/TopNews200ResponseTopNewsInner.pm
 lib/WWW/OpenAPIClient/Object/TopNews200ResponseTopNewsInnerNewsInner.pm
+lib/WWW/OpenAPIClient/Object/VerifyEmailAddress200Response.pm
 lib/WWW/OpenAPIClient/Role.pm
 lib/WWW/OpenAPIClient/Role/AutoDoc.pm
 lib/WWW/OpenAPIClient/StorageApi.pm
@@ -219,6 +227,7 @@ t/ComputeNutrition200ResponseIngredientBreakdownInnerTest.t
 t/ComputeNutrition200ResponseTest.t
 t/ConvertUnits200ResponseTest.t
 t/CorrectSpelling200ResponseTest.t
+t/DetectGenderByName200ResponseTest.t
 t/DetectLanguage200ResponseInnerTest.t
 t/DetectMainImageColor200ResponseInnerTest.t
 t/DetectSentiment200ResponseDocumentTest.t
@@ -231,7 +240,9 @@ t/ExtractDates200ResponseDatesInnerTest.t
 t/ExtractDates200ResponseTest.t
 t/ExtractEntities200ResponseEntitiesInnerTest.t
 t/ExtractEntities200ResponseTest.t
+t/ExtractNews200ResponseImagesInnerTest.t
 t/ExtractNews200ResponseTest.t
+t/ExtractNews200ResponseVideosInnerTest.t
 t/ExtractPublishDate200ResponseTest.t
 t/FindSimilarBooks200ResponseTest.t
 t/FoodApiTest.t
@@ -312,4 +323,5 @@ t/TextApiTest.t
 t/TopNews200ResponseTest.t
 t/TopNews200ResponseTopNewsInnerNewsInnerTest.t
 t/TopNews200ResponseTopNewsInnerTest.t
+t/VerifyEmailAddress200ResponseTest.t
 t/WebApiTest.t

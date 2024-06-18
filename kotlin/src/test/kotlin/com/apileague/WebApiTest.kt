@@ -24,6 +24,7 @@ import com.apileague.client.model.ExtractContentFromAWebPage200Response
 import com.apileague.client.model.ExtractPublishDate200Response
 import com.apileague.client.model.RetrievePageRank200Response
 import com.apileague.client.model.SearchWeb200Response
+import com.apileague.client.model.VerifyEmailAddress200Response
 
 class WebApiTest : ShouldSpec() {
     init {
@@ -68,6 +69,14 @@ class WebApiTest : ShouldSpec() {
             //val query : kotlin.String = penguins // kotlin.String | The search query.
             //val number : kotlin.Int = 5 // kotlin.Int | The number of results to return in range [1,50]
             //val result : SearchWeb200Response = apiInstance.searchWeb(query, number)
+            //result shouldBe ("TODO")
+        }
+
+        // to test verifyEmailAddress
+        should("test verifyEmailAddress") {
+            // uncomment below to test verifyEmailAddress
+            //val email : kotlin.String = maxtest@gmail.com // kotlin.String | The email address to verify.
+            //val result : VerifyEmailAddress200Response = apiInstance.verifyEmailAddress(email)
             //result shouldBe ("TODO")
         }
 

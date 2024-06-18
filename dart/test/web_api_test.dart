@@ -62,5 +62,14 @@ void main() {
       // TODO
     });
 
+    // Verify Email Address
+    //
+    // This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+    //
+    //Future<VerifyEmailAddress200Response> verifyEmailAddress(String email) async
+    test('test verifyEmailAddress', () async {
+      // TODO
+    });
+
   });
 }

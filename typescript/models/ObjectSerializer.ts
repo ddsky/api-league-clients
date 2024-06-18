@@ -3,6 +3,7 @@ export * from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
 export * from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 export * from '../models/ConvertUnits200Response';
 export * from '../models/CorrectSpelling200Response';
+export * from '../models/DetectGenderByName200Response';
 export * from '../models/DetectLanguage200ResponseInner';
 export * from '../models/DetectMainImageColor200ResponseInner';
 export * from '../models/DetectSentiment200Response';
@@ -16,6 +17,8 @@ export * from '../models/ExtractDates200ResponseDatesInner';
 export * from '../models/ExtractEntities200Response';
 export * from '../models/ExtractEntities200ResponseEntitiesInner';
 export * from '../models/ExtractNews200Response';
+export * from '../models/ExtractNews200ResponseImagesInner';
+export * from '../models/ExtractNews200ResponseVideosInner';
 export * from '../models/ExtractPublishDate200Response';
 export * from '../models/FindSimilarBooks200Response';
 export * from '../models/GenerateNonsenseWord200Response';
@@ -88,12 +91,14 @@ export * from '../models/TagPartOfSpeech200Response';
 export * from '../models/TopNews200Response';
 export * from '../models/TopNews200ResponseTopNewsInner';
 export * from '../models/TopNews200ResponseTopNewsInnerNewsInner';
+export * from '../models/VerifyEmailAddress200Response';
 
 import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
 import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
 import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
 import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
 import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
@@ -107,6 +112,8 @@ import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200Resp
 import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
 import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
 import { ExtractNews200Response } from '../models/ExtractNews200Response';
+import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
+import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
 import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
 import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
 import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
@@ -179,6 +186,7 @@ import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response
 import { TopNews200Response } from '../models/TopNews200Response';
 import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
 import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
+import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -201,6 +209,7 @@ let typeMap: {[index: string]: any} = {
     "ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner": ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner,
     "ConvertUnits200Response": ConvertUnits200Response,
     "CorrectSpelling200Response": CorrectSpelling200Response,
+    "DetectGenderByName200Response": DetectGenderByName200Response,
     "DetectLanguage200ResponseInner": DetectLanguage200ResponseInner,
     "DetectMainImageColor200ResponseInner": DetectMainImageColor200ResponseInner,
     "DetectSentiment200Response": DetectSentiment200Response,
@@ -214,6 +223,8 @@ let typeMap: {[index: string]: any} = {
     "ExtractEntities200Response": ExtractEntities200Response,
     "ExtractEntities200ResponseEntitiesInner": ExtractEntities200ResponseEntitiesInner,
     "ExtractNews200Response": ExtractNews200Response,
+    "ExtractNews200ResponseImagesInner": ExtractNews200ResponseImagesInner,
+    "ExtractNews200ResponseVideosInner": ExtractNews200ResponseVideosInner,
     "ExtractPublishDate200Response": ExtractPublishDate200Response,
     "FindSimilarBooks200Response": FindSimilarBooks200Response,
     "GenerateNonsenseWord200Response": GenerateNonsenseWord200Response,
@@ -286,6 +297,7 @@ let typeMap: {[index: string]: any} = {
     "TopNews200Response": TopNews200Response,
     "TopNews200ResponseTopNewsInner": TopNews200ResponseTopNewsInner,
     "TopNews200ResponseTopNewsInnerNewsInner": TopNews200ResponseTopNewsInnerNewsInner,
+    "VerifyEmailAddress200Response": VerifyEmailAddress200Response,
 }
 
 type MimeTypeDescriptor = {

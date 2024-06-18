@@ -27,6 +27,7 @@ apileague/models/compute_nutrition200_response_ingredient_breakdown_inner.py
 apileague/models/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.py
 apileague/models/convert_units200_response.py
 apileague/models/correct_spelling200_response.py
+apileague/models/detect_gender_by_name200_response.py
 apileague/models/detect_language200_response_inner.py
 apileague/models/detect_main_image_color200_response_inner.py
 apileague/models/detect_sentiment200_response.py
@@ -40,6 +41,8 @@ apileague/models/extract_dates200_response_dates_inner.py
 apileague/models/extract_entities200_response.py
 apileague/models/extract_entities200_response_entities_inner.py
 apileague/models/extract_news200_response.py
+apileague/models/extract_news200_response_images_inner.py
+apileague/models/extract_news200_response_videos_inner.py
 apileague/models/extract_publish_date200_response.py
 apileague/models/find_similar_books200_response.py
 apileague/models/generate_nonsense_word200_response.py
@@ -112,6 +115,7 @@ apileague/models/tag_part_of_speech200_response.py
 apileague/models/top_news200_response.py
 apileague/models/top_news200_response_top_news_inner.py
 apileague/models/top_news200_response_top_news_inner_news_inner.py
+apileague/models/verify_email_address200_response.py
 apileague/py.typed
 apileague/rest.py
 docs/ArtApi.md
@@ -121,6 +125,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -134,6 +139,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -214,6 +221,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 git_push.sh
 pyproject.toml
@@ -229,6 +237,7 @@ test/test_compute_nutrition200_response_ingredient_breakdown_inner.py
 test/test_compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.py
 test/test_convert_units200_response.py
 test/test_correct_spelling200_response.py
+test/test_detect_gender_by_name200_response.py
 test/test_detect_language200_response_inner.py
 test/test_detect_main_image_color200_response_inner.py
 test/test_detect_sentiment200_response.py
@@ -242,6 +251,8 @@ test/test_extract_dates200_response_dates_inner.py
 test/test_extract_entities200_response.py
 test/test_extract_entities200_response_entities_inner.py
 test/test_extract_news200_response.py
+test/test_extract_news200_response_images_inner.py
+test/test_extract_news200_response_videos_inner.py
 test/test_extract_publish_date200_response.py
 test/test_find_similar_books200_response.py
 test/test_food_api.py
@@ -322,5 +333,6 @@ test/test_text_api.py
 test/test_top_news200_response.py
 test/test_top_news200_response_top_news_inner.py
 test/test_top_news200_response_top_news_inner_news_inner.py
+test/test_verify_email_address200_response.py
 test/test_web_api.py
 tox.ini

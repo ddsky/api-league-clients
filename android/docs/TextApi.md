@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
+[**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
 [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
 [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
@@ -56,6 +57,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## detectGenderByName
+
+> DetectGenderByName200Response detectGenderByName(name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+
+```java
+// Import classes:
+//import com.apileague.TextApi;
+
+TextApi apiInstance = new TextApi();
+String name = Alex; // String | The name of the perso for which the sentiment should be detected.
+try {
+    DetectGenderByName200Response result = apiInstance.detectGenderByName(name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TextApi#detectGenderByName");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| The name of the perso for which the sentiment should be detected. | [default to null]
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
+import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
 import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
 import { ExtractDates200Response } from '../models/ExtractDates200Response';
@@ -62,6 +63,53 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (language !== undefined) {
             requestContext.setQueryParam("language", ObjectSerializer.serialize(language, "string", ""));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
+     * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+     * Detect Gender by Name
+     * @param name The name of the perso for which the sentiment should be detected.
+     */
+    public async detectGenderByName(name: string, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'name' is not null or undefined
+        if (name === null || name === undefined) {
+            throw new RequiredError("TextApi", "detectGenderByName", "name");
+        }
+
+
+        // Path Params
+        const localVarPath = '/detect-gender';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (name !== undefined) {
+            requestContext.setQueryParam("name", ObjectSerializer.serialize(name, "string", ""));
         }
 
 
@@ -659,6 +707,53 @@ export class TextApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "CorrectSpelling200Response", ""
             ) as CorrectSpelling200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to detectGenderByName
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async detectGenderByNameWithHttpInfo(response: ResponseContext): Promise<HttpInfo<DetectGenderByName200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: DetectGenderByName200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "DetectGenderByName200Response", ""
+            ) as DetectGenderByName200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: DetectGenderByName200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "DetectGenderByName200Response", ""
+            ) as DetectGenderByName200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

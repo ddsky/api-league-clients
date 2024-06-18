@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.2.0
+API version: 1.3.0
 Contact: mail@apileague.com
 */
 
@@ -195,7 +195,7 @@ type ApiSearchNewsRequest struct {
 	number *int32
 }
 
-// The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+// The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
 func (r ApiSearchNewsRequest) Text(text string) ApiSearchNewsRequest {
 	r.text = &text
 	return r

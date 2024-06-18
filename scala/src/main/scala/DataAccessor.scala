@@ -172,6 +172,12 @@ trait DataAccessor {
 
         /**
         * 
+        * @return A DetectGenderByName200Response
+        */
+        def Text_detectGenderByName(name: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,DetectGenderByName200Response] = Left(TODO)
+
+        /**
+        * 
         * @return A Seq[DetectLanguage200ResponseInner]
         */
         def Text_detectLanguage(text: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,Seq[DetectLanguage200ResponseInner]] = Left(TODO)
@@ -265,5 +271,11 @@ trait DataAccessor {
         * @return A SearchWeb200Response
         */
         def Web_searchWeb(query: String, number: Option[Int], authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,SearchWeb200Response] = Left(TODO)
+
+        /**
+        * 
+        * @return A VerifyEmailAddress200Response
+        */
+        def Web_verifyEmailAddress(email: String, authParamapiKey: String, authParamheaderApiKey: String): Either[CommonError,VerifyEmailAddress200Response] = Left(TODO)
 
 }

@@ -9,6 +9,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | [**extractPublishDate()**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
 | [**retrievePageRank()**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**searchWeb()**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
+| [**verifyEmailAddress()**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address |
 
 
 ## `extractAuthors()`
@@ -334,6 +335,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\SearchWeb200Response**](../Model/SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `verifyEmailAddress()`
+
+```php
+verifyEmailAddress($email): \OpenAPI\Client\Model\VerifyEmailAddress200Response
+```
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\WebApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$email = maxtest@gmail.com; // string | The email address to verify.
+
+try {
+    $result = $apiInstance->verifyEmailAddress($email);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WebApi->verifyEmailAddress: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **email** | **string**| The email address to verify. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\VerifyEmailAddress200Response**](../Model/VerifyEmailAddress200Response.md)
 
 ### Authorization
 

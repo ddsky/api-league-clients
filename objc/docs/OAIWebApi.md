@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](OAIWebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](OAIWebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](OAIWebApi.md#searchweb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](OAIWebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address
 
 
 # **extractAuthors**
@@ -313,6 +314,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OAISearchWeb200Response***](OAISearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verifyEmailAddress**
+```objc
+-(NSURLSessionTask*) verifyEmailAddressWithEmail: (NSString*) email
+        completionHandler: (void (^)(OAIVerifyEmailAddress200Response* output, NSError* error)) handler;
+```
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```objc
+OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: apiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"api-key"];
+
+// Configure API key authorization: (authentication scheme: headerApiKey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"x-api-key"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
+
+
+NSString* email = maxtest@gmail.com; // The email address to verify.
+
+OAIWebApi*apiInstance = [[OAIWebApi alloc] init];
+
+// Verify Email Address
+[apiInstance verifyEmailAddressWithEmail:email
+          completionHandler: ^(OAIVerifyEmailAddress200Response* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling OAIWebApi->verifyEmailAddress: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **NSString***| The email address to verify. | 
+
+### Return type
+
+[**OAIVerifyEmailAddress200Response***](OAIVerifyEmailAddress200Response.md)
 
 ### Authorization
 

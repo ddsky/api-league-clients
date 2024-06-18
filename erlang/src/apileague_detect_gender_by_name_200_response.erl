@@ -1,0 +1,17 @@
+-module(apileague_detect_gender_by_name_200_response).
+
+-export([encode/1]).
+
+-export_type([apileague_detect_gender_by_name_200_response/0]).
+
+-type apileague_detect_gender_by_name_200_response() ::
+    #{ 'name' => binary(),
+       'probability_male' => integer()
+     }.
+
+encode(#{ 'name' := Name,
+          'probability_male' := ProbabilityMale
+        }) ->
+    #{ 'name' => Name,
+       'probability_male' => ProbabilityMale
+     }.

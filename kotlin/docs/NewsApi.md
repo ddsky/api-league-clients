@@ -79,7 +79,7 @@ Search and filter news by text, date, location, language, and more. The API retu
 //import com.apileague.client.model.*
 
 val apiInstance = NewsApi()
-val text : kotlin.String = tesla // kotlin.String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+val text : kotlin.String = tesla // kotlin.String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
 val sourceCountries : kotlin.String = us,uk // kotlin.String | A comma-separated list of ISO 3166 country codes from which the news should originate.
 val language : kotlin.String = en // kotlin.String | The ISO 6391 language code of the news.
 val minSentiment : kotlin.Double = -0.8 // kotlin.Double | The minimal sentiment of the news in range [-1,1].
@@ -110,7 +110,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
+ **text** | **kotlin.String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
  **sourceCountries** | **kotlin.String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]
  **language** | **kotlin.String**| The ISO 6391 language code of the news. | [optional]
  **minSentiment** | **kotlin.Double**| The minimal sentiment of the news in range [-1,1]. | [optional]

@@ -37,12 +37,6 @@ class TopNews200ResponseTopNewsInnerNewsInnerTest : ShouldSpec() {
             //modelInstance.image shouldBe ("TODO")
         }
 
-        // to test the property `author`
-        should("test author") {
-            // uncomment below to test the property
-            //modelInstance.author shouldBe ("TODO")
-        }
-
         // to test the property `id`
         should("test id") {
             // uncomment below to test the property

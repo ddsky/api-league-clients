@@ -10,6 +10,7 @@ doc/ComputeNutrition200ResponseIngredientBreakdownInner.md
 doc/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 doc/ConvertUnits200Response.md
 doc/CorrectSpelling200Response.md
+doc/DetectGenderByName200Response.md
 doc/DetectLanguage200ResponseInner.md
 doc/DetectMainImageColor200ResponseInner.md
 doc/DetectSentiment200Response.md
@@ -23,6 +24,8 @@ doc/ExtractDates200ResponseDatesInner.md
 doc/ExtractEntities200Response.md
 doc/ExtractEntities200ResponseEntitiesInner.md
 doc/ExtractNews200Response.md
+doc/ExtractNews200ResponseImagesInner.md
+doc/ExtractNews200ResponseVideosInner.md
 doc/ExtractPublishDate200Response.md
 doc/FindSimilarBooks200Response.md
 doc/FoodApi.md
@@ -103,6 +106,7 @@ doc/TextApi.md
 doc/TopNews200Response.md
 doc/TopNews200ResponseTopNewsInner.md
 doc/TopNews200ResponseTopNewsInnerNewsInner.md
+doc/VerifyEmailAddress200Response.md
 doc/WebApi.md
 git_push.sh
 lib/api.dart
@@ -130,6 +134,7 @@ lib/model/compute_nutrition200_response_ingredient_breakdown_inner.dart
 lib/model/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.dart
 lib/model/convert_units200_response.dart
 lib/model/correct_spelling200_response.dart
+lib/model/detect_gender_by_name200_response.dart
 lib/model/detect_language200_response_inner.dart
 lib/model/detect_main_image_color200_response_inner.dart
 lib/model/detect_sentiment200_response.dart
@@ -143,6 +148,8 @@ lib/model/extract_dates200_response_dates_inner.dart
 lib/model/extract_entities200_response.dart
 lib/model/extract_entities200_response_entities_inner.dart
 lib/model/extract_news200_response.dart
+lib/model/extract_news200_response_images_inner.dart
+lib/model/extract_news200_response_videos_inner.dart
 lib/model/extract_publish_date200_response.dart
 lib/model/find_similar_books200_response.dart
 lib/model/generate_nonsense_word200_response.dart
@@ -215,6 +222,7 @@ lib/model/tag_part_of_speech200_response.dart
 lib/model/top_news200_response.dart
 lib/model/top_news200_response_top_news_inner.dart
 lib/model/top_news200_response_top_news_inner_news_inner.dart
+lib/model/verify_email_address200_response.dart
 pubspec.yaml
 test/art_api_test.dart
 test/books_api_test.dart
@@ -223,6 +231,7 @@ test/compute_nutrition200_response_ingredient_breakdown_inner_test.dart
 test/compute_nutrition200_response_test.dart
 test/convert_units200_response_test.dart
 test/correct_spelling200_response_test.dart
+test/detect_gender_by_name200_response_test.dart
 test/detect_language200_response_inner_test.dart
 test/detect_main_image_color200_response_inner_test.dart
 test/detect_sentiment200_response_document_test.dart
@@ -235,7 +244,9 @@ test/extract_dates200_response_dates_inner_test.dart
 test/extract_dates200_response_test.dart
 test/extract_entities200_response_entities_inner_test.dart
 test/extract_entities200_response_test.dart
+test/extract_news200_response_images_inner_test.dart
 test/extract_news200_response_test.dart
+test/extract_news200_response_videos_inner_test.dart
 test/extract_publish_date200_response_test.dart
 test/find_similar_books200_response_test.dart
 test/food_api_test.dart
@@ -316,4 +327,5 @@ test/text_api_test.dart
 test/top_news200_response_test.dart
 test/top_news200_response_top_news_inner_news_inner_test.dart
 test/top_news200_response_top_news_inner_test.dart
+test/verify_email_address200_response_test.dart
 test/web_api_test.dart

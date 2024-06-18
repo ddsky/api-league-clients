@@ -23,6 +23,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -36,6 +37,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodAPI.md
@@ -116,6 +119,7 @@ docs/TextAPI.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebAPI.md
 git_push.sh
 go.mod
@@ -125,6 +129,7 @@ model_compute_nutrition_200_response_ingredient_breakdown_inner.go
 model_compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.go
 model_convert_units_200_response.go
 model_correct_spelling_200_response.go
+model_detect_gender_by_name_200_response.go
 model_detect_language_200_response_inner.go
 model_detect_main_image_color_200_response_inner.go
 model_detect_sentiment_200_response.go
@@ -138,6 +143,8 @@ model_extract_dates_200_response_dates_inner.go
 model_extract_entities_200_response.go
 model_extract_entities_200_response_entities_inner.go
 model_extract_news_200_response.go
+model_extract_news_200_response_images_inner.go
+model_extract_news_200_response_videos_inner.go
 model_extract_publish_date_200_response.go
 model_find_similar_books_200_response.go
 model_generate_nonsense_word_200_response.go
@@ -210,6 +217,7 @@ model_tag_part_of_speech_200_response.go
 model_top_news_200_response.go
 model_top_news_200_response_top_news_inner.go
 model_top_news_200_response_top_news_inner_news_inner.go
+model_verify_email_address_200_response.go
 response.go
 test/api_art_test.go
 test/api_books_test.go

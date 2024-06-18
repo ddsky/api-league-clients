@@ -22,6 +22,7 @@ lib/api_league/model/compute_nutrition_200_response_ingredient_breakdown_inner.e
 lib/api_league/model/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.ex
 lib/api_league/model/convert_units_200_response.ex
 lib/api_league/model/correct_spelling_200_response.ex
+lib/api_league/model/detect_gender_by_name_200_response.ex
 lib/api_league/model/detect_language_200_response_inner.ex
 lib/api_league/model/detect_main_image_color_200_response_inner.ex
 lib/api_league/model/detect_sentiment_200_response.ex
@@ -35,6 +36,8 @@ lib/api_league/model/extract_dates_200_response_dates_inner.ex
 lib/api_league/model/extract_entities_200_response.ex
 lib/api_league/model/extract_entities_200_response_entities_inner.ex
 lib/api_league/model/extract_news_200_response.ex
+lib/api_league/model/extract_news_200_response_images_inner.ex
+lib/api_league/model/extract_news_200_response_videos_inner.ex
 lib/api_league/model/extract_publish_date_200_response.ex
 lib/api_league/model/find_similar_books_200_response.ex
 lib/api_league/model/generate_nonsense_word_200_response.ex
@@ -107,6 +110,7 @@ lib/api_league/model/tag_part_of_speech_200_response.ex
 lib/api_league/model/top_news_200_response.ex
 lib/api_league/model/top_news_200_response_top_news_inner.ex
 lib/api_league/model/top_news_200_response_top_news_inner_news_inner.ex
+lib/api_league/model/verify_email_address_200_response.ex
 lib/api_league/request_builder.ex
 mix.exs
 test/test_helper.exs

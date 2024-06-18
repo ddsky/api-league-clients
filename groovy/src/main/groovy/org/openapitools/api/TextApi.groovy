@@ -2,6 +2,7 @@ package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
 import org.openapitools.model.CorrectSpelling200Response
+import org.openapitools.model.DetectGenderByName200Response
 import org.openapitools.model.DetectLanguage200ResponseInner
 import org.openapitools.model.DetectSentiment200Response
 import org.openapitools.model.ExtractDates200Response
@@ -50,6 +51,33 @@ class TextApi {
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "GET", "",
                     CorrectSpelling200Response.class )
+
+    }
+
+    def detectGenderByName ( String name, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/detect-gender"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (name == null) {
+            throw new RuntimeException("missing required params name")
+        }
+
+        if (name != null) {
+            queryParams.put("name", name)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "",
+                    DetectGenderByName200Response.class )
 
     }
 

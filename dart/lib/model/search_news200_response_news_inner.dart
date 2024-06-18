@@ -20,6 +20,7 @@ class SearchNews200ResponseNewsInner {
     this.language,
     this.id,
     this.text,
+    this.video,
     this.title,
     this.publishDate,
     this.url,
@@ -52,6 +53,8 @@ class SearchNews200ResponseNewsInner {
 
   String? text;
 
+  String? video;
+
   String? title;
 
   String? publishDate;
@@ -69,6 +72,7 @@ class SearchNews200ResponseNewsInner {
     other.language == language &&
     other.id == id &&
     other.text == text &&
+    other.video == video &&
     other.title == title &&
     other.publishDate == publishDate &&
     other.url == url &&
@@ -84,13 +88,14 @@ class SearchNews200ResponseNewsInner {
     (language == null ? 0 : language!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
     (text == null ? 0 : text!.hashCode) +
+    (video == null ? 0 : video!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
     (publishDate == null ? 0 : publishDate!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
     (authors.hashCode);
 
   @override
-  String toString() => 'SearchNews200ResponseNewsInner[summary=$summary, image=$image, sentiment=$sentiment, sourceCountry=$sourceCountry, language=$language, id=$id, text=$text, title=$title, publishDate=$publishDate, url=$url, authors=$authors]';
+  String toString() => 'SearchNews200ResponseNewsInner[summary=$summary, image=$image, sentiment=$sentiment, sourceCountry=$sourceCountry, language=$language, id=$id, text=$text, video=$video, title=$title, publishDate=$publishDate, url=$url, authors=$authors]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -128,6 +133,11 @@ class SearchNews200ResponseNewsInner {
       json[r'text'] = this.text;
     } else {
       json[r'text'] = null;
+    }
+    if (this.video != null) {
+      json[r'video'] = this.video;
+    } else {
+      json[r'video'] = null;
     }
     if (this.title != null) {
       json[r'title'] = this.title;
@@ -174,6 +184,7 @@ class SearchNews200ResponseNewsInner {
         language: mapValueOfType<String>(json, r'language'),
         id: mapValueOfType<int>(json, r'id'),
         text: mapValueOfType<String>(json, r'text'),
+        video: mapValueOfType<String>(json, r'video'),
         title: mapValueOfType<String>(json, r'title'),
         publishDate: mapValueOfType<String>(json, r'publish_date'),
         url: mapValueOfType<String>(json, r'url'),

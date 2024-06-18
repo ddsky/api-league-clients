@@ -24,6 +24,7 @@ import com.apileague.client.model.ExtractContentFromAWebPage200Response
 import com.apileague.client.model.ExtractPublishDate200Response
 import com.apileague.client.model.RetrievePageRank200Response
 import com.apileague.client.model.SearchWeb200Response
+import com.apileague.client.model.VerifyEmailAddress200Response
 
 import com.squareup.moshi.Json
 
@@ -418,6 +419,80 @@ class WebApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/search-web",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Verify Email Address
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * @param email The email address to verify.
+     * @return VerifyEmailAddress200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun verifyEmailAddress(email: kotlin.String) : VerifyEmailAddress200Response {
+        val localVarResponse = verifyEmailAddressWithHttpInfo(email = email)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as VerifyEmailAddress200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Verify Email Address
+     * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+     * @param email The email address to verify.
+     * @return ApiResponse<VerifyEmailAddress200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun verifyEmailAddressWithHttpInfo(email: kotlin.String) : ApiResponse<VerifyEmailAddress200Response?> {
+        val localVariableConfig = verifyEmailAddressRequestConfig(email = email)
+
+        return request<Unit, VerifyEmailAddress200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation verifyEmailAddress
+     *
+     * @param email The email address to verify.
+     * @return RequestConfig
+     */
+    fun verifyEmailAddressRequestConfig(email: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("email", listOf(email.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/verify-email",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary** | **String** |  | [optional] 
 **image** | **String** |  | [optional] 
-**author** | **String** |  | [optional] 
 **id** | **int** |  | [optional] 
 **text** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 

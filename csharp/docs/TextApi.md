@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**CorrectSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling |
+| [**DetectGenderByName**](TextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name |
 | [**DetectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language |
 | [**DetectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment |
 | [**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates |
@@ -101,6 +102,112 @@ catch (ApiException e)
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="detectgenderbyname"></a>
+# **DetectGenderByName**
+> DetectGenderByName200Response DetectGenderByName (string name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class DetectGenderByNameExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new TextApi(config);
+            var name = Alex;  // string | The name of the perso for which the sentiment should be detected.
+
+            try
+            {
+                // Detect Gender by Name
+                DetectGenderByName200Response result = apiInstance.DetectGenderByName(name);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TextApi.DetectGenderByName: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DetectGenderByNameWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Detect Gender by Name
+    ApiResponse<DetectGenderByName200Response> response = apiInstance.DetectGenderByNameWithHttpInfo(name);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.DetectGenderByNameWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **name** | **string** | The name of the perso for which the sentiment should be detected. |  |
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

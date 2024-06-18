@@ -25,6 +25,7 @@ main =
       propMimeEq MimeJSON (Proxy :: Proxy ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner)
       propMimeEq MimeJSON (Proxy :: Proxy ConvertUnits200Response)
       propMimeEq MimeJSON (Proxy :: Proxy CorrectSpelling200Response)
+      propMimeEq MimeJSON (Proxy :: Proxy DetectGenderByName200Response)
       propMimeEq MimeJSON (Proxy :: Proxy DetectLanguage200ResponseInner)
       propMimeEq MimeJSON (Proxy :: Proxy DetectMainImageColor200ResponseInner)
       propMimeEq MimeJSON (Proxy :: Proxy DetectSentiment200Response)
@@ -38,6 +39,8 @@ main =
       propMimeEq MimeJSON (Proxy :: Proxy ExtractEntities200Response)
       propMimeEq MimeJSON (Proxy :: Proxy ExtractEntities200ResponseEntitiesInner)
       propMimeEq MimeJSON (Proxy :: Proxy ExtractNews200Response)
+      propMimeEq MimeJSON (Proxy :: Proxy ExtractNews200ResponseImagesInner)
+      propMimeEq MimeJSON (Proxy :: Proxy ExtractNews200ResponseVideosInner)
       propMimeEq MimeJSON (Proxy :: Proxy ExtractPublishDate200Response)
       propMimeEq MimeJSON (Proxy :: Proxy FindSimilarBooks200Response)
       propMimeEq MimeJSON (Proxy :: Proxy GenerateNonsenseWord200Response)
@@ -110,4 +113,5 @@ main =
       propMimeEq MimeJSON (Proxy :: Proxy TopNews200Response)
       propMimeEq MimeJSON (Proxy :: Proxy TopNews200ResponseTopNewsInner)
       propMimeEq MimeJSON (Proxy :: Proxy TopNews200ResponseTopNewsInnerNewsInner)
+      propMimeEq MimeJSON (Proxy :: Proxy VerifyEmailAddress200Response)
       

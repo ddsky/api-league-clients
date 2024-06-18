@@ -2,6 +2,7 @@
 #import "OAIQueryParamCollection.h"
 #import "OAIApiClient.h"
 #import "OAICorrectSpelling200Response.h"
+#import "OAIDetectGenderByName200Response.h"
 #import "OAIDetectLanguage200ResponseInner.h"
 #import "OAIDetectSentiment200Response.h"
 #import "OAIExtractDates200Response.h"
@@ -141,6 +142,74 @@ NSInteger kOAITextApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((OAICorrectSpelling200Response*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Detect Gender by Name
+/// Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+///  @param name The name of the perso for which the sentiment should be detected. 
+///
+///  @returns OAIDetectGenderByName200Response*
+///
+-(NSURLSessionTask*) detectGenderByNameWithName: (NSString*) name
+    completionHandler: (void (^)(OAIDetectGenderByName200Response* output, NSError* error)) handler {
+    // verify the required parameter 'name' is set
+    if (name == nil) {
+        NSParameterAssert(name);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"name"] };
+            NSError* error = [NSError errorWithDomain:kOAITextApiErrorDomain code:kOAITextApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/detect-gender"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (name != nil) {
+        queryParams[@"name"] = name;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAIDetectGenderByName200Response*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAIDetectGenderByName200Response*)data, error);
                                 }
                             }];
 }

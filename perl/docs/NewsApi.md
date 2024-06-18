@@ -94,7 +94,7 @@ my $api_instance = WWW::OpenAPIClient::NewsApi->new(
     #api_key_prefix => {'x-api-key' => 'Bearer'},
 );
 
-my $text = tesla; # string | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+my $text = tesla; # string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
 my $source_countries = us,uk; # string | A comma-separated list of ISO 3166 country codes from which the news should originate.
 my $language = en; # string | The ISO 6391 language code of the news.
 my $min_sentiment = -0.8; # double | The minimal sentiment of the news in range [-1,1].
@@ -123,7 +123,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **string**| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **text** | **string**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
  **source_countries** | **string**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
  **language** | **string**| The ISO 6391 language code of the news. | [optional] 
  **min_sentiment** | **double**| The minimal sentiment of the news in range [-1,1]. | [optional] 

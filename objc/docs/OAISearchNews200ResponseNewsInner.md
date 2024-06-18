@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **language** | **NSString*** |  | [optional] 
 **_id** | **NSNumber*** |  | [optional] 
 **text** | **NSString*** |  | [optional] 
+**video** | **NSString*** |  | [optional] 
 **title** | **NSString*** |  | [optional] 
 **publishDate** | **NSString*** |  | [optional] 
 **url** | **NSString*** |  | [optional] 

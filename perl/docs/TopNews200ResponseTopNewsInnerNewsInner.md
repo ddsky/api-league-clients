@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **summary** | **string** |  | [optional] 
 **image** | **string** |  | [optional] 
-**author** | **string** |  | [optional] 
 **id** | **int** |  | [optional] 
 **text** | **string** |  | [optional] 
 **title** | **string** |  | [optional] 

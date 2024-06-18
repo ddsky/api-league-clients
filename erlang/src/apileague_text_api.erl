@@ -1,6 +1,7 @@
 -module(apileague_text_api).
 
 -export([correct_spelling/3, correct_spelling/4,
+         detect_gender_by_name/2, detect_gender_by_name/3,
          detect_language/2, detect_language/3,
          detect_sentiment/2, detect_sentiment/3,
          extract_dates/2, extract_dates/3,
@@ -29,6 +30,27 @@ correct_spelling(Ctx, Text, Language, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/correct-spelling"],
     QS = lists:flatten([{<<"text">>, Text}, {<<"language">>, Language}])++apileague_utils:optional_params([], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Detect Gender by Name
+%% Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+-spec detect_gender_by_name(ctx:ctx(), binary()) -> {ok, apileague_detect_gender_by_name_200_response:apileague_detect_gender_by_name_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+detect_gender_by_name(Ctx, Name) ->
+    detect_gender_by_name(Ctx, Name, #{}).
+
+-spec detect_gender_by_name(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_detect_gender_by_name_200_response:apileague_detect_gender_by_name_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+detect_gender_by_name(Ctx, Name, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/detect-gender"],
+    QS = lists:flatten([{<<"name">>, Name}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

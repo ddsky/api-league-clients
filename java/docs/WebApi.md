@@ -9,6 +9,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
 | [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
+| [**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address |
 
 
 <a id="extractAuthors"></a>
@@ -397,6 +398,87 @@ public class Example {
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+<a id="verifyEmailAddress"></a>
+# **verifyEmailAddress**
+> VerifyEmailAddress200Response verifyEmailAddress(email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.WebApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    WebApi apiInstance = new WebApi(defaultClient);
+    String email = "maxtest@gmail.com"; // String | The email address to verify.
+    try {
+      VerifyEmailAddress200Response result = apiInstance.verifyEmailAddress(email);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling WebApi#verifyEmailAddress");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| The email address to verify. | |
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

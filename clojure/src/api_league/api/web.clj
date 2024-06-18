@@ -8,6 +8,7 @@
             [api-league.specs.search-gifs-200-response-images-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-flavonoids-inner :refer :all]
             [api-league.specs.search-memes-200-response-memes-inner :refer :all]
+            [api-league.specs.extract-news-200-response-videos-inner :refer :all]
             [api-league.specs.singularize-word-200-response :refer :all]
             [api-league.specs.generate-nonsense-word-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-taste :refer :all]
@@ -73,8 +74,10 @@
             [api-league.specs.extract-content-from-a-web-page-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.compute-nutrition-200-response :refer :all]
+            [api-league.specs.verify-email-address-200-response :refer :all]
             [api-league.specs.score-text-200-response-readability :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition :refer :all]
+            [api-league.specs.extract-news-200-response-images-inner :refer :all]
             [api-league.specs.score-text-200-response-style :refer :all]
             [api-league.specs.extract-dates-200-response-dates-inner :refer :all]
             [api-league.specs.search-recipes-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
@@ -91,6 +94,7 @@
             [api-league.specs.stem-text-200-response :refer :all]
             [api-league.specs.search-jokes-200-response-jokes-inner :refer :all]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours-operational :refer :all]
+            [api-league.specs.detect-gender-by-name-200-response :refer :all]
             [api-league.specs.extract-authors-200-response-authors-inner :refer :all]
             [api-league.specs.correct-spelling-200-response :refer :all]
             )
@@ -217,5 +221,29 @@
      (if (:decode-models *api-context*)
         (st/decode search-web-200-response-spec res st/string-transformer)
         res))))
+
+
+(defn-spec verify-email-address-with-http-info any?
+  "Verify Email Address
+  This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail."
+  [email string?]
+  (check-required-params email)
+  (call-api "/verify-email" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"email" email }
+             :form-params   {}
+             :content-types []
+             :accepts       ["application/json"]
+             :auth-names    ["apiKey" "headerApiKey"]}))
+
+(defn-spec verify-email-address verify-email-address-200-response-spec
+  "Verify Email Address
+  This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail."
+  [email string?]
+  (let [res (:data (verify-email-address-with-http-info email))]
+    (if (:decode-models *api-context*)
+       (st/decode verify-email-address-200-response-spec res st/string-transformer)
+       res)))
 
 

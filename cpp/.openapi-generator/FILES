@@ -16,6 +16,8 @@ client/OAIConvertUnits_200_response.cpp
 client/OAIConvertUnits_200_response.h
 client/OAICorrectSpelling_200_response.cpp
 client/OAICorrectSpelling_200_response.h
+client/OAIDetectGenderByName_200_response.cpp
+client/OAIDetectGenderByName_200_response.h
 client/OAIDetectLanguage_200_response_inner.cpp
 client/OAIDetectLanguage_200_response_inner.h
 client/OAIDetectMainImageColor_200_response_inner.cpp
@@ -43,6 +45,10 @@ client/OAIExtractEntities_200_response_entities_inner.cpp
 client/OAIExtractEntities_200_response_entities_inner.h
 client/OAIExtractNews_200_response.cpp
 client/OAIExtractNews_200_response.h
+client/OAIExtractNews_200_response_images_inner.cpp
+client/OAIExtractNews_200_response_images_inner.h
+client/OAIExtractNews_200_response_videos_inner.cpp
+client/OAIExtractNews_200_response_videos_inner.h
 client/OAIExtractPublishDate_200_response.cpp
 client/OAIExtractPublishDate_200_response.h
 client/OAIFindSimilarBooks_200_response.cpp
@@ -214,6 +220,8 @@ client/OAITopNews_200_response_top_news_inner.cpp
 client/OAITopNews_200_response_top_news_inner.h
 client/OAITopNews_200_response_top_news_inner_news_inner.cpp
 client/OAITopNews_200_response_top_news_inner_news_inner.h
+client/OAIVerifyEmailAddress_200_response.cpp
+client/OAIVerifyEmailAddress_200_response.h
 client/OAIWebApi.cpp
 client/OAIWebApi.h
 client/client.pri

@@ -7,7 +7,6 @@
 -type apileague_top_news_200_response_top_news_inner_news_inner() ::
     #{ 'summary' => binary(),
        'image' => binary(),
-       'author' => binary(),
        'id' => integer(),
        'text' => binary(),
        'title' => binary(),
@@ -18,7 +17,6 @@
 
 encode(#{ 'summary' := Summary,
           'image' := Image,
-          'author' := Author,
           'id' := Id,
           'text' := Text,
           'title' := Title,
@@ -28,7 +26,6 @@ encode(#{ 'summary' := Summary,
         }) ->
     #{ 'summary' => Summary,
        'image' => Image,
-       'author' => Author,
        'id' => Id,
        'text' => Text,
        'title' => Title,

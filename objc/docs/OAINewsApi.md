@@ -114,7 +114,7 @@ OAIDefaultConfiguration *apiConfig = [OAIDefaultConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"x-api-key"];
 
 
-NSString* text = tesla; // The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+NSString* text = tesla; // The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
 NSString* sourceCountries = us,uk; // A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
 NSString* language = en; // The ISO 6391 language code of the news. (optional)
 NSNumber* minSentiment = -0.8; // The minimal sentiment of the news in range [-1,1]. (optional)
@@ -162,7 +162,7 @@ OAINewsApi*apiInstance = [[OAINewsApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **NSString***| The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **text** | **NSString***| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
  **sourceCountries** | **NSString***| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
  **language** | **NSString***| The ISO 6391 language code of the news. | [optional] 
  **minSentiment** | **NSNumber***| The minimal sentiment of the news in range [-1,1]. | [optional] 

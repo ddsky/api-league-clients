@@ -115,7 +115,7 @@ end
 
 api_instance = OpenapiClient::NewsApi.new
 opts = {
-  text: 'tesla', # String | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  text: 'tesla', # String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
   source_countries: 'us,uk', # String | A comma-separated list of ISO 3166 country codes from which the news should originate.
   language: 'en', # String | The ISO 6391 language code of the news.
   min_sentiment: -0.8, # Float | The minimal sentiment of the news in range [-1,1].
@@ -163,7 +163,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **text** | **String** | The text to match in the news content. By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **text** | **String** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
 | **source_countries** | **String** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
 | **language** | **String** | The ISO 6391 language code of the news. | [optional] |
 | **min_sentiment** | **Float** | The minimal sentiment of the news in range [-1,1]. | [optional] |

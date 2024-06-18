@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param language 
  * @param id 
  * @param text 
+ * @param video 
  * @param title 
  * @param publishDate 
  * @param url 
@@ -58,6 +59,9 @@ data class SearchNews200ResponseNewsInner (
 
     @Json(name = "text")
     val text: kotlin.String? = null,
+
+    @Json(name = "video")
+    val video: kotlin.String? = null,
 
     @Json(name = "title")
     val title: kotlin.String? = null,

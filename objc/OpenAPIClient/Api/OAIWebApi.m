@@ -6,6 +6,7 @@
 #import "OAIExtractPublishDate200Response.h"
 #import "OAIRetrievePageRank200Response.h"
 #import "OAISearchWeb200Response.h"
+#import "OAIVerifyEmailAddress200Response.h"
 
 
 @interface OAIWebApi ()
@@ -395,6 +396,74 @@ NSInteger kOAIWebApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((OAISearchWeb200Response*)data, error);
+                                }
+                            }];
+}
+
+///
+/// Verify Email Address
+/// This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+///  @param email The email address to verify. 
+///
+///  @returns OAIVerifyEmailAddress200Response*
+///
+-(NSURLSessionTask*) verifyEmailAddressWithEmail: (NSString*) email
+    completionHandler: (void (^)(OAIVerifyEmailAddress200Response* output, NSError* error)) handler {
+    // verify the required parameter 'email' is set
+    if (email == nil) {
+        NSParameterAssert(email);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"email"] };
+            NSError* error = [NSError errorWithDomain:kOAIWebApiErrorDomain code:kOAIWebApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/verify-email"];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (email != nil) {
+        queryParams[@"email"] = email;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"apiKey", @"headerApiKey"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"OAIVerifyEmailAddress200Response*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((OAIVerifyEmailAddress200Response*)data, error);
                                 }
                             }];
 }

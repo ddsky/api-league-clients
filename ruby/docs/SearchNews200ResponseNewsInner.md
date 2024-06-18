@@ -11,6 +11,7 @@
 | **language** | **String** |  | [optional] |
 | **id** | **Integer** |  | [optional] |
 | **text** | **String** |  | [optional] |
+| **video** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **publish_date** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
@@ -29,6 +30,7 @@ instance = OpenapiClient::SearchNews200ResponseNewsInner.new(
   language: null,
   id: null,
   text: null,
+  video: null,
   title: null,
   publish_date: null,
   url: null,

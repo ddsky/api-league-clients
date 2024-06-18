@@ -5,6 +5,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**correctSpelling()**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
+| [**detectGenderByName()**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name |
 | [**detectLanguage()**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
 | [**detectSentiment()**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
 | [**extractDates()**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
@@ -73,6 +74,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\CorrectSpelling200Response**](../Model/CorrectSpelling200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `detectGenderByName()`
+
+```php
+detectGenderByName($name): \OpenAPI\Client\Model\DetectGenderByName200Response
+```
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\TextApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$name = Alex; // string | The name of the perso for which the sentiment should be detected.
+
+try {
+    $result = $apiInstance->detectGenderByName($name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TextApi->detectGenderByName: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **string**| The name of the perso for which the sentiment should be detected. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DetectGenderByName200Response**](../Model/DetectGenderByName200Response.md)
 
 ### Authorization
 

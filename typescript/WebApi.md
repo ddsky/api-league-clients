@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
 [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
+[**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
 
 
 # **extractAuthors**
@@ -290,6 +291,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 **SearchWeb200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **verifyEmailAddress**
+> VerifyEmailAddress200Response verifyEmailAddress()
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .WebApi(configuration);
+
+let body:.WebApiVerifyEmailAddressRequest = {
+  // string | The email address to verify.
+  email: "maxtest@gmail.com",
+};
+
+apiInstance.verifyEmailAddress(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | [**string**] | The email address to verify. | defaults to undefined
+
+
+### Return type
+
+**VerifyEmailAddress200Response**
 
 ### Authorization
 

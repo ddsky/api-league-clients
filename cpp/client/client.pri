@@ -7,6 +7,7 @@ HEADERS += \
     $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.h \
     $${PWD}/OAIConvertUnits_200_response.h \
     $${PWD}/OAICorrectSpelling_200_response.h \
+    $${PWD}/OAIDetectGenderByName_200_response.h \
     $${PWD}/OAIDetectLanguage_200_response_inner.h \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.h \
     $${PWD}/OAIDetectSentiment_200_response.h \
@@ -20,6 +21,8 @@ HEADERS += \
     $${PWD}/OAIExtractEntities_200_response.h \
     $${PWD}/OAIExtractEntities_200_response_entities_inner.h \
     $${PWD}/OAIExtractNews_200_response.h \
+    $${PWD}/OAIExtractNews_200_response_images_inner.h \
+    $${PWD}/OAIExtractNews_200_response_videos_inner.h \
     $${PWD}/OAIExtractPublishDate_200_response.h \
     $${PWD}/OAIFindSimilarBooks_200_response.h \
     $${PWD}/OAIGenerateNonsenseWord_200_response.h \
@@ -92,6 +95,7 @@ HEADERS += \
     $${PWD}/OAITopNews_200_response.h \
     $${PWD}/OAITopNews_200_response_top_news_inner.h \
     $${PWD}/OAITopNews_200_response_top_news_inner_news_inner.h \
+    $${PWD}/OAIVerifyEmailAddress_200_response.h \
 # APIs
     $${PWD}/OAIArtApi.h \
     $${PWD}/OAIBooksApi.h \
@@ -121,6 +125,7 @@ SOURCES += \
     $${PWD}/OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.cpp \
     $${PWD}/OAIConvertUnits_200_response.cpp \
     $${PWD}/OAICorrectSpelling_200_response.cpp \
+    $${PWD}/OAIDetectGenderByName_200_response.cpp \
     $${PWD}/OAIDetectLanguage_200_response_inner.cpp \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.cpp \
     $${PWD}/OAIDetectSentiment_200_response.cpp \
@@ -134,6 +139,8 @@ SOURCES += \
     $${PWD}/OAIExtractEntities_200_response.cpp \
     $${PWD}/OAIExtractEntities_200_response_entities_inner.cpp \
     $${PWD}/OAIExtractNews_200_response.cpp \
+    $${PWD}/OAIExtractNews_200_response_images_inner.cpp \
+    $${PWD}/OAIExtractNews_200_response_videos_inner.cpp \
     $${PWD}/OAIExtractPublishDate_200_response.cpp \
     $${PWD}/OAIFindSimilarBooks_200_response.cpp \
     $${PWD}/OAIGenerateNonsenseWord_200_response.cpp \
@@ -206,6 +213,7 @@ SOURCES += \
     $${PWD}/OAITopNews_200_response.cpp \
     $${PWD}/OAITopNews_200_response_top_news_inner.cpp \
     $${PWD}/OAITopNews_200_response_top_news_inner_news_inner.cpp \
+    $${PWD}/OAIVerifyEmailAddress_200_response.cpp \
 # APIs
     $${PWD}/OAIArtApi.cpp \
     $${PWD}/OAIBooksApi.cpp \

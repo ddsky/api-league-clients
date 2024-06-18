@@ -15,7 +15,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
   TopNews200ResponseTopNewsInnerNewsInner({
     this.summary,
     this.image,
-    this.author,
     this.id,
     this.text,
     this.title,
@@ -27,8 +26,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
   String? summary;
 
   String? image;
-
-  String? author;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -52,7 +49,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
   bool operator ==(Object other) => identical(this, other) || other is TopNews200ResponseTopNewsInnerNewsInner &&
     other.summary == summary &&
     other.image == image &&
-    other.author == author &&
     other.id == id &&
     other.text == text &&
     other.title == title &&
@@ -65,7 +61,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
     // ignore: unnecessary_parenthesis
     (summary == null ? 0 : summary!.hashCode) +
     (image == null ? 0 : image!.hashCode) +
-    (author == null ? 0 : author!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
     (text == null ? 0 : text!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
@@ -74,7 +69,7 @@ class TopNews200ResponseTopNewsInnerNewsInner {
     (authors.hashCode);
 
   @override
-  String toString() => 'TopNews200ResponseTopNewsInnerNewsInner[summary=$summary, image=$image, author=$author, id=$id, text=$text, title=$title, publishDate=$publishDate, url=$url, authors=$authors]';
+  String toString() => 'TopNews200ResponseTopNewsInnerNewsInner[summary=$summary, image=$image, id=$id, text=$text, title=$title, publishDate=$publishDate, url=$url, authors=$authors]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -87,11 +82,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
       json[r'image'] = this.image;
     } else {
       json[r'image'] = null;
-    }
-    if (this.author != null) {
-      json[r'author'] = this.author;
-    } else {
-      json[r'author'] = null;
     }
     if (this.id != null) {
       json[r'id'] = this.id;
@@ -143,7 +133,6 @@ class TopNews200ResponseTopNewsInnerNewsInner {
       return TopNews200ResponseTopNewsInnerNewsInner(
         summary: mapValueOfType<String>(json, r'summary'),
         image: mapValueOfType<String>(json, r'image'),
-        author: mapValueOfType<String>(json, r'author'),
         id: mapValueOfType<int>(json, r'id'),
         text: mapValueOfType<String>(json, r'text'),
         title: mapValueOfType<String>(json, r'title'),

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **language** | **kotlin.String** |  |  [optional]
 **id** | **kotlin.Int** |  |  [optional]
 **text** | **kotlin.String** |  |  [optional]
+**video** | **kotlin.String** |  |  [optional]
 **title** | **kotlin.String** |  |  [optional]
 **publishDate** | **kotlin.String** |  |  [optional]
 **url** | **kotlin.String** |  |  [optional]

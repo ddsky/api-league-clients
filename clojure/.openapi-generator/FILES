@@ -19,6 +19,7 @@ src/api_league/specs/compute_nutrition_200_response_ingredient_breakdown_inner.c
 src/api_league/specs/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.clj
 src/api_league/specs/convert_units_200_response.clj
 src/api_league/specs/correct_spelling_200_response.clj
+src/api_league/specs/detect_gender_by_name_200_response.clj
 src/api_league/specs/detect_language_200_response_inner.clj
 src/api_league/specs/detect_main_image_color_200_response_inner.clj
 src/api_league/specs/detect_sentiment_200_response.clj
@@ -32,6 +33,8 @@ src/api_league/specs/extract_dates_200_response_dates_inner.clj
 src/api_league/specs/extract_entities_200_response.clj
 src/api_league/specs/extract_entities_200_response_entities_inner.clj
 src/api_league/specs/extract_news_200_response.clj
+src/api_league/specs/extract_news_200_response_images_inner.clj
+src/api_league/specs/extract_news_200_response_videos_inner.clj
 src/api_league/specs/extract_publish_date_200_response.clj
 src/api_league/specs/find_similar_books_200_response.clj
 src/api_league/specs/generate_nonsense_word_200_response.clj
@@ -104,3 +107,4 @@ src/api_league/specs/tag_part_of_speech_200_response.clj
 src/api_league/specs/top_news_200_response.clj
 src/api_league/specs/top_news_200_response_top_news_inner.clj
 src/api_league/specs/top_news_200_response_top_news_inner_news_inner.clj
+src/api_league/specs/verify_email_address_200_response.clj

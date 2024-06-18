@@ -26,6 +26,15 @@ void main() {
       // TODO
     });
 
+    // Detect Gender by Name
+    //
+    // Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+    //
+    //Future<DetectGenderByName200Response> detectGenderByName(String name) async
+    test('test detectGenderByName', () async {
+      // TODO
+    });
+
     // Detect Language
     //
     // Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.

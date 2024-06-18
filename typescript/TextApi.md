@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
+[**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
 [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
 [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
@@ -57,6 +58,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 **CorrectSpelling200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **detectGenderByName**
+> DetectGenderByName200Response detectGenderByName()
+
+Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .TextApi(configuration);
+
+let body:.TextApiDetectGenderByNameRequest = {
+  // string | The name of the perso for which the sentiment should be detected.
+  name: "Alex",
+};
+
+apiInstance.detectGenderByName(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | [**string**] | The name of the perso for which the sentiment should be detected. | defaults to undefined
+
+
+### Return type
+
+**DetectGenderByName200Response**
 
 ### Authorization
 

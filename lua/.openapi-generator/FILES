@@ -1,6 +1,6 @@
 .gitignore
 .openapi-generator-ignore
-apileague-1.2.0.rockspec
+apileague-1.3.0.rockspec
 apileague/api/art_api.lua
 apileague/api/books_api.lua
 apileague/api/food_api.lua
@@ -17,6 +17,7 @@ apileague/model/compute_nutrition_200_response_ingredient_breakdown_inner.lua
 apileague/model/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.lua
 apileague/model/convert_units_200_response.lua
 apileague/model/correct_spelling_200_response.lua
+apileague/model/detect_gender_by_name_200_response.lua
 apileague/model/detect_language_200_response_inner.lua
 apileague/model/detect_main_image_color_200_response_inner.lua
 apileague/model/detect_sentiment_200_response.lua
@@ -30,6 +31,8 @@ apileague/model/extract_dates_200_response_dates_inner.lua
 apileague/model/extract_entities_200_response.lua
 apileague/model/extract_entities_200_response_entities_inner.lua
 apileague/model/extract_news_200_response.lua
+apileague/model/extract_news_200_response_images_inner.lua
+apileague/model/extract_news_200_response_videos_inner.lua
 apileague/model/extract_publish_date_200_response.lua
 apileague/model/find_similar_books_200_response.lua
 apileague/model/generate_nonsense_word_200_response.lua
@@ -102,6 +105,7 @@ apileague/model/tag_part_of_speech_200_response.lua
 apileague/model/top_news_200_response.lua
 apileague/model/top_news_200_response_top_news_inner.lua
 apileague/model/top_news_200_response_top_news_inner_news_inner.lua
+apileague/model/verify_email_address_200_response.lua
 git_push.sh
 spec/art_api_spec.lua
 spec/books_api_spec.lua
@@ -110,6 +114,7 @@ spec/compute_nutrition_200_response_ingredient_breakdown_inner_spec.lua
 spec/compute_nutrition_200_response_spec.lua
 spec/convert_units_200_response_spec.lua
 spec/correct_spelling_200_response_spec.lua
+spec/detect_gender_by_name_200_response_spec.lua
 spec/detect_language_200_response_inner_spec.lua
 spec/detect_main_image_color_200_response_inner_spec.lua
 spec/detect_sentiment_200_response_document_spec.lua
@@ -122,7 +127,9 @@ spec/extract_dates_200_response_dates_inner_spec.lua
 spec/extract_dates_200_response_spec.lua
 spec/extract_entities_200_response_entities_inner_spec.lua
 spec/extract_entities_200_response_spec.lua
+spec/extract_news_200_response_images_inner_spec.lua
 spec/extract_news_200_response_spec.lua
+spec/extract_news_200_response_videos_inner_spec.lua
 spec/extract_publish_date_200_response_spec.lua
 spec/find_similar_books_200_response_spec.lua
 spec/food_api_spec.lua
@@ -203,4 +210,5 @@ spec/text_api_spec.lua
 spec/top_news_200_response_spec.lua
 spec/top_news_200_response_top_news_inner_news_inner_spec.lua
 spec/top_news_200_response_top_news_inner_spec.lua
+spec/verify_email_address_200_response_spec.lua
 spec/web_api_spec.lua

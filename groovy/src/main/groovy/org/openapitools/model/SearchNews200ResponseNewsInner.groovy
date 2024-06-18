@@ -25,6 +25,8 @@ class SearchNews200ResponseNewsInner {
     
     String text
     
+    String video
+    
     String title
     
     String publishDate

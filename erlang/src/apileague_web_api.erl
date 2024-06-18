@@ -4,7 +4,8 @@
          extract_content_from_a_web_page/2, extract_content_from_a_web_page/3,
          extract_publish_date/2, extract_publish_date/3,
          retrieve_page_rank/2, retrieve_page_rank/3,
-         search_web/2, search_web/3]).
+         search_web/2, search_web/3,
+         verify_email_address/2, verify_email_address/3]).
 
 -define(BASE_URL, <<"">>).
 
@@ -106,6 +107,27 @@ search_web(Ctx, Query, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/search-web"],
     QS = lists:flatten([{<<"query">>, Query}])++apileague_utils:optional_params(['number'], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Verify Email Address
+%% This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+-spec verify_email_address(ctx:ctx(), binary()) -> {ok, apileague_verify_email_address_200_response:apileague_verify_email_address_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+verify_email_address(Ctx, Email) ->
+    verify_email_address(Ctx, Email, #{}).
+
+-spec verify_email_address(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_verify_email_address_200_response:apileague_verify_email_address_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+verify_email_address(Ctx, Email, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/verify-email"],
+    QS = lists:flatten([{<<"email">>, Email}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **language** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **text** | **str** |  | [optional] 
+**video** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **publish_date** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 

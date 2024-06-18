@@ -1,5 +1,5 @@
 package = "apileague"
-version = "1.2.0"
+version = "1.3.0"
 source = {
 	url = "https://github.com/ddsky/api-league-clients/tree/master/lua/.git"
 }
@@ -39,6 +39,7 @@ build = {
 		["apileague.model.compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner"] = "apileague/model/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.lua";
 		["apileague.model.convert_units_200_response"] = "apileague/model/convert_units_200_response.lua";
 		["apileague.model.correct_spelling_200_response"] = "apileague/model/correct_spelling_200_response.lua";
+		["apileague.model.detect_gender_by_name_200_response"] = "apileague/model/detect_gender_by_name_200_response.lua";
 		["apileague.model.detect_language_200_response_inner"] = "apileague/model/detect_language_200_response_inner.lua";
 		["apileague.model.detect_main_image_color_200_response_inner"] = "apileague/model/detect_main_image_color_200_response_inner.lua";
 		["apileague.model.detect_sentiment_200_response"] = "apileague/model/detect_sentiment_200_response.lua";
@@ -52,6 +53,8 @@ build = {
 		["apileague.model.extract_entities_200_response"] = "apileague/model/extract_entities_200_response.lua";
 		["apileague.model.extract_entities_200_response_entities_inner"] = "apileague/model/extract_entities_200_response_entities_inner.lua";
 		["apileague.model.extract_news_200_response"] = "apileague/model/extract_news_200_response.lua";
+		["apileague.model.extract_news_200_response_images_inner"] = "apileague/model/extract_news_200_response_images_inner.lua";
+		["apileague.model.extract_news_200_response_videos_inner"] = "apileague/model/extract_news_200_response_videos_inner.lua";
 		["apileague.model.extract_publish_date_200_response"] = "apileague/model/extract_publish_date_200_response.lua";
 		["apileague.model.find_similar_books_200_response"] = "apileague/model/find_similar_books_200_response.lua";
 		["apileague.model.generate_nonsense_word_200_response"] = "apileague/model/generate_nonsense_word_200_response.lua";
@@ -124,5 +127,6 @@ build = {
 		["apileague.model.top_news_200_response"] = "apileague/model/top_news_200_response.lua";
 		["apileague.model.top_news_200_response_top_news_inner"] = "apileague/model/top_news_200_response_top_news_inner.lua";
 		["apileague.model.top_news_200_response_top_news_inner_news_inner"] = "apileague/model/top_news_200_response_top_news_inner_news_inner.lua";
+		["apileague.model.verify_email_address_200_response"] = "apileague/model/verify_email_address_200_response.lua";
 	}
 }

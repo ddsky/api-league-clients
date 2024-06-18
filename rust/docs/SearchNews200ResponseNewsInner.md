@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **language** | Option<**String**> |  | [optional]
 **id** | Option<**i32**> |  | [optional]
 **text** | Option<**String**> |  | [optional]
+**video** | Option<**String**> |  | [optional]
 **title** | Option<**String**> |  | [optional]
 **publish_date** | Option<**String**> |  | [optional]
 **url** | Option<**String**> |  | [optional]

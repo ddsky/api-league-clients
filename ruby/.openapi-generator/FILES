@@ -14,6 +14,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -27,6 +28,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -107,6 +110,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 git_push.sh
 lib/openapi_client.rb
@@ -129,6 +133,7 @@ lib/openapi_client/models/compute_nutrition200_response_ingredient_breakdown_inn
 lib/openapi_client/models/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inner.rb
 lib/openapi_client/models/convert_units200_response.rb
 lib/openapi_client/models/correct_spelling200_response.rb
+lib/openapi_client/models/detect_gender_by_name200_response.rb
 lib/openapi_client/models/detect_language200_response_inner.rb
 lib/openapi_client/models/detect_main_image_color200_response_inner.rb
 lib/openapi_client/models/detect_sentiment200_response.rb
@@ -142,6 +147,8 @@ lib/openapi_client/models/extract_dates200_response_dates_inner.rb
 lib/openapi_client/models/extract_entities200_response.rb
 lib/openapi_client/models/extract_entities200_response_entities_inner.rb
 lib/openapi_client/models/extract_news200_response.rb
+lib/openapi_client/models/extract_news200_response_images_inner.rb
+lib/openapi_client/models/extract_news200_response_videos_inner.rb
 lib/openapi_client/models/extract_publish_date200_response.rb
 lib/openapi_client/models/find_similar_books200_response.rb
 lib/openapi_client/models/generate_nonsense_word200_response.rb
@@ -214,6 +221,7 @@ lib/openapi_client/models/tag_part_of_speech200_response.rb
 lib/openapi_client/models/top_news200_response.rb
 lib/openapi_client/models/top_news200_response_top_news_inner.rb
 lib/openapi_client/models/top_news200_response_top_news_inner_news_inner.rb
+lib/openapi_client/models/verify_email_address200_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
 spec/api/art_api_spec.rb
@@ -232,6 +240,7 @@ spec/models/compute_nutrition200_response_ingredient_breakdown_inner_spec.rb
 spec/models/compute_nutrition200_response_spec.rb
 spec/models/convert_units200_response_spec.rb
 spec/models/correct_spelling200_response_spec.rb
+spec/models/detect_gender_by_name200_response_spec.rb
 spec/models/detect_language200_response_inner_spec.rb
 spec/models/detect_main_image_color200_response_inner_spec.rb
 spec/models/detect_sentiment200_response_document_spec.rb
@@ -244,7 +253,9 @@ spec/models/extract_dates200_response_dates_inner_spec.rb
 spec/models/extract_dates200_response_spec.rb
 spec/models/extract_entities200_response_entities_inner_spec.rb
 spec/models/extract_entities200_response_spec.rb
+spec/models/extract_news200_response_images_inner_spec.rb
 spec/models/extract_news200_response_spec.rb
+spec/models/extract_news200_response_videos_inner_spec.rb
 spec/models/extract_publish_date200_response_spec.rb
 spec/models/find_similar_books200_response_spec.rb
 spec/models/generate_nonsense_word200_response_spec.rb
@@ -317,4 +328,5 @@ spec/models/tag_part_of_speech200_response_spec.rb
 spec/models/top_news200_response_spec.rb
 spec/models/top_news200_response_top_news_inner_news_inner_spec.rb
 spec/models/top_news200_response_top_news_inner_spec.rb
+spec/models/verify_email_address200_response_spec.rb
 spec/spec_helper.rb

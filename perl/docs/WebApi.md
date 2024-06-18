@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date
 [**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank
 [**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web
+[**verify_email_address**](WebApi.md#verify_email_address) | **GET** /verify-email | Verify Email Address
 
 
 # **extract_authors**
@@ -281,6 +282,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **verify_email_address**
+> VerifyEmailAddress200Response verify_email_address(email => $email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::WebApi;
+my $api_instance = WWW::OpenAPIClient::WebApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $email = maxtest@gmail.com; # string | The email address to verify.
+
+eval {
+    my $result = $api_instance->verify_email_address(email => $email);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling WebApi->verify_email_address: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| The email address to verify. | 
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

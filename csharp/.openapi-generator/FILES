@@ -11,6 +11,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -24,6 +25,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -104,6 +107,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 git_push.sh
 src/apileague.Test/Api/ArtApiTests.cs
@@ -122,6 +126,7 @@ src/apileague.Test/Model/ComputeNutrition200ResponseIngredientBreakdownInnerTest
 src/apileague.Test/Model/ComputeNutrition200ResponseTests.cs
 src/apileague.Test/Model/ConvertUnits200ResponseTests.cs
 src/apileague.Test/Model/CorrectSpelling200ResponseTests.cs
+src/apileague.Test/Model/DetectGenderByName200ResponseTests.cs
 src/apileague.Test/Model/DetectLanguage200ResponseInnerTests.cs
 src/apileague.Test/Model/DetectMainImageColor200ResponseInnerTests.cs
 src/apileague.Test/Model/DetectSentiment200ResponseDocumentTests.cs
@@ -134,7 +139,9 @@ src/apileague.Test/Model/ExtractDates200ResponseDatesInnerTests.cs
 src/apileague.Test/Model/ExtractDates200ResponseTests.cs
 src/apileague.Test/Model/ExtractEntities200ResponseEntitiesInnerTests.cs
 src/apileague.Test/Model/ExtractEntities200ResponseTests.cs
+src/apileague.Test/Model/ExtractNews200ResponseImagesInnerTests.cs
 src/apileague.Test/Model/ExtractNews200ResponseTests.cs
+src/apileague.Test/Model/ExtractNews200ResponseVideosInnerTests.cs
 src/apileague.Test/Model/ExtractPublishDate200ResponseTests.cs
 src/apileague.Test/Model/FindSimilarBooks200ResponseTests.cs
 src/apileague.Test/Model/GenerateNonsenseWord200ResponseTests.cs
@@ -207,6 +214,7 @@ src/apileague.Test/Model/TagPartOfSpeech200ResponseTests.cs
 src/apileague.Test/Model/TopNews200ResponseTests.cs
 src/apileague.Test/Model/TopNews200ResponseTopNewsInnerNewsInnerTests.cs
 src/apileague.Test/Model/TopNews200ResponseTopNewsInnerTests.cs
+src/apileague.Test/Model/VerifyEmailAddress200ResponseTests.cs
 src/apileague.Test/apileague.Test.csproj
 src/apileague/Api/ArtApi.cs
 src/apileague/Api/BooksApi.cs
@@ -241,6 +249,7 @@ src/apileague/Model/ComputeNutrition200ResponseIngredientBreakdownInner.cs
 src/apileague/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.cs
 src/apileague/Model/ConvertUnits200Response.cs
 src/apileague/Model/CorrectSpelling200Response.cs
+src/apileague/Model/DetectGenderByName200Response.cs
 src/apileague/Model/DetectLanguage200ResponseInner.cs
 src/apileague/Model/DetectMainImageColor200ResponseInner.cs
 src/apileague/Model/DetectSentiment200Response.cs
@@ -254,6 +263,8 @@ src/apileague/Model/ExtractDates200ResponseDatesInner.cs
 src/apileague/Model/ExtractEntities200Response.cs
 src/apileague/Model/ExtractEntities200ResponseEntitiesInner.cs
 src/apileague/Model/ExtractNews200Response.cs
+src/apileague/Model/ExtractNews200ResponseImagesInner.cs
+src/apileague/Model/ExtractNews200ResponseVideosInner.cs
 src/apileague/Model/ExtractPublishDate200Response.cs
 src/apileague/Model/FindSimilarBooks200Response.cs
 src/apileague/Model/GenerateNonsenseWord200Response.cs
@@ -326,4 +337,5 @@ src/apileague/Model/TagPartOfSpeech200Response.cs
 src/apileague/Model/TopNews200Response.cs
 src/apileague/Model/TopNews200ResponseTopNewsInner.cs
 src/apileague/Model/TopNews200ResponseTopNewsInnerNewsInner.cs
+src/apileague/Model/VerifyEmailAddress200Response.cs
 src/apileague/apileague.csproj

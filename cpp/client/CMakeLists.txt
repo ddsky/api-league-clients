@@ -16,6 +16,7 @@ add_library(${PROJECT_NAME}
   OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.h
   OAIConvertUnits_200_response.h
   OAICorrectSpelling_200_response.h
+  OAIDetectGenderByName_200_response.h
   OAIDetectLanguage_200_response_inner.h
   OAIDetectMainImageColor_200_response_inner.h
   OAIDetectSentiment_200_response.h
@@ -29,6 +30,8 @@ add_library(${PROJECT_NAME}
   OAIExtractEntities_200_response.h
   OAIExtractEntities_200_response_entities_inner.h
   OAIExtractNews_200_response.h
+  OAIExtractNews_200_response_images_inner.h
+  OAIExtractNews_200_response_videos_inner.h
   OAIExtractPublishDate_200_response.h
   OAIFindSimilarBooks_200_response.h
   OAIGenerateNonsenseWord_200_response.h
@@ -101,6 +104,7 @@ add_library(${PROJECT_NAME}
   OAITopNews_200_response.h
   OAITopNews_200_response_top_news_inner.h
   OAITopNews_200_response_top_news_inner_news_inner.h
+  OAIVerifyEmailAddress_200_response.h
   OAIArtApi.h
   OAIBooksApi.h
   OAIFoodApi.h
@@ -125,6 +129,7 @@ add_library(${PROJECT_NAME}
   OAIComputeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner.cpp
   OAIConvertUnits_200_response.cpp
   OAICorrectSpelling_200_response.cpp
+  OAIDetectGenderByName_200_response.cpp
   OAIDetectLanguage_200_response_inner.cpp
   OAIDetectMainImageColor_200_response_inner.cpp
   OAIDetectSentiment_200_response.cpp
@@ -138,6 +143,8 @@ add_library(${PROJECT_NAME}
   OAIExtractEntities_200_response.cpp
   OAIExtractEntities_200_response_entities_inner.cpp
   OAIExtractNews_200_response.cpp
+  OAIExtractNews_200_response_images_inner.cpp
+  OAIExtractNews_200_response_videos_inner.cpp
   OAIExtractPublishDate_200_response.cpp
   OAIFindSimilarBooks_200_response.cpp
   OAIGenerateNonsenseWord_200_response.cpp
@@ -210,6 +217,7 @@ add_library(${PROJECT_NAME}
   OAITopNews_200_response.cpp
   OAITopNews_200_response_top_news_inner.cpp
   OAITopNews_200_response_top_news_inner_news_inner.cpp
+  OAIVerifyEmailAddress_200_response.cpp
   OAIArtApi.cpp
   OAIBooksApi.cpp
   OAIFoodApi.cpp

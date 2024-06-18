@@ -20,6 +20,7 @@ import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.TextApi
 import com.apileague.client.model.CorrectSpelling200Response
+import com.apileague.client.model.DetectGenderByName200Response
 import com.apileague.client.model.DetectLanguage200ResponseInner
 import com.apileague.client.model.DetectSentiment200Response
 import com.apileague.client.model.ExtractDates200Response
@@ -43,6 +44,14 @@ class TextApiTest : ShouldSpec() {
             //val text : kotlin.String = Driving carss is fun. // kotlin.String | The text to be corrected.
             //val language : kotlin.String = en // kotlin.String | The language of the text, one of en, de, es, fr, or it.
             //val result : CorrectSpelling200Response = apiInstance.correctSpelling(text, language)
+            //result shouldBe ("TODO")
+        }
+
+        // to test detectGenderByName
+        should("test detectGenderByName") {
+            // uncomment below to test detectGenderByName
+            //val name : kotlin.String = Alex // kotlin.String | The name of the perso for which the sentiment should be detected.
+            //val result : DetectGenderByName200Response = apiInstance.detectGenderByName(name)
             //result shouldBe ("TODO")
         }
 

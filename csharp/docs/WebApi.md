@@ -9,6 +9,7 @@ All URIs are relative to *https://api.apileague.com*
 | [**ExtractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date |
 | [**RetrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
 | [**SearchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web |
+| [**VerifyEmailAddress**](WebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address |
 
 <a id="extractauthors"></a>
 # **ExtractAuthors**
@@ -518,6 +519,112 @@ catch (ApiException e)
 ### Return type
 
 [**SearchWeb200Response**](SearchWeb200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="verifyemailaddress"></a>
+# **VerifyEmailAddress**
+> VerifyEmailAddress200Response VerifyEmailAddress (string email)
+
+Verify Email Address
+
+This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class VerifyEmailAddressExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new WebApi(config);
+            var email = maxtest@gmail.com;  // string | The email address to verify.
+
+            try
+            {
+                // Verify Email Address
+                VerifyEmailAddress200Response result = apiInstance.VerifyEmailAddress(email);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WebApi.VerifyEmailAddress: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the VerifyEmailAddressWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Verify Email Address
+    ApiResponse<VerifyEmailAddress200Response> response = apiInstance.VerifyEmailAddressWithHttpInfo(email);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WebApi.VerifyEmailAddressWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **email** | **string** | The email address to verify. |  |
+
+### Return type
+
+[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
 
 ### Authorization
 

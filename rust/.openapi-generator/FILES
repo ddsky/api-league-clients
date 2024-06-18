@@ -10,6 +10,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInner.md
 docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
+docs/DetectGenderByName200Response.md
 docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
 docs/DetectSentiment200Response.md
@@ -23,6 +24,8 @@ docs/ExtractDates200ResponseDatesInner.md
 docs/ExtractEntities200Response.md
 docs/ExtractEntities200ResponseEntitiesInner.md
 docs/ExtractNews200Response.md
+docs/ExtractNews200ResponseImagesInner.md
+docs/ExtractNews200ResponseVideosInner.md
 docs/ExtractPublishDate200Response.md
 docs/FindSimilarBooks200Response.md
 docs/FoodApi.md
@@ -103,6 +106,7 @@ docs/TextApi.md
 docs/TopNews200Response.md
 docs/TopNews200ResponseTopNewsInner.md
 docs/TopNews200ResponseTopNewsInnerNewsInner.md
+docs/VerifyEmailAddress200Response.md
 docs/WebApi.md
 git_push.sh
 src/apis/art_api.rs
@@ -124,6 +128,7 @@ src/models/compute_nutrition_200_response_ingredient_breakdown_inner.rs
 src/models/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_inner.rs
 src/models/convert_units_200_response.rs
 src/models/correct_spelling_200_response.rs
+src/models/detect_gender_by_name_200_response.rs
 src/models/detect_language_200_response_inner.rs
 src/models/detect_main_image_color_200_response_inner.rs
 src/models/detect_sentiment_200_response.rs
@@ -137,6 +142,8 @@ src/models/extract_dates_200_response_dates_inner.rs
 src/models/extract_entities_200_response.rs
 src/models/extract_entities_200_response_entities_inner.rs
 src/models/extract_news_200_response.rs
+src/models/extract_news_200_response_images_inner.rs
+src/models/extract_news_200_response_videos_inner.rs
 src/models/extract_publish_date_200_response.rs
 src/models/find_similar_books_200_response.rs
 src/models/generate_nonsense_word_200_response.rs
@@ -210,3 +217,4 @@ src/models/tag_part_of_speech_200_response.rs
 src/models/top_news_200_response.rs
 src/models/top_news_200_response_top_news_inner.rs
 src/models/top_news_200_response_top_news_inner_news_inner.rs
+src/models/verify_email_address_200_response.rs

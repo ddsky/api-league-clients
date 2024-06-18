@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
+[**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
 [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
 [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
@@ -57,6 +58,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="detectGenderByName"></a>
+# **detectGenderByName**
+> DetectGenderByName200Response detectGenderByName(name)
+
+Detect Gender by Name
+
+Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = TextApi()
+val name : kotlin.String = Alex // kotlin.String | The name of the perso for which the sentiment should be detected.
+try {
+    val result : DetectGenderByName200Response = apiInstance.detectGenderByName(name)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TextApi#detectGenderByName")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TextApi#detectGenderByName")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **kotlin.String**| The name of the perso for which the sentiment should be detected. |
+
+### Return type
+
+[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
 
 ### Authorization
 

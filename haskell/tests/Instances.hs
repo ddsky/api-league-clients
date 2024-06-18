@@ -166,6 +166,15 @@ genCorrectSpelling200Response n =
   CorrectSpelling200Response
     <$> arbitraryReducedMaybe n -- correctSpelling200ResponseCorrectedText :: Maybe Text
   
+instance Arbitrary DetectGenderByName200Response where
+  arbitrary = sized genDetectGenderByName200Response
+
+genDetectGenderByName200Response :: Int -> Gen DetectGenderByName200Response
+genDetectGenderByName200Response n =
+  DetectGenderByName200Response
+    <$> arbitraryReducedMaybe n -- detectGenderByName200ResponseName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectGenderByName200ResponseProbabilityMale :: Maybe Double
+  
 instance Arbitrary DetectLanguage200ResponseInner where
   arbitrary = sized genDetectLanguage200ResponseInner
 
@@ -292,12 +301,34 @@ genExtractNews200Response n =
     <$> arbitraryReducedMaybe n -- extractNews200ResponseTitle :: Maybe Text
     <*> arbitraryReducedMaybe n -- extractNews200ResponseText :: Maybe Text
     <*> arbitraryReducedMaybe n -- extractNews200ResponseUrl :: Maybe Text
-    <*> arbitraryReducedMaybe n -- extractNews200ResponseImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseImages :: Maybe [ExtractNews200ResponseImagesInner]
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseVideos :: Maybe [ExtractNews200ResponseVideosInner]
     <*> arbitraryReducedMaybe n -- extractNews200ResponsePublishDate :: Maybe Text
-    <*> arbitraryReducedMaybe n -- extractNews200ResponseAuthor :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseAuthors :: Maybe [Text]
     <*> arbitraryReducedMaybe n -- extractNews200ResponseLanguage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- extractNews200ResponseSourceCountry :: Maybe Text
-    <*> arbitraryReducedMaybe n -- extractNews200ResponseSentiment :: Maybe Double
+  
+instance Arbitrary ExtractNews200ResponseImagesInner where
+  arbitrary = sized genExtractNews200ResponseImagesInner
+
+genExtractNews200ResponseImagesInner :: Int -> Gen ExtractNews200ResponseImagesInner
+genExtractNews200ResponseImagesInner n =
+  ExtractNews200ResponseImagesInner
+    <$> arbitraryReducedMaybe n -- extractNews200ResponseImagesInnerWidth :: Maybe Int
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseImagesInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseImagesInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseImagesInnerHeight :: Maybe Int
+  
+instance Arbitrary ExtractNews200ResponseVideosInner where
+  arbitrary = sized genExtractNews200ResponseVideosInner
+
+genExtractNews200ResponseVideosInner :: Int -> Gen ExtractNews200ResponseVideosInner
+genExtractNews200ResponseVideosInner n =
+  ExtractNews200ResponseVideosInner
+    <$> arbitraryReducedMaybe n -- extractNews200ResponseVideosInnerSummary :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseVideosInnerDuration :: Maybe Int
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseVideosInnerThumbnail :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseVideosInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- extractNews200ResponseVideosInnerUrl :: Maybe Text
   
 instance Arbitrary ExtractPublishDate200Response where
   arbitrary = sized genExtractPublishDate200Response
@@ -838,6 +869,7 @@ genSearchNews200ResponseNewsInner n =
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerLanguage :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerId :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerVideo :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerTitle :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerPublishDate :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerUrl :: Maybe Text
@@ -1066,13 +1098,31 @@ genTopNews200ResponseTopNewsInnerNewsInner n =
   TopNews200ResponseTopNewsInnerNewsInner
     <$> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerSummary :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerAuthor :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerId :: Maybe Int
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerText :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerTitle :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerPublishDate :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerUrl :: Maybe Text
     <*> arbitraryReducedMaybe n -- topNews200ResponseTopNewsInnerNewsInnerAuthors :: Maybe [Text]
+  
+instance Arbitrary VerifyEmailAddress200Response where
+  arbitrary = sized genVerifyEmailAddress200Response
+
+genVerifyEmailAddress200Response :: Int -> Gen VerifyEmailAddress200Response
+genVerifyEmailAddress200Response n =
+  VerifyEmailAddress200Response
+    <$> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseEmail :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseDomain :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseFirstName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseMiddleName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseLastName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseFullName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseUsername :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseResult :: Maybe Text
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseDisposable :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseAcceptAll :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- verifyEmailAddress200ResponseFreeProvider :: Maybe Bool
   
 
 

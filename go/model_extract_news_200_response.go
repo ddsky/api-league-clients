@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.2.0
+API version: 1.3.0
 Contact: mail@apileague.com
 */
 
@@ -23,12 +23,11 @@ type ExtractNews200Response struct {
 	Title NullableString `json:"title,omitempty"`
 	Text NullableString `json:"text,omitempty"`
 	Url NullableString `json:"url,omitempty"`
-	Image NullableString `json:"image,omitempty"`
+	Images []ExtractNews200ResponseImagesInner `json:"images,omitempty"`
+	Videos []ExtractNews200ResponseVideosInner `json:"videos,omitempty"`
 	PublishDate NullableString `json:"publish_date,omitempty"`
-	Author NullableString `json:"author,omitempty"`
+	Authors []*string `json:"authors,omitempty"`
 	Language NullableString `json:"language,omitempty"`
-	SourceCountry NullableString `json:"source_country,omitempty"`
-	Sentiment *float32 `json:"sentiment,omitempty"`
 }
 
 // NewExtractNews200Response instantiates a new ExtractNews200Response object
@@ -174,46 +173,68 @@ func (o *ExtractNews200Response) UnsetUrl() {
 	o.Url.Unset()
 }
 
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ExtractNews200Response) GetImage() string {
-	if o == nil || IsNil(o.Image.Get()) {
-		var ret string
+// GetImages returns the Images field value if set, zero value otherwise.
+func (o *ExtractNews200Response) GetImages() []ExtractNews200ResponseImagesInner {
+	if o == nil || IsNil(o.Images) {
+		var ret []ExtractNews200ResponseImagesInner
 		return ret
 	}
-	return *o.Image.Get()
+	return o.Images
 }
 
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExtractNews200Response) GetImageOk() (*string, bool) {
-	if o == nil {
+func (o *ExtractNews200Response) GetImagesOk() ([]ExtractNews200ResponseImagesInner, bool) {
+	if o == nil || IsNil(o.Images) {
 		return nil, false
 	}
-	return o.Image.Get(), o.Image.IsSet()
+	return o.Images, true
 }
 
-// HasImage returns a boolean if a field has been set.
-func (o *ExtractNews200Response) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
+// HasImages returns a boolean if a field has been set.
+func (o *ExtractNews200Response) HasImages() bool {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
 	return false
 }
 
-// SetImage gets a reference to the given NullableString and assigns it to the Image field.
-func (o *ExtractNews200Response) SetImage(v string) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *ExtractNews200Response) SetImageNil() {
-	o.Image.Set(nil)
+// SetImages gets a reference to the given []ExtractNews200ResponseImagesInner and assigns it to the Images field.
+func (o *ExtractNews200Response) SetImages(v []ExtractNews200ResponseImagesInner) {
+	o.Images = v
 }
 
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *ExtractNews200Response) UnsetImage() {
-	o.Image.Unset()
+// GetVideos returns the Videos field value if set, zero value otherwise.
+func (o *ExtractNews200Response) GetVideos() []ExtractNews200ResponseVideosInner {
+	if o == nil || IsNil(o.Videos) {
+		var ret []ExtractNews200ResponseVideosInner
+		return ret
+	}
+	return o.Videos
+}
+
+// GetVideosOk returns a tuple with the Videos field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExtractNews200Response) GetVideosOk() ([]ExtractNews200ResponseVideosInner, bool) {
+	if o == nil || IsNil(o.Videos) {
+		return nil, false
+	}
+	return o.Videos, true
+}
+
+// HasVideos returns a boolean if a field has been set.
+func (o *ExtractNews200Response) HasVideos() bool {
+	if o != nil && !IsNil(o.Videos) {
+		return true
+	}
+
+	return false
+}
+
+// SetVideos gets a reference to the given []ExtractNews200ResponseVideosInner and assigns it to the Videos field.
+func (o *ExtractNews200Response) SetVideos(v []ExtractNews200ResponseVideosInner) {
+	o.Videos = v
 }
 
 // GetPublishDate returns the PublishDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -258,46 +279,36 @@ func (o *ExtractNews200Response) UnsetPublishDate() {
 	o.PublishDate.Unset()
 }
 
-// GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ExtractNews200Response) GetAuthor() string {
-	if o == nil || IsNil(o.Author.Get()) {
-		var ret string
+// GetAuthors returns the Authors field value if set, zero value otherwise.
+func (o *ExtractNews200Response) GetAuthors() []*string {
+	if o == nil || IsNil(o.Authors) {
+		var ret []*string
 		return ret
 	}
-	return *o.Author.Get()
+	return o.Authors
 }
 
-// GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
+// GetAuthorsOk returns a tuple with the Authors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExtractNews200Response) GetAuthorOk() (*string, bool) {
-	if o == nil {
+func (o *ExtractNews200Response) GetAuthorsOk() ([]*string, bool) {
+	if o == nil || IsNil(o.Authors) {
 		return nil, false
 	}
-	return o.Author.Get(), o.Author.IsSet()
+	return o.Authors, true
 }
 
-// HasAuthor returns a boolean if a field has been set.
-func (o *ExtractNews200Response) HasAuthor() bool {
-	if o != nil && o.Author.IsSet() {
+// HasAuthors returns a boolean if a field has been set.
+func (o *ExtractNews200Response) HasAuthors() bool {
+	if o != nil && !IsNil(o.Authors) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthor gets a reference to the given NullableString and assigns it to the Author field.
-func (o *ExtractNews200Response) SetAuthor(v string) {
-	o.Author.Set(&v)
-}
-// SetAuthorNil sets the value for Author to be an explicit nil
-func (o *ExtractNews200Response) SetAuthorNil() {
-	o.Author.Set(nil)
-}
-
-// UnsetAuthor ensures that no value is present for Author, not even an explicit nil
-func (o *ExtractNews200Response) UnsetAuthor() {
-	o.Author.Unset()
+// SetAuthors gets a reference to the given []*string and assigns it to the Authors field.
+func (o *ExtractNews200Response) SetAuthors(v []*string) {
+	o.Authors = v
 }
 
 // GetLanguage returns the Language field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -342,80 +353,6 @@ func (o *ExtractNews200Response) UnsetLanguage() {
 	o.Language.Unset()
 }
 
-// GetSourceCountry returns the SourceCountry field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ExtractNews200Response) GetSourceCountry() string {
-	if o == nil || IsNil(o.SourceCountry.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.SourceCountry.Get()
-}
-
-// GetSourceCountryOk returns a tuple with the SourceCountry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExtractNews200Response) GetSourceCountryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.SourceCountry.Get(), o.SourceCountry.IsSet()
-}
-
-// HasSourceCountry returns a boolean if a field has been set.
-func (o *ExtractNews200Response) HasSourceCountry() bool {
-	if o != nil && o.SourceCountry.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceCountry gets a reference to the given NullableString and assigns it to the SourceCountry field.
-func (o *ExtractNews200Response) SetSourceCountry(v string) {
-	o.SourceCountry.Set(&v)
-}
-// SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
-func (o *ExtractNews200Response) SetSourceCountryNil() {
-	o.SourceCountry.Set(nil)
-}
-
-// UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
-func (o *ExtractNews200Response) UnsetSourceCountry() {
-	o.SourceCountry.Unset()
-}
-
-// GetSentiment returns the Sentiment field value if set, zero value otherwise.
-func (o *ExtractNews200Response) GetSentiment() float32 {
-	if o == nil || IsNil(o.Sentiment) {
-		var ret float32
-		return ret
-	}
-	return *o.Sentiment
-}
-
-// GetSentimentOk returns a tuple with the Sentiment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtractNews200Response) GetSentimentOk() (*float32, bool) {
-	if o == nil || IsNil(o.Sentiment) {
-		return nil, false
-	}
-	return o.Sentiment, true
-}
-
-// HasSentiment returns a boolean if a field has been set.
-func (o *ExtractNews200Response) HasSentiment() bool {
-	if o != nil && !IsNil(o.Sentiment) {
-		return true
-	}
-
-	return false
-}
-
-// SetSentiment gets a reference to the given float32 and assigns it to the Sentiment field.
-func (o *ExtractNews200Response) SetSentiment(v float32) {
-	o.Sentiment = &v
-}
-
 func (o ExtractNews200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -435,23 +372,20 @@ func (o ExtractNews200Response) ToMap() (map[string]interface{}, error) {
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
 	}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
+	if !IsNil(o.Images) {
+		toSerialize["images"] = o.Images
+	}
+	if !IsNil(o.Videos) {
+		toSerialize["videos"] = o.Videos
 	}
 	if o.PublishDate.IsSet() {
 		toSerialize["publish_date"] = o.PublishDate.Get()
 	}
-	if o.Author.IsSet() {
-		toSerialize["author"] = o.Author.Get()
+	if !IsNil(o.Authors) {
+		toSerialize["authors"] = o.Authors
 	}
 	if o.Language.IsSet() {
 		toSerialize["language"] = o.Language.Get()
-	}
-	if o.SourceCountry.IsSet() {
-		toSerialize["source_country"] = o.SourceCountry.Get()
-	}
-	if !IsNil(o.Sentiment) {
-		toSerialize["sentiment"] = o.Sentiment
 	}
 	return toSerialize, nil
 }

@@ -19,6 +19,8 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.client.model.ExtractNews200Response
+import com.apileague.client.model.ExtractNews200ResponseImagesInner
+import com.apileague.client.model.ExtractNews200ResponseVideosInner
 
 class ExtractNews200ResponseTest : ShouldSpec() {
     init {
@@ -43,10 +45,16 @@ class ExtractNews200ResponseTest : ShouldSpec() {
             //modelInstance.url shouldBe ("TODO")
         }
 
-        // to test the property `image`
-        should("test image") {
+        // to test the property `images`
+        should("test images") {
             // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
+            //modelInstance.images shouldBe ("TODO")
+        }
+
+        // to test the property `videos`
+        should("test videos") {
+            // uncomment below to test the property
+            //modelInstance.videos shouldBe ("TODO")
         }
 
         // to test the property `publishDate`
@@ -55,28 +63,16 @@ class ExtractNews200ResponseTest : ShouldSpec() {
             //modelInstance.publishDate shouldBe ("TODO")
         }
 
-        // to test the property `author`
-        should("test author") {
+        // to test the property `authors`
+        should("test authors") {
             // uncomment below to test the property
-            //modelInstance.author shouldBe ("TODO")
+            //modelInstance.authors shouldBe ("TODO")
         }
 
         // to test the property `language`
         should("test language") {
             // uncomment below to test the property
             //modelInstance.language shouldBe ("TODO")
-        }
-
-        // to test the property `sourceCountry`
-        should("test sourceCountry") {
-            // uncomment below to test the property
-            //modelInstance.sourceCountry shouldBe ("TODO")
-        }
-
-        // to test the property `sentiment`
-        should("test sentiment") {
-            // uncomment below to test the property
-            //modelInstance.sentiment shouldBe ("TODO")
         }
 
     }
