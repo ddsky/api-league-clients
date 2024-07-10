@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.3.0"
+compile "com.apileague:android-client:1.4.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.3.0.jar
+- target/android-client-1.4.0.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *HumorApi* | [**searchJokes**](docs/HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
 *HumorApi* | [**searchMemes**](docs/HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
 *KnowledgeApi* | [**randomQuote**](docs/KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
+*KnowledgeApi* | [**randomRiddle**](docs/KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle
 *KnowledgeApi* | [**randomTrivia**](docs/KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
 *MathApi* | [**convertUnits**](docs/MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
 *MediaApi* | [**detectMainImageColor**](docs/MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
  - [RandomMeme200Response](docs/RandomMeme200Response.md)
  - [RandomPoem200Response](docs/RandomPoem200Response.md)
  - [RandomQuote200Response](docs/RandomQuote200Response.md)
+ - [RandomRiddle200Response](docs/RandomRiddle200Response.md)
  - [RandomTrivia200Response](docs/RandomTrivia200Response.md)
  - [ReadKeyValueFromStore200Response](docs/ReadKeyValueFromStore200Response.md)
  - [RetrievePageRank200Response](docs/RetrievePageRank200Response.md)
@@ -196,7 +198,7 @@ Class | Method | HTTP request | Description
  - [ScoreText200ResponseStyle](docs/ScoreText200ResponseStyle.md)
  - [ScoreText200ResponseStyleSubscores](docs/ScoreText200ResponseStyleSubscores.md)
  - [SearchBooks200Response](docs/SearchBooks200Response.md)
- - [SearchBooks200ResponseBooksInner](docs/SearchBooks200ResponseBooksInner.md)
+ - [SearchBooks200ResponseBooksInnerInner](docs/SearchBooks200ResponseBooksInnerInner.md)
  - [SearchGifs200Response](docs/SearchGifs200Response.md)
  - [SearchGifs200ResponseImagesInner](docs/SearchGifs200ResponseImagesInner.md)
  - [SearchJokes200Response](docs/SearchJokes200Response.md)

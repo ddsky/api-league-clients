@@ -10,7 +10,7 @@
 |**available** | **Integer** |  |  [optional] |
 |**number** | **Integer** |  |  [optional] |
 |**offset** | **Integer** |  |  [optional] |
-|**books** | [**List&lt;SearchBooks200ResponseBooksInner&gt;**](SearchBooks200ResponseBooksInner.md) |  |  [optional] |
+|**books** | **List&lt;List&lt;SearchBooks200ResponseBooksInnerInner&gt;&gt;** |  |  [optional] |
 
 
 

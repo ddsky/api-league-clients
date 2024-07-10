@@ -43,7 +43,7 @@ class SearchBooks200Response {
   ///
   int? offset;
 
-  List<SearchBooks200ResponseBooksInner> books;
+  List<List<SearchBooks200ResponseBooksInnerInner>> books;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchBooks200Response &&
@@ -106,7 +106,11 @@ class SearchBooks200Response {
         available: mapValueOfType<int>(json, r'available'),
         number: mapValueOfType<int>(json, r'number'),
         offset: mapValueOfType<int>(json, r'offset'),
-        books: SearchBooks200ResponseBooksInner.listFromJson(json[r'books']),
+        books: json[r'books'] is List
+          ? (json[r'books'] as List).map((e) =>
+              SearchBooks200ResponseBooksInnerInner.listFromJson(json[r'books'])
+            ).toList()
+          :  const [],
       );
     }
     return null;

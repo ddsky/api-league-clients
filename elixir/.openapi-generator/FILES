@@ -46,6 +46,7 @@ lib/api_league/model/pluralize_word_200_response.ex
 lib/api_league/model/random_meme_200_response.ex
 lib/api_league/model/random_poem_200_response.ex
 lib/api_league/model/random_quote_200_response.ex
+lib/api_league/model/random_riddle_200_response.ex
 lib/api_league/model/random_trivia_200_response.ex
 lib/api_league/model/read_key_value_from_store_200_response.ex
 lib/api_league/model/retrieve_page_rank_200_response.ex
@@ -80,7 +81,7 @@ lib/api_league/model/score_text_200_response_skimmability_subscores.ex
 lib/api_league/model/score_text_200_response_style.ex
 lib/api_league/model/score_text_200_response_style_subscores.ex
 lib/api_league/model/search_books_200_response.ex
-lib/api_league/model/search_books_200_response_books_inner.ex
+lib/api_league/model/search_books_200_response_books_inner_inner.ex
 lib/api_league/model/search_gifs_200_response.ex
 lib/api_league/model/search_gifs_200_response_images_inner.ex
 lib/api_league/model/search_jokes_200_response.ex

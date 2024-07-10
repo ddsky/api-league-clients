@@ -240,6 +240,8 @@ class ApiClient {
           return RandomPoem200Response.fromJson(value);
         case 'RandomQuote200Response':
           return RandomQuote200Response.fromJson(value);
+        case 'RandomRiddle200Response':
+          return RandomRiddle200Response.fromJson(value);
         case 'RandomTrivia200Response':
           return RandomTrivia200Response.fromJson(value);
         case 'ReadKeyValueFromStore200Response':
@@ -308,8 +310,8 @@ class ApiClient {
           return ScoreText200ResponseStyleSubscores.fromJson(value);
         case 'SearchBooks200Response':
           return SearchBooks200Response.fromJson(value);
-        case 'SearchBooks200ResponseBooksInner':
-          return SearchBooks200ResponseBooksInner.fromJson(value);
+        case 'SearchBooks200ResponseBooksInnerInner':
+          return SearchBooks200ResponseBooksInnerInner.fromJson(value);
         case 'SearchGifs200Response':
           return SearchGifs200Response.fromJson(value);
         case 'SearchGifs200ResponseImagesInner':

@@ -66,11 +66,11 @@ Configure headerApiKey:
 
 <a id="searchNews"></a>
 # **searchNews**
-> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
 
 Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```kotlin
@@ -88,14 +88,15 @@ val earliestPublishDate : kotlin.String = 2022-04-22 16:12:35 // kotlin.String |
 val latestPublishDate : kotlin.String = 2022-04-22 16:12:35 // kotlin.String | The news must have been published before this date.
 val newsSources : kotlin.String = https://www.bbc.co.uk // kotlin.String | A comma-separated list of news sources from which the news should originate.
 val authors : kotlin.String = John Doe // kotlin.String | A comma-separated list of author names. Only news from any of the given authors will be returned.
+val categories : kotlin.String = politics,sports // kotlin.String | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
 val entities : kotlin.String = ORG:Tesla // kotlin.String | Filter news by entities (ORG, PER, or LOC).
 val locationFilter : kotlin.String = 51.050407, 13.737262, 100 // kotlin.String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-val sort : kotlin.String = publish-time // kotlin.String | The sorting criteria (publish-time or sentiment).
+val sort : kotlin.String = publish-time // kotlin.String | The sorting criteria (publish-time).
 val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
 val offset : kotlin.Int = 0 // kotlin.Int | The number of news to skip in range [0,10000]
 val number : kotlin.Int = 10 // kotlin.Int | The number of news to return in range [1,100]
 try {
-    val result : SearchNews200Response = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+    val result : SearchNews200Response = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NewsApi#searchNews")
@@ -119,9 +120,10 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **kotlin.String**| The news must have been published before this date. | [optional]
  **newsSources** | **kotlin.String**| A comma-separated list of news sources from which the news should originate. | [optional]
  **authors** | **kotlin.String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
+ **categories** | **kotlin.String**| A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional]
  **entities** | **kotlin.String**| Filter news by entities (ORG, PER, or LOC). | [optional]
  **locationFilter** | **kotlin.String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
- **sort** | **kotlin.String**| The sorting criteria (publish-time or sentiment). | [optional]
+ **sort** | **kotlin.String**| The sorting criteria (publish-time). | [optional]
  **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional]
  **offset** | **kotlin.Int**| The number of news to skip in range [0,10000] | [optional]
  **number** | **kotlin.Int**| The number of news to return in range [1,100] | [optional]

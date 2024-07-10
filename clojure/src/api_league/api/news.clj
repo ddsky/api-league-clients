@@ -5,6 +5,7 @@
             [orchestra.core :refer [defn-spec]]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-caloric-breakdown :refer :all]
+            [api-league.specs.random-riddle-200-response :refer :all]
             [api-league.specs.search-gifs-200-response-images-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-flavonoids-inner :refer :all]
             [api-league.specs.search-memes-200-response-memes-inner :refer :all]
@@ -57,12 +58,12 @@
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.detect-sentiment-200-response-document :refer :all]
             [api-league.specs.store-key-value-get-200-response :refer :all]
-            [api-league.specs.search-books-200-response-books-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
             [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
             [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
+            [api-league.specs.search-books-200-response-books-inner-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
             [api-league.specs.search-news-200-response-news-inner :refer :all]
@@ -127,13 +128,13 @@
 
 (defn-spec search-news-with-http-info any?
   "Search News
-  Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language."
+  Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language."
   ([] (search-news-with-http-info nil))
-  ([{:keys [text source-countries language min-sentiment max-sentiment earliest-publish-date latest-publish-date news-sources authors entities location-filter sort sort-direction offset number]} (s/map-of keyword? any?)]
+  ([{:keys [text source-countries language min-sentiment max-sentiment earliest-publish-date latest-publish-date news-sources authors categories entities location-filter sort sort-direction offset number]} (s/map-of keyword? any?)]
    (call-api "/search-news" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"text" text "source-countries" source-countries "language" language "min-sentiment" min-sentiment "max-sentiment" max-sentiment "earliest-publish-date" earliest-publish-date "latest-publish-date" latest-publish-date "news-sources" news-sources "authors" authors "entities" entities "location-filter" location-filter "sort" sort "sort-direction" sort-direction "offset" offset "number" number }
+              :query-params  {"text" text "source-countries" source-countries "language" language "min-sentiment" min-sentiment "max-sentiment" max-sentiment "earliest-publish-date" earliest-publish-date "latest-publish-date" latest-publish-date "news-sources" news-sources "authors" authors "categories" categories "entities" entities "location-filter" location-filter "sort" sort "sort-direction" sort-direction "offset" offset "number" number }
               :form-params   {}
               :content-types []
               :accepts       ["application/json"]
@@ -141,7 +142,7 @@
 
 (defn-spec search-news search-news-200-response-spec
   "Search News
-  Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language."
+  Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language."
   ([] (search-news nil))
   ([optional-params any?]
    (let [res (:data (search-news-with-http-info optional-params))]

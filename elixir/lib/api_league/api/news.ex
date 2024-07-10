@@ -50,7 +50,7 @@ defmodule APILeague.Api.News do
 
   @doc """
   Search News
-  Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
   ### Parameters
 
@@ -65,9 +65,10 @@ defmodule APILeague.Api.News do
     - `:"latest-publish-date"` (String.t): The news must have been published before this date.
     - `:"news-sources"` (String.t): A comma-separated list of news sources from which the news should originate.
     - `:authors` (String.t): A comma-separated list of author names. Only news from any of the given authors will be returned.
+    - `:categories` (String.t): A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
     - `:entities` (String.t): Filter news by entities (ORG, PER, or LOC).
     - `:"location-filter"` (String.t): Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-    - `:sort` (String.t): The sorting criteria (publish-time or sentiment).
+    - `:sort` (String.t): The sorting criteria (publish-time).
     - `:"sort-direction"` (String.t): Whether to sort ascending or descending (ASC or DESC).
     - `:offset` (integer()): The number of news to skip in range [0,10000]
     - `:number` (integer()): The number of news to return in range [1,100]
@@ -89,6 +90,7 @@ defmodule APILeague.Api.News do
       :"latest-publish-date" => :query,
       :"news-sources" => :query,
       :authors => :query,
+      :categories => :query,
       :entities => :query,
       :"location-filter" => :query,
       :sort => :query,

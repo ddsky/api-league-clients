@@ -38,6 +38,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -72,7 +73,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -168,6 +169,7 @@ src/main/kotlin/com/apileague/client/model/PluralizeWord200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomMeme200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomPoem200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomQuote200Response.kt
+src/main/kotlin/com/apileague/client/model/RandomRiddle200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomTrivia200Response.kt
 src/main/kotlin/com/apileague/client/model/ReadKeyValueFromStore200Response.kt
 src/main/kotlin/com/apileague/client/model/RetrievePageRank200Response.kt
@@ -202,7 +204,7 @@ src/main/kotlin/com/apileague/client/model/ScoreText200ResponseSkimmabilitySubsc
 src/main/kotlin/com/apileague/client/model/ScoreText200ResponseStyle.kt
 src/main/kotlin/com/apileague/client/model/ScoreText200ResponseStyleSubscores.kt
 src/main/kotlin/com/apileague/client/model/SearchBooks200Response.kt
-src/main/kotlin/com/apileague/client/model/SearchBooks200ResponseBooksInner.kt
+src/main/kotlin/com/apileague/client/model/SearchBooks200ResponseBooksInnerInner.kt
 src/main/kotlin/com/apileague/client/model/SearchGifs200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchGifs200ResponseImagesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchJokes200Response.kt
@@ -273,6 +275,7 @@ src/test/kotlin/com/apileague/client/model/PluralizeWord200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomMeme200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomPoem200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomQuote200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/RandomRiddle200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomTrivia200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ReadKeyValueFromStore200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RetrievePageRank200ResponseTest.kt
@@ -306,7 +309,7 @@ src/test/kotlin/com/apileague/client/model/ScoreText200ResponseSkimmabilityTest.
 src/test/kotlin/com/apileague/client/model/ScoreText200ResponseStyleSubscoresTest.kt
 src/test/kotlin/com/apileague/client/model/ScoreText200ResponseStyleTest.kt
 src/test/kotlin/com/apileague/client/model/ScoreText200ResponseTest.kt
-src/test/kotlin/com/apileague/client/model/SearchBooks200ResponseBooksInnerTest.kt
+src/test/kotlin/com/apileague/client/model/SearchBooks200ResponseBooksInnerInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchBooks200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifs200ResponseImagesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifs200ResponseTest.kt

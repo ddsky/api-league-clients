@@ -31,23 +31,8 @@ void main() {
       // TODO
     });
 
-    // String sourceCountry
-    test('to test the property `sourceCountry`', () async {
-      // TODO
-    });
-
     // String language
     test('to test the property `language`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // String text
-    test('to test the property `text`', () async {
       // TODO
     });
 
@@ -61,13 +46,33 @@ void main() {
       // TODO
     });
 
-    // String publishDate
-    test('to test the property `publishDate`', () async {
+    // String url
+    test('to test the property `url`', () async {
       // TODO
     });
 
-    // String url
-    test('to test the property `url`', () async {
+    // String sourceCountry
+    test('to test the property `sourceCountry`', () async {
+      // TODO
+    });
+
+    // int id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // String text
+    test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // String category
+    test('to test the property `category`', () async {
+      // TODO
+    });
+
+    // String publishDate
+    test('to test the property `publishDate`', () async {
       // TODO
     });
 

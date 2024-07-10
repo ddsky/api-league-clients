@@ -1,6 +1,6 @@
 .gitignore
 .openapi-generator-ignore
-apileague-1.3.0.rockspec
+apileague-1.4.0.rockspec
 apileague/api/art_api.lua
 apileague/api/books_api.lua
 apileague/api/food_api.lua
@@ -41,6 +41,7 @@ apileague/model/pluralize_word_200_response.lua
 apileague/model/random_meme_200_response.lua
 apileague/model/random_poem_200_response.lua
 apileague/model/random_quote_200_response.lua
+apileague/model/random_riddle_200_response.lua
 apileague/model/random_trivia_200_response.lua
 apileague/model/read_key_value_from_store_200_response.lua
 apileague/model/retrieve_page_rank_200_response.lua
@@ -75,7 +76,7 @@ apileague/model/score_text_200_response_skimmability_subscores.lua
 apileague/model/score_text_200_response_style.lua
 apileague/model/score_text_200_response_style_subscores.lua
 apileague/model/search_books_200_response.lua
-apileague/model/search_books_200_response_books_inner.lua
+apileague/model/search_books_200_response_books_inner_inner.lua
 apileague/model/search_gifs_200_response.lua
 apileague/model/search_gifs_200_response_images_inner.lua
 apileague/model/search_jokes_200_response.lua
@@ -144,6 +145,7 @@ spec/pluralize_word_200_response_spec.lua
 spec/random_meme_200_response_spec.lua
 spec/random_poem_200_response_spec.lua
 spec/random_quote_200_response_spec.lua
+spec/random_riddle_200_response_spec.lua
 spec/random_trivia_200_response_spec.lua
 spec/read_key_value_from_store_200_response_spec.lua
 spec/retrieve_page_rank_200_response_spec.lua
@@ -177,7 +179,7 @@ spec/score_text_200_response_skimmability_subscores_spec.lua
 spec/score_text_200_response_spec.lua
 spec/score_text_200_response_style_spec.lua
 spec/score_text_200_response_style_subscores_spec.lua
-spec/search_books_200_response_books_inner_spec.lua
+spec/search_books_200_response_books_inner_inner_spec.lua
 spec/search_books_200_response_spec.lua
 spec/search_gifs_200_response_images_inner_spec.lua
 spec/search_gifs_200_response_spec.lua

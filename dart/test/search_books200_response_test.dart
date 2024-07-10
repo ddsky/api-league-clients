@@ -31,7 +31,7 @@ void main() {
       // TODO
     });
 
-    // List<SearchBooks200ResponseBooksInner> books (default value: const [])
+    // List<List<SearchBooks200ResponseBooksInnerInner>> books (default value: const [])
     test('to test the property `books`', () async {
       // TODO
     });

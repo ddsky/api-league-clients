@@ -93,7 +93,7 @@ end
 
 Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Examples
 
@@ -124,9 +124,10 @@ opts = {
   latest_publish_date: '2022-04-22 16:12:35', # String | The news must have been published before this date.
   news_sources: 'https://www.bbc.co.uk', # String | A comma-separated list of news sources from which the news should originate.
   authors: 'John Doe', # String | A comma-separated list of author names. Only news from any of the given authors will be returned.
+  categories: 'politics,sports', # String | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
   entities: 'ORG:Tesla', # String | Filter news by entities (ORG, PER, or LOC).
   location_filter: '51.050407, 13.737262, 100', # String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-  sort: 'publish-time', # String | The sorting criteria (publish-time or sentiment).
+  sort: 'publish-time', # String | The sorting criteria (publish-time).
   sort_direction: 'ASC', # String | Whether to sort ascending or descending (ASC or DESC).
   offset: 0, # Integer | The number of news to skip in range [0,10000]
   number: 10 # Integer | The number of news to return in range [1,100]
@@ -172,9 +173,10 @@ end
 | **latest_publish_date** | **String** | The news must have been published before this date. | [optional] |
 | **news_sources** | **String** | A comma-separated list of news sources from which the news should originate. | [optional] |
 | **authors** | **String** | A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
+| **categories** | **String** | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional] |
 | **entities** | **String** | Filter news by entities (ORG, PER, or LOC). | [optional] |
 | **location_filter** | **String** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
-| **sort** | **String** | The sorting criteria (publish-time or sentiment). | [optional] |
+| **sort** | **String** | The sorting criteria (publish-time). | [optional] |
 | **sort_direction** | **String** | Whether to sort ascending or descending (ASC or DESC). | [optional] |
 | **offset** | **Integer** | The number of news to skip in range [0,10000] | [optional] |
 | **number** | **Integer** | The number of news to return in range [1,100] | [optional] |

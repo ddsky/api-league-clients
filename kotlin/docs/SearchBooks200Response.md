@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **available** | **kotlin.Int** |  |  [optional]
 **number** | **kotlin.Int** |  |  [optional]
 **offset** | **kotlin.Int** |  |  [optional]
-**books** | [**kotlin.collections.List&lt;SearchBooks200ResponseBooksInner&gt;**](SearchBooks200ResponseBooksInner.md) |  |  [optional]
+**books** | **kotlin.collections.List&lt;kotlin.collections.List&lt;SearchBooks200ResponseBooksInnerInner&gt;&gt;** |  |  [optional]
 
 
 

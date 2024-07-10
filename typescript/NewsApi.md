@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 # **searchNews**
 > SearchNews200Response searchNews()
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 
@@ -106,11 +106,13 @@ let body:.NewsApiSearchNewsRequest = {
   newsSources: "https://www.bbc.co.uk",
   // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
   authors: "John Doe",
+  // string | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. (optional)
+  categories: "politics,sports",
   // string | Filter news by entities (ORG, PER, or LOC). (optional)
   entities: "ORG:Tesla",
   // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
   locationFilter: "51.050407, 13.737262, 100",
-  // string | The sorting criteria (publish-time or sentiment). (optional)
+  // string | The sorting criteria (publish-time). (optional)
   sort: "publish-time",
   // string | Whether to sort ascending or descending (ASC or DESC). (optional)
   sortDirection: "ASC",
@@ -139,9 +141,10 @@ Name | Type | Description  | Notes
  **latestPublishDate** | [**string**] | The news must have been published before this date. | (optional) defaults to undefined
  **newsSources** | [**string**] | A comma-separated list of news sources from which the news should originate. | (optional) defaults to undefined
  **authors** | [**string**] | A comma-separated list of author names. Only news from any of the given authors will be returned. | (optional) defaults to undefined
+ **categories** | [**string**] | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | (optional) defaults to undefined
  **entities** | [**string**] | Filter news by entities (ORG, PER, or LOC). | (optional) defaults to undefined
  **locationFilter** | [**string**] | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | (optional) defaults to undefined
- **sort** | [**string**] | The sorting criteria (publish-time or sentiment). | (optional) defaults to undefined
+ **sort** | [**string**] | The sorting criteria (publish-time). | (optional) defaults to undefined
  **sortDirection** | [**string**] | Whether to sort ascending or descending (ASC or DESC). | (optional) defaults to undefined
  **offset** | [**number**] | The number of news to skip in range [0,10000] | (optional) defaults to undefined
  **number** | [**number**] | The number of news to return in range [1,100] | (optional) defaults to undefined

@@ -7,14 +7,15 @@ Name | Type | Description | Notes
 **Summary** | Pointer to **NullableString** |  | [optional] 
 **Image** | Pointer to **NullableString** |  | [optional] 
 **Sentiment** | Pointer to **float32** |  | [optional] 
-**SourceCountry** | Pointer to **NullableString** |  | [optional] 
 **Language** | Pointer to **NullableString** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
-**Text** | Pointer to **NullableString** |  | [optional] 
 **Video** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
-**PublishDate** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
+**SourceCountry** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **int32** |  | [optional] 
+**Text** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **NullableString** |  | [optional] 
+**PublishDate** | Pointer to **NullableString** |  | [optional] 
 **Authors** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -131,41 +132,6 @@ SetSentiment sets Sentiment field to given value.
 
 HasSentiment returns a boolean if a field has been set.
 
-### GetSourceCountry
-
-`func (o *SearchNews200ResponseNewsInner) GetSourceCountry() string`
-
-GetSourceCountry returns the SourceCountry field if non-nil, zero value otherwise.
-
-### GetSourceCountryOk
-
-`func (o *SearchNews200ResponseNewsInner) GetSourceCountryOk() (*string, bool)`
-
-GetSourceCountryOk returns a tuple with the SourceCountry field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceCountry
-
-`func (o *SearchNews200ResponseNewsInner) SetSourceCountry(v string)`
-
-SetSourceCountry sets SourceCountry field to given value.
-
-### HasSourceCountry
-
-`func (o *SearchNews200ResponseNewsInner) HasSourceCountry() bool`
-
-HasSourceCountry returns a boolean if a field has been set.
-
-### SetSourceCountryNil
-
-`func (o *SearchNews200ResponseNewsInner) SetSourceCountryNil(b bool)`
-
- SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
-
-### UnsetSourceCountry
-`func (o *SearchNews200ResponseNewsInner) UnsetSourceCountry()`
-
-UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
 ### GetLanguage
 
 `func (o *SearchNews200ResponseNewsInner) GetLanguage() string`
@@ -201,66 +167,6 @@ HasLanguage returns a boolean if a field has been set.
 `func (o *SearchNews200ResponseNewsInner) UnsetLanguage()`
 
 UnsetLanguage ensures that no value is present for Language, not even an explicit nil
-### GetId
-
-`func (o *SearchNews200ResponseNewsInner) GetId() int32`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SearchNews200ResponseNewsInner) GetIdOk() (*int32, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SearchNews200ResponseNewsInner) SetId(v int32)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *SearchNews200ResponseNewsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetText
-
-`func (o *SearchNews200ResponseNewsInner) GetText() string`
-
-GetText returns the Text field if non-nil, zero value otherwise.
-
-### GetTextOk
-
-`func (o *SearchNews200ResponseNewsInner) GetTextOk() (*string, bool)`
-
-GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetText
-
-`func (o *SearchNews200ResponseNewsInner) SetText(v string)`
-
-SetText sets Text field to given value.
-
-### HasText
-
-`func (o *SearchNews200ResponseNewsInner) HasText() bool`
-
-HasText returns a boolean if a field has been set.
-
-### SetTextNil
-
-`func (o *SearchNews200ResponseNewsInner) SetTextNil(b bool)`
-
- SetTextNil sets the value for Text to be an explicit nil
-
-### UnsetText
-`func (o *SearchNews200ResponseNewsInner) UnsetText()`
-
-UnsetText ensures that no value is present for Text, not even an explicit nil
 ### GetVideo
 
 `func (o *SearchNews200ResponseNewsInner) GetVideo() string`
@@ -331,41 +237,6 @@ HasTitle returns a boolean if a field has been set.
 `func (o *SearchNews200ResponseNewsInner) UnsetTitle()`
 
 UnsetTitle ensures that no value is present for Title, not even an explicit nil
-### GetPublishDate
-
-`func (o *SearchNews200ResponseNewsInner) GetPublishDate() string`
-
-GetPublishDate returns the PublishDate field if non-nil, zero value otherwise.
-
-### GetPublishDateOk
-
-`func (o *SearchNews200ResponseNewsInner) GetPublishDateOk() (*string, bool)`
-
-GetPublishDateOk returns a tuple with the PublishDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublishDate
-
-`func (o *SearchNews200ResponseNewsInner) SetPublishDate(v string)`
-
-SetPublishDate sets PublishDate field to given value.
-
-### HasPublishDate
-
-`func (o *SearchNews200ResponseNewsInner) HasPublishDate() bool`
-
-HasPublishDate returns a boolean if a field has been set.
-
-### SetPublishDateNil
-
-`func (o *SearchNews200ResponseNewsInner) SetPublishDateNil(b bool)`
-
- SetPublishDateNil sets the value for PublishDate to be an explicit nil
-
-### UnsetPublishDate
-`func (o *SearchNews200ResponseNewsInner) UnsetPublishDate()`
-
-UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
 ### GetUrl
 
 `func (o *SearchNews200ResponseNewsInner) GetUrl() string`
@@ -401,6 +272,171 @@ HasUrl returns a boolean if a field has been set.
 `func (o *SearchNews200ResponseNewsInner) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
+### GetSourceCountry
+
+`func (o *SearchNews200ResponseNewsInner) GetSourceCountry() string`
+
+GetSourceCountry returns the SourceCountry field if non-nil, zero value otherwise.
+
+### GetSourceCountryOk
+
+`func (o *SearchNews200ResponseNewsInner) GetSourceCountryOk() (*string, bool)`
+
+GetSourceCountryOk returns a tuple with the SourceCountry field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceCountry
+
+`func (o *SearchNews200ResponseNewsInner) SetSourceCountry(v string)`
+
+SetSourceCountry sets SourceCountry field to given value.
+
+### HasSourceCountry
+
+`func (o *SearchNews200ResponseNewsInner) HasSourceCountry() bool`
+
+HasSourceCountry returns a boolean if a field has been set.
+
+### SetSourceCountryNil
+
+`func (o *SearchNews200ResponseNewsInner) SetSourceCountryNil(b bool)`
+
+ SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
+
+### UnsetSourceCountry
+`func (o *SearchNews200ResponseNewsInner) UnsetSourceCountry()`
+
+UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
+### GetId
+
+`func (o *SearchNews200ResponseNewsInner) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SearchNews200ResponseNewsInner) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SearchNews200ResponseNewsInner) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *SearchNews200ResponseNewsInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetText
+
+`func (o *SearchNews200ResponseNewsInner) GetText() string`
+
+GetText returns the Text field if non-nil, zero value otherwise.
+
+### GetTextOk
+
+`func (o *SearchNews200ResponseNewsInner) GetTextOk() (*string, bool)`
+
+GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetText
+
+`func (o *SearchNews200ResponseNewsInner) SetText(v string)`
+
+SetText sets Text field to given value.
+
+### HasText
+
+`func (o *SearchNews200ResponseNewsInner) HasText() bool`
+
+HasText returns a boolean if a field has been set.
+
+### SetTextNil
+
+`func (o *SearchNews200ResponseNewsInner) SetTextNil(b bool)`
+
+ SetTextNil sets the value for Text to be an explicit nil
+
+### UnsetText
+`func (o *SearchNews200ResponseNewsInner) UnsetText()`
+
+UnsetText ensures that no value is present for Text, not even an explicit nil
+### GetCategory
+
+`func (o *SearchNews200ResponseNewsInner) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *SearchNews200ResponseNewsInner) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *SearchNews200ResponseNewsInner) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *SearchNews200ResponseNewsInner) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
+
+### SetCategoryNil
+
+`func (o *SearchNews200ResponseNewsInner) SetCategoryNil(b bool)`
+
+ SetCategoryNil sets the value for Category to be an explicit nil
+
+### UnsetCategory
+`func (o *SearchNews200ResponseNewsInner) UnsetCategory()`
+
+UnsetCategory ensures that no value is present for Category, not even an explicit nil
+### GetPublishDate
+
+`func (o *SearchNews200ResponseNewsInner) GetPublishDate() string`
+
+GetPublishDate returns the PublishDate field if non-nil, zero value otherwise.
+
+### GetPublishDateOk
+
+`func (o *SearchNews200ResponseNewsInner) GetPublishDateOk() (*string, bool)`
+
+GetPublishDateOk returns a tuple with the PublishDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishDate
+
+`func (o *SearchNews200ResponseNewsInner) SetPublishDate(v string)`
+
+SetPublishDate sets PublishDate field to given value.
+
+### HasPublishDate
+
+`func (o *SearchNews200ResponseNewsInner) HasPublishDate() bool`
+
+HasPublishDate returns a boolean if a field has been set.
+
+### SetPublishDateNil
+
+`func (o *SearchNews200ResponseNewsInner) SetPublishDateNil(b bool)`
+
+ SetPublishDateNil sets the value for PublishDate to be an explicit nil
+
+### UnsetPublishDate
+`func (o *SearchNews200ResponseNewsInner) UnsetPublishDate()`
+
+UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
 ### GetAuthors
 
 `func (o *SearchNews200ResponseNewsInner) GetAuthors() []*string`

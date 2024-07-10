@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**similar_books** | [**List[SearchBooks200ResponseBooksInner]**](SearchBooks200ResponseBooksInner.md) |  | [optional] 
+**similar_books** | [**List[SearchBooks200ResponseBooksInnerInner]**](SearchBooks200ResponseBooksInnerInner.md) |  | [optional] 
 
 ## Example
 

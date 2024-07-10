@@ -15,7 +15,7 @@
 
 package com.apileague.client.model
 
-import com.apileague.client.model.SearchBooks200ResponseBooksInner
+import com.apileague.client.model.SearchBooks200ResponseBooksInnerInner
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -42,7 +42,7 @@ data class SearchBooks200Response (
     val offset: kotlin.Int? = null,
 
     @Json(name = "books")
-    val books: kotlin.collections.List<SearchBooks200ResponseBooksInner>? = null
+    val books: kotlin.collections.List<kotlin.collections.List<SearchBooks200ResponseBooksInnerInner>>? = null
 
 )
 

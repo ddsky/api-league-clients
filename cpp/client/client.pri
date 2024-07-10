@@ -31,6 +31,7 @@ HEADERS += \
     $${PWD}/OAIRandomMeme_200_response.h \
     $${PWD}/OAIRandomPoem_200_response.h \
     $${PWD}/OAIRandomQuote_200_response.h \
+    $${PWD}/OAIRandomRiddle_200_response.h \
     $${PWD}/OAIRandomTrivia_200_response.h \
     $${PWD}/OAIReadKeyValueFromStore_200_response.h \
     $${PWD}/OAIRetrievePageRank_200_response.h \
@@ -65,7 +66,7 @@ HEADERS += \
     $${PWD}/OAIScoreText_200_response_style.h \
     $${PWD}/OAIScoreText_200_response_style_subscores.h \
     $${PWD}/OAISearchBooks_200_response.h \
-    $${PWD}/OAISearchBooks_200_response_books_inner.h \
+    $${PWD}/OAISearchBooks_200_response_books_inner_inner.h \
     $${PWD}/OAISearchGifs_200_response.h \
     $${PWD}/OAISearchGifs_200_response_images_inner.h \
     $${PWD}/OAISearchJokes_200_response.h \
@@ -149,6 +150,7 @@ SOURCES += \
     $${PWD}/OAIRandomMeme_200_response.cpp \
     $${PWD}/OAIRandomPoem_200_response.cpp \
     $${PWD}/OAIRandomQuote_200_response.cpp \
+    $${PWD}/OAIRandomRiddle_200_response.cpp \
     $${PWD}/OAIRandomTrivia_200_response.cpp \
     $${PWD}/OAIReadKeyValueFromStore_200_response.cpp \
     $${PWD}/OAIRetrievePageRank_200_response.cpp \
@@ -183,7 +185,7 @@ SOURCES += \
     $${PWD}/OAIScoreText_200_response_style.cpp \
     $${PWD}/OAIScoreText_200_response_style_subscores.cpp \
     $${PWD}/OAISearchBooks_200_response.cpp \
-    $${PWD}/OAISearchBooks_200_response_books_inner.cpp \
+    $${PWD}/OAISearchBooks_200_response_books_inner_inner.cpp \
     $${PWD}/OAISearchGifs_200_response.cpp \
     $${PWD}/OAISearchGifs_200_response_images_inner.cpp \
     $${PWD}/OAISearchJokes_200_response.cpp \

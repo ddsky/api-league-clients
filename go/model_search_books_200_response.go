@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.3.0
+API version: 1.4.0
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ type SearchBooks200Response struct {
 	Available *int32 `json:"available,omitempty"`
 	Number *int32 `json:"number,omitempty"`
 	Offset *int32 `json:"offset,omitempty"`
-	Books []SearchBooks200ResponseBooksInner `json:"books,omitempty"`
+	Books [][]SearchBooks200ResponseBooksInnerInner `json:"books,omitempty"`
 }
 
 // NewSearchBooks200Response instantiates a new SearchBooks200Response object
@@ -140,9 +140,9 @@ func (o *SearchBooks200Response) SetOffset(v int32) {
 }
 
 // GetBooks returns the Books field value if set, zero value otherwise.
-func (o *SearchBooks200Response) GetBooks() []SearchBooks200ResponseBooksInner {
+func (o *SearchBooks200Response) GetBooks() [][]SearchBooks200ResponseBooksInnerInner {
 	if o == nil || IsNil(o.Books) {
-		var ret []SearchBooks200ResponseBooksInner
+		var ret [][]SearchBooks200ResponseBooksInnerInner
 		return ret
 	}
 	return o.Books
@@ -150,7 +150,7 @@ func (o *SearchBooks200Response) GetBooks() []SearchBooks200ResponseBooksInner {
 
 // GetBooksOk returns a tuple with the Books field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchBooks200Response) GetBooksOk() ([]SearchBooks200ResponseBooksInner, bool) {
+func (o *SearchBooks200Response) GetBooksOk() ([][]SearchBooks200ResponseBooksInnerInner, bool) {
 	if o == nil || IsNil(o.Books) {
 		return nil, false
 	}
@@ -166,8 +166,8 @@ func (o *SearchBooks200Response) HasBooks() bool {
 	return false
 }
 
-// SetBooks gets a reference to the given []SearchBooks200ResponseBooksInner and assigns it to the Books field.
-func (o *SearchBooks200Response) SetBooks(v []SearchBooks200ResponseBooksInner) {
+// SetBooks gets a reference to the given [][]SearchBooks200ResponseBooksInnerInner and assigns it to the Books field.
+func (o *SearchBooks200Response) SetBooks(v [][]SearchBooks200ResponseBooksInnerInner) {
 	o.Books = v
 }
 

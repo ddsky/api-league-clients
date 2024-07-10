@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.3.0
+API version: 1.4.0
 Contact: mail@apileague.com
 */
 
@@ -187,6 +187,7 @@ type ApiSearchNewsRequest struct {
 	latestPublishDate *string
 	newsSources *string
 	authors *string
+	categories *string
 	entities *string
 	locationFilter *string
 	sort *string
@@ -249,6 +250,12 @@ func (r ApiSearchNewsRequest) Authors(authors string) ApiSearchNewsRequest {
 	return r
 }
 
+// A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
+func (r ApiSearchNewsRequest) Categories(categories string) ApiSearchNewsRequest {
+	r.categories = &categories
+	return r
+}
+
 // Filter news by entities (ORG, PER, or LOC).
 func (r ApiSearchNewsRequest) Entities(entities string) ApiSearchNewsRequest {
 	r.entities = &entities
@@ -261,7 +268,7 @@ func (r ApiSearchNewsRequest) LocationFilter(locationFilter string) ApiSearchNew
 	return r
 }
 
-// The sorting criteria (publish-time or sentiment).
+// The sorting criteria (publish-time).
 func (r ApiSearchNewsRequest) Sort(sort string) ApiSearchNewsRequest {
 	r.sort = &sort
 	return r
@@ -292,7 +299,7 @@ func (r ApiSearchNewsRequest) Execute() (*SearchNews200Response, *http.Response,
 /*
 SearchNews Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiSearchNewsRequest
@@ -351,6 +358,9 @@ func (a *NewsAPIService) SearchNewsExecute(r ApiSearchNewsRequest) (*SearchNews2
 	}
 	if r.authors != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "authors", r.authors, "")
+	}
+	if r.categories != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "categories", r.categories, "")
 	}
 	if r.entities != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "entities", r.entities, "")

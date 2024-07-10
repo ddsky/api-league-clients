@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.3.0
+  version: 1.4.0
 servers:
 - url: https://api.apileague.com
 security:
@@ -200,40 +200,30 @@ paths:
                     number: 10
                     offset: 0
                     books:
-                    - title: Journey to Hogwarts
-                      image: https://covers.openlibrary.org/b/id/2520429-M.jpg
-                      id: 17200576
-                    - image: https://covers.openlibrary.org/b/id/2520430-M.jpg
-                      id: 15954006
-                      title: Inside Hogwarts
-                      subtitle: Magical Paintbook
-                    - title: Harry Potter and the Goblet of Fire
-                      image: https://covers.openlibrary.org/b/id/12775900-M.jpg
-                      id: 16384516
-                    - title: Harry Potter and the Order of the Phoenix
-                      image: https://covers.openlibrary.org/b/id/11416565-M.jpg
-                      id: 14296534
-                    - title: Great Gatsby (Silver Screen Edition)
-                      image: https://covers.openlibrary.org/b/id/12791857-M.jpg
-                      id: 14530450
-                    - image: https://covers.openlibrary.org/b/id/394001-M.jpg
-                      id: 18810398
-                      title: The Hobbit
-                      subtitle: "or, There and back again"
-                    - image: https://covers.openlibrary.org/b/id/6282709-M.jpg
-                      id: 13597674
-                      title: The Name of the Wind
-                      subtitle: "The Kingkiller Chronicle : day one"
-                    - image: https://covers.openlibrary.org/b/id/13220226-M.jpg
-                      id: 20778556
-                      title: "Two Towers : The Lord of the Rings"
-                      subtitle: Part Two
-                    - title: Frankenstein (Silver Screen Edition)
-                      image: https://covers.openlibrary.org/b/id/12791860-M.jpg
-                      id: 20101114
-                    - title: Bogar bárd meséi
-                      image: https://covers.openlibrary.org/b/id/9326689-M.jpg
-                      id: 17798828
+                    - - title: Journey to Hogwarts
+                        image: https://covers.openlibrary.org/b/id/2520429-M.jpg
+                        id: 17200576
+                    - - image: https://covers.openlibrary.org/b/id/2520430-M.jpg
+                        id: 15954006
+                        title: Inside Hogwarts
+                        subtitle: Magical Paintbook
+                    - - title: Harry Potter and the Goblet of Fire
+                        image: https://covers.openlibrary.org/b/id/12775900-M.jpg
+                        id: 16384516
+                    - - title: Harry Potter and the Order of the Phoenix
+                        image: https://covers.openlibrary.org/b/id/11416565-M.jpg
+                        id: 14296534
+                    - - title: Great Gatsby (Silver Screen Edition)
+                        image: https://covers.openlibrary.org/b/id/12791857-M.jpg
+                        id: 14530450
+                    - - image: https://covers.openlibrary.org/b/id/394001-M.jpg
+                        id: 18810398
+                        title: The Hobbit
+                        subtitle: "or, There and back again"
+                    - - image: https://covers.openlibrary.org/b/id/6282709-M.jpg
+                        id: 13597674
+                        title: The Name of the Wind
+                        subtitle: "The Kingkiller Chronicle : day one"
               schema:
                 $ref: '#/components/schemas/searchBooks_200_response'
           description: Success
@@ -347,8 +337,8 @@ paths:
   /search-news:
     get:
       deprecated: false
-      description: "Search and filter news by text, date, location, language, and\
-        \ more. The API returns a list of news articles matching the given criteria.\
+      description: "Search and filter news by text, date, location, category, language,\
+        \ and more. The API returns a list of news articles matching the given criteria.\
         \ You can set as many filtering parameters as you like, but you have to set\
         \ at least one, e.g. text or language."
       externalDocs:
@@ -462,6 +452,20 @@ paths:
           pattern: "."
           type: string
         style: form
+      - description: "A comma-separated list of categories. Only news from any of\
+          \ the given categories will be returned. Possible categories are politics,\
+          \ sports, business, technology, entertainment, health, science, lifestyle,\
+          \ travel, culture, education, environment, other."
+        explode: false
+        in: query
+        name: categories
+        required: false
+        schema:
+          example: "politics,sports"
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
       - description: "Filter news by entities (ORG, PER, or LOC)."
         explode: false
         in: query
@@ -485,7 +489,7 @@ paths:
           pattern: "."
           type: string
         style: form
-      - description: The sorting criteria (publish-time or sentiment).
+      - description: The sorting criteria (publish-time).
         explode: false
         in: query
         name: sort
@@ -548,8 +552,11 @@ paths:
                         \ variant."
                       image: https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png
                       sentiment: 0.712523
-                      source_country: co
                       language: en
+                      video: https://cdn.jwplayer.com/videos/70lDQJpg-RyIcpnTz.mp4
+                      title: Tesla to Release a Four-Motor Version of Cybertruck
+                      url: https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/
+                      source_country: co
                       id: 28
                       text: "Tesla CEO Elon Musk has revealed new details about the\
                         \ upcoming Cybertruck electric pickup truck, the mass production\
@@ -578,10 +585,8 @@ paths:
                         \ on the pickup's roadmap on the next earnings call. The production\
                         \ of Tesla Cybertruck is expected to begin at the end of 2022,\
                         \ and its mass production is slated to start in 2023."
-                      video: https://cdn.jwplayer.com/videos/70lDQJpg-RyIcpnTz.mp4
-                      title: Tesla to Release a Four-Motor Version of Cybertruck
+                      category: business
                       publish_date: 2022-09-30 01:07:48
-                      url: https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/
                       authors:
                       - Iwan Stone
                       - Zahna Eklund
@@ -6334,6 +6339,58 @@ paths:
       summary: Random Quote
       tags:
       - Knowledge
+  /retrieve-random-riddle:
+    get:
+      deprecated: false
+      description: "The riddles API returns a random riddle or brain-teaser. Riddles\
+        \ are a great way to exercise your brain and keep it sharp. The API supports\
+        \ brain-teasers in three difficulty levels: easy, medium, and hard. You can\
+        \ also get a random riddle without specifying a difficulty level."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/random-riddle-api/
+      operationId: randomRiddle
+      parameters:
+      - description: "The difficulty of the riddle, either \"easy\", \"medium\", or\
+          \ \"hard\"."
+        explode: false
+        in: query
+        name: difficulty
+        required: false
+        schema:
+          example: easy
+          maxLength: 6
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    riddle: What has 13 hearts but no other organs?
+                    answer: A deck of cards
+                    difficulty: easy
+              schema:
+                $ref: '#/components/schemas/randomRiddle_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Random Riddle
+      tags:
+      - Knowledge
   /retrieve-random-poem:
     get:
       deprecated: false
@@ -8242,7 +8299,7 @@ paths:
       - Storage
 components:
   schemas:
-    searchBooks_200_response_books_inner:
+    searchBooks_200_response_books_inner_inner:
       example:
         image: image
         id: 5
@@ -8261,12 +8318,18 @@ components:
       example:
         number: 6
         books:
-        - image: image
-          id: 5
-          title: title
-        - image: image
-          id: 5
-          title: title
+        - - image: image
+            id: 5
+            title: title
+          - image: image
+            id: 5
+            title: title
+        - - image: image
+            id: 5
+            title: title
+          - image: image
+            id: 5
+            title: title
         offset: 1
         available: 0
       properties:
@@ -8278,7 +8341,9 @@ components:
           type: integer
         books:
           items:
-            $ref: '#/components/schemas/searchBooks_200_response_books_inner'
+            items:
+              $ref: '#/components/schemas/searchBooks_200_response_books_inner_inner'
+            type: array
           type: array
       type: object
     findSimilarBooks_200_response:
@@ -8293,7 +8358,7 @@ components:
       properties:
         similar_books:
           items:
-            $ref: '#/components/schemas/searchBooks_200_response_books_inner'
+            $ref: '#/components/schemas/searchBooks_200_response_books_inner_inner'
           type: array
       type: object
     searchNews_200_response_news_inner:
@@ -8301,14 +8366,15 @@ components:
         summary: summary
         image: image
         sentiment: 5.962133916683182
-        source_country: source_country
         language: language
-        id: 5
-        text: text
         video: video
         title: title
-        publish_date: publish_date
         url: url
+        source_country: source_country
+        id: 5
+        text: text
+        category: category
+        publish_date: publish_date
         authors:
         - authors
         - authors
@@ -8321,15 +8387,7 @@ components:
           type: string
         sentiment:
           type: number
-        source_country:
-          nullable: true
-          type: string
         language:
-          nullable: true
-          type: string
-        id:
-          type: integer
-        text:
           nullable: true
           type: string
         video:
@@ -8338,10 +8396,21 @@ components:
         title:
           nullable: true
           type: string
-        publish_date:
+        url:
           nullable: true
           type: string
-        url:
+        source_country:
+          nullable: true
+          type: string
+        id:
+          type: integer
+        text:
+          nullable: true
+          type: string
+        category:
+          nullable: true
+          type: string
+        publish_date:
           nullable: true
           type: string
         authors:
@@ -8356,28 +8425,30 @@ components:
         - summary: summary
           image: image
           sentiment: 5.962133916683182
-          source_country: source_country
           language: language
-          id: 5
-          text: text
           video: video
           title: title
-          publish_date: publish_date
           url: url
+          source_country: source_country
+          id: 5
+          text: text
+          category: category
+          publish_date: publish_date
           authors:
           - authors
           - authors
         - summary: summary
           image: image
           sentiment: 5.962133916683182
-          source_country: source_country
           language: language
-          id: 5
-          text: text
           video: video
           title: title
-          publish_date: publish_date
           url: url
+          source_country: source_country
+          id: 5
+          text: text
+          category: category
+          publish_date: publish_date
           authors:
           - authors
           - authors
@@ -10073,6 +10144,22 @@ components:
           nullable: true
           type: string
         quote:
+          nullable: true
+          type: string
+      type: object
+    randomRiddle_200_response:
+      example:
+        difficulty: difficulty
+        answer: answer
+        riddle: riddle
+      properties:
+        riddle:
+          nullable: true
+          type: string
+        answer:
+          nullable: true
+          type: string
+        difficulty:
           nullable: true
           type: string
       type: object

@@ -16,7 +16,7 @@ class FindSimilarBooks200Response {
     this.similarBooks = const [],
   });
 
-  List<SearchBooks200ResponseBooksInner> similarBooks;
+  List<SearchBooks200ResponseBooksInnerInner> similarBooks;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is FindSimilarBooks200Response &&
@@ -55,7 +55,7 @@ class FindSimilarBooks200Response {
       }());
 
       return FindSimilarBooks200Response(
-        similarBooks: SearchBooks200ResponseBooksInner.listFromJson(json[r'similar_books']),
+        similarBooks: SearchBooks200ResponseBooksInnerInner.listFromJson(json[r'similar_books']),
       );
     }
     return null;

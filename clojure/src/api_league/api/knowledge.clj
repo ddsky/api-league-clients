@@ -5,6 +5,7 @@
             [orchestra.core :refer [defn-spec]]
             [api-league.specs.search-restaurants-200-response-restaurants-inner-local-hours :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-caloric-breakdown :refer :all]
+            [api-league.specs.random-riddle-200-response :refer :all]
             [api-league.specs.search-gifs-200-response-images-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-nutrition-flavonoids-inner :refer :all]
             [api-league.specs.search-memes-200-response-memes-inner :refer :all]
@@ -57,12 +58,12 @@
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.detect-sentiment-200-response-document :refer :all]
             [api-league.specs.store-key-value-get-200-response :refer :all]
-            [api-league.specs.search-books-200-response-books-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
             [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
             [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
+            [api-league.specs.search-books-200-response-books-inner-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
             [api-league.specs.search-news-200-response-news-inner :refer :all]
@@ -123,6 +124,31 @@
    (let [res (:data (random-quote-with-http-info optional-params))]
      (if (:decode-models *api-context*)
         (st/decode random-quote-200-response-spec res st/string-transformer)
+        res))))
+
+
+(defn-spec random-riddle-with-http-info any?
+  "Random Riddle
+  The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level."
+  ([] (random-riddle-with-http-info nil))
+  ([{:keys [difficulty]} (s/map-of keyword? any?)]
+   (call-api "/retrieve-random-riddle" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"difficulty" difficulty }
+              :form-params   {}
+              :content-types []
+              :accepts       ["application/json"]
+              :auth-names    ["apiKey" "headerApiKey"]})))
+
+(defn-spec random-riddle random-riddle-200-response-spec
+  "Random Riddle
+  The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level."
+  ([] (random-riddle nil))
+  ([optional-params any?]
+   (let [res (:data (random-riddle-with-http-info optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode random-riddle-200-response-spec res st/string-transformer)
         res))))
 
 

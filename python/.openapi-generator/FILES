@@ -51,6 +51,7 @@ apileague/models/pluralize_word200_response.py
 apileague/models/random_meme200_response.py
 apileague/models/random_poem200_response.py
 apileague/models/random_quote200_response.py
+apileague/models/random_riddle200_response.py
 apileague/models/random_trivia200_response.py
 apileague/models/read_key_value_from_store200_response.py
 apileague/models/retrieve_page_rank200_response.py
@@ -85,7 +86,7 @@ apileague/models/score_text200_response_skimmability_subscores.py
 apileague/models/score_text200_response_style.py
 apileague/models/score_text200_response_style_subscores.py
 apileague/models/search_books200_response.py
-apileague/models/search_books200_response_books_inner.py
+apileague/models/search_books200_response_books_inner_inner.py
 apileague/models/search_gifs200_response.py
 apileague/models/search_gifs200_response_images_inner.py
 apileague/models/search_jokes200_response.py
@@ -155,6 +156,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -189,7 +191,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -267,6 +269,7 @@ test/test_pluralize_word200_response.py
 test/test_random_meme200_response.py
 test/test_random_poem200_response.py
 test/test_random_quote200_response.py
+test/test_random_riddle200_response.py
 test/test_random_trivia200_response.py
 test/test_read_key_value_from_store200_response.py
 test/test_retrieve_page_rank200_response.py
@@ -301,7 +304,7 @@ test/test_score_text200_response_skimmability_subscores.py
 test/test_score_text200_response_style.py
 test/test_score_text200_response_style_subscores.py
 test/test_search_books200_response.py
-test/test_search_books200_response_books_inner.py
+test/test_search_books200_response_books_inner_inner.py
 test/test_search_gifs200_response.py
 test/test_search_gifs200_response_images_inner.py
 test/test_search_jokes200_response.py

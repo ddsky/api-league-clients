@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **available** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
-**books** | [**List[SearchBooks200ResponseBooksInner]**](SearchBooks200ResponseBooksInner.md) |  | [optional] 
+**books** | **List[List[SearchBooks200ResponseBooksInnerInner]]** |  | [optional] 
 
 ## Example
 

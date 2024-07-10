@@ -344,7 +344,7 @@ instance Arbitrary FindSimilarBooks200Response where
 genFindSimilarBooks200Response :: Int -> Gen FindSimilarBooks200Response
 genFindSimilarBooks200Response n =
   FindSimilarBooks200Response
-    <$> arbitraryReducedMaybe n -- findSimilarBooks200ResponseSimilarBooks :: Maybe [SearchBooks200ResponseBooksInner]
+    <$> arbitraryReducedMaybe n -- findSimilarBooks200ResponseSimilarBooks :: Maybe [SearchBooks200ResponseBooksInnerInner]
   
 instance Arbitrary GenerateNonsenseWord200Response where
   arbitrary = sized genGenerateNonsenseWord200Response
@@ -403,6 +403,16 @@ genRandomQuote200Response n =
   RandomQuote200Response
     <$> arbitraryReducedMaybe n -- randomQuote200ResponseAuthor :: Maybe Text
     <*> arbitraryReducedMaybe n -- randomQuote200ResponseQuote :: Maybe Text
+  
+instance Arbitrary RandomRiddle200Response where
+  arbitrary = sized genRandomRiddle200Response
+
+genRandomRiddle200Response :: Int -> Gen RandomRiddle200Response
+genRandomRiddle200Response n =
+  RandomRiddle200Response
+    <$> arbitraryReducedMaybe n -- randomRiddle200ResponseRiddle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomRiddle200ResponseAnswer :: Maybe Text
+    <*> arbitraryReducedMaybe n -- randomRiddle200ResponseDifficulty :: Maybe Text
   
 instance Arbitrary RandomTrivia200Response where
   arbitrary = sized genRandomTrivia200Response
@@ -779,17 +789,17 @@ genSearchBooks200Response n =
     <$> arbitraryReducedMaybe n -- searchBooks200ResponseAvailable :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseNumber :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseOffset :: Maybe Int
-    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooks :: Maybe [SearchBooks200ResponseBooksInner]
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooks :: Maybe [[SearchBooks200ResponseBooksInnerInner]]
   
-instance Arbitrary SearchBooks200ResponseBooksInner where
-  arbitrary = sized genSearchBooks200ResponseBooksInner
+instance Arbitrary SearchBooks200ResponseBooksInnerInner where
+  arbitrary = sized genSearchBooks200ResponseBooksInnerInner
 
-genSearchBooks200ResponseBooksInner :: Int -> Gen SearchBooks200ResponseBooksInner
-genSearchBooks200ResponseBooksInner n =
-  SearchBooks200ResponseBooksInner
-    <$> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerTitle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerId :: Maybe Int
+genSearchBooks200ResponseBooksInnerInner :: Int -> Gen SearchBooks200ResponseBooksInnerInner
+genSearchBooks200ResponseBooksInnerInner n =
+  SearchBooks200ResponseBooksInnerInner
+    <$> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerId :: Maybe Int
   
 instance Arbitrary SearchGifs200Response where
   arbitrary = sized genSearchGifs200Response
@@ -865,14 +875,15 @@ genSearchNews200ResponseNewsInner n =
     <$> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSummary :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerImage :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSentiment :: Maybe Double
-    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSourceCountry :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerLanguage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerId :: Maybe Int
-    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerText :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerVideo :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerTitle :: Maybe Text
-    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerPublishDate :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerSourceCountry :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerCategory :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerPublishDate :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchNews200ResponseNewsInnerAuthors :: Maybe [Text]
   
 instance Arbitrary SearchRecipes200Response where

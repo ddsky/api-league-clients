@@ -43,28 +43,10 @@ class SearchNews200ResponseNewsInnerTest : ShouldSpec() {
             //modelInstance.sentiment shouldBe ("TODO")
         }
 
-        // to test the property `sourceCountry`
-        should("test sourceCountry") {
-            // uncomment below to test the property
-            //modelInstance.sourceCountry shouldBe ("TODO")
-        }
-
         // to test the property `language`
         should("test language") {
             // uncomment below to test the property
             //modelInstance.language shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
-        }
-
-        // to test the property `text`
-        should("test text") {
-            // uncomment below to test the property
-            //modelInstance.text shouldBe ("TODO")
         }
 
         // to test the property `video`
@@ -79,16 +61,40 @@ class SearchNews200ResponseNewsInnerTest : ShouldSpec() {
             //modelInstance.title shouldBe ("TODO")
         }
 
-        // to test the property `publishDate`
-        should("test publishDate") {
-            // uncomment below to test the property
-            //modelInstance.publishDate shouldBe ("TODO")
-        }
-
         // to test the property `url`
         should("test url") {
             // uncomment below to test the property
             //modelInstance.url shouldBe ("TODO")
+        }
+
+        // to test the property `sourceCountry`
+        should("test sourceCountry") {
+            // uncomment below to test the property
+            //modelInstance.sourceCountry shouldBe ("TODO")
+        }
+
+        // to test the property `id`
+        should("test id") {
+            // uncomment below to test the property
+            //modelInstance.id shouldBe ("TODO")
+        }
+
+        // to test the property `text`
+        should("test text") {
+            // uncomment below to test the property
+            //modelInstance.text shouldBe ("TODO")
+        }
+
+        // to test the property `category`
+        should("test category") {
+            // uncomment below to test the property
+            //modelInstance.category shouldBe ("TODO")
+        }
+
+        // to test the property `publishDate`
+        should("test publishDate") {
+            // uncomment below to test the property
+            //modelInstance.publishDate shouldBe ("TODO")
         }
 
         // to test the property `authors`

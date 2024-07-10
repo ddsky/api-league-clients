@@ -77,7 +77,7 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
      * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -88,15 +88,17 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
+     * @param categories A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
      * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
-     * @param sort The sorting criteria (publish-time or sentiment).
+     * @param sort The sorting criteria (publish-time).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public async searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
+
 
 
 
@@ -163,6 +165,11 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
         // Query Params
         if (authors !== undefined) {
             requestContext.setQueryParam("authors", ObjectSerializer.serialize(authors, "string", ""));
+        }
+
+        // Query Params
+        if (categories !== undefined) {
+            requestContext.setQueryParam("categories", ObjectSerializer.serialize(categories, "string", ""));
         }
 
         // Query Params

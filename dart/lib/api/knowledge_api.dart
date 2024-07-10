@@ -87,6 +87,68 @@ class KnowledgeApi {
     return null;
   }
 
+  /// Random Riddle
+  ///
+  /// The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] difficulty:
+  ///   The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
+  Future<Response> randomRiddleWithHttpInfo({ String? difficulty, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/retrieve-random-riddle';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (difficulty != null) {
+      queryParams.addAll(_queryParams('', 'difficulty', difficulty));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Random Riddle
+  ///
+  /// The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] difficulty:
+  ///   The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
+  Future<RandomRiddle200Response?> randomRiddle({ String? difficulty, }) async {
+    final response = await randomRiddleWithHttpInfo( difficulty: difficulty, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomRiddle200Response',) as RandomRiddle200Response;
+    
+    }
+    return null;
+  }
+
   /// Random Trivia
   ///
   /// This endpoint returns a random piece of trivia.

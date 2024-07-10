@@ -39,6 +39,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -73,7 +74,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -161,6 +162,7 @@ src/main/java/com/apileague/client/model/PluralizeWord200Response.java
 src/main/java/com/apileague/client/model/RandomMeme200Response.java
 src/main/java/com/apileague/client/model/RandomPoem200Response.java
 src/main/java/com/apileague/client/model/RandomQuote200Response.java
+src/main/java/com/apileague/client/model/RandomRiddle200Response.java
 src/main/java/com/apileague/client/model/RandomTrivia200Response.java
 src/main/java/com/apileague/client/model/ReadKeyValueFromStore200Response.java
 src/main/java/com/apileague/client/model/RetrievePageRank200Response.java
@@ -195,7 +197,7 @@ src/main/java/com/apileague/client/model/ScoreText200ResponseSkimmabilitySubscor
 src/main/java/com/apileague/client/model/ScoreText200ResponseStyle.java
 src/main/java/com/apileague/client/model/ScoreText200ResponseStyleSubscores.java
 src/main/java/com/apileague/client/model/SearchBooks200Response.java
-src/main/java/com/apileague/client/model/SearchBooks200ResponseBooksInner.java
+src/main/java/com/apileague/client/model/SearchBooks200ResponseBooksInnerInner.java
 src/main/java/com/apileague/client/model/SearchGifs200Response.java
 src/main/java/com/apileague/client/model/SearchGifs200ResponseImagesInner.java
 src/main/java/com/apileague/client/model/SearchJokes200Response.java

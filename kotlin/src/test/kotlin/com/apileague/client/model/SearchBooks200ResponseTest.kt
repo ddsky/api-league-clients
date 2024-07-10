@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.client.model.SearchBooks200Response
-import com.apileague.client.model.SearchBooks200ResponseBooksInner
+import com.apileague.client.model.SearchBooks200ResponseBooksInnerInner
 
 class SearchBooks200ResponseTest : ShouldSpec() {
     init {

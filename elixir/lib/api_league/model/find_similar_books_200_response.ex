@@ -12,14 +12,14 @@ defmodule APILeague.Model.FindSimilarBooks200Response do
   ]
 
   @type t :: %__MODULE__{
-    :similar_books => [APILeague.Model.SearchBooks200ResponseBooksInner.t] | nil
+    :similar_books => [APILeague.Model.SearchBooks200ResponseBooksInnerInner.t] | nil
   }
 
   alias APILeague.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:similar_books, :list, APILeague.Model.SearchBooks200ResponseBooksInner)
+     |> Deserializer.deserialize(:similar_books, :list, APILeague.Model.SearchBooks200ResponseBooksInnerInner)
   end
 end
 

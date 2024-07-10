@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.3.0
+API version: 1.4.0
 Contact: mail@apileague.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &FindSimilarBooks200Response{}
 
 // FindSimilarBooks200Response struct for FindSimilarBooks200Response
 type FindSimilarBooks200Response struct {
-	SimilarBooks []SearchBooks200ResponseBooksInner `json:"similar_books,omitempty"`
+	SimilarBooks []SearchBooks200ResponseBooksInnerInner `json:"similar_books,omitempty"`
 }
 
 // NewFindSimilarBooks200Response instantiates a new FindSimilarBooks200Response object
@@ -41,9 +41,9 @@ func NewFindSimilarBooks200ResponseWithDefaults() *FindSimilarBooks200Response {
 }
 
 // GetSimilarBooks returns the SimilarBooks field value if set, zero value otherwise.
-func (o *FindSimilarBooks200Response) GetSimilarBooks() []SearchBooks200ResponseBooksInner {
+func (o *FindSimilarBooks200Response) GetSimilarBooks() []SearchBooks200ResponseBooksInnerInner {
 	if o == nil || IsNil(o.SimilarBooks) {
-		var ret []SearchBooks200ResponseBooksInner
+		var ret []SearchBooks200ResponseBooksInnerInner
 		return ret
 	}
 	return o.SimilarBooks
@@ -51,7 +51,7 @@ func (o *FindSimilarBooks200Response) GetSimilarBooks() []SearchBooks200Response
 
 // GetSimilarBooksOk returns a tuple with the SimilarBooks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FindSimilarBooks200Response) GetSimilarBooksOk() ([]SearchBooks200ResponseBooksInner, bool) {
+func (o *FindSimilarBooks200Response) GetSimilarBooksOk() ([]SearchBooks200ResponseBooksInnerInner, bool) {
 	if o == nil || IsNil(o.SimilarBooks) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *FindSimilarBooks200Response) HasSimilarBooks() bool {
 	return false
 }
 
-// SetSimilarBooks gets a reference to the given []SearchBooks200ResponseBooksInner and assigns it to the SimilarBooks field.
-func (o *FindSimilarBooks200Response) SetSimilarBooks(v []SearchBooks200ResponseBooksInner) {
+// SetSimilarBooks gets a reference to the given []SearchBooks200ResponseBooksInnerInner and assigns it to the SimilarBooks field.
+func (o *FindSimilarBooks200Response) SetSimilarBooks(v []SearchBooks200ResponseBooksInnerInner) {
 	o.SimilarBooks = v
 }
 

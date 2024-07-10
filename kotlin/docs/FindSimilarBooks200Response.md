@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**similarBooks** | [**kotlin.collections.List&lt;SearchBooks200ResponseBooksInner&gt;**](SearchBooks200ResponseBooksInner.md) |  |  [optional]
+**similarBooks** | [**kotlin.collections.List&lt;SearchBooks200ResponseBooksInnerInner&gt;**](SearchBooks200ResponseBooksInnerInner.md) |  |  [optional]
 
 
 

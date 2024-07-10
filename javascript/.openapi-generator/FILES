@@ -40,6 +40,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -74,7 +75,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -153,6 +154,7 @@ src/model/PluralizeWord200Response.js
 src/model/RandomMeme200Response.js
 src/model/RandomPoem200Response.js
 src/model/RandomQuote200Response.js
+src/model/RandomRiddle200Response.js
 src/model/RandomTrivia200Response.js
 src/model/ReadKeyValueFromStore200Response.js
 src/model/RetrievePageRank200Response.js
@@ -187,7 +189,7 @@ src/model/ScoreText200ResponseSkimmabilitySubscores.js
 src/model/ScoreText200ResponseStyle.js
 src/model/ScoreText200ResponseStyleSubscores.js
 src/model/SearchBooks200Response.js
-src/model/SearchBooks200ResponseBooksInner.js
+src/model/SearchBooks200ResponseBooksInnerInner.js
 src/model/SearchGifs200Response.js
 src/model/SearchGifs200ResponseImagesInner.js
 src/model/SearchJokes200Response.js
@@ -258,6 +260,7 @@ test/model/PluralizeWord200Response.spec.js
 test/model/RandomMeme200Response.spec.js
 test/model/RandomPoem200Response.spec.js
 test/model/RandomQuote200Response.spec.js
+test/model/RandomRiddle200Response.spec.js
 test/model/RandomTrivia200Response.spec.js
 test/model/ReadKeyValueFromStore200Response.spec.js
 test/model/RetrievePageRank200Response.spec.js
@@ -292,7 +295,7 @@ test/model/ScoreText200ResponseSkimmabilitySubscores.spec.js
 test/model/ScoreText200ResponseStyle.spec.js
 test/model/ScoreText200ResponseStyleSubscores.spec.js
 test/model/SearchBooks200Response.spec.js
-test/model/SearchBooks200ResponseBooksInner.spec.js
+test/model/SearchBooks200ResponseBooksInnerInner.spec.js
 test/model/SearchGifs200Response.spec.js
 test/model/SearchGifs200ResponseImagesInner.spec.js
 test/model/SearchJokes200Response.spec.js

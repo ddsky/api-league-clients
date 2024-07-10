@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SimilarBooks** | Pointer to [**[]SearchBooks200ResponseBooksInner**](SearchBooks200ResponseBooksInner.md) |  | [optional] 
+**SimilarBooks** | Pointer to [**[]SearchBooks200ResponseBooksInnerInner**](SearchBooks200ResponseBooksInnerInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSimilarBooks
 
-`func (o *FindSimilarBooks200Response) GetSimilarBooks() []SearchBooks200ResponseBooksInner`
+`func (o *FindSimilarBooks200Response) GetSimilarBooks() []SearchBooks200ResponseBooksInnerInner`
 
 GetSimilarBooks returns the SimilarBooks field if non-nil, zero value otherwise.
 
 ### GetSimilarBooksOk
 
-`func (o *FindSimilarBooks200Response) GetSimilarBooksOk() (*[]SearchBooks200ResponseBooksInner, bool)`
+`func (o *FindSimilarBooks200Response) GetSimilarBooksOk() (*[]SearchBooks200ResponseBooksInnerInner, bool)`
 
 GetSimilarBooksOk returns a tuple with the SimilarBooks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSimilarBooks
 
-`func (o *FindSimilarBooks200Response) SetSimilarBooks(v []SearchBooks200ResponseBooksInner)`
+`func (o *FindSimilarBooks200Response) SetSimilarBooks(v []SearchBooks200ResponseBooksInnerInner)`
 
 SetSimilarBooks sets SimilarBooks field to given value.
 

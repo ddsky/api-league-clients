@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **similar_books** | [**Array&lt;SearchBooks200ResponseBooksInner&gt;**](SearchBooks200ResponseBooksInner.md) |  | [optional] |
+| **similar_books** | [**Array&lt;SearchBooks200ResponseBooksInnerInner&gt;**](SearchBooks200ResponseBooksInnerInner.md) |  | [optional] |
 
 ## Example
 

@@ -41,6 +41,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -75,7 +76,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -150,6 +151,7 @@ lib/WWW/OpenAPIClient/Object/PluralizeWord200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomMeme200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomPoem200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomQuote200Response.pm
+lib/WWW/OpenAPIClient/Object/RandomRiddle200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomTrivia200Response.pm
 lib/WWW/OpenAPIClient/Object/ReadKeyValueFromStore200Response.pm
 lib/WWW/OpenAPIClient/Object/RetrievePageRank200Response.pm
@@ -184,7 +186,7 @@ lib/WWW/OpenAPIClient/Object/ScoreText200ResponseSkimmabilitySubscores.pm
 lib/WWW/OpenAPIClient/Object/ScoreText200ResponseStyle.pm
 lib/WWW/OpenAPIClient/Object/ScoreText200ResponseStyleSubscores.pm
 lib/WWW/OpenAPIClient/Object/SearchBooks200Response.pm
-lib/WWW/OpenAPIClient/Object/SearchBooks200ResponseBooksInner.pm
+lib/WWW/OpenAPIClient/Object/SearchBooks200ResponseBooksInnerInner.pm
 lib/WWW/OpenAPIClient/Object/SearchGifs200Response.pm
 lib/WWW/OpenAPIClient/Object/SearchGifs200ResponseImagesInner.pm
 lib/WWW/OpenAPIClient/Object/SearchJokes200Response.pm
@@ -257,6 +259,7 @@ t/PluralizeWord200ResponseTest.t
 t/RandomMeme200ResponseTest.t
 t/RandomPoem200ResponseTest.t
 t/RandomQuote200ResponseTest.t
+t/RandomRiddle200ResponseTest.t
 t/RandomTrivia200ResponseTest.t
 t/ReadKeyValueFromStore200ResponseTest.t
 t/RetrievePageRank200ResponseTest.t
@@ -290,7 +293,7 @@ t/ScoreText200ResponseSkimmabilityTest.t
 t/ScoreText200ResponseStyleSubscoresTest.t
 t/ScoreText200ResponseStyleTest.t
 t/ScoreText200ResponseTest.t
-t/SearchBooks200ResponseBooksInnerTest.t
+t/SearchBooks200ResponseBooksInnerInnerTest.t
 t/SearchBooks200ResponseTest.t
 t/SearchGifs200ResponseImagesInnerTest.t
 t/SearchGifs200ResponseTest.t

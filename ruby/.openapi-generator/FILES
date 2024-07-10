@@ -44,6 +44,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -78,7 +79,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -157,6 +158,7 @@ lib/openapi_client/models/pluralize_word200_response.rb
 lib/openapi_client/models/random_meme200_response.rb
 lib/openapi_client/models/random_poem200_response.rb
 lib/openapi_client/models/random_quote200_response.rb
+lib/openapi_client/models/random_riddle200_response.rb
 lib/openapi_client/models/random_trivia200_response.rb
 lib/openapi_client/models/read_key_value_from_store200_response.rb
 lib/openapi_client/models/retrieve_page_rank200_response.rb
@@ -191,7 +193,7 @@ lib/openapi_client/models/score_text200_response_skimmability_subscores.rb
 lib/openapi_client/models/score_text200_response_style.rb
 lib/openapi_client/models/score_text200_response_style_subscores.rb
 lib/openapi_client/models/search_books200_response.rb
-lib/openapi_client/models/search_books200_response_books_inner.rb
+lib/openapi_client/models/search_books200_response_books_inner_inner.rb
 lib/openapi_client/models/search_gifs200_response.rb
 lib/openapi_client/models/search_gifs200_response_images_inner.rb
 lib/openapi_client/models/search_jokes200_response.rb
@@ -264,6 +266,7 @@ spec/models/pluralize_word200_response_spec.rb
 spec/models/random_meme200_response_spec.rb
 spec/models/random_poem200_response_spec.rb
 spec/models/random_quote200_response_spec.rb
+spec/models/random_riddle200_response_spec.rb
 spec/models/random_trivia200_response_spec.rb
 spec/models/read_key_value_from_store200_response_spec.rb
 spec/models/retrieve_page_rank200_response_spec.rb
@@ -297,7 +300,7 @@ spec/models/score_text200_response_skimmability_subscores_spec.rb
 spec/models/score_text200_response_spec.rb
 spec/models/score_text200_response_style_spec.rb
 spec/models/score_text200_response_style_subscores_spec.rb
-spec/models/search_books200_response_books_inner_spec.rb
+spec/models/search_books200_response_books_inner_inner_spec.rb
 spec/models/search_books200_response_spec.rb
 spec/models/search_gifs200_response_images_inner_spec.rb
 spec/models/search_gifs200_response_spec.rb

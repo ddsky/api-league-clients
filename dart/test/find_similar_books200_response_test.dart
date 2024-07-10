@@ -16,7 +16,7 @@ void main() {
   // final instance = FindSimilarBooks200Response();
 
   group('test FindSimilarBooks200Response', () {
-    // List<SearchBooks200ResponseBooksInner> similarBooks (default value: const [])
+    // List<SearchBooks200ResponseBooksInnerInner> similarBooks (default value: const [])
     test('to test the property `similarBooks`', () async {
       // TODO
     });

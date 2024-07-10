@@ -10,14 +10,15 @@
 |**summary** | **String** |  |  [optional] |
 |**image** | **String** |  |  [optional] |
 |**sentiment** | **BigDecimal** |  |  [optional] |
-|**sourceCountry** | **String** |  |  [optional] |
 |**language** | **String** |  |  [optional] |
-|**id** | **Integer** |  |  [optional] |
-|**text** | **String** |  |  [optional] |
 |**video** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
-|**publishDate** | **String** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
+|**sourceCountry** | **String** |  |  [optional] |
+|**id** | **Integer** |  |  [optional] |
+|**text** | **String** |  |  [optional] |
+|**category** | **String** |  |  [optional] |
+|**publishDate** | **String** |  |  [optional] |
 |**authors** | **List&lt;String&gt;** |  |  [optional] |
 
 

@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## SearchNews
 
-> SearchNews200Response SearchNews(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+> SearchNews200Response SearchNews(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 
 Search News
 
@@ -108,16 +108,17 @@ func main() {
 	latestPublishDate := "2022-04-22 16:12:35" // string | The news must have been published before this date. (optional)
 	newsSources := "https://www.bbc.co.uk" // string | A comma-separated list of news sources from which the news should originate. (optional)
 	authors := "John Doe" // string | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional)
+	categories := "politics,sports" // string | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. (optional)
 	entities := "ORG:Tesla" // string | Filter news by entities (ORG, PER, or LOC). (optional)
 	locationFilter := "51.050407, 13.737262, 100" // string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional)
-	sort := "publish-time" // string | The sorting criteria (publish-time or sentiment). (optional)
+	sort := "publish-time" // string | The sorting criteria (publish-time). (optional)
 	sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
 	offset := int32(0) // int32 | The number of news to skip in range [0,10000] (optional)
 	number := int32(10) // int32 | The number of news to return in range [1,100] (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NewsAPI.SearchNews(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.NewsAPI.SearchNews(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.SearchNews``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -147,9 +148,10 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **string** | The news must have been published before this date. | 
  **newsSources** | **string** | A comma-separated list of news sources from which the news should originate. | 
  **authors** | **string** | A comma-separated list of author names. Only news from any of the given authors will be returned. | 
+ **categories** | **string** | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | 
  **entities** | **string** | Filter news by entities (ORG, PER, or LOC). | 
  **locationFilter** | **string** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | 
- **sort** | **string** | The sorting criteria (publish-time or sentiment). | 
+ **sort** | **string** | The sorting criteria (publish-time). | 
  **sortDirection** | **string** | Whether to sort ascending or descending (ASC or DESC). | 
  **offset** | **int32** | The number of news to skip in range [0,10000] | 
  **number** | **int32** | The number of news to return in range [1,100] | 

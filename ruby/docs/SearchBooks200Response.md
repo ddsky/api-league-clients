@@ -7,7 +7,7 @@
 | **available** | **Integer** |  | [optional] |
 | **number** | **Integer** |  | [optional] |
 | **offset** | **Integer** |  | [optional] |
-| **books** | [**Array&lt;SearchBooks200ResponseBooksInner&gt;**](SearchBooks200ResponseBooksInner.md) |  | [optional] |
+| **books** | **Array&lt;Array&lt;SearchBooks200ResponseBooksInnerInner&gt;&gt;** |  | [optional] |
 
 ## Example
 

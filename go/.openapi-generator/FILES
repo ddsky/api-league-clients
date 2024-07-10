@@ -53,6 +53,7 @@ docs/PluralizeWord200Response.md
 docs/RandomMeme200Response.md
 docs/RandomPoem200Response.md
 docs/RandomQuote200Response.md
+docs/RandomRiddle200Response.md
 docs/RandomTrivia200Response.md
 docs/ReadKeyValueFromStore200Response.md
 docs/RetrievePageRank200Response.md
@@ -87,7 +88,7 @@ docs/ScoreText200ResponseSkimmabilitySubscores.md
 docs/ScoreText200ResponseStyle.md
 docs/ScoreText200ResponseStyleSubscores.md
 docs/SearchBooks200Response.md
-docs/SearchBooks200ResponseBooksInner.md
+docs/SearchBooks200ResponseBooksInnerInner.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
 docs/SearchJokes200Response.md
@@ -153,6 +154,7 @@ model_pluralize_word_200_response.go
 model_random_meme_200_response.go
 model_random_poem_200_response.go
 model_random_quote_200_response.go
+model_random_riddle_200_response.go
 model_random_trivia_200_response.go
 model_read_key_value_from_store_200_response.go
 model_retrieve_page_rank_200_response.go
@@ -187,7 +189,7 @@ model_score_text_200_response_skimmability_subscores.go
 model_score_text_200_response_style.go
 model_score_text_200_response_style_subscores.go
 model_search_books_200_response.go
-model_search_books_200_response_books_inner.go
+model_search_books_200_response_books_inner_inner.go
 model_search_gifs_200_response.go
 model_search_gifs_200_response_images_inner.go
 model_search_jokes_200_response.go

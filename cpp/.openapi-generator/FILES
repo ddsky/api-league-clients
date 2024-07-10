@@ -86,6 +86,8 @@ client/OAIRandomPoem_200_response.cpp
 client/OAIRandomPoem_200_response.h
 client/OAIRandomQuote_200_response.cpp
 client/OAIRandomQuote_200_response.h
+client/OAIRandomRiddle_200_response.cpp
+client/OAIRandomRiddle_200_response.h
 client/OAIRandomTrivia_200_response.cpp
 client/OAIRandomTrivia_200_response.h
 client/OAIReadKeyValueFromStore_200_response.cpp
@@ -154,8 +156,8 @@ client/OAIScoreText_200_response_style_subscores.cpp
 client/OAIScoreText_200_response_style_subscores.h
 client/OAISearchBooks_200_response.cpp
 client/OAISearchBooks_200_response.h
-client/OAISearchBooks_200_response_books_inner.cpp
-client/OAISearchBooks_200_response_books_inner.h
+client/OAISearchBooks_200_response_books_inner_inner.cpp
+client/OAISearchBooks_200_response_books_inner_inner.h
 client/OAISearchGifs_200_response.cpp
 client/OAISearchGifs_200_response.h
 client/OAISearchGifs_200_response_images_inner.cpp

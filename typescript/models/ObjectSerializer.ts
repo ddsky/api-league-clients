@@ -27,6 +27,7 @@ export * from '../models/PluralizeWord200Response';
 export * from '../models/RandomMeme200Response';
 export * from '../models/RandomPoem200Response';
 export * from '../models/RandomQuote200Response';
+export * from '../models/RandomRiddle200Response';
 export * from '../models/RandomTrivia200Response';
 export * from '../models/ReadKeyValueFromStore200Response';
 export * from '../models/RetrievePageRank200Response';
@@ -61,7 +62,7 @@ export * from '../models/ScoreText200ResponseSkimmabilitySubscores';
 export * from '../models/ScoreText200ResponseStyle';
 export * from '../models/ScoreText200ResponseStyleSubscores';
 export * from '../models/SearchBooks200Response';
-export * from '../models/SearchBooks200ResponseBooksInner';
+export * from '../models/SearchBooks200ResponseBooksInnerInner';
 export * from '../models/SearchGifs200Response';
 export * from '../models/SearchGifs200ResponseImagesInner';
 export * from '../models/SearchJokes200Response';
@@ -122,6 +123,7 @@ import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
+import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
 import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
@@ -156,7 +158,7 @@ import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText20
 import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
 import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
 import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInner } from '../models/SearchBooks200ResponseBooksInner';
+import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
@@ -233,6 +235,7 @@ let typeMap: {[index: string]: any} = {
     "RandomMeme200Response": RandomMeme200Response,
     "RandomPoem200Response": RandomPoem200Response,
     "RandomQuote200Response": RandomQuote200Response,
+    "RandomRiddle200Response": RandomRiddle200Response,
     "RandomTrivia200Response": RandomTrivia200Response,
     "ReadKeyValueFromStore200Response": ReadKeyValueFromStore200Response,
     "RetrievePageRank200Response": RetrievePageRank200Response,
@@ -267,7 +270,7 @@ let typeMap: {[index: string]: any} = {
     "ScoreText200ResponseStyle": ScoreText200ResponseStyle,
     "ScoreText200ResponseStyleSubscores": ScoreText200ResponseStyleSubscores,
     "SearchBooks200Response": SearchBooks200Response,
-    "SearchBooks200ResponseBooksInner": SearchBooks200ResponseBooksInner,
+    "SearchBooks200ResponseBooksInnerInner": SearchBooks200ResponseBooksInnerInner,
     "SearchGifs200Response": SearchGifs200Response,
     "SearchGifs200ResponseImagesInner": SearchGifs200ResponseImagesInner,
     "SearchJokes200Response": SearchJokes200Response,

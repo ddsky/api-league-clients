@@ -118,11 +118,11 @@ catch (ApiException e)
 
 <a id="searchnews"></a>
 # **SearchNews**
-> SearchNews200Response SearchNews (string? text = null, string? sourceCountries = null, string? language = null, double? minSentiment = null, double? maxSentiment = null, string? earliestPublishDate = null, string? latestPublishDate = null, string? newsSources = null, string? authors = null, string? entities = null, string? locationFilter = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
+> SearchNews200Response SearchNews (string? text = null, string? sourceCountries = null, string? language = null, double? minSentiment = null, double? maxSentiment = null, string? earliestPublishDate = null, string? latestPublishDate = null, string? newsSources = null, string? authors = null, string? categories = null, string? entities = null, string? locationFilter = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
 
 Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```csharp
@@ -159,9 +159,10 @@ namespace Example
             var latestPublishDate = 2022-04-22 16:12:35;  // string? | The news must have been published before this date. (optional) 
             var newsSources = https://www.bbc.co.uk;  // string? | A comma-separated list of news sources from which the news should originate. (optional) 
             var authors = John Doe;  // string? | A comma-separated list of author names. Only news from any of the given authors will be returned. (optional) 
+            var categories = politics,sports;  // string? | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. (optional) 
             var entities = ORG:Tesla;  // string? | Filter news by entities (ORG, PER, or LOC). (optional) 
             var locationFilter = 51.050407, 13.737262, 100;  // string? | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" (optional) 
-            var sort = publish-time;  // string? | The sorting criteria (publish-time or sentiment). (optional) 
+            var sort = publish-time;  // string? | The sorting criteria (publish-time). (optional) 
             var sortDirection = ASC;  // string? | Whether to sort ascending or descending (ASC or DESC). (optional) 
             var offset = 0;  // int? | The number of news to skip in range [0,10000] (optional) 
             var number = 10;  // int? | The number of news to return in range [1,100] (optional) 
@@ -169,7 +170,7 @@ namespace Example
             try
             {
                 // Search News
-                SearchNews200Response result = apiInstance.SearchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+                SearchNews200Response result = apiInstance.SearchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -190,7 +191,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search News
-    ApiResponse<SearchNews200Response> response = apiInstance.SearchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+    ApiResponse<SearchNews200Response> response = apiInstance.SearchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -216,9 +217,10 @@ catch (ApiException e)
 | **latestPublishDate** | **string?** | The news must have been published before this date. | [optional]  |
 | **newsSources** | **string?** | A comma-separated list of news sources from which the news should originate. | [optional]  |
 | **authors** | **string?** | A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]  |
+| **categories** | **string?** | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional]  |
 | **entities** | **string?** | Filter news by entities (ORG, PER, or LOC). | [optional]  |
 | **locationFilter** | **string?** | Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]  |
-| **sort** | **string?** | The sorting criteria (publish-time or sentiment). | [optional]  |
+| **sort** | **string?** | The sorting criteria (publish-time). | [optional]  |
 | **sortDirection** | **string?** | Whether to sort ascending or descending (ASC or DESC). | [optional]  |
 | **offset** | **int?** | The number of news to skip in range [0,10000] | [optional]  |
 | **number** | **int?** | The number of news to return in range [1,100] | [optional]  |

@@ -40,6 +40,7 @@ add_library(${PROJECT_NAME}
   OAIRandomMeme_200_response.h
   OAIRandomPoem_200_response.h
   OAIRandomQuote_200_response.h
+  OAIRandomRiddle_200_response.h
   OAIRandomTrivia_200_response.h
   OAIReadKeyValueFromStore_200_response.h
   OAIRetrievePageRank_200_response.h
@@ -74,7 +75,7 @@ add_library(${PROJECT_NAME}
   OAIScoreText_200_response_style.h
   OAIScoreText_200_response_style_subscores.h
   OAISearchBooks_200_response.h
-  OAISearchBooks_200_response_books_inner.h
+  OAISearchBooks_200_response_books_inner_inner.h
   OAISearchGifs_200_response.h
   OAISearchGifs_200_response_images_inner.h
   OAISearchJokes_200_response.h
@@ -153,6 +154,7 @@ add_library(${PROJECT_NAME}
   OAIRandomMeme_200_response.cpp
   OAIRandomPoem_200_response.cpp
   OAIRandomQuote_200_response.cpp
+  OAIRandomRiddle_200_response.cpp
   OAIRandomTrivia_200_response.cpp
   OAIReadKeyValueFromStore_200_response.cpp
   OAIRetrievePageRank_200_response.cpp
@@ -187,7 +189,7 @@ add_library(${PROJECT_NAME}
   OAIScoreText_200_response_style.cpp
   OAIScoreText_200_response_style_subscores.cpp
   OAISearchBooks_200_response.cpp
-  OAISearchBooks_200_response_books_inner.cpp
+  OAISearchBooks_200_response_books_inner_inner.cpp
   OAISearchGifs_200_response.cpp
   OAISearchGifs_200_response_images_inner.cpp
   OAISearchJokes_200_response.cpp

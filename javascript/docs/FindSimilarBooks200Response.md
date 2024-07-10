@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**similarBooks** | [**[SearchBooks200ResponseBooksInner]**](SearchBooks200ResponseBooksInner.md) |  | [optional] 
+**similarBooks** | [**[SearchBooks200ResponseBooksInnerInner]**](SearchBooks200ResponseBooksInnerInner.md) |  | [optional] 
 
 

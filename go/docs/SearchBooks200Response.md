@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Available** | Pointer to **int32** |  | [optional] 
 **Number** | Pointer to **int32** |  | [optional] 
 **Offset** | Pointer to **int32** |  | [optional] 
-**Books** | Pointer to [**[]SearchBooks200ResponseBooksInner**](SearchBooks200ResponseBooksInner.md) |  | [optional] 
+**Books** | Pointer to [**[][]SearchBooks200ResponseBooksInnerInner**]([]SearchBooks200ResponseBooksInnerInner.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasOffset returns a boolean if a field has been set.
 
 ### GetBooks
 
-`func (o *SearchBooks200Response) GetBooks() []SearchBooks200ResponseBooksInner`
+`func (o *SearchBooks200Response) GetBooks() [][]SearchBooks200ResponseBooksInnerInner`
 
 GetBooks returns the Books field if non-nil, zero value otherwise.
 
 ### GetBooksOk
 
-`func (o *SearchBooks200Response) GetBooksOk() (*[]SearchBooks200ResponseBooksInner, bool)`
+`func (o *SearchBooks200Response) GetBooksOk() (*[][]SearchBooks200ResponseBooksInnerInner, bool)`
 
 GetBooksOk returns a tuple with the Books field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBooks
 
-`func (o *SearchBooks200Response) SetBooks(v []SearchBooks200ResponseBooksInner)`
+`func (o *SearchBooks200Response) SetBooks(v [][]SearchBooks200ResponseBooksInnerInner)`
 
 SetBooks sets Books field to given value.
 

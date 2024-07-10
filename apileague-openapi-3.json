@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -39,18 +39,21 @@
                     "books": {
                       "type": "array",
                       "items": {
-                        "type": "object",
-                        "properties": {
-                          "title": {
-                            "type": "string",
-                            "nullable": true
-                          },
-                          "image": {
-                            "type": "string",
-                            "nullable": true
-                          },
-                          "id": {
-                            "type": "integer"
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "title": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "image": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "id": {
+                              "type": "integer"
+                            }
                           }
                         }
                       }
@@ -64,60 +67,58 @@
                       "number": 10,
                       "offset": 0,
                       "books": [
-                        {
-                          "title": "Journey to Hogwarts",
-                          "image": "https://covers.openlibrary.org/b/id/2520429-M.jpg",
-                          "id": 17200576
-                        },
-                        {
-                          "image": "https://covers.openlibrary.org/b/id/2520430-M.jpg",
-                          "id": 15954006,
-                          "title": "Inside Hogwarts",
-                          "subtitle": "Magical Paintbook"
-                        },
-                        {
-                          "title": "Harry Potter and the Goblet of Fire",
-                          "image": "https://covers.openlibrary.org/b/id/12775900-M.jpg",
-                          "id": 16384516
-                        },
-                        {
-                          "title": "Harry Potter and the Order of the Phoenix",
-                          "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg",
-                          "id": 14296534
-                        },
-                        {
-                          "title": "Great Gatsby (Silver Screen Edition)",
-                          "image": "https://covers.openlibrary.org/b/id/12791857-M.jpg",
-                          "id": 14530450
-                        },
-                        {
-                          "image": "https://covers.openlibrary.org/b/id/394001-M.jpg",
-                          "id": 18810398,
-                          "title": "The Hobbit",
-                          "subtitle": "or, There and back again"
-                        },
-                        {
-                          "image": "https://covers.openlibrary.org/b/id/6282709-M.jpg",
-                          "id": 13597674,
-                          "title": "The Name of the Wind",
-                          "subtitle": "The Kingkiller Chronicle : day one"
-                        },
-                        {
-                          "image": "https://covers.openlibrary.org/b/id/13220226-M.jpg",
-                          "id": 20778556,
-                          "title": "Two Towers : The Lord of the Rings",
-                          "subtitle": "Part Two"
-                        },
-                        {
-                          "title": "Frankenstein (Silver Screen Edition)",
-                          "image": "https://covers.openlibrary.org/b/id/12791860-M.jpg",
-                          "id": 20101114
-                        },
-                        {
-                          "title": "Bogar b\u00e1rd mes\u00e9i",
-                          "image": "https://covers.openlibrary.org/b/id/9326689-M.jpg",
-                          "id": 17798828
-                        }
+                        [
+                          {
+                            "title": "Journey to Hogwarts",
+                            "image": "https://covers.openlibrary.org/b/id/2520429-M.jpg",
+                            "id": 17200576
+                          }
+                        ],
+                        [
+                          {
+                            "image": "https://covers.openlibrary.org/b/id/2520430-M.jpg",
+                            "id": 15954006,
+                            "title": "Inside Hogwarts",
+                            "subtitle": "Magical Paintbook"
+                          }
+                        ],
+                        [
+                          {
+                            "title": "Harry Potter and the Goblet of Fire",
+                            "image": "https://covers.openlibrary.org/b/id/12775900-M.jpg",
+                            "id": 16384516
+                          }
+                        ],
+                        [
+                          {
+                            "title": "Harry Potter and the Order of the Phoenix",
+                            "image": "https://covers.openlibrary.org/b/id/11416565-M.jpg",
+                            "id": 14296534
+                          }
+                        ],
+                        [
+                          {
+                            "title": "Great Gatsby (Silver Screen Edition)",
+                            "image": "https://covers.openlibrary.org/b/id/12791857-M.jpg",
+                            "id": 14530450
+                          }
+                        ],
+                        [
+                          {
+                            "image": "https://covers.openlibrary.org/b/id/394001-M.jpg",
+                            "id": 18810398,
+                            "title": "The Hobbit",
+                            "subtitle": "or, There and back again"
+                          }
+                        ],
+                        [
+                          {
+                            "image": "https://covers.openlibrary.org/b/id/6282709-M.jpg",
+                            "id": 13597674,
+                            "title": "The Name of the Wind",
+                            "subtitle": "The Kingkiller Chronicle : day one"
+                          }
+                        ]
                       ]
                     }
                   }
@@ -549,18 +550,7 @@
                           "sentiment": {
                             "type": "number"
                           },
-                          "source_country": {
-                            "type": "string",
-                            "nullable": true
-                          },
                           "language": {
-                            "type": "string",
-                            "nullable": true
-                          },
-                          "id": {
-                            "type": "integer"
-                          },
-                          "text": {
                             "type": "string",
                             "nullable": true
                           },
@@ -572,11 +562,26 @@
                             "type": "string",
                             "nullable": true
                           },
-                          "publish_date": {
+                          "url": {
                             "type": "string",
                             "nullable": true
                           },
-                          "url": {
+                          "source_country": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "text": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "category": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "publish_date": {
                             "type": "string",
                             "nullable": true
                           },
@@ -603,14 +608,15 @@
                           "summary": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck. According to Musk, its initial production will begin with a four-motor variant.",
                           "image": "https://internetprotocol.co/content/images/2021/12/Tesla-to-Release-a-Four-Motor-Version-of-Cybertruck.png",
                           "sentiment": 0.712523,
-                          "source_country": "co",
                           "language": "en",
-                          "id": 28,
-                          "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
                           "video": "https://cdn.jwplayer.com/videos/70lDQJpg-RyIcpnTz.mp4",
                           "title": "Tesla to Release a Four-Motor Version of Cybertruck",
-                          "publish_date": "2022-09-30 01:07:48",
                           "url": "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
+                          "source_country": "co",
+                          "id": 28,
+                          "text": "Tesla CEO Elon Musk has revealed new details about the upcoming Cybertruck electric pickup truck, the mass production of which was delayed until 2023 because of the lack of components and a lot of complex technologies that need to be scaled up. According to Musk, the initial production of the electric pickup truck will begin with a four-motor variant with \u201cindependent, ultra fast response torque control of each wheel,\u201d the tweet reads. In response, Twitter users asked if the Cybertruck could turn like a tank. Musk said that thanks to both the rear and front wheel steer, the electric truck will not only be able to turn like a tank, but also drive diagonally like a crab. According to Electrek, this change could be Tesla's reaction to what its competitors do. Since the introduction of Tesla\u2019s novelty, the market for electric pickup trucks has significantly evolved. Currently, one electric pickup on the market can turn like a tank \u2013 the Rivian R1T, while GMC's Hummer EV can drive diagonally. Following the announcement of Tesla Cybertruck in 2019, the company announced three configurations of the pickup truck: the entry-level model with one motor, the one with two motors, and the one with three. Rumor has it that the company intends to abandon the single-motor version altogether. In this case, Tesla Cybertruck will be sold with two, three, and four motors. Musk has promised to provide an update on the pickup's roadmap on the next earnings call. The production of Tesla Cybertruck is expected to begin at the end of 2022, and its mass production is slated to start in 2023.",
+                          "category": "business",
+                          "publish_date": "2022-09-30 01:07:48",
                           "authors": [
                             "Iwan Stone",
                             "Zahna Eklund"
@@ -772,6 +778,20 @@
             "in": "query"
           },
           {
+            "name": "categories",
+            "description": "A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "politics,sports"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
             "name": "entities",
             "description": "Filter news by entities (ORG, PER, or LOC).",
             "schema": {
@@ -801,7 +821,7 @@
           },
           {
             "name": "sort",
-            "description": "The sorting criteria (publish-time or sentiment).",
+            "description": "The sorting criteria (publish-time).",
             "schema": {
               "pattern": ".",
               "maxLength": 100,
@@ -866,7 +886,7 @@
         "tags": [
           "News"
         ],
-        "description": "Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.",
+        "description": "Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.",
         "operationId": "searchNews",
         "deprecated": false
       }
@@ -9844,6 +9864,91 @@
         ],
         "description": "This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.",
         "operationId": "randomQuote",
+        "deprecated": false
+      }
+    },
+    "/retrieve-random-riddle": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "riddle": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "answer": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "difficulty": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "riddle": "What has 13 hearts but no other organs?",
+                      "answer": "A deck of cards",
+                      "difficulty": "easy"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "difficulty",
+            "description": "The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 6,
+              "type": "string",
+              "example": "easy"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/random-riddle-api/"
+        },
+        "summary": "Random Riddle",
+        "tags": [
+          "Knowledge"
+        ],
+        "description": "The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.",
+        "operationId": "randomRiddle",
         "deprecated": false
       }
     },

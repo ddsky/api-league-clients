@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**RandomQuote**](KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote |
+| [**RandomRiddle**](KnowledgeApi.md#randomriddle) | **GET** /retrieve-random-riddle | Random Riddle |
 | [**RandomTrivia**](KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
 <a id="randomquote"></a>
@@ -91,6 +92,112 @@ catch (ApiException e)
 ### Return type
 
 [**RandomQuote200Response**](RandomQuote200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="randomriddle"></a>
+# **RandomRiddle**
+> RandomRiddle200Response RandomRiddle (string? difficulty = null)
+
+Random Riddle
+
+The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class RandomRiddleExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new KnowledgeApi(config);
+            var difficulty = easy;  // string? | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\". (optional) 
+
+            try
+            {
+                // Random Riddle
+                RandomRiddle200Response result = apiInstance.RandomRiddle(difficulty);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.RandomRiddle: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RandomRiddleWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Random Riddle
+    ApiResponse<RandomRiddle200Response> response = apiInstance.RandomRiddleWithHttpInfo(difficulty);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KnowledgeApi.RandomRiddleWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **difficulty** | **string?** | The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. | [optional]  |
+
+### Return type
+
+[**RandomRiddle200Response**](RandomRiddle200Response.md)
 
 ### Authorization
 

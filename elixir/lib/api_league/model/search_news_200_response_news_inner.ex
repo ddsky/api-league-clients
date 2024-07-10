@@ -11,14 +11,15 @@ defmodule APILeague.Model.SearchNews200ResponseNewsInner do
     :summary,
     :image,
     :sentiment,
-    :source_country,
     :language,
-    :id,
-    :text,
     :video,
     :title,
-    :publish_date,
     :url,
+    :source_country,
+    :id,
+    :text,
+    :category,
+    :publish_date,
     :authors
   ]
 
@@ -26,14 +27,15 @@ defmodule APILeague.Model.SearchNews200ResponseNewsInner do
     :summary => String.t | nil,
     :image => String.t | nil,
     :sentiment => float() | nil,
-    :source_country => String.t | nil,
     :language => String.t | nil,
-    :id => integer() | nil,
-    :text => String.t | nil,
     :video => String.t | nil,
     :title => String.t | nil,
-    :publish_date => String.t | nil,
     :url => String.t | nil,
+    :source_country => String.t | nil,
+    :id => integer() | nil,
+    :text => String.t | nil,
+    :category => String.t | nil,
+    :publish_date => String.t | nil,
     :authors => [String.t] | nil
   }
 

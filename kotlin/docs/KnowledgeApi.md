@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
+[**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle
 [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
 
 
@@ -47,6 +48,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RandomQuote200Response**](RandomQuote200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="randomRiddle"></a>
+# **randomRiddle**
+> RandomRiddle200Response randomRiddle(difficulty)
+
+Random Riddle
+
+The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = KnowledgeApi()
+val difficulty : kotlin.String = easy // kotlin.String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
+try {
+    val result : RandomRiddle200Response = apiInstance.randomRiddle(difficulty)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling KnowledgeApi#randomRiddle")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling KnowledgeApi#randomRiddle")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **difficulty** | **kotlin.String**| The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. | [optional]
+
+### Return type
+
+[**RandomRiddle200Response**](RandomRiddle200Response.md)
 
 ### Authorization
 

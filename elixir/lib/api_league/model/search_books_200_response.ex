@@ -18,14 +18,11 @@ defmodule APILeague.Model.SearchBooks200Response do
     :available => integer() | nil,
     :number => integer() | nil,
     :offset => integer() | nil,
-    :books => [APILeague.Model.SearchBooks200ResponseBooksInner.t] | nil
+    :books => [[APILeague.Model.SearchBooks200ResponseBooksInnerInner.t]] | nil
   }
-
-  alias APILeague.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:books, :list, APILeague.Model.SearchBooks200ResponseBooksInner)
   end
 end
 

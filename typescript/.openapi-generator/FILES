@@ -62,6 +62,7 @@ models/PluralizeWord200Response.ts
 models/RandomMeme200Response.ts
 models/RandomPoem200Response.ts
 models/RandomQuote200Response.ts
+models/RandomRiddle200Response.ts
 models/RandomTrivia200Response.ts
 models/ReadKeyValueFromStore200Response.ts
 models/RetrievePageRank200Response.ts
@@ -96,7 +97,7 @@ models/ScoreText200ResponseSkimmabilitySubscores.ts
 models/ScoreText200ResponseStyle.ts
 models/ScoreText200ResponseStyleSubscores.ts
 models/SearchBooks200Response.ts
-models/SearchBooks200ResponseBooksInner.ts
+models/SearchBooks200ResponseBooksInnerInner.ts
 models/SearchGifs200Response.ts
 models/SearchGifs200ResponseImagesInner.ts
 models/SearchJokes200Response.ts

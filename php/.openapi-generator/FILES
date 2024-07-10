@@ -44,6 +44,7 @@ docs/Model/PluralizeWord200Response.md
 docs/Model/RandomMeme200Response.md
 docs/Model/RandomPoem200Response.md
 docs/Model/RandomQuote200Response.md
+docs/Model/RandomRiddle200Response.md
 docs/Model/RandomTrivia200Response.md
 docs/Model/ReadKeyValueFromStore200Response.md
 docs/Model/RetrievePageRank200Response.md
@@ -78,7 +79,7 @@ docs/Model/ScoreText200ResponseSkimmabilitySubscores.md
 docs/Model/ScoreText200ResponseStyle.md
 docs/Model/ScoreText200ResponseStyleSubscores.md
 docs/Model/SearchBooks200Response.md
-docs/Model/SearchBooks200ResponseBooksInner.md
+docs/Model/SearchBooks200ResponseBooksInnerInner.md
 docs/Model/SearchGifs200Response.md
 docs/Model/SearchGifs200ResponseImagesInner.md
 docs/Model/SearchJokes200Response.md
@@ -154,6 +155,7 @@ lib/Model/PluralizeWord200Response.php
 lib/Model/RandomMeme200Response.php
 lib/Model/RandomPoem200Response.php
 lib/Model/RandomQuote200Response.php
+lib/Model/RandomRiddle200Response.php
 lib/Model/RandomTrivia200Response.php
 lib/Model/ReadKeyValueFromStore200Response.php
 lib/Model/RetrievePageRank200Response.php
@@ -188,7 +190,7 @@ lib/Model/ScoreText200ResponseSkimmabilitySubscores.php
 lib/Model/ScoreText200ResponseStyle.php
 lib/Model/ScoreText200ResponseStyleSubscores.php
 lib/Model/SearchBooks200Response.php
-lib/Model/SearchBooks200ResponseBooksInner.php
+lib/Model/SearchBooks200ResponseBooksInnerInner.php
 lib/Model/SearchGifs200Response.php
 lib/Model/SearchGifs200ResponseImagesInner.php
 lib/Model/SearchJokes200Response.php
@@ -261,6 +263,7 @@ test/Model/PluralizeWord200ResponseTest.php
 test/Model/RandomMeme200ResponseTest.php
 test/Model/RandomPoem200ResponseTest.php
 test/Model/RandomQuote200ResponseTest.php
+test/Model/RandomRiddle200ResponseTest.php
 test/Model/RandomTrivia200ResponseTest.php
 test/Model/ReadKeyValueFromStore200ResponseTest.php
 test/Model/RetrievePageRank200ResponseTest.php
@@ -294,7 +297,7 @@ test/Model/ScoreText200ResponseSkimmabilityTest.php
 test/Model/ScoreText200ResponseStyleSubscoresTest.php
 test/Model/ScoreText200ResponseStyleTest.php
 test/Model/ScoreText200ResponseTest.php
-test/Model/SearchBooks200ResponseBooksInnerTest.php
+test/Model/SearchBooks200ResponseBooksInnerInnerTest.php
 test/Model/SearchBooks200ResponseTest.php
 test/Model/SearchGifs200ResponseImagesInnerTest.php
 test/Model/SearchGifs200ResponseTest.php

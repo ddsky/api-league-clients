@@ -40,6 +40,7 @@ doc/PluralizeWord200Response.md
 doc/RandomMeme200Response.md
 doc/RandomPoem200Response.md
 doc/RandomQuote200Response.md
+doc/RandomRiddle200Response.md
 doc/RandomTrivia200Response.md
 doc/ReadKeyValueFromStore200Response.md
 doc/RetrievePageRank200Response.md
@@ -74,7 +75,7 @@ doc/ScoreText200ResponseSkimmabilitySubscores.md
 doc/ScoreText200ResponseStyle.md
 doc/ScoreText200ResponseStyleSubscores.md
 doc/SearchBooks200Response.md
-doc/SearchBooks200ResponseBooksInner.md
+doc/SearchBooks200ResponseBooksInnerInner.md
 doc/SearchGifs200Response.md
 doc/SearchGifs200ResponseImagesInner.md
 doc/SearchJokes200Response.md
@@ -158,6 +159,7 @@ lib/model/pluralize_word200_response.dart
 lib/model/random_meme200_response.dart
 lib/model/random_poem200_response.dart
 lib/model/random_quote200_response.dart
+lib/model/random_riddle200_response.dart
 lib/model/random_trivia200_response.dart
 lib/model/read_key_value_from_store200_response.dart
 lib/model/retrieve_page_rank200_response.dart
@@ -192,7 +194,7 @@ lib/model/score_text200_response_skimmability_subscores.dart
 lib/model/score_text200_response_style.dart
 lib/model/score_text200_response_style_subscores.dart
 lib/model/search_books200_response.dart
-lib/model/search_books200_response_books_inner.dart
+lib/model/search_books200_response_books_inner_inner.dart
 lib/model/search_gifs200_response.dart
 lib/model/search_gifs200_response_images_inner.dart
 lib/model/search_jokes200_response.dart
@@ -261,6 +263,7 @@ test/pluralize_word200_response_test.dart
 test/random_meme200_response_test.dart
 test/random_poem200_response_test.dart
 test/random_quote200_response_test.dart
+test/random_riddle200_response_test.dart
 test/random_trivia200_response_test.dart
 test/read_key_value_from_store200_response_test.dart
 test/retrieve_page_rank200_response_test.dart
@@ -294,7 +297,7 @@ test/score_text200_response_skimmability_test.dart
 test/score_text200_response_style_subscores_test.dart
 test/score_text200_response_style_test.dart
 test/score_text200_response_test.dart
-test/search_books200_response_books_inner_test.dart
+test/search_books200_response_books_inner_inner_test.dart
 test/search_books200_response_test.dart
 test/search_gifs200_response_images_inner_test.dart
 test/search_gifs200_response_test.dart

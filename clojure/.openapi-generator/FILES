@@ -43,6 +43,7 @@ src/api_league/specs/pluralize_word_200_response.clj
 src/api_league/specs/random_meme_200_response.clj
 src/api_league/specs/random_poem_200_response.clj
 src/api_league/specs/random_quote_200_response.clj
+src/api_league/specs/random_riddle_200_response.clj
 src/api_league/specs/random_trivia_200_response.clj
 src/api_league/specs/read_key_value_from_store_200_response.clj
 src/api_league/specs/retrieve_page_rank_200_response.clj
@@ -77,7 +78,7 @@ src/api_league/specs/score_text_200_response_skimmability_subscores.clj
 src/api_league/specs/score_text_200_response_style.clj
 src/api_league/specs/score_text_200_response_style_subscores.clj
 src/api_league/specs/search_books_200_response.clj
-src/api_league/specs/search_books_200_response_books_inner.clj
+src/api_league/specs/search_books_200_response_books_inner_inner.clj
 src/api_league/specs/search_gifs_200_response.clj
 src/api_league/specs/search_gifs_200_response_images_inner.clj
 src/api_league/specs/search_jokes_200_response.clj

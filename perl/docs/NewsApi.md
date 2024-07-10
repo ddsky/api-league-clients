@@ -72,11 +72,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_news**
-> SearchNews200Response search_news(text => $text, source_countries => $source_countries, language => $language, min_sentiment => $min_sentiment, max_sentiment => $max_sentiment, earliest_publish_date => $earliest_publish_date, latest_publish_date => $latest_publish_date, news_sources => $news_sources, authors => $authors, entities => $entities, location_filter => $location_filter, sort => $sort, sort_direction => $sort_direction, offset => $offset, number => $number)
+> SearchNews200Response search_news(text => $text, source_countries => $source_countries, language => $language, min_sentiment => $min_sentiment, max_sentiment => $max_sentiment, earliest_publish_date => $earliest_publish_date, latest_publish_date => $latest_publish_date, news_sources => $news_sources, authors => $authors, categories => $categories, entities => $entities, location_filter => $location_filter, sort => $sort, sort_direction => $sort_direction, offset => $offset, number => $number)
 
 Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```perl
@@ -103,15 +103,16 @@ my $earliest_publish_date = 2022-04-22 16:12:35; # string | The news must have b
 my $latest_publish_date = 2022-04-22 16:12:35; # string | The news must have been published before this date.
 my $news_sources = https://www.bbc.co.uk; # string | A comma-separated list of news sources from which the news should originate.
 my $authors = John Doe; # string | A comma-separated list of author names. Only news from any of the given authors will be returned.
+my $categories = politics,sports; # string | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
 my $entities = ORG:Tesla; # string | Filter news by entities (ORG, PER, or LOC).
 my $location_filter = 51.050407, 13.737262, 100; # string | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-my $sort = publish-time; # string | The sorting criteria (publish-time or sentiment).
+my $sort = publish-time; # string | The sorting criteria (publish-time).
 my $sort_direction = ASC; # string | Whether to sort ascending or descending (ASC or DESC).
 my $offset = 0; # int | The number of news to skip in range [0,10000]
 my $number = 10; # int | The number of news to return in range [1,100]
 
 eval {
-    my $result = $api_instance->search_news(text => $text, source_countries => $source_countries, language => $language, min_sentiment => $min_sentiment, max_sentiment => $max_sentiment, earliest_publish_date => $earliest_publish_date, latest_publish_date => $latest_publish_date, news_sources => $news_sources, authors => $authors, entities => $entities, location_filter => $location_filter, sort => $sort, sort_direction => $sort_direction, offset => $offset, number => $number);
+    my $result = $api_instance->search_news(text => $text, source_countries => $source_countries, language => $language, min_sentiment => $min_sentiment, max_sentiment => $max_sentiment, earliest_publish_date => $earliest_publish_date, latest_publish_date => $latest_publish_date, news_sources => $news_sources, authors => $authors, categories => $categories, entities => $entities, location_filter => $location_filter, sort => $sort, sort_direction => $sort_direction, offset => $offset, number => $number);
     print Dumper($result);
 };
 if ($@) {
@@ -132,9 +133,10 @@ Name | Type | Description  | Notes
  **latest_publish_date** | **string**| The news must have been published before this date. | [optional] 
  **news_sources** | **string**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **string**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
+ **categories** | **string**| A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional] 
  **entities** | **string**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **location_filter** | **string**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] 
- **sort** | **string**| The sorting criteria (publish-time or sentiment). | [optional] 
+ **sort** | **string**| The sorting criteria (publish-time). | [optional] 
  **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
  **offset** | **int**| The number of news to skip in range [0,10000] | [optional] 
  **number** | **int**| The number of news to return in range [1,100] | [optional] 

@@ -68,11 +68,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchNews**
-> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number)
+> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
 
 Search News
 
-Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```dart
@@ -96,15 +96,16 @@ final earliestPublishDate = 2022-04-22 16:12:35; // String | The news must have 
 final latestPublishDate = 2022-04-22 16:12:35; // String | The news must have been published before this date.
 final newsSources = https://www.bbc.co.uk; // String | A comma-separated list of news sources from which the news should originate.
 final authors = John Doe; // String | A comma-separated list of author names. Only news from any of the given authors will be returned.
+final categories = politics,sports; // String | A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
 final entities = ORG:Tesla; // String | Filter news by entities (ORG, PER, or LOC).
 final locationFilter = 51.050407, 13.737262, 100; // String | Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
-final sort = publish-time; // String | The sorting criteria (publish-time or sentiment).
+final sort = publish-time; // String | The sorting criteria (publish-time).
 final sortDirection = ASC; // String | Whether to sort ascending or descending (ASC or DESC).
 final offset = 0; // int | The number of news to skip in range [0,10000]
 final number = 10; // int | The number of news to return in range [1,100]
 
 try {
-    final result = api_instance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number);
+    final result = api_instance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
     print(result);
 } catch (e) {
     print('Exception when calling NewsApi->searchNews: $e\n');
@@ -124,9 +125,10 @@ Name | Type | Description  | Notes
  **latestPublishDate** | **String**| The news must have been published before this date. | [optional] 
  **newsSources** | **String**| A comma-separated list of news sources from which the news should originate. | [optional] 
  **authors** | **String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] 
+ **categories** | **String**| A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional] 
  **entities** | **String**| Filter news by entities (ORG, PER, or LOC). | [optional] 
  **locationFilter** | **String**| Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\" | [optional] 
- **sort** | **String**| The sorting criteria (publish-time or sentiment). | [optional] 
+ **sort** | **String**| The sorting criteria (publish-time). | [optional] 
  **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
  **offset** | **int**| The number of news to skip in range [0,10000] | [optional] 
  **number** | **int**| The number of news to return in range [1,100] | [optional] 

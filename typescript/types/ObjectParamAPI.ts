@@ -30,6 +30,7 @@ import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
+import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
 import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
@@ -64,7 +65,7 @@ import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText20
 import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
 import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
 import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInner } from '../models/SearchBooks200ResponseBooksInner';
+import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
@@ -1362,6 +1363,15 @@ export interface KnowledgeApiRandomQuoteRequest {
     maxLength?: number
 }
 
+export interface KnowledgeApiRandomRiddleRequest {
+    /**
+     * The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
+     * @type string
+     * @memberof KnowledgeApirandomRiddle
+     */
+    difficulty?: string
+}
+
 export interface KnowledgeApiRandomTriviaRequest {
     /**
      * The maximum length of the trivia in letters.
@@ -1394,6 +1404,24 @@ export class ObjectKnowledgeApi {
      */
     public randomQuote(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<RandomQuote200Response> {
         return this.api.randomQuote(param.minLength, param.maxLength,  options).toPromise();
+    }
+
+    /**
+     * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+     * Random Riddle
+     * @param param the request object
+     */
+    public randomRiddleWithHttpInfo(param: KnowledgeApiRandomRiddleRequest = {}, options?: Configuration): Promise<HttpInfo<RandomRiddle200Response>> {
+        return this.api.randomRiddleWithHttpInfo(param.difficulty,  options).toPromise();
+    }
+
+    /**
+     * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+     * Random Riddle
+     * @param param the request object
+     */
+    public randomRiddle(param: KnowledgeApiRandomRiddleRequest = {}, options?: Configuration): Promise<RandomRiddle200Response> {
+        return this.api.randomRiddle(param.difficulty,  options).toPromise();
     }
 
     /**
@@ -1664,6 +1692,12 @@ export interface NewsApiSearchNewsRequest {
      */
     authors?: string
     /**
+     * A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
+     * @type string
+     * @memberof NewsApisearchNews
+     */
+    categories?: string
+    /**
      * Filter news by entities (ORG, PER, or LOC).
      * @type string
      * @memberof NewsApisearchNews
@@ -1676,7 +1710,7 @@ export interface NewsApiSearchNewsRequest {
      */
     locationFilter?: string
     /**
-     * The sorting criteria (publish-time or sentiment).
+     * The sorting criteria (publish-time).
      * @type string
      * @memberof NewsApisearchNews
      */
@@ -1754,21 +1788,21 @@ export class ObjectNewsApi {
     }
 
     /**
-     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
      * @param param the request object
      */
     public searchNewsWithHttpInfo(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<HttpInfo<SearchNews200Response>> {
-        return this.api.searchNewsWithHttpInfo(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+        return this.api.searchNewsWithHttpInfo(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
      * @param param the request object
      */
     public searchNews(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<SearchNews200Response> {
-        return this.api.searchNews(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+        return this.api.searchNews(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**

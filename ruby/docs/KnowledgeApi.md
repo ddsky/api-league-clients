@@ -5,6 +5,7 @@ All URIs are relative to *https://api.apileague.com*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**random_quote**](KnowledgeApi.md#random_quote) | **GET** /retrieve-random-quote | Random Quote |
+| [**random_riddle**](KnowledgeApi.md#random_riddle) | **GET** /retrieve-random-riddle | Random Riddle |
 | [**random_trivia**](KnowledgeApi.md#random_trivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
 
@@ -77,6 +78,84 @@ end
 ### Return type
 
 [**RandomQuote200Response**](RandomQuote200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## random_riddle
+
+> <RandomRiddle200Response> random_riddle(opts)
+
+Random Riddle
+
+The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::KnowledgeApi.new
+opts = {
+  difficulty: 'easy' # String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
+}
+
+begin
+  # Random Riddle
+  result = api_instance.random_riddle(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_riddle: #{e}"
+end
+```
+
+#### Using the random_riddle_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RandomRiddle200Response>, Integer, Hash)> random_riddle_with_http_info(opts)
+
+```ruby
+begin
+  # Random Riddle
+  data, status_code, headers = api_instance.random_riddle_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RandomRiddle200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_riddle_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **difficulty** | **String** | The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. | [optional] |
+
+### Return type
+
+[**RandomRiddle200Response**](RandomRiddle200Response.md)
 
 ### Authorization
 

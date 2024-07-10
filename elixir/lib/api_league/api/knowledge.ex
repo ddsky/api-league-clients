@@ -53,6 +53,47 @@ defmodule APILeague.Api.Knowledge do
   end
 
   @doc """
+  Random Riddle
+  The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `opts` (keyword): Optional parameters
+    - `:difficulty` (String.t): The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.RandomRiddle200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec random_riddle(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomRiddle200Response.t} | {:error, Tesla.Env.t}
+  def random_riddle(connection, opts \\ []) do
+    optional_params = %{
+      :difficulty => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-random-riddle")
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.RandomRiddle200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Random Trivia
   This endpoint returns a random piece of trivia.
 

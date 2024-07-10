@@ -85,7 +85,7 @@ class NewsApi {
 
   /// Search News
   ///
-  /// Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  /// Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -118,6 +118,9 @@ class NewsApi {
   /// * [String] authors:
   ///   A comma-separated list of author names. Only news from any of the given authors will be returned.
   ///
+  /// * [String] categories:
+  ///   A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
+  ///
   /// * [String] entities:
   ///   Filter news by entities (ORG, PER, or LOC).
   ///
@@ -125,7 +128,7 @@ class NewsApi {
   ///   Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
   ///
   /// * [String] sort:
-  ///   The sorting criteria (publish-time or sentiment).
+  ///   The sorting criteria (publish-time).
   ///
   /// * [String] sortDirection:
   ///   Whether to sort ascending or descending (ASC or DESC).
@@ -135,7 +138,7 @@ class NewsApi {
   ///
   /// * [int] number:
   ///   The number of news to return in range [1,100]
-  Future<Response> searchNewsWithHttpInfo({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
+  Future<Response> searchNewsWithHttpInfo({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-news';
 
@@ -173,6 +176,9 @@ class NewsApi {
     if (authors != null) {
       queryParams.addAll(_queryParams('', 'authors', authors));
     }
+    if (categories != null) {
+      queryParams.addAll(_queryParams('', 'categories', categories));
+    }
     if (entities != null) {
       queryParams.addAll(_queryParams('', 'entities', entities));
     }
@@ -208,7 +214,7 @@ class NewsApi {
 
   /// Search News
   ///
-  /// Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  /// Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
   ///
   /// Parameters:
   ///
@@ -239,6 +245,9 @@ class NewsApi {
   /// * [String] authors:
   ///   A comma-separated list of author names. Only news from any of the given authors will be returned.
   ///
+  /// * [String] categories:
+  ///   A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
+  ///
   /// * [String] entities:
   ///   Filter news by entities (ORG, PER, or LOC).
   ///
@@ -246,7 +255,7 @@ class NewsApi {
   ///   Filter news by radius around a certain location. Format is \"latitude,longitude,radius in kilometers\"
   ///
   /// * [String] sort:
-  ///   The sorting criteria (publish-time or sentiment).
+  ///   The sorting criteria (publish-time).
   ///
   /// * [String] sortDirection:
   ///   Whether to sort ascending or descending (ASC or DESC).
@@ -256,8 +265,8 @@ class NewsApi {
   ///
   /// * [int] number:
   ///   The number of news to return in range [1,100]
-  Future<SearchNews200Response?> searchNews({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
-    final response = await searchNewsWithHttpInfo( text: text, sourceCountries: sourceCountries, language: language, minSentiment: minSentiment, maxSentiment: maxSentiment, earliestPublishDate: earliestPublishDate, latestPublishDate: latestPublishDate, newsSources: newsSources, authors: authors, entities: entities, locationFilter: locationFilter, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
+  Future<SearchNews200Response?> searchNews({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    final response = await searchNewsWithHttpInfo( text: text, sourceCountries: sourceCountries, language: language, minSentiment: minSentiment, maxSentiment: maxSentiment, earliestPublishDate: earliestPublishDate, latestPublishDate: latestPublishDate, newsSources: newsSources, authors: authors, categories: categories, entities: entities, locationFilter: locationFilter, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

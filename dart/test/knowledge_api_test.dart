@@ -26,6 +26,15 @@ void main() {
       // TODO
     });
 
+    // Random Riddle
+    //
+    // The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+    //
+    //Future<RandomRiddle200Response> randomRiddle({ String difficulty }) async
+    test('test randomRiddle', () async {
+      // TODO
+    });
+
     // Random Trivia
     //
     // This endpoint returns a random piece of trivia.

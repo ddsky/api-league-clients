@@ -31,6 +31,7 @@ import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
 import { RandomMeme200Response } from '../models/RandomMeme200Response';
 import { RandomPoem200Response } from '../models/RandomPoem200Response';
 import { RandomQuote200Response } from '../models/RandomQuote200Response';
+import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
 import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
 import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
 import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
@@ -65,7 +66,7 @@ import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText20
 import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
 import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
 import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInner } from '../models/SearchBooks200ResponseBooksInner';
+import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
@@ -957,6 +958,39 @@ export class ObservableKnowledgeApi {
     }
 
     /**
+     * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+     * Random Riddle
+     * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
+     */
+    public randomRiddleWithHttpInfo(difficulty?: string, _options?: Configuration): Observable<HttpInfo<RandomRiddle200Response>> {
+        const requestContextPromise = this.requestFactory.randomRiddle(difficulty, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomRiddleWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
+     * Random Riddle
+     * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
+     */
+    public randomRiddle(difficulty?: string, _options?: Configuration): Observable<RandomRiddle200Response> {
+        return this.randomRiddleWithHttpInfo(difficulty, _options).pipe(map((apiResponse: HttpInfo<RandomRiddle200Response>) => apiResponse.data));
+    }
+
+    /**
      * This endpoint returns a random piece of trivia.
      * Random Trivia
      * @param maxLength The maximum length of the trivia in letters.
@@ -1225,7 +1259,7 @@ export class ObservableNewsApi {
     }
 
     /**
-     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
      * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -1236,15 +1270,16 @@ export class ObservableNewsApi {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
+     * @param categories A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
      * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
-     * @param sort The sorting criteria (publish-time or sentiment).
+     * @param sort The sorting criteria (publish-time).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public searchNewsWithHttpInfo(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchNews200Response>> {
-        const requestContextPromise = this.requestFactory.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _options);
+    public searchNewsWithHttpInfo(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchNews200Response>> {
+        const requestContextPromise = this.requestFactory.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1263,7 +1298,7 @@ export class ObservableNewsApi {
     }
 
     /**
-     * Search and filter news by text, date, location, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
      * Search News
      * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -1274,15 +1309,16 @@ export class ObservableNewsApi {
      * @param latestPublishDate The news must have been published before this date.
      * @param newsSources A comma-separated list of news sources from which the news should originate.
      * @param authors A comma-separated list of author names. Only news from any of the given authors will be returned.
+     * @param categories A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
      * @param entities Filter news by entities (ORG, PER, or LOC).
      * @param locationFilter Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
-     * @param sort The sorting criteria (publish-time or sentiment).
+     * @param sort The sorting criteria (publish-time).
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchNews200Response> {
-        return this.searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, entities, locationFilter, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchNews200Response>) => apiResponse.data));
+    public searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchNews200Response> {
+        return this.searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchNews200Response>) => apiResponse.data));
     }
 
     /**
