@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.4.0
+  version: 1.4.1
 servers:
 - url: https://api.apileague.com
 security:
