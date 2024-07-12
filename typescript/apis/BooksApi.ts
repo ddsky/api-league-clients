@@ -33,12 +33,16 @@ export class BooksApiRequestFactory extends BaseAPIRequestFactory {
 
 
         // Path Params
-        const localVarPath = '/list-similar-books'
-            .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
+        const localVarPath = '/list-similar-books';
 
         // Make Request Context
         const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
         requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (id !== undefined) {
+            requestContext.setQueryParam("id", ObjectSerializer.serialize(id, "number", "int32"));
+        }
 
         // Query Params
         if (number !== undefined) {

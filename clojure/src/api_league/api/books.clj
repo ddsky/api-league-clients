@@ -109,9 +109,9 @@
   ([id int?, {:keys [number]} (s/map-of keyword? any?)]
    (check-required-params id)
    (call-api "/list-similar-books" :get
-             {:path-params   {"id" id }
+             {:path-params   {}
               :header-params {}
-              :query-params  {"number" number }
+              :query-params  {"id" id "number" number }
               :form-params   {}
               :content-types []
               :accepts       ["application/json"]

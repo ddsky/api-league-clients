@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -481,9 +481,9 @@
               "example": 8302059
             },
             "required": true,
-            "style": "simple",
+            "style": "form",
             "explode": false,
-            "in": "path"
+            "in": "query"
           },
           {
             "name": "number",

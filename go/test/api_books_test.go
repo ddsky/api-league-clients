@@ -26,9 +26,7 @@ func Test_apileague_BooksAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var id int32
-
-		resp, httpRes, err := apiClient.BooksAPI.FindSimilarBooks(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.BooksAPI.FindSimilarBooks(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

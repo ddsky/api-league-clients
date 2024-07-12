@@ -35,6 +35,7 @@ defmodule APILeague.Api.Books do
       %{}
       |> method(:get)
       |> url("/list-similar-books")
+      |> add_param(:query, :id, id)
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

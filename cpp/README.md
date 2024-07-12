@@ -4,7 +4,7 @@
 
 API League
 
-- API version: 1.4.1
+- API version: 1.4.2
 - Generator version: 7.5.0
 
 API League is a Hub for World Class APIs.

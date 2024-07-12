@@ -31,8 +31,7 @@ class BooksApi {
   ///   The number of similar books to return in range [1,100]
   Future<Response> findSimilarBooksWithHttpInfo(int id, { int? number, }) async {
     // ignore: prefer_const_declarations
-    final path = r'/list-similar-books'
-      .replaceAll('{id}', id.toString());
+    final path = r'/list-similar-books';
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -41,6 +40,7 @@ class BooksApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+      queryParams.addAll(_queryParams('', 'id', id));
     if (number != null) {
       queryParams.addAll(_queryParams('', 'number', number));
     }

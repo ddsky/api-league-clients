@@ -108,6 +108,7 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                put("id", listOf(id.toString()))
                 if (number != null) {
                     put("number", listOf(number.toString()))
                 }
@@ -117,7 +118,7 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/list-similar-books".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            path = "/list-similar-books",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

@@ -18,7 +18,7 @@ find_similar_books(Ctx, Id, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/list-similar-books"],
-    QS = lists:flatten([])++apileague_utils:optional_params(['number'], _OptionalParams),
+    QS = lists:flatten([{<<"id">>, Id}])++apileague_utils:optional_params(['number'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

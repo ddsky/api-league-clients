@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## FindSimilarBooks
 
-> FindSimilarBooks200Response FindSimilarBooks(ctx, id).Number(number).Execute()
+> FindSimilarBooks200Response FindSimilarBooks(ctx).Id(id).Number(number).Execute()
 
 Find Similar Books
 
@@ -35,7 +35,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BooksAPI.FindSimilarBooks(context.Background(), id).Number(number).Execute()
+	resp, r, err := apiClient.BooksAPI.FindSimilarBooks(context.Background()).Id(id).Number(number).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BooksAPI.FindSimilarBooks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -48,10 +48,6 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The id of the book to which similar books should be found. | 
 
 ### Other Parameters
 
@@ -60,7 +56,7 @@ Other parameters are passed through a pointer to a apiFindSimilarBooksRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **id** | **int32** | The id of the book to which similar books should be found. | 
  **number** | **int32** | The number of similar books to return in range [1,100] | 
 
 ### Return type

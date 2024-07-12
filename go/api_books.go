@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.1
+API version: 1.4.2
 Contact: mail@apileague.com
 */
 
@@ -17,7 +17,6 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 )
 
 
@@ -27,8 +26,14 @@ type BooksAPIService service
 type ApiFindSimilarBooksRequest struct {
 	ctx context.Context
 	ApiService *BooksAPIService
-	id int32
+	id *int32
 	number *int32
+}
+
+// The id of the book to which similar books should be found.
+func (r ApiFindSimilarBooksRequest) Id(id int32) ApiFindSimilarBooksRequest {
+	r.id = &id
+	return r
 }
 
 // The number of similar books to return in range [1,100]
@@ -47,14 +52,12 @@ FindSimilarBooks Find Similar Books
 Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The id of the book to which similar books should be found.
  @return ApiFindSimilarBooksRequest
 */
-func (a *BooksAPIService) FindSimilarBooks(ctx context.Context, id int32) ApiFindSimilarBooksRequest {
+func (a *BooksAPIService) FindSimilarBooks(ctx context.Context) ApiFindSimilarBooksRequest {
 	return ApiFindSimilarBooksRequest{
 		ApiService: a,
 		ctx: ctx,
-		id: id,
 	}
 }
 
@@ -74,18 +77,21 @@ func (a *BooksAPIService) FindSimilarBooksExecute(r ApiFindSimilarBooksRequest) 
 	}
 
 	localVarPath := localBasePath + "/list-similar-books"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.id < 0 {
+	if r.id == nil {
+		return localVarReturnValue, nil, reportError("id is required and must be specified")
+	}
+	if *r.id < 0 {
 		return localVarReturnValue, nil, reportError("id must be greater than 0")
 	}
-	if r.id > 999999999 {
+	if *r.id > 999999999 {
 		return localVarReturnValue, nil, reportError("id must be less than 999999999")
 	}
 
+	parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
 	if r.number != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
 	}
