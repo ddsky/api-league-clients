@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **Number** |  | [optional] 
-**ingredients** | [**[RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
-**equipment** | [**[RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**ingredients** | [**[SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**equipment** | [**[SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
 **step** | **String** |  | [optional] 
 
 

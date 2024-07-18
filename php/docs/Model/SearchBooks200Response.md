@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**available** | **int** |  | [optional]
+**total_results** | **int** |  | [optional]
 **number** | **int** |  | [optional]
 **offset** | **int** |  | [optional]
 **books** | **\OpenAPI\Client\Model\SearchBooks200ResponseBooksInnerInner[][]** |  | [optional]

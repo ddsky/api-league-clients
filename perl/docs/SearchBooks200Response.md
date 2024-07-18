@@ -8,7 +8,7 @@ use WWW::OpenAPIClient::Object::SearchBooks200Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**available** | **int** |  | [optional] 
+**total_results** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
 **books** | **ARRAY[ARRAY[SearchBooks200ResponseBooksInnerInner]]** |  | [optional] 

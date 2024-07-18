@@ -47,5 +47,8 @@ data class ExtractEntities200ResponseEntitiesInner (
     @Json(name = "end_position")
     val endPosition: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

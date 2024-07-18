@@ -35,5 +35,8 @@ data class SingularizeWord200Response (
     @Json(name = "singular")
     val singular: kotlin.String? = null
 
-)
+) {
+
+
+}
 

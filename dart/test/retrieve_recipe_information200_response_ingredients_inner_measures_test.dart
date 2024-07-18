@@ -16,12 +16,12 @@ void main() {
   // final instance = RetrieveRecipeInformation200ResponseIngredientsInnerMeasures();
 
   group('test RetrieveRecipeInformation200ResponseIngredientsInnerMeasures', () {
-    // RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric metric
+    // SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric metric
     test('to test the property `metric`', () async {
       // TODO
     });
 
-    // RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric us
+    // SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric us
     test('to test the property `us`', () async {
       // TODO
     });

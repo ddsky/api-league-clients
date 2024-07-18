@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
-[**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
-[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News |
+| [**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News |
+| [**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News |
 
 
 <a id="extractNews"></a>
@@ -39,11 +39,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url of the news. |
- **analyze** | **kotlin.Boolean**| Whether to analyze the news (extract entities etc.) |
+| **url** | **kotlin.String**| The url of the news. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **analyze** | **kotlin.Boolean**| Whether to analyze the news (extract entities etc.) | |
 
 ### Return type
 
@@ -108,25 +107,24 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]
- **sourceCountries** | **kotlin.String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]
- **language** | **kotlin.String**| The ISO 6391 language code of the news. | [optional]
- **minSentiment** | **kotlin.Double**| The minimal sentiment of the news in range [-1,1]. | [optional]
- **maxSentiment** | **kotlin.Double**| The maximal sentiment of the news in range [-1,1]. | [optional]
- **earliestPublishDate** | **kotlin.String**| The news must have been published after this date. | [optional]
- **latestPublishDate** | **kotlin.String**| The news must have been published before this date. | [optional]
- **newsSources** | **kotlin.String**| A comma-separated list of news sources from which the news should originate. | [optional]
- **authors** | **kotlin.String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional]
- **categories** | **kotlin.String**| A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional]
- **entities** | **kotlin.String**| Filter news by entities (ORG, PER, or LOC). | [optional]
- **locationFilter** | **kotlin.String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional]
- **sort** | **kotlin.String**| The sorting criteria (publish-time). | [optional]
- **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **offset** | **kotlin.Int**| The number of news to skip in range [0,10000] | [optional]
- **number** | **kotlin.Int**| The number of news to return in range [1,100] | [optional]
+| **text** | **kotlin.String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **sourceCountries** | **kotlin.String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
+| **language** | **kotlin.String**| The ISO 6391 language code of the news. | [optional] |
+| **minSentiment** | **kotlin.Double**| The minimal sentiment of the news in range [-1,1]. | [optional] |
+| **maxSentiment** | **kotlin.Double**| The maximal sentiment of the news in range [-1,1]. | [optional] |
+| **earliestPublishDate** | **kotlin.String**| The news must have been published after this date. | [optional] |
+| **latestPublishDate** | **kotlin.String**| The news must have been published before this date. | [optional] |
+| **newsSources** | **kotlin.String**| A comma-separated list of news sources from which the news should originate. | [optional] |
+| **authors** | **kotlin.String**| A comma-separated list of author names. Only news from any of the given authors will be returned. | [optional] |
+| **categories** | **kotlin.String**| A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other. | [optional] |
+| **entities** | **kotlin.String**| Filter news by entities (ORG, PER, or LOC). | [optional] |
+| **locationFilter** | **kotlin.String**| Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot; | [optional] |
+| **sort** | **kotlin.String**| The sorting criteria (publish-time). | [optional] |
+| **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **kotlin.Int**| The number of news to skip in range [0,10000] | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of news to return in range [1,100] | [optional] |
 
 ### Return type
 
@@ -179,13 +177,12 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sourceCountry** | **kotlin.String**| The ISO 3166 country code of the country for which top news should be retrieved. |
- **language** | **kotlin.String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. |
- **date** | **kotlin.String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional]
- **headlinesOnly** | **kotlin.Boolean**| Whether to only return basic information such as id, title, and url of the news. | [optional]
+| **sourceCountry** | **kotlin.String**| The ISO 3166 country code of the country for which top news should be retrieved. | |
+| **language** | **kotlin.String**| The ISO 6391 language code of the top news. The language must be one spoken in the source-country. | |
+| **date** | **kotlin.String**| The date for which the top news should be retrieved. If no date is given, the current day is assumed. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **headlinesOnly** | **kotlin.Boolean**| Whether to only return basic information such as id, title, and url of the news. | [optional] |
 
 ### Return type
 

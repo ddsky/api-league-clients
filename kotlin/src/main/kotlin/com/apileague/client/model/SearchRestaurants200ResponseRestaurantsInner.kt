@@ -101,5 +101,8 @@ data class SearchRestaurants200ResponseRestaurantsInner (
     @Json(name = "local_hours")
     val localHours: SearchRestaurants200ResponseRestaurantsInnerLocalHours? = null
 
-)
+) {
+
+
+}
 

@@ -35,5 +35,8 @@ data class ConvertUnits200Response (
     @Json(name = "target_unit")
     val targetUnit: kotlin.String? = null
 
-)
+) {
+
+
+}
 

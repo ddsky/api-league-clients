@@ -8,7 +8,7 @@
 | **amount** | **Float** |  | [optional] |
 | **unit** | **String** |  | [optional] |
 | **id** | **Integer** |  | [optional] |
-| **nutrients** | [**Array&lt;RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner&gt;**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] |
+| **nutrients** | [**Array&lt;SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner&gt;**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] |
 
 ## Example
 

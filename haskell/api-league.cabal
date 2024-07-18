@@ -8,11 +8,11 @@ description:    .
                 .
                 base path: https://api.apileague.com
                 .
-                API League API version: 1.4.2
+                API League API version: 1.5.0
                 .
                 OpenAPI version: 3.0.0
                 .
-                Generator version: 7.5.0
+                Generator version: 7.8.0-SNAPSHOT
                 .
 category:       Web
 homepage:       https://openapi-generator.tech

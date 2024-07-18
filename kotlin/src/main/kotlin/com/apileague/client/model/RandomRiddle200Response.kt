@@ -39,5 +39,8 @@ data class RandomRiddle200Response (
     @Json(name = "difficulty")
     val difficulty: kotlin.String? = null
 
-)
+) {
+
+
+}
 

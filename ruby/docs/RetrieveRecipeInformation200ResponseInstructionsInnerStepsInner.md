@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **number** | **Integer** |  | [optional] |
-| **ingredients** | [**Array&lt;RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner&gt;**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] |
-| **equipment** | [**Array&lt;RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner&gt;**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] |
+| **ingredients** | [**Array&lt;SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner&gt;**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] |
+| **equipment** | [**Array&lt;SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner&gt;**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] |
 | **step** | **String** |  | [optional] |
 
 ## Example

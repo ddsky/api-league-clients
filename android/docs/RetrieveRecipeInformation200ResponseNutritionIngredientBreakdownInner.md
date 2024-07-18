@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **unit** | **String** |  |  [optional]
 **id** | **Integer** |  |  [optional]
-**nutrients** | [**List&lt;RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner&gt;**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  |  [optional]
+**nutrients** | [**List&lt;SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner&gt;**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  |  [optional]
 
 
 

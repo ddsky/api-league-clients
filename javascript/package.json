@@ -1,6 +1,6 @@
 {
   "name": "apileague-js",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "API League is a Hub for World Class APIs.",
   "license": "Unlicense",
   "main": "dist/index.js",

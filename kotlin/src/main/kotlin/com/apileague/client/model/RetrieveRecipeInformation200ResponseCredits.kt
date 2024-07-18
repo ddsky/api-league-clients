@@ -43,5 +43,8 @@ data class RetrieveRecipeInformation200ResponseCredits (
     @Json(name = "source_url")
     val sourceUrl: kotlin.String? = null
 
-)
+) {
+
+
+}
 

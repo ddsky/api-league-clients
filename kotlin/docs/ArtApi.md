@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
+| [**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
 
 
 <a id="imageToAsciiArtByURL"></a>
@@ -39,12 +39,11 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The URL to the image. |
- **width** | **kotlin.Int**| The maximum width of the image (default 400, max. 500). | [optional]
- **height** | **kotlin.Int**| The maximum height of the image (default 400, max. 500). | [optional]
+| **url** | **kotlin.String**| The URL to the image. | |
+| **width** | **kotlin.Int**| The maximum width of the image (default 400, max. 500). | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **height** | **kotlin.Int**| The maximum height of the image (default 400, max. 500). | [optional] |
 
 ### Return type
 
@@ -95,11 +94,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **minLines** | **kotlin.Int**| The minimum number of lines of the poem. | [optional]
- **maxLines** | **kotlin.Int**| The maximum number of lines of the poem. | [optional]
+| **minLines** | **kotlin.Int**| The minimum number of lines of the poem. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **maxLines** | **kotlin.Int**| The maximum number of lines of the poem. | [optional] |
 
 ### Return type
 

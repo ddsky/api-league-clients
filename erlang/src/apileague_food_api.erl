@@ -2,6 +2,7 @@
 
 -export([compute_nutrition/2, compute_nutrition/3,
          retrieve_recipe_information/2, retrieve_recipe_information/3,
+         search_drinks/1, search_drinks/2,
          search_recipes/1, search_recipes/2,
          search_restaurants/3, search_restaurants/4]).
 
@@ -42,6 +43,27 @@ retrieve_recipe_information(Ctx, Id, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/retrieve-recipe"],
     QS = lists:flatten([{<<"id">>, Id}])++apileague_utils:optional_params(['add-wine-pairing'], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Search Drinks
+%% Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+-spec search_drinks(ctx:ctx()) -> {ok, apileague_search_drinks_200_response:apileague_search_drinks_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_drinks(Ctx) ->
+    search_drinks(Ctx, #{}).
+
+-spec search_drinks(ctx:ctx(), maps:map()) -> {ok, apileague_search_drinks_200_response:apileague_search_drinks_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_drinks(Ctx, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/search-drinks"],
+    QS = lists:flatten([])++apileague_utils:optional_params(['query', 'glass-types', 'flavors', 'diet', 'include-ingredients', 'exclude-ingredients', 'min-calories', 'max-calories', 'min-carbs', 'max-carbs', 'min-protein', 'max-protein', 'min-fat', 'max-fat', 'min-alcohol-percent', 'max-alcohol-percent', 'min-caffeine', 'max-caffeine', 'sort', 'sort-direction', 'offset', 'number'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

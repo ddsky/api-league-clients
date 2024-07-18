@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ComputeNutrition**](FoodAPI.md#ComputeNutrition) | **Get** /compute-nutrition | Compute Nutrition
 [**RetrieveRecipeInformation**](FoodAPI.md#RetrieveRecipeInformation) | **Get** /retrieve-recipe | Retrieve Recipe Information
+[**SearchDrinks**](FoodAPI.md#SearchDrinks) | **Get** /search-drinks | Search Drinks
 [**SearchRecipes**](FoodAPI.md#SearchRecipes) | **Get** /search-recipes | Search Recipes
 [**SearchRestaurants**](FoodAPI.md#SearchRestaurants) | **Get** /search-restaurants | Search Restaurants
 
@@ -149,6 +150,114 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## SearchDrinks
+
+> SearchDrinks200Response SearchDrinks(ctx).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+
+Search Drinks
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	query := "vodka" // string | The search query. (optional)
+	glassTypes := "Highball Glass" // string | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+	flavors := "sour,sweet" // string | A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+	diet := "paleo" // string | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+	includeIngredients := "orange" // string | A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+	excludeIngredients := "vodka" // string | A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+	minCalories := float64(100) // float64 | The minimum amount of calories the drink must have per serving. (optional)
+	maxCalories := float64(655) // float64 | The maximum amount of calories the drink can have per serving. (optional)
+	minCarbs := float64(10.1) // float64 | The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+	maxCarbs := float64(25.5) // float64 | The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+	minProtein := float64(10.1) // float64 | The minimum amount of protein in grams the drink must have per serving. (optional)
+	maxProtein := float64(25.5) // float64 | The maximum amount of protein in grams the drink can have per serving. (optional)
+	minFat := float64(10.1) // float64 | The minimum amount of fat in grams the drink must have per serving. (optional)
+	maxFat := float64(25.5) // float64 | The maximum amount of fat in grams the drink can have per serving. (optional)
+	minAlcoholPercent := float64(10) // float64 | The minimum alcohol percentage the drink must have. (optional)
+	maxAlcoholPercent := float64(35) // float64 | The maximum alcohol percentage the drink can have. (optional)
+	minCaffeine := float64(30.4) // float64 | The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+	maxCaffeine := float64(80.9) // float64 | The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+	sort := "calories" // string | The attribute by which to sort the drinks. (optional)
+	sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
+	offset := int32(0) // int32 | The number of drinks to skip, between 0 and 90. (optional)
+	number := int32(3) // int32 | The number of drinks, between 1 and 10. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FoodAPI.SearchDrinks(context.Background()).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchDrinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchDrinks`: SearchDrinks200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchDrinks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSearchDrinksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **string** | The search query. | 
+ **glassTypes** | **string** | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | 
+ **flavors** | **string** | A comma-separated list (interpreted as AND) of dominant flavors in the drink. | 
+ **diet** | **string** | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | 
+ **includeIngredients** | **string** | A comma-separated list of ingredients that should/must be used in the drinks. | 
+ **excludeIngredients** | **string** | A comma-separated list of ingredients or ingredient types that the drinks must not contain. | 
+ **minCalories** | **float64** | The minimum amount of calories the drink must have per serving. | 
+ **maxCalories** | **float64** | The maximum amount of calories the drink can have per serving. | 
+ **minCarbs** | **float64** | The minimum amount of carbohydrates in grams the drink must have per serving. | 
+ **maxCarbs** | **float64** | The maximum amount of carbohydrates in grams the drink can have per serving. | 
+ **minProtein** | **float64** | The minimum amount of protein in grams the drink must have per serving. | 
+ **maxProtein** | **float64** | The maximum amount of protein in grams the drink can have per serving. | 
+ **minFat** | **float64** | The minimum amount of fat in grams the drink must have per serving. | 
+ **maxFat** | **float64** | The maximum amount of fat in grams the drink can have per serving. | 
+ **minAlcoholPercent** | **float64** | The minimum alcohol percentage the drink must have. | 
+ **maxAlcoholPercent** | **float64** | The maximum alcohol percentage the drink can have. | 
+ **minCaffeine** | **float64** | The minimum amount of caffeine in milligrams the drink must have per serving. | 
+ **maxCaffeine** | **float64** | The maximum amount of caffeine in milligrams the drink can have per serving. | 
+ **sort** | **string** | The attribute by which to sort the drinks. | 
+ **sortDirection** | **string** | Whether to sort ascending or descending (ASC or DESC). | 
+ **offset** | **int32** | The number of drinks to skip, between 0 and 90. | 
+ **number** | **int32** | The number of drinks, between 1 and 10. | 
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SearchRecipes
 
 > SearchRecipes200Response SearchRecipes(ctx).Query(query).Cuisines(cuisines).ExcludeCuisines(excludeCuisines).MealType(mealType).Diet(diet).Intolerances(intolerances).Equipment(equipment).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).FillIngredients(fillIngredients).AddRecipeInformation(addRecipeInformation).MaxTime(maxTime).MinServings(minServings).MaxServings(maxServings).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinSugar(minSugar).MaxSugar(maxSugar).MinFiber(minFiber).MaxFiber(maxFiber).MinFolate(minFolate).MaxFolate(maxFolate).MinFolicAcid(minFolicAcid).MaxFolicAcid(maxFolicAcid).MinIodine(minIodine).MaxIodine(maxIodine).MinIron(minIron).MaxIron(maxIron).MinZinc(minZinc).MaxZinc(maxZinc).MinMagnesium(minMagnesium).MaxMagnesium(maxMagnesium).MinManganese(minManganese).MaxManganese(maxManganese).MinPhosphorus(minPhosphorus).MaxPhosphorus(maxPhosphorus).MinPotassium(minPotassium).MaxPotassium(maxPotassium).MinSodium(minSodium).MaxSodium(maxSodium).MinSelenium(minSelenium).MaxSelenium(maxSelenium).MinCopper(minCopper).MaxCopper(maxCopper).MinCalcium(minCalcium).MaxCalcium(maxCalcium).MinCholine(minCholine).MaxCholine(maxCholine).MinCholesterol(minCholesterol).MaxCholesterol(maxCholesterol).MinFluoride(minFluoride).MaxFluoride(maxFluoride).MinAlcohol(minAlcohol).MaxAlcohol(maxAlcohol).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).MinSaturatedFat(minSaturatedFat).MaxSaturatedFat(maxSaturatedFat).MinVitaminA(minVitaminA).MaxVitaminA(maxVitaminA).MinVitaminC(minVitaminC).MaxVitaminC(maxVitaminC).MinVitaminD(minVitaminD).MaxVitaminD(maxVitaminD).MinVitaminE(minVitaminE).MaxVitaminE(maxVitaminE).MinVitaminK(minVitaminK).MaxVitaminK(maxVitaminK).MinVitaminB1(minVitaminB1).MaxVitaminB1(maxVitaminB1).MinVitaminB2(minVitaminB2).MaxVitaminB2(maxVitaminB2).MinVitaminB3(minVitaminB3).MaxVitaminB3(maxVitaminB3).MinVitaminB5(minVitaminB5).MaxVitaminB5(maxVitaminB5).MinVitaminB6(minVitaminB6).MaxVitaminB6(maxVitaminB6).MinVitaminB12(minVitaminB12).MaxVitaminB12(maxVitaminB12).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
@@ -171,8 +280,8 @@ import (
 
 func main() {
 	query := "pasta with mushrooms but without nuts" // string | The search query. (optional)
-	cuisines := "mexican" // string | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR'). (optional)
-	excludeCuisines := "indian,japanese" // string | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND'). (optional)
+	cuisines := "mexican" // string | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR'). (optional)
+	excludeCuisines := "indian,japanese" // string | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND'). (optional)
 	mealType := "dessert" // string | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
 	diet := "paleo" // string | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional)
 	intolerances := "gluten,dairy,shellfish" // string | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional)
@@ -256,7 +365,7 @@ func main() {
 	maxVitaminB6 := float64(80.9) // float64 | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional)
 	minVitaminB12 := float64(30.4) // float64 | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional)
 	maxVitaminB12 := float64(80.9) // float64 | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
-	sort := "meta-score" // string | The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+	sort := "meta-score" // string | The strategy to sort recipes by. (optional)
 	sortDirection := "ASC" // string | Whether to sort ascending or descending (ASC or DESC). (optional)
 	offset := int32(0) // int32 | The number of recipes to skip, between 0 and 900. (optional)
 	number := int32(3) // int32 | The number of recipes, between 1 and 100. (optional)
@@ -285,8 +394,8 @@ Other parameters are passed through a pointer to a apiSearchRecipesRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string** | The search query. | 
- **cuisines** | **string** | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | 
- **excludeCuisines** | **string** | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | 
+ **cuisines** | **string** | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | 
+ **excludeCuisines** | **string** | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | 
  **mealType** | **string** | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | 
  **diet** | **string** | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | 
  **intolerances** | **string** | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | 
@@ -370,7 +479,7 @@ Name | Type | Description  | Notes
  **maxVitaminB6** | **float64** | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | 
  **minVitaminB12** | **float64** | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | 
  **maxVitaminB12** | **float64** | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | 
- **sort** | **string** | The strategy to sort recipes by. See a full list of supported sorting options. | 
+ **sort** | **string** | The strategy to sort recipes by. | 
  **sortDirection** | **string** | Whether to sort ascending or descending (ASC or DESC). | 
  **offset** | **int32** | The number of recipes to skip, between 0 and 900. | 
  **number** | **int32** | The number of recipes, between 1 and 100. | 

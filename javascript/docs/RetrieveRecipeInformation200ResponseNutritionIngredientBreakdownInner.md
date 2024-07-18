@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **amount** | **Number** |  | [optional] 
 **unit** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
-**nutrients** | [**[RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
+**nutrients** | [**[SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
 
 

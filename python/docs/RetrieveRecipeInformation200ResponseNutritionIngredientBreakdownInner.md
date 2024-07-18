@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **amount** | **float** |  | [optional] 
 **unit** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
-**nutrients** | [**List[RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
+**nutrients** | [**List[SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
 
 ## Example
 

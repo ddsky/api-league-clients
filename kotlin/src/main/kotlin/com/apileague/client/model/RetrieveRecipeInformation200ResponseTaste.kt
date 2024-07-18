@@ -55,5 +55,8 @@ data class RetrieveRecipeInformation200ResponseTaste (
     @Json(name = "sourness")
     val sourness: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

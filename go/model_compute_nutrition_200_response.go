@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &ComputeNutrition200Response{}
 
 // ComputeNutrition200Response struct for ComputeNutrition200Response
 type ComputeNutrition200Response struct {
-	Nutrients []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner `json:"nutrients,omitempty"`
-	Properties []RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner `json:"properties,omitempty"`
+	Nutrients []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner `json:"nutrients,omitempty"`
+	Properties []SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner `json:"properties,omitempty"`
 	Flavonoids []SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner `json:"flavonoids,omitempty"`
 	IngredientBreakdown []ComputeNutrition200ResponseIngredientBreakdownInner `json:"ingredient_breakdown,omitempty"`
-	CaloricBreakdown *RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown `json:"caloric_breakdown,omitempty"`
-	WeightPerServing *RetrieveRecipeInformation200ResponseNutritionWeightPerServing `json:"weight_per_serving,omitempty"`
+	CaloricBreakdown *SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown `json:"caloric_breakdown,omitempty"`
+	WeightPerServing *SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing `json:"weight_per_serving,omitempty"`
 }
 
 // NewComputeNutrition200Response instantiates a new ComputeNutrition200Response object
@@ -46,9 +46,9 @@ func NewComputeNutrition200ResponseWithDefaults() *ComputeNutrition200Response {
 }
 
 // GetNutrients returns the Nutrients field value if set, zero value otherwise.
-func (o *ComputeNutrition200Response) GetNutrients() []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner {
+func (o *ComputeNutrition200Response) GetNutrients() []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner {
 	if o == nil || IsNil(o.Nutrients) {
-		var ret []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+		var ret []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
 		return ret
 	}
 	return o.Nutrients
@@ -56,7 +56,7 @@ func (o *ComputeNutrition200Response) GetNutrients() []RetrieveRecipeInformation
 
 // GetNutrientsOk returns a tuple with the Nutrients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeNutrition200Response) GetNutrientsOk() ([]RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner, bool) {
+func (o *ComputeNutrition200Response) GetNutrientsOk() ([]SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner, bool) {
 	if o == nil || IsNil(o.Nutrients) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *ComputeNutrition200Response) HasNutrients() bool {
 	return false
 }
 
-// SetNutrients gets a reference to the given []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner and assigns it to the Nutrients field.
-func (o *ComputeNutrition200Response) SetNutrients(v []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner) {
+// SetNutrients gets a reference to the given []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner and assigns it to the Nutrients field.
+func (o *ComputeNutrition200Response) SetNutrients(v []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner) {
 	o.Nutrients = v
 }
 
 // GetProperties returns the Properties field value if set, zero value otherwise.
-func (o *ComputeNutrition200Response) GetProperties() []RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner {
+func (o *ComputeNutrition200Response) GetProperties() []SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner {
 	if o == nil || IsNil(o.Properties) {
-		var ret []RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
+		var ret []SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner
 		return ret
 	}
 	return o.Properties
@@ -88,7 +88,7 @@ func (o *ComputeNutrition200Response) GetProperties() []RetrieveRecipeInformatio
 
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeNutrition200Response) GetPropertiesOk() ([]RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner, bool) {
+func (o *ComputeNutrition200Response) GetPropertiesOk() ([]SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner, bool) {
 	if o == nil || IsNil(o.Properties) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *ComputeNutrition200Response) HasProperties() bool {
 	return false
 }
 
-// SetProperties gets a reference to the given []RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner and assigns it to the Properties field.
-func (o *ComputeNutrition200Response) SetProperties(v []RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner) {
+// SetProperties gets a reference to the given []SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner and assigns it to the Properties field.
+func (o *ComputeNutrition200Response) SetProperties(v []SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner) {
 	o.Properties = v
 }
 
@@ -174,9 +174,9 @@ func (o *ComputeNutrition200Response) SetIngredientBreakdown(v []ComputeNutritio
 }
 
 // GetCaloricBreakdown returns the CaloricBreakdown field value if set, zero value otherwise.
-func (o *ComputeNutrition200Response) GetCaloricBreakdown() RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown {
+func (o *ComputeNutrition200Response) GetCaloricBreakdown() SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown {
 	if o == nil || IsNil(o.CaloricBreakdown) {
-		var ret RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
+		var ret SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
 		return ret
 	}
 	return *o.CaloricBreakdown
@@ -184,7 +184,7 @@ func (o *ComputeNutrition200Response) GetCaloricBreakdown() RetrieveRecipeInform
 
 // GetCaloricBreakdownOk returns a tuple with the CaloricBreakdown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeNutrition200Response) GetCaloricBreakdownOk() (*RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown, bool) {
+func (o *ComputeNutrition200Response) GetCaloricBreakdownOk() (*SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown, bool) {
 	if o == nil || IsNil(o.CaloricBreakdown) {
 		return nil, false
 	}
@@ -200,15 +200,15 @@ func (o *ComputeNutrition200Response) HasCaloricBreakdown() bool {
 	return false
 }
 
-// SetCaloricBreakdown gets a reference to the given RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown and assigns it to the CaloricBreakdown field.
-func (o *ComputeNutrition200Response) SetCaloricBreakdown(v RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown) {
+// SetCaloricBreakdown gets a reference to the given SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown and assigns it to the CaloricBreakdown field.
+func (o *ComputeNutrition200Response) SetCaloricBreakdown(v SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown) {
 	o.CaloricBreakdown = &v
 }
 
 // GetWeightPerServing returns the WeightPerServing field value if set, zero value otherwise.
-func (o *ComputeNutrition200Response) GetWeightPerServing() RetrieveRecipeInformation200ResponseNutritionWeightPerServing {
+func (o *ComputeNutrition200Response) GetWeightPerServing() SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing {
 	if o == nil || IsNil(o.WeightPerServing) {
-		var ret RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+		var ret SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
 		return ret
 	}
 	return *o.WeightPerServing
@@ -216,7 +216,7 @@ func (o *ComputeNutrition200Response) GetWeightPerServing() RetrieveRecipeInform
 
 // GetWeightPerServingOk returns a tuple with the WeightPerServing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeNutrition200Response) GetWeightPerServingOk() (*RetrieveRecipeInformation200ResponseNutritionWeightPerServing, bool) {
+func (o *ComputeNutrition200Response) GetWeightPerServingOk() (*SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing, bool) {
 	if o == nil || IsNil(o.WeightPerServing) {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *ComputeNutrition200Response) HasWeightPerServing() bool {
 	return false
 }
 
-// SetWeightPerServing gets a reference to the given RetrieveRecipeInformation200ResponseNutritionWeightPerServing and assigns it to the WeightPerServing field.
-func (o *ComputeNutrition200Response) SetWeightPerServing(v RetrieveRecipeInformation200ResponseNutritionWeightPerServing) {
+// SetWeightPerServing gets a reference to the given SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing and assigns it to the WeightPerServing field.
+func (o *ComputeNutrition200Response) SetWeightPerServing(v SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing) {
 	o.WeightPerServing = &v
 }
 

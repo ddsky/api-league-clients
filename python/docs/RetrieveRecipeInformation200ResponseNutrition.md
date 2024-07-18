@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**weight_per_serving** | [**RetrieveRecipeInformation200ResponseNutritionWeightPerServing**](RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md) |  | [optional] 
-**caloric_breakdown** | [**RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown**](RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md) |  | [optional] 
-**flavonoids** | [**List[RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner]**](RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md) |  | [optional] 
+**weight_per_serving** | [**SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing**](SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md) |  | [optional] 
+**caloric_breakdown** | [**SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
+**flavonoids** | [**List[SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner]**](SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
 **ingredient_breakdown** | [**List[RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner]**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md) |  | [optional] 
 **properties** | [**List[SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]**](SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md) |  | [optional] 
-**nutrients** | [**List[RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
+**nutrients** | [**List[SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
 
 ## Example
 

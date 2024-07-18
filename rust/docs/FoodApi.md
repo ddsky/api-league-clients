@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
 [**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
+[**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks
 [**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
 [**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
 
@@ -74,6 +75,57 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## search_drinks
+
+> models::SearchDrinks200Response search_drinks(query, glass_types, flavors, diet, include_ingredients, exclude_ingredients, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_alcohol_percent, max_alcohol_percent, min_caffeine, max_caffeine, sort, sort_direction, offset, number)
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**query** | Option<**String**> | The search query. |  |
+**glass_types** | Option<**String**> | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. |  |
+**flavors** | Option<**String**> | A comma-separated list (interpreted as AND) of dominant flavors in the drink. |  |
+**diet** | Option<**String**> | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. |  |
+**include_ingredients** | Option<**String**> | A comma-separated list of ingredients that should/must be used in the drinks. |  |
+**exclude_ingredients** | Option<**String**> | A comma-separated list of ingredients or ingredient types that the drinks must not contain. |  |
+**min_calories** | Option<**f64**> | The minimum amount of calories the drink must have per serving. |  |
+**max_calories** | Option<**f64**> | The maximum amount of calories the drink can have per serving. |  |
+**min_carbs** | Option<**f64**> | The minimum amount of carbohydrates in grams the drink must have per serving. |  |
+**max_carbs** | Option<**f64**> | The maximum amount of carbohydrates in grams the drink can have per serving. |  |
+**min_protein** | Option<**f64**> | The minimum amount of protein in grams the drink must have per serving. |  |
+**max_protein** | Option<**f64**> | The maximum amount of protein in grams the drink can have per serving. |  |
+**min_fat** | Option<**f64**> | The minimum amount of fat in grams the drink must have per serving. |  |
+**max_fat** | Option<**f64**> | The maximum amount of fat in grams the drink can have per serving. |  |
+**min_alcohol_percent** | Option<**f64**> | The minimum alcohol percentage the drink must have. |  |
+**max_alcohol_percent** | Option<**f64**> | The maximum alcohol percentage the drink can have. |  |
+**min_caffeine** | Option<**f64**> | The minimum amount of caffeine in milligrams the drink must have per serving. |  |
+**max_caffeine** | Option<**f64**> | The maximum amount of caffeine in milligrams the drink can have per serving. |  |
+**sort** | Option<**String**> | The attribute by which to sort the drinks. |  |
+**sort_direction** | Option<**String**> | Whether to sort ascending or descending (ASC or DESC). |  |
+**offset** | Option<**i32**> | The number of drinks to skip, between 0 and 90. |  |
+**number** | Option<**i32**> | The number of drinks, between 1 and 10. |  |
+
+### Return type
+
+[**models::SearchDrinks200Response**](searchDrinks_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## search_recipes
 
 > models::SearchRecipes200Response search_recipes(query, cuisines, exclude_cuisines, meal_type, diet, intolerances, equipment, include_ingredients, exclude_ingredients, fill_ingredients, add_recipe_information, max_time, min_servings, max_servings, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_sugar, max_sugar, min_fiber, max_fiber, min_folate, max_folate, min_folic_acid, max_folic_acid, min_iodine, max_iodine, min_iron, max_iron, min_zinc, max_zinc, min_magnesium, max_magnesium, min_manganese, max_manganese, min_phosphorus, max_phosphorus, min_potassium, max_potassium, min_sodium, max_sodium, min_selenium, max_selenium, min_copper, max_copper, min_calcium, max_calcium, min_choline, max_choline, min_cholesterol, max_cholesterol, min_fluoride, max_fluoride, min_alcohol, max_alcohol, min_caffeine, max_caffeine, min_saturated_fat, max_saturated_fat, min_vitamin_a, max_vitamin_a, min_vitamin_c, max_vitamin_c, min_vitamin_d, max_vitamin_d, min_vitamin_e, max_vitamin_e, min_vitamin_k, max_vitamin_k, min_vitamin_b1, max_vitamin_b1, min_vitamin_b2, max_vitamin_b2, min_vitamin_b3, max_vitamin_b3, min_vitamin_b5, max_vitamin_b5, min_vitamin_b6, max_vitamin_b6, min_vitamin_b12, max_vitamin_b12, sort, sort_direction, offset, number)
@@ -87,8 +139,8 @@ Search and filter thousands of recipes with natural language, e.g. pasta recipes
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **query** | Option<**String**> | The search query. |  |
-**cuisines** | Option<**String**> | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR'). |  |
-**exclude_cuisines** | Option<**String**> | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND'). |  |
+**cuisines** | Option<**String**> | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR'). |  |
+**exclude_cuisines** | Option<**String**> | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND'). |  |
 **meal_type** | Option<**String**> | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. |  |
 **diet** | Option<**String**> | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. |  |
 **intolerances** | Option<**String**> | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. |  |
@@ -172,7 +224,7 @@ Name | Type | Description  | Required | Notes
 **max_vitamin_b6** | Option<**f64**> | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. |  |
 **min_vitamin_b12** | Option<**f64**> | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. |  |
 **max_vitamin_b12** | Option<**f64**> | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. |  |
-**sort** | Option<**String**> | The strategy to sort recipes by. See a full list of supported sorting options. |  |
+**sort** | Option<**String**> | The strategy to sort recipes by. |  |
 **sort_direction** | Option<**String**> | Whether to sort ascending or descending (ASC or DESC). |  |
 **offset** | Option<**i32**> | The number of recipes to skip, between 0 and 900. |  |
 **number** | Option<**i32**> | The number of recipes, between 1 and 100. |  |

@@ -18,7 +18,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:apileague, "~> 1.4.2"}]
+  [{:apileague, "~> 1.5.0"}]
 end
 ```
 

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -338,6 +338,353 @@ func (a *FoodAPIService) RetrieveRecipeInformationExecute(r ApiRetrieveRecipeInf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiSearchDrinksRequest struct {
+	ctx context.Context
+	ApiService *FoodAPIService
+	query *string
+	glassTypes *string
+	flavors *string
+	diet *string
+	includeIngredients *string
+	excludeIngredients *string
+	minCalories *float64
+	maxCalories *float64
+	minCarbs *float64
+	maxCarbs *float64
+	minProtein *float64
+	maxProtein *float64
+	minFat *float64
+	maxFat *float64
+	minAlcoholPercent *float64
+	maxAlcoholPercent *float64
+	minCaffeine *float64
+	maxCaffeine *float64
+	sort *string
+	sortDirection *string
+	offset *int32
+	number *int32
+}
+
+// The search query.
+func (r ApiSearchDrinksRequest) Query(query string) ApiSearchDrinksRequest {
+	r.query = &query
+	return r
+}
+
+// A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+func (r ApiSearchDrinksRequest) GlassTypes(glassTypes string) ApiSearchDrinksRequest {
+	r.glassTypes = &glassTypes
+	return r
+}
+
+// A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+func (r ApiSearchDrinksRequest) Flavors(flavors string) ApiSearchDrinksRequest {
+	r.flavors = &flavors
+	return r
+}
+
+// The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+func (r ApiSearchDrinksRequest) Diet(diet string) ApiSearchDrinksRequest {
+	r.diet = &diet
+	return r
+}
+
+// A comma-separated list of ingredients that should/must be used in the drinks.
+func (r ApiSearchDrinksRequest) IncludeIngredients(includeIngredients string) ApiSearchDrinksRequest {
+	r.includeIngredients = &includeIngredients
+	return r
+}
+
+// A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+func (r ApiSearchDrinksRequest) ExcludeIngredients(excludeIngredients string) ApiSearchDrinksRequest {
+	r.excludeIngredients = &excludeIngredients
+	return r
+}
+
+// The minimum amount of calories the drink must have per serving.
+func (r ApiSearchDrinksRequest) MinCalories(minCalories float64) ApiSearchDrinksRequest {
+	r.minCalories = &minCalories
+	return r
+}
+
+// The maximum amount of calories the drink can have per serving.
+func (r ApiSearchDrinksRequest) MaxCalories(maxCalories float64) ApiSearchDrinksRequest {
+	r.maxCalories = &maxCalories
+	return r
+}
+
+// The minimum amount of carbohydrates in grams the drink must have per serving.
+func (r ApiSearchDrinksRequest) MinCarbs(minCarbs float64) ApiSearchDrinksRequest {
+	r.minCarbs = &minCarbs
+	return r
+}
+
+// The maximum amount of carbohydrates in grams the drink can have per serving.
+func (r ApiSearchDrinksRequest) MaxCarbs(maxCarbs float64) ApiSearchDrinksRequest {
+	r.maxCarbs = &maxCarbs
+	return r
+}
+
+// The minimum amount of protein in grams the drink must have per serving.
+func (r ApiSearchDrinksRequest) MinProtein(minProtein float64) ApiSearchDrinksRequest {
+	r.minProtein = &minProtein
+	return r
+}
+
+// The maximum amount of protein in grams the drink can have per serving.
+func (r ApiSearchDrinksRequest) MaxProtein(maxProtein float64) ApiSearchDrinksRequest {
+	r.maxProtein = &maxProtein
+	return r
+}
+
+// The minimum amount of fat in grams the drink must have per serving.
+func (r ApiSearchDrinksRequest) MinFat(minFat float64) ApiSearchDrinksRequest {
+	r.minFat = &minFat
+	return r
+}
+
+// The maximum amount of fat in grams the drink can have per serving.
+func (r ApiSearchDrinksRequest) MaxFat(maxFat float64) ApiSearchDrinksRequest {
+	r.maxFat = &maxFat
+	return r
+}
+
+// The minimum alcohol percentage the drink must have.
+func (r ApiSearchDrinksRequest) MinAlcoholPercent(minAlcoholPercent float64) ApiSearchDrinksRequest {
+	r.minAlcoholPercent = &minAlcoholPercent
+	return r
+}
+
+// The maximum alcohol percentage the drink can have.
+func (r ApiSearchDrinksRequest) MaxAlcoholPercent(maxAlcoholPercent float64) ApiSearchDrinksRequest {
+	r.maxAlcoholPercent = &maxAlcoholPercent
+	return r
+}
+
+// The minimum amount of caffeine in milligrams the drink must have per serving.
+func (r ApiSearchDrinksRequest) MinCaffeine(minCaffeine float64) ApiSearchDrinksRequest {
+	r.minCaffeine = &minCaffeine
+	return r
+}
+
+// The maximum amount of caffeine in milligrams the drink can have per serving.
+func (r ApiSearchDrinksRequest) MaxCaffeine(maxCaffeine float64) ApiSearchDrinksRequest {
+	r.maxCaffeine = &maxCaffeine
+	return r
+}
+
+// The attribute by which to sort the drinks.
+func (r ApiSearchDrinksRequest) Sort(sort string) ApiSearchDrinksRequest {
+	r.sort = &sort
+	return r
+}
+
+// Whether to sort ascending or descending (ASC or DESC).
+func (r ApiSearchDrinksRequest) SortDirection(sortDirection string) ApiSearchDrinksRequest {
+	r.sortDirection = &sortDirection
+	return r
+}
+
+// The number of drinks to skip, between 0 and 90.
+func (r ApiSearchDrinksRequest) Offset(offset int32) ApiSearchDrinksRequest {
+	r.offset = &offset
+	return r
+}
+
+// The number of drinks, between 1 and 10.
+func (r ApiSearchDrinksRequest) Number(number int32) ApiSearchDrinksRequest {
+	r.number = &number
+	return r
+}
+
+func (r ApiSearchDrinksRequest) Execute() (*SearchDrinks200Response, *http.Response, error) {
+	return r.ApiService.SearchDrinksExecute(r)
+}
+
+/*
+SearchDrinks Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiSearchDrinksRequest
+*/
+func (a *FoodAPIService) SearchDrinks(ctx context.Context) ApiSearchDrinksRequest {
+	return ApiSearchDrinksRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return SearchDrinks200Response
+func (a *FoodAPIService) SearchDrinksExecute(r ApiSearchDrinksRequest) (*SearchDrinks200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SearchDrinks200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchDrinks")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/search-drinks"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.query != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	}
+	if r.glassTypes != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "glass-types", r.glassTypes, "")
+	}
+	if r.flavors != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "flavors", r.flavors, "")
+	}
+	if r.diet != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "diet", r.diet, "")
+	}
+	if r.includeIngredients != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include-ingredients", r.includeIngredients, "")
+	}
+	if r.excludeIngredients != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "exclude-ingredients", r.excludeIngredients, "")
+	}
+	if r.minCalories != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-calories", r.minCalories, "")
+	}
+	if r.maxCalories != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-calories", r.maxCalories, "")
+	}
+	if r.minCarbs != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-carbs", r.minCarbs, "")
+	}
+	if r.maxCarbs != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-carbs", r.maxCarbs, "")
+	}
+	if r.minProtein != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-protein", r.minProtein, "")
+	}
+	if r.maxProtein != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-protein", r.maxProtein, "")
+	}
+	if r.minFat != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-fat", r.minFat, "")
+	}
+	if r.maxFat != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-fat", r.maxFat, "")
+	}
+	if r.minAlcoholPercent != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-alcohol-percent", r.minAlcoholPercent, "")
+	}
+	if r.maxAlcoholPercent != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-alcohol-percent", r.maxAlcoholPercent, "")
+	}
+	if r.minCaffeine != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-caffeine", r.minCaffeine, "")
+	}
+	if r.maxCaffeine != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-caffeine", r.maxCaffeine, "")
+	}
+	if r.sort != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "")
+	}
+	if r.sortDirection != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort-direction", r.sortDirection, "")
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+	}
+	if r.number != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiSearchRecipesRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
@@ -439,13 +786,13 @@ func (r ApiSearchRecipesRequest) Query(query string) ApiSearchRecipesRequest {
 	return r
 }
 
-// The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;).
+// The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;).
 func (r ApiSearchRecipesRequest) Cuisines(cuisines string) ApiSearchRecipesRequest {
 	r.cuisines = &cuisines
 	return r
 }
 
-// The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;).
+// The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;).
 func (r ApiSearchRecipesRequest) ExcludeCuisines(excludeCuisines string) ApiSearchRecipesRequest {
 	r.excludeCuisines = &excludeCuisines
 	return r
@@ -949,7 +1296,7 @@ func (r ApiSearchRecipesRequest) MaxVitaminB12(maxVitaminB12 float64) ApiSearchR
 	return r
 }
 
-// The strategy to sort recipes by. See a full list of supported sorting options.
+// The strategy to sort recipes by.
 func (r ApiSearchRecipesRequest) Sort(sort string) ApiSearchRecipesRequest {
 	r.sort = &sort
 	return r

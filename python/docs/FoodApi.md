@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
 [**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
+[**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks
 [**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
 [**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
 
@@ -200,6 +201,140 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_drinks**
+> SearchDrinks200Response search_drinks(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.search_drinks200_response import SearchDrinks200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.FoodApi(api_client)
+    query = 'vodka' # str | The search query. (optional)
+    glass_types = 'Highball Glass' # str | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+    flavors = 'sour,sweet' # str | A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+    diet = 'paleo' # str | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+    include_ingredients = 'orange' # str | A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+    exclude_ingredients = 'vodka' # str | A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+    min_calories = 100 # float | The minimum amount of calories the drink must have per serving. (optional)
+    max_calories = 655 # float | The maximum amount of calories the drink can have per serving. (optional)
+    min_carbs = 10.1 # float | The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+    max_carbs = 25.5 # float | The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+    min_protein = 10.1 # float | The minimum amount of protein in grams the drink must have per serving. (optional)
+    max_protein = 25.5 # float | The maximum amount of protein in grams the drink can have per serving. (optional)
+    min_fat = 10.1 # float | The minimum amount of fat in grams the drink must have per serving. (optional)
+    max_fat = 25.5 # float | The maximum amount of fat in grams the drink can have per serving. (optional)
+    min_alcohol_percent = 10 # float | The minimum alcohol percentage the drink must have. (optional)
+    max_alcohol_percent = 35 # float | The maximum alcohol percentage the drink can have. (optional)
+    min_caffeine = 30.4 # float | The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+    max_caffeine = 80.9 # float | The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+    sort = 'calories' # str | The attribute by which to sort the drinks. (optional)
+    sort_direction = 'ASC' # str | Whether to sort ascending or descending (ASC or DESC). (optional)
+    offset = 0 # int | The number of drinks to skip, between 0 and 90. (optional)
+    number = 3 # int | The number of drinks, between 1 and 10. (optional)
+
+    try:
+        # Search Drinks
+        api_response = api_instance.search_drinks(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+        print("The response of FoodApi->search_drinks:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FoodApi->search_drinks: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **str**| The search query. | [optional] 
+ **glass_types** | **str**| A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional] 
+ **flavors** | **str**| A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional] 
+ **diet** | **str**| The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional] 
+ **include_ingredients** | **str**| A comma-separated list of ingredients that should/must be used in the drinks. | [optional] 
+ **exclude_ingredients** | **str**| A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional] 
+ **min_calories** | **float**| The minimum amount of calories the drink must have per serving. | [optional] 
+ **max_calories** | **float**| The maximum amount of calories the drink can have per serving. | [optional] 
+ **min_carbs** | **float**| The minimum amount of carbohydrates in grams the drink must have per serving. | [optional] 
+ **max_carbs** | **float**| The maximum amount of carbohydrates in grams the drink can have per serving. | [optional] 
+ **min_protein** | **float**| The minimum amount of protein in grams the drink must have per serving. | [optional] 
+ **max_protein** | **float**| The maximum amount of protein in grams the drink can have per serving. | [optional] 
+ **min_fat** | **float**| The minimum amount of fat in grams the drink must have per serving. | [optional] 
+ **max_fat** | **float**| The maximum amount of fat in grams the drink can have per serving. | [optional] 
+ **min_alcohol_percent** | **float**| The minimum alcohol percentage the drink must have. | [optional] 
+ **max_alcohol_percent** | **float**| The maximum alcohol percentage the drink can have. | [optional] 
+ **min_caffeine** | **float**| The minimum amount of caffeine in milligrams the drink must have per serving. | [optional] 
+ **max_caffeine** | **float**| The maximum amount of caffeine in milligrams the drink can have per serving. | [optional] 
+ **sort** | **str**| The attribute by which to sort the drinks. | [optional] 
+ **sort_direction** | **str**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
+ **offset** | **int**| The number of drinks to skip, between 0 and 90. | [optional] 
+ **number** | **int**| The number of drinks, between 1 and 10. | [optional] 
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_recipes**
 > SearchRecipes200Response search_recipes(query=query, cuisines=cuisines, exclude_cuisines=exclude_cuisines, meal_type=meal_type, diet=diet, intolerances=intolerances, equipment=equipment, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, fill_ingredients=fill_ingredients, add_recipe_information=add_recipe_information, max_time=max_time, min_servings=min_servings, max_servings=max_servings, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_sugar=min_sugar, max_sugar=max_sugar, min_fiber=min_fiber, max_fiber=max_fiber, min_folate=min_folate, max_folate=max_folate, min_folic_acid=min_folic_acid, max_folic_acid=max_folic_acid, min_iodine=min_iodine, max_iodine=max_iodine, min_iron=min_iron, max_iron=max_iron, min_zinc=min_zinc, max_zinc=max_zinc, min_magnesium=min_magnesium, max_magnesium=max_magnesium, min_manganese=min_manganese, max_manganese=max_manganese, min_phosphorus=min_phosphorus, max_phosphorus=max_phosphorus, min_potassium=min_potassium, max_potassium=max_potassium, min_sodium=min_sodium, max_sodium=max_sodium, min_selenium=min_selenium, max_selenium=max_selenium, min_copper=min_copper, max_copper=max_copper, min_calcium=min_calcium, max_calcium=max_calcium, min_choline=min_choline, max_choline=max_choline, min_cholesterol=min_cholesterol, max_cholesterol=max_cholesterol, min_fluoride=min_fluoride, max_fluoride=max_fluoride, min_alcohol=min_alcohol, max_alcohol=max_alcohol, min_caffeine=min_caffeine, max_caffeine=max_caffeine, min_saturated_fat=min_saturated_fat, max_saturated_fat=max_saturated_fat, min_vitamin_a=min_vitamin_a, max_vitamin_a=max_vitamin_a, min_vitamin_c=min_vitamin_c, max_vitamin_c=max_vitamin_c, min_vitamin_d=min_vitamin_d, max_vitamin_d=max_vitamin_d, min_vitamin_e=min_vitamin_e, max_vitamin_e=max_vitamin_e, min_vitamin_k=min_vitamin_k, max_vitamin_k=max_vitamin_k, min_vitamin_b1=min_vitamin_b1, max_vitamin_b1=max_vitamin_b1, min_vitamin_b2=min_vitamin_b2, max_vitamin_b2=max_vitamin_b2, min_vitamin_b3=min_vitamin_b3, max_vitamin_b3=max_vitamin_b3, min_vitamin_b5=min_vitamin_b5, max_vitamin_b5=max_vitamin_b5, min_vitamin_b6=min_vitamin_b6, max_vitamin_b6=max_vitamin_b6, min_vitamin_b12=min_vitamin_b12, max_vitamin_b12=max_vitamin_b12, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
 
@@ -246,8 +381,8 @@ with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = apileague.FoodApi(api_client)
     query = 'pasta with mushrooms but without nuts' # str | The search query. (optional)
-    cuisines = 'mexican' # str | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR'). (optional)
-    exclude_cuisines = 'indian,japanese' # str | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND'). (optional)
+    cuisines = 'mexican' # str | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR'). (optional)
+    exclude_cuisines = 'indian,japanese' # str | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND'). (optional)
     meal_type = 'dessert' # str | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
     diet = 'paleo' # str | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional)
     intolerances = 'gluten,dairy,shellfish' # str | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional)
@@ -331,7 +466,7 @@ with apileague.ApiClient(configuration) as api_client:
     max_vitamin_b6 = 80.9 # float | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional)
     min_vitamin_b12 = 30.4 # float | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional)
     max_vitamin_b12 = 80.9 # float | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
-    sort = 'meta-score' # str | The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+    sort = 'meta-score' # str | The strategy to sort recipes by. (optional)
     sort_direction = 'ASC' # str | Whether to sort ascending or descending (ASC or DESC). (optional)
     offset = 0 # int | The number of recipes to skip, between 0 and 900. (optional)
     number = 3 # int | The number of recipes, between 1 and 100. (optional)
@@ -353,8 +488,8 @@ with apileague.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| The search query. | [optional] 
- **cuisines** | **str**| The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional] 
- **exclude_cuisines** | **str**| The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional] 
+ **cuisines** | **str**| The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional] 
+ **exclude_cuisines** | **str**| The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional] 
  **meal_type** | **str**| The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional] 
  **diet** | **str**| The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional] 
  **intolerances** | **str**| A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional] 
@@ -438,7 +573,7 @@ Name | Type | Description  | Notes
  **max_vitamin_b6** | **float**| The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional] 
  **min_vitamin_b12** | **float**| The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional] 
  **max_vitamin_b12** | **float**| The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional] 
- **sort** | **str**| The strategy to sort recipes by. See a full list of supported sorting options. | [optional] 
+ **sort** | **str**| The strategy to sort recipes by. | [optional] 
  **sort_direction** | **str**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
  **offset** | **int**| The number of recipes to skip, between 0 and 900. | [optional] 
  **number** | **int**| The number of recipes, between 1 and 100. | [optional] 

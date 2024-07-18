@@ -16,8 +16,8 @@ void main() {
   // final instance = SearchBooks200Response();
 
   group('test SearchBooks200Response', () {
-    // int available
-    test('to test the property `available`', () async {
+    // int totalResults
+    test('to test the property `totalResults`', () async {
       // TODO
     });
 

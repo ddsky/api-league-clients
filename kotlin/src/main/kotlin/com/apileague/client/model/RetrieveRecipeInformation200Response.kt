@@ -99,5 +99,8 @@ data class RetrieveRecipeInformation200Response (
     @Json(name = "scores")
     val scores: RetrieveRecipeInformation200ResponseScores? = null
 
-)
+) {
+
+
+}
 

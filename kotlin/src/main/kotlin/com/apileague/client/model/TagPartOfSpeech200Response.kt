@@ -31,5 +31,8 @@ data class TagPartOfSpeech200Response (
     @Json(name = "tagged_text")
     val taggedText: kotlin.String? = null
 
-)
+) {
+
+
+}
 

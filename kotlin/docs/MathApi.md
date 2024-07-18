@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
 
 
 <a id="convertUnits"></a>
@@ -39,13 +39,12 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sourceAmount** | **kotlin.Double**| The source amount. |
- **sourceUnit** | **kotlin.String**| The source unit. |
- **targetUnit** | **kotlin.String**| The unit to which should be converted. |
- **foodName** | **kotlin.String**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional]
+| **sourceAmount** | **kotlin.Double**| The source amount. | |
+| **sourceUnit** | **kotlin.String**| The source unit. | |
+| **targetUnit** | **kotlin.String**| The unit to which should be converted. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **foodName** | **kotlin.String**| An optional food name. For converting foods the food is relevant as they have different densities. | [optional] |
 
 ### Return type
 

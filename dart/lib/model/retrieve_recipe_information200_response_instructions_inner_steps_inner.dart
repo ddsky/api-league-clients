@@ -27,9 +27,9 @@ class RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner {
   ///
   int? number;
 
-  List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> ingredients;
+  List<SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> ingredients;
 
-  List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> equipment;
+  List<SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> equipment;
 
   String? step;
 
@@ -88,8 +88,8 @@ class RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner {
 
       return RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner(
         number: mapValueOfType<int>(json, r'number'),
-        ingredients: RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'ingredients']),
-        equipment: RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'equipment']),
+        ingredients: SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'ingredients']),
+        equipment: SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'equipment']),
         step: mapValueOfType<String>(json, r'step'),
       );
     }

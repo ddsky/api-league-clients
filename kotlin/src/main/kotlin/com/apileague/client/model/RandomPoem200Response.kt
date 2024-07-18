@@ -39,5 +39,8 @@ data class RandomPoem200Response (
     @Json(name = "poem")
     val poem: kotlin.String? = null
 
-)
+) {
+
+
+}
 

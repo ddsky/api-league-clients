@@ -75,5 +75,8 @@ data class VerifyEmailAddress200Response (
     @Json(name = "free_provider")
     val freeProvider: kotlin.Boolean? = null
 
-)
+) {
+
+
+}
 

@@ -31,5 +31,8 @@ data class CorrectSpelling200Response (
     @Json(name = "corrected_text")
     val correctedText: kotlin.String? = null
 
-)
+) {
+
+
+}
 

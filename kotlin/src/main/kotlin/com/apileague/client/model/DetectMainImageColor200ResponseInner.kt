@@ -39,5 +39,8 @@ data class DetectMainImageColor200ResponseInner (
     @Json(name = "hex_code")
     val hexCode: kotlin.String? = null
 
-)
+) {
+
+
+}
 

@@ -44,5 +44,8 @@ data class SearchRecipes200ResponseRecipesInner (
     @Json(name = "title")
     val title: kotlin.String? = null
 
-)
+) {
+
+
+}
 

@@ -32,5 +32,8 @@ data class ExtractEntities200Response (
     @Json(name = "entities")
     val entities: kotlin.collections.List<ExtractEntities200ResponseEntitiesInner>? = null
 
-)
+) {
+
+
+}
 

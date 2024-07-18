@@ -39,5 +39,8 @@ data class SearchWeb200ResponseResultsInner (
     @Json(name = "url")
     val url: kotlin.String? = null
 
-)
+) {
+
+
+}
 

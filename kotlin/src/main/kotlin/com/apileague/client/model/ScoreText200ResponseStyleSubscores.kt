@@ -39,5 +39,8 @@ data class ScoreText200ResponseStyleSubscores (
     @Json(name = "spelling_score")
     val spellingScore: kotlin.collections.List<kotlin.Int>? = null
 
-)
+) {
+
+
+}
 

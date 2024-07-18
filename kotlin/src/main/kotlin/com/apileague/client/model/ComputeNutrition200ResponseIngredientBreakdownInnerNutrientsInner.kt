@@ -43,5 +43,8 @@ data class ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner (
     @Json(name = "unit")
     val unit: kotlin.String? = null
 
-)
+) {
+
+
+}
 

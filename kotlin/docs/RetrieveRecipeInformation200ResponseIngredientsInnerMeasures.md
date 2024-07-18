@@ -2,10 +2,10 @@
 # RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**metric** | [**RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric**](RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md) |  |  [optional]
-**us** | [**RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric**](RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md) |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **metric** | [**SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  |  [optional] |
+| **us** | [**SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  |  [optional] |
 
 
 

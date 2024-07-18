@@ -35,6 +35,15 @@ void main() {
       // TODO
     });
 
+    // Search Drinks
+    //
+    // Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+    //
+    //Future<SearchDrinks200Response> searchDrinks({ String query, String glassTypes, String flavors, String diet, String includeIngredients, String excludeIngredients, double minCalories, double maxCalories, double minCarbs, double maxCarbs, double minProtein, double maxProtein, double minFat, double maxFat, double minAlcoholPercent, double maxAlcoholPercent, double minCaffeine, double maxCaffeine, String sort, String sortDirection, int offset, int number }) async
+    test('test searchDrinks', () async {
+      // TODO
+    });
+
     // Search Recipes
     //
     // Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.

@@ -21,6 +21,7 @@ import okhttp3.HttpUrl
 
 import com.apileague.client.model.ComputeNutrition200Response
 import com.apileague.client.model.RetrieveRecipeInformation200Response
+import com.apileague.client.model.SearchDrinks200Response
 import com.apileague.client.model.SearchRecipes200Response
 import com.apileague.client.model.SearchRestaurants200Response
 
@@ -215,11 +216,213 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
+     * Search Drinks
+     * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+     * @param query The search query. (optional)
+     * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+     * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+     * @param diet The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+     * @param minCalories The minimum amount of calories the drink must have per serving. (optional)
+     * @param maxCalories The maximum amount of calories the drink can have per serving. (optional)
+     * @param minCarbs The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+     * @param maxCarbs The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+     * @param minProtein The minimum amount of protein in grams the drink must have per serving. (optional)
+     * @param maxProtein The maximum amount of protein in grams the drink can have per serving. (optional)
+     * @param minFat The minimum amount of fat in grams the drink must have per serving. (optional)
+     * @param maxFat The maximum amount of fat in grams the drink can have per serving. (optional)
+     * @param minAlcoholPercent The minimum alcohol percentage the drink must have. (optional)
+     * @param maxAlcoholPercent The maximum alcohol percentage the drink can have. (optional)
+     * @param minCaffeine The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+     * @param sort The attribute by which to sort the drinks. (optional)
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
+     * @param offset The number of drinks to skip, between 0 and 90. (optional)
+     * @param number The number of drinks, between 1 and 10. (optional)
+     * @return SearchDrinks200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun searchDrinks(query: kotlin.String? = null, glassTypes: kotlin.String? = null, flavors: kotlin.String? = null, diet: kotlin.String? = null, includeIngredients: kotlin.String? = null, excludeIngredients: kotlin.String? = null, minCalories: kotlin.Double? = null, maxCalories: kotlin.Double? = null, minCarbs: kotlin.Double? = null, maxCarbs: kotlin.Double? = null, minProtein: kotlin.Double? = null, maxProtein: kotlin.Double? = null, minFat: kotlin.Double? = null, maxFat: kotlin.Double? = null, minAlcoholPercent: kotlin.Double? = null, maxAlcoholPercent: kotlin.Double? = null, minCaffeine: kotlin.Double? = null, maxCaffeine: kotlin.Double? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchDrinks200Response {
+        val localVarResponse = searchDrinksWithHttpInfo(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchDrinks200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Search Drinks
+     * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+     * @param query The search query. (optional)
+     * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+     * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+     * @param diet The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+     * @param minCalories The minimum amount of calories the drink must have per serving. (optional)
+     * @param maxCalories The maximum amount of calories the drink can have per serving. (optional)
+     * @param minCarbs The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+     * @param maxCarbs The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+     * @param minProtein The minimum amount of protein in grams the drink must have per serving. (optional)
+     * @param maxProtein The maximum amount of protein in grams the drink can have per serving. (optional)
+     * @param minFat The minimum amount of fat in grams the drink must have per serving. (optional)
+     * @param maxFat The maximum amount of fat in grams the drink can have per serving. (optional)
+     * @param minAlcoholPercent The minimum alcohol percentage the drink must have. (optional)
+     * @param maxAlcoholPercent The maximum alcohol percentage the drink can have. (optional)
+     * @param minCaffeine The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+     * @param sort The attribute by which to sort the drinks. (optional)
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
+     * @param offset The number of drinks to skip, between 0 and 90. (optional)
+     * @param number The number of drinks, between 1 and 10. (optional)
+     * @return ApiResponse<SearchDrinks200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun searchDrinksWithHttpInfo(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchDrinks200Response?> {
+        val localVariableConfig = searchDrinksRequestConfig(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+
+        return request<Unit, SearchDrinks200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation searchDrinks
+     *
+     * @param query The search query. (optional)
+     * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+     * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+     * @param diet The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+     * @param minCalories The minimum amount of calories the drink must have per serving. (optional)
+     * @param maxCalories The maximum amount of calories the drink can have per serving. (optional)
+     * @param minCarbs The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+     * @param maxCarbs The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+     * @param minProtein The minimum amount of protein in grams the drink must have per serving. (optional)
+     * @param maxProtein The maximum amount of protein in grams the drink can have per serving. (optional)
+     * @param minFat The minimum amount of fat in grams the drink must have per serving. (optional)
+     * @param maxFat The maximum amount of fat in grams the drink can have per serving. (optional)
+     * @param minAlcoholPercent The minimum alcohol percentage the drink must have. (optional)
+     * @param maxAlcoholPercent The maximum alcohol percentage the drink can have. (optional)
+     * @param minCaffeine The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+     * @param sort The attribute by which to sort the drinks. (optional)
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
+     * @param offset The number of drinks to skip, between 0 and 90. (optional)
+     * @param number The number of drinks, between 1 and 10. (optional)
+     * @return RequestConfig
+     */
+    fun searchDrinksRequestConfig(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (query != null) {
+                    put("query", listOf(query.toString()))
+                }
+                if (glassTypes != null) {
+                    put("glass-types", listOf(glassTypes.toString()))
+                }
+                if (flavors != null) {
+                    put("flavors", listOf(flavors.toString()))
+                }
+                if (diet != null) {
+                    put("diet", listOf(diet.toString()))
+                }
+                if (includeIngredients != null) {
+                    put("include-ingredients", listOf(includeIngredients.toString()))
+                }
+                if (excludeIngredients != null) {
+                    put("exclude-ingredients", listOf(excludeIngredients.toString()))
+                }
+                if (minCalories != null) {
+                    put("min-calories", listOf(minCalories.toString()))
+                }
+                if (maxCalories != null) {
+                    put("max-calories", listOf(maxCalories.toString()))
+                }
+                if (minCarbs != null) {
+                    put("min-carbs", listOf(minCarbs.toString()))
+                }
+                if (maxCarbs != null) {
+                    put("max-carbs", listOf(maxCarbs.toString()))
+                }
+                if (minProtein != null) {
+                    put("min-protein", listOf(minProtein.toString()))
+                }
+                if (maxProtein != null) {
+                    put("max-protein", listOf(maxProtein.toString()))
+                }
+                if (minFat != null) {
+                    put("min-fat", listOf(minFat.toString()))
+                }
+                if (maxFat != null) {
+                    put("max-fat", listOf(maxFat.toString()))
+                }
+                if (minAlcoholPercent != null) {
+                    put("min-alcohol-percent", listOf(minAlcoholPercent.toString()))
+                }
+                if (maxAlcoholPercent != null) {
+                    put("max-alcohol-percent", listOf(maxAlcoholPercent.toString()))
+                }
+                if (minCaffeine != null) {
+                    put("min-caffeine", listOf(minCaffeine.toString()))
+                }
+                if (maxCaffeine != null) {
+                    put("max-caffeine", listOf(maxCaffeine.toString()))
+                }
+                if (sort != null) {
+                    put("sort", listOf(sort.toString()))
+                }
+                if (sortDirection != null) {
+                    put("sort-direction", listOf(sortDirection.toString()))
+                }
+                if (offset != null) {
+                    put("offset", listOf(offset.toString()))
+                }
+                if (number != null) {
+                    put("number", listOf(number.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/search-drinks",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * Search Recipes
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
      * @param query The search query. (optional)
-     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). (optional)
-     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). (optional)
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). (optional)
      * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
      * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional)
      * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional)
@@ -303,7 +506,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional)
      * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional)
      * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
-     * @param sort The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+     * @param sort The strategy to sort recipes by. (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of recipes to skip, between 0 and 900. (optional)
      * @param number The number of recipes, between 1 and 100. (optional)
@@ -338,8 +541,8 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * Search Recipes
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
      * @param query The search query. (optional)
-     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). (optional)
-     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). (optional)
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). (optional)
      * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
      * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional)
      * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional)
@@ -423,7 +626,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional)
      * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional)
      * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
-     * @param sort The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+     * @param sort The strategy to sort recipes by. (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of recipes to skip, between 0 and 900. (optional)
      * @param number The number of recipes, between 1 and 100. (optional)
@@ -445,8 +648,8 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * To obtain the request config of the operation searchRecipes
      *
      * @param query The search query. (optional)
-     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). (optional)
-     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). (optional)
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). (optional)
      * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
      * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional)
      * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional)
@@ -530,7 +733,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional)
      * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional)
      * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
-     * @param sort The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+     * @param sort The strategy to sort recipes by. (optional)
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of recipes to skip, between 0 and 900. (optional)
      * @param number The number of recipes, between 1 and 100. (optional)

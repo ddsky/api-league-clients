@@ -79,5 +79,8 @@ data class SearchNews200ResponseNewsInner (
     @Json(name = "authors")
     val authors: kotlin.collections.List<kotlin.String>? = null
 
-)
+) {
+
+
+}
 

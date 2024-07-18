@@ -35,5 +35,8 @@ data class SearchRoyaltyFreeImages200ResponseImagesInnerLicense (
     @Json(name = "link")
     val link: kotlin.String? = null
 
-)
+) {
+
+
+}
 

@@ -35,5 +35,8 @@ data class StemText200Response (
     @Json(name = "stemmed")
     val stemmed: kotlin.String? = null
 
-)
+) {
+
+
+}
 

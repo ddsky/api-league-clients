@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**readKeyValueFromStore**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store
-[**storeKeyValueGET**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**readKeyValueFromStore**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store |
+| [**storeKeyValueGET**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET) |
 
 
 <a id="readKeyValueFromStore"></a>
@@ -37,10 +37,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **kotlin.String**| The key for which the value is stored (max length 255 characters). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **kotlin.String**| The key for which the value is stored (max length 255 characters). | |
 
 ### Return type
 
@@ -91,11 +90,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **kotlin.String**| The key for which the value is stored (max length 255 characters). |
- **&#x60;value&#x60;** | **kotlin.String**| The value that is supposed to be stored (max length 10,000 characters). |
+| **key** | **kotlin.String**| The key for which the value is stored (max length 255 characters). | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **&#x60;value&#x60;** | **kotlin.String**| The value that is supposed to be stored (max length 10,000 characters). | |
 
 ### Return type
 

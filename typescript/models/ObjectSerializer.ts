@@ -36,16 +36,10 @@ export * from '../models/RetrieveRecipeInformation200ResponseCredits';
 export * from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
 export * from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
 export * from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-export * from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric';
 export * from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
 export * from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-export * from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner';
 export * from '../models/RetrieveRecipeInformation200ResponseNutrition';
-export * from '../models/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown';
-export * from '../models/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner';
 export * from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-export * from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner';
-export * from '../models/RetrieveRecipeInformation200ResponseNutritionWeightPerServing';
 export * from '../models/RetrieveRecipeInformation200ResponseScores';
 export * from '../models/RetrieveRecipeInformation200ResponseTaste';
 export * from '../models/RetrieveRecipeInformation200ResponseTimes';
@@ -63,6 +57,23 @@ export * from '../models/ScoreText200ResponseStyle';
 export * from '../models/ScoreText200ResponseStyleSubscores';
 export * from '../models/SearchBooks200Response';
 export * from '../models/SearchBooks200ResponseBooksInnerInner';
+export * from '../models/SearchDrinks200Response';
+export * from '../models/SearchDrinks200ResponseDrinksInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerCredits';
+export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
+export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
+export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 export * from '../models/SearchGifs200Response';
 export * from '../models/SearchGifs200ResponseImagesInner';
 export * from '../models/SearchJokes200Response';
@@ -132,16 +143,10 @@ import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveR
 import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
 import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
 import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric';
 import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
 import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner';
 import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
-import { RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown } from '../models/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown';
-import { RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner';
 import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner';
-import { RetrieveRecipeInformation200ResponseNutritionWeightPerServing } from '../models/RetrieveRecipeInformation200ResponseNutritionWeightPerServing';
 import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
 import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
 import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
@@ -159,6 +164,23 @@ import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
 import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
 import { SearchBooks200Response } from '../models/SearchBooks200Response';
 import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
+import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
+import { SearchDrinks200ResponseDrinksInner } from '../models/SearchDrinks200ResponseDrinksInner';
+import { SearchDrinks200ResponseDrinksInnerCredits } from '../models/SearchDrinks200ResponseDrinksInnerCredits';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutrition } from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
+import { SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
+import { SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
@@ -244,16 +266,10 @@ let typeMap: {[index: string]: any} = {
     "RetrieveRecipeInformation200ResponseDietaryProperties": RetrieveRecipeInformation200ResponseDietaryProperties,
     "RetrieveRecipeInformation200ResponseIngredientsInner": RetrieveRecipeInformation200ResponseIngredientsInner,
     "RetrieveRecipeInformation200ResponseIngredientsInnerMeasures": RetrieveRecipeInformation200ResponseIngredientsInnerMeasures,
-    "RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric": RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric,
     "RetrieveRecipeInformation200ResponseInstructionsInner": RetrieveRecipeInformation200ResponseInstructionsInner,
     "RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner": RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner,
-    "RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner": RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner,
     "RetrieveRecipeInformation200ResponseNutrition": RetrieveRecipeInformation200ResponseNutrition,
-    "RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown": RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown,
-    "RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner": RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner,
     "RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner": RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner,
-    "RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner": RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner,
-    "RetrieveRecipeInformation200ResponseNutritionWeightPerServing": RetrieveRecipeInformation200ResponseNutritionWeightPerServing,
     "RetrieveRecipeInformation200ResponseScores": RetrieveRecipeInformation200ResponseScores,
     "RetrieveRecipeInformation200ResponseTaste": RetrieveRecipeInformation200ResponseTaste,
     "RetrieveRecipeInformation200ResponseTimes": RetrieveRecipeInformation200ResponseTimes,
@@ -271,6 +287,23 @@ let typeMap: {[index: string]: any} = {
     "ScoreText200ResponseStyleSubscores": ScoreText200ResponseStyleSubscores,
     "SearchBooks200Response": SearchBooks200Response,
     "SearchBooks200ResponseBooksInnerInner": SearchBooks200ResponseBooksInnerInner,
+    "SearchDrinks200Response": SearchDrinks200Response,
+    "SearchDrinks200ResponseDrinksInner": SearchDrinks200ResponseDrinksInner,
+    "SearchDrinks200ResponseDrinksInnerCredits": SearchDrinks200ResponseDrinksInnerCredits,
+    "SearchDrinks200ResponseDrinksInnerIngredientsInner": SearchDrinks200ResponseDrinksInnerIngredientsInner,
+    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures,
+    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric,
+    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs,
+    "SearchDrinks200ResponseDrinksInnerInstructionsInner": SearchDrinks200ResponseDrinksInnerInstructionsInner,
+    "SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner": SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner,
+    "SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner": SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner,
+    "SearchDrinks200ResponseDrinksInnerNutrition": SearchDrinks200ResponseDrinksInnerNutrition,
+    "SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown": SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown,
+    "SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner": SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner,
+    "SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner": SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner,
+    "SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner": SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner,
+    "SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner": SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner,
+    "SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing,
     "SearchGifs200Response": SearchGifs200Response,
     "SearchGifs200ResponseImagesInner": SearchGifs200ResponseImagesInner,
     "SearchJokes200Response": SearchJokes200Response,

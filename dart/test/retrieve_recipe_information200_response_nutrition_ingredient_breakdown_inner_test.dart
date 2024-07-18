@@ -36,7 +36,7 @@ void main() {
       // TODO
     });
 
-    // List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients (default value: const [])
+    // List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner> nutrients (default value: const [])
     test('to test the property `nutrients`', () async {
       // TODO
     });

@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**available** | **int** |  | [optional] 
+**totalResults** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
 **books** | [**List<List<SearchBooks200ResponseBooksInnerInner>>**](List.md) |  | [optional] [default to const []]

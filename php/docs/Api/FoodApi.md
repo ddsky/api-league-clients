@@ -6,6 +6,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | ------------- | ------------- | ------------- |
 | [**computeNutrition()**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition |
 | [**retrieveRecipeInformation()**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
+| [**searchDrinks()**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks |
 | [**searchRecipes()**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes |
 | [**searchRestaurants()**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants |
 
@@ -150,6 +151,115 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `searchDrinks()`
+
+```php
+searchDrinks($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchDrinks200Response
+```
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\FoodApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$query = vodka; // string | The search query.
+$glass_types = Highball Glass; // string | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+$flavors = sour,sweet; // string | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+$diet = paleo; // string | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+$include_ingredients = orange; // string | A comma-separated list of ingredients that should/must be used in the drinks.
+$exclude_ingredients = vodka; // string | A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+$min_calories = 100; // float | The minimum amount of calories the drink must have per serving.
+$max_calories = 655; // float | The maximum amount of calories the drink can have per serving.
+$min_carbs = 10.1; // float | The minimum amount of carbohydrates in grams the drink must have per serving.
+$max_carbs = 25.5; // float | The maximum amount of carbohydrates in grams the drink can have per serving.
+$min_protein = 10.1; // float | The minimum amount of protein in grams the drink must have per serving.
+$max_protein = 25.5; // float | The maximum amount of protein in grams the drink can have per serving.
+$min_fat = 10.1; // float | The minimum amount of fat in grams the drink must have per serving.
+$max_fat = 25.5; // float | The maximum amount of fat in grams the drink can have per serving.
+$min_alcohol_percent = 10; // float | The minimum alcohol percentage the drink must have.
+$max_alcohol_percent = 35; // float | The maximum alcohol percentage the drink can have.
+$min_caffeine = 30.4; // float | The minimum amount of caffeine in milligrams the drink must have per serving.
+$max_caffeine = 80.9; // float | The maximum amount of caffeine in milligrams the drink can have per serving.
+$sort = calories; // string | The attribute by which to sort the drinks.
+$sort_direction = ASC; // string | Whether to sort ascending or descending (ASC or DESC).
+$offset = 0; // int | The number of drinks to skip, between 0 and 90.
+$number = 3; // int | The number of drinks, between 1 and 10.
+
+try {
+    $result = $apiInstance->searchDrinks($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FoodApi->searchDrinks: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| The search query. | [optional] |
+| **glass_types** | **string**| A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional] |
+| **flavors** | **string**| A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional] |
+| **diet** | **string**| The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional] |
+| **include_ingredients** | **string**| A comma-separated list of ingredients that should/must be used in the drinks. | [optional] |
+| **exclude_ingredients** | **string**| A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional] |
+| **min_calories** | **float**| The minimum amount of calories the drink must have per serving. | [optional] |
+| **max_calories** | **float**| The maximum amount of calories the drink can have per serving. | [optional] |
+| **min_carbs** | **float**| The minimum amount of carbohydrates in grams the drink must have per serving. | [optional] |
+| **max_carbs** | **float**| The maximum amount of carbohydrates in grams the drink can have per serving. | [optional] |
+| **min_protein** | **float**| The minimum amount of protein in grams the drink must have per serving. | [optional] |
+| **max_protein** | **float**| The maximum amount of protein in grams the drink can have per serving. | [optional] |
+| **min_fat** | **float**| The minimum amount of fat in grams the drink must have per serving. | [optional] |
+| **max_fat** | **float**| The maximum amount of fat in grams the drink can have per serving. | [optional] |
+| **min_alcohol_percent** | **float**| The minimum alcohol percentage the drink must have. | [optional] |
+| **max_alcohol_percent** | **float**| The maximum alcohol percentage the drink can have. | [optional] |
+| **min_caffeine** | **float**| The minimum amount of caffeine in milligrams the drink must have per serving. | [optional] |
+| **max_caffeine** | **float**| The maximum amount of caffeine in milligrams the drink can have per serving. | [optional] |
+| **sort** | **string**| The attribute by which to sort the drinks. | [optional] |
+| **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **int**| The number of drinks to skip, between 0 and 90. | [optional] |
+| **number** | **int**| The number of drinks, between 1 and 10. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\SearchDrinks200Response**](../Model/SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `searchRecipes()`
 
 ```php
@@ -185,8 +295,8 @@ $apiInstance = new OpenAPI\Client\Api\FoodApi(
     $config
 );
 $query = pasta with mushrooms but without nuts; // string | The search query.
-$cuisines = mexican; // string | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-$exclude_cuisines = indian,japanese; // string | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+$cuisines = mexican; // string | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
+$exclude_cuisines = indian,japanese; // string | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
 $meal_type = dessert; // string | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
 $diet = paleo; // string | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
 $intolerances = gluten,dairy,shellfish; // string | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -270,7 +380,7 @@ $min_vitamin_b6 = 30.4; // float | The minimum amount of Vitamin B6 in milligram
 $max_vitamin_b6 = 80.9; // float | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
 $min_vitamin_b12 = 30.4; // float | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
 $max_vitamin_b12 = 80.9; // float | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-$sort = meta-score; // string | The strategy to sort recipes by. See a full list of supported sorting options.
+$sort = meta-score; // string | The strategy to sort recipes by.
 $sort_direction = ASC; // string | Whether to sort ascending or descending (ASC or DESC).
 $offset = 0; // int | The number of recipes to skip, between 0 and 900.
 $number = 3; // int | The number of recipes, between 1 and 100.
@@ -288,8 +398,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **query** | **string**| The search query. | [optional] |
-| **cuisines** | **string**| The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional] |
-| **exclude_cuisines** | **string**| The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional] |
+| **cuisines** | **string**| The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional] |
+| **exclude_cuisines** | **string**| The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional] |
 | **meal_type** | **string**| The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional] |
 | **diet** | **string**| The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional] |
 | **intolerances** | **string**| A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional] |
@@ -373,7 +483,7 @@ try {
 | **max_vitamin_b6** | **float**| The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional] |
 | **min_vitamin_b12** | **float**| The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional] |
 | **max_vitamin_b12** | **float**| The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional] |
-| **sort** | **string**| The strategy to sort recipes by. See a full list of supported sorting options. | [optional] |
+| **sort** | **string**| The strategy to sort recipes by. | [optional] |
 | **sort_direction** | **string**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
 | **offset** | **int**| The number of recipes to skip, between 0 and 900. | [optional] |
 | **number** | **int**| The number of recipes, between 1 and 100. | [optional] |

@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.4.2</version>
+    <version>1.5.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.4.2"
+compile "com.apileague:android-client:1.5.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.4.2.jar
+- target/android-client-1.5.0.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 *BooksApi* | [**searchBooks**](docs/BooksApi.md#searchBooks) | **GET** /search-books | Search Books
 *FoodApi* | [**computeNutrition**](docs/FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
 *FoodApi* | [**retrieveRecipeInformation**](docs/FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*FoodApi* | [**searchDrinks**](docs/FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks
 *FoodApi* | [**searchRecipes**](docs/FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
 *FoodApi* | [**searchRestaurants**](docs/FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
 *HumorApi* | [**generateNonsenseWord**](docs/HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
@@ -172,16 +173,10 @@ Class | Method | HTTP request | Description
  - [RetrieveRecipeInformation200ResponseDietaryProperties](docs/RetrieveRecipeInformation200ResponseDietaryProperties.md)
  - [RetrieveRecipeInformation200ResponseIngredientsInner](docs/RetrieveRecipeInformation200ResponseIngredientsInner.md)
  - [RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
- - [RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
  - [RetrieveRecipeInformation200ResponseInstructionsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInner.md)
  - [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
- - [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
  - [RetrieveRecipeInformation200ResponseNutrition](docs/RetrieveRecipeInformation200ResponseNutrition.md)
- - [RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
- - [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
  - [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
- - [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
- - [RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
  - [RetrieveRecipeInformation200ResponseScores](docs/RetrieveRecipeInformation200ResponseScores.md)
  - [RetrieveRecipeInformation200ResponseTaste](docs/RetrieveRecipeInformation200ResponseTaste.md)
  - [RetrieveRecipeInformation200ResponseTimes](docs/RetrieveRecipeInformation200ResponseTimes.md)
@@ -199,6 +194,23 @@ Class | Method | HTTP request | Description
  - [ScoreText200ResponseStyleSubscores](docs/ScoreText200ResponseStyleSubscores.md)
  - [SearchBooks200Response](docs/SearchBooks200Response.md)
  - [SearchBooks200ResponseBooksInnerInner](docs/SearchBooks200ResponseBooksInnerInner.md)
+ - [SearchDrinks200Response](docs/SearchDrinks200Response.md)
+ - [SearchDrinks200ResponseDrinksInner](docs/SearchDrinks200ResponseDrinksInner.md)
+ - [SearchDrinks200ResponseDrinksInnerCredits](docs/SearchDrinks200ResponseDrinksInnerCredits.md)
+ - [SearchDrinks200ResponseDrinksInnerIngredientsInner](docs/SearchDrinks200ResponseDrinksInnerIngredientsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures](docs/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures.md)
+ - [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric](docs/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md)
+ - [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs](docs/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs.md)
+ - [SearchDrinks200ResponseDrinksInnerInstructionsInner](docs/SearchDrinks200ResponseDrinksInnerInstructionsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner](docs/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerNutrition](docs/SearchDrinks200ResponseDrinksInnerNutrition.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown](docs/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner](docs/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner](docs/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md)
+ - [SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing](docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md)
  - [SearchGifs200Response](docs/SearchGifs200Response.md)
  - [SearchGifs200ResponseImagesInner](docs/SearchGifs200ResponseImagesInner.md)
  - [SearchJokes200Response](docs/SearchJokes200Response.md)

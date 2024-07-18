@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -24,7 +24,7 @@ type RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner struc
 	Amount *float32 `json:"amount,omitempty"`
 	Unit NullableString `json:"unit,omitempty"`
 	Id *int32 `json:"id,omitempty"`
-	Nutrients []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner `json:"nutrients,omitempty"`
+	Nutrients []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner `json:"nutrients,omitempty"`
 }
 
 // NewRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner instantiates a new RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner object
@@ -193,9 +193,9 @@ func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) 
 }
 
 // GetNutrients returns the Nutrients field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrients() []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner {
+func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrients() []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner {
 	if o == nil || IsNil(o.Nutrients) {
-		var ret []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+		var ret []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
 		return ret
 	}
 	return o.Nutrients
@@ -203,7 +203,7 @@ func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) 
 
 // GetNutrientsOk returns a tuple with the Nutrients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrientsOk() ([]RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner, bool) {
+func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrientsOk() ([]SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner, bool) {
 	if o == nil || IsNil(o.Nutrients) {
 		return nil, false
 	}
@@ -219,8 +219,8 @@ func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) 
 	return false
 }
 
-// SetNutrients gets a reference to the given []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner and assigns it to the Nutrients field.
-func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) SetNutrients(v []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner) {
+// SetNutrients gets a reference to the given []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner and assigns it to the Nutrients field.
+func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) SetNutrients(v []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner) {
 	o.Nutrients = v
 }
 

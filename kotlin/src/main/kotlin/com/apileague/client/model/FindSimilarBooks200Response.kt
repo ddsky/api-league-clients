@@ -32,5 +32,8 @@ data class FindSimilarBooks200Response (
     @Json(name = "similar_books")
     val similarBooks: kotlin.collections.List<SearchBooks200ResponseBooksInnerInner>? = null
 
-)
+) {
+
+
+}
 

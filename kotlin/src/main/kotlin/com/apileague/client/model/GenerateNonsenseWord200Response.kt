@@ -35,5 +35,8 @@ data class GenerateNonsenseWord200Response (
     @Json(name = "rating")
     val rating: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

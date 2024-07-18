@@ -15,7 +15,7 @@
 
 package com.apileague.client.model
 
-import com.apileague.client.model.RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
+import com.apileague.client.model.SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -46,7 +46,10 @@ data class RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
     val id: kotlin.Int? = null,
 
     @Json(name = "nutrients")
-    val nutrients: kotlin.collections.List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner>? = null
+    val nutrients: kotlin.collections.List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner>? = null
 
-)
+) {
+
+
+}
 

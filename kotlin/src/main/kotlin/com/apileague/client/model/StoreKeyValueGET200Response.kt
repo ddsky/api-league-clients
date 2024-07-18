@@ -31,5 +31,8 @@ data class StoreKeyValueGET200Response (
     @Json(name = "status")
     val status: kotlin.String? = null
 
-)
+) {
+
+
+}
 

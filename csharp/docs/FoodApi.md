@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |--------|--------------|-------------|
 | [**ComputeNutrition**](FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition |
 | [**RetrieveRecipeInformation**](FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
+| [**SearchDrinks**](FoodApi.md#searchdrinks) | **GET** /search-drinks | Search Drinks |
 | [**SearchRecipes**](FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes |
 | [**SearchRestaurants**](FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants |
 
@@ -227,6 +228,154 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="searchdrinks"></a>
+# **SearchDrinks**
+> SearchDrinks200Response SearchDrinks (string? query = null, string? glassTypes = null, string? flavors = null, string? diet = null, string? includeIngredients = null, string? excludeIngredients = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minAlcoholPercent = null, double? maxAlcoholPercent = null, double? minCaffeine = null, double? maxCaffeine = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class SearchDrinksExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new FoodApi(config);
+            var query = vodka;  // string? | The search query. (optional) 
+            var glassTypes = Highball Glass;  // string? | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional) 
+            var flavors = sour,sweet;  // string? | A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional) 
+            var diet = paleo;  // string? | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional) 
+            var includeIngredients = orange;  // string? | A comma-separated list of ingredients that should/must be used in the drinks. (optional) 
+            var excludeIngredients = vodka;  // string? | A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional) 
+            var minCalories = 100;  // double? | The minimum amount of calories the drink must have per serving. (optional) 
+            var maxCalories = 655;  // double? | The maximum amount of calories the drink can have per serving. (optional) 
+            var minCarbs = 10.1;  // double? | The minimum amount of carbohydrates in grams the drink must have per serving. (optional) 
+            var maxCarbs = 25.5;  // double? | The maximum amount of carbohydrates in grams the drink can have per serving. (optional) 
+            var minProtein = 10.1;  // double? | The minimum amount of protein in grams the drink must have per serving. (optional) 
+            var maxProtein = 25.5;  // double? | The maximum amount of protein in grams the drink can have per serving. (optional) 
+            var minFat = 10.1;  // double? | The minimum amount of fat in grams the drink must have per serving. (optional) 
+            var maxFat = 25.5;  // double? | The maximum amount of fat in grams the drink can have per serving. (optional) 
+            var minAlcoholPercent = 10;  // double? | The minimum alcohol percentage the drink must have. (optional) 
+            var maxAlcoholPercent = 35;  // double? | The maximum alcohol percentage the drink can have. (optional) 
+            var minCaffeine = 30.4;  // double? | The minimum amount of caffeine in milligrams the drink must have per serving. (optional) 
+            var maxCaffeine = 80.9;  // double? | The maximum amount of caffeine in milligrams the drink can have per serving. (optional) 
+            var sort = calories;  // string? | The attribute by which to sort the drinks. (optional) 
+            var sortDirection = ASC;  // string? | Whether to sort ascending or descending (ASC or DESC). (optional) 
+            var offset = 0;  // int? | The number of drinks to skip, between 0 and 90. (optional) 
+            var number = 3;  // int? | The number of drinks, between 1 and 10. (optional) 
+
+            try
+            {
+                // Search Drinks
+                SearchDrinks200Response result = apiInstance.SearchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FoodApi.SearchDrinks: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SearchDrinksWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search Drinks
+    ApiResponse<SearchDrinks200Response> response = apiInstance.SearchDrinksWithHttpInfo(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling FoodApi.SearchDrinksWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **query** | **string?** | The search query. | [optional]  |
+| **glassTypes** | **string?** | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional]  |
+| **flavors** | **string?** | A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional]  |
+| **diet** | **string?** | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional]  |
+| **includeIngredients** | **string?** | A comma-separated list of ingredients that should/must be used in the drinks. | [optional]  |
+| **excludeIngredients** | **string?** | A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional]  |
+| **minCalories** | **double?** | The minimum amount of calories the drink must have per serving. | [optional]  |
+| **maxCalories** | **double?** | The maximum amount of calories the drink can have per serving. | [optional]  |
+| **minCarbs** | **double?** | The minimum amount of carbohydrates in grams the drink must have per serving. | [optional]  |
+| **maxCarbs** | **double?** | The maximum amount of carbohydrates in grams the drink can have per serving. | [optional]  |
+| **minProtein** | **double?** | The minimum amount of protein in grams the drink must have per serving. | [optional]  |
+| **maxProtein** | **double?** | The maximum amount of protein in grams the drink can have per serving. | [optional]  |
+| **minFat** | **double?** | The minimum amount of fat in grams the drink must have per serving. | [optional]  |
+| **maxFat** | **double?** | The maximum amount of fat in grams the drink can have per serving. | [optional]  |
+| **minAlcoholPercent** | **double?** | The minimum alcohol percentage the drink must have. | [optional]  |
+| **maxAlcoholPercent** | **double?** | The maximum alcohol percentage the drink can have. | [optional]  |
+| **minCaffeine** | **double?** | The minimum amount of caffeine in milligrams the drink must have per serving. | [optional]  |
+| **maxCaffeine** | **double?** | The maximum amount of caffeine in milligrams the drink can have per serving. | [optional]  |
+| **sort** | **string?** | The attribute by which to sort the drinks. | [optional]  |
+| **sortDirection** | **string?** | Whether to sort ascending or descending (ASC or DESC). | [optional]  |
+| **offset** | **int?** | The number of drinks to skip, between 0 and 90. | [optional]  |
+| **number** | **int?** | The number of drinks, between 1 and 10. | [optional]  |
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="searchrecipes"></a>
 # **SearchRecipes**
 > SearchRecipes200Response SearchRecipes (string? query = null, string? cuisines = null, string? excludeCuisines = null, string? mealType = null, string? diet = null, string? intolerances = null, string? equipment = null, string? includeIngredients = null, string? excludeIngredients = null, bool? fillIngredients = null, bool? addRecipeInformation = null, int? maxTime = null, int? minServings = null, int? maxServings = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minSugar = null, double? maxSugar = null, double? minFiber = null, double? maxFiber = null, double? minFolate = null, double? maxFolate = null, double? minFolicAcid = null, double? maxFolicAcid = null, double? minIodine = null, double? maxIodine = null, double? minIron = null, double? maxIron = null, double? minZinc = null, double? maxZinc = null, double? minMagnesium = null, double? maxMagnesium = null, double? minManganese = null, double? maxManganese = null, double? minPhosphorus = null, double? maxPhosphorus = null, double? minPotassium = null, double? maxPotassium = null, double? minSodium = null, double? maxSodium = null, double? minSelenium = null, double? maxSelenium = null, double? minCopper = null, double? maxCopper = null, double? minCalcium = null, double? maxCalcium = null, double? minCholine = null, double? maxCholine = null, double? minCholesterol = null, double? maxCholesterol = null, double? minFluoride = null, double? maxFluoride = null, double? minAlcohol = null, double? maxAlcohol = null, double? minCaffeine = null, double? maxCaffeine = null, double? minSaturatedFat = null, double? maxSaturatedFat = null, double? minVitaminA = null, double? maxVitaminA = null, double? minVitaminC = null, double? maxVitaminC = null, double? minVitaminD = null, double? maxVitaminD = null, double? minVitaminE = null, double? maxVitaminE = null, double? minVitaminK = null, double? maxVitaminK = null, double? minVitaminB1 = null, double? maxVitaminB1 = null, double? minVitaminB2 = null, double? maxVitaminB2 = null, double? minVitaminB3 = null, double? maxVitaminB3 = null, double? minVitaminB5 = null, double? maxVitaminB5 = null, double? minVitaminB6 = null, double? maxVitaminB6 = null, double? minVitaminB12 = null, double? maxVitaminB12 = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
@@ -262,8 +411,8 @@ namespace Example
 
             var apiInstance = new FoodApi(config);
             var query = pasta with mushrooms but without nuts;  // string? | The search query. (optional) 
-            var cuisines = mexican;  // string? | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR'). (optional) 
-            var excludeCuisines = indian,japanese;  // string? | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND'). (optional) 
+            var cuisines = mexican;  // string? | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR'). (optional) 
+            var excludeCuisines = indian,japanese;  // string? | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND'). (optional) 
             var mealType = dessert;  // string? | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional) 
             var diet = paleo;  // string? | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. (optional) 
             var intolerances = gluten,dairy,shellfish;  // string? | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. (optional) 
@@ -347,7 +496,7 @@ namespace Example
             var maxVitaminB6 = 80.9;  // double? | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. (optional) 
             var minVitaminB12 = 30.4;  // double? | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. (optional) 
             var maxVitaminB12 = 80.9;  // double? | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional) 
-            var sort = meta-score;  // string? | The strategy to sort recipes by. See a full list of supported sorting options. (optional) 
+            var sort = meta-score;  // string? | The strategy to sort recipes by. (optional) 
             var sortDirection = ASC;  // string? | Whether to sort ascending or descending (ASC or DESC). (optional) 
             var offset = 0;  // int? | The number of recipes to skip, between 0 and 900. (optional) 
             var number = 3;  // int? | The number of recipes, between 1 and 100. (optional) 
@@ -394,8 +543,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **query** | **string?** | The search query. | [optional]  |
-| **cuisines** | **string?** | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional]  |
-| **excludeCuisines** | **string?** | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional]  |
+| **cuisines** | **string?** | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional]  |
+| **excludeCuisines** | **string?** | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional]  |
 | **mealType** | **string?** | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional]  |
 | **diet** | **string?** | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional]  |
 | **intolerances** | **string?** | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional]  |
@@ -479,7 +628,7 @@ catch (ApiException e)
 | **maxVitaminB6** | **double?** | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional]  |
 | **minVitaminB12** | **double?** | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional]  |
 | **maxVitaminB12** | **double?** | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional]  |
-| **sort** | **string?** | The strategy to sort recipes by. See a full list of supported sorting options. | [optional]  |
+| **sort** | **string?** | The strategy to sort recipes by. | [optional]  |
 | **sortDirection** | **string?** | Whether to sort ascending or descending (ASC or DESC). | [optional]  |
 | **offset** | **int?** | The number of recipes to skip, between 0 and 900. | [optional]  |
 | **number** | **int?** | The number of recipes, between 1 and 100. | [optional]  |

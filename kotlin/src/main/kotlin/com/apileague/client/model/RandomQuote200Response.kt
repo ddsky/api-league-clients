@@ -35,5 +35,8 @@ data class RandomQuote200Response (
     @Json(name = "quote")
     val quote: kotlin.String? = null
 
-)
+) {
+
+
+}
 

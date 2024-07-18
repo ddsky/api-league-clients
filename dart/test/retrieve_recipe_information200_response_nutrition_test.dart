@@ -16,17 +16,17 @@ void main() {
   // final instance = RetrieveRecipeInformation200ResponseNutrition();
 
   group('test RetrieveRecipeInformation200ResponseNutrition', () {
-    // RetrieveRecipeInformation200ResponseNutritionWeightPerServing weightPerServing
+    // SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing weightPerServing
     test('to test the property `weightPerServing`', () async {
       // TODO
     });
 
-    // RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown caloricBreakdown
+    // SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown caloricBreakdown
     test('to test the property `caloricBreakdown`', () async {
       // TODO
     });
 
-    // List<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner> flavonoids (default value: const [])
+    // List<SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner> flavonoids (default value: const [])
     test('to test the property `flavonoids`', () async {
       // TODO
     });
@@ -41,7 +41,7 @@ void main() {
       // TODO
     });
 
-    // List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients (default value: const [])
+    // List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner> nutrients (default value: const [])
     test('to test the property `nutrients`', () async {
       // TODO
     });

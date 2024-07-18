@@ -32,5 +32,8 @@ data class SearchRecipes200ResponseRecipesInnerNutrition (
     @Json(name = "nutrients")
     val nutrients: kotlin.collections.List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner>? = null
 
-)
+) {
+
+
+}
 

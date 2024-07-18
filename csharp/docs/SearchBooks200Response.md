@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Available** | **int** |  | [optional] 
+**TotalResults** | **int** |  | [optional] 
 **Number** | **int** |  | [optional] 
 **Offset** | **int** |  | [optional] 
 **Books** | **List&lt;List&lt;SearchBooks200ResponseBooksInnerInner&gt;&gt;** |  | [optional] 

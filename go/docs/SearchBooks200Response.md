@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Available** | Pointer to **int32** |  | [optional] 
+**TotalResults** | Pointer to **int32** |  | [optional] 
 **Number** | Pointer to **int32** |  | [optional] 
 **Offset** | Pointer to **int32** |  | [optional] 
 **Books** | Pointer to [**[][]SearchBooks200ResponseBooksInnerInner**]([]SearchBooks200ResponseBooksInnerInner.md) |  | [optional] 
@@ -28,30 +28,30 @@ NewSearchBooks200ResponseWithDefaults instantiates a new SearchBooks200Response 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAvailable
+### GetTotalResults
 
-`func (o *SearchBooks200Response) GetAvailable() int32`
+`func (o *SearchBooks200Response) GetTotalResults() int32`
 
-GetAvailable returns the Available field if non-nil, zero value otherwise.
+GetTotalResults returns the TotalResults field if non-nil, zero value otherwise.
 
-### GetAvailableOk
+### GetTotalResultsOk
 
-`func (o *SearchBooks200Response) GetAvailableOk() (*int32, bool)`
+`func (o *SearchBooks200Response) GetTotalResultsOk() (*int32, bool)`
 
-GetAvailableOk returns a tuple with the Available field if it's non-nil, zero value otherwise
+GetTotalResultsOk returns a tuple with the TotalResults field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAvailable
+### SetTotalResults
 
-`func (o *SearchBooks200Response) SetAvailable(v int32)`
+`func (o *SearchBooks200Response) SetTotalResults(v int32)`
 
-SetAvailable sets Available field to given value.
+SetTotalResults sets TotalResults field to given value.
 
-### HasAvailable
+### HasTotalResults
 
-`func (o *SearchBooks200Response) HasAvailable() bool`
+`func (o *SearchBooks200Response) HasTotalResults() bool`
 
-HasAvailable returns a boolean if a field has been set.
+HasTotalResults returns a boolean if a field has been set.
 
 ### GetNumber
 

@@ -36,5 +36,8 @@ data class SearchMemes200Response (
     @Json(name = "available")
     val available: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

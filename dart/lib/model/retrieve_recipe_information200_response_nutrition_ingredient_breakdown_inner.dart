@@ -40,7 +40,7 @@ class RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner {
   ///
   int? id;
 
-  List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients;
+  List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner> nutrients;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner &&
@@ -111,7 +111,7 @@ class RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner {
         amount: num.parse('${json[r'amount']}'),
         unit: mapValueOfType<String>(json, r'unit'),
         id: mapValueOfType<int>(json, r'id'),
-        nutrients: RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.listFromJson(json[r'nutrients']),
+        nutrients: SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.listFromJson(json[r'nutrients']),
       );
     }
     return null;

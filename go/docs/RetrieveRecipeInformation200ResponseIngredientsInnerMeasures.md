@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Metric** | Pointer to [**RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric**](RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md) |  | [optional] 
-**Us** | Pointer to [**RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric**](RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md) |  | [optional] 
+**Metric** | Pointer to [**SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
+**Us** | Pointer to [**SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMetric
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetric() RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetric() SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric`
 
 GetMetric returns the Metric field if non-nil, zero value otherwise.
 
 ### GetMetricOk
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetricOk() (*RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric, bool)`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetricOk() (*SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool)`
 
 GetMetricOk returns a tuple with the Metric field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetric
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetMetric(v RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric)`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetMetric(v SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric)`
 
 SetMetric sets Metric field to given value.
 
@@ -53,20 +53,20 @@ HasMetric returns a boolean if a field has been set.
 
 ### GetUs
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUs() RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUs() SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric`
 
 GetUs returns the Us field if non-nil, zero value otherwise.
 
 ### GetUsOk
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUsOk() (*RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric, bool)`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUsOk() (*SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool)`
 
 GetUsOk returns a tuple with the Us field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUs
 
-`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetUs(v RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric)`
+`func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetUs(v SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric)`
 
 SetUs sets Us field to given value.
 

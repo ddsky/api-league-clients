@@ -31,5 +31,8 @@ data class ListWordSynonyms200Response (
     @Json(name = "synonyms")
     val synonyms: kotlin.collections.List<kotlin.String>? = null
 
-)
+) {
+
+
+}
 

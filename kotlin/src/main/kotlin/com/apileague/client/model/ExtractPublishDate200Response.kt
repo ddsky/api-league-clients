@@ -31,5 +31,8 @@ data class ExtractPublishDate200Response (
     @Json(name = "publish_date")
     val publishDate: kotlin.String? = null
 
-)
+) {
+
+
+}
 

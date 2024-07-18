@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Amount** | Pointer to **float32** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
 **Id** | Pointer to **int32** |  | [optional] 
-**Nutrients** | Pointer to [**[]RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
+**Nutrients** | Pointer to [**[]SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetNutrients
 
-`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrients() []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner`
+`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrients() []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner`
 
 GetNutrients returns the Nutrients field if non-nil, zero value otherwise.
 
 ### GetNutrientsOk
 
-`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrientsOk() (*[]RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner, bool)`
+`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) GetNutrientsOk() (*[]SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner, bool)`
 
 GetNutrientsOk returns a tuple with the Nutrients field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNutrients
 
-`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) SetNutrients(v []RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner)`
+`func (o *RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner) SetNutrients(v []SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner)`
 
 SetNutrients sets Nutrients field to given value.
 

@@ -27,7 +27,7 @@ class RetrieveRecipeInformation200ResponseNutrition {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  RetrieveRecipeInformation200ResponseNutritionWeightPerServing? weightPerServing;
+  SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing? weightPerServing;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -35,15 +35,15 @@ class RetrieveRecipeInformation200ResponseNutrition {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown? caloricBreakdown;
+  SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown? caloricBreakdown;
 
-  List<RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner> flavonoids;
+  List<SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner> flavonoids;
 
   List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner> ingredientBreakdown;
 
   List<SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner> properties;
 
-  List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner> nutrients;
+  List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner> nutrients;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformation200ResponseNutrition &&
@@ -105,12 +105,12 @@ class RetrieveRecipeInformation200ResponseNutrition {
       }());
 
       return RetrieveRecipeInformation200ResponseNutrition(
-        weightPerServing: RetrieveRecipeInformation200ResponseNutritionWeightPerServing.fromJson(json[r'weight_per_serving']),
-        caloricBreakdown: RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.fromJson(json[r'caloric_breakdown']),
-        flavonoids: RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.listFromJson(json[r'flavonoids']),
+        weightPerServing: SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.fromJson(json[r'weight_per_serving']),
+        caloricBreakdown: SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown.fromJson(json[r'caloric_breakdown']),
+        flavonoids: SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner.listFromJson(json[r'flavonoids']),
         ingredientBreakdown: RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.listFromJson(json[r'ingredient_breakdown']),
         properties: SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.listFromJson(json[r'properties']),
-        nutrients: RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.listFromJson(json[r'nutrients']),
+        nutrients: SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.listFromJson(json[r'nutrients']),
       );
     }
     return null;

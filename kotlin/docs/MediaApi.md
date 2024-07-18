@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
-[**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image
-[**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color |
+| [**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image |
+| [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images |
 
 
 <a id="detectMainImageColor"></a>
@@ -38,10 +38,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url of the image for which the colors should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **kotlin.String**| The url of the image for which the colors should be detected. | |
 
 ### Return type
 
@@ -94,13 +93,12 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url of the image to be rescaled. |
- **width** | **kotlin.Int**| The desired width of the rescaled image. |
- **height** | **kotlin.Int**| The desired height of the rescaled image. |
- **crop** | **kotlin.Boolean**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. |
+| **url** | **kotlin.String**| The url of the image to be rescaled. | |
+| **width** | **kotlin.Int**| The desired width of the rescaled image. | |
+| **height** | **kotlin.Int**| The desired height of the rescaled image. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **crop** | **kotlin.Boolean**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | |
 
 ### Return type
 
@@ -151,11 +149,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **kotlin.String**| The search query. |
- **number** | **kotlin.Int**| The number of images to return in range [1,10] | [optional]
+| **query** | **kotlin.String**| The search query. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of images to return in range [1,10] | [optional] |
 
 ### Return type
 

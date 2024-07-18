@@ -31,5 +31,8 @@ data class SearchJokes200ResponseJokesInner (
     @Json(name = "joke")
     val joke: kotlin.String? = null
 
-)
+) {
+
+
+}
 

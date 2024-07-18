@@ -9,8 +9,8 @@ use WWW::OpenAPIClient::Object::RetrieveRecipeInformation200ResponseInstructions
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **int** |  | [optional] 
-**ingredients** | [**ARRAY[RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
-**equipment** | [**ARRAY[RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**ingredients** | [**ARRAY[SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**equipment** | [**ARRAY[SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
 **step** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.4.2
+  version: 1.5.0
 servers:
 - url: https://api.apileague.com
 security:
@@ -196,7 +196,7 @@ paths:
               examples:
                 Response:
                   value:
-                    available: 5999
+                    total_results: 5999
                     number: 10
                     offset: 0
                     books:
@@ -1540,6 +1540,1338 @@ paths:
       summary: Generate Nonsense Word
       tags:
       - Humor
+  /search-drinks:
+    get:
+      deprecated: false
+      description: "Search for drinks by title, ingredients, flavor, type of glass,\
+        \ alcohol content, and more."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-drinks-api/
+      operationId: searchDrinks
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: false
+        schema:
+          example: vodka
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list (interpreted as OR) of glass types that
+          the drink should be served in.
+        explode: false
+        in: query
+        name: glass-types
+        required: false
+        schema:
+          example: Highball Glass
+          maxLength: 200
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list (interpreted as AND) of dominant flavors
+          in the drink.
+        explode: false
+        in: query
+        name: flavors
+        required: false
+        schema:
+          example: "sour,sweet"
+          maxLength: 200
+          pattern: "."
+          type: string
+        style: form
+      - description: "The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian."
+        explode: false
+        in: query
+        name: diet
+        required: false
+        schema:
+          example: paleo
+          maxLength: 30
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of ingredients that should/must be used
+          in the drinks.
+        explode: false
+        in: query
+        name: include-ingredients
+        required: false
+        schema:
+          example: orange
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: A comma-separated list of ingredients or ingredient types that
+          the drinks must not contain.
+        explode: false
+        in: query
+        name: exclude-ingredients
+        required: false
+        schema:
+          example: vodka
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The minimum amount of calories the drink must have per serving.
+        explode: false
+        in: query
+        name: min-calories
+        required: false
+        schema:
+          example: 100
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum amount of calories the drink can have per serving.
+        explode: false
+        in: query
+        name: max-calories
+        required: false
+        schema:
+          example: 655
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The minimum amount of carbohydrates in grams the drink must have
+          per serving.
+        explode: false
+        in: query
+        name: min-carbs
+        required: false
+        schema:
+          example: 10.1
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum amount of carbohydrates in grams the drink can have
+          per serving.
+        explode: false
+        in: query
+        name: max-carbs
+        required: false
+        schema:
+          example: 25.5
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The minimum amount of protein in grams the drink must have per
+          serving.
+        explode: false
+        in: query
+        name: min-protein
+        required: false
+        schema:
+          example: 10.1
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum amount of protein in grams the drink can have per
+          serving.
+        explode: false
+        in: query
+        name: max-protein
+        required: false
+        schema:
+          example: 25.5
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The minimum amount of fat in grams the drink must have per serving.
+        explode: false
+        in: query
+        name: min-fat
+        required: false
+        schema:
+          example: 10.1
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum amount of fat in grams the drink can have per serving.
+        explode: false
+        in: query
+        name: max-fat
+        required: false
+        schema:
+          example: 25.5
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The minimum alcohol percentage the drink must have.
+        explode: false
+        in: query
+        name: min-alcohol-percent
+        required: false
+        schema:
+          example: 10
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum alcohol percentage the drink can have.
+        explode: false
+        in: query
+        name: max-alcohol-percent
+        required: false
+        schema:
+          example: 35
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The minimum amount of caffeine in milligrams the drink must have
+          per serving.
+        explode: false
+        in: query
+        name: min-caffeine
+        required: false
+        schema:
+          example: 30.4
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum amount of caffeine in milligrams the drink can have
+          per serving.
+        explode: false
+        in: query
+        name: max-caffeine
+        required: false
+        schema:
+          example: 80.9
+          format: double
+          maximum: 99999
+          minimum: 0
+          type: number
+        style: form
+      - description: The attribute by which to sort the drinks.
+        explode: false
+        in: query
+        name: sort
+        required: false
+        schema:
+          example: calories
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: Whether to sort ascending or descending (ASC or DESC).
+        explode: false
+        in: query
+        name: sort-direction
+        required: false
+        schema:
+          example: ASC
+          maxLength: 4
+          pattern: "."
+          type: string
+        style: form
+      - description: "The number of drinks to skip, between 0 and 90."
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 90
+          minimum: 0
+          type: integer
+        style: form
+      - description: "The number of drinks, between 1 and 10."
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 10
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    offset: 0
+                    number: 1
+                    drinks:
+                    - flavors:
+                      - creamy
+                      - spicy
+                      - sour
+                      - sweet
+                      instructions:
+                      - name: ""
+                        steps:
+                        - number: 1
+                          ingredients:
+                          - name: nutmeg
+                            image: https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg
+                            id: 2025
+                          equipment: []
+                          step: "Blend all ingredients, save nutmeg."
+                        - number: 2
+                          ingredients:
+                          - name: white wine
+                            image: https://img.spoonacular.com/ingredients_100x100/white-wine.jpg
+                            id: 14106
+                          - name: nutmeg
+                            image: https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg
+                            id: 2025
+                          equipment: []
+                          step: Pour into large white wine glass and sprinkle nutmeg
+                            on top.
+                      images:
+                      - https://img.apileague.com/recipes/1957030-90x90.jpg
+                      - https://img.apileague.com/recipes/1957030-312x231.jpg
+                      - https://img.apileague.com/recipes/1957030-636x393.jpg
+                      - https://img.apileague.com/recipes/1957030-556x370.jpg
+                      nutrition:
+                        weight_per_serving:
+                          amount: 228
+                          unit: g
+                        caloric_breakdown:
+                          percent_fat: 56.13
+                          percent_carbs: 37.36
+                          percent_protein: 6.51
+                        flavonoids:
+                        - name: Cyanidin
+                          amount: 0
+                          unit: ""
+                        - name: Petunidin
+                          amount: 0
+                          unit: ""
+                        - name: Delphinidin
+                          amount: 0
+                          unit: ""
+                        - name: Malvidin
+                          amount: 0
+                          unit: ""
+                        - name: Pelargonidin
+                          amount: 0
+                          unit: ""
+                        - name: Peonidin
+                          amount: 0
+                          unit: ""
+                        - name: Catechin
+                          amount: 0
+                          unit: ""
+                        - name: Epigallocatechin
+                          amount: 0
+                          unit: ""
+                        - name: Epicatechin
+                          amount: 0
+                          unit: ""
+                        - name: Epicatechin 3-gallate
+                          amount: 0
+                          unit: ""
+                        - name: Epigallocatechin 3-gallate
+                          amount: 0
+                          unit: ""
+                        - name: Theaflavin
+                          amount: 0
+                          unit: ""
+                        - name: Thearubigins
+                          amount: 0
+                          unit: ""
+                        - name: Eriodictyol
+                          amount: 0
+                          unit: ""
+                        - name: Hesperetin
+                          amount: 0
+                          unit: ""
+                        - name: Naringenin
+                          amount: 0
+                          unit: ""
+                        - name: Apigenin
+                          amount: 0
+                          unit: ""
+                        - name: Luteolin
+                          amount: 0
+                          unit: ""
+                        - name: Isorhamnetin
+                          amount: 0
+                          unit: ""
+                        - name: Kaempferol
+                          amount: 0
+                          unit: ""
+                        - name: Myricetin
+                          amount: 0
+                          unit: ""
+                        - name: Quercetin
+                          amount: 0
+                          unit: ""
+                        - name: "Theaflavin-3,3'-digallate"
+                          amount: 0
+                          unit: ""
+                        - name: Theaflavin-3'-gallate
+                          amount: 0
+                          unit: ""
+                        - name: Theaflavin-3-gallate
+                          amount: 0
+                          unit: ""
+                        - name: Gallocatechin
+                          amount: 0
+                          unit: ""
+                        ingredient_breakdown:
+                        - name: vodka
+                          amount: 2
+                          unit: oz
+                          id: 14051
+                          nutrients:
+                          - name: Vitamin B2
+                            percent_of_daily_needs: 6.77
+                            amount: 0
+                            unit: mg
+                          - name: Saturated Fat
+                            percent_of_daily_needs: 28.15
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B1
+                            percent_of_daily_needs: 1.78
+                            amount: 0
+                            unit: mg
+                          - name: Magnesium
+                            percent_of_daily_needs: 2.47
+                            amount: 0
+                            unit: mg
+                          - name: Zinc
+                            percent_of_daily_needs: 1.8
+                            amount: 0
+                            unit: mg
+                          - name: Protein
+                            percent_of_daily_needs: 3.78
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B6
+                            percent_of_daily_needs: 1.58
+                            amount: 0
+                            unit: mg
+                          - name: Net Carbohydrates
+                            percent_of_daily_needs: 3.79
+                            amount: 0
+                            unit: g
+                          - name: Copper
+                            percent_of_daily_needs: 2.01
+                            amount: 0.01
+                            unit: mg
+                          - name: Sugar
+                            percent_of_daily_needs: 10.69
+                            amount: 0
+                            unit: g
+                          - name: Manganese
+                            percent_of_daily_needs: 2.93
+                            amount: 0
+                            unit: mg
+                          - name: Poly Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: g
+                          - name: Alcohol
+                            percent_of_daily_needs: 100
+                            amount: 18.94
+                            unit: g
+                          - name: Fat
+                            percent_of_daily_needs: 11.15
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B5
+                            percent_of_daily_needs: 1.64
+                            amount: 0
+                            unit: mg
+                          - name: Folic Acid
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Carbohydrates
+                            percent_of_daily_needs: 3.62
+                            amount: 0
+                            unit: g
+                          - name: Potassium
+                            percent_of_daily_needs: 2.35
+                            amount: 0.57
+                            unit: mg
+                          - name: Vitamin B3
+                            percent_of_daily_needs: 0.44
+                            amount: 0
+                            unit: mg
+                          - name: Iron
+                            percent_of_daily_needs: 0.53
+                            amount: 0.01
+                            unit: mg
+                          - name: Phosphorus
+                            percent_of_daily_needs: 6.1
+                            amount: 2.83
+                            unit: mg
+                          - name: Vitamin A
+                            percent_of_daily_needs: 4.06
+                            amount: 0
+                            unit: IU
+                          - name: Calcium
+                            percent_of_daily_needs: 6.6
+                            amount: 0
+                            unit: mg
+                          - name: Fiber
+                            percent_of_daily_needs: 1.66
+                            amount: 0
+                            unit: g
+                          - name: Vitamin C
+                            percent_of_daily_needs: 0.69
+                            amount: 0
+                            unit: mg
+                          - name: Folate
+                            percent_of_daily_needs: 0.81
+                            amount: 0
+                            unit: µg
+                          - name: Sodium
+                            percent_of_daily_needs: 1.82
+                            amount: 0.57
+                            unit: mg
+                          - name: Cholesterol
+                            percent_of_daily_needs: 6.61
+                            amount: 0
+                            unit: mg
+                          - name: Calories
+                            percent_of_daily_needs: 12.23
+                            amount: 130.97
+                            unit: kcal
+                          - name: Mono Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B12
+                            percent_of_daily_needs: 1.8
+                            amount: 0
+                            unit: µg
+                          - name: Selenium
+                            percent_of_daily_needs: 2.64
+                            amount: 0
+                            unit: µg
+                        - name: half-and-half
+                          amount: 2
+                          unit: oz
+                          id: 1049
+                          nutrients:
+                          - name: Lycopene
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Saturated Fat
+                            percent_of_daily_needs: 28.15
+                            amount: 3.99
+                            unit: g
+                          - name: Vitamin B1
+                            percent_of_daily_needs: 1.78
+                            amount: 0.02
+                            unit: mg
+                          - name: Vitamin K
+                            percent_of_daily_needs: 0.7
+                            amount: 0.74
+                            unit: µg
+                          - name: Magnesium
+                            percent_of_daily_needs: 2.47
+                            amount: 5.67
+                            unit: mg
+                          - name: Zinc
+                            percent_of_daily_needs: 1.8
+                            amount: 0.22
+                            unit: mg
+                          - name: Protein
+                            percent_of_daily_needs: 3.78
+                            amount: 1.77
+                            unit: g
+                          - name: Vitamin B6
+                            percent_of_daily_needs: 1.58
+                            amount: 0.03
+                            unit: mg
+                          - name: Net Carbohydrates
+                            percent_of_daily_needs: 3.79
+                            amount: 2.44
+                            unit: g
+                          - name: Fluoride
+                            percent_of_daily_needs: 0
+                            amount: 1.7
+                            unit: mg
+                          - name: Copper
+                            percent_of_daily_needs: 2.01
+                            amount: 0.01
+                            unit: mg
+                          - name: Caffeine
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin E
+                            percent_of_daily_needs: 0.94
+                            amount: 0.14
+                            unit: mg
+                          - name: Sugar
+                            percent_of_daily_needs: 10.69
+                            amount: 2.34
+                            unit: g
+                          - name: Manganese
+                            percent_of_daily_needs: 2.93
+                            amount: 0
+                            unit: mg
+                          - name: Poly Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0.31
+                            unit: g
+                          - name: Folic Acid
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Alcohol
+                            percent_of_daily_needs: 100
+                            amount: 0
+                            unit: g
+                          - name: Fat
+                            percent_of_daily_needs: 11.15
+                            amount: 6.52
+                            unit: g
+                          - name: Vitamin D
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Vitamin B5
+                            percent_of_daily_needs: 1.64
+                            amount: 0.16
+                            unit: mg
+                          - name: Choline
+                            percent_of_daily_needs: 0
+                            amount: 10.6
+                            unit: mg
+                          - name: Vitamin B3
+                            percent_of_daily_needs: 0.44
+                            amount: 0.06
+                            unit: mg
+                          - name: Carbohydrates
+                            percent_of_daily_needs: 3.62
+                            amount: 2.44
+                            unit: g
+                          - name: Potassium
+                            percent_of_daily_needs: 2.35
+                            amount: 74.84
+                            unit: mg
+                          - name: Iron
+                            percent_of_daily_needs: 0.53
+                            amount: 0.03
+                            unit: mg
+                          - name: Phosphorus
+                            percent_of_daily_needs: 6.1
+                            amount: 53.86
+                            unit: mg
+                          - name: Vitamin A
+                            percent_of_daily_needs: 4.06
+                            amount: 200.71
+                            unit: IU
+                          - name: Calcium
+                            percent_of_daily_needs: 6.6
+                            amount: 60.67
+                            unit: mg
+                          - name: Fiber
+                            percent_of_daily_needs: 1.66
+                            amount: 0
+                            unit: g
+                          - name: Vitamin C
+                            percent_of_daily_needs: 0.69
+                            amount: 0.51
+                            unit: mg
+                          - name: Folate
+                            percent_of_daily_needs: 0.81
+                            amount: 1.7
+                            unit: µg
+                          - name: Sodium
+                            percent_of_daily_needs: 1.82
+                            amount: 34.59
+                            unit: mg
+                          - name: Cholesterol
+                            percent_of_daily_needs: 6.61
+                            amount: 19.84
+                            unit: mg
+                          - name: Mono Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 1.88
+                            unit: g
+                          - name: Calories
+                            percent_of_daily_needs: 12.23
+                            amount: 74.28
+                            unit: kcal
+                          - name: Vitamin B12
+                            percent_of_daily_needs: 1.8
+                            amount: 0.11
+                            unit: µg
+                          - name: Vitamin B2
+                            percent_of_daily_needs: 6.77
+                            amount: 0.11
+                            unit: mg
+                          - name: Selenium
+                            percent_of_daily_needs: 2.64
+                            amount: 1.81
+                            unit: µg
+                        - name: limeade
+                          amount: 2
+                          unit: oz
+                          id: 99185
+                          nutrients:
+                          - name: Vitamin B2
+                            percent_of_daily_needs: 6.77
+                            amount: 0
+                            unit: mg
+                          - name: Saturated Fat
+                            percent_of_daily_needs: 28.15
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B1
+                            percent_of_daily_needs: 1.78
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin K
+                            percent_of_daily_needs: 0.7
+                            amount: 0
+                            unit: µg
+                          - name: Trans Fat
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: g
+                          - name: Magnesium
+                            percent_of_daily_needs: 2.47
+                            amount: 0
+                            unit: mg
+                          - name: Zinc
+                            percent_of_daily_needs: 1.8
+                            amount: 0
+                            unit: mg
+                          - name: Protein
+                            percent_of_daily_needs: 3.78
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B6
+                            percent_of_daily_needs: 1.58
+                            amount: 0
+                            unit: mg
+                          - name: Net Carbohydrates
+                            percent_of_daily_needs: 3.79
+                            amount: 7.43
+                            unit: g
+                          - name: Fluoride
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: mg
+                          - name: Copper
+                            percent_of_daily_needs: 2.01
+                            amount: 0
+                            unit: mg
+                          - name: Caffeine
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin E
+                            percent_of_daily_needs: 0.94
+                            amount: 0
+                            unit: mg
+                          - name: Sugar
+                            percent_of_daily_needs: 10.69
+                            amount: 6.71
+                            unit: g
+                          - name: Manganese
+                            percent_of_daily_needs: 2.93
+                            amount: 0
+                            unit: mg
+                          - name: Poly Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: g
+                          - name: Alcohol
+                            percent_of_daily_needs: 100
+                            amount: 0
+                            unit: g
+                          - name: Fat
+                            percent_of_daily_needs: 11.15
+                            amount: 0
+                            unit: g
+                          - name: Vitamin D
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Vitamin B5
+                            percent_of_daily_needs: 1.64
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin B3
+                            percent_of_daily_needs: 0.44
+                            amount: 0
+                            unit: mg
+                          - name: Carbohydrates
+                            percent_of_daily_needs: 3.62
+                            amount: 7.43
+                            unit: g
+                          - name: Potassium
+                            percent_of_daily_needs: 2.35
+                            amount: 0
+                            unit: mg
+                          - name: Iron
+                            percent_of_daily_needs: 0.53
+                            amount: 0
+                            unit: mg
+                          - name: Phosphorus
+                            percent_of_daily_needs: 6.1
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin A
+                            percent_of_daily_needs: 4.06
+                            amount: 0
+                            unit: IU
+                          - name: Calcium
+                            percent_of_daily_needs: 6.6
+                            amount: 0
+                            unit: mg
+                          - name: Fiber
+                            percent_of_daily_needs: 1.66
+                            amount: 0
+                            unit: g
+                          - name: Vitamin C
+                            percent_of_daily_needs: 0.69
+                            amount: 0
+                            unit: mg
+                          - name: Folate
+                            percent_of_daily_needs: 0.81
+                            amount: 0
+                            unit: µg
+                          - name: Sodium
+                            percent_of_daily_needs: 1.82
+                            amount: 3.59
+                            unit: mg
+                          - name: Cholesterol
+                            percent_of_daily_needs: 6.61
+                            amount: 0
+                            unit: mg
+                          - name: Calories
+                            percent_of_daily_needs: 12.23
+                            amount: 28.76
+                            unit: kcal
+                          - name: Mono Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: g
+                          - name: Vitamin B12
+                            percent_of_daily_needs: 1.8
+                            amount: 0
+                            unit: µg
+                          - name: Selenium
+                            percent_of_daily_needs: 2.64
+                            amount: 0
+                            unit: µg
+                        - name: ice
+                          amount: 1
+                          unit: serving
+                          id: 10014412
+                          nutrients:
+                          - name: Fat
+                            percent_of_daily_needs: 11.15
+                            amount: 0
+                            unit: g
+                          - name: Potassium
+                            percent_of_daily_needs: 2.35
+                            amount: 0
+                            unit: mg
+                          - name: Phosphorus
+                            percent_of_daily_needs: 6.1
+                            amount: 0
+                            unit: mg
+                          - name: Iron
+                            percent_of_daily_needs: 0.53
+                            amount: 0
+                            unit: mg
+                          - name: Carbohydrates
+                            percent_of_daily_needs: 3.62
+                            amount: 0
+                            unit: g
+                          - name: Calcium
+                            percent_of_daily_needs: 6.6
+                            amount: 1.68
+                            unit: mg
+                          - name: Zinc
+                            percent_of_daily_needs: 1.8
+                            amount: 0.01
+                            unit: mg
+                          - name: Magnesium
+                            percent_of_daily_needs: 2.47
+                            amount: 0.56
+                            unit: mg
+                          - name: Fiber
+                            percent_of_daily_needs: 1.66
+                            amount: 0
+                            unit: g
+                          - name: Protein
+                            percent_of_daily_needs: 3.78
+                            amount: 0
+                            unit: g
+                          - name: Net Carbohydrates
+                            percent_of_daily_needs: 3.79
+                            amount: 0
+                            unit: g
+                          - name: Fluoride
+                            percent_of_daily_needs: 0
+                            amount: 14.45
+                            unit: mg
+                          - name: Copper
+                            percent_of_daily_needs: 2.01
+                            amount: 0.01
+                            unit: mg
+                          - name: Sodium
+                            percent_of_daily_needs: 1.82
+                            amount: 2.8
+                            unit: mg
+                          - name: Manganese
+                            percent_of_daily_needs: 2.93
+                            amount: 0
+                            unit: mg
+                          - name: Calories
+                            percent_of_daily_needs: 12.23
+                            amount: 0
+                            unit: kcal
+                        - name: nutmeg
+                          amount: 1
+                          unit: serving
+                          id: 2025
+                          nutrients:
+                          - name: Vitamin B2
+                            percent_of_daily_needs: 6.77
+                            amount: 0
+                            unit: mg
+                          - name: Saturated Fat
+                            percent_of_daily_needs: 28.15
+                            amount: 0.52
+                            unit: g
+                          - name: Vitamin B1
+                            percent_of_daily_needs: 1.78
+                            amount: 0.01
+                            unit: mg
+                          - name: Vitamin K
+                            percent_of_daily_needs: 0.7
+                            amount: 0
+                            unit: µg
+                          - name: Magnesium
+                            percent_of_daily_needs: 2.47
+                            amount: 3.66
+                            unit: mg
+                          - name: Zinc
+                            percent_of_daily_needs: 1.8
+                            amount: 0.04
+                            unit: mg
+                          - name: Protein
+                            percent_of_daily_needs: 3.78
+                            amount: 0.12
+                            unit: g
+                          - name: Vitamin B6
+                            percent_of_daily_needs: 1.58
+                            amount: 0
+                            unit: mg
+                          - name: Net Carbohydrates
+                            percent_of_daily_needs: 3.79
+                            amount: 0.57
+                            unit: g
+                          - name: Copper
+                            percent_of_daily_needs: 2.01
+                            amount: 0.02
+                            unit: mg
+                          - name: Caffeine
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: mg
+                          - name: Vitamin E
+                            percent_of_daily_needs: 0.94
+                            amount: 0
+                            unit: mg
+                          - name: Sugar
+                            percent_of_daily_needs: 10.69
+                            amount: 0.57
+                            unit: g
+                          - name: Manganese
+                            percent_of_daily_needs: 2.93
+                            amount: 0.06
+                            unit: mg
+                          - name: Poly Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0.01
+                            unit: g
+                          - name: Alcohol
+                            percent_of_daily_needs: 100
+                            amount: 0
+                            unit: g
+                          - name: Fat
+                            percent_of_daily_needs: 11.15
+                            amount: 0.73
+                            unit: g
+                          - name: Vitamin D
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Folic Acid
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                          - name: Choline
+                            percent_of_daily_needs: 0
+                            amount: 0.18
+                            unit: mg
+                          - name: Vitamin B3
+                            percent_of_daily_needs: 0.44
+                            amount: 0.03
+                            unit: mg
+                          - name: Carbohydrates
+                            percent_of_daily_needs: 3.62
+                            amount: 0.99
+                            unit: g
+                          - name: Potassium
+                            percent_of_daily_needs: 2.35
+                            amount: 7
+                            unit: mg
+                          - name: Iron
+                            percent_of_daily_needs: 0.53
+                            amount: 0.06
+                            unit: mg
+                          - name: Phosphorus
+                            percent_of_daily_needs: 6.1
+                            amount: 4.26
+                            unit: mg
+                          - name: Vitamin A
+                            percent_of_daily_needs: 4.06
+                            amount: 2.04
+                            unit: IU
+                          - name: Calcium
+                            percent_of_daily_needs: 6.6
+                            amount: 3.68
+                            unit: mg
+                          - name: Fiber
+                            percent_of_daily_needs: 1.66
+                            amount: 0.42
+                            unit: g
+                          - name: Vitamin C
+                            percent_of_daily_needs: 0.69
+                            amount: 0.06
+                            unit: mg
+                          - name: Folate
+                            percent_of_daily_needs: 0.81
+                            amount: 1.52
+                            unit: µg
+                          - name: Sodium
+                            percent_of_daily_needs: 1.82
+                            amount: 0.32
+                            unit: mg
+                          - name: Cholesterol
+                            percent_of_daily_needs: 6.61
+                            amount: 0
+                            unit: mg
+                          - name: Mono Unsaturated Fat
+                            percent_of_daily_needs: 0
+                            amount: 0.06
+                            unit: g
+                          - name: Calories
+                            percent_of_daily_needs: 12.23
+                            amount: 10.5
+                            unit: kcal
+                          - name: Vitamin B12
+                            percent_of_daily_needs: 1.8
+                            amount: 0
+                            unit: µg
+                          - name: Selenium
+                            percent_of_daily_needs: 2.64
+                            amount: 0.03
+                            unit: µg
+                          - name: Lycopene
+                            percent_of_daily_needs: 0
+                            amount: 0
+                            unit: µg
+                        properties:
+                        - name: Glycemic Index
+                          amount: 85
+                          unit: ""
+                        - name: Glycemic Load
+                          amount: 0.4
+                          unit: ""
+                        - name: Inflammation Score
+                          amount: -1
+                          unit: ""
+                        - name: Nutrition Score
+                          amount: 2.186957
+                          unit: '%'
+                        nutrients:
+                        - name: Calories
+                          percent_of_daily_needs: 12.23
+                          amount: 244.51
+                          unit: kcal
+                        - name: Fat
+                          percent_of_daily_needs: 11.15
+                          amount: 7.25
+                          unit: g
+                        - name: Saturated Fat
+                          percent_of_daily_needs: 28.15
+                          amount: 4.5
+                          unit: g
+                        - name: Carbohydrates
+                          percent_of_daily_needs: 3.62
+                          amount: 10.85
+                          unit: g
+                        - name: Net Carbohydrates
+                          percent_of_daily_needs: 3.79
+                          amount: 10.44
+                          unit: g
+                        - name: Sugar
+                          percent_of_daily_needs: 10.69
+                          amount: 9.62
+                          unit: g
+                        - name: Cholesterol
+                          percent_of_daily_needs: 6.61
+                          amount: 19.84
+                          unit: mg
+                        - name: Sodium
+                          percent_of_daily_needs: 1.82
+                          amount: 41.87
+                          unit: mg
+                        - name: Alcohol
+                          percent_of_daily_needs: 100
+                          amount: 18.94
+                          unit: g
+                        - name: Alcohol %
+                          percent_of_daily_needs: 100
+                          amount: 10.52
+                          unit: '%'
+                        - name: Protein
+                          percent_of_daily_needs: 3.78
+                          amount: 1.89
+                          unit: g
+                        - name: Vitamin B2
+                          percent_of_daily_needs: 6.77
+                          amount: 0.12
+                          unit: mg
+                        - name: Calcium
+                          percent_of_daily_needs: 6.6
+                          amount: 66.03
+                          unit: mg
+                        - name: Phosphorus
+                          percent_of_daily_needs: 6.1
+                          amount: 60.96
+                          unit: mg
+                        - name: Vitamin A
+                          percent_of_daily_needs: 4.06
+                          amount: 202.75
+                          unit: IU
+                        - name: Manganese
+                          percent_of_daily_needs: 2.93
+                          amount: 0.06
+                          unit: mg
+                        - name: Selenium
+                          percent_of_daily_needs: 2.64
+                          amount: 1.85
+                          unit: µg
+                        - name: Magnesium
+                          percent_of_daily_needs: 2.47
+                          amount: 9.89
+                          unit: mg
+                        - name: Potassium
+                          percent_of_daily_needs: 2.35
+                          amount: 82.41
+                          unit: mg
+                        - name: Copper
+                          percent_of_daily_needs: 2.01
+                          amount: 0.04
+                          unit: mg
+                        - name: Zinc
+                          percent_of_daily_needs: 1.8
+                          amount: 0.27
+                          unit: mg
+                        - name: Vitamin B12
+                          percent_of_daily_needs: 1.8
+                          amount: 0.11
+                          unit: µg
+                        - name: Vitamin B1
+                          percent_of_daily_needs: 1.78
+                          amount: 0.03
+                          unit: mg
+                        - name: Fiber
+                          percent_of_daily_needs: 1.66
+                          amount: 0.42
+                          unit: g
+                        - name: Vitamin B5
+                          percent_of_daily_needs: 1.64
+                          amount: 0.16
+                          unit: mg
+                        - name: Vitamin B6
+                          percent_of_daily_needs: 1.58
+                          amount: 0.03
+                          unit: mg
+                      glass_type: wine glass
+                      credits:
+                        text: drinkhero
+                        source_name: thecocktaildb.com
+                        source_url: https://www.thecocktaildb.com/drink/16967
+                      price_per_serving: 195.84
+                      description: "The Vodka Fizz has a unique and intriguing taste\
+                        \ profile. The vodka provides a robust and slightly sharp\
+                        \ alcohol base, while the half-and-half introduces a creamy\
+                        \ and smooth texture. The limeade adds a refreshing tangy\
+                        \ sweetness with a citrusy zest, balancing the richness of\
+                        \ the cream. The ice dilutes and chills the drink, making\
+                        \ it more refreshing, and the nutmeg adds a subtle spiciness\
+                        \ and aromatic warmth. Overall, this cocktail is a blend of\
+                        \ creamy, tangy, slightly sweet, and mildly spicy flavors.\
+                        \ If you enjoy complex drinks with a combination of creamy\
+                        \ and citrusy notes, this cocktail might be a delightful choice."
+                      ingredients:
+                      - image: https://img.spoonacular.com/ingredients_100x100/vodka.jpg
+                        name_clean: vodka
+                        amount: 2
+                        unit: oz
+                        measures:
+                          metric:
+                            unit_short: g
+                            amount: 56.699
+                            unit_long: grams
+                          us:
+                            unit_short: oz
+                            amount: 2
+                            unit_long: ounces
+                        original: 2 oz Vodka
+                        meta: []
+                        original_name: Vodka
+                        name: vodka
+                        id: 14051
+                        aisle: Alcoholic Beverages
+                        consistency: LIQUID
+                      - image: https://img.spoonacular.com/ingredients_100x100/fluid-cream.jpg
+                        name_clean: half and half
+                        amount: 2
+                        unit: oz
+                        measures:
+                          metric:
+                            unit_short: g
+                            amount: 56.699
+                            unit_long: grams
+                          us:
+                            unit_short: oz
+                            amount: 2
+                            unit_long: ounces
+                        original: 2 oz Half-and-half
+                        meta: []
+                        original_name: Half-and-half
+                        name: half-and-half
+                        id: 1049
+                        aisle: "Milk, Eggs, Other Dairy"
+                        consistency: SOLID
+                      - image: https://img.spoonacular.com/ingredients_100x100/limeade.jpg
+                        name_clean: limeade
+                        amount: 2
+                        unit: oz
+                        measures:
+                          metric:
+                            unit_short: g
+                            amount: 56.699
+                            unit_long: grams
+                          us:
+                            unit_short: oz
+                            amount: 2
+                            unit_long: ounces
+                        original: 2 oz Limeade
+                        meta: []
+                        original_name: Limeade
+                        name: limeade
+                        id: 99185
+                        aisle: Beverages
+                        consistency: SOLID
+                      - image: https://img.spoonacular.com/ingredients_100x100/ice-cubes.png
+                        name_clean: ice
+                        amount: 1
+                        unit: serving
+                        measures:
+                          metric:
+                            unit_short: serving
+                            amount: 1
+                            unit_long: serving
+                          us:
+                            unit_short: serving
+                            amount: 1
+                            unit_long: serving
+                        original: Ice
+                        meta: []
+                        original_name: Ice
+                        name: ice
+                        id: 10014412
+                        aisle: Frozen
+                        consistency: SOLID
+                      - image: https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg
+                        name_clean: nutmeg
+                        amount: 1
+                        unit: serving
+                        measures:
+                          metric:
+                            unit_short: serving
+                            amount: 1
+                            unit_long: serving
+                          us:
+                            unit_short: serving
+                            amount: 1
+                            unit_long: serving
+                        original: Nutmeg
+                        meta: []
+                        original_name: Nutmeg
+                        name: nutmeg
+                        id: 2025
+                        aisle: Spices and Seasonings
+                        consistency: SOLID
+                      id: 1957030
+                      title: Vodka Fizz
+                      cuisines: []
+                    total_results: 14
+              schema:
+                $ref: '#/components/schemas/searchDrinks_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Drinks
+      tags:
+      - Food
   /search-recipes:
     get:
       deprecated: false
@@ -1563,7 +2895,7 @@ paths:
           pattern: "."
           type: string
         style: form
-      - description: "The cuisine(s) of the recipes. One or more, comma separated\
+      - description: "The cuisine(s) of the recipes. One or more, comma-separated\
           \ (will be interpreted as 'OR')."
         explode: false
         in: query
@@ -1575,8 +2907,8 @@ paths:
           pattern: "."
           type: string
         style: form
-      - description: "The cuisine(s) the recipes must not match. One or more, comma\
-          \ separated (will be interpreted as 'AND')."
+      - description: "The cuisine(s) the recipes must not match. One or more, comma-separated\
+          \ (will be interpreted as 'AND')."
         explode: false
         in: query
         name: exclude-cuisines
@@ -2647,8 +3979,7 @@ paths:
           minimum: 0
           type: number
         style: form
-      - description: The strategy to sort recipes by. See a full list of supported
-          sorting options.
+      - description: The strategy to sort recipes by.
         explode: false
         in: query
         name: sort
@@ -8331,9 +9662,9 @@ components:
             id: 5
             title: title
         offset: 1
-        available: 0
+        total_results: 0
       properties:
-        available:
+        total_results:
           type: integer
         number:
           type: integer
@@ -8816,6 +10147,982 @@ components:
         rating:
           type: number
       type: object
+    searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner:
+      example:
+        image: image
+        name: name
+        id: 5
+      properties:
+        name:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        id:
+          type: integer
+      type: object
+    searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner:
+      example:
+        number: 1
+        ingredients:
+        - image: image
+          name: name
+          id: 5
+        - image: image
+          name: name
+          id: 5
+        equipment:
+        - equipment
+        - equipment
+        step: step
+      properties:
+        number:
+          type: integer
+        ingredients:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
+          type: array
+        equipment:
+          items:
+            nullable: true
+            type: string
+          type: array
+        step:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_instructions_inner:
+      example:
+        name: name
+        steps:
+        - number: 1
+          ingredients:
+          - image: image
+            name: name
+            id: 5
+          - image: image
+            name: name
+            id: 5
+          equipment:
+          - equipment
+          - equipment
+          step: step
+        - number: 1
+          ingredients:
+          - image: image
+            name: name
+            id: 5
+          - image: image
+            name: name
+            id: 5
+          equipment:
+          - equipment
+          - equipment
+          step: step
+      properties:
+        name:
+          nullable: true
+          type: string
+        steps:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner'
+          type: array
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving:
+      example:
+        amount: 5
+        unit: unit
+      properties:
+        amount:
+          type: integer
+        unit:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown:
+      example:
+        percent_fat: 2.3021358869347655
+        percent_carbs: 7.061401241503109
+        percent_protein: 9.301444243932576
+      properties:
+        percent_fat:
+          type: number
+        percent_carbs:
+          type: number
+        percent_protein:
+          type: number
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner:
+      example:
+        amount: 3
+        unit: unit
+        name: name
+      properties:
+        name:
+          nullable: true
+          type: string
+        amount:
+          type: integer
+        unit:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner:
+      example:
+        amount: 1
+        unit: unit
+        name: name
+        percent_of_daily_needs: 7.386281948385884
+      properties:
+        name:
+          nullable: true
+          type: string
+        percent_of_daily_needs:
+          type: number
+        amount:
+          type: integer
+        unit:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner:
+      example:
+        amount: 2
+        unit: unit
+        name: name
+        id: 4
+        nutrients:
+        - amount: 1
+          unit: unit
+          name: name
+          percent_of_daily_needs: 7.386281948385884
+        - amount: 1
+          unit: unit
+          name: name
+          percent_of_daily_needs: 7.386281948385884
+      properties:
+        name:
+          nullable: true
+          type: string
+        amount:
+          type: integer
+        unit:
+          nullable: true
+          type: string
+        id:
+          type: integer
+        nutrients:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner'
+          type: array
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner:
+      example:
+        amount: 1.4894159098541704
+        unit: unit
+        name: name
+        percent_of_daily_needs: 1.0246457001441578
+      properties:
+        name:
+          nullable: true
+          type: string
+        percent_of_daily_needs:
+          type: number
+        amount:
+          type: number
+        unit:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_nutrition:
+      example:
+        caloric_breakdown:
+          percent_fat: 2.3021358869347655
+          percent_carbs: 7.061401241503109
+          percent_protein: 9.301444243932576
+        ingredient_breakdown:
+        - amount: 2
+          unit: unit
+          name: name
+          id: 4
+          nutrients:
+          - amount: 1
+            unit: unit
+            name: name
+            percent_of_daily_needs: 7.386281948385884
+          - amount: 1
+            unit: unit
+            name: name
+            percent_of_daily_needs: 7.386281948385884
+        - amount: 2
+          unit: unit
+          name: name
+          id: 4
+          nutrients:
+          - amount: 1
+            unit: unit
+            name: name
+            percent_of_daily_needs: 7.386281948385884
+          - amount: 1
+            unit: unit
+            name: name
+            percent_of_daily_needs: 7.386281948385884
+        weight_per_serving:
+          amount: 5
+          unit: unit
+        flavonoids:
+        - amount: 3
+          unit: unit
+          name: name
+        - amount: 3
+          unit: unit
+          name: name
+        properties:
+        - amount: 3
+          unit: unit
+          name: name
+        - amount: 3
+          unit: unit
+          name: name
+        nutrients:
+        - amount: 1.4894159098541704
+          unit: unit
+          name: name
+          percent_of_daily_needs: 1.0246457001441578
+        - amount: 1.4894159098541704
+          unit: unit
+          name: name
+          percent_of_daily_needs: 1.0246457001441578
+      properties:
+        weight_per_serving:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
+        caloric_breakdown:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
+        flavonoids:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+          type: array
+        ingredient_breakdown:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner'
+          type: array
+        properties:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+          type: array
+        nutrients:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
+          type: array
+      type: object
+    searchDrinks_200_response_drinks_inner_credits:
+      example:
+        text: text
+        source_name: source_name
+        source_url: source_url
+      properties:
+        text:
+          nullable: true
+          type: string
+        source_name:
+          nullable: true
+          type: string
+        source_url:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric:
+      example:
+        amount: 1.1730742509559433
+        unit_long: unit_long
+        unit_short: unit_short
+      properties:
+        unit_short:
+          nullable: true
+          type: string
+        amount:
+          type: number
+        unit_long:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_ingredients_inner_measures_us:
+      example:
+        amount: 4
+        unit_long: unit_long
+        unit_short: unit_short
+      properties:
+        unit_short:
+          nullable: true
+          type: string
+        amount:
+          type: integer
+        unit_long:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner_ingredients_inner_measures:
+      example:
+        metric:
+          amount: 1.1730742509559433
+          unit_long: unit_long
+          unit_short: unit_short
+        us:
+          amount: 4
+          unit_long: unit_long
+          unit_short: unit_short
+      properties:
+        metric:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
+        us:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_us'
+      type: object
+    searchDrinks_200_response_drinks_inner_ingredients_inner:
+      example:
+        image: image
+        name_clean: name_clean
+        amount: 7
+        unit: unit
+        measures:
+          metric:
+            amount: 1.1730742509559433
+            unit_long: unit_long
+            unit_short: unit_short
+          us:
+            amount: 4
+            unit_long: unit_long
+            unit_short: unit_short
+        original: original
+        meta:
+        - meta
+        - meta
+        original_name: original_name
+        name: name
+        id: 5
+        aisle: aisle
+        consistency: consistency
+      properties:
+        image:
+          nullable: true
+          type: string
+        name_clean:
+          nullable: true
+          type: string
+        amount:
+          type: integer
+        unit:
+          nullable: true
+          type: string
+        measures:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures'
+        original:
+          nullable: true
+          type: string
+        meta:
+          items:
+            nullable: true
+            type: string
+          type: array
+        original_name:
+          nullable: true
+          type: string
+        name:
+          nullable: true
+          type: string
+        id:
+          type: integer
+        aisle:
+          nullable: true
+          type: string
+        consistency:
+          nullable: true
+          type: string
+      type: object
+    searchDrinks_200_response_drinks_inner:
+      example:
+        flavors:
+        - flavors
+        - flavors
+        instructions:
+        - name: name
+          steps:
+          - number: 1
+            ingredients:
+            - image: image
+              name: name
+              id: 5
+            - image: image
+              name: name
+              id: 5
+            equipment:
+            - equipment
+            - equipment
+            step: step
+          - number: 1
+            ingredients:
+            - image: image
+              name: name
+              id: 5
+            - image: image
+              name: name
+              id: 5
+            equipment:
+            - equipment
+            - equipment
+            step: step
+        - name: name
+          steps:
+          - number: 1
+            ingredients:
+            - image: image
+              name: name
+              id: 5
+            - image: image
+              name: name
+              id: 5
+            equipment:
+            - equipment
+            - equipment
+            step: step
+          - number: 1
+            ingredients:
+            - image: image
+              name: name
+              id: 5
+            - image: image
+              name: name
+              id: 5
+            equipment:
+            - equipment
+            - equipment
+            step: step
+        images:
+        - images
+        - images
+        nutrition:
+          caloric_breakdown:
+            percent_fat: 2.3021358869347655
+            percent_carbs: 7.061401241503109
+            percent_protein: 9.301444243932576
+          ingredient_breakdown:
+          - amount: 2
+            unit: unit
+            name: name
+            id: 4
+            nutrients:
+            - amount: 1
+              unit: unit
+              name: name
+              percent_of_daily_needs: 7.386281948385884
+            - amount: 1
+              unit: unit
+              name: name
+              percent_of_daily_needs: 7.386281948385884
+          - amount: 2
+            unit: unit
+            name: name
+            id: 4
+            nutrients:
+            - amount: 1
+              unit: unit
+              name: name
+              percent_of_daily_needs: 7.386281948385884
+            - amount: 1
+              unit: unit
+              name: name
+              percent_of_daily_needs: 7.386281948385884
+          weight_per_serving:
+            amount: 5
+            unit: unit
+          flavonoids:
+          - amount: 3
+            unit: unit
+            name: name
+          - amount: 3
+            unit: unit
+            name: name
+          properties:
+          - amount: 3
+            unit: unit
+            name: name
+          - amount: 3
+            unit: unit
+            name: name
+          nutrients:
+          - amount: 1.4894159098541704
+            unit: unit
+            name: name
+            percent_of_daily_needs: 1.0246457001441578
+          - amount: 1.4894159098541704
+            unit: unit
+            name: name
+            percent_of_daily_needs: 1.0246457001441578
+        glass_type: glass_type
+        credits:
+          text: text
+          source_name: source_name
+          source_url: source_url
+        price_per_serving: 6.84685269835264
+        description: description
+        ingredients:
+        - image: image
+          name_clean: name_clean
+          amount: 7
+          unit: unit
+          measures:
+            metric:
+              amount: 1.1730742509559433
+              unit_long: unit_long
+              unit_short: unit_short
+            us:
+              amount: 4
+              unit_long: unit_long
+              unit_short: unit_short
+          original: original
+          meta:
+          - meta
+          - meta
+          original_name: original_name
+          name: name
+          id: 5
+          aisle: aisle
+          consistency: consistency
+        - image: image
+          name_clean: name_clean
+          amount: 7
+          unit: unit
+          measures:
+            metric:
+              amount: 1.1730742509559433
+              unit_long: unit_long
+              unit_short: unit_short
+            us:
+              amount: 4
+              unit_long: unit_long
+              unit_short: unit_short
+          original: original
+          meta:
+          - meta
+          - meta
+          original_name: original_name
+          name: name
+          id: 5
+          aisle: aisle
+          consistency: consistency
+        id: 9
+        title: title
+        cuisines:
+        - cuisines
+        - cuisines
+      properties:
+        flavors:
+          items:
+            nullable: true
+            type: string
+          type: array
+        instructions:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner'
+          type: array
+        images:
+          items:
+            nullable: true
+            type: string
+          type: array
+        nutrition:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition'
+        glass_type:
+          nullable: true
+          type: string
+        credits:
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_credits'
+        price_per_serving:
+          type: number
+        description:
+          nullable: true
+          type: string
+        ingredients:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner'
+          type: array
+        id:
+          type: integer
+        title:
+          nullable: true
+          type: string
+        cuisines:
+          items:
+            nullable: true
+            type: string
+          type: array
+      type: object
+    searchDrinks_200_response:
+      example:
+        number: 6
+        offset: 0
+        drinks:
+        - flavors:
+          - flavors
+          - flavors
+          instructions:
+          - name: name
+            steps:
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+          - name: name
+            steps:
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+          images:
+          - images
+          - images
+          nutrition:
+            caloric_breakdown:
+              percent_fat: 2.3021358869347655
+              percent_carbs: 7.061401241503109
+              percent_protein: 9.301444243932576
+            ingredient_breakdown:
+            - amount: 2
+              unit: unit
+              name: name
+              id: 4
+              nutrients:
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+            - amount: 2
+              unit: unit
+              name: name
+              id: 4
+              nutrients:
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+            weight_per_serving:
+              amount: 5
+              unit: unit
+            flavonoids:
+            - amount: 3
+              unit: unit
+              name: name
+            - amount: 3
+              unit: unit
+              name: name
+            properties:
+            - amount: 3
+              unit: unit
+              name: name
+            - amount: 3
+              unit: unit
+              name: name
+            nutrients:
+            - amount: 1.4894159098541704
+              unit: unit
+              name: name
+              percent_of_daily_needs: 1.0246457001441578
+            - amount: 1.4894159098541704
+              unit: unit
+              name: name
+              percent_of_daily_needs: 1.0246457001441578
+          glass_type: glass_type
+          credits:
+            text: text
+            source_name: source_name
+            source_url: source_url
+          price_per_serving: 6.84685269835264
+          description: description
+          ingredients:
+          - image: image
+            name_clean: name_clean
+            amount: 7
+            unit: unit
+            measures:
+              metric:
+                amount: 1.1730742509559433
+                unit_long: unit_long
+                unit_short: unit_short
+              us:
+                amount: 4
+                unit_long: unit_long
+                unit_short: unit_short
+            original: original
+            meta:
+            - meta
+            - meta
+            original_name: original_name
+            name: name
+            id: 5
+            aisle: aisle
+            consistency: consistency
+          - image: image
+            name_clean: name_clean
+            amount: 7
+            unit: unit
+            measures:
+              metric:
+                amount: 1.1730742509559433
+                unit_long: unit_long
+                unit_short: unit_short
+              us:
+                amount: 4
+                unit_long: unit_long
+                unit_short: unit_short
+            original: original
+            meta:
+            - meta
+            - meta
+            original_name: original_name
+            name: name
+            id: 5
+            aisle: aisle
+            consistency: consistency
+          id: 9
+          title: title
+          cuisines:
+          - cuisines
+          - cuisines
+        - flavors:
+          - flavors
+          - flavors
+          instructions:
+          - name: name
+            steps:
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+          - name: name
+            steps:
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+            - number: 1
+              ingredients:
+              - image: image
+                name: name
+                id: 5
+              - image: image
+                name: name
+                id: 5
+              equipment:
+              - equipment
+              - equipment
+              step: step
+          images:
+          - images
+          - images
+          nutrition:
+            caloric_breakdown:
+              percent_fat: 2.3021358869347655
+              percent_carbs: 7.061401241503109
+              percent_protein: 9.301444243932576
+            ingredient_breakdown:
+            - amount: 2
+              unit: unit
+              name: name
+              id: 4
+              nutrients:
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+            - amount: 2
+              unit: unit
+              name: name
+              id: 4
+              nutrients:
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+              - amount: 1
+                unit: unit
+                name: name
+                percent_of_daily_needs: 7.386281948385884
+            weight_per_serving:
+              amount: 5
+              unit: unit
+            flavonoids:
+            - amount: 3
+              unit: unit
+              name: name
+            - amount: 3
+              unit: unit
+              name: name
+            properties:
+            - amount: 3
+              unit: unit
+              name: name
+            - amount: 3
+              unit: unit
+              name: name
+            nutrients:
+            - amount: 1.4894159098541704
+              unit: unit
+              name: name
+              percent_of_daily_needs: 1.0246457001441578
+            - amount: 1.4894159098541704
+              unit: unit
+              name: name
+              percent_of_daily_needs: 1.0246457001441578
+          glass_type: glass_type
+          credits:
+            text: text
+            source_name: source_name
+            source_url: source_url
+          price_per_serving: 6.84685269835264
+          description: description
+          ingredients:
+          - image: image
+            name_clean: name_clean
+            amount: 7
+            unit: unit
+            measures:
+              metric:
+                amount: 1.1730742509559433
+                unit_long: unit_long
+                unit_short: unit_short
+              us:
+                amount: 4
+                unit_long: unit_long
+                unit_short: unit_short
+            original: original
+            meta:
+            - meta
+            - meta
+            original_name: original_name
+            name: name
+            id: 5
+            aisle: aisle
+            consistency: consistency
+          - image: image
+            name_clean: name_clean
+            amount: 7
+            unit: unit
+            measures:
+              metric:
+                amount: 1.1730742509559433
+                unit_long: unit_long
+                unit_short: unit_short
+              us:
+                amount: 4
+                unit_long: unit_long
+                unit_short: unit_short
+            original: original
+            meta:
+            - meta
+            - meta
+            original_name: original_name
+            name: name
+            id: 5
+            aisle: aisle
+            consistency: consistency
+          id: 9
+          title: title
+          cuisines:
+          - cuisines
+          - cuisines
+        total_results: 9
+      properties:
+        offset:
+          type: integer
+        number:
+          type: integer
+        drinks:
+          items:
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner'
+          type: array
+        total_results:
+          type: integer
+      type: object
     searchRecipes_200_response_recipes_inner_nutrition_nutrients_inner:
       example:
         amount: 1.4658129805029452
@@ -8957,78 +11264,21 @@ components:
         total_minutes:
           type: integer
       type: object
-    retrieveRecipeInformation_200_response_nutrition_weight_per_serving:
-      example:
-        amount: 5
-        unit: unit
-      properties:
-        amount:
-          type: integer
-        unit:
-          nullable: true
-          type: string
-      type: object
-    retrieveRecipeInformation_200_response_nutrition_caloric_breakdown:
-      example:
-        percent_fat: 2.3021358869347655
-        percent_carbs: 7.061401241503109
-        percent_protein: 9.301444243932576
-      properties:
-        percent_fat:
-          type: number
-        percent_carbs:
-          type: number
-        percent_protein:
-          type: number
-      type: object
-    retrieveRecipeInformation_200_response_nutrition_flavonoids_inner:
-      example:
-        amount: 3
-        unit: unit
-        name: name
-      properties:
-        name:
-          nullable: true
-          type: string
-        amount:
-          type: integer
-        unit:
-          nullable: true
-          type: string
-      type: object
-    retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner:
-      example:
-        amount: 1.2315135367772556
-        unit: unit
-        name: name
-        percent_of_daily_needs: 7.386281948385884
-      properties:
-        name:
-          nullable: true
-          type: string
-        percent_of_daily_needs:
-          type: number
-        amount:
-          type: number
-        unit:
-          nullable: true
-          type: string
-      type: object
     retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner:
       example:
-        amount: 2.027123023002322
+        amount: 5.637376656633329
         unit: unit
         name: name
-        id: 4
+        id: 2
         nutrients:
-        - amount: 1.2315135367772556
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
-        - amount: 1.2315135367772556
+          percent_of_daily_needs: 1.0246457001441578
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
+          percent_of_daily_needs: 1.0246457001441578
       properties:
         name:
           nullable: true
@@ -9042,7 +11292,7 @@ components:
           type: integer
         nutrients:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
       type: object
     retrieveRecipeInformation_200_response_nutrition:
@@ -9052,32 +11302,32 @@ components:
           percent_carbs: 7.061401241503109
           percent_protein: 9.301444243932576
         ingredient_breakdown:
-        - amount: 2.027123023002322
+        - amount: 5.637376656633329
           unit: unit
           name: name
-          id: 4
+          id: 2
           nutrients:
-          - amount: 1.2315135367772556
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
-          - amount: 1.2315135367772556
+            percent_of_daily_needs: 1.0246457001441578
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
-        - amount: 2.027123023002322
+            percent_of_daily_needs: 1.0246457001441578
+        - amount: 5.637376656633329
           unit: unit
           name: name
-          id: 4
+          id: 2
           nutrients:
-          - amount: 1.2315135367772556
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
-          - amount: 1.2315135367772556
+            percent_of_daily_needs: 1.0246457001441578
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
+            percent_of_daily_needs: 1.0246457001441578
         weight_per_serving:
           amount: 5
           unit: unit
@@ -9096,22 +11346,22 @@ components:
           unit: unit
           name: name
         nutrients:
-        - amount: 1.2315135367772556
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
-        - amount: 1.2315135367772556
+          percent_of_daily_needs: 1.0246457001441578
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
+          percent_of_daily_needs: 1.0246457001441578
       properties:
         weight_per_serving:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_weight_per_serving'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
         caloric_breakdown:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_caloric_breakdown'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
         flavonoids:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         ingredient_breakdown:
           items:
@@ -9123,18 +11373,18 @@ components:
           type: array
         nutrients:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
       type: object
     retrieveRecipeInformation_200_response_taste:
       example:
-        fattiness: 1.0246457001441578
-        spiciness: 1
-        saltiness: 6
-        bitterness: 7.457744773683766
-        savoriness: 1.1730742509559433
-        sweetness: 4.965218492984954
-        sourness: 5.025004791520295
+        fattiness: 7.061401241503109
+        spiciness: 9
+        saltiness: 3
+        bitterness: 2.027123023002322
+        savoriness: 4.145608029883936
+        sweetness: 7.386281948385884
+        sourness: 1.2315135367772556
       properties:
         fattiness:
           type: number
@@ -9151,50 +11401,35 @@ components:
         sourness:
           type: number
       type: object
-    retrieveRecipeInformation_200_response_ingredients_inner_measures_metric:
-      example:
-        amount: 9.369310271410669
-        unit_long: unit_long
-        unit_short: unit_short
-      properties:
-        unit_short:
-          nullable: true
-          type: string
-        amount:
-          type: number
-        unit_long:
-          nullable: true
-          type: string
-      type: object
     retrieveRecipeInformation_200_response_ingredients_inner_measures:
       example:
         metric:
-          amount: 9.369310271410669
+          amount: 1.1730742509559433
           unit_long: unit_long
           unit_short: unit_short
         us:
-          amount: 9.369310271410669
+          amount: 1.1730742509559433
           unit_long: unit_long
           unit_short: unit_short
       properties:
         metric:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_ingredients_inner_measures_metric'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
         us:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_ingredients_inner_measures_metric'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
       type: object
     retrieveRecipeInformation_200_response_ingredients_inner:
       example:
         image: image
         name_clean: name_clean
-        amount: 9.965781217890562
+        amount: 1.0246457001441578
         unit: unit
         measures:
           metric:
-            amount: 9.369310271410669
+            amount: 1.1730742509559433
             unit_long: unit_long
             unit_short: unit_short
           us:
-            amount: 9.369310271410669
+            amount: 1.1730742509559433
             unit_long: unit_long
             unit_short: unit_short
         original: original
@@ -9203,7 +11438,7 @@ components:
         - meta
         original_name: original_name
         name: name
-        id: 6
+        id: 1
         aisle: aisle
         consistency: consistency
       properties:
@@ -9243,49 +11478,34 @@ components:
           nullable: true
           type: string
       type: object
-    retrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner:
-      example:
-        image: image
-        name: name
-        id: 9
-      properties:
-        name:
-          nullable: true
-          type: string
-        image:
-          nullable: true
-          type: string
-        id:
-          type: integer
-      type: object
     retrieveRecipeInformation_200_response_instructions_inner_steps_inner:
       example:
-        number: 8
+        number: 6
         ingredients:
         - image: image
           name: name
-          id: 9
+          id: 5
         - image: image
           name: name
-          id: 9
+          id: 5
         equipment:
         - image: image
           name: name
-          id: 9
+          id: 5
         - image: image
           name: name
-          id: 9
+          id: 5
         step: step
       properties:
         number:
           type: integer
         ingredients:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
           type: array
         equipment:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
           type: array
         step:
           nullable: true
@@ -9295,37 +11515,37 @@ components:
       example:
         name: name
         steps:
-        - number: 8
+        - number: 6
           ingredients:
           - image: image
             name: name
-            id: 9
+            id: 5
           - image: image
             name: name
-            id: 9
+            id: 5
           equipment:
           - image: image
             name: name
-            id: 9
+            id: 5
           - image: image
             name: name
-            id: 9
+            id: 5
           step: step
-        - number: 8
+        - number: 6
           ingredients:
           - image: image
             name: name
-            id: 9
+            id: 5
           - image: image
             name: name
-            id: 9
+            id: 5
           equipment:
           - image: image
             name: name
-            id: 9
+            id: 5
           - image: image
             name: name
-            id: 9
+            id: 5
           step: step
       properties:
         name:
@@ -9358,9 +11578,9 @@ components:
       type: object
     retrieveRecipeInformation_200_response_scores:
       example:
-        meta_score: 6.438423552598547
-        health_score: 6
-        weight_watcher_smart_points: 3
+        meta_score: 7.457744773683766
+        health_score: 4
+        weight_watcher_smart_points: 1
       properties:
         meta_score:
           type: number
@@ -9374,87 +11594,87 @@ components:
         instructions:
         - name: name
           steps:
-          - number: 8
+          - number: 6
             ingredients:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             equipment:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             step: step
-          - number: 8
+          - number: 6
             ingredients:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             equipment:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             step: step
         - name: name
           steps:
-          - number: 8
+          - number: 6
             ingredients:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             equipment:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             step: step
-          - number: 8
+          - number: 6
             ingredients:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             equipment:
             - image: image
               name: name
-              id: 9
+              id: 5
             - image: image
               name: name
-              id: 9
+              id: 5
             step: step
         images:
         - images
         - images
         scores:
-          meta_score: 6.438423552598547
-          health_score: 6
-          weight_watcher_smart_points: 3
+          meta_score: 7.457744773683766
+          health_score: 4
+          weight_watcher_smart_points: 1
         taste:
-          fattiness: 1.0246457001441578
-          spiciness: 1
-          saltiness: 6
-          bitterness: 7.457744773683766
-          savoriness: 1.1730742509559433
-          sweetness: 4.965218492984954
-          sourness: 5.025004791520295
+          fattiness: 7.061401241503109
+          spiciness: 9
+          saltiness: 3
+          bitterness: 2.027123023002322
+          savoriness: 4.145608029883936
+          sweetness: 7.386281948385884
+          sourness: 1.2315135367772556
         price_per_serving: 1.4658129805029452
         title: title
         cuisines:
@@ -9469,32 +11689,32 @@ components:
             percent_carbs: 7.061401241503109
             percent_protein: 9.301444243932576
           ingredient_breakdown:
-          - amount: 2.027123023002322
+          - amount: 5.637376656633329
             unit: unit
             name: name
-            id: 4
+            id: 2
             nutrients:
-            - amount: 1.2315135367772556
+            - amount: 1.4894159098541704
               unit: unit
               name: name
-              percent_of_daily_needs: 7.386281948385884
-            - amount: 1.2315135367772556
+              percent_of_daily_needs: 1.0246457001441578
+            - amount: 1.4894159098541704
               unit: unit
               name: name
-              percent_of_daily_needs: 7.386281948385884
-          - amount: 2.027123023002322
+              percent_of_daily_needs: 1.0246457001441578
+          - amount: 5.637376656633329
             unit: unit
             name: name
-            id: 4
+            id: 2
             nutrients:
-            - amount: 1.2315135367772556
+            - amount: 1.4894159098541704
               unit: unit
               name: name
-              percent_of_daily_needs: 7.386281948385884
-            - amount: 1.2315135367772556
+              percent_of_daily_needs: 1.0246457001441578
+            - amount: 1.4894159098541704
               unit: unit
               name: name
-              percent_of_daily_needs: 7.386281948385884
+              percent_of_daily_needs: 1.0246457001441578
           weight_per_serving:
             amount: 5
             unit: unit
@@ -9513,14 +11733,14 @@ components:
             unit: unit
             name: name
           nutrients:
-          - amount: 1.2315135367772556
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
-          - amount: 1.2315135367772556
+            percent_of_daily_needs: 1.0246457001441578
+          - amount: 1.4894159098541704
             unit: unit
             name: name
-            percent_of_daily_needs: 7.386281948385884
+            percent_of_daily_needs: 1.0246457001441578
         meal_types:
         - meal_types
         - meal_types
@@ -9545,15 +11765,15 @@ components:
         ingredients:
         - image: image
           name_clean: name_clean
-          amount: 9.965781217890562
+          amount: 1.0246457001441578
           unit: unit
           measures:
             metric:
-              amount: 9.369310271410669
+              amount: 1.1730742509559433
               unit_long: unit_long
               unit_short: unit_short
             us:
-              amount: 9.369310271410669
+              amount: 1.1730742509559433
               unit_long: unit_long
               unit_short: unit_short
           original: original
@@ -9562,20 +11782,20 @@ components:
           - meta
           original_name: original_name
           name: name
-          id: 6
+          id: 1
           aisle: aisle
           consistency: consistency
         - image: image
           name_clean: name_clean
-          amount: 9.965781217890562
+          amount: 1.0246457001441578
           unit: unit
           measures:
             metric:
-              amount: 9.369310271410669
+              amount: 1.1730742509559433
               unit_long: unit_long
               unit_short: unit_short
             us:
-              amount: 9.369310271410669
+              amount: 1.1730742509559433
               unit_long: unit_long
               unit_short: unit_short
           original: original
@@ -9584,7 +11804,7 @@ components:
           - meta
           original_name: original_name
           name: name
-          id: 6
+          id: 1
           aisle: aisle
           consistency: consistency
         id: 0
@@ -9739,22 +11959,22 @@ components:
           unit: unit
           name: name
         nutrients:
-        - amount: 1.2315135367772556
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
-        - amount: 1.2315135367772556
+          percent_of_daily_needs: 1.0246457001441578
+        - amount: 1.4894159098541704
           unit: unit
           name: name
-          percent_of_daily_needs: 7.386281948385884
+          percent_of_daily_needs: 1.0246457001441578
       properties:
         nutrients:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
         properties:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         flavonoids:
           items:
@@ -9765,9 +11985,9 @@ components:
             $ref: '#/components/schemas/computeNutrition_200_response_ingredient_breakdown_inner'
           type: array
         caloric_breakdown:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_caloric_breakdown'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
         weight_per_serving:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_weight_per_serving'
+          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
       type: object
     searchRestaurants_200_response_restaurants_inner_address:
       example:

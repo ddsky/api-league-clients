@@ -40,16 +40,10 @@ HEADERS += \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.h \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_scores.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_taste.h \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_times.h \
@@ -67,6 +61,23 @@ HEADERS += \
     $${PWD}/OAIScoreText_200_response_style_subscores.h \
     $${PWD}/OAISearchBooks_200_response.h \
     $${PWD}/OAISearchBooks_200_response_books_inner_inner.h \
+    $${PWD}/OAISearchDrinks_200_response.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_credits.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures_us.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner_steps_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_nutrients_inner.h \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_weight_per_serving.h \
     $${PWD}/OAISearchGifs_200_response.h \
     $${PWD}/OAISearchGifs_200_response_images_inner.h \
     $${PWD}/OAISearchJokes_200_response.h \
@@ -159,16 +170,10 @@ SOURCES += \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_dietary_properties.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_ingredients_inner_measures_metric.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_instructions_inner_steps_inner_ingredients_inner.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_caloric_breakdown.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_flavonoids_inner.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp \
-    $${PWD}/OAIRetrieveRecipeInformation_200_response_nutrition_weight_per_serving.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_scores.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_taste.cpp \
     $${PWD}/OAIRetrieveRecipeInformation_200_response_times.cpp \
@@ -186,6 +191,23 @@ SOURCES += \
     $${PWD}/OAIScoreText_200_response_style_subscores.cpp \
     $${PWD}/OAISearchBooks_200_response.cpp \
     $${PWD}/OAISearchBooks_200_response_books_inner_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_credits.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_ingredients_inner_measures_us.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner_steps_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_nutrients_inner.cpp \
+    $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_weight_per_serving.cpp \
     $${PWD}/OAISearchGifs_200_response.cpp \
     $${PWD}/OAISearchGifs_200_response_images_inner.cpp \
     $${PWD}/OAISearchJokes_200_response.cpp \

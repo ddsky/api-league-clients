@@ -39,5 +39,8 @@ data class RetrievePageRank200Response (
     @Json(name = "percentile")
     val percentile: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

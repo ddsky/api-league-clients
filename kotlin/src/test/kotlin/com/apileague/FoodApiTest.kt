@@ -21,6 +21,7 @@ import io.kotlintest.specs.ShouldSpec
 import com.apileague.FoodApi
 import com.apileague.client.model.ComputeNutrition200Response
 import com.apileague.client.model.RetrieveRecipeInformation200Response
+import com.apileague.client.model.SearchDrinks200Response
 import com.apileague.client.model.SearchRecipes200Response
 import com.apileague.client.model.SearchRestaurants200Response
 
@@ -48,12 +49,41 @@ class FoodApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
+        // to test searchDrinks
+        should("test searchDrinks") {
+            // uncomment below to test searchDrinks
+            //val query : kotlin.String = vodka // kotlin.String | The search query.
+            //val glassTypes : kotlin.String = Highball Glass // kotlin.String | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+            //val flavors : kotlin.String = sour,sweet // kotlin.String | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+            //val diet : kotlin.String = paleo // kotlin.String | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+            //val includeIngredients : kotlin.String = orange // kotlin.String | A comma-separated list of ingredients that should/must be used in the drinks.
+            //val excludeIngredients : kotlin.String = vodka // kotlin.String | A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+            //val minCalories : kotlin.Double = 100 // kotlin.Double | The minimum amount of calories the drink must have per serving.
+            //val maxCalories : kotlin.Double = 655 // kotlin.Double | The maximum amount of calories the drink can have per serving.
+            //val minCarbs : kotlin.Double = 10.1 // kotlin.Double | The minimum amount of carbohydrates in grams the drink must have per serving.
+            //val maxCarbs : kotlin.Double = 25.5 // kotlin.Double | The maximum amount of carbohydrates in grams the drink can have per serving.
+            //val minProtein : kotlin.Double = 10.1 // kotlin.Double | The minimum amount of protein in grams the drink must have per serving.
+            //val maxProtein : kotlin.Double = 25.5 // kotlin.Double | The maximum amount of protein in grams the drink can have per serving.
+            //val minFat : kotlin.Double = 10.1 // kotlin.Double | The minimum amount of fat in grams the drink must have per serving.
+            //val maxFat : kotlin.Double = 25.5 // kotlin.Double | The maximum amount of fat in grams the drink can have per serving.
+            //val minAlcoholPercent : kotlin.Double = 10 // kotlin.Double | The minimum alcohol percentage the drink must have.
+            //val maxAlcoholPercent : kotlin.Double = 35 // kotlin.Double | The maximum alcohol percentage the drink can have.
+            //val minCaffeine : kotlin.Double = 30.4 // kotlin.Double | The minimum amount of caffeine in milligrams the drink must have per serving.
+            //val maxCaffeine : kotlin.Double = 80.9 // kotlin.Double | The maximum amount of caffeine in milligrams the drink can have per serving.
+            //val sort : kotlin.String = calories // kotlin.String | The attribute by which to sort the drinks.
+            //val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
+            //val offset : kotlin.Int = 0 // kotlin.Int | The number of drinks to skip, between 0 and 90.
+            //val number : kotlin.Int = 3 // kotlin.Int | The number of drinks, between 1 and 10.
+            //val result : SearchDrinks200Response = apiInstance.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+            //result shouldBe ("TODO")
+        }
+
         // to test searchRecipes
         should("test searchRecipes") {
             // uncomment below to test searchRecipes
             //val query : kotlin.String = pasta with mushrooms but without nuts // kotlin.String | The search query.
-            //val cuisines : kotlin.String = mexican // kotlin.String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-            //val excludeCuisines : kotlin.String = indian,japanese // kotlin.String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+            //val cuisines : kotlin.String = mexican // kotlin.String | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
+            //val excludeCuisines : kotlin.String = indian,japanese // kotlin.String | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
             //val mealType : kotlin.String = dessert // kotlin.String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
             //val diet : kotlin.String = paleo // kotlin.String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
             //val intolerances : kotlin.String = gluten,dairy,shellfish // kotlin.String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -137,7 +167,7 @@ class FoodApiTest : ShouldSpec() {
             //val maxVitaminB6 : kotlin.Double = 80.9 // kotlin.Double | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
             //val minVitaminB12 : kotlin.Double = 30.4 // kotlin.Double | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
             //val maxVitaminB12 : kotlin.Double = 80.9 // kotlin.Double | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-            //val sort : kotlin.String = meta-score // kotlin.String | The strategy to sort recipes by. See a full list of supported sorting options.
+            //val sort : kotlin.String = meta-score // kotlin.String | The strategy to sort recipes by.
             //val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of recipes to skip, between 0 and 900.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of recipes, between 1 and 100.

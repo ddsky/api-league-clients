@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 *BooksApi* | [**searchBooks**](docs/Api/BooksApi.md#searchbooks) | **GET** /search-books | Search Books
 *FoodApi* | [**computeNutrition**](docs/Api/FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
 *FoodApi* | [**retrieveRecipeInformation**](docs/Api/FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+*FoodApi* | [**searchDrinks**](docs/Api/FoodApi.md#searchdrinks) | **GET** /search-drinks | Search Drinks
 *FoodApi* | [**searchRecipes**](docs/Api/FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
 *FoodApi* | [**searchRestaurants**](docs/Api/FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
 *HumorApi* | [**generateNonsenseWord**](docs/Api/HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
@@ -171,16 +172,10 @@ Class | Method | HTTP request | Description
 - [RetrieveRecipeInformation200ResponseDietaryProperties](docs/Model/RetrieveRecipeInformation200ResponseDietaryProperties.md)
 - [RetrieveRecipeInformation200ResponseIngredientsInner](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInner.md)
 - [RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
-- [RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.md)
 - [RetrieveRecipeInformation200ResponseInstructionsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInner.md)
 - [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
-- [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md)
 - [RetrieveRecipeInformation200ResponseNutrition](docs/Model/RetrieveRecipeInformation200ResponseNutrition.md)
-- [RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown](docs/Model/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown.md)
-- [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner.md)
 - [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
-- [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md)
-- [RetrieveRecipeInformation200ResponseNutritionWeightPerServing](docs/Model/RetrieveRecipeInformation200ResponseNutritionWeightPerServing.md)
 - [RetrieveRecipeInformation200ResponseScores](docs/Model/RetrieveRecipeInformation200ResponseScores.md)
 - [RetrieveRecipeInformation200ResponseTaste](docs/Model/RetrieveRecipeInformation200ResponseTaste.md)
 - [RetrieveRecipeInformation200ResponseTimes](docs/Model/RetrieveRecipeInformation200ResponseTimes.md)
@@ -198,6 +193,23 @@ Class | Method | HTTP request | Description
 - [ScoreText200ResponseStyleSubscores](docs/Model/ScoreText200ResponseStyleSubscores.md)
 - [SearchBooks200Response](docs/Model/SearchBooks200Response.md)
 - [SearchBooks200ResponseBooksInnerInner](docs/Model/SearchBooks200ResponseBooksInnerInner.md)
+- [SearchDrinks200Response](docs/Model/SearchDrinks200Response.md)
+- [SearchDrinks200ResponseDrinksInner](docs/Model/SearchDrinks200ResponseDrinksInner.md)
+- [SearchDrinks200ResponseDrinksInnerCredits](docs/Model/SearchDrinks200ResponseDrinksInnerCredits.md)
+- [SearchDrinks200ResponseDrinksInnerIngredientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInner.md)
+- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures.md)
+- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md)
+- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs.md)
+- [SearchDrinks200ResponseDrinksInnerInstructionsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInner.md)
+- [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner.md)
+- [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
+- [SearchDrinks200ResponseDrinksInnerNutrition](docs/Model/SearchDrinks200ResponseDrinksInnerNutrition.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md)
+- [SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md)
 - [SearchGifs200Response](docs/Model/SearchGifs200Response.md)
 - [SearchGifs200ResponseImagesInner](docs/Model/SearchGifs200ResponseImagesInner.md)
 - [SearchJokes200Response](docs/Model/SearchJokes200Response.md)
@@ -263,7 +275,7 @@ mail@apileague.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.4.2`
-    - Package version: `1.4.2`
-    - Generator version: `7.5.0`
+- API version: `1.5.0`
+    - Package version: `1.5.0`
+    - Generator version: `7.8.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

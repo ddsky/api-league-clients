@@ -10,6 +10,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
 import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
+import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
 import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
 import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
 
@@ -134,11 +135,200 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+     * Search Drinks
+     * @param query The search query.
+     * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+     * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+     * @param diet The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+     * @param includeIngredients A comma-separated list of ingredients that should/must be used in the drinks.
+     * @param excludeIngredients A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+     * @param minCalories The minimum amount of calories the drink must have per serving.
+     * @param maxCalories The maximum amount of calories the drink can have per serving.
+     * @param minCarbs The minimum amount of carbohydrates in grams the drink must have per serving.
+     * @param maxCarbs The maximum amount of carbohydrates in grams the drink can have per serving.
+     * @param minProtein The minimum amount of protein in grams the drink must have per serving.
+     * @param maxProtein The maximum amount of protein in grams the drink can have per serving.
+     * @param minFat The minimum amount of fat in grams the drink must have per serving.
+     * @param maxFat The maximum amount of fat in grams the drink can have per serving.
+     * @param minAlcoholPercent The minimum alcohol percentage the drink must have.
+     * @param maxAlcoholPercent The maximum alcohol percentage the drink can have.
+     * @param minCaffeine The minimum amount of caffeine in milligrams the drink must have per serving.
+     * @param maxCaffeine The maximum amount of caffeine in milligrams the drink can have per serving.
+     * @param sort The attribute by which to sort the drinks.
+     * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
+     * @param offset The number of drinks to skip, between 0 and 90.
+     * @param number The number of drinks, between 1 and 10.
+     */
+    public async searchDrinks(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Path Params
+        const localVarPath = '/search-drinks';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (query !== undefined) {
+            requestContext.setQueryParam("query", ObjectSerializer.serialize(query, "string", ""));
+        }
+
+        // Query Params
+        if (glassTypes !== undefined) {
+            requestContext.setQueryParam("glass-types", ObjectSerializer.serialize(glassTypes, "string", ""));
+        }
+
+        // Query Params
+        if (flavors !== undefined) {
+            requestContext.setQueryParam("flavors", ObjectSerializer.serialize(flavors, "string", ""));
+        }
+
+        // Query Params
+        if (diet !== undefined) {
+            requestContext.setQueryParam("diet", ObjectSerializer.serialize(diet, "string", ""));
+        }
+
+        // Query Params
+        if (includeIngredients !== undefined) {
+            requestContext.setQueryParam("include-ingredients", ObjectSerializer.serialize(includeIngredients, "string", ""));
+        }
+
+        // Query Params
+        if (excludeIngredients !== undefined) {
+            requestContext.setQueryParam("exclude-ingredients", ObjectSerializer.serialize(excludeIngredients, "string", ""));
+        }
+
+        // Query Params
+        if (minCalories !== undefined) {
+            requestContext.setQueryParam("min-calories", ObjectSerializer.serialize(minCalories, "number", "double"));
+        }
+
+        // Query Params
+        if (maxCalories !== undefined) {
+            requestContext.setQueryParam("max-calories", ObjectSerializer.serialize(maxCalories, "number", "double"));
+        }
+
+        // Query Params
+        if (minCarbs !== undefined) {
+            requestContext.setQueryParam("min-carbs", ObjectSerializer.serialize(minCarbs, "number", "double"));
+        }
+
+        // Query Params
+        if (maxCarbs !== undefined) {
+            requestContext.setQueryParam("max-carbs", ObjectSerializer.serialize(maxCarbs, "number", "double"));
+        }
+
+        // Query Params
+        if (minProtein !== undefined) {
+            requestContext.setQueryParam("min-protein", ObjectSerializer.serialize(minProtein, "number", "double"));
+        }
+
+        // Query Params
+        if (maxProtein !== undefined) {
+            requestContext.setQueryParam("max-protein", ObjectSerializer.serialize(maxProtein, "number", "double"));
+        }
+
+        // Query Params
+        if (minFat !== undefined) {
+            requestContext.setQueryParam("min-fat", ObjectSerializer.serialize(minFat, "number", "double"));
+        }
+
+        // Query Params
+        if (maxFat !== undefined) {
+            requestContext.setQueryParam("max-fat", ObjectSerializer.serialize(maxFat, "number", "double"));
+        }
+
+        // Query Params
+        if (minAlcoholPercent !== undefined) {
+            requestContext.setQueryParam("min-alcohol-percent", ObjectSerializer.serialize(minAlcoholPercent, "number", "double"));
+        }
+
+        // Query Params
+        if (maxAlcoholPercent !== undefined) {
+            requestContext.setQueryParam("max-alcohol-percent", ObjectSerializer.serialize(maxAlcoholPercent, "number", "double"));
+        }
+
+        // Query Params
+        if (minCaffeine !== undefined) {
+            requestContext.setQueryParam("min-caffeine", ObjectSerializer.serialize(minCaffeine, "number", "double"));
+        }
+
+        // Query Params
+        if (maxCaffeine !== undefined) {
+            requestContext.setQueryParam("max-caffeine", ObjectSerializer.serialize(maxCaffeine, "number", "double"));
+        }
+
+        // Query Params
+        if (sort !== undefined) {
+            requestContext.setQueryParam("sort", ObjectSerializer.serialize(sort, "string", ""));
+        }
+
+        // Query Params
+        if (sortDirection !== undefined) {
+            requestContext.setQueryParam("sort-direction", ObjectSerializer.serialize(sortDirection, "string", ""));
+        }
+
+        // Query Params
+        if (offset !== undefined) {
+            requestContext.setQueryParam("offset", ObjectSerializer.serialize(offset, "number", "int32"));
+        }
+
+        // Query Params
+        if (number !== undefined) {
+            requestContext.setQueryParam("number", ObjectSerializer.serialize(number, "number", "int32"));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
      * Search Recipes
      * @param query The search query.
-     * @param cuisines The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \&#39;OR\&#39;).
-     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \&#39;AND\&#39;).
+     * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
+     * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
      * @param mealType The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
      * @param diet The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
      * @param intolerances A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -222,7 +412,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
      * @param maxVitaminB6 The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
      * @param minVitaminB12 The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
      * @param maxVitaminB12 The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-     * @param sort The strategy to sort recipes by. See a full list of supported sorting options.
+     * @param sort The strategy to sort recipes by.
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC).
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
@@ -1005,6 +1195,53 @@ export class FoodApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "RetrieveRecipeInformation200Response", ""
             ) as RetrieveRecipeInformation200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to searchDrinks
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async searchDrinksWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchDrinks200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: SearchDrinks200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "SearchDrinks200Response", ""
+            ) as SearchDrinks200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: SearchDrinks200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "SearchDrinks200Response", ""
+            ) as SearchDrinks200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

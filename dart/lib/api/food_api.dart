@@ -163,6 +163,257 @@ class FoodApi {
     return null;
   }
 
+  /// Search Drinks
+  ///
+  /// Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query:
+  ///   The search query.
+  ///
+  /// * [String] glassTypes:
+  ///   A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+  ///
+  /// * [String] flavors:
+  ///   A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+  ///
+  /// * [String] diet:
+  ///   The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+  ///
+  /// * [String] includeIngredients:
+  ///   A comma-separated list of ingredients that should/must be used in the drinks.
+  ///
+  /// * [String] excludeIngredients:
+  ///   A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+  ///
+  /// * [double] minCalories:
+  ///   The minimum amount of calories the drink must have per serving.
+  ///
+  /// * [double] maxCalories:
+  ///   The maximum amount of calories the drink can have per serving.
+  ///
+  /// * [double] minCarbs:
+  ///   The minimum amount of carbohydrates in grams the drink must have per serving.
+  ///
+  /// * [double] maxCarbs:
+  ///   The maximum amount of carbohydrates in grams the drink can have per serving.
+  ///
+  /// * [double] minProtein:
+  ///   The minimum amount of protein in grams the drink must have per serving.
+  ///
+  /// * [double] maxProtein:
+  ///   The maximum amount of protein in grams the drink can have per serving.
+  ///
+  /// * [double] minFat:
+  ///   The minimum amount of fat in grams the drink must have per serving.
+  ///
+  /// * [double] maxFat:
+  ///   The maximum amount of fat in grams the drink can have per serving.
+  ///
+  /// * [double] minAlcoholPercent:
+  ///   The minimum alcohol percentage the drink must have.
+  ///
+  /// * [double] maxAlcoholPercent:
+  ///   The maximum alcohol percentage the drink can have.
+  ///
+  /// * [double] minCaffeine:
+  ///   The minimum amount of caffeine in milligrams the drink must have per serving.
+  ///
+  /// * [double] maxCaffeine:
+  ///   The maximum amount of caffeine in milligrams the drink can have per serving.
+  ///
+  /// * [String] sort:
+  ///   The attribute by which to sort the drinks.
+  ///
+  /// * [String] sortDirection:
+  ///   Whether to sort ascending or descending (ASC or DESC).
+  ///
+  /// * [int] offset:
+  ///   The number of drinks to skip, between 0 and 90.
+  ///
+  /// * [int] number:
+  ///   The number of drinks, between 1 and 10.
+  Future<Response> searchDrinksWithHttpInfo({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/search-drinks';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (query != null) {
+      queryParams.addAll(_queryParams('', 'query', query));
+    }
+    if (glassTypes != null) {
+      queryParams.addAll(_queryParams('', 'glass-types', glassTypes));
+    }
+    if (flavors != null) {
+      queryParams.addAll(_queryParams('', 'flavors', flavors));
+    }
+    if (diet != null) {
+      queryParams.addAll(_queryParams('', 'diet', diet));
+    }
+    if (includeIngredients != null) {
+      queryParams.addAll(_queryParams('', 'include-ingredients', includeIngredients));
+    }
+    if (excludeIngredients != null) {
+      queryParams.addAll(_queryParams('', 'exclude-ingredients', excludeIngredients));
+    }
+    if (minCalories != null) {
+      queryParams.addAll(_queryParams('', 'min-calories', minCalories));
+    }
+    if (maxCalories != null) {
+      queryParams.addAll(_queryParams('', 'max-calories', maxCalories));
+    }
+    if (minCarbs != null) {
+      queryParams.addAll(_queryParams('', 'min-carbs', minCarbs));
+    }
+    if (maxCarbs != null) {
+      queryParams.addAll(_queryParams('', 'max-carbs', maxCarbs));
+    }
+    if (minProtein != null) {
+      queryParams.addAll(_queryParams('', 'min-protein', minProtein));
+    }
+    if (maxProtein != null) {
+      queryParams.addAll(_queryParams('', 'max-protein', maxProtein));
+    }
+    if (minFat != null) {
+      queryParams.addAll(_queryParams('', 'min-fat', minFat));
+    }
+    if (maxFat != null) {
+      queryParams.addAll(_queryParams('', 'max-fat', maxFat));
+    }
+    if (minAlcoholPercent != null) {
+      queryParams.addAll(_queryParams('', 'min-alcohol-percent', minAlcoholPercent));
+    }
+    if (maxAlcoholPercent != null) {
+      queryParams.addAll(_queryParams('', 'max-alcohol-percent', maxAlcoholPercent));
+    }
+    if (minCaffeine != null) {
+      queryParams.addAll(_queryParams('', 'min-caffeine', minCaffeine));
+    }
+    if (maxCaffeine != null) {
+      queryParams.addAll(_queryParams('', 'max-caffeine', maxCaffeine));
+    }
+    if (sort != null) {
+      queryParams.addAll(_queryParams('', 'sort', sort));
+    }
+    if (sortDirection != null) {
+      queryParams.addAll(_queryParams('', 'sort-direction', sortDirection));
+    }
+    if (offset != null) {
+      queryParams.addAll(_queryParams('', 'offset', offset));
+    }
+    if (number != null) {
+      queryParams.addAll(_queryParams('', 'number', number));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Search Drinks
+  ///
+  /// Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query:
+  ///   The search query.
+  ///
+  /// * [String] glassTypes:
+  ///   A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+  ///
+  /// * [String] flavors:
+  ///   A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+  ///
+  /// * [String] diet:
+  ///   The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+  ///
+  /// * [String] includeIngredients:
+  ///   A comma-separated list of ingredients that should/must be used in the drinks.
+  ///
+  /// * [String] excludeIngredients:
+  ///   A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+  ///
+  /// * [double] minCalories:
+  ///   The minimum amount of calories the drink must have per serving.
+  ///
+  /// * [double] maxCalories:
+  ///   The maximum amount of calories the drink can have per serving.
+  ///
+  /// * [double] minCarbs:
+  ///   The minimum amount of carbohydrates in grams the drink must have per serving.
+  ///
+  /// * [double] maxCarbs:
+  ///   The maximum amount of carbohydrates in grams the drink can have per serving.
+  ///
+  /// * [double] minProtein:
+  ///   The minimum amount of protein in grams the drink must have per serving.
+  ///
+  /// * [double] maxProtein:
+  ///   The maximum amount of protein in grams the drink can have per serving.
+  ///
+  /// * [double] minFat:
+  ///   The minimum amount of fat in grams the drink must have per serving.
+  ///
+  /// * [double] maxFat:
+  ///   The maximum amount of fat in grams the drink can have per serving.
+  ///
+  /// * [double] minAlcoholPercent:
+  ///   The minimum alcohol percentage the drink must have.
+  ///
+  /// * [double] maxAlcoholPercent:
+  ///   The maximum alcohol percentage the drink can have.
+  ///
+  /// * [double] minCaffeine:
+  ///   The minimum amount of caffeine in milligrams the drink must have per serving.
+  ///
+  /// * [double] maxCaffeine:
+  ///   The maximum amount of caffeine in milligrams the drink can have per serving.
+  ///
+  /// * [String] sort:
+  ///   The attribute by which to sort the drinks.
+  ///
+  /// * [String] sortDirection:
+  ///   Whether to sort ascending or descending (ASC or DESC).
+  ///
+  /// * [int] offset:
+  ///   The number of drinks to skip, between 0 and 90.
+  ///
+  /// * [int] number:
+  ///   The number of drinks, between 1 and 10.
+  Future<SearchDrinks200Response?> searchDrinks({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    final response = await searchDrinksWithHttpInfo( query: query, glassTypes: glassTypes, flavors: flavors, diet: diet, includeIngredients: includeIngredients, excludeIngredients: excludeIngredients, minCalories: minCalories, maxCalories: maxCalories, minCarbs: minCarbs, maxCarbs: maxCarbs, minProtein: minProtein, maxProtein: maxProtein, minFat: minFat, maxFat: maxFat, minAlcoholPercent: minAlcoholPercent, maxAlcoholPercent: maxAlcoholPercent, minCaffeine: minCaffeine, maxCaffeine: maxCaffeine, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchDrinks200Response',) as SearchDrinks200Response;
+    
+    }
+    return null;
+  }
+
   /// Search Recipes
   ///
   /// Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
@@ -175,10 +426,10 @@ class FoodApi {
   ///   The search query.
   ///
   /// * [String] cuisines:
-  ///   The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
+  ///   The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
   ///
   /// * [String] excludeCuisines:
-  ///   The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+  ///   The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
   ///
   /// * [String] mealType:
   ///   The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
@@ -430,7 +681,7 @@ class FoodApi {
   ///   The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
   ///
   /// * [String] sort:
-  ///   The strategy to sort recipes by. See a full list of supported sorting options.
+  ///   The strategy to sort recipes by.
   ///
   /// * [String] sortDirection:
   ///   Whether to sort ascending or descending (ASC or DESC).
@@ -746,10 +997,10 @@ class FoodApi {
   ///   The search query.
   ///
   /// * [String] cuisines:
-  ///   The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
+  ///   The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
   ///
   /// * [String] excludeCuisines:
-  ///   The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+  ///   The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
   ///
   /// * [String] mealType:
   ///   The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
@@ -1001,7 +1252,7 @@ class FoodApi {
   ///   The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
   ///
   /// * [String] sort:
-  ///   The strategy to sort recipes by. See a full list of supported sorting options.
+  ///   The strategy to sort recipes by.
   ///
   /// * [String] sortDirection:
   ///   Whether to sort ascending or descending (ASC or DESC).

@@ -32,5 +32,8 @@ data class ScoreReadability200Response (
     @Json(name = "readability")
     val readability: ScoreText200ResponseReadability? = null
 
-)
+) {
+
+
+}
 

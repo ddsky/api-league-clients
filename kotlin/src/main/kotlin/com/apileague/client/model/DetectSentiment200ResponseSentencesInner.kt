@@ -43,5 +43,8 @@ data class DetectSentiment200ResponseSentencesInner (
     @Json(name = "confidence")
     val confidence: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

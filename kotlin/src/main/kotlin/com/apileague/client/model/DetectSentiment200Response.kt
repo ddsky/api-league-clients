@@ -37,5 +37,8 @@ data class DetectSentiment200Response (
     @Json(name = "sentences")
     val sentences: kotlin.collections.List<DetectSentiment200ResponseSentencesInner>? = null
 
-)
+) {
+
+
+}
 

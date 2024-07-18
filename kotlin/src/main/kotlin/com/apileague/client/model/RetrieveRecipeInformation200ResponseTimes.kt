@@ -31,5 +31,8 @@ data class RetrieveRecipeInformation200ResponseTimes (
     @Json(name = "total_minutes")
     val totalMinutes: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

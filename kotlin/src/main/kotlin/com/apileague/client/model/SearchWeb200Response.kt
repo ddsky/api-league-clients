@@ -32,5 +32,8 @@ data class SearchWeb200Response (
     @Json(name = "results")
     val results: kotlin.collections.List<SearchWeb200ResponseResultsInner>? = null
 
-)
+) {
+
+
+}
 

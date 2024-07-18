@@ -2,21 +2,21 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
-[**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
-[**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
-[**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
-[**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
-[**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
-[**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
-[**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word
-[**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability
-[**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text
-[**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word
-[**stemText**](TextApi.md#stemText) | **GET** /stem-text | Stem Text
-[**tagPartOfSpeech**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
+| [**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name |
+| [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
+| [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
+| [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
+| [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
+| [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
+| [**pluralizeWord**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
+| [**scoreReadability**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
+| [**scoreText**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
+| [**singularizeWord**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
+| [**stemText**](TextApi.md#stemText) | **GET** /stem-text | Stem Text |
+| [**tagPartOfSpeech**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech |
 
 
 <a id="correctSpelling"></a>
@@ -49,11 +49,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to be corrected. |
- **language** | **kotlin.String**| The language of the text, one of en, de, es, fr, or it. |
+| **text** | **kotlin.String**| The text to be corrected. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **language** | **kotlin.String**| The language of the text, one of en, de, es, fr, or it. | |
 
 ### Return type
 
@@ -103,10 +102,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **kotlin.String**| The name of the perso for which the sentiment should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String**| The name of the perso for which the sentiment should be detected. | |
 
 ### Return type
 
@@ -156,10 +154,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text for which the language should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text for which the language should be detected. | |
 
 ### Return type
 
@@ -209,10 +206,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text for which the sentiment should be detected. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text for which the sentiment should be detected. | |
 
 ### Return type
 
@@ -262,10 +258,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text from which dates should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text from which dates should be extracted. | |
 
 ### Return type
 
@@ -315,10 +310,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text from which entities should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text from which entities should be extracted. | |
 
 ### Return type
 
@@ -368,10 +362,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **kotlin.String**| The (noun) word for which a list of synonyms should be returned. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **kotlin.String**| The (noun) word for which a list of synonyms should be returned. | |
 
 ### Return type
 
@@ -421,10 +414,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **kotlin.String**| The (noun) word for which the plural form should be found. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **kotlin.String**| The (noun) word for which the plural form should be found. | |
 
 ### Return type
 
@@ -474,10 +466,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to score for readability. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text to score for readability. | |
 
 ### Return type
 
@@ -528,11 +519,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **title** | **kotlin.String**| The title of the text to score. |
- **text** | **kotlin.String**| The text to score for multiple metrics. |
+| **title** | **kotlin.String**| The title of the text to score. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text to score for multiple metrics. | |
 
 ### Return type
 
@@ -582,10 +572,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **word** | **kotlin.String**| The (noun) word for which the singular form should be found. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **word** | **kotlin.String**| The (noun) word for which the singular form should be found. | |
 
 ### Return type
 
@@ -635,10 +624,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to be stemmed. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text to be stemmed. | |
 
 ### Return type
 
@@ -688,10 +676,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **text** | **kotlin.String**| The text to tag the part of speech. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text to tag the part of speech. | |
 
 ### Return type
 

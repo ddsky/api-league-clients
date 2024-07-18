@@ -35,5 +35,8 @@ data class PluralizeWord200Response (
     @Json(name = "plural")
     val plural: kotlin.String? = null
 
-)
+) {
+
+
+}
 

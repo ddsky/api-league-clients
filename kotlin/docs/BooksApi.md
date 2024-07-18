@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books
-[**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books |
+| [**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books |
 
 
 <a id="findSimilarBooks"></a>
@@ -38,11 +38,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **kotlin.Int**| The id of the book to which similar books should be found. |
- **number** | **kotlin.Int**| The number of similar books to return in range [1,100] | [optional]
+| **id** | **kotlin.Int**| The id of the book to which similar books should be found. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of similar books to return in range [1,100] | [optional] |
 
 ### Return type
 
@@ -105,23 +104,22 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **kotlin.String**| The search query. | [optional]
- **earliestPublishYear** | **kotlin.Int**| The books must have been published after this year. | [optional]
- **latestPublishYear** | **kotlin.Int**| The books must have been published before this year. | [optional]
- **minRating** | **kotlin.Double**| The minimum rating the book must have gotten in the interval [0,1]. | [optional]
- **maxRating** | **kotlin.Double**| The maximum rating the book must have gotten in the interval [0,1]. | [optional]
- **genres** | **kotlin.String**| A comma-separated list of genres. Only books from any of the given genres will be returned. | [optional]
- **authors** | **kotlin.String**| A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | [optional]
- **isbn** | **kotlin.String**| Only the book matching the ISBN-13 will be returned | [optional]
- **oclc** | **kotlin.String**| Only the book matching the OCLC will be returned | [optional]
- **sort** | **kotlin.String**| The sorting criteria (publish-date or rating). | [optional]
- **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional]
- **groupResults** | **kotlin.Boolean**| Whether to group similar editions of the same book. | [optional]
- **offset** | **kotlin.Int**| The number of books to skip in range [0,1000] | [optional]
- **number** | **kotlin.Int**| The number of books to return in range [1,100] | [optional]
+| **query** | **kotlin.String**| The search query. | [optional] |
+| **earliestPublishYear** | **kotlin.Int**| The books must have been published after this year. | [optional] |
+| **latestPublishYear** | **kotlin.Int**| The books must have been published before this year. | [optional] |
+| **minRating** | **kotlin.Double**| The minimum rating the book must have gotten in the interval [0,1]. | [optional] |
+| **maxRating** | **kotlin.Double**| The maximum rating the book must have gotten in the interval [0,1]. | [optional] |
+| **genres** | **kotlin.String**| A comma-separated list of genres. Only books from any of the given genres will be returned. | [optional] |
+| **authors** | **kotlin.String**| A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate. | [optional] |
+| **isbn** | **kotlin.String**| Only the book matching the ISBN-13 will be returned | [optional] |
+| **oclc** | **kotlin.String**| Only the book matching the OCLC will be returned | [optional] |
+| **sort** | **kotlin.String**| The sorting criteria (publish-date or rating). | [optional] |
+| **sortDirection** | **kotlin.String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **groupResults** | **kotlin.Boolean**| Whether to group similar editions of the same book. | [optional] |
+| **offset** | **kotlin.Int**| The number of books to skip in range [0,1000] | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of books to return in range [1,100] | [optional] |
 
 ### Return type
 

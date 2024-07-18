@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **available** | **Integer** |  | [optional] |
+| **total_results** | **Integer** |  | [optional] |
 | **number** | **Integer** |  | [optional] |
 | **offset** | **Integer** |  | [optional] |
 | **books** | **Array&lt;Array&lt;SearchBooks200ResponseBooksInnerInner&gt;&gt;** |  | [optional] |
@@ -15,7 +15,7 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchBooks200Response.new(
-  available: null,
+  total_results: null,
   number: null,
   offset: null,
   books: null

@@ -23,7 +23,7 @@ class RetrieveRecipeInformation200ResponseIngredientsInnerMeasures {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric? metric;
+  SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric? metric;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -31,7 +31,7 @@ class RetrieveRecipeInformation200ResponseIngredientsInnerMeasures {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric? us;
+  SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric? us;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformation200ResponseIngredientsInnerMeasures &&
@@ -81,8 +81,8 @@ class RetrieveRecipeInformation200ResponseIngredientsInnerMeasures {
       }());
 
       return RetrieveRecipeInformation200ResponseIngredientsInnerMeasures(
-        metric: RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.fromJson(json[r'metric']),
-        us: RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric.fromJson(json[r'us']),
+        metric: SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.fromJson(json[r'metric']),
+        us: SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.fromJson(json[r'us']),
       );
     }
     return null;

@@ -32,5 +32,8 @@ data class SearchGifs200Response (
     @Json(name = "images")
     val images: kotlin.collections.List<SearchGifs200ResponseImagesInner>? = null
 
-)
+) {
+
+
+}
 

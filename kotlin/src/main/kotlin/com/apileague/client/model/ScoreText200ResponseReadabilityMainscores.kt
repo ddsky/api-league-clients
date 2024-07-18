@@ -35,5 +35,8 @@ data class ScoreText200ResponseReadabilityMainscores (
     @Json(name = "total")
     val total: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

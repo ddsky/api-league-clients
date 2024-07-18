@@ -51,5 +51,8 @@ data class RandomMeme200Response (
     @Json(name = "ratio")
     val ratio: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

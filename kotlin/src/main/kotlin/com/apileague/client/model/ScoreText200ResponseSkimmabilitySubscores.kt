@@ -51,5 +51,8 @@ data class ScoreText200ResponseSkimmabilitySubscores (
     @Json(name = "paragraph_headline_ratio_score")
     val paragraphHeadlineRatioScore: kotlin.collections.List<kotlin.Int>? = null
 
-)
+) {
+
+
+}
 

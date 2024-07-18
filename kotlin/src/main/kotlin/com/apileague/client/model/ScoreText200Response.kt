@@ -59,5 +59,8 @@ data class ScoreText200Response (
     @Json(name = "total_score")
     val totalScore: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

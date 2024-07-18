@@ -39,5 +39,8 @@ data class DetectSentiment200ResponseDocument (
     @Json(name = "average_confidence")
     val averageConfidence: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

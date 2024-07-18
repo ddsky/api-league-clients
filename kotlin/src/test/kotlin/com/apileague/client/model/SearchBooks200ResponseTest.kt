@@ -26,10 +26,10 @@ class SearchBooks200ResponseTest : ShouldSpec() {
         // uncomment below to create an instance of SearchBooks200Response
         //val modelInstance = SearchBooks200Response()
 
-        // to test the property `available`
-        should("test available") {
+        // to test the property `totalResults`
+        should("test totalResults") {
             // uncomment below to test the property
-            //modelInstance.available shouldBe ("TODO")
+            //modelInstance.totalResults shouldBe ("TODO")
         }
 
         // to test the property `number`

@@ -39,5 +39,8 @@ data class SearchGifs200ResponseImagesInner (
     @Json(name = "height")
     val height: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

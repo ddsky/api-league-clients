@@ -47,5 +47,8 @@ data class ExtractDates200ResponseDatesInner (
     @Json(name = "end_position")
     val endPosition: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

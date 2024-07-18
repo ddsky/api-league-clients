@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -21,8 +21,8 @@ var _ MappedNullable = &RetrieveRecipeInformation200ResponseInstructionsInnerSte
 // RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner struct for RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
 type RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner struct {
 	Number *int32 `json:"number,omitempty"`
-	Ingredients []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner `json:"ingredients,omitempty"`
-	Equipment []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner `json:"equipment,omitempty"`
+	Ingredients []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner `json:"ingredients,omitempty"`
+	Equipment []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner `json:"equipment,omitempty"`
 	Step NullableString `json:"step,omitempty"`
 }
 
@@ -76,9 +76,9 @@ func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetNum
 }
 
 // GetIngredients returns the Ingredients field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredients() []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner {
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredients() []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner {
 	if o == nil || IsNil(o.Ingredients) {
-		var ret []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+		var ret []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
 		return ret
 	}
 	return o.Ingredients
@@ -86,7 +86,7 @@ func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIng
 
 // GetIngredientsOk returns a tuple with the Ingredients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredientsOk() ([]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner, bool) {
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredientsOk() ([]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner, bool) {
 	if o == nil || IsNil(o.Ingredients) {
 		return nil, false
 	}
@@ -102,15 +102,15 @@ func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) HasIng
 	return false
 }
 
-// SetIngredients gets a reference to the given []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner and assigns it to the Ingredients field.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetIngredients(v []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner) {
+// SetIngredients gets a reference to the given []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner and assigns it to the Ingredients field.
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetIngredients(v []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) {
 	o.Ingredients = v
 }
 
 // GetEquipment returns the Equipment field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipment() []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner {
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipment() []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner {
 	if o == nil || IsNil(o.Equipment) {
-		var ret []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+		var ret []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
 		return ret
 	}
 	return o.Equipment
@@ -118,7 +118,7 @@ func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEqu
 
 // GetEquipmentOk returns a tuple with the Equipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipmentOk() ([]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner, bool) {
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipmentOk() ([]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner, bool) {
 	if o == nil || IsNil(o.Equipment) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) HasEqu
 	return false
 }
 
-// SetEquipment gets a reference to the given []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner and assigns it to the Equipment field.
-func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetEquipment(v []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner) {
+// SetEquipment gets a reference to the given []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner and assigns it to the Equipment field.
+func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetEquipment(v []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) {
 	o.Equipment = v
 }
 

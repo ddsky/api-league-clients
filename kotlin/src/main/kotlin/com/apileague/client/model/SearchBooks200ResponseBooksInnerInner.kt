@@ -39,5 +39,8 @@ data class SearchBooks200ResponseBooksInnerInner (
     @Json(name = "id")
     val id: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

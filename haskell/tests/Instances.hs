@@ -119,12 +119,12 @@ instance Arbitrary ComputeNutrition200Response where
 genComputeNutrition200Response :: Int -> Gen ComputeNutrition200Response
 genComputeNutrition200Response n =
   ComputeNutrition200Response
-    <$> arbitraryReducedMaybe n -- computeNutrition200ResponseNutrients :: Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]
-    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseProperties :: Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner]
+    <$> arbitraryReducedMaybe n -- computeNutrition200ResponseNutrients :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]
+    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseProperties :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner]
     <*> arbitraryReducedMaybe n -- computeNutrition200ResponseFlavonoids :: Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]
     <*> arbitraryReducedMaybe n -- computeNutrition200ResponseIngredientBreakdown :: Maybe [ComputeNutrition200ResponseIngredientBreakdownInner]
-    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseCaloricBreakdown :: Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseWeightPerServing :: Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing
+    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseCaloricBreakdown :: Maybe SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+    <*> arbitraryReducedMaybe n -- computeNutrition200ResponseWeightPerServing :: Maybe SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
   
 instance Arbitrary ComputeNutrition200ResponseIngredientBreakdownInner where
   arbitrary = sized genComputeNutrition200ResponseIngredientBreakdownInner
@@ -513,18 +513,8 @@ instance Arbitrary RetrieveRecipeInformation200ResponseIngredientsInnerMeasures 
 genRetrieveRecipeInformation200ResponseIngredientsInnerMeasures :: Int -> Gen RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
 genRetrieveRecipeInformation200ResponseIngredientsInnerMeasures n =
   RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric :: Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs :: Maybe RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-
-genRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric :: Int -> Gen RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-genRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric n =
-  RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitShort :: Maybe Text
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricAmount :: Maybe Double
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetricUnitLong :: Maybe Text
+    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric :: Maybe SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseIngredientsInnerMeasuresUs :: Maybe SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
   
 instance Arbitrary RetrieveRecipeInformation200ResponseInstructionsInner where
   arbitrary = sized genRetrieveRecipeInformation200ResponseInstructionsInner
@@ -542,19 +532,9 @@ genRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner :: Int -> Gen
 genRetrieveRecipeInformation200ResponseInstructionsInnerStepsInner n =
   RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
     <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerNumber :: Maybe Int
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients :: Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment :: Maybe [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner]
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredients :: Maybe [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerEquipment :: Maybe [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerStep :: Maybe Text
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
-
-genRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner :: Int -> Gen RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
-genRetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner n =
-  RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerImage :: Maybe Text
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInnerId :: Maybe Int
   
 instance Arbitrary RetrieveRecipeInformation200ResponseNutrition where
   arbitrary = sized genRetrieveRecipeInformation200ResponseNutrition
@@ -562,32 +542,12 @@ instance Arbitrary RetrieveRecipeInformation200ResponseNutrition where
 genRetrieveRecipeInformation200ResponseNutrition :: Int -> Gen RetrieveRecipeInformation200ResponseNutrition
 genRetrieveRecipeInformation200ResponseNutrition n =
   RetrieveRecipeInformation200ResponseNutrition
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionWeightPerServing :: Maybe RetrieveRecipeInformation200ResponseNutritionWeightPerServing
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionCaloricBreakdown :: Maybe RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionFlavonoids :: Maybe [RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner]
+    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionWeightPerServing :: Maybe SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionCaloricBreakdown :: Maybe SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionFlavonoids :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner]
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdown :: Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner]
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionProperties :: Maybe [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner]
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionNutrients :: Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-
-genRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown :: Int -> Gen RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-genRetrieveRecipeInformation200ResponseNutritionCaloricBreakdown n =
-  RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentFat :: Maybe Double
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentCarbs :: Maybe Double
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionCaloricBreakdownPercentProtein :: Maybe Double
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
-
-genRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner :: Int -> Gen RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
-genRetrieveRecipeInformation200ResponseNutritionFlavonoidsInner n =
-  RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerAmount :: Maybe Int
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionFlavonoidsInnerUnit :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionNutrients :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]
   
 instance Arbitrary RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner where
   arbitrary = sized genRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner
@@ -599,27 +559,7 @@ genRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner n =
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerAmount :: Maybe Double
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerUnit :: Maybe Text
     <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerId :: Maybe Int
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients :: Maybe [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner]
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
-
-genRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner :: Int -> Gen RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
-genRetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner n =
-  RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds :: Maybe Double
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerAmount :: Maybe Double
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInnerUnit :: Maybe Text
-  
-instance Arbitrary RetrieveRecipeInformation200ResponseNutritionWeightPerServing where
-  arbitrary = sized genRetrieveRecipeInformation200ResponseNutritionWeightPerServing
-
-genRetrieveRecipeInformation200ResponseNutritionWeightPerServing :: Int -> Gen RetrieveRecipeInformation200ResponseNutritionWeightPerServing
-genRetrieveRecipeInformation200ResponseNutritionWeightPerServing n =
-  RetrieveRecipeInformation200ResponseNutritionWeightPerServing
-    <$> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionWeightPerServingAmount :: Maybe Int
-    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionWeightPerServingUnit :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrients :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]
   
 instance Arbitrary RetrieveRecipeInformation200ResponseScores where
   arbitrary = sized genRetrieveRecipeInformation200ResponseScores
@@ -786,7 +726,7 @@ instance Arbitrary SearchBooks200Response where
 genSearchBooks200Response :: Int -> Gen SearchBooks200Response
 genSearchBooks200Response n =
   SearchBooks200Response
-    <$> arbitraryReducedMaybe n -- searchBooks200ResponseAvailable :: Maybe Int
+    <$> arbitraryReducedMaybe n -- searchBooks200ResponseTotalResults :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseNumber :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseOffset :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooks :: Maybe [[SearchBooks200ResponseBooksInnerInner]]
@@ -800,6 +740,200 @@ genSearchBooks200ResponseBooksInnerInner n =
     <$> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerTitle :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerImage :: Maybe Text
     <*> arbitraryReducedMaybe n -- searchBooks200ResponseBooksInnerInnerId :: Maybe Int
+  
+instance Arbitrary SearchDrinks200Response where
+  arbitrary = sized genSearchDrinks200Response
+
+genSearchDrinks200Response :: Int -> Gen SearchDrinks200Response
+genSearchDrinks200Response n =
+  SearchDrinks200Response
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinks :: Maybe [SearchDrinks200ResponseDrinksInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseTotalResults :: Maybe Int
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInner
+
+genSearchDrinks200ResponseDrinksInner :: Int -> Gen SearchDrinks200ResponseDrinksInner
+genSearchDrinks200ResponseDrinksInner n =
+  SearchDrinks200ResponseDrinksInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerFlavors :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructions :: Maybe [SearchDrinks200ResponseDrinksInnerInstructionsInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerImages :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutrition :: Maybe SearchDrinks200ResponseDrinksInnerNutrition
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerGlassType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerCredits :: Maybe SearchDrinks200ResponseDrinksInnerCredits
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerPricePerServing :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredients :: Maybe [SearchDrinks200ResponseDrinksInnerIngredientsInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerCuisines :: Maybe [Text]
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerCredits where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerCredits
+
+genSearchDrinks200ResponseDrinksInnerCredits :: Int -> Gen SearchDrinks200ResponseDrinksInnerCredits
+genSearchDrinks200ResponseDrinksInnerCredits n =
+  SearchDrinks200ResponseDrinksInnerCredits
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerCreditsText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerCreditsSourceName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerCreditsSourceUrl :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerIngredientsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerIngredientsInner
+
+genSearchDrinks200ResponseDrinksInnerIngredientsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerIngredientsInner
+genSearchDrinks200ResponseDrinksInnerIngredientsInner n =
+  SearchDrinks200ResponseDrinksInnerIngredientsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerNameClean :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerUnit :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasures :: Maybe SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerOriginal :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeta :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerOriginalName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerAisle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerConsistency :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures
+
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures :: Int -> Gen SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures n =
+  SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric :: Maybe SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs :: Maybe SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric :: Int -> Gen SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric n =
+  SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetricUnitShort :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetricAmount :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetricUnitLong :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs
+
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs :: Int -> Gen SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs
+genSearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs n =
+  SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUsUnitShort :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUsAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUsUnitLong :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerInstructionsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerInstructionsInner
+
+genSearchDrinks200ResponseDrinksInnerInstructionsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerInstructionsInner
+genSearchDrinks200ResponseDrinksInnerInstructionsInner n =
+  SearchDrinks200ResponseDrinksInnerInstructionsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerSteps :: Maybe [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner]
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner
+
+genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner
+genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner n =
+  SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredients :: Maybe [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerEquipment :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerStep :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
+
+genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
+genSearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner n =
+  SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInnerId :: Maybe Int
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutrition where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutrition
+
+genSearchDrinks200ResponseDrinksInnerNutrition :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutrition
+genSearchDrinks200ResponseDrinksInnerNutrition n =
+  SearchDrinks200ResponseDrinksInnerNutrition
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionWeightPerServing :: Maybe SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown :: Maybe SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionFlavonoids :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdown :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionProperties :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner]
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionNutrients :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner]
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+
+genSearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+genSearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown n =
+  SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionCaloricBreakdownPercentFat :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionCaloricBreakdownPercentCarbs :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionCaloricBreakdownPercentProtein :: Maybe Double
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner
+
+genSearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner
+genSearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner n =
+  SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionFlavonoidsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionFlavonoidsInnerAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionFlavonoidsInnerUnit :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner
+
+genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner
+genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner n =
+  SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerUnit :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrients :: Maybe [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner]
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner
+
+genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner
+genSearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner n =
+  SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInnerPercentOfDailyNeeds :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInnerAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInnerUnit :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
+
+genSearchDrinks200ResponseDrinksInnerNutritionNutrientsInner :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
+genSearchDrinks200ResponseDrinksInnerNutritionNutrientsInner n =
+  SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionNutrientsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionNutrientsInnerPercentOfDailyNeeds :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionNutrientsInnerAmount :: Maybe Double
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionNutrientsInnerUnit :: Maybe Text
+  
+instance Arbitrary SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing where
+  arbitrary = sized genSearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
+
+genSearchDrinks200ResponseDrinksInnerNutritionWeightPerServing :: Int -> Gen SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
+genSearchDrinks200ResponseDrinksInnerNutritionWeightPerServing n =
+  SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing
+    <$> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionWeightPerServingAmount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchDrinks200ResponseDrinksInnerNutritionWeightPerServingUnit :: Maybe Text
   
 instance Arbitrary SearchGifs200Response where
   arbitrary = sized genSearchGifs200Response

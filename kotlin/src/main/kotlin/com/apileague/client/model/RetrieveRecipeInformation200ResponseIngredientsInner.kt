@@ -76,5 +76,8 @@ data class RetrieveRecipeInformation200ResponseIngredientsInner (
     @Json(name = "consistency")
     val consistency: kotlin.String? = null
 
-)
+) {
+
+
+}
 

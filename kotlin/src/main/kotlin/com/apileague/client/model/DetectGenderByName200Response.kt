@@ -35,5 +35,8 @@ data class DetectGenderByName200Response (
     @Json(name = "probability_male")
     val probabilityMale: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

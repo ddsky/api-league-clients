@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
 [**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+[**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks
 [**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
 [**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
 
@@ -139,6 +140,129 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **searchDrinks**
+> SearchDrinks200Response searchDrinks()
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .FoodApi(configuration);
+
+let body:.FoodApiSearchDrinksRequest = {
+  // string | The search query. (optional)
+  query: "vodka",
+  // string | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
+  glassTypes: "Highball Glass",
+  // string | A comma-separated list (interpreted as AND) of dominant flavors in the drink. (optional)
+  flavors: "sour,sweet",
+  // string | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. (optional)
+  diet: "paleo",
+  // string | A comma-separated list of ingredients that should/must be used in the drinks. (optional)
+  includeIngredients: "orange",
+  // string | A comma-separated list of ingredients or ingredient types that the drinks must not contain. (optional)
+  excludeIngredients: "vodka",
+  // number | The minimum amount of calories the drink must have per serving. (optional)
+  minCalories: 100,
+  // number | The maximum amount of calories the drink can have per serving. (optional)
+  maxCalories: 655,
+  // number | The minimum amount of carbohydrates in grams the drink must have per serving. (optional)
+  minCarbs: 10.1,
+  // number | The maximum amount of carbohydrates in grams the drink can have per serving. (optional)
+  maxCarbs: 25.5,
+  // number | The minimum amount of protein in grams the drink must have per serving. (optional)
+  minProtein: 10.1,
+  // number | The maximum amount of protein in grams the drink can have per serving. (optional)
+  maxProtein: 25.5,
+  // number | The minimum amount of fat in grams the drink must have per serving. (optional)
+  minFat: 10.1,
+  // number | The maximum amount of fat in grams the drink can have per serving. (optional)
+  maxFat: 25.5,
+  // number | The minimum alcohol percentage the drink must have. (optional)
+  minAlcoholPercent: 10,
+  // number | The maximum alcohol percentage the drink can have. (optional)
+  maxAlcoholPercent: 35,
+  // number | The minimum amount of caffeine in milligrams the drink must have per serving. (optional)
+  minCaffeine: 30.4,
+  // number | The maximum amount of caffeine in milligrams the drink can have per serving. (optional)
+  maxCaffeine: 80.9,
+  // string | The attribute by which to sort the drinks. (optional)
+  sort: "calories",
+  // string | Whether to sort ascending or descending (ASC or DESC). (optional)
+  sortDirection: "ASC",
+  // number | The number of drinks to skip, between 0 and 90. (optional)
+  offset: 0,
+  // number | The number of drinks, between 1 and 10. (optional)
+  number: 3,
+};
+
+apiInstance.searchDrinks(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | [**string**] | The search query. | (optional) defaults to undefined
+ **glassTypes** | [**string**] | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | (optional) defaults to undefined
+ **flavors** | [**string**] | A comma-separated list (interpreted as AND) of dominant flavors in the drink. | (optional) defaults to undefined
+ **diet** | [**string**] | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | (optional) defaults to undefined
+ **includeIngredients** | [**string**] | A comma-separated list of ingredients that should/must be used in the drinks. | (optional) defaults to undefined
+ **excludeIngredients** | [**string**] | A comma-separated list of ingredients or ingredient types that the drinks must not contain. | (optional) defaults to undefined
+ **minCalories** | [**number**] | The minimum amount of calories the drink must have per serving. | (optional) defaults to undefined
+ **maxCalories** | [**number**] | The maximum amount of calories the drink can have per serving. | (optional) defaults to undefined
+ **minCarbs** | [**number**] | The minimum amount of carbohydrates in grams the drink must have per serving. | (optional) defaults to undefined
+ **maxCarbs** | [**number**] | The maximum amount of carbohydrates in grams the drink can have per serving. | (optional) defaults to undefined
+ **minProtein** | [**number**] | The minimum amount of protein in grams the drink must have per serving. | (optional) defaults to undefined
+ **maxProtein** | [**number**] | The maximum amount of protein in grams the drink can have per serving. | (optional) defaults to undefined
+ **minFat** | [**number**] | The minimum amount of fat in grams the drink must have per serving. | (optional) defaults to undefined
+ **maxFat** | [**number**] | The maximum amount of fat in grams the drink can have per serving. | (optional) defaults to undefined
+ **minAlcoholPercent** | [**number**] | The minimum alcohol percentage the drink must have. | (optional) defaults to undefined
+ **maxAlcoholPercent** | [**number**] | The maximum alcohol percentage the drink can have. | (optional) defaults to undefined
+ **minCaffeine** | [**number**] | The minimum amount of caffeine in milligrams the drink must have per serving. | (optional) defaults to undefined
+ **maxCaffeine** | [**number**] | The maximum amount of caffeine in milligrams the drink can have per serving. | (optional) defaults to undefined
+ **sort** | [**string**] | The attribute by which to sort the drinks. | (optional) defaults to undefined
+ **sortDirection** | [**string**] | Whether to sort ascending or descending (ASC or DESC). | (optional) defaults to undefined
+ **offset** | [**number**] | The number of drinks to skip, between 0 and 90. | (optional) defaults to undefined
+ **number** | [**number**] | The number of drinks, between 1 and 10. | (optional) defaults to undefined
+
+
+### Return type
+
+**SearchDrinks200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **searchRecipes**
 > SearchRecipes200Response searchRecipes()
 
@@ -157,9 +281,9 @@ const apiInstance = new .FoodApi(configuration);
 let body:.FoodApiSearchRecipesRequest = {
   // string | The search query. (optional)
   query: "pasta with mushrooms but without nuts",
-  // string | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \'OR\'). (optional)
+  // string | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \'OR\'). (optional)
   cuisines: "mexican",
-  // string | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \'AND\'). (optional)
+  // string | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \'AND\'). (optional)
   excludeCuisines: "indian,japanese",
   // string | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. (optional)
   mealType: "dessert",
@@ -327,7 +451,7 @@ let body:.FoodApiSearchRecipesRequest = {
   minVitaminB12: 30.4,
   // number | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. (optional)
   maxVitaminB12: 80.9,
-  // string | The strategy to sort recipes by. See a full list of supported sorting options. (optional)
+  // string | The strategy to sort recipes by. (optional)
   sort: "meta-score",
   // string | Whether to sort ascending or descending (ASC or DESC). (optional)
   sortDirection: "ASC",
@@ -348,8 +472,8 @@ apiInstance.searchRecipes(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | [**string**] | The search query. | (optional) defaults to undefined
- **cuisines** | [**string**] | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \&#39;OR\&#39;). | (optional) defaults to undefined
- **excludeCuisines** | [**string**] | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \&#39;AND\&#39;). | (optional) defaults to undefined
+ **cuisines** | [**string**] | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;). | (optional) defaults to undefined
+ **excludeCuisines** | [**string**] | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;). | (optional) defaults to undefined
  **mealType** | [**string**] | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | (optional) defaults to undefined
  **diet** | [**string**] | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | (optional) defaults to undefined
  **intolerances** | [**string**] | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | (optional) defaults to undefined
@@ -433,7 +557,7 @@ Name | Type | Description  | Notes
  **maxVitaminB6** | [**number**] | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | (optional) defaults to undefined
  **minVitaminB12** | [**number**] | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | (optional) defaults to undefined
  **maxVitaminB12** | [**number**] | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | (optional) defaults to undefined
- **sort** | [**string**] | The strategy to sort recipes by. See a full list of supported sorting options. | (optional) defaults to undefined
+ **sort** | [**string**] | The strategy to sort recipes by. | (optional) defaults to undefined
  **sortDirection** | [**string**] | Whether to sort ascending or descending (ASC or DESC). | (optional) defaults to undefined
  **offset** | [**number**] | The number of recipes to skip, between 0 and 900. | (optional) defaults to undefined
  **number** | [**number**] | The number of recipes, between 1 and 100. | (optional) defaults to undefined

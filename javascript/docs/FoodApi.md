@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
 [**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
+[**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks
 [**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
 [**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
 
@@ -133,6 +134,106 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## searchDrinks
+
+> SearchDrinks200Response searchDrinks(opts)
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.FoodApi();
+let opts = {
+  'query': "vodka", // String | The search query.
+  'glassTypes': "Highball Glass", // String | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+  'flavors': "sour,sweet", // String | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+  'diet': "paleo", // String | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+  'includeIngredients': "orange", // String | A comma-separated list of ingredients that should/must be used in the drinks.
+  'excludeIngredients': "vodka", // String | A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+  'minCalories': 100, // Number | The minimum amount of calories the drink must have per serving.
+  'maxCalories': 655, // Number | The maximum amount of calories the drink can have per serving.
+  'minCarbs': 10.1, // Number | The minimum amount of carbohydrates in grams the drink must have per serving.
+  'maxCarbs': 25.5, // Number | The maximum amount of carbohydrates in grams the drink can have per serving.
+  'minProtein': 10.1, // Number | The minimum amount of protein in grams the drink must have per serving.
+  'maxProtein': 25.5, // Number | The maximum amount of protein in grams the drink can have per serving.
+  'minFat': 10.1, // Number | The minimum amount of fat in grams the drink must have per serving.
+  'maxFat': 25.5, // Number | The maximum amount of fat in grams the drink can have per serving.
+  'minAlcoholPercent': 10, // Number | The minimum alcohol percentage the drink must have.
+  'maxAlcoholPercent': 35, // Number | The maximum alcohol percentage the drink can have.
+  'minCaffeine': 30.4, // Number | The minimum amount of caffeine in milligrams the drink must have per serving.
+  'maxCaffeine': 80.9, // Number | The maximum amount of caffeine in milligrams the drink can have per serving.
+  'sort': "calories", // String | The attribute by which to sort the drinks.
+  'sortDirection': "ASC", // String | Whether to sort ascending or descending (ASC or DESC).
+  'offset': 0, // Number | The number of drinks to skip, between 0 and 90.
+  'number': 3 // Number | The number of drinks, between 1 and 10.
+};
+apiInstance.searchDrinks(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The search query. | [optional] 
+ **glassTypes** | **String**| A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional] 
+ **flavors** | **String**| A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional] 
+ **diet** | **String**| The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional] 
+ **includeIngredients** | **String**| A comma-separated list of ingredients that should/must be used in the drinks. | [optional] 
+ **excludeIngredients** | **String**| A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional] 
+ **minCalories** | **Number**| The minimum amount of calories the drink must have per serving. | [optional] 
+ **maxCalories** | **Number**| The maximum amount of calories the drink can have per serving. | [optional] 
+ **minCarbs** | **Number**| The minimum amount of carbohydrates in grams the drink must have per serving. | [optional] 
+ **maxCarbs** | **Number**| The maximum amount of carbohydrates in grams the drink can have per serving. | [optional] 
+ **minProtein** | **Number**| The minimum amount of protein in grams the drink must have per serving. | [optional] 
+ **maxProtein** | **Number**| The maximum amount of protein in grams the drink can have per serving. | [optional] 
+ **minFat** | **Number**| The minimum amount of fat in grams the drink must have per serving. | [optional] 
+ **maxFat** | **Number**| The maximum amount of fat in grams the drink can have per serving. | [optional] 
+ **minAlcoholPercent** | **Number**| The minimum alcohol percentage the drink must have. | [optional] 
+ **maxAlcoholPercent** | **Number**| The maximum alcohol percentage the drink can have. | [optional] 
+ **minCaffeine** | **Number**| The minimum amount of caffeine in milligrams the drink must have per serving. | [optional] 
+ **maxCaffeine** | **Number**| The maximum amount of caffeine in milligrams the drink can have per serving. | [optional] 
+ **sort** | **String**| The attribute by which to sort the drinks. | [optional] 
+ **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
+ **offset** | **Number**| The number of drinks to skip, between 0 and 90. | [optional] 
+ **number** | **Number**| The number of drinks, between 1 and 10. | [optional] 
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## searchRecipes
 
 > SearchRecipes200Response searchRecipes(opts)
@@ -160,8 +261,8 @@ headerApiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new ApileagueJs.FoodApi();
 let opts = {
   'query': "pasta with mushrooms but without nuts", // String | The search query.
-  'cuisines': "mexican", // String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-  'excludeCuisines': "indian,japanese", // String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+  'cuisines': "mexican", // String | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
+  'excludeCuisines': "indian,japanese", // String | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
   'mealType': "dessert", // String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
   'diet': "paleo", // String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
   'intolerances': "gluten,dairy,shellfish", // String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -245,7 +346,7 @@ let opts = {
   'maxVitaminB6': 80.9, // Number | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
   'minVitaminB12': 30.4, // Number | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
   'maxVitaminB12': 80.9, // Number | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-  'sort': "meta-score", // String | The strategy to sort recipes by. See a full list of supported sorting options.
+  'sort': "meta-score", // String | The strategy to sort recipes by.
   'sortDirection': "ASC", // String | Whether to sort ascending or descending (ASC or DESC).
   'offset': 0, // Number | The number of recipes to skip, between 0 and 900.
   'number': 3 // Number | The number of recipes, between 1 and 100.
@@ -265,8 +366,8 @@ apiInstance.searchRecipes(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| The search query. | [optional] 
- **cuisines** | **String**| The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional] 
- **excludeCuisines** | **String**| The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional] 
+ **cuisines** | **String**| The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional] 
+ **excludeCuisines** | **String**| The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional] 
  **mealType** | **String**| The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional] 
  **diet** | **String**| The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional] 
  **intolerances** | **String**| A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional] 
@@ -350,7 +451,7 @@ Name | Type | Description  | Notes
  **maxVitaminB6** | **Number**| The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional] 
  **minVitaminB12** | **Number**| The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional] 
  **maxVitaminB12** | **Number**| The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional] 
- **sort** | **String**| The strategy to sort recipes by. See a full list of supported sorting options. | [optional] 
+ **sort** | **String**| The strategy to sort recipes by. | [optional] 
  **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] 
  **offset** | **Number**| The number of recipes to skip, between 0 and 900. | [optional] 
  **number** | **Number**| The number of recipes, between 1 and 100. | [optional] 

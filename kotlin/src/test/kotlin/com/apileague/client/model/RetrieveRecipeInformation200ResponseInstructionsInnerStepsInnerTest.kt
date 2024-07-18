@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.client.model.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner
-import com.apileague.client.model.RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner
+import com.apileague.client.model.SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
 
 class RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerTest : ShouldSpec() {
     init {

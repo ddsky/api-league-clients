@@ -13,7 +13,7 @@ part of openapi.api;
 class SearchBooks200Response {
   /// Returns a new [SearchBooks200Response] instance.
   SearchBooks200Response({
-    this.available,
+    this.totalResults,
     this.number,
     this.offset,
     this.books = const [],
@@ -25,7 +25,7 @@ class SearchBooks200Response {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? available;
+  int? totalResults;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -47,7 +47,7 @@ class SearchBooks200Response {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchBooks200Response &&
-    other.available == available &&
+    other.totalResults == totalResults &&
     other.number == number &&
     other.offset == offset &&
     _deepEquality.equals(other.books, books);
@@ -55,20 +55,20 @@ class SearchBooks200Response {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (available == null ? 0 : available!.hashCode) +
+    (totalResults == null ? 0 : totalResults!.hashCode) +
     (number == null ? 0 : number!.hashCode) +
     (offset == null ? 0 : offset!.hashCode) +
     (books.hashCode);
 
   @override
-  String toString() => 'SearchBooks200Response[available=$available, number=$number, offset=$offset, books=$books]';
+  String toString() => 'SearchBooks200Response[totalResults=$totalResults, number=$number, offset=$offset, books=$books]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.available != null) {
-      json[r'available'] = this.available;
+    if (this.totalResults != null) {
+      json[r'total_results'] = this.totalResults;
     } else {
-      json[r'available'] = null;
+      json[r'total_results'] = null;
     }
     if (this.number != null) {
       json[r'number'] = this.number;
@@ -103,7 +103,7 @@ class SearchBooks200Response {
       }());
 
       return SearchBooks200Response(
-        available: mapValueOfType<int>(json, r'available'),
+        totalResults: mapValueOfType<int>(json, r'total_results'),
         number: mapValueOfType<int>(json, r'number'),
         offset: mapValueOfType<int>(json, r'offset'),
         books: json[r'books'] is List

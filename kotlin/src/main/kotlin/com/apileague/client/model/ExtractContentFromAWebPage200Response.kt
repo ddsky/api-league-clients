@@ -43,5 +43,8 @@ data class ExtractContentFromAWebPage200Response (
     @Json(name = "images")
     val images: kotlin.collections.List<kotlin.String>? = null
 
-)
+) {
+
+
+}
 

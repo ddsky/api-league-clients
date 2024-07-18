@@ -55,5 +55,8 @@ data class RetrieveRecipeInformation200ResponseDietaryProperties (
     @Json(name = "diets")
     val diets: kotlin.collections.List<kotlin.String>? = null
 
-)
+) {
+
+
+}
 

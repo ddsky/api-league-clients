@@ -32,5 +32,8 @@ data class ExtractAuthors200Response (
     @Json(name = "authors")
     val authors: kotlin.collections.List<ExtractAuthors200ResponseAuthorsInner>? = null
 
-)
+) {
+
+
+}
 

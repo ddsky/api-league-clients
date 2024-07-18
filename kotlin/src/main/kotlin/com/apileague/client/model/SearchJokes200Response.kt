@@ -36,5 +36,8 @@ data class SearchJokes200Response (
     @Json(name = "available")
     val available: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

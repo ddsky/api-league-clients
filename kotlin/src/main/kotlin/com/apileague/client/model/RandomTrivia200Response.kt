@@ -31,5 +31,8 @@ data class RandomTrivia200Response (
     @Json(name = "trivia")
     val trivia: kotlin.String? = null
 
-)
+) {
+
+
+}
 

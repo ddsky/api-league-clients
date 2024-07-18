@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &SearchBooks200Response{}
 
 // SearchBooks200Response struct for SearchBooks200Response
 type SearchBooks200Response struct {
-	Available *int32 `json:"available,omitempty"`
+	TotalResults *int32 `json:"total_results,omitempty"`
 	Number *int32 `json:"number,omitempty"`
 	Offset *int32 `json:"offset,omitempty"`
 	Books [][]SearchBooks200ResponseBooksInnerInner `json:"books,omitempty"`
@@ -43,36 +43,36 @@ func NewSearchBooks200ResponseWithDefaults() *SearchBooks200Response {
 	return &this
 }
 
-// GetAvailable returns the Available field value if set, zero value otherwise.
-func (o *SearchBooks200Response) GetAvailable() int32 {
-	if o == nil || IsNil(o.Available) {
+// GetTotalResults returns the TotalResults field value if set, zero value otherwise.
+func (o *SearchBooks200Response) GetTotalResults() int32 {
+	if o == nil || IsNil(o.TotalResults) {
 		var ret int32
 		return ret
 	}
-	return *o.Available
+	return *o.TotalResults
 }
 
-// GetAvailableOk returns a tuple with the Available field value if set, nil otherwise
+// GetTotalResultsOk returns a tuple with the TotalResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchBooks200Response) GetAvailableOk() (*int32, bool) {
-	if o == nil || IsNil(o.Available) {
+func (o *SearchBooks200Response) GetTotalResultsOk() (*int32, bool) {
+	if o == nil || IsNil(o.TotalResults) {
 		return nil, false
 	}
-	return o.Available, true
+	return o.TotalResults, true
 }
 
-// HasAvailable returns a boolean if a field has been set.
-func (o *SearchBooks200Response) HasAvailable() bool {
-	if o != nil && !IsNil(o.Available) {
+// HasTotalResults returns a boolean if a field has been set.
+func (o *SearchBooks200Response) HasTotalResults() bool {
+	if o != nil && !IsNil(o.TotalResults) {
 		return true
 	}
 
 	return false
 }
 
-// SetAvailable gets a reference to the given int32 and assigns it to the Available field.
-func (o *SearchBooks200Response) SetAvailable(v int32) {
-	o.Available = &v
+// SetTotalResults gets a reference to the given int32 and assigns it to the TotalResults field.
+func (o *SearchBooks200Response) SetTotalResults(v int32) {
+	o.TotalResults = &v
 }
 
 // GetNumber returns the Number field value if set, zero value otherwise.
@@ -181,8 +181,8 @@ func (o SearchBooks200Response) MarshalJSON() ([]byte, error) {
 
 func (o SearchBooks200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Available) {
-		toSerialize["available"] = o.Available
+	if !IsNil(o.TotalResults) {
+		toSerialize["total_results"] = o.TotalResults
 	}
 	if !IsNil(o.Number) {
 		toSerialize["number"] = o.Number

@@ -5,8 +5,8 @@
 -export_type([apileague_retrieve_recipe_information_200_response_nutrition/0]).
 
 -type apileague_retrieve_recipe_information_200_response_nutrition() ::
-    #{ 'weight_per_serving' => apileague_retrieve_recipe_information_200_response_nutrition_weight_per_serving:apileague_retrieve_recipe_information_200_response_nutrition_weight_per_serving(),
-       'caloric_breakdown' => apileague_retrieve_recipe_information_200_response_nutrition_caloric_breakdown:apileague_retrieve_recipe_information_200_response_nutrition_caloric_breakdown(),
+    #{ 'weight_per_serving' => apileague_search_drinks_200_response_drinks_inner_nutrition_weight_per_serving:apileague_search_drinks_200_response_drinks_inner_nutrition_weight_per_serving(),
+       'caloric_breakdown' => apileague_search_drinks_200_response_drinks_inner_nutrition_caloric_breakdown:apileague_search_drinks_200_response_drinks_inner_nutrition_caloric_breakdown(),
        'flavonoids' => list(),
        'ingredient_breakdown' => list(),
        'properties' => list(),

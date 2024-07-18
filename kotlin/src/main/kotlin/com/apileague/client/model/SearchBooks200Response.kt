@@ -23,7 +23,7 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param available 
+ * @param totalResults 
  * @param number 
  * @param offset 
  * @param books 
@@ -32,8 +32,8 @@ import com.squareup.moshi.JsonClass
 
 data class SearchBooks200Response (
 
-    @Json(name = "available")
-    val available: kotlin.Int? = null,
+    @Json(name = "total_results")
+    val totalResults: kotlin.Int? = null,
 
     @Json(name = "number")
     val number: kotlin.Int? = null,
@@ -44,5 +44,8 @@ data class SearchBooks200Response (
     @Json(name = "books")
     val books: kotlin.collections.List<kotlin.collections.List<SearchBooks200ResponseBooksInnerInner>>? = null
 
-)
+) {
+
+
+}
 

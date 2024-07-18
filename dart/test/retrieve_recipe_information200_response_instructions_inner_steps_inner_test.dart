@@ -21,12 +21,12 @@ void main() {
       // TODO
     });
 
-    // List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> ingredients (default value: const [])
+    // List<SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> ingredients (default value: const [])
     test('to test the property `ingredients`', () async {
       // TODO
     });
 
-    // List<RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner> equipment (default value: const [])
+    // List<SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> equipment (default value: const [])
     test('to test the property `equipment`', () async {
       // TODO
     });

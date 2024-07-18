@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word |
+| [**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke |
+| [**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme |
+| [**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs |
+| [**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes |
+| [**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes |
 
 
 <a id="generateNonsenseWord"></a>
@@ -93,13 +93,12 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **includeTags** | **kotlin.String**| A comma-separated list of tags the jokes should have. | [optional]
- **excludeTags** | **kotlin.String**| A comma-separated list of tags the jokes must not have. | [optional]
- **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
- **maxLength** | **kotlin.Int**| The maximum length of the joke in letters. | [optional]
+| **includeTags** | **kotlin.String**| A comma-separated list of tags the jokes should have. | [optional] |
+| **excludeTags** | **kotlin.String**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **maxLength** | **kotlin.Int**| The maximum length of the joke in letters. | [optional] |
 
 ### Return type
 
@@ -153,14 +152,13 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywordsInImage** | **kotlin.Boolean**| Whether the keywords must occur in the image. | [optional]
- **mediaType** | **kotlin.String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
- **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional]
+| **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywordsInImage** | **kotlin.Boolean**| Whether the keywords must occur in the image. | [optional] |
+| **mediaType** | **kotlin.String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional] |
 
 ### Return type
 
@@ -211,11 +209,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **kotlin.String**| The search query. |
- **number** | **kotlin.Int**| The number of gifs to return in range [1,10] | [optional]
+| **query** | **kotlin.String**| The search query. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of gifs to return in range [1,10] | [optional] |
 
 ### Return type
 
@@ -271,16 +268,15 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the joke. | [optional]
- **includeTags** | **kotlin.String**| A comma-separated list of tags the jokes should have. | [optional]
- **excludeTags** | **kotlin.String**| A comma-separated list of tags the jokes must not have. | [optional]
- **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional]
- **maxLength** | **kotlin.Double**| The maximum length of the joke in letters. | [optional]
- **offset** | **kotlin.Int**| The number of jokes to skip, between 0 and 1000. | [optional]
- **number** | **kotlin.Int**| The number of jokes, between 1 and 10. | [optional]
+| **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the joke. | [optional] |
+| **includeTags** | **kotlin.String**| A comma-separated list of tags the jokes should have. | [optional] |
+| **excludeTags** | **kotlin.String**| A comma-separated list of tags the jokes must not have. | [optional] |
+| **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the jokes. | [optional] |
+| **maxLength** | **kotlin.Double**| The maximum length of the joke in letters. | [optional] |
+| **offset** | **kotlin.Int**| The number of jokes to skip, between 0 and 1000. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of jokes, between 1 and 10. | [optional] |
 
 ### Return type
 
@@ -336,16 +332,15 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the meme. | [optional]
- **keywordsInImage** | **kotlin.Boolean**| Whether the keywords must occur in the image. | [optional]
- **mediaType** | **kotlin.String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional]
- **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional]
- **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional]
- **offset** | **kotlin.Int**| The number of memes to skip, between 0 and 1000. | [optional]
- **number** | **kotlin.Int**| The number of memes, between 1 and 10. | [optional]
+| **keywords** | **kotlin.String**| A comma-separated list of words that must occur in the meme. | [optional] |
+| **keywordsInImage** | **kotlin.Boolean**| Whether the keywords must occur in the image. | [optional] |
+| **mediaType** | **kotlin.String**| The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). | [optional] |
+| **minRating** | **kotlin.Double**| The minimum rating in range [0.0,1.0] of the meme. | [optional] |
+| **maxAgeDays** | **kotlin.Int**| The maximum age of the meme in days. | [optional] |
+| **offset** | **kotlin.Int**| The number of memes to skip, between 0 and 1000. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of memes, between 1 and 10. | [optional] |
 
 ### Return type
 

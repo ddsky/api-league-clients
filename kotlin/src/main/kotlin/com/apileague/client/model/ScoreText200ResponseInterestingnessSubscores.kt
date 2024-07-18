@@ -47,5 +47,8 @@ data class ScoreText200ResponseInterestingnessSubscores (
     @Json(name = "google_hits_score")
     val googleHitsScore: kotlin.collections.List<kotlin.Int>? = null
 
-)
+) {
+
+
+}
 

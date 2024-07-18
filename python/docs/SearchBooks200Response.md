@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**available** | **int** |  | [optional] 
+**total_results** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
 **books** | **List[List[SearchBooks200ResponseBooksInnerInner]]** |  | [optional] 

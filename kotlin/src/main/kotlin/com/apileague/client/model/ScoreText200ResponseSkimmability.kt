@@ -37,5 +37,8 @@ data class ScoreText200ResponseSkimmability (
     @Json(name = "subscores")
     val subscores: ScoreText200ResponseSkimmabilitySubscores? = null
 
-)
+) {
+
+
+}
 

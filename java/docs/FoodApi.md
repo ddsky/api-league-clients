@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |------------- | ------------- | -------------|
 | [**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition |
 | [**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
+| [**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks |
 | [**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes |
 | [**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants |
 
@@ -178,6 +179,129 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
+<a id="searchDrinks"></a>
+# **searchDrinks**
+> SearchDrinks200Response searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Example
+```java
+// Import classes:
+import com.apileague.client.ApiClient;
+import com.apileague.client.ApiException;
+import com.apileague.client.Configuration;
+import com.apileague.client.auth.*;
+import com.apileague.client.models.*;
+import com.apileague.FoodApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.apileague.com");
+    
+    // Configure API key authorization: apiKey
+    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+    apiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apiKey.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: headerApiKey
+    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
+    headerApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //headerApiKey.setApiKeyPrefix("Token");
+
+    FoodApi apiInstance = new FoodApi(defaultClient);
+    String query = "vodka"; // String | The search query.
+    String glassTypes = "Highball Glass"; // String | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+    String flavors = "sour,sweet"; // String | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+    String diet = "paleo"; // String | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+    String includeIngredients = "orange"; // String | A comma-separated list of ingredients that should/must be used in the drinks.
+    String excludeIngredients = "vodka"; // String | A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+    Double minCalories = 100D; // Double | The minimum amount of calories the drink must have per serving.
+    Double maxCalories = 655D; // Double | The maximum amount of calories the drink can have per serving.
+    Double minCarbs = 10.1D; // Double | The minimum amount of carbohydrates in grams the drink must have per serving.
+    Double maxCarbs = 25.5D; // Double | The maximum amount of carbohydrates in grams the drink can have per serving.
+    Double minProtein = 10.1D; // Double | The minimum amount of protein in grams the drink must have per serving.
+    Double maxProtein = 25.5D; // Double | The maximum amount of protein in grams the drink can have per serving.
+    Double minFat = 10.1D; // Double | The minimum amount of fat in grams the drink must have per serving.
+    Double maxFat = 25.5D; // Double | The maximum amount of fat in grams the drink can have per serving.
+    Double minAlcoholPercent = 10D; // Double | The minimum alcohol percentage the drink must have.
+    Double maxAlcoholPercent = 35D; // Double | The maximum alcohol percentage the drink can have.
+    Double minCaffeine = 30.4D; // Double | The minimum amount of caffeine in milligrams the drink must have per serving.
+    Double maxCaffeine = 80.9D; // Double | The maximum amount of caffeine in milligrams the drink can have per serving.
+    String sort = "calories"; // String | The attribute by which to sort the drinks.
+    String sortDirection = "ASC"; // String | Whether to sort ascending or descending (ASC or DESC).
+    Integer offset = 0; // Integer | The number of drinks to skip, between 0 and 90.
+    Integer number = 3; // Integer | The number of drinks, between 1 and 10.
+    try {
+      SearchDrinks200Response result = apiInstance.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FoodApi#searchDrinks");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **query** | **String**| The search query. | [optional] |
+| **glassTypes** | **String**| A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional] |
+| **flavors** | **String**| A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional] |
+| **diet** | **String**| The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional] |
+| **includeIngredients** | **String**| A comma-separated list of ingredients that should/must be used in the drinks. | [optional] |
+| **excludeIngredients** | **String**| A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional] |
+| **minCalories** | **Double**| The minimum amount of calories the drink must have per serving. | [optional] |
+| **maxCalories** | **Double**| The maximum amount of calories the drink can have per serving. | [optional] |
+| **minCarbs** | **Double**| The minimum amount of carbohydrates in grams the drink must have per serving. | [optional] |
+| **maxCarbs** | **Double**| The maximum amount of carbohydrates in grams the drink can have per serving. | [optional] |
+| **minProtein** | **Double**| The minimum amount of protein in grams the drink must have per serving. | [optional] |
+| **maxProtein** | **Double**| The maximum amount of protein in grams the drink can have per serving. | [optional] |
+| **minFat** | **Double**| The minimum amount of fat in grams the drink must have per serving. | [optional] |
+| **maxFat** | **Double**| The maximum amount of fat in grams the drink can have per serving. | [optional] |
+| **minAlcoholPercent** | **Double**| The minimum alcohol percentage the drink must have. | [optional] |
+| **maxAlcoholPercent** | **Double**| The maximum alcohol percentage the drink can have. | [optional] |
+| **minCaffeine** | **Double**| The minimum amount of caffeine in milligrams the drink must have per serving. | [optional] |
+| **maxCaffeine** | **Double**| The maximum amount of caffeine in milligrams the drink can have per serving. | [optional] |
+| **sort** | **String**| The attribute by which to sort the drinks. | [optional] |
+| **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **Integer**| The number of drinks to skip, between 0 and 90. | [optional] |
+| **number** | **Integer**| The number of drinks, between 1 and 10. | [optional] |
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
 <a id="searchRecipes"></a>
 # **searchRecipes**
 > SearchRecipes200Response searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
@@ -215,8 +339,8 @@ public class Example {
 
     FoodApi apiInstance = new FoodApi(defaultClient);
     String query = "pasta with mushrooms but without nuts"; // String | The search query.
-    String cuisines = "mexican"; // String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-    String excludeCuisines = "indian,japanese"; // String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+    String cuisines = "mexican"; // String | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
+    String excludeCuisines = "indian,japanese"; // String | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
     String mealType = "dessert"; // String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
     String diet = "paleo"; // String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
     String intolerances = "gluten,dairy,shellfish"; // String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -300,7 +424,7 @@ public class Example {
     Double maxVitaminB6 = 80.9D; // Double | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
     Double minVitaminB12 = 30.4D; // Double | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
     Double maxVitaminB12 = 80.9D; // Double | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-    String sort = "meta-score"; // String | The strategy to sort recipes by. See a full list of supported sorting options.
+    String sort = "meta-score"; // String | The strategy to sort recipes by.
     String sortDirection = "ASC"; // String | Whether to sort ascending or descending (ASC or DESC).
     Integer offset = 0; // Integer | The number of recipes to skip, between 0 and 900.
     Integer number = 3; // Integer | The number of recipes, between 1 and 100.
@@ -323,8 +447,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **query** | **String**| The search query. | [optional] |
-| **cuisines** | **String**| The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional] |
-| **excludeCuisines** | **String**| The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional] |
+| **cuisines** | **String**| The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional] |
+| **excludeCuisines** | **String**| The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional] |
 | **mealType** | **String**| The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional] |
 | **diet** | **String**| The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional] |
 | **intolerances** | **String**| A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional] |
@@ -408,7 +532,7 @@ public class Example {
 | **maxVitaminB6** | **Double**| The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional] |
 | **minVitaminB12** | **Double**| The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional] |
 | **maxVitaminB12** | **Double**| The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional] |
-| **sort** | **String**| The strategy to sort recipes by. See a full list of supported sorting options. | [optional] |
+| **sort** | **String**| The strategy to sort recipes by. | [optional] |
 | **sortDirection** | **String**| Whether to sort ascending or descending (ASC or DESC). | [optional] |
 | **offset** | **Integer**| The number of recipes to skip, between 0 and 900. | [optional] |
 | **number** | **Integer**| The number of recipes, between 1 and 100. | [optional] |

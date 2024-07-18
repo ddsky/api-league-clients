@@ -7,7 +7,7 @@
 
 (def search-books-200-response-data
   {
-   (ds/opt :available) int?
+   (ds/opt :total_results) int?
    (ds/opt :number) int?
    (ds/opt :offset) int?
    (ds/opt :books) (s/coll-of (s/coll-of search-books-200-response-books-inner-inner-spec))

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **amount** | **num** |  | [optional] 
 **unit** | **String** |  | [optional] 
 **id** | **int** |  | [optional] 
-**nutrients** | [**List<RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner>**](RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] [default to const []]
+**nutrients** | [**List<SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner>**](SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

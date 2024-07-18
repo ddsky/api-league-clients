@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
-[**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle
-[**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
+| [**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle |
+| [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
 
 
 <a id="randomQuote"></a>
@@ -39,11 +39,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **minLength** | **kotlin.Int**| The minimum length of the quote in letters. | [optional]
- **maxLength** | **kotlin.Int**| The maximum length of the quote in letters. | [optional]
+| **minLength** | **kotlin.Int**| The minimum length of the quote in letters. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **maxLength** | **kotlin.Int**| The maximum length of the quote in letters. | [optional] |
 
 ### Return type
 
@@ -93,10 +92,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **difficulty** | **kotlin.String**| The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **difficulty** | **kotlin.String**| The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. | [optional] |
 
 ### Return type
 
@@ -146,10 +144,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **maxLength** | **kotlin.Int**| The maximum length of the trivia in letters. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **maxLength** | **kotlin.Int**| The maximum length of the trivia in letters. | [optional] |
 
 ### Return type
 

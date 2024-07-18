@@ -32,5 +32,8 @@ data class ExtractDates200Response (
     @Json(name = "dates")
     val dates: kotlin.collections.List<ExtractDates200ResponseDatesInner>? = null
 
-)
+) {
+
+
+}
 

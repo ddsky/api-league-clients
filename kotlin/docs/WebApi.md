@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.apileague.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors
-[**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page
-[**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date
-[**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank
-[**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web
-[**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**extractAuthors**](WebApi.md#extractAuthors) | **GET** /extract-authors | Extract Authors |
+| [**extractContentFromAWebPage**](WebApi.md#extractContentFromAWebPage) | **GET** /extract-content | Extract Content from a Web Page |
+| [**extractPublishDate**](WebApi.md#extractPublishDate) | **GET** /extract-publish-date | Extract Publish Date |
+| [**retrievePageRank**](WebApi.md#retrievePageRank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
+| [**searchWeb**](WebApi.md#searchWeb) | **GET** /search-web | Search Web |
+| [**verifyEmailAddress**](WebApi.md#verifyEmailAddress) | **GET** /verify-email | Verify Email Address |
 
 
 <a id="extractAuthors"></a>
@@ -41,10 +41,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url with the article from which authors should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **kotlin.String**| The url with the article from which authors should be extracted. | |
 
 ### Return type
 
@@ -94,10 +93,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url for which the content will be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **kotlin.String**| The url for which the content will be extracted. | |
 
 ### Return type
 
@@ -147,10 +145,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **kotlin.String**| The url for which the publish date should be extracted. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **url** | **kotlin.String**| The url for which the publish date should be extracted. | |
 
 ### Return type
 
@@ -200,10 +197,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **domain** | **kotlin.String**| The domain for which the page rank should be returned. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain** | **kotlin.String**| The domain for which the page rank should be returned. | |
 
 ### Return type
 
@@ -254,11 +250,10 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **kotlin.String**| The search query. |
- **number** | **kotlin.Int**| The number of results to return in range [1,50] | [optional]
+| **query** | **kotlin.String**| The search query. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of results to return in range [1,50] | [optional] |
 
 ### Return type
 
@@ -308,10 +303,9 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **kotlin.String**| The email address to verify. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **email** | **kotlin.String**| The email address to verify. | |
 
 ### Return type
 

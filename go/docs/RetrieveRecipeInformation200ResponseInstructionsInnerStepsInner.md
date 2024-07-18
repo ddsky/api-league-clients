@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Number** | Pointer to **int32** |  | [optional] 
-**Ingredients** | Pointer to [**[]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
-**Equipment** | Pointer to [**[]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner**](RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**Ingredients** | Pointer to [**[]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
+**Equipment** | Pointer to [**[]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner**](SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
 **Step** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasNumber returns a boolean if a field has been set.
 
 ### GetIngredients
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredients() []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredients() []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner`
 
 GetIngredients returns the Ingredients field if non-nil, zero value otherwise.
 
 ### GetIngredientsOk
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredientsOk() (*[]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner, bool)`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetIngredientsOk() (*[]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner, bool)`
 
 GetIngredientsOk returns a tuple with the Ingredients field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIngredients
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetIngredients(v []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner)`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetIngredients(v []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner)`
 
 SetIngredients sets Ingredients field to given value.
 
@@ -80,20 +80,20 @@ HasIngredients returns a boolean if a field has been set.
 
 ### GetEquipment
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipment() []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipment() []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner`
 
 GetEquipment returns the Equipment field if non-nil, zero value otherwise.
 
 ### GetEquipmentOk
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipmentOk() (*[]RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner, bool)`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) GetEquipmentOk() (*[]SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner, bool)`
 
 GetEquipmentOk returns a tuple with the Equipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEquipment
 
-`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetEquipment(v []RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner)`
+`func (o *RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner) SetEquipment(v []SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner)`
 
 SetEquipment sets Equipment field to given value.
 

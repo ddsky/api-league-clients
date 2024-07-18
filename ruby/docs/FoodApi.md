@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------ | ------------ | ----------- |
 | [**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition |
 | [**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information |
+| [**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks |
 | [**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes |
 | [**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants |
 
@@ -172,6 +173,126 @@ end
 - **Accept**: application/json
 
 
+## search_drinks
+
+> <SearchDrinks200Response> search_drinks(opts)
+
+Search Drinks
+
+Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::FoodApi.new
+opts = {
+  query: 'vodka', # String | The search query.
+  glass_types: 'Highball Glass', # String | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+  flavors: 'sour,sweet', # String | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+  diet: 'paleo', # String | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+  include_ingredients: 'orange', # String | A comma-separated list of ingredients that should/must be used in the drinks.
+  exclude_ingredients: 'vodka', # String | A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+  min_calories: 100, # Float | The minimum amount of calories the drink must have per serving.
+  max_calories: 655, # Float | The maximum amount of calories the drink can have per serving.
+  min_carbs: 10.1, # Float | The minimum amount of carbohydrates in grams the drink must have per serving.
+  max_carbs: 25.5, # Float | The maximum amount of carbohydrates in grams the drink can have per serving.
+  min_protein: 10.1, # Float | The minimum amount of protein in grams the drink must have per serving.
+  max_protein: 25.5, # Float | The maximum amount of protein in grams the drink can have per serving.
+  min_fat: 10.1, # Float | The minimum amount of fat in grams the drink must have per serving.
+  max_fat: 25.5, # Float | The maximum amount of fat in grams the drink can have per serving.
+  min_alcohol_percent: 10, # Float | The minimum alcohol percentage the drink must have.
+  max_alcohol_percent: 35, # Float | The maximum alcohol percentage the drink can have.
+  min_caffeine: 30.4, # Float | The minimum amount of caffeine in milligrams the drink must have per serving.
+  max_caffeine: 80.9, # Float | The maximum amount of caffeine in milligrams the drink can have per serving.
+  sort: 'calories', # String | The attribute by which to sort the drinks.
+  sort_direction: 'ASC', # String | Whether to sort ascending or descending (ASC or DESC).
+  offset: 0, # Integer | The number of drinks to skip, between 0 and 90.
+  number: 3 # Integer | The number of drinks, between 1 and 10.
+}
+
+begin
+  # Search Drinks
+  result = api_instance.search_drinks(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FoodApi->search_drinks: #{e}"
+end
+```
+
+#### Using the search_drinks_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SearchDrinks200Response>, Integer, Hash)> search_drinks_with_http_info(opts)
+
+```ruby
+begin
+  # Search Drinks
+  data, status_code, headers = api_instance.search_drinks_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SearchDrinks200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FoodApi->search_drinks_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **query** | **String** | The search query. | [optional] |
+| **glass_types** | **String** | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. | [optional] |
+| **flavors** | **String** | A comma-separated list (interpreted as AND) of dominant flavors in the drink. | [optional] |
+| **diet** | **String** | The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian. | [optional] |
+| **include_ingredients** | **String** | A comma-separated list of ingredients that should/must be used in the drinks. | [optional] |
+| **exclude_ingredients** | **String** | A comma-separated list of ingredients or ingredient types that the drinks must not contain. | [optional] |
+| **min_calories** | **Float** | The minimum amount of calories the drink must have per serving. | [optional] |
+| **max_calories** | **Float** | The maximum amount of calories the drink can have per serving. | [optional] |
+| **min_carbs** | **Float** | The minimum amount of carbohydrates in grams the drink must have per serving. | [optional] |
+| **max_carbs** | **Float** | The maximum amount of carbohydrates in grams the drink can have per serving. | [optional] |
+| **min_protein** | **Float** | The minimum amount of protein in grams the drink must have per serving. | [optional] |
+| **max_protein** | **Float** | The maximum amount of protein in grams the drink can have per serving. | [optional] |
+| **min_fat** | **Float** | The minimum amount of fat in grams the drink must have per serving. | [optional] |
+| **max_fat** | **Float** | The maximum amount of fat in grams the drink can have per serving. | [optional] |
+| **min_alcohol_percent** | **Float** | The minimum alcohol percentage the drink must have. | [optional] |
+| **max_alcohol_percent** | **Float** | The maximum alcohol percentage the drink can have. | [optional] |
+| **min_caffeine** | **Float** | The minimum amount of caffeine in milligrams the drink must have per serving. | [optional] |
+| **max_caffeine** | **Float** | The maximum amount of caffeine in milligrams the drink can have per serving. | [optional] |
+| **sort** | **String** | The attribute by which to sort the drinks. | [optional] |
+| **sort_direction** | **String** | Whether to sort ascending or descending (ASC or DESC). | [optional] |
+| **offset** | **Integer** | The number of drinks to skip, between 0 and 90. | [optional] |
+| **number** | **Integer** | The number of drinks, between 1 and 10. | [optional] |
+
+### Return type
+
+[**SearchDrinks200Response**](SearchDrinks200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## search_recipes
 
 > <SearchRecipes200Response> search_recipes(opts)
@@ -201,8 +322,8 @@ end
 api_instance = OpenapiClient::FoodApi.new
 opts = {
   query: 'pasta with mushrooms but without nuts', # String | The search query.
-  cuisines: 'mexican', # String | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').
-  exclude_cuisines: 'indian,japanese', # String | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').
+  cuisines: 'mexican', # String | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
+  exclude_cuisines: 'indian,japanese', # String | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
   meal_type: 'dessert', # String | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
   diet: 'paleo', # String | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
   intolerances: 'gluten,dairy,shellfish', # String | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
@@ -286,7 +407,7 @@ opts = {
   max_vitamin_b6: 80.9, # Float | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
   min_vitamin_b12: 30.4, # Float | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
   max_vitamin_b12: 80.9, # Float | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-  sort: 'meta-score', # String | The strategy to sort recipes by. See a full list of supported sorting options.
+  sort: 'meta-score', # String | The strategy to sort recipes by.
   sort_direction: 'ASC', # String | Whether to sort ascending or descending (ASC or DESC).
   offset: 0, # Integer | The number of recipes to skip, between 0 and 900.
   number: 3 # Integer | The number of recipes, between 1 and 100.
@@ -324,8 +445,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **query** | **String** | The search query. | [optional] |
-| **cuisines** | **String** | The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as &#39;OR&#39;). | [optional] |
-| **exclude_cuisines** | **String** | The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as &#39;AND&#39;). | [optional] |
+| **cuisines** | **String** | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). | [optional] |
+| **exclude_cuisines** | **String** | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;). | [optional] |
 | **meal_type** | **String** | The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink. | [optional] |
 | **diet** | **String** | The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian. | [optional] |
 | **intolerances** | **String** | A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered. | [optional] |
@@ -409,7 +530,7 @@ end
 | **max_vitamin_b6** | **Float** | The maximum amount of Vitamin B6 in milligrams the recipe can have per serving. | [optional] |
 | **min_vitamin_b12** | **Float** | The minimum amount of Vitamin B12 in milligrams the recipe must have per serving. | [optional] |
 | **max_vitamin_b12** | **Float** | The maximum amount of Vitamin B12 in milligrams the recipe can have per serving. | [optional] |
-| **sort** | **String** | The strategy to sort recipes by. See a full list of supported sorting options. | [optional] |
+| **sort** | **String** | The strategy to sort recipes by. | [optional] |
 | **sort_direction** | **String** | Whether to sort ascending or descending (ASC or DESC). | [optional] |
 | **offset** | **Integer** | The number of recipes to skip, between 0 and 900. | [optional] |
 | **number** | **Integer** | The number of recipes, between 1 and 100. | [optional] |

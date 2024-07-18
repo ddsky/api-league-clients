@@ -35,5 +35,8 @@ data class ScoreText200ResponseSkimmabilityMainscores (
     @Json(name = "total")
     val total: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

@@ -63,5 +63,8 @@ data class ScoreText200ResponseReadabilitySubscores (
     @Json(name = "fog")
     val fog: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

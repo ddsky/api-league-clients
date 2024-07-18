@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.4.2
+API version: 1.5.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &RetrieveRecipeInformation200ResponseIngredientsInnerMeas
 
 // RetrieveRecipeInformation200ResponseIngredientsInnerMeasures struct for RetrieveRecipeInformation200ResponseIngredientsInnerMeasures
 type RetrieveRecipeInformation200ResponseIngredientsInnerMeasures struct {
-	Metric *RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric `json:"metric,omitempty"`
-	Us *RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric `json:"us,omitempty"`
+	Metric *SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric `json:"metric,omitempty"`
+	Us *SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric `json:"us,omitempty"`
 }
 
 // NewRetrieveRecipeInformation200ResponseIngredientsInnerMeasures instantiates a new RetrieveRecipeInformation200ResponseIngredientsInnerMeasures object
@@ -42,9 +42,9 @@ func NewRetrieveRecipeInformation200ResponseIngredientsInnerMeasuresWithDefaults
 }
 
 // GetMetric returns the Metric field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetric() RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric {
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetric() SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric {
 	if o == nil || IsNil(o.Metric) {
-		var ret RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+		var ret SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
 		return ret
 	}
 	return *o.Metric
@@ -52,7 +52,7 @@ func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetric
 
 // GetMetricOk returns a tuple with the Metric field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetricOk() (*RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric, bool) {
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetMetricOk() (*SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool) {
 	if o == nil || IsNil(o.Metric) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) HasMetric
 	return false
 }
 
-// SetMetric gets a reference to the given RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric and assigns it to the Metric field.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetMetric(v RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric) {
+// SetMetric gets a reference to the given SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric and assigns it to the Metric field.
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetMetric(v SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric) {
 	o.Metric = &v
 }
 
 // GetUs returns the Us field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUs() RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric {
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUs() SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric {
 	if o == nil || IsNil(o.Us) {
-		var ret RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric
+		var ret SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric
 		return ret
 	}
 	return *o.Us
@@ -84,7 +84,7 @@ func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUs() R
 
 // GetUsOk returns a tuple with the Us field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUsOk() (*RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric, bool) {
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) GetUsOk() (*SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool) {
 	if o == nil || IsNil(o.Us) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) HasUs() b
 	return false
 }
 
-// SetUs gets a reference to the given RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric and assigns it to the Us field.
-func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetUs(v RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric) {
+// SetUs gets a reference to the given SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric and assigns it to the Us field.
+func (o *RetrieveRecipeInformation200ResponseIngredientsInnerMeasures) SetUs(v SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric) {
 	o.Us = &v
 }
 

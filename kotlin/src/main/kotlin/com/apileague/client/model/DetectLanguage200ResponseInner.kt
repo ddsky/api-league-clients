@@ -35,5 +35,8 @@ data class DetectLanguage200ResponseInner (
     @Json(name = "confidence")
     val confidence: java.math.BigDecimal? = null
 
-)
+) {
+
+
+}
 

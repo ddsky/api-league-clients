@@ -39,5 +39,8 @@ data class RetrieveRecipeInformation200ResponseScores (
     @Json(name = "health_score")
     val healthScore: kotlin.Int? = null
 
-)
+) {
+
+
+}
 

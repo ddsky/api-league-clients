@@ -48,5 +48,8 @@ data class ComputeNutrition200ResponseIngredientBreakdownInner (
     @Json(name = "nutrients")
     val nutrients: kotlin.collections.List<ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner>? = null
 
-)
+) {
+
+
+}
 

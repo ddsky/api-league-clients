@@ -39,5 +39,8 @@ data class SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner (
     @Json(name = "unit")
     val unit: kotlin.String? = null
 
-)
+) {
+
+
+}
 

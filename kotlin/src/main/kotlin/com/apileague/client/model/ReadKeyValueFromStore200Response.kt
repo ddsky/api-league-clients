@@ -31,5 +31,8 @@ data class ReadKeyValueFromStore200Response (
     @Json(name = "value")
     val `value`: kotlin.String? = null
 
-)
+) {
+
+
+}
 

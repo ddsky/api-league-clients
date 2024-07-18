@@ -39,16 +39,10 @@ import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveR
 import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
 import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
 import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasuresMetric';
 import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
 import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInnerIngredientsInner';
 import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
-import { RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown } from '../models/RetrieveRecipeInformation200ResponseNutritionCaloricBreakdown';
-import { RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionFlavonoidsInner';
 import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInnerNutrientsInner';
-import { RetrieveRecipeInformation200ResponseNutritionWeightPerServing } from '../models/RetrieveRecipeInformation200ResponseNutritionWeightPerServing';
 import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
 import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
 import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
@@ -66,6 +60,23 @@ import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
 import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
 import { SearchBooks200Response } from '../models/SearchBooks200Response';
 import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
+import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
+import { SearchDrinks200ResponseDrinksInner } from '../models/SearchDrinks200ResponseDrinksInner';
+import { SearchDrinks200ResponseDrinksInnerCredits } from '../models/SearchDrinks200ResponseDrinksInnerCredits';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
+import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutrition } from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
+import { SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
+import { SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
@@ -370,6 +381,141 @@ export interface FoodApiRetrieveRecipeInformationRequest {
     addWinePairing?: boolean
 }
 
+export interface FoodApiSearchDrinksRequest {
+    /**
+     * The search query.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    query?: string
+    /**
+     * A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    glassTypes?: string
+    /**
+     * A comma-separated list (interpreted as AND) of dominant flavors in the drink.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    flavors?: string
+    /**
+     * The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    diet?: string
+    /**
+     * A comma-separated list of ingredients that should/must be used in the drinks.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    includeIngredients?: string
+    /**
+     * A comma-separated list of ingredients or ingredient types that the drinks must not contain.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    excludeIngredients?: string
+    /**
+     * The minimum amount of calories the drink must have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minCalories?: number
+    /**
+     * The maximum amount of calories the drink can have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxCalories?: number
+    /**
+     * The minimum amount of carbohydrates in grams the drink must have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minCarbs?: number
+    /**
+     * The maximum amount of carbohydrates in grams the drink can have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxCarbs?: number
+    /**
+     * The minimum amount of protein in grams the drink must have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minProtein?: number
+    /**
+     * The maximum amount of protein in grams the drink can have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxProtein?: number
+    /**
+     * The minimum amount of fat in grams the drink must have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minFat?: number
+    /**
+     * The maximum amount of fat in grams the drink can have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxFat?: number
+    /**
+     * The minimum alcohol percentage the drink must have.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minAlcoholPercent?: number
+    /**
+     * The maximum alcohol percentage the drink can have.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxAlcoholPercent?: number
+    /**
+     * The minimum amount of caffeine in milligrams the drink must have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    minCaffeine?: number
+    /**
+     * The maximum amount of caffeine in milligrams the drink can have per serving.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    maxCaffeine?: number
+    /**
+     * The attribute by which to sort the drinks.
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    sort?: string
+    /**
+     * Whether to sort ascending or descending (ASC or DESC).
+     * @type string
+     * @memberof FoodApisearchDrinks
+     */
+    sortDirection?: string
+    /**
+     * The number of drinks to skip, between 0 and 90.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    offset?: number
+    /**
+     * The number of drinks, between 1 and 10.
+     * @type number
+     * @memberof FoodApisearchDrinks
+     */
+    number?: number
+}
+
 export interface FoodApiSearchRecipesRequest {
     /**
      * The search query.
@@ -378,13 +524,13 @@ export interface FoodApiSearchRecipesRequest {
      */
     query?: string
     /**
-     * The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as \&#39;OR\&#39;).
+     * The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
      * @type string
      * @memberof FoodApisearchRecipes
      */
     cuisines?: string
     /**
-     * The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as \&#39;AND\&#39;).
+     * The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
      * @type string
      * @memberof FoodApisearchRecipes
      */
@@ -888,7 +1034,7 @@ export interface FoodApiSearchRecipesRequest {
      */
     maxVitaminB12?: number
     /**
-     * The strategy to sort recipes by. See a full list of supported sorting options.
+     * The strategy to sort recipes by.
      * @type string
      * @memberof FoodApisearchRecipes
      */
@@ -1017,6 +1163,24 @@ export class ObjectFoodApi {
      */
     public retrieveRecipeInformation(param: FoodApiRetrieveRecipeInformationRequest, options?: Configuration): Promise<RetrieveRecipeInformation200Response> {
         return this.api.retrieveRecipeInformation(param.id, param.addWinePairing,  options).toPromise();
+    }
+
+    /**
+     * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+     * Search Drinks
+     * @param param the request object
+     */
+    public searchDrinksWithHttpInfo(param: FoodApiSearchDrinksRequest = {}, options?: Configuration): Promise<HttpInfo<SearchDrinks200Response>> {
+        return this.api.searchDrinksWithHttpInfo(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
+     * Search Drinks
+     * @param param the request object
+     */
+    public searchDrinks(param: FoodApiSearchDrinksRequest = {}, options?: Configuration): Promise<SearchDrinks200Response> {
+        return this.api.searchDrinks(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**

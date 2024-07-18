@@ -39,5 +39,8 @@ data class SearchMemes200ResponseMemesInner (
     @Json(name = "url")
     val url: kotlin.String? = null
 
-)
+) {
+
+
+}
 

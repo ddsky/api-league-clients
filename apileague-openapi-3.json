@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.4.2",
+    "version": "1.5.0",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -27,7 +27,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "available": {
+                    "total_results": {
                       "type": "integer"
                     },
                     "number": {
@@ -63,7 +63,7 @@
                 "examples": {
                   "Response": {
                     "value": {
-                      "available": 5999,
+                      "total_results": 5999,
                       "number": 10,
                       "offset": 0,
                       "books": [
@@ -2259,6 +2259,2259 @@
         "deprecated": false
       }
     },
+    "/search-drinks": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "number": {
+                      "type": "integer"
+                    },
+                    "drinks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "flavors": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          },
+                          "instructions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "steps": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "number": {
+                                        "type": "integer"
+                                      },
+                                      "ingredients": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "name": {
+                                              "type": "string",
+                                              "nullable": true
+                                            },
+                                            "image": {
+                                              "type": "string",
+                                              "nullable": true
+                                            },
+                                            "id": {
+                                              "type": "integer"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "equipment": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string",
+                                          "nullable": true
+                                        }
+                                      },
+                                      "step": {
+                                        "type": "string",
+                                        "nullable": true
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "images": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          },
+                          "nutrition": {
+                            "type": "object",
+                            "properties": {
+                              "weight_per_serving": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "integer"
+                                  },
+                                  "unit": {
+                                    "type": "string",
+                                    "nullable": true
+                                  }
+                                }
+                              },
+                              "caloric_breakdown": {
+                                "type": "object",
+                                "properties": {
+                                  "percent_fat": {
+                                    "type": "number"
+                                  },
+                                  "percent_carbs": {
+                                    "type": "number"
+                                  },
+                                  "percent_protein": {
+                                    "type": "number"
+                                  }
+                                }
+                              },
+                              "flavonoids": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "amount": {
+                                      "type": "integer"
+                                    },
+                                    "unit": {
+                                      "type": "string",
+                                      "nullable": true
+                                    }
+                                  }
+                                }
+                              },
+                              "ingredient_breakdown": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "amount": {
+                                      "type": "integer"
+                                    },
+                                    "unit": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "id": {
+                                      "type": "integer"
+                                    },
+                                    "nutrients": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "name": {
+                                            "type": "string",
+                                            "nullable": true
+                                          },
+                                          "percent_of_daily_needs": {
+                                            "type": "number"
+                                          },
+                                          "amount": {
+                                            "type": "integer"
+                                          },
+                                          "unit": {
+                                            "type": "string",
+                                            "nullable": true
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "properties": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "amount": {
+                                      "type": "integer"
+                                    },
+                                    "unit": {
+                                      "type": "string",
+                                      "nullable": true
+                                    }
+                                  }
+                                }
+                              },
+                              "nutrients": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "percent_of_daily_needs": {
+                                      "type": "number"
+                                    },
+                                    "amount": {
+                                      "type": "number"
+                                    },
+                                    "unit": {
+                                      "type": "string",
+                                      "nullable": true
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "glass_type": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "credits": {
+                            "type": "object",
+                            "properties": {
+                              "text": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "source_name": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "source_url": {
+                                "type": "string",
+                                "nullable": true
+                              }
+                            }
+                          },
+                          "price_per_serving": {
+                            "type": "number"
+                          },
+                          "description": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "ingredients": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "image": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "name_clean": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "amount": {
+                                  "type": "integer"
+                                },
+                                "unit": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "measures": {
+                                  "type": "object",
+                                  "properties": {
+                                    "metric": {
+                                      "type": "object",
+                                      "properties": {
+                                        "unit_short": {
+                                          "type": "string",
+                                          "nullable": true
+                                        },
+                                        "amount": {
+                                          "type": "number"
+                                        },
+                                        "unit_long": {
+                                          "type": "string",
+                                          "nullable": true
+                                        }
+                                      }
+                                    },
+                                    "us": {
+                                      "type": "object",
+                                      "properties": {
+                                        "unit_short": {
+                                          "type": "string",
+                                          "nullable": true
+                                        },
+                                        "amount": {
+                                          "type": "integer"
+                                        },
+                                        "unit_long": {
+                                          "type": "string",
+                                          "nullable": true
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "original": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "meta": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "nullable": true
+                                  }
+                                },
+                                "original_name": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "aisle": {
+                                  "type": "string",
+                                  "nullable": true
+                                },
+                                "consistency": {
+                                  "type": "string",
+                                  "nullable": true
+                                }
+                              }
+                            }
+                          },
+                          "id": {
+                            "type": "integer"
+                          },
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "cuisines": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "total_results": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "offset": 0,
+                      "number": 1,
+                      "drinks": [
+                        {
+                          "flavors": [
+                            "creamy",
+                            "spicy",
+                            "sour",
+                            "sweet"
+                          ],
+                          "instructions": [
+                            {
+                              "name": "",
+                              "steps": [
+                                {
+                                  "number": 1,
+                                  "ingredients": [
+                                    {
+                                      "name": "nutmeg",
+                                      "image": "https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg",
+                                      "id": 2025
+                                    }
+                                  ],
+                                  "equipment": [],
+                                  "step": "Blend all ingredients, save nutmeg."
+                                },
+                                {
+                                  "number": 2,
+                                  "ingredients": [
+                                    {
+                                      "name": "white wine",
+                                      "image": "https://img.spoonacular.com/ingredients_100x100/white-wine.jpg",
+                                      "id": 14106
+                                    },
+                                    {
+                                      "name": "nutmeg",
+                                      "image": "https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg",
+                                      "id": 2025
+                                    }
+                                  ],
+                                  "equipment": [],
+                                  "step": "Pour into large white wine glass and sprinkle nutmeg on top."
+                                }
+                              ]
+                            }
+                          ],
+                          "images": [
+                            "https://img.apileague.com/recipes/1957030-90x90.jpg",
+                            "https://img.apileague.com/recipes/1957030-312x231.jpg",
+                            "https://img.apileague.com/recipes/1957030-636x393.jpg",
+                            "https://img.apileague.com/recipes/1957030-556x370.jpg"
+                          ],
+                          "nutrition": {
+                            "weight_per_serving": {
+                              "amount": 228,
+                              "unit": "g"
+                            },
+                            "caloric_breakdown": {
+                              "percent_fat": 56.13,
+                              "percent_carbs": 37.36,
+                              "percent_protein": 6.51
+                            },
+                            "flavonoids": [
+                              {
+                                "name": "Cyanidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Petunidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Delphinidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Malvidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Pelargonidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Peonidin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Catechin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Epigallocatechin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Epicatechin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Epicatechin 3-gallate",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Epigallocatechin 3-gallate",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Theaflavin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Thearubigins",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Eriodictyol",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Hesperetin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Naringenin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Apigenin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Luteolin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Isorhamnetin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Kaempferol",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Myricetin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Quercetin",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Theaflavin-3,3'-digallate",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Theaflavin-3'-gallate",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Theaflavin-3-gallate",
+                                "amount": 0,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Gallocatechin",
+                                "amount": 0,
+                                "unit": ""
+                              }
+                            ],
+                            "ingredient_breakdown": [
+                              {
+                                "name": "vodka",
+                                "amount": 2,
+                                "unit": "oz",
+                                "id": 14051,
+                                "nutrients": [
+                                  {
+                                    "name": "Vitamin B2",
+                                    "percent_of_daily_needs": 6.77,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Saturated Fat",
+                                    "percent_of_daily_needs": 28.15,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B1",
+                                    "percent_of_daily_needs": 1.78,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Magnesium",
+                                    "percent_of_daily_needs": 2.47,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Zinc",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Protein",
+                                    "percent_of_daily_needs": 3.78,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B6",
+                                    "percent_of_daily_needs": 1.58,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Net Carbohydrates",
+                                    "percent_of_daily_needs": 3.79,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Copper",
+                                    "percent_of_daily_needs": 2.01,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Sugar",
+                                    "percent_of_daily_needs": 10.69,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Manganese",
+                                    "percent_of_daily_needs": 2.93,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Poly Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Alcohol",
+                                    "percent_of_daily_needs": 100,
+                                    "amount": 18.94,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fat",
+                                    "percent_of_daily_needs": 11.15,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B5",
+                                    "percent_of_daily_needs": 1.64,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Folic Acid",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Carbohydrates",
+                                    "percent_of_daily_needs": 3.62,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Potassium",
+                                    "percent_of_daily_needs": 2.35,
+                                    "amount": 0.57,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin B3",
+                                    "percent_of_daily_needs": 0.44,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Iron",
+                                    "percent_of_daily_needs": 0.53,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Phosphorus",
+                                    "percent_of_daily_needs": 6.1,
+                                    "amount": 2.83,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin A",
+                                    "percent_of_daily_needs": 4.06,
+                                    "amount": 0,
+                                    "unit": "IU"
+                                  },
+                                  {
+                                    "name": "Calcium",
+                                    "percent_of_daily_needs": 6.6,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Fiber",
+                                    "percent_of_daily_needs": 1.66,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin C",
+                                    "percent_of_daily_needs": 0.69,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Folate",
+                                    "percent_of_daily_needs": 0.81,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Sodium",
+                                    "percent_of_daily_needs": 1.82,
+                                    "amount": 0.57,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Cholesterol",
+                                    "percent_of_daily_needs": 6.61,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Calories",
+                                    "percent_of_daily_needs": 12.23,
+                                    "amount": 130.97,
+                                    "unit": "kcal"
+                                  },
+                                  {
+                                    "name": "Mono Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B12",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Selenium",
+                                    "percent_of_daily_needs": 2.64,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "half-and-half",
+                                "amount": 2,
+                                "unit": "oz",
+                                "id": 1049,
+                                "nutrients": [
+                                  {
+                                    "name": "Lycopene",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Saturated Fat",
+                                    "percent_of_daily_needs": 28.15,
+                                    "amount": 3.99,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B1",
+                                    "percent_of_daily_needs": 1.78,
+                                    "amount": 0.02,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin K",
+                                    "percent_of_daily_needs": 0.7,
+                                    "amount": 0.74,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Magnesium",
+                                    "percent_of_daily_needs": 2.47,
+                                    "amount": 5.67,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Zinc",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0.22,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Protein",
+                                    "percent_of_daily_needs": 3.78,
+                                    "amount": 1.77,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B6",
+                                    "percent_of_daily_needs": 1.58,
+                                    "amount": 0.03,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Net Carbohydrates",
+                                    "percent_of_daily_needs": 3.79,
+                                    "amount": 2.44,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fluoride",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 1.7,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Copper",
+                                    "percent_of_daily_needs": 2.01,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Caffeine",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin E",
+                                    "percent_of_daily_needs": 0.94,
+                                    "amount": 0.14,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Sugar",
+                                    "percent_of_daily_needs": 10.69,
+                                    "amount": 2.34,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Manganese",
+                                    "percent_of_daily_needs": 2.93,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Poly Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0.31,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Folic Acid",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Alcohol",
+                                    "percent_of_daily_needs": 100,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fat",
+                                    "percent_of_daily_needs": 11.15,
+                                    "amount": 6.52,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin D",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Vitamin B5",
+                                    "percent_of_daily_needs": 1.64,
+                                    "amount": 0.16,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Choline",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 10.6,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin B3",
+                                    "percent_of_daily_needs": 0.44,
+                                    "amount": 0.06,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Carbohydrates",
+                                    "percent_of_daily_needs": 3.62,
+                                    "amount": 2.44,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Potassium",
+                                    "percent_of_daily_needs": 2.35,
+                                    "amount": 74.84,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Iron",
+                                    "percent_of_daily_needs": 0.53,
+                                    "amount": 0.03,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Phosphorus",
+                                    "percent_of_daily_needs": 6.1,
+                                    "amount": 53.86,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin A",
+                                    "percent_of_daily_needs": 4.06,
+                                    "amount": 200.71,
+                                    "unit": "IU"
+                                  },
+                                  {
+                                    "name": "Calcium",
+                                    "percent_of_daily_needs": 6.6,
+                                    "amount": 60.67,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Fiber",
+                                    "percent_of_daily_needs": 1.66,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin C",
+                                    "percent_of_daily_needs": 0.69,
+                                    "amount": 0.51,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Folate",
+                                    "percent_of_daily_needs": 0.81,
+                                    "amount": 1.7,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Sodium",
+                                    "percent_of_daily_needs": 1.82,
+                                    "amount": 34.59,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Cholesterol",
+                                    "percent_of_daily_needs": 6.61,
+                                    "amount": 19.84,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Mono Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 1.88,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Calories",
+                                    "percent_of_daily_needs": 12.23,
+                                    "amount": 74.28,
+                                    "unit": "kcal"
+                                  },
+                                  {
+                                    "name": "Vitamin B12",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0.11,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Vitamin B2",
+                                    "percent_of_daily_needs": 6.77,
+                                    "amount": 0.11,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Selenium",
+                                    "percent_of_daily_needs": 2.64,
+                                    "amount": 1.81,
+                                    "unit": "\u00b5g"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "limeade",
+                                "amount": 2,
+                                "unit": "oz",
+                                "id": 99185,
+                                "nutrients": [
+                                  {
+                                    "name": "Vitamin B2",
+                                    "percent_of_daily_needs": 6.77,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Saturated Fat",
+                                    "percent_of_daily_needs": 28.15,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B1",
+                                    "percent_of_daily_needs": 1.78,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin K",
+                                    "percent_of_daily_needs": 0.7,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Trans Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Magnesium",
+                                    "percent_of_daily_needs": 2.47,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Zinc",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Protein",
+                                    "percent_of_daily_needs": 3.78,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B6",
+                                    "percent_of_daily_needs": 1.58,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Net Carbohydrates",
+                                    "percent_of_daily_needs": 3.79,
+                                    "amount": 7.43,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fluoride",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Copper",
+                                    "percent_of_daily_needs": 2.01,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Caffeine",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin E",
+                                    "percent_of_daily_needs": 0.94,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Sugar",
+                                    "percent_of_daily_needs": 10.69,
+                                    "amount": 6.71,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Manganese",
+                                    "percent_of_daily_needs": 2.93,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Poly Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Alcohol",
+                                    "percent_of_daily_needs": 100,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fat",
+                                    "percent_of_daily_needs": 11.15,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin D",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Vitamin B5",
+                                    "percent_of_daily_needs": 1.64,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin B3",
+                                    "percent_of_daily_needs": 0.44,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Carbohydrates",
+                                    "percent_of_daily_needs": 3.62,
+                                    "amount": 7.43,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Potassium",
+                                    "percent_of_daily_needs": 2.35,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Iron",
+                                    "percent_of_daily_needs": 0.53,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Phosphorus",
+                                    "percent_of_daily_needs": 6.1,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin A",
+                                    "percent_of_daily_needs": 4.06,
+                                    "amount": 0,
+                                    "unit": "IU"
+                                  },
+                                  {
+                                    "name": "Calcium",
+                                    "percent_of_daily_needs": 6.6,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Fiber",
+                                    "percent_of_daily_needs": 1.66,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin C",
+                                    "percent_of_daily_needs": 0.69,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Folate",
+                                    "percent_of_daily_needs": 0.81,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Sodium",
+                                    "percent_of_daily_needs": 1.82,
+                                    "amount": 3.59,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Cholesterol",
+                                    "percent_of_daily_needs": 6.61,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Calories",
+                                    "percent_of_daily_needs": 12.23,
+                                    "amount": 28.76,
+                                    "unit": "kcal"
+                                  },
+                                  {
+                                    "name": "Mono Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B12",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Selenium",
+                                    "percent_of_daily_needs": 2.64,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "ice",
+                                "amount": 1,
+                                "unit": "serving",
+                                "id": 10014412,
+                                "nutrients": [
+                                  {
+                                    "name": "Fat",
+                                    "percent_of_daily_needs": 11.15,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Potassium",
+                                    "percent_of_daily_needs": 2.35,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Phosphorus",
+                                    "percent_of_daily_needs": 6.1,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Iron",
+                                    "percent_of_daily_needs": 0.53,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Carbohydrates",
+                                    "percent_of_daily_needs": 3.62,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Calcium",
+                                    "percent_of_daily_needs": 6.6,
+                                    "amount": 1.68,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Zinc",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Magnesium",
+                                    "percent_of_daily_needs": 2.47,
+                                    "amount": 0.56,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Fiber",
+                                    "percent_of_daily_needs": 1.66,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Protein",
+                                    "percent_of_daily_needs": 3.78,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Net Carbohydrates",
+                                    "percent_of_daily_needs": 3.79,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fluoride",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 14.45,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Copper",
+                                    "percent_of_daily_needs": 2.01,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Sodium",
+                                    "percent_of_daily_needs": 1.82,
+                                    "amount": 2.8,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Manganese",
+                                    "percent_of_daily_needs": 2.93,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Calories",
+                                    "percent_of_daily_needs": 12.23,
+                                    "amount": 0,
+                                    "unit": "kcal"
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "nutmeg",
+                                "amount": 1,
+                                "unit": "serving",
+                                "id": 2025,
+                                "nutrients": [
+                                  {
+                                    "name": "Vitamin B2",
+                                    "percent_of_daily_needs": 6.77,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Saturated Fat",
+                                    "percent_of_daily_needs": 28.15,
+                                    "amount": 0.52,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B1",
+                                    "percent_of_daily_needs": 1.78,
+                                    "amount": 0.01,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin K",
+                                    "percent_of_daily_needs": 0.7,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Magnesium",
+                                    "percent_of_daily_needs": 2.47,
+                                    "amount": 3.66,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Zinc",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0.04,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Protein",
+                                    "percent_of_daily_needs": 3.78,
+                                    "amount": 0.12,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin B6",
+                                    "percent_of_daily_needs": 1.58,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Net Carbohydrates",
+                                    "percent_of_daily_needs": 3.79,
+                                    "amount": 0.57,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Copper",
+                                    "percent_of_daily_needs": 2.01,
+                                    "amount": 0.02,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Caffeine",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin E",
+                                    "percent_of_daily_needs": 0.94,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Sugar",
+                                    "percent_of_daily_needs": 10.69,
+                                    "amount": 0.57,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Manganese",
+                                    "percent_of_daily_needs": 2.93,
+                                    "amount": 0.06,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Poly Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0.01,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Alcohol",
+                                    "percent_of_daily_needs": 100,
+                                    "amount": 0,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Fat",
+                                    "percent_of_daily_needs": 11.15,
+                                    "amount": 0.73,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin D",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Folic Acid",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Choline",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0.18,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin B3",
+                                    "percent_of_daily_needs": 0.44,
+                                    "amount": 0.03,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Carbohydrates",
+                                    "percent_of_daily_needs": 3.62,
+                                    "amount": 0.99,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Potassium",
+                                    "percent_of_daily_needs": 2.35,
+                                    "amount": 7,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Iron",
+                                    "percent_of_daily_needs": 0.53,
+                                    "amount": 0.06,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Phosphorus",
+                                    "percent_of_daily_needs": 6.1,
+                                    "amount": 4.26,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Vitamin A",
+                                    "percent_of_daily_needs": 4.06,
+                                    "amount": 2.04,
+                                    "unit": "IU"
+                                  },
+                                  {
+                                    "name": "Calcium",
+                                    "percent_of_daily_needs": 6.6,
+                                    "amount": 3.68,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Fiber",
+                                    "percent_of_daily_needs": 1.66,
+                                    "amount": 0.42,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Vitamin C",
+                                    "percent_of_daily_needs": 0.69,
+                                    "amount": 0.06,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Folate",
+                                    "percent_of_daily_needs": 0.81,
+                                    "amount": 1.52,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Sodium",
+                                    "percent_of_daily_needs": 1.82,
+                                    "amount": 0.32,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Cholesterol",
+                                    "percent_of_daily_needs": 6.61,
+                                    "amount": 0,
+                                    "unit": "mg"
+                                  },
+                                  {
+                                    "name": "Mono Unsaturated Fat",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0.06,
+                                    "unit": "g"
+                                  },
+                                  {
+                                    "name": "Calories",
+                                    "percent_of_daily_needs": 12.23,
+                                    "amount": 10.5,
+                                    "unit": "kcal"
+                                  },
+                                  {
+                                    "name": "Vitamin B12",
+                                    "percent_of_daily_needs": 1.8,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Selenium",
+                                    "percent_of_daily_needs": 2.64,
+                                    "amount": 0.03,
+                                    "unit": "\u00b5g"
+                                  },
+                                  {
+                                    "name": "Lycopene",
+                                    "percent_of_daily_needs": 0,
+                                    "amount": 0,
+                                    "unit": "\u00b5g"
+                                  }
+                                ]
+                              }
+                            ],
+                            "properties": [
+                              {
+                                "name": "Glycemic Index",
+                                "amount": 85,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Glycemic Load",
+                                "amount": 0.4,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Inflammation Score",
+                                "amount": -1,
+                                "unit": ""
+                              },
+                              {
+                                "name": "Nutrition Score",
+                                "amount": 2.186957,
+                                "unit": "%"
+                              }
+                            ],
+                            "nutrients": [
+                              {
+                                "name": "Calories",
+                                "percent_of_daily_needs": 12.23,
+                                "amount": 244.51,
+                                "unit": "kcal"
+                              },
+                              {
+                                "name": "Fat",
+                                "percent_of_daily_needs": 11.15,
+                                "amount": 7.25,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Saturated Fat",
+                                "percent_of_daily_needs": 28.15,
+                                "amount": 4.5,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Carbohydrates",
+                                "percent_of_daily_needs": 3.62,
+                                "amount": 10.85,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Net Carbohydrates",
+                                "percent_of_daily_needs": 3.79,
+                                "amount": 10.44,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Sugar",
+                                "percent_of_daily_needs": 10.69,
+                                "amount": 9.62,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Cholesterol",
+                                "percent_of_daily_needs": 6.61,
+                                "amount": 19.84,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Sodium",
+                                "percent_of_daily_needs": 1.82,
+                                "amount": 41.87,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Alcohol",
+                                "percent_of_daily_needs": 100,
+                                "amount": 18.94,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Alcohol %",
+                                "percent_of_daily_needs": 100,
+                                "amount": 10.52,
+                                "unit": "%"
+                              },
+                              {
+                                "name": "Protein",
+                                "percent_of_daily_needs": 3.78,
+                                "amount": 1.89,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Vitamin B2",
+                                "percent_of_daily_needs": 6.77,
+                                "amount": 0.12,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Calcium",
+                                "percent_of_daily_needs": 6.6,
+                                "amount": 66.03,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Phosphorus",
+                                "percent_of_daily_needs": 6.1,
+                                "amount": 60.96,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Vitamin A",
+                                "percent_of_daily_needs": 4.06,
+                                "amount": 202.75,
+                                "unit": "IU"
+                              },
+                              {
+                                "name": "Manganese",
+                                "percent_of_daily_needs": 2.93,
+                                "amount": 0.06,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Selenium",
+                                "percent_of_daily_needs": 2.64,
+                                "amount": 1.85,
+                                "unit": "\u00b5g"
+                              },
+                              {
+                                "name": "Magnesium",
+                                "percent_of_daily_needs": 2.47,
+                                "amount": 9.89,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Potassium",
+                                "percent_of_daily_needs": 2.35,
+                                "amount": 82.41,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Copper",
+                                "percent_of_daily_needs": 2.01,
+                                "amount": 0.04,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Zinc",
+                                "percent_of_daily_needs": 1.8,
+                                "amount": 0.27,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Vitamin B12",
+                                "percent_of_daily_needs": 1.8,
+                                "amount": 0.11,
+                                "unit": "\u00b5g"
+                              },
+                              {
+                                "name": "Vitamin B1",
+                                "percent_of_daily_needs": 1.78,
+                                "amount": 0.03,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Fiber",
+                                "percent_of_daily_needs": 1.66,
+                                "amount": 0.42,
+                                "unit": "g"
+                              },
+                              {
+                                "name": "Vitamin B5",
+                                "percent_of_daily_needs": 1.64,
+                                "amount": 0.16,
+                                "unit": "mg"
+                              },
+                              {
+                                "name": "Vitamin B6",
+                                "percent_of_daily_needs": 1.58,
+                                "amount": 0.03,
+                                "unit": "mg"
+                              }
+                            ]
+                          },
+                          "glass_type": "wine glass",
+                          "credits": {
+                            "text": "drinkhero",
+                            "source_name": "thecocktaildb.com",
+                            "source_url": "https://www.thecocktaildb.com/drink/16967"
+                          },
+                          "price_per_serving": 195.84,
+                          "description": "The Vodka Fizz has a unique and intriguing taste profile. The vodka provides a robust and slightly sharp alcohol base, while the half-and-half introduces a creamy and smooth texture. The limeade adds a refreshing tangy sweetness with a citrusy zest, balancing the richness of the cream. The ice dilutes and chills the drink, making it more refreshing, and the nutmeg adds a subtle spiciness and aromatic warmth. Overall, this cocktail is a blend of creamy, tangy, slightly sweet, and mildly spicy flavors. If you enjoy complex drinks with a combination of creamy and citrusy notes, this cocktail might be a delightful choice.",
+                          "ingredients": [
+                            {
+                              "image": "https://img.spoonacular.com/ingredients_100x100/vodka.jpg",
+                              "name_clean": "vodka",
+                              "amount": 2,
+                              "unit": "oz",
+                              "measures": {
+                                "metric": {
+                                  "unit_short": "g",
+                                  "amount": 56.699,
+                                  "unit_long": "grams"
+                                },
+                                "us": {
+                                  "unit_short": "oz",
+                                  "amount": 2,
+                                  "unit_long": "ounces"
+                                }
+                              },
+                              "original": "2 oz Vodka",
+                              "meta": [],
+                              "original_name": "Vodka",
+                              "name": "vodka",
+                              "id": 14051,
+                              "aisle": "Alcoholic Beverages",
+                              "consistency": "LIQUID"
+                            },
+                            {
+                              "image": "https://img.spoonacular.com/ingredients_100x100/fluid-cream.jpg",
+                              "name_clean": "half and half",
+                              "amount": 2,
+                              "unit": "oz",
+                              "measures": {
+                                "metric": {
+                                  "unit_short": "g",
+                                  "amount": 56.699,
+                                  "unit_long": "grams"
+                                },
+                                "us": {
+                                  "unit_short": "oz",
+                                  "amount": 2,
+                                  "unit_long": "ounces"
+                                }
+                              },
+                              "original": "2 oz Half-and-half",
+                              "meta": [],
+                              "original_name": "Half-and-half",
+                              "name": "half-and-half",
+                              "id": 1049,
+                              "aisle": "Milk, Eggs, Other Dairy",
+                              "consistency": "SOLID"
+                            },
+                            {
+                              "image": "https://img.spoonacular.com/ingredients_100x100/limeade.jpg",
+                              "name_clean": "limeade",
+                              "amount": 2,
+                              "unit": "oz",
+                              "measures": {
+                                "metric": {
+                                  "unit_short": "g",
+                                  "amount": 56.699,
+                                  "unit_long": "grams"
+                                },
+                                "us": {
+                                  "unit_short": "oz",
+                                  "amount": 2,
+                                  "unit_long": "ounces"
+                                }
+                              },
+                              "original": "2 oz Limeade",
+                              "meta": [],
+                              "original_name": "Limeade",
+                              "name": "limeade",
+                              "id": 99185,
+                              "aisle": "Beverages",
+                              "consistency": "SOLID"
+                            },
+                            {
+                              "image": "https://img.spoonacular.com/ingredients_100x100/ice-cubes.png",
+                              "name_clean": "ice",
+                              "amount": 1,
+                              "unit": "serving",
+                              "measures": {
+                                "metric": {
+                                  "unit_short": "serving",
+                                  "amount": 1,
+                                  "unit_long": "serving"
+                                },
+                                "us": {
+                                  "unit_short": "serving",
+                                  "amount": 1,
+                                  "unit_long": "serving"
+                                }
+                              },
+                              "original": "Ice",
+                              "meta": [],
+                              "original_name": "Ice",
+                              "name": "ice",
+                              "id": 10014412,
+                              "aisle": "Frozen",
+                              "consistency": "SOLID"
+                            },
+                            {
+                              "image": "https://img.spoonacular.com/ingredients_100x100/ground-nutmeg.jpg",
+                              "name_clean": "nutmeg",
+                              "amount": 1,
+                              "unit": "serving",
+                              "measures": {
+                                "metric": {
+                                  "unit_short": "serving",
+                                  "amount": 1,
+                                  "unit_long": "serving"
+                                },
+                                "us": {
+                                  "unit_short": "serving",
+                                  "amount": 1,
+                                  "unit_long": "serving"
+                                }
+                              },
+                              "original": "Nutmeg",
+                              "meta": [],
+                              "original_name": "Nutmeg",
+                              "name": "nutmeg",
+                              "id": 2025,
+                              "aisle": "Spices and Seasonings",
+                              "consistency": "SOLID"
+                            }
+                          ],
+                          "id": 1957030,
+                          "title": "Vodka Fizz",
+                          "cuisines": []
+                        }
+                      ],
+                      "total_results": 14
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "vodka"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "glass-types",
+            "description": "A comma-separated list (interpreted as OR) of glass types that the drink should be served in.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 200,
+              "type": "string",
+              "example": "Highball Glass"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "flavors",
+            "description": "A comma-separated list (interpreted as AND) of dominant flavors in the drink.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 200,
+              "type": "string",
+              "example": "sour,sweet"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "diet",
+            "description": "The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 30,
+              "type": "string",
+              "example": "paleo"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "include-ingredients",
+            "description": "A comma-separated list of ingredients that should/must be used in the drinks.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "orange"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "exclude-ingredients",
+            "description": "A comma-separated list of ingredients or ingredient types that the drinks must not contain.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "vodka"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-calories",
+            "description": "The minimum amount of calories the drink must have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 100
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-calories",
+            "description": "The maximum amount of calories the drink can have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 655
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-carbs",
+            "description": "The minimum amount of carbohydrates in grams the drink must have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 10.1
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-carbs",
+            "description": "The maximum amount of carbohydrates in grams the drink can have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 25.5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-protein",
+            "description": "The minimum amount of protein in grams the drink must have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 10.1
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-protein",
+            "description": "The maximum amount of protein in grams the drink can have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 25.5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-fat",
+            "description": "The minimum amount of fat in grams the drink must have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 10.1
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-fat",
+            "description": "The maximum amount of fat in grams the drink can have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 25.5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-alcohol-percent",
+            "description": "The minimum alcohol percentage the drink must have.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 10
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-alcohol-percent",
+            "description": "The maximum alcohol percentage the drink can have.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 35
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-caffeine",
+            "description": "The minimum amount of caffeine in milligrams the drink must have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 30.4
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-caffeine",
+            "description": "The maximum amount of caffeine in milligrams the drink can have per serving.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 99999,
+              "type": "number",
+              "example": 80.9
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort",
+            "description": "The attribute by which to sort the drinks.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "calories"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "sort-direction",
+            "description": "Whether to sort ascending or descending (ASC or DESC).",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 4,
+              "type": "string",
+              "example": "ASC"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of drinks to skip, between 0 and 90.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 90,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of drinks, between 1 and 10.",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10,
+              "type": "integer",
+              "example": 3
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/search-drinks-api/"
+        },
+        "summary": "Search Drinks",
+        "tags": [
+          "Food"
+        ],
+        "description": "Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.",
+        "operationId": "searchDrinks",
+        "deprecated": false
+      }
+    },
     "/search-recipes": {
       "get": {
         "responses": {
@@ -2425,7 +4678,7 @@
           },
           {
             "name": "cuisines",
-            "description": "The cuisine(s) of the recipes. One or more, comma separated (will be interpreted as 'OR').",
+            "description": "The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').",
             "schema": {
               "pattern": ".",
               "maxLength": 300,
@@ -2439,7 +4692,7 @@
           },
           {
             "name": "exclude-cuisines",
-            "description": "The cuisine(s) the recipes must not match. One or more, comma separated (will be interpreted as 'AND').",
+            "description": "The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').",
             "schema": {
               "pattern": ".",
               "maxLength": 300,
@@ -3686,7 +5939,7 @@
           },
           {
             "name": "sort",
-            "description": "The strategy to sort recipes by. See a full list of supported sorting options.",
+            "description": "The strategy to sort recipes by.",
             "schema": {
               "pattern": ".",
               "maxLength": 100,
