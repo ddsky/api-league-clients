@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DetectMainImageColor**](MediaAPI.md#DetectMainImageColor) | **Get** /detect-color | Detect Main Image Color
 [**RescaleImage**](MediaAPI.md#RescaleImage) | **Get** /rescale-image | Rescale Image
+[**SearchIcons**](MediaAPI.md#SearchIcons) | **Get** /search-icons | Search Icons
 [**SearchRoyaltyFreeImages**](MediaAPI.md#SearchRoyaltyFreeImages) | **Get** /search-images | Search Royalty Free Images
 
 
@@ -78,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## RescaleImage
 
-> map[string]interface{} RescaleImage(ctx).Url(url).Width(width).Height(height).Crop(crop).Execute()
+> *os.File RescaleImage(ctx).Url(url).Width(width).Height(height).Crop(crop).Execute()
 
 Rescale Image
 
@@ -109,7 +110,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.RescaleImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RescaleImage`: map[string]interface{}
+	// response from `RescaleImage`: *os.File
 	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.RescaleImage`: %v\n", resp)
 }
 ```
@@ -132,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]interface{}**
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -142,6 +143,76 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SearchIcons
+
+> SearchIcons200Response SearchIcons(ctx).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
+
+Search Icons
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	query := "cars" // string | The search query.
+	onlyPublicDomain := true // bool | If true, only public domain icons will be returned. (optional)
+	number := int32(3) // int32 | The number of icons to return in range [1,100] (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.SearchIcons(context.Background()).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchIcons``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SearchIcons`: SearchIcons200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchIcons`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSearchIconsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **string** | The search query. | 
+ **onlyPublicDomain** | **bool** | If true, only public domain icons will be returned. | 
+ **number** | **int32** | The number of icons to return in range [1,100] | 
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -170,7 +241,7 @@ import (
 
 func main() {
 	query := "dogs" // string | The search query.
-	number := int32(3) // int32 | The number of images to return in range [1,10] (optional)
+	number := int32(3) // int32 | The number of images to return in range [1,100] (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -196,7 +267,7 @@ Other parameters are passed through a pointer to a apiSearchRoyaltyFreeImagesReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string** | The search query. | 
- **number** | **int32** | The number of images to return in range [1,10] | 
+ **number** | **int32** | The number of images to return in range [1,100] | 
 
 ### Return type
 

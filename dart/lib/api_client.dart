@@ -194,16 +194,8 @@ class ApiClient {
           return CorrectSpelling200Response.fromJson(value);
         case 'DetectGenderByName200Response':
           return DetectGenderByName200Response.fromJson(value);
-        case 'DetectLanguage200ResponseInner':
-          return DetectLanguage200ResponseInner.fromJson(value);
         case 'DetectMainImageColor200ResponseInner':
           return DetectMainImageColor200ResponseInner.fromJson(value);
-        case 'DetectSentiment200Response':
-          return DetectSentiment200Response.fromJson(value);
-        case 'DetectSentiment200ResponseDocument':
-          return DetectSentiment200ResponseDocument.fromJson(value);
-        case 'DetectSentiment200ResponseSentencesInner':
-          return DetectSentiment200ResponseSentencesInner.fromJson(value);
         case 'ExtractAuthors200Response':
           return ExtractAuthors200Response.fromJson(value);
         case 'ExtractAuthors200ResponseAuthorsInner':
@@ -338,6 +330,8 @@ class ApiClient {
           return SearchGifs200Response.fromJson(value);
         case 'SearchGifs200ResponseImagesInner':
           return SearchGifs200ResponseImagesInner.fromJson(value);
+        case 'SearchIcons200Response':
+          return SearchIcons200Response.fromJson(value);
         case 'SearchJokes200Response':
           return SearchJokes200Response.fromJson(value);
         case 'SearchJokes200ResponseJokesInner':

@@ -20,6 +20,7 @@ import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.MediaApi
 import com.apileague.client.model.DetectMainImageColor200ResponseInner
+import com.apileague.client.model.SearchIcons200Response
 import com.apileague.client.model.SearchRoyaltyFreeImages200Response
 
 class MediaApiTest : ShouldSpec() {
@@ -42,7 +43,17 @@ class MediaApiTest : ShouldSpec() {
             //val width : kotlin.Int = 200 // kotlin.Int | The desired width of the rescaled image.
             //val height : kotlin.Int = 200 // kotlin.Int | The desired height of the rescaled image.
             //val crop : kotlin.Boolean = true // kotlin.Boolean | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-            //val result : kotlin.Any = apiInstance.rescaleImage(url, width, height, crop)
+            //val result : java.io.File = apiInstance.rescaleImage(url, width, height, crop)
+            //result shouldBe ("TODO")
+        }
+
+        // to test searchIcons
+        should("test searchIcons") {
+            // uncomment below to test searchIcons
+            //val query : kotlin.String = cars // kotlin.String | The search query.
+            //val onlyPublicDomain : kotlin.Boolean = true // kotlin.Boolean | If true, only public domain icons will be returned.
+            //val number : kotlin.Int = 3 // kotlin.Int | The number of icons to return in range [1,100]
+            //val result : SearchIcons200Response = apiInstance.searchIcons(query, onlyPublicDomain, number)
             //result shouldBe ("TODO")
         }
 
@@ -50,7 +61,7 @@ class MediaApiTest : ShouldSpec() {
         should("test searchRoyaltyFreeImages") {
             // uncomment below to test searchRoyaltyFreeImages
             //val query : kotlin.String = dogs // kotlin.String | The search query.
-            //val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,10]
+            //val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,100]
             //val result : SearchRoyaltyFreeImages200Response = apiInstance.searchRoyaltyFreeImages(query, number)
             //result shouldBe ("TODO")
         }

@@ -2,8 +2,6 @@
 
 -export([correct_spelling/3, correct_spelling/4,
          detect_gender_by_name/2, detect_gender_by_name/3,
-         detect_language/2, detect_language/3,
-         detect_sentiment/2, detect_sentiment/3,
          extract_dates/2, extract_dates/3,
          extract_entities/2, extract_entities/3,
          list_word_synonyms/2, list_word_synonyms/3,
@@ -51,48 +49,6 @@ detect_gender_by_name(Ctx, Name, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/detect-gender"],
     QS = lists:flatten([{<<"name">>, Name}])++apileague_utils:optional_params([], _OptionalParams),
-    Headers = [],
-    Body1 = [],
-    ContentTypeHeader = apileague_utils:select_header_content_type([]),
-    Opts = maps:get(hackney_opts, Optional, []),
-
-    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
-
-%% @doc Detect Language
-%% Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
--spec detect_language(ctx:ctx(), binary()) -> {ok, [apileague_detect_language_200_response_inner:apileague_detect_language_200_response_inner()], apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-detect_language(Ctx, Text) ->
-    detect_language(Ctx, Text, #{}).
-
--spec detect_language(ctx:ctx(), binary(), maps:map()) -> {ok, [apileague_detect_language_200_response_inner:apileague_detect_language_200_response_inner()], apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-detect_language(Ctx, Text, Optional) ->
-    _OptionalParams = maps:get(params, Optional, #{}),
-    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
-
-    Method = get,
-    Path = [?BASE_URL, "/detect-language"],
-    QS = lists:flatten([{<<"text">>, Text}])++apileague_utils:optional_params([], _OptionalParams),
-    Headers = [],
-    Body1 = [],
-    ContentTypeHeader = apileague_utils:select_header_content_type([]),
-    Opts = maps:get(hackney_opts, Optional, []),
-
-    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
-
-%% @doc Detect Sentiment
-%% Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
--spec detect_sentiment(ctx:ctx(), binary()) -> {ok, apileague_detect_sentiment_200_response:apileague_detect_sentiment_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-detect_sentiment(Ctx, Text) ->
-    detect_sentiment(Ctx, Text, #{}).
-
--spec detect_sentiment(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_detect_sentiment_200_response:apileague_detect_sentiment_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-detect_sentiment(Ctx, Text, Optional) ->
-    _OptionalParams = maps:get(params, Optional, #{}),
-    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
-
-    Method = get,
-    Path = [?BASE_URL, "/detect-sentiment"],
-    QS = lists:flatten([{<<"text">>, Text}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

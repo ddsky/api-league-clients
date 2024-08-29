@@ -39,9 +39,9 @@
             [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-instructions-inner-steps-inner :refer :all]
             [api-league.specs.search-recipes-200-response :refer :all]
-            [api-league.specs.detect-sentiment-200-response-document :refer :all]
             [api-league.specs.store-key-value-get-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
+            [api-league.specs.search-icons-200-response :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
@@ -70,7 +70,6 @@
             [api-league.specs.extract-news-200-response-videos-inner :refer :all]
             [api-league.specs.singularize-word-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner :refer :all]
-            [api-league.specs.detect-language-200-response-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner-measures :refer :all]
             [api-league.specs.tag-part-of-speech-200-response :refer :all]
             [api-league.specs.extract-authors-200-response :refer :all]
@@ -87,14 +86,12 @@
             [api-league.specs.top-news-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-nutrition :refer :all]
-            [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
             [api-league.specs.search-news-200-response-news-inner :refer :all]
             [api-league.specs.extract-entities-200-response :refer :all]
             [api-league.specs.search-royalty-free-images-200-response :refer :all]
-            [api-league.specs.detect-sentiment-200-response-sentences-inner :refer :all]
             [api-league.specs.random-quote-200-response :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-ingredients-inner-measures-us :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-ingredients-inner :refer :all]
@@ -158,54 +155,6 @@
   (let [res (:data (detect-gender-by-name-with-http-info name))]
     (if (:decode-models *api-context*)
        (st/decode detect-gender-by-name-200-response-spec res st/string-transformer)
-       res)))
-
-
-(defn-spec detect-language-with-http-info any?
-  "Detect Language
-  Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages."
-  [text string?]
-  (check-required-params text)
-  (call-api "/detect-language" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"text" text }
-             :form-params   {}
-             :content-types []
-             :accepts       ["application/json"]
-             :auth-names    ["apiKey" "headerApiKey"]}))
-
-(defn-spec detect-language (s/coll-of detect-language-200-response-inner-spec)
-  "Detect Language
-  Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages."
-  [text string?]
-  (let [res (:data (detect-language-with-http-info text))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of detect-language-200-response-inner-spec) res st/string-transformer)
-       res)))
-
-
-(defn-spec detect-sentiment-with-http-info any?
-  "Detect Sentiment
-  Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence."
-  [text string?]
-  (check-required-params text)
-  (call-api "/detect-sentiment" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"text" text }
-             :form-params   {}
-             :content-types []
-             :accepts       ["application/json"]
-             :auth-names    ["apiKey" "headerApiKey"]}))
-
-(defn-spec detect-sentiment detect-sentiment-200-response-spec
-  "Detect Sentiment
-  Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence."
-  [text string?]
-  (let [res (:data (detect-sentiment-with-http-info text))]
-    (if (:decode-models *api-context*)
-       (st/decode detect-sentiment-200-response-spec res st/string-transformer)
        res)))
 
 

@@ -145,7 +145,7 @@ class MediaApi {
   ///
   /// * [bool] crop (required):
   ///   Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-  Future<Object?> rescaleImage(String url, int width, int height, bool crop,) async {
+  Future<MultipartFile?> rescaleImage(String url, int width, int height, bool crop,) async {
     final response = await rescaleImageWithHttpInfo(url, width, height, crop,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -154,7 +154,85 @@ class MediaApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Object',) as Object;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'MultipartFile',) as MultipartFile;
+    
+    }
+    return null;
+  }
+
+  /// Search Icons
+  ///
+  /// Search through millions of icons to match any topic you want.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query (required):
+  ///   The search query.
+  ///
+  /// * [bool] onlyPublicDomain:
+  ///   If true, only public domain icons will be returned.
+  ///
+  /// * [int] number:
+  ///   The number of icons to return in range [1,100]
+  Future<Response> searchIconsWithHttpInfo(String query, { bool? onlyPublicDomain, int? number, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/search-icons';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'query', query));
+    if (onlyPublicDomain != null) {
+      queryParams.addAll(_queryParams('', 'only-public-domain', onlyPublicDomain));
+    }
+    if (number != null) {
+      queryParams.addAll(_queryParams('', 'number', number));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Search Icons
+  ///
+  /// Search through millions of icons to match any topic you want.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query (required):
+  ///   The search query.
+  ///
+  /// * [bool] onlyPublicDomain:
+  ///   If true, only public domain icons will be returned.
+  ///
+  /// * [int] number:
+  ///   The number of icons to return in range [1,100]
+  Future<SearchIcons200Response?> searchIcons(String query, { bool? onlyPublicDomain, int? number, }) async {
+    final response = await searchIconsWithHttpInfo(query,  onlyPublicDomain: onlyPublicDomain, number: number, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchIcons200Response',) as SearchIcons200Response;
     
     }
     return null;
@@ -172,7 +250,7 @@ class MediaApi {
   ///   The search query.
   ///
   /// * [int] number:
-  ///   The number of images to return in range [1,10]
+  ///   The number of images to return in range [1,100]
   Future<Response> searchRoyaltyFreeImagesWithHttpInfo(String query, { int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-images';
@@ -213,7 +291,7 @@ class MediaApi {
   ///   The search query.
   ///
   /// * [int] number:
-  ///   The number of images to return in range [1,10]
+  ///   The number of images to return in range [1,100]
   Future<SearchRoyaltyFreeImages200Response?> searchRoyaltyFreeImages(String query, { int? number, }) async {
     final response = await searchRoyaltyFreeImagesWithHttpInfo(query,  number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {

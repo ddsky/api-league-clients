@@ -24,6 +24,8 @@ import com.squareup.moshi.JsonClass
  *
  * @param name 
  * @param probabilityMale 
+ * @param probabilityFemale 
+ * @param popularity 
  */
 
 
@@ -33,7 +35,13 @@ data class DetectGenderByName200Response (
     val name: kotlin.String? = null,
 
     @Json(name = "probability_male")
-    val probabilityMale: java.math.BigDecimal? = null
+    val probabilityMale: java.math.BigDecimal? = null,
+
+    @Json(name = "probability_female")
+    val probabilityFemale: java.math.BigDecimal? = null,
+
+    @Json(name = "popularity")
+    val popularity: java.math.BigDecimal? = null
 
 ) {
 

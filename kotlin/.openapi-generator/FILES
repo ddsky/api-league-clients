@@ -9,11 +9,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
-docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
-docs/DetectSentiment200Response.md
-docs/DetectSentiment200ResponseDocument.md
-docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -87,6 +83,7 @@ docs/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md
 docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
+docs/SearchIcons200Response.md
 docs/SearchJokes200Response.md
 docs/SearchJokes200ResponseJokesInner.md
 docs/SearchMemes200Response.md
@@ -157,11 +154,7 @@ src/main/kotlin/com/apileague/client/model/ComputeNutrition200ResponseIngredient
 src/main/kotlin/com/apileague/client/model/ConvertUnits200Response.kt
 src/main/kotlin/com/apileague/client/model/CorrectSpelling200Response.kt
 src/main/kotlin/com/apileague/client/model/DetectGenderByName200Response.kt
-src/main/kotlin/com/apileague/client/model/DetectLanguage200ResponseInner.kt
 src/main/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInner.kt
-src/main/kotlin/com/apileague/client/model/DetectSentiment200Response.kt
-src/main/kotlin/com/apileague/client/model/DetectSentiment200ResponseDocument.kt
-src/main/kotlin/com/apileague/client/model/DetectSentiment200ResponseSentencesInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractAuthors200Response.kt
 src/main/kotlin/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractContentFromAWebPage200Response.kt
@@ -229,6 +222,7 @@ src/main/kotlin/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerNut
 src/main/kotlin/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.kt
 src/main/kotlin/com/apileague/client/model/SearchGifs200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchGifs200ResponseImagesInner.kt
+src/main/kotlin/com/apileague/client/model/SearchIcons200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchJokes200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchJokes200ResponseJokesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchMemes200Response.kt
@@ -274,11 +268,7 @@ src/test/kotlin/com/apileague/client/model/ComputeNutrition200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ConvertUnits200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/CorrectSpelling200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/DetectGenderByName200ResponseTest.kt
-src/test/kotlin/com/apileague/client/model/DetectLanguage200ResponseInnerTest.kt
 src/test/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInnerTest.kt
-src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseDocumentTest.kt
-src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseSentencesInnerTest.kt
-src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractAuthors200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractContentFromAWebPage200ResponseTest.kt
@@ -346,6 +336,7 @@ src/test/kotlin/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerTes
 src/test/kotlin/com/apileague/client/model/SearchDrinks200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifs200ResponseImagesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifs200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/SearchIcons200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchJokes200ResponseJokesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchJokes200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchMemes200ResponseMemesInnerTest.kt

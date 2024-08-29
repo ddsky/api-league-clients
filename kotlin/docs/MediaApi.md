@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------------- | ------------- | ------------- |
 | [**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color |
 | [**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image |
+| [**searchIcons**](MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons |
 | [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images |
 
 
@@ -63,7 +64,7 @@ Configure headerApiKey:
 
 <a id="rescaleImage"></a>
 # **rescaleImage**
-> kotlin.Any rescaleImage(url, width, height, crop)
+> java.io.File rescaleImage(url, width, height, crop)
 
 Rescale Image
 
@@ -81,7 +82,7 @@ val width : kotlin.Int = 200 // kotlin.Int | The desired width of the rescaled i
 val height : kotlin.Int = 200 // kotlin.Int | The desired height of the rescaled image.
 val crop : kotlin.Boolean = true // kotlin.Boolean | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
 try {
-    val result : kotlin.Any = apiInstance.rescaleImage(url, width, height, crop)
+    val result : java.io.File = apiInstance.rescaleImage(url, width, height, crop)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MediaApi#rescaleImage")
@@ -102,7 +103,7 @@ try {
 
 ### Return type
 
-[**kotlin.Any**](kotlin.Any.md)
+[**java.io.File**](java.io.File.md)
 
 ### Authorization
 
@@ -118,6 +119,62 @@ Configure headerApiKey:
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+<a id="searchIcons"></a>
+# **searchIcons**
+> SearchIcons200Response searchIcons(query, onlyPublicDomain, number)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = MediaApi()
+val query : kotlin.String = cars // kotlin.String | The search query.
+val onlyPublicDomain : kotlin.Boolean = true // kotlin.Boolean | If true, only public domain icons will be returned.
+val number : kotlin.Int = 3 // kotlin.Int | The number of icons to return in range [1,100]
+try {
+    val result : SearchIcons200Response = apiInstance.searchIcons(query, onlyPublicDomain, number)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling MediaApi#searchIcons")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling MediaApi#searchIcons")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **query** | **kotlin.String**| The search query. | |
+| **onlyPublicDomain** | **kotlin.Boolean**| If true, only public domain icons will be returned. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **kotlin.Int**| The number of icons to return in range [1,100] | [optional] |
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a id="searchRoyaltyFreeImages"></a>
 # **searchRoyaltyFreeImages**
@@ -135,7 +192,7 @@ Search through hundreds of thousands of royalty free images to match any topic y
 
 val apiInstance = MediaApi()
 val query : kotlin.String = dogs // kotlin.String | The search query.
-val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,10]
+val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,100]
 try {
     val result : SearchRoyaltyFreeImages200Response = apiInstance.searchRoyaltyFreeImages(query, number)
     println(result)
@@ -152,7 +209,7 @@ try {
 | **query** | **kotlin.String**| The search query. | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **number** | **kotlin.Int**| The number of images to return in range [1,10] | [optional] |
+| **number** | **kotlin.Int**| The number of images to return in range [1,100] | [optional] |
 
 ### Return type
 

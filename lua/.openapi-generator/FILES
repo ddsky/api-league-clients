@@ -1,6 +1,6 @@
 .gitignore
 .openapi-generator-ignore
-apileague-1.5.0.rockspec
+apileague-1.6.2.rockspec
 apileague/api/art_api.lua
 apileague/api/books_api.lua
 apileague/api/food_api.lua
@@ -18,11 +18,7 @@ apileague/model/compute_nutrition_200_response_ingredient_breakdown_inner_nutrie
 apileague/model/convert_units_200_response.lua
 apileague/model/correct_spelling_200_response.lua
 apileague/model/detect_gender_by_name_200_response.lua
-apileague/model/detect_language_200_response_inner.lua
 apileague/model/detect_main_image_color_200_response_inner.lua
-apileague/model/detect_sentiment_200_response.lua
-apileague/model/detect_sentiment_200_response_document.lua
-apileague/model/detect_sentiment_200_response_sentences_inner.lua
 apileague/model/extract_authors_200_response.lua
 apileague/model/extract_authors_200_response_authors_inner.lua
 apileague/model/extract_content_from_a_web_page_200_response.lua
@@ -90,6 +86,7 @@ apileague/model/search_drinks_200_response_drinks_inner_nutrition_nutrients_inne
 apileague/model/search_drinks_200_response_drinks_inner_nutrition_weight_per_serving.lua
 apileague/model/search_gifs_200_response.lua
 apileague/model/search_gifs_200_response_images_inner.lua
+apileague/model/search_icons_200_response.lua
 apileague/model/search_jokes_200_response.lua
 apileague/model/search_jokes_200_response_jokes_inner.lua
 apileague/model/search_memes_200_response.lua
@@ -127,11 +124,7 @@ spec/compute_nutrition_200_response_spec.lua
 spec/convert_units_200_response_spec.lua
 spec/correct_spelling_200_response_spec.lua
 spec/detect_gender_by_name_200_response_spec.lua
-spec/detect_language_200_response_inner_spec.lua
 spec/detect_main_image_color_200_response_inner_spec.lua
-spec/detect_sentiment_200_response_document_spec.lua
-spec/detect_sentiment_200_response_sentences_inner_spec.lua
-spec/detect_sentiment_200_response_spec.lua
 spec/extract_authors_200_response_authors_inner_spec.lua
 spec/extract_authors_200_response_spec.lua
 spec/extract_content_from_a_web_page_200_response_spec.lua
@@ -205,6 +198,7 @@ spec/search_drinks_200_response_drinks_inner_spec.lua
 spec/search_drinks_200_response_spec.lua
 spec/search_gifs_200_response_images_inner_spec.lua
 spec/search_gifs_200_response_spec.lua
+spec/search_icons_200_response_spec.lua
 spec/search_jokes_200_response_jokes_inner_spec.lua
 spec/search_jokes_200_response_spec.lua
 spec/search_memes_200_response_memes_inner_spec.lua

@@ -8,11 +8,7 @@ HEADERS += \
     $${PWD}/OAIConvertUnits_200_response.h \
     $${PWD}/OAICorrectSpelling_200_response.h \
     $${PWD}/OAIDetectGenderByName_200_response.h \
-    $${PWD}/OAIDetectLanguage_200_response_inner.h \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.h \
-    $${PWD}/OAIDetectSentiment_200_response.h \
-    $${PWD}/OAIDetectSentiment_200_response_document.h \
-    $${PWD}/OAIDetectSentiment_200_response_sentences_inner.h \
     $${PWD}/OAIExtractAuthors_200_response.h \
     $${PWD}/OAIExtractAuthors_200_response_authors_inner.h \
     $${PWD}/OAIExtractContentFromAWebPage_200_response.h \
@@ -80,6 +76,7 @@ HEADERS += \
     $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_weight_per_serving.h \
     $${PWD}/OAISearchGifs_200_response.h \
     $${PWD}/OAISearchGifs_200_response_images_inner.h \
+    $${PWD}/OAISearchIcons_200_response.h \
     $${PWD}/OAISearchJokes_200_response.h \
     $${PWD}/OAISearchJokes_200_response_jokes_inner.h \
     $${PWD}/OAISearchMemes_200_response.h \
@@ -138,11 +135,7 @@ SOURCES += \
     $${PWD}/OAIConvertUnits_200_response.cpp \
     $${PWD}/OAICorrectSpelling_200_response.cpp \
     $${PWD}/OAIDetectGenderByName_200_response.cpp \
-    $${PWD}/OAIDetectLanguage_200_response_inner.cpp \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.cpp \
-    $${PWD}/OAIDetectSentiment_200_response.cpp \
-    $${PWD}/OAIDetectSentiment_200_response_document.cpp \
-    $${PWD}/OAIDetectSentiment_200_response_sentences_inner.cpp \
     $${PWD}/OAIExtractAuthors_200_response.cpp \
     $${PWD}/OAIExtractAuthors_200_response_authors_inner.cpp \
     $${PWD}/OAIExtractContentFromAWebPage_200_response.cpp \
@@ -210,6 +203,7 @@ SOURCES += \
     $${PWD}/OAISearchDrinks_200_response_drinks_inner_nutrition_weight_per_serving.cpp \
     $${PWD}/OAISearchGifs_200_response.cpp \
     $${PWD}/OAISearchGifs_200_response_images_inner.cpp \
+    $${PWD}/OAISearchIcons_200_response.cpp \
     $${PWD}/OAISearchJokes_200_response.cpp \
     $${PWD}/OAISearchJokes_200_response_jokes_inner.cpp \
     $${PWD}/OAISearchMemes_200_response.cpp \

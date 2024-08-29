@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |--------|--------------|-------------|
 | [**DetectMainImageColor**](MediaApi.md#detectmainimagecolor) | **GET** /detect-color | Detect Main Image Color |
 | [**RescaleImage**](MediaApi.md#rescaleimage) | **GET** /rescale-image | Rescale Image |
+| [**SearchIcons**](MediaApi.md#searchicons) | **GET** /search-icons | Search Icons |
 | [**SearchRoyaltyFreeImages**](MediaApi.md#searchroyaltyfreeimages) | **GET** /search-images | Search Royalty Free Images |
 
 <a id="detectmainimagecolor"></a>
@@ -116,7 +117,7 @@ catch (ApiException e)
 
 <a id="rescaleimage"></a>
 # **RescaleImage**
-> Object RescaleImage (string url, int width, int height, bool crop)
+> System.IO.Stream RescaleImage (string url, int width, int height, bool crop)
 
 Rescale Image
 
@@ -156,7 +157,7 @@ namespace Example
             try
             {
                 // Rescale Image
-                Object result = apiInstance.RescaleImage(url, width, height, crop);
+                System.IO.Stream result = apiInstance.RescaleImage(url, width, height, crop);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -177,7 +178,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Rescale Image
-    ApiResponse<Object> response = apiInstance.RescaleImageWithHttpInfo(url, width, height, crop);
+    ApiResponse<System.IO.Stream> response = apiInstance.RescaleImageWithHttpInfo(url, width, height, crop);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -201,7 +202,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Object**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -211,6 +212,116 @@ catch (ApiException e)
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="searchicons"></a>
+# **SearchIcons**
+> SearchIcons200Response SearchIcons (string query, bool? onlyPublicDomain = null, int? number = null)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class SearchIconsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new MediaApi(config);
+            var query = cars;  // string | The search query.
+            var onlyPublicDomain = true;  // bool? | If true, only public domain icons will be returned. (optional) 
+            var number = 3;  // int? | The number of icons to return in range [1,100] (optional) 
+
+            try
+            {
+                // Search Icons
+                SearchIcons200Response result = apiInstance.SearchIcons(query, onlyPublicDomain, number);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MediaApi.SearchIcons: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SearchIconsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search Icons
+    ApiResponse<SearchIcons200Response> response = apiInstance.SearchIconsWithHttpInfo(query, onlyPublicDomain, number);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MediaApi.SearchIconsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **query** | **string** | The search query. |  |
+| **onlyPublicDomain** | **bool?** | If true, only public domain icons will be returned. | [optional]  |
+| **number** | **int?** | The number of icons to return in range [1,100] | [optional]  |
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -261,7 +372,7 @@ namespace Example
 
             var apiInstance = new MediaApi(config);
             var query = dogs;  // string | The search query.
-            var number = 3;  // int? | The number of images to return in range [1,10] (optional) 
+            var number = 3;  // int? | The number of images to return in range [1,100] (optional) 
 
             try
             {
@@ -305,7 +416,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **query** | **string** | The search query. |  |
-| **number** | **int?** | The number of images to return in range [1,10] | [optional]  |
+| **number** | **int?** | The number of images to return in range [1,100] | [optional]  |
 
 ### Return type
 

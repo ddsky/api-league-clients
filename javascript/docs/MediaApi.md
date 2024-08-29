@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
 [**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image
+[**searchIcons**](MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons
 [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## rescaleImage
 
-> Object rescaleImage(url, width, height, crop)
+> File rescaleImage(url, width, height, crop)
 
 Rescale Image
 
@@ -116,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**File**
 
 ### Authorization
 
@@ -126,6 +127,68 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/octet-stream
+
+
+## searchIcons
+
+> SearchIcons200Response searchIcons(query, opts)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+
+```javascript
+import ApileagueJs from 'apileague-js';
+let defaultClient = ApileagueJs.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure API key authorization: headerApiKey
+let headerApiKey = defaultClient.authentications['headerApiKey'];
+headerApiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//headerApiKey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ApileagueJs.MediaApi();
+let query = "cars"; // String | The search query.
+let opts = {
+  'onlyPublicDomain': true, // Boolean | If true, only public domain icons will be returned.
+  'number': 3 // Number | The number of icons to return in range [1,100]
+};
+apiInstance.searchIcons(query, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The search query. | 
+ **onlyPublicDomain** | **Boolean**| If true, only public domain icons will be returned. | [optional] 
+ **number** | **Number**| The number of icons to return in range [1,100] | [optional] 
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## searchRoyaltyFreeImages
@@ -155,7 +218,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new ApileagueJs.MediaApi();
 let query = "dogs"; // String | The search query.
 let opts = {
-  'number': 3 // Number | The number of images to return in range [1,10]
+  'number': 3 // Number | The number of images to return in range [1,100]
 };
 apiInstance.searchRoyaltyFreeImages(query, opts, (error, data, response) => {
   if (error) {
@@ -172,7 +235,7 @@ apiInstance.searchRoyaltyFreeImages(query, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| The search query. | 
- **number** | **Number**| The number of images to return in range [1,10] | [optional] 
+ **number** | **Number**| The number of images to return in range [1,100] | [optional] 
 
 ### Return type
 

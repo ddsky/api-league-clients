@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.2</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.5.0"
+compile "com.apileague:android-client:1.6.2"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.5.0.jar
+- target/android-client-1.6.2.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *MathApi* | [**convertUnits**](docs/MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
 *MediaApi* | [**detectMainImageColor**](docs/MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
 *MediaApi* | [**rescaleImage**](docs/MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image
+*MediaApi* | [**searchIcons**](docs/MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons
 *MediaApi* | [**searchRoyaltyFreeImages**](docs/MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 *NewsApi* | [**extractNews**](docs/NewsApi.md#extractNews) | **GET** /extract-news | Extract News
 *NewsApi* | [**searchNews**](docs/NewsApi.md#searchNews) | **GET** /search-news | Search News
@@ -114,8 +115,6 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**storeKeyValueGET**](docs/StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
 *TextApi* | [**correctSpelling**](docs/TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
 *TextApi* | [**detectGenderByName**](docs/TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
-*TextApi* | [**detectLanguage**](docs/TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
-*TextApi* | [**detectSentiment**](docs/TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 *TextApi* | [**extractDates**](docs/TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
 *TextApi* | [**extractEntities**](docs/TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
 *TextApi* | [**listWordSynonyms**](docs/TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
@@ -141,11 +140,7 @@ Class | Method | HTTP request | Description
  - [ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [DetectGenderByName200Response](docs/DetectGenderByName200Response.md)
- - [DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
  - [DetectMainImageColor200ResponseInner](docs/DetectMainImageColor200ResponseInner.md)
- - [DetectSentiment200Response](docs/DetectSentiment200Response.md)
- - [DetectSentiment200ResponseDocument](docs/DetectSentiment200ResponseDocument.md)
- - [DetectSentiment200ResponseSentencesInner](docs/DetectSentiment200ResponseSentencesInner.md)
  - [ExtractAuthors200Response](docs/ExtractAuthors200Response.md)
  - [ExtractAuthors200ResponseAuthorsInner](docs/ExtractAuthors200ResponseAuthorsInner.md)
  - [ExtractContentFromAWebPage200Response](docs/ExtractContentFromAWebPage200Response.md)
@@ -213,6 +208,7 @@ Class | Method | HTTP request | Description
  - [SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing](docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md)
  - [SearchGifs200Response](docs/SearchGifs200Response.md)
  - [SearchGifs200ResponseImagesInner](docs/SearchGifs200ResponseImagesInner.md)
+ - [SearchIcons200Response](docs/SearchIcons200Response.md)
  - [SearchJokes200Response](docs/SearchJokes200Response.md)
  - [SearchJokes200ResponseJokesInner](docs/SearchJokes200ResponseJokesInner.md)
  - [SearchMemes200Response](docs/SearchMemes200Response.md)

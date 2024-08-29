@@ -37,5 +37,17 @@ class DetectGenderByName200ResponseTest : ShouldSpec() {
             //modelInstance.probabilityMale shouldBe ("TODO")
         }
 
+        // to test the property `probabilityFemale`
+        should("test probabilityFemale") {
+            // uncomment below to test the property
+            //modelInstance.probabilityFemale shouldBe ("TODO")
+        }
+
+        // to test the property `popularity`
+        should("test popularity") {
+            // uncomment below to test the property
+            //modelInstance.popularity shouldBe ("TODO")
+        }
+
     }
 }

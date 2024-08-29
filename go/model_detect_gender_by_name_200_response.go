@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.5.0
+API version: 1.6.2
 Contact: mail@apileague.com
 */
 
@@ -22,6 +22,8 @@ var _ MappedNullable = &DetectGenderByName200Response{}
 type DetectGenderByName200Response struct {
 	Name NullableString `json:"name,omitempty"`
 	ProbabilityMale *float32 `json:"probability_male,omitempty"`
+	ProbabilityFemale *float32 `json:"probability_female,omitempty"`
+	Popularity *float32 `json:"popularity,omitempty"`
 }
 
 // NewDetectGenderByName200Response instantiates a new DetectGenderByName200Response object
@@ -115,6 +117,70 @@ func (o *DetectGenderByName200Response) SetProbabilityMale(v float32) {
 	o.ProbabilityMale = &v
 }
 
+// GetProbabilityFemale returns the ProbabilityFemale field value if set, zero value otherwise.
+func (o *DetectGenderByName200Response) GetProbabilityFemale() float32 {
+	if o == nil || IsNil(o.ProbabilityFemale) {
+		var ret float32
+		return ret
+	}
+	return *o.ProbabilityFemale
+}
+
+// GetProbabilityFemaleOk returns a tuple with the ProbabilityFemale field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetectGenderByName200Response) GetProbabilityFemaleOk() (*float32, bool) {
+	if o == nil || IsNil(o.ProbabilityFemale) {
+		return nil, false
+	}
+	return o.ProbabilityFemale, true
+}
+
+// HasProbabilityFemale returns a boolean if a field has been set.
+func (o *DetectGenderByName200Response) HasProbabilityFemale() bool {
+	if o != nil && !IsNil(o.ProbabilityFemale) {
+		return true
+	}
+
+	return false
+}
+
+// SetProbabilityFemale gets a reference to the given float32 and assigns it to the ProbabilityFemale field.
+func (o *DetectGenderByName200Response) SetProbabilityFemale(v float32) {
+	o.ProbabilityFemale = &v
+}
+
+// GetPopularity returns the Popularity field value if set, zero value otherwise.
+func (o *DetectGenderByName200Response) GetPopularity() float32 {
+	if o == nil || IsNil(o.Popularity) {
+		var ret float32
+		return ret
+	}
+	return *o.Popularity
+}
+
+// GetPopularityOk returns a tuple with the Popularity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetectGenderByName200Response) GetPopularityOk() (*float32, bool) {
+	if o == nil || IsNil(o.Popularity) {
+		return nil, false
+	}
+	return o.Popularity, true
+}
+
+// HasPopularity returns a boolean if a field has been set.
+func (o *DetectGenderByName200Response) HasPopularity() bool {
+	if o != nil && !IsNil(o.Popularity) {
+		return true
+	}
+
+	return false
+}
+
+// SetPopularity gets a reference to the given float32 and assigns it to the Popularity field.
+func (o *DetectGenderByName200Response) SetPopularity(v float32) {
+	o.Popularity = &v
+}
+
 func (o DetectGenderByName200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -130,6 +196,12 @@ func (o DetectGenderByName200Response) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProbabilityMale) {
 		toSerialize["probability_male"] = o.ProbabilityMale
+	}
+	if !IsNil(o.ProbabilityFemale) {
+		toSerialize["probability_female"] = o.ProbabilityFemale
+	}
+	if !IsNil(o.Popularity) {
+		toSerialize["popularity"] = o.Popularity
 	}
 	return toSerialize, nil
 }

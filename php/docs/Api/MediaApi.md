@@ -6,6 +6,7 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | ------------- | ------------- | ------------- |
 | [**detectMainImageColor()**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color |
 | [**rescaleImage()**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image |
+| [**searchIcons()**](MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons |
 | [**searchRoyaltyFreeImages()**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images |
 
 
@@ -79,7 +80,7 @@ try {
 ## `rescaleImage()`
 
 ```php
-rescaleImage($url, $width, $height, $crop): object
+rescaleImage($url, $width, $height, $crop): \SplFileObject
 ```
 
 Rescale Image
@@ -134,7 +135,7 @@ try {
 
 ### Return type
 
-**object**
+**\SplFileObject**
 
 ### Authorization
 
@@ -144,6 +145,77 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/octet-stream`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `searchIcons()`
+
+```php
+searchIcons($query, $only_public_domain, $number): \OpenAPI\Client\Model\SearchIcons200Response
+```
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: apiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+// Configure API key authorization: headerApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\MediaApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$query = cars; // string | The search query.
+$only_public_domain = true; // bool | If true, only public domain icons will be returned.
+$number = 3; // int | The number of icons to return in range [1,100]
+
+try {
+    $result = $apiInstance->searchIcons($query, $only_public_domain, $number);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MediaApi->searchIcons: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| The search query. | |
+| **only_public_domain** | **bool**| If true, only public domain icons will be returned. | [optional] |
+| **number** | **int**| The number of icons to return in range [1,100] | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\SearchIcons200Response**](../Model/SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -184,7 +256,7 @@ $apiInstance = new OpenAPI\Client\Api\MediaApi(
     $config
 );
 $query = dogs; // string | The search query.
-$number = 3; // int | The number of images to return in range [1,10]
+$number = 3; // int | The number of images to return in range [1,100]
 
 try {
     $result = $apiInstance->searchRoyaltyFreeImages($query, $number);
@@ -199,7 +271,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **query** | **string**| The search query. | |
-| **number** | **int**| The number of images to return in range [1,10] | [optional] |
+| **number** | **int**| The number of images to return in range [1,100] | [optional] |
 
 ### Return type
 

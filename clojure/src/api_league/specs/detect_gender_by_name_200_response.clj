@@ -9,6 +9,8 @@
   {
    (ds/opt :name) string?
    (ds/opt :probability_male) float?
+   (ds/opt :probability_female) float?
+   (ds/opt :popularity) float?
    })
 
 (def detect-gender-by-name-200-response-spec

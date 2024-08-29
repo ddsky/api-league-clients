@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **probability_male** | **float** |  | [optional] 
+**probability_female** | **float** |  | [optional] 
+**popularity** | **float** |  | [optional] 
 
 ## Example
 

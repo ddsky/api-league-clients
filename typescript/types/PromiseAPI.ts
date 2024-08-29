@@ -7,11 +7,7 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -79,6 +75,7 @@ import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../mo
 import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
+import { SearchIcons200Response } from '../models/SearchIcons200Response';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
 import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
 import { SearchMemes200Response } from '../models/SearchMemes200Response';
@@ -967,7 +964,7 @@ export class PromiseMediaApi {
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImageWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Promise<HttpInfo<any>> {
+    public rescaleImageWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Promise<HttpInfo<HttpFile>> {
         const result = this.api.rescaleImageWithHttpInfo(url, width, height, crop, _options);
         return result.toPromise();
     }
@@ -980,8 +977,32 @@ export class PromiseMediaApi {
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImage(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Promise<any> {
+    public rescaleImage(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Promise<HttpFile> {
         const result = this.api.rescaleImage(url, width, height, crop, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search through millions of icons to match any topic you want.
+     * Search Icons
+     * @param query The search query.
+     * @param onlyPublicDomain If true, only public domain icons will be returned.
+     * @param number The number of icons to return in range [1,100]
+     */
+    public searchIconsWithHttpInfo(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Promise<HttpInfo<SearchIcons200Response>> {
+        const result = this.api.searchIconsWithHttpInfo(query, onlyPublicDomain, number, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Search through millions of icons to match any topic you want.
+     * Search Icons
+     * @param query The search query.
+     * @param onlyPublicDomain If true, only public domain icons will be returned.
+     * @param number The number of icons to return in range [1,100]
+     */
+    public searchIcons(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Promise<SearchIcons200Response> {
+        const result = this.api.searchIcons(query, onlyPublicDomain, number, _options);
         return result.toPromise();
     }
 
@@ -989,7 +1010,7 @@ export class PromiseMediaApi {
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * Search Royalty Free Images
      * @param query The search query.
-     * @param number The number of images to return in range [1,10]
+     * @param number The number of images to return in range [1,100]
      */
     public searchRoyaltyFreeImagesWithHttpInfo(query: string, number?: number, _options?: Configuration): Promise<HttpInfo<SearchRoyaltyFreeImages200Response>> {
         const result = this.api.searchRoyaltyFreeImagesWithHttpInfo(query, number, _options);
@@ -1000,7 +1021,7 @@ export class PromiseMediaApi {
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * Search Royalty Free Images
      * @param query The search query.
-     * @param number The number of images to return in range [1,10]
+     * @param number The number of images to return in range [1,100]
      */
     public searchRoyaltyFreeImages(query: string, number?: number, _options?: Configuration): Promise<SearchRoyaltyFreeImages200Response> {
         const result = this.api.searchRoyaltyFreeImages(query, number, _options);
@@ -1243,46 +1264,6 @@ export class PromiseTextApi {
      */
     public detectGenderByName(name: string, _options?: Configuration): Promise<DetectGenderByName200Response> {
         const result = this.api.detectGenderByName(name, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
-     * @param text The text for which the language should be detected.
-     */
-    public detectLanguageWithHttpInfo(text: string, _options?: Configuration): Promise<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
-        const result = this.api.detectLanguageWithHttpInfo(text, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
-     * @param text The text for which the language should be detected.
-     */
-    public detectLanguage(text: string, _options?: Configuration): Promise<Array<DetectLanguage200ResponseInner>> {
-        const result = this.api.detectLanguage(text, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
-     * @param text The text for which the sentiment should be detected.
-     */
-    public detectSentimentWithHttpInfo(text: string, _options?: Configuration): Promise<HttpInfo<DetectSentiment200Response>> {
-        const result = this.api.detectSentimentWithHttpInfo(text, _options);
-        return result.toPromise();
-    }
-
-    /**
-     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
-     * @param text The text for which the sentiment should be detected.
-     */
-    public detectSentiment(text: string, _options?: Configuration): Promise<DetectSentiment200Response> {
-        const result = this.api.detectSentiment(text, _options);
         return result.toPromise();
     }
 

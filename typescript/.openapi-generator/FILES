@@ -38,11 +38,7 @@ models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.ts
 models/ConvertUnits200Response.ts
 models/CorrectSpelling200Response.ts
 models/DetectGenderByName200Response.ts
-models/DetectLanguage200ResponseInner.ts
 models/DetectMainImageColor200ResponseInner.ts
-models/DetectSentiment200Response.ts
-models/DetectSentiment200ResponseDocument.ts
-models/DetectSentiment200ResponseSentencesInner.ts
 models/ExtractAuthors200Response.ts
 models/ExtractAuthors200ResponseAuthorsInner.ts
 models/ExtractContentFromAWebPage200Response.ts
@@ -111,6 +107,7 @@ models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.ts
 models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.ts
 models/SearchGifs200Response.ts
 models/SearchGifs200ResponseImagesInner.ts
+models/SearchIcons200Response.ts
 models/SearchJokes200Response.ts
 models/SearchJokes200ResponseJokesInner.ts
 models/SearchMemes200Response.ts

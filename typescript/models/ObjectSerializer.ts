@@ -4,11 +4,7 @@ export * from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutr
 export * from '../models/ConvertUnits200Response';
 export * from '../models/CorrectSpelling200Response';
 export * from '../models/DetectGenderByName200Response';
-export * from '../models/DetectLanguage200ResponseInner';
 export * from '../models/DetectMainImageColor200ResponseInner';
-export * from '../models/DetectSentiment200Response';
-export * from '../models/DetectSentiment200ResponseDocument';
-export * from '../models/DetectSentiment200ResponseSentencesInner';
 export * from '../models/ExtractAuthors200Response';
 export * from '../models/ExtractAuthors200ResponseAuthorsInner';
 export * from '../models/ExtractContentFromAWebPage200Response';
@@ -76,6 +72,7 @@ export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInn
 export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 export * from '../models/SearchGifs200Response';
 export * from '../models/SearchGifs200ResponseImagesInner';
+export * from '../models/SearchIcons200Response';
 export * from '../models/SearchJokes200Response';
 export * from '../models/SearchJokes200ResponseJokesInner';
 export * from '../models/SearchMemes200Response';
@@ -111,11 +108,7 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -183,6 +176,7 @@ import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../mo
 import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
+import { SearchIcons200Response } from '../models/SearchIcons200Response';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
 import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
 import { SearchMemes200Response } from '../models/SearchMemes200Response';
@@ -234,11 +228,7 @@ let typeMap: {[index: string]: any} = {
     "ConvertUnits200Response": ConvertUnits200Response,
     "CorrectSpelling200Response": CorrectSpelling200Response,
     "DetectGenderByName200Response": DetectGenderByName200Response,
-    "DetectLanguage200ResponseInner": DetectLanguage200ResponseInner,
     "DetectMainImageColor200ResponseInner": DetectMainImageColor200ResponseInner,
-    "DetectSentiment200Response": DetectSentiment200Response,
-    "DetectSentiment200ResponseDocument": DetectSentiment200ResponseDocument,
-    "DetectSentiment200ResponseSentencesInner": DetectSentiment200ResponseSentencesInner,
     "ExtractAuthors200Response": ExtractAuthors200Response,
     "ExtractAuthors200ResponseAuthorsInner": ExtractAuthors200ResponseAuthorsInner,
     "ExtractContentFromAWebPage200Response": ExtractContentFromAWebPage200Response,
@@ -306,6 +296,7 @@ let typeMap: {[index: string]: any} = {
     "SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing,
     "SearchGifs200Response": SearchGifs200Response,
     "SearchGifs200ResponseImagesInner": SearchGifs200ResponseImagesInner,
+    "SearchIcons200Response": SearchIcons200Response,
     "SearchJokes200Response": SearchJokes200Response,
     "SearchJokes200ResponseJokesInner": SearchJokes200ResponseJokesInner,
     "SearchMemes200Response": SearchMemes200Response,

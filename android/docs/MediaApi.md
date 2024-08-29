@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
 [**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image
+[**searchIcons**](MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons
 [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -58,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## rescaleImage
 
-> Object rescaleImage(url, width, height, crop)
+> File rescaleImage(url, width, height, crop)
 
 Rescale Image
 
@@ -76,7 +77,7 @@ Integer width = 200; // Integer | The desired width of the rescaled image.
 Integer height = 200; // Integer | The desired height of the rescaled image.
 Boolean crop = true; // Boolean | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
 try {
-    Object result = apiInstance.rescaleImage(url, width, height, crop);
+    File result = apiInstance.rescaleImage(url, width, height, crop);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaApi#rescaleImage");
@@ -96,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**File**](File.md)
 
 ### Authorization
 
@@ -106,6 +107,56 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/octet-stream
+
+
+## searchIcons
+
+> SearchIcons200Response searchIcons(query, onlyPublicDomain, number)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+
+```java
+// Import classes:
+//import com.apileague.MediaApi;
+
+MediaApi apiInstance = new MediaApi();
+String query = cars; // String | The search query.
+Boolean onlyPublicDomain = true; // Boolean | If true, only public domain icons will be returned.
+Integer number = 3; // Integer | The number of icons to return in range [1,100]
+try {
+    SearchIcons200Response result = apiInstance.searchIcons(query, onlyPublicDomain, number);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaApi#searchIcons");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The search query. | [default to null]
+ **onlyPublicDomain** | **Boolean**| If true, only public domain icons will be returned. | [optional] [default to null]
+ **number** | **Integer**| The number of icons to return in range [1,100] | [optional] [default to null]
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## searchRoyaltyFreeImages
@@ -124,7 +175,7 @@ Search through hundreds of thousands of royalty free images to match any topic y
 
 MediaApi apiInstance = new MediaApi();
 String query = dogs; // String | The search query.
-Integer number = 3; // Integer | The number of images to return in range [1,10]
+Integer number = 3; // Integer | The number of images to return in range [1,100]
 try {
     SearchRoyaltyFreeImages200Response result = apiInstance.searchRoyaltyFreeImages(query, number);
     System.out.println(result);
@@ -140,7 +191,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| The search query. | [default to null]
- **number** | **Integer**| The number of images to return in range [1,10] | [optional] [default to null]
+ **number** | **Integer**| The number of images to return in range [1,100] | [optional] [default to null]
 
 ### Return type
 

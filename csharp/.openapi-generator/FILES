@@ -12,11 +12,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
-docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
-docs/DetectSentiment200Response.md
-docs/DetectSentiment200ResponseDocument.md
-docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -90,6 +86,7 @@ docs/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md
 docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
+docs/SearchIcons200Response.md
 docs/SearchJokes200Response.md
 docs/SearchJokes200ResponseJokesInner.md
 docs/SearchMemes200Response.md
@@ -139,11 +136,7 @@ src/apileague.Test/Model/ComputeNutrition200ResponseTests.cs
 src/apileague.Test/Model/ConvertUnits200ResponseTests.cs
 src/apileague.Test/Model/CorrectSpelling200ResponseTests.cs
 src/apileague.Test/Model/DetectGenderByName200ResponseTests.cs
-src/apileague.Test/Model/DetectLanguage200ResponseInnerTests.cs
 src/apileague.Test/Model/DetectMainImageColor200ResponseInnerTests.cs
-src/apileague.Test/Model/DetectSentiment200ResponseDocumentTests.cs
-src/apileague.Test/Model/DetectSentiment200ResponseSentencesInnerTests.cs
-src/apileague.Test/Model/DetectSentiment200ResponseTests.cs
 src/apileague.Test/Model/ExtractAuthors200ResponseAuthorsInnerTests.cs
 src/apileague.Test/Model/ExtractAuthors200ResponseTests.cs
 src/apileague.Test/Model/ExtractContentFromAWebPage200ResponseTests.cs
@@ -211,6 +204,7 @@ src/apileague.Test/Model/SearchDrinks200ResponseDrinksInnerTests.cs
 src/apileague.Test/Model/SearchDrinks200ResponseTests.cs
 src/apileague.Test/Model/SearchGifs200ResponseImagesInnerTests.cs
 src/apileague.Test/Model/SearchGifs200ResponseTests.cs
+src/apileague.Test/Model/SearchIcons200ResponseTests.cs
 src/apileague.Test/Model/SearchJokes200ResponseJokesInnerTests.cs
 src/apileague.Test/Model/SearchJokes200ResponseTests.cs
 src/apileague.Test/Model/SearchMemes200ResponseMemesInnerTests.cs
@@ -274,11 +268,7 @@ src/apileague/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrients
 src/apileague/Model/ConvertUnits200Response.cs
 src/apileague/Model/CorrectSpelling200Response.cs
 src/apileague/Model/DetectGenderByName200Response.cs
-src/apileague/Model/DetectLanguage200ResponseInner.cs
 src/apileague/Model/DetectMainImageColor200ResponseInner.cs
-src/apileague/Model/DetectSentiment200Response.cs
-src/apileague/Model/DetectSentiment200ResponseDocument.cs
-src/apileague/Model/DetectSentiment200ResponseSentencesInner.cs
 src/apileague/Model/ExtractAuthors200Response.cs
 src/apileague/Model/ExtractAuthors200ResponseAuthorsInner.cs
 src/apileague/Model/ExtractContentFromAWebPage200Response.cs
@@ -346,6 +336,7 @@ src/apileague/Model/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.cs
 src/apileague/Model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.cs
 src/apileague/Model/SearchGifs200Response.cs
 src/apileague/Model/SearchGifs200ResponseImagesInner.cs
+src/apileague/Model/SearchIcons200Response.cs
 src/apileague/Model/SearchJokes200Response.cs
 src/apileague/Model/SearchJokes200ResponseJokesInner.cs
 src/apileague/Model/SearchMemes200Response.cs

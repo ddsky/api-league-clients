@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColor**](MediaApi.md#detectmainimagecolor) | **GET** /detect-color | Detect Main Image Color
 [**rescaleImage**](MediaApi.md#rescaleimage) | **GET** /rescale-image | Rescale Image
+[**searchIcons**](MediaApi.md#searchicons) | **GET** /search-icons | Search Icons
 [**searchRoyaltyFreeImages**](MediaApi.md#searchroyaltyfreeimages) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rescaleImage**
-> Object rescaleImage(url, width, height, crop)
+> MultipartFile rescaleImage(url, width, height, crop)
 
 Rescale Image
 
@@ -109,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**MultipartFile**](MultipartFile.md)
 
 ### Authorization
 
@@ -119,6 +120,61 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchIcons**
+> SearchIcons200Response searchIcons(query, onlyPublicDomain, number)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = MediaApi();
+final query = cars; // String | The search query.
+final onlyPublicDomain = true; // bool | If true, only public domain icons will be returned.
+final number = 3; // int | The number of icons to return in range [1,100]
+
+try {
+    final result = api_instance.searchIcons(query, onlyPublicDomain, number);
+    print(result);
+} catch (e) {
+    print('Exception when calling MediaApi->searchIcons: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The search query. | 
+ **onlyPublicDomain** | **bool**| If true, only public domain icons will be returned. | [optional] 
+ **number** | **int**| The number of icons to return in range [1,100] | [optional] 
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -143,7 +199,7 @@ import 'package:openapi/api.dart';
 
 final api_instance = MediaApi();
 final query = dogs; // String | The search query.
-final number = 3; // int | The number of images to return in range [1,10]
+final number = 3; // int | The number of images to return in range [1,100]
 
 try {
     final result = api_instance.searchRoyaltyFreeImages(query, number);
@@ -158,7 +214,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| The search query. | 
- **number** | **int**| The number of images to return in range [1,10] | [optional] 
+ **number** | **int**| The number of images to return in range [1,100] | [optional] 
 
 ### Return type
 

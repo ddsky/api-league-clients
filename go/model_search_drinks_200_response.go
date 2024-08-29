@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.5.0
+API version: 1.6.2
 Contact: mail@apileague.com
 */
 

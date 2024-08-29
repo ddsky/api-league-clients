@@ -9,6 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  [optional] |
 |**probabilityMale** | **BigDecimal** |  |  [optional] |
+|**probabilityFemale** | **BigDecimal** |  |  [optional] |
+|**popularity** | **BigDecimal** |  |  [optional] |
 
 
 

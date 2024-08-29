@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------ | ------------ | ----------- |
 | [**detect_main_image_color**](MediaApi.md#detect_main_image_color) | **GET** /detect-color | Detect Main Image Color |
 | [**rescale_image**](MediaApi.md#rescale_image) | **GET** /rescale-image | Rescale Image |
+| [**search_icons**](MediaApi.md#search_icons) | **GET** /search-icons | Search Icons |
 | [**search_royalty_free_images**](MediaApi.md#search_royalty_free_images) | **GET** /search-images | Search Royalty Free Images |
 
 
@@ -87,7 +88,7 @@ end
 
 ## rescale_image
 
-> Object rescale_image(url, width, height, crop)
+> File rescale_image(url, width, height, crop)
 
 Rescale Image
 
@@ -130,7 +131,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> rescale_image_with_http_info(url, width, height, crop)
+> <Array(File, Integer, Hash)> rescale_image_with_http_info(url, width, height, crop)
 
 ```ruby
 begin
@@ -138,7 +139,7 @@ begin
   data, status_code, headers = api_instance.rescale_image_with_http_info(url, width, height, crop)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => File
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MediaApi->rescale_image_with_http_info: #{e}"
 end
@@ -155,7 +156,7 @@ end
 
 ### Return type
 
-**Object**
+**File**
 
 ### Authorization
 
@@ -165,6 +166,88 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/octet-stream
+
+
+## search_icons
+
+> <SearchIcons200Response> search_icons(query, opts)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::MediaApi.new
+query = 'cars' # String | The search query.
+opts = {
+  only_public_domain: true, # Boolean | If true, only public domain icons will be returned.
+  number: 3 # Integer | The number of icons to return in range [1,100]
+}
+
+begin
+  # Search Icons
+  result = api_instance.search_icons(query, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MediaApi->search_icons: #{e}"
+end
+```
+
+#### Using the search_icons_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SearchIcons200Response>, Integer, Hash)> search_icons_with_http_info(query, opts)
+
+```ruby
+begin
+  # Search Icons
+  data, status_code, headers = api_instance.search_icons_with_http_info(query, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SearchIcons200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MediaApi->search_icons_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **query** | **String** | The search query. |  |
+| **only_public_domain** | **Boolean** | If true, only public domain icons will be returned. | [optional] |
+| **number** | **Integer** | The number of icons to return in range [1,100] | [optional] |
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## search_royalty_free_images
@@ -196,7 +279,7 @@ end
 api_instance = OpenapiClient::MediaApi.new
 query = 'dogs' # String | The search query.
 opts = {
-  number: 3 # Integer | The number of images to return in range [1,10]
+  number: 3 # Integer | The number of images to return in range [1,100]
 }
 
 begin
@@ -231,7 +314,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **query** | **String** | The search query. |  |
-| **number** | **Integer** | The number of images to return in range [1,10] | [optional] |
+| **number** | **Integer** | The number of images to return in range [1,100] | [optional] |
 
 ### Return type
 

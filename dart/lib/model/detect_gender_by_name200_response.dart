@@ -15,6 +15,8 @@ class DetectGenderByName200Response {
   DetectGenderByName200Response({
     this.name,
     this.probabilityMale,
+    this.probabilityFemale,
+    this.popularity,
   });
 
   String? name;
@@ -27,19 +29,39 @@ class DetectGenderByName200Response {
   ///
   num? probabilityMale;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? probabilityFemale;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? popularity;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is DetectGenderByName200Response &&
     other.name == name &&
-    other.probabilityMale == probabilityMale;
+    other.probabilityMale == probabilityMale &&
+    other.probabilityFemale == probabilityFemale &&
+    other.popularity == popularity;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (probabilityMale == null ? 0 : probabilityMale!.hashCode);
+    (probabilityMale == null ? 0 : probabilityMale!.hashCode) +
+    (probabilityFemale == null ? 0 : probabilityFemale!.hashCode) +
+    (popularity == null ? 0 : popularity!.hashCode);
 
   @override
-  String toString() => 'DetectGenderByName200Response[name=$name, probabilityMale=$probabilityMale]';
+  String toString() => 'DetectGenderByName200Response[name=$name, probabilityMale=$probabilityMale, probabilityFemale=$probabilityFemale, popularity=$popularity]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -52,6 +74,16 @@ class DetectGenderByName200Response {
       json[r'probability_male'] = this.probabilityMale;
     } else {
       json[r'probability_male'] = null;
+    }
+    if (this.probabilityFemale != null) {
+      json[r'probability_female'] = this.probabilityFemale;
+    } else {
+      json[r'probability_female'] = null;
+    }
+    if (this.popularity != null) {
+      json[r'popularity'] = this.popularity;
+    } else {
+      json[r'popularity'] = null;
     }
     return json;
   }
@@ -77,6 +109,8 @@ class DetectGenderByName200Response {
       return DetectGenderByName200Response(
         name: mapValueOfType<String>(json, r'name'),
         probabilityMale: num.parse('${json[r'probability_male']}'),
+        probabilityFemale: num.parse('${json[r'probability_female']}'),
+        popularity: num.parse('${json[r'popularity']}'),
       );
     }
     return null;

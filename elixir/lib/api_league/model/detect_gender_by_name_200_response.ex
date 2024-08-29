@@ -9,12 +9,16 @@ defmodule APILeague.Model.DetectGenderByName200Response do
   @derive Jason.Encoder
   defstruct [
     :name,
-    :probability_male
+    :probability_male,
+    :probability_female,
+    :popularity
   ]
 
   @type t :: %__MODULE__{
     :name => String.t | nil,
-    :probability_male => float() | nil
+    :probability_male => float() | nil,
+    :probability_female => float() | nil,
+    :popularity => float() | nil
   }
 
   def decode(value) do

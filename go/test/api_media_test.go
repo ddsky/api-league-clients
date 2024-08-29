@@ -46,6 +46,18 @@ func Test_apileague_MediaAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test MediaAPIService SearchIcons", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MediaAPI.SearchIcons(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MediaAPIService SearchRoyaltyFreeImages", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

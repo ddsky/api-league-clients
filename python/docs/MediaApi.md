@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detect_main_image_color**](MediaApi.md#detect_main_image_color) | **GET** /detect-color | Detect Main Image Color
 [**rescale_image**](MediaApi.md#rescale_image) | **GET** /rescale-image | Rescale Image
+[**search_icons**](MediaApi.md#search_icons) | **GET** /search-icons | Search Icons
 [**search_royalty_free_images**](MediaApi.md#search_royalty_free_images) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -102,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rescale_image**
-> object rescale_image(url, width, height, crop)
+> bytearray rescale_image(url, width, height, crop)
 
 Rescale Image
 
@@ -173,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**bytearray**
 
 ### Authorization
 
@@ -183,6 +184,102 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_icons**
+> SearchIcons200Response search_icons(query, only_public_domain=only_public_domain, number=number)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.search_icons200_response import SearchIcons200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.MediaApi(api_client)
+    query = 'cars' # str | The search query.
+    only_public_domain = true # bool | If true, only public domain icons will be returned. (optional)
+    number = 3 # int | The number of icons to return in range [1,100] (optional)
+
+    try:
+        # Search Icons
+        api_response = api_instance.search_icons(query, only_public_domain=only_public_domain, number=number)
+        print("The response of MediaApi->search_icons:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MediaApi->search_icons: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **str**| The search query. | 
+ **only_public_domain** | **bool**| If true, only public domain icons will be returned. | [optional] 
+ **number** | **int**| The number of icons to return in range [1,100] | [optional] 
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -244,7 +341,7 @@ with apileague.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = apileague.MediaApi(api_client)
     query = 'dogs' # str | The search query.
-    number = 3 # int | The number of images to return in range [1,10] (optional)
+    number = 3 # int | The number of images to return in range [1,100] (optional)
 
     try:
         # Search Royalty Free Images
@@ -263,7 +360,7 @@ with apileague.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| The search query. | 
- **number** | **int**| The number of images to return in range [1,10] | [optional] 
+ **number** | **int**| The number of images to return in range [1,100] | [optional] 
 
 ### Return type
 

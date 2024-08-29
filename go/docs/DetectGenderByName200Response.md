@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
 **ProbabilityMale** | Pointer to **float32** |  | [optional] 
+**ProbabilityFemale** | Pointer to **float32** |  | [optional] 
+**Popularity** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -85,6 +87,56 @@ SetProbabilityMale sets ProbabilityMale field to given value.
 `func (o *DetectGenderByName200Response) HasProbabilityMale() bool`
 
 HasProbabilityMale returns a boolean if a field has been set.
+
+### GetProbabilityFemale
+
+`func (o *DetectGenderByName200Response) GetProbabilityFemale() float32`
+
+GetProbabilityFemale returns the ProbabilityFemale field if non-nil, zero value otherwise.
+
+### GetProbabilityFemaleOk
+
+`func (o *DetectGenderByName200Response) GetProbabilityFemaleOk() (*float32, bool)`
+
+GetProbabilityFemaleOk returns a tuple with the ProbabilityFemale field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProbabilityFemale
+
+`func (o *DetectGenderByName200Response) SetProbabilityFemale(v float32)`
+
+SetProbabilityFemale sets ProbabilityFemale field to given value.
+
+### HasProbabilityFemale
+
+`func (o *DetectGenderByName200Response) HasProbabilityFemale() bool`
+
+HasProbabilityFemale returns a boolean if a field has been set.
+
+### GetPopularity
+
+`func (o *DetectGenderByName200Response) GetPopularity() float32`
+
+GetPopularity returns the Popularity field if non-nil, zero value otherwise.
+
+### GetPopularityOk
+
+`func (o *DetectGenderByName200Response) GetPopularityOk() (*float32, bool)`
+
+GetPopularityOk returns a tuple with the Popularity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPopularity
+
+`func (o *DetectGenderByName200Response) SetPopularity(v float32)`
+
+SetPopularity sets Popularity field to given value.
+
+### HasPopularity
+
+`func (o *DetectGenderByName200Response) HasPopularity() bool`
+
+HasPopularity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

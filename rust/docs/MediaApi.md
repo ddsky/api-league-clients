@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detect_main_image_color**](MediaApi.md#detect_main_image_color) | **GET** /detect-color | Detect Main Image Color
 [**rescale_image**](MediaApi.md#rescale_image) | **GET** /rescale-image | Rescale Image
+[**search_icons**](MediaApi.md#search_icons) | **GET** /search-icons | Search Icons
 [**search_royalty_free_images**](MediaApi.md#search_royalty_free_images) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -42,7 +43,7 @@ Name | Type | Description  | Required | Notes
 
 ## rescale_image
 
-> serde_json::Value rescale_image(url, width, height, crop)
+> std::path::PathBuf rescale_image(url, width, height, crop)
 Rescale Image
 
 Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
@@ -59,7 +60,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**std::path::PathBuf**](std::path::PathBuf.md)
 
 ### Authorization
 
@@ -69,6 +70,38 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## search_icons
+
+> models::SearchIcons200Response search_icons(query, only_public_domain, number)
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**query** | **String** | The search query. | [required] |
+**only_public_domain** | Option<**bool**> | If true, only public domain icons will be returned. |  |
+**number** | Option<**i32**> | The number of icons to return in range [1,100] |  |
+
+### Return type
+
+[**models::SearchIcons200Response**](searchIcons_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -86,7 +119,7 @@ Search through hundreds of thousands of royalty free images to match any topic y
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **query** | **String** | The search query. | [required] |
-**number** | Option<**i32**> | The number of images to return in range [1,10] |  |
+**number** | Option<**i32**> | The number of images to return in range [1,100] |  |
 
 ### Return type
 

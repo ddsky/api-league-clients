@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.5.0
+  version: 1.6.2
 servers:
 - url: https://api.apileague.com
 security:
@@ -8536,131 +8536,6 @@ paths:
       - Text
       x-accepts:
       - application/json
-  /detect-language:
-    get:
-      deprecated: false
-      description: "Detect the language of the given text. The API returns a list\
-        \ of languages and their confidence scores. The confidence score is a value\
-        \ between 0 and 1, where 1 means the language was detected with 100% confidence.\
-        \ The API supports text in 22 languages."
-      externalDocs:
-        description: Read entire docs
-        url: https://apileague.com/apis/detect-language-api/
-      operationId: detectLanguage
-      parameters:
-      - description: The text for which the language should be detected.
-        explode: false
-        in: query
-        name: text
-        required: true
-        schema:
-          example: Das ist ein Text.
-          maxLength: 10000
-          pattern: "."
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Response:
-                  value:
-                  - language: de
-                    confidence: 0.34
-                  - language: et
-                    confidence: 0.22
-                  - language: fi
-                    confidence: 0.13
-                  - language: sv
-                    confidence: 0.11
-                  - language: it
-                    confidence: 0.11
-                  - language: es
-                    confidence: 0.05
-                  - language: pt
-                    confidence: 0.03
-                  - language: lt
-                    confidence: 0.01
-              schema:
-                items:
-                  $ref: '#/components/schemas/detectLanguage_200_response_inner'
-                type: array
-          description: Success
-        "401":
-          description: Unauthorized
-        "402":
-          description: Payment Required
-        "403":
-          description: Forbidden
-        "404":
-          description: Not Found
-        "406":
-          description: Not Acceptable
-        "429":
-          description: Too Many Requests
-      summary: Detect Language
-      tags:
-      - Text
-      x-accepts:
-      - application/json
-  /detect-sentiment:
-    get:
-      deprecated: false
-      description: Detect the sentiment (positive or negative) of a given text. The
-        entire document is scored and also each individual sentence.
-      externalDocs:
-        description: Read entire docs
-        url: https://apileague.com/apis/detect-sentiment-api/
-      operationId: detectSentiment
-      parameters:
-      - description: The text for which the sentiment should be detected.
-        explode: false
-        in: query
-        name: text
-        required: true
-        schema:
-          example: Happy times feel so good.
-          maxLength: 10000
-          pattern: "."
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                Response:
-                  value:
-                    document:
-                      sentiment: positive
-                      confidence: 1
-                      average_confidence: 1
-                    sentences:
-                    - length: 34
-                      sentiment: positive
-                      offset: 0
-                      confidence: 1
-              schema:
-                $ref: '#/components/schemas/detectSentiment_200_response'
-          description: Success
-        "401":
-          description: Unauthorized
-        "402":
-          description: Payment Required
-        "403":
-          description: Forbidden
-        "404":
-          description: Not Found
-        "406":
-          description: Not Acceptable
-        "429":
-          description: Too Many Requests
-      summary: Detect Sentiment
-      tags:
-      - Text
-      x-accepts:
-      - application/json
   /score-text:
     get:
       deprecated: false
@@ -8953,6 +8828,8 @@ paths:
                   value:
                     name: Alex
                     probability_male: 0.9679
+                    probability_female: 0.0321
+                    popularity: 0.00152
               schema:
                 $ref: '#/components/schemas/detectGenderByName_200_response'
           description: Success
@@ -9310,7 +9187,7 @@ paths:
           pattern: "."
           type: string
         style: form
-      - description: "The number of images to return in range [1,10]"
+      - description: "The number of images to return in range [1,100]"
         explode: false
         in: query
         name: number
@@ -9318,7 +9195,7 @@ paths:
         schema:
           example: 3
           format: int32
-          maximum: 10
+          maximum: 100
           minimum: 1
           type: integer
         style: form
@@ -9370,6 +9247,99 @@ paths:
         "429":
           description: Too Many Requests
       summary: Search Royalty Free Images
+      tags:
+      - Media
+      x-accepts:
+      - application/json
+  /search-icons:
+    get:
+      deprecated: false
+      description: Search through millions of icons to match any topic you want.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/search-icons-api/
+      operationId: searchIcons
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: true
+        schema:
+          example: cars
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: "If true, only public domain icons will be returned."
+        explode: false
+        in: query
+        name: only-public-domain
+        required: false
+        schema:
+          example: true
+          type: boolean
+        style: form
+      - description: "The number of icons to return in range [1,100]"
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    icons:
+                    - width: 200
+                      license:
+                        name: PUBLIC_DOMAIN
+                        link: public-domain
+                      thumbnail: https://static.thenounproject.com/png/4435839-200.png
+                      id: "4435839"
+                      url: https://static.thenounproject.com/png/4435839-200.png
+                      height: 200
+                    - width: 200
+                      license:
+                        name: PUBLIC_DOMAIN
+                        link: public-domain
+                      thumbnail: https://static.thenounproject.com/png/4256398-200.png
+                      id: "4256398"
+                      url: https://static.thenounproject.com/png/4256398-200.png
+                      height: 200
+                    - width: 200
+                      license:
+                        name: PUBLIC_DOMAIN
+                        link: public-domain
+                      thumbnail: https://static.thenounproject.com/png/3675912-200.png
+                      id: "3675912"
+                      url: https://static.thenounproject.com/png/3675912-200.png
+                      height: 200
+              schema:
+                $ref: '#/components/schemas/searchIcons_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Search Icons
       tags:
       - Media
       x-accepts:
@@ -9439,7 +9409,8 @@ paths:
           content:
             application/octet-stream:
               schema:
-                type: object
+                format: binary
+                type: string
           description: Success
         "401":
           description: Unauthorized
@@ -12649,71 +12620,6 @@ components:
           nullable: true
           type: string
       type: object
-    detectLanguage_200_response_inner:
-      example:
-        confidence: 0.8008281904610115
-        language: language
-      properties:
-        language:
-          nullable: true
-          type: string
-        confidence:
-          type: number
-      type: object
-    detectSentiment_200_response_document:
-      example:
-        sentiment: sentiment
-        confidence: 0
-        average_confidence: 6
-      properties:
-        sentiment:
-          nullable: true
-          type: string
-        confidence:
-          type: integer
-        average_confidence:
-          type: integer
-      type: object
-    detectSentiment_200_response_sentences_inner:
-      example:
-        sentiment: sentiment
-        offset: 5
-        confidence: 5
-        length: 1
-      properties:
-        length:
-          type: integer
-        sentiment:
-          nullable: true
-          type: string
-        offset:
-          type: integer
-        confidence:
-          type: integer
-      type: object
-    detectSentiment_200_response:
-      example:
-        sentences:
-        - sentiment: sentiment
-          offset: 5
-          confidence: 5
-          length: 1
-        - sentiment: sentiment
-          offset: 5
-          confidence: 5
-          length: 1
-        document:
-          sentiment: sentiment
-          confidence: 0
-          average_confidence: 6
-      properties:
-        document:
-          $ref: '#/components/schemas/detectSentiment_200_response_document'
-        sentences:
-          items:
-            $ref: '#/components/schemas/detectSentiment_200_response_sentences_inner'
-          type: array
-      type: object
     scoreText_200_response_readability_mainscores:
       example:
         total: 5
@@ -13128,6 +13034,8 @@ components:
       type: object
     detectGenderByName_200_response:
       example:
+        probability_female: 6.027456183070403
+        popularity: 1.4658129805029452
         name: name
         probability_male: 0.8008281904610115
       properties:
@@ -13135,6 +13043,10 @@ components:
           nullable: true
           type: string
         probability_male:
+          type: number
+        probability_female:
+          type: number
+        popularity:
           type: number
       type: object
     listWordSynonyms_200_response:
@@ -13294,6 +13206,31 @@ components:
           height: 6
       properties:
         images:
+          items:
+            $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response_images_inner'
+          type: array
+      type: object
+    searchIcons_200_response:
+      example:
+        icons:
+        - license:
+            name: name
+            link: link
+          thumbnail: thumbnail
+          width: 0
+          id: id
+          url: url
+          height: 6
+        - license:
+            name: name
+            link: link
+          thumbnail: thumbnail
+          width: 0
+          id: id
+          url: url
+          height: 6
+      properties:
+        icons:
           items:
             $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response_images_inner'
           type: array

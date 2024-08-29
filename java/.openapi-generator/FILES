@@ -14,11 +14,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
-docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
-docs/DetectSentiment200Response.md
-docs/DetectSentiment200ResponseDocument.md
-docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -92,6 +88,7 @@ docs/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md
 docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
+docs/SearchIcons200Response.md
 docs/SearchJokes200Response.md
 docs/SearchJokes200ResponseJokesInner.md
 docs/SearchMemes200Response.md
@@ -167,11 +164,7 @@ src/main/java/com/apileague/client/model/ComputeNutrition200ResponseIngredientBr
 src/main/java/com/apileague/client/model/ConvertUnits200Response.java
 src/main/java/com/apileague/client/model/CorrectSpelling200Response.java
 src/main/java/com/apileague/client/model/DetectGenderByName200Response.java
-src/main/java/com/apileague/client/model/DetectLanguage200ResponseInner.java
 src/main/java/com/apileague/client/model/DetectMainImageColor200ResponseInner.java
-src/main/java/com/apileague/client/model/DetectSentiment200Response.java
-src/main/java/com/apileague/client/model/DetectSentiment200ResponseDocument.java
-src/main/java/com/apileague/client/model/DetectSentiment200ResponseSentencesInner.java
 src/main/java/com/apileague/client/model/ExtractAuthors200Response.java
 src/main/java/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInner.java
 src/main/java/com/apileague/client/model/ExtractContentFromAWebPage200Response.java
@@ -239,6 +232,7 @@ src/main/java/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerNutri
 src/main/java/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.java
 src/main/java/com/apileague/client/model/SearchGifs200Response.java
 src/main/java/com/apileague/client/model/SearchGifs200ResponseImagesInner.java
+src/main/java/com/apileague/client/model/SearchIcons200Response.java
 src/main/java/com/apileague/client/model/SearchJokes200Response.java
 src/main/java/com/apileague/client/model/SearchJokes200ResponseJokesInner.java
 src/main/java/com/apileague/client/model/SearchMemes200Response.java
@@ -284,11 +278,7 @@ src/test/java/com/apileague/client/model/ComputeNutrition200ResponseTest.java
 src/test/java/com/apileague/client/model/ConvertUnits200ResponseTest.java
 src/test/java/com/apileague/client/model/CorrectSpelling200ResponseTest.java
 src/test/java/com/apileague/client/model/DetectGenderByName200ResponseTest.java
-src/test/java/com/apileague/client/model/DetectLanguage200ResponseInnerTest.java
 src/test/java/com/apileague/client/model/DetectMainImageColor200ResponseInnerTest.java
-src/test/java/com/apileague/client/model/DetectSentiment200ResponseDocumentTest.java
-src/test/java/com/apileague/client/model/DetectSentiment200ResponseSentencesInnerTest.java
-src/test/java/com/apileague/client/model/DetectSentiment200ResponseTest.java
 src/test/java/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInnerTest.java
 src/test/java/com/apileague/client/model/ExtractAuthors200ResponseTest.java
 src/test/java/com/apileague/client/model/ExtractContentFromAWebPage200ResponseTest.java
@@ -356,6 +346,7 @@ src/test/java/com/apileague/client/model/SearchDrinks200ResponseDrinksInnerTest.
 src/test/java/com/apileague/client/model/SearchDrinks200ResponseTest.java
 src/test/java/com/apileague/client/model/SearchGifs200ResponseImagesInnerTest.java
 src/test/java/com/apileague/client/model/SearchGifs200ResponseTest.java
+src/test/java/com/apileague/client/model/SearchIcons200ResponseTest.java
 src/test/java/com/apileague/client/model/SearchJokes200ResponseJokesInnerTest.java
 src/test/java/com/apileague/client/model/SearchJokes200ResponseTest.java
 src/test/java/com/apileague/client/model/SearchMemes200ResponseMemesInnerTest.java

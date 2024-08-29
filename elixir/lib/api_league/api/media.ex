@@ -61,10 +61,10 @@ defmodule APILeague.Api.Media do
 
   ### Returns
 
-  - `{:ok, map()}` on success
+  - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec rescale_image(Tesla.Env.client, String.t, integer(), integer(), boolean(), keyword()) :: {:ok, map()} | {:ok, nil} | {:error, Tesla.Env.t}
+  @spec rescale_image(Tesla.Env.client, String.t, integer(), integer(), boolean(), keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
   def rescale_image(connection, url, width, height, crop, _opts \\ []) do
     request =
       %{}
@@ -79,7 +79,52 @@ defmodule APILeague.Api.Media do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, %{}},
+      {200, false},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Search Icons
+  Search through millions of icons to match any topic you want.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `query` (String.t): The search query.
+  - `opts` (keyword): Optional parameters
+    - `:"only-public-domain"` (boolean()): If true, only public domain icons will be returned.
+    - `:number` (integer()): The number of icons to return in range [1,100]
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.SearchIcons200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec search_icons(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchIcons200Response.t} | {:error, Tesla.Env.t}
+  def search_icons(connection, query, opts \\ []) do
+    optional_params = %{
+      :"only-public-domain" => :query,
+      :number => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/search-icons")
+      |> add_param(:query, :query, query)
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.SearchIcons200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -98,7 +143,7 @@ defmodule APILeague.Api.Media do
   - `connection` (APILeague.Connection): Connection to server
   - `query` (String.t): The search query.
   - `opts` (keyword): Optional parameters
-    - `:number` (integer()): The number of images to return in range [1,10]
+    - `:number` (integer()): The number of images to return in range [1,100]
 
   ### Returns
 

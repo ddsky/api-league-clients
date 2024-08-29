@@ -18,16 +18,8 @@ client/OAICorrectSpelling_200_response.cpp
 client/OAICorrectSpelling_200_response.h
 client/OAIDetectGenderByName_200_response.cpp
 client/OAIDetectGenderByName_200_response.h
-client/OAIDetectLanguage_200_response_inner.cpp
-client/OAIDetectLanguage_200_response_inner.h
 client/OAIDetectMainImageColor_200_response_inner.cpp
 client/OAIDetectMainImageColor_200_response_inner.h
-client/OAIDetectSentiment_200_response.cpp
-client/OAIDetectSentiment_200_response.h
-client/OAIDetectSentiment_200_response_document.cpp
-client/OAIDetectSentiment_200_response_document.h
-client/OAIDetectSentiment_200_response_sentences_inner.cpp
-client/OAIDetectSentiment_200_response_sentences_inner.h
 client/OAIEnum.h
 client/OAIExtractAuthors_200_response.cpp
 client/OAIExtractAuthors_200_response.h
@@ -184,6 +176,8 @@ client/OAISearchGifs_200_response.cpp
 client/OAISearchGifs_200_response.h
 client/OAISearchGifs_200_response_images_inner.cpp
 client/OAISearchGifs_200_response_images_inner.h
+client/OAISearchIcons_200_response.cpp
+client/OAISearchIcons_200_response.h
 client/OAISearchJokes_200_response.cpp
 client/OAISearchJokes_200_response.h
 client/OAISearchJokes_200_response_jokes_inner.cpp

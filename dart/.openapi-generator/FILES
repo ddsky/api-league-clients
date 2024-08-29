@@ -11,11 +11,7 @@ doc/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 doc/ConvertUnits200Response.md
 doc/CorrectSpelling200Response.md
 doc/DetectGenderByName200Response.md
-doc/DetectLanguage200ResponseInner.md
 doc/DetectMainImageColor200ResponseInner.md
-doc/DetectSentiment200Response.md
-doc/DetectSentiment200ResponseDocument.md
-doc/DetectSentiment200ResponseSentencesInner.md
 doc/ExtractAuthors200Response.md
 doc/ExtractAuthors200ResponseAuthorsInner.md
 doc/ExtractContentFromAWebPage200Response.md
@@ -89,6 +85,7 @@ doc/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md
 doc/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md
 doc/SearchGifs200Response.md
 doc/SearchGifs200ResponseImagesInner.md
+doc/SearchIcons200Response.md
 doc/SearchJokes200Response.md
 doc/SearchJokes200ResponseJokesInner.md
 doc/SearchMemes200Response.md
@@ -147,11 +144,7 @@ lib/model/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_inn
 lib/model/convert_units200_response.dart
 lib/model/correct_spelling200_response.dart
 lib/model/detect_gender_by_name200_response.dart
-lib/model/detect_language200_response_inner.dart
 lib/model/detect_main_image_color200_response_inner.dart
-lib/model/detect_sentiment200_response.dart
-lib/model/detect_sentiment200_response_document.dart
-lib/model/detect_sentiment200_response_sentences_inner.dart
 lib/model/extract_authors200_response.dart
 lib/model/extract_authors200_response_authors_inner.dart
 lib/model/extract_content_from_a_web_page200_response.dart
@@ -219,6 +212,7 @@ lib/model/search_drinks200_response_drinks_inner_nutrition_nutrients_inner.dart
 lib/model/search_drinks200_response_drinks_inner_nutrition_weight_per_serving.dart
 lib/model/search_gifs200_response.dart
 lib/model/search_gifs200_response_images_inner.dart
+lib/model/search_icons200_response.dart
 lib/model/search_jokes200_response.dart
 lib/model/search_jokes200_response_jokes_inner.dart
 lib/model/search_memes200_response.dart
@@ -256,11 +250,7 @@ test/compute_nutrition200_response_test.dart
 test/convert_units200_response_test.dart
 test/correct_spelling200_response_test.dart
 test/detect_gender_by_name200_response_test.dart
-test/detect_language200_response_inner_test.dart
 test/detect_main_image_color200_response_inner_test.dart
-test/detect_sentiment200_response_document_test.dart
-test/detect_sentiment200_response_sentences_inner_test.dart
-test/detect_sentiment200_response_test.dart
 test/extract_authors200_response_authors_inner_test.dart
 test/extract_authors200_response_test.dart
 test/extract_content_from_a_web_page200_response_test.dart
@@ -334,6 +324,7 @@ test/search_drinks200_response_drinks_inner_test.dart
 test/search_drinks200_response_test.dart
 test/search_gifs200_response_images_inner_test.dart
 test/search_gifs200_response_test.dart
+test/search_icons200_response_test.dart
 test/search_jokes200_response_jokes_inner_test.dart
 test/search_jokes200_response_test.dart
 test/search_memes200_response_memes_inner_test.dart

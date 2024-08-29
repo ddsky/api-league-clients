@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColor**](MediaApi.md#detectMainImageColor) | **GET** /detect-color | Detect Main Image Color
 [**rescaleImage**](MediaApi.md#rescaleImage) | **GET** /rescale-image | Rescale Image
+[**searchIcons**](MediaApi.md#searchIcons) | **GET** /search-icons | Search Icons
 [**searchRoyaltyFreeImages**](MediaApi.md#searchRoyaltyFreeImages) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **rescaleImage**
-> any rescaleImage()
+> HttpFile rescaleImage()
 
 Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
 
@@ -113,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**any**
+**HttpFile**
 
 ### Authorization
 
@@ -123,6 +124,72 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **searchIcons**
+> SearchIcons200Response searchIcons()
+
+Search through millions of icons to match any topic you want.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .MediaApi(configuration);
+
+let body:.MediaApiSearchIconsRequest = {
+  // string | The search query.
+  query: "cars",
+  // boolean | If true, only public domain icons will be returned. (optional)
+  onlyPublicDomain: true,
+  // number | The number of icons to return in range [1,100] (optional)
+  number: 3,
+};
+
+apiInstance.searchIcons(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | [**string**] | The search query. | defaults to undefined
+ **onlyPublicDomain** | [**boolean**] | If true, only public domain icons will be returned. | (optional) defaults to undefined
+ **number** | [**number**] | The number of icons to return in range [1,100] | (optional) defaults to undefined
+
+
+### Return type
+
+**SearchIcons200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -156,7 +223,7 @@ const apiInstance = new .MediaApi(configuration);
 let body:.MediaApiSearchRoyaltyFreeImagesRequest = {
   // string | The search query.
   query: "dogs",
-  // number | The number of images to return in range [1,10] (optional)
+  // number | The number of images to return in range [1,100] (optional)
   number: 3,
 };
 
@@ -171,7 +238,7 @@ apiInstance.searchRoyaltyFreeImages(body).then((data:any) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | [**string**] | The search query. | defaults to undefined
- **number** | [**number**] | The number of images to return in range [1,10] | (optional) defaults to undefined
+ **number** | [**number**] | The number of images to return in range [1,100] | (optional) defaults to undefined
 
 
 ### Return type

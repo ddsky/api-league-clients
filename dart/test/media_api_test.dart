@@ -30,8 +30,17 @@ void main() {
     //
     // Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
     //
-    //Future<Object> rescaleImage(String url, int width, int height, bool crop) async
+    //Future<MultipartFile> rescaleImage(String url, int width, int height, bool crop) async
     test('test rescaleImage', () async {
+      // TODO
+    });
+
+    // Search Icons
+    //
+    // Search through millions of icons to match any topic you want.
+    //
+    //Future<SearchIcons200Response> searchIcons(String query, { bool onlyPublicDomain, int number }) async
+    test('test searchIcons', () async {
       // TODO
     });
 

@@ -2,6 +2,7 @@
 
 -export([detect_main_image_color/2, detect_main_image_color/3,
          rescale_image/5, rescale_image/6,
+         search_icons/2, search_icons/3,
          search_royalty_free_images/2, search_royalty_free_images/3]).
 
 -define(BASE_URL, <<"">>).
@@ -29,11 +30,11 @@ detect_main_image_color(Ctx, Url, Optional) ->
 
 %% @doc Rescale Image
 %% Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
--spec rescale_image(ctx:ctx(), binary(), integer(), integer(), boolean()) -> {ok, maps:map(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+-spec rescale_image(ctx:ctx(), binary(), integer(), integer(), boolean()) -> {ok, binary(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
 rescale_image(Ctx, Url, Width, Height, Crop) ->
     rescale_image(Ctx, Url, Width, Height, Crop, #{}).
 
--spec rescale_image(ctx:ctx(), binary(), integer(), integer(), boolean(), maps:map()) -> {ok, maps:map(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+-spec rescale_image(ctx:ctx(), binary(), integer(), integer(), boolean(), maps:map()) -> {ok, binary(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
 rescale_image(Ctx, Url, Width, Height, Crop, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
@@ -41,6 +42,27 @@ rescale_image(Ctx, Url, Width, Height, Crop, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/rescale-image"],
     QS = lists:flatten([{<<"url">>, Url}, {<<"width">>, Width}, {<<"height">>, Height}, {<<"crop">>, Crop}])++apileague_utils:optional_params([], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Search Icons
+%% Search through millions of icons to match any topic you want.
+-spec search_icons(ctx:ctx(), binary()) -> {ok, apileague_search_icons_200_response:apileague_search_icons_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_icons(Ctx, Query) ->
+    search_icons(Ctx, Query, #{}).
+
+-spec search_icons(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_search_icons_200_response:apileague_search_icons_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_icons(Ctx, Query, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/search-icons"],
+    QS = lists:flatten([{<<"query">>, Query}])++apileague_utils:optional_params(['only-public-domain', 'number'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

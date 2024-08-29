@@ -39,9 +39,9 @@
             [api-league.specs.search-royalty-free-images-200-response-images-inner-license :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-instructions-inner-steps-inner :refer :all]
             [api-league.specs.search-recipes-200-response :refer :all]
-            [api-league.specs.detect-sentiment-200-response-document :refer :all]
             [api-league.specs.store-key-value-get-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-dietary-properties :refer :all]
+            [api-league.specs.search-icons-200-response :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner :refer :all]
             [api-league.specs.score-text-200-response-interestingness-subscores :refer :all]
             [api-league.specs.score-text-200-response-skimmability-subscores :refer :all]
@@ -70,7 +70,6 @@
             [api-league.specs.extract-news-200-response-videos-inner :refer :all]
             [api-league.specs.singularize-word-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner :refer :all]
-            [api-league.specs.detect-language-200-response-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-ingredients-inner-measures :refer :all]
             [api-league.specs.tag-part-of-speech-200-response :refer :all]
             [api-league.specs.extract-authors-200-response :refer :all]
@@ -87,14 +86,12 @@
             [api-league.specs.top-news-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.compute-nutrition-200-response-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-nutrition :refer :all]
-            [api-league.specs.detect-sentiment-200-response :refer :all]
             [api-league.specs.top-news-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-200-response-times :refer :all]
             [api-league.specs.search-royalty-free-images-200-response-images-inner :refer :all]
             [api-league.specs.search-news-200-response-news-inner :refer :all]
             [api-league.specs.extract-entities-200-response :refer :all]
             [api-league.specs.search-royalty-free-images-200-response :refer :all]
-            [api-league.specs.detect-sentiment-200-response-sentences-inner :refer :all]
             [api-league.specs.random-quote-200-response :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-ingredients-inner-measures-us :refer :all]
             [api-league.specs.search-drinks-200-response-drinks-inner-ingredients-inner :refer :all]
@@ -159,6 +156,32 @@
     (if (:decode-models *api-context*)
        (st/decode any? res st/string-transformer)
        res)))
+
+
+(defn-spec search-icons-with-http-info any?
+  "Search Icons
+  Search through millions of icons to match any topic you want."
+  ([query string?, ] (search-icons-with-http-info query nil))
+  ([query string?, {:keys [only-public-domain number]} (s/map-of keyword? any?)]
+   (check-required-params query)
+   (call-api "/search-icons" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"query" query "only-public-domain" only-public-domain "number" number }
+              :form-params   {}
+              :content-types []
+              :accepts       ["application/json"]
+              :auth-names    ["apiKey" "headerApiKey"]})))
+
+(defn-spec search-icons search-icons-200-response-spec
+  "Search Icons
+  Search through millions of icons to match any topic you want."
+  ([query string?, ] (search-icons query nil))
+  ([query string?, optional-params any?]
+   (let [res (:data (search-icons-with-http-info query optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode search-icons-200-response-spec res st/string-transformer)
+        res))))
 
 
 (defn-spec search-royalty-free-images-with-http-info any?

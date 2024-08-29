@@ -26,6 +26,16 @@ void main() {
       // TODO
     });
 
+    // num probabilityFemale
+    test('to test the property `probabilityFemale`', () async {
+      // TODO
+    });
+
+    // num popularity
+    test('to test the property `popularity`', () async {
+      // TODO
+    });
+
 
   });
 

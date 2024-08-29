@@ -11,11 +11,7 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
-docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
-docs/DetectSentiment200Response.md
-docs/DetectSentiment200ResponseDocument.md
-docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -89,6 +85,7 @@ docs/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md
 docs/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGifs200Response.md
 docs/SearchGifs200ResponseImagesInner.md
+docs/SearchIcons200Response.md
 docs/SearchJokes200Response.md
 docs/SearchJokes200ResponseJokesInner.md
 docs/SearchMemes200Response.md
@@ -142,11 +139,7 @@ src/model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.js
 src/model/ConvertUnits200Response.js
 src/model/CorrectSpelling200Response.js
 src/model/DetectGenderByName200Response.js
-src/model/DetectLanguage200ResponseInner.js
 src/model/DetectMainImageColor200ResponseInner.js
-src/model/DetectSentiment200Response.js
-src/model/DetectSentiment200ResponseDocument.js
-src/model/DetectSentiment200ResponseSentencesInner.js
 src/model/ExtractAuthors200Response.js
 src/model/ExtractAuthors200ResponseAuthorsInner.js
 src/model/ExtractContentFromAWebPage200Response.js
@@ -214,6 +207,7 @@ src/model/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.js
 src/model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.js
 src/model/SearchGifs200Response.js
 src/model/SearchGifs200ResponseImagesInner.js
+src/model/SearchIcons200Response.js
 src/model/SearchJokes200Response.js
 src/model/SearchJokes200ResponseJokesInner.js
 src/model/SearchMemes200Response.js
@@ -259,11 +253,7 @@ test/model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.spe
 test/model/ConvertUnits200Response.spec.js
 test/model/CorrectSpelling200Response.spec.js
 test/model/DetectGenderByName200Response.spec.js
-test/model/DetectLanguage200ResponseInner.spec.js
 test/model/DetectMainImageColor200ResponseInner.spec.js
-test/model/DetectSentiment200Response.spec.js
-test/model/DetectSentiment200ResponseDocument.spec.js
-test/model/DetectSentiment200ResponseSentencesInner.spec.js
 test/model/ExtractAuthors200Response.spec.js
 test/model/ExtractAuthors200ResponseAuthorsInner.spec.js
 test/model/ExtractContentFromAWebPage200Response.spec.js
@@ -331,6 +321,7 @@ test/model/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.spec.js
 test/model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.spec.js
 test/model/SearchGifs200Response.spec.js
 test/model/SearchGifs200ResponseImagesInner.spec.js
+test/model/SearchIcons200Response.spec.js
 test/model/SearchJokes200Response.spec.js
 test/model/SearchJokes200ResponseJokesInner.spec.js
 test/model/SearchMemes200Response.spec.js

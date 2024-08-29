@@ -8,11 +8,7 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -80,6 +76,7 @@ import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../mo
 import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGifs200Response } from '../models/SearchGifs200Response';
 import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
+import { SearchIcons200Response } from '../models/SearchIcons200Response';
 import { SearchJokes200Response } from '../models/SearchJokes200Response';
 import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
 import { SearchMemes200Response } from '../models/SearchMemes200Response';
@@ -1225,7 +1222,7 @@ export class ObservableMediaApi {
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImageWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpInfo<any>> {
+    public rescaleImageWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpInfo<HttpFile>> {
         const requestContextPromise = this.requestFactory.rescaleImage(url, width, height, crop, _options);
 
         // build promise chain
@@ -1252,15 +1249,52 @@ export class ObservableMediaApi {
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImage(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<any> {
-        return this.rescaleImageWithHttpInfo(url, width, height, crop, _options).pipe(map((apiResponse: HttpInfo<any>) => apiResponse.data));
+    public rescaleImage(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpFile> {
+        return this.rescaleImageWithHttpInfo(url, width, height, crop, _options).pipe(map((apiResponse: HttpInfo<HttpFile>) => apiResponse.data));
+    }
+
+    /**
+     * Search through millions of icons to match any topic you want.
+     * Search Icons
+     * @param query The search query.
+     * @param onlyPublicDomain If true, only public domain icons will be returned.
+     * @param number The number of icons to return in range [1,100]
+     */
+    public searchIconsWithHttpInfo(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<HttpInfo<SearchIcons200Response>> {
+        const requestContextPromise = this.requestFactory.searchIcons(query, onlyPublicDomain, number, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchIconsWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Search through millions of icons to match any topic you want.
+     * Search Icons
+     * @param query The search query.
+     * @param onlyPublicDomain If true, only public domain icons will be returned.
+     * @param number The number of icons to return in range [1,100]
+     */
+    public searchIcons(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<SearchIcons200Response> {
+        return this.searchIconsWithHttpInfo(query, onlyPublicDomain, number, _options).pipe(map((apiResponse: HttpInfo<SearchIcons200Response>) => apiResponse.data));
     }
 
     /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * Search Royalty Free Images
      * @param query The search query.
-     * @param number The number of images to return in range [1,10]
+     * @param number The number of images to return in range [1,100]
      */
     public searchRoyaltyFreeImagesWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRoyaltyFreeImages200Response>> {
         const requestContextPromise = this.requestFactory.searchRoyaltyFreeImages(query, number, _options);
@@ -1285,7 +1319,7 @@ export class ObservableMediaApi {
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * Search Royalty Free Images
      * @param query The search query.
-     * @param number The number of images to return in range [1,10]
+     * @param number The number of images to return in range [1,100]
      */
     public searchRoyaltyFreeImages(query: string, number?: number, _options?: Configuration): Observable<SearchRoyaltyFreeImages200Response> {
         return this.searchRoyaltyFreeImagesWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchRoyaltyFreeImages200Response>) => apiResponse.data));
@@ -1616,72 +1650,6 @@ export class ObservableTextApi {
      */
     public detectGenderByName(name: string, _options?: Configuration): Observable<DetectGenderByName200Response> {
         return this.detectGenderByNameWithHttpInfo(name, _options).pipe(map((apiResponse: HttpInfo<DetectGenderByName200Response>) => apiResponse.data));
-    }
-
-    /**
-     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
-     * @param text The text for which the language should be detected.
-     */
-    public detectLanguageWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
-        const requestContextPromise = this.requestFactory.detectLanguage(text, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectLanguageWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
-     * @param text The text for which the language should be detected.
-     */
-    public detectLanguage(text: string, _options?: Configuration): Observable<Array<DetectLanguage200ResponseInner>> {
-        return this.detectLanguageWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<Array<DetectLanguage200ResponseInner>>) => apiResponse.data));
-    }
-
-    /**
-     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
-     * @param text The text for which the sentiment should be detected.
-     */
-    public detectSentimentWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<DetectSentiment200Response>> {
-        const requestContextPromise = this.requestFactory.detectSentiment(text, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectSentimentWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
-     * @param text The text for which the sentiment should be detected.
-     */
-    public detectSentiment(text: string, _options?: Configuration): Observable<DetectSentiment200Response> {
-        return this.detectSentimentWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<DetectSentiment200Response>) => apiResponse.data));
     }
 
     /**

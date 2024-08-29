@@ -9,6 +9,7 @@ import {SecurityAuthentication} from '../auth/auth';
 
 
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { SearchIcons200Response } from '../models/SearchIcons200Response';
 import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
 
 /**
@@ -147,10 +148,71 @@ export class MediaApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Search through millions of icons to match any topic you want.
+     * Search Icons
+     * @param query The search query.
+     * @param onlyPublicDomain If true, only public domain icons will be returned.
+     * @param number The number of icons to return in range [1,100]
+     */
+    public async searchIcons(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'query' is not null or undefined
+        if (query === null || query === undefined) {
+            throw new RequiredError("MediaApi", "searchIcons", "query");
+        }
+
+
+
+
+        // Path Params
+        const localVarPath = '/search-icons';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (query !== undefined) {
+            requestContext.setQueryParam("query", ObjectSerializer.serialize(query, "string", ""));
+        }
+
+        // Query Params
+        if (onlyPublicDomain !== undefined) {
+            requestContext.setQueryParam("only-public-domain", ObjectSerializer.serialize(onlyPublicDomain, "boolean", ""));
+        }
+
+        // Query Params
+        if (number !== undefined) {
+            requestContext.setQueryParam("number", ObjectSerializer.serialize(number, "number", "int32"));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * Search Royalty Free Images
      * @param query The search query.
-     * @param number The number of images to return in range [1,10]
+     * @param number The number of images to return in range [1,100]
      */
     public async searchRoyaltyFreeImages(query: string, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
@@ -258,13 +320,10 @@ export class MediaApiResponseProcessor {
      * @params response Response returned by the server for a request to rescaleImage
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async rescaleImageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<any >> {
+     public async rescaleImageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<HttpFile >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: any = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "any", ""
-            ) as any;
+            const body: HttpFile = await response.getBodyAsFile() as any as HttpFile;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -288,10 +347,57 @@ export class MediaApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: any = ObjectSerializer.deserialize(
+            const body: HttpFile = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "any", ""
-            ) as any;
+                "HttpFile", "binary"
+            ) as HttpFile;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to searchIcons
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async searchIconsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchIcons200Response >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: SearchIcons200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "SearchIcons200Response", ""
+            ) as SearchIcons200Response;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: SearchIcons200Response = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "SearchIcons200Response", ""
+            ) as SearchIcons200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

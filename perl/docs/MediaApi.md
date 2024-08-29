@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detect_main_image_color**](MediaApi.md#detect_main_image_color) | **GET** /detect-color | Detect Main Image Color
 [**rescale_image**](MediaApi.md#rescale_image) | **GET** /rescale-image | Rescale Image
+[**search_icons**](MediaApi.md#search_icons) | **GET** /search-icons | Search Icons
 [**search_royalty_free_images**](MediaApi.md#search_royalty_free_images) | **GET** /search-images | Search Royalty Free Images
 
 
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rescale_image**
-> object rescale_image(url => $url, width => $width, height => $height, crop => $crop)
+> string rescale_image(url => $url, width => $width, height => $height, crop => $crop)
 
 Rescale Image
 
@@ -117,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**string**
 
 ### Authorization
 
@@ -127,6 +128,65 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_icons**
+> SearchIcons200Response search_icons(query => $query, only_public_domain => $only_public_domain, number => $number)
+
+Search Icons
+
+Search through millions of icons to match any topic you want.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::MediaApi;
+my $api_instance = WWW::OpenAPIClient::MediaApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $query = cars; # string | The search query.
+my $only_public_domain = true; # boolean | If true, only public domain icons will be returned.
+my $number = 3; # int | The number of icons to return in range [1,100]
+
+eval {
+    my $result = $api_instance->search_icons(query => $query, only_public_domain => $only_public_domain, number => $number);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling MediaApi->search_icons: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **string**| The search query. | 
+ **only_public_domain** | **boolean**| If true, only public domain icons will be returned. | [optional] 
+ **number** | **int**| The number of icons to return in range [1,100] | [optional] 
+
+### Return type
+
+[**SearchIcons200Response**](SearchIcons200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -154,7 +214,7 @@ my $api_instance = WWW::OpenAPIClient::MediaApi->new(
 );
 
 my $query = dogs; # string | The search query.
-my $number = 3; # int | The number of images to return in range [1,10]
+my $number = 3; # int | The number of images to return in range [1,100]
 
 eval {
     my $result = $api_instance->search_royalty_free_images(query => $query, number => $number);
@@ -170,7 +230,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| The search query. | 
- **number** | **int**| The number of images to return in range [1,10] | [optional] 
+ **number** | **int**| The number of images to return in range [1,100] | [optional] 
 
 ### Return type
 
