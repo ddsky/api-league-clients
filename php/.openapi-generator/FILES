@@ -21,7 +21,11 @@ docs/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/Model/ConvertUnits200Response.md
 docs/Model/CorrectSpelling200Response.md
 docs/Model/DetectGenderByName200Response.md
+docs/Model/DetectLanguage200ResponseInner.md
 docs/Model/DetectMainImageColor200ResponseInner.md
+docs/Model/DetectSentiment200Response.md
+docs/Model/DetectSentiment200ResponseDocument.md
+docs/Model/DetectSentiment200ResponseSentencesInner.md
 docs/Model/ExtractAuthors200Response.md
 docs/Model/ExtractAuthors200ResponseAuthorsInner.md
 docs/Model/ExtractContentFromAWebPage200Response.md
@@ -139,7 +143,11 @@ lib/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.php
 lib/Model/ConvertUnits200Response.php
 lib/Model/CorrectSpelling200Response.php
 lib/Model/DetectGenderByName200Response.php
+lib/Model/DetectLanguage200ResponseInner.php
 lib/Model/DetectMainImageColor200ResponseInner.php
+lib/Model/DetectSentiment200Response.php
+lib/Model/DetectSentiment200ResponseDocument.php
+lib/Model/DetectSentiment200ResponseSentencesInner.php
 lib/Model/ExtractAuthors200Response.php
 lib/Model/ExtractAuthors200ResponseAuthorsInner.php
 lib/Model/ExtractContentFromAWebPage200Response.php
@@ -256,7 +264,11 @@ test/Model/ComputeNutrition200ResponseTest.php
 test/Model/ConvertUnits200ResponseTest.php
 test/Model/CorrectSpelling200ResponseTest.php
 test/Model/DetectGenderByName200ResponseTest.php
+test/Model/DetectLanguage200ResponseInnerTest.php
 test/Model/DetectMainImageColor200ResponseInnerTest.php
+test/Model/DetectSentiment200ResponseDocumentTest.php
+test/Model/DetectSentiment200ResponseSentencesInnerTest.php
+test/Model/DetectSentiment200ResponseTest.php
 test/Model/ExtractAuthors200ResponseAuthorsInnerTest.php
 test/Model/ExtractAuthors200ResponseTest.php
 test/Model/ExtractContentFromAWebPage200ResponseTest.php

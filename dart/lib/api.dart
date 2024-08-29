@@ -46,7 +46,11 @@ part 'model/compute_nutrition200_response_ingredient_breakdown_inner_nutrients_i
 part 'model/convert_units200_response.dart';
 part 'model/correct_spelling200_response.dart';
 part 'model/detect_gender_by_name200_response.dart';
+part 'model/detect_language200_response_inner.dart';
 part 'model/detect_main_image_color200_response_inner.dart';
+part 'model/detect_sentiment200_response.dart';
+part 'model/detect_sentiment200_response_document.dart';
+part 'model/detect_sentiment200_response_sentences_inner.dart';
 part 'model/extract_authors200_response.dart';
 part 'model/extract_authors200_response_authors_inner.dart';
 part 'model/extract_content_from_a_web_page200_response.dart';

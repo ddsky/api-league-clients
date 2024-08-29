@@ -12,7 +12,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -136,7 +140,11 @@ lib/WWW/OpenAPIClient/Object/ComputeNutrition200ResponseIngredientBreakdownInner
 lib/WWW/OpenAPIClient/Object/ConvertUnits200Response.pm
 lib/WWW/OpenAPIClient/Object/CorrectSpelling200Response.pm
 lib/WWW/OpenAPIClient/Object/DetectGenderByName200Response.pm
+lib/WWW/OpenAPIClient/Object/DetectLanguage200ResponseInner.pm
 lib/WWW/OpenAPIClient/Object/DetectMainImageColor200ResponseInner.pm
+lib/WWW/OpenAPIClient/Object/DetectSentiment200Response.pm
+lib/WWW/OpenAPIClient/Object/DetectSentiment200ResponseDocument.pm
+lib/WWW/OpenAPIClient/Object/DetectSentiment200ResponseSentencesInner.pm
 lib/WWW/OpenAPIClient/Object/ExtractAuthors200Response.pm
 lib/WWW/OpenAPIClient/Object/ExtractAuthors200ResponseAuthorsInner.pm
 lib/WWW/OpenAPIClient/Object/ExtractContentFromAWebPage200Response.pm
@@ -246,7 +254,11 @@ t/ComputeNutrition200ResponseTest.t
 t/ConvertUnits200ResponseTest.t
 t/CorrectSpelling200ResponseTest.t
 t/DetectGenderByName200ResponseTest.t
+t/DetectLanguage200ResponseInnerTest.t
 t/DetectMainImageColor200ResponseInnerTest.t
+t/DetectSentiment200ResponseDocumentTest.t
+t/DetectSentiment200ResponseSentencesInnerTest.t
+t/DetectSentiment200ResponseTest.t
 t/ExtractAuthors200ResponseAuthorsInnerTest.t
 t/ExtractAuthors200ResponseTest.t
 t/ExtractContentFromAWebPage200ResponseTest.t

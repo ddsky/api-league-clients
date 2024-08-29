@@ -11,6 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correct_spelling**](TextApi.md#correct_spelling) | **GET** /correct-spelling | Correct Spelling
 [**detect_gender_by_name**](TextApi.md#detect_gender_by_name) | **GET** /detect-gender | Detect Gender by Name
+[**detect_language**](TextApi.md#detect_language) | **GET** /detect-language | Detect Language
+[**detect_sentiment**](TextApi.md#detect_sentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
 [**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities
 [**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms
@@ -122,6 +124,116 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detect_language**
+> ARRAY[DetectLanguage200ResponseInner] detect_language(text => $text)
+
+Detect Language
+
+Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::TextApi;
+my $api_instance = WWW::OpenAPIClient::TextApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $text = Das ist ein Text.; # string | The text for which the language should be detected.
+
+eval {
+    my $result = $api_instance->detect_language(text => $text);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TextApi->detect_language: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string**| The text for which the language should be detected. | 
+
+### Return type
+
+[**ARRAY[DetectLanguage200ResponseInner]**](DetectLanguage200ResponseInner.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detect_sentiment**
+> DetectSentiment200Response detect_sentiment(text => $text)
+
+Detect Sentiment
+
+Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::TextApi;
+my $api_instance = WWW::OpenAPIClient::TextApi->new(
+
+    # Configure API key authorization: apiKey
+    api_key => {'api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'api-key' => 'Bearer'},
+    # Configure API key authorization: headerApiKey
+    api_key => {'x-api-key' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'x-api-key' => 'Bearer'},
+);
+
+my $text = Happy times feel so good.; # string | The text for which the sentiment should be detected.
+
+eval {
+    my $result = $api_instance->detect_sentiment(text => $text);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TextApi->detect_sentiment: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string**| The text for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 

@@ -21,6 +21,8 @@ import io.kotlintest.specs.ShouldSpec
 import com.apileague.TextApi
 import com.apileague.client.model.CorrectSpelling200Response
 import com.apileague.client.model.DetectGenderByName200Response
+import com.apileague.client.model.DetectLanguage200ResponseInner
+import com.apileague.client.model.DetectSentiment200Response
 import com.apileague.client.model.ExtractDates200Response
 import com.apileague.client.model.ExtractEntities200Response
 import com.apileague.client.model.ListWordSynonyms200Response
@@ -50,6 +52,22 @@ class TextApiTest : ShouldSpec() {
             // uncomment below to test detectGenderByName
             //val name : kotlin.String = Alex // kotlin.String | The name of the perso for which the sentiment should be detected.
             //val result : DetectGenderByName200Response = apiInstance.detectGenderByName(name)
+            //result shouldBe ("TODO")
+        }
+
+        // to test detectLanguage
+        should("test detectLanguage") {
+            // uncomment below to test detectLanguage
+            //val text : kotlin.String = Das ist ein Text. // kotlin.String | The text for which the language should be detected.
+            //val result : kotlin.collections.List<DetectLanguage200ResponseInner> = apiInstance.detectLanguage(text)
+            //result shouldBe ("TODO")
+        }
+
+        // to test detectSentiment
+        should("test detectSentiment") {
+            // uncomment below to test detectSentiment
+            //val text : kotlin.String = Happy times feel so good. // kotlin.String | The text for which the sentiment should be detected.
+            //val result : DetectSentiment200Response = apiInstance.detectSentiment(text)
             //result shouldBe ("TODO")
         }
 

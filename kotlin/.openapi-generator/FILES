@@ -9,7 +9,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -154,7 +158,11 @@ src/main/kotlin/com/apileague/client/model/ComputeNutrition200ResponseIngredient
 src/main/kotlin/com/apileague/client/model/ConvertUnits200Response.kt
 src/main/kotlin/com/apileague/client/model/CorrectSpelling200Response.kt
 src/main/kotlin/com/apileague/client/model/DetectGenderByName200Response.kt
+src/main/kotlin/com/apileague/client/model/DetectLanguage200ResponseInner.kt
 src/main/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInner.kt
+src/main/kotlin/com/apileague/client/model/DetectSentiment200Response.kt
+src/main/kotlin/com/apileague/client/model/DetectSentiment200ResponseDocument.kt
+src/main/kotlin/com/apileague/client/model/DetectSentiment200ResponseSentencesInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractAuthors200Response.kt
 src/main/kotlin/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInner.kt
 src/main/kotlin/com/apileague/client/model/ExtractContentFromAWebPage200Response.kt
@@ -268,7 +276,11 @@ src/test/kotlin/com/apileague/client/model/ComputeNutrition200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ConvertUnits200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/CorrectSpelling200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/DetectGenderByName200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/DetectLanguage200ResponseInnerTest.kt
 src/test/kotlin/com/apileague/client/model/DetectMainImageColor200ResponseInnerTest.kt
+src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseDocumentTest.kt
+src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseSentencesInnerTest.kt
+src/test/kotlin/com/apileague/client/model/DetectSentiment200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractAuthors200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ExtractContentFromAWebPage200ResponseTest.kt

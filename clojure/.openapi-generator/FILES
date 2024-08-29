@@ -20,7 +20,11 @@ src/api_league/specs/compute_nutrition_200_response_ingredient_breakdown_inner_n
 src/api_league/specs/convert_units_200_response.clj
 src/api_league/specs/correct_spelling_200_response.clj
 src/api_league/specs/detect_gender_by_name_200_response.clj
+src/api_league/specs/detect_language_200_response_inner.clj
 src/api_league/specs/detect_main_image_color_200_response_inner.clj
+src/api_league/specs/detect_sentiment_200_response.clj
+src/api_league/specs/detect_sentiment_200_response_document.clj
+src/api_league/specs/detect_sentiment_200_response_sentences_inner.clj
 src/api_league/specs/extract_authors_200_response.clj
 src/api_league/specs/extract_authors_200_response_authors_inner.clj
 src/api_league/specs/extract_content_from_a_web_page_200_response.clj

@@ -12,7 +12,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -136,7 +140,11 @@ src/apileague.Test/Model/ComputeNutrition200ResponseTests.cs
 src/apileague.Test/Model/ConvertUnits200ResponseTests.cs
 src/apileague.Test/Model/CorrectSpelling200ResponseTests.cs
 src/apileague.Test/Model/DetectGenderByName200ResponseTests.cs
+src/apileague.Test/Model/DetectLanguage200ResponseInnerTests.cs
 src/apileague.Test/Model/DetectMainImageColor200ResponseInnerTests.cs
+src/apileague.Test/Model/DetectSentiment200ResponseDocumentTests.cs
+src/apileague.Test/Model/DetectSentiment200ResponseSentencesInnerTests.cs
+src/apileague.Test/Model/DetectSentiment200ResponseTests.cs
 src/apileague.Test/Model/ExtractAuthors200ResponseAuthorsInnerTests.cs
 src/apileague.Test/Model/ExtractAuthors200ResponseTests.cs
 src/apileague.Test/Model/ExtractContentFromAWebPage200ResponseTests.cs
@@ -268,7 +276,11 @@ src/apileague/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrients
 src/apileague/Model/ConvertUnits200Response.cs
 src/apileague/Model/CorrectSpelling200Response.cs
 src/apileague/Model/DetectGenderByName200Response.cs
+src/apileague/Model/DetectLanguage200ResponseInner.cs
 src/apileague/Model/DetectMainImageColor200ResponseInner.cs
+src/apileague/Model/DetectSentiment200Response.cs
+src/apileague/Model/DetectSentiment200ResponseDocument.cs
+src/apileague/Model/DetectSentiment200ResponseSentencesInner.cs
 src/apileague/Model/ExtractAuthors200Response.cs
 src/apileague/Model/ExtractAuthors200ResponseAuthorsInner.cs
 src/apileague/Model/ExtractContentFromAWebPage200Response.cs

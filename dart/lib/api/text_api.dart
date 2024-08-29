@@ -143,6 +143,129 @@ class TextApi {
     return null;
   }
 
+  /// Detect Language
+  ///
+  /// Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text for which the language should be detected.
+  Future<Response> detectLanguageWithHttpInfo(String text,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/detect-language';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'text', text));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Detect Language
+  ///
+  /// Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text for which the language should be detected.
+  Future<List<DetectLanguage200ResponseInner>?> detectLanguage(String text,) async {
+    final response = await detectLanguageWithHttpInfo(text,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<DetectLanguage200ResponseInner>') as List)
+        .cast<DetectLanguage200ResponseInner>()
+        .toList(growable: false);
+
+    }
+    return null;
+  }
+
+  /// Detect Sentiment
+  ///
+  /// Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text for which the sentiment should be detected.
+  Future<Response> detectSentimentWithHttpInfo(String text,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/detect-sentiment';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'text', text));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Detect Sentiment
+  ///
+  /// Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] text (required):
+  ///   The text for which the sentiment should be detected.
+  Future<DetectSentiment200Response?> detectSentiment(String text,) async {
+    final response = await detectSentimentWithHttpInfo(text,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'DetectSentiment200Response',) as DetectSentiment200Response;
+    
+    }
+    return null;
+  }
+
   /// Extract Dates
   ///
   /// Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).

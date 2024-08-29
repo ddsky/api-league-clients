@@ -11,6 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**correctSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling
 [**detectGenderByName**](TextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name
+[**detectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language
+[**detectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment
 [**extractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
 [**extractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities
 [**listWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms
@@ -114,6 +116,108 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detectLanguage**
+> List<DetectLanguage200ResponseInner> detectLanguage(text)
+
+Detect Language
+
+Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = TextApi();
+final text = Das ist ein Text.; // String | The text for which the language should be detected.
+
+try {
+    final result = api_instance.detectLanguage(text);
+    print(result);
+} catch (e) {
+    print('Exception when calling TextApi->detectLanguage: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **String**| The text for which the language should be detected. | 
+
+### Return type
+
+[**List<DetectLanguage200ResponseInner>**](DetectLanguage200ResponseInner.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **detectSentiment**
+> DetectSentiment200Response detectSentiment(text)
+
+Detect Sentiment
+
+Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = TextApi();
+final text = Happy times feel so good.; // String | The text for which the sentiment should be detected.
+
+try {
+    final result = api_instance.detectSentiment(text);
+    print(result);
+} catch (e) {
+    print('Exception when calling TextApi->detectSentiment: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **String**| The text for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 

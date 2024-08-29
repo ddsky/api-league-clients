@@ -86,6 +86,80 @@ defmodule APILeague.Api.Text do
   end
 
   @doc """
+  Detect Language
+  Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `text` (String.t): The text for which the language should be detected.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, [%DetectLanguage200ResponseInner{}, ...]}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec detect_language(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, [APILeague.Model.DetectLanguage200ResponseInner.t]} | {:error, Tesla.Env.t}
+  def detect_language(connection, text, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/detect-language")
+      |> add_param(:query, :text, text)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.DetectLanguage200ResponseInner},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Detect Sentiment
+  Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `text` (String.t): The text for which the sentiment should be detected.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.DetectSentiment200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec detect_sentiment(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.DetectSentiment200Response.t} | {:error, Tesla.Env.t}
+  def detect_sentiment(connection, text, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/detect-sentiment")
+      |> add_param(:query, :text, text)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.DetectSentiment200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Extract Dates
   Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 

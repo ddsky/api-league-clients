@@ -7,7 +7,11 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
+import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
+import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
+import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -1264,6 +1268,46 @@ export class PromiseTextApi {
      */
     public detectGenderByName(name: string, _options?: Configuration): Promise<DetectGenderByName200Response> {
         const result = this.api.detectGenderByName(name, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param text The text for which the language should be detected.
+     */
+    public detectLanguageWithHttpInfo(text: string, _options?: Configuration): Promise<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
+        const result = this.api.detectLanguageWithHttpInfo(text, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param text The text for which the language should be detected.
+     */
+    public detectLanguage(text: string, _options?: Configuration): Promise<Array<DetectLanguage200ResponseInner>> {
+        const result = this.api.detectLanguage(text, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param text The text for which the sentiment should be detected.
+     */
+    public detectSentimentWithHttpInfo(text: string, _options?: Configuration): Promise<HttpInfo<DetectSentiment200Response>> {
+        const result = this.api.detectSentimentWithHttpInfo(text, _options);
+        return result.toPromise();
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param text The text for which the sentiment should be detected.
+     */
+    public detectSentiment(text: string, _options?: Configuration): Promise<DetectSentiment200Response> {
+        const result = this.api.detectSentiment(text, _options);
         return result.toPromise();
     }
 

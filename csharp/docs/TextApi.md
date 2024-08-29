@@ -6,6 +6,8 @@ All URIs are relative to *https://api.apileague.com*
 |--------|--------------|-------------|
 | [**CorrectSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling |
 | [**DetectGenderByName**](TextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name |
+| [**DetectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language |
+| [**DetectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment |
 | [**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates |
 | [**ExtractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities |
 | [**ListWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms |
@@ -206,6 +208,218 @@ catch (ApiException e)
 ### Return type
 
 [**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="detectlanguage"></a>
+# **DetectLanguage**
+> List&lt;DetectLanguage200ResponseInner&gt; DetectLanguage (string text)
+
+Detect Language
+
+Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class DetectLanguageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new TextApi(config);
+            var text = Das ist ein Text.;  // string | The text for which the language should be detected.
+
+            try
+            {
+                // Detect Language
+                List<DetectLanguage200ResponseInner> result = apiInstance.DetectLanguage(text);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TextApi.DetectLanguage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DetectLanguageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Detect Language
+    ApiResponse<List<DetectLanguage200ResponseInner>> response = apiInstance.DetectLanguageWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.DetectLanguageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text for which the language should be detected. |  |
+
+### Return type
+
+[**List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="detectsentiment"></a>
+# **DetectSentiment**
+> DetectSentiment200Response DetectSentiment (string text)
+
+Detect Sentiment
+
+Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class DetectSentimentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new TextApi(config);
+            var text = Happy times feel so good.;  // string | The text for which the sentiment should be detected.
+
+            try
+            {
+                // Detect Sentiment
+                DetectSentiment200Response result = apiInstance.DetectSentiment(text);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TextApi.DetectSentiment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DetectSentimentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Detect Sentiment
+    ApiResponse<DetectSentiment200Response> response = apiInstance.DetectSentimentWithHttpInfo(text);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TextApi.DetectSentimentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **text** | **string** | The text for which the sentiment should be detected. |  |
+
+### Return type
+
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 

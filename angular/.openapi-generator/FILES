@@ -24,7 +24,11 @@ model/computeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.ts
 model/convertUnits200Response.ts
 model/correctSpelling200Response.ts
 model/detectGenderByName200Response.ts
+model/detectLanguage200ResponseInner.ts
 model/detectMainImageColor200ResponseInner.ts
+model/detectSentiment200Response.ts
+model/detectSentiment200ResponseDocument.ts
+model/detectSentiment200ResponseSentencesInner.ts
 model/extractAuthors200Response.ts
 model/extractAuthors200ResponseAuthorsInner.ts
 model/extractContentFromAWebPage200Response.ts

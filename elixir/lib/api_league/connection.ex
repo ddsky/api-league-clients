@@ -96,7 +96,7 @@ defmodule APILeague.Connection do
         Keyword.get(
           tesla_options,
           :user_agent,
-          "openapi-generator - APILeague 1.6.2 - elixir"
+          "openapi-generator - APILeague 1.6.3 - elixir"
         )
       )
 

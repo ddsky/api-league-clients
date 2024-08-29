@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CorrectSpelling**](TextAPI.md#CorrectSpelling) | **Get** /correct-spelling | Correct Spelling
 [**DetectGenderByName**](TextAPI.md#DetectGenderByName) | **Get** /detect-gender | Detect Gender by Name
+[**DetectLanguage**](TextAPI.md#DetectLanguage) | **Get** /detect-language | Detect Language
+[**DetectSentiment**](TextAPI.md#DetectSentiment) | **Get** /detect-sentiment | Detect Sentiment
 [**ExtractDates**](TextAPI.md#ExtractDates) | **Get** /extract-dates | Extract Dates
 [**ExtractEntities**](TextAPI.md#ExtractEntities) | **Get** /extract-entities | Extract Entities
 [**ListWordSynonyms**](TextAPI.md#ListWordSynonyms) | **Get** /list-synonyms | List Word Synonyms
@@ -137,6 +139,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DetectLanguage
+
+> []DetectLanguage200ResponseInner DetectLanguage(ctx).Text(text).Execute()
+
+Detect Language
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	text := "Das ist ein Text." // string | The text for which the language should be detected.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.DetectLanguage(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectLanguage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectLanguage`: []DetectLanguage200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectLanguage`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDetectLanguageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string** | The text for which the language should be detected. | 
+
+### Return type
+
+[**[]DetectLanguage200ResponseInner**](DetectLanguage200ResponseInner.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DetectSentiment
+
+> DetectSentiment200Response DetectSentiment(ctx).Text(text).Execute()
+
+Detect Sentiment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	text := "Happy times feel so good." // string | The text for which the sentiment should be detected.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TextAPI.DetectSentiment(context.Background()).Text(text).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectSentiment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DetectSentiment`: DetectSentiment200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectSentiment`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDetectSentimentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **text** | **string** | The text for which the sentiment should be detected. | 
+
+### Return type
+
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 

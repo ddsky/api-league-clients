@@ -1,7 +1,7 @@
 # java-client
 
 API League
-- API version: 1.6.2
+- API version: 1.6.3
   - Generator version: 7.8.0-SNAPSHOT
 
 API League is a Hub for World Class APIs.
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.apileague</groupId>
   <artifactId>java-client</artifactId>
-  <version>1.6.2</version>
+  <version>1.6.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.apileague:java-client:1.6.2"
+     implementation "com.apileague:java-client:1.6.3"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/java-client-1.6.2.jar`
+* `target/java-client-1.6.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -159,6 +159,8 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**storeKeyValueGET**](docs/StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
 *TextApi* | [**correctSpelling**](docs/TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling
 *TextApi* | [**detectGenderByName**](docs/TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name
+*TextApi* | [**detectLanguage**](docs/TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language
+*TextApi* | [**detectSentiment**](docs/TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment
 *TextApi* | [**extractDates**](docs/TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates
 *TextApi* | [**extractEntities**](docs/TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities
 *TextApi* | [**listWordSynonyms**](docs/TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms
@@ -184,7 +186,11 @@ Class | Method | HTTP request | Description
  - [ConvertUnits200Response](docs/ConvertUnits200Response.md)
  - [CorrectSpelling200Response](docs/CorrectSpelling200Response.md)
  - [DetectGenderByName200Response](docs/DetectGenderByName200Response.md)
+ - [DetectLanguage200ResponseInner](docs/DetectLanguage200ResponseInner.md)
  - [DetectMainImageColor200ResponseInner](docs/DetectMainImageColor200ResponseInner.md)
+ - [DetectSentiment200Response](docs/DetectSentiment200Response.md)
+ - [DetectSentiment200ResponseDocument](docs/DetectSentiment200ResponseDocument.md)
+ - [DetectSentiment200ResponseSentencesInner](docs/DetectSentiment200ResponseSentencesInner.md)
  - [ExtractAuthors200Response](docs/ExtractAuthors200Response.md)
  - [ExtractAuthors200ResponseAuthorsInner](docs/ExtractAuthors200ResponseAuthorsInner.md)
  - [ExtractContentFromAWebPage200Response](docs/ExtractContentFromAWebPage200Response.md)

@@ -11,7 +11,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -138,7 +142,11 @@ src/models/compute_nutrition_200_response_ingredient_breakdown_inner_nutrients_i
 src/models/convert_units_200_response.rs
 src/models/correct_spelling_200_response.rs
 src/models/detect_gender_by_name_200_response.rs
+src/models/detect_language_200_response_inner.rs
 src/models/detect_main_image_color_200_response_inner.rs
+src/models/detect_sentiment_200_response.rs
+src/models/detect_sentiment_200_response_document.rs
+src/models/detect_sentiment_200_response_sentences_inner.rs
 src/models/extract_authors_200_response.rs
 src/models/extract_authors_200_response_authors_inner.rs
 src/models/extract_content_from_a_web_page_200_response.rs

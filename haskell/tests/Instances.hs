@@ -177,6 +177,15 @@ genDetectGenderByName200Response n =
     <*> arbitraryReducedMaybe n -- detectGenderByName200ResponseProbabilityFemale :: Maybe Double
     <*> arbitraryReducedMaybe n -- detectGenderByName200ResponsePopularity :: Maybe Double
   
+instance Arbitrary DetectLanguage200ResponseInner where
+  arbitrary = sized genDetectLanguage200ResponseInner
+
+genDetectLanguage200ResponseInner :: Int -> Gen DetectLanguage200ResponseInner
+genDetectLanguage200ResponseInner n =
+  DetectLanguage200ResponseInner
+    <$> arbitraryReducedMaybe n -- detectLanguage200ResponseInnerLanguage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectLanguage200ResponseInnerConfidence :: Maybe Double
+  
 instance Arbitrary DetectMainImageColor200ResponseInner where
   arbitrary = sized genDetectMainImageColor200ResponseInner
 
@@ -186,6 +195,36 @@ genDetectMainImageColor200ResponseInner n =
     <$> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerSpecificColor :: Maybe Text
     <*> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerMainColor :: Maybe Text
     <*> arbitraryReducedMaybe n -- detectMainImageColor200ResponseInnerHexCode :: Maybe Text
+  
+instance Arbitrary DetectSentiment200Response where
+  arbitrary = sized genDetectSentiment200Response
+
+genDetectSentiment200Response :: Int -> Gen DetectSentiment200Response
+genDetectSentiment200Response n =
+  DetectSentiment200Response
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseDocument :: Maybe DetectSentiment200ResponseDocument
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentences :: Maybe [DetectSentiment200ResponseSentencesInner]
+  
+instance Arbitrary DetectSentiment200ResponseDocument where
+  arbitrary = sized genDetectSentiment200ResponseDocument
+
+genDetectSentiment200ResponseDocument :: Int -> Gen DetectSentiment200ResponseDocument
+genDetectSentiment200ResponseDocument n =
+  DetectSentiment200ResponseDocument
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentSentiment :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentConfidence :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseDocumentAverageConfidence :: Maybe Int
+  
+instance Arbitrary DetectSentiment200ResponseSentencesInner where
+  arbitrary = sized genDetectSentiment200ResponseSentencesInner
+
+genDetectSentiment200ResponseSentencesInner :: Int -> Gen DetectSentiment200ResponseSentencesInner
+genDetectSentiment200ResponseSentencesInner n =
+  DetectSentiment200ResponseSentencesInner
+    <$> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerLength :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerSentiment :: Maybe Text
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- detectSentiment200ResponseSentencesInnerConfidence :: Maybe Int
   
 instance Arbitrary ExtractAuthors200Response where
   arbitrary = sized genExtractAuthors200Response

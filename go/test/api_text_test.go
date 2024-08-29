@@ -46,6 +46,30 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test TextAPIService DetectLanguage", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.TextAPI.DetectLanguage(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TextAPIService DetectSentiment", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.TextAPI.DetectSentiment(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test TextAPIService ExtractDates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

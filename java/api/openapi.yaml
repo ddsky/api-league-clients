@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.6.2
+  version: 1.6.3
 servers:
 - url: https://api.apileague.com
 security:
@@ -8536,6 +8536,131 @@ paths:
       - Text
       x-accepts:
       - application/json
+  /detect-language:
+    get:
+      deprecated: false
+      description: "Detect the language of the given text. The API returns a list\
+        \ of languages and their confidence scores. The confidence score is a value\
+        \ between 0 and 1, where 1 means the language was detected with 100% confidence.\
+        \ The API supports text in 22 languages."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/detect-language-api/
+      operationId: detectLanguage
+      parameters:
+      - description: The text for which the language should be detected.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Das ist ein Text.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                  - language: de
+                    confidence: 0.34
+                  - language: et
+                    confidence: 0.22
+                  - language: fi
+                    confidence: 0.13
+                  - language: sv
+                    confidence: 0.11
+                  - language: it
+                    confidence: 0.11
+                  - language: es
+                    confidence: 0.05
+                  - language: pt
+                    confidence: 0.03
+                  - language: lt
+                    confidence: 0.01
+              schema:
+                items:
+                  $ref: '#/components/schemas/detectLanguage_200_response_inner'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Detect Language
+      tags:
+      - Text
+      x-accepts:
+      - application/json
+  /detect-sentiment:
+    get:
+      deprecated: false
+      description: Detect the sentiment (positive or negative) of a given text. The
+        entire document is scored and also each individual sentence.
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/detect-sentiment-api/
+      operationId: detectSentiment
+      parameters:
+      - description: The text for which the sentiment should be detected.
+        explode: false
+        in: query
+        name: text
+        required: true
+        schema:
+          example: Happy times feel so good.
+          maxLength: 10000
+          pattern: "."
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    document:
+                      sentiment: positive
+                      confidence: 1
+                      average_confidence: 1
+                    sentences:
+                    - length: 34
+                      sentiment: positive
+                      offset: 0
+                      confidence: 1
+              schema:
+                $ref: '#/components/schemas/detectSentiment_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Detect Sentiment
+      tags:
+      - Text
+      x-accepts:
+      - application/json
   /score-text:
     get:
       deprecated: false
@@ -12619,6 +12744,71 @@ components:
         corrected_text:
           nullable: true
           type: string
+      type: object
+    detectLanguage_200_response_inner:
+      example:
+        confidence: 0.8008281904610115
+        language: language
+      properties:
+        language:
+          nullable: true
+          type: string
+        confidence:
+          type: number
+      type: object
+    detectSentiment_200_response_document:
+      example:
+        sentiment: sentiment
+        confidence: 0
+        average_confidence: 6
+      properties:
+        sentiment:
+          nullable: true
+          type: string
+        confidence:
+          type: integer
+        average_confidence:
+          type: integer
+      type: object
+    detectSentiment_200_response_sentences_inner:
+      example:
+        sentiment: sentiment
+        offset: 5
+        confidence: 5
+        length: 1
+      properties:
+        length:
+          type: integer
+        sentiment:
+          nullable: true
+          type: string
+        offset:
+          type: integer
+        confidence:
+          type: integer
+      type: object
+    detectSentiment_200_response:
+      example:
+        sentences:
+        - sentiment: sentiment
+          offset: 5
+          confidence: 5
+          length: 1
+        - sentiment: sentiment
+          offset: 5
+          confidence: 5
+          length: 1
+        document:
+          sentiment: sentiment
+          confidence: 0
+          average_confidence: 6
+      properties:
+        document:
+          $ref: '#/components/schemas/detectSentiment_200_response_document'
+        sentences:
+          items:
+            $ref: '#/components/schemas/detectSentiment_200_response_sentences_inner'
+          type: array
       type: object
     scoreText_200_response_readability_mainscores:
       example:

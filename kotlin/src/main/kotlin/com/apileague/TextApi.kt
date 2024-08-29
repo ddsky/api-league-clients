@@ -21,6 +21,8 @@ import okhttp3.HttpUrl
 
 import com.apileague.client.model.CorrectSpelling200Response
 import com.apileague.client.model.DetectGenderByName200Response
+import com.apileague.client.model.DetectLanguage200ResponseInner
+import com.apileague.client.model.DetectSentiment200Response
 import com.apileague.client.model.ExtractDates200Response
 import com.apileague.client.model.ExtractEntities200Response
 import com.apileague.client.model.ListWordSynonyms200Response
@@ -200,6 +202,154 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/detect-gender",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Detect Language
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * @param text The text for which the language should be detected.
+     * @return kotlin.collections.List<DetectLanguage200ResponseInner>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun detectLanguage(text: kotlin.String) : kotlin.collections.List<DetectLanguage200ResponseInner> {
+        val localVarResponse = detectLanguageWithHttpInfo(text = text)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<DetectLanguage200ResponseInner>
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Detect Language
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * @param text The text for which the language should be detected.
+     * @return ApiResponse<kotlin.collections.List<DetectLanguage200ResponseInner>?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun detectLanguageWithHttpInfo(text: kotlin.String) : ApiResponse<kotlin.collections.List<DetectLanguage200ResponseInner>?> {
+        val localVariableConfig = detectLanguageRequestConfig(text = text)
+
+        return request<Unit, kotlin.collections.List<DetectLanguage200ResponseInner>>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation detectLanguage
+     *
+     * @param text The text for which the language should be detected.
+     * @return RequestConfig
+     */
+    fun detectLanguageRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("text", listOf(text.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/detect-language",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Detect Sentiment
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * @param text The text for which the sentiment should be detected.
+     * @return DetectSentiment200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun detectSentiment(text: kotlin.String) : DetectSentiment200Response {
+        val localVarResponse = detectSentimentWithHttpInfo(text = text)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DetectSentiment200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Detect Sentiment
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * @param text The text for which the sentiment should be detected.
+     * @return ApiResponse<DetectSentiment200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun detectSentimentWithHttpInfo(text: kotlin.String) : ApiResponse<DetectSentiment200Response?> {
+        val localVariableConfig = detectSentimentRequestConfig(text = text)
+
+        return request<Unit, DetectSentiment200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation detectSentiment
+     *
+     * @param text The text for which the sentiment should be detected.
+     * @return RequestConfig
+     */
+    fun detectSentimentRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("text", listOf(text.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/detect-sentiment",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

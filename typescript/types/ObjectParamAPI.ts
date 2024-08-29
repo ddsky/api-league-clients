@@ -7,7 +7,11 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
+import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
+import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
+import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -2124,6 +2128,24 @@ export interface TextApiDetectGenderByNameRequest {
     name: string
 }
 
+export interface TextApiDetectLanguageRequest {
+    /**
+     * The text for which the language should be detected.
+     * @type string
+     * @memberof TextApidetectLanguage
+     */
+    text: string
+}
+
+export interface TextApiDetectSentimentRequest {
+    /**
+     * The text for which the sentiment should be detected.
+     * @type string
+     * @memberof TextApidetectSentiment
+     */
+    text: string
+}
+
 export interface TextApiExtractDatesRequest {
     /**
      * The text from which dates should be extracted.
@@ -2252,6 +2274,42 @@ export class ObjectTextApi {
      */
     public detectGenderByName(param: TextApiDetectGenderByNameRequest, options?: Configuration): Promise<DetectGenderByName200Response> {
         return this.api.detectGenderByName(param.name,  options).toPromise();
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param param the request object
+     */
+    public detectLanguageWithHttpInfo(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
+        return this.api.detectLanguageWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param param the request object
+     */
+    public detectLanguage(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<Array<DetectLanguage200ResponseInner>> {
+        return this.api.detectLanguage(param.text,  options).toPromise();
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param param the request object
+     */
+    public detectSentimentWithHttpInfo(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<HttpInfo<DetectSentiment200Response>> {
+        return this.api.detectSentimentWithHttpInfo(param.text,  options).toPromise();
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param param the request object
+     */
+    public detectSentiment(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<DetectSentiment200Response> {
+        return this.api.detectSentiment(param.text,  options).toPromise();
     }
 
     /**

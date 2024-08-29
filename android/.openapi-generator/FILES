@@ -10,7 +10,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -148,7 +152,11 @@ src/main/java/com/apileague/client/model/ComputeNutrition200ResponseIngredientBr
 src/main/java/com/apileague/client/model/ConvertUnits200Response.java
 src/main/java/com/apileague/client/model/CorrectSpelling200Response.java
 src/main/java/com/apileague/client/model/DetectGenderByName200Response.java
+src/main/java/com/apileague/client/model/DetectLanguage200ResponseInner.java
 src/main/java/com/apileague/client/model/DetectMainImageColor200ResponseInner.java
+src/main/java/com/apileague/client/model/DetectSentiment200Response.java
+src/main/java/com/apileague/client/model/DetectSentiment200ResponseDocument.java
+src/main/java/com/apileague/client/model/DetectSentiment200ResponseSentencesInner.java
 src/main/java/com/apileague/client/model/ExtractAuthors200Response.java
 src/main/java/com/apileague/client/model/ExtractAuthors200ResponseAuthorsInner.java
 src/main/java/com/apileague/client/model/ExtractContentFromAWebPage200Response.java

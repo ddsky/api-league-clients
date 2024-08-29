@@ -15,7 +15,11 @@ docs/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md
 docs/ConvertUnits200Response.md
 docs/CorrectSpelling200Response.md
 docs/DetectGenderByName200Response.md
+docs/DetectLanguage200ResponseInner.md
 docs/DetectMainImageColor200ResponseInner.md
+docs/DetectSentiment200Response.md
+docs/DetectSentiment200ResponseDocument.md
+docs/DetectSentiment200ResponseSentencesInner.md
 docs/ExtractAuthors200Response.md
 docs/ExtractAuthors200ResponseAuthorsInner.md
 docs/ExtractContentFromAWebPage200Response.md
@@ -143,7 +147,11 @@ lib/openapi_client/models/compute_nutrition200_response_ingredient_breakdown_inn
 lib/openapi_client/models/convert_units200_response.rb
 lib/openapi_client/models/correct_spelling200_response.rb
 lib/openapi_client/models/detect_gender_by_name200_response.rb
+lib/openapi_client/models/detect_language200_response_inner.rb
 lib/openapi_client/models/detect_main_image_color200_response_inner.rb
+lib/openapi_client/models/detect_sentiment200_response.rb
+lib/openapi_client/models/detect_sentiment200_response_document.rb
+lib/openapi_client/models/detect_sentiment200_response_sentences_inner.rb
 lib/openapi_client/models/extract_authors200_response.rb
 lib/openapi_client/models/extract_authors200_response_authors_inner.rb
 lib/openapi_client/models/extract_content_from_a_web_page200_response.rb
@@ -259,7 +267,11 @@ spec/models/compute_nutrition200_response_spec.rb
 spec/models/convert_units200_response_spec.rb
 spec/models/correct_spelling200_response_spec.rb
 spec/models/detect_gender_by_name200_response_spec.rb
+spec/models/detect_language200_response_inner_spec.rb
 spec/models/detect_main_image_color200_response_inner_spec.rb
+spec/models/detect_sentiment200_response_document_spec.rb
+spec/models/detect_sentiment200_response_sentences_inner_spec.rb
+spec/models/detect_sentiment200_response_spec.rb
 spec/models/extract_authors200_response_authors_inner_spec.rb
 spec/models/extract_authors200_response_spec.rb
 spec/models/extract_content_from_a_web_page200_response_spec.rb

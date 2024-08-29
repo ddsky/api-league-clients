@@ -1,6 +1,6 @@
 [package]
 name = "apileague"
-version = "1.6.2"
+version = "1.6.3"
 authors = ["mail@apileague.com"]
 description = "API League is a Hub for World Class APIs."
 # Override this license by providing a License Object in the OpenAPI.

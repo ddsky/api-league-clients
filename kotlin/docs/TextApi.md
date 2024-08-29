@@ -6,6 +6,8 @@ All URIs are relative to *https://api.apileague.com*
 | ------------- | ------------- | ------------- |
 | [**correctSpelling**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
 | [**detectGenderByName**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name |
+| [**detectLanguage**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
+| [**detectSentiment**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
 | [**extractDates**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
 | [**extractEntities**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
 | [**listWordSynonyms**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
@@ -107,6 +109,110 @@ try {
 ### Return type
 
 [**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="detectLanguage"></a>
+# **detectLanguage**
+> kotlin.collections.List&lt;DetectLanguage200ResponseInner&gt; detectLanguage(text)
+
+Detect Language
+
+Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = TextApi()
+val text : kotlin.String = Das ist ein Text. // kotlin.String | The text for which the language should be detected.
+try {
+    val result : kotlin.collections.List<DetectLanguage200ResponseInner> = apiInstance.detectLanguage(text)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TextApi#detectLanguage")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TextApi#detectLanguage")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text for which the language should be detected. | |
+
+### Return type
+
+[**kotlin.collections.List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="detectSentiment"></a>
+# **detectSentiment**
+> DetectSentiment200Response detectSentiment(text)
+
+Detect Sentiment
+
+Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = TextApi()
+val text : kotlin.String = Happy times feel so good. // kotlin.String | The text for which the sentiment should be detected.
+try {
+    val result : DetectSentiment200Response = apiInstance.detectSentiment(text)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TextApi#detectSentiment")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TextApi#detectSentiment")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **text** | **kotlin.String**| The text for which the sentiment should be detected. | |
+
+### Return type
+
+[**DetectSentiment200Response**](DetectSentiment200Response.md)
 
 ### Authorization
 

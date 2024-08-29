@@ -4,7 +4,11 @@ export * from './computeNutrition200ResponseIngredientBreakdownInnerNutrientsInn
 export * from './convertUnits200Response';
 export * from './correctSpelling200Response';
 export * from './detectGenderByName200Response';
+export * from './detectLanguage200ResponseInner';
 export * from './detectMainImageColor200ResponseInner';
+export * from './detectSentiment200Response';
+export * from './detectSentiment200ResponseDocument';
+export * from './detectSentiment200ResponseSentencesInner';
 export * from './extractAuthors200Response';
 export * from './extractAuthors200ResponseAuthorsInner';
 export * from './extractContentFromAWebPage200Response';

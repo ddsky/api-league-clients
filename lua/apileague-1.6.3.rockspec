@@ -1,5 +1,5 @@
 package = "apileague"
-version = "1.6.2"
+version = "1.6.3"
 source = {
 	url = "https://github.com/ddsky/api-league-clients/tree/master/lua/.git"
 }
@@ -40,7 +40,11 @@ build = {
 		["apileague.model.convert_units_200_response"] = "apileague/model/convert_units_200_response.lua";
 		["apileague.model.correct_spelling_200_response"] = "apileague/model/correct_spelling_200_response.lua";
 		["apileague.model.detect_gender_by_name_200_response"] = "apileague/model/detect_gender_by_name_200_response.lua";
+		["apileague.model.detect_language_200_response_inner"] = "apileague/model/detect_language_200_response_inner.lua";
 		["apileague.model.detect_main_image_color_200_response_inner"] = "apileague/model/detect_main_image_color_200_response_inner.lua";
+		["apileague.model.detect_sentiment_200_response"] = "apileague/model/detect_sentiment_200_response.lua";
+		["apileague.model.detect_sentiment_200_response_document"] = "apileague/model/detect_sentiment_200_response_document.lua";
+		["apileague.model.detect_sentiment_200_response_sentences_inner"] = "apileague/model/detect_sentiment_200_response_sentences_inner.lua";
 		["apileague.model.extract_authors_200_response"] = "apileague/model/extract_authors_200_response.lua";
 		["apileague.model.extract_authors_200_response_authors_inner"] = "apileague/model/extract_authors_200_response_authors_inner.lua";
 		["apileague.model.extract_content_from_a_web_page_200_response"] = "apileague/model/extract_content_from_a_web_page_200_response.lua";

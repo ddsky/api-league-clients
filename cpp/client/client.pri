@@ -8,7 +8,11 @@ HEADERS += \
     $${PWD}/OAIConvertUnits_200_response.h \
     $${PWD}/OAICorrectSpelling_200_response.h \
     $${PWD}/OAIDetectGenderByName_200_response.h \
+    $${PWD}/OAIDetectLanguage_200_response_inner.h \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.h \
+    $${PWD}/OAIDetectSentiment_200_response.h \
+    $${PWD}/OAIDetectSentiment_200_response_document.h \
+    $${PWD}/OAIDetectSentiment_200_response_sentences_inner.h \
     $${PWD}/OAIExtractAuthors_200_response.h \
     $${PWD}/OAIExtractAuthors_200_response_authors_inner.h \
     $${PWD}/OAIExtractContentFromAWebPage_200_response.h \
@@ -135,7 +139,11 @@ SOURCES += \
     $${PWD}/OAIConvertUnits_200_response.cpp \
     $${PWD}/OAICorrectSpelling_200_response.cpp \
     $${PWD}/OAIDetectGenderByName_200_response.cpp \
+    $${PWD}/OAIDetectLanguage_200_response_inner.cpp \
     $${PWD}/OAIDetectMainImageColor_200_response_inner.cpp \
+    $${PWD}/OAIDetectSentiment_200_response.cpp \
+    $${PWD}/OAIDetectSentiment_200_response_document.cpp \
+    $${PWD}/OAIDetectSentiment_200_response_sentences_inner.cpp \
     $${PWD}/OAIExtractAuthors_200_response.cpp \
     $${PWD}/OAIExtractAuthors_200_response_authors_inner.cpp \
     $${PWD}/OAIExtractContentFromAWebPage_200_response.cpp \

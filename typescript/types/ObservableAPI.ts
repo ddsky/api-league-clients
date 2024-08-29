@@ -8,7 +8,11 @@ import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } fro
 import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
 import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
 import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
+import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
 import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
+import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
+import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
+import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
 import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
 import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
 import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
@@ -1650,6 +1654,72 @@ export class ObservableTextApi {
      */
     public detectGenderByName(name: string, _options?: Configuration): Observable<DetectGenderByName200Response> {
         return this.detectGenderByNameWithHttpInfo(name, _options).pipe(map((apiResponse: HttpInfo<DetectGenderByName200Response>) => apiResponse.data));
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param text The text for which the language should be detected.
+     */
+    public detectLanguageWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
+        const requestContextPromise = this.requestFactory.detectLanguage(text, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectLanguageWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
+     * Detect Language
+     * @param text The text for which the language should be detected.
+     */
+    public detectLanguage(text: string, _options?: Configuration): Observable<Array<DetectLanguage200ResponseInner>> {
+        return this.detectLanguageWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<Array<DetectLanguage200ResponseInner>>) => apiResponse.data));
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param text The text for which the sentiment should be detected.
+     */
+    public detectSentimentWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<DetectSentiment200Response>> {
+        const requestContextPromise = this.requestFactory.detectSentiment(text, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectSentimentWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
+     * Detect Sentiment
+     * @param text The text for which the sentiment should be detected.
+     */
+    public detectSentiment(text: string, _options?: Configuration): Observable<DetectSentiment200Response> {
+        return this.detectSentimentWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<DetectSentiment200Response>) => apiResponse.data));
     }
 
     /**

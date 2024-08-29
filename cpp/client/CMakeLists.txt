@@ -17,7 +17,11 @@ add_library(${PROJECT_NAME}
   OAIConvertUnits_200_response.h
   OAICorrectSpelling_200_response.h
   OAIDetectGenderByName_200_response.h
+  OAIDetectLanguage_200_response_inner.h
   OAIDetectMainImageColor_200_response_inner.h
+  OAIDetectSentiment_200_response.h
+  OAIDetectSentiment_200_response_document.h
+  OAIDetectSentiment_200_response_sentences_inner.h
   OAIExtractAuthors_200_response.h
   OAIExtractAuthors_200_response_authors_inner.h
   OAIExtractContentFromAWebPage_200_response.h
@@ -139,7 +143,11 @@ add_library(${PROJECT_NAME}
   OAIConvertUnits_200_response.cpp
   OAICorrectSpelling_200_response.cpp
   OAIDetectGenderByName_200_response.cpp
+  OAIDetectLanguage_200_response_inner.cpp
   OAIDetectMainImageColor_200_response_inner.cpp
+  OAIDetectSentiment_200_response.cpp
+  OAIDetectSentiment_200_response_document.cpp
+  OAIDetectSentiment_200_response_sentences_inner.cpp
   OAIExtractAuthors_200_response.cpp
   OAIExtractAuthors_200_response_authors_inner.cpp
   OAIExtractContentFromAWebPage_200_response.cpp

@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.6.2",
+    "version": "1.6.3",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -13092,6 +13092,237 @@
         ],
         "description": "The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).",
         "operationId": "correctSpelling",
+        "deprecated": false
+      }
+    },
+    "/detect-language": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "confidence": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": [
+                      {
+                        "language": "de",
+                        "confidence": 0.34
+                      },
+                      {
+                        "language": "et",
+                        "confidence": 0.22
+                      },
+                      {
+                        "language": "fi",
+                        "confidence": 0.13
+                      },
+                      {
+                        "language": "sv",
+                        "confidence": 0.11
+                      },
+                      {
+                        "language": "it",
+                        "confidence": 0.11
+                      },
+                      {
+                        "language": "es",
+                        "confidence": 0.05
+                      },
+                      {
+                        "language": "pt",
+                        "confidence": 0.03
+                      },
+                      {
+                        "language": "lt",
+                        "confidence": 0.01
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text for which the language should be detected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Das ist ein Text."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/detect-language-api/"
+        },
+        "summary": "Detect Language",
+        "tags": [
+          "Text"
+        ],
+        "description": "Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.",
+        "operationId": "detectLanguage",
+        "deprecated": false
+      }
+    },
+    "/detect-sentiment": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "document": {
+                      "type": "object",
+                      "properties": {
+                        "sentiment": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "confidence": {
+                          "type": "integer"
+                        },
+                        "average_confidence": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "sentences": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "length": {
+                            "type": "integer"
+                          },
+                          "sentiment": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "offset": {
+                            "type": "integer"
+                          },
+                          "confidence": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "document": {
+                        "sentiment": "positive",
+                        "confidence": 1,
+                        "average_confidence": 1
+                      },
+                      "sentences": [
+                        {
+                          "length": 34,
+                          "sentiment": "positive",
+                          "offset": 0,
+                          "confidence": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "description": "The text for which the sentiment should be detected.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 10000,
+              "type": "string",
+              "example": "Happy times feel so good."
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/detect-sentiment-api/"
+        },
+        "summary": "Detect Sentiment",
+        "tags": [
+          "Text"
+        ],
+        "description": "Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.",
+        "operationId": "detectSentiment",
         "deprecated": false
       }
     },

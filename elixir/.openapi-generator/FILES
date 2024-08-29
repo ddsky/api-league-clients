@@ -23,7 +23,11 @@ lib/api_league/model/compute_nutrition_200_response_ingredient_breakdown_inner_n
 lib/api_league/model/convert_units_200_response.ex
 lib/api_league/model/correct_spelling_200_response.ex
 lib/api_league/model/detect_gender_by_name_200_response.ex
+lib/api_league/model/detect_language_200_response_inner.ex
 lib/api_league/model/detect_main_image_color_200_response_inner.ex
+lib/api_league/model/detect_sentiment_200_response.ex
+lib/api_league/model/detect_sentiment_200_response_document.ex
+lib/api_league/model/detect_sentiment_200_response_sentences_inner.ex
 lib/api_league/model/extract_authors_200_response.ex
 lib/api_league/model/extract_authors_200_response_authors_inner.ex
 lib/api_league/model/extract_content_from_a_web_page_200_response.ex
