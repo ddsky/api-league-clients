@@ -10,7 +10,7 @@ defmodule APILeague.Api.Art do
   import APILeague.RequestBuilder
 
   @doc """
-  Image to Ascii Art by URL
+  Image to Ascii Art by URL API
   Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
   ### Parameters
@@ -26,8 +26,8 @@ defmodule APILeague.Api.Art do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec image_to_ascii_art_by_url(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def image_to_ascii_art_by_url(connection, url, opts \\ []) do
+  @spec image_to_ascii_art_by_urlapi(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
+  def image_to_ascii_art_by_urlapi(connection, url, opts \\ []) do
     optional_params = %{
       :width => :query,
       :height => :query
@@ -55,7 +55,7 @@ defmodule APILeague.Api.Art do
   end
 
   @doc """
-  Random Poem
+  Random Poem API
   Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
   ### Parameters
@@ -67,11 +67,11 @@ defmodule APILeague.Api.Art do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RandomPoem200Response.t}` on success
+  - `{:ok, APILeague.Model.RandomPoemApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_poem(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomPoem200Response.t} | {:error, Tesla.Env.t}
-  def random_poem(connection, opts \\ []) do
+  @spec random_poem_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomPoemApi200Response.t} | {:error, Tesla.Env.t}
+  def random_poem_api(connection, opts \\ []) do
     optional_params = %{
       :"min-lines" => :query,
       :"max-lines" => :query
@@ -87,7 +87,7 @@ defmodule APILeague.Api.Art do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RandomPoem200Response},
+      {200, APILeague.Model.RandomPoemApi200Response},
       {401, false},
       {402, false},
       {403, false},

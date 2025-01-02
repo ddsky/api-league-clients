@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition |
-| [**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information |
-| [**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks |
-| [**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes |
-| [**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants |
+| [**compute_nutrition_api**](FoodApi.md#compute_nutrition_api) | **GET** /compute-nutrition | Compute Nutrition API |
+| [**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
+| [**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API |
+| [**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API |
+| [**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API |
 
 
-## compute_nutrition
+## compute_nutrition_api
 
-> <ComputeNutrition200Response> compute_nutrition(ingredients, opts)
+> <ComputeNutritionAPI200Response> compute_nutrition_api(ingredients, opts)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -45,29 +45,29 @@ opts = {
 }
 
 begin
-  # Compute Nutrition
-  result = api_instance.compute_nutrition(ingredients, opts)
+  # Compute Nutrition API
+  result = api_instance.compute_nutrition_api(ingredients, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->compute_nutrition: #{e}"
+  puts "Error when calling FoodApi->compute_nutrition_api: #{e}"
 end
 ```
 
-#### Using the compute_nutrition_with_http_info variant
+#### Using the compute_nutrition_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ComputeNutrition200Response>, Integer, Hash)> compute_nutrition_with_http_info(ingredients, opts)
+> <Array(<ComputeNutritionAPI200Response>, Integer, Hash)> compute_nutrition_api_with_http_info(ingredients, opts)
 
 ```ruby
 begin
-  # Compute Nutrition
-  data, status_code, headers = api_instance.compute_nutrition_with_http_info(ingredients, opts)
+  # Compute Nutrition API
+  data, status_code, headers = api_instance.compute_nutrition_api_with_http_info(ingredients, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ComputeNutrition200Response>
+  p data # => <ComputeNutritionAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->compute_nutrition_with_http_info: #{e}"
+  puts "Error when calling FoodApi->compute_nutrition_api_with_http_info: #{e}"
 end
 ```
 
@@ -81,7 +81,7 @@ end
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -93,11 +93,11 @@ end
 - **Accept**: application/json
 
 
-## retrieve_recipe_information
+## retrieve_recipe_information_api
 
-> <RetrieveRecipeInformation200Response> retrieve_recipe_information(id, opts)
+> <RetrieveRecipeInformationAPI200Response> retrieve_recipe_information_api(id, opts)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -126,29 +126,29 @@ opts = {
 }
 
 begin
-  # Retrieve Recipe Information
-  result = api_instance.retrieve_recipe_information(id, opts)
+  # Retrieve Recipe Information API
+  result = api_instance.retrieve_recipe_information_api(id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->retrieve_recipe_information: #{e}"
+  puts "Error when calling FoodApi->retrieve_recipe_information_api: #{e}"
 end
 ```
 
-#### Using the retrieve_recipe_information_with_http_info variant
+#### Using the retrieve_recipe_information_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrieveRecipeInformation200Response>, Integer, Hash)> retrieve_recipe_information_with_http_info(id, opts)
+> <Array(<RetrieveRecipeInformationAPI200Response>, Integer, Hash)> retrieve_recipe_information_api_with_http_info(id, opts)
 
 ```ruby
 begin
-  # Retrieve Recipe Information
-  data, status_code, headers = api_instance.retrieve_recipe_information_with_http_info(id, opts)
+  # Retrieve Recipe Information API
+  data, status_code, headers = api_instance.retrieve_recipe_information_api_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RetrieveRecipeInformation200Response>
+  p data # => <RetrieveRecipeInformationAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->retrieve_recipe_information_with_http_info: #{e}"
+  puts "Error when calling FoodApi->retrieve_recipe_information_api_with_http_info: #{e}"
 end
 ```
 
@@ -161,7 +161,7 @@ end
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -173,11 +173,11 @@ end
 - **Accept**: application/json
 
 
-## search_drinks
+## search_drinks_api
 
-> <SearchDrinks200Response> search_drinks(opts)
+> <SearchDrinksAPI200Response> search_drinks_api(opts)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -226,29 +226,29 @@ opts = {
 }
 
 begin
-  # Search Drinks
-  result = api_instance.search_drinks(opts)
+  # Search Drinks API
+  result = api_instance.search_drinks_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_drinks: #{e}"
+  puts "Error when calling FoodApi->search_drinks_api: #{e}"
 end
 ```
 
-#### Using the search_drinks_with_http_info variant
+#### Using the search_drinks_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchDrinks200Response>, Integer, Hash)> search_drinks_with_http_info(opts)
+> <Array(<SearchDrinksAPI200Response>, Integer, Hash)> search_drinks_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search Drinks
-  data, status_code, headers = api_instance.search_drinks_with_http_info(opts)
+  # Search Drinks API
+  data, status_code, headers = api_instance.search_drinks_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchDrinks200Response>
+  p data # => <SearchDrinksAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_drinks_with_http_info: #{e}"
+  puts "Error when calling FoodApi->search_drinks_api_with_http_info: #{e}"
 end
 ```
 
@@ -281,7 +281,7 @@ end
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -293,11 +293,11 @@ end
 - **Accept**: application/json
 
 
-## search_recipes
+## search_recipes_api
 
-> <SearchRecipes200Response> search_recipes(opts)
+> <SearchRecipesAPI200Response> search_recipes_api(opts)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -414,29 +414,29 @@ opts = {
 }
 
 begin
-  # Search Recipes
-  result = api_instance.search_recipes(opts)
+  # Search Recipes API
+  result = api_instance.search_recipes_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_recipes: #{e}"
+  puts "Error when calling FoodApi->search_recipes_api: #{e}"
 end
 ```
 
-#### Using the search_recipes_with_http_info variant
+#### Using the search_recipes_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchRecipes200Response>, Integer, Hash)> search_recipes_with_http_info(opts)
+> <Array(<SearchRecipesAPI200Response>, Integer, Hash)> search_recipes_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search Recipes
-  data, status_code, headers = api_instance.search_recipes_with_http_info(opts)
+  # Search Recipes API
+  data, status_code, headers = api_instance.search_recipes_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchRecipes200Response>
+  p data # => <SearchRecipesAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_recipes_with_http_info: #{e}"
+  puts "Error when calling FoodApi->search_recipes_api_with_http_info: #{e}"
 end
 ```
 
@@ -537,7 +537,7 @@ end
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -549,11 +549,11 @@ end
 - **Accept**: application/json
 
 
-## search_restaurants
+## search_restaurants_api
 
-> <SearchRestaurants200Response> search_restaurants(lat, lon, opts)
+> <SearchRestaurantsAPI200Response> search_restaurants_api(lat, lon, opts)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -590,29 +590,29 @@ opts = {
 }
 
 begin
-  # Search Restaurants
-  result = api_instance.search_restaurants(lat, lon, opts)
+  # Search Restaurants API
+  result = api_instance.search_restaurants_api(lat, lon, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_restaurants: #{e}"
+  puts "Error when calling FoodApi->search_restaurants_api: #{e}"
 end
 ```
 
-#### Using the search_restaurants_with_http_info variant
+#### Using the search_restaurants_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchRestaurants200Response>, Integer, Hash)> search_restaurants_with_http_info(lat, lon, opts)
+> <Array(<SearchRestaurantsAPI200Response>, Integer, Hash)> search_restaurants_api_with_http_info(lat, lon, opts)
 
 ```ruby
 begin
-  # Search Restaurants
-  data, status_code, headers = api_instance.search_restaurants_with_http_info(lat, lon, opts)
+  # Search Restaurants API
+  data, status_code, headers = api_instance.search_restaurants_api_with_http_info(lat, lon, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchRestaurants200Response>
+  p data # => <SearchRestaurantsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_restaurants_with_http_info: #{e}"
+  puts "Error when calling FoodApi->search_restaurants_api_with_http_info: #{e}"
 end
 ```
 
@@ -633,7 +633,7 @@ end
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

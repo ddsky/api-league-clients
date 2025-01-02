@@ -17,30 +17,30 @@ void main() {
   // final instance = KnowledgeApi();
 
   group('tests for KnowledgeApi', () {
-    // Random Quote
+    // Random Quote API
     //
     // This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
     //
-    //Future<RandomQuote200Response> randomQuote({ int minLength, int maxLength }) async
-    test('test randomQuote', () async {
+    //Future<RandomQuoteAPI200Response> randomQuoteAPI({ int minLength, int maxLength }) async
+    test('test randomQuoteAPI', () async {
       // TODO
     });
 
-    // Random Riddle
+    // Random Riddle API
     //
     // The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
     //
-    //Future<RandomRiddle200Response> randomRiddle({ String difficulty }) async
-    test('test randomRiddle', () async {
+    //Future<RandomRiddleAPI200Response> randomRiddleAPI({ String difficulty }) async
+    test('test randomRiddleAPI', () async {
       // TODO
     });
 
-    // Random Trivia
+    // Random Trivia API
     //
-    // This endpoint returns a random piece of trivia.
+    // This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
     //
-    //Future<RandomTrivia200Response> randomTrivia({ int maxLength }) async
-    test('test randomTrivia', () async {
+    //Future<RandomTriviaAPI200Response> randomTriviaAPI({ int maxLength }) async
+    test('test randomTriviaAPI', () async {
       // TODO
     });
 

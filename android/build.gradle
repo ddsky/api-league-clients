@@ -58,7 +58,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.apileague'
             artifactId = 'android-client'
-            version = '1.6.3'
+            version = '1.6.4'
 
             afterEvaluate {
                 from components.release

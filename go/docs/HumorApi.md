@@ -4,20 +4,20 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GenerateNonsenseWord**](HumorAPI.md#GenerateNonsenseWord) | **Get** /generate-nonsense-word | Generate Nonsense Word
-[**RandomJoke**](HumorAPI.md#RandomJoke) | **Get** /retrieve-random-joke | Random Joke
-[**RandomMeme**](HumorAPI.md#RandomMeme) | **Get** /retrieve-random-meme | Random Meme
-[**SearchGifs**](HumorAPI.md#SearchGifs) | **Get** /search-gifs | Search Gifs
-[**SearchJokes**](HumorAPI.md#SearchJokes) | **Get** /search-jokes | Search Jokes
-[**SearchMemes**](HumorAPI.md#SearchMemes) | **Get** /search-memes | Search Memes
+[**GenerateNonsenseWordAPI**](HumorAPI.md#GenerateNonsenseWordAPI) | **Get** /generate-nonsense-word | Generate Nonsense Word API
+[**RandomJokeAPI**](HumorAPI.md#RandomJokeAPI) | **Get** /retrieve-random-joke | Random Joke API
+[**RandomMemeAPI**](HumorAPI.md#RandomMemeAPI) | **Get** /retrieve-random-meme | Random Meme API
+[**SearchGifsAPI**](HumorAPI.md#SearchGifsAPI) | **Get** /search-gifs | Search Gifs API
+[**SearchJokesAPI**](HumorAPI.md#SearchJokesAPI) | **Get** /search-jokes | Search Jokes API
+[**SearchMemesAPI**](HumorAPI.md#SearchMemesAPI) | **Get** /search-memes | Search Memes API
 
 
 
-## GenerateNonsenseWord
+## GenerateNonsenseWordAPI
 
-> GenerateNonsenseWord200Response GenerateNonsenseWord(ctx).Execute()
+> GenerateNonsenseWordAPI200Response GenerateNonsenseWordAPI(ctx).Execute()
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 
 
@@ -37,13 +37,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.GenerateNonsenseWord(context.Background()).Execute()
+	resp, r, err := apiClient.HumorAPI.GenerateNonsenseWordAPI(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.GenerateNonsenseWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.GenerateNonsenseWordAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GenerateNonsenseWord`: GenerateNonsenseWord200Response
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.GenerateNonsenseWord`: %v\n", resp)
+	// response from `GenerateNonsenseWordAPI`: GenerateNonsenseWordAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.GenerateNonsenseWordAPI`: %v\n", resp)
 }
 ```
 
@@ -53,12 +53,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGenerateNonsenseWordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGenerateNonsenseWordAPIRequest struct via the builder pattern
 
 
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -74,11 +74,11 @@ Other parameters are passed through a pointer to a apiGenerateNonsenseWordReques
 [[Back to README]](../README.md)
 
 
-## RandomJoke
+## RandomJokeAPI
 
-> SearchJokes200ResponseJokesInner RandomJoke(ctx).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
+> SearchJokesAPI200ResponseJokesInner RandomJokeAPI(ctx).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
 
-Random Joke
+Random Joke API
 
 
 
@@ -102,13 +102,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.RandomJoke(context.Background()).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
+	resp, r, err := apiClient.HumorAPI.RandomJokeAPI(context.Background()).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomJoke``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomJokeAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomJoke`: SearchJokes200ResponseJokesInner
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomJoke`: %v\n", resp)
+	// response from `RandomJokeAPI`: SearchJokesAPI200ResponseJokesInner
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomJokeAPI`: %v\n", resp)
 }
 ```
 
@@ -118,7 +118,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomJokeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomJokeAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -146,11 +146,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RandomMeme
+## RandomMemeAPI
 
-> RandomMeme200Response RandomMeme(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
+> RandomMemeAPI200Response RandomMemeAPI(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
 
-Random Meme
+Random Meme API
 
 
 
@@ -175,13 +175,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.RandomMeme(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
+	resp, r, err := apiClient.HumorAPI.RandomMemeAPI(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomMeme``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.RandomMemeAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomMeme`: RandomMeme200Response
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomMeme`: %v\n", resp)
+	// response from `RandomMemeAPI`: RandomMemeAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.RandomMemeAPI`: %v\n", resp)
 }
 ```
 
@@ -191,7 +191,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomMemeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomMemeAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -220,11 +220,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchGifs
+## SearchGifsAPI
 
-> SearchGifs200Response SearchGifs(ctx).Query(query).Number(number).Execute()
+> SearchGifsAPI200Response SearchGifsAPI(ctx).Query(query).Number(number).Execute()
 
-Search Gifs
+Search Gifs API
 
 
 
@@ -246,13 +246,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.SearchGifs(context.Background()).Query(query).Number(number).Execute()
+	resp, r, err := apiClient.HumorAPI.SearchGifsAPI(context.Background()).Query(query).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchGifs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchGifsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchGifs`: SearchGifs200Response
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchGifs`: %v\n", resp)
+	// response from `SearchGifsAPI`: SearchGifsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchGifsAPI`: %v\n", resp)
 }
 ```
 
@@ -262,7 +262,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchGifsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchGifsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -288,11 +288,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchJokes
+## SearchJokesAPI
 
-> SearchJokes200Response SearchJokes(ctx).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
+> SearchJokesAPI200Response SearchJokesAPI(ctx).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
 
-Search Jokes
+Search Jokes API
 
 
 
@@ -319,13 +319,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.SearchJokes(context.Background()).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.HumorAPI.SearchJokesAPI(context.Background()).Keywords(keywords).IncludeTags(includeTags).ExcludeTags(excludeTags).MinRating(minRating).MaxLength(maxLength).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchJokes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchJokesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchJokes`: SearchJokes200Response
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchJokes`: %v\n", resp)
+	// response from `SearchJokesAPI`: SearchJokesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchJokesAPI`: %v\n", resp)
 }
 ```
 
@@ -335,7 +335,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchJokesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchJokesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -366,11 +366,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchMemes
+## SearchMemesAPI
 
-> SearchMemes200Response SearchMemes(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
+> SearchMemesAPI200Response SearchMemesAPI(ctx).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
 
-Search Memes
+Search Memes API
 
 
 
@@ -397,13 +397,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.HumorAPI.SearchMemes(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.HumorAPI.SearchMemesAPI(context.Background()).Keywords(keywords).KeywordsInImage(keywordsInImage).MediaType(mediaType).MinRating(minRating).MaxAgeDays(maxAgeDays).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchMemes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `HumorAPI.SearchMemesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchMemes`: SearchMemes200Response
-	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchMemes`: %v\n", resp)
+	// response from `SearchMemesAPI`: SearchMemesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `HumorAPI.SearchMemesAPI`: %v\n", resp)
 }
 ```
 
@@ -413,7 +413,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchMemesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchMemesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.6.3",
+    "version": "1.6.4",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -351,12 +351,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-books-api/"
         },
-        "summary": "Search Books",
+        "summary": "Search Books API",
         "tags": [
           "Books"
         ],
-        "description": "Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.",
-        "operationId": "searchBooks",
+        "description": "Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.",
+        "operationId": "searchBooksAPI",
         "deprecated": false
       }
     },
@@ -505,12 +505,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/find-similar-books-api/"
         },
-        "summary": "Find Similar Books",
+        "summary": "Find Similar Books API",
         "tags": [
           "Books"
         ],
-        "description": "Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.",
-        "operationId": "findSimilarBooks",
+        "description": "Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.",
+        "operationId": "findSimilarBooksAPI",
         "deprecated": false
       }
     },
@@ -651,7 +651,7 @@
         "parameters": [
           {
             "name": "text",
-            "description": "The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford",
+            "description": "The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.",
             "schema": {
               "pattern": ".",
               "maxLength": 100,
@@ -882,12 +882,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-news-api/"
         },
-        "summary": "Search News",
+        "summary": "Search News API",
         "tags": [
           "News"
         ],
-        "description": "Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.",
-        "operationId": "searchNews",
+        "description": "Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.",
+        "operationId": "searchNewsAPI",
         "deprecated": false
       }
     },
@@ -1200,12 +1200,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/top-news-api/"
         },
-        "summary": "Top News",
+        "summary": "Top News API",
         "tags": [
           "News"
         ],
-        "description": "Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.",
-        "operationId": "topNews",
+        "description": "Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.",
+        "operationId": "topNewsAPI",
         "deprecated": false
       }
     },
@@ -1412,12 +1412,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-news-api/"
         },
-        "summary": "Extract News",
+        "summary": "Extract News API",
         "tags": [
           "News"
         ],
         "description": "Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.",
-        "operationId": "extractNews",
+        "operationId": "extractNewsAPI",
         "deprecated": false
       }
     },
@@ -1597,12 +1597,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-jokes-api/"
         },
-        "summary": "Search Jokes",
+        "summary": "Search Jokes API",
         "tags": [
           "Humor"
         ],
         "description": "With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.",
-        "operationId": "searchJokes",
+        "operationId": "searchJokesAPI",
         "deprecated": false
       }
     },
@@ -1716,12 +1716,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-joke-api/"
         },
-        "summary": "Random Joke",
+        "summary": "Random Joke API",
         "tags": [
           "Humor"
         ],
         "description": "This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".",
-        "operationId": "randomJoke",
+        "operationId": "randomJokeAPI",
         "deprecated": false
       }
     },
@@ -1913,12 +1913,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-memes-api/"
         },
-        "summary": "Search Memes",
+        "summary": "Search Memes API",
         "tags": [
           "Humor"
         ],
-        "description": "With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.",
-        "operationId": "searchMemes",
+        "description": "Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.",
+        "operationId": "searchMemesAPI",
         "deprecated": false
       }
     },
@@ -2066,12 +2066,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-meme-api/"
         },
-        "summary": "Random Meme",
+        "summary": "Random Meme API",
         "tags": [
           "Humor"
         ],
-        "description": "Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.",
-        "operationId": "randomMeme",
+        "description": "Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.",
+        "operationId": "randomMemeAPI",
         "deprecated": false
       }
     },
@@ -2186,12 +2186,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-gifs-api/"
         },
-        "summary": "Search Gifs",
+        "summary": "Search Gifs API",
         "tags": [
           "Humor"
         ],
         "description": "Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.",
-        "operationId": "searchGifs",
+        "operationId": "searchGifsAPI",
         "deprecated": false
       }
     },
@@ -2250,12 +2250,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/generate-nonsense-word-api/"
         },
-        "summary": "Generate Nonsense Word",
+        "summary": "Generate Nonsense Word API",
         "tags": [
           "Humor"
         ],
         "description": "Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.",
-        "operationId": "generateNonsenseWord",
+        "operationId": "generateNonsenseWordAPI",
         "deprecated": false
       }
     },
@@ -4503,12 +4503,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-drinks-api/"
         },
-        "summary": "Search Drinks",
+        "summary": "Search Drinks API",
         "tags": [
           "Food"
         ],
         "description": "Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.",
-        "operationId": "searchDrinks",
+        "operationId": "searchDrinksAPI",
         "deprecated": false
       }
     },
@@ -6000,12 +6000,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-recipes-api/"
         },
-        "summary": "Search Recipes",
+        "summary": "Search Recipes API",
         "tags": [
           "Food"
         ],
         "description": "Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.",
-        "operationId": "searchRecipes",
+        "operationId": "searchRecipesAPI",
         "deprecated": false
       }
     },
@@ -10122,12 +10122,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/retrieve-recipe-api/"
         },
-        "summary": "Retrieve Recipe Information",
+        "summary": "Retrieve Recipe Information API",
         "tags": [
           "Food"
         ],
         "description": "Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.",
-        "operationId": "retrieveRecipeInformation",
+        "operationId": "retrieveRecipeInformationAPI",
         "deprecated": false
       }
     },
@@ -11422,12 +11422,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/compute-nutrition-api/"
         },
-        "summary": "Compute Nutrition",
+        "summary": "Compute Nutrition API",
         "tags": [
           "Food"
         ],
         "description": "Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.",
-        "operationId": "computeNutrition",
+        "operationId": "computeNutritionAPI",
         "deprecated": false
       }
     },
@@ -11939,12 +11939,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-restaurants-api/"
         },
-        "summary": "Search Restaurants",
+        "summary": "Search Restaurants API",
         "tags": [
           "Food"
         ],
         "description": "Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.",
-        "operationId": "searchRestaurants",
+        "operationId": "searchRestaurantsAPI",
         "deprecated": false
       }
     },
@@ -12015,12 +12015,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-trivia-api/"
         },
-        "summary": "Random Trivia",
+        "summary": "Random Trivia API",
         "tags": [
           "Knowledge"
         ],
-        "description": "This endpoint returns a random piece of trivia.",
-        "operationId": "randomTrivia",
+        "description": "This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".",
+        "operationId": "randomTriviaAPI",
         "deprecated": false
       }
     },
@@ -12111,12 +12111,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-quote-api/"
         },
-        "summary": "Random Quote",
+        "summary": "Random Quote API",
         "tags": [
           "Knowledge"
         ],
         "description": "This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.",
-        "operationId": "randomQuote",
+        "operationId": "randomQuoteAPI",
         "deprecated": false
       }
     },
@@ -12196,12 +12196,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-riddle-api/"
         },
-        "summary": "Random Riddle",
+        "summary": "Random Riddle API",
         "tags": [
           "Knowledge"
         ],
         "description": "The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.",
-        "operationId": "randomRiddle",
+        "operationId": "randomRiddleAPI",
         "deprecated": false
       }
     },
@@ -12297,12 +12297,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/random-poem-api/"
         },
-        "summary": "Random Poem",
+        "summary": "Random Poem API",
         "tags": [
           "Art"
         ],
         "description": "Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).",
-        "operationId": "randomPoem",
+        "operationId": "randomPoemAPI",
         "deprecated": false
       }
     },
@@ -12394,12 +12394,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/image-to-ascii-art-api/"
         },
-        "summary": "Image to Ascii Art by URL",
+        "summary": "Image to Ascii Art by URL API",
         "tags": [
           "Art"
         ],
         "description": "Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.",
-        "operationId": "imageToAsciiArtByURL",
+        "operationId": "imageToAsciiArtByURLAPI",
         "deprecated": false
       }
     },
@@ -12489,12 +12489,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-web-content-api/"
         },
-        "summary": "Extract Content from a Web Page",
+        "summary": "Extract Content from a Web Page API",
         "tags": [
           "Web"
         ],
         "description": "Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.",
-        "operationId": "extractContentFromAWebPage",
+        "operationId": "extractContentFromAWebPageAPI",
         "deprecated": false
       }
     },
@@ -12564,12 +12564,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-publish-date-api/"
         },
-        "summary": "Extract Publish Date",
+        "summary": "Extract Publish Date API",
         "tags": [
           "Web"
         ],
         "description": "Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.",
-        "operationId": "extractPublishDate",
+        "operationId": "extractPublishDateAPI",
         "deprecated": false
       }
     },
@@ -12656,12 +12656,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-authors-api/"
         },
-        "summary": "Extract Authors",
+        "summary": "Extract Authors API",
         "tags": [
           "Web"
         ],
         "description": "Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.",
-        "operationId": "extractAuthors",
+        "operationId": "extractAuthorsAPI",
         "deprecated": false
       }
     },
@@ -12788,12 +12788,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/web-search-api/"
         },
-        "summary": "Search Web",
+        "summary": "Search Web API",
         "tags": [
           "Web"
         ],
         "description": "Search the web for a given query. The API returns a list of results with the title, summary, and URL.",
-        "operationId": "searchWeb",
+        "operationId": "searchWebAPI",
         "deprecated": false
       }
     },
@@ -12870,12 +12870,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/page-rank-api/"
         },
-        "summary": "Retrieve Page Rank",
+        "summary": "Retrieve Page Rank API",
         "tags": [
           "Web"
         ],
         "description": "This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.",
-        "operationId": "retrievePageRank",
+        "operationId": "retrievePageRankAPI",
         "deprecated": false
       }
     },
@@ -12997,12 +12997,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/email-verification-api/"
         },
-        "summary": "Verify Email Address",
+        "summary": "Verify Email Address API",
         "tags": [
           "Web"
         ],
         "description": "This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.",
-        "operationId": "verifyEmailAddress",
+        "operationId": "verifyEmailAddressAPI",
         "deprecated": false
       }
     },
@@ -13086,12 +13086,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/correct-spelling-api/"
         },
-        "summary": "Correct Spelling",
+        "summary": "Correct Spelling API",
         "tags": [
           "Text"
         ],
         "description": "The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).",
-        "operationId": "correctSpelling",
+        "operationId": "correctSpellingAPI",
         "deprecated": false
       }
     },
@@ -13198,12 +13198,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/detect-language-api/"
         },
-        "summary": "Detect Language",
+        "summary": "Detect Language API",
         "tags": [
           "Text"
         ],
         "description": "Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.",
-        "operationId": "detectLanguage",
+        "operationId": "detectLanguageAPI",
         "deprecated": false
       }
     },
@@ -13317,12 +13317,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/detect-sentiment-api/"
         },
-        "summary": "Detect Sentiment",
+        "summary": "Detect Sentiment API",
         "tags": [
           "Text"
         ],
         "description": "Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.",
-        "operationId": "detectSentiment",
+        "operationId": "detectSentimentAPI",
         "deprecated": false
       }
     },
@@ -13705,12 +13705,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/score-text-api/"
         },
-        "summary": "Score Text",
+        "summary": "Score Text API",
         "tags": [
           "Text"
         ],
         "description": "Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.",
-        "operationId": "scoreText",
+        "operationId": "scoreTextAPI",
         "deprecated": false
       }
     },
@@ -13840,12 +13840,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/score-readability-api/"
         },
-        "summary": "Score Readability",
+        "summary": "Score Readability API",
         "tags": [
           "Text"
         ],
         "description": "Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.",
-        "operationId": "scoreReadability",
+        "operationId": "scoreReadabilityAPI",
         "deprecated": false
       }
     },
@@ -13944,12 +13944,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-dates-api/"
         },
-        "summary": "Extract Dates",
+        "summary": "Extract Dates API",
         "tags": [
           "Text"
         ],
         "description": "Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).",
-        "operationId": "extractDates",
+        "operationId": "extractDatesAPI",
         "deprecated": false
       }
     },
@@ -14031,12 +14031,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/gender-name-detection-api/"
         },
-        "summary": "Detect Gender by Name",
+        "summary": "Detect Gender by Name API",
         "tags": [
           "Text"
         ],
         "description": "Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.",
-        "operationId": "detectGenderByName",
+        "operationId": "detectGenderByNameAPI",
         "deprecated": false
       }
     },
@@ -14113,12 +14113,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/synonyms-api/"
         },
-        "summary": "List Word Synonyms",
+        "summary": "List Word Synonyms API",
         "tags": [
           "Text"
         ],
         "description": "Return synonyms of a word.",
-        "operationId": "listWordSynonyms",
+        "operationId": "listWordSynonymsAPI",
         "deprecated": false
       }
     },
@@ -14188,12 +14188,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/pos-tagging-api/"
         },
-        "summary": "Tag Part of Speech",
+        "summary": "Tag Part of Speech API",
         "tags": [
           "Text"
         ],
         "description": "Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.",
-        "operationId": "tagPartOfSpeech",
+        "operationId": "tagPartOfSpeechAPI",
         "deprecated": false
       }
     },
@@ -14268,12 +14268,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/stemming-api/"
         },
-        "summary": "Stem Text",
+        "summary": "Stem Text API",
         "tags": [
           "Text"
         ],
         "description": "The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.",
-        "operationId": "stemText",
+        "operationId": "stemTextAPI",
         "deprecated": false
       }
     },
@@ -14348,12 +14348,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/word-singularization-pluralization-api/"
         },
-        "summary": "Singularize Word",
+        "summary": "Singularize Word API",
         "tags": [
           "Text"
         ],
         "description": "Find the singular form of a word.",
-        "operationId": "singularizeWord",
+        "operationId": "singularizeWordAPI",
         "deprecated": false
       }
     },
@@ -14428,12 +14428,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/word-singularization-pluralization-api/"
         },
-        "summary": "Pluralize Word",
+        "summary": "Pluralize Word API",
         "tags": [
           "Text"
         ],
         "description": "Find the plural form of a word.",
-        "operationId": "pluralizeWord",
+        "operationId": "pluralizeWordAPI",
         "deprecated": false
       }
     },
@@ -14539,12 +14539,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/extract-entities-api/"
         },
-        "summary": "Extract Entities",
+        "summary": "Extract Entities API",
         "tags": [
           "Text"
         ],
         "description": "Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.",
-        "operationId": "extractEntities",
+        "operationId": "extractEntitiesAPI",
         "deprecated": false
       }
     },
@@ -14698,12 +14698,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-images-api/"
         },
-        "summary": "Search Royalty Free Images",
+        "summary": "Search Royalty Free Images API",
         "tags": [
           "Media"
         ],
         "description": "Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.",
-        "operationId": "searchRoyaltyFreeImages",
+        "operationId": "searchRoyaltyFreeImagesAPI",
         "deprecated": false
       }
     },
@@ -14869,12 +14869,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/search-icons-api/"
         },
-        "summary": "Search Icons",
+        "summary": "Search Icons API",
         "tags": [
           "Media"
         ],
         "description": "Search through millions of icons to match any topic you want.",
-        "operationId": "searchIcons",
+        "operationId": "searchIconsAPI",
         "deprecated": false
       }
     },
@@ -14974,12 +14974,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/rescale-image-api/"
         },
-        "summary": "Rescale Image",
+        "summary": "Rescale Image API",
         "tags": [
           "Media"
         ],
         "description": "Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.",
-        "operationId": "rescaleImage",
+        "operationId": "rescaleImageAPI",
         "deprecated": false
       }
     },
@@ -15074,12 +15074,156 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/detect-main-image-color-api/"
         },
-        "summary": "Detect Main Image Color",
+        "summary": "Detect Main Image Color API",
         "tags": [
           "Media"
         ],
         "description": "Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.",
-        "operationId": "detectMainImageColor",
+        "operationId": "detectMainImageColorAPI",
+        "deprecated": false
+      }
+    },
+    "/search-vectors": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "vectors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "license": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "author": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "image_url": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "vectors": [
+                        {
+                          "license": "ATTRIBUTION",
+                          "title": "Airplanes",
+                          "author": "Candy Design",
+                          "image_url": "https://img.apileague.com/icons/10507904.svg"
+                        },
+                        {
+                          "license": "ATTRIBUTION",
+                          "title": "Model Airplanes",
+                          "author": "Juicy Fish",
+                          "image_url": "https://img.apileague.com/icons/10427558.svg"
+                        },
+                        {
+                          "license": "ATTRIBUTION",
+                          "title": "Paper Airplanes",
+                          "author": "HideMaru",
+                          "image_url": "https://img.apileague.com/icons/9051410.svg"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "airplanes"
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of vectors to skip, between 0 and 1000",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of vectors to return in range [1,10]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 100,
+              "type": "integer",
+              "example": 3
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/vector-search-api/"
+        },
+        "summary": "Vector Search API",
+        "tags": [
+          "Media"
+        ],
+        "description": "Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.",
+        "operationId": "vectorSearchAPI",
         "deprecated": false
       }
     },
@@ -15196,12 +15340,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/convert-units-api/"
         },
-        "summary": "Convert Units",
+        "summary": "Convert Units API",
         "tags": [
           "Math"
         ],
         "description": "Convert units from one to another. The API returns the amount and the unit of the target unit.",
-        "operationId": "convertUnits",
+        "operationId": "convertUnitsAPI",
         "deprecated": false
       }
     },
@@ -15271,12 +15415,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/key-value-storage-api/"
         },
-        "summary": "Read Key Value from Store",
+        "summary": "Read Key Value from Store API",
         "tags": [
           "Storage"
         ],
         "description": "Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.",
-        "operationId": "readKeyValueFromStore",
+        "operationId": "readKeyValueFromStoreAPI",
         "deprecated": false
       }
     },
@@ -15360,12 +15504,12 @@
           "description": "Read entire docs",
           "url": "https://apileague.com/apis/key-value-storage-api/"
         },
-        "summary": "Store Key Value (GET)",
+        "summary": "Store Key Value (GET) API",
         "tags": [
           "Storage"
         ],
         "description": "Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.",
-        "operationId": "storeKeyValueGET",
+        "operationId": "storeKeyValueGETAPI",
         "deprecated": false
       }
     }

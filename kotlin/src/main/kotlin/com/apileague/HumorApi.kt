@@ -19,12 +19,12 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.GenerateNonsenseWord200Response
-import com.apileague.client.model.RandomMeme200Response
-import com.apileague.client.model.SearchGifs200Response
-import com.apileague.client.model.SearchJokes200Response
-import com.apileague.client.model.SearchJokes200ResponseJokesInner
-import com.apileague.client.model.SearchMemes200Response
+import com.apileague.client.model.GenerateNonsenseWordAPI200Response
+import com.apileague.client.model.RandomMemeAPI200Response
+import com.apileague.client.model.SearchGifsAPI200Response
+import com.apileague.client.model.SearchJokesAPI200Response
+import com.apileague.client.model.SearchJokesAPI200ResponseJokesInner
+import com.apileague.client.model.SearchMemesAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -51,9 +51,9 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * @return GenerateNonsenseWord200Response
+     * @return GenerateNonsenseWordAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun generateNonsenseWord() : GenerateNonsenseWord200Response {
-        val localVarResponse = generateNonsenseWordWithHttpInfo()
+    fun generateNonsenseWordAPI() : GenerateNonsenseWordAPI200Response {
+        val localVarResponse = generateNonsenseWordAPIWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as GenerateNonsenseWord200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GenerateNonsenseWordAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -81,28 +81,28 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * @return ApiResponse<GenerateNonsenseWord200Response?>
+     * @return ApiResponse<GenerateNonsenseWordAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun generateNonsenseWordWithHttpInfo() : ApiResponse<GenerateNonsenseWord200Response?> {
-        val localVariableConfig = generateNonsenseWordRequestConfig()
+    fun generateNonsenseWordAPIWithHttpInfo() : ApiResponse<GenerateNonsenseWordAPI200Response?> {
+        val localVariableConfig = generateNonsenseWordAPIRequestConfig()
 
-        return request<Unit, GenerateNonsenseWord200Response>(
+        return request<Unit, GenerateNonsenseWordAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation generateNonsenseWord
+     * To obtain the request config of the operation generateNonsenseWordAPI
      *
      * @return RequestConfig
      */
-    fun generateNonsenseWordRequestConfig() : RequestConfig<Unit> {
+    fun generateNonsenseWordAPIRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -119,13 +119,13 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Random Joke
+     * Random Joke API
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
-     * @return SearchJokes200ResponseJokesInner
+     * @return SearchJokesAPI200ResponseJokesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -134,11 +134,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomJoke(includeTags: kotlin.String? = null, excludeTags: kotlin.String? = null, minRating: kotlin.Double? = null, maxLength: kotlin.Int? = null) : SearchJokes200ResponseJokesInner {
-        val localVarResponse = randomJokeWithHttpInfo(includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength)
+    fun randomJokeAPI(includeTags: kotlin.String? = null, excludeTags: kotlin.String? = null, minRating: kotlin.Double? = null, maxLength: kotlin.Int? = null) : SearchJokesAPI200ResponseJokesInner {
+        val localVarResponse = randomJokeAPIWithHttpInfo(includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchJokes200ResponseJokesInner
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchJokesAPI200ResponseJokesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -153,28 +153,28 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Random Joke
+     * Random Joke API
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes. (optional)
      * @param maxLength The maximum length of the joke in letters. (optional)
-     * @return ApiResponse<SearchJokes200ResponseJokesInner?>
+     * @return ApiResponse<SearchJokesAPI200ResponseJokesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomJokeWithHttpInfo(includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Int?) : ApiResponse<SearchJokes200ResponseJokesInner?> {
-        val localVariableConfig = randomJokeRequestConfig(includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength)
+    fun randomJokeAPIWithHttpInfo(includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Int?) : ApiResponse<SearchJokesAPI200ResponseJokesInner?> {
+        val localVariableConfig = randomJokeAPIRequestConfig(includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength)
 
-        return request<Unit, SearchJokes200ResponseJokesInner>(
+        return request<Unit, SearchJokesAPI200ResponseJokesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomJoke
+     * To obtain the request config of the operation randomJokeAPI
      *
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
      * @param excludeTags A comma-separated list of tags the jokes must not have. (optional)
@@ -182,7 +182,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @return RequestConfig
      */
-    fun randomJokeRequestConfig(includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Int?) : RequestConfig<Unit> {
+    fun randomJokeAPIRequestConfig(includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -213,14 +213,14 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Random Meme
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
-     * @return RandomMeme200Response
+     * @return RandomMemeAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -229,11 +229,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomMeme(keywords: kotlin.String? = null, keywordsInImage: kotlin.Boolean? = null, mediaType: kotlin.String? = null, minRating: kotlin.Double? = null, maxAgeDays: kotlin.Int? = null) : RandomMeme200Response {
-        val localVarResponse = randomMemeWithHttpInfo(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays)
+    fun randomMemeAPI(keywords: kotlin.String? = null, keywordsInImage: kotlin.Boolean? = null, mediaType: kotlin.String? = null, minRating: kotlin.Double? = null, maxAgeDays: kotlin.Int? = null) : RandomMemeAPI200Response {
+        val localVarResponse = randomMemeAPIWithHttpInfo(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomMeme200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomMemeAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -248,29 +248,29 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Random Meme
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
      * @param minRating The minimum rating in range [0.0,1.0] of the meme. (optional)
      * @param maxAgeDays The maximum age of the meme in days. (optional)
-     * @return ApiResponse<RandomMeme200Response?>
+     * @return ApiResponse<RandomMemeAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomMemeWithHttpInfo(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?) : ApiResponse<RandomMeme200Response?> {
-        val localVariableConfig = randomMemeRequestConfig(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays)
+    fun randomMemeAPIWithHttpInfo(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?) : ApiResponse<RandomMemeAPI200Response?> {
+        val localVariableConfig = randomMemeAPIRequestConfig(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays)
 
-        return request<Unit, RandomMeme200Response>(
+        return request<Unit, RandomMemeAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomMeme
+     * To obtain the request config of the operation randomMemeAPI
      *
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
@@ -279,7 +279,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @return RequestConfig
      */
-    fun randomMemeRequestConfig(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?) : RequestConfig<Unit> {
+    fun randomMemeAPIRequestConfig(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -313,11 +313,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Gifs
+     * Search Gifs API
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10] (optional)
-     * @return SearchGifs200Response
+     * @return SearchGifsAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -326,11 +326,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchGifs(query: kotlin.String, number: kotlin.Int? = null) : SearchGifs200Response {
-        val localVarResponse = searchGifsWithHttpInfo(query = query, number = number)
+    fun searchGifsAPI(query: kotlin.String, number: kotlin.Int? = null) : SearchGifsAPI200Response {
+        val localVarResponse = searchGifsAPIWithHttpInfo(query = query, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchGifs200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchGifsAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -345,32 +345,32 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Gifs
+     * Search Gifs API
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10] (optional)
-     * @return ApiResponse<SearchGifs200Response?>
+     * @return ApiResponse<SearchGifsAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchGifsWithHttpInfo(query: kotlin.String, number: kotlin.Int?) : ApiResponse<SearchGifs200Response?> {
-        val localVariableConfig = searchGifsRequestConfig(query = query, number = number)
+    fun searchGifsAPIWithHttpInfo(query: kotlin.String, number: kotlin.Int?) : ApiResponse<SearchGifsAPI200Response?> {
+        val localVariableConfig = searchGifsAPIRequestConfig(query = query, number = number)
 
-        return request<Unit, SearchGifs200Response>(
+        return request<Unit, SearchGifsAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchGifs
+     * To obtain the request config of the operation searchGifsAPI
      *
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10] (optional)
      * @return RequestConfig
      */
-    fun searchGifsRequestConfig(query: kotlin.String, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchGifsAPIRequestConfig(query: kotlin.String, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -393,7 +393,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Jokes
+     * Search Jokes API
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
@@ -402,7 +402,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
-     * @return SearchJokes200Response
+     * @return SearchJokesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -411,11 +411,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchJokes(keywords: kotlin.String? = null, includeTags: kotlin.String? = null, excludeTags: kotlin.String? = null, minRating: kotlin.Double? = null, maxLength: kotlin.Double? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchJokes200Response {
-        val localVarResponse = searchJokesWithHttpInfo(keywords = keywords, includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength, offset = offset, number = number)
+    fun searchJokesAPI(keywords: kotlin.String? = null, includeTags: kotlin.String? = null, excludeTags: kotlin.String? = null, minRating: kotlin.Double? = null, maxLength: kotlin.Double? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchJokesAPI200Response {
+        val localVarResponse = searchJokesAPIWithHttpInfo(keywords = keywords, includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength, offset = offset, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchJokes200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchJokesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -430,7 +430,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Jokes
+     * Search Jokes API
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
@@ -439,22 +439,22 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxLength The maximum length of the joke in letters. (optional)
      * @param offset The number of jokes to skip, between 0 and 1000. (optional)
      * @param number The number of jokes, between 1 and 10. (optional)
-     * @return ApiResponse<SearchJokes200Response?>
+     * @return ApiResponse<SearchJokesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchJokesWithHttpInfo(keywords: kotlin.String?, includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Double?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchJokes200Response?> {
-        val localVariableConfig = searchJokesRequestConfig(keywords = keywords, includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength, offset = offset, number = number)
+    fun searchJokesAPIWithHttpInfo(keywords: kotlin.String?, includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Double?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchJokesAPI200Response?> {
+        val localVariableConfig = searchJokesAPIRequestConfig(keywords = keywords, includeTags = includeTags, excludeTags = excludeTags, minRating = minRating, maxLength = maxLength, offset = offset, number = number)
 
-        return request<Unit, SearchJokes200Response>(
+        return request<Unit, SearchJokesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchJokes
+     * To obtain the request config of the operation searchJokesAPI
      *
      * @param keywords A comma-separated list of words that must occur in the joke. (optional)
      * @param includeTags A comma-separated list of tags the jokes should have. (optional)
@@ -465,7 +465,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param number The number of jokes, between 1 and 10. (optional)
      * @return RequestConfig
      */
-    fun searchJokesRequestConfig(keywords: kotlin.String?, includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Double?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchJokesAPIRequestConfig(keywords: kotlin.String?, includeTags: kotlin.String?, excludeTags: kotlin.String?, minRating: kotlin.Double?, maxLength: kotlin.Double?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -505,8 +505,8 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Memes
-     * With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
+     * Search Memes API
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You&#39;ll surely find something funny.
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
@@ -514,7 +514,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
      * @param number The number of memes, between 1 and 10. (optional)
-     * @return SearchMemes200Response
+     * @return SearchMemesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -523,11 +523,11 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchMemes(keywords: kotlin.String? = null, keywordsInImage: kotlin.Boolean? = null, mediaType: kotlin.String? = null, minRating: kotlin.Double? = null, maxAgeDays: kotlin.Int? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchMemes200Response {
-        val localVarResponse = searchMemesWithHttpInfo(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays, offset = offset, number = number)
+    fun searchMemesAPI(keywords: kotlin.String? = null, keywordsInImage: kotlin.Boolean? = null, mediaType: kotlin.String? = null, minRating: kotlin.Double? = null, maxAgeDays: kotlin.Int? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchMemesAPI200Response {
+        val localVarResponse = searchMemesAPIWithHttpInfo(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays, offset = offset, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchMemes200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchMemesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -542,8 +542,8 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Memes
-     * With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
+     * Search Memes API
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You&#39;ll surely find something funny.
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
      * @param mediaType The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;). (optional)
@@ -551,22 +551,22 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param maxAgeDays The maximum age of the meme in days. (optional)
      * @param offset The number of memes to skip, between 0 and 1000. (optional)
      * @param number The number of memes, between 1 and 10. (optional)
-     * @return ApiResponse<SearchMemes200Response?>
+     * @return ApiResponse<SearchMemesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchMemesWithHttpInfo(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchMemes200Response?> {
-        val localVariableConfig = searchMemesRequestConfig(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays, offset = offset, number = number)
+    fun searchMemesAPIWithHttpInfo(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchMemesAPI200Response?> {
+        val localVariableConfig = searchMemesAPIRequestConfig(keywords = keywords, keywordsInImage = keywordsInImage, mediaType = mediaType, minRating = minRating, maxAgeDays = maxAgeDays, offset = offset, number = number)
 
-        return request<Unit, SearchMemes200Response>(
+        return request<Unit, SearchMemesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchMemes
+     * To obtain the request config of the operation searchMemesAPI
      *
      * @param keywords A comma-separated list of words that must occur in the meme. (optional)
      * @param keywordsInImage Whether the keywords must occur in the image. (optional)
@@ -577,7 +577,7 @@ class HumorApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param number The number of memes, between 1 and 10. (optional)
      * @return RequestConfig
      */
-    fun searchMemesRequestConfig(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchMemesAPIRequestConfig(keywords: kotlin.String?, keywordsInImage: kotlin.Boolean?, mediaType: kotlin.String?, minRating: kotlin.Double?, maxAgeDays: kotlin.Int?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

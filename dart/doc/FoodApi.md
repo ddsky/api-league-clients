@@ -9,17 +9,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**computeNutrition**](FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
-[**retrieveRecipeInformation**](FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
-[**searchDrinks**](FoodApi.md#searchdrinks) | **GET** /search-drinks | Search Drinks
-[**searchRecipes**](FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
-[**searchRestaurants**](FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
+[**computeNutritionAPI**](FoodApi.md#computenutritionapi) | **GET** /compute-nutrition | Compute Nutrition API
+[**retrieveRecipeInformationAPI**](FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+[**searchDrinksAPI**](FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API
+[**searchRecipesAPI**](FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API
+[**searchRestaurantsAPI**](FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API
 
 
-# **computeNutrition**
-> ComputeNutrition200Response computeNutrition(ingredients, servings, reduceOils)
+# **computeNutritionAPI**
+> ComputeNutritionAPI200Response computeNutritionAPI(ingredients, servings, reduceOils)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -41,10 +41,10 @@ final servings = 1; // int | The number of servings the ingredients make. Nutrit
 final reduceOils = true; // bool | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
 
 try {
-    final result = api_instance.computeNutrition(ingredients, servings, reduceOils);
+    final result = api_instance.computeNutritionAPI(ingredients, servings, reduceOils);
     print(result);
 } catch (e) {
-    print('Exception when calling FoodApi->computeNutrition: $e\n');
+    print('Exception when calling FoodApi->computeNutritionAPI: $e\n');
 }
 ```
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -71,10 +71,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieveRecipeInformation**
-> RetrieveRecipeInformation200Response retrieveRecipeInformation(id, addWinePairing)
+# **retrieveRecipeInformationAPI**
+> RetrieveRecipeInformationAPI200Response retrieveRecipeInformationAPI(id, addWinePairing)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -95,10 +95,10 @@ final id = 74987; // int | The id of the recipe to retrieve.
 final addWinePairing = true; // bool | Whether to pair a wine to the recipe.
 
 try {
-    final result = api_instance.retrieveRecipeInformation(id, addWinePairing);
+    final result = api_instance.retrieveRecipeInformationAPI(id, addWinePairing);
     print(result);
 } catch (e) {
-    print('Exception when calling FoodApi->retrieveRecipeInformation: $e\n');
+    print('Exception when calling FoodApi->retrieveRecipeInformationAPI: $e\n');
 }
 ```
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -124,10 +124,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchDrinks**
-> SearchDrinks200Response searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+# **searchDrinksAPI**
+> SearchDrinksAPI200Response searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -168,10 +168,10 @@ final offset = 0; // int | The number of drinks to skip, between 0 and 90.
 final number = 3; // int | The number of drinks, between 1 and 10.
 
 try {
-    final result = api_instance.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+    final result = api_instance.searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling FoodApi->searchDrinks: $e\n');
+    print('Exception when calling FoodApi->searchDrinksAPI: $e\n');
 }
 ```
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -217,10 +217,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchRecipes**
-> SearchRecipes200Response searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
+# **searchRecipesAPI**
+> SearchRecipesAPI200Response searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -329,10 +329,10 @@ final offset = 0; // int | The number of recipes to skip, between 0 and 900.
 final number = 3; // int | The number of recipes, between 1 and 100.
 
 try {
-    final result = api_instance.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
+    final result = api_instance.searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling FoodApi->searchRecipes: $e\n');
+    print('Exception when calling FoodApi->searchRecipesAPI: $e\n');
 }
 ```
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -446,10 +446,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchRestaurants**
-> SearchRestaurants200Response searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
+# **searchRestaurantsAPI**
+> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -478,10 +478,10 @@ final page = 0; // int | The page of the results.
 final sort = rating; // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
 
 try {
-    final result = api_instance.searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
+    final result = api_instance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
     print(result);
 } catch (e) {
-    print('Exception when calling FoodApi->searchRestaurants: $e\n');
+    print('Exception when calling FoodApi->searchRestaurantsAPI: $e\n');
 }
 ```
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

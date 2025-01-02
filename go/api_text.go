@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // TextAPIService TextAPI service
 type TextAPIService service
 
-type ApiCorrectSpellingRequest struct {
+type ApiCorrectSpellingAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
@@ -31,47 +31,47 @@ type ApiCorrectSpellingRequest struct {
 }
 
 // The text to be corrected.
-func (r ApiCorrectSpellingRequest) Text(text string) ApiCorrectSpellingRequest {
+func (r ApiCorrectSpellingAPIRequest) Text(text string) ApiCorrectSpellingAPIRequest {
 	r.text = &text
 	return r
 }
 
 // The language of the text, one of en, de, es, fr, or it.
-func (r ApiCorrectSpellingRequest) Language(language string) ApiCorrectSpellingRequest {
+func (r ApiCorrectSpellingAPIRequest) Language(language string) ApiCorrectSpellingAPIRequest {
 	r.language = &language
 	return r
 }
 
-func (r ApiCorrectSpellingRequest) Execute() (*CorrectSpelling200Response, *http.Response, error) {
-	return r.ApiService.CorrectSpellingExecute(r)
+func (r ApiCorrectSpellingAPIRequest) Execute() (*CorrectSpellingAPI200Response, *http.Response, error) {
+	return r.ApiService.CorrectSpellingAPIExecute(r)
 }
 
 /*
-CorrectSpelling Correct Spelling
+CorrectSpellingAPI Correct Spelling API
 
 The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCorrectSpellingRequest
+ @return ApiCorrectSpellingAPIRequest
 */
-func (a *TextAPIService) CorrectSpelling(ctx context.Context) ApiCorrectSpellingRequest {
-	return ApiCorrectSpellingRequest{
+func (a *TextAPIService) CorrectSpellingAPI(ctx context.Context) ApiCorrectSpellingAPIRequest {
+	return ApiCorrectSpellingAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CorrectSpelling200Response
-func (a *TextAPIService) CorrectSpellingExecute(r ApiCorrectSpellingRequest) (*CorrectSpelling200Response, *http.Response, error) {
+//  @return CorrectSpellingAPI200Response
+func (a *TextAPIService) CorrectSpellingAPIExecute(r ApiCorrectSpellingAPIRequest) (*CorrectSpellingAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CorrectSpelling200Response
+		localVarReturnValue  *CorrectSpellingAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.CorrectSpelling")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.CorrectSpellingAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -178,48 +178,48 @@ func (a *TextAPIService) CorrectSpellingExecute(r ApiCorrectSpellingRequest) (*C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDetectGenderByNameRequest struct {
+type ApiDetectGenderByNameAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	name *string
 }
 
 // The name of the perso for which the sentiment should be detected.
-func (r ApiDetectGenderByNameRequest) Name(name string) ApiDetectGenderByNameRequest {
+func (r ApiDetectGenderByNameAPIRequest) Name(name string) ApiDetectGenderByNameAPIRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiDetectGenderByNameRequest) Execute() (*DetectGenderByName200Response, *http.Response, error) {
-	return r.ApiService.DetectGenderByNameExecute(r)
+func (r ApiDetectGenderByNameAPIRequest) Execute() (*DetectGenderByNameAPI200Response, *http.Response, error) {
+	return r.ApiService.DetectGenderByNameAPIExecute(r)
 }
 
 /*
-DetectGenderByName Detect Gender by Name
+DetectGenderByNameAPI Detect Gender by Name API
 
 Detect the likelihood that a name is given to a male or female (aka to "genderize" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetectGenderByNameRequest
+ @return ApiDetectGenderByNameAPIRequest
 */
-func (a *TextAPIService) DetectGenderByName(ctx context.Context) ApiDetectGenderByNameRequest {
-	return ApiDetectGenderByNameRequest{
+func (a *TextAPIService) DetectGenderByNameAPI(ctx context.Context) ApiDetectGenderByNameAPIRequest {
+	return ApiDetectGenderByNameAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DetectGenderByName200Response
-func (a *TextAPIService) DetectGenderByNameExecute(r ApiDetectGenderByNameRequest) (*DetectGenderByName200Response, *http.Response, error) {
+//  @return DetectGenderByNameAPI200Response
+func (a *TextAPIService) DetectGenderByNameAPIExecute(r ApiDetectGenderByNameAPIRequest) (*DetectGenderByNameAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DetectGenderByName200Response
+		localVarReturnValue  *DetectGenderByNameAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectGenderByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectGenderByNameAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -319,48 +319,48 @@ func (a *TextAPIService) DetectGenderByNameExecute(r ApiDetectGenderByNameReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDetectLanguageRequest struct {
+type ApiDetectLanguageAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text for which the language should be detected.
-func (r ApiDetectLanguageRequest) Text(text string) ApiDetectLanguageRequest {
+func (r ApiDetectLanguageAPIRequest) Text(text string) ApiDetectLanguageAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiDetectLanguageRequest) Execute() ([]DetectLanguage200ResponseInner, *http.Response, error) {
-	return r.ApiService.DetectLanguageExecute(r)
+func (r ApiDetectLanguageAPIRequest) Execute() ([]DetectLanguageAPI200ResponseInner, *http.Response, error) {
+	return r.ApiService.DetectLanguageAPIExecute(r)
 }
 
 /*
-DetectLanguage Detect Language
+DetectLanguageAPI Detect Language API
 
 Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetectLanguageRequest
+ @return ApiDetectLanguageAPIRequest
 */
-func (a *TextAPIService) DetectLanguage(ctx context.Context) ApiDetectLanguageRequest {
-	return ApiDetectLanguageRequest{
+func (a *TextAPIService) DetectLanguageAPI(ctx context.Context) ApiDetectLanguageAPIRequest {
+	return ApiDetectLanguageAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DetectLanguage200ResponseInner
-func (a *TextAPIService) DetectLanguageExecute(r ApiDetectLanguageRequest) ([]DetectLanguage200ResponseInner, *http.Response, error) {
+//  @return []DetectLanguageAPI200ResponseInner
+func (a *TextAPIService) DetectLanguageAPIExecute(r ApiDetectLanguageAPIRequest) ([]DetectLanguageAPI200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DetectLanguage200ResponseInner
+		localVarReturnValue  []DetectLanguageAPI200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectLanguage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectLanguageAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -460,48 +460,48 @@ func (a *TextAPIService) DetectLanguageExecute(r ApiDetectLanguageRequest) ([]De
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDetectSentimentRequest struct {
+type ApiDetectSentimentAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text for which the sentiment should be detected.
-func (r ApiDetectSentimentRequest) Text(text string) ApiDetectSentimentRequest {
+func (r ApiDetectSentimentAPIRequest) Text(text string) ApiDetectSentimentAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiDetectSentimentRequest) Execute() (*DetectSentiment200Response, *http.Response, error) {
-	return r.ApiService.DetectSentimentExecute(r)
+func (r ApiDetectSentimentAPIRequest) Execute() (*DetectSentimentAPI200Response, *http.Response, error) {
+	return r.ApiService.DetectSentimentAPIExecute(r)
 }
 
 /*
-DetectSentiment Detect Sentiment
+DetectSentimentAPI Detect Sentiment API
 
 Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetectSentimentRequest
+ @return ApiDetectSentimentAPIRequest
 */
-func (a *TextAPIService) DetectSentiment(ctx context.Context) ApiDetectSentimentRequest {
-	return ApiDetectSentimentRequest{
+func (a *TextAPIService) DetectSentimentAPI(ctx context.Context) ApiDetectSentimentAPIRequest {
+	return ApiDetectSentimentAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DetectSentiment200Response
-func (a *TextAPIService) DetectSentimentExecute(r ApiDetectSentimentRequest) (*DetectSentiment200Response, *http.Response, error) {
+//  @return DetectSentimentAPI200Response
+func (a *TextAPIService) DetectSentimentAPIExecute(r ApiDetectSentimentAPIRequest) (*DetectSentimentAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DetectSentiment200Response
+		localVarReturnValue  *DetectSentimentAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectSentiment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.DetectSentimentAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -601,48 +601,48 @@ func (a *TextAPIService) DetectSentimentExecute(r ApiDetectSentimentRequest) (*D
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiExtractDatesRequest struct {
+type ApiExtractDatesAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text from which dates should be extracted.
-func (r ApiExtractDatesRequest) Text(text string) ApiExtractDatesRequest {
+func (r ApiExtractDatesAPIRequest) Text(text string) ApiExtractDatesAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiExtractDatesRequest) Execute() (*ExtractDates200Response, *http.Response, error) {
-	return r.ApiService.ExtractDatesExecute(r)
+func (r ApiExtractDatesAPIRequest) Execute() (*ExtractDatesAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractDatesAPIExecute(r)
 }
 
 /*
-ExtractDates Extract Dates
+ExtractDatesAPI Extract Dates API
 
 Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of "April 5th, 2035", "04/05/2035", or "05.04.2035". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractDatesRequest
+ @return ApiExtractDatesAPIRequest
 */
-func (a *TextAPIService) ExtractDates(ctx context.Context) ApiExtractDatesRequest {
-	return ApiExtractDatesRequest{
+func (a *TextAPIService) ExtractDatesAPI(ctx context.Context) ApiExtractDatesAPIRequest {
+	return ApiExtractDatesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractDates200Response
-func (a *TextAPIService) ExtractDatesExecute(r ApiExtractDatesRequest) (*ExtractDates200Response, *http.Response, error) {
+//  @return ExtractDatesAPI200Response
+func (a *TextAPIService) ExtractDatesAPIExecute(r ApiExtractDatesAPIRequest) (*ExtractDatesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractDates200Response
+		localVarReturnValue  *ExtractDatesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ExtractDates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ExtractDatesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -742,48 +742,48 @@ func (a *TextAPIService) ExtractDatesExecute(r ApiExtractDatesRequest) (*Extract
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiExtractEntitiesRequest struct {
+type ApiExtractEntitiesAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text from which entities should be extracted.
-func (r ApiExtractEntitiesRequest) Text(text string) ApiExtractEntitiesRequest {
+func (r ApiExtractEntitiesAPIRequest) Text(text string) ApiExtractEntitiesAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiExtractEntitiesRequest) Execute() (*ExtractEntities200Response, *http.Response, error) {
-	return r.ApiService.ExtractEntitiesExecute(r)
+func (r ApiExtractEntitiesAPIRequest) Execute() (*ExtractEntitiesAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractEntitiesAPIExecute(r)
 }
 
 /*
-ExtractEntities Extract Entities
+ExtractEntitiesAPI Extract Entities API
 
 Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word "Canada" represents the concept of a country. The word "Jim Carrey" represents the concept of a person. The word "Tesla" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractEntitiesRequest
+ @return ApiExtractEntitiesAPIRequest
 */
-func (a *TextAPIService) ExtractEntities(ctx context.Context) ApiExtractEntitiesRequest {
-	return ApiExtractEntitiesRequest{
+func (a *TextAPIService) ExtractEntitiesAPI(ctx context.Context) ApiExtractEntitiesAPIRequest {
+	return ApiExtractEntitiesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractEntities200Response
-func (a *TextAPIService) ExtractEntitiesExecute(r ApiExtractEntitiesRequest) (*ExtractEntities200Response, *http.Response, error) {
+//  @return ExtractEntitiesAPI200Response
+func (a *TextAPIService) ExtractEntitiesAPIExecute(r ApiExtractEntitiesAPIRequest) (*ExtractEntitiesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractEntities200Response
+		localVarReturnValue  *ExtractEntitiesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ExtractEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ExtractEntitiesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -883,48 +883,48 @@ func (a *TextAPIService) ExtractEntitiesExecute(r ApiExtractEntitiesRequest) (*E
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListWordSynonymsRequest struct {
+type ApiListWordSynonymsAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	word *string
 }
 
 // The (noun) word for which a list of synonyms should be returned.
-func (r ApiListWordSynonymsRequest) Word(word string) ApiListWordSynonymsRequest {
+func (r ApiListWordSynonymsAPIRequest) Word(word string) ApiListWordSynonymsAPIRequest {
 	r.word = &word
 	return r
 }
 
-func (r ApiListWordSynonymsRequest) Execute() (*ListWordSynonyms200Response, *http.Response, error) {
-	return r.ApiService.ListWordSynonymsExecute(r)
+func (r ApiListWordSynonymsAPIRequest) Execute() (*ListWordSynonymsAPI200Response, *http.Response, error) {
+	return r.ApiService.ListWordSynonymsAPIExecute(r)
 }
 
 /*
-ListWordSynonyms List Word Synonyms
+ListWordSynonymsAPI List Word Synonyms API
 
 Return synonyms of a word.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListWordSynonymsRequest
+ @return ApiListWordSynonymsAPIRequest
 */
-func (a *TextAPIService) ListWordSynonyms(ctx context.Context) ApiListWordSynonymsRequest {
-	return ApiListWordSynonymsRequest{
+func (a *TextAPIService) ListWordSynonymsAPI(ctx context.Context) ApiListWordSynonymsAPIRequest {
+	return ApiListWordSynonymsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListWordSynonyms200Response
-func (a *TextAPIService) ListWordSynonymsExecute(r ApiListWordSynonymsRequest) (*ListWordSynonyms200Response, *http.Response, error) {
+//  @return ListWordSynonymsAPI200Response
+func (a *TextAPIService) ListWordSynonymsAPIExecute(r ApiListWordSynonymsAPIRequest) (*ListWordSynonymsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListWordSynonyms200Response
+		localVarReturnValue  *ListWordSynonymsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ListWordSynonyms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ListWordSynonymsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1024,48 +1024,48 @@ func (a *TextAPIService) ListWordSynonymsExecute(r ApiListWordSynonymsRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPluralizeWordRequest struct {
+type ApiPluralizeWordAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	word *string
 }
 
 // The (noun) word for which the plural form should be found.
-func (r ApiPluralizeWordRequest) Word(word string) ApiPluralizeWordRequest {
+func (r ApiPluralizeWordAPIRequest) Word(word string) ApiPluralizeWordAPIRequest {
 	r.word = &word
 	return r
 }
 
-func (r ApiPluralizeWordRequest) Execute() (*PluralizeWord200Response, *http.Response, error) {
-	return r.ApiService.PluralizeWordExecute(r)
+func (r ApiPluralizeWordAPIRequest) Execute() (*PluralizeWordAPI200Response, *http.Response, error) {
+	return r.ApiService.PluralizeWordAPIExecute(r)
 }
 
 /*
-PluralizeWord Pluralize Word
+PluralizeWordAPI Pluralize Word API
 
 Find the plural form of a word.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPluralizeWordRequest
+ @return ApiPluralizeWordAPIRequest
 */
-func (a *TextAPIService) PluralizeWord(ctx context.Context) ApiPluralizeWordRequest {
-	return ApiPluralizeWordRequest{
+func (a *TextAPIService) PluralizeWordAPI(ctx context.Context) ApiPluralizeWordAPIRequest {
+	return ApiPluralizeWordAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PluralizeWord200Response
-func (a *TextAPIService) PluralizeWordExecute(r ApiPluralizeWordRequest) (*PluralizeWord200Response, *http.Response, error) {
+//  @return PluralizeWordAPI200Response
+func (a *TextAPIService) PluralizeWordAPIExecute(r ApiPluralizeWordAPIRequest) (*PluralizeWordAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PluralizeWord200Response
+		localVarReturnValue  *PluralizeWordAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.PluralizeWord")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.PluralizeWordAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1165,48 +1165,48 @@ func (a *TextAPIService) PluralizeWordExecute(r ApiPluralizeWordRequest) (*Plura
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiScoreReadabilityRequest struct {
+type ApiScoreReadabilityAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text to score for readability.
-func (r ApiScoreReadabilityRequest) Text(text string) ApiScoreReadabilityRequest {
+func (r ApiScoreReadabilityAPIRequest) Text(text string) ApiScoreReadabilityAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiScoreReadabilityRequest) Execute() (*ScoreReadability200Response, *http.Response, error) {
-	return r.ApiService.ScoreReadabilityExecute(r)
+func (r ApiScoreReadabilityAPIRequest) Execute() (*ScoreReadabilityAPI200Response, *http.Response, error) {
+	return r.ApiService.ScoreReadabilityAPIExecute(r)
 }
 
 /*
-ScoreReadability Score Readability
+ScoreReadabilityAPI Score Readability API
 
 Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiScoreReadabilityRequest
+ @return ApiScoreReadabilityAPIRequest
 */
-func (a *TextAPIService) ScoreReadability(ctx context.Context) ApiScoreReadabilityRequest {
-	return ApiScoreReadabilityRequest{
+func (a *TextAPIService) ScoreReadabilityAPI(ctx context.Context) ApiScoreReadabilityAPIRequest {
+	return ApiScoreReadabilityAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ScoreReadability200Response
-func (a *TextAPIService) ScoreReadabilityExecute(r ApiScoreReadabilityRequest) (*ScoreReadability200Response, *http.Response, error) {
+//  @return ScoreReadabilityAPI200Response
+func (a *TextAPIService) ScoreReadabilityAPIExecute(r ApiScoreReadabilityAPIRequest) (*ScoreReadabilityAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ScoreReadability200Response
+		localVarReturnValue  *ScoreReadabilityAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ScoreReadability")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ScoreReadabilityAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1306,7 +1306,7 @@ func (a *TextAPIService) ScoreReadabilityExecute(r ApiScoreReadabilityRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiScoreTextRequest struct {
+type ApiScoreTextAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	title *string
@@ -1314,47 +1314,47 @@ type ApiScoreTextRequest struct {
 }
 
 // The title of the text to score.
-func (r ApiScoreTextRequest) Title(title string) ApiScoreTextRequest {
+func (r ApiScoreTextAPIRequest) Title(title string) ApiScoreTextAPIRequest {
 	r.title = &title
 	return r
 }
 
 // The text to score for multiple metrics.
-func (r ApiScoreTextRequest) Text(text string) ApiScoreTextRequest {
+func (r ApiScoreTextAPIRequest) Text(text string) ApiScoreTextAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiScoreTextRequest) Execute() (*ScoreText200Response, *http.Response, error) {
-	return r.ApiService.ScoreTextExecute(r)
+func (r ApiScoreTextAPIRequest) Execute() (*ScoreTextAPI200Response, *http.Response, error) {
+	return r.ApiService.ScoreTextAPIExecute(r)
 }
 
 /*
-ScoreText Score Text
+ScoreTextAPI Score Text API
 
 Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiScoreTextRequest
+ @return ApiScoreTextAPIRequest
 */
-func (a *TextAPIService) ScoreText(ctx context.Context) ApiScoreTextRequest {
-	return ApiScoreTextRequest{
+func (a *TextAPIService) ScoreTextAPI(ctx context.Context) ApiScoreTextAPIRequest {
+	return ApiScoreTextAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ScoreText200Response
-func (a *TextAPIService) ScoreTextExecute(r ApiScoreTextRequest) (*ScoreText200Response, *http.Response, error) {
+//  @return ScoreTextAPI200Response
+func (a *TextAPIService) ScoreTextAPIExecute(r ApiScoreTextAPIRequest) (*ScoreTextAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ScoreText200Response
+		localVarReturnValue  *ScoreTextAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ScoreText")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.ScoreTextAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1461,48 +1461,48 @@ func (a *TextAPIService) ScoreTextExecute(r ApiScoreTextRequest) (*ScoreText200R
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSingularizeWordRequest struct {
+type ApiSingularizeWordAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	word *string
 }
 
 // The (noun) word for which the singular form should be found.
-func (r ApiSingularizeWordRequest) Word(word string) ApiSingularizeWordRequest {
+func (r ApiSingularizeWordAPIRequest) Word(word string) ApiSingularizeWordAPIRequest {
 	r.word = &word
 	return r
 }
 
-func (r ApiSingularizeWordRequest) Execute() (*SingularizeWord200Response, *http.Response, error) {
-	return r.ApiService.SingularizeWordExecute(r)
+func (r ApiSingularizeWordAPIRequest) Execute() (*SingularizeWordAPI200Response, *http.Response, error) {
+	return r.ApiService.SingularizeWordAPIExecute(r)
 }
 
 /*
-SingularizeWord Singularize Word
+SingularizeWordAPI Singularize Word API
 
 Find the singular form of a word.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSingularizeWordRequest
+ @return ApiSingularizeWordAPIRequest
 */
-func (a *TextAPIService) SingularizeWord(ctx context.Context) ApiSingularizeWordRequest {
-	return ApiSingularizeWordRequest{
+func (a *TextAPIService) SingularizeWordAPI(ctx context.Context) ApiSingularizeWordAPIRequest {
+	return ApiSingularizeWordAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SingularizeWord200Response
-func (a *TextAPIService) SingularizeWordExecute(r ApiSingularizeWordRequest) (*SingularizeWord200Response, *http.Response, error) {
+//  @return SingularizeWordAPI200Response
+func (a *TextAPIService) SingularizeWordAPIExecute(r ApiSingularizeWordAPIRequest) (*SingularizeWordAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SingularizeWord200Response
+		localVarReturnValue  *SingularizeWordAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.SingularizeWord")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.SingularizeWordAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1602,48 +1602,48 @@ func (a *TextAPIService) SingularizeWordExecute(r ApiSingularizeWordRequest) (*S
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStemTextRequest struct {
+type ApiStemTextAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text to be stemmed.
-func (r ApiStemTextRequest) Text(text string) ApiStemTextRequest {
+func (r ApiStemTextAPIRequest) Text(text string) ApiStemTextAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiStemTextRequest) Execute() (*StemText200Response, *http.Response, error) {
-	return r.ApiService.StemTextExecute(r)
+func (r ApiStemTextAPIRequest) Execute() (*StemTextAPI200Response, *http.Response, error) {
+	return r.ApiService.StemTextAPIExecute(r)
 }
 
 /*
-StemText Stem Text
+StemTextAPI Stem Text API
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStemTextRequest
+ @return ApiStemTextAPIRequest
 */
-func (a *TextAPIService) StemText(ctx context.Context) ApiStemTextRequest {
-	return ApiStemTextRequest{
+func (a *TextAPIService) StemTextAPI(ctx context.Context) ApiStemTextAPIRequest {
+	return ApiStemTextAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StemText200Response
-func (a *TextAPIService) StemTextExecute(r ApiStemTextRequest) (*StemText200Response, *http.Response, error) {
+//  @return StemTextAPI200Response
+func (a *TextAPIService) StemTextAPIExecute(r ApiStemTextAPIRequest) (*StemTextAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StemText200Response
+		localVarReturnValue  *StemTextAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.StemText")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.StemTextAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1743,48 +1743,48 @@ func (a *TextAPIService) StemTextExecute(r ApiStemTextRequest) (*StemText200Resp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTagPartOfSpeechRequest struct {
+type ApiTagPartOfSpeechAPIRequest struct {
 	ctx context.Context
 	ApiService *TextAPIService
 	text *string
 }
 
 // The text to tag the part of speech.
-func (r ApiTagPartOfSpeechRequest) Text(text string) ApiTagPartOfSpeechRequest {
+func (r ApiTagPartOfSpeechAPIRequest) Text(text string) ApiTagPartOfSpeechAPIRequest {
 	r.text = &text
 	return r
 }
 
-func (r ApiTagPartOfSpeechRequest) Execute() (*TagPartOfSpeech200Response, *http.Response, error) {
-	return r.ApiService.TagPartOfSpeechExecute(r)
+func (r ApiTagPartOfSpeechAPIRequest) Execute() (*TagPartOfSpeechAPI200Response, *http.Response, error) {
+	return r.ApiService.TagPartOfSpeechAPIExecute(r)
 }
 
 /*
-TagPartOfSpeech Tag Part of Speech
+TagPartOfSpeechAPI Tag Part of Speech API
 
 Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTagPartOfSpeechRequest
+ @return ApiTagPartOfSpeechAPIRequest
 */
-func (a *TextAPIService) TagPartOfSpeech(ctx context.Context) ApiTagPartOfSpeechRequest {
-	return ApiTagPartOfSpeechRequest{
+func (a *TextAPIService) TagPartOfSpeechAPI(ctx context.Context) ApiTagPartOfSpeechAPIRequest {
+	return ApiTagPartOfSpeechAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TagPartOfSpeech200Response
-func (a *TextAPIService) TagPartOfSpeechExecute(r ApiTagPartOfSpeechRequest) (*TagPartOfSpeech200Response, *http.Response, error) {
+//  @return TagPartOfSpeechAPI200Response
+func (a *TextAPIService) TagPartOfSpeechAPIExecute(r ApiTagPartOfSpeechAPIRequest) (*TagPartOfSpeechAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TagPartOfSpeech200Response
+		localVarReturnValue  *TagPartOfSpeechAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.TagPartOfSpeech")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TextAPIService.TagPartOfSpeechAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

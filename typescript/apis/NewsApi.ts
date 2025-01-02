@@ -8,9 +8,9 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ExtractNews200Response } from '../models/ExtractNews200Response';
-import { SearchNews200Response } from '../models/SearchNews200Response';
-import { TopNews200Response } from '../models/TopNews200Response';
+import { ExtractNewsAPI200Response } from '../models/ExtractNewsAPI200Response';
+import { SearchNewsAPI200Response } from '../models/SearchNewsAPI200Response';
+import { TopNewsAPI200Response } from '../models/TopNewsAPI200Response';
 
 /**
  * no description
@@ -19,22 +19,22 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
-     * Extract News
+     * Extract News API
      * @param url The url of the news.
      * @param analyze Whether to analyze the news (extract entities etc.)
      */
-    public async extractNews(url: string, analyze: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async extractNewsAPI(url: string, analyze: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'url' is not null or undefined
         if (url === null || url === undefined) {
-            throw new RequiredError("NewsApi", "extractNews", "url");
+            throw new RequiredError("NewsApi", "extractNewsAPI", "url");
         }
 
 
         // verify required parameter 'analyze' is not null or undefined
         if (analyze === null || analyze === undefined) {
-            throw new RequiredError("NewsApi", "extractNews", "analyze");
+            throw new RequiredError("NewsApi", "extractNewsAPI", "analyze");
         }
 
 
@@ -77,9 +77,9 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * Search News
-     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News API
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @param language The ISO 6391 language code of the news.
      * @param minSentiment The minimal sentiment of the news in range [-1,1].
@@ -96,7 +96,7 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public async searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchNewsAPI(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -224,25 +224,25 @@ export class NewsApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
-     * Top News
+     * Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News API
      * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
      * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
      * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed.
      * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news.
      */
-    public async topNews(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async topNewsAPI(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'sourceCountry' is not null or undefined
         if (sourceCountry === null || sourceCountry === undefined) {
-            throw new RequiredError("NewsApi", "topNews", "sourceCountry");
+            throw new RequiredError("NewsApi", "topNewsAPI", "sourceCountry");
         }
 
 
         // verify required parameter 'language' is not null or undefined
         if (language === null || language === undefined) {
-            throw new RequiredError("NewsApi", "topNews", "language");
+            throw new RequiredError("NewsApi", "topNewsAPI", "language");
         }
 
 
@@ -304,16 +304,16 @@ export class NewsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractNews
+     * @params response Response returned by the server for a request to extractNewsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractNewsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractNews200Response >> {
+     public async extractNewsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractNewsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractNews200Response = ObjectSerializer.deserialize(
+            const body: ExtractNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractNews200Response", ""
-            ) as ExtractNews200Response;
+                "ExtractNewsAPI200Response", ""
+            ) as ExtractNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -337,10 +337,10 @@ export class NewsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractNews200Response = ObjectSerializer.deserialize(
+            const body: ExtractNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractNews200Response", ""
-            ) as ExtractNews200Response;
+                "ExtractNewsAPI200Response", ""
+            ) as ExtractNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -351,16 +351,16 @@ export class NewsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchNews
+     * @params response Response returned by the server for a request to searchNewsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchNewsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchNews200Response >> {
+     public async searchNewsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchNewsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchNews200Response = ObjectSerializer.deserialize(
+            const body: SearchNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchNews200Response", ""
-            ) as SearchNews200Response;
+                "SearchNewsAPI200Response", ""
+            ) as SearchNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -384,10 +384,10 @@ export class NewsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchNews200Response = ObjectSerializer.deserialize(
+            const body: SearchNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchNews200Response", ""
-            ) as SearchNews200Response;
+                "SearchNewsAPI200Response", ""
+            ) as SearchNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -398,16 +398,16 @@ export class NewsApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to topNews
+     * @params response Response returned by the server for a request to topNewsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async topNewsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TopNews200Response >> {
+     public async topNewsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TopNewsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: TopNews200Response = ObjectSerializer.deserialize(
+            const body: TopNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TopNews200Response", ""
-            ) as TopNews200Response;
+                "TopNewsAPI200Response", ""
+            ) as TopNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -431,10 +431,10 @@ export class NewsApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: TopNews200Response = ObjectSerializer.deserialize(
+            const body: TopNewsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TopNews200Response", ""
-            ) as TopNews200Response;
+                "TopNewsAPI200Response", ""
+            ) as TopNewsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

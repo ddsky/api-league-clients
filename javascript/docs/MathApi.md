@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+[**convertUnitsAPI**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API
 
 
 
-## convertUnits
+## convertUnitsAPI
 
-> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, opts)
+> ConvertUnitsAPI200Response convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, opts)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -39,7 +39,7 @@ let targetUnit = "lb"; // String | The unit to which should be converted.
 let opts = {
   'foodName': "flour" // String | An optional food name. For converting foods the food is relevant as they have different densities.
 };
-apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, opts, (error, data, response) => {
+apiInstance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

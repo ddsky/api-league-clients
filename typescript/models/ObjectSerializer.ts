@@ -1,218 +1,222 @@
-export * from '../models/ComputeNutrition200Response';
-export * from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
-export * from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
-export * from '../models/ConvertUnits200Response';
-export * from '../models/CorrectSpelling200Response';
-export * from '../models/DetectGenderByName200Response';
-export * from '../models/DetectLanguage200ResponseInner';
-export * from '../models/DetectMainImageColor200ResponseInner';
-export * from '../models/DetectSentiment200Response';
-export * from '../models/DetectSentiment200ResponseDocument';
-export * from '../models/DetectSentiment200ResponseSentencesInner';
-export * from '../models/ExtractAuthors200Response';
-export * from '../models/ExtractAuthors200ResponseAuthorsInner';
-export * from '../models/ExtractContentFromAWebPage200Response';
-export * from '../models/ExtractDates200Response';
-export * from '../models/ExtractDates200ResponseDatesInner';
-export * from '../models/ExtractEntities200Response';
-export * from '../models/ExtractEntities200ResponseEntitiesInner';
-export * from '../models/ExtractNews200Response';
-export * from '../models/ExtractNews200ResponseImagesInner';
-export * from '../models/ExtractNews200ResponseVideosInner';
-export * from '../models/ExtractPublishDate200Response';
-export * from '../models/FindSimilarBooks200Response';
-export * from '../models/GenerateNonsenseWord200Response';
-export * from '../models/ListWordSynonyms200Response';
-export * from '../models/PluralizeWord200Response';
-export * from '../models/RandomMeme200Response';
-export * from '../models/RandomPoem200Response';
-export * from '../models/RandomQuote200Response';
-export * from '../models/RandomRiddle200Response';
-export * from '../models/RandomTrivia200Response';
-export * from '../models/ReadKeyValueFromStore200Response';
-export * from '../models/RetrievePageRank200Response';
-export * from '../models/RetrieveRecipeInformation200Response';
-export * from '../models/RetrieveRecipeInformation200ResponseCredits';
-export * from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
-export * from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
-export * from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-export * from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
-export * from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-export * from '../models/RetrieveRecipeInformation200ResponseNutrition';
-export * from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-export * from '../models/RetrieveRecipeInformation200ResponseScores';
-export * from '../models/RetrieveRecipeInformation200ResponseTaste';
-export * from '../models/RetrieveRecipeInformation200ResponseTimes';
-export * from '../models/ScoreReadability200Response';
-export * from '../models/ScoreText200Response';
-export * from '../models/ScoreText200ResponseInterestingness';
-export * from '../models/ScoreText200ResponseInterestingnessSubscores';
-export * from '../models/ScoreText200ResponseReadability';
-export * from '../models/ScoreText200ResponseReadabilityMainscores';
-export * from '../models/ScoreText200ResponseReadabilitySubscores';
-export * from '../models/ScoreText200ResponseSkimmability';
-export * from '../models/ScoreText200ResponseSkimmabilityMainscores';
-export * from '../models/ScoreText200ResponseSkimmabilitySubscores';
-export * from '../models/ScoreText200ResponseStyle';
-export * from '../models/ScoreText200ResponseStyleSubscores';
-export * from '../models/SearchBooks200Response';
-export * from '../models/SearchBooks200ResponseBooksInnerInner';
-export * from '../models/SearchDrinks200Response';
-export * from '../models/SearchDrinks200ResponseDrinksInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerCredits';
-export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
-export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
-export * from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
-export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
-export * from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
-export * from '../models/SearchGifs200Response';
-export * from '../models/SearchGifs200ResponseImagesInner';
-export * from '../models/SearchIcons200Response';
-export * from '../models/SearchJokes200Response';
-export * from '../models/SearchJokes200ResponseJokesInner';
-export * from '../models/SearchMemes200Response';
-export * from '../models/SearchMemes200ResponseMemesInner';
-export * from '../models/SearchNews200Response';
-export * from '../models/SearchNews200ResponseNewsInner';
-export * from '../models/SearchRecipes200Response';
-export * from '../models/SearchRecipes200ResponseRecipesInner';
-export * from '../models/SearchRecipes200ResponseRecipesInnerNutrition';
-export * from '../models/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
-export * from '../models/SearchRestaurants200Response';
-export * from '../models/SearchRestaurants200ResponseRestaurantsInner';
-export * from '../models/SearchRestaurants200ResponseRestaurantsInnerAddress';
-export * from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
-export * from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
-export * from '../models/SearchRoyaltyFreeImages200Response';
-export * from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
-export * from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
-export * from '../models/SearchWeb200Response';
-export * from '../models/SearchWeb200ResponseResultsInner';
-export * from '../models/SingularizeWord200Response';
-export * from '../models/StemText200Response';
-export * from '../models/StoreKeyValueGET200Response';
-export * from '../models/TagPartOfSpeech200Response';
-export * from '../models/TopNews200Response';
-export * from '../models/TopNews200ResponseTopNewsInner';
-export * from '../models/TopNews200ResponseTopNewsInnerNewsInner';
-export * from '../models/VerifyEmailAddress200Response';
+export * from '../models/ComputeNutritionAPI200Response';
+export * from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
+export * from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
+export * from '../models/ConvertUnitsAPI200Response';
+export * from '../models/CorrectSpellingAPI200Response';
+export * from '../models/DetectGenderByNameAPI200Response';
+export * from '../models/DetectLanguageAPI200ResponseInner';
+export * from '../models/DetectMainImageColorAPI200ResponseInner';
+export * from '../models/DetectSentimentAPI200Response';
+export * from '../models/DetectSentimentAPI200ResponseDocument';
+export * from '../models/DetectSentimentAPI200ResponseSentencesInner';
+export * from '../models/ExtractAuthorsAPI200Response';
+export * from '../models/ExtractAuthorsAPI200ResponseAuthorsInner';
+export * from '../models/ExtractContentFromAWebPageAPI200Response';
+export * from '../models/ExtractDatesAPI200Response';
+export * from '../models/ExtractDatesAPI200ResponseDatesInner';
+export * from '../models/ExtractEntitiesAPI200Response';
+export * from '../models/ExtractEntitiesAPI200ResponseEntitiesInner';
+export * from '../models/ExtractNewsAPI200Response';
+export * from '../models/ExtractNewsAPI200ResponseImagesInner';
+export * from '../models/ExtractNewsAPI200ResponseVideosInner';
+export * from '../models/ExtractPublishDateAPI200Response';
+export * from '../models/FindSimilarBooksAPI200Response';
+export * from '../models/GenerateNonsenseWordAPI200Response';
+export * from '../models/ListWordSynonymsAPI200Response';
+export * from '../models/PluralizeWordAPI200Response';
+export * from '../models/RandomMemeAPI200Response';
+export * from '../models/RandomPoemAPI200Response';
+export * from '../models/RandomQuoteAPI200Response';
+export * from '../models/RandomRiddleAPI200Response';
+export * from '../models/RandomTriviaAPI200Response';
+export * from '../models/ReadKeyValueFromStoreAPI200Response';
+export * from '../models/RetrievePageRankAPI200Response';
+export * from '../models/RetrieveRecipeInformationAPI200Response';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseDietaryProperties';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInner';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInner';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseNutrition';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseScores';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseTaste';
+export * from '../models/RetrieveRecipeInformationAPI200ResponseTimes';
+export * from '../models/ScoreReadabilityAPI200Response';
+export * from '../models/ScoreTextAPI200Response';
+export * from '../models/ScoreTextAPI200ResponseInterestingness';
+export * from '../models/ScoreTextAPI200ResponseInterestingnessSubscores';
+export * from '../models/ScoreTextAPI200ResponseReadability';
+export * from '../models/ScoreTextAPI200ResponseReadabilityMainscores';
+export * from '../models/ScoreTextAPI200ResponseReadabilitySubscores';
+export * from '../models/ScoreTextAPI200ResponseSkimmability';
+export * from '../models/ScoreTextAPI200ResponseSkimmabilityMainscores';
+export * from '../models/ScoreTextAPI200ResponseSkimmabilitySubscores';
+export * from '../models/ScoreTextAPI200ResponseStyle';
+export * from '../models/ScoreTextAPI200ResponseStyleSubscores';
+export * from '../models/SearchBooksAPI200Response';
+export * from '../models/SearchBooksAPI200ResponseBooksInnerInner';
+export * from '../models/SearchDrinksAPI200Response';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerCredits';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+export * from '../models/SearchGifsAPI200Response';
+export * from '../models/SearchGifsAPI200ResponseImagesInner';
+export * from '../models/SearchIconsAPI200Response';
+export * from '../models/SearchJokesAPI200Response';
+export * from '../models/SearchJokesAPI200ResponseJokesInner';
+export * from '../models/SearchMemesAPI200Response';
+export * from '../models/SearchMemesAPI200ResponseMemesInner';
+export * from '../models/SearchNewsAPI200Response';
+export * from '../models/SearchNewsAPI200ResponseNewsInner';
+export * from '../models/SearchRecipesAPI200Response';
+export * from '../models/SearchRecipesAPI200ResponseRecipesInner';
+export * from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
+export * from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
+export * from '../models/SearchRestaurantsAPI200Response';
+export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
+export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
+export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
+export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
+export * from '../models/SearchRoyaltyFreeImagesAPI200Response';
+export * from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
+export * from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
+export * from '../models/SearchWebAPI200Response';
+export * from '../models/SearchWebAPI200ResponseResultsInner';
+export * from '../models/SingularizeWordAPI200Response';
+export * from '../models/StemTextAPI200Response';
+export * from '../models/StoreKeyValueGETAPI200Response';
+export * from '../models/TagPartOfSpeechAPI200Response';
+export * from '../models/TopNewsAPI200Response';
+export * from '../models/TopNewsAPI200ResponseTopNewsInner';
+export * from '../models/TopNewsAPI200ResponseTopNewsInnerNewsInner';
+export * from '../models/VectorSearchAPI200Response';
+export * from '../models/VectorSearchAPI200ResponseVectorsInner';
+export * from '../models/VerifyEmailAddressAPI200Response';
 
-import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
-import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
-import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
-import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
-import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
-import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
-import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
-import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
-import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
-import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
-import { ExtractDates200Response } from '../models/ExtractDates200Response';
-import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200ResponseDatesInner';
-import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
-import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
-import { ExtractNews200Response } from '../models/ExtractNews200Response';
-import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
-import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
-import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
-import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
-import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
-import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
-import { RandomMeme200Response } from '../models/RandomMeme200Response';
-import { RandomPoem200Response } from '../models/RandomPoem200Response';
-import { RandomQuote200Response } from '../models/RandomQuote200Response';
-import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
-import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
-import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
-import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
-import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
-import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
-import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
-import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
-import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
-import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
-import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
-import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
-import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
-import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
-import { ScoreText200Response } from '../models/ScoreText200Response';
-import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
-import { ScoreText200ResponseInterestingnessSubscores } from '../models/ScoreText200ResponseInterestingnessSubscores';
-import { ScoreText200ResponseReadability } from '../models/ScoreText200ResponseReadability';
-import { ScoreText200ResponseReadabilityMainscores } from '../models/ScoreText200ResponseReadabilityMainscores';
-import { ScoreText200ResponseReadabilitySubscores } from '../models/ScoreText200ResponseReadabilitySubscores';
-import { ScoreText200ResponseSkimmability } from '../models/ScoreText200ResponseSkimmability';
-import { ScoreText200ResponseSkimmabilityMainscores } from '../models/ScoreText200ResponseSkimmabilityMainscores';
-import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText200ResponseSkimmabilitySubscores';
-import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
-import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
-import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
-import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
-import { SearchDrinks200ResponseDrinksInner } from '../models/SearchDrinks200ResponseDrinksInner';
-import { SearchDrinks200ResponseDrinksInnerCredits } from '../models/SearchDrinks200ResponseDrinksInnerCredits';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutrition } from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
-import { SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
-import { SearchGifs200Response } from '../models/SearchGifs200Response';
-import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
-import { SearchIcons200Response } from '../models/SearchIcons200Response';
-import { SearchJokes200Response } from '../models/SearchJokes200Response';
-import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
-import { SearchMemes200Response } from '../models/SearchMemes200Response';
-import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
-import { SearchNews200Response } from '../models/SearchNews200Response';
-import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
-import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
-import { SearchRecipes200ResponseRecipesInner } from '../models/SearchRecipes200ResponseRecipesInner';
-import { SearchRecipes200ResponseRecipesInnerNutrition } from '../models/SearchRecipes200ResponseRecipesInnerNutrition';
-import { SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
-import { SearchRestaurants200ResponseRestaurantsInner } from '../models/SearchRestaurants200ResponseRestaurantsInner';
-import { SearchRestaurants200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurants200ResponseRestaurantsInnerAddress';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
-import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
-import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
-import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
-import { SearchWeb200Response } from '../models/SearchWeb200Response';
-import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
-import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
-import { StemText200Response } from '../models/StemText200Response';
-import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
-import { TopNews200Response } from '../models/TopNews200Response';
-import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
-import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
-import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
+import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
+import { ConvertUnitsAPI200Response } from '../models/ConvertUnitsAPI200Response';
+import { CorrectSpellingAPI200Response } from '../models/CorrectSpellingAPI200Response';
+import { DetectGenderByNameAPI200Response } from '../models/DetectGenderByNameAPI200Response';
+import { DetectLanguageAPI200ResponseInner } from '../models/DetectLanguageAPI200ResponseInner';
+import { DetectMainImageColorAPI200ResponseInner } from '../models/DetectMainImageColorAPI200ResponseInner';
+import { DetectSentimentAPI200Response } from '../models/DetectSentimentAPI200Response';
+import { DetectSentimentAPI200ResponseDocument } from '../models/DetectSentimentAPI200ResponseDocument';
+import { DetectSentimentAPI200ResponseSentencesInner } from '../models/DetectSentimentAPI200ResponseSentencesInner';
+import { ExtractAuthorsAPI200Response } from '../models/ExtractAuthorsAPI200Response';
+import { ExtractAuthorsAPI200ResponseAuthorsInner } from '../models/ExtractAuthorsAPI200ResponseAuthorsInner';
+import { ExtractContentFromAWebPageAPI200Response } from '../models/ExtractContentFromAWebPageAPI200Response';
+import { ExtractDatesAPI200Response } from '../models/ExtractDatesAPI200Response';
+import { ExtractDatesAPI200ResponseDatesInner } from '../models/ExtractDatesAPI200ResponseDatesInner';
+import { ExtractEntitiesAPI200Response } from '../models/ExtractEntitiesAPI200Response';
+import { ExtractEntitiesAPI200ResponseEntitiesInner } from '../models/ExtractEntitiesAPI200ResponseEntitiesInner';
+import { ExtractNewsAPI200Response } from '../models/ExtractNewsAPI200Response';
+import { ExtractNewsAPI200ResponseImagesInner } from '../models/ExtractNewsAPI200ResponseImagesInner';
+import { ExtractNewsAPI200ResponseVideosInner } from '../models/ExtractNewsAPI200ResponseVideosInner';
+import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
+import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
+import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
+import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
+import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
+import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
+import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
+import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
+import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
+import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
+import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
+import { RetrieveRecipeInformationAPI200ResponseDietaryProperties } from '../models/RetrieveRecipeInformationAPI200ResponseDietaryProperties';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInner } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInner';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInner';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner';
+import { RetrieveRecipeInformationAPI200ResponseNutrition } from '../models/RetrieveRecipeInformationAPI200ResponseNutrition';
+import { RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner';
+import { RetrieveRecipeInformationAPI200ResponseScores } from '../models/RetrieveRecipeInformationAPI200ResponseScores';
+import { RetrieveRecipeInformationAPI200ResponseTaste } from '../models/RetrieveRecipeInformationAPI200ResponseTaste';
+import { RetrieveRecipeInformationAPI200ResponseTimes } from '../models/RetrieveRecipeInformationAPI200ResponseTimes';
+import { ScoreReadabilityAPI200Response } from '../models/ScoreReadabilityAPI200Response';
+import { ScoreTextAPI200Response } from '../models/ScoreTextAPI200Response';
+import { ScoreTextAPI200ResponseInterestingness } from '../models/ScoreTextAPI200ResponseInterestingness';
+import { ScoreTextAPI200ResponseInterestingnessSubscores } from '../models/ScoreTextAPI200ResponseInterestingnessSubscores';
+import { ScoreTextAPI200ResponseReadability } from '../models/ScoreTextAPI200ResponseReadability';
+import { ScoreTextAPI200ResponseReadabilityMainscores } from '../models/ScoreTextAPI200ResponseReadabilityMainscores';
+import { ScoreTextAPI200ResponseReadabilitySubscores } from '../models/ScoreTextAPI200ResponseReadabilitySubscores';
+import { ScoreTextAPI200ResponseSkimmability } from '../models/ScoreTextAPI200ResponseSkimmability';
+import { ScoreTextAPI200ResponseSkimmabilityMainscores } from '../models/ScoreTextAPI200ResponseSkimmabilityMainscores';
+import { ScoreTextAPI200ResponseSkimmabilitySubscores } from '../models/ScoreTextAPI200ResponseSkimmabilitySubscores';
+import { ScoreTextAPI200ResponseStyle } from '../models/ScoreTextAPI200ResponseStyle';
+import { ScoreTextAPI200ResponseStyleSubscores } from '../models/ScoreTextAPI200ResponseStyleSubscores';
+import { SearchBooksAPI200Response } from '../models/SearchBooksAPI200Response';
+import { SearchBooksAPI200ResponseBooksInnerInner } from '../models/SearchBooksAPI200ResponseBooksInnerInner';
+import { SearchDrinksAPI200Response } from '../models/SearchDrinksAPI200Response';
+import { SearchDrinksAPI200ResponseDrinksInner } from '../models/SearchDrinksAPI200ResponseDrinksInner';
+import { SearchDrinksAPI200ResponseDrinksInnerCredits } from '../models/SearchDrinksAPI200ResponseDrinksInnerCredits';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
+import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
+import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
+import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
+import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
+import { SearchMemesAPI200ResponseMemesInner } from '../models/SearchMemesAPI200ResponseMemesInner';
+import { SearchNewsAPI200Response } from '../models/SearchNewsAPI200Response';
+import { SearchNewsAPI200ResponseNewsInner } from '../models/SearchNewsAPI200ResponseNewsInner';
+import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Response';
+import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
+import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
+import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
+import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
+import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
+import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
+import { SearchWebAPI200Response } from '../models/SearchWebAPI200Response';
+import { SearchWebAPI200ResponseResultsInner } from '../models/SearchWebAPI200ResponseResultsInner';
+import { SingularizeWordAPI200Response } from '../models/SingularizeWordAPI200Response';
+import { StemTextAPI200Response } from '../models/StemTextAPI200Response';
+import { StoreKeyValueGETAPI200Response } from '../models/StoreKeyValueGETAPI200Response';
+import { TagPartOfSpeechAPI200Response } from '../models/TagPartOfSpeechAPI200Response';
+import { TopNewsAPI200Response } from '../models/TopNewsAPI200Response';
+import { TopNewsAPI200ResponseTopNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInner';
+import { TopNewsAPI200ResponseTopNewsInnerNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInnerNewsInner';
+import { VectorSearchAPI200Response } from '../models/VectorSearchAPI200Response';
+import { VectorSearchAPI200ResponseVectorsInner } from '../models/VectorSearchAPI200ResponseVectorsInner';
+import { VerifyEmailAddressAPI200Response } from '../models/VerifyEmailAddressAPI200Response';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -230,113 +234,115 @@ let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
-    "ComputeNutrition200Response": ComputeNutrition200Response,
-    "ComputeNutrition200ResponseIngredientBreakdownInner": ComputeNutrition200ResponseIngredientBreakdownInner,
-    "ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner": ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner,
-    "ConvertUnits200Response": ConvertUnits200Response,
-    "CorrectSpelling200Response": CorrectSpelling200Response,
-    "DetectGenderByName200Response": DetectGenderByName200Response,
-    "DetectLanguage200ResponseInner": DetectLanguage200ResponseInner,
-    "DetectMainImageColor200ResponseInner": DetectMainImageColor200ResponseInner,
-    "DetectSentiment200Response": DetectSentiment200Response,
-    "DetectSentiment200ResponseDocument": DetectSentiment200ResponseDocument,
-    "DetectSentiment200ResponseSentencesInner": DetectSentiment200ResponseSentencesInner,
-    "ExtractAuthors200Response": ExtractAuthors200Response,
-    "ExtractAuthors200ResponseAuthorsInner": ExtractAuthors200ResponseAuthorsInner,
-    "ExtractContentFromAWebPage200Response": ExtractContentFromAWebPage200Response,
-    "ExtractDates200Response": ExtractDates200Response,
-    "ExtractDates200ResponseDatesInner": ExtractDates200ResponseDatesInner,
-    "ExtractEntities200Response": ExtractEntities200Response,
-    "ExtractEntities200ResponseEntitiesInner": ExtractEntities200ResponseEntitiesInner,
-    "ExtractNews200Response": ExtractNews200Response,
-    "ExtractNews200ResponseImagesInner": ExtractNews200ResponseImagesInner,
-    "ExtractNews200ResponseVideosInner": ExtractNews200ResponseVideosInner,
-    "ExtractPublishDate200Response": ExtractPublishDate200Response,
-    "FindSimilarBooks200Response": FindSimilarBooks200Response,
-    "GenerateNonsenseWord200Response": GenerateNonsenseWord200Response,
-    "ListWordSynonyms200Response": ListWordSynonyms200Response,
-    "PluralizeWord200Response": PluralizeWord200Response,
-    "RandomMeme200Response": RandomMeme200Response,
-    "RandomPoem200Response": RandomPoem200Response,
-    "RandomQuote200Response": RandomQuote200Response,
-    "RandomRiddle200Response": RandomRiddle200Response,
-    "RandomTrivia200Response": RandomTrivia200Response,
-    "ReadKeyValueFromStore200Response": ReadKeyValueFromStore200Response,
-    "RetrievePageRank200Response": RetrievePageRank200Response,
-    "RetrieveRecipeInformation200Response": RetrieveRecipeInformation200Response,
-    "RetrieveRecipeInformation200ResponseCredits": RetrieveRecipeInformation200ResponseCredits,
-    "RetrieveRecipeInformation200ResponseDietaryProperties": RetrieveRecipeInformation200ResponseDietaryProperties,
-    "RetrieveRecipeInformation200ResponseIngredientsInner": RetrieveRecipeInformation200ResponseIngredientsInner,
-    "RetrieveRecipeInformation200ResponseIngredientsInnerMeasures": RetrieveRecipeInformation200ResponseIngredientsInnerMeasures,
-    "RetrieveRecipeInformation200ResponseInstructionsInner": RetrieveRecipeInformation200ResponseInstructionsInner,
-    "RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner": RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner,
-    "RetrieveRecipeInformation200ResponseNutrition": RetrieveRecipeInformation200ResponseNutrition,
-    "RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner": RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner,
-    "RetrieveRecipeInformation200ResponseScores": RetrieveRecipeInformation200ResponseScores,
-    "RetrieveRecipeInformation200ResponseTaste": RetrieveRecipeInformation200ResponseTaste,
-    "RetrieveRecipeInformation200ResponseTimes": RetrieveRecipeInformation200ResponseTimes,
-    "ScoreReadability200Response": ScoreReadability200Response,
-    "ScoreText200Response": ScoreText200Response,
-    "ScoreText200ResponseInterestingness": ScoreText200ResponseInterestingness,
-    "ScoreText200ResponseInterestingnessSubscores": ScoreText200ResponseInterestingnessSubscores,
-    "ScoreText200ResponseReadability": ScoreText200ResponseReadability,
-    "ScoreText200ResponseReadabilityMainscores": ScoreText200ResponseReadabilityMainscores,
-    "ScoreText200ResponseReadabilitySubscores": ScoreText200ResponseReadabilitySubscores,
-    "ScoreText200ResponseSkimmability": ScoreText200ResponseSkimmability,
-    "ScoreText200ResponseSkimmabilityMainscores": ScoreText200ResponseSkimmabilityMainscores,
-    "ScoreText200ResponseSkimmabilitySubscores": ScoreText200ResponseSkimmabilitySubscores,
-    "ScoreText200ResponseStyle": ScoreText200ResponseStyle,
-    "ScoreText200ResponseStyleSubscores": ScoreText200ResponseStyleSubscores,
-    "SearchBooks200Response": SearchBooks200Response,
-    "SearchBooks200ResponseBooksInnerInner": SearchBooks200ResponseBooksInnerInner,
-    "SearchDrinks200Response": SearchDrinks200Response,
-    "SearchDrinks200ResponseDrinksInner": SearchDrinks200ResponseDrinksInner,
-    "SearchDrinks200ResponseDrinksInnerCredits": SearchDrinks200ResponseDrinksInnerCredits,
-    "SearchDrinks200ResponseDrinksInnerIngredientsInner": SearchDrinks200ResponseDrinksInnerIngredientsInner,
-    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures,
-    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric,
-    "SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs": SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs,
-    "SearchDrinks200ResponseDrinksInnerInstructionsInner": SearchDrinks200ResponseDrinksInnerInstructionsInner,
-    "SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner": SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner,
-    "SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner": SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner,
-    "SearchDrinks200ResponseDrinksInnerNutrition": SearchDrinks200ResponseDrinksInnerNutrition,
-    "SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown": SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown,
-    "SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner": SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner,
-    "SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner": SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner,
-    "SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner": SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner,
-    "SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner": SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner,
-    "SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing,
-    "SearchGifs200Response": SearchGifs200Response,
-    "SearchGifs200ResponseImagesInner": SearchGifs200ResponseImagesInner,
-    "SearchIcons200Response": SearchIcons200Response,
-    "SearchJokes200Response": SearchJokes200Response,
-    "SearchJokes200ResponseJokesInner": SearchJokes200ResponseJokesInner,
-    "SearchMemes200Response": SearchMemes200Response,
-    "SearchMemes200ResponseMemesInner": SearchMemes200ResponseMemesInner,
-    "SearchNews200Response": SearchNews200Response,
-    "SearchNews200ResponseNewsInner": SearchNews200ResponseNewsInner,
-    "SearchRecipes200Response": SearchRecipes200Response,
-    "SearchRecipes200ResponseRecipesInner": SearchRecipes200ResponseRecipesInner,
-    "SearchRecipes200ResponseRecipesInnerNutrition": SearchRecipes200ResponseRecipesInnerNutrition,
-    "SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner": SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner,
-    "SearchRestaurants200Response": SearchRestaurants200Response,
-    "SearchRestaurants200ResponseRestaurantsInner": SearchRestaurants200ResponseRestaurantsInner,
-    "SearchRestaurants200ResponseRestaurantsInnerAddress": SearchRestaurants200ResponseRestaurantsInnerAddress,
-    "SearchRestaurants200ResponseRestaurantsInnerLocalHours": SearchRestaurants200ResponseRestaurantsInnerLocalHours,
-    "SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational": SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational,
-    "SearchRoyaltyFreeImages200Response": SearchRoyaltyFreeImages200Response,
-    "SearchRoyaltyFreeImages200ResponseImagesInner": SearchRoyaltyFreeImages200ResponseImagesInner,
-    "SearchRoyaltyFreeImages200ResponseImagesInnerLicense": SearchRoyaltyFreeImages200ResponseImagesInnerLicense,
-    "SearchWeb200Response": SearchWeb200Response,
-    "SearchWeb200ResponseResultsInner": SearchWeb200ResponseResultsInner,
-    "SingularizeWord200Response": SingularizeWord200Response,
-    "StemText200Response": StemText200Response,
-    "StoreKeyValueGET200Response": StoreKeyValueGET200Response,
-    "TagPartOfSpeech200Response": TagPartOfSpeech200Response,
-    "TopNews200Response": TopNews200Response,
-    "TopNews200ResponseTopNewsInner": TopNews200ResponseTopNewsInner,
-    "TopNews200ResponseTopNewsInnerNewsInner": TopNews200ResponseTopNewsInnerNewsInner,
-    "VerifyEmailAddress200Response": VerifyEmailAddress200Response,
+    "ComputeNutritionAPI200Response": ComputeNutritionAPI200Response,
+    "ComputeNutritionAPI200ResponseIngredientBreakdownInner": ComputeNutritionAPI200ResponseIngredientBreakdownInner,
+    "ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner": ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner,
+    "ConvertUnitsAPI200Response": ConvertUnitsAPI200Response,
+    "CorrectSpellingAPI200Response": CorrectSpellingAPI200Response,
+    "DetectGenderByNameAPI200Response": DetectGenderByNameAPI200Response,
+    "DetectLanguageAPI200ResponseInner": DetectLanguageAPI200ResponseInner,
+    "DetectMainImageColorAPI200ResponseInner": DetectMainImageColorAPI200ResponseInner,
+    "DetectSentimentAPI200Response": DetectSentimentAPI200Response,
+    "DetectSentimentAPI200ResponseDocument": DetectSentimentAPI200ResponseDocument,
+    "DetectSentimentAPI200ResponseSentencesInner": DetectSentimentAPI200ResponseSentencesInner,
+    "ExtractAuthorsAPI200Response": ExtractAuthorsAPI200Response,
+    "ExtractAuthorsAPI200ResponseAuthorsInner": ExtractAuthorsAPI200ResponseAuthorsInner,
+    "ExtractContentFromAWebPageAPI200Response": ExtractContentFromAWebPageAPI200Response,
+    "ExtractDatesAPI200Response": ExtractDatesAPI200Response,
+    "ExtractDatesAPI200ResponseDatesInner": ExtractDatesAPI200ResponseDatesInner,
+    "ExtractEntitiesAPI200Response": ExtractEntitiesAPI200Response,
+    "ExtractEntitiesAPI200ResponseEntitiesInner": ExtractEntitiesAPI200ResponseEntitiesInner,
+    "ExtractNewsAPI200Response": ExtractNewsAPI200Response,
+    "ExtractNewsAPI200ResponseImagesInner": ExtractNewsAPI200ResponseImagesInner,
+    "ExtractNewsAPI200ResponseVideosInner": ExtractNewsAPI200ResponseVideosInner,
+    "ExtractPublishDateAPI200Response": ExtractPublishDateAPI200Response,
+    "FindSimilarBooksAPI200Response": FindSimilarBooksAPI200Response,
+    "GenerateNonsenseWordAPI200Response": GenerateNonsenseWordAPI200Response,
+    "ListWordSynonymsAPI200Response": ListWordSynonymsAPI200Response,
+    "PluralizeWordAPI200Response": PluralizeWordAPI200Response,
+    "RandomMemeAPI200Response": RandomMemeAPI200Response,
+    "RandomPoemAPI200Response": RandomPoemAPI200Response,
+    "RandomQuoteAPI200Response": RandomQuoteAPI200Response,
+    "RandomRiddleAPI200Response": RandomRiddleAPI200Response,
+    "RandomTriviaAPI200Response": RandomTriviaAPI200Response,
+    "ReadKeyValueFromStoreAPI200Response": ReadKeyValueFromStoreAPI200Response,
+    "RetrievePageRankAPI200Response": RetrievePageRankAPI200Response,
+    "RetrieveRecipeInformationAPI200Response": RetrieveRecipeInformationAPI200Response,
+    "RetrieveRecipeInformationAPI200ResponseCredits": RetrieveRecipeInformationAPI200ResponseCredits,
+    "RetrieveRecipeInformationAPI200ResponseDietaryProperties": RetrieveRecipeInformationAPI200ResponseDietaryProperties,
+    "RetrieveRecipeInformationAPI200ResponseIngredientsInner": RetrieveRecipeInformationAPI200ResponseIngredientsInner,
+    "RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures": RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures,
+    "RetrieveRecipeInformationAPI200ResponseInstructionsInner": RetrieveRecipeInformationAPI200ResponseInstructionsInner,
+    "RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner": RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner,
+    "RetrieveRecipeInformationAPI200ResponseNutrition": RetrieveRecipeInformationAPI200ResponseNutrition,
+    "RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner": RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner,
+    "RetrieveRecipeInformationAPI200ResponseScores": RetrieveRecipeInformationAPI200ResponseScores,
+    "RetrieveRecipeInformationAPI200ResponseTaste": RetrieveRecipeInformationAPI200ResponseTaste,
+    "RetrieveRecipeInformationAPI200ResponseTimes": RetrieveRecipeInformationAPI200ResponseTimes,
+    "ScoreReadabilityAPI200Response": ScoreReadabilityAPI200Response,
+    "ScoreTextAPI200Response": ScoreTextAPI200Response,
+    "ScoreTextAPI200ResponseInterestingness": ScoreTextAPI200ResponseInterestingness,
+    "ScoreTextAPI200ResponseInterestingnessSubscores": ScoreTextAPI200ResponseInterestingnessSubscores,
+    "ScoreTextAPI200ResponseReadability": ScoreTextAPI200ResponseReadability,
+    "ScoreTextAPI200ResponseReadabilityMainscores": ScoreTextAPI200ResponseReadabilityMainscores,
+    "ScoreTextAPI200ResponseReadabilitySubscores": ScoreTextAPI200ResponseReadabilitySubscores,
+    "ScoreTextAPI200ResponseSkimmability": ScoreTextAPI200ResponseSkimmability,
+    "ScoreTextAPI200ResponseSkimmabilityMainscores": ScoreTextAPI200ResponseSkimmabilityMainscores,
+    "ScoreTextAPI200ResponseSkimmabilitySubscores": ScoreTextAPI200ResponseSkimmabilitySubscores,
+    "ScoreTextAPI200ResponseStyle": ScoreTextAPI200ResponseStyle,
+    "ScoreTextAPI200ResponseStyleSubscores": ScoreTextAPI200ResponseStyleSubscores,
+    "SearchBooksAPI200Response": SearchBooksAPI200Response,
+    "SearchBooksAPI200ResponseBooksInnerInner": SearchBooksAPI200ResponseBooksInnerInner,
+    "SearchDrinksAPI200Response": SearchDrinksAPI200Response,
+    "SearchDrinksAPI200ResponseDrinksInner": SearchDrinksAPI200ResponseDrinksInner,
+    "SearchDrinksAPI200ResponseDrinksInnerCredits": SearchDrinksAPI200ResponseDrinksInnerCredits,
+    "SearchDrinksAPI200ResponseDrinksInnerIngredientsInner": SearchDrinksAPI200ResponseDrinksInnerIngredientsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures": SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures,
+    "SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric": SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric,
+    "SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs": SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs,
+    "SearchDrinksAPI200ResponseDrinksInnerInstructionsInner": SearchDrinksAPI200ResponseDrinksInnerInstructionsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner": SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner": SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutrition": SearchDrinksAPI200ResponseDrinksInnerNutrition,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown": SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner": SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing,
+    "SearchGifsAPI200Response": SearchGifsAPI200Response,
+    "SearchGifsAPI200ResponseImagesInner": SearchGifsAPI200ResponseImagesInner,
+    "SearchIconsAPI200Response": SearchIconsAPI200Response,
+    "SearchJokesAPI200Response": SearchJokesAPI200Response,
+    "SearchJokesAPI200ResponseJokesInner": SearchJokesAPI200ResponseJokesInner,
+    "SearchMemesAPI200Response": SearchMemesAPI200Response,
+    "SearchMemesAPI200ResponseMemesInner": SearchMemesAPI200ResponseMemesInner,
+    "SearchNewsAPI200Response": SearchNewsAPI200Response,
+    "SearchNewsAPI200ResponseNewsInner": SearchNewsAPI200ResponseNewsInner,
+    "SearchRecipesAPI200Response": SearchRecipesAPI200Response,
+    "SearchRecipesAPI200ResponseRecipesInner": SearchRecipesAPI200ResponseRecipesInner,
+    "SearchRecipesAPI200ResponseRecipesInnerNutrition": SearchRecipesAPI200ResponseRecipesInnerNutrition,
+    "SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner": SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner,
+    "SearchRestaurantsAPI200Response": SearchRestaurantsAPI200Response,
+    "SearchRestaurantsAPI200ResponseRestaurantsInner": SearchRestaurantsAPI200ResponseRestaurantsInner,
+    "SearchRestaurantsAPI200ResponseRestaurantsInnerAddress": SearchRestaurantsAPI200ResponseRestaurantsInnerAddress,
+    "SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours": SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours,
+    "SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational": SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational,
+    "SearchRoyaltyFreeImagesAPI200Response": SearchRoyaltyFreeImagesAPI200Response,
+    "SearchRoyaltyFreeImagesAPI200ResponseImagesInner": SearchRoyaltyFreeImagesAPI200ResponseImagesInner,
+    "SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense": SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense,
+    "SearchWebAPI200Response": SearchWebAPI200Response,
+    "SearchWebAPI200ResponseResultsInner": SearchWebAPI200ResponseResultsInner,
+    "SingularizeWordAPI200Response": SingularizeWordAPI200Response,
+    "StemTextAPI200Response": StemTextAPI200Response,
+    "StoreKeyValueGETAPI200Response": StoreKeyValueGETAPI200Response,
+    "TagPartOfSpeechAPI200Response": TagPartOfSpeechAPI200Response,
+    "TopNewsAPI200Response": TopNewsAPI200Response,
+    "TopNewsAPI200ResponseTopNewsInner": TopNewsAPI200ResponseTopNewsInner,
+    "TopNewsAPI200ResponseTopNewsInnerNewsInner": TopNewsAPI200ResponseTopNewsInnerNewsInner,
+    "VectorSearchAPI200Response": VectorSearchAPI200Response,
+    "VectorSearchAPI200ResponseVectorsInner": VectorSearchAPI200ResponseVectorsInner,
+    "VerifyEmailAddressAPI200Response": VerifyEmailAddressAPI200Response,
 }
 
 type MimeTypeDescriptor = {

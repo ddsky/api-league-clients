@@ -22,11 +22,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test TextAPIService CorrectSpelling", func(t *testing.T) {
+	t.Run("Test TextAPIService CorrectSpellingAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.CorrectSpelling(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.CorrectSpellingAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService DetectGenderByName", func(t *testing.T) {
+	t.Run("Test TextAPIService DetectGenderByNameAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.DetectGenderByName(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.DetectGenderByNameAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService DetectLanguage", func(t *testing.T) {
+	t.Run("Test TextAPIService DetectLanguageAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.DetectLanguage(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.DetectLanguageAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService DetectSentiment", func(t *testing.T) {
+	t.Run("Test TextAPIService DetectSentimentAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.DetectSentiment(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.DetectSentimentAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +70,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService ExtractDates", func(t *testing.T) {
+	t.Run("Test TextAPIService ExtractDatesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.ExtractDates(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.ExtractDatesAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,11 +82,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService ExtractEntities", func(t *testing.T) {
+	t.Run("Test TextAPIService ExtractEntitiesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.ExtractEntities(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.ExtractEntitiesAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -94,11 +94,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService ListWordSynonyms", func(t *testing.T) {
+	t.Run("Test TextAPIService ListWordSynonymsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.ListWordSynonyms(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.ListWordSynonymsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,11 +106,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService PluralizeWord", func(t *testing.T) {
+	t.Run("Test TextAPIService PluralizeWordAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.PluralizeWord(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.PluralizeWordAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -118,11 +118,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService ScoreReadability", func(t *testing.T) {
+	t.Run("Test TextAPIService ScoreReadabilityAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.ScoreReadability(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.ScoreReadabilityAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -130,11 +130,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService ScoreText", func(t *testing.T) {
+	t.Run("Test TextAPIService ScoreTextAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.ScoreText(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.ScoreTextAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -142,11 +142,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService SingularizeWord", func(t *testing.T) {
+	t.Run("Test TextAPIService SingularizeWordAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.SingularizeWord(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.SingularizeWordAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -154,11 +154,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService StemText", func(t *testing.T) {
+	t.Run("Test TextAPIService StemTextAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.StemText(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.StemTextAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -166,11 +166,11 @@ func Test_apileague_TextAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TextAPIService TagPartOfSpeech", func(t *testing.T) {
+	t.Run("Test TextAPIService TagPartOfSpeechAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TextAPI.TagPartOfSpeech(context.Background()).Execute()
+		resp, httpRes, err := apiClient.TextAPI.TagPartOfSpeechAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

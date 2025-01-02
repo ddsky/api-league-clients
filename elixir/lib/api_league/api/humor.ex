@@ -10,7 +10,7 @@ defmodule APILeague.Api.Humor do
   import APILeague.RequestBuilder
 
   @doc """
-  Generate Nonsense Word
+  Generate Nonsense Word API
   Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
   ### Parameters
@@ -20,11 +20,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.GenerateNonsenseWord200Response.t}` on success
+  - `{:ok, APILeague.Model.GenerateNonsenseWordApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec generate_nonsense_word(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.GenerateNonsenseWord200Response.t} | {:error, Tesla.Env.t}
-  def generate_nonsense_word(connection, _opts \\ []) do
+  @spec generate_nonsense_word_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.GenerateNonsenseWordApi200Response.t} | {:error, Tesla.Env.t}
+  def generate_nonsense_word_api(connection, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -34,7 +34,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.GenerateNonsenseWord200Response},
+      {200, APILeague.Model.GenerateNonsenseWordApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -45,7 +45,7 @@ defmodule APILeague.Api.Humor do
   end
 
   @doc """
-  Random Joke
+  Random Joke API
   This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
   ### Parameters
@@ -59,11 +59,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchJokes200ResponseJokesInner.t}` on success
+  - `{:ok, APILeague.Model.SearchJokesApi200ResponseJokesInner.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_joke(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchJokes200ResponseJokesInner.t} | {:error, Tesla.Env.t}
-  def random_joke(connection, opts \\ []) do
+  @spec random_joke_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchJokesApi200ResponseJokesInner.t} | {:error, Tesla.Env.t}
+  def random_joke_api(connection, opts \\ []) do
     optional_params = %{
       :"include-tags" => :query,
       :"exclude-tags" => :query,
@@ -81,7 +81,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchJokes200ResponseJokesInner},
+      {200, APILeague.Model.SearchJokesApi200ResponseJokesInner},
       {401, false},
       {402, false},
       {403, false},
@@ -92,8 +92,8 @@ defmodule APILeague.Api.Humor do
   end
 
   @doc """
-  Random Meme
-  Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+  Random Meme API
+  Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
   ### Parameters
 
@@ -107,11 +107,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RandomMeme200Response.t}` on success
+  - `{:ok, APILeague.Model.RandomMemeApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_meme(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomMeme200Response.t} | {:error, Tesla.Env.t}
-  def random_meme(connection, opts \\ []) do
+  @spec random_meme_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomMemeApi200Response.t} | {:error, Tesla.Env.t}
+  def random_meme_api(connection, opts \\ []) do
     optional_params = %{
       :keywords => :query,
       :"keywords-in-image" => :query,
@@ -130,7 +130,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RandomMeme200Response},
+      {200, APILeague.Model.RandomMemeApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -141,7 +141,7 @@ defmodule APILeague.Api.Humor do
   end
 
   @doc """
-  Search Gifs
+  Search Gifs API
   Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
   ### Parameters
@@ -153,11 +153,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchGifs200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchGifsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_gifs(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchGifs200Response.t} | {:error, Tesla.Env.t}
-  def search_gifs(connection, query, opts \\ []) do
+  @spec search_gifs_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchGifsApi200Response.t} | {:error, Tesla.Env.t}
+  def search_gifs_api(connection, query, opts \\ []) do
     optional_params = %{
       :number => :query
     }
@@ -173,7 +173,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchGifs200Response},
+      {200, APILeague.Model.SearchGifsApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -184,7 +184,7 @@ defmodule APILeague.Api.Humor do
   end
 
   @doc """
-  Search Jokes
+  Search Jokes API
   With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
   ### Parameters
@@ -201,11 +201,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchJokes200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchJokesApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_jokes(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchJokes200Response.t} | {:error, Tesla.Env.t}
-  def search_jokes(connection, opts \\ []) do
+  @spec search_jokes_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchJokesApi200Response.t} | {:error, Tesla.Env.t}
+  def search_jokes_api(connection, opts \\ []) do
     optional_params = %{
       :keywords => :query,
       :"include-tags" => :query,
@@ -226,7 +226,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchJokes200Response},
+      {200, APILeague.Model.SearchJokesApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -237,8 +237,8 @@ defmodule APILeague.Api.Humor do
   end
 
   @doc """
-  Search Memes
-  With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+  Search Memes API
+  Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
   ### Parameters
 
@@ -254,11 +254,11 @@ defmodule APILeague.Api.Humor do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchMemes200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchMemesApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_memes(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchMemes200Response.t} | {:error, Tesla.Env.t}
-  def search_memes(connection, opts \\ []) do
+  @spec search_memes_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchMemesApi200Response.t} | {:error, Tesla.Env.t}
+  def search_memes_api(connection, opts \\ []) do
     optional_params = %{
       :keywords => :query,
       :"keywords-in-image" => :query,
@@ -279,7 +279,7 @@ defmodule APILeague.Api.Humor do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchMemes200Response},
+      {200, APILeague.Model.SearchMemesApi200Response},
       {401, false},
       {402, false},
       {403, false},

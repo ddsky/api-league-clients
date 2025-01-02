@@ -19,19 +19,19 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.CorrectSpelling200Response
-import com.apileague.client.model.DetectGenderByName200Response
-import com.apileague.client.model.DetectLanguage200ResponseInner
-import com.apileague.client.model.DetectSentiment200Response
-import com.apileague.client.model.ExtractDates200Response
-import com.apileague.client.model.ExtractEntities200Response
-import com.apileague.client.model.ListWordSynonyms200Response
-import com.apileague.client.model.PluralizeWord200Response
-import com.apileague.client.model.ScoreReadability200Response
-import com.apileague.client.model.ScoreText200Response
-import com.apileague.client.model.SingularizeWord200Response
-import com.apileague.client.model.StemText200Response
-import com.apileague.client.model.TagPartOfSpeech200Response
+import com.apileague.client.model.CorrectSpellingAPI200Response
+import com.apileague.client.model.DetectGenderByNameAPI200Response
+import com.apileague.client.model.DetectLanguageAPI200ResponseInner
+import com.apileague.client.model.DetectSentimentAPI200Response
+import com.apileague.client.model.ExtractDatesAPI200Response
+import com.apileague.client.model.ExtractEntitiesAPI200Response
+import com.apileague.client.model.ListWordSynonymsAPI200Response
+import com.apileague.client.model.PluralizeWordAPI200Response
+import com.apileague.client.model.ScoreReadabilityAPI200Response
+import com.apileague.client.model.ScoreTextAPI200Response
+import com.apileague.client.model.SingularizeWordAPI200Response
+import com.apileague.client.model.StemTextAPI200Response
+import com.apileague.client.model.TagPartOfSpeechAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -58,11 +58,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Correct Spelling
+     * Correct Spelling API
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
-     * @return CorrectSpelling200Response
+     * @return CorrectSpellingAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -71,11 +71,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun correctSpelling(text: kotlin.String, language: kotlin.String) : CorrectSpelling200Response {
-        val localVarResponse = correctSpellingWithHttpInfo(text = text, language = language)
+    fun correctSpellingAPI(text: kotlin.String, language: kotlin.String) : CorrectSpellingAPI200Response {
+        val localVarResponse = correctSpellingAPIWithHttpInfo(text = text, language = language)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as CorrectSpelling200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CorrectSpellingAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -90,32 +90,32 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Correct Spelling
+     * Correct Spelling API
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
-     * @return ApiResponse<CorrectSpelling200Response?>
+     * @return ApiResponse<CorrectSpellingAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun correctSpellingWithHttpInfo(text: kotlin.String, language: kotlin.String) : ApiResponse<CorrectSpelling200Response?> {
-        val localVariableConfig = correctSpellingRequestConfig(text = text, language = language)
+    fun correctSpellingAPIWithHttpInfo(text: kotlin.String, language: kotlin.String) : ApiResponse<CorrectSpellingAPI200Response?> {
+        val localVariableConfig = correctSpellingAPIRequestConfig(text = text, language = language)
 
-        return request<Unit, CorrectSpelling200Response>(
+        return request<Unit, CorrectSpellingAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation correctSpelling
+     * To obtain the request config of the operation correctSpellingAPI
      *
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
      * @return RequestConfig
      */
-    fun correctSpellingRequestConfig(text: kotlin.String, language: kotlin.String) : RequestConfig<Unit> {
+    fun correctSpellingAPIRequestConfig(text: kotlin.String, language: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -136,10 +136,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
      * @param name The name of the perso for which the sentiment should be detected.
-     * @return DetectGenderByName200Response
+     * @return DetectGenderByNameAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -148,11 +148,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun detectGenderByName(name: kotlin.String) : DetectGenderByName200Response {
-        val localVarResponse = detectGenderByNameWithHttpInfo(name = name)
+    fun detectGenderByNameAPI(name: kotlin.String) : DetectGenderByNameAPI200Response {
+        val localVarResponse = detectGenderByNameAPIWithHttpInfo(name = name)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as DetectGenderByName200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DetectGenderByNameAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -167,30 +167,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * Detect the likelihood that a name is given to a male or female (aka to \&quot;genderize\&quot; a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
      * @param name The name of the perso for which the sentiment should be detected.
-     * @return ApiResponse<DetectGenderByName200Response?>
+     * @return ApiResponse<DetectGenderByNameAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun detectGenderByNameWithHttpInfo(name: kotlin.String) : ApiResponse<DetectGenderByName200Response?> {
-        val localVariableConfig = detectGenderByNameRequestConfig(name = name)
+    fun detectGenderByNameAPIWithHttpInfo(name: kotlin.String) : ApiResponse<DetectGenderByNameAPI200Response?> {
+        val localVariableConfig = detectGenderByNameAPIRequestConfig(name = name)
 
-        return request<Unit, DetectGenderByName200Response>(
+        return request<Unit, DetectGenderByNameAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation detectGenderByName
+     * To obtain the request config of the operation detectGenderByNameAPI
      *
      * @param name The name of the perso for which the sentiment should be detected.
      * @return RequestConfig
      */
-    fun detectGenderByNameRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
+    fun detectGenderByNameAPIRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -210,10 +210,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Language
+     * Detect Language API
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
      * @param text The text for which the language should be detected.
-     * @return kotlin.collections.List<DetectLanguage200ResponseInner>
+     * @return kotlin.collections.List<DetectLanguageAPI200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -222,11 +222,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun detectLanguage(text: kotlin.String) : kotlin.collections.List<DetectLanguage200ResponseInner> {
-        val localVarResponse = detectLanguageWithHttpInfo(text = text)
+    fun detectLanguageAPI(text: kotlin.String) : kotlin.collections.List<DetectLanguageAPI200ResponseInner> {
+        val localVarResponse = detectLanguageAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<DetectLanguage200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<DetectLanguageAPI200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -241,30 +241,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Language
+     * Detect Language API
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
      * @param text The text for which the language should be detected.
-     * @return ApiResponse<kotlin.collections.List<DetectLanguage200ResponseInner>?>
+     * @return ApiResponse<kotlin.collections.List<DetectLanguageAPI200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun detectLanguageWithHttpInfo(text: kotlin.String) : ApiResponse<kotlin.collections.List<DetectLanguage200ResponseInner>?> {
-        val localVariableConfig = detectLanguageRequestConfig(text = text)
+    fun detectLanguageAPIWithHttpInfo(text: kotlin.String) : ApiResponse<kotlin.collections.List<DetectLanguageAPI200ResponseInner>?> {
+        val localVariableConfig = detectLanguageAPIRequestConfig(text = text)
 
-        return request<Unit, kotlin.collections.List<DetectLanguage200ResponseInner>>(
+        return request<Unit, kotlin.collections.List<DetectLanguageAPI200ResponseInner>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation detectLanguage
+     * To obtain the request config of the operation detectLanguageAPI
      *
      * @param text The text for which the language should be detected.
      * @return RequestConfig
      */
-    fun detectLanguageRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun detectLanguageAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -284,10 +284,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Sentiment
+     * Detect Sentiment API
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
      * @param text The text for which the sentiment should be detected.
-     * @return DetectSentiment200Response
+     * @return DetectSentimentAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -296,11 +296,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun detectSentiment(text: kotlin.String) : DetectSentiment200Response {
-        val localVarResponse = detectSentimentWithHttpInfo(text = text)
+    fun detectSentimentAPI(text: kotlin.String) : DetectSentimentAPI200Response {
+        val localVarResponse = detectSentimentAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as DetectSentiment200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DetectSentimentAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -315,30 +315,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Detect Sentiment
+     * Detect Sentiment API
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
      * @param text The text for which the sentiment should be detected.
-     * @return ApiResponse<DetectSentiment200Response?>
+     * @return ApiResponse<DetectSentimentAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun detectSentimentWithHttpInfo(text: kotlin.String) : ApiResponse<DetectSentiment200Response?> {
-        val localVariableConfig = detectSentimentRequestConfig(text = text)
+    fun detectSentimentAPIWithHttpInfo(text: kotlin.String) : ApiResponse<DetectSentimentAPI200Response?> {
+        val localVariableConfig = detectSentimentAPIRequestConfig(text = text)
 
-        return request<Unit, DetectSentiment200Response>(
+        return request<Unit, DetectSentimentAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation detectSentiment
+     * To obtain the request config of the operation detectSentimentAPI
      *
      * @param text The text for which the sentiment should be detected.
      * @return RequestConfig
      */
-    fun detectSentimentRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun detectSentimentAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -358,10 +358,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Extract Dates
+     * Extract Dates API
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
      * @param text The text from which dates should be extracted.
-     * @return ExtractDates200Response
+     * @return ExtractDatesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -370,11 +370,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun extractDates(text: kotlin.String) : ExtractDates200Response {
-        val localVarResponse = extractDatesWithHttpInfo(text = text)
+    fun extractDatesAPI(text: kotlin.String) : ExtractDatesAPI200Response {
+        val localVarResponse = extractDatesAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ExtractDates200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ExtractDatesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -389,30 +389,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Extract Dates
+     * Extract Dates API
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \&quot;April 5th, 2035\&quot;, \&quot;04/05/2035\&quot;, or \&quot;05.04.2035\&quot;. The normalized date is the date in the form of a timestamp (milliseconds since 1970).
      * @param text The text from which dates should be extracted.
-     * @return ApiResponse<ExtractDates200Response?>
+     * @return ApiResponse<ExtractDatesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun extractDatesWithHttpInfo(text: kotlin.String) : ApiResponse<ExtractDates200Response?> {
-        val localVariableConfig = extractDatesRequestConfig(text = text)
+    fun extractDatesAPIWithHttpInfo(text: kotlin.String) : ApiResponse<ExtractDatesAPI200Response?> {
+        val localVariableConfig = extractDatesAPIRequestConfig(text = text)
 
-        return request<Unit, ExtractDates200Response>(
+        return request<Unit, ExtractDatesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation extractDates
+     * To obtain the request config of the operation extractDatesAPI
      *
      * @param text The text from which dates should be extracted.
      * @return RequestConfig
      */
-    fun extractDatesRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun extractDatesAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -432,10 +432,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Extract Entities
+     * Extract Entities API
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
      * @param text The text from which entities should be extracted.
-     * @return ExtractEntities200Response
+     * @return ExtractEntitiesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -444,11 +444,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun extractEntities(text: kotlin.String) : ExtractEntities200Response {
-        val localVarResponse = extractEntitiesWithHttpInfo(text = text)
+    fun extractEntitiesAPI(text: kotlin.String) : ExtractEntitiesAPI200Response {
+        val localVarResponse = extractEntitiesAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ExtractEntities200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ExtractEntitiesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -463,30 +463,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Extract Entities
+     * Extract Entities API
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \&quot;Canada\&quot; represents the concept of a country. The word \&quot;Jim Carrey\&quot; represents the concept of a person. The word \&quot;Tesla\&quot; represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
      * @param text The text from which entities should be extracted.
-     * @return ApiResponse<ExtractEntities200Response?>
+     * @return ApiResponse<ExtractEntitiesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun extractEntitiesWithHttpInfo(text: kotlin.String) : ApiResponse<ExtractEntities200Response?> {
-        val localVariableConfig = extractEntitiesRequestConfig(text = text)
+    fun extractEntitiesAPIWithHttpInfo(text: kotlin.String) : ApiResponse<ExtractEntitiesAPI200Response?> {
+        val localVariableConfig = extractEntitiesAPIRequestConfig(text = text)
 
-        return request<Unit, ExtractEntities200Response>(
+        return request<Unit, ExtractEntitiesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation extractEntities
+     * To obtain the request config of the operation extractEntitiesAPI
      *
      * @param text The text from which entities should be extracted.
      * @return RequestConfig
      */
-    fun extractEntitiesRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun extractEntitiesAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -506,10 +506,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * List Word Synonyms
+     * List Word Synonyms API
      * Return synonyms of a word.
      * @param word The (noun) word for which a list of synonyms should be returned.
-     * @return ListWordSynonyms200Response
+     * @return ListWordSynonymsAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -518,11 +518,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun listWordSynonyms(word: kotlin.String) : ListWordSynonyms200Response {
-        val localVarResponse = listWordSynonymsWithHttpInfo(word = word)
+    fun listWordSynonymsAPI(word: kotlin.String) : ListWordSynonymsAPI200Response {
+        val localVarResponse = listWordSynonymsAPIWithHttpInfo(word = word)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ListWordSynonyms200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ListWordSynonymsAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -537,30 +537,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * List Word Synonyms
+     * List Word Synonyms API
      * Return synonyms of a word.
      * @param word The (noun) word for which a list of synonyms should be returned.
-     * @return ApiResponse<ListWordSynonyms200Response?>
+     * @return ApiResponse<ListWordSynonymsAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun listWordSynonymsWithHttpInfo(word: kotlin.String) : ApiResponse<ListWordSynonyms200Response?> {
-        val localVariableConfig = listWordSynonymsRequestConfig(word = word)
+    fun listWordSynonymsAPIWithHttpInfo(word: kotlin.String) : ApiResponse<ListWordSynonymsAPI200Response?> {
+        val localVariableConfig = listWordSynonymsAPIRequestConfig(word = word)
 
-        return request<Unit, ListWordSynonyms200Response>(
+        return request<Unit, ListWordSynonymsAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation listWordSynonyms
+     * To obtain the request config of the operation listWordSynonymsAPI
      *
      * @param word The (noun) word for which a list of synonyms should be returned.
      * @return RequestConfig
      */
-    fun listWordSynonymsRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
+    fun listWordSynonymsAPIRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -580,10 +580,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Pluralize Word
+     * Pluralize Word API
      * Find the plural form of a word.
      * @param word The (noun) word for which the plural form should be found.
-     * @return PluralizeWord200Response
+     * @return PluralizeWordAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -592,11 +592,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun pluralizeWord(word: kotlin.String) : PluralizeWord200Response {
-        val localVarResponse = pluralizeWordWithHttpInfo(word = word)
+    fun pluralizeWordAPI(word: kotlin.String) : PluralizeWordAPI200Response {
+        val localVarResponse = pluralizeWordAPIWithHttpInfo(word = word)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as PluralizeWord200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as PluralizeWordAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -611,30 +611,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Pluralize Word
+     * Pluralize Word API
      * Find the plural form of a word.
      * @param word The (noun) word for which the plural form should be found.
-     * @return ApiResponse<PluralizeWord200Response?>
+     * @return ApiResponse<PluralizeWordAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun pluralizeWordWithHttpInfo(word: kotlin.String) : ApiResponse<PluralizeWord200Response?> {
-        val localVariableConfig = pluralizeWordRequestConfig(word = word)
+    fun pluralizeWordAPIWithHttpInfo(word: kotlin.String) : ApiResponse<PluralizeWordAPI200Response?> {
+        val localVariableConfig = pluralizeWordAPIRequestConfig(word = word)
 
-        return request<Unit, PluralizeWord200Response>(
+        return request<Unit, PluralizeWordAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation pluralizeWord
+     * To obtain the request config of the operation pluralizeWordAPI
      *
      * @param word The (noun) word for which the plural form should be found.
      * @return RequestConfig
      */
-    fun pluralizeWordRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
+    fun pluralizeWordAPIRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -654,10 +654,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Score Readability
+     * Score Readability API
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
      * @param text The text to score for readability.
-     * @return ScoreReadability200Response
+     * @return ScoreReadabilityAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -666,11 +666,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun scoreReadability(text: kotlin.String) : ScoreReadability200Response {
-        val localVarResponse = scoreReadabilityWithHttpInfo(text = text)
+    fun scoreReadabilityAPI(text: kotlin.String) : ScoreReadabilityAPI200Response {
+        val localVarResponse = scoreReadabilityAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ScoreReadability200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ScoreReadabilityAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -685,30 +685,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Score Readability
+     * Score Readability API
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
      * @param text The text to score for readability.
-     * @return ApiResponse<ScoreReadability200Response?>
+     * @return ApiResponse<ScoreReadabilityAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun scoreReadabilityWithHttpInfo(text: kotlin.String) : ApiResponse<ScoreReadability200Response?> {
-        val localVariableConfig = scoreReadabilityRequestConfig(text = text)
+    fun scoreReadabilityAPIWithHttpInfo(text: kotlin.String) : ApiResponse<ScoreReadabilityAPI200Response?> {
+        val localVariableConfig = scoreReadabilityAPIRequestConfig(text = text)
 
-        return request<Unit, ScoreReadability200Response>(
+        return request<Unit, ScoreReadabilityAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation scoreReadability
+     * To obtain the request config of the operation scoreReadabilityAPI
      *
      * @param text The text to score for readability.
      * @return RequestConfig
      */
-    fun scoreReadabilityRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun scoreReadabilityAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -728,11 +728,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Score Text
+     * Score Text API
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
-     * @return ScoreText200Response
+     * @return ScoreTextAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -741,11 +741,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun scoreText(title: kotlin.String, text: kotlin.String) : ScoreText200Response {
-        val localVarResponse = scoreTextWithHttpInfo(title = title, text = text)
+    fun scoreTextAPI(title: kotlin.String, text: kotlin.String) : ScoreTextAPI200Response {
+        val localVarResponse = scoreTextAPIWithHttpInfo(title = title, text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ScoreText200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ScoreTextAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -760,32 +760,32 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Score Text
+     * Score Text API
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
-     * @return ApiResponse<ScoreText200Response?>
+     * @return ApiResponse<ScoreTextAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun scoreTextWithHttpInfo(title: kotlin.String, text: kotlin.String) : ApiResponse<ScoreText200Response?> {
-        val localVariableConfig = scoreTextRequestConfig(title = title, text = text)
+    fun scoreTextAPIWithHttpInfo(title: kotlin.String, text: kotlin.String) : ApiResponse<ScoreTextAPI200Response?> {
+        val localVariableConfig = scoreTextAPIRequestConfig(title = title, text = text)
 
-        return request<Unit, ScoreText200Response>(
+        return request<Unit, ScoreTextAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation scoreText
+     * To obtain the request config of the operation scoreTextAPI
      *
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
      * @return RequestConfig
      */
-    fun scoreTextRequestConfig(title: kotlin.String, text: kotlin.String) : RequestConfig<Unit> {
+    fun scoreTextAPIRequestConfig(title: kotlin.String, text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -806,10 +806,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Singularize Word
+     * Singularize Word API
      * Find the singular form of a word.
      * @param word The (noun) word for which the singular form should be found.
-     * @return SingularizeWord200Response
+     * @return SingularizeWordAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -818,11 +818,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun singularizeWord(word: kotlin.String) : SingularizeWord200Response {
-        val localVarResponse = singularizeWordWithHttpInfo(word = word)
+    fun singularizeWordAPI(word: kotlin.String) : SingularizeWordAPI200Response {
+        val localVarResponse = singularizeWordAPIWithHttpInfo(word = word)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SingularizeWord200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SingularizeWordAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -837,30 +837,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Singularize Word
+     * Singularize Word API
      * Find the singular form of a word.
      * @param word The (noun) word for which the singular form should be found.
-     * @return ApiResponse<SingularizeWord200Response?>
+     * @return ApiResponse<SingularizeWordAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun singularizeWordWithHttpInfo(word: kotlin.String) : ApiResponse<SingularizeWord200Response?> {
-        val localVariableConfig = singularizeWordRequestConfig(word = word)
+    fun singularizeWordAPIWithHttpInfo(word: kotlin.String) : ApiResponse<SingularizeWordAPI200Response?> {
+        val localVariableConfig = singularizeWordAPIRequestConfig(word = word)
 
-        return request<Unit, SingularizeWord200Response>(
+        return request<Unit, SingularizeWordAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation singularizeWord
+     * To obtain the request config of the operation singularizeWordAPI
      *
      * @param word The (noun) word for which the singular form should be found.
      * @return RequestConfig
      */
-    fun singularizeWordRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
+    fun singularizeWordAPIRequestConfig(word: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -880,10 +880,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Stem Text
+     * Stem Text API
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed.
-     * @return StemText200Response
+     * @return StemTextAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -892,11 +892,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun stemText(text: kotlin.String) : StemText200Response {
-        val localVarResponse = stemTextWithHttpInfo(text = text)
+    fun stemTextAPI(text: kotlin.String) : StemTextAPI200Response {
+        val localVarResponse = stemTextAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as StemText200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as StemTextAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -911,30 +911,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Stem Text
+     * Stem Text API
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
      * @param text The text to be stemmed.
-     * @return ApiResponse<StemText200Response?>
+     * @return ApiResponse<StemTextAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun stemTextWithHttpInfo(text: kotlin.String) : ApiResponse<StemText200Response?> {
-        val localVariableConfig = stemTextRequestConfig(text = text)
+    fun stemTextAPIWithHttpInfo(text: kotlin.String) : ApiResponse<StemTextAPI200Response?> {
+        val localVariableConfig = stemTextAPIRequestConfig(text = text)
 
-        return request<Unit, StemText200Response>(
+        return request<Unit, StemTextAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation stemText
+     * To obtain the request config of the operation stemTextAPI
      *
      * @param text The text to be stemmed.
      * @return RequestConfig
      */
-    fun stemTextRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun stemTextAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -954,10 +954,10 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
      * @param text The text to tag the part of speech.
-     * @return TagPartOfSpeech200Response
+     * @return TagPartOfSpeechAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -966,11 +966,11 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun tagPartOfSpeech(text: kotlin.String) : TagPartOfSpeech200Response {
-        val localVarResponse = tagPartOfSpeechWithHttpInfo(text = text)
+    fun tagPartOfSpeechAPI(text: kotlin.String) : TagPartOfSpeechAPI200Response {
+        val localVarResponse = tagPartOfSpeechAPIWithHttpInfo(text = text)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TagPartOfSpeech200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TagPartOfSpeechAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -985,30 +985,30 @@ class TextApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
      * @param text The text to tag the part of speech.
-     * @return ApiResponse<TagPartOfSpeech200Response?>
+     * @return ApiResponse<TagPartOfSpeechAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun tagPartOfSpeechWithHttpInfo(text: kotlin.String) : ApiResponse<TagPartOfSpeech200Response?> {
-        val localVariableConfig = tagPartOfSpeechRequestConfig(text = text)
+    fun tagPartOfSpeechAPIWithHttpInfo(text: kotlin.String) : ApiResponse<TagPartOfSpeechAPI200Response?> {
+        val localVariableConfig = tagPartOfSpeechAPIRequestConfig(text = text)
 
-        return request<Unit, TagPartOfSpeech200Response>(
+        return request<Unit, TagPartOfSpeechAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation tagPartOfSpeech
+     * To obtain the request config of the operation tagPartOfSpeechAPI
      *
      * @param text The text to tag the part of speech.
      * @return RequestConfig
      */
-    fun tagPartOfSpeechRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
+    fun tagPartOfSpeechAPIRequestConfig(text: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

@@ -8,12 +8,12 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
-import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
-import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
-import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
-import { SearchWeb200Response } from '../models/SearchWeb200Response';
-import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
+import { ExtractAuthorsAPI200Response } from '../models/ExtractAuthorsAPI200Response';
+import { ExtractContentFromAWebPageAPI200Response } from '../models/ExtractContentFromAWebPageAPI200Response';
+import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
+import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
+import { SearchWebAPI200Response } from '../models/SearchWebAPI200Response';
+import { VerifyEmailAddressAPI200Response } from '../models/VerifyEmailAddressAPI200Response';
 
 /**
  * no description
@@ -22,15 +22,15 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-     * Extract Authors
+     * Extract Authors API
      * @param url The url with the article from which authors should be extracted.
      */
-    public async extractAuthors(url: string, _options?: Configuration): Promise<RequestContext> {
+    public async extractAuthorsAPI(url: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'url' is not null or undefined
         if (url === null || url === undefined) {
-            throw new RequiredError("WebApi", "extractAuthors", "url");
+            throw new RequiredError("WebApi", "extractAuthorsAPI", "url");
         }
 
 
@@ -69,15 +69,15 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-     * Extract Content from a Web Page
+     * Extract Content from a Web Page API
      * @param url The url for which the content will be extracted.
      */
-    public async extractContentFromAWebPage(url: string, _options?: Configuration): Promise<RequestContext> {
+    public async extractContentFromAWebPageAPI(url: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'url' is not null or undefined
         if (url === null || url === undefined) {
-            throw new RequiredError("WebApi", "extractContentFromAWebPage", "url");
+            throw new RequiredError("WebApi", "extractContentFromAWebPageAPI", "url");
         }
 
 
@@ -116,15 +116,15 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-     * Extract Publish Date
+     * Extract Publish Date API
      * @param url The url for which the publish date should be extracted.
      */
-    public async extractPublishDate(url: string, _options?: Configuration): Promise<RequestContext> {
+    public async extractPublishDateAPI(url: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'url' is not null or undefined
         if (url === null || url === undefined) {
-            throw new RequiredError("WebApi", "extractPublishDate", "url");
+            throw new RequiredError("WebApi", "extractPublishDateAPI", "url");
         }
 
 
@@ -163,15 +163,15 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
-     * Retrieve Page Rank
+     * Retrieve Page Rank API
      * @param domain The domain for which the page rank should be returned.
      */
-    public async retrievePageRank(domain: string, _options?: Configuration): Promise<RequestContext> {
+    public async retrievePageRankAPI(domain: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'domain' is not null or undefined
         if (domain === null || domain === undefined) {
-            throw new RequiredError("WebApi", "retrievePageRank", "domain");
+            throw new RequiredError("WebApi", "retrievePageRankAPI", "domain");
         }
 
 
@@ -210,16 +210,16 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-     * Search Web
+     * Search Web API
      * @param query The search query.
      * @param number The number of results to return in range [1,50]
      */
-    public async searchWeb(query: string, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchWebAPI(query: string, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'query' is not null or undefined
         if (query === null || query === undefined) {
-            throw new RequiredError("WebApi", "searchWeb", "query");
+            throw new RequiredError("WebApi", "searchWebAPI", "query");
         }
 
 
@@ -264,15 +264,15 @@ export class WebApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
-     * Verify Email Address
+     * Verify Email Address API
      * @param email The email address to verify.
      */
-    public async verifyEmailAddress(email: string, _options?: Configuration): Promise<RequestContext> {
+    public async verifyEmailAddressAPI(email: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'email' is not null or undefined
         if (email === null || email === undefined) {
-            throw new RequiredError("WebApi", "verifyEmailAddress", "email");
+            throw new RequiredError("WebApi", "verifyEmailAddressAPI", "email");
         }
 
 
@@ -317,16 +317,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractAuthors
+     * @params response Response returned by the server for a request to extractAuthorsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractAuthorsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractAuthors200Response >> {
+     public async extractAuthorsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractAuthorsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractAuthors200Response = ObjectSerializer.deserialize(
+            const body: ExtractAuthorsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractAuthors200Response", ""
-            ) as ExtractAuthors200Response;
+                "ExtractAuthorsAPI200Response", ""
+            ) as ExtractAuthorsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -350,10 +350,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractAuthors200Response = ObjectSerializer.deserialize(
+            const body: ExtractAuthorsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractAuthors200Response", ""
-            ) as ExtractAuthors200Response;
+                "ExtractAuthorsAPI200Response", ""
+            ) as ExtractAuthorsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -364,16 +364,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractContentFromAWebPage
+     * @params response Response returned by the server for a request to extractContentFromAWebPageAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractContentFromAWebPageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractContentFromAWebPage200Response >> {
+     public async extractContentFromAWebPageAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractContentFromAWebPageAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractContentFromAWebPage200Response = ObjectSerializer.deserialize(
+            const body: ExtractContentFromAWebPageAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractContentFromAWebPage200Response", ""
-            ) as ExtractContentFromAWebPage200Response;
+                "ExtractContentFromAWebPageAPI200Response", ""
+            ) as ExtractContentFromAWebPageAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -397,10 +397,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractContentFromAWebPage200Response = ObjectSerializer.deserialize(
+            const body: ExtractContentFromAWebPageAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractContentFromAWebPage200Response", ""
-            ) as ExtractContentFromAWebPage200Response;
+                "ExtractContentFromAWebPageAPI200Response", ""
+            ) as ExtractContentFromAWebPageAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -411,16 +411,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractPublishDate
+     * @params response Response returned by the server for a request to extractPublishDateAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractPublishDateWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractPublishDate200Response >> {
+     public async extractPublishDateAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractPublishDateAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractPublishDate200Response = ObjectSerializer.deserialize(
+            const body: ExtractPublishDateAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractPublishDate200Response", ""
-            ) as ExtractPublishDate200Response;
+                "ExtractPublishDateAPI200Response", ""
+            ) as ExtractPublishDateAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -444,10 +444,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractPublishDate200Response = ObjectSerializer.deserialize(
+            const body: ExtractPublishDateAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractPublishDate200Response", ""
-            ) as ExtractPublishDate200Response;
+                "ExtractPublishDateAPI200Response", ""
+            ) as ExtractPublishDateAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -458,16 +458,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to retrievePageRank
+     * @params response Response returned by the server for a request to retrievePageRankAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async retrievePageRankWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RetrievePageRank200Response >> {
+     public async retrievePageRankAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RetrievePageRankAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RetrievePageRank200Response = ObjectSerializer.deserialize(
+            const body: RetrievePageRankAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RetrievePageRank200Response", ""
-            ) as RetrievePageRank200Response;
+                "RetrievePageRankAPI200Response", ""
+            ) as RetrievePageRankAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -491,10 +491,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RetrievePageRank200Response = ObjectSerializer.deserialize(
+            const body: RetrievePageRankAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RetrievePageRank200Response", ""
-            ) as RetrievePageRank200Response;
+                "RetrievePageRankAPI200Response", ""
+            ) as RetrievePageRankAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -505,16 +505,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchWeb
+     * @params response Response returned by the server for a request to searchWebAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchWebWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchWeb200Response >> {
+     public async searchWebAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchWebAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchWeb200Response = ObjectSerializer.deserialize(
+            const body: SearchWebAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchWeb200Response", ""
-            ) as SearchWeb200Response;
+                "SearchWebAPI200Response", ""
+            ) as SearchWebAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -538,10 +538,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchWeb200Response = ObjectSerializer.deserialize(
+            const body: SearchWebAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchWeb200Response", ""
-            ) as SearchWeb200Response;
+                "SearchWebAPI200Response", ""
+            ) as SearchWebAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -552,16 +552,16 @@ export class WebApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to verifyEmailAddress
+     * @params response Response returned by the server for a request to verifyEmailAddressAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async verifyEmailAddressWithHttpInfo(response: ResponseContext): Promise<HttpInfo<VerifyEmailAddress200Response >> {
+     public async verifyEmailAddressAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<VerifyEmailAddressAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: VerifyEmailAddress200Response = ObjectSerializer.deserialize(
+            const body: VerifyEmailAddressAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "VerifyEmailAddress200Response", ""
-            ) as VerifyEmailAddress200Response;
+                "VerifyEmailAddressAPI200Response", ""
+            ) as VerifyEmailAddressAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -585,10 +585,10 @@ export class WebApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: VerifyEmailAddress200Response = ObjectSerializer.deserialize(
+            const body: VerifyEmailAddressAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "VerifyEmailAddress200Response", ""
-            ) as VerifyEmailAddress200Response;
+                "VerifyEmailAddressAPI200Response", ""
+            ) as VerifyEmailAddressAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

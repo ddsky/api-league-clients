@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
-| [**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
+| [**imageToAsciiArtByURLAPI**](ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API |
+| [**randomPoemAPI**](ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API |
 
 
-<a id="imageToAsciiArtByURL"></a>
-# **imageToAsciiArtByURL**
-> String imageToAsciiArtByURL(url, width, height)
+<a id="imageToAsciiArtByURLAPI"></a>
+# **imageToAsciiArtByURLAPI**
+> String imageToAsciiArtByURLAPI(url, width, height)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -48,10 +48,10 @@ public class Example {
     Integer width = 200; // Integer | The maximum width of the image (default 400, max. 500).
     Integer height = 200; // Integer | The maximum height of the image (default 400, max. 500).
     try {
-      String result = apiInstance.imageToAsciiArtByURL(url, width, height);
+      String result = apiInstance.imageToAsciiArtByURLAPI(url, width, height);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ArtApi#imageToAsciiArtByURL");
+      System.err.println("Exception when calling ArtApi#imageToAsciiArtByURLAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -93,11 +93,11 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="randomPoem"></a>
-# **randomPoem**
-> RandomPoem200Response randomPoem(minLines, maxLines)
+<a id="randomPoemAPI"></a>
+# **randomPoemAPI**
+> RandomPoemAPI200Response randomPoemAPI(minLines, maxLines)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
 
@@ -132,10 +132,10 @@ public class Example {
     Integer minLines = 5; // Integer | The minimum number of lines of the poem.
     Integer maxLines = 20; // Integer | The maximum number of lines of the poem.
     try {
-      RandomPoem200Response result = apiInstance.randomPoem(minLines, maxLines);
+      RandomPoemAPI200Response result = apiInstance.randomPoemAPI(minLines, maxLines);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ArtApi#randomPoem");
+      System.err.println("Exception when calling ArtApi#randomPoemAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -154,7 +154,7 @@ public class Example {
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

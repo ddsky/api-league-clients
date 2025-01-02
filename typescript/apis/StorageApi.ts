@@ -8,8 +8,8 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
-import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
+import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { StoreKeyValueGETAPI200Response } from '../models/StoreKeyValueGETAPI200Response';
 
 /**
  * no description
@@ -18,15 +18,15 @@ export class StorageApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * @param key The key for which the value is stored (max length 255 characters).
      */
-    public async readKeyValueFromStore(key: string, _options?: Configuration): Promise<RequestContext> {
+    public async readKeyValueFromStoreAPI(key: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'key' is not null or undefined
         if (key === null || key === undefined) {
-            throw new RequiredError("StorageApi", "readKeyValueFromStore", "key");
+            throw new RequiredError("StorageApi", "readKeyValueFromStoreAPI", "key");
         }
 
 
@@ -65,22 +65,22 @@ export class StorageApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * @param key The key for which the value is stored (max length 255 characters).
      * @param value The value that is supposed to be stored (max length 10,000 characters).
      */
-    public async storeKeyValueGET(key: string, value: string, _options?: Configuration): Promise<RequestContext> {
+    public async storeKeyValueGETAPI(key: string, value: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'key' is not null or undefined
         if (key === null || key === undefined) {
-            throw new RequiredError("StorageApi", "storeKeyValueGET", "key");
+            throw new RequiredError("StorageApi", "storeKeyValueGETAPI", "key");
         }
 
 
         // verify required parameter 'value' is not null or undefined
         if (value === null || value === undefined) {
-            throw new RequiredError("StorageApi", "storeKeyValueGET", "value");
+            throw new RequiredError("StorageApi", "storeKeyValueGETAPI", "value");
         }
 
 
@@ -130,16 +130,16 @@ export class StorageApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to readKeyValueFromStore
+     * @params response Response returned by the server for a request to readKeyValueFromStoreAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async readKeyValueFromStoreWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ReadKeyValueFromStore200Response >> {
+     public async readKeyValueFromStoreAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ReadKeyValueFromStoreAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ReadKeyValueFromStore200Response = ObjectSerializer.deserialize(
+            const body: ReadKeyValueFromStoreAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ReadKeyValueFromStore200Response", ""
-            ) as ReadKeyValueFromStore200Response;
+                "ReadKeyValueFromStoreAPI200Response", ""
+            ) as ReadKeyValueFromStoreAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -163,10 +163,10 @@ export class StorageApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ReadKeyValueFromStore200Response = ObjectSerializer.deserialize(
+            const body: ReadKeyValueFromStoreAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ReadKeyValueFromStore200Response", ""
-            ) as ReadKeyValueFromStore200Response;
+                "ReadKeyValueFromStoreAPI200Response", ""
+            ) as ReadKeyValueFromStoreAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -177,16 +177,16 @@ export class StorageApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to storeKeyValueGET
+     * @params response Response returned by the server for a request to storeKeyValueGETAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async storeKeyValueGETWithHttpInfo(response: ResponseContext): Promise<HttpInfo<StoreKeyValueGET200Response >> {
+     public async storeKeyValueGETAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<StoreKeyValueGETAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: StoreKeyValueGET200Response = ObjectSerializer.deserialize(
+            const body: StoreKeyValueGETAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "StoreKeyValueGET200Response", ""
-            ) as StoreKeyValueGET200Response;
+                "StoreKeyValueGETAPI200Response", ""
+            ) as StoreKeyValueGETAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -210,10 +210,10 @@ export class StorageApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: StoreKeyValueGET200Response = ObjectSerializer.deserialize(
+            const body: StoreKeyValueGETAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "StoreKeyValueGET200Response", ""
-            ) as StoreKeyValueGET200Response;
+                "StoreKeyValueGETAPI200Response", ""
+            ) as StoreKeyValueGETAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

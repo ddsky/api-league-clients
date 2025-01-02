@@ -19,28 +19,28 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.NewsApi
-import com.apileague.client.model.ExtractNews200Response
-import com.apileague.client.model.SearchNews200Response
-import com.apileague.client.model.TopNews200Response
+import com.apileague.client.model.ExtractNewsAPI200Response
+import com.apileague.client.model.SearchNewsAPI200Response
+import com.apileague.client.model.TopNewsAPI200Response
 
 class NewsApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of NewsApi
         //val apiInstance = NewsApi()
 
-        // to test extractNews
-        should("test extractNews") {
-            // uncomment below to test extractNews
+        // to test extractNewsAPI
+        should("test extractNewsAPI") {
+            // uncomment below to test extractNewsAPI
             //val url : kotlin.String = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/ // kotlin.String | The url of the news.
             //val analyze : kotlin.Boolean = true // kotlin.Boolean | Whether to analyze the news (extract entities etc.)
-            //val result : ExtractNews200Response = apiInstance.extractNews(url, analyze)
+            //val result : ExtractNewsAPI200Response = apiInstance.extractNewsAPI(url, analyze)
             //result shouldBe ("TODO")
         }
 
-        // to test searchNews
-        should("test searchNews") {
-            // uncomment below to test searchNews
-            //val text : kotlin.String = tesla // kotlin.String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+        // to test searchNewsAPI
+        should("test searchNewsAPI") {
+            // uncomment below to test searchNewsAPI
+            //val text : kotlin.String = tesla // kotlin.String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
             //val sourceCountries : kotlin.String = us,uk // kotlin.String | A comma-separated list of ISO 3166 country codes from which the news should originate.
             //val language : kotlin.String = en // kotlin.String | The ISO 6391 language code of the news.
             //val minSentiment : kotlin.Double = -0.8 // kotlin.Double | The minimal sentiment of the news in range [-1,1].
@@ -56,18 +56,18 @@ class NewsApiTest : ShouldSpec() {
             //val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of news to skip in range [0,10000]
             //val number : kotlin.Int = 10 // kotlin.Int | The number of news to return in range [1,100]
-            //val result : SearchNews200Response = apiInstance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
+            //val result : SearchNewsAPI200Response = apiInstance.searchNewsAPI(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
             //result shouldBe ("TODO")
         }
 
-        // to test topNews
-        should("test topNews") {
-            // uncomment below to test topNews
+        // to test topNewsAPI
+        should("test topNewsAPI") {
+            // uncomment below to test topNewsAPI
             //val sourceCountry : kotlin.String = us // kotlin.String | The ISO 3166 country code of the country for which top news should be retrieved.
             //val language : kotlin.String = en // kotlin.String | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
             //val date : kotlin.String = 2024-05-30 // kotlin.String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
             //val headlinesOnly : kotlin.Boolean = false // kotlin.Boolean | Whether to only return basic information such as id, title, and url of the news.
-            //val result : TopNews200Response = apiInstance.topNews(sourceCountry, language, date, headlinesOnly)
+            //val result : TopNewsAPI200Response = apiInstance.topNewsAPI(sourceCountry, language, date, headlinesOnly)
             //result shouldBe ("TODO")
         }
 

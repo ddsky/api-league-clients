@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
-[**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
-[**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks
-[**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
-[**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
+[**compute_nutrition_api**](FoodApi.md#compute_nutrition_api) | **GET** /compute-nutrition | Compute Nutrition API
+[**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+[**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API
+[**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API
+[**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API
 
 
 
-## compute_nutrition
+## compute_nutrition_api
 
-> models::ComputeNutrition200Response compute_nutrition(ingredients, servings, reduce_oils)
-Compute Nutrition
+> models::ComputeNutritionApi200Response compute_nutrition_api(ingredients, servings, reduce_oils)
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -30,7 +30,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::ComputeNutrition200Response**](computeNutrition_200_response.md)
+[**models::ComputeNutritionApi200Response**](computeNutritionAPI_200_response.md)
 
 ### Authorization
 
@@ -44,10 +44,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## retrieve_recipe_information
+## retrieve_recipe_information_api
 
-> models::RetrieveRecipeInformation200Response retrieve_recipe_information(id, add_wine_pairing)
-Retrieve Recipe Information
+> models::RetrieveRecipeInformationApi200Response retrieve_recipe_information_api(id, add_wine_pairing)
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::RetrieveRecipeInformation200Response**](retrieveRecipeInformation_200_response.md)
+[**models::RetrieveRecipeInformationApi200Response**](retrieveRecipeInformationAPI_200_response.md)
 
 ### Authorization
 
@@ -75,10 +75,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## search_drinks
+## search_drinks_api
 
-> models::SearchDrinks200Response search_drinks(query, glass_types, flavors, diet, include_ingredients, exclude_ingredients, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_alcohol_percent, max_alcohol_percent, min_caffeine, max_caffeine, sort, sort_direction, offset, number)
-Search Drinks
+> models::SearchDrinksApi200Response search_drinks_api(query, glass_types, flavors, diet, include_ingredients, exclude_ingredients, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_alcohol_percent, max_alcohol_percent, min_caffeine, max_caffeine, sort, sort_direction, offset, number)
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SearchDrinks200Response**](searchDrinks_200_response.md)
+[**models::SearchDrinksApi200Response**](searchDrinksAPI_200_response.md)
 
 ### Authorization
 
@@ -126,10 +126,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## search_recipes
+## search_recipes_api
 
-> models::SearchRecipes200Response search_recipes(query, cuisines, exclude_cuisines, meal_type, diet, intolerances, equipment, include_ingredients, exclude_ingredients, fill_ingredients, add_recipe_information, max_time, min_servings, max_servings, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_sugar, max_sugar, min_fiber, max_fiber, min_folate, max_folate, min_folic_acid, max_folic_acid, min_iodine, max_iodine, min_iron, max_iron, min_zinc, max_zinc, min_magnesium, max_magnesium, min_manganese, max_manganese, min_phosphorus, max_phosphorus, min_potassium, max_potassium, min_sodium, max_sodium, min_selenium, max_selenium, min_copper, max_copper, min_calcium, max_calcium, min_choline, max_choline, min_cholesterol, max_cholesterol, min_fluoride, max_fluoride, min_alcohol, max_alcohol, min_caffeine, max_caffeine, min_saturated_fat, max_saturated_fat, min_vitamin_a, max_vitamin_a, min_vitamin_c, max_vitamin_c, min_vitamin_d, max_vitamin_d, min_vitamin_e, max_vitamin_e, min_vitamin_k, max_vitamin_k, min_vitamin_b1, max_vitamin_b1, min_vitamin_b2, max_vitamin_b2, min_vitamin_b3, max_vitamin_b3, min_vitamin_b5, max_vitamin_b5, min_vitamin_b6, max_vitamin_b6, min_vitamin_b12, max_vitamin_b12, sort, sort_direction, offset, number)
-Search Recipes
+> models::SearchRecipesApi200Response search_recipes_api(query, cuisines, exclude_cuisines, meal_type, diet, intolerances, equipment, include_ingredients, exclude_ingredients, fill_ingredients, add_recipe_information, max_time, min_servings, max_servings, min_calories, max_calories, min_carbs, max_carbs, min_protein, max_protein, min_fat, max_fat, min_sugar, max_sugar, min_fiber, max_fiber, min_folate, max_folate, min_folic_acid, max_folic_acid, min_iodine, max_iodine, min_iron, max_iron, min_zinc, max_zinc, min_magnesium, max_magnesium, min_manganese, max_manganese, min_phosphorus, max_phosphorus, min_potassium, max_potassium, min_sodium, max_sodium, min_selenium, max_selenium, min_copper, max_copper, min_calcium, max_calcium, min_choline, max_choline, min_cholesterol, max_cholesterol, min_fluoride, max_fluoride, min_alcohol, max_alcohol, min_caffeine, max_caffeine, min_saturated_fat, max_saturated_fat, min_vitamin_a, max_vitamin_a, min_vitamin_c, max_vitamin_c, min_vitamin_d, max_vitamin_d, min_vitamin_e, max_vitamin_e, min_vitamin_k, max_vitamin_k, min_vitamin_b1, max_vitamin_b1, min_vitamin_b2, max_vitamin_b2, min_vitamin_b3, max_vitamin_b3, min_vitamin_b5, max_vitamin_b5, min_vitamin_b6, max_vitamin_b6, min_vitamin_b12, max_vitamin_b12, sort, sort_direction, offset, number)
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SearchRecipes200Response**](searchRecipes_200_response.md)
+[**models::SearchRecipesApi200Response**](searchRecipesAPI_200_response.md)
 
 ### Authorization
 
@@ -245,10 +245,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## search_restaurants
+## search_restaurants_api
 
-> models::SearchRestaurants200Response search_restaurants(lat, lon, query, distance, budget, min_rating, cuisine, is_open, page, sort)
-Search Restaurants
+> models::SearchRestaurantsApi200Response search_restaurants_api(lat, lon, query, distance, budget, min_rating, cuisine, is_open, page, sort)
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SearchRestaurants200Response**](searchRestaurants_200_response.md)
+[**models::SearchRestaurantsApi200Response**](searchRestaurantsAPI_200_response.md)
 
 ### Authorization
 

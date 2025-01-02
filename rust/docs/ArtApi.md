@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**image_to_ascii_art_by_url**](ArtApi.md#image_to_ascii_art_by_url) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**random_poem**](ArtApi.md#random_poem) | **GET** /retrieve-random-poem | Random Poem
+[**image_to_ascii_art_by_urlapi**](ArtApi.md#image_to_ascii_art_by_urlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+[**random_poem_api**](ArtApi.md#random_poem_api) | **GET** /retrieve-random-poem | Random Poem API
 
 
 
-## image_to_ascii_art_by_url
+## image_to_ascii_art_by_urlapi
 
-> String image_to_ascii_art_by_url(url, width, height)
-Image to Ascii Art by URL
+> String image_to_ascii_art_by_urlapi(url, width, height)
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -41,10 +41,10 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## random_poem
+## random_poem_api
 
-> models::RandomPoem200Response random_poem(min_lines, max_lines)
-Random Poem
+> models::RandomPoemApi200Response random_poem_api(min_lines, max_lines)
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::RandomPoem200Response**](randomPoem_200_response.md)
+[**models::RandomPoemApi200Response**](randomPoemAPI_200_response.md)
 
 ### Authorization
 

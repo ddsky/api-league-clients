@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ExtractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News |
-| [**SearchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News |
-| [**TopNews**](NewsApi.md#topnews) | **GET** /retrieve-top-news | Top News |
+| [**ExtractNewsAPI**](NewsApi.md#extractnewsapi) | **GET** /extract-news | Extract News API |
+| [**SearchNewsAPI**](NewsApi.md#searchnewsapi) | **GET** /search-news | Search News API |
+| [**TopNewsAPI**](NewsApi.md#topnewsapi) | **GET** /retrieve-top-news | Top News API |
 
-<a id="extractnews"></a>
-# **ExtractNews**
-> ExtractNews200Response ExtractNews (string url, bool analyze)
+<a id="extractnewsapi"></a>
+# **ExtractNewsAPI**
+> ExtractNewsAPI200Response ExtractNewsAPI (string url, bool analyze)
 
-Extract News
+Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -26,7 +26,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractNewsExample
+    public class ExtractNewsAPIExample
     {
         public static void Main()
         {
@@ -47,13 +47,13 @@ namespace Example
 
             try
             {
-                // Extract News
-                ExtractNews200Response result = apiInstance.ExtractNews(url, analyze);
+                // Extract News API
+                ExtractNewsAPI200Response result = apiInstance.ExtractNewsAPI(url, analyze);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NewsApi.ExtractNews: " + e.Message);
+                Debug.Print("Exception when calling NewsApi.ExtractNewsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +62,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractNewsWithHttpInfo variant
+#### Using the ExtractNewsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract News
-    ApiResponse<ExtractNews200Response> response = apiInstance.ExtractNewsWithHttpInfo(url, analyze);
+    // Extract News API
+    ApiResponse<ExtractNewsAPI200Response> response = apiInstance.ExtractNewsAPIWithHttpInfo(url, analyze);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling NewsApi.ExtractNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling NewsApi.ExtractNewsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractNews200Response**](ExtractNews200Response.md)
+[**ExtractNewsAPI200Response**](ExtractNewsAPI200Response.md)
 
 ### Authorization
 
@@ -116,13 +116,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchnews"></a>
-# **SearchNews**
-> SearchNews200Response SearchNews (string? text = null, string? sourceCountries = null, string? language = null, double? minSentiment = null, double? maxSentiment = null, string? earliestPublishDate = null, string? latestPublishDate = null, string? newsSources = null, string? authors = null, string? categories = null, string? entities = null, string? locationFilter = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
+<a id="searchnewsapi"></a>
+# **SearchNewsAPI**
+> SearchNewsAPI200Response SearchNewsAPI (string? text = null, string? sourceCountries = null, string? language = null, double? minSentiment = null, double? maxSentiment = null, string? earliestPublishDate = null, string? latestPublishDate = null, string? newsSources = null, string? authors = null, string? categories = null, string? entities = null, string? locationFilter = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
 
-Search News
+Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```csharp
@@ -134,7 +134,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchNewsExample
+    public class SearchNewsAPIExample
     {
         public static void Main()
         {
@@ -150,7 +150,7 @@ namespace Example
             // config.AddApiKeyPrefix("x-api-key", "Bearer");
 
             var apiInstance = new NewsApi(config);
-            var text = tesla;  // string? | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional) 
+            var text = tesla;  // string? | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. (optional) 
             var sourceCountries = us,uk;  // string? | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional) 
             var language = en;  // string? | The ISO 6391 language code of the news. (optional) 
             var minSentiment = -0.8;  // double? | The minimal sentiment of the news in range [-1,1]. (optional) 
@@ -169,13 +169,13 @@ namespace Example
 
             try
             {
-                // Search News
-                SearchNews200Response result = apiInstance.SearchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
+                // Search News API
+                SearchNewsAPI200Response result = apiInstance.SearchNewsAPI(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NewsApi.SearchNews: " + e.Message);
+                Debug.Print("Exception when calling NewsApi.SearchNewsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -184,21 +184,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchNewsWithHttpInfo variant
+#### Using the SearchNewsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search News
-    ApiResponse<SearchNews200Response> response = apiInstance.SearchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
+    // Search News API
+    ApiResponse<SearchNewsAPI200Response> response = apiInstance.SearchNewsAPIWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling NewsApi.SearchNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling NewsApi.SearchNewsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -208,7 +208,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **text** | **string?** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional]  |
+| **text** | **string?** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | [optional]  |
 | **sourceCountries** | **string?** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional]  |
 | **language** | **string?** | The ISO 6391 language code of the news. | [optional]  |
 | **minSentiment** | **double?** | The minimal sentiment of the news in range [-1,1]. | [optional]  |
@@ -227,7 +227,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchNews200Response**](SearchNews200Response.md)
+[**SearchNewsAPI200Response**](SearchNewsAPI200Response.md)
 
 ### Authorization
 
@@ -252,13 +252,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="topnews"></a>
-# **TopNews**
-> TopNews200Response TopNews (string sourceCountry, string language, string? date = null, bool? headlinesOnly = null)
+<a id="topnewsapi"></a>
+# **TopNewsAPI**
+> TopNewsAPI200Response TopNewsAPI (string sourceCountry, string language, string? date = null, bool? headlinesOnly = null)
 
-Top News
+Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Example
 ```csharp
@@ -270,7 +270,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class TopNewsExample
+    public class TopNewsAPIExample
     {
         public static void Main()
         {
@@ -293,13 +293,13 @@ namespace Example
 
             try
             {
-                // Top News
-                TopNews200Response result = apiInstance.TopNews(sourceCountry, language, date, headlinesOnly);
+                // Top News API
+                TopNewsAPI200Response result = apiInstance.TopNewsAPI(sourceCountry, language, date, headlinesOnly);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling NewsApi.TopNews: " + e.Message);
+                Debug.Print("Exception when calling NewsApi.TopNewsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -308,21 +308,21 @@ namespace Example
 }
 ```
 
-#### Using the TopNewsWithHttpInfo variant
+#### Using the TopNewsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Top News
-    ApiResponse<TopNews200Response> response = apiInstance.TopNewsWithHttpInfo(sourceCountry, language, date, headlinesOnly);
+    // Top News API
+    ApiResponse<TopNewsAPI200Response> response = apiInstance.TopNewsAPIWithHttpInfo(sourceCountry, language, date, headlinesOnly);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling NewsApi.TopNewsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling NewsApi.TopNewsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -339,7 +339,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TopNews200Response**](TopNews200Response.md)
+[**TopNewsAPI200Response**](TopNewsAPI200Response.md)
 
 ### Authorization
 

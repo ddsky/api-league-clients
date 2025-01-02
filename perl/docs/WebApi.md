@@ -9,18 +9,18 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extract_authors**](WebApi.md#extract_authors) | **GET** /extract-authors | Extract Authors
-[**extract_content_from_a_web_page**](WebApi.md#extract_content_from_a_web_page) | **GET** /extract-content | Extract Content from a Web Page
-[**extract_publish_date**](WebApi.md#extract_publish_date) | **GET** /extract-publish-date | Extract Publish Date
-[**retrieve_page_rank**](WebApi.md#retrieve_page_rank) | **GET** /retrieve-page-rank | Retrieve Page Rank
-[**search_web**](WebApi.md#search_web) | **GET** /search-web | Search Web
-[**verify_email_address**](WebApi.md#verify_email_address) | **GET** /verify-email | Verify Email Address
+[**extract_authors_api**](WebApi.md#extract_authors_api) | **GET** /extract-authors | Extract Authors API
+[**extract_content_from_a_web_page_api**](WebApi.md#extract_content_from_a_web_page_api) | **GET** /extract-content | Extract Content from a Web Page API
+[**extract_publish_date_api**](WebApi.md#extract_publish_date_api) | **GET** /extract-publish-date | Extract Publish Date API
+[**retrieve_page_rank_api**](WebApi.md#retrieve_page_rank_api) | **GET** /retrieve-page-rank | Retrieve Page Rank API
+[**search_web_api**](WebApi.md#search_web_api) | **GET** /search-web | Search Web API
+[**verify_email_address_api**](WebApi.md#verify_email_address_api) | **GET** /verify-email | Verify Email Address API
 
 
-# **extract_authors**
-> ExtractAuthors200Response extract_authors(url => $url)
+# **extract_authors_api**
+> ExtractAuthorsAPI200Response extract_authors_api(url => $url)
 
-Extract Authors
+Extract Authors API
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
@@ -43,11 +43,11 @@ my $api_instance = WWW::OpenAPIClient::WebApi->new(
 my $url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; # string | The url with the article from which authors should be extracted.
 
 eval {
-    my $result = $api_instance->extract_authors(url => $url);
+    my $result = $api_instance->extract_authors_api(url => $url);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->extract_authors: $@\n";
+    warn "Exception when calling WebApi->extract_authors_api: $@\n";
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
+[**ExtractAuthorsAPI200Response**](ExtractAuthorsAPI200Response.md)
 
 ### Authorization
 
@@ -72,10 +72,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extract_content_from_a_web_page**
-> ExtractContentFromAWebPage200Response extract_content_from_a_web_page(url => $url)
+# **extract_content_from_a_web_page_api**
+> ExtractContentFromAWebPageAPI200Response extract_content_from_a_web_page_api(url => $url)
 
-Extract Content from a Web Page
+Extract Content from a Web Page API
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
@@ -98,11 +98,11 @@ my $api_instance = WWW::OpenAPIClient::WebApi->new(
 my $url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; # string | The url for which the content will be extracted.
 
 eval {
-    my $result = $api_instance->extract_content_from_a_web_page(url => $url);
+    my $result = $api_instance->extract_content_from_a_web_page_api(url => $url);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->extract_content_from_a_web_page: $@\n";
+    warn "Exception when calling WebApi->extract_content_from_a_web_page_api: $@\n";
 }
 ```
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
+[**ExtractContentFromAWebPageAPI200Response**](ExtractContentFromAWebPageAPI200Response.md)
 
 ### Authorization
 
@@ -127,10 +127,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extract_publish_date**
-> ExtractPublishDate200Response extract_publish_date(url => $url)
+# **extract_publish_date_api**
+> ExtractPublishDateAPI200Response extract_publish_date_api(url => $url)
 
-Extract Publish Date
+Extract Publish Date API
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
@@ -153,11 +153,11 @@ my $api_instance = WWW::OpenAPIClient::WebApi->new(
 my $url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; # string | The url for which the publish date should be extracted.
 
 eval {
-    my $result = $api_instance->extract_publish_date(url => $url);
+    my $result = $api_instance->extract_publish_date_api(url => $url);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->extract_publish_date: $@\n";
+    warn "Exception when calling WebApi->extract_publish_date_api: $@\n";
 }
 ```
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+[**ExtractPublishDateAPI200Response**](ExtractPublishDateAPI200Response.md)
 
 ### Authorization
 
@@ -182,10 +182,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_page_rank**
-> RetrievePageRank200Response retrieve_page_rank(domain => $domain)
+# **retrieve_page_rank_api**
+> RetrievePageRankAPI200Response retrieve_page_rank_api(domain => $domain)
 
-Retrieve Page Rank
+Retrieve Page Rank API
 
 This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
 
@@ -208,11 +208,11 @@ my $api_instance = WWW::OpenAPIClient::WebApi->new(
 my $domain = amazon.com; # string | The domain for which the page rank should be returned.
 
 eval {
-    my $result = $api_instance->retrieve_page_rank(domain => $domain);
+    my $result = $api_instance->retrieve_page_rank_api(domain => $domain);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->retrieve_page_rank: $@\n";
+    warn "Exception when calling WebApi->retrieve_page_rank_api: $@\n";
 }
 ```
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
+[**RetrievePageRankAPI200Response**](RetrievePageRankAPI200Response.md)
 
 ### Authorization
 
@@ -237,10 +237,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_web**
-> SearchWeb200Response search_web(query => $query, number => $number)
+# **search_web_api**
+> SearchWebAPI200Response search_web_api(query => $query, number => $number)
 
-Search Web
+Search Web API
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
@@ -264,11 +264,11 @@ my $query = penguins; # string | The search query.
 my $number = 5; # int | The number of results to return in range [1,50]
 
 eval {
-    my $result = $api_instance->search_web(query => $query, number => $number);
+    my $result = $api_instance->search_web_api(query => $query, number => $number);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->search_web: $@\n";
+    warn "Exception when calling WebApi->search_web_api: $@\n";
 }
 ```
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchWeb200Response**](SearchWeb200Response.md)
+[**SearchWebAPI200Response**](SearchWebAPI200Response.md)
 
 ### Authorization
 
@@ -294,10 +294,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verify_email_address**
-> VerifyEmailAddress200Response verify_email_address(email => $email)
+# **verify_email_address_api**
+> VerifyEmailAddressAPI200Response verify_email_address_api(email => $email)
 
-Verify Email Address
+Verify Email Address API
 
 This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
 
@@ -320,11 +320,11 @@ my $api_instance = WWW::OpenAPIClient::WebApi->new(
 my $email = maxtest@gmail.com; # string | The email address to verify.
 
 eval {
-    my $result = $api_instance->verify_email_address(email => $email);
+    my $result = $api_instance->verify_email_address_api(email => $email);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling WebApi->verify_email_address: $@\n";
+    warn "Exception when calling WebApi->verify_email_address_api: $@\n";
 }
 ```
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
+[**VerifyEmailAddressAPI200Response**](VerifyEmailAddressAPI200Response.md)
 
 ### Authorization
 

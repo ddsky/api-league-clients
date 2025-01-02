@@ -10,7 +10,7 @@ defmodule APILeague.Api.Food do
   import APILeague.RequestBuilder
 
   @doc """
-  Compute Nutrition
+  Compute Nutrition API
   Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
   ### Parameters
@@ -23,11 +23,11 @@ defmodule APILeague.Api.Food do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ComputeNutrition200Response.t}` on success
+  - `{:ok, APILeague.Model.ComputeNutritionApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec compute_nutrition(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ComputeNutrition200Response.t} | {:error, Tesla.Env.t}
-  def compute_nutrition(connection, ingredients, opts \\ []) do
+  @spec compute_nutrition_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ComputeNutritionApi200Response.t} | {:error, Tesla.Env.t}
+  def compute_nutrition_api(connection, ingredients, opts \\ []) do
     optional_params = %{
       :servings => :query,
       :"reduce-oils" => :query
@@ -44,7 +44,7 @@ defmodule APILeague.Api.Food do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ComputeNutrition200Response},
+      {200, APILeague.Model.ComputeNutritionApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -55,7 +55,7 @@ defmodule APILeague.Api.Food do
   end
 
   @doc """
-  Retrieve Recipe Information
+  Retrieve Recipe Information API
   Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
   ### Parameters
@@ -67,11 +67,11 @@ defmodule APILeague.Api.Food do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RetrieveRecipeInformation200Response.t}` on success
+  - `{:ok, APILeague.Model.RetrieveRecipeInformationApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec retrieve_recipe_information(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrieveRecipeInformation200Response.t} | {:error, Tesla.Env.t}
-  def retrieve_recipe_information(connection, id, opts \\ []) do
+  @spec retrieve_recipe_information_api(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrieveRecipeInformationApi200Response.t} | {:error, Tesla.Env.t}
+  def retrieve_recipe_information_api(connection, id, opts \\ []) do
     optional_params = %{
       :"add-wine-pairing" => :query
     }
@@ -87,7 +87,7 @@ defmodule APILeague.Api.Food do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RetrieveRecipeInformation200Response},
+      {200, APILeague.Model.RetrieveRecipeInformationApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -98,7 +98,7 @@ defmodule APILeague.Api.Food do
   end
 
   @doc """
-  Search Drinks
+  Search Drinks API
   Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
   ### Parameters
@@ -130,11 +130,11 @@ defmodule APILeague.Api.Food do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchDrinks200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchDrinksApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_drinks(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchDrinks200Response.t} | {:error, Tesla.Env.t}
-  def search_drinks(connection, opts \\ []) do
+  @spec search_drinks_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchDrinksApi200Response.t} | {:error, Tesla.Env.t}
+  def search_drinks_api(connection, opts \\ []) do
     optional_params = %{
       :query => :query,
       :"glass-types" => :query,
@@ -170,7 +170,7 @@ defmodule APILeague.Api.Food do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchDrinks200Response},
+      {200, APILeague.Model.SearchDrinksApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -181,7 +181,7 @@ defmodule APILeague.Api.Food do
   end
 
   @doc """
-  Search Recipes
+  Search Recipes API
   Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
   ### Parameters
@@ -281,11 +281,11 @@ defmodule APILeague.Api.Food do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchRecipes200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchRecipesApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_recipes(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchRecipes200Response.t} | {:error, Tesla.Env.t}
-  def search_recipes(connection, opts \\ []) do
+  @spec search_recipes_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchRecipesApi200Response.t} | {:error, Tesla.Env.t}
+  def search_recipes_api(connection, opts \\ []) do
     optional_params = %{
       :query => :query,
       :cuisines => :query,
@@ -389,7 +389,7 @@ defmodule APILeague.Api.Food do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchRecipes200Response},
+      {200, APILeague.Model.SearchRecipesApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -400,7 +400,7 @@ defmodule APILeague.Api.Food do
   end
 
   @doc """
-  Search Restaurants
+  Search Restaurants API
   Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
   ### Parameters
@@ -420,11 +420,11 @@ defmodule APILeague.Api.Food do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchRestaurants200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchRestaurantsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_restaurants(Tesla.Env.client, float(), float(), keyword()) :: {:ok, APILeague.Model.SearchRestaurants200Response.t} | {:ok, nil} | {:error, Tesla.Env.t}
-  def search_restaurants(connection, lat, lon, opts \\ []) do
+  @spec search_restaurants_api(Tesla.Env.client, float(), float(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchRestaurantsApi200Response.t} | {:error, Tesla.Env.t}
+  def search_restaurants_api(connection, lat, lon, opts \\ []) do
     optional_params = %{
       :query => :query,
       :distance => :query,
@@ -448,7 +448,7 @@ defmodule APILeague.Api.Food do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchRestaurants200Response},
+      {200, APILeague.Model.SearchRestaurantsApi200Response},
       {401, false},
       {402, false},
       {403, false},

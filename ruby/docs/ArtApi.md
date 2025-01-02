@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**image_to_ascii_art_by_url**](ArtApi.md#image_to_ascii_art_by_url) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
-| [**random_poem**](ArtApi.md#random_poem) | **GET** /retrieve-random-poem | Random Poem |
+| [**image_to_ascii_art_by_urlapi**](ArtApi.md#image_to_ascii_art_by_urlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API |
+| [**random_poem_api**](ArtApi.md#random_poem_api) | **GET** /retrieve-random-poem | Random Poem API |
 
 
-## image_to_ascii_art_by_url
+## image_to_ascii_art_by_urlapi
 
-> String image_to_ascii_art_by_url(url, opts)
+> String image_to_ascii_art_by_urlapi(url, opts)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -42,29 +42,29 @@ opts = {
 }
 
 begin
-  # Image to Ascii Art by URL
-  result = api_instance.image_to_ascii_art_by_url(url, opts)
+  # Image to Ascii Art by URL API
+  result = api_instance.image_to_ascii_art_by_urlapi(url, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ArtApi->image_to_ascii_art_by_url: #{e}"
+  puts "Error when calling ArtApi->image_to_ascii_art_by_urlapi: #{e}"
 end
 ```
 
-#### Using the image_to_ascii_art_by_url_with_http_info variant
+#### Using the image_to_ascii_art_by_urlapi_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(String, Integer, Hash)> image_to_ascii_art_by_url_with_http_info(url, opts)
+> <Array(String, Integer, Hash)> image_to_ascii_art_by_urlapi_with_http_info(url, opts)
 
 ```ruby
 begin
-  # Image to Ascii Art by URL
-  data, status_code, headers = api_instance.image_to_ascii_art_by_url_with_http_info(url, opts)
+  # Image to Ascii Art by URL API
+  data, status_code, headers = api_instance.image_to_ascii_art_by_urlapi_with_http_info(url, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ArtApi->image_to_ascii_art_by_url_with_http_info: #{e}"
+  puts "Error when calling ArtApi->image_to_ascii_art_by_urlapi_with_http_info: #{e}"
 end
 ```
 
@@ -90,11 +90,11 @@ end
 - **Accept**: text/plain
 
 
-## random_poem
+## random_poem_api
 
-> <RandomPoem200Response> random_poem(opts)
+> <RandomPoemAPI200Response> random_poem_api(opts)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
@@ -123,29 +123,29 @@ opts = {
 }
 
 begin
-  # Random Poem
-  result = api_instance.random_poem(opts)
+  # Random Poem API
+  result = api_instance.random_poem_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ArtApi->random_poem: #{e}"
+  puts "Error when calling ArtApi->random_poem_api: #{e}"
 end
 ```
 
-#### Using the random_poem_with_http_info variant
+#### Using the random_poem_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RandomPoem200Response>, Integer, Hash)> random_poem_with_http_info(opts)
+> <Array(<RandomPoemAPI200Response>, Integer, Hash)> random_poem_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Poem
-  data, status_code, headers = api_instance.random_poem_with_http_info(opts)
+  # Random Poem API
+  data, status_code, headers = api_instance.random_poem_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RandomPoem200Response>
+  p data # => <RandomPoemAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ArtApi->random_poem_with_http_info: #{e}"
+  puts "Error when calling ArtApi->random_poem_api_with_http_info: #{e}"
 end
 ```
 
@@ -158,7 +158,7 @@ end
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

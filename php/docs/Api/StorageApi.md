@@ -4,17 +4,17 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**readKeyValueFromStore()**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store |
-| [**storeKeyValueGET()**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET) |
+| [**readKeyValueFromStoreAPI()**](StorageApi.md#readKeyValueFromStoreAPI) | **GET** /read-key-value | Read Key Value from Store API |
+| [**storeKeyValueGETAPI()**](StorageApi.md#storeKeyValueGETAPI) | **GET** /store-key-value | Store Key Value (GET) API |
 
 
-## `readKeyValueFromStore()`
+## `readKeyValueFromStoreAPI()`
 
 ```php
-readKeyValueFromStore($key): \OpenAPI\Client\Model\ReadKeyValueFromStore200Response
+readKeyValueFromStoreAPI($key): \OpenAPI\Client\Model\ReadKeyValueFromStoreAPI200Response
 ```
 
-Read Key Value from Store
+Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -45,10 +45,10 @@ $apiInstance = new OpenAPI\Client\Api\StorageApi(
 $key = visitors24h; // string | The key for which the value is stored (max length 255 characters).
 
 try {
-    $result = $apiInstance->readKeyValueFromStore($key);
+    $result = $apiInstance->readKeyValueFromStoreAPI($key);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageApi->readKeyValueFromStore: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageApi->readKeyValueFromStoreAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ReadKeyValueFromStore200Response**](../Model/ReadKeyValueFromStore200Response.md)
+[**\OpenAPI\Client\Model\ReadKeyValueFromStoreAPI200Response**](../Model/ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -75,13 +75,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `storeKeyValueGET()`
+## `storeKeyValueGETAPI()`
 
 ```php
-storeKeyValueGET($key, $value): \OpenAPI\Client\Model\StoreKeyValueGET200Response
+storeKeyValueGETAPI($key, $value): \OpenAPI\Client\Model\StoreKeyValueGETAPI200Response
 ```
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -113,10 +113,10 @@ $key = visitors24h; // string | The key for which the value is stored (max lengt
 $value = 23578 visitors; // string | The value that is supposed to be stored (max length 10,000 characters).
 
 try {
-    $result = $apiInstance->storeKeyValueGET($key, $value);
+    $result = $apiInstance->storeKeyValueGETAPI($key, $value);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageApi->storeKeyValueGET: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageApi->storeKeyValueGETAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\StoreKeyValueGET200Response**](../Model/StoreKeyValueGET200Response.md)
+[**\OpenAPI\Client\Model\StoreKeyValueGETAPI200Response**](../Model/StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

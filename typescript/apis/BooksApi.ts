@@ -8,8 +8,8 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
-import { SearchBooks200Response } from '../models/SearchBooks200Response';
+import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { SearchBooksAPI200Response } from '../models/SearchBooksAPI200Response';
 
 /**
  * no description
@@ -17,17 +17,17 @@ import { SearchBooks200Response } from '../models/SearchBooks200Response';
 export class BooksApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
-     * Find Similar Books
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100]
      */
-    public async findSimilarBooks(id: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async findSimilarBooksAPI(id: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
-            throw new RequiredError("BooksApi", "findSimilarBooks", "id");
+            throw new RequiredError("BooksApi", "findSimilarBooksAPI", "id");
         }
 
 
@@ -71,8 +71,8 @@ export class BooksApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
-     * Search Books
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
      * @param query The search query.
      * @param earliestPublishYear The books must have been published after this year.
      * @param latestPublishYear The books must have been published before this year.
@@ -88,7 +88,7 @@ export class BooksApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of books to skip in range [0,1000]
      * @param number The number of books to return in range [1,100]
      */
-    public async searchBooks(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchBooksAPI(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -211,16 +211,16 @@ export class BooksApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to findSimilarBooks
+     * @params response Response returned by the server for a request to findSimilarBooksAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async findSimilarBooksWithHttpInfo(response: ResponseContext): Promise<HttpInfo<FindSimilarBooks200Response >> {
+     public async findSimilarBooksAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<FindSimilarBooksAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: FindSimilarBooks200Response = ObjectSerializer.deserialize(
+            const body: FindSimilarBooksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "FindSimilarBooks200Response", ""
-            ) as FindSimilarBooks200Response;
+                "FindSimilarBooksAPI200Response", ""
+            ) as FindSimilarBooksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -244,10 +244,10 @@ export class BooksApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: FindSimilarBooks200Response = ObjectSerializer.deserialize(
+            const body: FindSimilarBooksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "FindSimilarBooks200Response", ""
-            ) as FindSimilarBooks200Response;
+                "FindSimilarBooksAPI200Response", ""
+            ) as FindSimilarBooksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -258,16 +258,16 @@ export class BooksApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchBooks
+     * @params response Response returned by the server for a request to searchBooksAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchBooksWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchBooks200Response >> {
+     public async searchBooksAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchBooksAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchBooks200Response = ObjectSerializer.deserialize(
+            const body: SearchBooksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchBooks200Response", ""
-            ) as SearchBooks200Response;
+                "SearchBooksAPI200Response", ""
+            ) as SearchBooksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -291,10 +291,10 @@ export class BooksApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchBooks200Response = ObjectSerializer.deserialize(
+            const body: SearchBooksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchBooks200Response", ""
-            ) as SearchBooks200Response;
+                "SearchBooksAPI200Response", ""
+            ) as SearchBooksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

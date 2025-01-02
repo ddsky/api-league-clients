@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News
-[**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News
-[**top_news**](NewsApi.md#top_news) | **GET** /retrieve-top-news | Top News
+[**extract_news_api**](NewsApi.md#extract_news_api) | **GET** /extract-news | Extract News API
+[**search_news_api**](NewsApi.md#search_news_api) | **GET** /search-news | Search News API
+[**top_news_api**](NewsApi.md#top_news_api) | **GET** /retrieve-top-news | Top News API
 
 
 
-## extract_news
+## extract_news_api
 
-> models::ExtractNews200Response extract_news(url, analyze)
-Extract News
+> models::ExtractNewsApi200Response extract_news_api(url, analyze)
+Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::ExtractNews200Response**](extractNews_200_response.md)
+[**models::ExtractNewsApi200Response**](extractNewsAPI_200_response.md)
 
 ### Authorization
 
@@ -41,19 +41,19 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## search_news
+## search_news_api
 
-> models::SearchNews200Response search_news(text, source_countries, language, min_sentiment, max_sentiment, earliest_publish_date, latest_publish_date, news_sources, authors, categories, entities, location_filter, sort, sort_direction, offset, number)
-Search News
+> models::SearchNewsApi200Response search_news_api(text, source_countries, language, min_sentiment, max_sentiment, earliest_publish_date, latest_publish_date, news_sources, authors, categories, entities, location_filter, sort, sort_direction, offset, number)
+Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**text** | Option<**String**> | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford |  |
+**text** | Option<**String**> | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. |  |
 **source_countries** | Option<**String**> | A comma-separated list of ISO 3166 country codes from which the news should originate. |  |
 **language** | Option<**String**> | The ISO 6391 language code of the news. |  |
 **min_sentiment** | Option<**f64**> | The minimal sentiment of the news in range [-1,1]. |  |
@@ -72,7 +72,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SearchNews200Response**](searchNews_200_response.md)
+[**models::SearchNewsApi200Response**](searchNewsAPI_200_response.md)
 
 ### Authorization
 
@@ -86,12 +86,12 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## top_news
+## top_news_api
 
-> models::TopNews200Response top_news(source_country, language, date, headlines_only)
-Top News
+> models::TopNewsApi200Response top_news_api(source_country, language, date, headlines_only)
+Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Parameters
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::TopNews200Response**](topNews_200_response.md)
+[**models::TopNewsApi200Response**](topNewsAPI_200_response.md)
 
 ### Authorization
 

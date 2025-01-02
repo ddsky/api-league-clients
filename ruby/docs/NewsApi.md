@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**extract_news**](NewsApi.md#extract_news) | **GET** /extract-news | Extract News |
-| [**search_news**](NewsApi.md#search_news) | **GET** /search-news | Search News |
-| [**top_news**](NewsApi.md#top_news) | **GET** /retrieve-top-news | Top News |
+| [**extract_news_api**](NewsApi.md#extract_news_api) | **GET** /extract-news | Extract News API |
+| [**search_news_api**](NewsApi.md#search_news_api) | **GET** /search-news | Search News API |
+| [**top_news_api**](NewsApi.md#top_news_api) | **GET** /retrieve-top-news | Top News API |
 
 
-## extract_news
+## extract_news_api
 
-> <ExtractNews200Response> extract_news(url, analyze)
+> <ExtractNewsAPI200Response> extract_news_api(url, analyze)
 
-Extract News
+Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -40,29 +40,29 @@ url = 'https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-mot
 analyze = true # Boolean | Whether to analyze the news (extract entities etc.)
 
 begin
-  # Extract News
-  result = api_instance.extract_news(url, analyze)
+  # Extract News API
+  result = api_instance.extract_news_api(url, analyze)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->extract_news: #{e}"
+  puts "Error when calling NewsApi->extract_news_api: #{e}"
 end
 ```
 
-#### Using the extract_news_with_http_info variant
+#### Using the extract_news_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExtractNews200Response>, Integer, Hash)> extract_news_with_http_info(url, analyze)
+> <Array(<ExtractNewsAPI200Response>, Integer, Hash)> extract_news_api_with_http_info(url, analyze)
 
 ```ruby
 begin
-  # Extract News
-  data, status_code, headers = api_instance.extract_news_with_http_info(url, analyze)
+  # Extract News API
+  data, status_code, headers = api_instance.extract_news_api_with_http_info(url, analyze)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ExtractNews200Response>
+  p data # => <ExtractNewsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->extract_news_with_http_info: #{e}"
+  puts "Error when calling NewsApi->extract_news_api_with_http_info: #{e}"
 end
 ```
 
@@ -75,7 +75,7 @@ end
 
 ### Return type
 
-[**ExtractNews200Response**](ExtractNews200Response.md)
+[**ExtractNewsAPI200Response**](ExtractNewsAPI200Response.md)
 
 ### Authorization
 
@@ -87,13 +87,13 @@ end
 - **Accept**: application/json
 
 
-## search_news
+## search_news_api
 
-> <SearchNews200Response> search_news(opts)
+> <SearchNewsAPI200Response> search_news_api(opts)
 
-Search News
+Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Examples
 
@@ -115,7 +115,7 @@ end
 
 api_instance = OpenapiClient::NewsApi.new
 opts = {
-  text: 'tesla', # String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  text: 'tesla', # String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
   source_countries: 'us,uk', # String | A comma-separated list of ISO 3166 country codes from which the news should originate.
   language: 'en', # String | The ISO 6391 language code of the news.
   min_sentiment: -0.8, # Float | The minimal sentiment of the news in range [-1,1].
@@ -134,29 +134,29 @@ opts = {
 }
 
 begin
-  # Search News
-  result = api_instance.search_news(opts)
+  # Search News API
+  result = api_instance.search_news_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->search_news: #{e}"
+  puts "Error when calling NewsApi->search_news_api: #{e}"
 end
 ```
 
-#### Using the search_news_with_http_info variant
+#### Using the search_news_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchNews200Response>, Integer, Hash)> search_news_with_http_info(opts)
+> <Array(<SearchNewsAPI200Response>, Integer, Hash)> search_news_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search News
-  data, status_code, headers = api_instance.search_news_with_http_info(opts)
+  # Search News API
+  data, status_code, headers = api_instance.search_news_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchNews200Response>
+  p data # => <SearchNewsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->search_news_with_http_info: #{e}"
+  puts "Error when calling NewsApi->search_news_api_with_http_info: #{e}"
 end
 ```
 
@@ -164,7 +164,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **text** | **String** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] |
+| **text** | **String** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | [optional] |
 | **source_countries** | **String** | A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] |
 | **language** | **String** | The ISO 6391 language code of the news. | [optional] |
 | **min_sentiment** | **Float** | The minimal sentiment of the news in range [-1,1]. | [optional] |
@@ -183,7 +183,7 @@ end
 
 ### Return type
 
-[**SearchNews200Response**](SearchNews200Response.md)
+[**SearchNewsAPI200Response**](SearchNewsAPI200Response.md)
 
 ### Authorization
 
@@ -195,13 +195,13 @@ end
 - **Accept**: application/json
 
 
-## top_news
+## top_news_api
 
-> <TopNews200Response> top_news(source_country, language, opts)
+> <TopNewsAPI200Response> top_news_api(source_country, language, opts)
 
-Top News
+Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Examples
 
@@ -230,29 +230,29 @@ opts = {
 }
 
 begin
-  # Top News
-  result = api_instance.top_news(source_country, language, opts)
+  # Top News API
+  result = api_instance.top_news_api(source_country, language, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->top_news: #{e}"
+  puts "Error when calling NewsApi->top_news_api: #{e}"
 end
 ```
 
-#### Using the top_news_with_http_info variant
+#### Using the top_news_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<TopNews200Response>, Integer, Hash)> top_news_with_http_info(source_country, language, opts)
+> <Array(<TopNewsAPI200Response>, Integer, Hash)> top_news_api_with_http_info(source_country, language, opts)
 
 ```ruby
 begin
-  # Top News
-  data, status_code, headers = api_instance.top_news_with_http_info(source_country, language, opts)
+  # Top News API
+  data, status_code, headers = api_instance.top_news_api_with_http_info(source_country, language, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <TopNews200Response>
+  p data # => <TopNewsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling NewsApi->top_news_with_http_info: #{e}"
+  puts "Error when calling NewsApi->top_news_api_with_http_info: #{e}"
 end
 ```
 
@@ -267,7 +267,7 @@ end
 
 ### Return type
 
-[**TopNews200Response**](TopNews200Response.md)
+[**TopNewsAPI200Response**](TopNewsAPI200Response.md)
 
 ### Authorization
 

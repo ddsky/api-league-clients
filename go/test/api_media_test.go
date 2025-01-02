@@ -22,11 +22,11 @@ func Test_apileague_MediaAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test MediaAPIService DetectMainImageColor", func(t *testing.T) {
+	t.Run("Test MediaAPIService DetectMainImageColorAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MediaAPI.DetectMainImageColor(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MediaAPI.DetectMainImageColorAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_MediaAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MediaAPIService RescaleImage", func(t *testing.T) {
+	t.Run("Test MediaAPIService RescaleImageAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MediaAPI.RescaleImage(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MediaAPI.RescaleImageAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_MediaAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MediaAPIService SearchIcons", func(t *testing.T) {
+	t.Run("Test MediaAPIService SearchIconsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MediaAPI.SearchIcons(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MediaAPI.SearchIconsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,23 @@ func Test_apileague_MediaAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test MediaAPIService SearchRoyaltyFreeImages", func(t *testing.T) {
+	t.Run("Test MediaAPIService SearchRoyaltyFreeImagesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.MediaAPI.SearchRoyaltyFreeImages(context.Background()).Execute()
+		resp, httpRes, err := apiClient.MediaAPI.SearchRoyaltyFreeImagesAPI(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MediaAPIService VectorSearchAPI", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MediaAPI.VectorSearchAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

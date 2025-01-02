@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.ReadKeyValueFromStore200Response
-import com.apileague.client.model.StoreKeyValueGET200Response
+import com.apileague.client.model.ReadKeyValueFromStoreAPI200Response
+import com.apileague.client.model.StoreKeyValueGETAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -47,10 +47,10 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters).
-     * @return ReadKeyValueFromStore200Response
+     * @return ReadKeyValueFromStoreAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -59,11 +59,11 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun readKeyValueFromStore(key: kotlin.String) : ReadKeyValueFromStore200Response {
-        val localVarResponse = readKeyValueFromStoreWithHttpInfo(key = key)
+    fun readKeyValueFromStoreAPI(key: kotlin.String) : ReadKeyValueFromStoreAPI200Response {
+        val localVarResponse = readKeyValueFromStoreAPIWithHttpInfo(key = key)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ReadKeyValueFromStore200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ReadKeyValueFromStoreAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -78,30 +78,30 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters).
-     * @return ApiResponse<ReadKeyValueFromStore200Response?>
+     * @return ApiResponse<ReadKeyValueFromStoreAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun readKeyValueFromStoreWithHttpInfo(key: kotlin.String) : ApiResponse<ReadKeyValueFromStore200Response?> {
-        val localVariableConfig = readKeyValueFromStoreRequestConfig(key = key)
+    fun readKeyValueFromStoreAPIWithHttpInfo(key: kotlin.String) : ApiResponse<ReadKeyValueFromStoreAPI200Response?> {
+        val localVariableConfig = readKeyValueFromStoreAPIRequestConfig(key = key)
 
-        return request<Unit, ReadKeyValueFromStore200Response>(
+        return request<Unit, ReadKeyValueFromStoreAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation readKeyValueFromStore
+     * To obtain the request config of the operation readKeyValueFromStoreAPI
      *
      * @param key The key for which the value is stored (max length 255 characters).
      * @return RequestConfig
      */
-    fun readKeyValueFromStoreRequestConfig(key: kotlin.String) : RequestConfig<Unit> {
+    fun readKeyValueFromStoreAPIRequestConfig(key: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -121,11 +121,11 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters).
      * @param `value` The value that is supposed to be stored (max length 10,000 characters).
-     * @return StoreKeyValueGET200Response
+     * @return StoreKeyValueGETAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -134,11 +134,11 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun storeKeyValueGET(key: kotlin.String, `value`: kotlin.String) : StoreKeyValueGET200Response {
-        val localVarResponse = storeKeyValueGETWithHttpInfo(key = key, `value` = `value`)
+    fun storeKeyValueGETAPI(key: kotlin.String, `value`: kotlin.String) : StoreKeyValueGETAPI200Response {
+        val localVarResponse = storeKeyValueGETAPIWithHttpInfo(key = key, `value` = `value`)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as StoreKeyValueGET200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as StoreKeyValueGETAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -153,32 +153,32 @@ class StorageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
      * @param key The key for which the value is stored (max length 255 characters).
      * @param `value` The value that is supposed to be stored (max length 10,000 characters).
-     * @return ApiResponse<StoreKeyValueGET200Response?>
+     * @return ApiResponse<StoreKeyValueGETAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun storeKeyValueGETWithHttpInfo(key: kotlin.String, `value`: kotlin.String) : ApiResponse<StoreKeyValueGET200Response?> {
-        val localVariableConfig = storeKeyValueGETRequestConfig(key = key, `value` = `value`)
+    fun storeKeyValueGETAPIWithHttpInfo(key: kotlin.String, `value`: kotlin.String) : ApiResponse<StoreKeyValueGETAPI200Response?> {
+        val localVariableConfig = storeKeyValueGETAPIRequestConfig(key = key, `value` = `value`)
 
-        return request<Unit, StoreKeyValueGET200Response>(
+        return request<Unit, StoreKeyValueGETAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation storeKeyValueGET
+     * To obtain the request config of the operation storeKeyValueGETAPI
      *
      * @param key The key for which the value is stored (max length 255 characters).
      * @param `value` The value that is supposed to be stored (max length 10,000 characters).
      * @return RequestConfig
      */
-    fun storeKeyValueGETRequestConfig(key: kotlin.String, `value`: kotlin.String) : RequestConfig<Unit> {
+    fun storeKeyValueGETAPIRequestConfig(key: kotlin.String, `value`: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

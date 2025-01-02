@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReadKeyValueFromStore**](StorageAPI.md#ReadKeyValueFromStore) | **Get** /read-key-value | Read Key Value from Store
-[**StoreKeyValueGET**](StorageAPI.md#StoreKeyValueGET) | **Get** /store-key-value | Store Key Value (GET)
+[**ReadKeyValueFromStoreAPI**](StorageAPI.md#ReadKeyValueFromStoreAPI) | **Get** /read-key-value | Read Key Value from Store API
+[**StoreKeyValueGETAPI**](StorageAPI.md#StoreKeyValueGETAPI) | **Get** /store-key-value | Store Key Value (GET) API
 
 
 
-## ReadKeyValueFromStore
+## ReadKeyValueFromStoreAPI
 
-> ReadKeyValueFromStore200Response ReadKeyValueFromStore(ctx).Key(key).Execute()
+> ReadKeyValueFromStoreAPI200Response ReadKeyValueFromStoreAPI(ctx).Key(key).Execute()
 
-Read Key Value from Store
+Read Key Value from Store API
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.StorageAPI.ReadKeyValueFromStore(context.Background()).Key(key).Execute()
+	resp, r, err := apiClient.StorageAPI.ReadKeyValueFromStoreAPI(context.Background()).Key(key).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.ReadKeyValueFromStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.ReadKeyValueFromStoreAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ReadKeyValueFromStore`: ReadKeyValueFromStore200Response
-	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.ReadKeyValueFromStore`: %v\n", resp)
+	// response from `ReadKeyValueFromStoreAPI`: ReadKeyValueFromStoreAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.ReadKeyValueFromStoreAPI`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReadKeyValueFromStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiReadKeyValueFromStoreAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
+[**ReadKeyValueFromStoreAPI200Response**](ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -75,11 +75,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## StoreKeyValueGET
+## StoreKeyValueGETAPI
 
-> StoreKeyValueGET200Response StoreKeyValueGET(ctx).Key(key).Value(value).Execute()
+> StoreKeyValueGETAPI200Response StoreKeyValueGETAPI(ctx).Key(key).Value(value).Execute()
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 
 
@@ -101,13 +101,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.StorageAPI.StoreKeyValueGET(context.Background()).Key(key).Value(value).Execute()
+	resp, r, err := apiClient.StorageAPI.StoreKeyValueGETAPI(context.Background()).Key(key).Value(value).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.StoreKeyValueGET``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.StoreKeyValueGETAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `StoreKeyValueGET`: StoreKeyValueGET200Response
-	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.StoreKeyValueGET`: %v\n", resp)
+	// response from `StoreKeyValueGETAPI`: StoreKeyValueGETAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `StorageAPI.StoreKeyValueGETAPI`: %v\n", resp)
 }
 ```
 
@@ -117,7 +117,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiStoreKeyValueGETRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStoreKeyValueGETAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
+[**StoreKeyValueGETAPI200Response**](StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

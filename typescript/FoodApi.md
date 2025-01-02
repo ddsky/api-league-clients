@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
-[**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
-[**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks
-[**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
-[**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
+[**computeNutritionAPI**](FoodApi.md#computeNutritionAPI) | **GET** /compute-nutrition | Compute Nutrition API
+[**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+[**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
+[**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
+[**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 
 
-# **computeNutrition**
-> ComputeNutrition200Response computeNutrition()
+# **computeNutritionAPI**
+> ComputeNutritionAPI200Response computeNutritionAPI()
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -26,7 +26,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .FoodApi(configuration);
 
-let body:.FoodApiComputeNutritionRequest = {
+let body:.FoodApiComputeNutritionAPIRequest = {
   // string | A comma-separated list of the ingredients of the recipe.
   ingredients: "1 cup apples,3oz milk,35g butter",
   // number | The number of servings the ingredients make. Nutrition is computed per serving. (optional)
@@ -35,7 +35,7 @@ let body:.FoodApiComputeNutritionRequest = {
   reduceOils: true,
 };
 
-apiInstance.computeNutrition(body).then((data:any) => {
+apiInstance.computeNutritionAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ComputeNutrition200Response**
+**ComputeNutritionAPI200Response**
 
 ### Authorization
 
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **retrieveRecipeInformation**
-> RetrieveRecipeInformation200Response retrieveRecipeInformation()
+# **retrieveRecipeInformationAPI**
+> RetrieveRecipeInformationAPI200Response retrieveRecipeInformationAPI()
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -92,14 +92,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .FoodApi(configuration);
 
-let body:.FoodApiRetrieveRecipeInformationRequest = {
+let body:.FoodApiRetrieveRecipeInformationAPIRequest = {
   // number | The id of the recipe to retrieve.
   id: 74987,
   // boolean | Whether to pair a wine to the recipe. (optional)
   addWinePairing: true,
 };
 
-apiInstance.retrieveRecipeInformation(body).then((data:any) => {
+apiInstance.retrieveRecipeInformationAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RetrieveRecipeInformation200Response**
+**RetrieveRecipeInformationAPI200Response**
 
 ### Authorization
 
@@ -140,8 +140,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchDrinks**
-> SearchDrinks200Response searchDrinks()
+# **searchDrinksAPI**
+> SearchDrinksAPI200Response searchDrinksAPI()
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -155,7 +155,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .FoodApi(configuration);
 
-let body:.FoodApiSearchDrinksRequest = {
+let body:.FoodApiSearchDrinksAPIRequest = {
   // string | The search query. (optional)
   query: "vodka",
   // string | A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
@@ -202,7 +202,7 @@ let body:.FoodApiSearchDrinksRequest = {
   number: 3,
 };
 
-apiInstance.searchDrinks(body).then((data:any) => {
+apiInstance.searchDrinksAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchDrinks200Response**
+**SearchDrinksAPI200Response**
 
 ### Authorization
 
@@ -263,8 +263,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchRecipes**
-> SearchRecipes200Response searchRecipes()
+# **searchRecipesAPI**
+> SearchRecipesAPI200Response searchRecipesAPI()
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -278,7 +278,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .FoodApi(configuration);
 
-let body:.FoodApiSearchRecipesRequest = {
+let body:.FoodApiSearchRecipesAPIRequest = {
   // string | The search query. (optional)
   query: "pasta with mushrooms but without nuts",
   // string | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \'OR\'). (optional)
@@ -461,7 +461,7 @@ let body:.FoodApiSearchRecipesRequest = {
   number: 3,
 };
 
-apiInstance.searchRecipes(body).then((data:any) => {
+apiInstance.searchRecipesAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchRecipes200Response**
+**SearchRecipesAPI200Response**
 
 ### Authorization
 
@@ -590,8 +590,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchRestaurants**
-> SearchRestaurants200Response searchRestaurants()
+# **searchRestaurantsAPI**
+> SearchRestaurantsAPI200Response searchRestaurantsAPI()
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -605,7 +605,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .FoodApi(configuration);
 
-let body:.FoodApiSearchRestaurantsRequest = {
+let body:.FoodApiSearchRestaurantsAPIRequest = {
   // number | The latitude to search around.
   lat: 32.715736,
   // number | The longitude to search around.
@@ -628,7 +628,7 @@ let body:.FoodApiSearchRestaurantsRequest = {
   sort: "rating",
 };
 
-apiInstance.searchRestaurants(body).then((data:any) => {
+apiInstance.searchRestaurantsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchRestaurants200Response**
+**SearchRestaurantsAPI200Response**
 
 ### Authorization
 

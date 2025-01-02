@@ -16,9 +16,9 @@ class BooksApi {
 
   final ApiClient apiClient;
 
-  /// Find Similar Books
+  /// Find Similar Books API
   ///
-  /// Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+  /// Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -29,7 +29,7 @@ class BooksApi {
   ///
   /// * [int] number:
   ///   The number of similar books to return in range [1,100]
-  Future<Response> findSimilarBooksWithHttpInfo(int id, { int? number, }) async {
+  Future<Response> findSimilarBooksAPIWithHttpInfo(int id, { int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/list-similar-books';
 
@@ -59,9 +59,9 @@ class BooksApi {
     );
   }
 
-  /// Find Similar Books
+  /// Find Similar Books API
   ///
-  /// Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+  /// Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
   ///
   /// Parameters:
   ///
@@ -70,8 +70,8 @@ class BooksApi {
   ///
   /// * [int] number:
   ///   The number of similar books to return in range [1,100]
-  Future<FindSimilarBooks200Response?> findSimilarBooks(int id, { int? number, }) async {
-    final response = await findSimilarBooksWithHttpInfo(id,  number: number, );
+  Future<FindSimilarBooksAPI200Response?> findSimilarBooksAPI(int id, { int? number, }) async {
+    final response = await findSimilarBooksAPIWithHttpInfo(id,  number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -79,15 +79,15 @@ class BooksApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FindSimilarBooks200Response',) as FindSimilarBooks200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FindSimilarBooksAPI200Response',) as FindSimilarBooksAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Books
+  /// Search Books API
   ///
-  /// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+  /// Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -134,7 +134,7 @@ class BooksApi {
   ///
   /// * [int] number:
   ///   The number of books to return in range [1,100]
-  Future<Response> searchBooksWithHttpInfo({ String? query, int? earliestPublishYear, int? latestPublishYear, double? minRating, double? maxRating, String? genres, String? authors, String? isbn, String? oclc, String? sort, String? sortDirection, bool? groupResults, int? offset, int? number, }) async {
+  Future<Response> searchBooksAPIWithHttpInfo({ String? query, int? earliestPublishYear, int? latestPublishYear, double? minRating, double? maxRating, String? genres, String? authors, String? isbn, String? oclc, String? sort, String? sortDirection, bool? groupResults, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-books';
 
@@ -202,9 +202,9 @@ class BooksApi {
     );
   }
 
-  /// Search Books
+  /// Search Books API
   ///
-  /// Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+  /// Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
   ///
   /// Parameters:
   ///
@@ -249,8 +249,8 @@ class BooksApi {
   ///
   /// * [int] number:
   ///   The number of books to return in range [1,100]
-  Future<SearchBooks200Response?> searchBooks({ String? query, int? earliestPublishYear, int? latestPublishYear, double? minRating, double? maxRating, String? genres, String? authors, String? isbn, String? oclc, String? sort, String? sortDirection, bool? groupResults, int? offset, int? number, }) async {
-    final response = await searchBooksWithHttpInfo( query: query, earliestPublishYear: earliestPublishYear, latestPublishYear: latestPublishYear, minRating: minRating, maxRating: maxRating, genres: genres, authors: authors, isbn: isbn, oclc: oclc, sort: sort, sortDirection: sortDirection, groupResults: groupResults, offset: offset, number: number, );
+  Future<SearchBooksAPI200Response?> searchBooksAPI({ String? query, int? earliestPublishYear, int? latestPublishYear, double? minRating, double? maxRating, String? genres, String? authors, String? isbn, String? oclc, String? sort, String? sortDirection, bool? groupResults, int? offset, int? number, }) async {
+    final response = await searchBooksAPIWithHttpInfo( query: query, earliestPublishYear: earliestPublishYear, latestPublishYear: latestPublishYear, minRating: minRating, maxRating: maxRating, genres: genres, authors: authors, isbn: isbn, oclc: oclc, sort: sort, sortDirection: sortDirection, groupResults: groupResults, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -258,7 +258,7 @@ class BooksApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchBooks200Response',) as SearchBooks200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchBooksAPI200Response',) as SearchBooksAPI200Response;
     
     }
     return null;

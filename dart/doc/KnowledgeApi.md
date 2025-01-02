@@ -9,15 +9,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**randomQuote**](KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote
-[**randomRiddle**](KnowledgeApi.md#randomriddle) | **GET** /retrieve-random-riddle | Random Riddle
-[**randomTrivia**](KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia
+[**randomQuoteAPI**](KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API
+[**randomRiddleAPI**](KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API
+[**randomTriviaAPI**](KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API
 
 
-# **randomQuote**
-> RandomQuote200Response randomQuote(minLength, maxLength)
+# **randomQuoteAPI**
+> RandomQuoteAPI200Response randomQuoteAPI(minLength, maxLength)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -38,10 +38,10 @@ final minLength = 120; // int | The minimum length of the quote in letters.
 final maxLength = 300; // int | The maximum length of the quote in letters.
 
 try {
-    final result = api_instance.randomQuote(minLength, maxLength);
+    final result = api_instance.randomQuoteAPI(minLength, maxLength);
     print(result);
 } catch (e) {
-    print('Exception when calling KnowledgeApi->randomQuote: $e\n');
+    print('Exception when calling KnowledgeApi->randomQuoteAPI: $e\n');
 }
 ```
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -67,10 +67,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **randomRiddle**
-> RandomRiddle200Response randomRiddle(difficulty)
+# **randomRiddleAPI**
+> RandomRiddleAPI200Response randomRiddleAPI(difficulty)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -90,10 +90,10 @@ final api_instance = KnowledgeApi();
 final difficulty = easy; // String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
 
 try {
-    final result = api_instance.randomRiddle(difficulty);
+    final result = api_instance.randomRiddleAPI(difficulty);
     print(result);
 } catch (e) {
-    print('Exception when calling KnowledgeApi->randomRiddle: $e\n');
+    print('Exception when calling KnowledgeApi->randomRiddleAPI: $e\n');
 }
 ```
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -118,12 +118,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **randomTrivia**
-> RandomTrivia200Response randomTrivia(maxLength)
+# **randomTriviaAPI**
+> RandomTriviaAPI200Response randomTriviaAPI(maxLength)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Example
 ```dart
@@ -141,10 +141,10 @@ final api_instance = KnowledgeApi();
 final maxLength = 300; // int | The maximum length of the trivia in letters.
 
 try {
-    final result = api_instance.randomTrivia(maxLength);
+    final result = api_instance.randomTriviaAPI(maxLength);
     print(result);
 } catch (e) {
-    print('Exception when calling KnowledgeApi->randomTrivia: $e\n');
+    print('Exception when calling KnowledgeApi->randomTriviaAPI: $e\n');
 }
 ```
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

@@ -4,20 +4,20 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**computeNutrition()**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition |
-| [**retrieveRecipeInformation()**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
-| [**searchDrinks()**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks |
-| [**searchRecipes()**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes |
-| [**searchRestaurants()**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants |
+| [**computeNutritionAPI()**](FoodApi.md#computeNutritionAPI) | **GET** /compute-nutrition | Compute Nutrition API |
+| [**retrieveRecipeInformationAPI()**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
+| [**searchDrinksAPI()**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API |
+| [**searchRecipesAPI()**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API |
+| [**searchRestaurantsAPI()**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API |
 
 
-## `computeNutrition()`
+## `computeNutritionAPI()`
 
 ```php
-computeNutrition($ingredients, $servings, $reduce_oils): \OpenAPI\Client\Model\ComputeNutrition200Response
+computeNutritionAPI($ingredients, $servings, $reduce_oils): \OpenAPI\Client\Model\ComputeNutritionAPI200Response
 ```
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -50,10 +50,10 @@ $servings = 1; // int | The number of servings the ingredients make. Nutrition i
 $reduce_oils = true; // bool | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
 
 try {
-    $result = $apiInstance->computeNutrition($ingredients, $servings, $reduce_oils);
+    $result = $apiInstance->computeNutritionAPI($ingredients, $servings, $reduce_oils);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FoodApi->computeNutrition: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FoodApi->computeNutritionAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ComputeNutrition200Response**](../Model/ComputeNutrition200Response.md)
+[**\OpenAPI\Client\Model\ComputeNutritionAPI200Response**](../Model/ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -82,13 +82,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `retrieveRecipeInformation()`
+## `retrieveRecipeInformationAPI()`
 
 ```php
-retrieveRecipeInformation($id, $add_wine_pairing): \OpenAPI\Client\Model\RetrieveRecipeInformation200Response
+retrieveRecipeInformationAPI($id, $add_wine_pairing): \OpenAPI\Client\Model\RetrieveRecipeInformationAPI200Response
 ```
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -120,10 +120,10 @@ $id = 74987; // int | The id of the recipe to retrieve.
 $add_wine_pairing = true; // bool | Whether to pair a wine to the recipe.
 
 try {
-    $result = $apiInstance->retrieveRecipeInformation($id, $add_wine_pairing);
+    $result = $apiInstance->retrieveRecipeInformationAPI($id, $add_wine_pairing);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FoodApi->retrieveRecipeInformation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FoodApi->retrieveRecipeInformationAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -136,7 +136,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RetrieveRecipeInformation200Response**](../Model/RetrieveRecipeInformation200Response.md)
+[**\OpenAPI\Client\Model\RetrieveRecipeInformationAPI200Response**](../Model/RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -151,13 +151,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchDrinks()`
+## `searchDrinksAPI()`
 
 ```php
-searchDrinks($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchDrinks200Response
+searchDrinksAPI($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchDrinksAPI200Response
 ```
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -209,10 +209,10 @@ $offset = 0; // int | The number of drinks to skip, between 0 and 90.
 $number = 3; // int | The number of drinks, between 1 and 10.
 
 try {
-    $result = $apiInstance->searchDrinks($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number);
+    $result = $apiInstance->searchDrinksAPI($query, $glass_types, $flavors, $diet, $include_ingredients, $exclude_ingredients, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_alcohol_percent, $max_alcohol_percent, $min_caffeine, $max_caffeine, $sort, $sort_direction, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FoodApi->searchDrinks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FoodApi->searchDrinksAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -245,7 +245,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchDrinks200Response**](../Model/SearchDrinks200Response.md)
+[**\OpenAPI\Client\Model\SearchDrinksAPI200Response**](../Model/SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -260,13 +260,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchRecipes()`
+## `searchRecipesAPI()`
 
 ```php
-searchRecipes($query, $cuisines, $exclude_cuisines, $meal_type, $diet, $intolerances, $equipment, $include_ingredients, $exclude_ingredients, $fill_ingredients, $add_recipe_information, $max_time, $min_servings, $max_servings, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_sugar, $max_sugar, $min_fiber, $max_fiber, $min_folate, $max_folate, $min_folic_acid, $max_folic_acid, $min_iodine, $max_iodine, $min_iron, $max_iron, $min_zinc, $max_zinc, $min_magnesium, $max_magnesium, $min_manganese, $max_manganese, $min_phosphorus, $max_phosphorus, $min_potassium, $max_potassium, $min_sodium, $max_sodium, $min_selenium, $max_selenium, $min_copper, $max_copper, $min_calcium, $max_calcium, $min_choline, $max_choline, $min_cholesterol, $max_cholesterol, $min_fluoride, $max_fluoride, $min_alcohol, $max_alcohol, $min_caffeine, $max_caffeine, $min_saturated_fat, $max_saturated_fat, $min_vitamin_a, $max_vitamin_a, $min_vitamin_c, $max_vitamin_c, $min_vitamin_d, $max_vitamin_d, $min_vitamin_e, $max_vitamin_e, $min_vitamin_k, $max_vitamin_k, $min_vitamin_b1, $max_vitamin_b1, $min_vitamin_b2, $max_vitamin_b2, $min_vitamin_b3, $max_vitamin_b3, $min_vitamin_b5, $max_vitamin_b5, $min_vitamin_b6, $max_vitamin_b6, $min_vitamin_b12, $max_vitamin_b12, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchRecipes200Response
+searchRecipesAPI($query, $cuisines, $exclude_cuisines, $meal_type, $diet, $intolerances, $equipment, $include_ingredients, $exclude_ingredients, $fill_ingredients, $add_recipe_information, $max_time, $min_servings, $max_servings, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_sugar, $max_sugar, $min_fiber, $max_fiber, $min_folate, $max_folate, $min_folic_acid, $max_folic_acid, $min_iodine, $max_iodine, $min_iron, $max_iron, $min_zinc, $max_zinc, $min_magnesium, $max_magnesium, $min_manganese, $max_manganese, $min_phosphorus, $max_phosphorus, $min_potassium, $max_potassium, $min_sodium, $max_sodium, $min_selenium, $max_selenium, $min_copper, $max_copper, $min_calcium, $max_calcium, $min_choline, $max_choline, $min_cholesterol, $max_cholesterol, $min_fluoride, $max_fluoride, $min_alcohol, $max_alcohol, $min_caffeine, $max_caffeine, $min_saturated_fat, $max_saturated_fat, $min_vitamin_a, $max_vitamin_a, $min_vitamin_c, $max_vitamin_c, $min_vitamin_d, $max_vitamin_d, $min_vitamin_e, $max_vitamin_e, $min_vitamin_k, $max_vitamin_k, $min_vitamin_b1, $max_vitamin_b1, $min_vitamin_b2, $max_vitamin_b2, $min_vitamin_b3, $max_vitamin_b3, $min_vitamin_b5, $max_vitamin_b5, $min_vitamin_b6, $max_vitamin_b6, $min_vitamin_b12, $max_vitamin_b12, $sort, $sort_direction, $offset, $number): \OpenAPI\Client\Model\SearchRecipesAPI200Response
 ```
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -386,10 +386,10 @@ $offset = 0; // int | The number of recipes to skip, between 0 and 900.
 $number = 3; // int | The number of recipes, between 1 and 100.
 
 try {
-    $result = $apiInstance->searchRecipes($query, $cuisines, $exclude_cuisines, $meal_type, $diet, $intolerances, $equipment, $include_ingredients, $exclude_ingredients, $fill_ingredients, $add_recipe_information, $max_time, $min_servings, $max_servings, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_sugar, $max_sugar, $min_fiber, $max_fiber, $min_folate, $max_folate, $min_folic_acid, $max_folic_acid, $min_iodine, $max_iodine, $min_iron, $max_iron, $min_zinc, $max_zinc, $min_magnesium, $max_magnesium, $min_manganese, $max_manganese, $min_phosphorus, $max_phosphorus, $min_potassium, $max_potassium, $min_sodium, $max_sodium, $min_selenium, $max_selenium, $min_copper, $max_copper, $min_calcium, $max_calcium, $min_choline, $max_choline, $min_cholesterol, $max_cholesterol, $min_fluoride, $max_fluoride, $min_alcohol, $max_alcohol, $min_caffeine, $max_caffeine, $min_saturated_fat, $max_saturated_fat, $min_vitamin_a, $max_vitamin_a, $min_vitamin_c, $max_vitamin_c, $min_vitamin_d, $max_vitamin_d, $min_vitamin_e, $max_vitamin_e, $min_vitamin_k, $max_vitamin_k, $min_vitamin_b1, $max_vitamin_b1, $min_vitamin_b2, $max_vitamin_b2, $min_vitamin_b3, $max_vitamin_b3, $min_vitamin_b5, $max_vitamin_b5, $min_vitamin_b6, $max_vitamin_b6, $min_vitamin_b12, $max_vitamin_b12, $sort, $sort_direction, $offset, $number);
+    $result = $apiInstance->searchRecipesAPI($query, $cuisines, $exclude_cuisines, $meal_type, $diet, $intolerances, $equipment, $include_ingredients, $exclude_ingredients, $fill_ingredients, $add_recipe_information, $max_time, $min_servings, $max_servings, $min_calories, $max_calories, $min_carbs, $max_carbs, $min_protein, $max_protein, $min_fat, $max_fat, $min_sugar, $max_sugar, $min_fiber, $max_fiber, $min_folate, $max_folate, $min_folic_acid, $max_folic_acid, $min_iodine, $max_iodine, $min_iron, $max_iron, $min_zinc, $max_zinc, $min_magnesium, $max_magnesium, $min_manganese, $max_manganese, $min_phosphorus, $max_phosphorus, $min_potassium, $max_potassium, $min_sodium, $max_sodium, $min_selenium, $max_selenium, $min_copper, $max_copper, $min_calcium, $max_calcium, $min_choline, $max_choline, $min_cholesterol, $max_cholesterol, $min_fluoride, $max_fluoride, $min_alcohol, $max_alcohol, $min_caffeine, $max_caffeine, $min_saturated_fat, $max_saturated_fat, $min_vitamin_a, $max_vitamin_a, $min_vitamin_c, $max_vitamin_c, $min_vitamin_d, $max_vitamin_d, $min_vitamin_e, $max_vitamin_e, $min_vitamin_k, $max_vitamin_k, $min_vitamin_b1, $max_vitamin_b1, $min_vitamin_b2, $max_vitamin_b2, $min_vitamin_b3, $max_vitamin_b3, $min_vitamin_b5, $max_vitamin_b5, $min_vitamin_b6, $max_vitamin_b6, $min_vitamin_b12, $max_vitamin_b12, $sort, $sort_direction, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FoodApi->searchRecipes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FoodApi->searchRecipesAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -490,7 +490,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchRecipes200Response**](../Model/SearchRecipes200Response.md)
+[**\OpenAPI\Client\Model\SearchRecipesAPI200Response**](../Model/SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -505,13 +505,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchRestaurants()`
+## `searchRestaurantsAPI()`
 
 ```php
-searchRestaurants($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort): \OpenAPI\Client\Model\SearchRestaurants200Response
+searchRestaurantsAPI($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort): \OpenAPI\Client\Model\SearchRestaurantsAPI200Response
 ```
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -551,10 +551,10 @@ $page = 0; // int | The page of the results.
 $sort = rating; // string | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
 
 try {
-    $result = $apiInstance->searchRestaurants($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort);
+    $result = $apiInstance->searchRestaurantsAPI($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FoodApi->searchRestaurants: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FoodApi->searchRestaurantsAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -575,7 +575,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchRestaurants200Response**](../Model/SearchRestaurants200Response.md)
+[**\OpenAPI\Client\Model\SearchRestaurantsAPI200Response**](../Model/SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

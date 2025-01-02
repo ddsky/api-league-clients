@@ -4,28 +4,28 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**correctSpelling()**](TextApi.md#correctSpelling) | **GET** /correct-spelling | Correct Spelling |
-| [**detectGenderByName()**](TextApi.md#detectGenderByName) | **GET** /detect-gender | Detect Gender by Name |
-| [**detectLanguage()**](TextApi.md#detectLanguage) | **GET** /detect-language | Detect Language |
-| [**detectSentiment()**](TextApi.md#detectSentiment) | **GET** /detect-sentiment | Detect Sentiment |
-| [**extractDates()**](TextApi.md#extractDates) | **GET** /extract-dates | Extract Dates |
-| [**extractEntities()**](TextApi.md#extractEntities) | **GET** /extract-entities | Extract Entities |
-| [**listWordSynonyms()**](TextApi.md#listWordSynonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**pluralizeWord()**](TextApi.md#pluralizeWord) | **GET** /pluralize-word | Pluralize Word |
-| [**scoreReadability()**](TextApi.md#scoreReadability) | **GET** /score-readability | Score Readability |
-| [**scoreText()**](TextApi.md#scoreText) | **GET** /score-text | Score Text |
-| [**singularizeWord()**](TextApi.md#singularizeWord) | **GET** /singularize-word | Singularize Word |
-| [**stemText()**](TextApi.md#stemText) | **GET** /stem-text | Stem Text |
-| [**tagPartOfSpeech()**](TextApi.md#tagPartOfSpeech) | **GET** /tag-pos | Tag Part of Speech |
+| [**correctSpellingAPI()**](TextApi.md#correctSpellingAPI) | **GET** /correct-spelling | Correct Spelling API |
+| [**detectGenderByNameAPI()**](TextApi.md#detectGenderByNameAPI) | **GET** /detect-gender | Detect Gender by Name API |
+| [**detectLanguageAPI()**](TextApi.md#detectLanguageAPI) | **GET** /detect-language | Detect Language API |
+| [**detectSentimentAPI()**](TextApi.md#detectSentimentAPI) | **GET** /detect-sentiment | Detect Sentiment API |
+| [**extractDatesAPI()**](TextApi.md#extractDatesAPI) | **GET** /extract-dates | Extract Dates API |
+| [**extractEntitiesAPI()**](TextApi.md#extractEntitiesAPI) | **GET** /extract-entities | Extract Entities API |
+| [**listWordSynonymsAPI()**](TextApi.md#listWordSynonymsAPI) | **GET** /list-synonyms | List Word Synonyms API |
+| [**pluralizeWordAPI()**](TextApi.md#pluralizeWordAPI) | **GET** /pluralize-word | Pluralize Word API |
+| [**scoreReadabilityAPI()**](TextApi.md#scoreReadabilityAPI) | **GET** /score-readability | Score Readability API |
+| [**scoreTextAPI()**](TextApi.md#scoreTextAPI) | **GET** /score-text | Score Text API |
+| [**singularizeWordAPI()**](TextApi.md#singularizeWordAPI) | **GET** /singularize-word | Singularize Word API |
+| [**stemTextAPI()**](TextApi.md#stemTextAPI) | **GET** /stem-text | Stem Text API |
+| [**tagPartOfSpeechAPI()**](TextApi.md#tagPartOfSpeechAPI) | **GET** /tag-pos | Tag Part of Speech API |
 
 
-## `correctSpelling()`
+## `correctSpellingAPI()`
 
 ```php
-correctSpelling($text, $language): \OpenAPI\Client\Model\CorrectSpelling200Response
+correctSpellingAPI($text, $language): \OpenAPI\Client\Model\CorrectSpellingAPI200Response
 ```
 
-Correct Spelling
+Correct Spelling API
 
 The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
 
@@ -57,10 +57,10 @@ $text = Driving carss is fun.; // string | The text to be corrected.
 $language = en; // string | The language of the text, one of en, de, es, fr, or it.
 
 try {
-    $result = $apiInstance->correctSpelling($text, $language);
+    $result = $apiInstance->correctSpellingAPI($text, $language);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->correctSpelling: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->correctSpellingAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -73,7 +73,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CorrectSpelling200Response**](../Model/CorrectSpelling200Response.md)
+[**\OpenAPI\Client\Model\CorrectSpellingAPI200Response**](../Model/CorrectSpellingAPI200Response.md)
 
 ### Authorization
 
@@ -88,13 +88,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `detectGenderByName()`
+## `detectGenderByNameAPI()`
 
 ```php
-detectGenderByName($name): \OpenAPI\Client\Model\DetectGenderByName200Response
+detectGenderByNameAPI($name): \OpenAPI\Client\Model\DetectGenderByNameAPI200Response
 ```
 
-Detect Gender by Name
+Detect Gender by Name API
 
 Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
 
@@ -125,10 +125,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $name = Alex; // string | The name of the perso for which the sentiment should be detected.
 
 try {
-    $result = $apiInstance->detectGenderByName($name);
+    $result = $apiInstance->detectGenderByNameAPI($name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->detectGenderByName: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->detectGenderByNameAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -140,7 +140,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DetectGenderByName200Response**](../Model/DetectGenderByName200Response.md)
+[**\OpenAPI\Client\Model\DetectGenderByNameAPI200Response**](../Model/DetectGenderByNameAPI200Response.md)
 
 ### Authorization
 
@@ -155,13 +155,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `detectLanguage()`
+## `detectLanguageAPI()`
 
 ```php
-detectLanguage($text): \OpenAPI\Client\Model\DetectLanguage200ResponseInner[]
+detectLanguageAPI($text): \OpenAPI\Client\Model\DetectLanguageAPI200ResponseInner[]
 ```
 
-Detect Language
+Detect Language API
 
 Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 
@@ -192,10 +192,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = Das ist ein Text.; // string | The text for which the language should be detected.
 
 try {
-    $result = $apiInstance->detectLanguage($text);
+    $result = $apiInstance->detectLanguageAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->detectLanguage: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->detectLanguageAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -207,7 +207,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DetectLanguage200ResponseInner[]**](../Model/DetectLanguage200ResponseInner.md)
+[**\OpenAPI\Client\Model\DetectLanguageAPI200ResponseInner[]**](../Model/DetectLanguageAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -222,13 +222,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `detectSentiment()`
+## `detectSentimentAPI()`
 
 ```php
-detectSentiment($text): \OpenAPI\Client\Model\DetectSentiment200Response
+detectSentimentAPI($text): \OpenAPI\Client\Model\DetectSentimentAPI200Response
 ```
 
-Detect Sentiment
+Detect Sentiment API
 
 Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
 
@@ -259,10 +259,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = Happy times feel so good.; // string | The text for which the sentiment should be detected.
 
 try {
-    $result = $apiInstance->detectSentiment($text);
+    $result = $apiInstance->detectSentimentAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->detectSentiment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->detectSentimentAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -274,7 +274,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DetectSentiment200Response**](../Model/DetectSentiment200Response.md)
+[**\OpenAPI\Client\Model\DetectSentimentAPI200Response**](../Model/DetectSentimentAPI200Response.md)
 
 ### Authorization
 
@@ -289,13 +289,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `extractDates()`
+## `extractDatesAPI()`
 
 ```php
-extractDates($text): \OpenAPI\Client\Model\ExtractDates200Response
+extractDatesAPI($text): \OpenAPI\Client\Model\ExtractDatesAPI200Response
 ```
 
-Extract Dates
+Extract Dates API
 
 Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 
@@ -326,10 +326,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = On 5th or April, 2035 there will be flying cars - 2023-02-12.; // string | The text from which dates should be extracted.
 
 try {
-    $result = $apiInstance->extractDates($text);
+    $result = $apiInstance->extractDatesAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->extractDates: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->extractDatesAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -341,7 +341,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ExtractDates200Response**](../Model/ExtractDates200Response.md)
+[**\OpenAPI\Client\Model\ExtractDatesAPI200Response**](../Model/ExtractDatesAPI200Response.md)
 
 ### Authorization
 
@@ -356,13 +356,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `extractEntities()`
+## `extractEntitiesAPI()`
 
 ```php
-extractEntities($text): \OpenAPI\Client\Model\ExtractEntities200Response
+extractEntitiesAPI($text): \OpenAPI\Client\Model\ExtractEntitiesAPI200Response
 ```
 
-Extract Entities
+Extract Entities API
 
 Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
 
@@ -393,10 +393,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = Jim Carrey is an actor from Canada; // string | The text from which entities should be extracted.
 
 try {
-    $result = $apiInstance->extractEntities($text);
+    $result = $apiInstance->extractEntitiesAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->extractEntities: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->extractEntitiesAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -408,7 +408,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ExtractEntities200Response**](../Model/ExtractEntities200Response.md)
+[**\OpenAPI\Client\Model\ExtractEntitiesAPI200Response**](../Model/ExtractEntitiesAPI200Response.md)
 
 ### Authorization
 
@@ -423,13 +423,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `listWordSynonyms()`
+## `listWordSynonymsAPI()`
 
 ```php
-listWordSynonyms($word): \OpenAPI\Client\Model\ListWordSynonyms200Response
+listWordSynonymsAPI($word): \OpenAPI\Client\Model\ListWordSynonymsAPI200Response
 ```
 
-List Word Synonyms
+List Word Synonyms API
 
 Return synonyms of a word.
 
@@ -460,10 +460,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $word = airplane; // string | The (noun) word for which a list of synonyms should be returned.
 
 try {
-    $result = $apiInstance->listWordSynonyms($word);
+    $result = $apiInstance->listWordSynonymsAPI($word);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->listWordSynonyms: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->listWordSynonymsAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -475,7 +475,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ListWordSynonyms200Response**](../Model/ListWordSynonyms200Response.md)
+[**\OpenAPI\Client\Model\ListWordSynonymsAPI200Response**](../Model/ListWordSynonymsAPI200Response.md)
 
 ### Authorization
 
@@ -490,13 +490,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `pluralizeWord()`
+## `pluralizeWordAPI()`
 
 ```php
-pluralizeWord($word): \OpenAPI\Client\Model\PluralizeWord200Response
+pluralizeWordAPI($word): \OpenAPI\Client\Model\PluralizeWordAPI200Response
 ```
 
-Pluralize Word
+Pluralize Word API
 
 Find the plural form of a word.
 
@@ -527,10 +527,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $word = party; // string | The (noun) word for which the plural form should be found.
 
 try {
-    $result = $apiInstance->pluralizeWord($word);
+    $result = $apiInstance->pluralizeWordAPI($word);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->pluralizeWord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->pluralizeWordAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -542,7 +542,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\PluralizeWord200Response**](../Model/PluralizeWord200Response.md)
+[**\OpenAPI\Client\Model\PluralizeWordAPI200Response**](../Model/PluralizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -557,13 +557,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `scoreReadability()`
+## `scoreReadabilityAPI()`
 
 ```php
-scoreReadability($text): \OpenAPI\Client\Model\ScoreReadability200Response
+scoreReadabilityAPI($text): \OpenAPI\Client\Model\ScoreReadabilityAPI200Response
 ```
 
-Score Readability
+Score Readability API
 
 Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
 
@@ -594,10 +594,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = A rather complex text, hard to read, and highly convoluted using acronym TERMS.; // string | The text to score for readability.
 
 try {
-    $result = $apiInstance->scoreReadability($text);
+    $result = $apiInstance->scoreReadabilityAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->scoreReadability: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->scoreReadabilityAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -609,7 +609,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ScoreReadability200Response**](../Model/ScoreReadability200Response.md)
+[**\OpenAPI\Client\Model\ScoreReadabilityAPI200Response**](../Model/ScoreReadabilityAPI200Response.md)
 
 ### Authorization
 
@@ -624,13 +624,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `scoreText()`
+## `scoreTextAPI()`
 
 ```php
-scoreText($title, $text): \OpenAPI\Client\Model\ScoreText200Response
+scoreTextAPI($title, $text): \OpenAPI\Client\Model\ScoreTextAPI200Response
 ```
 
-Score Text
+Score Text API
 
 Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
 
@@ -662,10 +662,10 @@ $title = A short story; // string | The title of the text to score.
 $text = A nice short story to be analyzed; // string | The text to score for multiple metrics.
 
 try {
-    $result = $apiInstance->scoreText($title, $text);
+    $result = $apiInstance->scoreTextAPI($title, $text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->scoreText: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->scoreTextAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -678,7 +678,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ScoreText200Response**](../Model/ScoreText200Response.md)
+[**\OpenAPI\Client\Model\ScoreTextAPI200Response**](../Model/ScoreTextAPI200Response.md)
 
 ### Authorization
 
@@ -693,13 +693,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `singularizeWord()`
+## `singularizeWordAPI()`
 
 ```php
-singularizeWord($word): \OpenAPI\Client\Model\SingularizeWord200Response
+singularizeWordAPI($word): \OpenAPI\Client\Model\SingularizeWordAPI200Response
 ```
 
-Singularize Word
+Singularize Word API
 
 Find the singular form of a word.
 
@@ -730,10 +730,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $word = airplanes; // string | The (noun) word for which the singular form should be found.
 
 try {
-    $result = $apiInstance->singularizeWord($word);
+    $result = $apiInstance->singularizeWordAPI($word);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->singularizeWord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->singularizeWordAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -745,7 +745,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SingularizeWord200Response**](../Model/SingularizeWord200Response.md)
+[**\OpenAPI\Client\Model\SingularizeWordAPI200Response**](../Model/SingularizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -760,13 +760,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `stemText()`
+## `stemTextAPI()`
 
 ```php
-stemText($text): \OpenAPI\Client\Model\StemText200Response
+stemTextAPI($text): \OpenAPI\Client\Model\StemTextAPI200Response
 ```
 
-Stem Text
+Stem Text API
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -797,10 +797,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = The laziest dogs are jumping over the quicker brown foxes.; // string | The text to be stemmed.
 
 try {
-    $result = $apiInstance->stemText($text);
+    $result = $apiInstance->stemTextAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->stemText: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->stemTextAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -812,7 +812,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\StemText200Response**](../Model/StemText200Response.md)
+[**\OpenAPI\Client\Model\StemTextAPI200Response**](../Model/StemTextAPI200Response.md)
 
 ### Authorization
 
@@ -827,13 +827,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `tagPartOfSpeech()`
+## `tagPartOfSpeechAPI()`
 
 ```php
-tagPartOfSpeech($text): \OpenAPI\Client\Model\TagPartOfSpeech200Response
+tagPartOfSpeechAPI($text): \OpenAPI\Client\Model\TagPartOfSpeechAPI200Response
 ```
 
-Tag Part of Speech
+Tag Part of Speech API
 
 Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
 
@@ -864,10 +864,10 @@ $apiInstance = new OpenAPI\Client\Api\TextApi(
 $text = The lazy dog jumps over the quick brown fox.; // string | The text to tag the part of speech.
 
 try {
-    $result = $apiInstance->tagPartOfSpeech($text);
+    $result = $apiInstance->tagPartOfSpeechAPI($text);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TextApi->tagPartOfSpeech: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TextApi->tagPartOfSpeechAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -879,7 +879,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TagPartOfSpeech200Response**](../Model/TagPartOfSpeech200Response.md)
+[**\OpenAPI\Client\Model\TagPartOfSpeechAPI200Response**](../Model/TagPartOfSpeechAPI200Response.md)
 
 ### Authorization
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
-[**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle
-[**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
+[**randomQuoteAPI**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API
+[**randomRiddleAPI**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API
+[**randomTriviaAPI**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API
 
 
 
-## randomQuote
+## randomQuoteAPI
 
-> RandomQuote200Response randomQuote(opts)
+> RandomQuoteAPI200Response randomQuoteAPI(opts)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -39,7 +39,7 @@ let opts = {
   'minLength': 120, // Number | The minimum length of the quote in letters.
   'maxLength': 300 // Number | The maximum length of the quote in letters.
 };
-apiInstance.randomQuote(opts, (error, data, response) => {
+apiInstance.randomQuoteAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -70,11 +70,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## randomRiddle
+## randomRiddleAPI
 
-> RandomRiddle200Response randomRiddle(opts)
+> RandomRiddleAPI200Response randomRiddleAPI(opts)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -98,7 +98,7 @@ let apiInstance = new ApileagueJs.KnowledgeApi();
 let opts = {
   'difficulty': "easy" // String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
 };
-apiInstance.randomRiddle(opts, (error, data, response) => {
+apiInstance.randomRiddleAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -128,13 +128,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## randomTrivia
+## randomTriviaAPI
 
-> RandomTrivia200Response randomTrivia(opts)
+> RandomTriviaAPI200Response randomTriviaAPI(opts)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \&quot;Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\&quot;.
 
 ### Example
 
@@ -156,7 +156,7 @@ let apiInstance = new ApileagueJs.KnowledgeApi();
 let opts = {
   'maxLength': 300 // Number | The maximum length of the trivia in letters.
 };
-apiInstance.randomTrivia(opts, (error, data, response) => {
+apiInstance.randomTriviaAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

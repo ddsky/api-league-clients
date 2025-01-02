@@ -19,128 +19,128 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.TextApi
-import com.apileague.client.model.CorrectSpelling200Response
-import com.apileague.client.model.DetectGenderByName200Response
-import com.apileague.client.model.DetectLanguage200ResponseInner
-import com.apileague.client.model.DetectSentiment200Response
-import com.apileague.client.model.ExtractDates200Response
-import com.apileague.client.model.ExtractEntities200Response
-import com.apileague.client.model.ListWordSynonyms200Response
-import com.apileague.client.model.PluralizeWord200Response
-import com.apileague.client.model.ScoreReadability200Response
-import com.apileague.client.model.ScoreText200Response
-import com.apileague.client.model.SingularizeWord200Response
-import com.apileague.client.model.StemText200Response
-import com.apileague.client.model.TagPartOfSpeech200Response
+import com.apileague.client.model.CorrectSpellingAPI200Response
+import com.apileague.client.model.DetectGenderByNameAPI200Response
+import com.apileague.client.model.DetectLanguageAPI200ResponseInner
+import com.apileague.client.model.DetectSentimentAPI200Response
+import com.apileague.client.model.ExtractDatesAPI200Response
+import com.apileague.client.model.ExtractEntitiesAPI200Response
+import com.apileague.client.model.ListWordSynonymsAPI200Response
+import com.apileague.client.model.PluralizeWordAPI200Response
+import com.apileague.client.model.ScoreReadabilityAPI200Response
+import com.apileague.client.model.ScoreTextAPI200Response
+import com.apileague.client.model.SingularizeWordAPI200Response
+import com.apileague.client.model.StemTextAPI200Response
+import com.apileague.client.model.TagPartOfSpeechAPI200Response
 
 class TextApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of TextApi
         //val apiInstance = TextApi()
 
-        // to test correctSpelling
-        should("test correctSpelling") {
-            // uncomment below to test correctSpelling
+        // to test correctSpellingAPI
+        should("test correctSpellingAPI") {
+            // uncomment below to test correctSpellingAPI
             //val text : kotlin.String = Driving carss is fun. // kotlin.String | The text to be corrected.
             //val language : kotlin.String = en // kotlin.String | The language of the text, one of en, de, es, fr, or it.
-            //val result : CorrectSpelling200Response = apiInstance.correctSpelling(text, language)
+            //val result : CorrectSpellingAPI200Response = apiInstance.correctSpellingAPI(text, language)
             //result shouldBe ("TODO")
         }
 
-        // to test detectGenderByName
-        should("test detectGenderByName") {
-            // uncomment below to test detectGenderByName
+        // to test detectGenderByNameAPI
+        should("test detectGenderByNameAPI") {
+            // uncomment below to test detectGenderByNameAPI
             //val name : kotlin.String = Alex // kotlin.String | The name of the perso for which the sentiment should be detected.
-            //val result : DetectGenderByName200Response = apiInstance.detectGenderByName(name)
+            //val result : DetectGenderByNameAPI200Response = apiInstance.detectGenderByNameAPI(name)
             //result shouldBe ("TODO")
         }
 
-        // to test detectLanguage
-        should("test detectLanguage") {
-            // uncomment below to test detectLanguage
+        // to test detectLanguageAPI
+        should("test detectLanguageAPI") {
+            // uncomment below to test detectLanguageAPI
             //val text : kotlin.String = Das ist ein Text. // kotlin.String | The text for which the language should be detected.
-            //val result : kotlin.collections.List<DetectLanguage200ResponseInner> = apiInstance.detectLanguage(text)
+            //val result : kotlin.collections.List<DetectLanguageAPI200ResponseInner> = apiInstance.detectLanguageAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test detectSentiment
-        should("test detectSentiment") {
-            // uncomment below to test detectSentiment
+        // to test detectSentimentAPI
+        should("test detectSentimentAPI") {
+            // uncomment below to test detectSentimentAPI
             //val text : kotlin.String = Happy times feel so good. // kotlin.String | The text for which the sentiment should be detected.
-            //val result : DetectSentiment200Response = apiInstance.detectSentiment(text)
+            //val result : DetectSentimentAPI200Response = apiInstance.detectSentimentAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test extractDates
-        should("test extractDates") {
-            // uncomment below to test extractDates
+        // to test extractDatesAPI
+        should("test extractDatesAPI") {
+            // uncomment below to test extractDatesAPI
             //val text : kotlin.String = On 5th or April, 2035 there will be flying cars - 2023-02-12. // kotlin.String | The text from which dates should be extracted.
-            //val result : ExtractDates200Response = apiInstance.extractDates(text)
+            //val result : ExtractDatesAPI200Response = apiInstance.extractDatesAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test extractEntities
-        should("test extractEntities") {
-            // uncomment below to test extractEntities
+        // to test extractEntitiesAPI
+        should("test extractEntitiesAPI") {
+            // uncomment below to test extractEntitiesAPI
             //val text : kotlin.String = Jim Carrey is an actor from Canada // kotlin.String | The text from which entities should be extracted.
-            //val result : ExtractEntities200Response = apiInstance.extractEntities(text)
+            //val result : ExtractEntitiesAPI200Response = apiInstance.extractEntitiesAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test listWordSynonyms
-        should("test listWordSynonyms") {
-            // uncomment below to test listWordSynonyms
+        // to test listWordSynonymsAPI
+        should("test listWordSynonymsAPI") {
+            // uncomment below to test listWordSynonymsAPI
             //val word : kotlin.String = airplane // kotlin.String | The (noun) word for which a list of synonyms should be returned.
-            //val result : ListWordSynonyms200Response = apiInstance.listWordSynonyms(word)
+            //val result : ListWordSynonymsAPI200Response = apiInstance.listWordSynonymsAPI(word)
             //result shouldBe ("TODO")
         }
 
-        // to test pluralizeWord
-        should("test pluralizeWord") {
-            // uncomment below to test pluralizeWord
+        // to test pluralizeWordAPI
+        should("test pluralizeWordAPI") {
+            // uncomment below to test pluralizeWordAPI
             //val word : kotlin.String = party // kotlin.String | The (noun) word for which the plural form should be found.
-            //val result : PluralizeWord200Response = apiInstance.pluralizeWord(word)
+            //val result : PluralizeWordAPI200Response = apiInstance.pluralizeWordAPI(word)
             //result shouldBe ("TODO")
         }
 
-        // to test scoreReadability
-        should("test scoreReadability") {
-            // uncomment below to test scoreReadability
+        // to test scoreReadabilityAPI
+        should("test scoreReadabilityAPI") {
+            // uncomment below to test scoreReadabilityAPI
             //val text : kotlin.String = A rather complex text, hard to read, and highly convoluted using acronym TERMS. // kotlin.String | The text to score for readability.
-            //val result : ScoreReadability200Response = apiInstance.scoreReadability(text)
+            //val result : ScoreReadabilityAPI200Response = apiInstance.scoreReadabilityAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test scoreText
-        should("test scoreText") {
-            // uncomment below to test scoreText
+        // to test scoreTextAPI
+        should("test scoreTextAPI") {
+            // uncomment below to test scoreTextAPI
             //val title : kotlin.String = A short story // kotlin.String | The title of the text to score.
             //val text : kotlin.String = A nice short story to be analyzed // kotlin.String | The text to score for multiple metrics.
-            //val result : ScoreText200Response = apiInstance.scoreText(title, text)
+            //val result : ScoreTextAPI200Response = apiInstance.scoreTextAPI(title, text)
             //result shouldBe ("TODO")
         }
 
-        // to test singularizeWord
-        should("test singularizeWord") {
-            // uncomment below to test singularizeWord
+        // to test singularizeWordAPI
+        should("test singularizeWordAPI") {
+            // uncomment below to test singularizeWordAPI
             //val word : kotlin.String = airplanes // kotlin.String | The (noun) word for which the singular form should be found.
-            //val result : SingularizeWord200Response = apiInstance.singularizeWord(word)
+            //val result : SingularizeWordAPI200Response = apiInstance.singularizeWordAPI(word)
             //result shouldBe ("TODO")
         }
 
-        // to test stemText
-        should("test stemText") {
-            // uncomment below to test stemText
+        // to test stemTextAPI
+        should("test stemTextAPI") {
+            // uncomment below to test stemTextAPI
             //val text : kotlin.String = The laziest dogs are jumping over the quicker brown foxes. // kotlin.String | The text to be stemmed.
-            //val result : StemText200Response = apiInstance.stemText(text)
+            //val result : StemTextAPI200Response = apiInstance.stemTextAPI(text)
             //result shouldBe ("TODO")
         }
 
-        // to test tagPartOfSpeech
-        should("test tagPartOfSpeech") {
-            // uncomment below to test tagPartOfSpeech
+        // to test tagPartOfSpeechAPI
+        should("test tagPartOfSpeechAPI") {
+            // uncomment below to test tagPartOfSpeechAPI
             //val text : kotlin.String = The lazy dog jumps over the quick brown fox. // kotlin.String | The text to tag the part of speech.
-            //val result : TagPartOfSpeech200Response = apiInstance.tagPartOfSpeech(text)
+            //val result : TagPartOfSpeechAPI200Response = apiInstance.tagPartOfSpeechAPI(text)
             //result shouldBe ("TODO")
         }
 

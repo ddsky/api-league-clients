@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
+[**generateNonsenseWordAPI**](HumorApi.md#generateNonsenseWordAPI) | **GET** /generate-nonsense-word | Generate Nonsense Word API
+[**randomJokeAPI**](HumorApi.md#randomJokeAPI) | **GET** /retrieve-random-joke | Random Joke API
+[**randomMemeAPI**](HumorApi.md#randomMemeAPI) | **GET** /retrieve-random-meme | Random Meme API
+[**searchGifsAPI**](HumorApi.md#searchGifsAPI) | **GET** /search-gifs | Search Gifs API
+[**searchJokesAPI**](HumorApi.md#searchJokesAPI) | **GET** /search-jokes | Search Jokes API
+[**searchMemesAPI**](HumorApi.md#searchMemesAPI) | **GET** /search-memes | Search Memes API
 
 
-# **generateNonsenseWord**
-> GenerateNonsenseWord200Response generateNonsenseWord()
+# **generateNonsenseWordAPI**
+> GenerateNonsenseWordAPI200Response generateNonsenseWordAPI()
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -29,7 +29,7 @@ const apiInstance = new .HumorApi(configuration);
 
 let body:any = {};
 
-apiInstance.generateNonsenseWord(body).then((data:any) => {
+apiInstance.generateNonsenseWordAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**GenerateNonsenseWord200Response**
+**GenerateNonsenseWordAPI200Response**
 
 ### Authorization
 
@@ -66,8 +66,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **randomJoke**
-> SearchJokes200ResponseJokesInner randomJoke()
+# **randomJokeAPI**
+> SearchJokesAPI200ResponseJokesInner randomJokeAPI()
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -81,7 +81,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .HumorApi(configuration);
 
-let body:.HumorApiRandomJokeRequest = {
+let body:.HumorApiRandomJokeAPIRequest = {
   // string | A comma-separated list of tags the jokes should have. (optional)
   includeTags: "animal",
   // string | A comma-separated list of tags the jokes must not have. (optional)
@@ -92,7 +92,7 @@ let body:.HumorApiRandomJokeRequest = {
   maxLength: 140,
 };
 
-apiInstance.randomJoke(body).then((data:any) => {
+apiInstance.randomJokeAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchJokes200ResponseJokesInner**
+**SearchJokesAPI200ResponseJokesInner**
 
 ### Authorization
 
@@ -135,10 +135,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **randomMeme**
-> RandomMeme200Response randomMeme()
+# **randomMemeAPI**
+> RandomMemeAPI200Response randomMemeAPI()
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 
@@ -150,7 +150,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .HumorApi(configuration);
 
-let body:.HumorApiRandomMemeRequest = {
+let body:.HumorApiRandomMemeAPIRequest = {
   // string | A comma-separated list of words that must occur in the meme. (optional)
   keywords: "airplane",
   // boolean | Whether the keywords must occur in the image. (optional)
@@ -163,7 +163,7 @@ let body:.HumorApiRandomMemeRequest = {
   maxAgeDays: 30,
 };
 
-apiInstance.randomMeme(body).then((data:any) => {
+apiInstance.randomMemeAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RandomMeme200Response**
+**RandomMemeAPI200Response**
 
 ### Authorization
 
@@ -207,8 +207,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchGifs**
-> SearchGifs200Response searchGifs()
+# **searchGifsAPI**
+> SearchGifsAPI200Response searchGifsAPI()
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -222,14 +222,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .HumorApi(configuration);
 
-let body:.HumorApiSearchGifsRequest = {
+let body:.HumorApiSearchGifsAPIRequest = {
   // string | The search query.
   query: "dogs",
   // number | The number of gifs to return in range [1,10] (optional)
   number: 5,
 };
 
-apiInstance.searchGifs(body).then((data:any) => {
+apiInstance.searchGifsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchGifs200Response**
+**SearchGifsAPI200Response**
 
 ### Authorization
 
@@ -270,8 +270,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchJokes**
-> SearchJokes200Response searchJokes()
+# **searchJokesAPI**
+> SearchJokesAPI200Response searchJokesAPI()
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -285,7 +285,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .HumorApi(configuration);
 
-let body:.HumorApiSearchJokesRequest = {
+let body:.HumorApiSearchJokesAPIRequest = {
   // string | A comma-separated list of words that must occur in the joke. (optional)
   keywords: "horse,man",
   // string | A comma-separated list of tags the jokes should have. (optional)
@@ -302,7 +302,7 @@ let body:.HumorApiSearchJokesRequest = {
   number: 3,
 };
 
-apiInstance.searchJokes(body).then((data:any) => {
+apiInstance.searchJokesAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchJokes200Response**
+**SearchJokesAPI200Response**
 
 ### Authorization
 
@@ -348,10 +348,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchMemes**
-> SearchMemes200Response searchMemes()
+# **searchMemesAPI**
+> SearchMemesAPI200Response searchMemesAPI()
 
-With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
 
 ### Example
 
@@ -363,7 +363,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .HumorApi(configuration);
 
-let body:.HumorApiSearchMemesRequest = {
+let body:.HumorApiSearchMemesAPIRequest = {
   // string | A comma-separated list of words that must occur in the meme. (optional)
   keywords: "rocket",
   // boolean | Whether the keywords must occur in the image. (optional)
@@ -380,7 +380,7 @@ let body:.HumorApiSearchMemesRequest = {
   number: 3,
 };
 
-apiInstance.searchMemes(body).then((data:any) => {
+apiInstance.searchMemesAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchMemes200Response**
+**SearchMemesAPI200Response**
 
 ### Authorization
 

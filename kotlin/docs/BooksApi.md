@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books |
-| [**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books |
+| [**findSimilarBooksAPI**](BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API |
+| [**searchBooksAPI**](BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API |
 
 
-<a id="findSimilarBooks"></a>
-# **findSimilarBooks**
-> FindSimilarBooks200Response findSimilarBooks(id, number)
+<a id="findSimilarBooksAPI"></a>
+# **findSimilarBooksAPI**
+> FindSimilarBooksAPI200Response findSimilarBooksAPI(id, number)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 ```kotlin
@@ -26,13 +26,13 @@ val apiInstance = BooksApi()
 val id : kotlin.Int = 8302059 // kotlin.Int | The id of the book to which similar books should be found.
 val number : kotlin.Int = 10 // kotlin.Int | The number of similar books to return in range [1,100]
 try {
-    val result : FindSimilarBooks200Response = apiInstance.findSimilarBooks(id, number)
+    val result : FindSimilarBooksAPI200Response = apiInstance.findSimilarBooksAPI(id, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BooksApi#findSimilarBooks")
+    println("4xx response calling BooksApi#findSimilarBooksAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BooksApi#findSimilarBooks")
+    println("5xx response calling BooksApi#findSimilarBooksAPI")
     e.printStackTrace()
 }
 ```
@@ -45,7 +45,7 @@ try {
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -62,13 +62,13 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchBooks"></a>
-# **searchBooks**
-> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+<a id="searchBooksAPI"></a>
+# **searchBooksAPI**
+> SearchBooksAPI200Response searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```kotlin
@@ -92,13 +92,13 @@ val groupResults : kotlin.Boolean = false // kotlin.Boolean | Whether to group s
 val offset : kotlin.Int = 0 // kotlin.Int | The number of books to skip in range [0,1000]
 val number : kotlin.Int = 10 // kotlin.Int | The number of books to return in range [1,100]
 try {
-    val result : SearchBooks200Response = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+    val result : SearchBooksAPI200Response = apiInstance.searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BooksApi#searchBooks")
+    println("4xx response calling BooksApi#searchBooksAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BooksApi#searchBooks")
+    println("5xx response calling BooksApi#searchBooksAPI")
     e.printStackTrace()
 }
 ```
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

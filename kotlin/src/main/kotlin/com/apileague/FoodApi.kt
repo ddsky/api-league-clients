@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.ComputeNutrition200Response
-import com.apileague.client.model.RetrieveRecipeInformation200Response
-import com.apileague.client.model.SearchDrinks200Response
-import com.apileague.client.model.SearchRecipes200Response
-import com.apileague.client.model.SearchRestaurants200Response
+import com.apileague.client.model.ComputeNutritionAPI200Response
+import com.apileague.client.model.RetrieveRecipeInformationAPI200Response
+import com.apileague.client.model.SearchDrinksAPI200Response
+import com.apileague.client.model.SearchRecipesAPI200Response
+import com.apileague.client.model.SearchRestaurantsAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -50,12 +50,12 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Compute Nutrition
+     * Compute Nutrition API
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving. (optional)
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true. (optional)
-     * @return ComputeNutrition200Response
+     * @return ComputeNutritionAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -64,11 +64,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun computeNutrition(ingredients: kotlin.String, servings: kotlin.Int? = null, reduceOils: kotlin.Boolean? = null) : ComputeNutrition200Response {
-        val localVarResponse = computeNutritionWithHttpInfo(ingredients = ingredients, servings = servings, reduceOils = reduceOils)
+    fun computeNutritionAPI(ingredients: kotlin.String, servings: kotlin.Int? = null, reduceOils: kotlin.Boolean? = null) : ComputeNutritionAPI200Response {
+        val localVarResponse = computeNutritionAPIWithHttpInfo(ingredients = ingredients, servings = servings, reduceOils = reduceOils)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ComputeNutrition200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ComputeNutritionAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -83,34 +83,34 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Compute Nutrition
+     * Compute Nutrition API
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving. (optional)
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true. (optional)
-     * @return ApiResponse<ComputeNutrition200Response?>
+     * @return ApiResponse<ComputeNutritionAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun computeNutritionWithHttpInfo(ingredients: kotlin.String, servings: kotlin.Int?, reduceOils: kotlin.Boolean?) : ApiResponse<ComputeNutrition200Response?> {
-        val localVariableConfig = computeNutritionRequestConfig(ingredients = ingredients, servings = servings, reduceOils = reduceOils)
+    fun computeNutritionAPIWithHttpInfo(ingredients: kotlin.String, servings: kotlin.Int?, reduceOils: kotlin.Boolean?) : ApiResponse<ComputeNutritionAPI200Response?> {
+        val localVariableConfig = computeNutritionAPIRequestConfig(ingredients = ingredients, servings = servings, reduceOils = reduceOils)
 
-        return request<Unit, ComputeNutrition200Response>(
+        return request<Unit, ComputeNutritionAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation computeNutrition
+     * To obtain the request config of the operation computeNutritionAPI
      *
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving. (optional)
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true. (optional)
      * @return RequestConfig
      */
-    fun computeNutritionRequestConfig(ingredients: kotlin.String, servings: kotlin.Int?, reduceOils: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun computeNutritionAPIRequestConfig(ingredients: kotlin.String, servings: kotlin.Int?, reduceOils: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -136,11 +136,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe. (optional)
-     * @return RetrieveRecipeInformation200Response
+     * @return RetrieveRecipeInformationAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -149,11 +149,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun retrieveRecipeInformation(id: kotlin.Int, addWinePairing: kotlin.Boolean? = null) : RetrieveRecipeInformation200Response {
-        val localVarResponse = retrieveRecipeInformationWithHttpInfo(id = id, addWinePairing = addWinePairing)
+    fun retrieveRecipeInformationAPI(id: kotlin.Int, addWinePairing: kotlin.Boolean? = null) : RetrieveRecipeInformationAPI200Response {
+        val localVarResponse = retrieveRecipeInformationAPIWithHttpInfo(id = id, addWinePairing = addWinePairing)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RetrieveRecipeInformation200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RetrieveRecipeInformationAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -168,32 +168,32 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe. (optional)
-     * @return ApiResponse<RetrieveRecipeInformation200Response?>
+     * @return ApiResponse<RetrieveRecipeInformationAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun retrieveRecipeInformationWithHttpInfo(id: kotlin.Int, addWinePairing: kotlin.Boolean?) : ApiResponse<RetrieveRecipeInformation200Response?> {
-        val localVariableConfig = retrieveRecipeInformationRequestConfig(id = id, addWinePairing = addWinePairing)
+    fun retrieveRecipeInformationAPIWithHttpInfo(id: kotlin.Int, addWinePairing: kotlin.Boolean?) : ApiResponse<RetrieveRecipeInformationAPI200Response?> {
+        val localVariableConfig = retrieveRecipeInformationAPIRequestConfig(id = id, addWinePairing = addWinePairing)
 
-        return request<Unit, RetrieveRecipeInformation200Response>(
+        return request<Unit, RetrieveRecipeInformationAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation retrieveRecipeInformation
+     * To obtain the request config of the operation retrieveRecipeInformationAPI
      *
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe. (optional)
      * @return RequestConfig
      */
-    fun retrieveRecipeInformationRequestConfig(id: kotlin.Int, addWinePairing: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun retrieveRecipeInformationAPIRequestConfig(id: kotlin.Int, addWinePairing: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -216,7 +216,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Drinks
+     * Search Drinks API
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
      * @param query The search query. (optional)
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
@@ -240,7 +240,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of drinks to skip, between 0 and 90. (optional)
      * @param number The number of drinks, between 1 and 10. (optional)
-     * @return SearchDrinks200Response
+     * @return SearchDrinksAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -249,11 +249,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchDrinks(query: kotlin.String? = null, glassTypes: kotlin.String? = null, flavors: kotlin.String? = null, diet: kotlin.String? = null, includeIngredients: kotlin.String? = null, excludeIngredients: kotlin.String? = null, minCalories: kotlin.Double? = null, maxCalories: kotlin.Double? = null, minCarbs: kotlin.Double? = null, maxCarbs: kotlin.Double? = null, minProtein: kotlin.Double? = null, maxProtein: kotlin.Double? = null, minFat: kotlin.Double? = null, maxFat: kotlin.Double? = null, minAlcoholPercent: kotlin.Double? = null, maxAlcoholPercent: kotlin.Double? = null, minCaffeine: kotlin.Double? = null, maxCaffeine: kotlin.Double? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchDrinks200Response {
-        val localVarResponse = searchDrinksWithHttpInfo(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+    fun searchDrinksAPI(query: kotlin.String? = null, glassTypes: kotlin.String? = null, flavors: kotlin.String? = null, diet: kotlin.String? = null, includeIngredients: kotlin.String? = null, excludeIngredients: kotlin.String? = null, minCalories: kotlin.Double? = null, maxCalories: kotlin.Double? = null, minCarbs: kotlin.Double? = null, maxCarbs: kotlin.Double? = null, minProtein: kotlin.Double? = null, maxProtein: kotlin.Double? = null, minFat: kotlin.Double? = null, maxFat: kotlin.Double? = null, minAlcoholPercent: kotlin.Double? = null, maxAlcoholPercent: kotlin.Double? = null, minCaffeine: kotlin.Double? = null, maxCaffeine: kotlin.Double? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchDrinksAPI200Response {
+        val localVarResponse = searchDrinksAPIWithHttpInfo(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchDrinks200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchDrinksAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -268,7 +268,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Drinks
+     * Search Drinks API
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
      * @param query The search query. (optional)
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
@@ -292,22 +292,22 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of drinks to skip, between 0 and 90. (optional)
      * @param number The number of drinks, between 1 and 10. (optional)
-     * @return ApiResponse<SearchDrinks200Response?>
+     * @return ApiResponse<SearchDrinksAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchDrinksWithHttpInfo(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchDrinks200Response?> {
-        val localVariableConfig = searchDrinksRequestConfig(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+    fun searchDrinksAPIWithHttpInfo(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchDrinksAPI200Response?> {
+        val localVariableConfig = searchDrinksAPIRequestConfig(query = query, glassTypes = glassTypes, flavors = flavors, diet = diet, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minAlcoholPercent = minAlcoholPercent, maxAlcoholPercent = maxAlcoholPercent, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
 
-        return request<Unit, SearchDrinks200Response>(
+        return request<Unit, SearchDrinksAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchDrinks
+     * To obtain the request config of the operation searchDrinksAPI
      *
      * @param query The search query. (optional)
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in. (optional)
@@ -333,7 +333,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param number The number of drinks, between 1 and 10. (optional)
      * @return RequestConfig
      */
-    fun searchDrinksRequestConfig(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchDrinksAPIRequestConfig(query: kotlin.String?, glassTypes: kotlin.String?, flavors: kotlin.String?, diet: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minAlcoholPercent: kotlin.Double?, maxAlcoholPercent: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -418,7 +418,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Recipes
+     * Search Recipes API
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
      * @param query The search query. (optional)
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
@@ -510,7 +510,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of recipes to skip, between 0 and 900. (optional)
      * @param number The number of recipes, between 1 and 100. (optional)
-     * @return SearchRecipes200Response
+     * @return SearchRecipesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -519,11 +519,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchRecipes(query: kotlin.String? = null, cuisines: kotlin.String? = null, excludeCuisines: kotlin.String? = null, mealType: kotlin.String? = null, diet: kotlin.String? = null, intolerances: kotlin.String? = null, equipment: kotlin.String? = null, includeIngredients: kotlin.String? = null, excludeIngredients: kotlin.String? = null, fillIngredients: kotlin.Boolean? = null, addRecipeInformation: kotlin.Boolean? = null, maxTime: kotlin.Int? = null, minServings: kotlin.Int? = null, maxServings: kotlin.Int? = null, minCalories: kotlin.Double? = null, maxCalories: kotlin.Double? = null, minCarbs: kotlin.Double? = null, maxCarbs: kotlin.Double? = null, minProtein: kotlin.Double? = null, maxProtein: kotlin.Double? = null, minFat: kotlin.Double? = null, maxFat: kotlin.Double? = null, minSugar: kotlin.Double? = null, maxSugar: kotlin.Double? = null, minFiber: kotlin.Double? = null, maxFiber: kotlin.Double? = null, minFolate: kotlin.Double? = null, maxFolate: kotlin.Double? = null, minFolicAcid: kotlin.Double? = null, maxFolicAcid: kotlin.Double? = null, minIodine: kotlin.Double? = null, maxIodine: kotlin.Double? = null, minIron: kotlin.Double? = null, maxIron: kotlin.Double? = null, minZinc: kotlin.Double? = null, maxZinc: kotlin.Double? = null, minMagnesium: kotlin.Double? = null, maxMagnesium: kotlin.Double? = null, minManganese: kotlin.Double? = null, maxManganese: kotlin.Double? = null, minPhosphorus: kotlin.Double? = null, maxPhosphorus: kotlin.Double? = null, minPotassium: kotlin.Double? = null, maxPotassium: kotlin.Double? = null, minSodium: kotlin.Double? = null, maxSodium: kotlin.Double? = null, minSelenium: kotlin.Double? = null, maxSelenium: kotlin.Double? = null, minCopper: kotlin.Double? = null, maxCopper: kotlin.Double? = null, minCalcium: kotlin.Double? = null, maxCalcium: kotlin.Double? = null, minCholine: kotlin.Double? = null, maxCholine: kotlin.Double? = null, minCholesterol: kotlin.Double? = null, maxCholesterol: kotlin.Double? = null, minFluoride: kotlin.Double? = null, maxFluoride: kotlin.Double? = null, minAlcohol: kotlin.Double? = null, maxAlcohol: kotlin.Double? = null, minCaffeine: kotlin.Double? = null, maxCaffeine: kotlin.Double? = null, minSaturatedFat: kotlin.Double? = null, maxSaturatedFat: kotlin.Double? = null, minVitaminA: kotlin.Double? = null, maxVitaminA: kotlin.Double? = null, minVitaminC: kotlin.Double? = null, maxVitaminC: kotlin.Double? = null, minVitaminD: kotlin.Double? = null, maxVitaminD: kotlin.Double? = null, minVitaminE: kotlin.Double? = null, maxVitaminE: kotlin.Double? = null, minVitaminK: kotlin.Double? = null, maxVitaminK: kotlin.Double? = null, minVitaminB1: kotlin.Double? = null, maxVitaminB1: kotlin.Double? = null, minVitaminB2: kotlin.Double? = null, maxVitaminB2: kotlin.Double? = null, minVitaminB3: kotlin.Double? = null, maxVitaminB3: kotlin.Double? = null, minVitaminB5: kotlin.Double? = null, maxVitaminB5: kotlin.Double? = null, minVitaminB6: kotlin.Double? = null, maxVitaminB6: kotlin.Double? = null, minVitaminB12: kotlin.Double? = null, maxVitaminB12: kotlin.Double? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchRecipes200Response {
-        val localVarResponse = searchRecipesWithHttpInfo(query = query, cuisines = cuisines, excludeCuisines = excludeCuisines, mealType = mealType, diet = diet, intolerances = intolerances, equipment = equipment, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, fillIngredients = fillIngredients, addRecipeInformation = addRecipeInformation, maxTime = maxTime, minServings = minServings, maxServings = maxServings, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minSugar = minSugar, maxSugar = maxSugar, minFiber = minFiber, maxFiber = maxFiber, minFolate = minFolate, maxFolate = maxFolate, minFolicAcid = minFolicAcid, maxFolicAcid = maxFolicAcid, minIodine = minIodine, maxIodine = maxIodine, minIron = minIron, maxIron = maxIron, minZinc = minZinc, maxZinc = maxZinc, minMagnesium = minMagnesium, maxMagnesium = maxMagnesium, minManganese = minManganese, maxManganese = maxManganese, minPhosphorus = minPhosphorus, maxPhosphorus = maxPhosphorus, minPotassium = minPotassium, maxPotassium = maxPotassium, minSodium = minSodium, maxSodium = maxSodium, minSelenium = minSelenium, maxSelenium = maxSelenium, minCopper = minCopper, maxCopper = maxCopper, minCalcium = minCalcium, maxCalcium = maxCalcium, minCholine = minCholine, maxCholine = maxCholine, minCholesterol = minCholesterol, maxCholesterol = maxCholesterol, minFluoride = minFluoride, maxFluoride = maxFluoride, minAlcohol = minAlcohol, maxAlcohol = maxAlcohol, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, minSaturatedFat = minSaturatedFat, maxSaturatedFat = maxSaturatedFat, minVitaminA = minVitaminA, maxVitaminA = maxVitaminA, minVitaminC = minVitaminC, maxVitaminC = maxVitaminC, minVitaminD = minVitaminD, maxVitaminD = maxVitaminD, minVitaminE = minVitaminE, maxVitaminE = maxVitaminE, minVitaminK = minVitaminK, maxVitaminK = maxVitaminK, minVitaminB1 = minVitaminB1, maxVitaminB1 = maxVitaminB1, minVitaminB2 = minVitaminB2, maxVitaminB2 = maxVitaminB2, minVitaminB3 = minVitaminB3, maxVitaminB3 = maxVitaminB3, minVitaminB5 = minVitaminB5, maxVitaminB5 = maxVitaminB5, minVitaminB6 = minVitaminB6, maxVitaminB6 = maxVitaminB6, minVitaminB12 = minVitaminB12, maxVitaminB12 = maxVitaminB12, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+    fun searchRecipesAPI(query: kotlin.String? = null, cuisines: kotlin.String? = null, excludeCuisines: kotlin.String? = null, mealType: kotlin.String? = null, diet: kotlin.String? = null, intolerances: kotlin.String? = null, equipment: kotlin.String? = null, includeIngredients: kotlin.String? = null, excludeIngredients: kotlin.String? = null, fillIngredients: kotlin.Boolean? = null, addRecipeInformation: kotlin.Boolean? = null, maxTime: kotlin.Int? = null, minServings: kotlin.Int? = null, maxServings: kotlin.Int? = null, minCalories: kotlin.Double? = null, maxCalories: kotlin.Double? = null, minCarbs: kotlin.Double? = null, maxCarbs: kotlin.Double? = null, minProtein: kotlin.Double? = null, maxProtein: kotlin.Double? = null, minFat: kotlin.Double? = null, maxFat: kotlin.Double? = null, minSugar: kotlin.Double? = null, maxSugar: kotlin.Double? = null, minFiber: kotlin.Double? = null, maxFiber: kotlin.Double? = null, minFolate: kotlin.Double? = null, maxFolate: kotlin.Double? = null, minFolicAcid: kotlin.Double? = null, maxFolicAcid: kotlin.Double? = null, minIodine: kotlin.Double? = null, maxIodine: kotlin.Double? = null, minIron: kotlin.Double? = null, maxIron: kotlin.Double? = null, minZinc: kotlin.Double? = null, maxZinc: kotlin.Double? = null, minMagnesium: kotlin.Double? = null, maxMagnesium: kotlin.Double? = null, minManganese: kotlin.Double? = null, maxManganese: kotlin.Double? = null, minPhosphorus: kotlin.Double? = null, maxPhosphorus: kotlin.Double? = null, minPotassium: kotlin.Double? = null, maxPotassium: kotlin.Double? = null, minSodium: kotlin.Double? = null, maxSodium: kotlin.Double? = null, minSelenium: kotlin.Double? = null, maxSelenium: kotlin.Double? = null, minCopper: kotlin.Double? = null, maxCopper: kotlin.Double? = null, minCalcium: kotlin.Double? = null, maxCalcium: kotlin.Double? = null, minCholine: kotlin.Double? = null, maxCholine: kotlin.Double? = null, minCholesterol: kotlin.Double? = null, maxCholesterol: kotlin.Double? = null, minFluoride: kotlin.Double? = null, maxFluoride: kotlin.Double? = null, minAlcohol: kotlin.Double? = null, maxAlcohol: kotlin.Double? = null, minCaffeine: kotlin.Double? = null, maxCaffeine: kotlin.Double? = null, minSaturatedFat: kotlin.Double? = null, maxSaturatedFat: kotlin.Double? = null, minVitaminA: kotlin.Double? = null, maxVitaminA: kotlin.Double? = null, minVitaminC: kotlin.Double? = null, maxVitaminC: kotlin.Double? = null, minVitaminD: kotlin.Double? = null, maxVitaminD: kotlin.Double? = null, minVitaminE: kotlin.Double? = null, maxVitaminE: kotlin.Double? = null, minVitaminK: kotlin.Double? = null, maxVitaminK: kotlin.Double? = null, minVitaminB1: kotlin.Double? = null, maxVitaminB1: kotlin.Double? = null, minVitaminB2: kotlin.Double? = null, maxVitaminB2: kotlin.Double? = null, minVitaminB3: kotlin.Double? = null, maxVitaminB3: kotlin.Double? = null, minVitaminB5: kotlin.Double? = null, maxVitaminB5: kotlin.Double? = null, minVitaminB6: kotlin.Double? = null, maxVitaminB6: kotlin.Double? = null, minVitaminB12: kotlin.Double? = null, maxVitaminB12: kotlin.Double? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchRecipesAPI200Response {
+        val localVarResponse = searchRecipesAPIWithHttpInfo(query = query, cuisines = cuisines, excludeCuisines = excludeCuisines, mealType = mealType, diet = diet, intolerances = intolerances, equipment = equipment, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, fillIngredients = fillIngredients, addRecipeInformation = addRecipeInformation, maxTime = maxTime, minServings = minServings, maxServings = maxServings, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minSugar = minSugar, maxSugar = maxSugar, minFiber = minFiber, maxFiber = maxFiber, minFolate = minFolate, maxFolate = maxFolate, minFolicAcid = minFolicAcid, maxFolicAcid = maxFolicAcid, minIodine = minIodine, maxIodine = maxIodine, minIron = minIron, maxIron = maxIron, minZinc = minZinc, maxZinc = maxZinc, minMagnesium = minMagnesium, maxMagnesium = maxMagnesium, minManganese = minManganese, maxManganese = maxManganese, minPhosphorus = minPhosphorus, maxPhosphorus = maxPhosphorus, minPotassium = minPotassium, maxPotassium = maxPotassium, minSodium = minSodium, maxSodium = maxSodium, minSelenium = minSelenium, maxSelenium = maxSelenium, minCopper = minCopper, maxCopper = maxCopper, minCalcium = minCalcium, maxCalcium = maxCalcium, minCholine = minCholine, maxCholine = maxCholine, minCholesterol = minCholesterol, maxCholesterol = maxCholesterol, minFluoride = minFluoride, maxFluoride = maxFluoride, minAlcohol = minAlcohol, maxAlcohol = maxAlcohol, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, minSaturatedFat = minSaturatedFat, maxSaturatedFat = maxSaturatedFat, minVitaminA = minVitaminA, maxVitaminA = maxVitaminA, minVitaminC = minVitaminC, maxVitaminC = maxVitaminC, minVitaminD = minVitaminD, maxVitaminD = maxVitaminD, minVitaminE = minVitaminE, maxVitaminE = maxVitaminE, minVitaminK = minVitaminK, maxVitaminK = maxVitaminK, minVitaminB1 = minVitaminB1, maxVitaminB1 = maxVitaminB1, minVitaminB2 = minVitaminB2, maxVitaminB2 = maxVitaminB2, minVitaminB3 = minVitaminB3, maxVitaminB3 = maxVitaminB3, minVitaminB5 = minVitaminB5, maxVitaminB5 = maxVitaminB5, minVitaminB6 = minVitaminB6, maxVitaminB6 = maxVitaminB6, minVitaminB12 = minVitaminB12, maxVitaminB12 = maxVitaminB12, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRecipes200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRecipesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -538,7 +538,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Recipes
+     * Search Recipes API
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
      * @param query The search query. (optional)
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
@@ -630,22 +630,22 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param sortDirection Whether to sort ascending or descending (ASC or DESC). (optional)
      * @param offset The number of recipes to skip, between 0 and 900. (optional)
      * @param number The number of recipes, between 1 and 100. (optional)
-     * @return ApiResponse<SearchRecipes200Response?>
+     * @return ApiResponse<SearchRecipesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchRecipesWithHttpInfo(query: kotlin.String?, cuisines: kotlin.String?, excludeCuisines: kotlin.String?, mealType: kotlin.String?, diet: kotlin.String?, intolerances: kotlin.String?, equipment: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, fillIngredients: kotlin.Boolean?, addRecipeInformation: kotlin.Boolean?, maxTime: kotlin.Int?, minServings: kotlin.Int?, maxServings: kotlin.Int?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minSugar: kotlin.Double?, maxSugar: kotlin.Double?, minFiber: kotlin.Double?, maxFiber: kotlin.Double?, minFolate: kotlin.Double?, maxFolate: kotlin.Double?, minFolicAcid: kotlin.Double?, maxFolicAcid: kotlin.Double?, minIodine: kotlin.Double?, maxIodine: kotlin.Double?, minIron: kotlin.Double?, maxIron: kotlin.Double?, minZinc: kotlin.Double?, maxZinc: kotlin.Double?, minMagnesium: kotlin.Double?, maxMagnesium: kotlin.Double?, minManganese: kotlin.Double?, maxManganese: kotlin.Double?, minPhosphorus: kotlin.Double?, maxPhosphorus: kotlin.Double?, minPotassium: kotlin.Double?, maxPotassium: kotlin.Double?, minSodium: kotlin.Double?, maxSodium: kotlin.Double?, minSelenium: kotlin.Double?, maxSelenium: kotlin.Double?, minCopper: kotlin.Double?, maxCopper: kotlin.Double?, minCalcium: kotlin.Double?, maxCalcium: kotlin.Double?, minCholine: kotlin.Double?, maxCholine: kotlin.Double?, minCholesterol: kotlin.Double?, maxCholesterol: kotlin.Double?, minFluoride: kotlin.Double?, maxFluoride: kotlin.Double?, minAlcohol: kotlin.Double?, maxAlcohol: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, minSaturatedFat: kotlin.Double?, maxSaturatedFat: kotlin.Double?, minVitaminA: kotlin.Double?, maxVitaminA: kotlin.Double?, minVitaminC: kotlin.Double?, maxVitaminC: kotlin.Double?, minVitaminD: kotlin.Double?, maxVitaminD: kotlin.Double?, minVitaminE: kotlin.Double?, maxVitaminE: kotlin.Double?, minVitaminK: kotlin.Double?, maxVitaminK: kotlin.Double?, minVitaminB1: kotlin.Double?, maxVitaminB1: kotlin.Double?, minVitaminB2: kotlin.Double?, maxVitaminB2: kotlin.Double?, minVitaminB3: kotlin.Double?, maxVitaminB3: kotlin.Double?, minVitaminB5: kotlin.Double?, maxVitaminB5: kotlin.Double?, minVitaminB6: kotlin.Double?, maxVitaminB6: kotlin.Double?, minVitaminB12: kotlin.Double?, maxVitaminB12: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchRecipes200Response?> {
-        val localVariableConfig = searchRecipesRequestConfig(query = query, cuisines = cuisines, excludeCuisines = excludeCuisines, mealType = mealType, diet = diet, intolerances = intolerances, equipment = equipment, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, fillIngredients = fillIngredients, addRecipeInformation = addRecipeInformation, maxTime = maxTime, minServings = minServings, maxServings = maxServings, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minSugar = minSugar, maxSugar = maxSugar, minFiber = minFiber, maxFiber = maxFiber, minFolate = minFolate, maxFolate = maxFolate, minFolicAcid = minFolicAcid, maxFolicAcid = maxFolicAcid, minIodine = minIodine, maxIodine = maxIodine, minIron = minIron, maxIron = maxIron, minZinc = minZinc, maxZinc = maxZinc, minMagnesium = minMagnesium, maxMagnesium = maxMagnesium, minManganese = minManganese, maxManganese = maxManganese, minPhosphorus = minPhosphorus, maxPhosphorus = maxPhosphorus, minPotassium = minPotassium, maxPotassium = maxPotassium, minSodium = minSodium, maxSodium = maxSodium, minSelenium = minSelenium, maxSelenium = maxSelenium, minCopper = minCopper, maxCopper = maxCopper, minCalcium = minCalcium, maxCalcium = maxCalcium, minCholine = minCholine, maxCholine = maxCholine, minCholesterol = minCholesterol, maxCholesterol = maxCholesterol, minFluoride = minFluoride, maxFluoride = maxFluoride, minAlcohol = minAlcohol, maxAlcohol = maxAlcohol, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, minSaturatedFat = minSaturatedFat, maxSaturatedFat = maxSaturatedFat, minVitaminA = minVitaminA, maxVitaminA = maxVitaminA, minVitaminC = minVitaminC, maxVitaminC = maxVitaminC, minVitaminD = minVitaminD, maxVitaminD = maxVitaminD, minVitaminE = minVitaminE, maxVitaminE = maxVitaminE, minVitaminK = minVitaminK, maxVitaminK = maxVitaminK, minVitaminB1 = minVitaminB1, maxVitaminB1 = maxVitaminB1, minVitaminB2 = minVitaminB2, maxVitaminB2 = maxVitaminB2, minVitaminB3 = minVitaminB3, maxVitaminB3 = maxVitaminB3, minVitaminB5 = minVitaminB5, maxVitaminB5 = maxVitaminB5, minVitaminB6 = minVitaminB6, maxVitaminB6 = maxVitaminB6, minVitaminB12 = minVitaminB12, maxVitaminB12 = maxVitaminB12, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
+    fun searchRecipesAPIWithHttpInfo(query: kotlin.String?, cuisines: kotlin.String?, excludeCuisines: kotlin.String?, mealType: kotlin.String?, diet: kotlin.String?, intolerances: kotlin.String?, equipment: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, fillIngredients: kotlin.Boolean?, addRecipeInformation: kotlin.Boolean?, maxTime: kotlin.Int?, minServings: kotlin.Int?, maxServings: kotlin.Int?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minSugar: kotlin.Double?, maxSugar: kotlin.Double?, minFiber: kotlin.Double?, maxFiber: kotlin.Double?, minFolate: kotlin.Double?, maxFolate: kotlin.Double?, minFolicAcid: kotlin.Double?, maxFolicAcid: kotlin.Double?, minIodine: kotlin.Double?, maxIodine: kotlin.Double?, minIron: kotlin.Double?, maxIron: kotlin.Double?, minZinc: kotlin.Double?, maxZinc: kotlin.Double?, minMagnesium: kotlin.Double?, maxMagnesium: kotlin.Double?, minManganese: kotlin.Double?, maxManganese: kotlin.Double?, minPhosphorus: kotlin.Double?, maxPhosphorus: kotlin.Double?, minPotassium: kotlin.Double?, maxPotassium: kotlin.Double?, minSodium: kotlin.Double?, maxSodium: kotlin.Double?, minSelenium: kotlin.Double?, maxSelenium: kotlin.Double?, minCopper: kotlin.Double?, maxCopper: kotlin.Double?, minCalcium: kotlin.Double?, maxCalcium: kotlin.Double?, minCholine: kotlin.Double?, maxCholine: kotlin.Double?, minCholesterol: kotlin.Double?, maxCholesterol: kotlin.Double?, minFluoride: kotlin.Double?, maxFluoride: kotlin.Double?, minAlcohol: kotlin.Double?, maxAlcohol: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, minSaturatedFat: kotlin.Double?, maxSaturatedFat: kotlin.Double?, minVitaminA: kotlin.Double?, maxVitaminA: kotlin.Double?, minVitaminC: kotlin.Double?, maxVitaminC: kotlin.Double?, minVitaminD: kotlin.Double?, maxVitaminD: kotlin.Double?, minVitaminE: kotlin.Double?, maxVitaminE: kotlin.Double?, minVitaminK: kotlin.Double?, maxVitaminK: kotlin.Double?, minVitaminB1: kotlin.Double?, maxVitaminB1: kotlin.Double?, minVitaminB2: kotlin.Double?, maxVitaminB2: kotlin.Double?, minVitaminB3: kotlin.Double?, maxVitaminB3: kotlin.Double?, minVitaminB5: kotlin.Double?, maxVitaminB5: kotlin.Double?, minVitaminB6: kotlin.Double?, maxVitaminB6: kotlin.Double?, minVitaminB12: kotlin.Double?, maxVitaminB12: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchRecipesAPI200Response?> {
+        val localVariableConfig = searchRecipesAPIRequestConfig(query = query, cuisines = cuisines, excludeCuisines = excludeCuisines, mealType = mealType, diet = diet, intolerances = intolerances, equipment = equipment, includeIngredients = includeIngredients, excludeIngredients = excludeIngredients, fillIngredients = fillIngredients, addRecipeInformation = addRecipeInformation, maxTime = maxTime, minServings = minServings, maxServings = maxServings, minCalories = minCalories, maxCalories = maxCalories, minCarbs = minCarbs, maxCarbs = maxCarbs, minProtein = minProtein, maxProtein = maxProtein, minFat = minFat, maxFat = maxFat, minSugar = minSugar, maxSugar = maxSugar, minFiber = minFiber, maxFiber = maxFiber, minFolate = minFolate, maxFolate = maxFolate, minFolicAcid = minFolicAcid, maxFolicAcid = maxFolicAcid, minIodine = minIodine, maxIodine = maxIodine, minIron = minIron, maxIron = maxIron, minZinc = minZinc, maxZinc = maxZinc, minMagnesium = minMagnesium, maxMagnesium = maxMagnesium, minManganese = minManganese, maxManganese = maxManganese, minPhosphorus = minPhosphorus, maxPhosphorus = maxPhosphorus, minPotassium = minPotassium, maxPotassium = maxPotassium, minSodium = minSodium, maxSodium = maxSodium, minSelenium = minSelenium, maxSelenium = maxSelenium, minCopper = minCopper, maxCopper = maxCopper, minCalcium = minCalcium, maxCalcium = maxCalcium, minCholine = minCholine, maxCholine = maxCholine, minCholesterol = minCholesterol, maxCholesterol = maxCholesterol, minFluoride = minFluoride, maxFluoride = maxFluoride, minAlcohol = minAlcohol, maxAlcohol = maxAlcohol, minCaffeine = minCaffeine, maxCaffeine = maxCaffeine, minSaturatedFat = minSaturatedFat, maxSaturatedFat = maxSaturatedFat, minVitaminA = minVitaminA, maxVitaminA = maxVitaminA, minVitaminC = minVitaminC, maxVitaminC = maxVitaminC, minVitaminD = minVitaminD, maxVitaminD = maxVitaminD, minVitaminE = minVitaminE, maxVitaminE = maxVitaminE, minVitaminK = minVitaminK, maxVitaminK = maxVitaminK, minVitaminB1 = minVitaminB1, maxVitaminB1 = maxVitaminB1, minVitaminB2 = minVitaminB2, maxVitaminB2 = maxVitaminB2, minVitaminB3 = minVitaminB3, maxVitaminB3 = maxVitaminB3, minVitaminB5 = minVitaminB5, maxVitaminB5 = maxVitaminB5, minVitaminB6 = minVitaminB6, maxVitaminB6 = maxVitaminB6, minVitaminB12 = minVitaminB12, maxVitaminB12 = maxVitaminB12, sort = sort, sortDirection = sortDirection, offset = offset, number = number)
 
-        return request<Unit, SearchRecipes200Response>(
+        return request<Unit, SearchRecipesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchRecipes
+     * To obtain the request config of the operation searchRecipesAPI
      *
      * @param query The search query. (optional)
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;). (optional)
@@ -739,7 +739,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param number The number of recipes, between 1 and 100. (optional)
      * @return RequestConfig
      */
-    fun searchRecipesRequestConfig(query: kotlin.String?, cuisines: kotlin.String?, excludeCuisines: kotlin.String?, mealType: kotlin.String?, diet: kotlin.String?, intolerances: kotlin.String?, equipment: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, fillIngredients: kotlin.Boolean?, addRecipeInformation: kotlin.Boolean?, maxTime: kotlin.Int?, minServings: kotlin.Int?, maxServings: kotlin.Int?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minSugar: kotlin.Double?, maxSugar: kotlin.Double?, minFiber: kotlin.Double?, maxFiber: kotlin.Double?, minFolate: kotlin.Double?, maxFolate: kotlin.Double?, minFolicAcid: kotlin.Double?, maxFolicAcid: kotlin.Double?, minIodine: kotlin.Double?, maxIodine: kotlin.Double?, minIron: kotlin.Double?, maxIron: kotlin.Double?, minZinc: kotlin.Double?, maxZinc: kotlin.Double?, minMagnesium: kotlin.Double?, maxMagnesium: kotlin.Double?, minManganese: kotlin.Double?, maxManganese: kotlin.Double?, minPhosphorus: kotlin.Double?, maxPhosphorus: kotlin.Double?, minPotassium: kotlin.Double?, maxPotassium: kotlin.Double?, minSodium: kotlin.Double?, maxSodium: kotlin.Double?, minSelenium: kotlin.Double?, maxSelenium: kotlin.Double?, minCopper: kotlin.Double?, maxCopper: kotlin.Double?, minCalcium: kotlin.Double?, maxCalcium: kotlin.Double?, minCholine: kotlin.Double?, maxCholine: kotlin.Double?, minCholesterol: kotlin.Double?, maxCholesterol: kotlin.Double?, minFluoride: kotlin.Double?, maxFluoride: kotlin.Double?, minAlcohol: kotlin.Double?, maxAlcohol: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, minSaturatedFat: kotlin.Double?, maxSaturatedFat: kotlin.Double?, minVitaminA: kotlin.Double?, maxVitaminA: kotlin.Double?, minVitaminC: kotlin.Double?, maxVitaminC: kotlin.Double?, minVitaminD: kotlin.Double?, maxVitaminD: kotlin.Double?, minVitaminE: kotlin.Double?, maxVitaminE: kotlin.Double?, minVitaminK: kotlin.Double?, maxVitaminK: kotlin.Double?, minVitaminB1: kotlin.Double?, maxVitaminB1: kotlin.Double?, minVitaminB2: kotlin.Double?, maxVitaminB2: kotlin.Double?, minVitaminB3: kotlin.Double?, maxVitaminB3: kotlin.Double?, minVitaminB5: kotlin.Double?, maxVitaminB5: kotlin.Double?, minVitaminB6: kotlin.Double?, maxVitaminB6: kotlin.Double?, minVitaminB12: kotlin.Double?, maxVitaminB12: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchRecipesAPIRequestConfig(query: kotlin.String?, cuisines: kotlin.String?, excludeCuisines: kotlin.String?, mealType: kotlin.String?, diet: kotlin.String?, intolerances: kotlin.String?, equipment: kotlin.String?, includeIngredients: kotlin.String?, excludeIngredients: kotlin.String?, fillIngredients: kotlin.Boolean?, addRecipeInformation: kotlin.Boolean?, maxTime: kotlin.Int?, minServings: kotlin.Int?, maxServings: kotlin.Int?, minCalories: kotlin.Double?, maxCalories: kotlin.Double?, minCarbs: kotlin.Double?, maxCarbs: kotlin.Double?, minProtein: kotlin.Double?, maxProtein: kotlin.Double?, minFat: kotlin.Double?, maxFat: kotlin.Double?, minSugar: kotlin.Double?, maxSugar: kotlin.Double?, minFiber: kotlin.Double?, maxFiber: kotlin.Double?, minFolate: kotlin.Double?, maxFolate: kotlin.Double?, minFolicAcid: kotlin.Double?, maxFolicAcid: kotlin.Double?, minIodine: kotlin.Double?, maxIodine: kotlin.Double?, minIron: kotlin.Double?, maxIron: kotlin.Double?, minZinc: kotlin.Double?, maxZinc: kotlin.Double?, minMagnesium: kotlin.Double?, maxMagnesium: kotlin.Double?, minManganese: kotlin.Double?, maxManganese: kotlin.Double?, minPhosphorus: kotlin.Double?, maxPhosphorus: kotlin.Double?, minPotassium: kotlin.Double?, maxPotassium: kotlin.Double?, minSodium: kotlin.Double?, maxSodium: kotlin.Double?, minSelenium: kotlin.Double?, maxSelenium: kotlin.Double?, minCopper: kotlin.Double?, maxCopper: kotlin.Double?, minCalcium: kotlin.Double?, maxCalcium: kotlin.Double?, minCholine: kotlin.Double?, maxCholine: kotlin.Double?, minCholesterol: kotlin.Double?, maxCholesterol: kotlin.Double?, minFluoride: kotlin.Double?, maxFluoride: kotlin.Double?, minAlcohol: kotlin.Double?, maxAlcohol: kotlin.Double?, minCaffeine: kotlin.Double?, maxCaffeine: kotlin.Double?, minSaturatedFat: kotlin.Double?, maxSaturatedFat: kotlin.Double?, minVitaminA: kotlin.Double?, maxVitaminA: kotlin.Double?, minVitaminC: kotlin.Double?, maxVitaminC: kotlin.Double?, minVitaminD: kotlin.Double?, maxVitaminD: kotlin.Double?, minVitaminE: kotlin.Double?, maxVitaminE: kotlin.Double?, minVitaminK: kotlin.Double?, maxVitaminK: kotlin.Double?, minVitaminB1: kotlin.Double?, maxVitaminB1: kotlin.Double?, minVitaminB2: kotlin.Double?, maxVitaminB2: kotlin.Double?, minVitaminB3: kotlin.Double?, maxVitaminB3: kotlin.Double?, minVitaminB5: kotlin.Double?, maxVitaminB5: kotlin.Double?, minVitaminB6: kotlin.Double?, maxVitaminB6: kotlin.Double?, minVitaminB12: kotlin.Double?, maxVitaminB12: kotlin.Double?, sort: kotlin.String?, sortDirection: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1028,7 +1028,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Restaurants
+     * Search Restaurants API
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
@@ -1040,7 +1040,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param isOpen Whether the restaurants have to be open now. (optional)
      * @param page The page of the results. (optional)
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
-     * @return SearchRestaurants200Response
+     * @return SearchRestaurantsAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1049,11 +1049,11 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchRestaurants(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String? = null, distance: kotlin.Int? = null, budget: kotlin.Double? = null, minRating: kotlin.Double? = null, cuisine: kotlin.String? = null, isOpen: kotlin.Boolean? = null, page: kotlin.Int? = null, sort: kotlin.String? = null) : SearchRestaurants200Response {
-        val localVarResponse = searchRestaurantsWithHttpInfo(lat = lat, lon = lon, query = query, distance = distance, budget = budget, minRating = minRating, cuisine = cuisine, isOpen = isOpen, page = page, sort = sort)
+    fun searchRestaurantsAPI(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String? = null, distance: kotlin.Int? = null, budget: kotlin.Double? = null, minRating: kotlin.Double? = null, cuisine: kotlin.String? = null, isOpen: kotlin.Boolean? = null, page: kotlin.Int? = null, sort: kotlin.String? = null) : SearchRestaurantsAPI200Response {
+        val localVarResponse = searchRestaurantsAPIWithHttpInfo(lat = lat, lon = lon, query = query, distance = distance, budget = budget, minRating = minRating, cuisine = cuisine, isOpen = isOpen, page = page, sort = sort)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRestaurants200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRestaurantsAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1068,7 +1068,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Search Restaurants
+     * Search Restaurants API
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
@@ -1080,22 +1080,22 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param isOpen Whether the restaurants have to be open now. (optional)
      * @param page The page of the results. (optional)
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
-     * @return ApiResponse<SearchRestaurants200Response?>
+     * @return ApiResponse<SearchRestaurantsAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchRestaurantsWithHttpInfo(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String?, distance: kotlin.Int?, budget: kotlin.Double?, minRating: kotlin.Double?, cuisine: kotlin.String?, isOpen: kotlin.Boolean?, page: kotlin.Int?, sort: kotlin.String?) : ApiResponse<SearchRestaurants200Response?> {
-        val localVariableConfig = searchRestaurantsRequestConfig(lat = lat, lon = lon, query = query, distance = distance, budget = budget, minRating = minRating, cuisine = cuisine, isOpen = isOpen, page = page, sort = sort)
+    fun searchRestaurantsAPIWithHttpInfo(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String?, distance: kotlin.Int?, budget: kotlin.Double?, minRating: kotlin.Double?, cuisine: kotlin.String?, isOpen: kotlin.Boolean?, page: kotlin.Int?, sort: kotlin.String?) : ApiResponse<SearchRestaurantsAPI200Response?> {
+        val localVariableConfig = searchRestaurantsAPIRequestConfig(lat = lat, lon = lon, query = query, distance = distance, budget = budget, minRating = minRating, cuisine = cuisine, isOpen = isOpen, page = page, sort = sort)
 
-        return request<Unit, SearchRestaurants200Response>(
+        return request<Unit, SearchRestaurantsAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchRestaurants
+     * To obtain the request config of the operation searchRestaurantsAPI
      *
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
@@ -1109,7 +1109,7 @@ class FoodApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
      * @return RequestConfig
      */
-    fun searchRestaurantsRequestConfig(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String?, distance: kotlin.Int?, budget: kotlin.Double?, minRating: kotlin.Double?, cuisine: kotlin.String?, isOpen: kotlin.Boolean?, page: kotlin.Int?, sort: kotlin.String?) : RequestConfig<Unit> {
+    fun searchRestaurantsAPIRequestConfig(lat: kotlin.Double, lon: kotlin.Double, query: kotlin.String?, distance: kotlin.Int?, budget: kotlin.Double?, minRating: kotlin.Double?, cuisine: kotlin.String?, isOpen: kotlin.Boolean?, page: kotlin.Int?, sort: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**FindSimilarBooks**](BooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books |
-| [**SearchBooks**](BooksApi.md#searchbooks) | **GET** /search-books | Search Books |
+| [**FindSimilarBooksAPI**](BooksApi.md#findsimilarbooksapi) | **GET** /list-similar-books | Find Similar Books API |
+| [**SearchBooksAPI**](BooksApi.md#searchbooksapi) | **GET** /search-books | Search Books API |
 
-<a id="findsimilarbooks"></a>
-# **FindSimilarBooks**
-> FindSimilarBooks200Response FindSimilarBooks (int id, int? number = null)
+<a id="findsimilarbooksapi"></a>
+# **FindSimilarBooksAPI**
+> FindSimilarBooksAPI200Response FindSimilarBooksAPI (int id, int? number = null)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 ```csharp
@@ -25,7 +25,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class FindSimilarBooksExample
+    public class FindSimilarBooksAPIExample
     {
         public static void Main()
         {
@@ -46,13 +46,13 @@ namespace Example
 
             try
             {
-                // Find Similar Books
-                FindSimilarBooks200Response result = apiInstance.FindSimilarBooks(id, number);
+                // Find Similar Books API
+                FindSimilarBooksAPI200Response result = apiInstance.FindSimilarBooksAPI(id, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BooksApi.FindSimilarBooks: " + e.Message);
+                Debug.Print("Exception when calling BooksApi.FindSimilarBooksAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -61,21 +61,21 @@ namespace Example
 }
 ```
 
-#### Using the FindSimilarBooksWithHttpInfo variant
+#### Using the FindSimilarBooksAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Find Similar Books
-    ApiResponse<FindSimilarBooks200Response> response = apiInstance.FindSimilarBooksWithHttpInfo(id, number);
+    // Find Similar Books API
+    ApiResponse<FindSimilarBooksAPI200Response> response = apiInstance.FindSimilarBooksAPIWithHttpInfo(id, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BooksApi.FindSimilarBooksWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BooksApi.FindSimilarBooksAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -90,7 +90,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -115,13 +115,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchbooks"></a>
-# **SearchBooks**
-> SearchBooks200Response SearchBooks (string? query = null, int? earliestPublishYear = null, int? latestPublishYear = null, double? minRating = null, double? maxRating = null, string? genres = null, string? authors = null, string? isbn = null, string? oclc = null, string? sort = null, string? sortDirection = null, bool? groupResults = null, int? offset = null, int? number = null)
+<a id="searchbooksapi"></a>
+# **SearchBooksAPI**
+> SearchBooksAPI200Response SearchBooksAPI (string? query = null, int? earliestPublishYear = null, int? latestPublishYear = null, double? minRating = null, double? maxRating = null, string? genres = null, string? authors = null, string? isbn = null, string? oclc = null, string? sort = null, string? sortDirection = null, bool? groupResults = null, int? offset = null, int? number = null)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```csharp
@@ -133,7 +133,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchBooksExample
+    public class SearchBooksAPIExample
     {
         public static void Main()
         {
@@ -166,13 +166,13 @@ namespace Example
 
             try
             {
-                // Search Books
-                SearchBooks200Response result = apiInstance.SearchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+                // Search Books API
+                SearchBooksAPI200Response result = apiInstance.SearchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BooksApi.SearchBooks: " + e.Message);
+                Debug.Print("Exception when calling BooksApi.SearchBooksAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -181,21 +181,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchBooksWithHttpInfo variant
+#### Using the SearchBooksAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Books
-    ApiResponse<SearchBooks200Response> response = apiInstance.SearchBooksWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+    // Search Books API
+    ApiResponse<SearchBooksAPI200Response> response = apiInstance.SearchBooksAPIWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling BooksApi.SearchBooksWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling BooksApi.SearchBooksAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -222,7 +222,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

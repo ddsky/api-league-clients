@@ -19,39 +19,39 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.FoodApi
-import com.apileague.client.model.ComputeNutrition200Response
-import com.apileague.client.model.RetrieveRecipeInformation200Response
-import com.apileague.client.model.SearchDrinks200Response
-import com.apileague.client.model.SearchRecipes200Response
-import com.apileague.client.model.SearchRestaurants200Response
+import com.apileague.client.model.ComputeNutritionAPI200Response
+import com.apileague.client.model.RetrieveRecipeInformationAPI200Response
+import com.apileague.client.model.SearchDrinksAPI200Response
+import com.apileague.client.model.SearchRecipesAPI200Response
+import com.apileague.client.model.SearchRestaurantsAPI200Response
 
 class FoodApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of FoodApi
         //val apiInstance = FoodApi()
 
-        // to test computeNutrition
-        should("test computeNutrition") {
-            // uncomment below to test computeNutrition
+        // to test computeNutritionAPI
+        should("test computeNutritionAPI") {
+            // uncomment below to test computeNutritionAPI
             //val ingredients : kotlin.String = 1 cup apples,3oz milk,35g butter // kotlin.String | A comma-separated list of the ingredients of the recipe.
             //val servings : kotlin.Int = 1 // kotlin.Int | The number of servings the ingredients make. Nutrition is computed per serving.
             //val reduceOils : kotlin.Boolean = true // kotlin.Boolean | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
-            //val result : ComputeNutrition200Response = apiInstance.computeNutrition(ingredients, servings, reduceOils)
+            //val result : ComputeNutritionAPI200Response = apiInstance.computeNutritionAPI(ingredients, servings, reduceOils)
             //result shouldBe ("TODO")
         }
 
-        // to test retrieveRecipeInformation
-        should("test retrieveRecipeInformation") {
-            // uncomment below to test retrieveRecipeInformation
+        // to test retrieveRecipeInformationAPI
+        should("test retrieveRecipeInformationAPI") {
+            // uncomment below to test retrieveRecipeInformationAPI
             //val id : kotlin.Int = 74987 // kotlin.Int | The id of the recipe to retrieve.
             //val addWinePairing : kotlin.Boolean = true // kotlin.Boolean | Whether to pair a wine to the recipe.
-            //val result : RetrieveRecipeInformation200Response = apiInstance.retrieveRecipeInformation(id, addWinePairing)
+            //val result : RetrieveRecipeInformationAPI200Response = apiInstance.retrieveRecipeInformationAPI(id, addWinePairing)
             //result shouldBe ("TODO")
         }
 
-        // to test searchDrinks
-        should("test searchDrinks") {
-            // uncomment below to test searchDrinks
+        // to test searchDrinksAPI
+        should("test searchDrinksAPI") {
+            // uncomment below to test searchDrinksAPI
             //val query : kotlin.String = vodka // kotlin.String | The search query.
             //val glassTypes : kotlin.String = Highball Glass // kotlin.String | A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
             //val flavors : kotlin.String = sour,sweet // kotlin.String | A comma-separated list (interpreted as AND) of dominant flavors in the drink.
@@ -74,13 +74,13 @@ class FoodApiTest : ShouldSpec() {
             //val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of drinks to skip, between 0 and 90.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of drinks, between 1 and 10.
-            //val result : SearchDrinks200Response = apiInstance.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+            //val result : SearchDrinksAPI200Response = apiInstance.searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchRecipes
-        should("test searchRecipes") {
-            // uncomment below to test searchRecipes
+        // to test searchRecipesAPI
+        should("test searchRecipesAPI") {
+            // uncomment below to test searchRecipesAPI
             //val query : kotlin.String = pasta with mushrooms but without nuts // kotlin.String | The search query.
             //val cuisines : kotlin.String = mexican // kotlin.String | The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as 'OR').
             //val excludeCuisines : kotlin.String = indian,japanese // kotlin.String | The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as 'AND').
@@ -171,13 +171,13 @@ class FoodApiTest : ShouldSpec() {
             //val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascending or descending (ASC or DESC).
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of recipes to skip, between 0 and 900.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of recipes, between 1 and 100.
-            //val result : SearchRecipes200Response = apiInstance.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
+            //val result : SearchRecipesAPI200Response = apiInstance.searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchRestaurants
-        should("test searchRestaurants") {
-            // uncomment below to test searchRestaurants
+        // to test searchRestaurantsAPI
+        should("test searchRestaurantsAPI") {
+            // uncomment below to test searchRestaurantsAPI
             //val lat : kotlin.Double = 32.715736 // kotlin.Double | The latitude to search around.
             //val lon : kotlin.Double = -117.161087 // kotlin.Double | The longitude to search around.
             //val query : kotlin.String = burger // kotlin.String | The search query.
@@ -188,7 +188,7 @@ class FoodApiTest : ShouldSpec() {
             //val isOpen : kotlin.Boolean = true // kotlin.Boolean | Whether the restaurants have to be open now.
             //val page : kotlin.Int = 0 // kotlin.Int | The page of the results.
             //val sort : kotlin.String = rating // kotlin.String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-            //val result : SearchRestaurants200Response = apiInstance.searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
+            //val result : SearchRestaurantsAPI200Response = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
             //result shouldBe ("TODO")
         }
 

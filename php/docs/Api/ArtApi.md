@@ -4,17 +4,17 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**imageToAsciiArtByURL()**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
-| [**randomPoem()**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
+| [**imageToAsciiArtByURLAPI()**](ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API |
+| [**randomPoemAPI()**](ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API |
 
 
-## `imageToAsciiArtByURL()`
+## `imageToAsciiArtByURLAPI()`
 
 ```php
-imageToAsciiArtByURL($url, $width, $height): string
+imageToAsciiArtByURLAPI($url, $width, $height): string
 ```
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -47,10 +47,10 @@ $width = 200; // int | The maximum width of the image (default 400, max. 500).
 $height = 200; // int | The maximum height of the image (default 400, max. 500).
 
 try {
-    $result = $apiInstance->imageToAsciiArtByURL($url, $width, $height);
+    $result = $apiInstance->imageToAsciiArtByURLAPI($url, $width, $height);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ArtApi->imageToAsciiArtByURL: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ArtApi->imageToAsciiArtByURLAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -79,13 +79,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `randomPoem()`
+## `randomPoemAPI()`
 
 ```php
-randomPoem($min_lines, $max_lines): \OpenAPI\Client\Model\RandomPoem200Response
+randomPoemAPI($min_lines, $max_lines): \OpenAPI\Client\Model\RandomPoemAPI200Response
 ```
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
@@ -117,10 +117,10 @@ $min_lines = 5; // int | The minimum number of lines of the poem.
 $max_lines = 20; // int | The maximum number of lines of the poem.
 
 try {
-    $result = $apiInstance->randomPoem($min_lines, $max_lines);
+    $result = $apiInstance->randomPoemAPI($min_lines, $max_lines);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ArtApi->randomPoem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ArtApi->randomPoemAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -133,7 +133,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RandomPoem200Response**](../Model/RandomPoem200Response.md)
+[**\OpenAPI\Client\Model\RandomPoemAPI200Response**](../Model/RandomPoemAPI200Response.md)
 
 ### Authorization
 

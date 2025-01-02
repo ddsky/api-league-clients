@@ -8,11 +8,11 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
-import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
-import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
-import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
-import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
+import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
+import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
+import { SearchDrinksAPI200Response } from '../models/SearchDrinksAPI200Response';
+import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Response';
+import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
 
 /**
  * no description
@@ -21,17 +21,17 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
-     * Compute Nutrition
+     * Compute Nutrition API
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving.
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
      */
-    public async computeNutrition(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async computeNutritionAPI(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'ingredients' is not null or undefined
         if (ingredients === null || ingredients === undefined) {
-            throw new RequiredError("FoodApi", "computeNutrition", "ingredients");
+            throw new RequiredError("FoodApi", "computeNutritionAPI", "ingredients");
         }
 
 
@@ -82,16 +82,16 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe.
      */
-    public async retrieveRecipeInformation(id: number, addWinePairing?: boolean, _options?: Configuration): Promise<RequestContext> {
+    public async retrieveRecipeInformationAPI(id: number, addWinePairing?: boolean, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
-            throw new RequiredError("FoodApi", "retrieveRecipeInformation", "id");
+            throw new RequiredError("FoodApi", "retrieveRecipeInformationAPI", "id");
         }
 
 
@@ -136,7 +136,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
-     * Search Drinks
+     * Search Drinks API
      * @param query The search query.
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
      * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink.
@@ -160,7 +160,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of drinks to skip, between 0 and 90.
      * @param number The number of drinks, between 1 and 10.
      */
-    public async searchDrinks(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchDrinksAPI(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -325,7 +325,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
-     * Search Recipes
+     * Search Recipes API
      * @param query The search query.
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
      * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
@@ -417,7 +417,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
      */
-    public async searchRecipes(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchRecipesAPI(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -990,7 +990,7 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants
+     * Search Restaurants API
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
      * @param query The search query.
@@ -1002,18 +1002,18 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
      * @param page The page of the results.
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
      */
-    public async searchRestaurants(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
+    public async searchRestaurantsAPI(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'lat' is not null or undefined
         if (lat === null || lat === undefined) {
-            throw new RequiredError("FoodApi", "searchRestaurants", "lat");
+            throw new RequiredError("FoodApi", "searchRestaurantsAPI", "lat");
         }
 
 
         // verify required parameter 'lon' is not null or undefined
         if (lon === null || lon === undefined) {
-            throw new RequiredError("FoodApi", "searchRestaurants", "lon");
+            throw new RequiredError("FoodApi", "searchRestaurantsAPI", "lon");
         }
 
 
@@ -1111,16 +1111,16 @@ export class FoodApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to computeNutrition
+     * @params response Response returned by the server for a request to computeNutritionAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async computeNutritionWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ComputeNutrition200Response >> {
+     public async computeNutritionAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ComputeNutritionAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ComputeNutrition200Response = ObjectSerializer.deserialize(
+            const body: ComputeNutritionAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ComputeNutrition200Response", ""
-            ) as ComputeNutrition200Response;
+                "ComputeNutritionAPI200Response", ""
+            ) as ComputeNutritionAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1144,10 +1144,10 @@ export class FoodApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ComputeNutrition200Response = ObjectSerializer.deserialize(
+            const body: ComputeNutritionAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ComputeNutrition200Response", ""
-            ) as ComputeNutrition200Response;
+                "ComputeNutritionAPI200Response", ""
+            ) as ComputeNutritionAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1158,16 +1158,16 @@ export class FoodApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to retrieveRecipeInformation
+     * @params response Response returned by the server for a request to retrieveRecipeInformationAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async retrieveRecipeInformationWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RetrieveRecipeInformation200Response >> {
+     public async retrieveRecipeInformationAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RetrieveRecipeInformationAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RetrieveRecipeInformation200Response = ObjectSerializer.deserialize(
+            const body: RetrieveRecipeInformationAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RetrieveRecipeInformation200Response", ""
-            ) as RetrieveRecipeInformation200Response;
+                "RetrieveRecipeInformationAPI200Response", ""
+            ) as RetrieveRecipeInformationAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1191,10 +1191,10 @@ export class FoodApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RetrieveRecipeInformation200Response = ObjectSerializer.deserialize(
+            const body: RetrieveRecipeInformationAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RetrieveRecipeInformation200Response", ""
-            ) as RetrieveRecipeInformation200Response;
+                "RetrieveRecipeInformationAPI200Response", ""
+            ) as RetrieveRecipeInformationAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1205,16 +1205,16 @@ export class FoodApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchDrinks
+     * @params response Response returned by the server for a request to searchDrinksAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchDrinksWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchDrinks200Response >> {
+     public async searchDrinksAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchDrinksAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchDrinks200Response = ObjectSerializer.deserialize(
+            const body: SearchDrinksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchDrinks200Response", ""
-            ) as SearchDrinks200Response;
+                "SearchDrinksAPI200Response", ""
+            ) as SearchDrinksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1238,10 +1238,10 @@ export class FoodApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchDrinks200Response = ObjectSerializer.deserialize(
+            const body: SearchDrinksAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchDrinks200Response", ""
-            ) as SearchDrinks200Response;
+                "SearchDrinksAPI200Response", ""
+            ) as SearchDrinksAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1252,16 +1252,16 @@ export class FoodApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchRecipes
+     * @params response Response returned by the server for a request to searchRecipesAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchRecipesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchRecipes200Response >> {
+     public async searchRecipesAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchRecipesAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchRecipes200Response = ObjectSerializer.deserialize(
+            const body: SearchRecipesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRecipes200Response", ""
-            ) as SearchRecipes200Response;
+                "SearchRecipesAPI200Response", ""
+            ) as SearchRecipesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1285,10 +1285,10 @@ export class FoodApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchRecipes200Response = ObjectSerializer.deserialize(
+            const body: SearchRecipesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRecipes200Response", ""
-            ) as SearchRecipes200Response;
+                "SearchRecipesAPI200Response", ""
+            ) as SearchRecipesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1299,16 +1299,16 @@ export class FoodApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchRestaurants
+     * @params response Response returned by the server for a request to searchRestaurantsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchRestaurantsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchRestaurants200Response >> {
+     public async searchRestaurantsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchRestaurantsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchRestaurants200Response = ObjectSerializer.deserialize(
+            const body: SearchRestaurantsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRestaurants200Response", ""
-            ) as SearchRestaurants200Response;
+                "SearchRestaurantsAPI200Response", ""
+            ) as SearchRestaurantsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1332,10 +1332,10 @@ export class FoodApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchRestaurants200Response = ObjectSerializer.deserialize(
+            const body: SearchRestaurantsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRestaurants200Response", ""
-            ) as SearchRestaurants200Response;
+                "SearchRestaurantsAPI200Response", ""
+            ) as SearchRestaurantsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

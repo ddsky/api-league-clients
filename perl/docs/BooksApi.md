@@ -9,16 +9,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find_similar_books**](BooksApi.md#find_similar_books) | **GET** /list-similar-books | Find Similar Books
-[**search_books**](BooksApi.md#search_books) | **GET** /search-books | Search Books
+[**find_similar_books_api**](BooksApi.md#find_similar_books_api) | **GET** /list-similar-books | Find Similar Books API
+[**search_books_api**](BooksApi.md#search_books_api) | **GET** /search-books | Search Books API
 
 
-# **find_similar_books**
-> FindSimilarBooks200Response find_similar_books(id => $id, number => $number)
+# **find_similar_books_api**
+> FindSimilarBooksAPI200Response find_similar_books_api(id => $id, number => $number)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 ```perl
@@ -40,11 +40,11 @@ my $id = 8302059; # int | The id of the book to which similar books should be fo
 my $number = 10; # int | The number of similar books to return in range [1,100]
 
 eval {
-    my $result = $api_instance->find_similar_books(id => $id, number => $number);
+    my $result = $api_instance->find_similar_books_api(id => $id, number => $number);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling BooksApi->find_similar_books: $@\n";
+    warn "Exception when calling BooksApi->find_similar_books_api: $@\n";
 }
 ```
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -70,12 +70,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_books**
-> SearchBooks200Response search_books(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number)
+# **search_books_api**
+> SearchBooksAPI200Response search_books_api(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```perl
@@ -109,11 +109,11 @@ my $offset = 0; # int | The number of books to skip in range [0,1000]
 my $number = 10; # int | The number of books to return in range [1,100]
 
 eval {
-    my $result = $api_instance->search_books(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number);
+    my $result = $api_instance->search_books_api(query => $query, earliest_publish_year => $earliest_publish_year, latest_publish_year => $latest_publish_year, min_rating => $min_rating, max_rating => $max_rating, genres => $genres, authors => $authors, isbn => $isbn, oclc => $oclc, sort => $sort, sort_direction => $sort_direction, group_results => $group_results, offset => $offset, number => $number);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling BooksApi->search_books: $@\n";
+    warn "Exception when calling BooksApi->search_books_api: $@\n";
 }
 ```
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

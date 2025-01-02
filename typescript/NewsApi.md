@@ -4,13 +4,13 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
-[**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
-[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
+[**extractNewsAPI**](NewsApi.md#extractNewsAPI) | **GET** /extract-news | Extract News API
+[**searchNewsAPI**](NewsApi.md#searchNewsAPI) | **GET** /search-news | Search News API
+[**topNewsAPI**](NewsApi.md#topNewsAPI) | **GET** /retrieve-top-news | Top News API
 
 
-# **extractNews**
-> ExtractNews200Response extractNews()
+# **extractNewsAPI**
+> ExtractNewsAPI200Response extractNewsAPI()
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -24,14 +24,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .NewsApi(configuration);
 
-let body:.NewsApiExtractNewsRequest = {
+let body:.NewsApiExtractNewsAPIRequest = {
   // string | The url of the news.
   url: "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/",
   // boolean | Whether to analyze the news (extract entities etc.)
   analyze: true,
 };
 
-apiInstance.extractNews(body).then((data:any) => {
+apiInstance.extractNewsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ExtractNews200Response**
+**ExtractNewsAPI200Response**
 
 ### Authorization
 
@@ -72,10 +72,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchNews**
-> SearchNews200Response searchNews()
+# **searchNewsAPI**
+> SearchNewsAPI200Response searchNewsAPI()
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 
@@ -87,8 +87,8 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .NewsApi(configuration);
 
-let body:.NewsApiSearchNewsRequest = {
-  // string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+let body:.NewsApiSearchNewsAPIRequest = {
+  // string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. (optional)
   text: "tesla",
   // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
   sourceCountries: "us,uk",
@@ -122,7 +122,7 @@ let body:.NewsApiSearchNewsRequest = {
   number: 10,
 };
 
-apiInstance.searchNews(body).then((data:any) => {
+apiInstance.searchNewsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -132,7 +132,7 @@ apiInstance.searchNews(body).then((data:any) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | [**string**] | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | (optional) defaults to undefined
+ **text** | [**string**] | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | (optional) defaults to undefined
  **sourceCountries** | [**string**] | A comma-separated list of ISO 3166 country codes from which the news should originate. | (optional) defaults to undefined
  **language** | [**string**] | The ISO 6391 language code of the news. | (optional) defaults to undefined
  **minSentiment** | [**number**] | The minimal sentiment of the news in range [-1,1]. | (optional) defaults to undefined
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchNews200Response**
+**SearchNewsAPI200Response**
 
 ### Authorization
 
@@ -177,10 +177,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **topNews**
-> TopNews200Response topNews()
+# **topNewsAPI**
+> TopNewsAPI200Response topNewsAPI()
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Example
 
@@ -192,7 +192,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .NewsApi(configuration);
 
-let body:.NewsApiTopNewsRequest = {
+let body:.NewsApiTopNewsAPIRequest = {
   // string | The ISO 3166 country code of the country for which top news should be retrieved.
   sourceCountry: "us",
   // string | The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
@@ -203,7 +203,7 @@ let body:.NewsApiTopNewsRequest = {
   headlinesOnly: false,
 };
 
-apiInstance.topNews(body).then((data:any) => {
+apiInstance.topNewsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**TopNews200Response**
+**TopNewsAPI200Response**
 
 ### Authorization
 

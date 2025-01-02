@@ -4,21 +4,21 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**generateNonsenseWord()**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word |
-| [**randomJoke()**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke |
-| [**randomMeme()**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme |
-| [**searchGifs()**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs |
-| [**searchJokes()**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes |
-| [**searchMemes()**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes |
+| [**generateNonsenseWordAPI()**](HumorApi.md#generateNonsenseWordAPI) | **GET** /generate-nonsense-word | Generate Nonsense Word API |
+| [**randomJokeAPI()**](HumorApi.md#randomJokeAPI) | **GET** /retrieve-random-joke | Random Joke API |
+| [**randomMemeAPI()**](HumorApi.md#randomMemeAPI) | **GET** /retrieve-random-meme | Random Meme API |
+| [**searchGifsAPI()**](HumorApi.md#searchGifsAPI) | **GET** /search-gifs | Search Gifs API |
+| [**searchJokesAPI()**](HumorApi.md#searchJokesAPI) | **GET** /search-jokes | Search Jokes API |
+| [**searchMemesAPI()**](HumorApi.md#searchMemesAPI) | **GET** /search-memes | Search Memes API |
 
 
-## `generateNonsenseWord()`
+## `generateNonsenseWordAPI()`
 
 ```php
-generateNonsenseWord(): \OpenAPI\Client\Model\GenerateNonsenseWord200Response
+generateNonsenseWordAPI(): \OpenAPI\Client\Model\GenerateNonsenseWordAPI200Response
 ```
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -48,10 +48,10 @@ $apiInstance = new OpenAPI\Client\Api\HumorApi(
 );
 
 try {
-    $result = $apiInstance->generateNonsenseWord();
+    $result = $apiInstance->generateNonsenseWordAPI();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->generateNonsenseWord: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->generateNonsenseWordAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\GenerateNonsenseWord200Response**](../Model/GenerateNonsenseWord200Response.md)
+[**\OpenAPI\Client\Model\GenerateNonsenseWordAPI200Response**](../Model/GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -76,13 +76,13 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `randomJoke()`
+## `randomJokeAPI()`
 
 ```php
-randomJoke($include_tags, $exclude_tags, $min_rating, $max_length): \OpenAPI\Client\Model\SearchJokes200ResponseJokesInner
+randomJokeAPI($include_tags, $exclude_tags, $min_rating, $max_length): \OpenAPI\Client\Model\SearchJokesAPI200ResponseJokesInner
 ```
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -116,10 +116,10 @@ $min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the jokes.
 $max_length = 140; // int | The maximum length of the joke in letters.
 
 try {
-    $result = $apiInstance->randomJoke($include_tags, $exclude_tags, $min_rating, $max_length);
+    $result = $apiInstance->randomJokeAPI($include_tags, $exclude_tags, $min_rating, $max_length);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->randomJoke: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->randomJokeAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -134,7 +134,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchJokes200ResponseJokesInner**](../Model/SearchJokes200ResponseJokesInner.md)
+[**\OpenAPI\Client\Model\SearchJokesAPI200ResponseJokesInner**](../Model/SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -149,15 +149,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `randomMeme()`
+## `randomMemeAPI()`
 
 ```php
-randomMeme($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days): \OpenAPI\Client\Model\RandomMeme200Response
+randomMemeAPI($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days): \OpenAPI\Client\Model\RandomMemeAPI200Response
 ```
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 
@@ -190,10 +190,10 @@ $min_rating = 0; // float | The minimum rating in range [0.0,1.0] of the meme.
 $max_age_days = 30; // int | The maximum age of the meme in days.
 
 try {
-    $result = $apiInstance->randomMeme($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days);
+    $result = $apiInstance->randomMemeAPI($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->randomMeme: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->randomMemeAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -209,7 +209,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RandomMeme200Response**](../Model/RandomMeme200Response.md)
+[**\OpenAPI\Client\Model\RandomMemeAPI200Response**](../Model/RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -224,13 +224,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchGifs()`
+## `searchGifsAPI()`
 
 ```php
-searchGifs($query, $number): \OpenAPI\Client\Model\SearchGifs200Response
+searchGifsAPI($query, $number): \OpenAPI\Client\Model\SearchGifsAPI200Response
 ```
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -262,10 +262,10 @@ $query = dogs; // string | The search query.
 $number = 5; // int | The number of gifs to return in range [1,10]
 
 try {
-    $result = $apiInstance->searchGifs($query, $number);
+    $result = $apiInstance->searchGifsAPI($query, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->searchGifs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->searchGifsAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -278,7 +278,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchGifs200Response**](../Model/SearchGifs200Response.md)
+[**\OpenAPI\Client\Model\SearchGifsAPI200Response**](../Model/SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -293,13 +293,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchJokes()`
+## `searchJokesAPI()`
 
 ```php
-searchJokes($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number): \OpenAPI\Client\Model\SearchJokes200Response
+searchJokesAPI($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number): \OpenAPI\Client\Model\SearchJokesAPI200Response
 ```
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -336,10 +336,10 @@ $offset = 0; // int | The number of jokes to skip, between 0 and 1000.
 $number = 3; // int | The number of jokes, between 1 and 10.
 
 try {
-    $result = $apiInstance->searchJokes($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number);
+    $result = $apiInstance->searchJokesAPI($keywords, $include_tags, $exclude_tags, $min_rating, $max_length, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->searchJokes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->searchJokesAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -357,7 +357,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchJokes200Response**](../Model/SearchJokes200Response.md)
+[**\OpenAPI\Client\Model\SearchJokesAPI200Response**](../Model/SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -372,15 +372,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchMemes()`
+## `searchMemesAPI()`
 
 ```php
-searchMemes($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number): \OpenAPI\Client\Model\SearchMemes200Response
+searchMemesAPI($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number): \OpenAPI\Client\Model\SearchMemesAPI200Response
 ```
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
 ### Example
 
@@ -415,10 +415,10 @@ $offset = 0; // int | The number of memes to skip, between 0 and 1000.
 $number = 3; // int | The number of memes, between 1 and 10.
 
 try {
-    $result = $apiInstance->searchMemes($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number);
+    $result = $apiInstance->searchMemesAPI($keywords, $keywords_in_image, $media_type, $min_rating, $max_age_days, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HumorApi->searchMemes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HumorApi->searchMemesAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -436,7 +436,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchMemes200Response**](../Model/SearchMemes200Response.md)
+[**\OpenAPI\Client\Model\SearchMemesAPI200Response**](../Model/SearchMemesAPI200Response.md)
 
 ### Authorization
 

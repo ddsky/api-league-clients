@@ -17,39 +17,48 @@ void main() {
   // final instance = MediaApi();
 
   group('tests for MediaApi', () {
-    // Detect Main Image Color
+    // Detect Main Image Color API
     //
     // Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
     //
-    //Future<List<DetectMainImageColor200ResponseInner>> detectMainImageColor(String url) async
-    test('test detectMainImageColor', () async {
+    //Future<List<DetectMainImageColorAPI200ResponseInner>> detectMainImageColorAPI(String url) async
+    test('test detectMainImageColorAPI', () async {
       // TODO
     });
 
-    // Rescale Image
+    // Rescale Image API
     //
     // Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
     //
-    //Future<MultipartFile> rescaleImage(String url, int width, int height, bool crop) async
-    test('test rescaleImage', () async {
+    //Future<MultipartFile> rescaleImageAPI(String url, int width, int height, bool crop) async
+    test('test rescaleImageAPI', () async {
       // TODO
     });
 
-    // Search Icons
+    // Search Icons API
     //
     // Search through millions of icons to match any topic you want.
     //
-    //Future<SearchIcons200Response> searchIcons(String query, { bool onlyPublicDomain, int number }) async
-    test('test searchIcons', () async {
+    //Future<SearchIconsAPI200Response> searchIconsAPI(String query, { bool onlyPublicDomain, int number }) async
+    test('test searchIconsAPI', () async {
       // TODO
     });
 
-    // Search Royalty Free Images
+    // Search Royalty Free Images API
     //
     // Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
     //
-    //Future<SearchRoyaltyFreeImages200Response> searchRoyaltyFreeImages(String query, { int number }) async
-    test('test searchRoyaltyFreeImages', () async {
+    //Future<SearchRoyaltyFreeImagesAPI200Response> searchRoyaltyFreeImagesAPI(String query, { int number }) async
+    test('test searchRoyaltyFreeImagesAPI', () async {
+      // TODO
+    });
+
+    // Vector Search API
+    //
+    // Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+    //
+    //Future<VectorSearchAPI200Response> vectorSearchAPI(String query, { int offset, int number }) async
+    test('test vectorSearchAPI', () async {
       // TODO
     });
 

@@ -19,60 +19,60 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.HumorApi
-import com.apileague.client.model.GenerateNonsenseWord200Response
-import com.apileague.client.model.RandomMeme200Response
-import com.apileague.client.model.SearchGifs200Response
-import com.apileague.client.model.SearchJokes200Response
-import com.apileague.client.model.SearchJokes200ResponseJokesInner
-import com.apileague.client.model.SearchMemes200Response
+import com.apileague.client.model.GenerateNonsenseWordAPI200Response
+import com.apileague.client.model.RandomMemeAPI200Response
+import com.apileague.client.model.SearchGifsAPI200Response
+import com.apileague.client.model.SearchJokesAPI200Response
+import com.apileague.client.model.SearchJokesAPI200ResponseJokesInner
+import com.apileague.client.model.SearchMemesAPI200Response
 
 class HumorApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of HumorApi
         //val apiInstance = HumorApi()
 
-        // to test generateNonsenseWord
-        should("test generateNonsenseWord") {
-            // uncomment below to test generateNonsenseWord
-            //val result : GenerateNonsenseWord200Response = apiInstance.generateNonsenseWord()
+        // to test generateNonsenseWordAPI
+        should("test generateNonsenseWordAPI") {
+            // uncomment below to test generateNonsenseWordAPI
+            //val result : GenerateNonsenseWordAPI200Response = apiInstance.generateNonsenseWordAPI()
             //result shouldBe ("TODO")
         }
 
-        // to test randomJoke
-        should("test randomJoke") {
-            // uncomment below to test randomJoke
+        // to test randomJokeAPI
+        should("test randomJokeAPI") {
+            // uncomment below to test randomJokeAPI
             //val includeTags : kotlin.String = animal // kotlin.String | A comma-separated list of tags the jokes should have.
             //val excludeTags : kotlin.String = nsfw,dark // kotlin.String | A comma-separated list of tags the jokes must not have.
             //val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the jokes.
             //val maxLength : kotlin.Int = 140 // kotlin.Int | The maximum length of the joke in letters.
-            //val result : SearchJokes200ResponseJokesInner = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength)
+            //val result : SearchJokesAPI200ResponseJokesInner = apiInstance.randomJokeAPI(includeTags, excludeTags, minRating, maxLength)
             //result shouldBe ("TODO")
         }
 
-        // to test randomMeme
-        should("test randomMeme") {
-            // uncomment below to test randomMeme
+        // to test randomMemeAPI
+        should("test randomMemeAPI") {
+            // uncomment below to test randomMemeAPI
             //val keywords : kotlin.String = airplane // kotlin.String | A comma-separated list of words that must occur in the meme.
             //val keywordsInImage : kotlin.Boolean = true // kotlin.Boolean | Whether the keywords must occur in the image.
             //val mediaType : kotlin.String = image // kotlin.String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
             //val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the meme.
             //val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
-            //val result : RandomMeme200Response = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+            //val result : RandomMemeAPI200Response = apiInstance.randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
             //result shouldBe ("TODO")
         }
 
-        // to test searchGifs
-        should("test searchGifs") {
-            // uncomment below to test searchGifs
+        // to test searchGifsAPI
+        should("test searchGifsAPI") {
+            // uncomment below to test searchGifsAPI
             //val query : kotlin.String = dogs // kotlin.String | The search query.
             //val number : kotlin.Int = 5 // kotlin.Int | The number of gifs to return in range [1,10]
-            //val result : SearchGifs200Response = apiInstance.searchGifs(query, number)
+            //val result : SearchGifsAPI200Response = apiInstance.searchGifsAPI(query, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchJokes
-        should("test searchJokes") {
-            // uncomment below to test searchJokes
+        // to test searchJokesAPI
+        should("test searchJokesAPI") {
+            // uncomment below to test searchJokesAPI
             //val keywords : kotlin.String = horse,man // kotlin.String | A comma-separated list of words that must occur in the joke.
             //val includeTags : kotlin.String = animal // kotlin.String | A comma-separated list of tags the jokes should have.
             //val excludeTags : kotlin.String = nsfw,dark // kotlin.String | A comma-separated list of tags the jokes must not have.
@@ -80,13 +80,13 @@ class HumorApiTest : ShouldSpec() {
             //val maxLength : kotlin.Double = 140 // kotlin.Double | The maximum length of the joke in letters.
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of jokes to skip, between 0 and 1000.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of jokes, between 1 and 10.
-            //val result : SearchJokes200Response = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+            //val result : SearchJokesAPI200Response = apiInstance.searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchMemes
-        should("test searchMemes") {
-            // uncomment below to test searchMemes
+        // to test searchMemesAPI
+        should("test searchMemesAPI") {
+            // uncomment below to test searchMemesAPI
             //val keywords : kotlin.String = rocket // kotlin.String | A comma-separated list of words that must occur in the meme.
             //val keywordsInImage : kotlin.Boolean = true // kotlin.Boolean | Whether the keywords must occur in the image.
             //val mediaType : kotlin.String = image // kotlin.String | The media type (either 'image', 'video' or even specific format such as 'jpg', 'png', or 'gif').
@@ -94,7 +94,7 @@ class HumorApiTest : ShouldSpec() {
             //val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of memes to skip, between 0 and 1000.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of memes, between 1 and 10.
-            //val result : SearchMemes200Response = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+            //val result : SearchMemesAPI200Response = apiInstance.searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
             //result shouldBe ("TODO")
         }
 

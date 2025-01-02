@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition |
-| [**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
-| [**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks |
-| [**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes |
-| [**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants |
+| [**computeNutritionAPI**](FoodApi.md#computeNutritionAPI) | **GET** /compute-nutrition | Compute Nutrition API |
+| [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
+| [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API |
+| [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API |
+| [**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API |
 
 
-<a id="computeNutrition"></a>
-# **computeNutrition**
-> ComputeNutrition200Response computeNutrition(ingredients, servings, reduceOils)
+<a id="computeNutritionAPI"></a>
+# **computeNutritionAPI**
+> ComputeNutritionAPI200Response computeNutritionAPI(ingredients, servings, reduceOils)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -30,13 +30,13 @@ val ingredients : kotlin.String = 1 cup apples,3oz milk,35g butter // kotlin.Str
 val servings : kotlin.Int = 1 // kotlin.Int | The number of servings the ingredients make. Nutrition is computed per serving.
 val reduceOils : kotlin.Boolean = true // kotlin.Boolean | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
 try {
-    val result : ComputeNutrition200Response = apiInstance.computeNutrition(ingredients, servings, reduceOils)
+    val result : ComputeNutritionAPI200Response = apiInstance.computeNutritionAPI(ingredients, servings, reduceOils)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FoodApi#computeNutrition")
+    println("4xx response calling FoodApi#computeNutritionAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FoodApi#computeNutrition")
+    println("5xx response calling FoodApi#computeNutritionAPI")
     e.printStackTrace()
 }
 ```
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -67,11 +67,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="retrieveRecipeInformation"></a>
-# **retrieveRecipeInformation**
-> RetrieveRecipeInformation200Response retrieveRecipeInformation(id, addWinePairing)
+<a id="retrieveRecipeInformationAPI"></a>
+# **retrieveRecipeInformationAPI**
+> RetrieveRecipeInformationAPI200Response retrieveRecipeInformationAPI(id, addWinePairing)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -85,13 +85,13 @@ val apiInstance = FoodApi()
 val id : kotlin.Int = 74987 // kotlin.Int | The id of the recipe to retrieve.
 val addWinePairing : kotlin.Boolean = true // kotlin.Boolean | Whether to pair a wine to the recipe.
 try {
-    val result : RetrieveRecipeInformation200Response = apiInstance.retrieveRecipeInformation(id, addWinePairing)
+    val result : RetrieveRecipeInformationAPI200Response = apiInstance.retrieveRecipeInformationAPI(id, addWinePairing)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FoodApi#retrieveRecipeInformation")
+    println("4xx response calling FoodApi#retrieveRecipeInformationAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FoodApi#retrieveRecipeInformation")
+    println("5xx response calling FoodApi#retrieveRecipeInformationAPI")
     e.printStackTrace()
 }
 ```
@@ -104,7 +104,7 @@ try {
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -121,11 +121,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchDrinks"></a>
-# **searchDrinks**
-> SearchDrinks200Response searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+<a id="searchDrinksAPI"></a>
+# **searchDrinksAPI**
+> SearchDrinksAPI200Response searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -159,13 +159,13 @@ val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascen
 val offset : kotlin.Int = 0 // kotlin.Int | The number of drinks to skip, between 0 and 90.
 val number : kotlin.Int = 3 // kotlin.Int | The number of drinks, between 1 and 10.
 try {
-    val result : SearchDrinks200Response = apiInstance.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
+    val result : SearchDrinksAPI200Response = apiInstance.searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FoodApi#searchDrinks")
+    println("4xx response calling FoodApi#searchDrinksAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FoodApi#searchDrinks")
+    println("5xx response calling FoodApi#searchDrinksAPI")
     e.printStackTrace()
 }
 ```
@@ -198,7 +198,7 @@ try {
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -215,11 +215,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchRecipes"></a>
-# **searchRecipes**
-> SearchRecipes200Response searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
+<a id="searchRecipesAPI"></a>
+# **searchRecipesAPI**
+> SearchRecipesAPI200Response searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -321,13 +321,13 @@ val sortDirection : kotlin.String = ASC // kotlin.String | Whether to sort ascen
 val offset : kotlin.Int = 0 // kotlin.Int | The number of recipes to skip, between 0 and 900.
 val number : kotlin.Int = 3 // kotlin.Int | The number of recipes, between 1 and 100.
 try {
-    val result : SearchRecipes200Response = apiInstance.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
+    val result : SearchRecipesAPI200Response = apiInstance.searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FoodApi#searchRecipes")
+    println("4xx response calling FoodApi#searchRecipesAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FoodApi#searchRecipes")
+    println("5xx response calling FoodApi#searchRecipesAPI")
     e.printStackTrace()
 }
 ```
@@ -428,7 +428,7 @@ try {
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -445,11 +445,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchRestaurants"></a>
-# **searchRestaurants**
-> SearchRestaurants200Response searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
+<a id="searchRestaurantsAPI"></a>
+# **searchRestaurantsAPI**
+> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -471,13 +471,13 @@ val isOpen : kotlin.Boolean = true // kotlin.Boolean | Whether the restaurants h
 val page : kotlin.Int = 0 // kotlin.Int | The page of the results.
 val sort : kotlin.String = rating // kotlin.String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
 try {
-    val result : SearchRestaurants200Response = apiInstance.searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
+    val result : SearchRestaurantsAPI200Response = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FoodApi#searchRestaurants")
+    println("4xx response calling FoodApi#searchRestaurantsAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FoodApi#searchRestaurants")
+    println("5xx response calling FoodApi#searchRestaurantsAPI")
     e.printStackTrace()
 }
 ```
@@ -498,7 +498,7 @@ try {
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

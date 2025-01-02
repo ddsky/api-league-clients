@@ -9,15 +9,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**random_quote**](KnowledgeApi.md#random_quote) | **GET** /retrieve-random-quote | Random Quote
-[**random_riddle**](KnowledgeApi.md#random_riddle) | **GET** /retrieve-random-riddle | Random Riddle
-[**random_trivia**](KnowledgeApi.md#random_trivia) | **GET** /retrieve-random-trivia | Random Trivia
+[**random_quote_api**](KnowledgeApi.md#random_quote_api) | **GET** /retrieve-random-quote | Random Quote API
+[**random_riddle_api**](KnowledgeApi.md#random_riddle_api) | **GET** /retrieve-random-riddle | Random Riddle API
+[**random_trivia_api**](KnowledgeApi.md#random_trivia_api) | **GET** /retrieve-random-trivia | Random Trivia API
 
 
-# **random_quote**
-> RandomQuote200Response random_quote(min_length => $min_length, max_length => $max_length)
+# **random_quote_api**
+> RandomQuoteAPI200Response random_quote_api(min_length => $min_length, max_length => $max_length)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -41,11 +41,11 @@ my $min_length = 120; # int | The minimum length of the quote in letters.
 my $max_length = 300; # int | The maximum length of the quote in letters.
 
 eval {
-    my $result = $api_instance->random_quote(min_length => $min_length, max_length => $max_length);
+    my $result = $api_instance->random_quote_api(min_length => $min_length, max_length => $max_length);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling KnowledgeApi->random_quote: $@\n";
+    warn "Exception when calling KnowledgeApi->random_quote_api: $@\n";
 }
 ```
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -71,10 +71,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **random_riddle**
-> RandomRiddle200Response random_riddle(difficulty => $difficulty)
+# **random_riddle_api**
+> RandomRiddleAPI200Response random_riddle_api(difficulty => $difficulty)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -97,11 +97,11 @@ my $api_instance = WWW::OpenAPIClient::KnowledgeApi->new(
 my $difficulty = easy; # string | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
 
 eval {
-    my $result = $api_instance->random_riddle(difficulty => $difficulty);
+    my $result = $api_instance->random_riddle_api(difficulty => $difficulty);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling KnowledgeApi->random_riddle: $@\n";
+    warn "Exception when calling KnowledgeApi->random_riddle_api: $@\n";
 }
 ```
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -126,12 +126,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **random_trivia**
-> RandomTrivia200Response random_trivia(max_length => $max_length)
+# **random_trivia_api**
+> RandomTriviaAPI200Response random_trivia_api(max_length => $max_length)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Example
 ```perl
@@ -152,11 +152,11 @@ my $api_instance = WWW::OpenAPIClient::KnowledgeApi->new(
 my $max_length = 300; # int | The maximum length of the trivia in letters.
 
 eval {
-    my $result = $api_instance->random_trivia(max_length => $max_length);
+    my $result = $api_instance->random_trivia_api(max_length => $max_length);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling KnowledgeApi->random_trivia: $@\n";
+    warn "Exception when calling KnowledgeApi->random_trivia_api: $@\n";
 }
 ```
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

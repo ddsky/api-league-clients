@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.RandomQuote200Response
-import com.apileague.client.model.RandomRiddle200Response
-import com.apileague.client.model.RandomTrivia200Response
+import com.apileague.client.model.RandomQuoteAPI200Response
+import com.apileague.client.model.RandomRiddleAPI200Response
+import com.apileague.client.model.RandomTriviaAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -48,11 +48,11 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Quote
+     * Random Quote API
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      * @param minLength The minimum length of the quote in letters. (optional)
      * @param maxLength The maximum length of the quote in letters. (optional)
-     * @return RandomQuote200Response
+     * @return RandomQuoteAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomQuote(minLength: kotlin.Int? = null, maxLength: kotlin.Int? = null) : RandomQuote200Response {
-        val localVarResponse = randomQuoteWithHttpInfo(minLength = minLength, maxLength = maxLength)
+    fun randomQuoteAPI(minLength: kotlin.Int? = null, maxLength: kotlin.Int? = null) : RandomQuoteAPI200Response {
+        val localVarResponse = randomQuoteAPIWithHttpInfo(minLength = minLength, maxLength = maxLength)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomQuote200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomQuoteAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -80,32 +80,32 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Quote
+     * Random Quote API
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      * @param minLength The minimum length of the quote in letters. (optional)
      * @param maxLength The maximum length of the quote in letters. (optional)
-     * @return ApiResponse<RandomQuote200Response?>
+     * @return ApiResponse<RandomQuoteAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomQuoteWithHttpInfo(minLength: kotlin.Int?, maxLength: kotlin.Int?) : ApiResponse<RandomQuote200Response?> {
-        val localVariableConfig = randomQuoteRequestConfig(minLength = minLength, maxLength = maxLength)
+    fun randomQuoteAPIWithHttpInfo(minLength: kotlin.Int?, maxLength: kotlin.Int?) : ApiResponse<RandomQuoteAPI200Response?> {
+        val localVariableConfig = randomQuoteAPIRequestConfig(minLength = minLength, maxLength = maxLength)
 
-        return request<Unit, RandomQuote200Response>(
+        return request<Unit, RandomQuoteAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomQuote
+     * To obtain the request config of the operation randomQuoteAPI
      *
      * @param minLength The minimum length of the quote in letters. (optional)
      * @param maxLength The maximum length of the quote in letters. (optional)
      * @return RequestConfig
      */
-    fun randomQuoteRequestConfig(minLength: kotlin.Int?, maxLength: kotlin.Int?) : RequestConfig<Unit> {
+    fun randomQuoteAPIRequestConfig(minLength: kotlin.Int?, maxLength: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -130,10 +130,10 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Riddle
+     * Random Riddle API
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. (optional)
-     * @return RandomRiddle200Response
+     * @return RandomRiddleAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -142,11 +142,11 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomRiddle(difficulty: kotlin.String? = null) : RandomRiddle200Response {
-        val localVarResponse = randomRiddleWithHttpInfo(difficulty = difficulty)
+    fun randomRiddleAPI(difficulty: kotlin.String? = null) : RandomRiddleAPI200Response {
+        val localVarResponse = randomRiddleAPIWithHttpInfo(difficulty = difficulty)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomRiddle200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomRiddleAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -161,30 +161,30 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Riddle
+     * Random Riddle API
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. (optional)
-     * @return ApiResponse<RandomRiddle200Response?>
+     * @return ApiResponse<RandomRiddleAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomRiddleWithHttpInfo(difficulty: kotlin.String?) : ApiResponse<RandomRiddle200Response?> {
-        val localVariableConfig = randomRiddleRequestConfig(difficulty = difficulty)
+    fun randomRiddleAPIWithHttpInfo(difficulty: kotlin.String?) : ApiResponse<RandomRiddleAPI200Response?> {
+        val localVariableConfig = randomRiddleAPIRequestConfig(difficulty = difficulty)
 
-        return request<Unit, RandomRiddle200Response>(
+        return request<Unit, RandomRiddleAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomRiddle
+     * To obtain the request config of the operation randomRiddleAPI
      *
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;. (optional)
      * @return RequestConfig
      */
-    fun randomRiddleRequestConfig(difficulty: kotlin.String?) : RequestConfig<Unit> {
+    fun randomRiddleAPIRequestConfig(difficulty: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -206,10 +206,10 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Trivia
-     * This endpoint returns a random piece of trivia.
+     * Random Trivia API
+     * This endpoint returns a random piece of trivia like \&quot;Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\&quot;.
      * @param maxLength The maximum length of the trivia in letters. (optional)
-     * @return RandomTrivia200Response
+     * @return RandomTriviaAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -218,11 +218,11 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomTrivia(maxLength: kotlin.Int? = null) : RandomTrivia200Response {
-        val localVarResponse = randomTriviaWithHttpInfo(maxLength = maxLength)
+    fun randomTriviaAPI(maxLength: kotlin.Int? = null) : RandomTriviaAPI200Response {
+        val localVarResponse = randomTriviaAPIWithHttpInfo(maxLength = maxLength)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomTrivia200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomTriviaAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -237,30 +237,30 @@ class KnowledgeApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
     }
 
     /**
-     * Random Trivia
-     * This endpoint returns a random piece of trivia.
+     * Random Trivia API
+     * This endpoint returns a random piece of trivia like \&quot;Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\&quot;.
      * @param maxLength The maximum length of the trivia in letters. (optional)
-     * @return ApiResponse<RandomTrivia200Response?>
+     * @return ApiResponse<RandomTriviaAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomTriviaWithHttpInfo(maxLength: kotlin.Int?) : ApiResponse<RandomTrivia200Response?> {
-        val localVariableConfig = randomTriviaRequestConfig(maxLength = maxLength)
+    fun randomTriviaAPIWithHttpInfo(maxLength: kotlin.Int?) : ApiResponse<RandomTriviaAPI200Response?> {
+        val localVariableConfig = randomTriviaAPIRequestConfig(maxLength = maxLength)
 
-        return request<Unit, RandomTrivia200Response>(
+        return request<Unit, RandomTriviaAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomTrivia
+     * To obtain the request config of the operation randomTriviaAPI
      *
      * @param maxLength The maximum length of the trivia in letters. (optional)
      * @return RequestConfig
      */
-    fun randomTriviaRequestConfig(maxLength: kotlin.Int?) : RequestConfig<Unit> {
+    fun randomTriviaAPIRequestConfig(maxLength: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

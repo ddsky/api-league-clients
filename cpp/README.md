@@ -4,7 +4,7 @@
 
 API League
 
-- API version: 1.6.3
+- API version: 1.6.4
 - Generator version: 7.8.0-SNAPSHOT
 
 API League is a Hub for World Class APIs.
@@ -69,10 +69,10 @@ void Example::exampleFunction1(){
       apiInstance.setApiKey("YOUR API KEY NAME","YOUR API KEY");
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
@@ -80,10 +80,10 @@ void Example::exampleFunction1(){
       QString url = create(); // QString | The URL to the image.
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
@@ -91,16 +91,16 @@ void Example::exampleFunction1(){
       qint32 width = create(); // qint32 | The maximum width of the image (default 400, max. 500).
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLSignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
 
       qint32 height = create(); // qint32 | The maximum height of the image (default 400, max. 500).
-      apiInstance.imageToAsciiArtByURL(urlwidthheight);
+      apiInstance.imageToAsciiArtByURLAPI(urlwidthheight);
       QTimer::singleShot(5000, &loop, &QEventLoop::quit);
       loop.exec();
   }

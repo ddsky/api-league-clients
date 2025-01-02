@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // KnowledgeAPIService KnowledgeAPI service
 type KnowledgeAPIService service
 
-type ApiRandomQuoteRequest struct {
+type ApiRandomQuoteAPIRequest struct {
 	ctx context.Context
 	ApiService *KnowledgeAPIService
 	minLength *int32
@@ -31,47 +31,47 @@ type ApiRandomQuoteRequest struct {
 }
 
 // The minimum length of the quote in letters.
-func (r ApiRandomQuoteRequest) MinLength(minLength int32) ApiRandomQuoteRequest {
+func (r ApiRandomQuoteAPIRequest) MinLength(minLength int32) ApiRandomQuoteAPIRequest {
 	r.minLength = &minLength
 	return r
 }
 
 // The maximum length of the quote in letters.
-func (r ApiRandomQuoteRequest) MaxLength(maxLength int32) ApiRandomQuoteRequest {
+func (r ApiRandomQuoteAPIRequest) MaxLength(maxLength int32) ApiRandomQuoteAPIRequest {
 	r.maxLength = &maxLength
 	return r
 }
 
-func (r ApiRandomQuoteRequest) Execute() (*RandomQuote200Response, *http.Response, error) {
-	return r.ApiService.RandomQuoteExecute(r)
+func (r ApiRandomQuoteAPIRequest) Execute() (*RandomQuoteAPI200Response, *http.Response, error) {
+	return r.ApiService.RandomQuoteAPIExecute(r)
 }
 
 /*
-RandomQuote Random Quote
+RandomQuoteAPI Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomQuoteRequest
+ @return ApiRandomQuoteAPIRequest
 */
-func (a *KnowledgeAPIService) RandomQuote(ctx context.Context) ApiRandomQuoteRequest {
-	return ApiRandomQuoteRequest{
+func (a *KnowledgeAPIService) RandomQuoteAPI(ctx context.Context) ApiRandomQuoteAPIRequest {
+	return ApiRandomQuoteAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RandomQuote200Response
-func (a *KnowledgeAPIService) RandomQuoteExecute(r ApiRandomQuoteRequest) (*RandomQuote200Response, *http.Response, error) {
+//  @return RandomQuoteAPI200Response
+func (a *KnowledgeAPIService) RandomQuoteAPIExecute(r ApiRandomQuoteAPIRequest) (*RandomQuoteAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RandomQuote200Response
+		localVarReturnValue  *RandomQuoteAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomQuote")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomQuoteAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -170,48 +170,48 @@ func (a *KnowledgeAPIService) RandomQuoteExecute(r ApiRandomQuoteRequest) (*Rand
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRandomRiddleRequest struct {
+type ApiRandomRiddleAPIRequest struct {
 	ctx context.Context
 	ApiService *KnowledgeAPIService
 	difficulty *string
 }
 
 // The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
-func (r ApiRandomRiddleRequest) Difficulty(difficulty string) ApiRandomRiddleRequest {
+func (r ApiRandomRiddleAPIRequest) Difficulty(difficulty string) ApiRandomRiddleAPIRequest {
 	r.difficulty = &difficulty
 	return r
 }
 
-func (r ApiRandomRiddleRequest) Execute() (*RandomRiddle200Response, *http.Response, error) {
-	return r.ApiService.RandomRiddleExecute(r)
+func (r ApiRandomRiddleAPIRequest) Execute() (*RandomRiddleAPI200Response, *http.Response, error) {
+	return r.ApiService.RandomRiddleAPIExecute(r)
 }
 
 /*
-RandomRiddle Random Riddle
+RandomRiddleAPI Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomRiddleRequest
+ @return ApiRandomRiddleAPIRequest
 */
-func (a *KnowledgeAPIService) RandomRiddle(ctx context.Context) ApiRandomRiddleRequest {
-	return ApiRandomRiddleRequest{
+func (a *KnowledgeAPIService) RandomRiddleAPI(ctx context.Context) ApiRandomRiddleAPIRequest {
+	return ApiRandomRiddleAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RandomRiddle200Response
-func (a *KnowledgeAPIService) RandomRiddleExecute(r ApiRandomRiddleRequest) (*RandomRiddle200Response, *http.Response, error) {
+//  @return RandomRiddleAPI200Response
+func (a *KnowledgeAPIService) RandomRiddleAPIExecute(r ApiRandomRiddleAPIRequest) (*RandomRiddleAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RandomRiddle200Response
+		localVarReturnValue  *RandomRiddleAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomRiddle")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomRiddleAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -307,48 +307,48 @@ func (a *KnowledgeAPIService) RandomRiddleExecute(r ApiRandomRiddleRequest) (*Ra
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRandomTriviaRequest struct {
+type ApiRandomTriviaAPIRequest struct {
 	ctx context.Context
 	ApiService *KnowledgeAPIService
 	maxLength *int32
 }
 
 // The maximum length of the trivia in letters.
-func (r ApiRandomTriviaRequest) MaxLength(maxLength int32) ApiRandomTriviaRequest {
+func (r ApiRandomTriviaAPIRequest) MaxLength(maxLength int32) ApiRandomTriviaAPIRequest {
 	r.maxLength = &maxLength
 	return r
 }
 
-func (r ApiRandomTriviaRequest) Execute() (*RandomTrivia200Response, *http.Response, error) {
-	return r.ApiService.RandomTriviaExecute(r)
+func (r ApiRandomTriviaAPIRequest) Execute() (*RandomTriviaAPI200Response, *http.Response, error) {
+	return r.ApiService.RandomTriviaAPIExecute(r)
 }
 
 /*
-RandomTrivia Random Trivia
+RandomTriviaAPI Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like "Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.".
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomTriviaRequest
+ @return ApiRandomTriviaAPIRequest
 */
-func (a *KnowledgeAPIService) RandomTrivia(ctx context.Context) ApiRandomTriviaRequest {
-	return ApiRandomTriviaRequest{
+func (a *KnowledgeAPIService) RandomTriviaAPI(ctx context.Context) ApiRandomTriviaAPIRequest {
+	return ApiRandomTriviaAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RandomTrivia200Response
-func (a *KnowledgeAPIService) RandomTriviaExecute(r ApiRandomTriviaRequest) (*RandomTrivia200Response, *http.Response, error) {
+//  @return RandomTriviaAPI200Response
+func (a *KnowledgeAPIService) RandomTriviaAPIExecute(r ApiRandomTriviaAPIRequest) (*RandomTriviaAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RandomTrivia200Response
+		localVarReturnValue  *RandomTriviaAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomTrivia")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KnowledgeAPIService.RandomTriviaAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -22,11 +22,11 @@ func Test_apileague_ArtAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ArtAPIService ImageToAsciiArtByURL", func(t *testing.T) {
+	t.Run("Test ArtAPIService ImageToAsciiArtByURLAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ArtAPI.ImageToAsciiArtByURL(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ArtAPI.ImageToAsciiArtByURLAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_ArtAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ArtAPIService RandomPoem", func(t *testing.T) {
+	t.Run("Test ArtAPIService RandomPoemAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ArtAPI.RandomPoem(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ArtAPI.RandomPoemAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

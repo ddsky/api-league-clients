@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GenerateNonsenseWord**](HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word |
-| [**RandomJoke**](HumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke |
-| [**RandomMeme**](HumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme |
-| [**SearchGifs**](HumorApi.md#searchgifs) | **GET** /search-gifs | Search Gifs |
-| [**SearchJokes**](HumorApi.md#searchjokes) | **GET** /search-jokes | Search Jokes |
-| [**SearchMemes**](HumorApi.md#searchmemes) | **GET** /search-memes | Search Memes |
+| [**GenerateNonsenseWordAPI**](HumorApi.md#generatenonsensewordapi) | **GET** /generate-nonsense-word | Generate Nonsense Word API |
+| [**RandomJokeAPI**](HumorApi.md#randomjokeapi) | **GET** /retrieve-random-joke | Random Joke API |
+| [**RandomMemeAPI**](HumorApi.md#randommemeapi) | **GET** /retrieve-random-meme | Random Meme API |
+| [**SearchGifsAPI**](HumorApi.md#searchgifsapi) | **GET** /search-gifs | Search Gifs API |
+| [**SearchJokesAPI**](HumorApi.md#searchjokesapi) | **GET** /search-jokes | Search Jokes API |
+| [**SearchMemesAPI**](HumorApi.md#searchmemesapi) | **GET** /search-memes | Search Memes API |
 
-<a id="generatenonsenseword"></a>
-# **GenerateNonsenseWord**
-> GenerateNonsenseWord200Response GenerateNonsenseWord ()
+<a id="generatenonsensewordapi"></a>
+# **GenerateNonsenseWordAPI**
+> GenerateNonsenseWordAPI200Response GenerateNonsenseWordAPI ()
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -29,7 +29,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class GenerateNonsenseWordExample
+    public class GenerateNonsenseWordAPIExample
     {
         public static void Main()
         {
@@ -48,13 +48,13 @@ namespace Example
 
             try
             {
-                // Generate Nonsense Word
-                GenerateNonsenseWord200Response result = apiInstance.GenerateNonsenseWord();
+                // Generate Nonsense Word API
+                GenerateNonsenseWordAPI200Response result = apiInstance.GenerateNonsenseWordAPI();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.GenerateNonsenseWord: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.GenerateNonsenseWordAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -63,21 +63,21 @@ namespace Example
 }
 ```
 
-#### Using the GenerateNonsenseWordWithHttpInfo variant
+#### Using the GenerateNonsenseWordAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Generate Nonsense Word
-    ApiResponse<GenerateNonsenseWord200Response> response = apiInstance.GenerateNonsenseWordWithHttpInfo();
+    // Generate Nonsense Word API
+    ApiResponse<GenerateNonsenseWordAPI200Response> response = apiInstance.GenerateNonsenseWordAPIWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.GenerateNonsenseWordWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.GenerateNonsenseWordAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -87,7 +87,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -112,11 +112,11 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="randomjoke"></a>
-# **RandomJoke**
-> SearchJokes200ResponseJokesInner RandomJoke (string? includeTags = null, string? excludeTags = null, double? minRating = null, int? maxLength = null)
+<a id="randomjokeapi"></a>
+# **RandomJokeAPI**
+> SearchJokesAPI200ResponseJokesInner RandomJokeAPI (string? includeTags = null, string? excludeTags = null, double? minRating = null, int? maxLength = null)
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -130,7 +130,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomJokeExample
+    public class RandomJokeAPIExample
     {
         public static void Main()
         {
@@ -153,13 +153,13 @@ namespace Example
 
             try
             {
-                // Random Joke
-                SearchJokes200ResponseJokesInner result = apiInstance.RandomJoke(includeTags, excludeTags, minRating, maxLength);
+                // Random Joke API
+                SearchJokesAPI200ResponseJokesInner result = apiInstance.RandomJokeAPI(includeTags, excludeTags, minRating, maxLength);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.RandomJoke: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.RandomJokeAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -168,21 +168,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomJokeWithHttpInfo variant
+#### Using the RandomJokeAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Joke
-    ApiResponse<SearchJokes200ResponseJokesInner> response = apiInstance.RandomJokeWithHttpInfo(includeTags, excludeTags, minRating, maxLength);
+    // Random Joke API
+    ApiResponse<SearchJokesAPI200ResponseJokesInner> response = apiInstance.RandomJokeAPIWithHttpInfo(includeTags, excludeTags, minRating, maxLength);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.RandomJokeWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.RandomJokeAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -199,7 +199,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -224,13 +224,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="randommeme"></a>
-# **RandomMeme**
-> RandomMeme200Response RandomMeme (string? keywords = null, bool? keywordsInImage = null, string? mediaType = null, double? minRating = null, int? maxAgeDays = null)
+<a id="randommemeapi"></a>
+# **RandomMemeAPI**
+> RandomMemeAPI200Response RandomMemeAPI (string? keywords = null, bool? keywordsInImage = null, string? mediaType = null, double? minRating = null, int? maxAgeDays = null)
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 ```csharp
@@ -242,7 +242,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomMemeExample
+    public class RandomMemeAPIExample
     {
         public static void Main()
         {
@@ -266,13 +266,13 @@ namespace Example
 
             try
             {
-                // Random Meme
-                RandomMeme200Response result = apiInstance.RandomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+                // Random Meme API
+                RandomMemeAPI200Response result = apiInstance.RandomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.RandomMeme: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.RandomMemeAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -281,21 +281,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomMemeWithHttpInfo variant
+#### Using the RandomMemeAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Meme
-    ApiResponse<RandomMeme200Response> response = apiInstance.RandomMemeWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+    // Random Meme API
+    ApiResponse<RandomMemeAPI200Response> response = apiInstance.RandomMemeAPIWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.RandomMemeWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.RandomMemeAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -313,7 +313,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -338,11 +338,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchgifs"></a>
-# **SearchGifs**
-> SearchGifs200Response SearchGifs (string query, int? number = null)
+<a id="searchgifsapi"></a>
+# **SearchGifsAPI**
+> SearchGifsAPI200Response SearchGifsAPI (string query, int? number = null)
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -356,7 +356,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchGifsExample
+    public class SearchGifsAPIExample
     {
         public static void Main()
         {
@@ -377,13 +377,13 @@ namespace Example
 
             try
             {
-                // Search Gifs
-                SearchGifs200Response result = apiInstance.SearchGifs(query, number);
+                // Search Gifs API
+                SearchGifsAPI200Response result = apiInstance.SearchGifsAPI(query, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.SearchGifs: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.SearchGifsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -392,21 +392,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchGifsWithHttpInfo variant
+#### Using the SearchGifsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Gifs
-    ApiResponse<SearchGifs200Response> response = apiInstance.SearchGifsWithHttpInfo(query, number);
+    // Search Gifs API
+    ApiResponse<SearchGifsAPI200Response> response = apiInstance.SearchGifsAPIWithHttpInfo(query, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.SearchGifsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.SearchGifsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -421,7 +421,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -446,11 +446,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchjokes"></a>
-# **SearchJokes**
-> SearchJokes200Response SearchJokes (string? keywords = null, string? includeTags = null, string? excludeTags = null, double? minRating = null, double? maxLength = null, int? offset = null, int? number = null)
+<a id="searchjokesapi"></a>
+# **SearchJokesAPI**
+> SearchJokesAPI200Response SearchJokesAPI (string? keywords = null, string? includeTags = null, string? excludeTags = null, double? minRating = null, double? maxLength = null, int? offset = null, int? number = null)
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -464,7 +464,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchJokesExample
+    public class SearchJokesAPIExample
     {
         public static void Main()
         {
@@ -490,13 +490,13 @@ namespace Example
 
             try
             {
-                // Search Jokes
-                SearchJokes200Response result = apiInstance.SearchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+                // Search Jokes API
+                SearchJokesAPI200Response result = apiInstance.SearchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.SearchJokes: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.SearchJokesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -505,21 +505,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchJokesWithHttpInfo variant
+#### Using the SearchJokesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Jokes
-    ApiResponse<SearchJokes200Response> response = apiInstance.SearchJokesWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+    // Search Jokes API
+    ApiResponse<SearchJokesAPI200Response> response = apiInstance.SearchJokesAPIWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.SearchJokesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.SearchJokesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -539,7 +539,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -564,13 +564,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchmemes"></a>
-# **SearchMemes**
-> SearchMemes200Response SearchMemes (string? keywords = null, bool? keywordsInImage = null, string? mediaType = null, double? minRating = null, int? maxAgeDays = null, int? offset = null, int? number = null)
+<a id="searchmemesapi"></a>
+# **SearchMemesAPI**
+> SearchMemesAPI200Response SearchMemesAPI (string? keywords = null, bool? keywordsInImage = null, string? mediaType = null, double? minRating = null, int? maxAgeDays = null, int? offset = null, int? number = null)
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
 ### Example
 ```csharp
@@ -582,7 +582,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchMemesExample
+    public class SearchMemesAPIExample
     {
         public static void Main()
         {
@@ -608,13 +608,13 @@ namespace Example
 
             try
             {
-                // Search Memes
-                SearchMemes200Response result = apiInstance.SearchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+                // Search Memes API
+                SearchMemesAPI200Response result = apiInstance.SearchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling HumorApi.SearchMemes: " + e.Message);
+                Debug.Print("Exception when calling HumorApi.SearchMemesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -623,21 +623,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchMemesWithHttpInfo variant
+#### Using the SearchMemesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Memes
-    ApiResponse<SearchMemes200Response> response = apiInstance.SearchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+    // Search Memes API
+    ApiResponse<SearchMemesAPI200Response> response = apiInstance.SearchMemesAPIWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling HumorApi.SearchMemesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling HumorApi.SearchMemesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -657,7 +657,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

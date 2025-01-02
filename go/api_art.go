@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // ArtAPIService ArtAPI service
 type ArtAPIService service
 
-type ApiImageToAsciiArtByURLRequest struct {
+type ApiImageToAsciiArtByURLAPIRequest struct {
 	ctx context.Context
 	ApiService *ArtAPIService
 	url *string
@@ -32,37 +32,37 @@ type ApiImageToAsciiArtByURLRequest struct {
 }
 
 // The URL to the image.
-func (r ApiImageToAsciiArtByURLRequest) Url(url string) ApiImageToAsciiArtByURLRequest {
+func (r ApiImageToAsciiArtByURLAPIRequest) Url(url string) ApiImageToAsciiArtByURLAPIRequest {
 	r.url = &url
 	return r
 }
 
 // The maximum width of the image (default 400, max. 500).
-func (r ApiImageToAsciiArtByURLRequest) Width(width int32) ApiImageToAsciiArtByURLRequest {
+func (r ApiImageToAsciiArtByURLAPIRequest) Width(width int32) ApiImageToAsciiArtByURLAPIRequest {
 	r.width = &width
 	return r
 }
 
 // The maximum height of the image (default 400, max. 500).
-func (r ApiImageToAsciiArtByURLRequest) Height(height int32) ApiImageToAsciiArtByURLRequest {
+func (r ApiImageToAsciiArtByURLAPIRequest) Height(height int32) ApiImageToAsciiArtByURLAPIRequest {
 	r.height = &height
 	return r
 }
 
-func (r ApiImageToAsciiArtByURLRequest) Execute() (string, *http.Response, error) {
-	return r.ApiService.ImageToAsciiArtByURLExecute(r)
+func (r ApiImageToAsciiArtByURLAPIRequest) Execute() (string, *http.Response, error) {
+	return r.ApiService.ImageToAsciiArtByURLAPIExecute(r)
 }
 
 /*
-ImageToAsciiArtByURL Image to Ascii Art by URL
+ImageToAsciiArtByURLAPI Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiImageToAsciiArtByURLRequest
+ @return ApiImageToAsciiArtByURLAPIRequest
 */
-func (a *ArtAPIService) ImageToAsciiArtByURL(ctx context.Context) ApiImageToAsciiArtByURLRequest {
-	return ApiImageToAsciiArtByURLRequest{
+func (a *ArtAPIService) ImageToAsciiArtByURLAPI(ctx context.Context) ApiImageToAsciiArtByURLAPIRequest {
+	return ApiImageToAsciiArtByURLAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -70,7 +70,7 @@ func (a *ArtAPIService) ImageToAsciiArtByURL(ctx context.Context) ApiImageToAsci
 
 // Execute executes the request
 //  @return string
-func (a *ArtAPIService) ImageToAsciiArtByURLExecute(r ApiImageToAsciiArtByURLRequest) (string, *http.Response, error) {
+func (a *ArtAPIService) ImageToAsciiArtByURLAPIExecute(r ApiImageToAsciiArtByURLAPIRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -78,7 +78,7 @@ func (a *ArtAPIService) ImageToAsciiArtByURLExecute(r ApiImageToAsciiArtByURLReq
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.ImageToAsciiArtByURL")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.ImageToAsciiArtByURLAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -184,7 +184,7 @@ func (a *ArtAPIService) ImageToAsciiArtByURLExecute(r ApiImageToAsciiArtByURLReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRandomPoemRequest struct {
+type ApiRandomPoemAPIRequest struct {
 	ctx context.Context
 	ApiService *ArtAPIService
 	minLines *int32
@@ -192,47 +192,47 @@ type ApiRandomPoemRequest struct {
 }
 
 // The minimum number of lines of the poem.
-func (r ApiRandomPoemRequest) MinLines(minLines int32) ApiRandomPoemRequest {
+func (r ApiRandomPoemAPIRequest) MinLines(minLines int32) ApiRandomPoemAPIRequest {
 	r.minLines = &minLines
 	return r
 }
 
 // The maximum number of lines of the poem.
-func (r ApiRandomPoemRequest) MaxLines(maxLines int32) ApiRandomPoemRequest {
+func (r ApiRandomPoemAPIRequest) MaxLines(maxLines int32) ApiRandomPoemAPIRequest {
 	r.maxLines = &maxLines
 	return r
 }
 
-func (r ApiRandomPoemRequest) Execute() (*RandomPoem200Response, *http.Response, error) {
-	return r.ApiService.RandomPoemExecute(r)
+func (r ApiRandomPoemAPIRequest) Execute() (*RandomPoemAPI200Response, *http.Response, error) {
+	return r.ApiService.RandomPoemAPIExecute(r)
 }
 
 /*
-RandomPoem Random Poem
+RandomPoemAPI Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomPoemRequest
+ @return ApiRandomPoemAPIRequest
 */
-func (a *ArtAPIService) RandomPoem(ctx context.Context) ApiRandomPoemRequest {
-	return ApiRandomPoemRequest{
+func (a *ArtAPIService) RandomPoemAPI(ctx context.Context) ApiRandomPoemAPIRequest {
+	return ApiRandomPoemAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RandomPoem200Response
-func (a *ArtAPIService) RandomPoemExecute(r ApiRandomPoemRequest) (*RandomPoem200Response, *http.Response, error) {
+//  @return RandomPoemAPI200Response
+func (a *ArtAPIService) RandomPoemAPIExecute(r ApiRandomPoemAPIRequest) (*RandomPoemAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RandomPoem200Response
+		localVarReturnValue  *RandomPoemAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.RandomPoem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.RandomPoemAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

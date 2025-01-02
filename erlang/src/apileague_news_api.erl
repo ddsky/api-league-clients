@@ -1,19 +1,19 @@
 -module(apileague_news_api).
 
--export([extract_news/3, extract_news/4,
-         search_news/1, search_news/2,
-         top_news/3, top_news/4]).
+-export([extract_news_api/3, extract_news_api/4,
+         search_news_api/1, search_news_api/2,
+         top_news_api/3, top_news_api/4]).
 
 -define(BASE_URL, <<"">>).
 
-%% @doc Extract News
+%% @doc Extract News API
 %% Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
--spec extract_news(ctx:ctx(), binary(), boolean()) -> {ok, apileague_extract_news_200_response:apileague_extract_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-extract_news(Ctx, Url, Analyze) ->
-    extract_news(Ctx, Url, Analyze, #{}).
+-spec extract_news_api(ctx:ctx(), binary(), boolean()) -> {ok, apileague_extract_news_api_200_response:apileague_extract_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+extract_news_api(Ctx, Url, Analyze) ->
+    extract_news_api(Ctx, Url, Analyze, #{}).
 
--spec extract_news(ctx:ctx(), binary(), boolean(), maps:map()) -> {ok, apileague_extract_news_200_response:apileague_extract_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-extract_news(Ctx, Url, Analyze, Optional) ->
+-spec extract_news_api(ctx:ctx(), binary(), boolean(), maps:map()) -> {ok, apileague_extract_news_api_200_response:apileague_extract_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+extract_news_api(Ctx, Url, Analyze, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -27,14 +27,14 @@ extract_news(Ctx, Url, Analyze, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Search News
-%% Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
--spec search_news(ctx:ctx()) -> {ok, apileague_search_news_200_response:apileague_search_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_news(Ctx) ->
-    search_news(Ctx, #{}).
+%% @doc Search News API
+%% Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+-spec search_news_api(ctx:ctx()) -> {ok, apileague_search_news_api_200_response:apileague_search_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_news_api(Ctx) ->
+    search_news_api(Ctx, #{}).
 
--spec search_news(ctx:ctx(), maps:map()) -> {ok, apileague_search_news_200_response:apileague_search_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_news(Ctx, Optional) ->
+-spec search_news_api(ctx:ctx(), maps:map()) -> {ok, apileague_search_news_api_200_response:apileague_search_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_news_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -48,14 +48,14 @@ search_news(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Top News
-%% Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
--spec top_news(ctx:ctx(), binary(), binary()) -> {ok, apileague_top_news_200_response:apileague_top_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-top_news(Ctx, SourceCountry, Language) ->
-    top_news(Ctx, SourceCountry, Language, #{}).
+%% @doc Top News API
+%% Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+-spec top_news_api(ctx:ctx(), binary(), binary()) -> {ok, apileague_top_news_api_200_response:apileague_top_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+top_news_api(Ctx, SourceCountry, Language) ->
+    top_news_api(Ctx, SourceCountry, Language, #{}).
 
--spec top_news(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, apileague_top_news_200_response:apileague_top_news_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-top_news(Ctx, SourceCountry, Language, Optional) ->
+-spec top_news_api(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, apileague_top_news_api_200_response:apileague_top_news_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+top_news_api(Ctx, SourceCountry, Language, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 

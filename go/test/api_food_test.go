@@ -22,11 +22,11 @@ func Test_apileague_FoodAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FoodAPIService ComputeNutrition", func(t *testing.T) {
+	t.Run("Test FoodAPIService ComputeNutritionAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FoodAPI.ComputeNutrition(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FoodAPI.ComputeNutritionAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_FoodAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test FoodAPIService RetrieveRecipeInformation", func(t *testing.T) {
+	t.Run("Test FoodAPIService RetrieveRecipeInformationAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FoodAPI.RetrieveRecipeInformation(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FoodAPI.RetrieveRecipeInformationAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_FoodAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test FoodAPIService SearchDrinks", func(t *testing.T) {
+	t.Run("Test FoodAPIService SearchDrinksAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FoodAPI.SearchDrinks(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FoodAPI.SearchDrinksAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_apileague_FoodAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test FoodAPIService SearchRecipes", func(t *testing.T) {
+	t.Run("Test FoodAPIService SearchRecipesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FoodAPI.SearchRecipes(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FoodAPI.SearchRecipesAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +70,11 @@ func Test_apileague_FoodAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test FoodAPIService SearchRestaurants", func(t *testing.T) {
+	t.Run("Test FoodAPIService SearchRestaurantsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FoodAPI.SearchRestaurants(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FoodAPI.SearchRestaurantsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

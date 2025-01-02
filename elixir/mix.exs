@@ -4,7 +4,7 @@ defmodule APILeague.Mixfile do
   def project do
     [
       app: :apileague,
-      version: "1.6.3",
+      version: "1.6.4",
       elixir: "~> 1.10",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,

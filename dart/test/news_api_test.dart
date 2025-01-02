@@ -17,30 +17,30 @@ void main() {
   // final instance = NewsApi();
 
   group('tests for NewsApi', () {
-    // Extract News
+    // Extract News API
     //
     // Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
     //
-    //Future<ExtractNews200Response> extractNews(String url, bool analyze) async
-    test('test extractNews', () async {
+    //Future<ExtractNewsAPI200Response> extractNewsAPI(String url, bool analyze) async
+    test('test extractNewsAPI', () async {
       // TODO
     });
 
-    // Search News
+    // Search News API
     //
-    // Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+    // Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
     //
-    //Future<SearchNews200Response> searchNews({ String text, String sourceCountries, String language, double minSentiment, double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String categories, String entities, String locationFilter, String sort, String sortDirection, int offset, int number }) async
-    test('test searchNews', () async {
+    //Future<SearchNewsAPI200Response> searchNewsAPI({ String text, String sourceCountries, String language, double minSentiment, double maxSentiment, String earliestPublishDate, String latestPublishDate, String newsSources, String authors, String categories, String entities, String locationFilter, String sort, String sortDirection, int offset, int number }) async
+    test('test searchNewsAPI', () async {
       // TODO
     });
 
-    // Top News
+    // Top News API
     //
-    // Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+    // Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
     //
-    //Future<TopNews200Response> topNews(String sourceCountry, String language, { String date, bool headlinesOnly }) async
-    test('test topNews', () async {
+    //Future<TopNewsAPI200Response> topNewsAPI(String sourceCountry, String language, { String date, bool headlinesOnly }) async
+    test('test topNewsAPI', () async {
       // TODO
     });
 

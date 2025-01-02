@@ -19,21 +19,21 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.MathApi
-import com.apileague.client.model.ConvertUnits200Response
+import com.apileague.client.model.ConvertUnitsAPI200Response
 
 class MathApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of MathApi
         //val apiInstance = MathApi()
 
-        // to test convertUnits
-        should("test convertUnits") {
-            // uncomment below to test convertUnits
+        // to test convertUnitsAPI
+        should("test convertUnitsAPI") {
+            // uncomment below to test convertUnitsAPI
             //val sourceAmount : kotlin.Double = 100 // kotlin.Double | The source amount.
             //val sourceUnit : kotlin.String = kg // kotlin.String | The source unit.
             //val targetUnit : kotlin.String = lb // kotlin.String | The unit to which should be converted.
             //val foodName : kotlin.String = flour // kotlin.String | An optional food name. For converting foods the food is relevant as they have different densities.
-            //val result : ConvertUnits200Response = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+            //val result : ConvertUnitsAPI200Response = apiInstance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
             //result shouldBe ("TODO")
         }
 

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -24,48 +24,48 @@ import (
 // MediaAPIService MediaAPI service
 type MediaAPIService service
 
-type ApiDetectMainImageColorRequest struct {
+type ApiDetectMainImageColorAPIRequest struct {
 	ctx context.Context
 	ApiService *MediaAPIService
 	url *string
 }
 
 // The url of the image for which the colors should be detected.
-func (r ApiDetectMainImageColorRequest) Url(url string) ApiDetectMainImageColorRequest {
+func (r ApiDetectMainImageColorAPIRequest) Url(url string) ApiDetectMainImageColorAPIRequest {
 	r.url = &url
 	return r
 }
 
-func (r ApiDetectMainImageColorRequest) Execute() ([]DetectMainImageColor200ResponseInner, *http.Response, error) {
-	return r.ApiService.DetectMainImageColorExecute(r)
+func (r ApiDetectMainImageColorAPIRequest) Execute() ([]DetectMainImageColorAPI200ResponseInner, *http.Response, error) {
+	return r.ApiService.DetectMainImageColorAPIExecute(r)
 }
 
 /*
-DetectMainImageColor Detect Main Image Color
+DetectMainImageColorAPI Detect Main Image Color API
 
 Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetectMainImageColorRequest
+ @return ApiDetectMainImageColorAPIRequest
 */
-func (a *MediaAPIService) DetectMainImageColor(ctx context.Context) ApiDetectMainImageColorRequest {
-	return ApiDetectMainImageColorRequest{
+func (a *MediaAPIService) DetectMainImageColorAPI(ctx context.Context) ApiDetectMainImageColorAPIRequest {
+	return ApiDetectMainImageColorAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DetectMainImageColor200ResponseInner
-func (a *MediaAPIService) DetectMainImageColorExecute(r ApiDetectMainImageColorRequest) ([]DetectMainImageColor200ResponseInner, *http.Response, error) {
+//  @return []DetectMainImageColorAPI200ResponseInner
+func (a *MediaAPIService) DetectMainImageColorAPIExecute(r ApiDetectMainImageColorAPIRequest) ([]DetectMainImageColorAPI200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DetectMainImageColor200ResponseInner
+		localVarReturnValue  []DetectMainImageColorAPI200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.DetectMainImageColor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.DetectMainImageColorAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -165,7 +165,7 @@ func (a *MediaAPIService) DetectMainImageColorExecute(r ApiDetectMainImageColorR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRescaleImageRequest struct {
+type ApiRescaleImageAPIRequest struct {
 	ctx context.Context
 	ApiService *MediaAPIService
 	url *string
@@ -175,43 +175,43 @@ type ApiRescaleImageRequest struct {
 }
 
 // The url of the image to be rescaled.
-func (r ApiRescaleImageRequest) Url(url string) ApiRescaleImageRequest {
+func (r ApiRescaleImageAPIRequest) Url(url string) ApiRescaleImageAPIRequest {
 	r.url = &url
 	return r
 }
 
 // The desired width of the rescaled image.
-func (r ApiRescaleImageRequest) Width(width int32) ApiRescaleImageRequest {
+func (r ApiRescaleImageAPIRequest) Width(width int32) ApiRescaleImageAPIRequest {
 	r.width = &width
 	return r
 }
 
 // The desired height of the rescaled image.
-func (r ApiRescaleImageRequest) Height(height int32) ApiRescaleImageRequest {
+func (r ApiRescaleImageAPIRequest) Height(height int32) ApiRescaleImageAPIRequest {
 	r.height = &height
 	return r
 }
 
 // Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-func (r ApiRescaleImageRequest) Crop(crop bool) ApiRescaleImageRequest {
+func (r ApiRescaleImageAPIRequest) Crop(crop bool) ApiRescaleImageAPIRequest {
 	r.crop = &crop
 	return r
 }
 
-func (r ApiRescaleImageRequest) Execute() (*os.File, *http.Response, error) {
-	return r.ApiService.RescaleImageExecute(r)
+func (r ApiRescaleImageAPIRequest) Execute() (*os.File, *http.Response, error) {
+	return r.ApiService.RescaleImageAPIExecute(r)
 }
 
 /*
-RescaleImage Rescale Image
+RescaleImageAPI Rescale Image API
 
 Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRescaleImageRequest
+ @return ApiRescaleImageAPIRequest
 */
-func (a *MediaAPIService) RescaleImage(ctx context.Context) ApiRescaleImageRequest {
-	return ApiRescaleImageRequest{
+func (a *MediaAPIService) RescaleImageAPI(ctx context.Context) ApiRescaleImageAPIRequest {
+	return ApiRescaleImageAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -219,7 +219,7 @@ func (a *MediaAPIService) RescaleImage(ctx context.Context) ApiRescaleImageReque
 
 // Execute executes the request
 //  @return *os.File
-func (a *MediaAPIService) RescaleImageExecute(r ApiRescaleImageRequest) (*os.File, *http.Response, error) {
+func (a *MediaAPIService) RescaleImageAPIExecute(r ApiRescaleImageAPIRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -227,7 +227,7 @@ func (a *MediaAPIService) RescaleImageExecute(r ApiRescaleImageRequest) (*os.Fil
 		localVarReturnValue  *os.File
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.RescaleImage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.RescaleImageAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -351,7 +351,7 @@ func (a *MediaAPIService) RescaleImageExecute(r ApiRescaleImageRequest) (*os.Fil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchIconsRequest struct {
+type ApiSearchIconsAPIRequest struct {
 	ctx context.Context
 	ApiService *MediaAPIService
 	query *string
@@ -360,53 +360,53 @@ type ApiSearchIconsRequest struct {
 }
 
 // The search query.
-func (r ApiSearchIconsRequest) Query(query string) ApiSearchIconsRequest {
+func (r ApiSearchIconsAPIRequest) Query(query string) ApiSearchIconsAPIRequest {
 	r.query = &query
 	return r
 }
 
 // If true, only public domain icons will be returned.
-func (r ApiSearchIconsRequest) OnlyPublicDomain(onlyPublicDomain bool) ApiSearchIconsRequest {
+func (r ApiSearchIconsAPIRequest) OnlyPublicDomain(onlyPublicDomain bool) ApiSearchIconsAPIRequest {
 	r.onlyPublicDomain = &onlyPublicDomain
 	return r
 }
 
 // The number of icons to return in range [1,100]
-func (r ApiSearchIconsRequest) Number(number int32) ApiSearchIconsRequest {
+func (r ApiSearchIconsAPIRequest) Number(number int32) ApiSearchIconsAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchIconsRequest) Execute() (*SearchIcons200Response, *http.Response, error) {
-	return r.ApiService.SearchIconsExecute(r)
+func (r ApiSearchIconsAPIRequest) Execute() (*SearchIconsAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchIconsAPIExecute(r)
 }
 
 /*
-SearchIcons Search Icons
+SearchIconsAPI Search Icons API
 
 Search through millions of icons to match any topic you want.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchIconsRequest
+ @return ApiSearchIconsAPIRequest
 */
-func (a *MediaAPIService) SearchIcons(ctx context.Context) ApiSearchIconsRequest {
-	return ApiSearchIconsRequest{
+func (a *MediaAPIService) SearchIconsAPI(ctx context.Context) ApiSearchIconsAPIRequest {
+	return ApiSearchIconsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchIcons200Response
-func (a *MediaAPIService) SearchIconsExecute(r ApiSearchIconsRequest) (*SearchIcons200Response, *http.Response, error) {
+//  @return SearchIconsAPI200Response
+func (a *MediaAPIService) SearchIconsAPIExecute(r ApiSearchIconsAPIRequest) (*SearchIconsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchIcons200Response
+		localVarReturnValue  *SearchIconsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.SearchIcons")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.SearchIconsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,7 +512,7 @@ func (a *MediaAPIService) SearchIconsExecute(r ApiSearchIconsRequest) (*SearchIc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchRoyaltyFreeImagesRequest struct {
+type ApiSearchRoyaltyFreeImagesAPIRequest struct {
 	ctx context.Context
 	ApiService *MediaAPIService
 	query *string
@@ -520,47 +520,47 @@ type ApiSearchRoyaltyFreeImagesRequest struct {
 }
 
 // The search query.
-func (r ApiSearchRoyaltyFreeImagesRequest) Query(query string) ApiSearchRoyaltyFreeImagesRequest {
+func (r ApiSearchRoyaltyFreeImagesAPIRequest) Query(query string) ApiSearchRoyaltyFreeImagesAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The number of images to return in range [1,100]
-func (r ApiSearchRoyaltyFreeImagesRequest) Number(number int32) ApiSearchRoyaltyFreeImagesRequest {
+func (r ApiSearchRoyaltyFreeImagesAPIRequest) Number(number int32) ApiSearchRoyaltyFreeImagesAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchRoyaltyFreeImagesRequest) Execute() (*SearchRoyaltyFreeImages200Response, *http.Response, error) {
-	return r.ApiService.SearchRoyaltyFreeImagesExecute(r)
+func (r ApiSearchRoyaltyFreeImagesAPIRequest) Execute() (*SearchRoyaltyFreeImagesAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchRoyaltyFreeImagesAPIExecute(r)
 }
 
 /*
-SearchRoyaltyFreeImages Search Royalty Free Images
+SearchRoyaltyFreeImagesAPI Search Royalty Free Images API
 
 Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRoyaltyFreeImagesRequest
+ @return ApiSearchRoyaltyFreeImagesAPIRequest
 */
-func (a *MediaAPIService) SearchRoyaltyFreeImages(ctx context.Context) ApiSearchRoyaltyFreeImagesRequest {
-	return ApiSearchRoyaltyFreeImagesRequest{
+func (a *MediaAPIService) SearchRoyaltyFreeImagesAPI(ctx context.Context) ApiSearchRoyaltyFreeImagesAPIRequest {
+	return ApiSearchRoyaltyFreeImagesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchRoyaltyFreeImages200Response
-func (a *MediaAPIService) SearchRoyaltyFreeImagesExecute(r ApiSearchRoyaltyFreeImagesRequest) (*SearchRoyaltyFreeImages200Response, *http.Response, error) {
+//  @return SearchRoyaltyFreeImagesAPI200Response
+func (a *MediaAPIService) SearchRoyaltyFreeImagesAPIExecute(r ApiSearchRoyaltyFreeImagesAPIRequest) (*SearchRoyaltyFreeImagesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchRoyaltyFreeImages200Response
+		localVarReturnValue  *SearchRoyaltyFreeImagesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.SearchRoyaltyFreeImages")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.SearchRoyaltyFreeImagesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -578,6 +578,167 @@ func (a *MediaAPIService) SearchRoyaltyFreeImagesExecute(r ApiSearchRoyaltyFreeI
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	if r.number != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiVectorSearchAPIRequest struct {
+	ctx context.Context
+	ApiService *MediaAPIService
+	query *string
+	offset *int32
+	number *int32
+}
+
+// The search query.
+func (r ApiVectorSearchAPIRequest) Query(query string) ApiVectorSearchAPIRequest {
+	r.query = &query
+	return r
+}
+
+// The number of vectors to skip, between 0 and 1000
+func (r ApiVectorSearchAPIRequest) Offset(offset int32) ApiVectorSearchAPIRequest {
+	r.offset = &offset
+	return r
+}
+
+// The number of vectors to return in range [1,10]
+func (r ApiVectorSearchAPIRequest) Number(number int32) ApiVectorSearchAPIRequest {
+	r.number = &number
+	return r
+}
+
+func (r ApiVectorSearchAPIRequest) Execute() (*VectorSearchAPI200Response, *http.Response, error) {
+	return r.ApiService.VectorSearchAPIExecute(r)
+}
+
+/*
+VectorSearchAPI Vector Search API
+
+Search through over 700,000 free to use vector icons. The license is either "PUBLIC_DOMAIN" or "ATTRIBUTION". If it is "ATTRIBUTION" just attribute the author somewhere in your project.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVectorSearchAPIRequest
+*/
+func (a *MediaAPIService) VectorSearchAPI(ctx context.Context) ApiVectorSearchAPIRequest {
+	return ApiVectorSearchAPIRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return VectorSearchAPI200Response
+func (a *MediaAPIService) VectorSearchAPIExecute(r ApiVectorSearchAPIRequest) (*VectorSearchAPI200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *VectorSearchAPI200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaAPIService.VectorSearchAPI")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/search-vectors"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.query == nil {
+		return localVarReturnValue, nil, reportError("query is required and must be specified")
+	}
+	if strlen(*r.query) > 300 {
+		return localVarReturnValue, nil, reportError("query must have less than 300 elements")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+	}
 	if r.number != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
 	}

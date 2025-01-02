@@ -10,7 +10,7 @@ defmodule APILeague.Api.Media do
   import APILeague.RequestBuilder
 
   @doc """
-  Detect Main Image Color
+  Detect Main Image Color API
   Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 
   ### Parameters
@@ -21,11 +21,11 @@ defmodule APILeague.Api.Media do
 
   ### Returns
 
-  - `{:ok, [%DetectMainImageColor200ResponseInner{}, ...]}` on success
+  - `{:ok, [%DetectMainImageColorApi200ResponseInner{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec detect_main_image_color(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, [APILeague.Model.DetectMainImageColor200ResponseInner.t]} | {:error, Tesla.Env.t}
-  def detect_main_image_color(connection, url, _opts \\ []) do
+  @spec detect_main_image_color_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, [APILeague.Model.DetectMainImageColorApi200ResponseInner.t]} | {:error, Tesla.Env.t}
+  def detect_main_image_color_api(connection, url, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -36,7 +36,7 @@ defmodule APILeague.Api.Media do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.DetectMainImageColor200ResponseInner},
+      {200, APILeague.Model.DetectMainImageColorApi200ResponseInner},
       {401, false},
       {402, false},
       {403, false},
@@ -47,7 +47,7 @@ defmodule APILeague.Api.Media do
   end
 
   @doc """
-  Rescale Image
+  Rescale Image API
   Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
 
   ### Parameters
@@ -64,8 +64,8 @@ defmodule APILeague.Api.Media do
   - `{:ok, String.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec rescale_image(Tesla.Env.client, String.t, integer(), integer(), boolean(), keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
-  def rescale_image(connection, url, width, height, crop, _opts \\ []) do
+  @spec rescale_image_api(Tesla.Env.client, String.t, integer(), integer(), boolean(), keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
+  def rescale_image_api(connection, url, width, height, crop, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -90,7 +90,7 @@ defmodule APILeague.Api.Media do
   end
 
   @doc """
-  Search Icons
+  Search Icons API
   Search through millions of icons to match any topic you want.
 
   ### Parameters
@@ -103,11 +103,11 @@ defmodule APILeague.Api.Media do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchIcons200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchIconsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_icons(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchIcons200Response.t} | {:error, Tesla.Env.t}
-  def search_icons(connection, query, opts \\ []) do
+  @spec search_icons_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchIconsApi200Response.t} | {:error, Tesla.Env.t}
+  def search_icons_api(connection, query, opts \\ []) do
     optional_params = %{
       :"only-public-domain" => :query,
       :number => :query
@@ -124,7 +124,7 @@ defmodule APILeague.Api.Media do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchIcons200Response},
+      {200, APILeague.Model.SearchIconsApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -135,7 +135,7 @@ defmodule APILeague.Api.Media do
   end
 
   @doc """
-  Search Royalty Free Images
+  Search Royalty Free Images API
   Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
 
   ### Parameters
@@ -147,11 +147,11 @@ defmodule APILeague.Api.Media do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchRoyaltyFreeImages200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchRoyaltyFreeImagesApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_royalty_free_images(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchRoyaltyFreeImages200Response.t} | {:error, Tesla.Env.t}
-  def search_royalty_free_images(connection, query, opts \\ []) do
+  @spec search_royalty_free_images_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchRoyaltyFreeImagesApi200Response.t} | {:error, Tesla.Env.t}
+  def search_royalty_free_images_api(connection, query, opts \\ []) do
     optional_params = %{
       :number => :query
     }
@@ -167,7 +167,52 @@ defmodule APILeague.Api.Media do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchRoyaltyFreeImages200Response},
+      {200, APILeague.Model.SearchRoyaltyFreeImagesApi200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Vector Search API
+  Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `query` (String.t): The search query.
+  - `opts` (keyword): Optional parameters
+    - `:offset` (integer()): The number of vectors to skip, between 0 and 1000
+    - `:number` (integer()): The number of vectors to return in range [1,10]
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.VectorSearchApi200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec vector_search_api(Tesla.Env.client, String.t, keyword()) :: {:ok, APILeague.Model.VectorSearchApi200Response.t} | {:ok, nil} | {:error, Tesla.Env.t}
+  def vector_search_api(connection, query, opts \\ []) do
+    optional_params = %{
+      :offset => :query,
+      :number => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/search-vectors")
+      |> add_param(:query, :query, query)
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.VectorSearchApi200Response},
       {401, false},
       {402, false},
       {403, false},

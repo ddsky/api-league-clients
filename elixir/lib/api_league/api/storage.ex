@@ -10,7 +10,7 @@ defmodule APILeague.Api.Storage do
   import APILeague.RequestBuilder
 
   @doc """
-  Read Key Value from Store
+  Read Key Value from Store API
   Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
   ### Parameters
@@ -21,11 +21,11 @@ defmodule APILeague.Api.Storage do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ReadKeyValueFromStore200Response.t}` on success
+  - `{:ok, APILeague.Model.ReadKeyValueFromStoreApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec read_key_value_from_store(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ReadKeyValueFromStore200Response.t} | {:error, Tesla.Env.t}
-  def read_key_value_from_store(connection, key, _opts \\ []) do
+  @spec read_key_value_from_store_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ReadKeyValueFromStoreApi200Response.t} | {:error, Tesla.Env.t}
+  def read_key_value_from_store_api(connection, key, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -36,7 +36,7 @@ defmodule APILeague.Api.Storage do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ReadKeyValueFromStore200Response},
+      {200, APILeague.Model.ReadKeyValueFromStoreApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -47,7 +47,7 @@ defmodule APILeague.Api.Storage do
   end
 
   @doc """
-  Store Key Value (GET)
+  Store Key Value (GET) API
   Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
   ### Parameters
@@ -59,11 +59,11 @@ defmodule APILeague.Api.Storage do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.StoreKeyValueGet200Response.t}` on success
+  - `{:ok, APILeague.Model.StoreKeyValueGetapi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec store_key_value_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.StoreKeyValueGet200Response.t} | {:error, Tesla.Env.t}
-  def store_key_value_get(connection, key, value, _opts \\ []) do
+  @spec store_key_value_getapi(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.StoreKeyValueGetapi200Response.t} | {:error, Tesla.Env.t}
+  def store_key_value_getapi(connection, key, value, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -75,7 +75,7 @@ defmodule APILeague.Api.Storage do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.StoreKeyValueGet200Response},
+      {200, APILeague.Model.StoreKeyValueGetapi200Response},
       {401, false},
       {402, false},
       {403, false},

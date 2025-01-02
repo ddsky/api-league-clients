@@ -10,7 +10,7 @@ defmodule APILeague.Api.Math do
   import APILeague.RequestBuilder
 
   @doc """
-  Convert Units
+  Convert Units API
   Convert units from one to another. The API returns the amount and the unit of the target unit.
 
   ### Parameters
@@ -24,11 +24,11 @@ defmodule APILeague.Api.Math do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ConvertUnits200Response.t}` on success
+  - `{:ok, APILeague.Model.ConvertUnitsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec convert_units(Tesla.Env.client, float(), String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ConvertUnits200Response.t} | {:error, Tesla.Env.t}
-  def convert_units(connection, source_amount, source_unit, target_unit, opts \\ []) do
+  @spec convert_units_api(Tesla.Env.client, float(), String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ConvertUnitsApi200Response.t} | {:error, Tesla.Env.t}
+  def convert_units_api(connection, source_amount, source_unit, target_unit, opts \\ []) do
     optional_params = %{
       :"food-name" => :query
     }
@@ -46,7 +46,7 @@ defmodule APILeague.Api.Math do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ConvertUnits200Response},
+      {200, APILeague.Model.ConvertUnitsApi200Response},
       {401, false},
       {402, false},
       {403, false},

@@ -16,7 +16,7 @@ class ArtApi {
 
   final ApiClient apiClient;
 
-  /// Image to Ascii Art by URL
+  /// Image to Ascii Art by URL API
   ///
   /// Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
   ///
@@ -32,7 +32,7 @@ class ArtApi {
   ///
   /// * [int] height:
   ///   The maximum height of the image (default 400, max. 500).
-  Future<Response> imageToAsciiArtByURLWithHttpInfo(String url, { int? width, int? height, }) async {
+  Future<Response> imageToAsciiArtByURLAPIWithHttpInfo(String url, { int? width, int? height, }) async {
     // ignore: prefer_const_declarations
     final path = r'/convert-image-to-ascii-txt';
 
@@ -65,7 +65,7 @@ class ArtApi {
     );
   }
 
-  /// Image to Ascii Art by URL
+  /// Image to Ascii Art by URL API
   ///
   /// Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
   ///
@@ -79,8 +79,8 @@ class ArtApi {
   ///
   /// * [int] height:
   ///   The maximum height of the image (default 400, max. 500).
-  Future<String?> imageToAsciiArtByURL(String url, { int? width, int? height, }) async {
-    final response = await imageToAsciiArtByURLWithHttpInfo(url,  width: width, height: height, );
+  Future<String?> imageToAsciiArtByURLAPI(String url, { int? width, int? height, }) async {
+    final response = await imageToAsciiArtByURLAPIWithHttpInfo(url,  width: width, height: height, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -94,7 +94,7 @@ class ArtApi {
     return null;
   }
 
-  /// Random Poem
+  /// Random Poem API
   ///
   /// Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
   ///
@@ -107,7 +107,7 @@ class ArtApi {
   ///
   /// * [int] maxLines:
   ///   The maximum number of lines of the poem.
-  Future<Response> randomPoemWithHttpInfo({ int? minLines, int? maxLines, }) async {
+  Future<Response> randomPoemAPIWithHttpInfo({ int? minLines, int? maxLines, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-poem';
 
@@ -139,7 +139,7 @@ class ArtApi {
     );
   }
 
-  /// Random Poem
+  /// Random Poem API
   ///
   /// Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
   ///
@@ -150,8 +150,8 @@ class ArtApi {
   ///
   /// * [int] maxLines:
   ///   The maximum number of lines of the poem.
-  Future<RandomPoem200Response?> randomPoem({ int? minLines, int? maxLines, }) async {
-    final response = await randomPoemWithHttpInfo( minLines: minLines, maxLines: maxLines, );
+  Future<RandomPoemAPI200Response?> randomPoemAPI({ int? minLines, int? maxLines, }) async {
+    final response = await randomPoemAPIWithHttpInfo( minLines: minLines, maxLines: maxLines, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -159,7 +159,7 @@ class ArtApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomPoem200Response',) as RandomPoem200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomPoemAPI200Response',) as RandomPoemAPI200Response;
     
     }
     return null;

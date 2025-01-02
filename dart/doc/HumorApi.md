@@ -9,18 +9,18 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateNonsenseWord**](HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke**](HumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme**](HumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs**](HumorApi.md#searchgifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes**](HumorApi.md#searchjokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes**](HumorApi.md#searchmemes) | **GET** /search-memes | Search Memes
+[**generateNonsenseWordAPI**](HumorApi.md#generatenonsensewordapi) | **GET** /generate-nonsense-word | Generate Nonsense Word API
+[**randomJokeAPI**](HumorApi.md#randomjokeapi) | **GET** /retrieve-random-joke | Random Joke API
+[**randomMemeAPI**](HumorApi.md#randommemeapi) | **GET** /retrieve-random-meme | Random Meme API
+[**searchGifsAPI**](HumorApi.md#searchgifsapi) | **GET** /search-gifs | Search Gifs API
+[**searchJokesAPI**](HumorApi.md#searchjokesapi) | **GET** /search-jokes | Search Jokes API
+[**searchMemesAPI**](HumorApi.md#searchmemesapi) | **GET** /search-memes | Search Memes API
 
 
-# **generateNonsenseWord**
-> GenerateNonsenseWord200Response generateNonsenseWord()
+# **generateNonsenseWordAPI**
+> GenerateNonsenseWordAPI200Response generateNonsenseWordAPI()
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -39,10 +39,10 @@ import 'package:openapi/api.dart';
 final api_instance = HumorApi();
 
 try {
-    final result = api_instance.generateNonsenseWord();
+    final result = api_instance.generateNonsenseWordAPI();
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->generateNonsenseWord: $e\n');
+    print('Exception when calling HumorApi->generateNonsenseWordAPI: $e\n');
 }
 ```
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -64,10 +64,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **randomJoke**
-> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
+# **randomJokeAPI**
+> SearchJokesAPI200ResponseJokesInner randomJokeAPI(includeTags, excludeTags, minRating, maxLength)
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -90,10 +90,10 @@ final minRating = 0; // double | The minimum rating in range [0.0,1.0] of the jo
 final maxLength = 140; // int | The maximum length of the joke in letters.
 
 try {
-    final result = api_instance.randomJoke(includeTags, excludeTags, minRating, maxLength);
+    final result = api_instance.randomJokeAPI(includeTags, excludeTags, minRating, maxLength);
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->randomJoke: $e\n');
+    print('Exception when calling HumorApi->randomJokeAPI: $e\n');
 }
 ```
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -121,12 +121,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **randomMeme**
-> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+# **randomMemeAPI**
+> RandomMemeAPI200Response randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 ```dart
@@ -148,10 +148,10 @@ final minRating = 0; // double | The minimum rating in range [0.0,1.0] of the me
 final maxAgeDays = 30; // int | The maximum age of the meme in days.
 
 try {
-    final result = api_instance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+    final result = api_instance.randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->randomMeme: $e\n');
+    print('Exception when calling HumorApi->randomMemeAPI: $e\n');
 }
 ```
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -180,10 +180,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchGifs**
-> SearchGifs200Response searchGifs(query, number)
+# **searchGifsAPI**
+> SearchGifsAPI200Response searchGifsAPI(query, number)
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -204,10 +204,10 @@ final query = dogs; // String | The search query.
 final number = 5; // int | The number of gifs to return in range [1,10]
 
 try {
-    final result = api_instance.searchGifs(query, number);
+    final result = api_instance.searchGifsAPI(query, number);
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->searchGifs: $e\n');
+    print('Exception when calling HumorApi->searchGifsAPI: $e\n');
 }
 ```
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -233,10 +233,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchJokes**
-> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+# **searchJokesAPI**
+> SearchJokesAPI200Response searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -262,10 +262,10 @@ final offset = 0; // int | The number of jokes to skip, between 0 and 1000.
 final number = 3; // int | The number of jokes, between 1 and 10.
 
 try {
-    final result = api_instance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+    final result = api_instance.searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->searchJokes: $e\n');
+    print('Exception when calling HumorApi->searchJokesAPI: $e\n');
 }
 ```
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -296,12 +296,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchMemes**
-> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+# **searchMemesAPI**
+> SearchMemesAPI200Response searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
 ### Example
 ```dart
@@ -325,10 +325,10 @@ final offset = 0; // int | The number of memes to skip, between 0 and 1000.
 final number = 3; // int | The number of memes, between 1 and 10.
 
 try {
-    final result = api_instance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+    final result = api_instance.searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling HumorApi->searchMemes: $e\n');
+    print('Exception when calling HumorApi->searchMemesAPI: $e\n');
 }
 ```
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

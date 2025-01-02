@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books
-[**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books
+[**findSimilarBooksAPI**](BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API
+[**searchBooksAPI**](BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API
 
 
 
-## findSimilarBooks
+## findSimilarBooksAPI
 
-> FindSimilarBooks200Response findSimilarBooks(id, opts)
+> FindSimilarBooksAPI200Response findSimilarBooksAPI(id, opts)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 
@@ -38,7 +38,7 @@ let id = 8302059; // Number | The id of the book to which similar books should b
 let opts = {
   'number': 10 // Number | The number of similar books to return in range [1,100]
 };
-apiInstance.findSimilarBooks(id, opts, (error, data, response) => {
+apiInstance.findSimilarBooksAPI(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -69,13 +69,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchBooks
+## searchBooksAPI
 
-> SearchBooks200Response searchBooks(opts)
+> SearchBooksAPI200Response searchBooksAPI(opts)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 
@@ -110,7 +110,7 @@ let opts = {
   'offset': 0, // Number | The number of books to skip in range [0,1000]
   'number': 10 // Number | The number of books to return in range [1,100]
 };
-apiInstance.searchBooks(opts, (error, data, response) => {
+apiInstance.searchBooksAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

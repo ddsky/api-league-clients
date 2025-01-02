@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ComputeNutrition**](FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition |
-| [**RetrieveRecipeInformation**](FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information |
-| [**SearchDrinks**](FoodApi.md#searchdrinks) | **GET** /search-drinks | Search Drinks |
-| [**SearchRecipes**](FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes |
-| [**SearchRestaurants**](FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants |
+| [**ComputeNutritionAPI**](FoodApi.md#computenutritionapi) | **GET** /compute-nutrition | Compute Nutrition API |
+| [**RetrieveRecipeInformationAPI**](FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
+| [**SearchDrinksAPI**](FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API |
+| [**SearchRecipesAPI**](FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API |
+| [**SearchRestaurantsAPI**](FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API |
 
-<a id="computenutrition"></a>
-# **ComputeNutrition**
-> ComputeNutrition200Response ComputeNutrition (string ingredients, int? servings = null, bool? reduceOils = null)
+<a id="computenutritionapi"></a>
+# **ComputeNutritionAPI**
+> ComputeNutritionAPI200Response ComputeNutritionAPI (string ingredients, int? servings = null, bool? reduceOils = null)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -28,7 +28,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ComputeNutritionExample
+    public class ComputeNutritionAPIExample
     {
         public static void Main()
         {
@@ -50,13 +50,13 @@ namespace Example
 
             try
             {
-                // Compute Nutrition
-                ComputeNutrition200Response result = apiInstance.ComputeNutrition(ingredients, servings, reduceOils);
+                // Compute Nutrition API
+                ComputeNutritionAPI200Response result = apiInstance.ComputeNutritionAPI(ingredients, servings, reduceOils);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FoodApi.ComputeNutrition: " + e.Message);
+                Debug.Print("Exception when calling FoodApi.ComputeNutritionAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -65,21 +65,21 @@ namespace Example
 }
 ```
 
-#### Using the ComputeNutritionWithHttpInfo variant
+#### Using the ComputeNutritionAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Compute Nutrition
-    ApiResponse<ComputeNutrition200Response> response = apiInstance.ComputeNutritionWithHttpInfo(ingredients, servings, reduceOils);
+    // Compute Nutrition API
+    ApiResponse<ComputeNutritionAPI200Response> response = apiInstance.ComputeNutritionAPIWithHttpInfo(ingredients, servings, reduceOils);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoodApi.ComputeNutritionWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FoodApi.ComputeNutritionAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -95,7 +95,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -120,11 +120,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="retrieverecipeinformation"></a>
-# **RetrieveRecipeInformation**
-> RetrieveRecipeInformation200Response RetrieveRecipeInformation (int id, bool? addWinePairing = null)
+<a id="retrieverecipeinformationapi"></a>
+# **RetrieveRecipeInformationAPI**
+> RetrieveRecipeInformationAPI200Response RetrieveRecipeInformationAPI (int id, bool? addWinePairing = null)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -138,7 +138,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RetrieveRecipeInformationExample
+    public class RetrieveRecipeInformationAPIExample
     {
         public static void Main()
         {
@@ -159,13 +159,13 @@ namespace Example
 
             try
             {
-                // Retrieve Recipe Information
-                RetrieveRecipeInformation200Response result = apiInstance.RetrieveRecipeInformation(id, addWinePairing);
+                // Retrieve Recipe Information API
+                RetrieveRecipeInformationAPI200Response result = apiInstance.RetrieveRecipeInformationAPI(id, addWinePairing);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FoodApi.RetrieveRecipeInformation: " + e.Message);
+                Debug.Print("Exception when calling FoodApi.RetrieveRecipeInformationAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -174,21 +174,21 @@ namespace Example
 }
 ```
 
-#### Using the RetrieveRecipeInformationWithHttpInfo variant
+#### Using the RetrieveRecipeInformationAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Retrieve Recipe Information
-    ApiResponse<RetrieveRecipeInformation200Response> response = apiInstance.RetrieveRecipeInformationWithHttpInfo(id, addWinePairing);
+    // Retrieve Recipe Information API
+    ApiResponse<RetrieveRecipeInformationAPI200Response> response = apiInstance.RetrieveRecipeInformationAPIWithHttpInfo(id, addWinePairing);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoodApi.RetrieveRecipeInformationWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FoodApi.RetrieveRecipeInformationAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -203,7 +203,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -228,11 +228,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchdrinks"></a>
-# **SearchDrinks**
-> SearchDrinks200Response SearchDrinks (string? query = null, string? glassTypes = null, string? flavors = null, string? diet = null, string? includeIngredients = null, string? excludeIngredients = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minAlcoholPercent = null, double? maxAlcoholPercent = null, double? minCaffeine = null, double? maxCaffeine = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
+<a id="searchdrinksapi"></a>
+# **SearchDrinksAPI**
+> SearchDrinksAPI200Response SearchDrinksAPI (string? query = null, string? glassTypes = null, string? flavors = null, string? diet = null, string? includeIngredients = null, string? excludeIngredients = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minAlcoholPercent = null, double? maxAlcoholPercent = null, double? minCaffeine = null, double? maxCaffeine = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -246,7 +246,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchDrinksExample
+    public class SearchDrinksAPIExample
     {
         public static void Main()
         {
@@ -287,13 +287,13 @@ namespace Example
 
             try
             {
-                // Search Drinks
-                SearchDrinks200Response result = apiInstance.SearchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+                // Search Drinks API
+                SearchDrinksAPI200Response result = apiInstance.SearchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FoodApi.SearchDrinks: " + e.Message);
+                Debug.Print("Exception when calling FoodApi.SearchDrinksAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -302,21 +302,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchDrinksWithHttpInfo variant
+#### Using the SearchDrinksAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Drinks
-    ApiResponse<SearchDrinks200Response> response = apiInstance.SearchDrinksWithHttpInfo(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
+    // Search Drinks API
+    ApiResponse<SearchDrinksAPI200Response> response = apiInstance.SearchDrinksAPIWithHttpInfo(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoodApi.SearchDrinksWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FoodApi.SearchDrinksAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -351,7 +351,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -376,11 +376,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchrecipes"></a>
-# **SearchRecipes**
-> SearchRecipes200Response SearchRecipes (string? query = null, string? cuisines = null, string? excludeCuisines = null, string? mealType = null, string? diet = null, string? intolerances = null, string? equipment = null, string? includeIngredients = null, string? excludeIngredients = null, bool? fillIngredients = null, bool? addRecipeInformation = null, int? maxTime = null, int? minServings = null, int? maxServings = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minSugar = null, double? maxSugar = null, double? minFiber = null, double? maxFiber = null, double? minFolate = null, double? maxFolate = null, double? minFolicAcid = null, double? maxFolicAcid = null, double? minIodine = null, double? maxIodine = null, double? minIron = null, double? maxIron = null, double? minZinc = null, double? maxZinc = null, double? minMagnesium = null, double? maxMagnesium = null, double? minManganese = null, double? maxManganese = null, double? minPhosphorus = null, double? maxPhosphorus = null, double? minPotassium = null, double? maxPotassium = null, double? minSodium = null, double? maxSodium = null, double? minSelenium = null, double? maxSelenium = null, double? minCopper = null, double? maxCopper = null, double? minCalcium = null, double? maxCalcium = null, double? minCholine = null, double? maxCholine = null, double? minCholesterol = null, double? maxCholesterol = null, double? minFluoride = null, double? maxFluoride = null, double? minAlcohol = null, double? maxAlcohol = null, double? minCaffeine = null, double? maxCaffeine = null, double? minSaturatedFat = null, double? maxSaturatedFat = null, double? minVitaminA = null, double? maxVitaminA = null, double? minVitaminC = null, double? maxVitaminC = null, double? minVitaminD = null, double? maxVitaminD = null, double? minVitaminE = null, double? maxVitaminE = null, double? minVitaminK = null, double? maxVitaminK = null, double? minVitaminB1 = null, double? maxVitaminB1 = null, double? minVitaminB2 = null, double? maxVitaminB2 = null, double? minVitaminB3 = null, double? maxVitaminB3 = null, double? minVitaminB5 = null, double? maxVitaminB5 = null, double? minVitaminB6 = null, double? maxVitaminB6 = null, double? minVitaminB12 = null, double? maxVitaminB12 = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
+<a id="searchrecipesapi"></a>
+# **SearchRecipesAPI**
+> SearchRecipesAPI200Response SearchRecipesAPI (string? query = null, string? cuisines = null, string? excludeCuisines = null, string? mealType = null, string? diet = null, string? intolerances = null, string? equipment = null, string? includeIngredients = null, string? excludeIngredients = null, bool? fillIngredients = null, bool? addRecipeInformation = null, int? maxTime = null, int? minServings = null, int? maxServings = null, double? minCalories = null, double? maxCalories = null, double? minCarbs = null, double? maxCarbs = null, double? minProtein = null, double? maxProtein = null, double? minFat = null, double? maxFat = null, double? minSugar = null, double? maxSugar = null, double? minFiber = null, double? maxFiber = null, double? minFolate = null, double? maxFolate = null, double? minFolicAcid = null, double? maxFolicAcid = null, double? minIodine = null, double? maxIodine = null, double? minIron = null, double? maxIron = null, double? minZinc = null, double? maxZinc = null, double? minMagnesium = null, double? maxMagnesium = null, double? minManganese = null, double? maxManganese = null, double? minPhosphorus = null, double? maxPhosphorus = null, double? minPotassium = null, double? maxPotassium = null, double? minSodium = null, double? maxSodium = null, double? minSelenium = null, double? maxSelenium = null, double? minCopper = null, double? maxCopper = null, double? minCalcium = null, double? maxCalcium = null, double? minCholine = null, double? maxCholine = null, double? minCholesterol = null, double? maxCholesterol = null, double? minFluoride = null, double? maxFluoride = null, double? minAlcohol = null, double? maxAlcohol = null, double? minCaffeine = null, double? maxCaffeine = null, double? minSaturatedFat = null, double? maxSaturatedFat = null, double? minVitaminA = null, double? maxVitaminA = null, double? minVitaminC = null, double? maxVitaminC = null, double? minVitaminD = null, double? maxVitaminD = null, double? minVitaminE = null, double? maxVitaminE = null, double? minVitaminK = null, double? maxVitaminK = null, double? minVitaminB1 = null, double? maxVitaminB1 = null, double? minVitaminB2 = null, double? maxVitaminB2 = null, double? minVitaminB3 = null, double? maxVitaminB3 = null, double? minVitaminB5 = null, double? maxVitaminB5 = null, double? minVitaminB6 = null, double? maxVitaminB6 = null, double? minVitaminB12 = null, double? maxVitaminB12 = null, string? sort = null, string? sortDirection = null, int? offset = null, int? number = null)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -394,7 +394,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchRecipesExample
+    public class SearchRecipesAPIExample
     {
         public static void Main()
         {
@@ -503,13 +503,13 @@ namespace Example
 
             try
             {
-                // Search Recipes
-                SearchRecipes200Response result = apiInstance.SearchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
+                // Search Recipes API
+                SearchRecipesAPI200Response result = apiInstance.SearchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FoodApi.SearchRecipes: " + e.Message);
+                Debug.Print("Exception when calling FoodApi.SearchRecipesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -518,21 +518,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchRecipesWithHttpInfo variant
+#### Using the SearchRecipesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Recipes
-    ApiResponse<SearchRecipes200Response> response = apiInstance.SearchRecipesWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
+    // Search Recipes API
+    ApiResponse<SearchRecipesAPI200Response> response = apiInstance.SearchRecipesAPIWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoodApi.SearchRecipesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FoodApi.SearchRecipesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -635,7 +635,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -660,11 +660,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchrestaurants"></a>
-# **SearchRestaurants**
-> SearchRestaurants200Response SearchRestaurants (double lat, double lon, string? query = null, int? distance = null, double? budget = null, double? minRating = null, string? cuisine = null, bool? isOpen = null, int? page = null, string? sort = null)
+<a id="searchrestaurantsapi"></a>
+# **SearchRestaurantsAPI**
+> SearchRestaurantsAPI200Response SearchRestaurantsAPI (double lat, double lon, string? query = null, int? distance = null, double? budget = null, double? minRating = null, string? cuisine = null, bool? isOpen = null, int? page = null, string? sort = null)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -678,7 +678,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchRestaurantsExample
+    public class SearchRestaurantsAPIExample
     {
         public static void Main()
         {
@@ -707,13 +707,13 @@ namespace Example
 
             try
             {
-                // Search Restaurants
-                SearchRestaurants200Response result = apiInstance.SearchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
+                // Search Restaurants API
+                SearchRestaurantsAPI200Response result = apiInstance.SearchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling FoodApi.SearchRestaurants: " + e.Message);
+                Debug.Print("Exception when calling FoodApi.SearchRestaurantsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -722,21 +722,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchRestaurantsWithHttpInfo variant
+#### Using the SearchRestaurantsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Restaurants
-    ApiResponse<SearchRestaurants200Response> response = apiInstance.SearchRestaurantsWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
+    // Search Restaurants API
+    ApiResponse<SearchRestaurantsAPI200Response> response = apiInstance.SearchRestaurantsAPIWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling FoodApi.SearchRestaurantsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling FoodApi.SearchRestaurantsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -759,7 +759,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

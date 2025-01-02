@@ -8,19 +8,19 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
-import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { ExtractDates200Response } from '../models/ExtractDates200Response';
-import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
-import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
-import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
-import { ScoreText200Response } from '../models/ScoreText200Response';
-import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
-import { StemText200Response } from '../models/StemText200Response';
-import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
+import { CorrectSpellingAPI200Response } from '../models/CorrectSpellingAPI200Response';
+import { DetectGenderByNameAPI200Response } from '../models/DetectGenderByNameAPI200Response';
+import { DetectLanguageAPI200ResponseInner } from '../models/DetectLanguageAPI200ResponseInner';
+import { DetectSentimentAPI200Response } from '../models/DetectSentimentAPI200Response';
+import { ExtractDatesAPI200Response } from '../models/ExtractDatesAPI200Response';
+import { ExtractEntitiesAPI200Response } from '../models/ExtractEntitiesAPI200Response';
+import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
+import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { ScoreReadabilityAPI200Response } from '../models/ScoreReadabilityAPI200Response';
+import { ScoreTextAPI200Response } from '../models/ScoreTextAPI200Response';
+import { SingularizeWordAPI200Response } from '../models/SingularizeWordAPI200Response';
+import { StemTextAPI200Response } from '../models/StemTextAPI200Response';
+import { TagPartOfSpeechAPI200Response } from '../models/TagPartOfSpeechAPI200Response';
 
 /**
  * no description
@@ -29,22 +29,22 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-     * Correct Spelling
+     * Correct Spelling API
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
      */
-    public async correctSpelling(text: string, language: string, _options?: Configuration): Promise<RequestContext> {
+    public async correctSpellingAPI(text: string, language: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "correctSpelling", "text");
+            throw new RequiredError("TextApi", "correctSpellingAPI", "text");
         }
 
 
         // verify required parameter 'language' is not null or undefined
         if (language === null || language === undefined) {
-            throw new RequiredError("TextApi", "correctSpelling", "language");
+            throw new RequiredError("TextApi", "correctSpellingAPI", "language");
         }
 
 
@@ -88,15 +88,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * @param name The name of the perso for which the sentiment should be detected.
      */
-    public async detectGenderByName(name: string, _options?: Configuration): Promise<RequestContext> {
+    public async detectGenderByNameAPI(name: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'name' is not null or undefined
         if (name === null || name === undefined) {
-            throw new RequiredError("TextApi", "detectGenderByName", "name");
+            throw new RequiredError("TextApi", "detectGenderByNameAPI", "name");
         }
 
 
@@ -135,15 +135,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
+     * Detect Language API
      * @param text The text for which the language should be detected.
      */
-    public async detectLanguage(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async detectLanguageAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "detectLanguage", "text");
+            throw new RequiredError("TextApi", "detectLanguageAPI", "text");
         }
 
 
@@ -182,15 +182,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
+     * Detect Sentiment API
      * @param text The text for which the sentiment should be detected.
      */
-    public async detectSentiment(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async detectSentimentAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "detectSentiment", "text");
+            throw new RequiredError("TextApi", "detectSentimentAPI", "text");
         }
 
 
@@ -229,15 +229,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-     * Extract Dates
+     * Extract Dates API
      * @param text The text from which dates should be extracted.
      */
-    public async extractDates(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async extractDatesAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "extractDates", "text");
+            throw new RequiredError("TextApi", "extractDatesAPI", "text");
         }
 
 
@@ -276,15 +276,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-     * Extract Entities
+     * Extract Entities API
      * @param text The text from which entities should be extracted.
      */
-    public async extractEntities(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async extractEntitiesAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "extractEntities", "text");
+            throw new RequiredError("TextApi", "extractEntitiesAPI", "text");
         }
 
 
@@ -323,15 +323,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Return synonyms of a word.
-     * List Word Synonyms
+     * List Word Synonyms API
      * @param word The (noun) word for which a list of synonyms should be returned.
      */
-    public async listWordSynonyms(word: string, _options?: Configuration): Promise<RequestContext> {
+    public async listWordSynonymsAPI(word: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'word' is not null or undefined
         if (word === null || word === undefined) {
-            throw new RequiredError("TextApi", "listWordSynonyms", "word");
+            throw new RequiredError("TextApi", "listWordSynonymsAPI", "word");
         }
 
 
@@ -370,15 +370,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Find the plural form of a word.
-     * Pluralize Word
+     * Pluralize Word API
      * @param word The (noun) word for which the plural form should be found.
      */
-    public async pluralizeWord(word: string, _options?: Configuration): Promise<RequestContext> {
+    public async pluralizeWordAPI(word: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'word' is not null or undefined
         if (word === null || word === undefined) {
-            throw new RequiredError("TextApi", "pluralizeWord", "word");
+            throw new RequiredError("TextApi", "pluralizeWordAPI", "word");
         }
 
 
@@ -417,15 +417,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-     * Score Readability
+     * Score Readability API
      * @param text The text to score for readability.
      */
-    public async scoreReadability(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async scoreReadabilityAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "scoreReadability", "text");
+            throw new RequiredError("TextApi", "scoreReadabilityAPI", "text");
         }
 
 
@@ -464,22 +464,22 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-     * Score Text
+     * Score Text API
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
      */
-    public async scoreText(title: string, text: string, _options?: Configuration): Promise<RequestContext> {
+    public async scoreTextAPI(title: string, text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'title' is not null or undefined
         if (title === null || title === undefined) {
-            throw new RequiredError("TextApi", "scoreText", "title");
+            throw new RequiredError("TextApi", "scoreTextAPI", "title");
         }
 
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "scoreText", "text");
+            throw new RequiredError("TextApi", "scoreTextAPI", "text");
         }
 
 
@@ -523,15 +523,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Find the singular form of a word.
-     * Singularize Word
+     * Singularize Word API
      * @param word The (noun) word for which the singular form should be found.
      */
-    public async singularizeWord(word: string, _options?: Configuration): Promise<RequestContext> {
+    public async singularizeWordAPI(word: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'word' is not null or undefined
         if (word === null || word === undefined) {
-            throw new RequiredError("TextApi", "singularizeWord", "word");
+            throw new RequiredError("TextApi", "singularizeWordAPI", "word");
         }
 
 
@@ -570,15 +570,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Stem Text
+     * Stem Text API
      * @param text The text to be stemmed.
      */
-    public async stemText(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async stemTextAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "stemText", "text");
+            throw new RequiredError("TextApi", "stemTextAPI", "text");
         }
 
 
@@ -617,15 +617,15 @@ export class TextApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * @param text The text to tag the part of speech.
      */
-    public async tagPartOfSpeech(text: string, _options?: Configuration): Promise<RequestContext> {
+    public async tagPartOfSpeechAPI(text: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'text' is not null or undefined
         if (text === null || text === undefined) {
-            throw new RequiredError("TextApi", "tagPartOfSpeech", "text");
+            throw new RequiredError("TextApi", "tagPartOfSpeechAPI", "text");
         }
 
 
@@ -670,16 +670,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to correctSpelling
+     * @params response Response returned by the server for a request to correctSpellingAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async correctSpellingWithHttpInfo(response: ResponseContext): Promise<HttpInfo<CorrectSpelling200Response >> {
+     public async correctSpellingAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<CorrectSpellingAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: CorrectSpelling200Response = ObjectSerializer.deserialize(
+            const body: CorrectSpellingAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "CorrectSpelling200Response", ""
-            ) as CorrectSpelling200Response;
+                "CorrectSpellingAPI200Response", ""
+            ) as CorrectSpellingAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -703,10 +703,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: CorrectSpelling200Response = ObjectSerializer.deserialize(
+            const body: CorrectSpellingAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "CorrectSpelling200Response", ""
-            ) as CorrectSpelling200Response;
+                "CorrectSpellingAPI200Response", ""
+            ) as CorrectSpellingAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -717,16 +717,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to detectGenderByName
+     * @params response Response returned by the server for a request to detectGenderByNameAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async detectGenderByNameWithHttpInfo(response: ResponseContext): Promise<HttpInfo<DetectGenderByName200Response >> {
+     public async detectGenderByNameAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<DetectGenderByNameAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: DetectGenderByName200Response = ObjectSerializer.deserialize(
+            const body: DetectGenderByNameAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "DetectGenderByName200Response", ""
-            ) as DetectGenderByName200Response;
+                "DetectGenderByNameAPI200Response", ""
+            ) as DetectGenderByNameAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -750,10 +750,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: DetectGenderByName200Response = ObjectSerializer.deserialize(
+            const body: DetectGenderByNameAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "DetectGenderByName200Response", ""
-            ) as DetectGenderByName200Response;
+                "DetectGenderByNameAPI200Response", ""
+            ) as DetectGenderByNameAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -764,16 +764,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to detectLanguage
+     * @params response Response returned by the server for a request to detectLanguageAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async detectLanguageWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<DetectLanguage200ResponseInner> >> {
+     public async detectLanguageAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<Array<DetectLanguageAPI200ResponseInner> >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: Array<DetectLanguage200ResponseInner> = ObjectSerializer.deserialize(
+            const body: Array<DetectLanguageAPI200ResponseInner> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<DetectLanguage200ResponseInner>", ""
-            ) as Array<DetectLanguage200ResponseInner>;
+                "Array<DetectLanguageAPI200ResponseInner>", ""
+            ) as Array<DetectLanguageAPI200ResponseInner>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -797,10 +797,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: Array<DetectLanguage200ResponseInner> = ObjectSerializer.deserialize(
+            const body: Array<DetectLanguageAPI200ResponseInner> = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "Array<DetectLanguage200ResponseInner>", ""
-            ) as Array<DetectLanguage200ResponseInner>;
+                "Array<DetectLanguageAPI200ResponseInner>", ""
+            ) as Array<DetectLanguageAPI200ResponseInner>;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -811,16 +811,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to detectSentiment
+     * @params response Response returned by the server for a request to detectSentimentAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async detectSentimentWithHttpInfo(response: ResponseContext): Promise<HttpInfo<DetectSentiment200Response >> {
+     public async detectSentimentAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<DetectSentimentAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: DetectSentiment200Response = ObjectSerializer.deserialize(
+            const body: DetectSentimentAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "DetectSentiment200Response", ""
-            ) as DetectSentiment200Response;
+                "DetectSentimentAPI200Response", ""
+            ) as DetectSentimentAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -844,10 +844,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: DetectSentiment200Response = ObjectSerializer.deserialize(
+            const body: DetectSentimentAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "DetectSentiment200Response", ""
-            ) as DetectSentiment200Response;
+                "DetectSentimentAPI200Response", ""
+            ) as DetectSentimentAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -858,16 +858,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractDates
+     * @params response Response returned by the server for a request to extractDatesAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractDatesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractDates200Response >> {
+     public async extractDatesAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractDatesAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractDates200Response = ObjectSerializer.deserialize(
+            const body: ExtractDatesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractDates200Response", ""
-            ) as ExtractDates200Response;
+                "ExtractDatesAPI200Response", ""
+            ) as ExtractDatesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -891,10 +891,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractDates200Response = ObjectSerializer.deserialize(
+            const body: ExtractDatesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractDates200Response", ""
-            ) as ExtractDates200Response;
+                "ExtractDatesAPI200Response", ""
+            ) as ExtractDatesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -905,16 +905,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to extractEntities
+     * @params response Response returned by the server for a request to extractEntitiesAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async extractEntitiesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractEntities200Response >> {
+     public async extractEntitiesAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ExtractEntitiesAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ExtractEntities200Response = ObjectSerializer.deserialize(
+            const body: ExtractEntitiesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractEntities200Response", ""
-            ) as ExtractEntities200Response;
+                "ExtractEntitiesAPI200Response", ""
+            ) as ExtractEntitiesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -938,10 +938,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ExtractEntities200Response = ObjectSerializer.deserialize(
+            const body: ExtractEntitiesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ExtractEntities200Response", ""
-            ) as ExtractEntities200Response;
+                "ExtractEntitiesAPI200Response", ""
+            ) as ExtractEntitiesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -952,16 +952,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to listWordSynonyms
+     * @params response Response returned by the server for a request to listWordSynonymsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async listWordSynonymsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ListWordSynonyms200Response >> {
+     public async listWordSynonymsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ListWordSynonymsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ListWordSynonyms200Response = ObjectSerializer.deserialize(
+            const body: ListWordSynonymsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ListWordSynonyms200Response", ""
-            ) as ListWordSynonyms200Response;
+                "ListWordSynonymsAPI200Response", ""
+            ) as ListWordSynonymsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -985,10 +985,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ListWordSynonyms200Response = ObjectSerializer.deserialize(
+            const body: ListWordSynonymsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ListWordSynonyms200Response", ""
-            ) as ListWordSynonyms200Response;
+                "ListWordSynonymsAPI200Response", ""
+            ) as ListWordSynonymsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -999,16 +999,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to pluralizeWord
+     * @params response Response returned by the server for a request to pluralizeWordAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async pluralizeWordWithHttpInfo(response: ResponseContext): Promise<HttpInfo<PluralizeWord200Response >> {
+     public async pluralizeWordAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<PluralizeWordAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: PluralizeWord200Response = ObjectSerializer.deserialize(
+            const body: PluralizeWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "PluralizeWord200Response", ""
-            ) as PluralizeWord200Response;
+                "PluralizeWordAPI200Response", ""
+            ) as PluralizeWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1032,10 +1032,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: PluralizeWord200Response = ObjectSerializer.deserialize(
+            const body: PluralizeWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "PluralizeWord200Response", ""
-            ) as PluralizeWord200Response;
+                "PluralizeWordAPI200Response", ""
+            ) as PluralizeWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1046,16 +1046,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to scoreReadability
+     * @params response Response returned by the server for a request to scoreReadabilityAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async scoreReadabilityWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ScoreReadability200Response >> {
+     public async scoreReadabilityAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ScoreReadabilityAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ScoreReadability200Response = ObjectSerializer.deserialize(
+            const body: ScoreReadabilityAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ScoreReadability200Response", ""
-            ) as ScoreReadability200Response;
+                "ScoreReadabilityAPI200Response", ""
+            ) as ScoreReadabilityAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1079,10 +1079,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ScoreReadability200Response = ObjectSerializer.deserialize(
+            const body: ScoreReadabilityAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ScoreReadability200Response", ""
-            ) as ScoreReadability200Response;
+                "ScoreReadabilityAPI200Response", ""
+            ) as ScoreReadabilityAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1093,16 +1093,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to scoreText
+     * @params response Response returned by the server for a request to scoreTextAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async scoreTextWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ScoreText200Response >> {
+     public async scoreTextAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ScoreTextAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ScoreText200Response = ObjectSerializer.deserialize(
+            const body: ScoreTextAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ScoreText200Response", ""
-            ) as ScoreText200Response;
+                "ScoreTextAPI200Response", ""
+            ) as ScoreTextAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1126,10 +1126,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ScoreText200Response = ObjectSerializer.deserialize(
+            const body: ScoreTextAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ScoreText200Response", ""
-            ) as ScoreText200Response;
+                "ScoreTextAPI200Response", ""
+            ) as ScoreTextAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1140,16 +1140,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to singularizeWord
+     * @params response Response returned by the server for a request to singularizeWordAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async singularizeWordWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SingularizeWord200Response >> {
+     public async singularizeWordAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SingularizeWordAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SingularizeWord200Response = ObjectSerializer.deserialize(
+            const body: SingularizeWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SingularizeWord200Response", ""
-            ) as SingularizeWord200Response;
+                "SingularizeWordAPI200Response", ""
+            ) as SingularizeWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1173,10 +1173,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SingularizeWord200Response = ObjectSerializer.deserialize(
+            const body: SingularizeWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SingularizeWord200Response", ""
-            ) as SingularizeWord200Response;
+                "SingularizeWordAPI200Response", ""
+            ) as SingularizeWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1187,16 +1187,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to stemText
+     * @params response Response returned by the server for a request to stemTextAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async stemTextWithHttpInfo(response: ResponseContext): Promise<HttpInfo<StemText200Response >> {
+     public async stemTextAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<StemTextAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: StemText200Response = ObjectSerializer.deserialize(
+            const body: StemTextAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "StemText200Response", ""
-            ) as StemText200Response;
+                "StemTextAPI200Response", ""
+            ) as StemTextAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1220,10 +1220,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: StemText200Response = ObjectSerializer.deserialize(
+            const body: StemTextAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "StemText200Response", ""
-            ) as StemText200Response;
+                "StemTextAPI200Response", ""
+            ) as StemTextAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -1234,16 +1234,16 @@ export class TextApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to tagPartOfSpeech
+     * @params response Response returned by the server for a request to tagPartOfSpeechAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async tagPartOfSpeechWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TagPartOfSpeech200Response >> {
+     public async tagPartOfSpeechAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<TagPartOfSpeechAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: TagPartOfSpeech200Response = ObjectSerializer.deserialize(
+            const body: TagPartOfSpeechAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TagPartOfSpeech200Response", ""
-            ) as TagPartOfSpeech200Response;
+                "TagPartOfSpeechAPI200Response", ""
+            ) as TagPartOfSpeechAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -1267,10 +1267,10 @@ export class TextApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: TagPartOfSpeech200Response = ObjectSerializer.deserialize(
+            const body: TagPartOfSpeechAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "TagPartOfSpeech200Response", ""
-            ) as TagPartOfSpeech200Response;
+                "TagPartOfSpeechAPI200Response", ""
+            ) as TagPartOfSpeechAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

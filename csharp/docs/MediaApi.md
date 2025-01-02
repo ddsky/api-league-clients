@@ -4,16 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DetectMainImageColor**](MediaApi.md#detectmainimagecolor) | **GET** /detect-color | Detect Main Image Color |
-| [**RescaleImage**](MediaApi.md#rescaleimage) | **GET** /rescale-image | Rescale Image |
-| [**SearchIcons**](MediaApi.md#searchicons) | **GET** /search-icons | Search Icons |
-| [**SearchRoyaltyFreeImages**](MediaApi.md#searchroyaltyfreeimages) | **GET** /search-images | Search Royalty Free Images |
+| [**DetectMainImageColorAPI**](MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API |
+| [**RescaleImageAPI**](MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API |
+| [**SearchIconsAPI**](MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API |
+| [**SearchRoyaltyFreeImagesAPI**](MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API |
+| [**VectorSearchAPI**](MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API |
 
-<a id="detectmainimagecolor"></a>
-# **DetectMainImageColor**
-> List&lt;DetectMainImageColor200ResponseInner&gt; DetectMainImageColor (string url)
+<a id="detectmainimagecolorapi"></a>
+# **DetectMainImageColorAPI**
+> List&lt;DetectMainImageColorAPI200ResponseInner&gt; DetectMainImageColorAPI (string url)
 
-Detect Main Image Color
+Detect Main Image Color API
 
 Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 
@@ -27,7 +28,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class DetectMainImageColorExample
+    public class DetectMainImageColorAPIExample
     {
         public static void Main()
         {
@@ -47,13 +48,13 @@ namespace Example
 
             try
             {
-                // Detect Main Image Color
-                List<DetectMainImageColor200ResponseInner> result = apiInstance.DetectMainImageColor(url);
+                // Detect Main Image Color API
+                List<DetectMainImageColorAPI200ResponseInner> result = apiInstance.DetectMainImageColorAPI(url);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MediaApi.DetectMainImageColor: " + e.Message);
+                Debug.Print("Exception when calling MediaApi.DetectMainImageColorAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +63,21 @@ namespace Example
 }
 ```
 
-#### Using the DetectMainImageColorWithHttpInfo variant
+#### Using the DetectMainImageColorAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Detect Main Image Color
-    ApiResponse<List<DetectMainImageColor200ResponseInner>> response = apiInstance.DetectMainImageColorWithHttpInfo(url);
+    // Detect Main Image Color API
+    ApiResponse<List<DetectMainImageColorAPI200ResponseInner>> response = apiInstance.DetectMainImageColorAPIWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MediaApi.DetectMainImageColorWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MediaApi.DetectMainImageColorAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -90,7 +91,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;DetectMainImageColor200ResponseInner&gt;**](DetectMainImageColor200ResponseInner.md)
+[**List&lt;DetectMainImageColorAPI200ResponseInner&gt;**](DetectMainImageColorAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -115,11 +116,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="rescaleimage"></a>
-# **RescaleImage**
-> System.IO.Stream RescaleImage (string url, int width, int height, bool crop)
+<a id="rescaleimageapi"></a>
+# **RescaleImageAPI**
+> System.IO.Stream RescaleImageAPI (string url, int width, int height, bool crop)
 
-Rescale Image
+Rescale Image API
 
 Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
 
@@ -133,7 +134,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RescaleImageExample
+    public class RescaleImageAPIExample
     {
         public static void Main()
         {
@@ -156,13 +157,13 @@ namespace Example
 
             try
             {
-                // Rescale Image
-                System.IO.Stream result = apiInstance.RescaleImage(url, width, height, crop);
+                // Rescale Image API
+                System.IO.Stream result = apiInstance.RescaleImageAPI(url, width, height, crop);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MediaApi.RescaleImage: " + e.Message);
+                Debug.Print("Exception when calling MediaApi.RescaleImageAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -171,21 +172,21 @@ namespace Example
 }
 ```
 
-#### Using the RescaleImageWithHttpInfo variant
+#### Using the RescaleImageAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Rescale Image
-    ApiResponse<System.IO.Stream> response = apiInstance.RescaleImageWithHttpInfo(url, width, height, crop);
+    // Rescale Image API
+    ApiResponse<System.IO.Stream> response = apiInstance.RescaleImageAPIWithHttpInfo(url, width, height, crop);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MediaApi.RescaleImageWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MediaApi.RescaleImageAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -227,11 +228,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchicons"></a>
-# **SearchIcons**
-> SearchIcons200Response SearchIcons (string query, bool? onlyPublicDomain = null, int? number = null)
+<a id="searchiconsapi"></a>
+# **SearchIconsAPI**
+> SearchIconsAPI200Response SearchIconsAPI (string query, bool? onlyPublicDomain = null, int? number = null)
 
-Search Icons
+Search Icons API
 
 Search through millions of icons to match any topic you want.
 
@@ -245,7 +246,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchIconsExample
+    public class SearchIconsAPIExample
     {
         public static void Main()
         {
@@ -267,13 +268,13 @@ namespace Example
 
             try
             {
-                // Search Icons
-                SearchIcons200Response result = apiInstance.SearchIcons(query, onlyPublicDomain, number);
+                // Search Icons API
+                SearchIconsAPI200Response result = apiInstance.SearchIconsAPI(query, onlyPublicDomain, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MediaApi.SearchIcons: " + e.Message);
+                Debug.Print("Exception when calling MediaApi.SearchIconsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -282,21 +283,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchIconsWithHttpInfo variant
+#### Using the SearchIconsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Icons
-    ApiResponse<SearchIcons200Response> response = apiInstance.SearchIconsWithHttpInfo(query, onlyPublicDomain, number);
+    // Search Icons API
+    ApiResponse<SearchIconsAPI200Response> response = apiInstance.SearchIconsAPIWithHttpInfo(query, onlyPublicDomain, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MediaApi.SearchIconsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MediaApi.SearchIconsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -312,7 +313,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchIcons200Response**](SearchIcons200Response.md)
+[**SearchIconsAPI200Response**](SearchIconsAPI200Response.md)
 
 ### Authorization
 
@@ -337,11 +338,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchroyaltyfreeimages"></a>
-# **SearchRoyaltyFreeImages**
-> SearchRoyaltyFreeImages200Response SearchRoyaltyFreeImages (string query, int? number = null)
+<a id="searchroyaltyfreeimagesapi"></a>
+# **SearchRoyaltyFreeImagesAPI**
+> SearchRoyaltyFreeImagesAPI200Response SearchRoyaltyFreeImagesAPI (string query, int? number = null)
 
-Search Royalty Free Images
+Search Royalty Free Images API
 
 Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
 
@@ -355,7 +356,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchRoyaltyFreeImagesExample
+    public class SearchRoyaltyFreeImagesAPIExample
     {
         public static void Main()
         {
@@ -376,13 +377,13 @@ namespace Example
 
             try
             {
-                // Search Royalty Free Images
-                SearchRoyaltyFreeImages200Response result = apiInstance.SearchRoyaltyFreeImages(query, number);
+                // Search Royalty Free Images API
+                SearchRoyaltyFreeImagesAPI200Response result = apiInstance.SearchRoyaltyFreeImagesAPI(query, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MediaApi.SearchRoyaltyFreeImages: " + e.Message);
+                Debug.Print("Exception when calling MediaApi.SearchRoyaltyFreeImagesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -391,21 +392,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchRoyaltyFreeImagesWithHttpInfo variant
+#### Using the SearchRoyaltyFreeImagesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Royalty Free Images
-    ApiResponse<SearchRoyaltyFreeImages200Response> response = apiInstance.SearchRoyaltyFreeImagesWithHttpInfo(query, number);
+    // Search Royalty Free Images API
+    ApiResponse<SearchRoyaltyFreeImagesAPI200Response> response = apiInstance.SearchRoyaltyFreeImagesAPIWithHttpInfo(query, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MediaApi.SearchRoyaltyFreeImagesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MediaApi.SearchRoyaltyFreeImagesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -420,7 +421,117 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
+[**SearchRoyaltyFreeImagesAPI200Response**](SearchRoyaltyFreeImagesAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="vectorsearchapi"></a>
+# **VectorSearchAPI**
+> VectorSearchAPI200Response VectorSearchAPI (string query, int? offset = null, int? number = null)
+
+Vector Search API
+
+Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class VectorSearchAPIExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new MediaApi(config);
+            var query = airplanes;  // string | The search query.
+            var offset = 0;  // int? | The number of vectors to skip, between 0 and 1000 (optional) 
+            var number = 3;  // int? | The number of vectors to return in range [1,10] (optional) 
+
+            try
+            {
+                // Vector Search API
+                VectorSearchAPI200Response result = apiInstance.VectorSearchAPI(query, offset, number);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MediaApi.VectorSearchAPI: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the VectorSearchAPIWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Vector Search API
+    ApiResponse<VectorSearchAPI200Response> response = apiInstance.VectorSearchAPIWithHttpInfo(query, offset, number);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MediaApi.VectorSearchAPIWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **query** | **string** | The search query. |  |
+| **offset** | **int?** | The number of vectors to skip, between 0 and 1000 | [optional]  |
+| **number** | **int?** | The number of vectors to return in range [1,10] | [optional]  |
+
+### Return type
+
+[**VectorSearchAPI200Response**](VectorSearchAPI200Response.md)
 
 ### Authorization
 

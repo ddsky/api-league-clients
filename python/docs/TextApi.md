@@ -4,25 +4,25 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**correct_spelling**](TextApi.md#correct_spelling) | **GET** /correct-spelling | Correct Spelling
-[**detect_gender_by_name**](TextApi.md#detect_gender_by_name) | **GET** /detect-gender | Detect Gender by Name
-[**detect_language**](TextApi.md#detect_language) | **GET** /detect-language | Detect Language
-[**detect_sentiment**](TextApi.md#detect_sentiment) | **GET** /detect-sentiment | Detect Sentiment
-[**extract_dates**](TextApi.md#extract_dates) | **GET** /extract-dates | Extract Dates
-[**extract_entities**](TextApi.md#extract_entities) | **GET** /extract-entities | Extract Entities
-[**list_word_synonyms**](TextApi.md#list_word_synonyms) | **GET** /list-synonyms | List Word Synonyms
-[**pluralize_word**](TextApi.md#pluralize_word) | **GET** /pluralize-word | Pluralize Word
-[**score_readability**](TextApi.md#score_readability) | **GET** /score-readability | Score Readability
-[**score_text**](TextApi.md#score_text) | **GET** /score-text | Score Text
-[**singularize_word**](TextApi.md#singularize_word) | **GET** /singularize-word | Singularize Word
-[**stem_text**](TextApi.md#stem_text) | **GET** /stem-text | Stem Text
-[**tag_part_of_speech**](TextApi.md#tag_part_of_speech) | **GET** /tag-pos | Tag Part of Speech
+[**correct_spelling_api**](TextApi.md#correct_spelling_api) | **GET** /correct-spelling | Correct Spelling API
+[**detect_gender_by_name_api**](TextApi.md#detect_gender_by_name_api) | **GET** /detect-gender | Detect Gender by Name API
+[**detect_language_api**](TextApi.md#detect_language_api) | **GET** /detect-language | Detect Language API
+[**detect_sentiment_api**](TextApi.md#detect_sentiment_api) | **GET** /detect-sentiment | Detect Sentiment API
+[**extract_dates_api**](TextApi.md#extract_dates_api) | **GET** /extract-dates | Extract Dates API
+[**extract_entities_api**](TextApi.md#extract_entities_api) | **GET** /extract-entities | Extract Entities API
+[**list_word_synonyms_api**](TextApi.md#list_word_synonyms_api) | **GET** /list-synonyms | List Word Synonyms API
+[**pluralize_word_api**](TextApi.md#pluralize_word_api) | **GET** /pluralize-word | Pluralize Word API
+[**score_readability_api**](TextApi.md#score_readability_api) | **GET** /score-readability | Score Readability API
+[**score_text_api**](TextApi.md#score_text_api) | **GET** /score-text | Score Text API
+[**singularize_word_api**](TextApi.md#singularize_word_api) | **GET** /singularize-word | Singularize Word API
+[**stem_text_api**](TextApi.md#stem_text_api) | **GET** /stem-text | Stem Text API
+[**tag_part_of_speech_api**](TextApi.md#tag_part_of_speech_api) | **GET** /tag-pos | Tag Part of Speech API
 
 
-# **correct_spelling**
-> CorrectSpelling200Response correct_spelling(text, language)
+# **correct_spelling_api**
+> CorrectSpellingAPI200Response correct_spelling_api(text, language)
 
-Correct Spelling
+Correct Spelling API
 
 The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
 
@@ -33,7 +33,7 @@ The API corrects spelling mistakes in a given text. It returns the corrected tex
 
 ```python
 import apileague
-from apileague.models.correct_spelling200_response import CorrectSpelling200Response
+from apileague.models.correct_spelling_api200_response import CorrectSpellingAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -68,12 +68,12 @@ with apileague.ApiClient(configuration) as api_client:
     language = 'en' # str | The language of the text, one of en, de, es, fr, or it.
 
     try:
-        # Correct Spelling
-        api_response = api_instance.correct_spelling(text, language)
-        print("The response of TextApi->correct_spelling:\n")
+        # Correct Spelling API
+        api_response = api_instance.correct_spelling_api(text, language)
+        print("The response of TextApi->correct_spelling_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->correct_spelling: %s\n" % e)
+        print("Exception when calling TextApi->correct_spelling_api: %s\n" % e)
 ```
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+[**CorrectSpellingAPI200Response**](CorrectSpellingAPI200Response.md)
 
 ### Authorization
 
@@ -113,10 +113,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detect_gender_by_name**
-> DetectGenderByName200Response detect_gender_by_name(name)
+# **detect_gender_by_name_api**
+> DetectGenderByNameAPI200Response detect_gender_by_name_api(name)
 
-Detect Gender by Name
+Detect Gender by Name API
 
 Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
 
@@ -127,7 +127,7 @@ Detect the likelihood that a name is given to a male or female (aka to \"genderi
 
 ```python
 import apileague
-from apileague.models.detect_gender_by_name200_response import DetectGenderByName200Response
+from apileague.models.detect_gender_by_name_api200_response import DetectGenderByNameAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -161,12 +161,12 @@ with apileague.ApiClient(configuration) as api_client:
     name = 'Alex' # str | The name of the perso for which the sentiment should be detected.
 
     try:
-        # Detect Gender by Name
-        api_response = api_instance.detect_gender_by_name(name)
-        print("The response of TextApi->detect_gender_by_name:\n")
+        # Detect Gender by Name API
+        api_response = api_instance.detect_gender_by_name_api(name)
+        print("The response of TextApi->detect_gender_by_name_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->detect_gender_by_name: %s\n" % e)
+        print("Exception when calling TextApi->detect_gender_by_name_api: %s\n" % e)
 ```
 
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+[**DetectGenderByNameAPI200Response**](DetectGenderByNameAPI200Response.md)
 
 ### Authorization
 
@@ -205,10 +205,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detect_language**
-> List[DetectLanguage200ResponseInner] detect_language(text)
+# **detect_language_api**
+> List[DetectLanguageAPI200ResponseInner] detect_language_api(text)
 
-Detect Language
+Detect Language API
 
 Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 
@@ -219,7 +219,7 @@ Detect the language of the given text. The API returns a list of languages and t
 
 ```python
 import apileague
-from apileague.models.detect_language200_response_inner import DetectLanguage200ResponseInner
+from apileague.models.detect_language_api200_response_inner import DetectLanguageAPI200ResponseInner
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -253,12 +253,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'Das ist ein Text.' # str | The text for which the language should be detected.
 
     try:
-        # Detect Language
-        api_response = api_instance.detect_language(text)
-        print("The response of TextApi->detect_language:\n")
+        # Detect Language API
+        api_response = api_instance.detect_language_api(text)
+        print("The response of TextApi->detect_language_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->detect_language: %s\n" % e)
+        print("Exception when calling TextApi->detect_language_api: %s\n" % e)
 ```
 
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[DetectLanguage200ResponseInner]**](DetectLanguage200ResponseInner.md)
+[**List[DetectLanguageAPI200ResponseInner]**](DetectLanguageAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -297,10 +297,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detect_sentiment**
-> DetectSentiment200Response detect_sentiment(text)
+# **detect_sentiment_api**
+> DetectSentimentAPI200Response detect_sentiment_api(text)
 
-Detect Sentiment
+Detect Sentiment API
 
 Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
 
@@ -311,7 +311,7 @@ Detect the sentiment (positive or negative) of a given text. The entire document
 
 ```python
 import apileague
-from apileague.models.detect_sentiment200_response import DetectSentiment200Response
+from apileague.models.detect_sentiment_api200_response import DetectSentimentAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -345,12 +345,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'Happy times feel so good.' # str | The text for which the sentiment should be detected.
 
     try:
-        # Detect Sentiment
-        api_response = api_instance.detect_sentiment(text)
-        print("The response of TextApi->detect_sentiment:\n")
+        # Detect Sentiment API
+        api_response = api_instance.detect_sentiment_api(text)
+        print("The response of TextApi->detect_sentiment_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->detect_sentiment: %s\n" % e)
+        print("Exception when calling TextApi->detect_sentiment_api: %s\n" % e)
 ```
 
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DetectSentiment200Response**](DetectSentiment200Response.md)
+[**DetectSentimentAPI200Response**](DetectSentimentAPI200Response.md)
 
 ### Authorization
 
@@ -389,10 +389,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extract_dates**
-> ExtractDates200Response extract_dates(text)
+# **extract_dates_api**
+> ExtractDatesAPI200Response extract_dates_api(text)
 
-Extract Dates
+Extract Dates API
 
 Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 
@@ -403,7 +403,7 @@ Extract dates from a given text. The API will return a list of dates with their 
 
 ```python
 import apileague
-from apileague.models.extract_dates200_response import ExtractDates200Response
+from apileague.models.extract_dates_api200_response import ExtractDatesAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -437,12 +437,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'On 5th or April, 2035 there will be flying cars - 2023-02-12.' # str | The text from which dates should be extracted.
 
     try:
-        # Extract Dates
-        api_response = api_instance.extract_dates(text)
-        print("The response of TextApi->extract_dates:\n")
+        # Extract Dates API
+        api_response = api_instance.extract_dates_api(text)
+        print("The response of TextApi->extract_dates_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->extract_dates: %s\n" % e)
+        print("Exception when calling TextApi->extract_dates_api: %s\n" % e)
 ```
 
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractDates200Response**](ExtractDates200Response.md)
+[**ExtractDatesAPI200Response**](ExtractDatesAPI200Response.md)
 
 ### Authorization
 
@@ -481,10 +481,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extract_entities**
-> ExtractEntities200Response extract_entities(text)
+# **extract_entities_api**
+> ExtractEntitiesAPI200Response extract_entities_api(text)
 
-Extract Entities
+Extract Entities API
 
 Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
 
@@ -495,7 +495,7 @@ Extract entities from a text. An entity is a word or a group of words that repre
 
 ```python
 import apileague
-from apileague.models.extract_entities200_response import ExtractEntities200Response
+from apileague.models.extract_entities_api200_response import ExtractEntitiesAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -529,12 +529,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'Jim Carrey is an actor from Canada' # str | The text from which entities should be extracted.
 
     try:
-        # Extract Entities
-        api_response = api_instance.extract_entities(text)
-        print("The response of TextApi->extract_entities:\n")
+        # Extract Entities API
+        api_response = api_instance.extract_entities_api(text)
+        print("The response of TextApi->extract_entities_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->extract_entities: %s\n" % e)
+        print("Exception when calling TextApi->extract_entities_api: %s\n" % e)
 ```
 
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractEntities200Response**](ExtractEntities200Response.md)
+[**ExtractEntitiesAPI200Response**](ExtractEntitiesAPI200Response.md)
 
 ### Authorization
 
@@ -573,10 +573,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_word_synonyms**
-> ListWordSynonyms200Response list_word_synonyms(word)
+# **list_word_synonyms_api**
+> ListWordSynonymsAPI200Response list_word_synonyms_api(word)
 
-List Word Synonyms
+List Word Synonyms API
 
 Return synonyms of a word.
 
@@ -587,7 +587,7 @@ Return synonyms of a word.
 
 ```python
 import apileague
-from apileague.models.list_word_synonyms200_response import ListWordSynonyms200Response
+from apileague.models.list_word_synonyms_api200_response import ListWordSynonymsAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -621,12 +621,12 @@ with apileague.ApiClient(configuration) as api_client:
     word = 'airplane' # str | The (noun) word for which a list of synonyms should be returned.
 
     try:
-        # List Word Synonyms
-        api_response = api_instance.list_word_synonyms(word)
-        print("The response of TextApi->list_word_synonyms:\n")
+        # List Word Synonyms API
+        api_response = api_instance.list_word_synonyms_api(word)
+        print("The response of TextApi->list_word_synonyms_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->list_word_synonyms: %s\n" % e)
+        print("Exception when calling TextApi->list_word_synonyms_api: %s\n" % e)
 ```
 
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
+[**ListWordSynonymsAPI200Response**](ListWordSynonymsAPI200Response.md)
 
 ### Authorization
 
@@ -665,10 +665,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **pluralize_word**
-> PluralizeWord200Response pluralize_word(word)
+# **pluralize_word_api**
+> PluralizeWordAPI200Response pluralize_word_api(word)
 
-Pluralize Word
+Pluralize Word API
 
 Find the plural form of a word.
 
@@ -679,7 +679,7 @@ Find the plural form of a word.
 
 ```python
 import apileague
-from apileague.models.pluralize_word200_response import PluralizeWord200Response
+from apileague.models.pluralize_word_api200_response import PluralizeWordAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -713,12 +713,12 @@ with apileague.ApiClient(configuration) as api_client:
     word = 'party' # str | The (noun) word for which the plural form should be found.
 
     try:
-        # Pluralize Word
-        api_response = api_instance.pluralize_word(word)
-        print("The response of TextApi->pluralize_word:\n")
+        # Pluralize Word API
+        api_response = api_instance.pluralize_word_api(word)
+        print("The response of TextApi->pluralize_word_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->pluralize_word: %s\n" % e)
+        print("Exception when calling TextApi->pluralize_word_api: %s\n" % e)
 ```
 
 
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PluralizeWord200Response**](PluralizeWord200Response.md)
+[**PluralizeWordAPI200Response**](PluralizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -757,10 +757,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **score_readability**
-> ScoreReadability200Response score_readability(text)
+# **score_readability_api**
+> ScoreReadabilityAPI200Response score_readability_api(text)
 
-Score Readability
+Score Readability API
 
 Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
 
@@ -771,7 +771,7 @@ Score the readability of a text. The readability score is based on the average l
 
 ```python
 import apileague
-from apileague.models.score_readability200_response import ScoreReadability200Response
+from apileague.models.score_readability_api200_response import ScoreReadabilityAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -805,12 +805,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'A rather complex text, hard to read, and highly convoluted using acronym TERMS.' # str | The text to score for readability.
 
     try:
-        # Score Readability
-        api_response = api_instance.score_readability(text)
-        print("The response of TextApi->score_readability:\n")
+        # Score Readability API
+        api_response = api_instance.score_readability_api(text)
+        print("The response of TextApi->score_readability_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->score_readability: %s\n" % e)
+        print("Exception when calling TextApi->score_readability_api: %s\n" % e)
 ```
 
 
@@ -824,7 +824,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ScoreReadability200Response**](ScoreReadability200Response.md)
+[**ScoreReadabilityAPI200Response**](ScoreReadabilityAPI200Response.md)
 
 ### Authorization
 
@@ -849,10 +849,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **score_text**
-> ScoreText200Response score_text(title, text)
+# **score_text_api**
+> ScoreTextAPI200Response score_text_api(title, text)
 
-Score Text
+Score Text API
 
 Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
 
@@ -863,7 +863,7 @@ Score the readability, skimmability, interestingness, and style of a text. The r
 
 ```python
 import apileague
-from apileague.models.score_text200_response import ScoreText200Response
+from apileague.models.score_text_api200_response import ScoreTextAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -898,12 +898,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'A nice short story to be analyzed' # str | The text to score for multiple metrics.
 
     try:
-        # Score Text
-        api_response = api_instance.score_text(title, text)
-        print("The response of TextApi->score_text:\n")
+        # Score Text API
+        api_response = api_instance.score_text_api(title, text)
+        print("The response of TextApi->score_text_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->score_text: %s\n" % e)
+        print("Exception when calling TextApi->score_text_api: %s\n" % e)
 ```
 
 
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ScoreText200Response**](ScoreText200Response.md)
+[**ScoreTextAPI200Response**](ScoreTextAPI200Response.md)
 
 ### Authorization
 
@@ -943,10 +943,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **singularize_word**
-> SingularizeWord200Response singularize_word(word)
+# **singularize_word_api**
+> SingularizeWordAPI200Response singularize_word_api(word)
 
-Singularize Word
+Singularize Word API
 
 Find the singular form of a word.
 
@@ -957,7 +957,7 @@ Find the singular form of a word.
 
 ```python
 import apileague
-from apileague.models.singularize_word200_response import SingularizeWord200Response
+from apileague.models.singularize_word_api200_response import SingularizeWordAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -991,12 +991,12 @@ with apileague.ApiClient(configuration) as api_client:
     word = 'airplanes' # str | The (noun) word for which the singular form should be found.
 
     try:
-        # Singularize Word
-        api_response = api_instance.singularize_word(word)
-        print("The response of TextApi->singularize_word:\n")
+        # Singularize Word API
+        api_response = api_instance.singularize_word_api(word)
+        print("The response of TextApi->singularize_word_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->singularize_word: %s\n" % e)
+        print("Exception when calling TextApi->singularize_word_api: %s\n" % e)
 ```
 
 
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SingularizeWord200Response**](SingularizeWord200Response.md)
+[**SingularizeWordAPI200Response**](SingularizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -1035,10 +1035,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **stem_text**
-> StemText200Response stem_text(text)
+# **stem_text_api**
+> StemTextAPI200Response stem_text_api(text)
 
-Stem Text
+Stem Text API
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -1049,7 +1049,7 @@ The Text Stemming API is used to get the root form of a word. It is useful for s
 
 ```python
 import apileague
-from apileague.models.stem_text200_response import StemText200Response
+from apileague.models.stem_text_api200_response import StemTextAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -1083,12 +1083,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'The laziest dogs are jumping over the quicker brown foxes.' # str | The text to be stemmed.
 
     try:
-        # Stem Text
-        api_response = api_instance.stem_text(text)
-        print("The response of TextApi->stem_text:\n")
+        # Stem Text API
+        api_response = api_instance.stem_text_api(text)
+        print("The response of TextApi->stem_text_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->stem_text: %s\n" % e)
+        print("Exception when calling TextApi->stem_text_api: %s\n" % e)
 ```
 
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StemText200Response**](StemText200Response.md)
+[**StemTextAPI200Response**](StemTextAPI200Response.md)
 
 ### Authorization
 
@@ -1127,10 +1127,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tag_part_of_speech**
-> TagPartOfSpeech200Response tag_part_of_speech(text)
+# **tag_part_of_speech_api**
+> TagPartOfSpeechAPI200Response tag_part_of_speech_api(text)
 
-Tag Part of Speech
+Tag Part of Speech API
 
 Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
 
@@ -1141,7 +1141,7 @@ Part of speech tagging is the process of marking up a word in a text as correspo
 
 ```python
 import apileague
-from apileague.models.tag_part_of_speech200_response import TagPartOfSpeech200Response
+from apileague.models.tag_part_of_speech_api200_response import TagPartOfSpeechAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -1175,12 +1175,12 @@ with apileague.ApiClient(configuration) as api_client:
     text = 'The lazy dog jumps over the quick brown fox.' # str | The text to tag the part of speech.
 
     try:
-        # Tag Part of Speech
-        api_response = api_instance.tag_part_of_speech(text)
-        print("The response of TextApi->tag_part_of_speech:\n")
+        # Tag Part of Speech API
+        api_response = api_instance.tag_part_of_speech_api(text)
+        print("The response of TextApi->tag_part_of_speech_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TextApi->tag_part_of_speech: %s\n" % e)
+        print("Exception when calling TextApi->tag_part_of_speech_api: %s\n" % e)
 ```
 
 
@@ -1194,7 +1194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
+[**TagPartOfSpeechAPI200Response**](TagPartOfSpeechAPI200Response.md)
 
 ### Authorization
 

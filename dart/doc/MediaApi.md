@@ -9,16 +9,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**detectMainImageColor**](MediaApi.md#detectmainimagecolor) | **GET** /detect-color | Detect Main Image Color
-[**rescaleImage**](MediaApi.md#rescaleimage) | **GET** /rescale-image | Rescale Image
-[**searchIcons**](MediaApi.md#searchicons) | **GET** /search-icons | Search Icons
-[**searchRoyaltyFreeImages**](MediaApi.md#searchroyaltyfreeimages) | **GET** /search-images | Search Royalty Free Images
+[**detectMainImageColorAPI**](MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API
+[**rescaleImageAPI**](MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API
+[**searchIconsAPI**](MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API
+[**searchRoyaltyFreeImagesAPI**](MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API
+[**vectorSearchAPI**](MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API
 
 
-# **detectMainImageColor**
-> List<DetectMainImageColor200ResponseInner> detectMainImageColor(url)
+# **detectMainImageColorAPI**
+> List<DetectMainImageColorAPI200ResponseInner> detectMainImageColorAPI(url)
 
-Detect Main Image Color
+Detect Main Image Color API
 
 Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
 
@@ -38,10 +39,10 @@ final api_instance = MediaApi();
 final url = https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM ; // String | The url of the image for which the colors should be detected.
 
 try {
-    final result = api_instance.detectMainImageColor(url);
+    final result = api_instance.detectMainImageColorAPI(url);
     print(result);
 } catch (e) {
-    print('Exception when calling MediaApi->detectMainImageColor: $e\n');
+    print('Exception when calling MediaApi->detectMainImageColorAPI: $e\n');
 }
 ```
 
@@ -53,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<DetectMainImageColor200ResponseInner>**](DetectMainImageColor200ResponseInner.md)
+[**List<DetectMainImageColorAPI200ResponseInner>**](DetectMainImageColorAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -66,10 +67,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **rescaleImage**
-> MultipartFile rescaleImage(url, width, height, crop)
+# **rescaleImageAPI**
+> MultipartFile rescaleImageAPI(url, width, height, crop)
 
-Rescale Image
+Rescale Image API
 
 Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
 
@@ -92,10 +93,10 @@ final height = 200; // int | The desired height of the rescaled image.
 final crop = true; // bool | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
 
 try {
-    final result = api_instance.rescaleImage(url, width, height, crop);
+    final result = api_instance.rescaleImageAPI(url, width, height, crop);
     print(result);
 } catch (e) {
-    print('Exception when calling MediaApi->rescaleImage: $e\n');
+    print('Exception when calling MediaApi->rescaleImageAPI: $e\n');
 }
 ```
 
@@ -123,10 +124,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchIcons**
-> SearchIcons200Response searchIcons(query, onlyPublicDomain, number)
+# **searchIconsAPI**
+> SearchIconsAPI200Response searchIconsAPI(query, onlyPublicDomain, number)
 
-Search Icons
+Search Icons API
 
 Search through millions of icons to match any topic you want.
 
@@ -148,10 +149,10 @@ final onlyPublicDomain = true; // bool | If true, only public domain icons will 
 final number = 3; // int | The number of icons to return in range [1,100]
 
 try {
-    final result = api_instance.searchIcons(query, onlyPublicDomain, number);
+    final result = api_instance.searchIconsAPI(query, onlyPublicDomain, number);
     print(result);
 } catch (e) {
-    print('Exception when calling MediaApi->searchIcons: $e\n');
+    print('Exception when calling MediaApi->searchIconsAPI: $e\n');
 }
 ```
 
@@ -165,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchIcons200Response**](SearchIcons200Response.md)
+[**SearchIconsAPI200Response**](SearchIconsAPI200Response.md)
 
 ### Authorization
 
@@ -178,10 +179,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchRoyaltyFreeImages**
-> SearchRoyaltyFreeImages200Response searchRoyaltyFreeImages(query, number)
+# **searchRoyaltyFreeImagesAPI**
+> SearchRoyaltyFreeImagesAPI200Response searchRoyaltyFreeImagesAPI(query, number)
 
-Search Royalty Free Images
+Search Royalty Free Images API
 
 Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
 
@@ -202,10 +203,10 @@ final query = dogs; // String | The search query.
 final number = 3; // int | The number of images to return in range [1,100]
 
 try {
-    final result = api_instance.searchRoyaltyFreeImages(query, number);
+    final result = api_instance.searchRoyaltyFreeImagesAPI(query, number);
     print(result);
 } catch (e) {
-    print('Exception when calling MediaApi->searchRoyaltyFreeImages: $e\n');
+    print('Exception when calling MediaApi->searchRoyaltyFreeImagesAPI: $e\n');
 }
 ```
 
@@ -218,7 +219,62 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
+[**SearchRoyaltyFreeImagesAPI200Response**](SearchRoyaltyFreeImagesAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **vectorSearchAPI**
+> VectorSearchAPI200Response vectorSearchAPI(query, offset, number)
+
+Vector Search API
+
+Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = MediaApi();
+final query = airplanes; // String | The search query.
+final offset = 0; // int | The number of vectors to skip, between 0 and 1000
+final number = 3; // int | The number of vectors to return in range [1,10]
+
+try {
+    final result = api_instance.vectorSearchAPI(query, offset, number);
+    print(result);
+} catch (e) {
+    print('Exception when calling MediaApi->vectorSearchAPI: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The search query. | 
+ **offset** | **int**| The number of vectors to skip, between 0 and 1000 | [optional] 
+ **number** | **int**| The number of vectors to return in range [1,10] | [optional] 
+
+### Return type
+
+[**VectorSearchAPI200Response**](VectorSearchAPI200Response.md)
 
 ### Authorization
 

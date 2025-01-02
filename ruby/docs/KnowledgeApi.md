@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**random_quote**](KnowledgeApi.md#random_quote) | **GET** /retrieve-random-quote | Random Quote |
-| [**random_riddle**](KnowledgeApi.md#random_riddle) | **GET** /retrieve-random-riddle | Random Riddle |
-| [**random_trivia**](KnowledgeApi.md#random_trivia) | **GET** /retrieve-random-trivia | Random Trivia |
+| [**random_quote_api**](KnowledgeApi.md#random_quote_api) | **GET** /retrieve-random-quote | Random Quote API |
+| [**random_riddle_api**](KnowledgeApi.md#random_riddle_api) | **GET** /retrieve-random-riddle | Random Riddle API |
+| [**random_trivia_api**](KnowledgeApi.md#random_trivia_api) | **GET** /retrieve-random-trivia | Random Trivia API |
 
 
-## random_quote
+## random_quote_api
 
-> <RandomQuote200Response> random_quote(opts)
+> <RandomQuoteAPI200Response> random_quote_api(opts)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -42,29 +42,29 @@ opts = {
 }
 
 begin
-  # Random Quote
-  result = api_instance.random_quote(opts)
+  # Random Quote API
+  result = api_instance.random_quote_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_quote: #{e}"
+  puts "Error when calling KnowledgeApi->random_quote_api: #{e}"
 end
 ```
 
-#### Using the random_quote_with_http_info variant
+#### Using the random_quote_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RandomQuote200Response>, Integer, Hash)> random_quote_with_http_info(opts)
+> <Array(<RandomQuoteAPI200Response>, Integer, Hash)> random_quote_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Quote
-  data, status_code, headers = api_instance.random_quote_with_http_info(opts)
+  # Random Quote API
+  data, status_code, headers = api_instance.random_quote_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RandomQuote200Response>
+  p data # => <RandomQuoteAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_quote_with_http_info: #{e}"
+  puts "Error when calling KnowledgeApi->random_quote_api_with_http_info: #{e}"
 end
 ```
 
@@ -77,7 +77,7 @@ end
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -89,11 +89,11 @@ end
 - **Accept**: application/json
 
 
-## random_riddle
+## random_riddle_api
 
-> <RandomRiddle200Response> random_riddle(opts)
+> <RandomRiddleAPI200Response> random_riddle_api(opts)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -121,29 +121,29 @@ opts = {
 }
 
 begin
-  # Random Riddle
-  result = api_instance.random_riddle(opts)
+  # Random Riddle API
+  result = api_instance.random_riddle_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_riddle: #{e}"
+  puts "Error when calling KnowledgeApi->random_riddle_api: #{e}"
 end
 ```
 
-#### Using the random_riddle_with_http_info variant
+#### Using the random_riddle_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RandomRiddle200Response>, Integer, Hash)> random_riddle_with_http_info(opts)
+> <Array(<RandomRiddleAPI200Response>, Integer, Hash)> random_riddle_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Riddle
-  data, status_code, headers = api_instance.random_riddle_with_http_info(opts)
+  # Random Riddle API
+  data, status_code, headers = api_instance.random_riddle_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RandomRiddle200Response>
+  p data # => <RandomRiddleAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_riddle_with_http_info: #{e}"
+  puts "Error when calling KnowledgeApi->random_riddle_api_with_http_info: #{e}"
 end
 ```
 
@@ -155,7 +155,7 @@ end
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -167,13 +167,13 @@ end
 - **Accept**: application/json
 
 
-## random_trivia
+## random_trivia_api
 
-> <RandomTrivia200Response> random_trivia(opts)
+> <RandomTriviaAPI200Response> random_trivia_api(opts)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Examples
 
@@ -199,29 +199,29 @@ opts = {
 }
 
 begin
-  # Random Trivia
-  result = api_instance.random_trivia(opts)
+  # Random Trivia API
+  result = api_instance.random_trivia_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_trivia: #{e}"
+  puts "Error when calling KnowledgeApi->random_trivia_api: #{e}"
 end
 ```
 
-#### Using the random_trivia_with_http_info variant
+#### Using the random_trivia_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RandomTrivia200Response>, Integer, Hash)> random_trivia_with_http_info(opts)
+> <Array(<RandomTriviaAPI200Response>, Integer, Hash)> random_trivia_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Trivia
-  data, status_code, headers = api_instance.random_trivia_with_http_info(opts)
+  # Random Trivia API
+  data, status_code, headers = api_instance.random_trivia_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RandomTrivia200Response>
+  p data # => <RandomTriviaAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling KnowledgeApi->random_trivia_with_http_info: #{e}"
+  puts "Error when calling KnowledgeApi->random_trivia_api_with_http_info: #{e}"
 end
 ```
 
@@ -233,7 +233,7 @@ end
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

@@ -19,50 +19,61 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.MediaApi
-import com.apileague.client.model.DetectMainImageColor200ResponseInner
-import com.apileague.client.model.SearchIcons200Response
-import com.apileague.client.model.SearchRoyaltyFreeImages200Response
+import com.apileague.client.model.DetectMainImageColorAPI200ResponseInner
+import com.apileague.client.model.SearchIconsAPI200Response
+import com.apileague.client.model.SearchRoyaltyFreeImagesAPI200Response
+import com.apileague.client.model.VectorSearchAPI200Response
 
 class MediaApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of MediaApi
         //val apiInstance = MediaApi()
 
-        // to test detectMainImageColor
-        should("test detectMainImageColor") {
-            // uncomment below to test detectMainImageColor
+        // to test detectMainImageColorAPI
+        should("test detectMainImageColorAPI") {
+            // uncomment below to test detectMainImageColorAPI
             //val url : kotlin.String = https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM  // kotlin.String | The url of the image for which the colors should be detected.
-            //val result : kotlin.collections.List<DetectMainImageColor200ResponseInner> = apiInstance.detectMainImageColor(url)
+            //val result : kotlin.collections.List<DetectMainImageColorAPI200ResponseInner> = apiInstance.detectMainImageColorAPI(url)
             //result shouldBe ("TODO")
         }
 
-        // to test rescaleImage
-        should("test rescaleImage") {
-            // uncomment below to test rescaleImage
+        // to test rescaleImageAPI
+        should("test rescaleImageAPI") {
+            // uncomment below to test rescaleImageAPI
             //val url : kotlin.String = https://fastly.picsum.photos/id/63/5000/2813.jpg?hmac=HvaeSK6WT-G9bYF_CyB2m1ARQirL8UMnygdU9W6PDvM  // kotlin.String | The url of the image to be rescaled.
             //val width : kotlin.Int = 200 // kotlin.Int | The desired width of the rescaled image.
             //val height : kotlin.Int = 200 // kotlin.Int | The desired height of the rescaled image.
             //val crop : kotlin.Boolean = true // kotlin.Boolean | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-            //val result : java.io.File = apiInstance.rescaleImage(url, width, height, crop)
+            //val result : java.io.File = apiInstance.rescaleImageAPI(url, width, height, crop)
             //result shouldBe ("TODO")
         }
 
-        // to test searchIcons
-        should("test searchIcons") {
-            // uncomment below to test searchIcons
+        // to test searchIconsAPI
+        should("test searchIconsAPI") {
+            // uncomment below to test searchIconsAPI
             //val query : kotlin.String = cars // kotlin.String | The search query.
             //val onlyPublicDomain : kotlin.Boolean = true // kotlin.Boolean | If true, only public domain icons will be returned.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of icons to return in range [1,100]
-            //val result : SearchIcons200Response = apiInstance.searchIcons(query, onlyPublicDomain, number)
+            //val result : SearchIconsAPI200Response = apiInstance.searchIconsAPI(query, onlyPublicDomain, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchRoyaltyFreeImages
-        should("test searchRoyaltyFreeImages") {
-            // uncomment below to test searchRoyaltyFreeImages
+        // to test searchRoyaltyFreeImagesAPI
+        should("test searchRoyaltyFreeImagesAPI") {
+            // uncomment below to test searchRoyaltyFreeImagesAPI
             //val query : kotlin.String = dogs // kotlin.String | The search query.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of images to return in range [1,100]
-            //val result : SearchRoyaltyFreeImages200Response = apiInstance.searchRoyaltyFreeImages(query, number)
+            //val result : SearchRoyaltyFreeImagesAPI200Response = apiInstance.searchRoyaltyFreeImagesAPI(query, number)
+            //result shouldBe ("TODO")
+        }
+
+        // to test vectorSearchAPI
+        should("test vectorSearchAPI") {
+            // uncomment below to test vectorSearchAPI
+            //val query : kotlin.String = airplanes // kotlin.String | The search query.
+            //val offset : kotlin.Int = 0 // kotlin.Int | The number of vectors to skip, between 0 and 1000
+            //val number : kotlin.Int = 3 // kotlin.Int | The number of vectors to return in range [1,10]
+            //val result : VectorSearchAPI200Response = apiInstance.vectorSearchAPI(query, offset, number)
             //result shouldBe ("TODO")
         }
 

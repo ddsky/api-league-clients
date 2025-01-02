@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ReadKeyValueFromStore**](StorageApi.md#readkeyvaluefromstore) | **GET** /read-key-value | Read Key Value from Store |
-| [**StoreKeyValueGET**](StorageApi.md#storekeyvalueget) | **GET** /store-key-value | Store Key Value (GET) |
+| [**ReadKeyValueFromStoreAPI**](StorageApi.md#readkeyvaluefromstoreapi) | **GET** /read-key-value | Read Key Value from Store API |
+| [**StoreKeyValueGETAPI**](StorageApi.md#storekeyvaluegetapi) | **GET** /store-key-value | Store Key Value (GET) API |
 
-<a id="readkeyvaluefromstore"></a>
-# **ReadKeyValueFromStore**
-> ReadKeyValueFromStore200Response ReadKeyValueFromStore (string key)
+<a id="readkeyvaluefromstoreapi"></a>
+# **ReadKeyValueFromStoreAPI**
+> ReadKeyValueFromStoreAPI200Response ReadKeyValueFromStoreAPI (string key)
 
-Read Key Value from Store
+Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -25,7 +25,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ReadKeyValueFromStoreExample
+    public class ReadKeyValueFromStoreAPIExample
     {
         public static void Main()
         {
@@ -45,13 +45,13 @@ namespace Example
 
             try
             {
-                // Read Key Value from Store
-                ReadKeyValueFromStore200Response result = apiInstance.ReadKeyValueFromStore(key);
+                // Read Key Value from Store API
+                ReadKeyValueFromStoreAPI200Response result = apiInstance.ReadKeyValueFromStoreAPI(key);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling StorageApi.ReadKeyValueFromStore: " + e.Message);
+                Debug.Print("Exception when calling StorageApi.ReadKeyValueFromStoreAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,21 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the ReadKeyValueFromStoreWithHttpInfo variant
+#### Using the ReadKeyValueFromStoreAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Read Key Value from Store
-    ApiResponse<ReadKeyValueFromStore200Response> response = apiInstance.ReadKeyValueFromStoreWithHttpInfo(key);
+    // Read Key Value from Store API
+    ApiResponse<ReadKeyValueFromStoreAPI200Response> response = apiInstance.ReadKeyValueFromStoreAPIWithHttpInfo(key);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling StorageApi.ReadKeyValueFromStoreWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling StorageApi.ReadKeyValueFromStoreAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -88,7 +88,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
+[**ReadKeyValueFromStoreAPI200Response**](ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -113,11 +113,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="storekeyvalueget"></a>
-# **StoreKeyValueGET**
-> StoreKeyValueGET200Response StoreKeyValueGET (string key, string value)
+<a id="storekeyvaluegetapi"></a>
+# **StoreKeyValueGETAPI**
+> StoreKeyValueGETAPI200Response StoreKeyValueGETAPI (string key, string value)
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -131,7 +131,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class StoreKeyValueGETExample
+    public class StoreKeyValueGETAPIExample
     {
         public static void Main()
         {
@@ -152,13 +152,13 @@ namespace Example
 
             try
             {
-                // Store Key Value (GET)
-                StoreKeyValueGET200Response result = apiInstance.StoreKeyValueGET(key, value);
+                // Store Key Value (GET) API
+                StoreKeyValueGETAPI200Response result = apiInstance.StoreKeyValueGETAPI(key, value);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling StorageApi.StoreKeyValueGET: " + e.Message);
+                Debug.Print("Exception when calling StorageApi.StoreKeyValueGETAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -167,21 +167,21 @@ namespace Example
 }
 ```
 
-#### Using the StoreKeyValueGETWithHttpInfo variant
+#### Using the StoreKeyValueGETAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Store Key Value (GET)
-    ApiResponse<StoreKeyValueGET200Response> response = apiInstance.StoreKeyValueGETWithHttpInfo(key, value);
+    // Store Key Value (GET) API
+    ApiResponse<StoreKeyValueGETAPI200Response> response = apiInstance.StoreKeyValueGETAPIWithHttpInfo(key, value);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling StorageApi.StoreKeyValueGETWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling StorageApi.StoreKeyValueGETAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -196,7 +196,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
+[**StoreKeyValueGETAPI200Response**](StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

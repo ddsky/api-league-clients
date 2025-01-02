@@ -22,11 +22,11 @@ func Test_apileague_KnowledgeAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test KnowledgeAPIService RandomQuote", func(t *testing.T) {
+	t.Run("Test KnowledgeAPIService RandomQuoteAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.KnowledgeAPI.RandomQuote(context.Background()).Execute()
+		resp, httpRes, err := apiClient.KnowledgeAPI.RandomQuoteAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_KnowledgeAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test KnowledgeAPIService RandomRiddle", func(t *testing.T) {
+	t.Run("Test KnowledgeAPIService RandomRiddleAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.KnowledgeAPI.RandomRiddle(context.Background()).Execute()
+		resp, httpRes, err := apiClient.KnowledgeAPI.RandomRiddleAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_KnowledgeAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test KnowledgeAPIService RandomTrivia", func(t *testing.T) {
+	t.Run("Test KnowledgeAPIService RandomTriviaAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.KnowledgeAPI.RandomTrivia(context.Background()).Execute()
+		resp, httpRes, err := apiClient.KnowledgeAPI.RandomTriviaAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

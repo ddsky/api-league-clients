@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // FoodAPIService FoodAPI service
 type FoodAPIService service
 
-type ApiComputeNutritionRequest struct {
+type ApiComputeNutritionAPIRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
 	ingredients *string
@@ -32,53 +32,53 @@ type ApiComputeNutritionRequest struct {
 }
 
 // A comma-separated list of the ingredients of the recipe.
-func (r ApiComputeNutritionRequest) Ingredients(ingredients string) ApiComputeNutritionRequest {
+func (r ApiComputeNutritionAPIRequest) Ingredients(ingredients string) ApiComputeNutritionAPIRequest {
 	r.ingredients = &ingredients
 	return r
 }
 
 // The number of servings the ingredients make. Nutrition is computed per serving.
-func (r ApiComputeNutritionRequest) Servings(servings int32) ApiComputeNutritionRequest {
+func (r ApiComputeNutritionAPIRequest) Servings(servings int32) ApiComputeNutritionAPIRequest {
 	r.servings = &servings
 	return r
 }
 
 // If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
-func (r ApiComputeNutritionRequest) ReduceOils(reduceOils bool) ApiComputeNutritionRequest {
+func (r ApiComputeNutritionAPIRequest) ReduceOils(reduceOils bool) ApiComputeNutritionAPIRequest {
 	r.reduceOils = &reduceOils
 	return r
 }
 
-func (r ApiComputeNutritionRequest) Execute() (*ComputeNutrition200Response, *http.Response, error) {
-	return r.ApiService.ComputeNutritionExecute(r)
+func (r ApiComputeNutritionAPIRequest) Execute() (*ComputeNutritionAPI200Response, *http.Response, error) {
+	return r.ApiService.ComputeNutritionAPIExecute(r)
 }
 
 /*
-ComputeNutrition Compute Nutrition
+ComputeNutritionAPI Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiComputeNutritionRequest
+ @return ApiComputeNutritionAPIRequest
 */
-func (a *FoodAPIService) ComputeNutrition(ctx context.Context) ApiComputeNutritionRequest {
-	return ApiComputeNutritionRequest{
+func (a *FoodAPIService) ComputeNutritionAPI(ctx context.Context) ApiComputeNutritionAPIRequest {
+	return ApiComputeNutritionAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ComputeNutrition200Response
-func (a *FoodAPIService) ComputeNutritionExecute(r ApiComputeNutritionRequest) (*ComputeNutrition200Response, *http.Response, error) {
+//  @return ComputeNutritionAPI200Response
+func (a *FoodAPIService) ComputeNutritionAPIExecute(r ApiComputeNutritionAPIRequest) (*ComputeNutritionAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ComputeNutrition200Response
+		localVarReturnValue  *ComputeNutritionAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.ComputeNutrition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.ComputeNutritionAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -184,7 +184,7 @@ func (a *FoodAPIService) ComputeNutritionExecute(r ApiComputeNutritionRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRetrieveRecipeInformationRequest struct {
+type ApiRetrieveRecipeInformationAPIRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
 	id *int32
@@ -192,47 +192,47 @@ type ApiRetrieveRecipeInformationRequest struct {
 }
 
 // The id of the recipe to retrieve.
-func (r ApiRetrieveRecipeInformationRequest) Id(id int32) ApiRetrieveRecipeInformationRequest {
+func (r ApiRetrieveRecipeInformationAPIRequest) Id(id int32) ApiRetrieveRecipeInformationAPIRequest {
 	r.id = &id
 	return r
 }
 
 // Whether to pair a wine to the recipe.
-func (r ApiRetrieveRecipeInformationRequest) AddWinePairing(addWinePairing bool) ApiRetrieveRecipeInformationRequest {
+func (r ApiRetrieveRecipeInformationAPIRequest) AddWinePairing(addWinePairing bool) ApiRetrieveRecipeInformationAPIRequest {
 	r.addWinePairing = &addWinePairing
 	return r
 }
 
-func (r ApiRetrieveRecipeInformationRequest) Execute() (*RetrieveRecipeInformation200Response, *http.Response, error) {
-	return r.ApiService.RetrieveRecipeInformationExecute(r)
+func (r ApiRetrieveRecipeInformationAPIRequest) Execute() (*RetrieveRecipeInformationAPI200Response, *http.Response, error) {
+	return r.ApiService.RetrieveRecipeInformationAPIExecute(r)
 }
 
 /*
-RetrieveRecipeInformation Retrieve Recipe Information
+RetrieveRecipeInformationAPI Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrieveRecipeInformationRequest
+ @return ApiRetrieveRecipeInformationAPIRequest
 */
-func (a *FoodAPIService) RetrieveRecipeInformation(ctx context.Context) ApiRetrieveRecipeInformationRequest {
-	return ApiRetrieveRecipeInformationRequest{
+func (a *FoodAPIService) RetrieveRecipeInformationAPI(ctx context.Context) ApiRetrieveRecipeInformationAPIRequest {
+	return ApiRetrieveRecipeInformationAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RetrieveRecipeInformation200Response
-func (a *FoodAPIService) RetrieveRecipeInformationExecute(r ApiRetrieveRecipeInformationRequest) (*RetrieveRecipeInformation200Response, *http.Response, error) {
+//  @return RetrieveRecipeInformationAPI200Response
+func (a *FoodAPIService) RetrieveRecipeInformationAPIExecute(r ApiRetrieveRecipeInformationAPIRequest) (*RetrieveRecipeInformationAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RetrieveRecipeInformation200Response
+		localVarReturnValue  *RetrieveRecipeInformationAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.RetrieveRecipeInformation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.RetrieveRecipeInformationAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -338,7 +338,7 @@ func (a *FoodAPIService) RetrieveRecipeInformationExecute(r ApiRetrieveRecipeInf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchDrinksRequest struct {
+type ApiSearchDrinksAPIRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
 	query *string
@@ -366,167 +366,167 @@ type ApiSearchDrinksRequest struct {
 }
 
 // The search query.
-func (r ApiSearchDrinksRequest) Query(query string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Query(query string) ApiSearchDrinksAPIRequest {
 	r.query = &query
 	return r
 }
 
 // A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
-func (r ApiSearchDrinksRequest) GlassTypes(glassTypes string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) GlassTypes(glassTypes string) ApiSearchDrinksAPIRequest {
 	r.glassTypes = &glassTypes
 	return r
 }
 
 // A comma-separated list (interpreted as AND) of dominant flavors in the drink.
-func (r ApiSearchDrinksRequest) Flavors(flavors string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Flavors(flavors string) ApiSearchDrinksAPIRequest {
 	r.flavors = &flavors
 	return r
 }
 
 // The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
-func (r ApiSearchDrinksRequest) Diet(diet string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Diet(diet string) ApiSearchDrinksAPIRequest {
 	r.diet = &diet
 	return r
 }
 
 // A comma-separated list of ingredients that should/must be used in the drinks.
-func (r ApiSearchDrinksRequest) IncludeIngredients(includeIngredients string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) IncludeIngredients(includeIngredients string) ApiSearchDrinksAPIRequest {
 	r.includeIngredients = &includeIngredients
 	return r
 }
 
 // A comma-separated list of ingredients or ingredient types that the drinks must not contain.
-func (r ApiSearchDrinksRequest) ExcludeIngredients(excludeIngredients string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) ExcludeIngredients(excludeIngredients string) ApiSearchDrinksAPIRequest {
 	r.excludeIngredients = &excludeIngredients
 	return r
 }
 
 // The minimum amount of calories the drink must have per serving.
-func (r ApiSearchDrinksRequest) MinCalories(minCalories float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinCalories(minCalories float64) ApiSearchDrinksAPIRequest {
 	r.minCalories = &minCalories
 	return r
 }
 
 // The maximum amount of calories the drink can have per serving.
-func (r ApiSearchDrinksRequest) MaxCalories(maxCalories float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxCalories(maxCalories float64) ApiSearchDrinksAPIRequest {
 	r.maxCalories = &maxCalories
 	return r
 }
 
 // The minimum amount of carbohydrates in grams the drink must have per serving.
-func (r ApiSearchDrinksRequest) MinCarbs(minCarbs float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinCarbs(minCarbs float64) ApiSearchDrinksAPIRequest {
 	r.minCarbs = &minCarbs
 	return r
 }
 
 // The maximum amount of carbohydrates in grams the drink can have per serving.
-func (r ApiSearchDrinksRequest) MaxCarbs(maxCarbs float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxCarbs(maxCarbs float64) ApiSearchDrinksAPIRequest {
 	r.maxCarbs = &maxCarbs
 	return r
 }
 
 // The minimum amount of protein in grams the drink must have per serving.
-func (r ApiSearchDrinksRequest) MinProtein(minProtein float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinProtein(minProtein float64) ApiSearchDrinksAPIRequest {
 	r.minProtein = &minProtein
 	return r
 }
 
 // The maximum amount of protein in grams the drink can have per serving.
-func (r ApiSearchDrinksRequest) MaxProtein(maxProtein float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxProtein(maxProtein float64) ApiSearchDrinksAPIRequest {
 	r.maxProtein = &maxProtein
 	return r
 }
 
 // The minimum amount of fat in grams the drink must have per serving.
-func (r ApiSearchDrinksRequest) MinFat(minFat float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinFat(minFat float64) ApiSearchDrinksAPIRequest {
 	r.minFat = &minFat
 	return r
 }
 
 // The maximum amount of fat in grams the drink can have per serving.
-func (r ApiSearchDrinksRequest) MaxFat(maxFat float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxFat(maxFat float64) ApiSearchDrinksAPIRequest {
 	r.maxFat = &maxFat
 	return r
 }
 
 // The minimum alcohol percentage the drink must have.
-func (r ApiSearchDrinksRequest) MinAlcoholPercent(minAlcoholPercent float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinAlcoholPercent(minAlcoholPercent float64) ApiSearchDrinksAPIRequest {
 	r.minAlcoholPercent = &minAlcoholPercent
 	return r
 }
 
 // The maximum alcohol percentage the drink can have.
-func (r ApiSearchDrinksRequest) MaxAlcoholPercent(maxAlcoholPercent float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxAlcoholPercent(maxAlcoholPercent float64) ApiSearchDrinksAPIRequest {
 	r.maxAlcoholPercent = &maxAlcoholPercent
 	return r
 }
 
 // The minimum amount of caffeine in milligrams the drink must have per serving.
-func (r ApiSearchDrinksRequest) MinCaffeine(minCaffeine float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MinCaffeine(minCaffeine float64) ApiSearchDrinksAPIRequest {
 	r.minCaffeine = &minCaffeine
 	return r
 }
 
 // The maximum amount of caffeine in milligrams the drink can have per serving.
-func (r ApiSearchDrinksRequest) MaxCaffeine(maxCaffeine float64) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) MaxCaffeine(maxCaffeine float64) ApiSearchDrinksAPIRequest {
 	r.maxCaffeine = &maxCaffeine
 	return r
 }
 
 // The attribute by which to sort the drinks.
-func (r ApiSearchDrinksRequest) Sort(sort string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Sort(sort string) ApiSearchDrinksAPIRequest {
 	r.sort = &sort
 	return r
 }
 
 // Whether to sort ascending or descending (ASC or DESC).
-func (r ApiSearchDrinksRequest) SortDirection(sortDirection string) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) SortDirection(sortDirection string) ApiSearchDrinksAPIRequest {
 	r.sortDirection = &sortDirection
 	return r
 }
 
 // The number of drinks to skip, between 0 and 90.
-func (r ApiSearchDrinksRequest) Offset(offset int32) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Offset(offset int32) ApiSearchDrinksAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of drinks, between 1 and 10.
-func (r ApiSearchDrinksRequest) Number(number int32) ApiSearchDrinksRequest {
+func (r ApiSearchDrinksAPIRequest) Number(number int32) ApiSearchDrinksAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchDrinksRequest) Execute() (*SearchDrinks200Response, *http.Response, error) {
-	return r.ApiService.SearchDrinksExecute(r)
+func (r ApiSearchDrinksAPIRequest) Execute() (*SearchDrinksAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchDrinksAPIExecute(r)
 }
 
 /*
-SearchDrinks Search Drinks
+SearchDrinksAPI Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchDrinksRequest
+ @return ApiSearchDrinksAPIRequest
 */
-func (a *FoodAPIService) SearchDrinks(ctx context.Context) ApiSearchDrinksRequest {
-	return ApiSearchDrinksRequest{
+func (a *FoodAPIService) SearchDrinksAPI(ctx context.Context) ApiSearchDrinksAPIRequest {
+	return ApiSearchDrinksAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchDrinks200Response
-func (a *FoodAPIService) SearchDrinksExecute(r ApiSearchDrinksRequest) (*SearchDrinks200Response, *http.Response, error) {
+//  @return SearchDrinksAPI200Response
+func (a *FoodAPIService) SearchDrinksAPIExecute(r ApiSearchDrinksAPIRequest) (*SearchDrinksAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchDrinks200Response
+		localVarReturnValue  *SearchDrinksAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchDrinks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchDrinksAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -685,7 +685,7 @@ func (a *FoodAPIService) SearchDrinksExecute(r ApiSearchDrinksRequest) (*SearchD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchRecipesRequest struct {
+type ApiSearchRecipesAPIRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
 	query *string
@@ -781,575 +781,575 @@ type ApiSearchRecipesRequest struct {
 }
 
 // The search query.
-func (r ApiSearchRecipesRequest) Query(query string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Query(query string) ApiSearchRecipesAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as &#39;OR&#39;).
-func (r ApiSearchRecipesRequest) Cuisines(cuisines string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Cuisines(cuisines string) ApiSearchRecipesAPIRequest {
 	r.cuisines = &cuisines
 	return r
 }
 
 // The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as &#39;AND&#39;).
-func (r ApiSearchRecipesRequest) ExcludeCuisines(excludeCuisines string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) ExcludeCuisines(excludeCuisines string) ApiSearchRecipesAPIRequest {
 	r.excludeCuisines = &excludeCuisines
 	return r
 }
 
 // The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
-func (r ApiSearchRecipesRequest) MealType(mealType string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MealType(mealType string) ApiSearchRecipesAPIRequest {
 	r.mealType = &mealType
 	return r
 }
 
 // The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
-func (r ApiSearchRecipesRequest) Diet(diet string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Diet(diet string) ApiSearchRecipesAPIRequest {
 	r.diet = &diet
 	return r
 }
 
 // A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
-func (r ApiSearchRecipesRequest) Intolerances(intolerances string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Intolerances(intolerances string) ApiSearchRecipesAPIRequest {
 	r.intolerances = &intolerances
 	return r
 }
 
 // The equipment required. Multiple values will be interpreted as &#39;OR&#39;.
-func (r ApiSearchRecipesRequest) Equipment(equipment string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Equipment(equipment string) ApiSearchRecipesAPIRequest {
 	r.equipment = &equipment
 	return r
 }
 
 // A comma-separated list of ingredients that should/must be used in the recipes.
-func (r ApiSearchRecipesRequest) IncludeIngredients(includeIngredients string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) IncludeIngredients(includeIngredients string) ApiSearchRecipesAPIRequest {
 	r.includeIngredients = &includeIngredients
 	return r
 }
 
 // A comma-separated list of ingredients or ingredient types that the recipes must not contain.
-func (r ApiSearchRecipesRequest) ExcludeIngredients(excludeIngredients string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) ExcludeIngredients(excludeIngredients string) ApiSearchRecipesAPIRequest {
 	r.excludeIngredients = &excludeIngredients
 	return r
 }
 
 // Add information about the ingredients and whether they are used or missing in relation to the query.
-func (r ApiSearchRecipesRequest) FillIngredients(fillIngredients bool) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) FillIngredients(fillIngredients bool) ApiSearchRecipesAPIRequest {
 	r.fillIngredients = &fillIngredients
 	return r
 }
 
 // If set to true, you get more information about the recipes returned.
-func (r ApiSearchRecipesRequest) AddRecipeInformation(addRecipeInformation bool) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) AddRecipeInformation(addRecipeInformation bool) ApiSearchRecipesAPIRequest {
 	r.addRecipeInformation = &addRecipeInformation
 	return r
 }
 
 // The maximum time in minutes it should take to prepare and cook the recipe.
-func (r ApiSearchRecipesRequest) MaxTime(maxTime int32) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxTime(maxTime int32) ApiSearchRecipesAPIRequest {
 	r.maxTime = &maxTime
 	return r
 }
 
 // The minimum amount of servings the recipe is for.
-func (r ApiSearchRecipesRequest) MinServings(minServings int32) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinServings(minServings int32) ApiSearchRecipesAPIRequest {
 	r.minServings = &minServings
 	return r
 }
 
 // The maximum amount of servings the recipe is for.
-func (r ApiSearchRecipesRequest) MaxServings(maxServings int32) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxServings(maxServings int32) ApiSearchRecipesAPIRequest {
 	r.maxServings = &maxServings
 	return r
 }
 
 // The minimum amount of calories the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCalories(minCalories float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCalories(minCalories float64) ApiSearchRecipesAPIRequest {
 	r.minCalories = &minCalories
 	return r
 }
 
 // The maximum amount of calories the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCalories(maxCalories float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCalories(maxCalories float64) ApiSearchRecipesAPIRequest {
 	r.maxCalories = &maxCalories
 	return r
 }
 
 // The minimum amount of carbohydrates in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCarbs(minCarbs float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCarbs(minCarbs float64) ApiSearchRecipesAPIRequest {
 	r.minCarbs = &minCarbs
 	return r
 }
 
 // The maximum amount of carbohydrates in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCarbs(maxCarbs float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCarbs(maxCarbs float64) ApiSearchRecipesAPIRequest {
 	r.maxCarbs = &maxCarbs
 	return r
 }
 
 // The minimum amount of protein in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinProtein(minProtein float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinProtein(minProtein float64) ApiSearchRecipesAPIRequest {
 	r.minProtein = &minProtein
 	return r
 }
 
 // The maximum amount of protein in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxProtein(maxProtein float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxProtein(maxProtein float64) ApiSearchRecipesAPIRequest {
 	r.maxProtein = &maxProtein
 	return r
 }
 
 // The minimum amount of fat in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinFat(minFat float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinFat(minFat float64) ApiSearchRecipesAPIRequest {
 	r.minFat = &minFat
 	return r
 }
 
 // The maximum amount of fat in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxFat(maxFat float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxFat(maxFat float64) ApiSearchRecipesAPIRequest {
 	r.maxFat = &maxFat
 	return r
 }
 
 // The minimum amount of sugar in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinSugar(minSugar float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinSugar(minSugar float64) ApiSearchRecipesAPIRequest {
 	r.minSugar = &minSugar
 	return r
 }
 
 // The maximum amount of sugar in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxSugar(maxSugar float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxSugar(maxSugar float64) ApiSearchRecipesAPIRequest {
 	r.maxSugar = &maxSugar
 	return r
 }
 
 // The minimum amount of fiber in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinFiber(minFiber float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinFiber(minFiber float64) ApiSearchRecipesAPIRequest {
 	r.minFiber = &minFiber
 	return r
 }
 
 // The maximum amount of fiber in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxFiber(maxFiber float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxFiber(maxFiber float64) ApiSearchRecipesAPIRequest {
 	r.maxFiber = &maxFiber
 	return r
 }
 
 // The minimum amount of folate in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinFolate(minFolate float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinFolate(minFolate float64) ApiSearchRecipesAPIRequest {
 	r.minFolate = &minFolate
 	return r
 }
 
 // The maximum amount of folate in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxFolate(maxFolate float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxFolate(maxFolate float64) ApiSearchRecipesAPIRequest {
 	r.maxFolate = &maxFolate
 	return r
 }
 
 // The minimum amount of folic acid in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinFolicAcid(minFolicAcid float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinFolicAcid(minFolicAcid float64) ApiSearchRecipesAPIRequest {
 	r.minFolicAcid = &minFolicAcid
 	return r
 }
 
 // The maximum amount of folic acid in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxFolicAcid(maxFolicAcid float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxFolicAcid(maxFolicAcid float64) ApiSearchRecipesAPIRequest {
 	r.maxFolicAcid = &maxFolicAcid
 	return r
 }
 
 // The minimum amount of iodine in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinIodine(minIodine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinIodine(minIodine float64) ApiSearchRecipesAPIRequest {
 	r.minIodine = &minIodine
 	return r
 }
 
 // The maximum amount of iodine in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxIodine(maxIodine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxIodine(maxIodine float64) ApiSearchRecipesAPIRequest {
 	r.maxIodine = &maxIodine
 	return r
 }
 
 // The minimum amount of iron in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinIron(minIron float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinIron(minIron float64) ApiSearchRecipesAPIRequest {
 	r.minIron = &minIron
 	return r
 }
 
 // The maximum amount of iron in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxIron(maxIron float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxIron(maxIron float64) ApiSearchRecipesAPIRequest {
 	r.maxIron = &maxIron
 	return r
 }
 
 // The minimum amount of zinc in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinZinc(minZinc float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinZinc(minZinc float64) ApiSearchRecipesAPIRequest {
 	r.minZinc = &minZinc
 	return r
 }
 
 // The maximum amount of zinc in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxZinc(maxZinc float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxZinc(maxZinc float64) ApiSearchRecipesAPIRequest {
 	r.maxZinc = &maxZinc
 	return r
 }
 
 // The minimum amount of magnesium in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinMagnesium(minMagnesium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinMagnesium(minMagnesium float64) ApiSearchRecipesAPIRequest {
 	r.minMagnesium = &minMagnesium
 	return r
 }
 
 // The maximum amount of magnesium in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxMagnesium(maxMagnesium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxMagnesium(maxMagnesium float64) ApiSearchRecipesAPIRequest {
 	r.maxMagnesium = &maxMagnesium
 	return r
 }
 
 // The minimum amount of manganese in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinManganese(minManganese float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinManganese(minManganese float64) ApiSearchRecipesAPIRequest {
 	r.minManganese = &minManganese
 	return r
 }
 
 // The maximum amount of manganese in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxManganese(maxManganese float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxManganese(maxManganese float64) ApiSearchRecipesAPIRequest {
 	r.maxManganese = &maxManganese
 	return r
 }
 
 // The minimum amount of phosphorus in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinPhosphorus(minPhosphorus float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinPhosphorus(minPhosphorus float64) ApiSearchRecipesAPIRequest {
 	r.minPhosphorus = &minPhosphorus
 	return r
 }
 
 // The maximum amount of phosphorus in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxPhosphorus(maxPhosphorus float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxPhosphorus(maxPhosphorus float64) ApiSearchRecipesAPIRequest {
 	r.maxPhosphorus = &maxPhosphorus
 	return r
 }
 
 // The minimum amount of potassium in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinPotassium(minPotassium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinPotassium(minPotassium float64) ApiSearchRecipesAPIRequest {
 	r.minPotassium = &minPotassium
 	return r
 }
 
 // The maximum amount of potassium in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxPotassium(maxPotassium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxPotassium(maxPotassium float64) ApiSearchRecipesAPIRequest {
 	r.maxPotassium = &maxPotassium
 	return r
 }
 
 // The minimum amount of sodium in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinSodium(minSodium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinSodium(minSodium float64) ApiSearchRecipesAPIRequest {
 	r.minSodium = &minSodium
 	return r
 }
 
 // The maximum amount of sodium in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxSodium(maxSodium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxSodium(maxSodium float64) ApiSearchRecipesAPIRequest {
 	r.maxSodium = &maxSodium
 	return r
 }
 
 // The minimum amount of selenium in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinSelenium(minSelenium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinSelenium(minSelenium float64) ApiSearchRecipesAPIRequest {
 	r.minSelenium = &minSelenium
 	return r
 }
 
 // The maximum amount of selenium in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxSelenium(maxSelenium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxSelenium(maxSelenium float64) ApiSearchRecipesAPIRequest {
 	r.maxSelenium = &maxSelenium
 	return r
 }
 
 // The minimum amount of copper in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCopper(minCopper float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCopper(minCopper float64) ApiSearchRecipesAPIRequest {
 	r.minCopper = &minCopper
 	return r
 }
 
 // The maximum amount of copper in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCopper(maxCopper float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCopper(maxCopper float64) ApiSearchRecipesAPIRequest {
 	r.maxCopper = &maxCopper
 	return r
 }
 
 // The minimum amount of calcium in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCalcium(minCalcium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCalcium(minCalcium float64) ApiSearchRecipesAPIRequest {
 	r.minCalcium = &minCalcium
 	return r
 }
 
 // The maximum amount of calcium in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCalcium(maxCalcium float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCalcium(maxCalcium float64) ApiSearchRecipesAPIRequest {
 	r.maxCalcium = &maxCalcium
 	return r
 }
 
 // The minimum amount of choline in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCholine(minCholine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCholine(minCholine float64) ApiSearchRecipesAPIRequest {
 	r.minCholine = &minCholine
 	return r
 }
 
 // The maximum amount of choline in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCholine(maxCholine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCholine(maxCholine float64) ApiSearchRecipesAPIRequest {
 	r.maxCholine = &maxCholine
 	return r
 }
 
 // The minimum amount of cholesterol in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCholesterol(minCholesterol float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCholesterol(minCholesterol float64) ApiSearchRecipesAPIRequest {
 	r.minCholesterol = &minCholesterol
 	return r
 }
 
 // The maximum amount of cholesterol in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCholesterol(maxCholesterol float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCholesterol(maxCholesterol float64) ApiSearchRecipesAPIRequest {
 	r.maxCholesterol = &maxCholesterol
 	return r
 }
 
 // The minimum amount of fluoride in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinFluoride(minFluoride float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinFluoride(minFluoride float64) ApiSearchRecipesAPIRequest {
 	r.minFluoride = &minFluoride
 	return r
 }
 
 // The maximum amount of fluoride in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxFluoride(maxFluoride float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxFluoride(maxFluoride float64) ApiSearchRecipesAPIRequest {
 	r.maxFluoride = &maxFluoride
 	return r
 }
 
 // The minimum amount of alcohol in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinAlcohol(minAlcohol float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinAlcohol(minAlcohol float64) ApiSearchRecipesAPIRequest {
 	r.minAlcohol = &minAlcohol
 	return r
 }
 
 // The maximum amount of alcohol in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxAlcohol(maxAlcohol float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxAlcohol(maxAlcohol float64) ApiSearchRecipesAPIRequest {
 	r.maxAlcohol = &maxAlcohol
 	return r
 }
 
 // The minimum amount of caffeine in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinCaffeine(minCaffeine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinCaffeine(minCaffeine float64) ApiSearchRecipesAPIRequest {
 	r.minCaffeine = &minCaffeine
 	return r
 }
 
 // The maximum amount of caffeine in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxCaffeine(maxCaffeine float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxCaffeine(maxCaffeine float64) ApiSearchRecipesAPIRequest {
 	r.maxCaffeine = &maxCaffeine
 	return r
 }
 
 // The minimum amount of saturated fat in grams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinSaturatedFat(minSaturatedFat float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinSaturatedFat(minSaturatedFat float64) ApiSearchRecipesAPIRequest {
 	r.minSaturatedFat = &minSaturatedFat
 	return r
 }
 
 // The maximum amount of saturated fat in grams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxSaturatedFat(maxSaturatedFat float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxSaturatedFat(maxSaturatedFat float64) ApiSearchRecipesAPIRequest {
 	r.maxSaturatedFat = &maxSaturatedFat
 	return r
 }
 
 // The minimum amount of Vitamin A in IU the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminA(minVitaminA float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminA(minVitaminA float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminA = &minVitaminA
 	return r
 }
 
 // The maximum amount of Vitamin A in IU the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminA(maxVitaminA float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminA(maxVitaminA float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminA = &maxVitaminA
 	return r
 }
 
 // The minimum amount of Vitamin C in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminC(minVitaminC float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminC(minVitaminC float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminC = &minVitaminC
 	return r
 }
 
 // The maximum amount of Vitamin C in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminC(maxVitaminC float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminC(maxVitaminC float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminC = &maxVitaminC
 	return r
 }
 
 // The minimum amount of Vitamin D in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminD(minVitaminD float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminD(minVitaminD float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminD = &minVitaminD
 	return r
 }
 
 // The maximum amount of Vitamin D in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminD(maxVitaminD float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminD(maxVitaminD float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminD = &maxVitaminD
 	return r
 }
 
 // The minimum amount of Vitamin E in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminE(minVitaminE float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminE(minVitaminE float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminE = &minVitaminE
 	return r
 }
 
 // The maximum amount of Vitamin E in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminE(maxVitaminE float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminE(maxVitaminE float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminE = &maxVitaminE
 	return r
 }
 
 // The minimum amount of Vitamin K in micrograms the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminK(minVitaminK float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminK(minVitaminK float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminK = &minVitaminK
 	return r
 }
 
 // The maximum amount of Vitamin K in micrograms the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminK(maxVitaminK float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminK(maxVitaminK float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminK = &maxVitaminK
 	return r
 }
 
 // The minimum amount of Vitamin B1 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB1(minVitaminB1 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB1(minVitaminB1 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB1 = &minVitaminB1
 	return r
 }
 
 // The maximum amount of Vitamin B1 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB1(maxVitaminB1 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB1(maxVitaminB1 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB1 = &maxVitaminB1
 	return r
 }
 
 // The minimum amount of Vitamin B2 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB2(minVitaminB2 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB2(minVitaminB2 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB2 = &minVitaminB2
 	return r
 }
 
 // The maximum amount of Vitamin B2 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB2(maxVitaminB2 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB2(maxVitaminB2 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB2 = &maxVitaminB2
 	return r
 }
 
 // The minimum amount of Vitamin B3 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB3(minVitaminB3 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB3(minVitaminB3 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB3 = &minVitaminB3
 	return r
 }
 
 // The maximum amount of Vitamin B3 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB3(maxVitaminB3 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB3(maxVitaminB3 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB3 = &maxVitaminB3
 	return r
 }
 
 // The minimum amount of Vitamin B5 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB5(minVitaminB5 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB5(minVitaminB5 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB5 = &minVitaminB5
 	return r
 }
 
 // The maximum amount of Vitamin B5 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB5(maxVitaminB5 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB5(maxVitaminB5 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB5 = &maxVitaminB5
 	return r
 }
 
 // The minimum amount of Vitamin B6 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB6(minVitaminB6 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB6(minVitaminB6 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB6 = &minVitaminB6
 	return r
 }
 
 // The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB6(maxVitaminB6 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB6(maxVitaminB6 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB6 = &maxVitaminB6
 	return r
 }
 
 // The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
-func (r ApiSearchRecipesRequest) MinVitaminB12(minVitaminB12 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MinVitaminB12(minVitaminB12 float64) ApiSearchRecipesAPIRequest {
 	r.minVitaminB12 = &minVitaminB12
 	return r
 }
 
 // The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
-func (r ApiSearchRecipesRequest) MaxVitaminB12(maxVitaminB12 float64) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) MaxVitaminB12(maxVitaminB12 float64) ApiSearchRecipesAPIRequest {
 	r.maxVitaminB12 = &maxVitaminB12
 	return r
 }
 
 // The strategy to sort recipes by.
-func (r ApiSearchRecipesRequest) Sort(sort string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Sort(sort string) ApiSearchRecipesAPIRequest {
 	r.sort = &sort
 	return r
 }
 
 // Whether to sort ascending or descending (ASC or DESC).
-func (r ApiSearchRecipesRequest) SortDirection(sortDirection string) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) SortDirection(sortDirection string) ApiSearchRecipesAPIRequest {
 	r.sortDirection = &sortDirection
 	return r
 }
 
 // The number of recipes to skip, between 0 and 900.
-func (r ApiSearchRecipesRequest) Offset(offset int32) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Offset(offset int32) ApiSearchRecipesAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of recipes, between 1 and 100.
-func (r ApiSearchRecipesRequest) Number(number int32) ApiSearchRecipesRequest {
+func (r ApiSearchRecipesAPIRequest) Number(number int32) ApiSearchRecipesAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchRecipesRequest) Execute() (*SearchRecipes200Response, *http.Response, error) {
-	return r.ApiService.SearchRecipesExecute(r)
+func (r ApiSearchRecipesAPIRequest) Execute() (*SearchRecipesAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchRecipesAPIExecute(r)
 }
 
 /*
-SearchRecipes Search Recipes
+SearchRecipesAPI Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRecipesRequest
+ @return ApiSearchRecipesAPIRequest
 */
-func (a *FoodAPIService) SearchRecipes(ctx context.Context) ApiSearchRecipesRequest {
-	return ApiSearchRecipesRequest{
+func (a *FoodAPIService) SearchRecipesAPI(ctx context.Context) ApiSearchRecipesAPIRequest {
+	return ApiSearchRecipesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchRecipes200Response
-func (a *FoodAPIService) SearchRecipesExecute(r ApiSearchRecipesRequest) (*SearchRecipes200Response, *http.Response, error) {
+//  @return SearchRecipesAPI200Response
+func (a *FoodAPIService) SearchRecipesAPIExecute(r ApiSearchRecipesAPIRequest) (*SearchRecipesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchRecipes200Response
+		localVarReturnValue  *SearchRecipesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchRecipes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchRecipesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1712,7 +1712,7 @@ func (a *FoodAPIService) SearchRecipesExecute(r ApiSearchRecipesRequest) (*Searc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchRestaurantsRequest struct {
+type ApiSearchRestaurantsAPIRequest struct {
 	ctx context.Context
 	ApiService *FoodAPIService
 	lat *float64
@@ -1728,95 +1728,95 @@ type ApiSearchRestaurantsRequest struct {
 }
 
 // The latitude to search around.
-func (r ApiSearchRestaurantsRequest) Lat(lat float64) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Lat(lat float64) ApiSearchRestaurantsAPIRequest {
 	r.lat = &lat
 	return r
 }
 
 // The longitude to search around.
-func (r ApiSearchRestaurantsRequest) Lon(lon float64) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Lon(lon float64) ApiSearchRestaurantsAPIRequest {
 	r.lon = &lon
 	return r
 }
 
 // The search query.
-func (r ApiSearchRestaurantsRequest) Query(query string) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Query(query string) ApiSearchRestaurantsAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The maximum distance of the restaurant in miles around the given location.
-func (r ApiSearchRestaurantsRequest) Distance(distance int32) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Distance(distance int32) ApiSearchRestaurantsAPIRequest {
 	r.distance = &distance
 	return r
 }
 
 // The budget in USD for the meal.
-func (r ApiSearchRestaurantsRequest) Budget(budget float64) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Budget(budget float64) ApiSearchRestaurantsAPIRequest {
 	r.budget = &budget
 	return r
 }
 
 // The minimum rating of the restaurants in range [0,5].
-func (r ApiSearchRestaurantsRequest) MinRating(minRating float64) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) MinRating(minRating float64) ApiSearchRestaurantsAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The cuisine that the restaurants should support.
-func (r ApiSearchRestaurantsRequest) Cuisine(cuisine string) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Cuisine(cuisine string) ApiSearchRestaurantsAPIRequest {
 	r.cuisine = &cuisine
 	return r
 }
 
 // Whether the restaurants have to be open now.
-func (r ApiSearchRestaurantsRequest) IsOpen(isOpen bool) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) IsOpen(isOpen bool) ApiSearchRestaurantsAPIRequest {
 	r.isOpen = &isOpen
 	return r
 }
 
 // The page of the results.
-func (r ApiSearchRestaurantsRequest) Page(page int32) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Page(page int32) ApiSearchRestaurantsAPIRequest {
 	r.page = &page
 	return r
 }
 
 // The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-func (r ApiSearchRestaurantsRequest) Sort(sort string) ApiSearchRestaurantsRequest {
+func (r ApiSearchRestaurantsAPIRequest) Sort(sort string) ApiSearchRestaurantsAPIRequest {
 	r.sort = &sort
 	return r
 }
 
-func (r ApiSearchRestaurantsRequest) Execute() (*SearchRestaurants200Response, *http.Response, error) {
-	return r.ApiService.SearchRestaurantsExecute(r)
+func (r ApiSearchRestaurantsAPIRequest) Execute() (*SearchRestaurantsAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchRestaurantsAPIExecute(r)
 }
 
 /*
-SearchRestaurants Search Restaurants
+SearchRestaurantsAPI Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRestaurantsRequest
+ @return ApiSearchRestaurantsAPIRequest
 */
-func (a *FoodAPIService) SearchRestaurants(ctx context.Context) ApiSearchRestaurantsRequest {
-	return ApiSearchRestaurantsRequest{
+func (a *FoodAPIService) SearchRestaurantsAPI(ctx context.Context) ApiSearchRestaurantsAPIRequest {
+	return ApiSearchRestaurantsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchRestaurants200Response
-func (a *FoodAPIService) SearchRestaurantsExecute(r ApiSearchRestaurantsRequest) (*SearchRestaurants200Response, *http.Response, error) {
+//  @return SearchRestaurantsAPI200Response
+func (a *FoodAPIService) SearchRestaurantsAPIExecute(r ApiSearchRestaurantsAPIRequest) (*SearchRestaurantsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchRestaurants200Response
+		localVarReturnValue  *SearchRestaurantsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchRestaurants")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FoodAPIService.SearchRestaurantsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

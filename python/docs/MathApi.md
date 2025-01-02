@@ -4,13 +4,13 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convert_units**](MathApi.md#convert_units) | **GET** /convert-units | Convert Units
+[**convert_units_api**](MathApi.md#convert_units_api) | **GET** /convert-units | Convert Units API
 
 
-# **convert_units**
-> ConvertUnits200Response convert_units(source_amount, source_unit, target_unit, food_name=food_name)
+# **convert_units_api**
+> ConvertUnitsAPI200Response convert_units_api(source_amount, source_unit, target_unit, food_name=food_name)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -21,7 +21,7 @@ Convert units from one to another. The API returns the amount and the unit of th
 
 ```python
 import apileague
-from apileague.models.convert_units200_response import ConvertUnits200Response
+from apileague.models.convert_units_api200_response import ConvertUnitsAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -58,12 +58,12 @@ with apileague.ApiClient(configuration) as api_client:
     food_name = 'flour' # str | An optional food name. For converting foods the food is relevant as they have different densities. (optional)
 
     try:
-        # Convert Units
-        api_response = api_instance.convert_units(source_amount, source_unit, target_unit, food_name=food_name)
-        print("The response of MathApi->convert_units:\n")
+        # Convert Units API
+        api_response = api_instance.convert_units_api(source_amount, source_unit, target_unit, food_name=food_name)
+        print("The response of MathApi->convert_units_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MathApi->convert_units: %s\n" % e)
+        print("Exception when calling MathApi->convert_units_api: %s\n" % e)
 ```
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

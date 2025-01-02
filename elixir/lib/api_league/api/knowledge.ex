@@ -10,7 +10,7 @@ defmodule APILeague.Api.Knowledge do
   import APILeague.RequestBuilder
 
   @doc """
-  Random Quote
+  Random Quote API
   This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
   ### Parameters
@@ -22,11 +22,11 @@ defmodule APILeague.Api.Knowledge do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RandomQuote200Response.t}` on success
+  - `{:ok, APILeague.Model.RandomQuoteApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_quote(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomQuote200Response.t} | {:error, Tesla.Env.t}
-  def random_quote(connection, opts \\ []) do
+  @spec random_quote_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomQuoteApi200Response.t} | {:error, Tesla.Env.t}
+  def random_quote_api(connection, opts \\ []) do
     optional_params = %{
       :"min-length" => :query,
       :"max-length" => :query
@@ -42,7 +42,7 @@ defmodule APILeague.Api.Knowledge do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RandomQuote200Response},
+      {200, APILeague.Model.RandomQuoteApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -53,7 +53,7 @@ defmodule APILeague.Api.Knowledge do
   end
 
   @doc """
-  Random Riddle
+  Random Riddle API
   The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
   ### Parameters
@@ -64,11 +64,11 @@ defmodule APILeague.Api.Knowledge do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RandomRiddle200Response.t}` on success
+  - `{:ok, APILeague.Model.RandomRiddleApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_riddle(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomRiddle200Response.t} | {:error, Tesla.Env.t}
-  def random_riddle(connection, opts \\ []) do
+  @spec random_riddle_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomRiddleApi200Response.t} | {:error, Tesla.Env.t}
+  def random_riddle_api(connection, opts \\ []) do
     optional_params = %{
       :difficulty => :query
     }
@@ -83,7 +83,7 @@ defmodule APILeague.Api.Knowledge do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RandomRiddle200Response},
+      {200, APILeague.Model.RandomRiddleApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -94,8 +94,8 @@ defmodule APILeague.Api.Knowledge do
   end
 
   @doc """
-  Random Trivia
-  This endpoint returns a random piece of trivia.
+  Random Trivia API
+  This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
   ### Parameters
 
@@ -105,11 +105,11 @@ defmodule APILeague.Api.Knowledge do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RandomTrivia200Response.t}` on success
+  - `{:ok, APILeague.Model.RandomTriviaApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec random_trivia(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomTrivia200Response.t} | {:error, Tesla.Env.t}
-  def random_trivia(connection, opts \\ []) do
+  @spec random_trivia_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomTriviaApi200Response.t} | {:error, Tesla.Env.t}
+  def random_trivia_api(connection, opts \\ []) do
     optional_params = %{
       :"max-length" => :query
     }
@@ -124,7 +124,7 @@ defmodule APILeague.Api.Knowledge do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RandomTrivia200Response},
+      {200, APILeague.Model.RandomTriviaApi200Response},
       {401, false},
       {402, false},
       {403, false},

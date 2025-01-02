@@ -1,22 +1,22 @@
 -module(apileague_humor_api).
 
--export([generate_nonsense_word/1, generate_nonsense_word/2,
-         random_joke/1, random_joke/2,
-         random_meme/1, random_meme/2,
-         search_gifs/2, search_gifs/3,
-         search_jokes/1, search_jokes/2,
-         search_memes/1, search_memes/2]).
+-export([generate_nonsense_word_api/1, generate_nonsense_word_api/2,
+         random_joke_api/1, random_joke_api/2,
+         random_meme_api/1, random_meme_api/2,
+         search_gifs_api/2, search_gifs_api/3,
+         search_jokes_api/1, search_jokes_api/2,
+         search_memes_api/1, search_memes_api/2]).
 
 -define(BASE_URL, <<"">>).
 
-%% @doc Generate Nonsense Word
+%% @doc Generate Nonsense Word API
 %% Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
--spec generate_nonsense_word(ctx:ctx()) -> {ok, apileague_generate_nonsense_word_200_response:apileague_generate_nonsense_word_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-generate_nonsense_word(Ctx) ->
-    generate_nonsense_word(Ctx, #{}).
+-spec generate_nonsense_word_api(ctx:ctx()) -> {ok, apileague_generate_nonsense_word_api_200_response:apileague_generate_nonsense_word_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+generate_nonsense_word_api(Ctx) ->
+    generate_nonsense_word_api(Ctx, #{}).
 
--spec generate_nonsense_word(ctx:ctx(), maps:map()) -> {ok, apileague_generate_nonsense_word_200_response:apileague_generate_nonsense_word_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-generate_nonsense_word(Ctx, Optional) ->
+-spec generate_nonsense_word_api(ctx:ctx(), maps:map()) -> {ok, apileague_generate_nonsense_word_api_200_response:apileague_generate_nonsense_word_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+generate_nonsense_word_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -30,14 +30,14 @@ generate_nonsense_word(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Random Joke
+%% @doc Random Joke API
 %% This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
--spec random_joke(ctx:ctx()) -> {ok, apileague_search_jokes_200_response_jokes_inner:apileague_search_jokes_200_response_jokes_inner(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_joke(Ctx) ->
-    random_joke(Ctx, #{}).
+-spec random_joke_api(ctx:ctx()) -> {ok, apileague_search_jokes_api_200_response_jokes_inner:apileague_search_jokes_api_200_response_jokes_inner(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_joke_api(Ctx) ->
+    random_joke_api(Ctx, #{}).
 
--spec random_joke(ctx:ctx(), maps:map()) -> {ok, apileague_search_jokes_200_response_jokes_inner:apileague_search_jokes_200_response_jokes_inner(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_joke(Ctx, Optional) ->
+-spec random_joke_api(ctx:ctx(), maps:map()) -> {ok, apileague_search_jokes_api_200_response_jokes_inner:apileague_search_jokes_api_200_response_jokes_inner(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_joke_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -51,14 +51,14 @@ random_joke(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Random Meme
-%% Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
--spec random_meme(ctx:ctx()) -> {ok, apileague_random_meme_200_response:apileague_random_meme_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_meme(Ctx) ->
-    random_meme(Ctx, #{}).
+%% @doc Random Meme API
+%% Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+-spec random_meme_api(ctx:ctx()) -> {ok, apileague_random_meme_api_200_response:apileague_random_meme_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_meme_api(Ctx) ->
+    random_meme_api(Ctx, #{}).
 
--spec random_meme(ctx:ctx(), maps:map()) -> {ok, apileague_random_meme_200_response:apileague_random_meme_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_meme(Ctx, Optional) ->
+-spec random_meme_api(ctx:ctx(), maps:map()) -> {ok, apileague_random_meme_api_200_response:apileague_random_meme_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_meme_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -72,14 +72,14 @@ random_meme(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Search Gifs
+%% @doc Search Gifs API
 %% Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
--spec search_gifs(ctx:ctx(), binary()) -> {ok, apileague_search_gifs_200_response:apileague_search_gifs_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_gifs(Ctx, Query) ->
-    search_gifs(Ctx, Query, #{}).
+-spec search_gifs_api(ctx:ctx(), binary()) -> {ok, apileague_search_gifs_api_200_response:apileague_search_gifs_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_gifs_api(Ctx, Query) ->
+    search_gifs_api(Ctx, Query, #{}).
 
--spec search_gifs(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_search_gifs_200_response:apileague_search_gifs_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_gifs(Ctx, Query, Optional) ->
+-spec search_gifs_api(ctx:ctx(), binary(), maps:map()) -> {ok, apileague_search_gifs_api_200_response:apileague_search_gifs_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_gifs_api(Ctx, Query, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -93,14 +93,14 @@ search_gifs(Ctx, Query, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Search Jokes
+%% @doc Search Jokes API
 %% With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
--spec search_jokes(ctx:ctx()) -> {ok, apileague_search_jokes_200_response:apileague_search_jokes_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_jokes(Ctx) ->
-    search_jokes(Ctx, #{}).
+-spec search_jokes_api(ctx:ctx()) -> {ok, apileague_search_jokes_api_200_response:apileague_search_jokes_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_jokes_api(Ctx) ->
+    search_jokes_api(Ctx, #{}).
 
--spec search_jokes(ctx:ctx(), maps:map()) -> {ok, apileague_search_jokes_200_response:apileague_search_jokes_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_jokes(Ctx, Optional) ->
+-spec search_jokes_api(ctx:ctx(), maps:map()) -> {ok, apileague_search_jokes_api_200_response:apileague_search_jokes_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_jokes_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -114,14 +114,14 @@ search_jokes(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Search Memes
-%% With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
--spec search_memes(ctx:ctx()) -> {ok, apileague_search_memes_200_response:apileague_search_memes_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_memes(Ctx) ->
-    search_memes(Ctx, #{}).
+%% @doc Search Memes API
+%% Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
+-spec search_memes_api(ctx:ctx()) -> {ok, apileague_search_memes_api_200_response:apileague_search_memes_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_memes_api(Ctx) ->
+    search_memes_api(Ctx, #{}).
 
--spec search_memes(ctx:ctx(), maps:map()) -> {ok, apileague_search_memes_200_response:apileague_search_memes_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_memes(Ctx, Optional) ->
+-spec search_memes_api(ctx:ctx(), maps:map()) -> {ok, apileague_search_memes_api_200_response:apileague_search_memes_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_memes_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 

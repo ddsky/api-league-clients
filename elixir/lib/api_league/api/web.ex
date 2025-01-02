@@ -10,7 +10,7 @@ defmodule APILeague.Api.Web do
   import APILeague.RequestBuilder
 
   @doc """
-  Extract Authors
+  Extract Authors API
   Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
   ### Parameters
@@ -21,11 +21,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ExtractAuthors200Response.t}` on success
+  - `{:ok, APILeague.Model.ExtractAuthorsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec extract_authors(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractAuthors200Response.t} | {:error, Tesla.Env.t}
-  def extract_authors(connection, url, _opts \\ []) do
+  @spec extract_authors_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractAuthorsApi200Response.t} | {:error, Tesla.Env.t}
+  def extract_authors_api(connection, url, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -36,7 +36,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ExtractAuthors200Response},
+      {200, APILeague.Model.ExtractAuthorsApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -47,7 +47,7 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
-  Extract Content from a Web Page
+  Extract Content from a Web Page API
   Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
   ### Parameters
@@ -58,11 +58,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ExtractContentFromAWebPage200Response.t}` on success
+  - `{:ok, APILeague.Model.ExtractContentFromAWebPageApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec extract_content_from_a_web_page(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractContentFromAWebPage200Response.t} | {:error, Tesla.Env.t}
-  def extract_content_from_a_web_page(connection, url, _opts \\ []) do
+  @spec extract_content_from_a_web_page_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractContentFromAWebPageApi200Response.t} | {:error, Tesla.Env.t}
+  def extract_content_from_a_web_page_api(connection, url, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -73,7 +73,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ExtractContentFromAWebPage200Response},
+      {200, APILeague.Model.ExtractContentFromAWebPageApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -84,7 +84,7 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
-  Extract Publish Date
+  Extract Publish Date API
   Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
   ### Parameters
@@ -95,11 +95,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ExtractPublishDate200Response.t}` on success
+  - `{:ok, APILeague.Model.ExtractPublishDateApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec extract_publish_date(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractPublishDate200Response.t} | {:error, Tesla.Env.t}
-  def extract_publish_date(connection, url, _opts \\ []) do
+  @spec extract_publish_date_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractPublishDateApi200Response.t} | {:error, Tesla.Env.t}
+  def extract_publish_date_api(connection, url, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -110,7 +110,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ExtractPublishDate200Response},
+      {200, APILeague.Model.ExtractPublishDateApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -121,7 +121,7 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
-  Retrieve Page Rank
+  Retrieve Page Rank API
   This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
 
   ### Parameters
@@ -132,11 +132,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.RetrievePageRank200Response.t}` on success
+  - `{:ok, APILeague.Model.RetrievePageRankApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec retrieve_page_rank(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrievePageRank200Response.t} | {:error, Tesla.Env.t}
-  def retrieve_page_rank(connection, domain, _opts \\ []) do
+  @spec retrieve_page_rank_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrievePageRankApi200Response.t} | {:error, Tesla.Env.t}
+  def retrieve_page_rank_api(connection, domain, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -147,7 +147,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.RetrievePageRank200Response},
+      {200, APILeague.Model.RetrievePageRankApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -158,7 +158,7 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
-  Search Web
+  Search Web API
   Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
   ### Parameters
@@ -170,11 +170,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchWeb200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchWebApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_web(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchWeb200Response.t} | {:error, Tesla.Env.t}
-  def search_web(connection, query, opts \\ []) do
+  @spec search_web_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchWebApi200Response.t} | {:error, Tesla.Env.t}
+  def search_web_api(connection, query, opts \\ []) do
     optional_params = %{
       :number => :query
     }
@@ -190,7 +190,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchWeb200Response},
+      {200, APILeague.Model.SearchWebApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -201,7 +201,7 @@ defmodule APILeague.Api.Web do
   end
 
   @doc """
-  Verify Email Address
+  Verify Email Address API
   This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
 
   ### Parameters
@@ -212,11 +212,11 @@ defmodule APILeague.Api.Web do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.VerifyEmailAddress200Response.t}` on success
+  - `{:ok, APILeague.Model.VerifyEmailAddressApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec verify_email_address(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.VerifyEmailAddress200Response.t} | {:error, Tesla.Env.t}
-  def verify_email_address(connection, email, _opts \\ []) do
+  @spec verify_email_address_api(Tesla.Env.client, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.VerifyEmailAddressApi200Response.t} | {:error, Tesla.Env.t}
+  def verify_email_address_api(connection, email, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -227,7 +227,7 @@ defmodule APILeague.Api.Web do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.VerifyEmailAddress200Response},
+      {200, APILeague.Model.VerifyEmailAddressApi200Response},
       {401, false},
       {402, false},
       {403, false},

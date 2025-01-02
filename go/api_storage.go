@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,48 +23,48 @@ import (
 // StorageAPIService StorageAPI service
 type StorageAPIService service
 
-type ApiReadKeyValueFromStoreRequest struct {
+type ApiReadKeyValueFromStoreAPIRequest struct {
 	ctx context.Context
 	ApiService *StorageAPIService
 	key *string
 }
 
 // The key for which the value is stored (max length 255 characters).
-func (r ApiReadKeyValueFromStoreRequest) Key(key string) ApiReadKeyValueFromStoreRequest {
+func (r ApiReadKeyValueFromStoreAPIRequest) Key(key string) ApiReadKeyValueFromStoreAPIRequest {
 	r.key = &key
 	return r
 }
 
-func (r ApiReadKeyValueFromStoreRequest) Execute() (*ReadKeyValueFromStore200Response, *http.Response, error) {
-	return r.ApiService.ReadKeyValueFromStoreExecute(r)
+func (r ApiReadKeyValueFromStoreAPIRequest) Execute() (*ReadKeyValueFromStoreAPI200Response, *http.Response, error) {
+	return r.ApiService.ReadKeyValueFromStoreAPIExecute(r)
 }
 
 /*
-ReadKeyValueFromStore Read Key Value from Store
+ReadKeyValueFromStoreAPI Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReadKeyValueFromStoreRequest
+ @return ApiReadKeyValueFromStoreAPIRequest
 */
-func (a *StorageAPIService) ReadKeyValueFromStore(ctx context.Context) ApiReadKeyValueFromStoreRequest {
-	return ApiReadKeyValueFromStoreRequest{
+func (a *StorageAPIService) ReadKeyValueFromStoreAPI(ctx context.Context) ApiReadKeyValueFromStoreAPIRequest {
+	return ApiReadKeyValueFromStoreAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ReadKeyValueFromStore200Response
-func (a *StorageAPIService) ReadKeyValueFromStoreExecute(r ApiReadKeyValueFromStoreRequest) (*ReadKeyValueFromStore200Response, *http.Response, error) {
+//  @return ReadKeyValueFromStoreAPI200Response
+func (a *StorageAPIService) ReadKeyValueFromStoreAPIExecute(r ApiReadKeyValueFromStoreAPIRequest) (*ReadKeyValueFromStoreAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ReadKeyValueFromStore200Response
+		localVarReturnValue  *ReadKeyValueFromStoreAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageAPIService.ReadKeyValueFromStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageAPIService.ReadKeyValueFromStoreAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -164,7 +164,7 @@ func (a *StorageAPIService) ReadKeyValueFromStoreExecute(r ApiReadKeyValueFromSt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStoreKeyValueGETRequest struct {
+type ApiStoreKeyValueGETAPIRequest struct {
 	ctx context.Context
 	ApiService *StorageAPIService
 	key *string
@@ -172,47 +172,47 @@ type ApiStoreKeyValueGETRequest struct {
 }
 
 // The key for which the value is stored (max length 255 characters).
-func (r ApiStoreKeyValueGETRequest) Key(key string) ApiStoreKeyValueGETRequest {
+func (r ApiStoreKeyValueGETAPIRequest) Key(key string) ApiStoreKeyValueGETAPIRequest {
 	r.key = &key
 	return r
 }
 
 // The value that is supposed to be stored (max length 10,000 characters).
-func (r ApiStoreKeyValueGETRequest) Value(value string) ApiStoreKeyValueGETRequest {
+func (r ApiStoreKeyValueGETAPIRequest) Value(value string) ApiStoreKeyValueGETAPIRequest {
 	r.value = &value
 	return r
 }
 
-func (r ApiStoreKeyValueGETRequest) Execute() (*StoreKeyValueGET200Response, *http.Response, error) {
-	return r.ApiService.StoreKeyValueGETExecute(r)
+func (r ApiStoreKeyValueGETAPIRequest) Execute() (*StoreKeyValueGETAPI200Response, *http.Response, error) {
+	return r.ApiService.StoreKeyValueGETAPIExecute(r)
 }
 
 /*
-StoreKeyValueGET Store Key Value (GET)
+StoreKeyValueGETAPI Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStoreKeyValueGETRequest
+ @return ApiStoreKeyValueGETAPIRequest
 */
-func (a *StorageAPIService) StoreKeyValueGET(ctx context.Context) ApiStoreKeyValueGETRequest {
-	return ApiStoreKeyValueGETRequest{
+func (a *StorageAPIService) StoreKeyValueGETAPI(ctx context.Context) ApiStoreKeyValueGETAPIRequest {
+	return ApiStoreKeyValueGETAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StoreKeyValueGET200Response
-func (a *StorageAPIService) StoreKeyValueGETExecute(r ApiStoreKeyValueGETRequest) (*StoreKeyValueGET200Response, *http.Response, error) {
+//  @return StoreKeyValueGETAPI200Response
+func (a *StorageAPIService) StoreKeyValueGETAPIExecute(r ApiStoreKeyValueGETAPIRequest) (*StoreKeyValueGETAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StoreKeyValueGET200Response
+		localVarReturnValue  *StoreKeyValueGETAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageAPIService.StoreKeyValueGET")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StorageAPIService.StoreKeyValueGETAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convert_units**](MathApi.md#convert_units) | **GET** /convert-units | Convert Units
+[**convert_units_api**](MathApi.md#convert_units_api) | **GET** /convert-units | Convert Units API
 
 
 
-## convert_units
+## convert_units_api
 
-> models::ConvertUnits200Response convert_units(source_amount, source_unit, target_unit, food_name)
-Convert Units
+> models::ConvertUnitsApi200Response convert_units_api(source_amount, source_unit, target_unit, food_name)
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::ConvertUnits200Response**](convertUnits_200_response.md)
+[**models::ConvertUnitsApi200Response**](convertUnitsAPI_200_response.md)
 
 ### Authorization
 

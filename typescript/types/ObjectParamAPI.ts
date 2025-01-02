@@ -1,149 +1,151 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
-import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
-import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
-import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
-import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
-import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
-import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
-import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
-import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
-import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
-import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
-import { ExtractDates200Response } from '../models/ExtractDates200Response';
-import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200ResponseDatesInner';
-import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
-import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
-import { ExtractNews200Response } from '../models/ExtractNews200Response';
-import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
-import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
-import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
-import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
-import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
-import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
-import { RandomMeme200Response } from '../models/RandomMeme200Response';
-import { RandomPoem200Response } from '../models/RandomPoem200Response';
-import { RandomQuote200Response } from '../models/RandomQuote200Response';
-import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
-import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
-import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
-import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
-import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
-import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
-import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
-import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
-import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
-import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
-import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
-import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
-import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
-import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
-import { ScoreText200Response } from '../models/ScoreText200Response';
-import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
-import { ScoreText200ResponseInterestingnessSubscores } from '../models/ScoreText200ResponseInterestingnessSubscores';
-import { ScoreText200ResponseReadability } from '../models/ScoreText200ResponseReadability';
-import { ScoreText200ResponseReadabilityMainscores } from '../models/ScoreText200ResponseReadabilityMainscores';
-import { ScoreText200ResponseReadabilitySubscores } from '../models/ScoreText200ResponseReadabilitySubscores';
-import { ScoreText200ResponseSkimmability } from '../models/ScoreText200ResponseSkimmability';
-import { ScoreText200ResponseSkimmabilityMainscores } from '../models/ScoreText200ResponseSkimmabilityMainscores';
-import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText200ResponseSkimmabilitySubscores';
-import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
-import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
-import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
-import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
-import { SearchDrinks200ResponseDrinksInner } from '../models/SearchDrinks200ResponseDrinksInner';
-import { SearchDrinks200ResponseDrinksInnerCredits } from '../models/SearchDrinks200ResponseDrinksInnerCredits';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutrition } from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
-import { SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
-import { SearchGifs200Response } from '../models/SearchGifs200Response';
-import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
-import { SearchIcons200Response } from '../models/SearchIcons200Response';
-import { SearchJokes200Response } from '../models/SearchJokes200Response';
-import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
-import { SearchMemes200Response } from '../models/SearchMemes200Response';
-import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
-import { SearchNews200Response } from '../models/SearchNews200Response';
-import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
-import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
-import { SearchRecipes200ResponseRecipesInner } from '../models/SearchRecipes200ResponseRecipesInner';
-import { SearchRecipes200ResponseRecipesInnerNutrition } from '../models/SearchRecipes200ResponseRecipesInnerNutrition';
-import { SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
-import { SearchRestaurants200ResponseRestaurantsInner } from '../models/SearchRestaurants200ResponseRestaurantsInner';
-import { SearchRestaurants200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurants200ResponseRestaurantsInnerAddress';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
-import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
-import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
-import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
-import { SearchWeb200Response } from '../models/SearchWeb200Response';
-import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
-import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
-import { StemText200Response } from '../models/StemText200Response';
-import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
-import { TopNews200Response } from '../models/TopNews200Response';
-import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
-import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
-import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
+import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
+import { ConvertUnitsAPI200Response } from '../models/ConvertUnitsAPI200Response';
+import { CorrectSpellingAPI200Response } from '../models/CorrectSpellingAPI200Response';
+import { DetectGenderByNameAPI200Response } from '../models/DetectGenderByNameAPI200Response';
+import { DetectLanguageAPI200ResponseInner } from '../models/DetectLanguageAPI200ResponseInner';
+import { DetectMainImageColorAPI200ResponseInner } from '../models/DetectMainImageColorAPI200ResponseInner';
+import { DetectSentimentAPI200Response } from '../models/DetectSentimentAPI200Response';
+import { DetectSentimentAPI200ResponseDocument } from '../models/DetectSentimentAPI200ResponseDocument';
+import { DetectSentimentAPI200ResponseSentencesInner } from '../models/DetectSentimentAPI200ResponseSentencesInner';
+import { ExtractAuthorsAPI200Response } from '../models/ExtractAuthorsAPI200Response';
+import { ExtractAuthorsAPI200ResponseAuthorsInner } from '../models/ExtractAuthorsAPI200ResponseAuthorsInner';
+import { ExtractContentFromAWebPageAPI200Response } from '../models/ExtractContentFromAWebPageAPI200Response';
+import { ExtractDatesAPI200Response } from '../models/ExtractDatesAPI200Response';
+import { ExtractDatesAPI200ResponseDatesInner } from '../models/ExtractDatesAPI200ResponseDatesInner';
+import { ExtractEntitiesAPI200Response } from '../models/ExtractEntitiesAPI200Response';
+import { ExtractEntitiesAPI200ResponseEntitiesInner } from '../models/ExtractEntitiesAPI200ResponseEntitiesInner';
+import { ExtractNewsAPI200Response } from '../models/ExtractNewsAPI200Response';
+import { ExtractNewsAPI200ResponseImagesInner } from '../models/ExtractNewsAPI200ResponseImagesInner';
+import { ExtractNewsAPI200ResponseVideosInner } from '../models/ExtractNewsAPI200ResponseVideosInner';
+import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
+import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
+import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
+import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
+import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
+import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
+import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
+import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
+import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
+import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
+import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
+import { RetrieveRecipeInformationAPI200ResponseDietaryProperties } from '../models/RetrieveRecipeInformationAPI200ResponseDietaryProperties';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInner } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInner';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInner';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner';
+import { RetrieveRecipeInformationAPI200ResponseNutrition } from '../models/RetrieveRecipeInformationAPI200ResponseNutrition';
+import { RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner';
+import { RetrieveRecipeInformationAPI200ResponseScores } from '../models/RetrieveRecipeInformationAPI200ResponseScores';
+import { RetrieveRecipeInformationAPI200ResponseTaste } from '../models/RetrieveRecipeInformationAPI200ResponseTaste';
+import { RetrieveRecipeInformationAPI200ResponseTimes } from '../models/RetrieveRecipeInformationAPI200ResponseTimes';
+import { ScoreReadabilityAPI200Response } from '../models/ScoreReadabilityAPI200Response';
+import { ScoreTextAPI200Response } from '../models/ScoreTextAPI200Response';
+import { ScoreTextAPI200ResponseInterestingness } from '../models/ScoreTextAPI200ResponseInterestingness';
+import { ScoreTextAPI200ResponseInterestingnessSubscores } from '../models/ScoreTextAPI200ResponseInterestingnessSubscores';
+import { ScoreTextAPI200ResponseReadability } from '../models/ScoreTextAPI200ResponseReadability';
+import { ScoreTextAPI200ResponseReadabilityMainscores } from '../models/ScoreTextAPI200ResponseReadabilityMainscores';
+import { ScoreTextAPI200ResponseReadabilitySubscores } from '../models/ScoreTextAPI200ResponseReadabilitySubscores';
+import { ScoreTextAPI200ResponseSkimmability } from '../models/ScoreTextAPI200ResponseSkimmability';
+import { ScoreTextAPI200ResponseSkimmabilityMainscores } from '../models/ScoreTextAPI200ResponseSkimmabilityMainscores';
+import { ScoreTextAPI200ResponseSkimmabilitySubscores } from '../models/ScoreTextAPI200ResponseSkimmabilitySubscores';
+import { ScoreTextAPI200ResponseStyle } from '../models/ScoreTextAPI200ResponseStyle';
+import { ScoreTextAPI200ResponseStyleSubscores } from '../models/ScoreTextAPI200ResponseStyleSubscores';
+import { SearchBooksAPI200Response } from '../models/SearchBooksAPI200Response';
+import { SearchBooksAPI200ResponseBooksInnerInner } from '../models/SearchBooksAPI200ResponseBooksInnerInner';
+import { SearchDrinksAPI200Response } from '../models/SearchDrinksAPI200Response';
+import { SearchDrinksAPI200ResponseDrinksInner } from '../models/SearchDrinksAPI200ResponseDrinksInner';
+import { SearchDrinksAPI200ResponseDrinksInnerCredits } from '../models/SearchDrinksAPI200ResponseDrinksInnerCredits';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
+import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
+import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
+import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
+import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
+import { SearchMemesAPI200ResponseMemesInner } from '../models/SearchMemesAPI200ResponseMemesInner';
+import { SearchNewsAPI200Response } from '../models/SearchNewsAPI200Response';
+import { SearchNewsAPI200ResponseNewsInner } from '../models/SearchNewsAPI200ResponseNewsInner';
+import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Response';
+import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
+import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
+import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
+import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
+import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
+import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
+import { SearchWebAPI200Response } from '../models/SearchWebAPI200Response';
+import { SearchWebAPI200ResponseResultsInner } from '../models/SearchWebAPI200ResponseResultsInner';
+import { SingularizeWordAPI200Response } from '../models/SingularizeWordAPI200Response';
+import { StemTextAPI200Response } from '../models/StemTextAPI200Response';
+import { StoreKeyValueGETAPI200Response } from '../models/StoreKeyValueGETAPI200Response';
+import { TagPartOfSpeechAPI200Response } from '../models/TagPartOfSpeechAPI200Response';
+import { TopNewsAPI200Response } from '../models/TopNewsAPI200Response';
+import { TopNewsAPI200ResponseTopNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInner';
+import { TopNewsAPI200ResponseTopNewsInnerNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInnerNewsInner';
+import { VectorSearchAPI200Response } from '../models/VectorSearchAPI200Response';
+import { VectorSearchAPI200ResponseVectorsInner } from '../models/VectorSearchAPI200ResponseVectorsInner';
+import { VerifyEmailAddressAPI200Response } from '../models/VerifyEmailAddressAPI200Response';
 
 import { ObservableArtApi } from "./ObservableAPI";
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
 
-export interface ArtApiImageToAsciiArtByURLRequest {
+export interface ArtApiImageToAsciiArtByURLAPIRequest {
     /**
      * The URL to the image.
      * @type string
-     * @memberof ArtApiimageToAsciiArtByURL
+     * @memberof ArtApiimageToAsciiArtByURLAPI
      */
     url: string
     /**
      * The maximum width of the image (default 400, max. 500).
      * @type number
-     * @memberof ArtApiimageToAsciiArtByURL
+     * @memberof ArtApiimageToAsciiArtByURLAPI
      */
     width?: number
     /**
      * The maximum height of the image (default 400, max. 500).
      * @type number
-     * @memberof ArtApiimageToAsciiArtByURL
+     * @memberof ArtApiimageToAsciiArtByURLAPI
      */
     height?: number
 }
 
-export interface ArtApiRandomPoemRequest {
+export interface ArtApiRandomPoemAPIRequest {
     /**
      * The minimum number of lines of the poem.
      * @type number
-     * @memberof ArtApirandomPoem
+     * @memberof ArtApirandomPoemAPI
      */
     minLines?: number
     /**
      * The maximum number of lines of the poem.
      * @type number
-     * @memberof ArtApirandomPoem
+     * @memberof ArtApirandomPoemAPI
      */
     maxLines?: number
 }
@@ -157,38 +159,38 @@ export class ObjectArtApi {
 
     /**
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * @param param the request object
      */
-    public imageToAsciiArtByURLWithHttpInfo(param: ArtApiImageToAsciiArtByURLRequest, options?: Configuration): Promise<HttpInfo<string>> {
-        return this.api.imageToAsciiArtByURLWithHttpInfo(param.url, param.width, param.height,  options).toPromise();
+    public imageToAsciiArtByURLAPIWithHttpInfo(param: ArtApiImageToAsciiArtByURLAPIRequest, options?: Configuration): Promise<HttpInfo<string>> {
+        return this.api.imageToAsciiArtByURLAPIWithHttpInfo(param.url, param.width, param.height,  options).toPromise();
     }
 
     /**
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * @param param the request object
      */
-    public imageToAsciiArtByURL(param: ArtApiImageToAsciiArtByURLRequest, options?: Configuration): Promise<string> {
-        return this.api.imageToAsciiArtByURL(param.url, param.width, param.height,  options).toPromise();
+    public imageToAsciiArtByURLAPI(param: ArtApiImageToAsciiArtByURLAPIRequest, options?: Configuration): Promise<string> {
+        return this.api.imageToAsciiArtByURLAPI(param.url, param.width, param.height,  options).toPromise();
     }
 
     /**
      * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
-     * Random Poem
+     * Random Poem API
      * @param param the request object
      */
-    public randomPoemWithHttpInfo(param: ArtApiRandomPoemRequest = {}, options?: Configuration): Promise<HttpInfo<RandomPoem200Response>> {
-        return this.api.randomPoemWithHttpInfo(param.minLines, param.maxLines,  options).toPromise();
+    public randomPoemAPIWithHttpInfo(param: ArtApiRandomPoemAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomPoemAPI200Response>> {
+        return this.api.randomPoemAPIWithHttpInfo(param.minLines, param.maxLines,  options).toPromise();
     }
 
     /**
      * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
-     * Random Poem
+     * Random Poem API
      * @param param the request object
      */
-    public randomPoem(param: ArtApiRandomPoemRequest = {}, options?: Configuration): Promise<RandomPoem200Response> {
-        return this.api.randomPoem(param.minLines, param.maxLines,  options).toPromise();
+    public randomPoemAPI(param: ArtApiRandomPoemAPIRequest = {}, options?: Configuration): Promise<RandomPoemAPI200Response> {
+        return this.api.randomPoemAPI(param.minLines, param.maxLines,  options).toPromise();
     }
 
 }
@@ -196,104 +198,104 @@ export class ObjectArtApi {
 import { ObservableBooksApi } from "./ObservableAPI";
 import { BooksApiRequestFactory, BooksApiResponseProcessor} from "../apis/BooksApi";
 
-export interface BooksApiFindSimilarBooksRequest {
+export interface BooksApiFindSimilarBooksAPIRequest {
     /**
      * The id of the book to which similar books should be found.
      * @type number
-     * @memberof BooksApifindSimilarBooks
+     * @memberof BooksApifindSimilarBooksAPI
      */
     id: number
     /**
      * The number of similar books to return in range [1,100]
      * @type number
-     * @memberof BooksApifindSimilarBooks
+     * @memberof BooksApifindSimilarBooksAPI
      */
     number?: number
 }
 
-export interface BooksApiSearchBooksRequest {
+export interface BooksApiSearchBooksAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     query?: string
     /**
      * The books must have been published after this year.
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     earliestPublishYear?: number
     /**
      * The books must have been published before this year.
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     latestPublishYear?: number
     /**
      * The minimum rating the book must have gotten in the interval [0,1].
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     minRating?: number
     /**
      * The maximum rating the book must have gotten in the interval [0,1].
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     maxRating?: number
     /**
      * A comma-separated list of genres. Only books from any of the given genres will be returned.
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     genres?: string
     /**
      * A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can\&#39;t disambiguate.
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     authors?: string
     /**
      * Only the book matching the ISBN-13 will be returned
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     isbn?: string
     /**
      * Only the book matching the OCLC will be returned
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     oclc?: string
     /**
      * The sorting criteria (publish-date or rating).
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     sort?: string
     /**
      * Whether to sort ascending or descending (ASC or DESC).
      * @type string
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     sortDirection?: string
     /**
      * Whether to group similar editions of the same book.
      * @type boolean
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     groupResults?: boolean
     /**
      * The number of books to skip in range [0,1000]
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     offset?: number
     /**
      * The number of books to return in range [1,100]
      * @type number
-     * @memberof BooksApisearchBooks
+     * @memberof BooksApisearchBooksAPI
      */
     number?: number
 }
@@ -306,39 +308,39 @@ export class ObjectBooksApi {
     }
 
     /**
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
-     * Find Similar Books
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
      * @param param the request object
      */
-    public findSimilarBooksWithHttpInfo(param: BooksApiFindSimilarBooksRequest, options?: Configuration): Promise<HttpInfo<FindSimilarBooks200Response>> {
-        return this.api.findSimilarBooksWithHttpInfo(param.id, param.number,  options).toPromise();
+    public findSimilarBooksAPIWithHttpInfo(param: BooksApiFindSimilarBooksAPIRequest, options?: Configuration): Promise<HttpInfo<FindSimilarBooksAPI200Response>> {
+        return this.api.findSimilarBooksAPIWithHttpInfo(param.id, param.number,  options).toPromise();
     }
 
     /**
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
-     * Find Similar Books
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
      * @param param the request object
      */
-    public findSimilarBooks(param: BooksApiFindSimilarBooksRequest, options?: Configuration): Promise<FindSimilarBooks200Response> {
-        return this.api.findSimilarBooks(param.id, param.number,  options).toPromise();
+    public findSimilarBooksAPI(param: BooksApiFindSimilarBooksAPIRequest, options?: Configuration): Promise<FindSimilarBooksAPI200Response> {
+        return this.api.findSimilarBooksAPI(param.id, param.number,  options).toPromise();
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
-     * Search Books
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
      * @param param the request object
      */
-    public searchBooksWithHttpInfo(param: BooksApiSearchBooksRequest = {}, options?: Configuration): Promise<HttpInfo<SearchBooks200Response>> {
-        return this.api.searchBooksWithHttpInfo(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
+    public searchBooksAPIWithHttpInfo(param: BooksApiSearchBooksAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchBooksAPI200Response>> {
+        return this.api.searchBooksAPIWithHttpInfo(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
-     * Search Books
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
      * @param param the request object
      */
-    public searchBooks(param: BooksApiSearchBooksRequest = {}, options?: Configuration): Promise<SearchBooks200Response> {
-        return this.api.searchBooks(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
+    public searchBooksAPI(param: BooksApiSearchBooksAPIRequest = {}, options?: Configuration): Promise<SearchBooksAPI200Response> {
+        return this.api.searchBooksAPI(param.query, param.earliestPublishYear, param.latestPublishYear, param.minRating, param.maxRating, param.genres, param.authors, param.isbn, param.oclc, param.sort, param.sortDirection, param.groupResults, param.offset, param.number,  options).toPromise();
     }
 
 }
@@ -346,779 +348,779 @@ export class ObjectBooksApi {
 import { ObservableFoodApi } from "./ObservableAPI";
 import { FoodApiRequestFactory, FoodApiResponseProcessor} from "../apis/FoodApi";
 
-export interface FoodApiComputeNutritionRequest {
+export interface FoodApiComputeNutritionAPIRequest {
     /**
      * A comma-separated list of the ingredients of the recipe.
      * @type string
-     * @memberof FoodApicomputeNutrition
+     * @memberof FoodApicomputeNutritionAPI
      */
     ingredients: string
     /**
      * The number of servings the ingredients make. Nutrition is computed per serving.
      * @type number
-     * @memberof FoodApicomputeNutrition
+     * @memberof FoodApicomputeNutritionAPI
      */
     servings?: number
     /**
      * If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
      * @type boolean
-     * @memberof FoodApicomputeNutrition
+     * @memberof FoodApicomputeNutritionAPI
      */
     reduceOils?: boolean
 }
 
-export interface FoodApiRetrieveRecipeInformationRequest {
+export interface FoodApiRetrieveRecipeInformationAPIRequest {
     /**
      * The id of the recipe to retrieve.
      * @type number
-     * @memberof FoodApiretrieveRecipeInformation
+     * @memberof FoodApiretrieveRecipeInformationAPI
      */
     id: number
     /**
      * Whether to pair a wine to the recipe.
      * @type boolean
-     * @memberof FoodApiretrieveRecipeInformation
+     * @memberof FoodApiretrieveRecipeInformationAPI
      */
     addWinePairing?: boolean
 }
 
-export interface FoodApiSearchDrinksRequest {
+export interface FoodApiSearchDrinksAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     query?: string
     /**
      * A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     glassTypes?: string
     /**
      * A comma-separated list (interpreted as AND) of dominant flavors in the drink.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     flavors?: string
     /**
      * The diet the drink must adhere to. One of the following: paleo,primal,grain-free,vegan,vegetarian.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     diet?: string
     /**
      * A comma-separated list of ingredients that should/must be used in the drinks.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     includeIngredients?: string
     /**
      * A comma-separated list of ingredients or ingredient types that the drinks must not contain.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     excludeIngredients?: string
     /**
      * The minimum amount of calories the drink must have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minCalories?: number
     /**
      * The maximum amount of calories the drink can have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxCalories?: number
     /**
      * The minimum amount of carbohydrates in grams the drink must have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minCarbs?: number
     /**
      * The maximum amount of carbohydrates in grams the drink can have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxCarbs?: number
     /**
      * The minimum amount of protein in grams the drink must have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minProtein?: number
     /**
      * The maximum amount of protein in grams the drink can have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxProtein?: number
     /**
      * The minimum amount of fat in grams the drink must have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minFat?: number
     /**
      * The maximum amount of fat in grams the drink can have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxFat?: number
     /**
      * The minimum alcohol percentage the drink must have.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minAlcoholPercent?: number
     /**
      * The maximum alcohol percentage the drink can have.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxAlcoholPercent?: number
     /**
      * The minimum amount of caffeine in milligrams the drink must have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     minCaffeine?: number
     /**
      * The maximum amount of caffeine in milligrams the drink can have per serving.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     maxCaffeine?: number
     /**
      * The attribute by which to sort the drinks.
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     sort?: string
     /**
      * Whether to sort ascending or descending (ASC or DESC).
      * @type string
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     sortDirection?: string
     /**
      * The number of drinks to skip, between 0 and 90.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     offset?: number
     /**
      * The number of drinks, between 1 and 10.
      * @type number
-     * @memberof FoodApisearchDrinks
+     * @memberof FoodApisearchDrinksAPI
      */
     number?: number
 }
 
-export interface FoodApiSearchRecipesRequest {
+export interface FoodApiSearchRecipesAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     query?: string
     /**
      * The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     cuisines?: string
     /**
      * The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     excludeCuisines?: string
     /**
      * The type of the recipe, one of: main course,side dish,dessert,appetizer,salad,bread,breakfast,soup,beverage,sauce,drink.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     mealType?: string
     /**
      * The diet the recipes must adhere to. One of the following: paleo,primal,grain-free,pescetarian,lacto vegetarian,ovo vegetarian,vegan,vegetarian.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     diet?: string
     /**
      * A comma-separated list of intolerances. All recipes returned must not contain ingredients that are not suitable for people with the intolerances entered.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     intolerances?: string
     /**
      * The equipment required. Multiple values will be interpreted as \&#39;OR\&#39;.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     equipment?: string
     /**
      * A comma-separated list of ingredients that should/must be used in the recipes.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     includeIngredients?: string
     /**
      * A comma-separated list of ingredients or ingredient types that the recipes must not contain.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     excludeIngredients?: string
     /**
      * Add information about the ingredients and whether they are used or missing in relation to the query.
      * @type boolean
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     fillIngredients?: boolean
     /**
      * If set to true, you get more information about the recipes returned.
      * @type boolean
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     addRecipeInformation?: boolean
     /**
      * The maximum time in minutes it should take to prepare and cook the recipe.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxTime?: number
     /**
      * The minimum amount of servings the recipe is for.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minServings?: number
     /**
      * The maximum amount of servings the recipe is for.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxServings?: number
     /**
      * The minimum amount of calories the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCalories?: number
     /**
      * The maximum amount of calories the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCalories?: number
     /**
      * The minimum amount of carbohydrates in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCarbs?: number
     /**
      * The maximum amount of carbohydrates in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCarbs?: number
     /**
      * The minimum amount of protein in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minProtein?: number
     /**
      * The maximum amount of protein in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxProtein?: number
     /**
      * The minimum amount of fat in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minFat?: number
     /**
      * The maximum amount of fat in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxFat?: number
     /**
      * The minimum amount of sugar in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minSugar?: number
     /**
      * The maximum amount of sugar in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxSugar?: number
     /**
      * The minimum amount of fiber in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minFiber?: number
     /**
      * The maximum amount of fiber in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxFiber?: number
     /**
      * The minimum amount of folate in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minFolate?: number
     /**
      * The maximum amount of folate in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxFolate?: number
     /**
      * The minimum amount of folic acid in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minFolicAcid?: number
     /**
      * The maximum amount of folic acid in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxFolicAcid?: number
     /**
      * The minimum amount of iodine in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minIodine?: number
     /**
      * The maximum amount of iodine in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxIodine?: number
     /**
      * The minimum amount of iron in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minIron?: number
     /**
      * The maximum amount of iron in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxIron?: number
     /**
      * The minimum amount of zinc in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minZinc?: number
     /**
      * The maximum amount of zinc in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxZinc?: number
     /**
      * The minimum amount of magnesium in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minMagnesium?: number
     /**
      * The maximum amount of magnesium in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxMagnesium?: number
     /**
      * The minimum amount of manganese in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minManganese?: number
     /**
      * The maximum amount of manganese in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxManganese?: number
     /**
      * The minimum amount of phosphorus in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minPhosphorus?: number
     /**
      * The maximum amount of phosphorus in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxPhosphorus?: number
     /**
      * The minimum amount of potassium in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minPotassium?: number
     /**
      * The maximum amount of potassium in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxPotassium?: number
     /**
      * The minimum amount of sodium in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minSodium?: number
     /**
      * The maximum amount of sodium in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxSodium?: number
     /**
      * The minimum amount of selenium in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minSelenium?: number
     /**
      * The maximum amount of selenium in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxSelenium?: number
     /**
      * The minimum amount of copper in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCopper?: number
     /**
      * The maximum amount of copper in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCopper?: number
     /**
      * The minimum amount of calcium in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCalcium?: number
     /**
      * The maximum amount of calcium in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCalcium?: number
     /**
      * The minimum amount of choline in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCholine?: number
     /**
      * The maximum amount of choline in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCholine?: number
     /**
      * The minimum amount of cholesterol in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCholesterol?: number
     /**
      * The maximum amount of cholesterol in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCholesterol?: number
     /**
      * The minimum amount of fluoride in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minFluoride?: number
     /**
      * The maximum amount of fluoride in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxFluoride?: number
     /**
      * The minimum amount of alcohol in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minAlcohol?: number
     /**
      * The maximum amount of alcohol in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxAlcohol?: number
     /**
      * The minimum amount of caffeine in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minCaffeine?: number
     /**
      * The maximum amount of caffeine in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxCaffeine?: number
     /**
      * The minimum amount of saturated fat in grams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minSaturatedFat?: number
     /**
      * The maximum amount of saturated fat in grams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxSaturatedFat?: number
     /**
      * The minimum amount of Vitamin A in IU the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminA?: number
     /**
      * The maximum amount of Vitamin A in IU the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminA?: number
     /**
      * The minimum amount of Vitamin C in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminC?: number
     /**
      * The maximum amount of Vitamin C in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminC?: number
     /**
      * The minimum amount of Vitamin D in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminD?: number
     /**
      * The maximum amount of Vitamin D in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminD?: number
     /**
      * The minimum amount of Vitamin E in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminE?: number
     /**
      * The maximum amount of Vitamin E in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminE?: number
     /**
      * The minimum amount of Vitamin K in micrograms the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminK?: number
     /**
      * The maximum amount of Vitamin K in micrograms the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminK?: number
     /**
      * The minimum amount of Vitamin B1 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB1?: number
     /**
      * The maximum amount of Vitamin B1 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB1?: number
     /**
      * The minimum amount of Vitamin B2 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB2?: number
     /**
      * The maximum amount of Vitamin B2 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB2?: number
     /**
      * The minimum amount of Vitamin B3 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB3?: number
     /**
      * The maximum amount of Vitamin B3 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB3?: number
     /**
      * The minimum amount of Vitamin B5 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB5?: number
     /**
      * The maximum amount of Vitamin B5 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB5?: number
     /**
      * The minimum amount of Vitamin B6 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB6?: number
     /**
      * The maximum amount of Vitamin B6 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB6?: number
     /**
      * The minimum amount of Vitamin B12 in milligrams the recipe must have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     minVitaminB12?: number
     /**
      * The maximum amount of Vitamin B12 in milligrams the recipe can have per serving.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     maxVitaminB12?: number
     /**
      * The strategy to sort recipes by.
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     sort?: string
     /**
      * Whether to sort ascending or descending (ASC or DESC).
      * @type string
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     sortDirection?: string
     /**
      * The number of recipes to skip, between 0 and 900.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     offset?: number
     /**
      * The number of recipes, between 1 and 100.
      * @type number
-     * @memberof FoodApisearchRecipes
+     * @memberof FoodApisearchRecipesAPI
      */
     number?: number
 }
 
-export interface FoodApiSearchRestaurantsRequest {
+export interface FoodApiSearchRestaurantsAPIRequest {
     /**
      * The latitude to search around.
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     lat: number
     /**
      * The longitude to search around.
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     lon: number
     /**
      * The search query.
      * @type string
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     query?: string
     /**
      * The maximum distance of the restaurant in miles around the given location.
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     distance?: number
     /**
      * The budget in USD for the meal.
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     budget?: number
     /**
      * The minimum rating of the restaurants in range [0,5].
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     minRating?: number
     /**
      * The cuisine that the restaurants should support.
      * @type string
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     cuisine?: string
     /**
      * Whether the restaurants have to be open now.
      * @type boolean
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     isOpen?: boolean
     /**
      * The page of the results.
      * @type number
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     page?: number
     /**
      * The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
      * @type string
-     * @memberof FoodApisearchRestaurants
+     * @memberof FoodApisearchRestaurantsAPI
      */
     sort?: string
 }
@@ -1132,92 +1134,92 @@ export class ObjectFoodApi {
 
     /**
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
-     * Compute Nutrition
+     * Compute Nutrition API
      * @param param the request object
      */
-    public computeNutritionWithHttpInfo(param: FoodApiComputeNutritionRequest, options?: Configuration): Promise<HttpInfo<ComputeNutrition200Response>> {
-        return this.api.computeNutritionWithHttpInfo(param.ingredients, param.servings, param.reduceOils,  options).toPromise();
+    public computeNutritionAPIWithHttpInfo(param: FoodApiComputeNutritionAPIRequest, options?: Configuration): Promise<HttpInfo<ComputeNutritionAPI200Response>> {
+        return this.api.computeNutritionAPIWithHttpInfo(param.ingredients, param.servings, param.reduceOils,  options).toPromise();
     }
 
     /**
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
-     * Compute Nutrition
+     * Compute Nutrition API
      * @param param the request object
      */
-    public computeNutrition(param: FoodApiComputeNutritionRequest, options?: Configuration): Promise<ComputeNutrition200Response> {
-        return this.api.computeNutrition(param.ingredients, param.servings, param.reduceOils,  options).toPromise();
+    public computeNutritionAPI(param: FoodApiComputeNutritionAPIRequest, options?: Configuration): Promise<ComputeNutritionAPI200Response> {
+        return this.api.computeNutritionAPI(param.ingredients, param.servings, param.reduceOils,  options).toPromise();
     }
 
     /**
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * @param param the request object
      */
-    public retrieveRecipeInformationWithHttpInfo(param: FoodApiRetrieveRecipeInformationRequest, options?: Configuration): Promise<HttpInfo<RetrieveRecipeInformation200Response>> {
-        return this.api.retrieveRecipeInformationWithHttpInfo(param.id, param.addWinePairing,  options).toPromise();
+    public retrieveRecipeInformationAPIWithHttpInfo(param: FoodApiRetrieveRecipeInformationAPIRequest, options?: Configuration): Promise<HttpInfo<RetrieveRecipeInformationAPI200Response>> {
+        return this.api.retrieveRecipeInformationAPIWithHttpInfo(param.id, param.addWinePairing,  options).toPromise();
     }
 
     /**
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * @param param the request object
      */
-    public retrieveRecipeInformation(param: FoodApiRetrieveRecipeInformationRequest, options?: Configuration): Promise<RetrieveRecipeInformation200Response> {
-        return this.api.retrieveRecipeInformation(param.id, param.addWinePairing,  options).toPromise();
+    public retrieveRecipeInformationAPI(param: FoodApiRetrieveRecipeInformationAPIRequest, options?: Configuration): Promise<RetrieveRecipeInformationAPI200Response> {
+        return this.api.retrieveRecipeInformationAPI(param.id, param.addWinePairing,  options).toPromise();
     }
 
     /**
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
-     * Search Drinks
+     * Search Drinks API
      * @param param the request object
      */
-    public searchDrinksWithHttpInfo(param: FoodApiSearchDrinksRequest = {}, options?: Configuration): Promise<HttpInfo<SearchDrinks200Response>> {
-        return this.api.searchDrinksWithHttpInfo(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchDrinksAPIWithHttpInfo(param: FoodApiSearchDrinksAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchDrinksAPI200Response>> {
+        return this.api.searchDrinksAPIWithHttpInfo(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
-     * Search Drinks
+     * Search Drinks API
      * @param param the request object
      */
-    public searchDrinks(param: FoodApiSearchDrinksRequest = {}, options?: Configuration): Promise<SearchDrinks200Response> {
-        return this.api.searchDrinks(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchDrinksAPI(param: FoodApiSearchDrinksAPIRequest = {}, options?: Configuration): Promise<SearchDrinksAPI200Response> {
+        return this.api.searchDrinksAPI(param.query, param.glassTypes, param.flavors, param.diet, param.includeIngredients, param.excludeIngredients, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minAlcoholPercent, param.maxAlcoholPercent, param.minCaffeine, param.maxCaffeine, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
-     * Search Recipes
+     * Search Recipes API
      * @param param the request object
      */
-    public searchRecipesWithHttpInfo(param: FoodApiSearchRecipesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchRecipes200Response>> {
-        return this.api.searchRecipesWithHttpInfo(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchRecipesAPIWithHttpInfo(param: FoodApiSearchRecipesAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchRecipesAPI200Response>> {
+        return this.api.searchRecipesAPIWithHttpInfo(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
-     * Search Recipes
+     * Search Recipes API
      * @param param the request object
      */
-    public searchRecipes(param: FoodApiSearchRecipesRequest = {}, options?: Configuration): Promise<SearchRecipes200Response> {
-        return this.api.searchRecipes(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchRecipesAPI(param: FoodApiSearchRecipesAPIRequest = {}, options?: Configuration): Promise<SearchRecipesAPI200Response> {
+        return this.api.searchRecipesAPI(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants
+     * Search Restaurants API
      * @param param the request object
      */
-    public searchRestaurantsWithHttpInfo(param: FoodApiSearchRestaurantsRequest, options?: Configuration): Promise<HttpInfo<SearchRestaurants200Response>> {
-        return this.api.searchRestaurantsWithHttpInfo(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
+    public searchRestaurantsAPIWithHttpInfo(param: FoodApiSearchRestaurantsAPIRequest, options?: Configuration): Promise<HttpInfo<SearchRestaurantsAPI200Response>> {
+        return this.api.searchRestaurantsAPIWithHttpInfo(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
     }
 
     /**
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants
+     * Search Restaurants API
      * @param param the request object
      */
-    public searchRestaurants(param: FoodApiSearchRestaurantsRequest, options?: Configuration): Promise<SearchRestaurants200Response> {
-        return this.api.searchRestaurants(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
+    public searchRestaurantsAPI(param: FoodApiSearchRestaurantsAPIRequest, options?: Configuration): Promise<SearchRestaurantsAPI200Response> {
+        return this.api.searchRestaurantsAPI(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
     }
 
 }
@@ -1225,170 +1227,170 @@ export class ObjectFoodApi {
 import { ObservableHumorApi } from "./ObservableAPI";
 import { HumorApiRequestFactory, HumorApiResponseProcessor} from "../apis/HumorApi";
 
-export interface HumorApiGenerateNonsenseWordRequest {
+export interface HumorApiGenerateNonsenseWordAPIRequest {
 }
 
-export interface HumorApiRandomJokeRequest {
+export interface HumorApiRandomJokeAPIRequest {
     /**
      * A comma-separated list of tags the jokes should have.
      * @type string
-     * @memberof HumorApirandomJoke
+     * @memberof HumorApirandomJokeAPI
      */
     includeTags?: string
     /**
      * A comma-separated list of tags the jokes must not have.
      * @type string
-     * @memberof HumorApirandomJoke
+     * @memberof HumorApirandomJokeAPI
      */
     excludeTags?: string
     /**
      * The minimum rating in range [0.0,1.0] of the jokes.
      * @type number
-     * @memberof HumorApirandomJoke
+     * @memberof HumorApirandomJokeAPI
      */
     minRating?: number
     /**
      * The maximum length of the joke in letters.
      * @type number
-     * @memberof HumorApirandomJoke
+     * @memberof HumorApirandomJokeAPI
      */
     maxLength?: number
 }
 
-export interface HumorApiRandomMemeRequest {
+export interface HumorApiRandomMemeAPIRequest {
     /**
      * A comma-separated list of words that must occur in the meme.
      * @type string
-     * @memberof HumorApirandomMeme
+     * @memberof HumorApirandomMemeAPI
      */
     keywords?: string
     /**
      * Whether the keywords must occur in the image.
      * @type boolean
-     * @memberof HumorApirandomMeme
+     * @memberof HumorApirandomMemeAPI
      */
     keywordsInImage?: boolean
     /**
      * The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @type string
-     * @memberof HumorApirandomMeme
+     * @memberof HumorApirandomMemeAPI
      */
     mediaType?: string
     /**
      * The minimum rating in range [0.0,1.0] of the meme.
      * @type number
-     * @memberof HumorApirandomMeme
+     * @memberof HumorApirandomMemeAPI
      */
     minRating?: number
     /**
      * The maximum age of the meme in days.
      * @type number
-     * @memberof HumorApirandomMeme
+     * @memberof HumorApirandomMemeAPI
      */
     maxAgeDays?: number
 }
 
-export interface HumorApiSearchGifsRequest {
+export interface HumorApiSearchGifsAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof HumorApisearchGifs
+     * @memberof HumorApisearchGifsAPI
      */
     query: string
     /**
      * The number of gifs to return in range [1,10]
      * @type number
-     * @memberof HumorApisearchGifs
+     * @memberof HumorApisearchGifsAPI
      */
     number?: number
 }
 
-export interface HumorApiSearchJokesRequest {
+export interface HumorApiSearchJokesAPIRequest {
     /**
      * A comma-separated list of words that must occur in the joke.
      * @type string
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     keywords?: string
     /**
      * A comma-separated list of tags the jokes should have.
      * @type string
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     includeTags?: string
     /**
      * A comma-separated list of tags the jokes must not have.
      * @type string
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     excludeTags?: string
     /**
      * The minimum rating in range [0.0,1.0] of the jokes.
      * @type number
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     minRating?: number
     /**
      * The maximum length of the joke in letters.
      * @type number
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     maxLength?: number
     /**
      * The number of jokes to skip, between 0 and 1000.
      * @type number
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     offset?: number
     /**
      * The number of jokes, between 1 and 10.
      * @type number
-     * @memberof HumorApisearchJokes
+     * @memberof HumorApisearchJokesAPI
      */
     number?: number
 }
 
-export interface HumorApiSearchMemesRequest {
+export interface HumorApiSearchMemesAPIRequest {
     /**
      * A comma-separated list of words that must occur in the meme.
      * @type string
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     keywords?: string
     /**
      * Whether the keywords must occur in the image.
      * @type boolean
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     keywordsInImage?: boolean
     /**
      * The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @type string
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     mediaType?: string
     /**
      * The minimum rating in range [0.0,1.0] of the meme.
      * @type number
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     minRating?: number
     /**
      * The maximum age of the meme in days.
      * @type number
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     maxAgeDays?: number
     /**
      * The number of memes to skip, between 0 and 1000.
      * @type number
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     offset?: number
     /**
      * The number of memes, between 1 and 10.
      * @type number
-     * @memberof HumorApisearchMemes
+     * @memberof HumorApisearchMemesAPI
      */
     number?: number
 }
@@ -1402,110 +1404,110 @@ export class ObjectHumorApi {
 
     /**
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      * @param param the request object
      */
-    public generateNonsenseWordWithHttpInfo(param: HumorApiGenerateNonsenseWordRequest = {}, options?: Configuration): Promise<HttpInfo<GenerateNonsenseWord200Response>> {
-        return this.api.generateNonsenseWordWithHttpInfo( options).toPromise();
+    public generateNonsenseWordAPIWithHttpInfo(param: HumorApiGenerateNonsenseWordAPIRequest = {}, options?: Configuration): Promise<HttpInfo<GenerateNonsenseWordAPI200Response>> {
+        return this.api.generateNonsenseWordAPIWithHttpInfo( options).toPromise();
     }
 
     /**
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      * @param param the request object
      */
-    public generateNonsenseWord(param: HumorApiGenerateNonsenseWordRequest = {}, options?: Configuration): Promise<GenerateNonsenseWord200Response> {
-        return this.api.generateNonsenseWord( options).toPromise();
+    public generateNonsenseWordAPI(param: HumorApiGenerateNonsenseWordAPIRequest = {}, options?: Configuration): Promise<GenerateNonsenseWordAPI200Response> {
+        return this.api.generateNonsenseWordAPI( options).toPromise();
     }
 
     /**
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-     * Random Joke
+     * Random Joke API
      * @param param the request object
      */
-    public randomJokeWithHttpInfo(param: HumorApiRandomJokeRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokes200ResponseJokesInner>> {
-        return this.api.randomJokeWithHttpInfo(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
+    public randomJokeAPIWithHttpInfo(param: HumorApiRandomJokeAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokesAPI200ResponseJokesInner>> {
+        return this.api.randomJokeAPIWithHttpInfo(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
     }
 
     /**
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-     * Random Joke
+     * Random Joke API
      * @param param the request object
      */
-    public randomJoke(param: HumorApiRandomJokeRequest = {}, options?: Configuration): Promise<SearchJokes200ResponseJokesInner> {
-        return this.api.randomJoke(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
+    public randomJokeAPI(param: HumorApiRandomJokeAPIRequest = {}, options?: Configuration): Promise<SearchJokesAPI200ResponseJokesInner> {
+        return this.api.randomJokeAPI(param.includeTags, param.excludeTags, param.minRating, param.maxLength,  options).toPromise();
     }
 
     /**
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-     * Random Meme
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
      * @param param the request object
      */
-    public randomMemeWithHttpInfo(param: HumorApiRandomMemeRequest = {}, options?: Configuration): Promise<HttpInfo<RandomMeme200Response>> {
-        return this.api.randomMemeWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
+    public randomMemeAPIWithHttpInfo(param: HumorApiRandomMemeAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomMemeAPI200Response>> {
+        return this.api.randomMemeAPIWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
     }
 
     /**
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-     * Random Meme
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
      * @param param the request object
      */
-    public randomMeme(param: HumorApiRandomMemeRequest = {}, options?: Configuration): Promise<RandomMeme200Response> {
-        return this.api.randomMeme(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
-    }
-
-    /**
-     * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-     * Search Gifs
-     * @param param the request object
-     */
-    public searchGifsWithHttpInfo(param: HumorApiSearchGifsRequest, options?: Configuration): Promise<HttpInfo<SearchGifs200Response>> {
-        return this.api.searchGifsWithHttpInfo(param.query, param.number,  options).toPromise();
+    public randomMemeAPI(param: HumorApiRandomMemeAPIRequest = {}, options?: Configuration): Promise<RandomMemeAPI200Response> {
+        return this.api.randomMemeAPI(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays,  options).toPromise();
     }
 
     /**
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-     * Search Gifs
+     * Search Gifs API
      * @param param the request object
      */
-    public searchGifs(param: HumorApiSearchGifsRequest, options?: Configuration): Promise<SearchGifs200Response> {
-        return this.api.searchGifs(param.query, param.number,  options).toPromise();
+    public searchGifsAPIWithHttpInfo(param: HumorApiSearchGifsAPIRequest, options?: Configuration): Promise<HttpInfo<SearchGifsAPI200Response>> {
+        return this.api.searchGifsAPIWithHttpInfo(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
+     * Search Gifs API
+     * @param param the request object
+     */
+    public searchGifsAPI(param: HumorApiSearchGifsAPIRequest, options?: Configuration): Promise<SearchGifsAPI200Response> {
+        return this.api.searchGifsAPI(param.query, param.number,  options).toPromise();
     }
 
     /**
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-     * Search Jokes
+     * Search Jokes API
      * @param param the request object
      */
-    public searchJokesWithHttpInfo(param: HumorApiSearchJokesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokes200Response>> {
-        return this.api.searchJokesWithHttpInfo(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
+    public searchJokesAPIWithHttpInfo(param: HumorApiSearchJokesAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchJokesAPI200Response>> {
+        return this.api.searchJokesAPIWithHttpInfo(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
     }
 
     /**
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-     * Search Jokes
+     * Search Jokes API
      * @param param the request object
      */
-    public searchJokes(param: HumorApiSearchJokesRequest = {}, options?: Configuration): Promise<SearchJokes200Response> {
-        return this.api.searchJokes(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
+    public searchJokesAPI(param: HumorApiSearchJokesAPIRequest = {}, options?: Configuration): Promise<SearchJokesAPI200Response> {
+        return this.api.searchJokesAPI(param.keywords, param.includeTags, param.excludeTags, param.minRating, param.maxLength, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
-     * Search Memes
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
+     * Search Memes API
      * @param param the request object
      */
-    public searchMemesWithHttpInfo(param: HumorApiSearchMemesRequest = {}, options?: Configuration): Promise<HttpInfo<SearchMemes200Response>> {
-        return this.api.searchMemesWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
+    public searchMemesAPIWithHttpInfo(param: HumorApiSearchMemesAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchMemesAPI200Response>> {
+        return this.api.searchMemesAPIWithHttpInfo(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
-     * Search Memes
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
+     * Search Memes API
      * @param param the request object
      */
-    public searchMemes(param: HumorApiSearchMemesRequest = {}, options?: Configuration): Promise<SearchMemes200Response> {
-        return this.api.searchMemes(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
+    public searchMemesAPI(param: HumorApiSearchMemesAPIRequest = {}, options?: Configuration): Promise<SearchMemesAPI200Response> {
+        return this.api.searchMemesAPI(param.keywords, param.keywordsInImage, param.mediaType, param.minRating, param.maxAgeDays, param.offset, param.number,  options).toPromise();
     }
 
 }
@@ -1513,35 +1515,35 @@ export class ObjectHumorApi {
 import { ObservableKnowledgeApi } from "./ObservableAPI";
 import { KnowledgeApiRequestFactory, KnowledgeApiResponseProcessor} from "../apis/KnowledgeApi";
 
-export interface KnowledgeApiRandomQuoteRequest {
+export interface KnowledgeApiRandomQuoteAPIRequest {
     /**
      * The minimum length of the quote in letters.
      * @type number
-     * @memberof KnowledgeApirandomQuote
+     * @memberof KnowledgeApirandomQuoteAPI
      */
     minLength?: number
     /**
      * The maximum length of the quote in letters.
      * @type number
-     * @memberof KnowledgeApirandomQuote
+     * @memberof KnowledgeApirandomQuoteAPI
      */
     maxLength?: number
 }
 
-export interface KnowledgeApiRandomRiddleRequest {
+export interface KnowledgeApiRandomRiddleAPIRequest {
     /**
      * The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
      * @type string
-     * @memberof KnowledgeApirandomRiddle
+     * @memberof KnowledgeApirandomRiddleAPI
      */
     difficulty?: string
 }
 
-export interface KnowledgeApiRandomTriviaRequest {
+export interface KnowledgeApiRandomTriviaAPIRequest {
     /**
      * The maximum length of the trivia in letters.
      * @type number
-     * @memberof KnowledgeApirandomTrivia
+     * @memberof KnowledgeApirandomTriviaAPI
      */
     maxLength?: number
 }
@@ -1555,56 +1557,56 @@ export class ObjectKnowledgeApi {
 
     /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-     * Random Quote
+     * Random Quote API
      * @param param the request object
      */
-    public randomQuoteWithHttpInfo(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<HttpInfo<RandomQuote200Response>> {
-        return this.api.randomQuoteWithHttpInfo(param.minLength, param.maxLength,  options).toPromise();
+    public randomQuoteAPIWithHttpInfo(param: KnowledgeApiRandomQuoteAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomQuoteAPI200Response>> {
+        return this.api.randomQuoteAPIWithHttpInfo(param.minLength, param.maxLength,  options).toPromise();
     }
 
     /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-     * Random Quote
+     * Random Quote API
      * @param param the request object
      */
-    public randomQuote(param: KnowledgeApiRandomQuoteRequest = {}, options?: Configuration): Promise<RandomQuote200Response> {
-        return this.api.randomQuote(param.minLength, param.maxLength,  options).toPromise();
+    public randomQuoteAPI(param: KnowledgeApiRandomQuoteAPIRequest = {}, options?: Configuration): Promise<RandomQuoteAPI200Response> {
+        return this.api.randomQuoteAPI(param.minLength, param.maxLength,  options).toPromise();
     }
 
     /**
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
-     * Random Riddle
+     * Random Riddle API
      * @param param the request object
      */
-    public randomRiddleWithHttpInfo(param: KnowledgeApiRandomRiddleRequest = {}, options?: Configuration): Promise<HttpInfo<RandomRiddle200Response>> {
-        return this.api.randomRiddleWithHttpInfo(param.difficulty,  options).toPromise();
+    public randomRiddleAPIWithHttpInfo(param: KnowledgeApiRandomRiddleAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomRiddleAPI200Response>> {
+        return this.api.randomRiddleAPIWithHttpInfo(param.difficulty,  options).toPromise();
     }
 
     /**
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
-     * Random Riddle
+     * Random Riddle API
      * @param param the request object
      */
-    public randomRiddle(param: KnowledgeApiRandomRiddleRequest = {}, options?: Configuration): Promise<RandomRiddle200Response> {
-        return this.api.randomRiddle(param.difficulty,  options).toPromise();
+    public randomRiddleAPI(param: KnowledgeApiRandomRiddleAPIRequest = {}, options?: Configuration): Promise<RandomRiddleAPI200Response> {
+        return this.api.randomRiddleAPI(param.difficulty,  options).toPromise();
     }
 
     /**
-     * This endpoint returns a random piece of trivia.
-     * Random Trivia
+     * This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+     * Random Trivia API
      * @param param the request object
      */
-    public randomTriviaWithHttpInfo(param: KnowledgeApiRandomTriviaRequest = {}, options?: Configuration): Promise<HttpInfo<RandomTrivia200Response>> {
-        return this.api.randomTriviaWithHttpInfo(param.maxLength,  options).toPromise();
+    public randomTriviaAPIWithHttpInfo(param: KnowledgeApiRandomTriviaAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomTriviaAPI200Response>> {
+        return this.api.randomTriviaAPIWithHttpInfo(param.maxLength,  options).toPromise();
     }
 
     /**
-     * This endpoint returns a random piece of trivia.
-     * Random Trivia
+     * This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+     * Random Trivia API
      * @param param the request object
      */
-    public randomTrivia(param: KnowledgeApiRandomTriviaRequest = {}, options?: Configuration): Promise<RandomTrivia200Response> {
-        return this.api.randomTrivia(param.maxLength,  options).toPromise();
+    public randomTriviaAPI(param: KnowledgeApiRandomTriviaAPIRequest = {}, options?: Configuration): Promise<RandomTriviaAPI200Response> {
+        return this.api.randomTriviaAPI(param.maxLength,  options).toPromise();
     }
 
 }
@@ -1612,29 +1614,29 @@ export class ObjectKnowledgeApi {
 import { ObservableMathApi } from "./ObservableAPI";
 import { MathApiRequestFactory, MathApiResponseProcessor} from "../apis/MathApi";
 
-export interface MathApiConvertUnitsRequest {
+export interface MathApiConvertUnitsAPIRequest {
     /**
      * The source amount.
      * @type number
-     * @memberof MathApiconvertUnits
+     * @memberof MathApiconvertUnitsAPI
      */
     sourceAmount: number
     /**
      * The source unit.
      * @type string
-     * @memberof MathApiconvertUnits
+     * @memberof MathApiconvertUnitsAPI
      */
     sourceUnit: string
     /**
      * The unit to which should be converted.
      * @type string
-     * @memberof MathApiconvertUnits
+     * @memberof MathApiconvertUnitsAPI
      */
     targetUnit: string
     /**
      * An optional food name. For converting foods the food is relevant as they have different densities.
      * @type string
-     * @memberof MathApiconvertUnits
+     * @memberof MathApiconvertUnitsAPI
      */
     foodName?: string
 }
@@ -1648,20 +1650,20 @@ export class ObjectMathApi {
 
     /**
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
-     * Convert Units
+     * Convert Units API
      * @param param the request object
      */
-    public convertUnitsWithHttpInfo(param: MathApiConvertUnitsRequest, options?: Configuration): Promise<HttpInfo<ConvertUnits200Response>> {
-        return this.api.convertUnitsWithHttpInfo(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
+    public convertUnitsAPIWithHttpInfo(param: MathApiConvertUnitsAPIRequest, options?: Configuration): Promise<HttpInfo<ConvertUnitsAPI200Response>> {
+        return this.api.convertUnitsAPIWithHttpInfo(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
     }
 
     /**
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
-     * Convert Units
+     * Convert Units API
      * @param param the request object
      */
-    public convertUnits(param: MathApiConvertUnitsRequest, options?: Configuration): Promise<ConvertUnits200Response> {
-        return this.api.convertUnits(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
+    public convertUnitsAPI(param: MathApiConvertUnitsAPIRequest, options?: Configuration): Promise<ConvertUnitsAPI200Response> {
+        return this.api.convertUnitsAPI(param.sourceAmount, param.sourceUnit, param.targetUnit, param.foodName,  options).toPromise();
     }
 
 }
@@ -1669,74 +1671,95 @@ export class ObjectMathApi {
 import { ObservableMediaApi } from "./ObservableAPI";
 import { MediaApiRequestFactory, MediaApiResponseProcessor} from "../apis/MediaApi";
 
-export interface MediaApiDetectMainImageColorRequest {
+export interface MediaApiDetectMainImageColorAPIRequest {
     /**
      * The url of the image for which the colors should be detected.
      * @type string
-     * @memberof MediaApidetectMainImageColor
+     * @memberof MediaApidetectMainImageColorAPI
      */
     url: string
 }
 
-export interface MediaApiRescaleImageRequest {
+export interface MediaApiRescaleImageAPIRequest {
     /**
      * The url of the image to be rescaled.
      * @type string
-     * @memberof MediaApirescaleImage
+     * @memberof MediaApirescaleImageAPI
      */
     url: string
     /**
      * The desired width of the rescaled image.
      * @type number
-     * @memberof MediaApirescaleImage
+     * @memberof MediaApirescaleImageAPI
      */
     width: number
     /**
      * The desired height of the rescaled image.
      * @type number
-     * @memberof MediaApirescaleImage
+     * @memberof MediaApirescaleImageAPI
      */
     height: number
     /**
      * Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      * @type boolean
-     * @memberof MediaApirescaleImage
+     * @memberof MediaApirescaleImageAPI
      */
     crop: boolean
 }
 
-export interface MediaApiSearchIconsRequest {
+export interface MediaApiSearchIconsAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof MediaApisearchIcons
+     * @memberof MediaApisearchIconsAPI
      */
     query: string
     /**
      * If true, only public domain icons will be returned.
      * @type boolean
-     * @memberof MediaApisearchIcons
+     * @memberof MediaApisearchIconsAPI
      */
     onlyPublicDomain?: boolean
     /**
      * The number of icons to return in range [1,100]
      * @type number
-     * @memberof MediaApisearchIcons
+     * @memberof MediaApisearchIconsAPI
      */
     number?: number
 }
 
-export interface MediaApiSearchRoyaltyFreeImagesRequest {
+export interface MediaApiSearchRoyaltyFreeImagesAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof MediaApisearchRoyaltyFreeImages
+     * @memberof MediaApisearchRoyaltyFreeImagesAPI
      */
     query: string
     /**
      * The number of images to return in range [1,100]
      * @type number
-     * @memberof MediaApisearchRoyaltyFreeImages
+     * @memberof MediaApisearchRoyaltyFreeImagesAPI
+     */
+    number?: number
+}
+
+export interface MediaApiVectorSearchAPIRequest {
+    /**
+     * The search query.
+     * @type string
+     * @memberof MediaApivectorSearchAPI
+     */
+    query: string
+    /**
+     * The number of vectors to skip, between 0 and 1000
+     * @type number
+     * @memberof MediaApivectorSearchAPI
+     */
+    offset?: number
+    /**
+     * The number of vectors to return in range [1,10]
+     * @type number
+     * @memberof MediaApivectorSearchAPI
      */
     number?: number
 }
@@ -1750,74 +1773,92 @@ export class ObjectMediaApi {
 
     /**
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * @param param the request object
      */
-    public detectMainImageColorWithHttpInfo(param: MediaApiDetectMainImageColorRequest, options?: Configuration): Promise<HttpInfo<Array<DetectMainImageColor200ResponseInner>>> {
-        return this.api.detectMainImageColorWithHttpInfo(param.url,  options).toPromise();
+    public detectMainImageColorAPIWithHttpInfo(param: MediaApiDetectMainImageColorAPIRequest, options?: Configuration): Promise<HttpInfo<Array<DetectMainImageColorAPI200ResponseInner>>> {
+        return this.api.detectMainImageColorAPIWithHttpInfo(param.url,  options).toPromise();
     }
 
     /**
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * @param param the request object
      */
-    public detectMainImageColor(param: MediaApiDetectMainImageColorRequest, options?: Configuration): Promise<Array<DetectMainImageColor200ResponseInner>> {
-        return this.api.detectMainImageColor(param.url,  options).toPromise();
+    public detectMainImageColorAPI(param: MediaApiDetectMainImageColorAPIRequest, options?: Configuration): Promise<Array<DetectMainImageColorAPI200ResponseInner>> {
+        return this.api.detectMainImageColorAPI(param.url,  options).toPromise();
     }
 
     /**
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
-     * Rescale Image
+     * Rescale Image API
      * @param param the request object
      */
-    public rescaleImageWithHttpInfo(param: MediaApiRescaleImageRequest, options?: Configuration): Promise<HttpInfo<HttpFile>> {
-        return this.api.rescaleImageWithHttpInfo(param.url, param.width, param.height, param.crop,  options).toPromise();
+    public rescaleImageAPIWithHttpInfo(param: MediaApiRescaleImageAPIRequest, options?: Configuration): Promise<HttpInfo<HttpFile>> {
+        return this.api.rescaleImageAPIWithHttpInfo(param.url, param.width, param.height, param.crop,  options).toPromise();
     }
 
     /**
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
-     * Rescale Image
+     * Rescale Image API
      * @param param the request object
      */
-    public rescaleImage(param: MediaApiRescaleImageRequest, options?: Configuration): Promise<HttpFile> {
-        return this.api.rescaleImage(param.url, param.width, param.height, param.crop,  options).toPromise();
+    public rescaleImageAPI(param: MediaApiRescaleImageAPIRequest, options?: Configuration): Promise<HttpFile> {
+        return this.api.rescaleImageAPI(param.url, param.width, param.height, param.crop,  options).toPromise();
     }
 
     /**
      * Search through millions of icons to match any topic you want.
-     * Search Icons
+     * Search Icons API
      * @param param the request object
      */
-    public searchIconsWithHttpInfo(param: MediaApiSearchIconsRequest, options?: Configuration): Promise<HttpInfo<SearchIcons200Response>> {
-        return this.api.searchIconsWithHttpInfo(param.query, param.onlyPublicDomain, param.number,  options).toPromise();
+    public searchIconsAPIWithHttpInfo(param: MediaApiSearchIconsAPIRequest, options?: Configuration): Promise<HttpInfo<SearchIconsAPI200Response>> {
+        return this.api.searchIconsAPIWithHttpInfo(param.query, param.onlyPublicDomain, param.number,  options).toPromise();
     }
 
     /**
      * Search through millions of icons to match any topic you want.
-     * Search Icons
+     * Search Icons API
      * @param param the request object
      */
-    public searchIcons(param: MediaApiSearchIconsRequest, options?: Configuration): Promise<SearchIcons200Response> {
-        return this.api.searchIcons(param.query, param.onlyPublicDomain, param.number,  options).toPromise();
+    public searchIconsAPI(param: MediaApiSearchIconsAPIRequest, options?: Configuration): Promise<SearchIconsAPI200Response> {
+        return this.api.searchIconsAPI(param.query, param.onlyPublicDomain, param.number,  options).toPromise();
     }
 
     /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * @param param the request object
      */
-    public searchRoyaltyFreeImagesWithHttpInfo(param: MediaApiSearchRoyaltyFreeImagesRequest, options?: Configuration): Promise<HttpInfo<SearchRoyaltyFreeImages200Response>> {
-        return this.api.searchRoyaltyFreeImagesWithHttpInfo(param.query, param.number,  options).toPromise();
+    public searchRoyaltyFreeImagesAPIWithHttpInfo(param: MediaApiSearchRoyaltyFreeImagesAPIRequest, options?: Configuration): Promise<HttpInfo<SearchRoyaltyFreeImagesAPI200Response>> {
+        return this.api.searchRoyaltyFreeImagesAPIWithHttpInfo(param.query, param.number,  options).toPromise();
     }
 
     /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * @param param the request object
      */
-    public searchRoyaltyFreeImages(param: MediaApiSearchRoyaltyFreeImagesRequest, options?: Configuration): Promise<SearchRoyaltyFreeImages200Response> {
-        return this.api.searchRoyaltyFreeImages(param.query, param.number,  options).toPromise();
+    public searchRoyaltyFreeImagesAPI(param: MediaApiSearchRoyaltyFreeImagesAPIRequest, options?: Configuration): Promise<SearchRoyaltyFreeImagesAPI200Response> {
+        return this.api.searchRoyaltyFreeImagesAPI(param.query, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+     * Vector Search API
+     * @param param the request object
+     */
+    public vectorSearchAPIWithHttpInfo(param: MediaApiVectorSearchAPIRequest, options?: Configuration): Promise<HttpInfo<VectorSearchAPI200Response>> {
+        return this.api.vectorSearchAPIWithHttpInfo(param.query, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+     * Vector Search API
+     * @param param the request object
+     */
+    public vectorSearchAPI(param: MediaApiVectorSearchAPIRequest, options?: Configuration): Promise<VectorSearchAPI200Response> {
+        return this.api.vectorSearchAPI(param.query, param.offset, param.number,  options).toPromise();
     }
 
 }
@@ -1825,143 +1866,143 @@ export class ObjectMediaApi {
 import { ObservableNewsApi } from "./ObservableAPI";
 import { NewsApiRequestFactory, NewsApiResponseProcessor} from "../apis/NewsApi";
 
-export interface NewsApiExtractNewsRequest {
+export interface NewsApiExtractNewsAPIRequest {
     /**
      * The url of the news.
      * @type string
-     * @memberof NewsApiextractNews
+     * @memberof NewsApiextractNewsAPI
      */
     url: string
     /**
      * Whether to analyze the news (extract entities etc.)
      * @type boolean
-     * @memberof NewsApiextractNews
+     * @memberof NewsApiextractNewsAPI
      */
     analyze: boolean
 }
 
-export interface NewsApiSearchNewsRequest {
+export interface NewsApiSearchNewsAPIRequest {
     /**
-     * The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     text?: string
     /**
      * A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     sourceCountries?: string
     /**
      * The ISO 6391 language code of the news.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     language?: string
     /**
      * The minimal sentiment of the news in range [-1,1].
      * @type number
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     minSentiment?: number
     /**
      * The maximal sentiment of the news in range [-1,1].
      * @type number
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     maxSentiment?: number
     /**
      * The news must have been published after this date.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     earliestPublishDate?: string
     /**
      * The news must have been published before this date.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     latestPublishDate?: string
     /**
      * A comma-separated list of news sources from which the news should originate.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     newsSources?: string
     /**
      * A comma-separated list of author names. Only news from any of the given authors will be returned.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     authors?: string
     /**
      * A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     categories?: string
     /**
      * Filter news by entities (ORG, PER, or LOC).
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     entities?: string
     /**
      * Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     locationFilter?: string
     /**
      * The sorting criteria (publish-time).
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     sort?: string
     /**
      * Whether to sort ascending or descending (ASC or DESC).
      * @type string
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     sortDirection?: string
     /**
      * The number of news to skip in range [0,10000]
      * @type number
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     offset?: number
     /**
      * The number of news to return in range [1,100]
      * @type number
-     * @memberof NewsApisearchNews
+     * @memberof NewsApisearchNewsAPI
      */
     number?: number
 }
 
-export interface NewsApiTopNewsRequest {
+export interface NewsApiTopNewsAPIRequest {
     /**
      * The ISO 3166 country code of the country for which top news should be retrieved.
      * @type string
-     * @memberof NewsApitopNews
+     * @memberof NewsApitopNewsAPI
      */
     sourceCountry: string
     /**
      * The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
      * @type string
-     * @memberof NewsApitopNews
+     * @memberof NewsApitopNewsAPI
      */
     language: string
     /**
      * The date for which the top news should be retrieved. If no date is given, the current day is assumed.
      * @type string
-     * @memberof NewsApitopNews
+     * @memberof NewsApitopNewsAPI
      */
     date?: string
     /**
      * Whether to only return basic information such as id, title, and url of the news.
      * @type boolean
-     * @memberof NewsApitopNews
+     * @memberof NewsApitopNewsAPI
      */
     headlinesOnly?: boolean
 }
@@ -1975,56 +2016,56 @@ export class ObjectNewsApi {
 
     /**
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
-     * Extract News
+     * Extract News API
      * @param param the request object
      */
-    public extractNewsWithHttpInfo(param: NewsApiExtractNewsRequest, options?: Configuration): Promise<HttpInfo<ExtractNews200Response>> {
-        return this.api.extractNewsWithHttpInfo(param.url, param.analyze,  options).toPromise();
+    public extractNewsAPIWithHttpInfo(param: NewsApiExtractNewsAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractNewsAPI200Response>> {
+        return this.api.extractNewsAPIWithHttpInfo(param.url, param.analyze,  options).toPromise();
     }
 
     /**
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
-     * Extract News
+     * Extract News API
      * @param param the request object
      */
-    public extractNews(param: NewsApiExtractNewsRequest, options?: Configuration): Promise<ExtractNews200Response> {
-        return this.api.extractNews(param.url, param.analyze,  options).toPromise();
+    public extractNewsAPI(param: NewsApiExtractNewsAPIRequest, options?: Configuration): Promise<ExtractNewsAPI200Response> {
+        return this.api.extractNewsAPI(param.url, param.analyze,  options).toPromise();
     }
 
     /**
-     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * Search News
+     * Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News API
      * @param param the request object
      */
-    public searchNewsWithHttpInfo(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<HttpInfo<SearchNews200Response>> {
-        return this.api.searchNewsWithHttpInfo(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchNewsAPIWithHttpInfo(param: NewsApiSearchNewsAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchNewsAPI200Response>> {
+        return this.api.searchNewsAPIWithHttpInfo(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * Search News
+     * Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News API
      * @param param the request object
      */
-    public searchNews(param: NewsApiSearchNewsRequest = {}, options?: Configuration): Promise<SearchNews200Response> {
-        return this.api.searchNews(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
+    public searchNewsAPI(param: NewsApiSearchNewsAPIRequest = {}, options?: Configuration): Promise<SearchNewsAPI200Response> {
+        return this.api.searchNewsAPI(param.text, param.sourceCountries, param.language, param.minSentiment, param.maxSentiment, param.earliestPublishDate, param.latestPublishDate, param.newsSources, param.authors, param.categories, param.entities, param.locationFilter, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
     }
 
     /**
-     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
-     * Top News
+     * Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News API
      * @param param the request object
      */
-    public topNewsWithHttpInfo(param: NewsApiTopNewsRequest, options?: Configuration): Promise<HttpInfo<TopNews200Response>> {
-        return this.api.topNewsWithHttpInfo(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
+    public topNewsAPIWithHttpInfo(param: NewsApiTopNewsAPIRequest, options?: Configuration): Promise<HttpInfo<TopNewsAPI200Response>> {
+        return this.api.topNewsAPIWithHttpInfo(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
     }
 
     /**
-     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
-     * Top News
+     * Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News API
      * @param param the request object
      */
-    public topNews(param: NewsApiTopNewsRequest, options?: Configuration): Promise<TopNews200Response> {
-        return this.api.topNews(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
+    public topNewsAPI(param: NewsApiTopNewsAPIRequest, options?: Configuration): Promise<TopNewsAPI200Response> {
+        return this.api.topNewsAPI(param.sourceCountry, param.language, param.date, param.headlinesOnly,  options).toPromise();
     }
 
 }
@@ -2032,26 +2073,26 @@ export class ObjectNewsApi {
 import { ObservableStorageApi } from "./ObservableAPI";
 import { StorageApiRequestFactory, StorageApiResponseProcessor} from "../apis/StorageApi";
 
-export interface StorageApiReadKeyValueFromStoreRequest {
+export interface StorageApiReadKeyValueFromStoreAPIRequest {
     /**
      * The key for which the value is stored (max length 255 characters).
      * @type string
-     * @memberof StorageApireadKeyValueFromStore
+     * @memberof StorageApireadKeyValueFromStoreAPI
      */
     key: string
 }
 
-export interface StorageApiStoreKeyValueGETRequest {
+export interface StorageApiStoreKeyValueGETAPIRequest {
     /**
      * The key for which the value is stored (max length 255 characters).
      * @type string
-     * @memberof StorageApistoreKeyValueGET
+     * @memberof StorageApistoreKeyValueGETAPI
      */
     key: string
     /**
      * The value that is supposed to be stored (max length 10,000 characters).
      * @type string
-     * @memberof StorageApistoreKeyValueGET
+     * @memberof StorageApistoreKeyValueGETAPI
      */
     value: string
 }
@@ -2065,38 +2106,38 @@ export class ObjectStorageApi {
 
     /**
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * @param param the request object
      */
-    public readKeyValueFromStoreWithHttpInfo(param: StorageApiReadKeyValueFromStoreRequest, options?: Configuration): Promise<HttpInfo<ReadKeyValueFromStore200Response>> {
-        return this.api.readKeyValueFromStoreWithHttpInfo(param.key,  options).toPromise();
+    public readKeyValueFromStoreAPIWithHttpInfo(param: StorageApiReadKeyValueFromStoreAPIRequest, options?: Configuration): Promise<HttpInfo<ReadKeyValueFromStoreAPI200Response>> {
+        return this.api.readKeyValueFromStoreAPIWithHttpInfo(param.key,  options).toPromise();
     }
 
     /**
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * @param param the request object
      */
-    public readKeyValueFromStore(param: StorageApiReadKeyValueFromStoreRequest, options?: Configuration): Promise<ReadKeyValueFromStore200Response> {
-        return this.api.readKeyValueFromStore(param.key,  options).toPromise();
+    public readKeyValueFromStoreAPI(param: StorageApiReadKeyValueFromStoreAPIRequest, options?: Configuration): Promise<ReadKeyValueFromStoreAPI200Response> {
+        return this.api.readKeyValueFromStoreAPI(param.key,  options).toPromise();
     }
 
     /**
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * @param param the request object
      */
-    public storeKeyValueGETWithHttpInfo(param: StorageApiStoreKeyValueGETRequest, options?: Configuration): Promise<HttpInfo<StoreKeyValueGET200Response>> {
-        return this.api.storeKeyValueGETWithHttpInfo(param.key, param.value,  options).toPromise();
+    public storeKeyValueGETAPIWithHttpInfo(param: StorageApiStoreKeyValueGETAPIRequest, options?: Configuration): Promise<HttpInfo<StoreKeyValueGETAPI200Response>> {
+        return this.api.storeKeyValueGETAPIWithHttpInfo(param.key, param.value,  options).toPromise();
     }
 
     /**
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * @param param the request object
      */
-    public storeKeyValueGET(param: StorageApiStoreKeyValueGETRequest, options?: Configuration): Promise<StoreKeyValueGET200Response> {
-        return this.api.storeKeyValueGET(param.key, param.value,  options).toPromise();
+    public storeKeyValueGETAPI(param: StorageApiStoreKeyValueGETAPIRequest, options?: Configuration): Promise<StoreKeyValueGETAPI200Response> {
+        return this.api.storeKeyValueGETAPI(param.key, param.value,  options).toPromise();
     }
 
 }
@@ -2104,131 +2145,131 @@ export class ObjectStorageApi {
 import { ObservableTextApi } from "./ObservableAPI";
 import { TextApiRequestFactory, TextApiResponseProcessor} from "../apis/TextApi";
 
-export interface TextApiCorrectSpellingRequest {
+export interface TextApiCorrectSpellingAPIRequest {
     /**
      * The text to be corrected.
      * @type string
-     * @memberof TextApicorrectSpelling
+     * @memberof TextApicorrectSpellingAPI
      */
     text: string
     /**
      * The language of the text, one of en, de, es, fr, or it.
      * @type string
-     * @memberof TextApicorrectSpelling
+     * @memberof TextApicorrectSpellingAPI
      */
     language: string
 }
 
-export interface TextApiDetectGenderByNameRequest {
+export interface TextApiDetectGenderByNameAPIRequest {
     /**
      * The name of the perso for which the sentiment should be detected.
      * @type string
-     * @memberof TextApidetectGenderByName
+     * @memberof TextApidetectGenderByNameAPI
      */
     name: string
 }
 
-export interface TextApiDetectLanguageRequest {
+export interface TextApiDetectLanguageAPIRequest {
     /**
      * The text for which the language should be detected.
      * @type string
-     * @memberof TextApidetectLanguage
+     * @memberof TextApidetectLanguageAPI
      */
     text: string
 }
 
-export interface TextApiDetectSentimentRequest {
+export interface TextApiDetectSentimentAPIRequest {
     /**
      * The text for which the sentiment should be detected.
      * @type string
-     * @memberof TextApidetectSentiment
+     * @memberof TextApidetectSentimentAPI
      */
     text: string
 }
 
-export interface TextApiExtractDatesRequest {
+export interface TextApiExtractDatesAPIRequest {
     /**
      * The text from which dates should be extracted.
      * @type string
-     * @memberof TextApiextractDates
+     * @memberof TextApiextractDatesAPI
      */
     text: string
 }
 
-export interface TextApiExtractEntitiesRequest {
+export interface TextApiExtractEntitiesAPIRequest {
     /**
      * The text from which entities should be extracted.
      * @type string
-     * @memberof TextApiextractEntities
+     * @memberof TextApiextractEntitiesAPI
      */
     text: string
 }
 
-export interface TextApiListWordSynonymsRequest {
+export interface TextApiListWordSynonymsAPIRequest {
     /**
      * The (noun) word for which a list of synonyms should be returned.
      * @type string
-     * @memberof TextApilistWordSynonyms
+     * @memberof TextApilistWordSynonymsAPI
      */
     word: string
 }
 
-export interface TextApiPluralizeWordRequest {
+export interface TextApiPluralizeWordAPIRequest {
     /**
      * The (noun) word for which the plural form should be found.
      * @type string
-     * @memberof TextApipluralizeWord
+     * @memberof TextApipluralizeWordAPI
      */
     word: string
 }
 
-export interface TextApiScoreReadabilityRequest {
+export interface TextApiScoreReadabilityAPIRequest {
     /**
      * The text to score for readability.
      * @type string
-     * @memberof TextApiscoreReadability
+     * @memberof TextApiscoreReadabilityAPI
      */
     text: string
 }
 
-export interface TextApiScoreTextRequest {
+export interface TextApiScoreTextAPIRequest {
     /**
      * The title of the text to score.
      * @type string
-     * @memberof TextApiscoreText
+     * @memberof TextApiscoreTextAPI
      */
     title: string
     /**
      * The text to score for multiple metrics.
      * @type string
-     * @memberof TextApiscoreText
+     * @memberof TextApiscoreTextAPI
      */
     text: string
 }
 
-export interface TextApiSingularizeWordRequest {
+export interface TextApiSingularizeWordAPIRequest {
     /**
      * The (noun) word for which the singular form should be found.
      * @type string
-     * @memberof TextApisingularizeWord
+     * @memberof TextApisingularizeWordAPI
      */
     word: string
 }
 
-export interface TextApiStemTextRequest {
+export interface TextApiStemTextAPIRequest {
     /**
      * The text to be stemmed.
      * @type string
-     * @memberof TextApistemText
+     * @memberof TextApistemTextAPI
      */
     text: string
 }
 
-export interface TextApiTagPartOfSpeechRequest {
+export interface TextApiTagPartOfSpeechAPIRequest {
     /**
      * The text to tag the part of speech.
      * @type string
-     * @memberof TextApitagPartOfSpeech
+     * @memberof TextApitagPartOfSpeechAPI
      */
     text: string
 }
@@ -2242,236 +2283,236 @@ export class ObjectTextApi {
 
     /**
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-     * Correct Spelling
+     * Correct Spelling API
      * @param param the request object
      */
-    public correctSpellingWithHttpInfo(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<HttpInfo<CorrectSpelling200Response>> {
-        return this.api.correctSpellingWithHttpInfo(param.text, param.language,  options).toPromise();
+    public correctSpellingAPIWithHttpInfo(param: TextApiCorrectSpellingAPIRequest, options?: Configuration): Promise<HttpInfo<CorrectSpellingAPI200Response>> {
+        return this.api.correctSpellingAPIWithHttpInfo(param.text, param.language,  options).toPromise();
     }
 
     /**
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-     * Correct Spelling
+     * Correct Spelling API
      * @param param the request object
      */
-    public correctSpelling(param: TextApiCorrectSpellingRequest, options?: Configuration): Promise<CorrectSpelling200Response> {
-        return this.api.correctSpelling(param.text, param.language,  options).toPromise();
+    public correctSpellingAPI(param: TextApiCorrectSpellingAPIRequest, options?: Configuration): Promise<CorrectSpellingAPI200Response> {
+        return this.api.correctSpellingAPI(param.text, param.language,  options).toPromise();
     }
 
     /**
      * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * @param param the request object
      */
-    public detectGenderByNameWithHttpInfo(param: TextApiDetectGenderByNameRequest, options?: Configuration): Promise<HttpInfo<DetectGenderByName200Response>> {
-        return this.api.detectGenderByNameWithHttpInfo(param.name,  options).toPromise();
+    public detectGenderByNameAPIWithHttpInfo(param: TextApiDetectGenderByNameAPIRequest, options?: Configuration): Promise<HttpInfo<DetectGenderByNameAPI200Response>> {
+        return this.api.detectGenderByNameAPIWithHttpInfo(param.name,  options).toPromise();
     }
 
     /**
      * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * @param param the request object
      */
-    public detectGenderByName(param: TextApiDetectGenderByNameRequest, options?: Configuration): Promise<DetectGenderByName200Response> {
-        return this.api.detectGenderByName(param.name,  options).toPromise();
+    public detectGenderByNameAPI(param: TextApiDetectGenderByNameAPIRequest, options?: Configuration): Promise<DetectGenderByNameAPI200Response> {
+        return this.api.detectGenderByNameAPI(param.name,  options).toPromise();
     }
 
     /**
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
+     * Detect Language API
      * @param param the request object
      */
-    public detectLanguageWithHttpInfo(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
-        return this.api.detectLanguageWithHttpInfo(param.text,  options).toPromise();
+    public detectLanguageAPIWithHttpInfo(param: TextApiDetectLanguageAPIRequest, options?: Configuration): Promise<HttpInfo<Array<DetectLanguageAPI200ResponseInner>>> {
+        return this.api.detectLanguageAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
+     * Detect Language API
      * @param param the request object
      */
-    public detectLanguage(param: TextApiDetectLanguageRequest, options?: Configuration): Promise<Array<DetectLanguage200ResponseInner>> {
-        return this.api.detectLanguage(param.text,  options).toPromise();
+    public detectLanguageAPI(param: TextApiDetectLanguageAPIRequest, options?: Configuration): Promise<Array<DetectLanguageAPI200ResponseInner>> {
+        return this.api.detectLanguageAPI(param.text,  options).toPromise();
     }
 
     /**
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
+     * Detect Sentiment API
      * @param param the request object
      */
-    public detectSentimentWithHttpInfo(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<HttpInfo<DetectSentiment200Response>> {
-        return this.api.detectSentimentWithHttpInfo(param.text,  options).toPromise();
+    public detectSentimentAPIWithHttpInfo(param: TextApiDetectSentimentAPIRequest, options?: Configuration): Promise<HttpInfo<DetectSentimentAPI200Response>> {
+        return this.api.detectSentimentAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
+     * Detect Sentiment API
      * @param param the request object
      */
-    public detectSentiment(param: TextApiDetectSentimentRequest, options?: Configuration): Promise<DetectSentiment200Response> {
-        return this.api.detectSentiment(param.text,  options).toPromise();
+    public detectSentimentAPI(param: TextApiDetectSentimentAPIRequest, options?: Configuration): Promise<DetectSentimentAPI200Response> {
+        return this.api.detectSentimentAPI(param.text,  options).toPromise();
     }
 
     /**
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-     * Extract Dates
+     * Extract Dates API
      * @param param the request object
      */
-    public extractDatesWithHttpInfo(param: TextApiExtractDatesRequest, options?: Configuration): Promise<HttpInfo<ExtractDates200Response>> {
-        return this.api.extractDatesWithHttpInfo(param.text,  options).toPromise();
+    public extractDatesAPIWithHttpInfo(param: TextApiExtractDatesAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractDatesAPI200Response>> {
+        return this.api.extractDatesAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-     * Extract Dates
+     * Extract Dates API
      * @param param the request object
      */
-    public extractDates(param: TextApiExtractDatesRequest, options?: Configuration): Promise<ExtractDates200Response> {
-        return this.api.extractDates(param.text,  options).toPromise();
+    public extractDatesAPI(param: TextApiExtractDatesAPIRequest, options?: Configuration): Promise<ExtractDatesAPI200Response> {
+        return this.api.extractDatesAPI(param.text,  options).toPromise();
     }
 
     /**
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-     * Extract Entities
+     * Extract Entities API
      * @param param the request object
      */
-    public extractEntitiesWithHttpInfo(param: TextApiExtractEntitiesRequest, options?: Configuration): Promise<HttpInfo<ExtractEntities200Response>> {
-        return this.api.extractEntitiesWithHttpInfo(param.text,  options).toPromise();
+    public extractEntitiesAPIWithHttpInfo(param: TextApiExtractEntitiesAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractEntitiesAPI200Response>> {
+        return this.api.extractEntitiesAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-     * Extract Entities
+     * Extract Entities API
      * @param param the request object
      */
-    public extractEntities(param: TextApiExtractEntitiesRequest, options?: Configuration): Promise<ExtractEntities200Response> {
-        return this.api.extractEntities(param.text,  options).toPromise();
+    public extractEntitiesAPI(param: TextApiExtractEntitiesAPIRequest, options?: Configuration): Promise<ExtractEntitiesAPI200Response> {
+        return this.api.extractEntitiesAPI(param.text,  options).toPromise();
     }
 
     /**
      * Return synonyms of a word.
-     * List Word Synonyms
+     * List Word Synonyms API
      * @param param the request object
      */
-    public listWordSynonymsWithHttpInfo(param: TextApiListWordSynonymsRequest, options?: Configuration): Promise<HttpInfo<ListWordSynonyms200Response>> {
-        return this.api.listWordSynonymsWithHttpInfo(param.word,  options).toPromise();
+    public listWordSynonymsAPIWithHttpInfo(param: TextApiListWordSynonymsAPIRequest, options?: Configuration): Promise<HttpInfo<ListWordSynonymsAPI200Response>> {
+        return this.api.listWordSynonymsAPIWithHttpInfo(param.word,  options).toPromise();
     }
 
     /**
      * Return synonyms of a word.
-     * List Word Synonyms
+     * List Word Synonyms API
      * @param param the request object
      */
-    public listWordSynonyms(param: TextApiListWordSynonymsRequest, options?: Configuration): Promise<ListWordSynonyms200Response> {
-        return this.api.listWordSynonyms(param.word,  options).toPromise();
+    public listWordSynonymsAPI(param: TextApiListWordSynonymsAPIRequest, options?: Configuration): Promise<ListWordSynonymsAPI200Response> {
+        return this.api.listWordSynonymsAPI(param.word,  options).toPromise();
     }
 
     /**
      * Find the plural form of a word.
-     * Pluralize Word
+     * Pluralize Word API
      * @param param the request object
      */
-    public pluralizeWordWithHttpInfo(param: TextApiPluralizeWordRequest, options?: Configuration): Promise<HttpInfo<PluralizeWord200Response>> {
-        return this.api.pluralizeWordWithHttpInfo(param.word,  options).toPromise();
+    public pluralizeWordAPIWithHttpInfo(param: TextApiPluralizeWordAPIRequest, options?: Configuration): Promise<HttpInfo<PluralizeWordAPI200Response>> {
+        return this.api.pluralizeWordAPIWithHttpInfo(param.word,  options).toPromise();
     }
 
     /**
      * Find the plural form of a word.
-     * Pluralize Word
+     * Pluralize Word API
      * @param param the request object
      */
-    public pluralizeWord(param: TextApiPluralizeWordRequest, options?: Configuration): Promise<PluralizeWord200Response> {
-        return this.api.pluralizeWord(param.word,  options).toPromise();
+    public pluralizeWordAPI(param: TextApiPluralizeWordAPIRequest, options?: Configuration): Promise<PluralizeWordAPI200Response> {
+        return this.api.pluralizeWordAPI(param.word,  options).toPromise();
     }
 
     /**
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-     * Score Readability
+     * Score Readability API
      * @param param the request object
      */
-    public scoreReadabilityWithHttpInfo(param: TextApiScoreReadabilityRequest, options?: Configuration): Promise<HttpInfo<ScoreReadability200Response>> {
-        return this.api.scoreReadabilityWithHttpInfo(param.text,  options).toPromise();
+    public scoreReadabilityAPIWithHttpInfo(param: TextApiScoreReadabilityAPIRequest, options?: Configuration): Promise<HttpInfo<ScoreReadabilityAPI200Response>> {
+        return this.api.scoreReadabilityAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-     * Score Readability
+     * Score Readability API
      * @param param the request object
      */
-    public scoreReadability(param: TextApiScoreReadabilityRequest, options?: Configuration): Promise<ScoreReadability200Response> {
-        return this.api.scoreReadability(param.text,  options).toPromise();
+    public scoreReadabilityAPI(param: TextApiScoreReadabilityAPIRequest, options?: Configuration): Promise<ScoreReadabilityAPI200Response> {
+        return this.api.scoreReadabilityAPI(param.text,  options).toPromise();
     }
 
     /**
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-     * Score Text
+     * Score Text API
      * @param param the request object
      */
-    public scoreTextWithHttpInfo(param: TextApiScoreTextRequest, options?: Configuration): Promise<HttpInfo<ScoreText200Response>> {
-        return this.api.scoreTextWithHttpInfo(param.title, param.text,  options).toPromise();
+    public scoreTextAPIWithHttpInfo(param: TextApiScoreTextAPIRequest, options?: Configuration): Promise<HttpInfo<ScoreTextAPI200Response>> {
+        return this.api.scoreTextAPIWithHttpInfo(param.title, param.text,  options).toPromise();
     }
 
     /**
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-     * Score Text
+     * Score Text API
      * @param param the request object
      */
-    public scoreText(param: TextApiScoreTextRequest, options?: Configuration): Promise<ScoreText200Response> {
-        return this.api.scoreText(param.title, param.text,  options).toPromise();
+    public scoreTextAPI(param: TextApiScoreTextAPIRequest, options?: Configuration): Promise<ScoreTextAPI200Response> {
+        return this.api.scoreTextAPI(param.title, param.text,  options).toPromise();
     }
 
     /**
      * Find the singular form of a word.
-     * Singularize Word
+     * Singularize Word API
      * @param param the request object
      */
-    public singularizeWordWithHttpInfo(param: TextApiSingularizeWordRequest, options?: Configuration): Promise<HttpInfo<SingularizeWord200Response>> {
-        return this.api.singularizeWordWithHttpInfo(param.word,  options).toPromise();
+    public singularizeWordAPIWithHttpInfo(param: TextApiSingularizeWordAPIRequest, options?: Configuration): Promise<HttpInfo<SingularizeWordAPI200Response>> {
+        return this.api.singularizeWordAPIWithHttpInfo(param.word,  options).toPromise();
     }
 
     /**
      * Find the singular form of a word.
-     * Singularize Word
+     * Singularize Word API
      * @param param the request object
      */
-    public singularizeWord(param: TextApiSingularizeWordRequest, options?: Configuration): Promise<SingularizeWord200Response> {
-        return this.api.singularizeWord(param.word,  options).toPromise();
+    public singularizeWordAPI(param: TextApiSingularizeWordAPIRequest, options?: Configuration): Promise<SingularizeWordAPI200Response> {
+        return this.api.singularizeWordAPI(param.word,  options).toPromise();
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Stem Text
+     * Stem Text API
      * @param param the request object
      */
-    public stemTextWithHttpInfo(param: TextApiStemTextRequest, options?: Configuration): Promise<HttpInfo<StemText200Response>> {
-        return this.api.stemTextWithHttpInfo(param.text,  options).toPromise();
+    public stemTextAPIWithHttpInfo(param: TextApiStemTextAPIRequest, options?: Configuration): Promise<HttpInfo<StemTextAPI200Response>> {
+        return this.api.stemTextAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Stem Text
+     * Stem Text API
      * @param param the request object
      */
-    public stemText(param: TextApiStemTextRequest, options?: Configuration): Promise<StemText200Response> {
-        return this.api.stemText(param.text,  options).toPromise();
+    public stemTextAPI(param: TextApiStemTextAPIRequest, options?: Configuration): Promise<StemTextAPI200Response> {
+        return this.api.stemTextAPI(param.text,  options).toPromise();
     }
 
     /**
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * @param param the request object
      */
-    public tagPartOfSpeechWithHttpInfo(param: TextApiTagPartOfSpeechRequest, options?: Configuration): Promise<HttpInfo<TagPartOfSpeech200Response>> {
-        return this.api.tagPartOfSpeechWithHttpInfo(param.text,  options).toPromise();
+    public tagPartOfSpeechAPIWithHttpInfo(param: TextApiTagPartOfSpeechAPIRequest, options?: Configuration): Promise<HttpInfo<TagPartOfSpeechAPI200Response>> {
+        return this.api.tagPartOfSpeechAPIWithHttpInfo(param.text,  options).toPromise();
     }
 
     /**
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * @param param the request object
      */
-    public tagPartOfSpeech(param: TextApiTagPartOfSpeechRequest, options?: Configuration): Promise<TagPartOfSpeech200Response> {
-        return this.api.tagPartOfSpeech(param.text,  options).toPromise();
+    public tagPartOfSpeechAPI(param: TextApiTagPartOfSpeechAPIRequest, options?: Configuration): Promise<TagPartOfSpeechAPI200Response> {
+        return this.api.tagPartOfSpeechAPI(param.text,  options).toPromise();
     }
 
 }
@@ -2479,62 +2520,62 @@ export class ObjectTextApi {
 import { ObservableWebApi } from "./ObservableAPI";
 import { WebApiRequestFactory, WebApiResponseProcessor} from "../apis/WebApi";
 
-export interface WebApiExtractAuthorsRequest {
+export interface WebApiExtractAuthorsAPIRequest {
     /**
      * The url with the article from which authors should be extracted.
      * @type string
-     * @memberof WebApiextractAuthors
+     * @memberof WebApiextractAuthorsAPI
      */
     url: string
 }
 
-export interface WebApiExtractContentFromAWebPageRequest {
+export interface WebApiExtractContentFromAWebPageAPIRequest {
     /**
      * The url for which the content will be extracted.
      * @type string
-     * @memberof WebApiextractContentFromAWebPage
+     * @memberof WebApiextractContentFromAWebPageAPI
      */
     url: string
 }
 
-export interface WebApiExtractPublishDateRequest {
+export interface WebApiExtractPublishDateAPIRequest {
     /**
      * The url for which the publish date should be extracted.
      * @type string
-     * @memberof WebApiextractPublishDate
+     * @memberof WebApiextractPublishDateAPI
      */
     url: string
 }
 
-export interface WebApiRetrievePageRankRequest {
+export interface WebApiRetrievePageRankAPIRequest {
     /**
      * The domain for which the page rank should be returned.
      * @type string
-     * @memberof WebApiretrievePageRank
+     * @memberof WebApiretrievePageRankAPI
      */
     domain: string
 }
 
-export interface WebApiSearchWebRequest {
+export interface WebApiSearchWebAPIRequest {
     /**
      * The search query.
      * @type string
-     * @memberof WebApisearchWeb
+     * @memberof WebApisearchWebAPI
      */
     query: string
     /**
      * The number of results to return in range [1,50]
      * @type number
-     * @memberof WebApisearchWeb
+     * @memberof WebApisearchWebAPI
      */
     number?: number
 }
 
-export interface WebApiVerifyEmailAddressRequest {
+export interface WebApiVerifyEmailAddressAPIRequest {
     /**
      * The email address to verify.
      * @type string
-     * @memberof WebApiverifyEmailAddress
+     * @memberof WebApiverifyEmailAddressAPI
      */
     email: string
 }
@@ -2548,110 +2589,110 @@ export class ObjectWebApi {
 
     /**
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-     * Extract Authors
+     * Extract Authors API
      * @param param the request object
      */
-    public extractAuthorsWithHttpInfo(param: WebApiExtractAuthorsRequest, options?: Configuration): Promise<HttpInfo<ExtractAuthors200Response>> {
-        return this.api.extractAuthorsWithHttpInfo(param.url,  options).toPromise();
+    public extractAuthorsAPIWithHttpInfo(param: WebApiExtractAuthorsAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractAuthorsAPI200Response>> {
+        return this.api.extractAuthorsAPIWithHttpInfo(param.url,  options).toPromise();
     }
 
     /**
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-     * Extract Authors
+     * Extract Authors API
      * @param param the request object
      */
-    public extractAuthors(param: WebApiExtractAuthorsRequest, options?: Configuration): Promise<ExtractAuthors200Response> {
-        return this.api.extractAuthors(param.url,  options).toPromise();
+    public extractAuthorsAPI(param: WebApiExtractAuthorsAPIRequest, options?: Configuration): Promise<ExtractAuthorsAPI200Response> {
+        return this.api.extractAuthorsAPI(param.url,  options).toPromise();
     }
 
     /**
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-     * Extract Content from a Web Page
+     * Extract Content from a Web Page API
      * @param param the request object
      */
-    public extractContentFromAWebPageWithHttpInfo(param: WebApiExtractContentFromAWebPageRequest, options?: Configuration): Promise<HttpInfo<ExtractContentFromAWebPage200Response>> {
-        return this.api.extractContentFromAWebPageWithHttpInfo(param.url,  options).toPromise();
+    public extractContentFromAWebPageAPIWithHttpInfo(param: WebApiExtractContentFromAWebPageAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractContentFromAWebPageAPI200Response>> {
+        return this.api.extractContentFromAWebPageAPIWithHttpInfo(param.url,  options).toPromise();
     }
 
     /**
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-     * Extract Content from a Web Page
+     * Extract Content from a Web Page API
      * @param param the request object
      */
-    public extractContentFromAWebPage(param: WebApiExtractContentFromAWebPageRequest, options?: Configuration): Promise<ExtractContentFromAWebPage200Response> {
-        return this.api.extractContentFromAWebPage(param.url,  options).toPromise();
+    public extractContentFromAWebPageAPI(param: WebApiExtractContentFromAWebPageAPIRequest, options?: Configuration): Promise<ExtractContentFromAWebPageAPI200Response> {
+        return this.api.extractContentFromAWebPageAPI(param.url,  options).toPromise();
     }
 
     /**
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-     * Extract Publish Date
+     * Extract Publish Date API
      * @param param the request object
      */
-    public extractPublishDateWithHttpInfo(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<HttpInfo<ExtractPublishDate200Response>> {
-        return this.api.extractPublishDateWithHttpInfo(param.url,  options).toPromise();
+    public extractPublishDateAPIWithHttpInfo(param: WebApiExtractPublishDateAPIRequest, options?: Configuration): Promise<HttpInfo<ExtractPublishDateAPI200Response>> {
+        return this.api.extractPublishDateAPIWithHttpInfo(param.url,  options).toPromise();
     }
 
     /**
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-     * Extract Publish Date
+     * Extract Publish Date API
      * @param param the request object
      */
-    public extractPublishDate(param: WebApiExtractPublishDateRequest, options?: Configuration): Promise<ExtractPublishDate200Response> {
-        return this.api.extractPublishDate(param.url,  options).toPromise();
+    public extractPublishDateAPI(param: WebApiExtractPublishDateAPIRequest, options?: Configuration): Promise<ExtractPublishDateAPI200Response> {
+        return this.api.extractPublishDateAPI(param.url,  options).toPromise();
     }
 
     /**
      * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
-     * Retrieve Page Rank
+     * Retrieve Page Rank API
      * @param param the request object
      */
-    public retrievePageRankWithHttpInfo(param: WebApiRetrievePageRankRequest, options?: Configuration): Promise<HttpInfo<RetrievePageRank200Response>> {
-        return this.api.retrievePageRankWithHttpInfo(param.domain,  options).toPromise();
+    public retrievePageRankAPIWithHttpInfo(param: WebApiRetrievePageRankAPIRequest, options?: Configuration): Promise<HttpInfo<RetrievePageRankAPI200Response>> {
+        return this.api.retrievePageRankAPIWithHttpInfo(param.domain,  options).toPromise();
     }
 
     /**
      * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
-     * Retrieve Page Rank
+     * Retrieve Page Rank API
      * @param param the request object
      */
-    public retrievePageRank(param: WebApiRetrievePageRankRequest, options?: Configuration): Promise<RetrievePageRank200Response> {
-        return this.api.retrievePageRank(param.domain,  options).toPromise();
+    public retrievePageRankAPI(param: WebApiRetrievePageRankAPIRequest, options?: Configuration): Promise<RetrievePageRankAPI200Response> {
+        return this.api.retrievePageRankAPI(param.domain,  options).toPromise();
     }
 
     /**
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-     * Search Web
+     * Search Web API
      * @param param the request object
      */
-    public searchWebWithHttpInfo(param: WebApiSearchWebRequest, options?: Configuration): Promise<HttpInfo<SearchWeb200Response>> {
-        return this.api.searchWebWithHttpInfo(param.query, param.number,  options).toPromise();
+    public searchWebAPIWithHttpInfo(param: WebApiSearchWebAPIRequest, options?: Configuration): Promise<HttpInfo<SearchWebAPI200Response>> {
+        return this.api.searchWebAPIWithHttpInfo(param.query, param.number,  options).toPromise();
     }
 
     /**
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-     * Search Web
+     * Search Web API
      * @param param the request object
      */
-    public searchWeb(param: WebApiSearchWebRequest, options?: Configuration): Promise<SearchWeb200Response> {
-        return this.api.searchWeb(param.query, param.number,  options).toPromise();
+    public searchWebAPI(param: WebApiSearchWebAPIRequest, options?: Configuration): Promise<SearchWebAPI200Response> {
+        return this.api.searchWebAPI(param.query, param.number,  options).toPromise();
     }
 
     /**
      * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
-     * Verify Email Address
+     * Verify Email Address API
      * @param param the request object
      */
-    public verifyEmailAddressWithHttpInfo(param: WebApiVerifyEmailAddressRequest, options?: Configuration): Promise<HttpInfo<VerifyEmailAddress200Response>> {
-        return this.api.verifyEmailAddressWithHttpInfo(param.email,  options).toPromise();
+    public verifyEmailAddressAPIWithHttpInfo(param: WebApiVerifyEmailAddressAPIRequest, options?: Configuration): Promise<HttpInfo<VerifyEmailAddressAPI200Response>> {
+        return this.api.verifyEmailAddressAPIWithHttpInfo(param.email,  options).toPromise();
     }
 
     /**
      * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
-     * Verify Email Address
+     * Verify Email Address API
      * @param param the request object
      */
-    public verifyEmailAddress(param: WebApiVerifyEmailAddressRequest, options?: Configuration): Promise<VerifyEmailAddress200Response> {
-        return this.api.verifyEmailAddress(param.email,  options).toPromise();
+    public verifyEmailAddressAPI(param: WebApiVerifyEmailAddressAPIRequest, options?: Configuration): Promise<VerifyEmailAddressAPI200Response> {
+        return this.api.verifyEmailAddressAPI(param.email,  options).toPromise();
     }
 
 }

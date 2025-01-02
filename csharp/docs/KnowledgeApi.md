@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**RandomQuote**](KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote |
-| [**RandomRiddle**](KnowledgeApi.md#randomriddle) | **GET** /retrieve-random-riddle | Random Riddle |
-| [**RandomTrivia**](KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia |
+| [**RandomQuoteAPI**](KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API |
+| [**RandomRiddleAPI**](KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API |
+| [**RandomTriviaAPI**](KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API |
 
-<a id="randomquote"></a>
-# **RandomQuote**
-> RandomQuote200Response RandomQuote (int? minLength = null, int? maxLength = null)
+<a id="randomquoteapi"></a>
+# **RandomQuoteAPI**
+> RandomQuoteAPI200Response RandomQuoteAPI (int? minLength = null, int? maxLength = null)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -26,7 +26,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomQuoteExample
+    public class RandomQuoteAPIExample
     {
         public static void Main()
         {
@@ -47,13 +47,13 @@ namespace Example
 
             try
             {
-                // Random Quote
-                RandomQuote200Response result = apiInstance.RandomQuote(minLength, maxLength);
+                // Random Quote API
+                RandomQuoteAPI200Response result = apiInstance.RandomQuoteAPI(minLength, maxLength);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling KnowledgeApi.RandomQuote: " + e.Message);
+                Debug.Print("Exception when calling KnowledgeApi.RandomQuoteAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +62,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomQuoteWithHttpInfo variant
+#### Using the RandomQuoteAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Quote
-    ApiResponse<RandomQuote200Response> response = apiInstance.RandomQuoteWithHttpInfo(minLength, maxLength);
+    // Random Quote API
+    ApiResponse<RandomQuoteAPI200Response> response = apiInstance.RandomQuoteAPIWithHttpInfo(minLength, maxLength);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KnowledgeApi.RandomQuoteWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KnowledgeApi.RandomQuoteAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -116,11 +116,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="randomriddle"></a>
-# **RandomRiddle**
-> RandomRiddle200Response RandomRiddle (string? difficulty = null)
+<a id="randomriddleapi"></a>
+# **RandomRiddleAPI**
+> RandomRiddleAPI200Response RandomRiddleAPI (string? difficulty = null)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -134,7 +134,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomRiddleExample
+    public class RandomRiddleAPIExample
     {
         public static void Main()
         {
@@ -154,13 +154,13 @@ namespace Example
 
             try
             {
-                // Random Riddle
-                RandomRiddle200Response result = apiInstance.RandomRiddle(difficulty);
+                // Random Riddle API
+                RandomRiddleAPI200Response result = apiInstance.RandomRiddleAPI(difficulty);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling KnowledgeApi.RandomRiddle: " + e.Message);
+                Debug.Print("Exception when calling KnowledgeApi.RandomRiddleAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -169,21 +169,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomRiddleWithHttpInfo variant
+#### Using the RandomRiddleAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Riddle
-    ApiResponse<RandomRiddle200Response> response = apiInstance.RandomRiddleWithHttpInfo(difficulty);
+    // Random Riddle API
+    ApiResponse<RandomRiddleAPI200Response> response = apiInstance.RandomRiddleAPIWithHttpInfo(difficulty);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KnowledgeApi.RandomRiddleWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KnowledgeApi.RandomRiddleAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -197,7 +197,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -222,13 +222,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="randomtrivia"></a>
-# **RandomTrivia**
-> RandomTrivia200Response RandomTrivia (int? maxLength = null)
+<a id="randomtriviaapi"></a>
+# **RandomTriviaAPI**
+> RandomTriviaAPI200Response RandomTriviaAPI (int? maxLength = null)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Example
 ```csharp
@@ -240,7 +240,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomTriviaExample
+    public class RandomTriviaAPIExample
     {
         public static void Main()
         {
@@ -260,13 +260,13 @@ namespace Example
 
             try
             {
-                // Random Trivia
-                RandomTrivia200Response result = apiInstance.RandomTrivia(maxLength);
+                // Random Trivia API
+                RandomTriviaAPI200Response result = apiInstance.RandomTriviaAPI(maxLength);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling KnowledgeApi.RandomTrivia: " + e.Message);
+                Debug.Print("Exception when calling KnowledgeApi.RandomTriviaAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -275,21 +275,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomTriviaWithHttpInfo variant
+#### Using the RandomTriviaAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Trivia
-    ApiResponse<RandomTrivia200Response> response = apiInstance.RandomTriviaWithHttpInfo(maxLength);
+    // Random Trivia API
+    ApiResponse<RandomTriviaAPI200Response> response = apiInstance.RandomTriviaAPIWithHttpInfo(maxLength);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling KnowledgeApi.RandomTriviaWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling KnowledgeApi.RandomTriviaAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -303,7 +303,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

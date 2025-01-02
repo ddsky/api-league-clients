@@ -22,11 +22,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test HumorAPIService GenerateNonsenseWord", func(t *testing.T) {
+	t.Run("Test HumorAPIService GenerateNonsenseWordAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.GenerateNonsenseWord(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.GenerateNonsenseWordAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test HumorAPIService RandomJoke", func(t *testing.T) {
+	t.Run("Test HumorAPIService RandomJokeAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.RandomJoke(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.RandomJokeAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test HumorAPIService RandomMeme", func(t *testing.T) {
+	t.Run("Test HumorAPIService RandomMemeAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.RandomMeme(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.RandomMemeAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test HumorAPIService SearchGifs", func(t *testing.T) {
+	t.Run("Test HumorAPIService SearchGifsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.SearchGifs(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.SearchGifsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +70,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test HumorAPIService SearchJokes", func(t *testing.T) {
+	t.Run("Test HumorAPIService SearchJokesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.SearchJokes(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.SearchJokesAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,11 +82,11 @@ func Test_apileague_HumorAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test HumorAPIService SearchMemes", func(t *testing.T) {
+	t.Run("Test HumorAPIService SearchMemesAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.HumorAPI.SearchMemes(context.Background()).Execute()
+		resp, httpRes, err := apiClient.HumorAPI.SearchMemesAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

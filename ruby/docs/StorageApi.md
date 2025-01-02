@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**read_key_value_from_store**](StorageApi.md#read_key_value_from_store) | **GET** /read-key-value | Read Key Value from Store |
-| [**store_key_value_get**](StorageApi.md#store_key_value_get) | **GET** /store-key-value | Store Key Value (GET) |
+| [**read_key_value_from_store_api**](StorageApi.md#read_key_value_from_store_api) | **GET** /read-key-value | Read Key Value from Store API |
+| [**store_key_value_getapi**](StorageApi.md#store_key_value_getapi) | **GET** /store-key-value | Store Key Value (GET) API |
 
 
-## read_key_value_from_store
+## read_key_value_from_store_api
 
-> <ReadKeyValueFromStore200Response> read_key_value_from_store(key)
+> <ReadKeyValueFromStoreAPI200Response> read_key_value_from_store_api(key)
 
-Read Key Value from Store
+Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -38,29 +38,29 @@ api_instance = OpenapiClient::StorageApi.new
 key = 'visitors24h' # String | The key for which the value is stored (max length 255 characters).
 
 begin
-  # Read Key Value from Store
-  result = api_instance.read_key_value_from_store(key)
+  # Read Key Value from Store API
+  result = api_instance.read_key_value_from_store_api(key)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling StorageApi->read_key_value_from_store: #{e}"
+  puts "Error when calling StorageApi->read_key_value_from_store_api: #{e}"
 end
 ```
 
-#### Using the read_key_value_from_store_with_http_info variant
+#### Using the read_key_value_from_store_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ReadKeyValueFromStore200Response>, Integer, Hash)> read_key_value_from_store_with_http_info(key)
+> <Array(<ReadKeyValueFromStoreAPI200Response>, Integer, Hash)> read_key_value_from_store_api_with_http_info(key)
 
 ```ruby
 begin
-  # Read Key Value from Store
-  data, status_code, headers = api_instance.read_key_value_from_store_with_http_info(key)
+  # Read Key Value from Store API
+  data, status_code, headers = api_instance.read_key_value_from_store_api_with_http_info(key)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ReadKeyValueFromStore200Response>
+  p data # => <ReadKeyValueFromStoreAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling StorageApi->read_key_value_from_store_with_http_info: #{e}"
+  puts "Error when calling StorageApi->read_key_value_from_store_api_with_http_info: #{e}"
 end
 ```
 
@@ -72,7 +72,7 @@ end
 
 ### Return type
 
-[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
+[**ReadKeyValueFromStoreAPI200Response**](ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -84,11 +84,11 @@ end
 - **Accept**: application/json
 
 
-## store_key_value_get
+## store_key_value_getapi
 
-> <StoreKeyValueGET200Response> store_key_value_get(key, value)
+> <StoreKeyValueGETAPI200Response> store_key_value_getapi(key, value)
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -115,29 +115,29 @@ key = 'visitors24h' # String | The key for which the value is stored (max length
 value = '23578 visitors' # String | The value that is supposed to be stored (max length 10,000 characters).
 
 begin
-  # Store Key Value (GET)
-  result = api_instance.store_key_value_get(key, value)
+  # Store Key Value (GET) API
+  result = api_instance.store_key_value_getapi(key, value)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling StorageApi->store_key_value_get: #{e}"
+  puts "Error when calling StorageApi->store_key_value_getapi: #{e}"
 end
 ```
 
-#### Using the store_key_value_get_with_http_info variant
+#### Using the store_key_value_getapi_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<StoreKeyValueGET200Response>, Integer, Hash)> store_key_value_get_with_http_info(key, value)
+> <Array(<StoreKeyValueGETAPI200Response>, Integer, Hash)> store_key_value_getapi_with_http_info(key, value)
 
 ```ruby
 begin
-  # Store Key Value (GET)
-  data, status_code, headers = api_instance.store_key_value_get_with_http_info(key, value)
+  # Store Key Value (GET) API
+  data, status_code, headers = api_instance.store_key_value_getapi_with_http_info(key, value)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <StoreKeyValueGET200Response>
+  p data # => <StoreKeyValueGETAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling StorageApi->store_key_value_get_with_http_info: #{e}"
+  puts "Error when calling StorageApi->store_key_value_getapi_with_http_info: #{e}"
 end
 ```
 
@@ -150,7 +150,7 @@ end
 
 ### Return type
 
-[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
+[**StoreKeyValueGETAPI200Response**](StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

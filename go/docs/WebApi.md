@@ -4,20 +4,20 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExtractAuthors**](WebAPI.md#ExtractAuthors) | **Get** /extract-authors | Extract Authors
-[**ExtractContentFromAWebPage**](WebAPI.md#ExtractContentFromAWebPage) | **Get** /extract-content | Extract Content from a Web Page
-[**ExtractPublishDate**](WebAPI.md#ExtractPublishDate) | **Get** /extract-publish-date | Extract Publish Date
-[**RetrievePageRank**](WebAPI.md#RetrievePageRank) | **Get** /retrieve-page-rank | Retrieve Page Rank
-[**SearchWeb**](WebAPI.md#SearchWeb) | **Get** /search-web | Search Web
-[**VerifyEmailAddress**](WebAPI.md#VerifyEmailAddress) | **Get** /verify-email | Verify Email Address
+[**ExtractAuthorsAPI**](WebAPI.md#ExtractAuthorsAPI) | **Get** /extract-authors | Extract Authors API
+[**ExtractContentFromAWebPageAPI**](WebAPI.md#ExtractContentFromAWebPageAPI) | **Get** /extract-content | Extract Content from a Web Page API
+[**ExtractPublishDateAPI**](WebAPI.md#ExtractPublishDateAPI) | **Get** /extract-publish-date | Extract Publish Date API
+[**RetrievePageRankAPI**](WebAPI.md#RetrievePageRankAPI) | **Get** /retrieve-page-rank | Retrieve Page Rank API
+[**SearchWebAPI**](WebAPI.md#SearchWebAPI) | **Get** /search-web | Search Web API
+[**VerifyEmailAddressAPI**](WebAPI.md#VerifyEmailAddressAPI) | **Get** /verify-email | Verify Email Address API
 
 
 
-## ExtractAuthors
+## ExtractAuthorsAPI
 
-> ExtractAuthors200Response ExtractAuthors(ctx).Url(url).Execute()
+> ExtractAuthorsAPI200Response ExtractAuthorsAPI(ctx).Url(url).Execute()
 
-Extract Authors
+Extract Authors API
 
 
 
@@ -38,13 +38,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.ExtractAuthors(context.Background()).Url(url).Execute()
+	resp, r, err := apiClient.WebAPI.ExtractAuthorsAPI(context.Background()).Url(url).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractAuthors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractAuthorsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractAuthors`: ExtractAuthors200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractAuthors`: %v\n", resp)
+	// response from `ExtractAuthorsAPI`: ExtractAuthorsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractAuthorsAPI`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractAuthorsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractAuthorsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
+[**ExtractAuthorsAPI200Response**](ExtractAuthorsAPI200Response.md)
 
 ### Authorization
 
@@ -79,11 +79,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExtractContentFromAWebPage
+## ExtractContentFromAWebPageAPI
 
-> ExtractContentFromAWebPage200Response ExtractContentFromAWebPage(ctx).Url(url).Execute()
+> ExtractContentFromAWebPageAPI200Response ExtractContentFromAWebPageAPI(ctx).Url(url).Execute()
 
-Extract Content from a Web Page
+Extract Content from a Web Page API
 
 
 
@@ -104,13 +104,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.ExtractContentFromAWebPage(context.Background()).Url(url).Execute()
+	resp, r, err := apiClient.WebAPI.ExtractContentFromAWebPageAPI(context.Background()).Url(url).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractContentFromAWebPage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractContentFromAWebPageAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractContentFromAWebPage`: ExtractContentFromAWebPage200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractContentFromAWebPage`: %v\n", resp)
+	// response from `ExtractContentFromAWebPageAPI`: ExtractContentFromAWebPageAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractContentFromAWebPageAPI`: %v\n", resp)
 }
 ```
 
@@ -120,7 +120,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractContentFromAWebPageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractContentFromAWebPageAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
+[**ExtractContentFromAWebPageAPI200Response**](ExtractContentFromAWebPageAPI200Response.md)
 
 ### Authorization
 
@@ -145,11 +145,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExtractPublishDate
+## ExtractPublishDateAPI
 
-> ExtractPublishDate200Response ExtractPublishDate(ctx).Url(url).Execute()
+> ExtractPublishDateAPI200Response ExtractPublishDateAPI(ctx).Url(url).Execute()
 
-Extract Publish Date
+Extract Publish Date API
 
 
 
@@ -170,13 +170,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.ExtractPublishDate(context.Background()).Url(url).Execute()
+	resp, r, err := apiClient.WebAPI.ExtractPublishDateAPI(context.Background()).Url(url).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractPublishDate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.ExtractPublishDateAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractPublishDate`: ExtractPublishDate200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractPublishDate`: %v\n", resp)
+	// response from `ExtractPublishDateAPI`: ExtractPublishDateAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.ExtractPublishDateAPI`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractPublishDateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractPublishDateAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+[**ExtractPublishDateAPI200Response**](ExtractPublishDateAPI200Response.md)
 
 ### Authorization
 
@@ -211,11 +211,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RetrievePageRank
+## RetrievePageRankAPI
 
-> RetrievePageRank200Response RetrievePageRank(ctx).Domain(domain).Execute()
+> RetrievePageRankAPI200Response RetrievePageRankAPI(ctx).Domain(domain).Execute()
 
-Retrieve Page Rank
+Retrieve Page Rank API
 
 
 
@@ -236,13 +236,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.RetrievePageRank(context.Background()).Domain(domain).Execute()
+	resp, r, err := apiClient.WebAPI.RetrievePageRankAPI(context.Background()).Domain(domain).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.RetrievePageRank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.RetrievePageRankAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RetrievePageRank`: RetrievePageRank200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.RetrievePageRank`: %v\n", resp)
+	// response from `RetrievePageRankAPI`: RetrievePageRankAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.RetrievePageRankAPI`: %v\n", resp)
 }
 ```
 
@@ -252,7 +252,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRetrievePageRankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRetrievePageRankAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
+[**RetrievePageRankAPI200Response**](RetrievePageRankAPI200Response.md)
 
 ### Authorization
 
@@ -277,11 +277,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchWeb
+## SearchWebAPI
 
-> SearchWeb200Response SearchWeb(ctx).Query(query).Number(number).Execute()
+> SearchWebAPI200Response SearchWebAPI(ctx).Query(query).Number(number).Execute()
 
-Search Web
+Search Web API
 
 
 
@@ -303,13 +303,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.SearchWeb(context.Background()).Query(query).Number(number).Execute()
+	resp, r, err := apiClient.WebAPI.SearchWebAPI(context.Background()).Query(query).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.SearchWeb``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.SearchWebAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchWeb`: SearchWeb200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.SearchWeb`: %v\n", resp)
+	// response from `SearchWebAPI`: SearchWebAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.SearchWebAPI`: %v\n", resp)
 }
 ```
 
@@ -319,7 +319,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchWebRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchWebAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchWeb200Response**](SearchWeb200Response.md)
+[**SearchWebAPI200Response**](SearchWebAPI200Response.md)
 
 ### Authorization
 
@@ -345,11 +345,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## VerifyEmailAddress
+## VerifyEmailAddressAPI
 
-> VerifyEmailAddress200Response VerifyEmailAddress(ctx).Email(email).Execute()
+> VerifyEmailAddressAPI200Response VerifyEmailAddressAPI(ctx).Email(email).Execute()
 
-Verify Email Address
+Verify Email Address API
 
 
 
@@ -370,13 +370,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.WebAPI.VerifyEmailAddress(context.Background()).Email(email).Execute()
+	resp, r, err := apiClient.WebAPI.VerifyEmailAddressAPI(context.Background()).Email(email).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.VerifyEmailAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `WebAPI.VerifyEmailAddressAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `VerifyEmailAddress`: VerifyEmailAddress200Response
-	fmt.Fprintf(os.Stdout, "Response from `WebAPI.VerifyEmailAddress`: %v\n", resp)
+	// response from `VerifyEmailAddressAPI`: VerifyEmailAddressAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `WebAPI.VerifyEmailAddressAPI`: %v\n", resp)
 }
 ```
 
@@ -386,7 +386,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyEmailAddressRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyEmailAddressAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
+[**VerifyEmailAddressAPI200Response**](VerifyEmailAddressAPI200Response.md)
 
 ### Authorization
 

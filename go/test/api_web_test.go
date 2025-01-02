@@ -22,11 +22,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test WebAPIService ExtractAuthors", func(t *testing.T) {
+	t.Run("Test WebAPIService ExtractAuthorsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.ExtractAuthors(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.ExtractAuthorsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebAPIService ExtractContentFromAWebPage", func(t *testing.T) {
+	t.Run("Test WebAPIService ExtractContentFromAWebPageAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.ExtractContentFromAWebPage(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.ExtractContentFromAWebPageAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebAPIService ExtractPublishDate", func(t *testing.T) {
+	t.Run("Test WebAPIService ExtractPublishDateAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.ExtractPublishDate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.ExtractPublishDateAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebAPIService RetrievePageRank", func(t *testing.T) {
+	t.Run("Test WebAPIService RetrievePageRankAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.RetrievePageRank(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.RetrievePageRankAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -70,11 +70,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebAPIService SearchWeb", func(t *testing.T) {
+	t.Run("Test WebAPIService SearchWebAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.SearchWeb(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.SearchWebAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,11 +82,11 @@ func Test_apileague_WebAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test WebAPIService VerifyEmailAddress", func(t *testing.T) {
+	t.Run("Test WebAPIService VerifyEmailAddressAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.WebAPI.VerifyEmailAddress(context.Background()).Execute()
+		resp, httpRes, err := apiClient.WebAPI.VerifyEmailAddressAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

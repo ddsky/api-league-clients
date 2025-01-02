@@ -4,19 +4,19 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ComputeNutrition**](FoodAPI.md#ComputeNutrition) | **Get** /compute-nutrition | Compute Nutrition
-[**RetrieveRecipeInformation**](FoodAPI.md#RetrieveRecipeInformation) | **Get** /retrieve-recipe | Retrieve Recipe Information
-[**SearchDrinks**](FoodAPI.md#SearchDrinks) | **Get** /search-drinks | Search Drinks
-[**SearchRecipes**](FoodAPI.md#SearchRecipes) | **Get** /search-recipes | Search Recipes
-[**SearchRestaurants**](FoodAPI.md#SearchRestaurants) | **Get** /search-restaurants | Search Restaurants
+[**ComputeNutritionAPI**](FoodAPI.md#ComputeNutritionAPI) | **Get** /compute-nutrition | Compute Nutrition API
+[**RetrieveRecipeInformationAPI**](FoodAPI.md#RetrieveRecipeInformationAPI) | **Get** /retrieve-recipe | Retrieve Recipe Information API
+[**SearchDrinksAPI**](FoodAPI.md#SearchDrinksAPI) | **Get** /search-drinks | Search Drinks API
+[**SearchRecipesAPI**](FoodAPI.md#SearchRecipesAPI) | **Get** /search-recipes | Search Recipes API
+[**SearchRestaurantsAPI**](FoodAPI.md#SearchRestaurantsAPI) | **Get** /search-restaurants | Search Restaurants API
 
 
 
-## ComputeNutrition
+## ComputeNutritionAPI
 
-> ComputeNutrition200Response ComputeNutrition(ctx).Ingredients(ingredients).Servings(servings).ReduceOils(reduceOils).Execute()
+> ComputeNutritionAPI200Response ComputeNutritionAPI(ctx).Ingredients(ingredients).Servings(servings).ReduceOils(reduceOils).Execute()
 
-Compute Nutrition
+Compute Nutrition API
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.ComputeNutrition(context.Background()).Ingredients(ingredients).Servings(servings).ReduceOils(reduceOils).Execute()
+	resp, r, err := apiClient.FoodAPI.ComputeNutritionAPI(context.Background()).Ingredients(ingredients).Servings(servings).ReduceOils(reduceOils).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.ComputeNutrition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.ComputeNutritionAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ComputeNutrition`: ComputeNutrition200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.ComputeNutrition`: %v\n", resp)
+	// response from `ComputeNutritionAPI`: ComputeNutritionAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.ComputeNutritionAPI`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeNutritionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeNutritionAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -82,11 +82,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RetrieveRecipeInformation
+## RetrieveRecipeInformationAPI
 
-> RetrieveRecipeInformation200Response RetrieveRecipeInformation(ctx).Id(id).AddWinePairing(addWinePairing).Execute()
+> RetrieveRecipeInformationAPI200Response RetrieveRecipeInformationAPI(ctx).Id(id).AddWinePairing(addWinePairing).Execute()
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 
 
@@ -108,13 +108,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.RetrieveRecipeInformation(context.Background()).Id(id).AddWinePairing(addWinePairing).Execute()
+	resp, r, err := apiClient.FoodAPI.RetrieveRecipeInformationAPI(context.Background()).Id(id).AddWinePairing(addWinePairing).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.RetrieveRecipeInformation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.RetrieveRecipeInformationAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RetrieveRecipeInformation`: RetrieveRecipeInformation200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.RetrieveRecipeInformation`: %v\n", resp)
+	// response from `RetrieveRecipeInformationAPI`: RetrieveRecipeInformationAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.RetrieveRecipeInformationAPI`: %v\n", resp)
 }
 ```
 
@@ -124,7 +124,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRetrieveRecipeInformationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRetrieveRecipeInformationAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -150,11 +150,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchDrinks
+## SearchDrinksAPI
 
-> SearchDrinks200Response SearchDrinks(ctx).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+> SearchDrinksAPI200Response SearchDrinksAPI(ctx).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 
-Search Drinks
+Search Drinks API
 
 
 
@@ -196,13 +196,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.SearchDrinks(context.Background()).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.FoodAPI.SearchDrinksAPI(context.Background()).Query(query).GlassTypes(glassTypes).Flavors(flavors).Diet(diet).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinAlcoholPercent(minAlcoholPercent).MaxAlcoholPercent(maxAlcoholPercent).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchDrinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchDrinksAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchDrinks`: SearchDrinks200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchDrinks`: %v\n", resp)
+	// response from `SearchDrinksAPI`: SearchDrinksAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchDrinksAPI`: %v\n", resp)
 }
 ```
 
@@ -212,7 +212,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchDrinksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchDrinksAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -258,11 +258,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchRecipes
+## SearchRecipesAPI
 
-> SearchRecipes200Response SearchRecipes(ctx).Query(query).Cuisines(cuisines).ExcludeCuisines(excludeCuisines).MealType(mealType).Diet(diet).Intolerances(intolerances).Equipment(equipment).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).FillIngredients(fillIngredients).AddRecipeInformation(addRecipeInformation).MaxTime(maxTime).MinServings(minServings).MaxServings(maxServings).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinSugar(minSugar).MaxSugar(maxSugar).MinFiber(minFiber).MaxFiber(maxFiber).MinFolate(minFolate).MaxFolate(maxFolate).MinFolicAcid(minFolicAcid).MaxFolicAcid(maxFolicAcid).MinIodine(minIodine).MaxIodine(maxIodine).MinIron(minIron).MaxIron(maxIron).MinZinc(minZinc).MaxZinc(maxZinc).MinMagnesium(minMagnesium).MaxMagnesium(maxMagnesium).MinManganese(minManganese).MaxManganese(maxManganese).MinPhosphorus(minPhosphorus).MaxPhosphorus(maxPhosphorus).MinPotassium(minPotassium).MaxPotassium(maxPotassium).MinSodium(minSodium).MaxSodium(maxSodium).MinSelenium(minSelenium).MaxSelenium(maxSelenium).MinCopper(minCopper).MaxCopper(maxCopper).MinCalcium(minCalcium).MaxCalcium(maxCalcium).MinCholine(minCholine).MaxCholine(maxCholine).MinCholesterol(minCholesterol).MaxCholesterol(maxCholesterol).MinFluoride(minFluoride).MaxFluoride(maxFluoride).MinAlcohol(minAlcohol).MaxAlcohol(maxAlcohol).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).MinSaturatedFat(minSaturatedFat).MaxSaturatedFat(maxSaturatedFat).MinVitaminA(minVitaminA).MaxVitaminA(maxVitaminA).MinVitaminC(minVitaminC).MaxVitaminC(maxVitaminC).MinVitaminD(minVitaminD).MaxVitaminD(maxVitaminD).MinVitaminE(minVitaminE).MaxVitaminE(maxVitaminE).MinVitaminK(minVitaminK).MaxVitaminK(maxVitaminK).MinVitaminB1(minVitaminB1).MaxVitaminB1(maxVitaminB1).MinVitaminB2(minVitaminB2).MaxVitaminB2(maxVitaminB2).MinVitaminB3(minVitaminB3).MaxVitaminB3(maxVitaminB3).MinVitaminB5(minVitaminB5).MaxVitaminB5(maxVitaminB5).MinVitaminB6(minVitaminB6).MaxVitaminB6(maxVitaminB6).MinVitaminB12(minVitaminB12).MaxVitaminB12(maxVitaminB12).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+> SearchRecipesAPI200Response SearchRecipesAPI(ctx).Query(query).Cuisines(cuisines).ExcludeCuisines(excludeCuisines).MealType(mealType).Diet(diet).Intolerances(intolerances).Equipment(equipment).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).FillIngredients(fillIngredients).AddRecipeInformation(addRecipeInformation).MaxTime(maxTime).MinServings(minServings).MaxServings(maxServings).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinSugar(minSugar).MaxSugar(maxSugar).MinFiber(minFiber).MaxFiber(maxFiber).MinFolate(minFolate).MaxFolate(maxFolate).MinFolicAcid(minFolicAcid).MaxFolicAcid(maxFolicAcid).MinIodine(minIodine).MaxIodine(maxIodine).MinIron(minIron).MaxIron(maxIron).MinZinc(minZinc).MaxZinc(maxZinc).MinMagnesium(minMagnesium).MaxMagnesium(maxMagnesium).MinManganese(minManganese).MaxManganese(maxManganese).MinPhosphorus(minPhosphorus).MaxPhosphorus(maxPhosphorus).MinPotassium(minPotassium).MaxPotassium(maxPotassium).MinSodium(minSodium).MaxSodium(maxSodium).MinSelenium(minSelenium).MaxSelenium(maxSelenium).MinCopper(minCopper).MaxCopper(maxCopper).MinCalcium(minCalcium).MaxCalcium(maxCalcium).MinCholine(minCholine).MaxCholine(maxCholine).MinCholesterol(minCholesterol).MaxCholesterol(maxCholesterol).MinFluoride(minFluoride).MaxFluoride(maxFluoride).MinAlcohol(minAlcohol).MaxAlcohol(maxAlcohol).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).MinSaturatedFat(minSaturatedFat).MaxSaturatedFat(maxSaturatedFat).MinVitaminA(minVitaminA).MaxVitaminA(maxVitaminA).MinVitaminC(minVitaminC).MaxVitaminC(maxVitaminC).MinVitaminD(minVitaminD).MaxVitaminD(maxVitaminD).MinVitaminE(minVitaminE).MaxVitaminE(maxVitaminE).MinVitaminK(minVitaminK).MaxVitaminK(maxVitaminK).MinVitaminB1(minVitaminB1).MaxVitaminB1(maxVitaminB1).MinVitaminB2(minVitaminB2).MaxVitaminB2(maxVitaminB2).MinVitaminB3(minVitaminB3).MaxVitaminB3(maxVitaminB3).MinVitaminB5(minVitaminB5).MaxVitaminB5(maxVitaminB5).MinVitaminB6(minVitaminB6).MaxVitaminB6(maxVitaminB6).MinVitaminB12(minVitaminB12).MaxVitaminB12(maxVitaminB12).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 
-Search Recipes
+Search Recipes API
 
 
 
@@ -372,13 +372,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.SearchRecipes(context.Background()).Query(query).Cuisines(cuisines).ExcludeCuisines(excludeCuisines).MealType(mealType).Diet(diet).Intolerances(intolerances).Equipment(equipment).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).FillIngredients(fillIngredients).AddRecipeInformation(addRecipeInformation).MaxTime(maxTime).MinServings(minServings).MaxServings(maxServings).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinSugar(minSugar).MaxSugar(maxSugar).MinFiber(minFiber).MaxFiber(maxFiber).MinFolate(minFolate).MaxFolate(maxFolate).MinFolicAcid(minFolicAcid).MaxFolicAcid(maxFolicAcid).MinIodine(minIodine).MaxIodine(maxIodine).MinIron(minIron).MaxIron(maxIron).MinZinc(minZinc).MaxZinc(maxZinc).MinMagnesium(minMagnesium).MaxMagnesium(maxMagnesium).MinManganese(minManganese).MaxManganese(maxManganese).MinPhosphorus(minPhosphorus).MaxPhosphorus(maxPhosphorus).MinPotassium(minPotassium).MaxPotassium(maxPotassium).MinSodium(minSodium).MaxSodium(maxSodium).MinSelenium(minSelenium).MaxSelenium(maxSelenium).MinCopper(minCopper).MaxCopper(maxCopper).MinCalcium(minCalcium).MaxCalcium(maxCalcium).MinCholine(minCholine).MaxCholine(maxCholine).MinCholesterol(minCholesterol).MaxCholesterol(maxCholesterol).MinFluoride(minFluoride).MaxFluoride(maxFluoride).MinAlcohol(minAlcohol).MaxAlcohol(maxAlcohol).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).MinSaturatedFat(minSaturatedFat).MaxSaturatedFat(maxSaturatedFat).MinVitaminA(minVitaminA).MaxVitaminA(maxVitaminA).MinVitaminC(minVitaminC).MaxVitaminC(maxVitaminC).MinVitaminD(minVitaminD).MaxVitaminD(maxVitaminD).MinVitaminE(minVitaminE).MaxVitaminE(maxVitaminE).MinVitaminK(minVitaminK).MaxVitaminK(maxVitaminK).MinVitaminB1(minVitaminB1).MaxVitaminB1(maxVitaminB1).MinVitaminB2(minVitaminB2).MaxVitaminB2(maxVitaminB2).MinVitaminB3(minVitaminB3).MaxVitaminB3(maxVitaminB3).MinVitaminB5(minVitaminB5).MaxVitaminB5(maxVitaminB5).MinVitaminB6(minVitaminB6).MaxVitaminB6(maxVitaminB6).MinVitaminB12(minVitaminB12).MaxVitaminB12(maxVitaminB12).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.FoodAPI.SearchRecipesAPI(context.Background()).Query(query).Cuisines(cuisines).ExcludeCuisines(excludeCuisines).MealType(mealType).Diet(diet).Intolerances(intolerances).Equipment(equipment).IncludeIngredients(includeIngredients).ExcludeIngredients(excludeIngredients).FillIngredients(fillIngredients).AddRecipeInformation(addRecipeInformation).MaxTime(maxTime).MinServings(minServings).MaxServings(maxServings).MinCalories(minCalories).MaxCalories(maxCalories).MinCarbs(minCarbs).MaxCarbs(maxCarbs).MinProtein(minProtein).MaxProtein(maxProtein).MinFat(minFat).MaxFat(maxFat).MinSugar(minSugar).MaxSugar(maxSugar).MinFiber(minFiber).MaxFiber(maxFiber).MinFolate(minFolate).MaxFolate(maxFolate).MinFolicAcid(minFolicAcid).MaxFolicAcid(maxFolicAcid).MinIodine(minIodine).MaxIodine(maxIodine).MinIron(minIron).MaxIron(maxIron).MinZinc(minZinc).MaxZinc(maxZinc).MinMagnesium(minMagnesium).MaxMagnesium(maxMagnesium).MinManganese(minManganese).MaxManganese(maxManganese).MinPhosphorus(minPhosphorus).MaxPhosphorus(maxPhosphorus).MinPotassium(minPotassium).MaxPotassium(maxPotassium).MinSodium(minSodium).MaxSodium(maxSodium).MinSelenium(minSelenium).MaxSelenium(maxSelenium).MinCopper(minCopper).MaxCopper(maxCopper).MinCalcium(minCalcium).MaxCalcium(maxCalcium).MinCholine(minCholine).MaxCholine(maxCholine).MinCholesterol(minCholesterol).MaxCholesterol(maxCholesterol).MinFluoride(minFluoride).MaxFluoride(maxFluoride).MinAlcohol(minAlcohol).MaxAlcohol(maxAlcohol).MinCaffeine(minCaffeine).MaxCaffeine(maxCaffeine).MinSaturatedFat(minSaturatedFat).MaxSaturatedFat(maxSaturatedFat).MinVitaminA(minVitaminA).MaxVitaminA(maxVitaminA).MinVitaminC(minVitaminC).MaxVitaminC(maxVitaminC).MinVitaminD(minVitaminD).MaxVitaminD(maxVitaminD).MinVitaminE(minVitaminE).MaxVitaminE(maxVitaminE).MinVitaminK(minVitaminK).MaxVitaminK(maxVitaminK).MinVitaminB1(minVitaminB1).MaxVitaminB1(maxVitaminB1).MinVitaminB2(minVitaminB2).MaxVitaminB2(maxVitaminB2).MinVitaminB3(minVitaminB3).MaxVitaminB3(maxVitaminB3).MinVitaminB5(minVitaminB5).MaxVitaminB5(maxVitaminB5).MinVitaminB6(minVitaminB6).MaxVitaminB6(maxVitaminB6).MinVitaminB12(minVitaminB12).MaxVitaminB12(maxVitaminB12).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchRecipes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchRecipesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchRecipes`: SearchRecipes200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchRecipes`: %v\n", resp)
+	// response from `SearchRecipesAPI`: SearchRecipesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchRecipesAPI`: %v\n", resp)
 }
 ```
 
@@ -388,7 +388,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchRecipesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchRecipesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -502,11 +502,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchRestaurants
+## SearchRestaurantsAPI
 
-> SearchRestaurants200Response SearchRestaurants(ctx).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
+> SearchRestaurantsAPI200Response SearchRestaurantsAPI(ctx).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
 
-Search Restaurants
+Search Restaurants API
 
 
 
@@ -536,13 +536,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.SearchRestaurants(context.Background()).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
+	resp, r, err := apiClient.FoodAPI.SearchRestaurantsAPI(context.Background()).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchRestaurants``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchRestaurantsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchRestaurants`: SearchRestaurants200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchRestaurants`: %v\n", resp)
+	// response from `SearchRestaurantsAPI`: SearchRestaurantsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchRestaurantsAPI`: %v\n", resp)
 }
 ```
 
@@ -552,7 +552,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchRestaurantsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchRestaurantsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**compute_nutrition**](FoodApi.md#compute_nutrition) | **GET** /compute-nutrition | Compute Nutrition
-[**retrieve_recipe_information**](FoodApi.md#retrieve_recipe_information) | **GET** /retrieve-recipe | Retrieve Recipe Information
-[**search_drinks**](FoodApi.md#search_drinks) | **GET** /search-drinks | Search Drinks
-[**search_recipes**](FoodApi.md#search_recipes) | **GET** /search-recipes | Search Recipes
-[**search_restaurants**](FoodApi.md#search_restaurants) | **GET** /search-restaurants | Search Restaurants
+[**compute_nutrition_api**](FoodApi.md#compute_nutrition_api) | **GET** /compute-nutrition | Compute Nutrition API
+[**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+[**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API
+[**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API
+[**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API
 
 
-# **compute_nutrition**
-> ComputeNutrition200Response compute_nutrition(ingredients, servings=servings, reduce_oils=reduce_oils)
+# **compute_nutrition_api**
+> ComputeNutritionAPI200Response compute_nutrition_api(ingredients, servings=servings, reduce_oils=reduce_oils)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -25,7 +25,7 @@ Compute detailed nutritional information for a given recipe (list of ingredients
 
 ```python
 import apileague
-from apileague.models.compute_nutrition200_response import ComputeNutrition200Response
+from apileague.models.compute_nutrition_api200_response import ComputeNutritionAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -61,12 +61,12 @@ with apileague.ApiClient(configuration) as api_client:
     reduce_oils = true # bool | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true. (optional)
 
     try:
-        # Compute Nutrition
-        api_response = api_instance.compute_nutrition(ingredients, servings=servings, reduce_oils=reduce_oils)
-        print("The response of FoodApi->compute_nutrition:\n")
+        # Compute Nutrition API
+        api_response = api_instance.compute_nutrition_api(ingredients, servings=servings, reduce_oils=reduce_oils)
+        print("The response of FoodApi->compute_nutrition_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FoodApi->compute_nutrition: %s\n" % e)
+        print("Exception when calling FoodApi->compute_nutrition_api: %s\n" % e)
 ```
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -107,10 +107,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_recipe_information**
-> RetrieveRecipeInformation200Response retrieve_recipe_information(id, add_wine_pairing=add_wine_pairing)
+# **retrieve_recipe_information_api**
+> RetrieveRecipeInformationAPI200Response retrieve_recipe_information_api(id, add_wine_pairing=add_wine_pairing)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -121,7 +121,7 @@ Get detailed recipe information such as dietary properties, macro and micro nutr
 
 ```python
 import apileague
-from apileague.models.retrieve_recipe_information200_response import RetrieveRecipeInformation200Response
+from apileague.models.retrieve_recipe_information_api200_response import RetrieveRecipeInformationAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -156,12 +156,12 @@ with apileague.ApiClient(configuration) as api_client:
     add_wine_pairing = true # bool | Whether to pair a wine to the recipe. (optional)
 
     try:
-        # Retrieve Recipe Information
-        api_response = api_instance.retrieve_recipe_information(id, add_wine_pairing=add_wine_pairing)
-        print("The response of FoodApi->retrieve_recipe_information:\n")
+        # Retrieve Recipe Information API
+        api_response = api_instance.retrieve_recipe_information_api(id, add_wine_pairing=add_wine_pairing)
+        print("The response of FoodApi->retrieve_recipe_information_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FoodApi->retrieve_recipe_information: %s\n" % e)
+        print("Exception when calling FoodApi->retrieve_recipe_information_api: %s\n" % e)
 ```
 
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -201,10 +201,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_drinks**
-> SearchDrinks200Response search_drinks(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+# **search_drinks_api**
+> SearchDrinksAPI200Response search_drinks_api(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -215,7 +215,7 @@ Search for drinks by title, ingredients, flavor, type of glass, alcohol content,
 
 ```python
 import apileague
-from apileague.models.search_drinks200_response import SearchDrinks200Response
+from apileague.models.search_drinks_api200_response import SearchDrinksAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -270,12 +270,12 @@ with apileague.ApiClient(configuration) as api_client:
     number = 3 # int | The number of drinks, between 1 and 10. (optional)
 
     try:
-        # Search Drinks
-        api_response = api_instance.search_drinks(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
-        print("The response of FoodApi->search_drinks:\n")
+        # Search Drinks API
+        api_response = api_instance.search_drinks_api(query=query, glass_types=glass_types, flavors=flavors, diet=diet, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_alcohol_percent=min_alcohol_percent, max_alcohol_percent=max_alcohol_percent, min_caffeine=min_caffeine, max_caffeine=max_caffeine, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+        print("The response of FoodApi->search_drinks_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FoodApi->search_drinks: %s\n" % e)
+        print("Exception when calling FoodApi->search_drinks_api: %s\n" % e)
 ```
 
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -335,10 +335,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_recipes**
-> SearchRecipes200Response search_recipes(query=query, cuisines=cuisines, exclude_cuisines=exclude_cuisines, meal_type=meal_type, diet=diet, intolerances=intolerances, equipment=equipment, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, fill_ingredients=fill_ingredients, add_recipe_information=add_recipe_information, max_time=max_time, min_servings=min_servings, max_servings=max_servings, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_sugar=min_sugar, max_sugar=max_sugar, min_fiber=min_fiber, max_fiber=max_fiber, min_folate=min_folate, max_folate=max_folate, min_folic_acid=min_folic_acid, max_folic_acid=max_folic_acid, min_iodine=min_iodine, max_iodine=max_iodine, min_iron=min_iron, max_iron=max_iron, min_zinc=min_zinc, max_zinc=max_zinc, min_magnesium=min_magnesium, max_magnesium=max_magnesium, min_manganese=min_manganese, max_manganese=max_manganese, min_phosphorus=min_phosphorus, max_phosphorus=max_phosphorus, min_potassium=min_potassium, max_potassium=max_potassium, min_sodium=min_sodium, max_sodium=max_sodium, min_selenium=min_selenium, max_selenium=max_selenium, min_copper=min_copper, max_copper=max_copper, min_calcium=min_calcium, max_calcium=max_calcium, min_choline=min_choline, max_choline=max_choline, min_cholesterol=min_cholesterol, max_cholesterol=max_cholesterol, min_fluoride=min_fluoride, max_fluoride=max_fluoride, min_alcohol=min_alcohol, max_alcohol=max_alcohol, min_caffeine=min_caffeine, max_caffeine=max_caffeine, min_saturated_fat=min_saturated_fat, max_saturated_fat=max_saturated_fat, min_vitamin_a=min_vitamin_a, max_vitamin_a=max_vitamin_a, min_vitamin_c=min_vitamin_c, max_vitamin_c=max_vitamin_c, min_vitamin_d=min_vitamin_d, max_vitamin_d=max_vitamin_d, min_vitamin_e=min_vitamin_e, max_vitamin_e=max_vitamin_e, min_vitamin_k=min_vitamin_k, max_vitamin_k=max_vitamin_k, min_vitamin_b1=min_vitamin_b1, max_vitamin_b1=max_vitamin_b1, min_vitamin_b2=min_vitamin_b2, max_vitamin_b2=max_vitamin_b2, min_vitamin_b3=min_vitamin_b3, max_vitamin_b3=max_vitamin_b3, min_vitamin_b5=min_vitamin_b5, max_vitamin_b5=max_vitamin_b5, min_vitamin_b6=min_vitamin_b6, max_vitamin_b6=max_vitamin_b6, min_vitamin_b12=min_vitamin_b12, max_vitamin_b12=max_vitamin_b12, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+# **search_recipes_api**
+> SearchRecipesAPI200Response search_recipes_api(query=query, cuisines=cuisines, exclude_cuisines=exclude_cuisines, meal_type=meal_type, diet=diet, intolerances=intolerances, equipment=equipment, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, fill_ingredients=fill_ingredients, add_recipe_information=add_recipe_information, max_time=max_time, min_servings=min_servings, max_servings=max_servings, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_sugar=min_sugar, max_sugar=max_sugar, min_fiber=min_fiber, max_fiber=max_fiber, min_folate=min_folate, max_folate=max_folate, min_folic_acid=min_folic_acid, max_folic_acid=max_folic_acid, min_iodine=min_iodine, max_iodine=max_iodine, min_iron=min_iron, max_iron=max_iron, min_zinc=min_zinc, max_zinc=max_zinc, min_magnesium=min_magnesium, max_magnesium=max_magnesium, min_manganese=min_manganese, max_manganese=max_manganese, min_phosphorus=min_phosphorus, max_phosphorus=max_phosphorus, min_potassium=min_potassium, max_potassium=max_potassium, min_sodium=min_sodium, max_sodium=max_sodium, min_selenium=min_selenium, max_selenium=max_selenium, min_copper=min_copper, max_copper=max_copper, min_calcium=min_calcium, max_calcium=max_calcium, min_choline=min_choline, max_choline=max_choline, min_cholesterol=min_cholesterol, max_cholesterol=max_cholesterol, min_fluoride=min_fluoride, max_fluoride=max_fluoride, min_alcohol=min_alcohol, max_alcohol=max_alcohol, min_caffeine=min_caffeine, max_caffeine=max_caffeine, min_saturated_fat=min_saturated_fat, max_saturated_fat=max_saturated_fat, min_vitamin_a=min_vitamin_a, max_vitamin_a=max_vitamin_a, min_vitamin_c=min_vitamin_c, max_vitamin_c=max_vitamin_c, min_vitamin_d=min_vitamin_d, max_vitamin_d=max_vitamin_d, min_vitamin_e=min_vitamin_e, max_vitamin_e=max_vitamin_e, min_vitamin_k=min_vitamin_k, max_vitamin_k=max_vitamin_k, min_vitamin_b1=min_vitamin_b1, max_vitamin_b1=max_vitamin_b1, min_vitamin_b2=min_vitamin_b2, max_vitamin_b2=max_vitamin_b2, min_vitamin_b3=min_vitamin_b3, max_vitamin_b3=max_vitamin_b3, min_vitamin_b5=min_vitamin_b5, max_vitamin_b5=max_vitamin_b5, min_vitamin_b6=min_vitamin_b6, max_vitamin_b6=max_vitamin_b6, min_vitamin_b12=min_vitamin_b12, max_vitamin_b12=max_vitamin_b12, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -349,7 +349,7 @@ Search and filter thousands of recipes with natural language, e.g. pasta recipes
 
 ```python
 import apileague
-from apileague.models.search_recipes200_response import SearchRecipes200Response
+from apileague.models.search_recipes_api200_response import SearchRecipesAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -472,12 +472,12 @@ with apileague.ApiClient(configuration) as api_client:
     number = 3 # int | The number of recipes, between 1 and 100. (optional)
 
     try:
-        # Search Recipes
-        api_response = api_instance.search_recipes(query=query, cuisines=cuisines, exclude_cuisines=exclude_cuisines, meal_type=meal_type, diet=diet, intolerances=intolerances, equipment=equipment, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, fill_ingredients=fill_ingredients, add_recipe_information=add_recipe_information, max_time=max_time, min_servings=min_servings, max_servings=max_servings, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_sugar=min_sugar, max_sugar=max_sugar, min_fiber=min_fiber, max_fiber=max_fiber, min_folate=min_folate, max_folate=max_folate, min_folic_acid=min_folic_acid, max_folic_acid=max_folic_acid, min_iodine=min_iodine, max_iodine=max_iodine, min_iron=min_iron, max_iron=max_iron, min_zinc=min_zinc, max_zinc=max_zinc, min_magnesium=min_magnesium, max_magnesium=max_magnesium, min_manganese=min_manganese, max_manganese=max_manganese, min_phosphorus=min_phosphorus, max_phosphorus=max_phosphorus, min_potassium=min_potassium, max_potassium=max_potassium, min_sodium=min_sodium, max_sodium=max_sodium, min_selenium=min_selenium, max_selenium=max_selenium, min_copper=min_copper, max_copper=max_copper, min_calcium=min_calcium, max_calcium=max_calcium, min_choline=min_choline, max_choline=max_choline, min_cholesterol=min_cholesterol, max_cholesterol=max_cholesterol, min_fluoride=min_fluoride, max_fluoride=max_fluoride, min_alcohol=min_alcohol, max_alcohol=max_alcohol, min_caffeine=min_caffeine, max_caffeine=max_caffeine, min_saturated_fat=min_saturated_fat, max_saturated_fat=max_saturated_fat, min_vitamin_a=min_vitamin_a, max_vitamin_a=max_vitamin_a, min_vitamin_c=min_vitamin_c, max_vitamin_c=max_vitamin_c, min_vitamin_d=min_vitamin_d, max_vitamin_d=max_vitamin_d, min_vitamin_e=min_vitamin_e, max_vitamin_e=max_vitamin_e, min_vitamin_k=min_vitamin_k, max_vitamin_k=max_vitamin_k, min_vitamin_b1=min_vitamin_b1, max_vitamin_b1=max_vitamin_b1, min_vitamin_b2=min_vitamin_b2, max_vitamin_b2=max_vitamin_b2, min_vitamin_b3=min_vitamin_b3, max_vitamin_b3=max_vitamin_b3, min_vitamin_b5=min_vitamin_b5, max_vitamin_b5=max_vitamin_b5, min_vitamin_b6=min_vitamin_b6, max_vitamin_b6=max_vitamin_b6, min_vitamin_b12=min_vitamin_b12, max_vitamin_b12=max_vitamin_b12, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
-        print("The response of FoodApi->search_recipes:\n")
+        # Search Recipes API
+        api_response = api_instance.search_recipes_api(query=query, cuisines=cuisines, exclude_cuisines=exclude_cuisines, meal_type=meal_type, diet=diet, intolerances=intolerances, equipment=equipment, include_ingredients=include_ingredients, exclude_ingredients=exclude_ingredients, fill_ingredients=fill_ingredients, add_recipe_information=add_recipe_information, max_time=max_time, min_servings=min_servings, max_servings=max_servings, min_calories=min_calories, max_calories=max_calories, min_carbs=min_carbs, max_carbs=max_carbs, min_protein=min_protein, max_protein=max_protein, min_fat=min_fat, max_fat=max_fat, min_sugar=min_sugar, max_sugar=max_sugar, min_fiber=min_fiber, max_fiber=max_fiber, min_folate=min_folate, max_folate=max_folate, min_folic_acid=min_folic_acid, max_folic_acid=max_folic_acid, min_iodine=min_iodine, max_iodine=max_iodine, min_iron=min_iron, max_iron=max_iron, min_zinc=min_zinc, max_zinc=max_zinc, min_magnesium=min_magnesium, max_magnesium=max_magnesium, min_manganese=min_manganese, max_manganese=max_manganese, min_phosphorus=min_phosphorus, max_phosphorus=max_phosphorus, min_potassium=min_potassium, max_potassium=max_potassium, min_sodium=min_sodium, max_sodium=max_sodium, min_selenium=min_selenium, max_selenium=max_selenium, min_copper=min_copper, max_copper=max_copper, min_calcium=min_calcium, max_calcium=max_calcium, min_choline=min_choline, max_choline=max_choline, min_cholesterol=min_cholesterol, max_cholesterol=max_cholesterol, min_fluoride=min_fluoride, max_fluoride=max_fluoride, min_alcohol=min_alcohol, max_alcohol=max_alcohol, min_caffeine=min_caffeine, max_caffeine=max_caffeine, min_saturated_fat=min_saturated_fat, max_saturated_fat=max_saturated_fat, min_vitamin_a=min_vitamin_a, max_vitamin_a=max_vitamin_a, min_vitamin_c=min_vitamin_c, max_vitamin_c=max_vitamin_c, min_vitamin_d=min_vitamin_d, max_vitamin_d=max_vitamin_d, min_vitamin_e=min_vitamin_e, max_vitamin_e=max_vitamin_e, min_vitamin_k=min_vitamin_k, max_vitamin_k=max_vitamin_k, min_vitamin_b1=min_vitamin_b1, max_vitamin_b1=max_vitamin_b1, min_vitamin_b2=min_vitamin_b2, max_vitamin_b2=max_vitamin_b2, min_vitamin_b3=min_vitamin_b3, max_vitamin_b3=max_vitamin_b3, min_vitamin_b5=min_vitamin_b5, max_vitamin_b5=max_vitamin_b5, min_vitamin_b6=min_vitamin_b6, max_vitamin_b6=max_vitamin_b6, min_vitamin_b12=min_vitamin_b12, max_vitamin_b12=max_vitamin_b12, sort=sort, sort_direction=sort_direction, offset=offset, number=number)
+        print("The response of FoodApi->search_recipes_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FoodApi->search_recipes: %s\n" % e)
+        print("Exception when calling FoodApi->search_recipes_api: %s\n" % e)
 ```
 
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -605,10 +605,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_restaurants**
-> SearchRestaurants200Response search_restaurants(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
+# **search_restaurants_api**
+> SearchRestaurantsAPI200Response search_restaurants_api(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -619,7 +619,7 @@ Search through thousands of restaurants (in North America) by location, cuisine,
 
 ```python
 import apileague
-from apileague.models.search_restaurants200_response import SearchRestaurants200Response
+from apileague.models.search_restaurants_api200_response import SearchRestaurantsAPI200Response
 from apileague.rest import ApiException
 from pprint import pprint
 
@@ -662,12 +662,12 @@ with apileague.ApiClient(configuration) as api_client:
     sort = 'rating' # str | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
 
     try:
-        # Search Restaurants
-        api_response = api_instance.search_restaurants(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
-        print("The response of FoodApi->search_restaurants:\n")
+        # Search Restaurants API
+        api_response = api_instance.search_restaurants_api(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
+        print("The response of FoodApi->search_restaurants_api:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FoodApi->search_restaurants: %s\n" % e)
+        print("Exception when calling FoodApi->search_restaurants_api: %s\n" % e)
 ```
 
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

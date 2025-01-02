@@ -4,27 +4,27 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CorrectSpelling**](TextAPI.md#CorrectSpelling) | **Get** /correct-spelling | Correct Spelling
-[**DetectGenderByName**](TextAPI.md#DetectGenderByName) | **Get** /detect-gender | Detect Gender by Name
-[**DetectLanguage**](TextAPI.md#DetectLanguage) | **Get** /detect-language | Detect Language
-[**DetectSentiment**](TextAPI.md#DetectSentiment) | **Get** /detect-sentiment | Detect Sentiment
-[**ExtractDates**](TextAPI.md#ExtractDates) | **Get** /extract-dates | Extract Dates
-[**ExtractEntities**](TextAPI.md#ExtractEntities) | **Get** /extract-entities | Extract Entities
-[**ListWordSynonyms**](TextAPI.md#ListWordSynonyms) | **Get** /list-synonyms | List Word Synonyms
-[**PluralizeWord**](TextAPI.md#PluralizeWord) | **Get** /pluralize-word | Pluralize Word
-[**ScoreReadability**](TextAPI.md#ScoreReadability) | **Get** /score-readability | Score Readability
-[**ScoreText**](TextAPI.md#ScoreText) | **Get** /score-text | Score Text
-[**SingularizeWord**](TextAPI.md#SingularizeWord) | **Get** /singularize-word | Singularize Word
-[**StemText**](TextAPI.md#StemText) | **Get** /stem-text | Stem Text
-[**TagPartOfSpeech**](TextAPI.md#TagPartOfSpeech) | **Get** /tag-pos | Tag Part of Speech
+[**CorrectSpellingAPI**](TextAPI.md#CorrectSpellingAPI) | **Get** /correct-spelling | Correct Spelling API
+[**DetectGenderByNameAPI**](TextAPI.md#DetectGenderByNameAPI) | **Get** /detect-gender | Detect Gender by Name API
+[**DetectLanguageAPI**](TextAPI.md#DetectLanguageAPI) | **Get** /detect-language | Detect Language API
+[**DetectSentimentAPI**](TextAPI.md#DetectSentimentAPI) | **Get** /detect-sentiment | Detect Sentiment API
+[**ExtractDatesAPI**](TextAPI.md#ExtractDatesAPI) | **Get** /extract-dates | Extract Dates API
+[**ExtractEntitiesAPI**](TextAPI.md#ExtractEntitiesAPI) | **Get** /extract-entities | Extract Entities API
+[**ListWordSynonymsAPI**](TextAPI.md#ListWordSynonymsAPI) | **Get** /list-synonyms | List Word Synonyms API
+[**PluralizeWordAPI**](TextAPI.md#PluralizeWordAPI) | **Get** /pluralize-word | Pluralize Word API
+[**ScoreReadabilityAPI**](TextAPI.md#ScoreReadabilityAPI) | **Get** /score-readability | Score Readability API
+[**ScoreTextAPI**](TextAPI.md#ScoreTextAPI) | **Get** /score-text | Score Text API
+[**SingularizeWordAPI**](TextAPI.md#SingularizeWordAPI) | **Get** /singularize-word | Singularize Word API
+[**StemTextAPI**](TextAPI.md#StemTextAPI) | **Get** /stem-text | Stem Text API
+[**TagPartOfSpeechAPI**](TextAPI.md#TagPartOfSpeechAPI) | **Get** /tag-pos | Tag Part of Speech API
 
 
 
-## CorrectSpelling
+## CorrectSpellingAPI
 
-> CorrectSpelling200Response CorrectSpelling(ctx).Text(text).Language(language).Execute()
+> CorrectSpellingAPI200Response CorrectSpellingAPI(ctx).Text(text).Language(language).Execute()
 
-Correct Spelling
+Correct Spelling API
 
 
 
@@ -46,13 +46,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.CorrectSpelling(context.Background()).Text(text).Language(language).Execute()
+	resp, r, err := apiClient.TextAPI.CorrectSpellingAPI(context.Background()).Text(text).Language(language).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.CorrectSpelling``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.CorrectSpellingAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CorrectSpelling`: CorrectSpelling200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.CorrectSpelling`: %v\n", resp)
+	// response from `CorrectSpellingAPI`: CorrectSpellingAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.CorrectSpellingAPI`: %v\n", resp)
 }
 ```
 
@@ -62,7 +62,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCorrectSpellingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCorrectSpellingAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+[**CorrectSpellingAPI200Response**](CorrectSpellingAPI200Response.md)
 
 ### Authorization
 
@@ -88,11 +88,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DetectGenderByName
+## DetectGenderByNameAPI
 
-> DetectGenderByName200Response DetectGenderByName(ctx).Name(name).Execute()
+> DetectGenderByNameAPI200Response DetectGenderByNameAPI(ctx).Name(name).Execute()
 
-Detect Gender by Name
+Detect Gender by Name API
 
 
 
@@ -113,13 +113,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.DetectGenderByName(context.Background()).Name(name).Execute()
+	resp, r, err := apiClient.TextAPI.DetectGenderByNameAPI(context.Background()).Name(name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectGenderByName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectGenderByNameAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DetectGenderByName`: DetectGenderByName200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectGenderByName`: %v\n", resp)
+	// response from `DetectGenderByNameAPI`: DetectGenderByNameAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectGenderByNameAPI`: %v\n", resp)
 }
 ```
 
@@ -129,7 +129,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDetectGenderByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDetectGenderByNameAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+[**DetectGenderByNameAPI200Response**](DetectGenderByNameAPI200Response.md)
 
 ### Authorization
 
@@ -154,11 +154,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DetectLanguage
+## DetectLanguageAPI
 
-> []DetectLanguage200ResponseInner DetectLanguage(ctx).Text(text).Execute()
+> []DetectLanguageAPI200ResponseInner DetectLanguageAPI(ctx).Text(text).Execute()
 
-Detect Language
+Detect Language API
 
 
 
@@ -179,13 +179,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.DetectLanguage(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.DetectLanguageAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectLanguage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectLanguageAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DetectLanguage`: []DetectLanguage200ResponseInner
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectLanguage`: %v\n", resp)
+	// response from `DetectLanguageAPI`: []DetectLanguageAPI200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectLanguageAPI`: %v\n", resp)
 }
 ```
 
@@ -195,7 +195,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDetectLanguageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDetectLanguageAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DetectLanguage200ResponseInner**](DetectLanguage200ResponseInner.md)
+[**[]DetectLanguageAPI200ResponseInner**](DetectLanguageAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -220,11 +220,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DetectSentiment
+## DetectSentimentAPI
 
-> DetectSentiment200Response DetectSentiment(ctx).Text(text).Execute()
+> DetectSentimentAPI200Response DetectSentimentAPI(ctx).Text(text).Execute()
 
-Detect Sentiment
+Detect Sentiment API
 
 
 
@@ -245,13 +245,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.DetectSentiment(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.DetectSentimentAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectSentiment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.DetectSentimentAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DetectSentiment`: DetectSentiment200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectSentiment`: %v\n", resp)
+	// response from `DetectSentimentAPI`: DetectSentimentAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.DetectSentimentAPI`: %v\n", resp)
 }
 ```
 
@@ -261,7 +261,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDetectSentimentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDetectSentimentAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DetectSentiment200Response**](DetectSentiment200Response.md)
+[**DetectSentimentAPI200Response**](DetectSentimentAPI200Response.md)
 
 ### Authorization
 
@@ -286,11 +286,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExtractDates
+## ExtractDatesAPI
 
-> ExtractDates200Response ExtractDates(ctx).Text(text).Execute()
+> ExtractDatesAPI200Response ExtractDatesAPI(ctx).Text(text).Execute()
 
-Extract Dates
+Extract Dates API
 
 
 
@@ -311,13 +311,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.ExtractDates(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.ExtractDatesAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractDates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractDatesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractDates`: ExtractDates200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractDates`: %v\n", resp)
+	// response from `ExtractDatesAPI`: ExtractDatesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractDatesAPI`: %v\n", resp)
 }
 ```
 
@@ -327,7 +327,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractDatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractDatesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractDates200Response**](ExtractDates200Response.md)
+[**ExtractDatesAPI200Response**](ExtractDatesAPI200Response.md)
 
 ### Authorization
 
@@ -352,11 +352,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExtractEntities
+## ExtractEntitiesAPI
 
-> ExtractEntities200Response ExtractEntities(ctx).Text(text).Execute()
+> ExtractEntitiesAPI200Response ExtractEntitiesAPI(ctx).Text(text).Execute()
 
-Extract Entities
+Extract Entities API
 
 
 
@@ -377,13 +377,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.ExtractEntities(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.ExtractEntitiesAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ExtractEntitiesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractEntities`: ExtractEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractEntities`: %v\n", resp)
+	// response from `ExtractEntitiesAPI`: ExtractEntitiesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ExtractEntitiesAPI`: %v\n", resp)
 }
 ```
 
@@ -393,7 +393,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractEntitiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractEntitiesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractEntities200Response**](ExtractEntities200Response.md)
+[**ExtractEntitiesAPI200Response**](ExtractEntitiesAPI200Response.md)
 
 ### Authorization
 
@@ -418,11 +418,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListWordSynonyms
+## ListWordSynonymsAPI
 
-> ListWordSynonyms200Response ListWordSynonyms(ctx).Word(word).Execute()
+> ListWordSynonymsAPI200Response ListWordSynonymsAPI(ctx).Word(word).Execute()
 
-List Word Synonyms
+List Word Synonyms API
 
 
 
@@ -443,13 +443,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.ListWordSynonyms(context.Background()).Word(word).Execute()
+	resp, r, err := apiClient.TextAPI.ListWordSynonymsAPI(context.Background()).Word(word).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ListWordSynonyms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ListWordSynonymsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListWordSynonyms`: ListWordSynonyms200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ListWordSynonyms`: %v\n", resp)
+	// response from `ListWordSynonymsAPI`: ListWordSynonymsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ListWordSynonymsAPI`: %v\n", resp)
 }
 ```
 
@@ -459,7 +459,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListWordSynonymsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListWordSynonymsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
+[**ListWordSynonymsAPI200Response**](ListWordSynonymsAPI200Response.md)
 
 ### Authorization
 
@@ -484,11 +484,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PluralizeWord
+## PluralizeWordAPI
 
-> PluralizeWord200Response PluralizeWord(ctx).Word(word).Execute()
+> PluralizeWordAPI200Response PluralizeWordAPI(ctx).Word(word).Execute()
 
-Pluralize Word
+Pluralize Word API
 
 
 
@@ -509,13 +509,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.PluralizeWord(context.Background()).Word(word).Execute()
+	resp, r, err := apiClient.TextAPI.PluralizeWordAPI(context.Background()).Word(word).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.PluralizeWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.PluralizeWordAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PluralizeWord`: PluralizeWord200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.PluralizeWord`: %v\n", resp)
+	// response from `PluralizeWordAPI`: PluralizeWordAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.PluralizeWordAPI`: %v\n", resp)
 }
 ```
 
@@ -525,7 +525,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPluralizeWordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPluralizeWordAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PluralizeWord200Response**](PluralizeWord200Response.md)
+[**PluralizeWordAPI200Response**](PluralizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -550,11 +550,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ScoreReadability
+## ScoreReadabilityAPI
 
-> ScoreReadability200Response ScoreReadability(ctx).Text(text).Execute()
+> ScoreReadabilityAPI200Response ScoreReadabilityAPI(ctx).Text(text).Execute()
 
-Score Readability
+Score Readability API
 
 
 
@@ -575,13 +575,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.ScoreReadability(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.ScoreReadabilityAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreReadability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreReadabilityAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ScoreReadability`: ScoreReadability200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreReadability`: %v\n", resp)
+	// response from `ScoreReadabilityAPI`: ScoreReadabilityAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreReadabilityAPI`: %v\n", resp)
 }
 ```
 
@@ -591,7 +591,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiScoreReadabilityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScoreReadabilityAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ScoreReadability200Response**](ScoreReadability200Response.md)
+[**ScoreReadabilityAPI200Response**](ScoreReadabilityAPI200Response.md)
 
 ### Authorization
 
@@ -616,11 +616,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ScoreText
+## ScoreTextAPI
 
-> ScoreText200Response ScoreText(ctx).Title(title).Text(text).Execute()
+> ScoreTextAPI200Response ScoreTextAPI(ctx).Title(title).Text(text).Execute()
 
-Score Text
+Score Text API
 
 
 
@@ -642,13 +642,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.ScoreText(context.Background()).Title(title).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.ScoreTextAPI(context.Background()).Title(title).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.ScoreTextAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ScoreText`: ScoreText200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreText`: %v\n", resp)
+	// response from `ScoreTextAPI`: ScoreTextAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.ScoreTextAPI`: %v\n", resp)
 }
 ```
 
@@ -658,7 +658,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiScoreTextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiScoreTextAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -668,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ScoreText200Response**](ScoreText200Response.md)
+[**ScoreTextAPI200Response**](ScoreTextAPI200Response.md)
 
 ### Authorization
 
@@ -684,11 +684,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SingularizeWord
+## SingularizeWordAPI
 
-> SingularizeWord200Response SingularizeWord(ctx).Word(word).Execute()
+> SingularizeWordAPI200Response SingularizeWordAPI(ctx).Word(word).Execute()
 
-Singularize Word
+Singularize Word API
 
 
 
@@ -709,13 +709,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.SingularizeWord(context.Background()).Word(word).Execute()
+	resp, r, err := apiClient.TextAPI.SingularizeWordAPI(context.Background()).Word(word).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.SingularizeWord``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.SingularizeWordAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SingularizeWord`: SingularizeWord200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.SingularizeWord`: %v\n", resp)
+	// response from `SingularizeWordAPI`: SingularizeWordAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.SingularizeWordAPI`: %v\n", resp)
 }
 ```
 
@@ -725,7 +725,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSingularizeWordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSingularizeWordAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SingularizeWord200Response**](SingularizeWord200Response.md)
+[**SingularizeWordAPI200Response**](SingularizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -750,11 +750,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## StemText
+## StemTextAPI
 
-> StemText200Response StemText(ctx).Text(text).Execute()
+> StemTextAPI200Response StemTextAPI(ctx).Text(text).Execute()
 
-Stem Text
+Stem Text API
 
 
 
@@ -775,13 +775,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.StemText(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.StemTextAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.StemText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.StemTextAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `StemText`: StemText200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.StemText`: %v\n", resp)
+	// response from `StemTextAPI`: StemTextAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.StemTextAPI`: %v\n", resp)
 }
 ```
 
@@ -791,7 +791,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiStemTextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStemTextAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StemText200Response**](StemText200Response.md)
+[**StemTextAPI200Response**](StemTextAPI200Response.md)
 
 ### Authorization
 
@@ -816,11 +816,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TagPartOfSpeech
+## TagPartOfSpeechAPI
 
-> TagPartOfSpeech200Response TagPartOfSpeech(ctx).Text(text).Execute()
+> TagPartOfSpeechAPI200Response TagPartOfSpeechAPI(ctx).Text(text).Execute()
 
-Tag Part of Speech
+Tag Part of Speech API
 
 
 
@@ -841,13 +841,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TextAPI.TagPartOfSpeech(context.Background()).Text(text).Execute()
+	resp, r, err := apiClient.TextAPI.TagPartOfSpeechAPI(context.Background()).Text(text).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.TagPartOfSpeech``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TextAPI.TagPartOfSpeechAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TagPartOfSpeech`: TagPartOfSpeech200Response
-	fmt.Fprintf(os.Stdout, "Response from `TextAPI.TagPartOfSpeech`: %v\n", resp)
+	// response from `TagPartOfSpeechAPI`: TagPartOfSpeechAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `TextAPI.TagPartOfSpeechAPI`: %v\n", resp)
 }
 ```
 
@@ -857,7 +857,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTagPartOfSpeechRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTagPartOfSpeechAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -866,7 +866,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
+[**TagPartOfSpeechAPI200Response**](TagPartOfSpeechAPI200Response.md)
 
 ### Authorization
 

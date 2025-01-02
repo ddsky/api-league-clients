@@ -16,7 +16,7 @@ class KnowledgeApi {
 
   final ApiClient apiClient;
 
-  /// Random Quote
+  /// Random Quote API
   ///
   /// This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
   ///
@@ -29,7 +29,7 @@ class KnowledgeApi {
   ///
   /// * [int] maxLength:
   ///   The maximum length of the quote in letters.
-  Future<Response> randomQuoteWithHttpInfo({ int? minLength, int? maxLength, }) async {
+  Future<Response> randomQuoteAPIWithHttpInfo({ int? minLength, int? maxLength, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-quote';
 
@@ -61,7 +61,7 @@ class KnowledgeApi {
     );
   }
 
-  /// Random Quote
+  /// Random Quote API
   ///
   /// This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
   ///
@@ -72,8 +72,8 @@ class KnowledgeApi {
   ///
   /// * [int] maxLength:
   ///   The maximum length of the quote in letters.
-  Future<RandomQuote200Response?> randomQuote({ int? minLength, int? maxLength, }) async {
-    final response = await randomQuoteWithHttpInfo( minLength: minLength, maxLength: maxLength, );
+  Future<RandomQuoteAPI200Response?> randomQuoteAPI({ int? minLength, int? maxLength, }) async {
+    final response = await randomQuoteAPIWithHttpInfo( minLength: minLength, maxLength: maxLength, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -81,13 +81,13 @@ class KnowledgeApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomQuote200Response',) as RandomQuote200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomQuoteAPI200Response',) as RandomQuoteAPI200Response;
     
     }
     return null;
   }
 
-  /// Random Riddle
+  /// Random Riddle API
   ///
   /// The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
   ///
@@ -97,7 +97,7 @@ class KnowledgeApi {
   ///
   /// * [String] difficulty:
   ///   The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
-  Future<Response> randomRiddleWithHttpInfo({ String? difficulty, }) async {
+  Future<Response> randomRiddleAPIWithHttpInfo({ String? difficulty, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-riddle';
 
@@ -126,7 +126,7 @@ class KnowledgeApi {
     );
   }
 
-  /// Random Riddle
+  /// Random Riddle API
   ///
   /// The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
   ///
@@ -134,8 +134,8 @@ class KnowledgeApi {
   ///
   /// * [String] difficulty:
   ///   The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
-  Future<RandomRiddle200Response?> randomRiddle({ String? difficulty, }) async {
-    final response = await randomRiddleWithHttpInfo( difficulty: difficulty, );
+  Future<RandomRiddleAPI200Response?> randomRiddleAPI({ String? difficulty, }) async {
+    final response = await randomRiddleAPIWithHttpInfo( difficulty: difficulty, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -143,15 +143,15 @@ class KnowledgeApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomRiddle200Response',) as RandomRiddle200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomRiddleAPI200Response',) as RandomRiddleAPI200Response;
     
     }
     return null;
   }
 
-  /// Random Trivia
+  /// Random Trivia API
   ///
-  /// This endpoint returns a random piece of trivia.
+  /// This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -159,7 +159,7 @@ class KnowledgeApi {
   ///
   /// * [int] maxLength:
   ///   The maximum length of the trivia in letters.
-  Future<Response> randomTriviaWithHttpInfo({ int? maxLength, }) async {
+  Future<Response> randomTriviaAPIWithHttpInfo({ int? maxLength, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-trivia';
 
@@ -188,16 +188,16 @@ class KnowledgeApi {
     );
   }
 
-  /// Random Trivia
+  /// Random Trivia API
   ///
-  /// This endpoint returns a random piece of trivia.
+  /// This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
   ///
   /// Parameters:
   ///
   /// * [int] maxLength:
   ///   The maximum length of the trivia in letters.
-  Future<RandomTrivia200Response?> randomTrivia({ int? maxLength, }) async {
-    final response = await randomTriviaWithHttpInfo( maxLength: maxLength, );
+  Future<RandomTriviaAPI200Response?> randomTriviaAPI({ int? maxLength, }) async {
+    final response = await randomTriviaAPIWithHttpInfo( maxLength: maxLength, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -205,7 +205,7 @@ class KnowledgeApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomTrivia200Response',) as RandomTrivia200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomTriviaAPI200Response',) as RandomTriviaAPI200Response;
     
     }
     return null;

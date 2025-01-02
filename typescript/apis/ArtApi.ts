@@ -8,7 +8,7 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { RandomPoem200Response } from '../models/RandomPoem200Response';
+import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
 
 /**
  * no description
@@ -17,17 +17,17 @@ export class ArtApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500).
      * @param height The maximum height of the image (default 400, max. 500).
      */
-    public async imageToAsciiArtByURL(url: string, width?: number, height?: number, _options?: Configuration): Promise<RequestContext> {
+    public async imageToAsciiArtByURLAPI(url: string, width?: number, height?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'url' is not null or undefined
         if (url === null || url === undefined) {
-            throw new RequiredError("ArtApi", "imageToAsciiArtByURL", "url");
+            throw new RequiredError("ArtApi", "imageToAsciiArtByURLAPI", "url");
         }
 
 
@@ -78,11 +78,11 @@ export class ArtApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
-     * Random Poem
+     * Random Poem API
      * @param minLines The minimum number of lines of the poem.
      * @param maxLines The maximum number of lines of the poem.
      */
-    public async randomPoem(minLines?: number, maxLines?: number, _options?: Configuration): Promise<RequestContext> {
+    public async randomPoemAPI(minLines?: number, maxLines?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -133,10 +133,10 @@ export class ArtApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to imageToAsciiArtByURL
+     * @params response Response returned by the server for a request to imageToAsciiArtByURLAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async imageToAsciiArtByURLWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
+     public async imageToAsciiArtByURLAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<string >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: string = ObjectSerializer.deserialize(
@@ -180,16 +180,16 @@ export class ArtApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomPoem
+     * @params response Response returned by the server for a request to randomPoemAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomPoemWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomPoem200Response >> {
+     public async randomPoemAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomPoemAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RandomPoem200Response = ObjectSerializer.deserialize(
+            const body: RandomPoemAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomPoem200Response", ""
-            ) as RandomPoem200Response;
+                "RandomPoemAPI200Response", ""
+            ) as RandomPoemAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -213,10 +213,10 @@ export class ArtApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RandomPoem200Response = ObjectSerializer.deserialize(
+            const body: RandomPoemAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomPoem200Response", ""
-            ) as RandomPoem200Response;
+                "RandomPoemAPI200Response", ""
+            ) as RandomPoemAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

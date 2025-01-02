@@ -4,12 +4,12 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
+[**imageToAsciiArtByURLAPI**](ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+[**randomPoemAPI**](ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API
 
 
-# **imageToAsciiArtByURL**
-> string imageToAsciiArtByURL()
+# **imageToAsciiArtByURLAPI**
+> string imageToAsciiArtByURLAPI()
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -23,7 +23,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .ArtApi(configuration);
 
-let body:.ArtApiImageToAsciiArtByURLRequest = {
+let body:.ArtApiImageToAsciiArtByURLAPIRequest = {
   // string | The URL to the image.
   url: "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png",
   // number | The maximum width of the image (default 400, max. 500). (optional)
@@ -32,7 +32,7 @@ let body:.ArtApiImageToAsciiArtByURLRequest = {
   height: 200,
 };
 
-apiInstance.imageToAsciiArtByURL(body).then((data:any) => {
+apiInstance.imageToAsciiArtByURLAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -74,8 +74,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **randomPoem**
-> RandomPoem200Response randomPoem()
+# **randomPoemAPI**
+> RandomPoemAPI200Response randomPoemAPI()
 
 Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
 
@@ -89,14 +89,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .ArtApi(configuration);
 
-let body:.ArtApiRandomPoemRequest = {
+let body:.ArtApiRandomPoemAPIRequest = {
   // number | The minimum number of lines of the poem. (optional)
   minLines: 5,
   // number | The maximum number of lines of the poem. (optional)
   maxLines: 20,
 };
 
-apiInstance.randomPoem(body).then((data:any) => {
+apiInstance.randomPoemAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RandomPoem200Response**
+**RandomPoemAPI200Response**
 
 ### Authorization
 

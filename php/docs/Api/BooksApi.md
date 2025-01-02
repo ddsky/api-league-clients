@@ -4,19 +4,19 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**findSimilarBooks()**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books |
-| [**searchBooks()**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books |
+| [**findSimilarBooksAPI()**](BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API |
+| [**searchBooksAPI()**](BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API |
 
 
-## `findSimilarBooks()`
+## `findSimilarBooksAPI()`
 
 ```php
-findSimilarBooks($id, $number): \OpenAPI\Client\Model\FindSimilarBooks200Response
+findSimilarBooksAPI($id, $number): \OpenAPI\Client\Model\FindSimilarBooksAPI200Response
 ```
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 
@@ -46,10 +46,10 @@ $id = 8302059; // int | The id of the book to which similar books should be foun
 $number = 10; // int | The number of similar books to return in range [1,100]
 
 try {
-    $result = $apiInstance->findSimilarBooks($id, $number);
+    $result = $apiInstance->findSimilarBooksAPI($id, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BooksApi->findSimilarBooks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BooksApi->findSimilarBooksAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -62,7 +62,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\FindSimilarBooks200Response**](../Model/FindSimilarBooks200Response.md)
+[**\OpenAPI\Client\Model\FindSimilarBooksAPI200Response**](../Model/FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -77,15 +77,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `searchBooks()`
+## `searchBooksAPI()`
 
 ```php
-searchBooks($query, $earliest_publish_year, $latest_publish_year, $min_rating, $max_rating, $genres, $authors, $isbn, $oclc, $sort, $sort_direction, $group_results, $offset, $number): \OpenAPI\Client\Model\SearchBooks200Response
+searchBooksAPI($query, $earliest_publish_year, $latest_publish_year, $min_rating, $max_rating, $genres, $authors, $isbn, $oclc, $sort, $sort_direction, $group_results, $offset, $number): \OpenAPI\Client\Model\SearchBooksAPI200Response
 ```
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 
@@ -127,10 +127,10 @@ $offset = 0; // int | The number of books to skip in range [0,1000]
 $number = 10; // int | The number of books to return in range [1,100]
 
 try {
-    $result = $apiInstance->searchBooks($query, $earliest_publish_year, $latest_publish_year, $min_rating, $max_rating, $genres, $authors, $isbn, $oclc, $sort, $sort_direction, $group_results, $offset, $number);
+    $result = $apiInstance->searchBooksAPI($query, $earliest_publish_year, $latest_publish_year, $min_rating, $max_rating, $genres, $authors, $isbn, $oclc, $sort, $sort_direction, $group_results, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BooksApi->searchBooks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BooksApi->searchBooksAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -155,7 +155,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\SearchBooks200Response**](../Model/SearchBooks200Response.md)
+[**\OpenAPI\Client\Model\SearchBooksAPI200Response**](../Model/SearchBooksAPI200Response.md)
 
 ### Authorization
 

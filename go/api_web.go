@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,48 +23,48 @@ import (
 // WebAPIService WebAPI service
 type WebAPIService service
 
-type ApiExtractAuthorsRequest struct {
+type ApiExtractAuthorsAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	url *string
 }
 
 // The url with the article from which authors should be extracted.
-func (r ApiExtractAuthorsRequest) Url(url string) ApiExtractAuthorsRequest {
+func (r ApiExtractAuthorsAPIRequest) Url(url string) ApiExtractAuthorsAPIRequest {
 	r.url = &url
 	return r
 }
 
-func (r ApiExtractAuthorsRequest) Execute() (*ExtractAuthors200Response, *http.Response, error) {
-	return r.ApiService.ExtractAuthorsExecute(r)
+func (r ApiExtractAuthorsAPIRequest) Execute() (*ExtractAuthorsAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractAuthorsAPIExecute(r)
 }
 
 /*
-ExtractAuthors Extract Authors
+ExtractAuthorsAPI Extract Authors API
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractAuthorsRequest
+ @return ApiExtractAuthorsAPIRequest
 */
-func (a *WebAPIService) ExtractAuthors(ctx context.Context) ApiExtractAuthorsRequest {
-	return ApiExtractAuthorsRequest{
+func (a *WebAPIService) ExtractAuthorsAPI(ctx context.Context) ApiExtractAuthorsAPIRequest {
+	return ApiExtractAuthorsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractAuthors200Response
-func (a *WebAPIService) ExtractAuthorsExecute(r ApiExtractAuthorsRequest) (*ExtractAuthors200Response, *http.Response, error) {
+//  @return ExtractAuthorsAPI200Response
+func (a *WebAPIService) ExtractAuthorsAPIExecute(r ApiExtractAuthorsAPIRequest) (*ExtractAuthorsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractAuthors200Response
+		localVarReturnValue  *ExtractAuthorsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractAuthors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractAuthorsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -164,48 +164,48 @@ func (a *WebAPIService) ExtractAuthorsExecute(r ApiExtractAuthorsRequest) (*Extr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiExtractContentFromAWebPageRequest struct {
+type ApiExtractContentFromAWebPageAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	url *string
 }
 
 // The url for which the content will be extracted.
-func (r ApiExtractContentFromAWebPageRequest) Url(url string) ApiExtractContentFromAWebPageRequest {
+func (r ApiExtractContentFromAWebPageAPIRequest) Url(url string) ApiExtractContentFromAWebPageAPIRequest {
 	r.url = &url
 	return r
 }
 
-func (r ApiExtractContentFromAWebPageRequest) Execute() (*ExtractContentFromAWebPage200Response, *http.Response, error) {
-	return r.ApiService.ExtractContentFromAWebPageExecute(r)
+func (r ApiExtractContentFromAWebPageAPIRequest) Execute() (*ExtractContentFromAWebPageAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractContentFromAWebPageAPIExecute(r)
 }
 
 /*
-ExtractContentFromAWebPage Extract Content from a Web Page
+ExtractContentFromAWebPageAPI Extract Content from a Web Page API
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractContentFromAWebPageRequest
+ @return ApiExtractContentFromAWebPageAPIRequest
 */
-func (a *WebAPIService) ExtractContentFromAWebPage(ctx context.Context) ApiExtractContentFromAWebPageRequest {
-	return ApiExtractContentFromAWebPageRequest{
+func (a *WebAPIService) ExtractContentFromAWebPageAPI(ctx context.Context) ApiExtractContentFromAWebPageAPIRequest {
+	return ApiExtractContentFromAWebPageAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractContentFromAWebPage200Response
-func (a *WebAPIService) ExtractContentFromAWebPageExecute(r ApiExtractContentFromAWebPageRequest) (*ExtractContentFromAWebPage200Response, *http.Response, error) {
+//  @return ExtractContentFromAWebPageAPI200Response
+func (a *WebAPIService) ExtractContentFromAWebPageAPIExecute(r ApiExtractContentFromAWebPageAPIRequest) (*ExtractContentFromAWebPageAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractContentFromAWebPage200Response
+		localVarReturnValue  *ExtractContentFromAWebPageAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractContentFromAWebPage")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractContentFromAWebPageAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -305,48 +305,48 @@ func (a *WebAPIService) ExtractContentFromAWebPageExecute(r ApiExtractContentFro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiExtractPublishDateRequest struct {
+type ApiExtractPublishDateAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	url *string
 }
 
 // The url for which the publish date should be extracted.
-func (r ApiExtractPublishDateRequest) Url(url string) ApiExtractPublishDateRequest {
+func (r ApiExtractPublishDateAPIRequest) Url(url string) ApiExtractPublishDateAPIRequest {
 	r.url = &url
 	return r
 }
 
-func (r ApiExtractPublishDateRequest) Execute() (*ExtractPublishDate200Response, *http.Response, error) {
-	return r.ApiService.ExtractPublishDateExecute(r)
+func (r ApiExtractPublishDateAPIRequest) Execute() (*ExtractPublishDateAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractPublishDateAPIExecute(r)
 }
 
 /*
-ExtractPublishDate Extract Publish Date
+ExtractPublishDateAPI Extract Publish Date API
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractPublishDateRequest
+ @return ApiExtractPublishDateAPIRequest
 */
-func (a *WebAPIService) ExtractPublishDate(ctx context.Context) ApiExtractPublishDateRequest {
-	return ApiExtractPublishDateRequest{
+func (a *WebAPIService) ExtractPublishDateAPI(ctx context.Context) ApiExtractPublishDateAPIRequest {
+	return ApiExtractPublishDateAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractPublishDate200Response
-func (a *WebAPIService) ExtractPublishDateExecute(r ApiExtractPublishDateRequest) (*ExtractPublishDate200Response, *http.Response, error) {
+//  @return ExtractPublishDateAPI200Response
+func (a *WebAPIService) ExtractPublishDateAPIExecute(r ApiExtractPublishDateAPIRequest) (*ExtractPublishDateAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractPublishDate200Response
+		localVarReturnValue  *ExtractPublishDateAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractPublishDate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.ExtractPublishDateAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -446,48 +446,48 @@ func (a *WebAPIService) ExtractPublishDateExecute(r ApiExtractPublishDateRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRetrievePageRankRequest struct {
+type ApiRetrievePageRankAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	domain *string
 }
 
 // The domain for which the page rank should be returned.
-func (r ApiRetrievePageRankRequest) Domain(domain string) ApiRetrievePageRankRequest {
+func (r ApiRetrievePageRankAPIRequest) Domain(domain string) ApiRetrievePageRankAPIRequest {
 	r.domain = &domain
 	return r
 }
 
-func (r ApiRetrievePageRankRequest) Execute() (*RetrievePageRank200Response, *http.Response, error) {
-	return r.ApiService.RetrievePageRankExecute(r)
+func (r ApiRetrievePageRankAPIRequest) Execute() (*RetrievePageRankAPI200Response, *http.Response, error) {
+	return r.ApiService.RetrievePageRankAPIExecute(r)
 }
 
 /*
-RetrievePageRank Retrieve Page Rank
+RetrievePageRankAPI Retrieve Page Rank API
 
 This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRetrievePageRankRequest
+ @return ApiRetrievePageRankAPIRequest
 */
-func (a *WebAPIService) RetrievePageRank(ctx context.Context) ApiRetrievePageRankRequest {
-	return ApiRetrievePageRankRequest{
+func (a *WebAPIService) RetrievePageRankAPI(ctx context.Context) ApiRetrievePageRankAPIRequest {
+	return ApiRetrievePageRankAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RetrievePageRank200Response
-func (a *WebAPIService) RetrievePageRankExecute(r ApiRetrievePageRankRequest) (*RetrievePageRank200Response, *http.Response, error) {
+//  @return RetrievePageRankAPI200Response
+func (a *WebAPIService) RetrievePageRankAPIExecute(r ApiRetrievePageRankAPIRequest) (*RetrievePageRankAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RetrievePageRank200Response
+		localVarReturnValue  *RetrievePageRankAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.RetrievePageRank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.RetrievePageRankAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -587,7 +587,7 @@ func (a *WebAPIService) RetrievePageRankExecute(r ApiRetrievePageRankRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchWebRequest struct {
+type ApiSearchWebAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	query *string
@@ -595,47 +595,47 @@ type ApiSearchWebRequest struct {
 }
 
 // The search query.
-func (r ApiSearchWebRequest) Query(query string) ApiSearchWebRequest {
+func (r ApiSearchWebAPIRequest) Query(query string) ApiSearchWebAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The number of results to return in range [1,50]
-func (r ApiSearchWebRequest) Number(number int32) ApiSearchWebRequest {
+func (r ApiSearchWebAPIRequest) Number(number int32) ApiSearchWebAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchWebRequest) Execute() (*SearchWeb200Response, *http.Response, error) {
-	return r.ApiService.SearchWebExecute(r)
+func (r ApiSearchWebAPIRequest) Execute() (*SearchWebAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchWebAPIExecute(r)
 }
 
 /*
-SearchWeb Search Web
+SearchWebAPI Search Web API
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchWebRequest
+ @return ApiSearchWebAPIRequest
 */
-func (a *WebAPIService) SearchWeb(ctx context.Context) ApiSearchWebRequest {
-	return ApiSearchWebRequest{
+func (a *WebAPIService) SearchWebAPI(ctx context.Context) ApiSearchWebAPIRequest {
+	return ApiSearchWebAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchWeb200Response
-func (a *WebAPIService) SearchWebExecute(r ApiSearchWebRequest) (*SearchWeb200Response, *http.Response, error) {
+//  @return SearchWebAPI200Response
+func (a *WebAPIService) SearchWebAPIExecute(r ApiSearchWebAPIRequest) (*SearchWebAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchWeb200Response
+		localVarReturnValue  *SearchWebAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.SearchWeb")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.SearchWebAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -738,48 +738,48 @@ func (a *WebAPIService) SearchWebExecute(r ApiSearchWebRequest) (*SearchWeb200Re
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiVerifyEmailAddressRequest struct {
+type ApiVerifyEmailAddressAPIRequest struct {
 	ctx context.Context
 	ApiService *WebAPIService
 	email *string
 }
 
 // The email address to verify.
-func (r ApiVerifyEmailAddressRequest) Email(email string) ApiVerifyEmailAddressRequest {
+func (r ApiVerifyEmailAddressAPIRequest) Email(email string) ApiVerifyEmailAddressAPIRequest {
 	r.email = &email
 	return r
 }
 
-func (r ApiVerifyEmailAddressRequest) Execute() (*VerifyEmailAddress200Response, *http.Response, error) {
-	return r.ApiService.VerifyEmailAddressExecute(r)
+func (r ApiVerifyEmailAddressAPIRequest) Execute() (*VerifyEmailAddressAPI200Response, *http.Response, error) {
+	return r.ApiService.VerifyEmailAddressAPIExecute(r)
 }
 
 /*
-VerifyEmailAddress Verify Email Address
+VerifyEmailAddressAPI Verify Email Address API
 
 This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyEmailAddressRequest
+ @return ApiVerifyEmailAddressAPIRequest
 */
-func (a *WebAPIService) VerifyEmailAddress(ctx context.Context) ApiVerifyEmailAddressRequest {
-	return ApiVerifyEmailAddressRequest{
+func (a *WebAPIService) VerifyEmailAddressAPI(ctx context.Context) ApiVerifyEmailAddressAPIRequest {
+	return ApiVerifyEmailAddressAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VerifyEmailAddress200Response
-func (a *WebAPIService) VerifyEmailAddressExecute(r ApiVerifyEmailAddressRequest) (*VerifyEmailAddress200Response, *http.Response, error) {
+//  @return VerifyEmailAddressAPI200Response
+func (a *WebAPIService) VerifyEmailAddressAPIExecute(r ApiVerifyEmailAddressAPIRequest) (*VerifyEmailAddressAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifyEmailAddress200Response
+		localVarReturnValue  *VerifyEmailAddressAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.VerifyEmailAddress")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebAPIService.VerifyEmailAddressAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

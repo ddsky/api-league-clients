@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
+| [**convertUnitsAPI**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API |
 
 
-<a id="convertUnits"></a>
-# **convertUnits**
-> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+<a id="convertUnitsAPI"></a>
+# **convertUnitsAPI**
+> ConvertUnitsAPI200Response convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -48,10 +48,10 @@ public class Example {
     String targetUnit = "lb"; // String | The unit to which should be converted.
     String foodName = "flour"; // String | An optional food name. For converting foods the food is relevant as they have different densities.
     try {
-      ConvertUnits200Response result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+      ConvertUnitsAPI200Response result = apiInstance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MathApi#convertUnits");
+      System.err.println("Exception when calling MathApi#convertUnitsAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -72,7 +72,7 @@ public class Example {
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

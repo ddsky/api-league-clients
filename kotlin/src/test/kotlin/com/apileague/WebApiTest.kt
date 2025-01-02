@@ -19,64 +19,64 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.WebApi
-import com.apileague.client.model.ExtractAuthors200Response
-import com.apileague.client.model.ExtractContentFromAWebPage200Response
-import com.apileague.client.model.ExtractPublishDate200Response
-import com.apileague.client.model.RetrievePageRank200Response
-import com.apileague.client.model.SearchWeb200Response
-import com.apileague.client.model.VerifyEmailAddress200Response
+import com.apileague.client.model.ExtractAuthorsAPI200Response
+import com.apileague.client.model.ExtractContentFromAWebPageAPI200Response
+import com.apileague.client.model.ExtractPublishDateAPI200Response
+import com.apileague.client.model.RetrievePageRankAPI200Response
+import com.apileague.client.model.SearchWebAPI200Response
+import com.apileague.client.model.VerifyEmailAddressAPI200Response
 
 class WebApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of WebApi
         //val apiInstance = WebApi()
 
-        // to test extractAuthors
-        should("test extractAuthors") {
-            // uncomment below to test extractAuthors
+        // to test extractAuthorsAPI
+        should("test extractAuthorsAPI") {
+            // uncomment below to test extractAuthorsAPI
             //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url with the article from which authors should be extracted.
-            //val result : ExtractAuthors200Response = apiInstance.extractAuthors(url)
+            //val result : ExtractAuthorsAPI200Response = apiInstance.extractAuthorsAPI(url)
             //result shouldBe ("TODO")
         }
 
-        // to test extractContentFromAWebPage
-        should("test extractContentFromAWebPage") {
-            // uncomment below to test extractContentFromAWebPage
+        // to test extractContentFromAWebPageAPI
+        should("test extractContentFromAWebPageAPI") {
+            // uncomment below to test extractContentFromAWebPageAPI
             //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url for which the content will be extracted.
-            //val result : ExtractContentFromAWebPage200Response = apiInstance.extractContentFromAWebPage(url)
+            //val result : ExtractContentFromAWebPageAPI200Response = apiInstance.extractContentFromAWebPageAPI(url)
             //result shouldBe ("TODO")
         }
 
-        // to test extractPublishDate
-        should("test extractPublishDate") {
-            // uncomment below to test extractPublishDate
+        // to test extractPublishDateAPI
+        should("test extractPublishDateAPI") {
+            // uncomment below to test extractPublishDateAPI
             //val url : kotlin.String = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html // kotlin.String | The url for which the publish date should be extracted.
-            //val result : ExtractPublishDate200Response = apiInstance.extractPublishDate(url)
+            //val result : ExtractPublishDateAPI200Response = apiInstance.extractPublishDateAPI(url)
             //result shouldBe ("TODO")
         }
 
-        // to test retrievePageRank
-        should("test retrievePageRank") {
-            // uncomment below to test retrievePageRank
+        // to test retrievePageRankAPI
+        should("test retrievePageRankAPI") {
+            // uncomment below to test retrievePageRankAPI
             //val domain : kotlin.String = amazon.com // kotlin.String | The domain for which the page rank should be returned.
-            //val result : RetrievePageRank200Response = apiInstance.retrievePageRank(domain)
+            //val result : RetrievePageRankAPI200Response = apiInstance.retrievePageRankAPI(domain)
             //result shouldBe ("TODO")
         }
 
-        // to test searchWeb
-        should("test searchWeb") {
-            // uncomment below to test searchWeb
+        // to test searchWebAPI
+        should("test searchWebAPI") {
+            // uncomment below to test searchWebAPI
             //val query : kotlin.String = penguins // kotlin.String | The search query.
             //val number : kotlin.Int = 5 // kotlin.Int | The number of results to return in range [1,50]
-            //val result : SearchWeb200Response = apiInstance.searchWeb(query, number)
+            //val result : SearchWebAPI200Response = apiInstance.searchWebAPI(query, number)
             //result shouldBe ("TODO")
         }
 
-        // to test verifyEmailAddress
-        should("test verifyEmailAddress") {
-            // uncomment below to test verifyEmailAddress
+        // to test verifyEmailAddressAPI
+        should("test verifyEmailAddressAPI") {
+            // uncomment below to test verifyEmailAddressAPI
             //val email : kotlin.String = maxtest@gmail.com // kotlin.String | The email address to verify.
-            //val result : VerifyEmailAddress200Response = apiInstance.verifyEmailAddress(email)
+            //val result : VerifyEmailAddressAPI200Response = apiInstance.verifyEmailAddressAPI(email)
             //result shouldBe ("TODO")
         }
 

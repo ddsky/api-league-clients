@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ImageToAsciiArtByURL**](ArtAPI.md#ImageToAsciiArtByURL) | **Get** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**RandomPoem**](ArtAPI.md#RandomPoem) | **Get** /retrieve-random-poem | Random Poem
+[**ImageToAsciiArtByURLAPI**](ArtAPI.md#ImageToAsciiArtByURLAPI) | **Get** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+[**RandomPoemAPI**](ArtAPI.md#RandomPoemAPI) | **Get** /retrieve-random-poem | Random Poem API
 
 
 
-## ImageToAsciiArtByURL
+## ImageToAsciiArtByURLAPI
 
-> string ImageToAsciiArtByURL(ctx).Url(url).Width(width).Height(height).Execute()
+> string ImageToAsciiArtByURLAPI(ctx).Url(url).Width(width).Height(height).Execute()
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ArtAPI.ImageToAsciiArtByURL(context.Background()).Url(url).Width(width).Height(height).Execute()
+	resp, r, err := apiClient.ArtAPI.ImageToAsciiArtByURLAPI(context.Background()).Url(url).Width(width).Height(height).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.ImageToAsciiArtByURL``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.ImageToAsciiArtByURLAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ImageToAsciiArtByURL`: string
-	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.ImageToAsciiArtByURL`: %v\n", resp)
+	// response from `ImageToAsciiArtByURLAPI`: string
+	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.ImageToAsciiArtByURLAPI`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiImageToAsciiArtByURLRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiImageToAsciiArtByURLAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,11 +79,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RandomPoem
+## RandomPoemAPI
 
-> RandomPoem200Response RandomPoem(ctx).MinLines(minLines).MaxLines(maxLines).Execute()
+> RandomPoemAPI200Response RandomPoemAPI(ctx).MinLines(minLines).MaxLines(maxLines).Execute()
 
-Random Poem
+Random Poem API
 
 
 
@@ -105,13 +105,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ArtAPI.RandomPoem(context.Background()).MinLines(minLines).MaxLines(maxLines).Execute()
+	resp, r, err := apiClient.ArtAPI.RandomPoemAPI(context.Background()).MinLines(minLines).MaxLines(maxLines).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.RandomPoem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ArtAPI.RandomPoemAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomPoem`: RandomPoem200Response
-	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.RandomPoem`: %v\n", resp)
+	// response from `RandomPoemAPI`: RandomPoemAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `ArtAPI.RandomPoemAPI`: %v\n", resp)
 }
 ```
 
@@ -121,7 +121,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomPoemRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomPoemAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

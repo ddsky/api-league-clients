@@ -22,11 +22,11 @@ func Test_apileague_StorageAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test StorageAPIService ReadKeyValueFromStore", func(t *testing.T) {
+	t.Run("Test StorageAPIService ReadKeyValueFromStoreAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.StorageAPI.ReadKeyValueFromStore(context.Background()).Execute()
+		resp, httpRes, err := apiClient.StorageAPI.ReadKeyValueFromStoreAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_StorageAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test StorageAPIService StoreKeyValueGET", func(t *testing.T) {
+	t.Run("Test StorageAPIService StoreKeyValueGETAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.StorageAPI.StoreKeyValueGET(context.Background()).Execute()
+		resp, httpRes, err := apiClient.StorageAPI.StoreKeyValueGETAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

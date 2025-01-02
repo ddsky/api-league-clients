@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
-| [**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle |
-| [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
+| [**randomQuoteAPI**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API |
+| [**randomRiddleAPI**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API |
+| [**randomTriviaAPI**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API |
 
 
-<a id="randomQuote"></a>
-# **randomQuote**
-> RandomQuote200Response randomQuote(minLength, maxLength)
+<a id="randomQuoteAPI"></a>
+# **randomQuoteAPI**
+> RandomQuoteAPI200Response randomQuoteAPI(minLength, maxLength)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -48,10 +48,10 @@ public class Example {
     Integer minLength = 120; // Integer | The minimum length of the quote in letters.
     Integer maxLength = 300; // Integer | The maximum length of the quote in letters.
     try {
-      RandomQuote200Response result = apiInstance.randomQuote(minLength, maxLength);
+      RandomQuoteAPI200Response result = apiInstance.randomQuoteAPI(minLength, maxLength);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling KnowledgeApi#randomQuote");
+      System.err.println("Exception when calling KnowledgeApi#randomQuoteAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -70,7 +70,7 @@ public class Example {
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -92,11 +92,11 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="randomRiddle"></a>
-# **randomRiddle**
-> RandomRiddle200Response randomRiddle(difficulty)
+<a id="randomRiddleAPI"></a>
+# **randomRiddleAPI**
+> RandomRiddleAPI200Response randomRiddleAPI(difficulty)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -130,10 +130,10 @@ public class Example {
     KnowledgeApi apiInstance = new KnowledgeApi(defaultClient);
     String difficulty = "easy"; // String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
     try {
-      RandomRiddle200Response result = apiInstance.randomRiddle(difficulty);
+      RandomRiddleAPI200Response result = apiInstance.randomRiddleAPI(difficulty);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling KnowledgeApi#randomRiddle");
+      System.err.println("Exception when calling KnowledgeApi#randomRiddleAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -151,7 +151,7 @@ public class Example {
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -173,13 +173,13 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="randomTrivia"></a>
-# **randomTrivia**
-> RandomTrivia200Response randomTrivia(maxLength)
+<a id="randomTriviaAPI"></a>
+# **randomTriviaAPI**
+> RandomTriviaAPI200Response randomTriviaAPI(maxLength)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \&quot;Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\&quot;.
 
 ### Example
 ```java
@@ -211,10 +211,10 @@ public class Example {
     KnowledgeApi apiInstance = new KnowledgeApi(defaultClient);
     Integer maxLength = 300; // Integer | The maximum length of the trivia in letters.
     try {
-      RandomTrivia200Response result = apiInstance.randomTrivia(maxLength);
+      RandomTriviaAPI200Response result = apiInstance.randomTriviaAPI(maxLength);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling KnowledgeApi#randomTrivia");
+      System.err.println("Exception when calling KnowledgeApi#randomTriviaAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -232,7 +232,7 @@ public class Example {
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

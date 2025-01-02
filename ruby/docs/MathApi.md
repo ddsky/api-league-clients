@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**convert_units**](MathApi.md#convert_units) | **GET** /convert-units | Convert Units |
+| [**convert_units_api**](MathApi.md#convert_units_api) | **GET** /convert-units | Convert Units API |
 
 
-## convert_units
+## convert_units_api
 
-> <ConvertUnits200Response> convert_units(source_amount, source_unit, target_unit, opts)
+> <ConvertUnitsAPI200Response> convert_units_api(source_amount, source_unit, target_unit, opts)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -42,29 +42,29 @@ opts = {
 }
 
 begin
-  # Convert Units
-  result = api_instance.convert_units(source_amount, source_unit, target_unit, opts)
+  # Convert Units API
+  result = api_instance.convert_units_api(source_amount, source_unit, target_unit, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MathApi->convert_units: #{e}"
+  puts "Error when calling MathApi->convert_units_api: #{e}"
 end
 ```
 
-#### Using the convert_units_with_http_info variant
+#### Using the convert_units_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ConvertUnits200Response>, Integer, Hash)> convert_units_with_http_info(source_amount, source_unit, target_unit, opts)
+> <Array(<ConvertUnitsAPI200Response>, Integer, Hash)> convert_units_api_with_http_info(source_amount, source_unit, target_unit, opts)
 
 ```ruby
 begin
-  # Convert Units
-  data, status_code, headers = api_instance.convert_units_with_http_info(source_amount, source_unit, target_unit, opts)
+  # Convert Units API
+  data, status_code, headers = api_instance.convert_units_api_with_http_info(source_amount, source_unit, target_unit, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ConvertUnits200Response>
+  p data # => <ConvertUnitsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MathApi->convert_units_with_http_info: #{e}"
+  puts "Error when calling MathApi->convert_units_api_with_http_info: #{e}"
 end
 ```
 
@@ -79,7 +79,7 @@ end
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

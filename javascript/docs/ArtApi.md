@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem
+[**imageToAsciiArtByURLAPI**](ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+[**randomPoemAPI**](ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API
 
 
 
-## imageToAsciiArtByURL
+## imageToAsciiArtByURLAPI
 
-> String imageToAsciiArtByURL(url, opts)
+> String imageToAsciiArtByURLAPI(url, opts)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -39,7 +39,7 @@ let opts = {
   'width': 200, // Number | The maximum width of the image (default 400, max. 500).
   'height': 200 // Number | The maximum height of the image (default 400, max. 500).
 };
-apiInstance.imageToAsciiArtByURL(url, opts, (error, data, response) => {
+apiInstance.imageToAsciiArtByURLAPI(url, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -71,11 +71,11 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain
 
 
-## randomPoem
+## randomPoemAPI
 
-> RandomPoem200Response randomPoem(opts)
+> RandomPoemAPI200Response randomPoemAPI(opts)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
 
@@ -100,7 +100,7 @@ let opts = {
   'minLines': 5, // Number | The minimum number of lines of the poem.
   'maxLines': 20 // Number | The maximum number of lines of the poem.
 };
-apiInstance.randomPoem(opts, (error, data, response) => {
+apiInstance.randomPoemAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

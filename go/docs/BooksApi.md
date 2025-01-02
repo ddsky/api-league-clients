@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**FindSimilarBooks**](BooksAPI.md#FindSimilarBooks) | **Get** /list-similar-books | Find Similar Books
-[**SearchBooks**](BooksAPI.md#SearchBooks) | **Get** /search-books | Search Books
+[**FindSimilarBooksAPI**](BooksAPI.md#FindSimilarBooksAPI) | **Get** /list-similar-books | Find Similar Books API
+[**SearchBooksAPI**](BooksAPI.md#SearchBooksAPI) | **Get** /search-books | Search Books API
 
 
 
-## FindSimilarBooks
+## FindSimilarBooksAPI
 
-> FindSimilarBooks200Response FindSimilarBooks(ctx).Id(id).Number(number).Execute()
+> FindSimilarBooksAPI200Response FindSimilarBooksAPI(ctx).Id(id).Number(number).Execute()
 
-Find Similar Books
+Find Similar Books API
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BooksAPI.FindSimilarBooks(context.Background()).Id(id).Number(number).Execute()
+	resp, r, err := apiClient.BooksAPI.FindSimilarBooksAPI(context.Background()).Id(id).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BooksAPI.FindSimilarBooks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BooksAPI.FindSimilarBooksAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `FindSimilarBooks`: FindSimilarBooks200Response
-	fmt.Fprintf(os.Stdout, "Response from `BooksAPI.FindSimilarBooks`: %v\n", resp)
+	// response from `FindSimilarBooksAPI`: FindSimilarBooksAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `BooksAPI.FindSimilarBooksAPI`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiFindSimilarBooksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiFindSimilarBooksAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -77,11 +77,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchBooks
+## SearchBooksAPI
 
-> SearchBooks200Response SearchBooks(ctx).Query(query).EarliestPublishYear(earliestPublishYear).LatestPublishYear(latestPublishYear).MinRating(minRating).MaxRating(maxRating).Genres(genres).Authors(authors).Isbn(isbn).Oclc(oclc).Sort(sort).SortDirection(sortDirection).GroupResults(groupResults).Offset(offset).Number(number).Execute()
+> SearchBooksAPI200Response SearchBooksAPI(ctx).Query(query).EarliestPublishYear(earliestPublishYear).LatestPublishYear(latestPublishYear).MinRating(minRating).MaxRating(maxRating).Genres(genres).Authors(authors).Isbn(isbn).Oclc(oclc).Sort(sort).SortDirection(sortDirection).GroupResults(groupResults).Offset(offset).Number(number).Execute()
 
-Search Books
+Search Books API
 
 
 
@@ -115,13 +115,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BooksAPI.SearchBooks(context.Background()).Query(query).EarliestPublishYear(earliestPublishYear).LatestPublishYear(latestPublishYear).MinRating(minRating).MaxRating(maxRating).Genres(genres).Authors(authors).Isbn(isbn).Oclc(oclc).Sort(sort).SortDirection(sortDirection).GroupResults(groupResults).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.BooksAPI.SearchBooksAPI(context.Background()).Query(query).EarliestPublishYear(earliestPublishYear).LatestPublishYear(latestPublishYear).MinRating(minRating).MaxRating(maxRating).Genres(genres).Authors(authors).Isbn(isbn).Oclc(oclc).Sort(sort).SortDirection(sortDirection).GroupResults(groupResults).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BooksAPI.SearchBooks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BooksAPI.SearchBooksAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchBooks`: SearchBooks200Response
-	fmt.Fprintf(os.Stdout, "Response from `BooksAPI.SearchBooks`: %v\n", resp)
+	// response from `SearchBooksAPI`: SearchBooksAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `BooksAPI.SearchBooksAPI`: %v\n", resp)
 }
 ```
 
@@ -131,7 +131,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchBooksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchBooksAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

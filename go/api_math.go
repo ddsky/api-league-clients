@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // MathAPIService MathAPI service
 type MathAPIService service
 
-type ApiConvertUnitsRequest struct {
+type ApiConvertUnitsAPIRequest struct {
 	ctx context.Context
 	ApiService *MathAPIService
 	sourceAmount *float64
@@ -33,59 +33,59 @@ type ApiConvertUnitsRequest struct {
 }
 
 // The source amount.
-func (r ApiConvertUnitsRequest) SourceAmount(sourceAmount float64) ApiConvertUnitsRequest {
+func (r ApiConvertUnitsAPIRequest) SourceAmount(sourceAmount float64) ApiConvertUnitsAPIRequest {
 	r.sourceAmount = &sourceAmount
 	return r
 }
 
 // The source unit.
-func (r ApiConvertUnitsRequest) SourceUnit(sourceUnit string) ApiConvertUnitsRequest {
+func (r ApiConvertUnitsAPIRequest) SourceUnit(sourceUnit string) ApiConvertUnitsAPIRequest {
 	r.sourceUnit = &sourceUnit
 	return r
 }
 
 // The unit to which should be converted.
-func (r ApiConvertUnitsRequest) TargetUnit(targetUnit string) ApiConvertUnitsRequest {
+func (r ApiConvertUnitsAPIRequest) TargetUnit(targetUnit string) ApiConvertUnitsAPIRequest {
 	r.targetUnit = &targetUnit
 	return r
 }
 
 // An optional food name. For converting foods the food is relevant as they have different densities.
-func (r ApiConvertUnitsRequest) FoodName(foodName string) ApiConvertUnitsRequest {
+func (r ApiConvertUnitsAPIRequest) FoodName(foodName string) ApiConvertUnitsAPIRequest {
 	r.foodName = &foodName
 	return r
 }
 
-func (r ApiConvertUnitsRequest) Execute() (*ConvertUnits200Response, *http.Response, error) {
-	return r.ApiService.ConvertUnitsExecute(r)
+func (r ApiConvertUnitsAPIRequest) Execute() (*ConvertUnitsAPI200Response, *http.Response, error) {
+	return r.ApiService.ConvertUnitsAPIExecute(r)
 }
 
 /*
-ConvertUnits Convert Units
+ConvertUnitsAPI Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiConvertUnitsRequest
+ @return ApiConvertUnitsAPIRequest
 */
-func (a *MathAPIService) ConvertUnits(ctx context.Context) ApiConvertUnitsRequest {
-	return ApiConvertUnitsRequest{
+func (a *MathAPIService) ConvertUnitsAPI(ctx context.Context) ApiConvertUnitsAPIRequest {
+	return ApiConvertUnitsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConvertUnits200Response
-func (a *MathAPIService) ConvertUnitsExecute(r ApiConvertUnitsRequest) (*ConvertUnits200Response, *http.Response, error) {
+//  @return ConvertUnitsAPI200Response
+func (a *MathAPIService) ConvertUnitsAPIExecute(r ApiConvertUnitsAPIRequest) (*ConvertUnitsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ConvertUnits200Response
+		localVarReturnValue  *ConvertUnitsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MathAPIService.ConvertUnits")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MathAPIService.ConvertUnitsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

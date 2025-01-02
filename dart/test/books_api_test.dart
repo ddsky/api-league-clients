@@ -17,21 +17,21 @@ void main() {
   // final instance = BooksApi();
 
   group('tests for BooksApi', () {
-    // Find Similar Books
+    // Find Similar Books API
     //
-    // Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+    // Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
     //
-    //Future<FindSimilarBooks200Response> findSimilarBooks(int id, { int number }) async
-    test('test findSimilarBooks', () async {
+    //Future<FindSimilarBooksAPI200Response> findSimilarBooksAPI(int id, { int number }) async
+    test('test findSimilarBooksAPI', () async {
       // TODO
     });
 
-    // Search Books
+    // Search Books API
     //
-    // Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+    // Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
     //
-    //Future<SearchBooks200Response> searchBooks({ String query, int earliestPublishYear, int latestPublishYear, double minRating, double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, bool groupResults, int offset, int number }) async
-    test('test searchBooks', () async {
+    //Future<SearchBooksAPI200Response> searchBooksAPI({ String query, int earliestPublishYear, int latestPublishYear, double minRating, double maxRating, String genres, String authors, String isbn, String oclc, String sort, String sortDirection, bool groupResults, int offset, int number }) async
+    test('test searchBooksAPI', () async {
       // TODO
     });
 

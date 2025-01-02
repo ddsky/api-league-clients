@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
-| [**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle |
-| [**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
+| [**randomQuoteAPI**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API |
+| [**randomRiddleAPI**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API |
+| [**randomTriviaAPI**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API |
 
 
-<a id="randomQuote"></a>
-# **randomQuote**
-> RandomQuote200Response randomQuote(minLength, maxLength)
+<a id="randomQuoteAPI"></a>
+# **randomQuoteAPI**
+> RandomQuoteAPI200Response randomQuoteAPI(minLength, maxLength)
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -27,13 +27,13 @@ val apiInstance = KnowledgeApi()
 val minLength : kotlin.Int = 120 // kotlin.Int | The minimum length of the quote in letters.
 val maxLength : kotlin.Int = 300 // kotlin.Int | The maximum length of the quote in letters.
 try {
-    val result : RandomQuote200Response = apiInstance.randomQuote(minLength, maxLength)
+    val result : RandomQuoteAPI200Response = apiInstance.randomQuoteAPI(minLength, maxLength)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling KnowledgeApi#randomQuote")
+    println("4xx response calling KnowledgeApi#randomQuoteAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling KnowledgeApi#randomQuote")
+    println("5xx response calling KnowledgeApi#randomQuoteAPI")
     e.printStackTrace()
 }
 ```
@@ -46,7 +46,7 @@ try {
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -63,11 +63,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="randomRiddle"></a>
-# **randomRiddle**
-> RandomRiddle200Response randomRiddle(difficulty)
+<a id="randomRiddleAPI"></a>
+# **randomRiddleAPI**
+> RandomRiddleAPI200Response randomRiddleAPI(difficulty)
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -80,13 +80,13 @@ The riddles API returns a random riddle or brain-teaser. Riddles are a great way
 val apiInstance = KnowledgeApi()
 val difficulty : kotlin.String = easy // kotlin.String | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
 try {
-    val result : RandomRiddle200Response = apiInstance.randomRiddle(difficulty)
+    val result : RandomRiddleAPI200Response = apiInstance.randomRiddleAPI(difficulty)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling KnowledgeApi#randomRiddle")
+    println("4xx response calling KnowledgeApi#randomRiddleAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling KnowledgeApi#randomRiddle")
+    println("5xx response calling KnowledgeApi#randomRiddleAPI")
     e.printStackTrace()
 }
 ```
@@ -98,7 +98,7 @@ try {
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -115,13 +115,13 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="randomTrivia"></a>
-# **randomTrivia**
-> RandomTrivia200Response randomTrivia(maxLength)
+<a id="randomTriviaAPI"></a>
+# **randomTriviaAPI**
+> RandomTriviaAPI200Response randomTriviaAPI(maxLength)
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \&quot;Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\&quot;.
 
 ### Example
 ```kotlin
@@ -132,13 +132,13 @@ This endpoint returns a random piece of trivia.
 val apiInstance = KnowledgeApi()
 val maxLength : kotlin.Int = 300 // kotlin.Int | The maximum length of the trivia in letters.
 try {
-    val result : RandomTrivia200Response = apiInstance.randomTrivia(maxLength)
+    val result : RandomTriviaAPI200Response = apiInstance.randomTriviaAPI(maxLength)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling KnowledgeApi#randomTrivia")
+    println("4xx response calling KnowledgeApi#randomTriviaAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling KnowledgeApi#randomTrivia")
+    println("5xx response calling KnowledgeApi#randomTriviaAPI")
     e.printStackTrace()
 }
 ```
@@ -150,7 +150,7 @@ try {
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

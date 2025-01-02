@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books
-[**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books
+[**findSimilarBooksAPI**](BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API
+[**searchBooksAPI**](BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API
 
 
-# **findSimilarBooks**
-> FindSimilarBooks200Response findSimilarBooks()
+# **findSimilarBooksAPI**
+> FindSimilarBooksAPI200Response findSimilarBooksAPI()
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 
@@ -23,14 +23,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .BooksApi(configuration);
 
-let body:.BooksApiFindSimilarBooksRequest = {
+let body:.BooksApiFindSimilarBooksAPIRequest = {
   // number | The id of the book to which similar books should be found.
   id: 8302059,
   // number | The number of similar books to return in range [1,100] (optional)
   number: 10,
 };
 
-apiInstance.findSimilarBooks(body).then((data:any) => {
+apiInstance.findSimilarBooksAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**FindSimilarBooks200Response**
+**FindSimilarBooksAPI200Response**
 
 ### Authorization
 
@@ -71,10 +71,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **searchBooks**
-> SearchBooks200Response searchBooks()
+# **searchBooksAPI**
+> SearchBooksAPI200Response searchBooksAPI()
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 
@@ -86,7 +86,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .BooksApi(configuration);
 
-let body:.BooksApiSearchBooksRequest = {
+let body:.BooksApiSearchBooksAPIRequest = {
   // string | The search query. (optional)
   query: "books about wizards",
   // number | The books must have been published after this year. (optional)
@@ -117,7 +117,7 @@ let body:.BooksApiSearchBooksRequest = {
   number: 10,
 };
 
-apiInstance.searchBooks(body).then((data:any) => {
+apiInstance.searchBooksAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**SearchBooks200Response**
+**SearchBooksAPI200Response**
 
 ### Authorization
 

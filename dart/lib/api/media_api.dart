@@ -16,7 +16,7 @@ class MediaApi {
 
   final ApiClient apiClient;
 
-  /// Detect Main Image Color
+  /// Detect Main Image Color API
   ///
   /// Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
   ///
@@ -26,7 +26,7 @@ class MediaApi {
   ///
   /// * [String] url (required):
   ///   The url of the image for which the colors should be detected.
-  Future<Response> detectMainImageColorWithHttpInfo(String url,) async {
+  Future<Response> detectMainImageColorAPIWithHttpInfo(String url,) async {
     // ignore: prefer_const_declarations
     final path = r'/detect-color';
 
@@ -53,7 +53,7 @@ class MediaApi {
     );
   }
 
-  /// Detect Main Image Color
+  /// Detect Main Image Color API
   ///
   /// Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
   ///
@@ -61,8 +61,8 @@ class MediaApi {
   ///
   /// * [String] url (required):
   ///   The url of the image for which the colors should be detected.
-  Future<List<DetectMainImageColor200ResponseInner>?> detectMainImageColor(String url,) async {
-    final response = await detectMainImageColorWithHttpInfo(url,);
+  Future<List<DetectMainImageColorAPI200ResponseInner>?> detectMainImageColorAPI(String url,) async {
+    final response = await detectMainImageColorAPIWithHttpInfo(url,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -71,15 +71,15 @@ class MediaApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<DetectMainImageColor200ResponseInner>') as List)
-        .cast<DetectMainImageColor200ResponseInner>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<DetectMainImageColorAPI200ResponseInner>') as List)
+        .cast<DetectMainImageColorAPI200ResponseInner>()
         .toList(growable: false);
 
     }
     return null;
   }
 
-  /// Rescale Image
+  /// Rescale Image API
   ///
   /// Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
   ///
@@ -98,7 +98,7 @@ class MediaApi {
   ///
   /// * [bool] crop (required):
   ///   Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-  Future<Response> rescaleImageWithHttpInfo(String url, int width, int height, bool crop,) async {
+  Future<Response> rescaleImageAPIWithHttpInfo(String url, int width, int height, bool crop,) async {
     // ignore: prefer_const_declarations
     final path = r'/rescale-image';
 
@@ -128,7 +128,7 @@ class MediaApi {
     );
   }
 
-  /// Rescale Image
+  /// Rescale Image API
   ///
   /// Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
   ///
@@ -145,8 +145,8 @@ class MediaApi {
   ///
   /// * [bool] crop (required):
   ///   Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
-  Future<MultipartFile?> rescaleImage(String url, int width, int height, bool crop,) async {
-    final response = await rescaleImageWithHttpInfo(url, width, height, crop,);
+  Future<MultipartFile?> rescaleImageAPI(String url, int width, int height, bool crop,) async {
+    final response = await rescaleImageAPIWithHttpInfo(url, width, height, crop,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -160,7 +160,7 @@ class MediaApi {
     return null;
   }
 
-  /// Search Icons
+  /// Search Icons API
   ///
   /// Search through millions of icons to match any topic you want.
   ///
@@ -176,7 +176,7 @@ class MediaApi {
   ///
   /// * [int] number:
   ///   The number of icons to return in range [1,100]
-  Future<Response> searchIconsWithHttpInfo(String query, { bool? onlyPublicDomain, int? number, }) async {
+  Future<Response> searchIconsAPIWithHttpInfo(String query, { bool? onlyPublicDomain, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-icons';
 
@@ -209,7 +209,7 @@ class MediaApi {
     );
   }
 
-  /// Search Icons
+  /// Search Icons API
   ///
   /// Search through millions of icons to match any topic you want.
   ///
@@ -223,8 +223,8 @@ class MediaApi {
   ///
   /// * [int] number:
   ///   The number of icons to return in range [1,100]
-  Future<SearchIcons200Response?> searchIcons(String query, { bool? onlyPublicDomain, int? number, }) async {
-    final response = await searchIconsWithHttpInfo(query,  onlyPublicDomain: onlyPublicDomain, number: number, );
+  Future<SearchIconsAPI200Response?> searchIconsAPI(String query, { bool? onlyPublicDomain, int? number, }) async {
+    final response = await searchIconsAPIWithHttpInfo(query,  onlyPublicDomain: onlyPublicDomain, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -232,13 +232,13 @@ class MediaApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchIcons200Response',) as SearchIcons200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchIconsAPI200Response',) as SearchIconsAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Royalty Free Images
+  /// Search Royalty Free Images API
   ///
   /// Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
   ///
@@ -251,7 +251,7 @@ class MediaApi {
   ///
   /// * [int] number:
   ///   The number of images to return in range [1,100]
-  Future<Response> searchRoyaltyFreeImagesWithHttpInfo(String query, { int? number, }) async {
+  Future<Response> searchRoyaltyFreeImagesAPIWithHttpInfo(String query, { int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-images';
 
@@ -281,7 +281,7 @@ class MediaApi {
     );
   }
 
-  /// Search Royalty Free Images
+  /// Search Royalty Free Images API
   ///
   /// Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
   ///
@@ -292,8 +292,8 @@ class MediaApi {
   ///
   /// * [int] number:
   ///   The number of images to return in range [1,100]
-  Future<SearchRoyaltyFreeImages200Response?> searchRoyaltyFreeImages(String query, { int? number, }) async {
-    final response = await searchRoyaltyFreeImagesWithHttpInfo(query,  number: number, );
+  Future<SearchRoyaltyFreeImagesAPI200Response?> searchRoyaltyFreeImagesAPI(String query, { int? number, }) async {
+    final response = await searchRoyaltyFreeImagesAPIWithHttpInfo(query,  number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -301,7 +301,85 @@ class MediaApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRoyaltyFreeImages200Response',) as SearchRoyaltyFreeImages200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRoyaltyFreeImagesAPI200Response',) as SearchRoyaltyFreeImagesAPI200Response;
+    
+    }
+    return null;
+  }
+
+  /// Vector Search API
+  ///
+  /// Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query (required):
+  ///   The search query.
+  ///
+  /// * [int] offset:
+  ///   The number of vectors to skip, between 0 and 1000
+  ///
+  /// * [int] number:
+  ///   The number of vectors to return in range [1,10]
+  Future<Response> vectorSearchAPIWithHttpInfo(String query, { int? offset, int? number, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/search-vectors';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'query', query));
+    if (offset != null) {
+      queryParams.addAll(_queryParams('', 'offset', offset));
+    }
+    if (number != null) {
+      queryParams.addAll(_queryParams('', 'number', number));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Vector Search API
+  ///
+  /// Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] query (required):
+  ///   The search query.
+  ///
+  /// * [int] offset:
+  ///   The number of vectors to skip, between 0 and 1000
+  ///
+  /// * [int] number:
+  ///   The number of vectors to return in range [1,10]
+  Future<VectorSearchAPI200Response?> vectorSearchAPI(String query, { int? offset, int? number, }) async {
+    final response = await vectorSearchAPIWithHttpInfo(query,  offset: offset, number: number, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'VectorSearchAPI200Response',) as VectorSearchAPI200Response;
     
     }
     return null;

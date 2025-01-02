@@ -17,12 +17,12 @@ void main() {
   // final instance = MathApi();
 
   group('tests for MathApi', () {
-    // Convert Units
+    // Convert Units API
     //
     // Convert units from one to another. The API returns the amount and the unit of the target unit.
     //
-    //Future<ConvertUnits200Response> convertUnits(double sourceAmount, String sourceUnit, String targetUnit, { String foodName }) async
-    test('test convertUnits', () async {
+    //Future<ConvertUnitsAPI200Response> convertUnitsAPI(double sourceAmount, String sourceUnit, String targetUnit, { String foodName }) async
+    test('test convertUnitsAPI', () async {
       // TODO
     });
 

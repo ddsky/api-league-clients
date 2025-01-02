@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**findSimilarBooks**](BooksApi.md#findSimilarBooks) | **GET** /list-similar-books | Find Similar Books |
-| [**searchBooks**](BooksApi.md#searchBooks) | **GET** /search-books | Search Books |
+| [**findSimilarBooksAPI**](BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API |
+| [**searchBooksAPI**](BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API |
 
 
-<a id="findSimilarBooks"></a>
-# **findSimilarBooks**
-> FindSimilarBooks200Response findSimilarBooks(id, number)
+<a id="findSimilarBooksAPI"></a>
+# **findSimilarBooksAPI**
+> FindSimilarBooksAPI200Response findSimilarBooksAPI(id, number)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 ```java
@@ -47,10 +47,10 @@ public class Example {
     Integer id = 8302059; // Integer | The id of the book to which similar books should be found.
     Integer number = 10; // Integer | The number of similar books to return in range [1,100]
     try {
-      FindSimilarBooks200Response result = apiInstance.findSimilarBooks(id, number);
+      FindSimilarBooksAPI200Response result = apiInstance.findSimilarBooksAPI(id, number);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BooksApi#findSimilarBooks");
+      System.err.println("Exception when calling BooksApi#findSimilarBooksAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -69,7 +69,7 @@ public class Example {
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -91,13 +91,13 @@ public class Example {
 | **406** | Not Acceptable |  -  |
 | **429** | Too Many Requests |  -  |
 
-<a id="searchBooks"></a>
-# **searchBooks**
-> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+<a id="searchBooksAPI"></a>
+# **searchBooksAPI**
+> SearchBooksAPI200Response searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```java
@@ -142,10 +142,10 @@ public class Example {
     Integer offset = 0; // Integer | The number of books to skip in range [0,1000]
     Integer number = 10; // Integer | The number of books to return in range [1,100]
     try {
-      SearchBooks200Response result = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+      SearchBooksAPI200Response result = apiInstance.searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling BooksApi#searchBooks");
+      System.err.println("Exception when calling BooksApi#searchBooksAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -176,7 +176,7 @@ public class Example {
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

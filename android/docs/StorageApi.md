@@ -4,16 +4,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**readKeyValueFromStore**](StorageApi.md#readKeyValueFromStore) | **GET** /read-key-value | Read Key Value from Store
-[**storeKeyValueGET**](StorageApi.md#storeKeyValueGET) | **GET** /store-key-value | Store Key Value (GET)
+[**readKeyValueFromStoreAPI**](StorageApi.md#readKeyValueFromStoreAPI) | **GET** /read-key-value | Read Key Value from Store API
+[**storeKeyValueGETAPI**](StorageApi.md#storeKeyValueGETAPI) | **GET** /store-key-value | Store Key Value (GET) API
 
 
 
-## readKeyValueFromStore
+## readKeyValueFromStoreAPI
 
-> ReadKeyValueFromStore200Response readKeyValueFromStore(key)
+> ReadKeyValueFromStoreAPI200Response readKeyValueFromStoreAPI(key)
 
-Read Key Value from Store
+Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -26,10 +26,10 @@ Read a value from the key-value store. The key-value store is a simple storage s
 StorageApi apiInstance = new StorageApi();
 String key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
 try {
-    ReadKeyValueFromStore200Response result = apiInstance.readKeyValueFromStore(key);
+    ReadKeyValueFromStoreAPI200Response result = apiInstance.readKeyValueFromStoreAPI(key);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#readKeyValueFromStore");
+    System.err.println("Exception when calling StorageApi#readKeyValueFromStoreAPI");
     e.printStackTrace();
 }
 ```
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
+[**ReadKeyValueFromStoreAPI200Response**](ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -55,11 +55,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## storeKeyValueGET
+## storeKeyValueGETAPI
 
-> StoreKeyValueGET200Response storeKeyValueGET(key, value)
+> StoreKeyValueGETAPI200Response storeKeyValueGETAPI(key, value)
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -73,10 +73,10 @@ StorageApi apiInstance = new StorageApi();
 String key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
 String value = 23578 visitors; // String | The value that is supposed to be stored (max length 10,000 characters).
 try {
-    StoreKeyValueGET200Response result = apiInstance.storeKeyValueGET(key, value);
+    StoreKeyValueGETAPI200Response result = apiInstance.storeKeyValueGETAPI(key, value);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#storeKeyValueGET");
+    System.err.println("Exception when calling StorageApi#storeKeyValueGETAPI");
     e.printStackTrace();
 }
 ```
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
+[**StoreKeyValueGETAPI200Response**](StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

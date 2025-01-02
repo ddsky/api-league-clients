@@ -4,20 +4,20 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word
-[**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke
-[**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme
-[**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs
-[**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes
-[**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes
+[**generateNonsenseWordAPI**](HumorApi.md#generateNonsenseWordAPI) | **GET** /generate-nonsense-word | Generate Nonsense Word API
+[**randomJokeAPI**](HumorApi.md#randomJokeAPI) | **GET** /retrieve-random-joke | Random Joke API
+[**randomMemeAPI**](HumorApi.md#randomMemeAPI) | **GET** /retrieve-random-meme | Random Meme API
+[**searchGifsAPI**](HumorApi.md#searchGifsAPI) | **GET** /search-gifs | Search Gifs API
+[**searchJokesAPI**](HumorApi.md#searchJokesAPI) | **GET** /search-jokes | Search Jokes API
+[**searchMemesAPI**](HumorApi.md#searchMemesAPI) | **GET** /search-memes | Search Memes API
 
 
 
-## generateNonsenseWord
+## generateNonsenseWordAPI
 
-> GenerateNonsenseWord200Response generateNonsenseWord()
+> GenerateNonsenseWordAPI200Response generateNonsenseWordAPI()
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -29,10 +29,10 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 
 HumorApi apiInstance = new HumorApi();
 try {
-    GenerateNonsenseWord200Response result = apiInstance.generateNonsenseWord();
+    GenerateNonsenseWordAPI200Response result = apiInstance.generateNonsenseWordAPI();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#generateNonsenseWord");
+    System.err.println("Exception when calling HumorApi#generateNonsenseWordAPI");
     e.printStackTrace();
 }
 ```
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -55,11 +55,11 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## randomJoke
+## randomJokeAPI
 
-> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
+> SearchJokesAPI200ResponseJokesInner randomJokeAPI(includeTags, excludeTags, minRating, maxLength)
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
 
@@ -75,10 +75,10 @@ String excludeTags = nsfw,dark; // String | A comma-separated list of tags the j
 Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the jokes.
 Integer maxLength = 140; // Integer | The maximum length of the joke in letters.
 try {
-    SearchJokes200ResponseJokesInner result = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength);
+    SearchJokesAPI200ResponseJokesInner result = apiInstance.randomJokeAPI(includeTags, excludeTags, minRating, maxLength);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#randomJoke");
+    System.err.println("Exception when calling HumorApi#randomJokeAPI");
     e.printStackTrace();
 }
 ```
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -107,13 +107,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## randomMeme
+## randomMemeAPI
 
-> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+> RandomMemeAPI200Response randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 
@@ -128,10 +128,10 @@ String mediaType = image; // String | The media type (either 'image', 'video' or
 Double minRating = 0; // Double | The minimum rating in range [0.0,1.0] of the meme.
 Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 try {
-    RandomMeme200Response result = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
+    RandomMemeAPI200Response result = apiInstance.randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#randomMeme");
+    System.err.println("Exception when calling HumorApi#randomMemeAPI");
     e.printStackTrace();
 }
 ```
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -161,11 +161,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchGifs
+## searchGifsAPI
 
-> SearchGifs200Response searchGifs(query, number)
+> SearchGifsAPI200Response searchGifsAPI(query, number)
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -179,10 +179,10 @@ HumorApi apiInstance = new HumorApi();
 String query = dogs; // String | The search query.
 Integer number = 5; // Integer | The number of gifs to return in range [1,10]
 try {
-    SearchGifs200Response result = apiInstance.searchGifs(query, number);
+    SearchGifsAPI200Response result = apiInstance.searchGifsAPI(query, number);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#searchGifs");
+    System.err.println("Exception when calling HumorApi#searchGifsAPI");
     e.printStackTrace();
 }
 ```
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -209,11 +209,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchJokes
+## searchJokesAPI
 
-> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+> SearchJokesAPI200Response searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -232,10 +232,10 @@ Double maxLength = 140; // Double | The maximum length of the joke in letters.
 Integer offset = 0; // Integer | The number of jokes to skip, between 0 and 1000.
 Integer number = 3; // Integer | The number of jokes, between 1 and 10.
 try {
-    SearchJokes200Response result = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
+    SearchJokesAPI200Response result = apiInstance.searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#searchJokes");
+    System.err.println("Exception when calling HumorApi#searchJokesAPI");
     e.printStackTrace();
 }
 ```
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -267,13 +267,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchMemes
+## searchMemesAPI
 
-> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+> SearchMemesAPI200Response searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You&#39;ll surely find something funny.
 
 ### Example
 
@@ -290,10 +290,10 @@ Integer maxAgeDays = 30; // Integer | The maximum age of the meme in days.
 Integer offset = 0; // Integer | The number of memes to skip, between 0 and 1000.
 Integer number = 3; // Integer | The number of memes, between 1 and 10.
 try {
-    SearchMemes200Response result = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
+    SearchMemesAPI200Response result = apiInstance.searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HumorApi#searchMemes");
+    System.err.println("Exception when calling HumorApi#searchMemesAPI");
     e.printStackTrace();
 }
 ```
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

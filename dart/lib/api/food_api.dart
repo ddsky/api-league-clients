@@ -16,7 +16,7 @@ class FoodApi {
 
   final ApiClient apiClient;
 
-  /// Compute Nutrition
+  /// Compute Nutrition API
   ///
   /// Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
   ///
@@ -32,7 +32,7 @@ class FoodApi {
   ///
   /// * [bool] reduceOils:
   ///   If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
-  Future<Response> computeNutritionWithHttpInfo(String ingredients, { int? servings, bool? reduceOils, }) async {
+  Future<Response> computeNutritionAPIWithHttpInfo(String ingredients, { int? servings, bool? reduceOils, }) async {
     // ignore: prefer_const_declarations
     final path = r'/compute-nutrition';
 
@@ -65,7 +65,7 @@ class FoodApi {
     );
   }
 
-  /// Compute Nutrition
+  /// Compute Nutrition API
   ///
   /// Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
   ///
@@ -79,8 +79,8 @@ class FoodApi {
   ///
   /// * [bool] reduceOils:
   ///   If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
-  Future<ComputeNutrition200Response?> computeNutrition(String ingredients, { int? servings, bool? reduceOils, }) async {
-    final response = await computeNutritionWithHttpInfo(ingredients,  servings: servings, reduceOils: reduceOils, );
+  Future<ComputeNutritionAPI200Response?> computeNutritionAPI(String ingredients, { int? servings, bool? reduceOils, }) async {
+    final response = await computeNutritionAPIWithHttpInfo(ingredients,  servings: servings, reduceOils: reduceOils, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -88,13 +88,13 @@ class FoodApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ComputeNutrition200Response',) as ComputeNutrition200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ComputeNutritionAPI200Response',) as ComputeNutritionAPI200Response;
     
     }
     return null;
   }
 
-  /// Retrieve Recipe Information
+  /// Retrieve Recipe Information API
   ///
   /// Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
   ///
@@ -107,7 +107,7 @@ class FoodApi {
   ///
   /// * [bool] addWinePairing:
   ///   Whether to pair a wine to the recipe.
-  Future<Response> retrieveRecipeInformationWithHttpInfo(int id, { bool? addWinePairing, }) async {
+  Future<Response> retrieveRecipeInformationAPIWithHttpInfo(int id, { bool? addWinePairing, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-recipe';
 
@@ -137,7 +137,7 @@ class FoodApi {
     );
   }
 
-  /// Retrieve Recipe Information
+  /// Retrieve Recipe Information API
   ///
   /// Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
   ///
@@ -148,8 +148,8 @@ class FoodApi {
   ///
   /// * [bool] addWinePairing:
   ///   Whether to pair a wine to the recipe.
-  Future<RetrieveRecipeInformation200Response?> retrieveRecipeInformation(int id, { bool? addWinePairing, }) async {
-    final response = await retrieveRecipeInformationWithHttpInfo(id,  addWinePairing: addWinePairing, );
+  Future<RetrieveRecipeInformationAPI200Response?> retrieveRecipeInformationAPI(int id, { bool? addWinePairing, }) async {
+    final response = await retrieveRecipeInformationAPIWithHttpInfo(id,  addWinePairing: addWinePairing, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -157,13 +157,13 @@ class FoodApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RetrieveRecipeInformation200Response',) as RetrieveRecipeInformation200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RetrieveRecipeInformationAPI200Response',) as RetrieveRecipeInformationAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Drinks
+  /// Search Drinks API
   ///
   /// Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
   ///
@@ -236,7 +236,7 @@ class FoodApi {
   ///
   /// * [int] number:
   ///   The number of drinks, between 1 and 10.
-  Future<Response> searchDrinksWithHttpInfo({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
+  Future<Response> searchDrinksAPIWithHttpInfo({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-drinks';
 
@@ -328,7 +328,7 @@ class FoodApi {
     );
   }
 
-  /// Search Drinks
+  /// Search Drinks API
   ///
   /// Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
   ///
@@ -399,8 +399,8 @@ class FoodApi {
   ///
   /// * [int] number:
   ///   The number of drinks, between 1 and 10.
-  Future<SearchDrinks200Response?> searchDrinks({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
-    final response = await searchDrinksWithHttpInfo( query: query, glassTypes: glassTypes, flavors: flavors, diet: diet, includeIngredients: includeIngredients, excludeIngredients: excludeIngredients, minCalories: minCalories, maxCalories: maxCalories, minCarbs: minCarbs, maxCarbs: maxCarbs, minProtein: minProtein, maxProtein: maxProtein, minFat: minFat, maxFat: maxFat, minAlcoholPercent: minAlcoholPercent, maxAlcoholPercent: maxAlcoholPercent, minCaffeine: minCaffeine, maxCaffeine: maxCaffeine, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
+  Future<SearchDrinksAPI200Response?> searchDrinksAPI({ String? query, String? glassTypes, String? flavors, String? diet, String? includeIngredients, String? excludeIngredients, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minAlcoholPercent, double? maxAlcoholPercent, double? minCaffeine, double? maxCaffeine, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    final response = await searchDrinksAPIWithHttpInfo( query: query, glassTypes: glassTypes, flavors: flavors, diet: diet, includeIngredients: includeIngredients, excludeIngredients: excludeIngredients, minCalories: minCalories, maxCalories: maxCalories, minCarbs: minCarbs, maxCarbs: maxCarbs, minProtein: minProtein, maxProtein: maxProtein, minFat: minFat, maxFat: maxFat, minAlcoholPercent: minAlcoholPercent, maxAlcoholPercent: maxAlcoholPercent, minCaffeine: minCaffeine, maxCaffeine: maxCaffeine, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -408,13 +408,13 @@ class FoodApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchDrinks200Response',) as SearchDrinks200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchDrinksAPI200Response',) as SearchDrinksAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Recipes
+  /// Search Recipes API
   ///
   /// Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
   ///
@@ -691,7 +691,7 @@ class FoodApi {
   ///
   /// * [int] number:
   ///   The number of recipes, between 1 and 100.
-  Future<Response> searchRecipesWithHttpInfo({ String? query, String? cuisines, String? excludeCuisines, String? mealType, String? diet, String? intolerances, String? equipment, String? includeIngredients, String? excludeIngredients, bool? fillIngredients, bool? addRecipeInformation, int? maxTime, int? minServings, int? maxServings, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minSugar, double? maxSugar, double? minFiber, double? maxFiber, double? minFolate, double? maxFolate, double? minFolicAcid, double? maxFolicAcid, double? minIodine, double? maxIodine, double? minIron, double? maxIron, double? minZinc, double? maxZinc, double? minMagnesium, double? maxMagnesium, double? minManganese, double? maxManganese, double? minPhosphorus, double? maxPhosphorus, double? minPotassium, double? maxPotassium, double? minSodium, double? maxSodium, double? minSelenium, double? maxSelenium, double? minCopper, double? maxCopper, double? minCalcium, double? maxCalcium, double? minCholine, double? maxCholine, double? minCholesterol, double? maxCholesterol, double? minFluoride, double? maxFluoride, double? minAlcohol, double? maxAlcohol, double? minCaffeine, double? maxCaffeine, double? minSaturatedFat, double? maxSaturatedFat, double? minVitaminA, double? maxVitaminA, double? minVitaminC, double? maxVitaminC, double? minVitaminD, double? maxVitaminD, double? minVitaminE, double? maxVitaminE, double? minVitaminK, double? maxVitaminK, double? minVitaminB1, double? maxVitaminB1, double? minVitaminB2, double? maxVitaminB2, double? minVitaminB3, double? maxVitaminB3, double? minVitaminB5, double? maxVitaminB5, double? minVitaminB6, double? maxVitaminB6, double? minVitaminB12, double? maxVitaminB12, String? sort, String? sortDirection, int? offset, int? number, }) async {
+  Future<Response> searchRecipesAPIWithHttpInfo({ String? query, String? cuisines, String? excludeCuisines, String? mealType, String? diet, String? intolerances, String? equipment, String? includeIngredients, String? excludeIngredients, bool? fillIngredients, bool? addRecipeInformation, int? maxTime, int? minServings, int? maxServings, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minSugar, double? maxSugar, double? minFiber, double? maxFiber, double? minFolate, double? maxFolate, double? minFolicAcid, double? maxFolicAcid, double? minIodine, double? maxIodine, double? minIron, double? maxIron, double? minZinc, double? maxZinc, double? minMagnesium, double? maxMagnesium, double? minManganese, double? maxManganese, double? minPhosphorus, double? maxPhosphorus, double? minPotassium, double? maxPotassium, double? minSodium, double? maxSodium, double? minSelenium, double? maxSelenium, double? minCopper, double? maxCopper, double? minCalcium, double? maxCalcium, double? minCholine, double? maxCholine, double? minCholesterol, double? maxCholesterol, double? minFluoride, double? maxFluoride, double? minAlcohol, double? maxAlcohol, double? minCaffeine, double? maxCaffeine, double? minSaturatedFat, double? maxSaturatedFat, double? minVitaminA, double? maxVitaminA, double? minVitaminC, double? maxVitaminC, double? minVitaminD, double? maxVitaminD, double? minVitaminE, double? maxVitaminE, double? minVitaminK, double? maxVitaminK, double? minVitaminB1, double? maxVitaminB1, double? minVitaminB2, double? maxVitaminB2, double? minVitaminB3, double? maxVitaminB3, double? minVitaminB5, double? maxVitaminB5, double? minVitaminB6, double? maxVitaminB6, double? minVitaminB12, double? maxVitaminB12, String? sort, String? sortDirection, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-recipes';
 
@@ -987,7 +987,7 @@ class FoodApi {
     );
   }
 
-  /// Search Recipes
+  /// Search Recipes API
   ///
   /// Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
   ///
@@ -1262,8 +1262,8 @@ class FoodApi {
   ///
   /// * [int] number:
   ///   The number of recipes, between 1 and 100.
-  Future<SearchRecipes200Response?> searchRecipes({ String? query, String? cuisines, String? excludeCuisines, String? mealType, String? diet, String? intolerances, String? equipment, String? includeIngredients, String? excludeIngredients, bool? fillIngredients, bool? addRecipeInformation, int? maxTime, int? minServings, int? maxServings, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minSugar, double? maxSugar, double? minFiber, double? maxFiber, double? minFolate, double? maxFolate, double? minFolicAcid, double? maxFolicAcid, double? minIodine, double? maxIodine, double? minIron, double? maxIron, double? minZinc, double? maxZinc, double? minMagnesium, double? maxMagnesium, double? minManganese, double? maxManganese, double? minPhosphorus, double? maxPhosphorus, double? minPotassium, double? maxPotassium, double? minSodium, double? maxSodium, double? minSelenium, double? maxSelenium, double? minCopper, double? maxCopper, double? minCalcium, double? maxCalcium, double? minCholine, double? maxCholine, double? minCholesterol, double? maxCholesterol, double? minFluoride, double? maxFluoride, double? minAlcohol, double? maxAlcohol, double? minCaffeine, double? maxCaffeine, double? minSaturatedFat, double? maxSaturatedFat, double? minVitaminA, double? maxVitaminA, double? minVitaminC, double? maxVitaminC, double? minVitaminD, double? maxVitaminD, double? minVitaminE, double? maxVitaminE, double? minVitaminK, double? maxVitaminK, double? minVitaminB1, double? maxVitaminB1, double? minVitaminB2, double? maxVitaminB2, double? minVitaminB3, double? maxVitaminB3, double? minVitaminB5, double? maxVitaminB5, double? minVitaminB6, double? maxVitaminB6, double? minVitaminB12, double? maxVitaminB12, String? sort, String? sortDirection, int? offset, int? number, }) async {
-    final response = await searchRecipesWithHttpInfo( query: query, cuisines: cuisines, excludeCuisines: excludeCuisines, mealType: mealType, diet: diet, intolerances: intolerances, equipment: equipment, includeIngredients: includeIngredients, excludeIngredients: excludeIngredients, fillIngredients: fillIngredients, addRecipeInformation: addRecipeInformation, maxTime: maxTime, minServings: minServings, maxServings: maxServings, minCalories: minCalories, maxCalories: maxCalories, minCarbs: minCarbs, maxCarbs: maxCarbs, minProtein: minProtein, maxProtein: maxProtein, minFat: minFat, maxFat: maxFat, minSugar: minSugar, maxSugar: maxSugar, minFiber: minFiber, maxFiber: maxFiber, minFolate: minFolate, maxFolate: maxFolate, minFolicAcid: minFolicAcid, maxFolicAcid: maxFolicAcid, minIodine: minIodine, maxIodine: maxIodine, minIron: minIron, maxIron: maxIron, minZinc: minZinc, maxZinc: maxZinc, minMagnesium: minMagnesium, maxMagnesium: maxMagnesium, minManganese: minManganese, maxManganese: maxManganese, minPhosphorus: minPhosphorus, maxPhosphorus: maxPhosphorus, minPotassium: minPotassium, maxPotassium: maxPotassium, minSodium: minSodium, maxSodium: maxSodium, minSelenium: minSelenium, maxSelenium: maxSelenium, minCopper: minCopper, maxCopper: maxCopper, minCalcium: minCalcium, maxCalcium: maxCalcium, minCholine: minCholine, maxCholine: maxCholine, minCholesterol: minCholesterol, maxCholesterol: maxCholesterol, minFluoride: minFluoride, maxFluoride: maxFluoride, minAlcohol: minAlcohol, maxAlcohol: maxAlcohol, minCaffeine: minCaffeine, maxCaffeine: maxCaffeine, minSaturatedFat: minSaturatedFat, maxSaturatedFat: maxSaturatedFat, minVitaminA: minVitaminA, maxVitaminA: maxVitaminA, minVitaminC: minVitaminC, maxVitaminC: maxVitaminC, minVitaminD: minVitaminD, maxVitaminD: maxVitaminD, minVitaminE: minVitaminE, maxVitaminE: maxVitaminE, minVitaminK: minVitaminK, maxVitaminK: maxVitaminK, minVitaminB1: minVitaminB1, maxVitaminB1: maxVitaminB1, minVitaminB2: minVitaminB2, maxVitaminB2: maxVitaminB2, minVitaminB3: minVitaminB3, maxVitaminB3: maxVitaminB3, minVitaminB5: minVitaminB5, maxVitaminB5: maxVitaminB5, minVitaminB6: minVitaminB6, maxVitaminB6: maxVitaminB6, minVitaminB12: minVitaminB12, maxVitaminB12: maxVitaminB12, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
+  Future<SearchRecipesAPI200Response?> searchRecipesAPI({ String? query, String? cuisines, String? excludeCuisines, String? mealType, String? diet, String? intolerances, String? equipment, String? includeIngredients, String? excludeIngredients, bool? fillIngredients, bool? addRecipeInformation, int? maxTime, int? minServings, int? maxServings, double? minCalories, double? maxCalories, double? minCarbs, double? maxCarbs, double? minProtein, double? maxProtein, double? minFat, double? maxFat, double? minSugar, double? maxSugar, double? minFiber, double? maxFiber, double? minFolate, double? maxFolate, double? minFolicAcid, double? maxFolicAcid, double? minIodine, double? maxIodine, double? minIron, double? maxIron, double? minZinc, double? maxZinc, double? minMagnesium, double? maxMagnesium, double? minManganese, double? maxManganese, double? minPhosphorus, double? maxPhosphorus, double? minPotassium, double? maxPotassium, double? minSodium, double? maxSodium, double? minSelenium, double? maxSelenium, double? minCopper, double? maxCopper, double? minCalcium, double? maxCalcium, double? minCholine, double? maxCholine, double? minCholesterol, double? maxCholesterol, double? minFluoride, double? maxFluoride, double? minAlcohol, double? maxAlcohol, double? minCaffeine, double? maxCaffeine, double? minSaturatedFat, double? maxSaturatedFat, double? minVitaminA, double? maxVitaminA, double? minVitaminC, double? maxVitaminC, double? minVitaminD, double? maxVitaminD, double? minVitaminE, double? maxVitaminE, double? minVitaminK, double? maxVitaminK, double? minVitaminB1, double? maxVitaminB1, double? minVitaminB2, double? maxVitaminB2, double? minVitaminB3, double? maxVitaminB3, double? minVitaminB5, double? maxVitaminB5, double? minVitaminB6, double? maxVitaminB6, double? minVitaminB12, double? maxVitaminB12, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    final response = await searchRecipesAPIWithHttpInfo( query: query, cuisines: cuisines, excludeCuisines: excludeCuisines, mealType: mealType, diet: diet, intolerances: intolerances, equipment: equipment, includeIngredients: includeIngredients, excludeIngredients: excludeIngredients, fillIngredients: fillIngredients, addRecipeInformation: addRecipeInformation, maxTime: maxTime, minServings: minServings, maxServings: maxServings, minCalories: minCalories, maxCalories: maxCalories, minCarbs: minCarbs, maxCarbs: maxCarbs, minProtein: minProtein, maxProtein: maxProtein, minFat: minFat, maxFat: maxFat, minSugar: minSugar, maxSugar: maxSugar, minFiber: minFiber, maxFiber: maxFiber, minFolate: minFolate, maxFolate: maxFolate, minFolicAcid: minFolicAcid, maxFolicAcid: maxFolicAcid, minIodine: minIodine, maxIodine: maxIodine, minIron: minIron, maxIron: maxIron, minZinc: minZinc, maxZinc: maxZinc, minMagnesium: minMagnesium, maxMagnesium: maxMagnesium, minManganese: minManganese, maxManganese: maxManganese, minPhosphorus: minPhosphorus, maxPhosphorus: maxPhosphorus, minPotassium: minPotassium, maxPotassium: maxPotassium, minSodium: minSodium, maxSodium: maxSodium, minSelenium: minSelenium, maxSelenium: maxSelenium, minCopper: minCopper, maxCopper: maxCopper, minCalcium: minCalcium, maxCalcium: maxCalcium, minCholine: minCholine, maxCholine: maxCholine, minCholesterol: minCholesterol, maxCholesterol: maxCholesterol, minFluoride: minFluoride, maxFluoride: maxFluoride, minAlcohol: minAlcohol, maxAlcohol: maxAlcohol, minCaffeine: minCaffeine, maxCaffeine: maxCaffeine, minSaturatedFat: minSaturatedFat, maxSaturatedFat: maxSaturatedFat, minVitaminA: minVitaminA, maxVitaminA: maxVitaminA, minVitaminC: minVitaminC, maxVitaminC: maxVitaminC, minVitaminD: minVitaminD, maxVitaminD: maxVitaminD, minVitaminE: minVitaminE, maxVitaminE: maxVitaminE, minVitaminK: minVitaminK, maxVitaminK: maxVitaminK, minVitaminB1: minVitaminB1, maxVitaminB1: maxVitaminB1, minVitaminB2: minVitaminB2, maxVitaminB2: maxVitaminB2, minVitaminB3: minVitaminB3, maxVitaminB3: maxVitaminB3, minVitaminB5: minVitaminB5, maxVitaminB5: maxVitaminB5, minVitaminB6: minVitaminB6, maxVitaminB6: maxVitaminB6, minVitaminB12: minVitaminB12, maxVitaminB12: maxVitaminB12, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1271,13 +1271,13 @@ class FoodApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRecipes200Response',) as SearchRecipes200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRecipesAPI200Response',) as SearchRecipesAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Restaurants
+  /// Search Restaurants API
   ///
   /// Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
   ///
@@ -1314,7 +1314,7 @@ class FoodApi {
   ///
   /// * [String] sort:
   ///   The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-  Future<Response> searchRestaurantsWithHttpInfo(double lat, double lon, { String? query, int? distance, double? budget, double? minRating, String? cuisine, bool? isOpen, int? page, String? sort, }) async {
+  Future<Response> searchRestaurantsAPIWithHttpInfo(double lat, double lon, { String? query, int? distance, double? budget, double? minRating, String? cuisine, bool? isOpen, int? page, String? sort, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-restaurants';
 
@@ -1366,7 +1366,7 @@ class FoodApi {
     );
   }
 
-  /// Search Restaurants
+  /// Search Restaurants API
   ///
   /// Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
   ///
@@ -1401,8 +1401,8 @@ class FoodApi {
   ///
   /// * [String] sort:
   ///   The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-  Future<SearchRestaurants200Response?> searchRestaurants(double lat, double lon, { String? query, int? distance, double? budget, double? minRating, String? cuisine, bool? isOpen, int? page, String? sort, }) async {
-    final response = await searchRestaurantsWithHttpInfo(lat, lon,  query: query, distance: distance, budget: budget, minRating: minRating, cuisine: cuisine, isOpen: isOpen, page: page, sort: sort, );
+  Future<SearchRestaurantsAPI200Response?> searchRestaurantsAPI(double lat, double lon, { String? query, int? distance, double? budget, double? minRating, String? cuisine, bool? isOpen, int? page, String? sort, }) async {
+    final response = await searchRestaurantsAPIWithHttpInfo(lat, lon,  query: query, distance: distance, budget: budget, minRating: minRating, cuisine: cuisine, isOpen: isOpen, page: page, sort: sort, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1410,7 +1410,7 @@ class FoodApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRestaurants200Response',) as SearchRestaurants200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchRestaurantsAPI200Response',) as SearchRestaurantsAPI200Response;
     
     }
     return null;

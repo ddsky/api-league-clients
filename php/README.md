@@ -71,10 +71,10 @@ $width = 200; // int | The maximum width of the image (default 400, max. 500).
 $height = 200; // int | The maximum height of the image (default 400, max. 500).
 
 try {
-    $result = $apiInstance->imageToAsciiArtByURL($url, $width, $height);
+    $result = $apiInstance->imageToAsciiArtByURLAPI($url, $width, $height);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ArtApi->imageToAsciiArtByURL: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ArtApi->imageToAsciiArtByURLAPI: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -85,163 +85,166 @@ All URIs are relative to *https://api.apileague.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ArtApi* | [**imageToAsciiArtByURL**](docs/Api/ArtApi.md#imagetoasciiartbyurl) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-*ArtApi* | [**randomPoem**](docs/Api/ArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem
-*BooksApi* | [**findSimilarBooks**](docs/Api/BooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books
-*BooksApi* | [**searchBooks**](docs/Api/BooksApi.md#searchbooks) | **GET** /search-books | Search Books
-*FoodApi* | [**computeNutrition**](docs/Api/FoodApi.md#computenutrition) | **GET** /compute-nutrition | Compute Nutrition
-*FoodApi* | [**retrieveRecipeInformation**](docs/Api/FoodApi.md#retrieverecipeinformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
-*FoodApi* | [**searchDrinks**](docs/Api/FoodApi.md#searchdrinks) | **GET** /search-drinks | Search Drinks
-*FoodApi* | [**searchRecipes**](docs/Api/FoodApi.md#searchrecipes) | **GET** /search-recipes | Search Recipes
-*FoodApi* | [**searchRestaurants**](docs/Api/FoodApi.md#searchrestaurants) | **GET** /search-restaurants | Search Restaurants
-*HumorApi* | [**generateNonsenseWord**](docs/Api/HumorApi.md#generatenonsenseword) | **GET** /generate-nonsense-word | Generate Nonsense Word
-*HumorApi* | [**randomJoke**](docs/Api/HumorApi.md#randomjoke) | **GET** /retrieve-random-joke | Random Joke
-*HumorApi* | [**randomMeme**](docs/Api/HumorApi.md#randommeme) | **GET** /retrieve-random-meme | Random Meme
-*HumorApi* | [**searchGifs**](docs/Api/HumorApi.md#searchgifs) | **GET** /search-gifs | Search Gifs
-*HumorApi* | [**searchJokes**](docs/Api/HumorApi.md#searchjokes) | **GET** /search-jokes | Search Jokes
-*HumorApi* | [**searchMemes**](docs/Api/HumorApi.md#searchmemes) | **GET** /search-memes | Search Memes
-*KnowledgeApi* | [**randomQuote**](docs/Api/KnowledgeApi.md#randomquote) | **GET** /retrieve-random-quote | Random Quote
-*KnowledgeApi* | [**randomRiddle**](docs/Api/KnowledgeApi.md#randomriddle) | **GET** /retrieve-random-riddle | Random Riddle
-*KnowledgeApi* | [**randomTrivia**](docs/Api/KnowledgeApi.md#randomtrivia) | **GET** /retrieve-random-trivia | Random Trivia
-*MathApi* | [**convertUnits**](docs/Api/MathApi.md#convertunits) | **GET** /convert-units | Convert Units
-*MediaApi* | [**detectMainImageColor**](docs/Api/MediaApi.md#detectmainimagecolor) | **GET** /detect-color | Detect Main Image Color
-*MediaApi* | [**rescaleImage**](docs/Api/MediaApi.md#rescaleimage) | **GET** /rescale-image | Rescale Image
-*MediaApi* | [**searchIcons**](docs/Api/MediaApi.md#searchicons) | **GET** /search-icons | Search Icons
-*MediaApi* | [**searchRoyaltyFreeImages**](docs/Api/MediaApi.md#searchroyaltyfreeimages) | **GET** /search-images | Search Royalty Free Images
-*NewsApi* | [**extractNews**](docs/Api/NewsApi.md#extractnews) | **GET** /extract-news | Extract News
-*NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /search-news | Search News
-*NewsApi* | [**topNews**](docs/Api/NewsApi.md#topnews) | **GET** /retrieve-top-news | Top News
-*StorageApi* | [**readKeyValueFromStore**](docs/Api/StorageApi.md#readkeyvaluefromstore) | **GET** /read-key-value | Read Key Value from Store
-*StorageApi* | [**storeKeyValueGET**](docs/Api/StorageApi.md#storekeyvalueget) | **GET** /store-key-value | Store Key Value (GET)
-*TextApi* | [**correctSpelling**](docs/Api/TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling
-*TextApi* | [**detectGenderByName**](docs/Api/TextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name
-*TextApi* | [**detectLanguage**](docs/Api/TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language
-*TextApi* | [**detectSentiment**](docs/Api/TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment
-*TextApi* | [**extractDates**](docs/Api/TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates
-*TextApi* | [**extractEntities**](docs/Api/TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities
-*TextApi* | [**listWordSynonyms**](docs/Api/TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms
-*TextApi* | [**pluralizeWord**](docs/Api/TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word
-*TextApi* | [**scoreReadability**](docs/Api/TextApi.md#scorereadability) | **GET** /score-readability | Score Readability
-*TextApi* | [**scoreText**](docs/Api/TextApi.md#scoretext) | **GET** /score-text | Score Text
-*TextApi* | [**singularizeWord**](docs/Api/TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word
-*TextApi* | [**stemText**](docs/Api/TextApi.md#stemtext) | **GET** /stem-text | Stem Text
-*TextApi* | [**tagPartOfSpeech**](docs/Api/TextApi.md#tagpartofspeech) | **GET** /tag-pos | Tag Part of Speech
-*WebApi* | [**extractAuthors**](docs/Api/WebApi.md#extractauthors) | **GET** /extract-authors | Extract Authors
-*WebApi* | [**extractContentFromAWebPage**](docs/Api/WebApi.md#extractcontentfromawebpage) | **GET** /extract-content | Extract Content from a Web Page
-*WebApi* | [**extractPublishDate**](docs/Api/WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date
-*WebApi* | [**retrievePageRank**](docs/Api/WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank
-*WebApi* | [**searchWeb**](docs/Api/WebApi.md#searchweb) | **GET** /search-web | Search Web
-*WebApi* | [**verifyEmailAddress**](docs/Api/WebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address
+*ArtApi* | [**imageToAsciiArtByURLAPI**](docs/Api/ArtApi.md#imagetoasciiartbyurlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+*ArtApi* | [**randomPoemAPI**](docs/Api/ArtApi.md#randompoemapi) | **GET** /retrieve-random-poem | Random Poem API
+*BooksApi* | [**findSimilarBooksAPI**](docs/Api/BooksApi.md#findsimilarbooksapi) | **GET** /list-similar-books | Find Similar Books API
+*BooksApi* | [**searchBooksAPI**](docs/Api/BooksApi.md#searchbooksapi) | **GET** /search-books | Search Books API
+*FoodApi* | [**computeNutritionAPI**](docs/Api/FoodApi.md#computenutritionapi) | **GET** /compute-nutrition | Compute Nutrition API
+*FoodApi* | [**retrieveRecipeInformationAPI**](docs/Api/FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+*FoodApi* | [**searchDrinksAPI**](docs/Api/FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API
+*FoodApi* | [**searchRecipesAPI**](docs/Api/FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API
+*FoodApi* | [**searchRestaurantsAPI**](docs/Api/FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API
+*HumorApi* | [**generateNonsenseWordAPI**](docs/Api/HumorApi.md#generatenonsensewordapi) | **GET** /generate-nonsense-word | Generate Nonsense Word API
+*HumorApi* | [**randomJokeAPI**](docs/Api/HumorApi.md#randomjokeapi) | **GET** /retrieve-random-joke | Random Joke API
+*HumorApi* | [**randomMemeAPI**](docs/Api/HumorApi.md#randommemeapi) | **GET** /retrieve-random-meme | Random Meme API
+*HumorApi* | [**searchGifsAPI**](docs/Api/HumorApi.md#searchgifsapi) | **GET** /search-gifs | Search Gifs API
+*HumorApi* | [**searchJokesAPI**](docs/Api/HumorApi.md#searchjokesapi) | **GET** /search-jokes | Search Jokes API
+*HumorApi* | [**searchMemesAPI**](docs/Api/HumorApi.md#searchmemesapi) | **GET** /search-memes | Search Memes API
+*KnowledgeApi* | [**randomQuoteAPI**](docs/Api/KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API
+*KnowledgeApi* | [**randomRiddleAPI**](docs/Api/KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API
+*KnowledgeApi* | [**randomTriviaAPI**](docs/Api/KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API
+*MathApi* | [**convertUnitsAPI**](docs/Api/MathApi.md#convertunitsapi) | **GET** /convert-units | Convert Units API
+*MediaApi* | [**detectMainImageColorAPI**](docs/Api/MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API
+*MediaApi* | [**rescaleImageAPI**](docs/Api/MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API
+*MediaApi* | [**searchIconsAPI**](docs/Api/MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API
+*MediaApi* | [**searchRoyaltyFreeImagesAPI**](docs/Api/MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API
+*MediaApi* | [**vectorSearchAPI**](docs/Api/MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API
+*NewsApi* | [**extractNewsAPI**](docs/Api/NewsApi.md#extractnewsapi) | **GET** /extract-news | Extract News API
+*NewsApi* | [**searchNewsAPI**](docs/Api/NewsApi.md#searchnewsapi) | **GET** /search-news | Search News API
+*NewsApi* | [**topNewsAPI**](docs/Api/NewsApi.md#topnewsapi) | **GET** /retrieve-top-news | Top News API
+*StorageApi* | [**readKeyValueFromStoreAPI**](docs/Api/StorageApi.md#readkeyvaluefromstoreapi) | **GET** /read-key-value | Read Key Value from Store API
+*StorageApi* | [**storeKeyValueGETAPI**](docs/Api/StorageApi.md#storekeyvaluegetapi) | **GET** /store-key-value | Store Key Value (GET) API
+*TextApi* | [**correctSpellingAPI**](docs/Api/TextApi.md#correctspellingapi) | **GET** /correct-spelling | Correct Spelling API
+*TextApi* | [**detectGenderByNameAPI**](docs/Api/TextApi.md#detectgenderbynameapi) | **GET** /detect-gender | Detect Gender by Name API
+*TextApi* | [**detectLanguageAPI**](docs/Api/TextApi.md#detectlanguageapi) | **GET** /detect-language | Detect Language API
+*TextApi* | [**detectSentimentAPI**](docs/Api/TextApi.md#detectsentimentapi) | **GET** /detect-sentiment | Detect Sentiment API
+*TextApi* | [**extractDatesAPI**](docs/Api/TextApi.md#extractdatesapi) | **GET** /extract-dates | Extract Dates API
+*TextApi* | [**extractEntitiesAPI**](docs/Api/TextApi.md#extractentitiesapi) | **GET** /extract-entities | Extract Entities API
+*TextApi* | [**listWordSynonymsAPI**](docs/Api/TextApi.md#listwordsynonymsapi) | **GET** /list-synonyms | List Word Synonyms API
+*TextApi* | [**pluralizeWordAPI**](docs/Api/TextApi.md#pluralizewordapi) | **GET** /pluralize-word | Pluralize Word API
+*TextApi* | [**scoreReadabilityAPI**](docs/Api/TextApi.md#scorereadabilityapi) | **GET** /score-readability | Score Readability API
+*TextApi* | [**scoreTextAPI**](docs/Api/TextApi.md#scoretextapi) | **GET** /score-text | Score Text API
+*TextApi* | [**singularizeWordAPI**](docs/Api/TextApi.md#singularizewordapi) | **GET** /singularize-word | Singularize Word API
+*TextApi* | [**stemTextAPI**](docs/Api/TextApi.md#stemtextapi) | **GET** /stem-text | Stem Text API
+*TextApi* | [**tagPartOfSpeechAPI**](docs/Api/TextApi.md#tagpartofspeechapi) | **GET** /tag-pos | Tag Part of Speech API
+*WebApi* | [**extractAuthorsAPI**](docs/Api/WebApi.md#extractauthorsapi) | **GET** /extract-authors | Extract Authors API
+*WebApi* | [**extractContentFromAWebPageAPI**](docs/Api/WebApi.md#extractcontentfromawebpageapi) | **GET** /extract-content | Extract Content from a Web Page API
+*WebApi* | [**extractPublishDateAPI**](docs/Api/WebApi.md#extractpublishdateapi) | **GET** /extract-publish-date | Extract Publish Date API
+*WebApi* | [**retrievePageRankAPI**](docs/Api/WebApi.md#retrievepagerankapi) | **GET** /retrieve-page-rank | Retrieve Page Rank API
+*WebApi* | [**searchWebAPI**](docs/Api/WebApi.md#searchwebapi) | **GET** /search-web | Search Web API
+*WebApi* | [**verifyEmailAddressAPI**](docs/Api/WebApi.md#verifyemailaddressapi) | **GET** /verify-email | Verify Email Address API
 
 ## Models
 
-- [ComputeNutrition200Response](docs/Model/ComputeNutrition200Response.md)
-- [ComputeNutrition200ResponseIngredientBreakdownInner](docs/Model/ComputeNutrition200ResponseIngredientBreakdownInner.md)
-- [ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner](docs/Model/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner.md)
-- [ConvertUnits200Response](docs/Model/ConvertUnits200Response.md)
-- [CorrectSpelling200Response](docs/Model/CorrectSpelling200Response.md)
-- [DetectGenderByName200Response](docs/Model/DetectGenderByName200Response.md)
-- [DetectLanguage200ResponseInner](docs/Model/DetectLanguage200ResponseInner.md)
-- [DetectMainImageColor200ResponseInner](docs/Model/DetectMainImageColor200ResponseInner.md)
-- [DetectSentiment200Response](docs/Model/DetectSentiment200Response.md)
-- [DetectSentiment200ResponseDocument](docs/Model/DetectSentiment200ResponseDocument.md)
-- [DetectSentiment200ResponseSentencesInner](docs/Model/DetectSentiment200ResponseSentencesInner.md)
-- [ExtractAuthors200Response](docs/Model/ExtractAuthors200Response.md)
-- [ExtractAuthors200ResponseAuthorsInner](docs/Model/ExtractAuthors200ResponseAuthorsInner.md)
-- [ExtractContentFromAWebPage200Response](docs/Model/ExtractContentFromAWebPage200Response.md)
-- [ExtractDates200Response](docs/Model/ExtractDates200Response.md)
-- [ExtractDates200ResponseDatesInner](docs/Model/ExtractDates200ResponseDatesInner.md)
-- [ExtractEntities200Response](docs/Model/ExtractEntities200Response.md)
-- [ExtractEntities200ResponseEntitiesInner](docs/Model/ExtractEntities200ResponseEntitiesInner.md)
-- [ExtractNews200Response](docs/Model/ExtractNews200Response.md)
-- [ExtractNews200ResponseImagesInner](docs/Model/ExtractNews200ResponseImagesInner.md)
-- [ExtractNews200ResponseVideosInner](docs/Model/ExtractNews200ResponseVideosInner.md)
-- [ExtractPublishDate200Response](docs/Model/ExtractPublishDate200Response.md)
-- [FindSimilarBooks200Response](docs/Model/FindSimilarBooks200Response.md)
-- [GenerateNonsenseWord200Response](docs/Model/GenerateNonsenseWord200Response.md)
-- [ListWordSynonyms200Response](docs/Model/ListWordSynonyms200Response.md)
-- [PluralizeWord200Response](docs/Model/PluralizeWord200Response.md)
-- [RandomMeme200Response](docs/Model/RandomMeme200Response.md)
-- [RandomPoem200Response](docs/Model/RandomPoem200Response.md)
-- [RandomQuote200Response](docs/Model/RandomQuote200Response.md)
-- [RandomRiddle200Response](docs/Model/RandomRiddle200Response.md)
-- [RandomTrivia200Response](docs/Model/RandomTrivia200Response.md)
-- [ReadKeyValueFromStore200Response](docs/Model/ReadKeyValueFromStore200Response.md)
-- [RetrievePageRank200Response](docs/Model/RetrievePageRank200Response.md)
-- [RetrieveRecipeInformation200Response](docs/Model/RetrieveRecipeInformation200Response.md)
-- [RetrieveRecipeInformation200ResponseCredits](docs/Model/RetrieveRecipeInformation200ResponseCredits.md)
-- [RetrieveRecipeInformation200ResponseDietaryProperties](docs/Model/RetrieveRecipeInformation200ResponseDietaryProperties.md)
-- [RetrieveRecipeInformation200ResponseIngredientsInner](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInner.md)
-- [RetrieveRecipeInformation200ResponseIngredientsInnerMeasures](docs/Model/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures.md)
-- [RetrieveRecipeInformation200ResponseInstructionsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInner.md)
-- [RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner](docs/Model/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner.md)
-- [RetrieveRecipeInformation200ResponseNutrition](docs/Model/RetrieveRecipeInformation200ResponseNutrition.md)
-- [RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner](docs/Model/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner.md)
-- [RetrieveRecipeInformation200ResponseScores](docs/Model/RetrieveRecipeInformation200ResponseScores.md)
-- [RetrieveRecipeInformation200ResponseTaste](docs/Model/RetrieveRecipeInformation200ResponseTaste.md)
-- [RetrieveRecipeInformation200ResponseTimes](docs/Model/RetrieveRecipeInformation200ResponseTimes.md)
-- [ScoreReadability200Response](docs/Model/ScoreReadability200Response.md)
-- [ScoreText200Response](docs/Model/ScoreText200Response.md)
-- [ScoreText200ResponseInterestingness](docs/Model/ScoreText200ResponseInterestingness.md)
-- [ScoreText200ResponseInterestingnessSubscores](docs/Model/ScoreText200ResponseInterestingnessSubscores.md)
-- [ScoreText200ResponseReadability](docs/Model/ScoreText200ResponseReadability.md)
-- [ScoreText200ResponseReadabilityMainscores](docs/Model/ScoreText200ResponseReadabilityMainscores.md)
-- [ScoreText200ResponseReadabilitySubscores](docs/Model/ScoreText200ResponseReadabilitySubscores.md)
-- [ScoreText200ResponseSkimmability](docs/Model/ScoreText200ResponseSkimmability.md)
-- [ScoreText200ResponseSkimmabilityMainscores](docs/Model/ScoreText200ResponseSkimmabilityMainscores.md)
-- [ScoreText200ResponseSkimmabilitySubscores](docs/Model/ScoreText200ResponseSkimmabilitySubscores.md)
-- [ScoreText200ResponseStyle](docs/Model/ScoreText200ResponseStyle.md)
-- [ScoreText200ResponseStyleSubscores](docs/Model/ScoreText200ResponseStyleSubscores.md)
-- [SearchBooks200Response](docs/Model/SearchBooks200Response.md)
-- [SearchBooks200ResponseBooksInnerInner](docs/Model/SearchBooks200ResponseBooksInnerInner.md)
-- [SearchDrinks200Response](docs/Model/SearchDrinks200Response.md)
-- [SearchDrinks200ResponseDrinksInner](docs/Model/SearchDrinks200ResponseDrinksInner.md)
-- [SearchDrinks200ResponseDrinksInnerCredits](docs/Model/SearchDrinks200ResponseDrinksInnerCredits.md)
-- [SearchDrinks200ResponseDrinksInnerIngredientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInner.md)
-- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures.md)
-- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md)
-- [SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs](docs/Model/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs.md)
-- [SearchDrinks200ResponseDrinksInnerInstructionsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInner.md)
-- [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner.md)
-- [SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
-- [SearchDrinks200ResponseDrinksInnerNutrition](docs/Model/SearchDrinks200ResponseDrinksInnerNutrition.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner.md)
-- [SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing](docs/Model/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing.md)
-- [SearchGifs200Response](docs/Model/SearchGifs200Response.md)
-- [SearchGifs200ResponseImagesInner](docs/Model/SearchGifs200ResponseImagesInner.md)
-- [SearchIcons200Response](docs/Model/SearchIcons200Response.md)
-- [SearchJokes200Response](docs/Model/SearchJokes200Response.md)
-- [SearchJokes200ResponseJokesInner](docs/Model/SearchJokes200ResponseJokesInner.md)
-- [SearchMemes200Response](docs/Model/SearchMemes200Response.md)
-- [SearchMemes200ResponseMemesInner](docs/Model/SearchMemes200ResponseMemesInner.md)
-- [SearchNews200Response](docs/Model/SearchNews200Response.md)
-- [SearchNews200ResponseNewsInner](docs/Model/SearchNews200ResponseNewsInner.md)
-- [SearchRecipes200Response](docs/Model/SearchRecipes200Response.md)
-- [SearchRecipes200ResponseRecipesInner](docs/Model/SearchRecipes200ResponseRecipesInner.md)
-- [SearchRecipes200ResponseRecipesInnerNutrition](docs/Model/SearchRecipes200ResponseRecipesInnerNutrition.md)
-- [SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner](docs/Model/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner.md)
-- [SearchRestaurants200Response](docs/Model/SearchRestaurants200Response.md)
-- [SearchRestaurants200ResponseRestaurantsInner](docs/Model/SearchRestaurants200ResponseRestaurantsInner.md)
-- [SearchRestaurants200ResponseRestaurantsInnerAddress](docs/Model/SearchRestaurants200ResponseRestaurantsInnerAddress.md)
-- [SearchRestaurants200ResponseRestaurantsInnerLocalHours](docs/Model/SearchRestaurants200ResponseRestaurantsInnerLocalHours.md)
-- [SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational](docs/Model/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational.md)
-- [SearchRoyaltyFreeImages200Response](docs/Model/SearchRoyaltyFreeImages200Response.md)
-- [SearchRoyaltyFreeImages200ResponseImagesInner](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInner.md)
-- [SearchRoyaltyFreeImages200ResponseImagesInnerLicense](docs/Model/SearchRoyaltyFreeImages200ResponseImagesInnerLicense.md)
-- [SearchWeb200Response](docs/Model/SearchWeb200Response.md)
-- [SearchWeb200ResponseResultsInner](docs/Model/SearchWeb200ResponseResultsInner.md)
-- [SingularizeWord200Response](docs/Model/SingularizeWord200Response.md)
-- [StemText200Response](docs/Model/StemText200Response.md)
-- [StoreKeyValueGET200Response](docs/Model/StoreKeyValueGET200Response.md)
-- [TagPartOfSpeech200Response](docs/Model/TagPartOfSpeech200Response.md)
-- [TopNews200Response](docs/Model/TopNews200Response.md)
-- [TopNews200ResponseTopNewsInner](docs/Model/TopNews200ResponseTopNewsInner.md)
-- [TopNews200ResponseTopNewsInnerNewsInner](docs/Model/TopNews200ResponseTopNewsInnerNewsInner.md)
-- [VerifyEmailAddress200Response](docs/Model/VerifyEmailAddress200Response.md)
+- [ComputeNutritionAPI200Response](docs/Model/ComputeNutritionAPI200Response.md)
+- [ComputeNutritionAPI200ResponseIngredientBreakdownInner](docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md)
+- [ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner](docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md)
+- [ConvertUnitsAPI200Response](docs/Model/ConvertUnitsAPI200Response.md)
+- [CorrectSpellingAPI200Response](docs/Model/CorrectSpellingAPI200Response.md)
+- [DetectGenderByNameAPI200Response](docs/Model/DetectGenderByNameAPI200Response.md)
+- [DetectLanguageAPI200ResponseInner](docs/Model/DetectLanguageAPI200ResponseInner.md)
+- [DetectMainImageColorAPI200ResponseInner](docs/Model/DetectMainImageColorAPI200ResponseInner.md)
+- [DetectSentimentAPI200Response](docs/Model/DetectSentimentAPI200Response.md)
+- [DetectSentimentAPI200ResponseDocument](docs/Model/DetectSentimentAPI200ResponseDocument.md)
+- [DetectSentimentAPI200ResponseSentencesInner](docs/Model/DetectSentimentAPI200ResponseSentencesInner.md)
+- [ExtractAuthorsAPI200Response](docs/Model/ExtractAuthorsAPI200Response.md)
+- [ExtractAuthorsAPI200ResponseAuthorsInner](docs/Model/ExtractAuthorsAPI200ResponseAuthorsInner.md)
+- [ExtractContentFromAWebPageAPI200Response](docs/Model/ExtractContentFromAWebPageAPI200Response.md)
+- [ExtractDatesAPI200Response](docs/Model/ExtractDatesAPI200Response.md)
+- [ExtractDatesAPI200ResponseDatesInner](docs/Model/ExtractDatesAPI200ResponseDatesInner.md)
+- [ExtractEntitiesAPI200Response](docs/Model/ExtractEntitiesAPI200Response.md)
+- [ExtractEntitiesAPI200ResponseEntitiesInner](docs/Model/ExtractEntitiesAPI200ResponseEntitiesInner.md)
+- [ExtractNewsAPI200Response](docs/Model/ExtractNewsAPI200Response.md)
+- [ExtractNewsAPI200ResponseImagesInner](docs/Model/ExtractNewsAPI200ResponseImagesInner.md)
+- [ExtractNewsAPI200ResponseVideosInner](docs/Model/ExtractNewsAPI200ResponseVideosInner.md)
+- [ExtractPublishDateAPI200Response](docs/Model/ExtractPublishDateAPI200Response.md)
+- [FindSimilarBooksAPI200Response](docs/Model/FindSimilarBooksAPI200Response.md)
+- [GenerateNonsenseWordAPI200Response](docs/Model/GenerateNonsenseWordAPI200Response.md)
+- [ListWordSynonymsAPI200Response](docs/Model/ListWordSynonymsAPI200Response.md)
+- [PluralizeWordAPI200Response](docs/Model/PluralizeWordAPI200Response.md)
+- [RandomMemeAPI200Response](docs/Model/RandomMemeAPI200Response.md)
+- [RandomPoemAPI200Response](docs/Model/RandomPoemAPI200Response.md)
+- [RandomQuoteAPI200Response](docs/Model/RandomQuoteAPI200Response.md)
+- [RandomRiddleAPI200Response](docs/Model/RandomRiddleAPI200Response.md)
+- [RandomTriviaAPI200Response](docs/Model/RandomTriviaAPI200Response.md)
+- [ReadKeyValueFromStoreAPI200Response](docs/Model/ReadKeyValueFromStoreAPI200Response.md)
+- [RetrievePageRankAPI200Response](docs/Model/RetrievePageRankAPI200Response.md)
+- [RetrieveRecipeInformationAPI200Response](docs/Model/RetrieveRecipeInformationAPI200Response.md)
+- [RetrieveRecipeInformationAPI200ResponseCredits](docs/Model/RetrieveRecipeInformationAPI200ResponseCredits.md)
+- [RetrieveRecipeInformationAPI200ResponseDietaryProperties](docs/Model/RetrieveRecipeInformationAPI200ResponseDietaryProperties.md)
+- [RetrieveRecipeInformationAPI200ResponseIngredientsInner](docs/Model/RetrieveRecipeInformationAPI200ResponseIngredientsInner.md)
+- [RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures](docs/Model/RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.md)
+- [RetrieveRecipeInformationAPI200ResponseInstructionsInner](docs/Model/RetrieveRecipeInformationAPI200ResponseInstructionsInner.md)
+- [RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner](docs/Model/RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner.md)
+- [RetrieveRecipeInformationAPI200ResponseNutrition](docs/Model/RetrieveRecipeInformationAPI200ResponseNutrition.md)
+- [RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner](docs/Model/RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner.md)
+- [RetrieveRecipeInformationAPI200ResponseScores](docs/Model/RetrieveRecipeInformationAPI200ResponseScores.md)
+- [RetrieveRecipeInformationAPI200ResponseTaste](docs/Model/RetrieveRecipeInformationAPI200ResponseTaste.md)
+- [RetrieveRecipeInformationAPI200ResponseTimes](docs/Model/RetrieveRecipeInformationAPI200ResponseTimes.md)
+- [ScoreReadabilityAPI200Response](docs/Model/ScoreReadabilityAPI200Response.md)
+- [ScoreTextAPI200Response](docs/Model/ScoreTextAPI200Response.md)
+- [ScoreTextAPI200ResponseInterestingness](docs/Model/ScoreTextAPI200ResponseInterestingness.md)
+- [ScoreTextAPI200ResponseInterestingnessSubscores](docs/Model/ScoreTextAPI200ResponseInterestingnessSubscores.md)
+- [ScoreTextAPI200ResponseReadability](docs/Model/ScoreTextAPI200ResponseReadability.md)
+- [ScoreTextAPI200ResponseReadabilityMainscores](docs/Model/ScoreTextAPI200ResponseReadabilityMainscores.md)
+- [ScoreTextAPI200ResponseReadabilitySubscores](docs/Model/ScoreTextAPI200ResponseReadabilitySubscores.md)
+- [ScoreTextAPI200ResponseSkimmability](docs/Model/ScoreTextAPI200ResponseSkimmability.md)
+- [ScoreTextAPI200ResponseSkimmabilityMainscores](docs/Model/ScoreTextAPI200ResponseSkimmabilityMainscores.md)
+- [ScoreTextAPI200ResponseSkimmabilitySubscores](docs/Model/ScoreTextAPI200ResponseSkimmabilitySubscores.md)
+- [ScoreTextAPI200ResponseStyle](docs/Model/ScoreTextAPI200ResponseStyle.md)
+- [ScoreTextAPI200ResponseStyleSubscores](docs/Model/ScoreTextAPI200ResponseStyleSubscores.md)
+- [SearchBooksAPI200Response](docs/Model/SearchBooksAPI200Response.md)
+- [SearchBooksAPI200ResponseBooksInnerInner](docs/Model/SearchBooksAPI200ResponseBooksInnerInner.md)
+- [SearchDrinksAPI200Response](docs/Model/SearchDrinksAPI200Response.md)
+- [SearchDrinksAPI200ResponseDrinksInner](docs/Model/SearchDrinksAPI200ResponseDrinksInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerCredits](docs/Model/SearchDrinksAPI200ResponseDrinksInnerCredits.md)
+- [SearchDrinksAPI200ResponseDrinksInnerIngredientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures](docs/Model/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures.md)
+- [SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric](docs/Model/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md)
+- [SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs](docs/Model/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs.md)
+- [SearchDrinksAPI200ResponseDrinksInnerInstructionsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutrition](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutrition.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md)
+- [SearchGifsAPI200Response](docs/Model/SearchGifsAPI200Response.md)
+- [SearchGifsAPI200ResponseImagesInner](docs/Model/SearchGifsAPI200ResponseImagesInner.md)
+- [SearchIconsAPI200Response](docs/Model/SearchIconsAPI200Response.md)
+- [SearchJokesAPI200Response](docs/Model/SearchJokesAPI200Response.md)
+- [SearchJokesAPI200ResponseJokesInner](docs/Model/SearchJokesAPI200ResponseJokesInner.md)
+- [SearchMemesAPI200Response](docs/Model/SearchMemesAPI200Response.md)
+- [SearchMemesAPI200ResponseMemesInner](docs/Model/SearchMemesAPI200ResponseMemesInner.md)
+- [SearchNewsAPI200Response](docs/Model/SearchNewsAPI200Response.md)
+- [SearchNewsAPI200ResponseNewsInner](docs/Model/SearchNewsAPI200ResponseNewsInner.md)
+- [SearchRecipesAPI200Response](docs/Model/SearchRecipesAPI200Response.md)
+- [SearchRecipesAPI200ResponseRecipesInner](docs/Model/SearchRecipesAPI200ResponseRecipesInner.md)
+- [SearchRecipesAPI200ResponseRecipesInnerNutrition](docs/Model/SearchRecipesAPI200ResponseRecipesInnerNutrition.md)
+- [SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner](docs/Model/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md)
+- [SearchRestaurantsAPI200Response](docs/Model/SearchRestaurantsAPI200Response.md)
+- [SearchRestaurantsAPI200ResponseRestaurantsInner](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInner.md)
+- [SearchRestaurantsAPI200ResponseRestaurantsInnerAddress](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.md)
+- [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.md)
+- [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.md)
+- [SearchRoyaltyFreeImagesAPI200Response](docs/Model/SearchRoyaltyFreeImagesAPI200Response.md)
+- [SearchRoyaltyFreeImagesAPI200ResponseImagesInner](docs/Model/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md)
+- [SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense](docs/Model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md)
+- [SearchWebAPI200Response](docs/Model/SearchWebAPI200Response.md)
+- [SearchWebAPI200ResponseResultsInner](docs/Model/SearchWebAPI200ResponseResultsInner.md)
+- [SingularizeWordAPI200Response](docs/Model/SingularizeWordAPI200Response.md)
+- [StemTextAPI200Response](docs/Model/StemTextAPI200Response.md)
+- [StoreKeyValueGETAPI200Response](docs/Model/StoreKeyValueGETAPI200Response.md)
+- [TagPartOfSpeechAPI200Response](docs/Model/TagPartOfSpeechAPI200Response.md)
+- [TopNewsAPI200Response](docs/Model/TopNewsAPI200Response.md)
+- [TopNewsAPI200ResponseTopNewsInner](docs/Model/TopNewsAPI200ResponseTopNewsInner.md)
+- [TopNewsAPI200ResponseTopNewsInnerNewsInner](docs/Model/TopNewsAPI200ResponseTopNewsInnerNewsInner.md)
+- [VectorSearchAPI200Response](docs/Model/VectorSearchAPI200Response.md)
+- [VectorSearchAPI200ResponseVectorsInner](docs/Model/VectorSearchAPI200ResponseVectorsInner.md)
+- [VerifyEmailAddressAPI200Response](docs/Model/VerifyEmailAddressAPI200Response.md)
 
 ## Authorization
 
@@ -277,7 +280,7 @@ mail@apileague.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.6.3`
-    - Package version: `1.6.3`
+- API version: `1.6.4`
+    - Package version: `1.6.4`
     - Generator version: `7.8.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

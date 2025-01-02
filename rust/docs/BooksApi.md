@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find_similar_books**](BooksApi.md#find_similar_books) | **GET** /list-similar-books | Find Similar Books
-[**search_books**](BooksApi.md#search_books) | **GET** /search-books | Search Books
+[**find_similar_books_api**](BooksApi.md#find_similar_books_api) | **GET** /list-similar-books | Find Similar Books API
+[**search_books_api**](BooksApi.md#search_books_api) | **GET** /search-books | Search Books API
 
 
 
-## find_similar_books
+## find_similar_books_api
 
-> models::FindSimilarBooks200Response find_similar_books(id, number)
-Find Similar Books
+> models::FindSimilarBooksApi200Response find_similar_books_api(id, number)
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Parameters
 
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::FindSimilarBooks200Response**](findSimilarBooks_200_response.md)
+[**models::FindSimilarBooksApi200Response**](findSimilarBooksAPI_200_response.md)
 
 ### Authorization
 
@@ -40,12 +40,12 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## search_books
+## search_books_api
 
-> models::SearchBooks200Response search_books(query, earliest_publish_year, latest_publish_year, min_rating, max_rating, genres, authors, isbn, oclc, sort, sort_direction, group_results, offset, number)
-Search Books
+> models::SearchBooksApi200Response search_books_api(query, earliest_publish_year, latest_publish_year, min_rating, max_rating, genres, authors, isbn, oclc, sort, sort_direction, group_results, offset, number)
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Parameters
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SearchBooks200Response**](searchBooks_200_response.md)
+[**models::SearchBooksApi200Response**](searchBooksAPI_200_response.md)
 
 ### Authorization
 

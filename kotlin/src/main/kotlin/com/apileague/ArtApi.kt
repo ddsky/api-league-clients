@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.RandomPoem200Response
+import com.apileague.client.model.RandomPoemAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -46,7 +46,7 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     }
 
     /**
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500). (optional)
@@ -60,8 +60,8 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun imageToAsciiArtByURL(url: kotlin.String, width: kotlin.Int? = null, height: kotlin.Int? = null) : kotlin.String {
-        val localVarResponse = imageToAsciiArtByURLWithHttpInfo(url = url, width = width, height = height)
+    fun imageToAsciiArtByURLAPI(url: kotlin.String, width: kotlin.Int? = null, height: kotlin.Int? = null) : kotlin.String {
+        val localVarResponse = imageToAsciiArtByURLAPIWithHttpInfo(url = url, width = width, height = height)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.String
@@ -79,7 +79,7 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     }
 
     /**
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500). (optional)
@@ -90,8 +90,8 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun imageToAsciiArtByURLWithHttpInfo(url: kotlin.String, width: kotlin.Int?, height: kotlin.Int?) : ApiResponse<kotlin.String?> {
-        val localVariableConfig = imageToAsciiArtByURLRequestConfig(url = url, width = width, height = height)
+    fun imageToAsciiArtByURLAPIWithHttpInfo(url: kotlin.String, width: kotlin.Int?, height: kotlin.Int?) : ApiResponse<kotlin.String?> {
+        val localVariableConfig = imageToAsciiArtByURLAPIRequestConfig(url = url, width = width, height = height)
 
         return request<Unit, kotlin.String>(
             localVariableConfig
@@ -99,14 +99,14 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     }
 
     /**
-     * To obtain the request config of the operation imageToAsciiArtByURL
+     * To obtain the request config of the operation imageToAsciiArtByURLAPI
      *
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500). (optional)
      * @param height The maximum height of the image (default 400, max. 500). (optional)
      * @return RequestConfig
      */
-    fun imageToAsciiArtByURLRequestConfig(url: kotlin.String, width: kotlin.Int?, height: kotlin.Int?) : RequestConfig<Unit> {
+    fun imageToAsciiArtByURLAPIRequestConfig(url: kotlin.String, width: kotlin.Int?, height: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -131,11 +131,11 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     }
 
     /**
-     * Random Poem
+     * Random Poem API
      * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
      * @param minLines The minimum number of lines of the poem. (optional)
      * @param maxLines The maximum number of lines of the poem. (optional)
-     * @return RandomPoem200Response
+     * @return RandomPoemAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -144,11 +144,11 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun randomPoem(minLines: kotlin.Int? = null, maxLines: kotlin.Int? = null) : RandomPoem200Response {
-        val localVarResponse = randomPoemWithHttpInfo(minLines = minLines, maxLines = maxLines)
+    fun randomPoemAPI(minLines: kotlin.Int? = null, maxLines: kotlin.Int? = null) : RandomPoemAPI200Response {
+        val localVarResponse = randomPoemAPIWithHttpInfo(minLines = minLines, maxLines = maxLines)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomPoem200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RandomPoemAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -163,32 +163,32 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     }
 
     /**
-     * Random Poem
+     * Random Poem API
      * Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
      * @param minLines The minimum number of lines of the poem. (optional)
      * @param maxLines The maximum number of lines of the poem. (optional)
-     * @return ApiResponse<RandomPoem200Response?>
+     * @return ApiResponse<RandomPoemAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun randomPoemWithHttpInfo(minLines: kotlin.Int?, maxLines: kotlin.Int?) : ApiResponse<RandomPoem200Response?> {
-        val localVariableConfig = randomPoemRequestConfig(minLines = minLines, maxLines = maxLines)
+    fun randomPoemAPIWithHttpInfo(minLines: kotlin.Int?, maxLines: kotlin.Int?) : ApiResponse<RandomPoemAPI200Response?> {
+        val localVariableConfig = randomPoemAPIRequestConfig(minLines = minLines, maxLines = maxLines)
 
-        return request<Unit, RandomPoem200Response>(
+        return request<Unit, RandomPoemAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation randomPoem
+     * To obtain the request config of the operation randomPoemAPI
      *
      * @param minLines The minimum number of lines of the poem. (optional)
      * @param maxLines The maximum number of lines of the poem. (optional)
      * @return RequestConfig
      */
-    fun randomPoemRequestConfig(minLines: kotlin.Int?, maxLines: kotlin.Int?) : RequestConfig<Unit> {
+    fun randomPoemAPIRequestConfig(minLines: kotlin.Int?, maxLines: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

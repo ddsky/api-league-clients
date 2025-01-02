@@ -19,9 +19,10 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.DetectMainImageColor200ResponseInner
-import com.apileague.client.model.SearchIcons200Response
-import com.apileague.client.model.SearchRoyaltyFreeImages200Response
+import com.apileague.client.model.DetectMainImageColorAPI200ResponseInner
+import com.apileague.client.model.SearchIconsAPI200Response
+import com.apileague.client.model.SearchRoyaltyFreeImagesAPI200Response
+import com.apileague.client.model.VectorSearchAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -48,10 +49,10 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
      * @param url The url of the image for which the colors should be detected.
-     * @return kotlin.collections.List<DetectMainImageColor200ResponseInner>
+     * @return kotlin.collections.List<DetectMainImageColorAPI200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -60,11 +61,11 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun detectMainImageColor(url: kotlin.String) : kotlin.collections.List<DetectMainImageColor200ResponseInner> {
-        val localVarResponse = detectMainImageColorWithHttpInfo(url = url)
+    fun detectMainImageColorAPI(url: kotlin.String) : kotlin.collections.List<DetectMainImageColorAPI200ResponseInner> {
+        val localVarResponse = detectMainImageColorAPIWithHttpInfo(url = url)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<DetectMainImageColor200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<DetectMainImageColorAPI200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -79,30 +80,30 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
      * @param url The url of the image for which the colors should be detected.
-     * @return ApiResponse<kotlin.collections.List<DetectMainImageColor200ResponseInner>?>
+     * @return ApiResponse<kotlin.collections.List<DetectMainImageColorAPI200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun detectMainImageColorWithHttpInfo(url: kotlin.String) : ApiResponse<kotlin.collections.List<DetectMainImageColor200ResponseInner>?> {
-        val localVariableConfig = detectMainImageColorRequestConfig(url = url)
+    fun detectMainImageColorAPIWithHttpInfo(url: kotlin.String) : ApiResponse<kotlin.collections.List<DetectMainImageColorAPI200ResponseInner>?> {
+        val localVariableConfig = detectMainImageColorAPIRequestConfig(url = url)
 
-        return request<Unit, kotlin.collections.List<DetectMainImageColor200ResponseInner>>(
+        return request<Unit, kotlin.collections.List<DetectMainImageColorAPI200ResponseInner>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation detectMainImageColor
+     * To obtain the request config of the operation detectMainImageColorAPI
      *
      * @param url The url of the image for which the colors should be detected.
      * @return RequestConfig
      */
-    fun detectMainImageColorRequestConfig(url: kotlin.String) : RequestConfig<Unit> {
+    fun detectMainImageColorAPIRequestConfig(url: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -122,7 +123,7 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Rescale Image
+     * Rescale Image API
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
      * @param url The url of the image to be rescaled.
      * @param width The desired width of the rescaled image.
@@ -137,8 +138,8 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun rescaleImage(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : java.io.File {
-        val localVarResponse = rescaleImageWithHttpInfo(url = url, width = width, height = height, crop = crop)
+    fun rescaleImageAPI(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : java.io.File {
+        val localVarResponse = rescaleImageAPIWithHttpInfo(url = url, width = width, height = height, crop = crop)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as java.io.File
@@ -156,7 +157,7 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Rescale Image
+     * Rescale Image API
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
      * @param url The url of the image to be rescaled.
      * @param width The desired width of the rescaled image.
@@ -168,8 +169,8 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun rescaleImageWithHttpInfo(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : ApiResponse<java.io.File?> {
-        val localVariableConfig = rescaleImageRequestConfig(url = url, width = width, height = height, crop = crop)
+    fun rescaleImageAPIWithHttpInfo(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : ApiResponse<java.io.File?> {
+        val localVariableConfig = rescaleImageAPIRequestConfig(url = url, width = width, height = height, crop = crop)
 
         return request<Unit, java.io.File>(
             localVariableConfig
@@ -177,7 +178,7 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * To obtain the request config of the operation rescaleImage
+     * To obtain the request config of the operation rescaleImageAPI
      *
      * @param url The url of the image to be rescaled.
      * @param width The desired width of the rescaled image.
@@ -185,7 +186,7 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      * @return RequestConfig
      */
-    fun rescaleImageRequestConfig(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : RequestConfig<Unit> {
+    fun rescaleImageAPIRequestConfig(url: kotlin.String, width: kotlin.Int, height: kotlin.Int, crop: kotlin.Boolean) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -208,12 +209,12 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Icons
+     * Search Icons API
      * Search through millions of icons to match any topic you want.
      * @param query The search query.
      * @param onlyPublicDomain If true, only public domain icons will be returned. (optional)
      * @param number The number of icons to return in range [1,100] (optional)
-     * @return SearchIcons200Response
+     * @return SearchIconsAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -222,11 +223,11 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchIcons(query: kotlin.String, onlyPublicDomain: kotlin.Boolean? = null, number: kotlin.Int? = null) : SearchIcons200Response {
-        val localVarResponse = searchIconsWithHttpInfo(query = query, onlyPublicDomain = onlyPublicDomain, number = number)
+    fun searchIconsAPI(query: kotlin.String, onlyPublicDomain: kotlin.Boolean? = null, number: kotlin.Int? = null) : SearchIconsAPI200Response {
+        val localVarResponse = searchIconsAPIWithHttpInfo(query = query, onlyPublicDomain = onlyPublicDomain, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchIcons200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchIconsAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -241,34 +242,34 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Icons
+     * Search Icons API
      * Search through millions of icons to match any topic you want.
      * @param query The search query.
      * @param onlyPublicDomain If true, only public domain icons will be returned. (optional)
      * @param number The number of icons to return in range [1,100] (optional)
-     * @return ApiResponse<SearchIcons200Response?>
+     * @return ApiResponse<SearchIconsAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchIconsWithHttpInfo(query: kotlin.String, onlyPublicDomain: kotlin.Boolean?, number: kotlin.Int?) : ApiResponse<SearchIcons200Response?> {
-        val localVariableConfig = searchIconsRequestConfig(query = query, onlyPublicDomain = onlyPublicDomain, number = number)
+    fun searchIconsAPIWithHttpInfo(query: kotlin.String, onlyPublicDomain: kotlin.Boolean?, number: kotlin.Int?) : ApiResponse<SearchIconsAPI200Response?> {
+        val localVariableConfig = searchIconsAPIRequestConfig(query = query, onlyPublicDomain = onlyPublicDomain, number = number)
 
-        return request<Unit, SearchIcons200Response>(
+        return request<Unit, SearchIconsAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchIcons
+     * To obtain the request config of the operation searchIconsAPI
      *
      * @param query The search query.
      * @param onlyPublicDomain If true, only public domain icons will be returned. (optional)
      * @param number The number of icons to return in range [1,100] (optional)
      * @return RequestConfig
      */
-    fun searchIconsRequestConfig(query: kotlin.String, onlyPublicDomain: kotlin.Boolean?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchIconsAPIRequestConfig(query: kotlin.String, onlyPublicDomain: kotlin.Boolean?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -294,11 +295,11 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * @param query The search query.
      * @param number The number of images to return in range [1,100] (optional)
-     * @return SearchRoyaltyFreeImages200Response
+     * @return SearchRoyaltyFreeImagesAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -307,11 +308,11 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchRoyaltyFreeImages(query: kotlin.String, number: kotlin.Int? = null) : SearchRoyaltyFreeImages200Response {
-        val localVarResponse = searchRoyaltyFreeImagesWithHttpInfo(query = query, number = number)
+    fun searchRoyaltyFreeImagesAPI(query: kotlin.String, number: kotlin.Int? = null) : SearchRoyaltyFreeImagesAPI200Response {
+        val localVarResponse = searchRoyaltyFreeImagesAPIWithHttpInfo(query = query, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRoyaltyFreeImages200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchRoyaltyFreeImagesAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -326,32 +327,32 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
      * @param query The search query.
      * @param number The number of images to return in range [1,100] (optional)
-     * @return ApiResponse<SearchRoyaltyFreeImages200Response?>
+     * @return ApiResponse<SearchRoyaltyFreeImagesAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchRoyaltyFreeImagesWithHttpInfo(query: kotlin.String, number: kotlin.Int?) : ApiResponse<SearchRoyaltyFreeImages200Response?> {
-        val localVariableConfig = searchRoyaltyFreeImagesRequestConfig(query = query, number = number)
+    fun searchRoyaltyFreeImagesAPIWithHttpInfo(query: kotlin.String, number: kotlin.Int?) : ApiResponse<SearchRoyaltyFreeImagesAPI200Response?> {
+        val localVariableConfig = searchRoyaltyFreeImagesAPIRequestConfig(query = query, number = number)
 
-        return request<Unit, SearchRoyaltyFreeImages200Response>(
+        return request<Unit, SearchRoyaltyFreeImagesAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchRoyaltyFreeImages
+     * To obtain the request config of the operation searchRoyaltyFreeImagesAPI
      *
      * @param query The search query.
      * @param number The number of images to return in range [1,100] (optional)
      * @return RequestConfig
      */
-    fun searchRoyaltyFreeImagesRequestConfig(query: kotlin.String, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchRoyaltyFreeImagesAPIRequestConfig(query: kotlin.String, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -366,6 +367,92 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/search-images",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Vector Search API
+     * Search through over 700,000 free to use vector icons. The license is either \&quot;PUBLIC_DOMAIN\&quot; or \&quot;ATTRIBUTION\&quot;. If it is \&quot;ATTRIBUTION\&quot; just attribute the author somewhere in your project.
+     * @param query The search query.
+     * @param offset The number of vectors to skip, between 0 and 1000 (optional)
+     * @param number The number of vectors to return in range [1,10] (optional)
+     * @return VectorSearchAPI200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun vectorSearchAPI(query: kotlin.String, offset: kotlin.Int? = null, number: kotlin.Int? = null) : VectorSearchAPI200Response {
+        val localVarResponse = vectorSearchAPIWithHttpInfo(query = query, offset = offset, number = number)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as VectorSearchAPI200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Vector Search API
+     * Search through over 700,000 free to use vector icons. The license is either \&quot;PUBLIC_DOMAIN\&quot; or \&quot;ATTRIBUTION\&quot;. If it is \&quot;ATTRIBUTION\&quot; just attribute the author somewhere in your project.
+     * @param query The search query.
+     * @param offset The number of vectors to skip, between 0 and 1000 (optional)
+     * @param number The number of vectors to return in range [1,10] (optional)
+     * @return ApiResponse<VectorSearchAPI200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun vectorSearchAPIWithHttpInfo(query: kotlin.String, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<VectorSearchAPI200Response?> {
+        val localVariableConfig = vectorSearchAPIRequestConfig(query = query, offset = offset, number = number)
+
+        return request<Unit, VectorSearchAPI200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation vectorSearchAPI
+     *
+     * @param query The search query.
+     * @param offset The number of vectors to skip, between 0 and 1000 (optional)
+     * @param number The number of vectors to return in range [1,10] (optional)
+     * @return RequestConfig
+     */
+    fun vectorSearchAPIRequestConfig(query: kotlin.String, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("query", listOf(query.toString()))
+                if (offset != null) {
+                    put("offset", listOf(offset.toString()))
+                }
+                if (number != null) {
+                    put("number", listOf(number.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/search-vectors",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

@@ -19,28 +19,28 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.StorageApi
-import com.apileague.client.model.ReadKeyValueFromStore200Response
-import com.apileague.client.model.StoreKeyValueGET200Response
+import com.apileague.client.model.ReadKeyValueFromStoreAPI200Response
+import com.apileague.client.model.StoreKeyValueGETAPI200Response
 
 class StorageApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of StorageApi
         //val apiInstance = StorageApi()
 
-        // to test readKeyValueFromStore
-        should("test readKeyValueFromStore") {
-            // uncomment below to test readKeyValueFromStore
+        // to test readKeyValueFromStoreAPI
+        should("test readKeyValueFromStoreAPI") {
+            // uncomment below to test readKeyValueFromStoreAPI
             //val key : kotlin.String = visitors24h // kotlin.String | The key for which the value is stored (max length 255 characters).
-            //val result : ReadKeyValueFromStore200Response = apiInstance.readKeyValueFromStore(key)
+            //val result : ReadKeyValueFromStoreAPI200Response = apiInstance.readKeyValueFromStoreAPI(key)
             //result shouldBe ("TODO")
         }
 
-        // to test storeKeyValueGET
-        should("test storeKeyValueGET") {
-            // uncomment below to test storeKeyValueGET
+        // to test storeKeyValueGETAPI
+        should("test storeKeyValueGETAPI") {
+            // uncomment below to test storeKeyValueGETAPI
             //val key : kotlin.String = visitors24h // kotlin.String | The key for which the value is stored (max length 255 characters).
             //val `value` : kotlin.String = 23578 visitors // kotlin.String | The value that is supposed to be stored (max length 10,000 characters).
-            //val result : StoreKeyValueGET200Response = apiInstance.storeKeyValueGET(key, `value`)
+            //val result : StoreKeyValueGETAPI200Response = apiInstance.storeKeyValueGETAPI(key, `value`)
             //result shouldBe ("TODO")
         }
 

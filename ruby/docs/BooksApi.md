@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**find_similar_books**](BooksApi.md#find_similar_books) | **GET** /list-similar-books | Find Similar Books |
-| [**search_books**](BooksApi.md#search_books) | **GET** /search-books | Search Books |
+| [**find_similar_books_api**](BooksApi.md#find_similar_books_api) | **GET** /list-similar-books | Find Similar Books API |
+| [**search_books_api**](BooksApi.md#search_books_api) | **GET** /search-books | Search Books API |
 
 
-## find_similar_books
+## find_similar_books_api
 
-> <FindSimilarBooks200Response> find_similar_books(id, opts)
+> <FindSimilarBooksAPI200Response> find_similar_books_api(id, opts)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Examples
 
@@ -41,29 +41,29 @@ opts = {
 }
 
 begin
-  # Find Similar Books
-  result = api_instance.find_similar_books(id, opts)
+  # Find Similar Books API
+  result = api_instance.find_similar_books_api(id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling BooksApi->find_similar_books: #{e}"
+  puts "Error when calling BooksApi->find_similar_books_api: #{e}"
 end
 ```
 
-#### Using the find_similar_books_with_http_info variant
+#### Using the find_similar_books_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FindSimilarBooks200Response>, Integer, Hash)> find_similar_books_with_http_info(id, opts)
+> <Array(<FindSimilarBooksAPI200Response>, Integer, Hash)> find_similar_books_api_with_http_info(id, opts)
 
 ```ruby
 begin
-  # Find Similar Books
-  data, status_code, headers = api_instance.find_similar_books_with_http_info(id, opts)
+  # Find Similar Books API
+  data, status_code, headers = api_instance.find_similar_books_api_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <FindSimilarBooks200Response>
+  p data # => <FindSimilarBooksAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling BooksApi->find_similar_books_with_http_info: #{e}"
+  puts "Error when calling BooksApi->find_similar_books_api_with_http_info: #{e}"
 end
 ```
 
@@ -76,7 +76,7 @@ end
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -88,13 +88,13 @@ end
 - **Accept**: application/json
 
 
-## search_books
+## search_books_api
 
-> <SearchBooks200Response> search_books(opts)
+> <SearchBooksAPI200Response> search_books_api(opts)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Examples
 
@@ -133,29 +133,29 @@ opts = {
 }
 
 begin
-  # Search Books
-  result = api_instance.search_books(opts)
+  # Search Books API
+  result = api_instance.search_books_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling BooksApi->search_books: #{e}"
+  puts "Error when calling BooksApi->search_books_api: #{e}"
 end
 ```
 
-#### Using the search_books_with_http_info variant
+#### Using the search_books_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchBooks200Response>, Integer, Hash)> search_books_with_http_info(opts)
+> <Array(<SearchBooksAPI200Response>, Integer, Hash)> search_books_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search Books
-  data, status_code, headers = api_instance.search_books_with_http_info(opts)
+  # Search Books API
+  data, status_code, headers = api_instance.search_books_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchBooks200Response>
+  p data # => <SearchBooksAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling BooksApi->search_books_with_http_info: #{e}"
+  puts "Error when calling BooksApi->search_books_api_with_http_info: #{e}"
 end
 ```
 
@@ -180,7 +180,7 @@ end
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

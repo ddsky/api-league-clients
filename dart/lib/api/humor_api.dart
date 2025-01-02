@@ -16,12 +16,12 @@ class HumorApi {
 
   final ApiClient apiClient;
 
-  /// Generate Nonsense Word
+  /// Generate Nonsense Word API
   ///
   /// Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> generateNonsenseWordWithHttpInfo() async {
+  Future<Response> generateNonsenseWordAPIWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/generate-nonsense-word';
 
@@ -46,11 +46,11 @@ class HumorApi {
     );
   }
 
-  /// Generate Nonsense Word
+  /// Generate Nonsense Word API
   ///
   /// Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-  Future<GenerateNonsenseWord200Response?> generateNonsenseWord() async {
-    final response = await generateNonsenseWordWithHttpInfo();
+  Future<GenerateNonsenseWordAPI200Response?> generateNonsenseWordAPI() async {
+    final response = await generateNonsenseWordAPIWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -58,13 +58,13 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GenerateNonsenseWord200Response',) as GenerateNonsenseWord200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GenerateNonsenseWordAPI200Response',) as GenerateNonsenseWordAPI200Response;
     
     }
     return null;
   }
 
-  /// Random Joke
+  /// Random Joke API
   ///
   /// This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
   ///
@@ -83,7 +83,7 @@ class HumorApi {
   ///
   /// * [int] maxLength:
   ///   The maximum length of the joke in letters.
-  Future<Response> randomJokeWithHttpInfo({ String? includeTags, String? excludeTags, double? minRating, int? maxLength, }) async {
+  Future<Response> randomJokeAPIWithHttpInfo({ String? includeTags, String? excludeTags, double? minRating, int? maxLength, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-joke';
 
@@ -121,7 +121,7 @@ class HumorApi {
     );
   }
 
-  /// Random Joke
+  /// Random Joke API
   ///
   /// This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
   ///
@@ -138,8 +138,8 @@ class HumorApi {
   ///
   /// * [int] maxLength:
   ///   The maximum length of the joke in letters.
-  Future<SearchJokes200ResponseJokesInner?> randomJoke({ String? includeTags, String? excludeTags, double? minRating, int? maxLength, }) async {
-    final response = await randomJokeWithHttpInfo( includeTags: includeTags, excludeTags: excludeTags, minRating: minRating, maxLength: maxLength, );
+  Future<SearchJokesAPI200ResponseJokesInner?> randomJokeAPI({ String? includeTags, String? excludeTags, double? minRating, int? maxLength, }) async {
+    final response = await randomJokeAPIWithHttpInfo( includeTags: includeTags, excludeTags: excludeTags, minRating: minRating, maxLength: maxLength, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -147,15 +147,15 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchJokes200ResponseJokesInner',) as SearchJokes200ResponseJokesInner;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchJokesAPI200ResponseJokesInner',) as SearchJokesAPI200ResponseJokesInner;
     
     }
     return null;
   }
 
-  /// Random Meme
+  /// Random Meme API
   ///
-  /// Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+  /// Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -175,7 +175,7 @@ class HumorApi {
   ///
   /// * [int] maxAgeDays:
   ///   The maximum age of the meme in days.
-  Future<Response> randomMemeWithHttpInfo({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, }) async {
+  Future<Response> randomMemeAPIWithHttpInfo({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-random-meme';
 
@@ -216,9 +216,9 @@ class HumorApi {
     );
   }
 
-  /// Random Meme
+  /// Random Meme API
   ///
-  /// Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+  /// Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
   ///
   /// Parameters:
   ///
@@ -236,8 +236,8 @@ class HumorApi {
   ///
   /// * [int] maxAgeDays:
   ///   The maximum age of the meme in days.
-  Future<RandomMeme200Response?> randomMeme({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, }) async {
-    final response = await randomMemeWithHttpInfo( keywords: keywords, keywordsInImage: keywordsInImage, mediaType: mediaType, minRating: minRating, maxAgeDays: maxAgeDays, );
+  Future<RandomMemeAPI200Response?> randomMemeAPI({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, }) async {
+    final response = await randomMemeAPIWithHttpInfo( keywords: keywords, keywordsInImage: keywordsInImage, mediaType: mediaType, minRating: minRating, maxAgeDays: maxAgeDays, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -245,13 +245,13 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomMeme200Response',) as RandomMeme200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomMemeAPI200Response',) as RandomMemeAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Gifs
+  /// Search Gifs API
   ///
   /// Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
   ///
@@ -264,7 +264,7 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of gifs to return in range [1,10]
-  Future<Response> searchGifsWithHttpInfo(String query, { int? number, }) async {
+  Future<Response> searchGifsAPIWithHttpInfo(String query, { int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-gifs';
 
@@ -294,7 +294,7 @@ class HumorApi {
     );
   }
 
-  /// Search Gifs
+  /// Search Gifs API
   ///
   /// Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
   ///
@@ -305,8 +305,8 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of gifs to return in range [1,10]
-  Future<SearchGifs200Response?> searchGifs(String query, { int? number, }) async {
-    final response = await searchGifsWithHttpInfo(query,  number: number, );
+  Future<SearchGifsAPI200Response?> searchGifsAPI(String query, { int? number, }) async {
+    final response = await searchGifsAPIWithHttpInfo(query,  number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -314,13 +314,13 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchGifs200Response',) as SearchGifs200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchGifsAPI200Response',) as SearchGifsAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Jokes
+  /// Search Jokes API
   ///
   /// With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
   ///
@@ -348,7 +348,7 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of jokes, between 1 and 10.
-  Future<Response> searchJokesWithHttpInfo({ String? keywords, String? includeTags, String? excludeTags, double? minRating, double? maxLength, int? offset, int? number, }) async {
+  Future<Response> searchJokesAPIWithHttpInfo({ String? keywords, String? includeTags, String? excludeTags, double? minRating, double? maxLength, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-jokes';
 
@@ -395,7 +395,7 @@ class HumorApi {
     );
   }
 
-  /// Search Jokes
+  /// Search Jokes API
   ///
   /// With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
   ///
@@ -421,8 +421,8 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of jokes, between 1 and 10.
-  Future<SearchJokes200Response?> searchJokes({ String? keywords, String? includeTags, String? excludeTags, double? minRating, double? maxLength, int? offset, int? number, }) async {
-    final response = await searchJokesWithHttpInfo( keywords: keywords, includeTags: includeTags, excludeTags: excludeTags, minRating: minRating, maxLength: maxLength, offset: offset, number: number, );
+  Future<SearchJokesAPI200Response?> searchJokesAPI({ String? keywords, String? includeTags, String? excludeTags, double? minRating, double? maxLength, int? offset, int? number, }) async {
+    final response = await searchJokesAPIWithHttpInfo( keywords: keywords, includeTags: includeTags, excludeTags: excludeTags, minRating: minRating, maxLength: maxLength, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -430,15 +430,15 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchJokes200Response',) as SearchJokes200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchJokesAPI200Response',) as SearchJokesAPI200Response;
     
     }
     return null;
   }
 
-  /// Search Memes
+  /// Search Memes API
   ///
-  /// With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+  /// Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -464,7 +464,7 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of memes, between 1 and 10.
-  Future<Response> searchMemesWithHttpInfo({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
+  Future<Response> searchMemesAPIWithHttpInfo({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-memes';
 
@@ -511,9 +511,9 @@ class HumorApi {
     );
   }
 
-  /// Search Memes
+  /// Search Memes API
   ///
-  /// With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+  /// Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
   ///
   /// Parameters:
   ///
@@ -537,8 +537,8 @@ class HumorApi {
   ///
   /// * [int] number:
   ///   The number of memes, between 1 and 10.
-  Future<SearchMemes200Response?> searchMemes({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
-    final response = await searchMemesWithHttpInfo( keywords: keywords, keywordsInImage: keywordsInImage, mediaType: mediaType, minRating: minRating, maxAgeDays: maxAgeDays, offset: offset, number: number, );
+  Future<SearchMemesAPI200Response?> searchMemesAPI({ String? keywords, bool? keywordsInImage, String? mediaType, double? minRating, int? maxAgeDays, int? offset, int? number, }) async {
+    final response = await searchMemesAPIWithHttpInfo( keywords: keywords, keywordsInImage: keywordsInImage, mediaType: mediaType, minRating: minRating, maxAgeDays: maxAgeDays, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -546,7 +546,7 @@ class HumorApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchMemes200Response',) as SearchMemes200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchMemesAPI200Response',) as SearchMemesAPI200Response;
     
     }
     return null;

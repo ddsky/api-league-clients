@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
+| [**convertUnitsAPI**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API |
 
 
-<a id="convertUnits"></a>
-# **convertUnits**
-> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+<a id="convertUnitsAPI"></a>
+# **convertUnitsAPI**
+> ConvertUnitsAPI200Response convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -27,13 +27,13 @@ val sourceUnit : kotlin.String = kg // kotlin.String | The source unit.
 val targetUnit : kotlin.String = lb // kotlin.String | The unit to which should be converted.
 val foodName : kotlin.String = flour // kotlin.String | An optional food name. For converting foods the food is relevant as they have different densities.
 try {
-    val result : ConvertUnits200Response = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+    val result : ConvertUnitsAPI200Response = apiInstance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MathApi#convertUnits")
+    println("4xx response calling MathApi#convertUnitsAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MathApi#convertUnits")
+    println("5xx response calling MathApi#convertUnitsAPI")
     e.printStackTrace()
 }
 ```
@@ -48,7 +48,7 @@ try {
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExtractNews**](NewsAPI.md#ExtractNews) | **Get** /extract-news | Extract News
-[**SearchNews**](NewsAPI.md#SearchNews) | **Get** /search-news | Search News
-[**TopNews**](NewsAPI.md#TopNews) | **Get** /retrieve-top-news | Top News
+[**ExtractNewsAPI**](NewsAPI.md#ExtractNewsAPI) | **Get** /extract-news | Extract News API
+[**SearchNewsAPI**](NewsAPI.md#SearchNewsAPI) | **Get** /search-news | Search News API
+[**TopNewsAPI**](NewsAPI.md#TopNewsAPI) | **Get** /retrieve-top-news | Top News API
 
 
 
-## ExtractNews
+## ExtractNewsAPI
 
-> ExtractNews200Response ExtractNews(ctx).Url(url).Analyze(analyze).Execute()
+> ExtractNewsAPI200Response ExtractNewsAPI(ctx).Url(url).Analyze(analyze).Execute()
 
-Extract News
+Extract News API
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NewsAPI.ExtractNews(context.Background()).Url(url).Analyze(analyze).Execute()
+	resp, r, err := apiClient.NewsAPI.ExtractNewsAPI(context.Background()).Url(url).Analyze(analyze).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.ExtractNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.ExtractNewsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExtractNews`: ExtractNews200Response
-	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.ExtractNews`: %v\n", resp)
+	// response from `ExtractNewsAPI`: ExtractNewsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.ExtractNewsAPI`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExtractNewsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiExtractNewsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractNews200Response**](ExtractNews200Response.md)
+[**ExtractNewsAPI200Response**](ExtractNewsAPI200Response.md)
 
 ### Authorization
 
@@ -78,11 +78,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchNews
+## SearchNewsAPI
 
-> SearchNews200Response SearchNews(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+> SearchNewsAPI200Response SearchNewsAPI(ctx).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 
-Search News
+Search News API
 
 
 
@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-	text := "tesla" // string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford (optional)
+	text := "tesla" // string | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. (optional)
 	sourceCountries := "us,uk" // string | A comma-separated list of ISO 3166 country codes from which the news should originate. (optional)
 	language := "en" // string | The ISO 6391 language code of the news. (optional)
 	minSentiment := float64(-0.8) // float64 | The minimal sentiment of the news in range [-1,1]. (optional)
@@ -118,13 +118,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NewsAPI.SearchNews(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
+	resp, r, err := apiClient.NewsAPI.SearchNewsAPI(context.Background()).Text(text).SourceCountries(sourceCountries).Language(language).MinSentiment(minSentiment).MaxSentiment(maxSentiment).EarliestPublishDate(earliestPublishDate).LatestPublishDate(latestPublishDate).NewsSources(newsSources).Authors(authors).Categories(categories).Entities(entities).LocationFilter(locationFilter).Sort(sort).SortDirection(sortDirection).Offset(offset).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.SearchNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.SearchNewsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchNews`: SearchNews200Response
-	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.SearchNews`: %v\n", resp)
+	// response from `SearchNewsAPI`: SearchNewsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.SearchNewsAPI`: %v\n", resp)
 }
 ```
 
@@ -134,12 +134,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchNewsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchNewsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **string** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | 
+ **text** | **string** | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | 
  **sourceCountries** | **string** | A comma-separated list of ISO 3166 country codes from which the news should originate. | 
  **language** | **string** | The ISO 6391 language code of the news. | 
  **minSentiment** | **float64** | The minimal sentiment of the news in range [-1,1]. | 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchNews200Response**](SearchNews200Response.md)
+[**SearchNewsAPI200Response**](SearchNewsAPI200Response.md)
 
 ### Authorization
 
@@ -174,11 +174,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TopNews
+## TopNewsAPI
 
-> TopNews200Response TopNews(ctx).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
+> TopNewsAPI200Response TopNewsAPI(ctx).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
 
-Top News
+Top News API
 
 
 
@@ -202,13 +202,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NewsAPI.TopNews(context.Background()).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
+	resp, r, err := apiClient.NewsAPI.TopNewsAPI(context.Background()).SourceCountry(sourceCountry).Language(language).Date(date).HeadlinesOnly(headlinesOnly).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.TopNews``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `NewsAPI.TopNewsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TopNews`: TopNews200Response
-	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.TopNews`: %v\n", resp)
+	// response from `TopNewsAPI`: TopNewsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `NewsAPI.TopNewsAPI`: %v\n", resp)
 }
 ```
 
@@ -218,7 +218,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTopNewsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTopNewsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TopNews200Response**](TopNews200Response.md)
+[**TopNewsAPI200Response**](TopNewsAPI200Response.md)
 
 ### Authorization
 

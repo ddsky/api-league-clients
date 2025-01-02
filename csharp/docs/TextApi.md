@@ -4,25 +4,25 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CorrectSpelling**](TextApi.md#correctspelling) | **GET** /correct-spelling | Correct Spelling |
-| [**DetectGenderByName**](TextApi.md#detectgenderbyname) | **GET** /detect-gender | Detect Gender by Name |
-| [**DetectLanguage**](TextApi.md#detectlanguage) | **GET** /detect-language | Detect Language |
-| [**DetectSentiment**](TextApi.md#detectsentiment) | **GET** /detect-sentiment | Detect Sentiment |
-| [**ExtractDates**](TextApi.md#extractdates) | **GET** /extract-dates | Extract Dates |
-| [**ExtractEntities**](TextApi.md#extractentities) | **GET** /extract-entities | Extract Entities |
-| [**ListWordSynonyms**](TextApi.md#listwordsynonyms) | **GET** /list-synonyms | List Word Synonyms |
-| [**PluralizeWord**](TextApi.md#pluralizeword) | **GET** /pluralize-word | Pluralize Word |
-| [**ScoreReadability**](TextApi.md#scorereadability) | **GET** /score-readability | Score Readability |
-| [**ScoreText**](TextApi.md#scoretext) | **GET** /score-text | Score Text |
-| [**SingularizeWord**](TextApi.md#singularizeword) | **GET** /singularize-word | Singularize Word |
-| [**StemText**](TextApi.md#stemtext) | **GET** /stem-text | Stem Text |
-| [**TagPartOfSpeech**](TextApi.md#tagpartofspeech) | **GET** /tag-pos | Tag Part of Speech |
+| [**CorrectSpellingAPI**](TextApi.md#correctspellingapi) | **GET** /correct-spelling | Correct Spelling API |
+| [**DetectGenderByNameAPI**](TextApi.md#detectgenderbynameapi) | **GET** /detect-gender | Detect Gender by Name API |
+| [**DetectLanguageAPI**](TextApi.md#detectlanguageapi) | **GET** /detect-language | Detect Language API |
+| [**DetectSentimentAPI**](TextApi.md#detectsentimentapi) | **GET** /detect-sentiment | Detect Sentiment API |
+| [**ExtractDatesAPI**](TextApi.md#extractdatesapi) | **GET** /extract-dates | Extract Dates API |
+| [**ExtractEntitiesAPI**](TextApi.md#extractentitiesapi) | **GET** /extract-entities | Extract Entities API |
+| [**ListWordSynonymsAPI**](TextApi.md#listwordsynonymsapi) | **GET** /list-synonyms | List Word Synonyms API |
+| [**PluralizeWordAPI**](TextApi.md#pluralizewordapi) | **GET** /pluralize-word | Pluralize Word API |
+| [**ScoreReadabilityAPI**](TextApi.md#scorereadabilityapi) | **GET** /score-readability | Score Readability API |
+| [**ScoreTextAPI**](TextApi.md#scoretextapi) | **GET** /score-text | Score Text API |
+| [**SingularizeWordAPI**](TextApi.md#singularizewordapi) | **GET** /singularize-word | Singularize Word API |
+| [**StemTextAPI**](TextApi.md#stemtextapi) | **GET** /stem-text | Stem Text API |
+| [**TagPartOfSpeechAPI**](TextApi.md#tagpartofspeechapi) | **GET** /tag-pos | Tag Part of Speech API |
 
-<a id="correctspelling"></a>
-# **CorrectSpelling**
-> CorrectSpelling200Response CorrectSpelling (string text, string language)
+<a id="correctspellingapi"></a>
+# **CorrectSpellingAPI**
+> CorrectSpellingAPI200Response CorrectSpellingAPI (string text, string language)
 
-Correct Spelling
+Correct Spelling API
 
 The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
 
@@ -36,7 +36,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class CorrectSpellingExample
+    public class CorrectSpellingAPIExample
     {
         public static void Main()
         {
@@ -57,13 +57,13 @@ namespace Example
 
             try
             {
-                // Correct Spelling
-                CorrectSpelling200Response result = apiInstance.CorrectSpelling(text, language);
+                // Correct Spelling API
+                CorrectSpellingAPI200Response result = apiInstance.CorrectSpellingAPI(text, language);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.CorrectSpelling: " + e.Message);
+                Debug.Print("Exception when calling TextApi.CorrectSpellingAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -72,21 +72,21 @@ namespace Example
 }
 ```
 
-#### Using the CorrectSpellingWithHttpInfo variant
+#### Using the CorrectSpellingAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Correct Spelling
-    ApiResponse<CorrectSpelling200Response> response = apiInstance.CorrectSpellingWithHttpInfo(text, language);
+    // Correct Spelling API
+    ApiResponse<CorrectSpellingAPI200Response> response = apiInstance.CorrectSpellingAPIWithHttpInfo(text, language);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.CorrectSpellingWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.CorrectSpellingAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -101,7 +101,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**CorrectSpelling200Response**](CorrectSpelling200Response.md)
+[**CorrectSpellingAPI200Response**](CorrectSpellingAPI200Response.md)
 
 ### Authorization
 
@@ -126,11 +126,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="detectgenderbyname"></a>
-# **DetectGenderByName**
-> DetectGenderByName200Response DetectGenderByName (string name)
+<a id="detectgenderbynameapi"></a>
+# **DetectGenderByNameAPI**
+> DetectGenderByNameAPI200Response DetectGenderByNameAPI (string name)
 
-Detect Gender by Name
+Detect Gender by Name API
 
 Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
 
@@ -144,7 +144,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class DetectGenderByNameExample
+    public class DetectGenderByNameAPIExample
     {
         public static void Main()
         {
@@ -164,13 +164,13 @@ namespace Example
 
             try
             {
-                // Detect Gender by Name
-                DetectGenderByName200Response result = apiInstance.DetectGenderByName(name);
+                // Detect Gender by Name API
+                DetectGenderByNameAPI200Response result = apiInstance.DetectGenderByNameAPI(name);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.DetectGenderByName: " + e.Message);
+                Debug.Print("Exception when calling TextApi.DetectGenderByNameAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -179,21 +179,21 @@ namespace Example
 }
 ```
 
-#### Using the DetectGenderByNameWithHttpInfo variant
+#### Using the DetectGenderByNameAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Detect Gender by Name
-    ApiResponse<DetectGenderByName200Response> response = apiInstance.DetectGenderByNameWithHttpInfo(name);
+    // Detect Gender by Name API
+    ApiResponse<DetectGenderByNameAPI200Response> response = apiInstance.DetectGenderByNameAPIWithHttpInfo(name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.DetectGenderByNameWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.DetectGenderByNameAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -207,7 +207,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**DetectGenderByName200Response**](DetectGenderByName200Response.md)
+[**DetectGenderByNameAPI200Response**](DetectGenderByNameAPI200Response.md)
 
 ### Authorization
 
@@ -232,11 +232,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="detectlanguage"></a>
-# **DetectLanguage**
-> List&lt;DetectLanguage200ResponseInner&gt; DetectLanguage (string text)
+<a id="detectlanguageapi"></a>
+# **DetectLanguageAPI**
+> List&lt;DetectLanguageAPI200ResponseInner&gt; DetectLanguageAPI (string text)
 
-Detect Language
+Detect Language API
 
 Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
 
@@ -250,7 +250,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class DetectLanguageExample
+    public class DetectLanguageAPIExample
     {
         public static void Main()
         {
@@ -270,13 +270,13 @@ namespace Example
 
             try
             {
-                // Detect Language
-                List<DetectLanguage200ResponseInner> result = apiInstance.DetectLanguage(text);
+                // Detect Language API
+                List<DetectLanguageAPI200ResponseInner> result = apiInstance.DetectLanguageAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.DetectLanguage: " + e.Message);
+                Debug.Print("Exception when calling TextApi.DetectLanguageAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -285,21 +285,21 @@ namespace Example
 }
 ```
 
-#### Using the DetectLanguageWithHttpInfo variant
+#### Using the DetectLanguageAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Detect Language
-    ApiResponse<List<DetectLanguage200ResponseInner>> response = apiInstance.DetectLanguageWithHttpInfo(text);
+    // Detect Language API
+    ApiResponse<List<DetectLanguageAPI200ResponseInner>> response = apiInstance.DetectLanguageAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.DetectLanguageWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.DetectLanguageAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -313,7 +313,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;DetectLanguage200ResponseInner&gt;**](DetectLanguage200ResponseInner.md)
+[**List&lt;DetectLanguageAPI200ResponseInner&gt;**](DetectLanguageAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -338,11 +338,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="detectsentiment"></a>
-# **DetectSentiment**
-> DetectSentiment200Response DetectSentiment (string text)
+<a id="detectsentimentapi"></a>
+# **DetectSentimentAPI**
+> DetectSentimentAPI200Response DetectSentimentAPI (string text)
 
-Detect Sentiment
+Detect Sentiment API
 
 Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
 
@@ -356,7 +356,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class DetectSentimentExample
+    public class DetectSentimentAPIExample
     {
         public static void Main()
         {
@@ -376,13 +376,13 @@ namespace Example
 
             try
             {
-                // Detect Sentiment
-                DetectSentiment200Response result = apiInstance.DetectSentiment(text);
+                // Detect Sentiment API
+                DetectSentimentAPI200Response result = apiInstance.DetectSentimentAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.DetectSentiment: " + e.Message);
+                Debug.Print("Exception when calling TextApi.DetectSentimentAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -391,21 +391,21 @@ namespace Example
 }
 ```
 
-#### Using the DetectSentimentWithHttpInfo variant
+#### Using the DetectSentimentAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Detect Sentiment
-    ApiResponse<DetectSentiment200Response> response = apiInstance.DetectSentimentWithHttpInfo(text);
+    // Detect Sentiment API
+    ApiResponse<DetectSentimentAPI200Response> response = apiInstance.DetectSentimentAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.DetectSentimentWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.DetectSentimentAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -419,7 +419,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**DetectSentiment200Response**](DetectSentiment200Response.md)
+[**DetectSentimentAPI200Response**](DetectSentimentAPI200Response.md)
 
 ### Authorization
 
@@ -444,11 +444,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="extractdates"></a>
-# **ExtractDates**
-> ExtractDates200Response ExtractDates (string text)
+<a id="extractdatesapi"></a>
+# **ExtractDatesAPI**
+> ExtractDatesAPI200Response ExtractDatesAPI (string text)
 
-Extract Dates
+Extract Dates API
 
 Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
 
@@ -462,7 +462,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractDatesExample
+    public class ExtractDatesAPIExample
     {
         public static void Main()
         {
@@ -482,13 +482,13 @@ namespace Example
 
             try
             {
-                // Extract Dates
-                ExtractDates200Response result = apiInstance.ExtractDates(text);
+                // Extract Dates API
+                ExtractDatesAPI200Response result = apiInstance.ExtractDatesAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ExtractDates: " + e.Message);
+                Debug.Print("Exception when calling TextApi.ExtractDatesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -497,21 +497,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractDatesWithHttpInfo variant
+#### Using the ExtractDatesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract Dates
-    ApiResponse<ExtractDates200Response> response = apiInstance.ExtractDatesWithHttpInfo(text);
+    // Extract Dates API
+    ApiResponse<ExtractDatesAPI200Response> response = apiInstance.ExtractDatesAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.ExtractDatesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.ExtractDatesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -525,7 +525,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractDates200Response**](ExtractDates200Response.md)
+[**ExtractDatesAPI200Response**](ExtractDatesAPI200Response.md)
 
 ### Authorization
 
@@ -550,11 +550,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="extractentities"></a>
-# **ExtractEntities**
-> ExtractEntities200Response ExtractEntities (string text)
+<a id="extractentitiesapi"></a>
+# **ExtractEntitiesAPI**
+> ExtractEntitiesAPI200Response ExtractEntitiesAPI (string text)
 
-Extract Entities
+Extract Entities API
 
 Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
 
@@ -568,7 +568,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractEntitiesExample
+    public class ExtractEntitiesAPIExample
     {
         public static void Main()
         {
@@ -588,13 +588,13 @@ namespace Example
 
             try
             {
-                // Extract Entities
-                ExtractEntities200Response result = apiInstance.ExtractEntities(text);
+                // Extract Entities API
+                ExtractEntitiesAPI200Response result = apiInstance.ExtractEntitiesAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ExtractEntities: " + e.Message);
+                Debug.Print("Exception when calling TextApi.ExtractEntitiesAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -603,21 +603,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractEntitiesWithHttpInfo variant
+#### Using the ExtractEntitiesAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract Entities
-    ApiResponse<ExtractEntities200Response> response = apiInstance.ExtractEntitiesWithHttpInfo(text);
+    // Extract Entities API
+    ApiResponse<ExtractEntitiesAPI200Response> response = apiInstance.ExtractEntitiesAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.ExtractEntitiesWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.ExtractEntitiesAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -631,7 +631,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractEntities200Response**](ExtractEntities200Response.md)
+[**ExtractEntitiesAPI200Response**](ExtractEntitiesAPI200Response.md)
 
 ### Authorization
 
@@ -656,11 +656,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="listwordsynonyms"></a>
-# **ListWordSynonyms**
-> ListWordSynonyms200Response ListWordSynonyms (string word)
+<a id="listwordsynonymsapi"></a>
+# **ListWordSynonymsAPI**
+> ListWordSynonymsAPI200Response ListWordSynonymsAPI (string word)
 
-List Word Synonyms
+List Word Synonyms API
 
 Return synonyms of a word.
 
@@ -674,7 +674,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ListWordSynonymsExample
+    public class ListWordSynonymsAPIExample
     {
         public static void Main()
         {
@@ -694,13 +694,13 @@ namespace Example
 
             try
             {
-                // List Word Synonyms
-                ListWordSynonyms200Response result = apiInstance.ListWordSynonyms(word);
+                // List Word Synonyms API
+                ListWordSynonymsAPI200Response result = apiInstance.ListWordSynonymsAPI(word);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ListWordSynonyms: " + e.Message);
+                Debug.Print("Exception when calling TextApi.ListWordSynonymsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -709,21 +709,21 @@ namespace Example
 }
 ```
 
-#### Using the ListWordSynonymsWithHttpInfo variant
+#### Using the ListWordSynonymsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // List Word Synonyms
-    ApiResponse<ListWordSynonyms200Response> response = apiInstance.ListWordSynonymsWithHttpInfo(word);
+    // List Word Synonyms API
+    ApiResponse<ListWordSynonymsAPI200Response> response = apiInstance.ListWordSynonymsAPIWithHttpInfo(word);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.ListWordSynonymsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.ListWordSynonymsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -737,7 +737,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ListWordSynonyms200Response**](ListWordSynonyms200Response.md)
+[**ListWordSynonymsAPI200Response**](ListWordSynonymsAPI200Response.md)
 
 ### Authorization
 
@@ -762,11 +762,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="pluralizeword"></a>
-# **PluralizeWord**
-> PluralizeWord200Response PluralizeWord (string word)
+<a id="pluralizewordapi"></a>
+# **PluralizeWordAPI**
+> PluralizeWordAPI200Response PluralizeWordAPI (string word)
 
-Pluralize Word
+Pluralize Word API
 
 Find the plural form of a word.
 
@@ -780,7 +780,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class PluralizeWordExample
+    public class PluralizeWordAPIExample
     {
         public static void Main()
         {
@@ -800,13 +800,13 @@ namespace Example
 
             try
             {
-                // Pluralize Word
-                PluralizeWord200Response result = apiInstance.PluralizeWord(word);
+                // Pluralize Word API
+                PluralizeWordAPI200Response result = apiInstance.PluralizeWordAPI(word);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.PluralizeWord: " + e.Message);
+                Debug.Print("Exception when calling TextApi.PluralizeWordAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -815,21 +815,21 @@ namespace Example
 }
 ```
 
-#### Using the PluralizeWordWithHttpInfo variant
+#### Using the PluralizeWordAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Pluralize Word
-    ApiResponse<PluralizeWord200Response> response = apiInstance.PluralizeWordWithHttpInfo(word);
+    // Pluralize Word API
+    ApiResponse<PluralizeWordAPI200Response> response = apiInstance.PluralizeWordAPIWithHttpInfo(word);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.PluralizeWordWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.PluralizeWordAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -843,7 +843,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**PluralizeWord200Response**](PluralizeWord200Response.md)
+[**PluralizeWordAPI200Response**](PluralizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -868,11 +868,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="scorereadability"></a>
-# **ScoreReadability**
-> ScoreReadability200Response ScoreReadability (string text)
+<a id="scorereadabilityapi"></a>
+# **ScoreReadabilityAPI**
+> ScoreReadabilityAPI200Response ScoreReadabilityAPI (string text)
 
-Score Readability
+Score Readability API
 
 Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
 
@@ -886,7 +886,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ScoreReadabilityExample
+    public class ScoreReadabilityAPIExample
     {
         public static void Main()
         {
@@ -906,13 +906,13 @@ namespace Example
 
             try
             {
-                // Score Readability
-                ScoreReadability200Response result = apiInstance.ScoreReadability(text);
+                // Score Readability API
+                ScoreReadabilityAPI200Response result = apiInstance.ScoreReadabilityAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ScoreReadability: " + e.Message);
+                Debug.Print("Exception when calling TextApi.ScoreReadabilityAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -921,21 +921,21 @@ namespace Example
 }
 ```
 
-#### Using the ScoreReadabilityWithHttpInfo variant
+#### Using the ScoreReadabilityAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Score Readability
-    ApiResponse<ScoreReadability200Response> response = apiInstance.ScoreReadabilityWithHttpInfo(text);
+    // Score Readability API
+    ApiResponse<ScoreReadabilityAPI200Response> response = apiInstance.ScoreReadabilityAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.ScoreReadabilityWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.ScoreReadabilityAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -949,7 +949,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ScoreReadability200Response**](ScoreReadability200Response.md)
+[**ScoreReadabilityAPI200Response**](ScoreReadabilityAPI200Response.md)
 
 ### Authorization
 
@@ -974,11 +974,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="scoretext"></a>
-# **ScoreText**
-> ScoreText200Response ScoreText (string title, string text)
+<a id="scoretextapi"></a>
+# **ScoreTextAPI**
+> ScoreTextAPI200Response ScoreTextAPI (string title, string text)
 
-Score Text
+Score Text API
 
 Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
 
@@ -992,7 +992,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ScoreTextExample
+    public class ScoreTextAPIExample
     {
         public static void Main()
         {
@@ -1013,13 +1013,13 @@ namespace Example
 
             try
             {
-                // Score Text
-                ScoreText200Response result = apiInstance.ScoreText(title, text);
+                // Score Text API
+                ScoreTextAPI200Response result = apiInstance.ScoreTextAPI(title, text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.ScoreText: " + e.Message);
+                Debug.Print("Exception when calling TextApi.ScoreTextAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1028,21 +1028,21 @@ namespace Example
 }
 ```
 
-#### Using the ScoreTextWithHttpInfo variant
+#### Using the ScoreTextAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Score Text
-    ApiResponse<ScoreText200Response> response = apiInstance.ScoreTextWithHttpInfo(title, text);
+    // Score Text API
+    ApiResponse<ScoreTextAPI200Response> response = apiInstance.ScoreTextAPIWithHttpInfo(title, text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.ScoreTextWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.ScoreTextAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1057,7 +1057,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ScoreText200Response**](ScoreText200Response.md)
+[**ScoreTextAPI200Response**](ScoreTextAPI200Response.md)
 
 ### Authorization
 
@@ -1082,11 +1082,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="singularizeword"></a>
-# **SingularizeWord**
-> SingularizeWord200Response SingularizeWord (string word)
+<a id="singularizewordapi"></a>
+# **SingularizeWordAPI**
+> SingularizeWordAPI200Response SingularizeWordAPI (string word)
 
-Singularize Word
+Singularize Word API
 
 Find the singular form of a word.
 
@@ -1100,7 +1100,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SingularizeWordExample
+    public class SingularizeWordAPIExample
     {
         public static void Main()
         {
@@ -1120,13 +1120,13 @@ namespace Example
 
             try
             {
-                // Singularize Word
-                SingularizeWord200Response result = apiInstance.SingularizeWord(word);
+                // Singularize Word API
+                SingularizeWordAPI200Response result = apiInstance.SingularizeWordAPI(word);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.SingularizeWord: " + e.Message);
+                Debug.Print("Exception when calling TextApi.SingularizeWordAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1135,21 +1135,21 @@ namespace Example
 }
 ```
 
-#### Using the SingularizeWordWithHttpInfo variant
+#### Using the SingularizeWordAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Singularize Word
-    ApiResponse<SingularizeWord200Response> response = apiInstance.SingularizeWordWithHttpInfo(word);
+    // Singularize Word API
+    ApiResponse<SingularizeWordAPI200Response> response = apiInstance.SingularizeWordAPIWithHttpInfo(word);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.SingularizeWordWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.SingularizeWordAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1163,7 +1163,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SingularizeWord200Response**](SingularizeWord200Response.md)
+[**SingularizeWordAPI200Response**](SingularizeWordAPI200Response.md)
 
 ### Authorization
 
@@ -1188,11 +1188,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="stemtext"></a>
-# **StemText**
-> StemText200Response StemText (string text)
+<a id="stemtextapi"></a>
+# **StemTextAPI**
+> StemTextAPI200Response StemTextAPI (string text)
 
-Stem Text
+Stem Text API
 
 The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
 
@@ -1206,7 +1206,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class StemTextExample
+    public class StemTextAPIExample
     {
         public static void Main()
         {
@@ -1226,13 +1226,13 @@ namespace Example
 
             try
             {
-                // Stem Text
-                StemText200Response result = apiInstance.StemText(text);
+                // Stem Text API
+                StemTextAPI200Response result = apiInstance.StemTextAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.StemText: " + e.Message);
+                Debug.Print("Exception when calling TextApi.StemTextAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1241,21 +1241,21 @@ namespace Example
 }
 ```
 
-#### Using the StemTextWithHttpInfo variant
+#### Using the StemTextAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Stem Text
-    ApiResponse<StemText200Response> response = apiInstance.StemTextWithHttpInfo(text);
+    // Stem Text API
+    ApiResponse<StemTextAPI200Response> response = apiInstance.StemTextAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.StemTextWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.StemTextAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1269,7 +1269,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**StemText200Response**](StemText200Response.md)
+[**StemTextAPI200Response**](StemTextAPI200Response.md)
 
 ### Authorization
 
@@ -1294,11 +1294,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="tagpartofspeech"></a>
-# **TagPartOfSpeech**
-> TagPartOfSpeech200Response TagPartOfSpeech (string text)
+<a id="tagpartofspeechapi"></a>
+# **TagPartOfSpeechAPI**
+> TagPartOfSpeechAPI200Response TagPartOfSpeechAPI (string text)
 
-Tag Part of Speech
+Tag Part of Speech API
 
 Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
 
@@ -1312,7 +1312,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class TagPartOfSpeechExample
+    public class TagPartOfSpeechAPIExample
     {
         public static void Main()
         {
@@ -1332,13 +1332,13 @@ namespace Example
 
             try
             {
-                // Tag Part of Speech
-                TagPartOfSpeech200Response result = apiInstance.TagPartOfSpeech(text);
+                // Tag Part of Speech API
+                TagPartOfSpeechAPI200Response result = apiInstance.TagPartOfSpeechAPI(text);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TextApi.TagPartOfSpeech: " + e.Message);
+                Debug.Print("Exception when calling TextApi.TagPartOfSpeechAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -1347,21 +1347,21 @@ namespace Example
 }
 ```
 
-#### Using the TagPartOfSpeechWithHttpInfo variant
+#### Using the TagPartOfSpeechAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Tag Part of Speech
-    ApiResponse<TagPartOfSpeech200Response> response = apiInstance.TagPartOfSpeechWithHttpInfo(text);
+    // Tag Part of Speech API
+    ApiResponse<TagPartOfSpeechAPI200Response> response = apiInstance.TagPartOfSpeechAPIWithHttpInfo(text);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TextApi.TagPartOfSpeechWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TextApi.TagPartOfSpeechAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -1375,7 +1375,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TagPartOfSpeech200Response**](TagPartOfSpeech200Response.md)
+[**TagPartOfSpeechAPI200Response**](TagPartOfSpeechAPI200Response.md)
 
 ### Authorization
 

@@ -8,7 +8,7 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
+import { ConvertUnitsAPI200Response } from '../models/ConvertUnitsAPI200Response';
 
 /**
  * no description
@@ -17,30 +17,30 @@ export class MathApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
-     * Convert Units
+     * Convert Units API
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
      * @param targetUnit The unit to which should be converted.
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities.
      */
-    public async convertUnits(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Promise<RequestContext> {
+    public async convertUnitsAPI(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'sourceAmount' is not null or undefined
         if (sourceAmount === null || sourceAmount === undefined) {
-            throw new RequiredError("MathApi", "convertUnits", "sourceAmount");
+            throw new RequiredError("MathApi", "convertUnitsAPI", "sourceAmount");
         }
 
 
         // verify required parameter 'sourceUnit' is not null or undefined
         if (sourceUnit === null || sourceUnit === undefined) {
-            throw new RequiredError("MathApi", "convertUnits", "sourceUnit");
+            throw new RequiredError("MathApi", "convertUnitsAPI", "sourceUnit");
         }
 
 
         // verify required parameter 'targetUnit' is not null or undefined
         if (targetUnit === null || targetUnit === undefined) {
-            throw new RequiredError("MathApi", "convertUnits", "targetUnit");
+            throw new RequiredError("MathApi", "convertUnitsAPI", "targetUnit");
         }
 
 
@@ -101,16 +101,16 @@ export class MathApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to convertUnits
+     * @params response Response returned by the server for a request to convertUnitsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async convertUnitsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ConvertUnits200Response >> {
+     public async convertUnitsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<ConvertUnitsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: ConvertUnits200Response = ObjectSerializer.deserialize(
+            const body: ConvertUnitsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ConvertUnits200Response", ""
-            ) as ConvertUnits200Response;
+                "ConvertUnitsAPI200Response", ""
+            ) as ConvertUnitsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -134,10 +134,10 @@ export class MathApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: ConvertUnits200Response = ObjectSerializer.deserialize(
+            const body: ConvertUnitsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "ConvertUnits200Response", ""
-            ) as ConvertUnits200Response;
+                "ConvertUnitsAPI200Response", ""
+            ) as ConvertUnitsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

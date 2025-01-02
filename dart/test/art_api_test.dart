@@ -17,21 +17,21 @@ void main() {
   // final instance = ArtApi();
 
   group('tests for ArtApi', () {
-    // Image to Ascii Art by URL
+    // Image to Ascii Art by URL API
     //
     // Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
     //
-    //Future<String> imageToAsciiArtByURL(String url, { int width, int height }) async
-    test('test imageToAsciiArtByURL', () async {
+    //Future<String> imageToAsciiArtByURLAPI(String url, { int width, int height }) async
+    test('test imageToAsciiArtByURLAPI', () async {
       // TODO
     });
 
-    // Random Poem
+    // Random Poem API
     //
     // Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
     //
-    //Future<RandomPoem200Response> randomPoem({ int minLines, int maxLines }) async
-    test('test randomPoem', () async {
+    //Future<RandomPoemAPI200Response> randomPoemAPI({ int minLines, int maxLines }) async
+    test('test randomPoemAPI', () async {
       // TODO
     });
 

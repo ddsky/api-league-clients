@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ConvertUnits**](MathAPI.md#ConvertUnits) | **Get** /convert-units | Convert Units
+[**ConvertUnitsAPI**](MathAPI.md#ConvertUnitsAPI) | **Get** /convert-units | Convert Units API
 
 
 
-## ConvertUnits
+## ConvertUnitsAPI
 
-> ConvertUnits200Response ConvertUnits(ctx).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
+> ConvertUnitsAPI200Response ConvertUnitsAPI(ctx).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
 
-Convert Units
+Convert Units API
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MathAPI.ConvertUnits(context.Background()).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
+	resp, r, err := apiClient.MathAPI.ConvertUnitsAPI(context.Background()).SourceAmount(sourceAmount).SourceUnit(sourceUnit).TargetUnit(targetUnit).FoodName(foodName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MathAPI.ConvertUnits``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MathAPI.ConvertUnitsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ConvertUnits`: ConvertUnits200Response
-	fmt.Fprintf(os.Stdout, "Response from `MathAPI.ConvertUnits`: %v\n", resp)
+	// response from `ConvertUnitsAPI`: ConvertUnitsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `MathAPI.ConvertUnitsAPI`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiConvertUnitsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiConvertUnitsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

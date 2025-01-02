@@ -8,9 +8,9 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { RandomQuote200Response } from '../models/RandomQuote200Response';
-import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
-import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
+import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
+import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
+import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
 
 /**
  * no description
@@ -19,11 +19,11 @@ export class KnowledgeApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-     * Random Quote
+     * Random Quote API
      * @param minLength The minimum length of the quote in letters.
      * @param maxLength The maximum length of the quote in letters.
      */
-    public async randomQuote(minLength?: number, maxLength?: number, _options?: Configuration): Promise<RequestContext> {
+    public async randomQuoteAPI(minLength?: number, maxLength?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -68,10 +68,10 @@ export class KnowledgeApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
-     * Random Riddle
+     * Random Riddle API
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
      */
-    public async randomRiddle(difficulty?: string, _options?: Configuration): Promise<RequestContext> {
+    public async randomRiddleAPI(difficulty?: string, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -109,11 +109,11 @@ export class KnowledgeApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * This endpoint returns a random piece of trivia.
-     * Random Trivia
+     * This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+     * Random Trivia API
      * @param maxLength The maximum length of the trivia in letters.
      */
-    public async randomTrivia(maxLength?: number, _options?: Configuration): Promise<RequestContext> {
+    public async randomTriviaAPI(maxLength?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -158,16 +158,16 @@ export class KnowledgeApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomQuote
+     * @params response Response returned by the server for a request to randomQuoteAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomQuoteWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomQuote200Response >> {
+     public async randomQuoteAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomQuoteAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RandomQuote200Response = ObjectSerializer.deserialize(
+            const body: RandomQuoteAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomQuote200Response", ""
-            ) as RandomQuote200Response;
+                "RandomQuoteAPI200Response", ""
+            ) as RandomQuoteAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -191,10 +191,10 @@ export class KnowledgeApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RandomQuote200Response = ObjectSerializer.deserialize(
+            const body: RandomQuoteAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomQuote200Response", ""
-            ) as RandomQuote200Response;
+                "RandomQuoteAPI200Response", ""
+            ) as RandomQuoteAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -205,16 +205,16 @@ export class KnowledgeApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomRiddle
+     * @params response Response returned by the server for a request to randomRiddleAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomRiddleWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomRiddle200Response >> {
+     public async randomRiddleAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomRiddleAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RandomRiddle200Response = ObjectSerializer.deserialize(
+            const body: RandomRiddleAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomRiddle200Response", ""
-            ) as RandomRiddle200Response;
+                "RandomRiddleAPI200Response", ""
+            ) as RandomRiddleAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -238,10 +238,10 @@ export class KnowledgeApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RandomRiddle200Response = ObjectSerializer.deserialize(
+            const body: RandomRiddleAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomRiddle200Response", ""
-            ) as RandomRiddle200Response;
+                "RandomRiddleAPI200Response", ""
+            ) as RandomRiddleAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -252,16 +252,16 @@ export class KnowledgeApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomTrivia
+     * @params response Response returned by the server for a request to randomTriviaAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomTriviaWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomTrivia200Response >> {
+     public async randomTriviaAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomTriviaAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RandomTrivia200Response = ObjectSerializer.deserialize(
+            const body: RandomTriviaAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomTrivia200Response", ""
-            ) as RandomTrivia200Response;
+                "RandomTriviaAPI200Response", ""
+            ) as RandomTriviaAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -285,10 +285,10 @@ export class KnowledgeApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RandomTrivia200Response = ObjectSerializer.deserialize(
+            const body: RandomTriviaAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomTrivia200Response", ""
-            ) as RandomTrivia200Response;
+                "RandomTriviaAPI200Response", ""
+            ) as RandomTriviaAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

@@ -16,7 +16,7 @@ class MathApi {
 
   final ApiClient apiClient;
 
-  /// Convert Units
+  /// Convert Units API
   ///
   /// Convert units from one to another. The API returns the amount and the unit of the target unit.
   ///
@@ -35,7 +35,7 @@ class MathApi {
   ///
   /// * [String] foodName:
   ///   An optional food name. For converting foods the food is relevant as they have different densities.
-  Future<Response> convertUnitsWithHttpInfo(double sourceAmount, String sourceUnit, String targetUnit, { String? foodName, }) async {
+  Future<Response> convertUnitsAPIWithHttpInfo(double sourceAmount, String sourceUnit, String targetUnit, { String? foodName, }) async {
     // ignore: prefer_const_declarations
     final path = r'/convert-units';
 
@@ -67,7 +67,7 @@ class MathApi {
     );
   }
 
-  /// Convert Units
+  /// Convert Units API
   ///
   /// Convert units from one to another. The API returns the amount and the unit of the target unit.
   ///
@@ -84,8 +84,8 @@ class MathApi {
   ///
   /// * [String] foodName:
   ///   An optional food name. For converting foods the food is relevant as they have different densities.
-  Future<ConvertUnits200Response?> convertUnits(double sourceAmount, String sourceUnit, String targetUnit, { String? foodName, }) async {
-    final response = await convertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit,  foodName: foodName, );
+  Future<ConvertUnitsAPI200Response?> convertUnitsAPI(double sourceAmount, String sourceUnit, String targetUnit, { String? foodName, }) async {
+    final response = await convertUnitsAPIWithHttpInfo(sourceAmount, sourceUnit, targetUnit,  foodName: foodName, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -93,7 +93,7 @@ class MathApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ConvertUnits200Response',) as ConvertUnits200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ConvertUnitsAPI200Response',) as ConvertUnitsAPI200Response;
     
     }
     return null;

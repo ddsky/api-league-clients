@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.6.3
+  version: 1.6.4
 servers:
 - url: https://api.apileague.com
 security:
@@ -16,14 +16,15 @@ paths:
   /search-books:
     get:
       deprecated: false
-      description: "Search and filter books based on matching a query, the ISBN, rating,\
-        \ and more fields. The query is semantically parsed using our own large ontology.\
-        \ That means you can search paranormal books and the ontology knows that Aliens,\
-        \ Werewolves, Ghosts, and Shapeshifters fall into that category."
+      description: "Search and filter over 4 million books based on matching a query,\
+        \ the ISBN, rating, and more fields. The query is semantically parsed using\
+        \ our own large ontology. That means you can search paranormal books and the\
+        \ ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into\
+        \ that category."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-books-api/
-      operationId: searchBooks
+      operationId: searchBooksAPI
       parameters:
       - description: The search query.
         explode: false
@@ -225,7 +226,7 @@ paths:
                         title: The Name of the Wind
                         subtitle: "The Kingkiller Chronicle : day one"
               schema:
-                $ref: '#/components/schemas/searchBooks_200_response'
+                $ref: '#/components/schemas/searchBooksAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -239,7 +240,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Books
+      summary: Search Books API
       tags:
       - Books
       x-accepts:
@@ -247,14 +248,14 @@ paths:
   /list-similar-books:
     get:
       deprecated: false
-      description: "Find books that are similar to the given book. This is useful\
-        \ for recommending books to users based on their reading history or preferences.\
-        \ The response will contain a list of similar books with their title, id,\
-        \ and cover image."
+      description: "Find books that are similar to the given book (based on a set\
+        \ of over 4 million books). This is useful for recommending books to users\
+        \ based on their reading history or preferences. The response will contain\
+        \ a list of similar books with their title, id, and cover image."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/find-similar-books-api/
-      operationId: findSimilarBooks
+      operationId: findSimilarBooksAPI
       parameters:
       - description: The id of the book to which similar books should be found.
         explode: false
@@ -319,7 +320,7 @@ paths:
                       image: https://covers.openlibrary.org/b/id/3965371-M.jpg
                       id: 20121054
               schema:
-                $ref: '#/components/schemas/findSimilarBooks_200_response'
+                $ref: '#/components/schemas/findSimilarBooksAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -333,7 +334,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Find Similar Books
+      summary: Find Similar Books API
       tags:
       - Books
       x-accepts:
@@ -341,18 +342,21 @@ paths:
   /search-news:
     get:
       deprecated: false
-      description: "Search and filter news by text, date, location, category, language,\
-        \ and more. The API returns a list of news articles matching the given criteria.\
-        \ You can set as many filtering parameters as you like, but you have to set\
-        \ at least one, e.g. text or language."
+      description: "Search and filter millions of news from over 200 countries in\
+        \ 90 languages by text, date, location, category, language, and more. The\
+        \ API returns a list of news articles matching the given criteria. You can\
+        \ set as many filtering parameters as you like, but you have to set at least\
+        \ one, e.g. text or language."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-news-api/
-      operationId: searchNews
+      operationId: searchNewsAPI
       parameters:
       - description: "The text to match in the news content (at least 3 characters,\
           \ maximum 100 characters). By default all query terms are expected, you\
-          \ can use an uppercase OR to search for any terms, e.g. tesla OR ford"
+          \ can use an uppercase OR to search for any terms, e.g. tesla OR ford. You\
+          \ can also exclude terms by putting a minus sign (-) in front of the term,\
+          \ e.g. tesla -ford."
         explode: false
         in: query
         name: text
@@ -595,7 +599,7 @@ paths:
                       - Iwan Stone
                       - Zahna Eklund
               schema:
-                $ref: '#/components/schemas/searchNews_200_response'
+                $ref: '#/components/schemas/searchNewsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -609,7 +613,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search News
+      summary: Search News API
       tags:
       - News
       x-accepts:
@@ -617,13 +621,14 @@ paths:
   /retrieve-top-news:
     get:
       deprecated: false
-      description: Get the top news from a country in a language for a specific date.
-        The top news are clustered from multiple sources in the given country. The
-        more news in a cluster the higher the cluster is ranked.
+      description: Get the top news from a country (over 220 are supported) in a language
+        (over 90 are supported) for a specific date. The top news are clustered from
+        multiple sources in the given country. The more news in a cluster the higher
+        the cluster is ranked.
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/top-news-api/
-      operationId: topNews
+      operationId: topNewsAPI
       parameters:
       - description: The ISO 3166 country code of the country for which top news should
           be retrieved.
@@ -800,7 +805,7 @@ paths:
                     language: en
                     country: us
               schema:
-                $ref: '#/components/schemas/topNews_200_response'
+                $ref: '#/components/schemas/topNewsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -814,7 +819,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Top News
+      summary: Top News API
       tags:
       - News
       x-accepts:
@@ -828,7 +833,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-news-api/
-      operationId: extractNews
+      operationId: extractNewsAPI
       parameters:
       - description: The url of the news.
         explode: false
@@ -960,7 +965,7 @@ paths:
                     - Jennie Taer
                     language: en
               schema:
-                $ref: '#/components/schemas/extractNews_200_response'
+                $ref: '#/components/schemas/extractNewsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -974,7 +979,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract News
+      summary: Extract News API
       tags:
       - News
       x-accepts:
@@ -988,7 +993,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-jokes-api/
-      operationId: searchJokes
+      operationId: searchJokesAPI
       parameters:
       - description: A comma-separated list of words that must occur in the joke.
         explode: false
@@ -1112,7 +1117,7 @@ paths:
                         \ like, now we know him as the headless horseman."
                     available: 169
               schema:
-                $ref: '#/components/schemas/searchJokes_200_response'
+                $ref: '#/components/schemas/searchJokesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -1126,7 +1131,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Jokes
+      summary: Search Jokes API
       tags:
       - Humor
       x-accepts:
@@ -1141,7 +1146,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-joke-api/
-      operationId: randomJoke
+      operationId: randomJokeAPI
       parameters:
       - description: A comma-separated list of tags the jokes should have.
         explode: false
@@ -1200,7 +1205,7 @@ paths:
                       What do you call a boxing match between two aardvarks?
                       A snout bout!
               schema:
-                $ref: '#/components/schemas/searchJokes_200_response_jokes_inner'
+                $ref: '#/components/schemas/searchJokesAPI_200_response_jokes_inner'
           description: Success
         "401":
           description: Unauthorized
@@ -1214,7 +1219,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Joke
+      summary: Random Joke API
       tags:
       - Humor
       x-accepts:
@@ -1222,12 +1227,13 @@ paths:
   /search-memes:
     get:
       deprecated: false
-      description: "With over 200,000 memes, you'll surely find something funny. You\
-        \ can even search for text within memes and filter by user ratings."
+      description: "Search over 300,000 memes by keyword, rating, and age. Most memes\
+        \ are stills (images) but using the media-type you can also get videos. You\
+        \ can even search for text within memes. You'll surely find something funny."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-memes-api/
-      operationId: searchMemes
+      operationId: searchMemesAPI
       parameters:
       - description: A comma-separated list of words that must occur in the meme.
         explode: false
@@ -1333,7 +1339,7 @@ paths:
                       url: https://i.imgur.com/yaZoCFP.jpg
                     available: 156
               schema:
-                $ref: '#/components/schemas/searchMemes_200_response'
+                $ref: '#/components/schemas/searchMemesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -1347,7 +1353,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Memes
+      summary: Search Memes API
       tags:
       - Humor
       x-accepts:
@@ -1355,12 +1361,12 @@ paths:
   /retrieve-random-meme:
     get:
       deprecated: false
-      description: "Get a random meme out of over 200,000+ memes. To get the latest\
+      description: "Get a random meme out of over 300,000+ memes. To get the latest\
         \ memes, you can use the max-age-days parameter."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-meme-api/
-      operationId: randomMeme
+      operationId: randomMemeAPI
       parameters:
       - description: A comma-separated list of words that must occur in the meme.
         explode: false
@@ -1432,7 +1438,7 @@ paths:
                     height: 702
                     ratio: 0.911681
               schema:
-                $ref: '#/components/schemas/randomMeme_200_response'
+                $ref: '#/components/schemas/randomMemeAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -1446,7 +1452,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Meme
+      summary: Random Meme API
       tags:
       - Humor
       x-accepts:
@@ -1460,7 +1466,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-gifs-api/
-      operationId: searchGifs
+      operationId: searchGifsAPI
       parameters:
       - description: The search query.
         explode: false
@@ -1503,7 +1509,7 @@ paths:
                       url: https://media.tenor.com/SmFA9ziWpx4AAAAC/dogs-dog.gif
                       height: 374
               schema:
-                $ref: '#/components/schemas/searchGifs_200_response'
+                $ref: '#/components/schemas/searchGifsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -1517,7 +1523,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Gifs
+      summary: Search Gifs API
       tags:
       - Humor
       x-accepts:
@@ -1531,7 +1537,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/generate-nonsense-word-api/
-      operationId: generateNonsenseWord
+      operationId: generateNonsenseWordAPI
       parameters: []
       responses:
         "200":
@@ -1543,7 +1549,7 @@ paths:
                     word: caboo
                     rating: 0.41
               schema:
-                $ref: '#/components/schemas/generateNonsenseWord_200_response'
+                $ref: '#/components/schemas/generateNonsenseWordAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -1557,7 +1563,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Generate Nonsense Word
+      summary: Generate Nonsense Word API
       tags:
       - Humor
       x-accepts:
@@ -1570,7 +1576,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-drinks-api/
-      operationId: searchDrinks
+      operationId: searchDrinksAPI
       parameters:
       - description: The search query.
         explode: false
@@ -2877,7 +2883,7 @@ paths:
                       cuisines: []
                     total_results: 14
               schema:
-                $ref: '#/components/schemas/searchDrinks_200_response'
+                $ref: '#/components/schemas/searchDrinksAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -2891,7 +2897,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Drinks
+      summary: Search Drinks API
       tags:
       - Food
       x-accepts:
@@ -2906,7 +2912,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-recipes-api/
-      operationId: searchRecipes
+      operationId: searchRecipesAPI
       parameters:
       - description: The search query.
         explode: false
@@ -4088,7 +4094,7 @@ paths:
                       title: "Spaghetti with Peas, Mushrooms, and Tomato Sauce"
                     total_results: 18
               schema:
-                $ref: '#/components/schemas/searchRecipes_200_response'
+                $ref: '#/components/schemas/searchRecipesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -4102,7 +4108,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Recipes
+      summary: Search Recipes API
       tags:
       - Food
       x-accepts:
@@ -4115,7 +4121,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/retrieve-recipe-api/
-      operationId: retrieveRecipeInformation
+      operationId: retrieveRecipeInformationAPI
       parameters:
       - description: The id of the recipe to retrieve.
         explode: false
@@ -6575,7 +6581,7 @@ paths:
                       weight_watcher_smart_points: 11
                       health_score: 22
               schema:
-                $ref: '#/components/schemas/retrieveRecipeInformation_200_response'
+                $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -6589,7 +6595,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Retrieve Recipe Information
+      summary: Retrieve Recipe Information API
       tags:
       - Food
       x-accepts:
@@ -6606,7 +6612,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/compute-nutrition-api/
-      operationId: computeNutrition
+      operationId: computeNutritionAPI
       parameters:
       - description: A comma-separated list of the ingredients of the recipe.
         explode: false
@@ -7356,7 +7362,7 @@ paths:
                       amount: 245
                       unit: g
               schema:
-                $ref: '#/components/schemas/computeNutrition_200_response'
+                $ref: '#/components/schemas/computeNutritionAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7370,7 +7376,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Compute Nutrition
+      summary: Compute Nutrition API
       tags:
       - Food
       x-accepts:
@@ -7383,7 +7389,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-restaurants-api/
-      operationId: searchRestaurants
+      operationId: searchRestaurantsAPI
       parameters:
       - description: The search query.
         explode: false
@@ -7574,7 +7580,7 @@ paths:
                           wednesday: 07:00AM - 11:00PM
                           monday: 07:00AM - 11:00PM
               schema:
-                $ref: '#/components/schemas/searchRestaurants_200_response'
+                $ref: '#/components/schemas/searchRestaurantsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7588,7 +7594,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Restaurants
+      summary: Search Restaurants API
       tags:
       - Food
       x-accepts:
@@ -7596,11 +7602,13 @@ paths:
   /retrieve-random-trivia:
     get:
       deprecated: false
-      description: This endpoint returns a random piece of trivia.
+      description: "This endpoint returns a random piece of trivia like \"Rio de Janeiro\
+        \ was once the capital of Portugal, making it the only European capital outside\
+        \ of Europe.\"."
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-trivia-api/
-      operationId: randomTrivia
+      operationId: randomTriviaAPI
       parameters:
       - description: The maximum length of the trivia in letters.
         explode: false
@@ -7623,7 +7631,7 @@ paths:
                   value:
                     trivia: Koalas sleep up to 20 hours a day.
               schema:
-                $ref: '#/components/schemas/randomTrivia_200_response'
+                $ref: '#/components/schemas/randomTriviaAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7637,7 +7645,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Trivia
+      summary: Random Trivia API
       tags:
       - Knowledge
       x-accepts:
@@ -7650,7 +7658,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-quote-api/
-      operationId: randomQuote
+      operationId: randomQuoteAPI
       parameters:
       - description: The minimum length of the quote in letters.
         explode: false
@@ -7687,7 +7695,7 @@ paths:
                     quote: "A little philosophy inclineth man's mind to atheism, but\
                       \ depth in philosophy bringeth men's minds about to religion."
               schema:
-                $ref: '#/components/schemas/randomQuote_200_response'
+                $ref: '#/components/schemas/randomQuoteAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7701,7 +7709,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Quote
+      summary: Random Quote API
       tags:
       - Knowledge
       x-accepts:
@@ -7716,7 +7724,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-riddle-api/
-      operationId: randomRiddle
+      operationId: randomRiddleAPI
       parameters:
       - description: "The difficulty of the riddle, either \"easy\", \"medium\", or\
           \ \"hard\"."
@@ -7741,7 +7749,7 @@ paths:
                     answer: A deck of cards
                     difficulty: easy
               schema:
-                $ref: '#/components/schemas/randomRiddle_200_response'
+                $ref: '#/components/schemas/randomRiddleAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7755,7 +7763,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Riddle
+      summary: Random Riddle API
       tags:
       - Knowledge
       x-accepts:
@@ -7768,7 +7776,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/random-poem-api/
-      operationId: randomPoem
+      operationId: randomPoemAPI
       parameters:
       - description: The minimum number of lines of the poem.
         explode: false
@@ -7829,7 +7837,7 @@ paths:
                       Reach the stars before they are done!
                       For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future
               schema:
-                $ref: '#/components/schemas/randomPoem_200_response'
+                $ref: '#/components/schemas/randomPoemAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -7843,7 +7851,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Random Poem
+      summary: Random Poem API
       tags:
       - Art
       x-accepts:
@@ -7857,7 +7865,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/image-to-ascii-art-api/
-      operationId: imageToAsciiArtByURL
+      operationId: imageToAsciiArtByURLAPI
       parameters:
       - description: The URL to the image.
         explode: false
@@ -8096,7 +8104,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Image to Ascii Art by URL
+      summary: Image to Ascii Art by URL API
       tags:
       - Art
       x-accepts:
@@ -8111,7 +8119,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-web-content-api/
-      operationId: extractContentFromAWebPage
+      operationId: extractContentFromAWebPageAPI
       parameters:
       - description: The url for which the content will be extracted.
         explode: false
@@ -8140,7 +8148,7 @@ paths:
                     images:
                     - https://static01.nyt.com/images/2024/03/19/multimedia/00oz-misery-kbjt/00oz-misery-kbjt-superJumbo.jpg?quality=75&auto=webp
               schema:
-                $ref: '#/components/schemas/extractContentFromAWebPage_200_response'
+                $ref: '#/components/schemas/extractContentFromAWebPageAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8154,7 +8162,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract Content from a Web Page
+      summary: Extract Content from a Web Page API
       tags:
       - Web
       x-accepts:
@@ -8168,7 +8176,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-publish-date-api/
-      operationId: extractPublishDate
+      operationId: extractPublishDateAPI
       parameters:
       - description: The url for which the publish date should be extracted.
         explode: false
@@ -8190,7 +8198,7 @@ paths:
                   value:
                     publish_date: 2023-03-27
               schema:
-                $ref: '#/components/schemas/extractPublishDate_200_response'
+                $ref: '#/components/schemas/extractPublishDateAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8204,7 +8212,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract Publish Date
+      summary: Extract Publish Date API
       tags:
       - Web
       x-accepts:
@@ -8218,7 +8226,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-authors-api/
-      operationId: extractAuthors
+      operationId: extractAuthorsAPI
       parameters:
       - description: The url with the article from which authors should be extracted.
         explode: false
@@ -8242,7 +8250,7 @@ paths:
                     - link: https://www.nytimes.com/by/natasha-frost
                       name: Natasha Frost
               schema:
-                $ref: '#/components/schemas/extractAuthors_200_response'
+                $ref: '#/components/schemas/extractAuthorsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8256,7 +8264,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract Authors
+      summary: Extract Authors API
       tags:
       - Web
       x-accepts:
@@ -8269,7 +8277,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/web-search-api/
-      operationId: searchWeb
+      operationId: searchWebAPI
       parameters:
       - description: The search query.
         explode: false
@@ -8341,7 +8349,7 @@ paths:
                         \ face, and how you can help protect them."
                       url: https://www.worldwildlife.org/species/penguin
               schema:
-                $ref: '#/components/schemas/searchWeb_200_response'
+                $ref: '#/components/schemas/searchWebAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8355,7 +8363,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Web
+      summary: Search Web API
       tags:
       - Web
       x-accepts:
@@ -8369,7 +8377,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/page-rank-api/
-      operationId: retrievePageRank
+      operationId: retrievePageRankAPI
       parameters:
       - description: The domain for which the page rank should be returned.
         explode: false
@@ -8393,7 +8401,7 @@ paths:
                     position: 30
                     percentile: 0.999997
               schema:
-                $ref: '#/components/schemas/retrievePageRank_200_response'
+                $ref: '#/components/schemas/retrievePageRankAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8407,7 +8415,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Retrieve Page Rank
+      summary: Retrieve Page Rank API
       tags:
       - Web
       x-accepts:
@@ -8422,7 +8430,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/email-verification-api/
-      operationId: verifyEmailAddress
+      operationId: verifyEmailAddressAPI
       parameters:
       - description: The email address to verify.
         explode: false
@@ -8455,7 +8463,7 @@ paths:
                     accept_all: false
                     free_provider: true
               schema:
-                $ref: '#/components/schemas/verifyEmailAddress_200_response'
+                $ref: '#/components/schemas/verifyEmailAddressAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8469,7 +8477,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Verify Email Address
+      summary: Verify Email Address API
       tags:
       - Web
       x-accepts:
@@ -8484,7 +8492,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/correct-spelling-api/
-      operationId: correctSpelling
+      operationId: correctSpellingAPI
       parameters:
       - description: The text to be corrected.
         explode: false
@@ -8517,7 +8525,7 @@ paths:
                   value:
                     corrected_text: driving cars is fun
               schema:
-                $ref: '#/components/schemas/correctSpelling_200_response'
+                $ref: '#/components/schemas/correctSpellingAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8531,7 +8539,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Correct Spelling
+      summary: Correct Spelling API
       tags:
       - Text
       x-accepts:
@@ -8546,7 +8554,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/detect-language-api/
-      operationId: detectLanguage
+      operationId: detectLanguageAPI
       parameters:
       - description: The text for which the language should be detected.
         explode: false
@@ -8584,7 +8592,7 @@ paths:
                     confidence: 0.01
               schema:
                 items:
-                  $ref: '#/components/schemas/detectLanguage_200_response_inner'
+                  $ref: '#/components/schemas/detectLanguageAPI_200_response_inner'
                 type: array
           description: Success
         "401":
@@ -8599,7 +8607,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Detect Language
+      summary: Detect Language API
       tags:
       - Text
       x-accepts:
@@ -8612,7 +8620,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/detect-sentiment-api/
-      operationId: detectSentiment
+      operationId: detectSentimentAPI
       parameters:
       - description: The text for which the sentiment should be detected.
         explode: false
@@ -8642,7 +8650,7 @@ paths:
                       offset: 0
                       confidence: 1
               schema:
-                $ref: '#/components/schemas/detectSentiment_200_response'
+                $ref: '#/components/schemas/detectSentimentAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8656,7 +8664,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Detect Sentiment
+      summary: Detect Sentiment API
       tags:
       - Text
       x-accepts:
@@ -8673,7 +8681,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/score-text-api/
-      operationId: scoreText
+      operationId: scoreTextAPI
       parameters:
       - description: The title of the text to score.
         explode: false
@@ -8779,7 +8787,7 @@ paths:
                         - 5
                     total_score: 6.662088
               schema:
-                $ref: '#/components/schemas/scoreText_200_response'
+                $ref: '#/components/schemas/scoreTextAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8793,7 +8801,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Score Text
+      summary: Score Text API
       tags:
       - Text
       x-accepts:
@@ -8808,7 +8816,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/score-readability-api/
-      operationId: scoreReadability
+      operationId: scoreReadabilityAPI
       parameters:
       - description: The text to score for readability.
         explode: false
@@ -8844,7 +8852,7 @@ paths:
                         kincaid: 9.449
                         fog: 11.354
               schema:
-                $ref: '#/components/schemas/scoreReadability_200_response'
+                $ref: '#/components/schemas/scoreReadabilityAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8858,7 +8866,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Score Readability
+      summary: Score Readability API
       tags:
       - Text
       x-accepts:
@@ -8875,7 +8883,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-dates-api/
-      operationId: extractDates
+      operationId: extractDatesAPI
       parameters:
       - description: The text from which dates should be extracted.
         explode: false
@@ -8902,7 +8910,7 @@ paths:
                       tag: DATETIME
                       end_position: 18
               schema:
-                $ref: '#/components/schemas/extractDates_200_response'
+                $ref: '#/components/schemas/extractDatesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8916,7 +8924,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract Dates
+      summary: Extract Dates API
       tags:
       - Text
       x-accepts:
@@ -8931,7 +8939,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/gender-name-detection-api/
-      operationId: detectGenderByName
+      operationId: detectGenderByNameAPI
       parameters:
       - description: The name of the perso for which the sentiment should be detected.
         explode: false
@@ -8956,7 +8964,7 @@ paths:
                     probability_female: 0.0321
                     popularity: 0.00152
               schema:
-                $ref: '#/components/schemas/detectGenderByName_200_response'
+                $ref: '#/components/schemas/detectGenderByNameAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -8970,7 +8978,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Detect Gender by Name
+      summary: Detect Gender by Name API
       tags:
       - Text
       x-accepts:
@@ -8982,7 +8990,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/synonyms-api/
-      operationId: listWordSynonyms
+      operationId: listWordSynonymsAPI
       parameters:
       - description: The (noun) word for which a list of synonyms should be returned.
         explode: false
@@ -9007,7 +9015,7 @@ paths:
                     - plane
                     - heavier-than-air craft
               schema:
-                $ref: '#/components/schemas/listWordSynonyms_200_response'
+                $ref: '#/components/schemas/listWordSynonymsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9021,7 +9029,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: List Word Synonyms
+      summary: List Word Synonyms API
       tags:
       - Text
       x-accepts:
@@ -9036,7 +9044,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/pos-tagging-api/
-      operationId: tagPartOfSpeech
+      operationId: tagPartOfSpeechAPI
       parameters:
       - description: The text to tag the part of speech.
         explode: false
@@ -9059,7 +9067,7 @@ paths:
                     tagged_text: The/AT lazy/JJ dog/NN jumps/NNS over/UNDER the/AT
                       quick/RB brown/JJ fox/NN
               schema:
-                $ref: '#/components/schemas/tagPartOfSpeech_200_response'
+                $ref: '#/components/schemas/tagPartOfSpeechAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9073,7 +9081,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Tag Part of Speech
+      summary: Tag Part of Speech API
       tags:
       - Text
       x-accepts:
@@ -9086,7 +9094,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/stemming-api/
-      operationId: stemText
+      operationId: stemTextAPI
       parameters:
       - description: The text to be stemmed.
         explode: false
@@ -9110,7 +9118,7 @@ paths:
                       foxes
                     stemmed: The laziest dog are jump over the quicker brown fox
               schema:
-                $ref: '#/components/schemas/stemText_200_response'
+                $ref: '#/components/schemas/stemTextAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9124,7 +9132,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Stem Text
+      summary: Stem Text API
       tags:
       - Text
       x-accepts:
@@ -9136,7 +9144,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/word-singularization-pluralization-api/
-      operationId: singularizeWord
+      operationId: singularizeWordAPI
       parameters:
       - description: The (noun) word for which the singular form should be found.
         explode: false
@@ -9159,7 +9167,7 @@ paths:
                     original: parties
                     singular: party
               schema:
-                $ref: '#/components/schemas/singularizeWord_200_response'
+                $ref: '#/components/schemas/singularizeWordAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9173,7 +9181,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Singularize Word
+      summary: Singularize Word API
       tags:
       - Text
       x-accepts:
@@ -9185,7 +9193,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/word-singularization-pluralization-api/
-      operationId: pluralizeWord
+      operationId: pluralizeWordAPI
       parameters:
       - description: The (noun) word for which the plural form should be found.
         explode: false
@@ -9208,7 +9216,7 @@ paths:
                     original: party
                     plural: parties
               schema:
-                $ref: '#/components/schemas/pluralizeWord_200_response'
+                $ref: '#/components/schemas/pluralizeWordAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9222,7 +9230,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Pluralize Word
+      summary: Pluralize Word API
       tags:
       - Text
       x-accepts:
@@ -9239,7 +9247,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/extract-entities-api/
-      operationId: extractEntities
+      operationId: extractEntitiesAPI
       parameters:
       - description: The text from which entities should be extracted.
         explode: false
@@ -9270,7 +9278,7 @@ paths:
                       value: Canada
                       end_position: 34
               schema:
-                $ref: '#/components/schemas/extractEntities_200_response'
+                $ref: '#/components/schemas/extractEntitiesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9284,7 +9292,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Extract Entities
+      summary: Extract Entities API
       tags:
       - Text
       x-accepts:
@@ -9299,7 +9307,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-images-api/
-      operationId: searchRoyaltyFreeImages
+      operationId: searchRoyaltyFreeImagesAPI
       parameters:
       - description: The search query.
         explode: false
@@ -9357,7 +9365,7 @@ paths:
                       url: https://images.unsplash.com/photo-1568572933382-74d440642117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTgyNnwwfDF8c2VhcmNofDN8fGRvZ3N8ZW58MHx8fHwxNzA4MjkyMjA0fDA&ixlib=rb-4.0.3&q=80&w=1080
                       height: 4032
               schema:
-                $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response'
+                $ref: '#/components/schemas/searchRoyaltyFreeImagesAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9371,7 +9379,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Royalty Free Images
+      summary: Search Royalty Free Images API
       tags:
       - Media
       x-accepts:
@@ -9383,7 +9391,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/search-icons-api/
-      operationId: searchIcons
+      operationId: searchIconsAPI
       parameters:
       - description: The search query.
         explode: false
@@ -9450,7 +9458,7 @@ paths:
                       url: https://static.thenounproject.com/png/3675912-200.png
                       height: 200
               schema:
-                $ref: '#/components/schemas/searchIcons_200_response'
+                $ref: '#/components/schemas/searchIconsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9464,7 +9472,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Search Icons
+      summary: Search Icons API
       tags:
       - Media
       x-accepts:
@@ -9479,7 +9487,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/rescale-image-api/
-      operationId: rescaleImage
+      operationId: rescaleImageAPI
       parameters:
       - description: The url of the image to be rescaled.
         explode: false
@@ -9549,7 +9557,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Rescale Image
+      summary: Rescale Image API
       tags:
       - Media
       x-accepts:
@@ -9563,7 +9571,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/detect-main-image-color-api/
-      operationId: detectMainImageColor
+      operationId: detectMainImageColorAPI
       parameters:
       - description: The url of the image for which the colors should be detected.
         explode: false
@@ -9594,7 +9602,7 @@ paths:
                     hex_code: '#36180d'
               schema:
                 items:
-                  $ref: '#/components/schemas/detectMainImageColor_200_response_inner'
+                  $ref: '#/components/schemas/detectMainImageColorAPI_200_response_inner'
                 type: array
           description: Success
         "401":
@@ -9609,7 +9617,93 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Detect Main Image Color
+      summary: Detect Main Image Color API
+      tags:
+      - Media
+      x-accepts:
+      - application/json
+  /search-vectors:
+    get:
+      deprecated: false
+      description: "Search through over 700,000 free to use vector icons. The license\
+        \ is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\"\
+        \ just attribute the author somewhere in your project."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/vector-search-api/
+      operationId: vectorSearchAPI
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: true
+        schema:
+          example: airplanes
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: "The number of vectors to skip, between 0 and 1000"
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: "The number of vectors to return in range [1,10]"
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 3
+          format: int32
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    vectors:
+                    - license: ATTRIBUTION
+                      title: Airplanes
+                      author: Candy Design
+                      image_url: https://img.apileague.com/icons/10507904.svg
+                    - license: ATTRIBUTION
+                      title: Model Airplanes
+                      author: Juicy Fish
+                      image_url: https://img.apileague.com/icons/10427558.svg
+                    - license: ATTRIBUTION
+                      title: Paper Airplanes
+                      author: HideMaru
+                      image_url: https://img.apileague.com/icons/9051410.svg
+              schema:
+                $ref: '#/components/schemas/vectorSearchAPI_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Vector Search API
       tags:
       - Media
       x-accepts:
@@ -9622,7 +9716,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/convert-units-api/
-      operationId: convertUnits
+      operationId: convertUnitsAPI
       parameters:
       - description: The source amount.
         explode: false
@@ -9680,7 +9774,7 @@ paths:
                     target_amount: 220.462262
                     target_unit: lb
               schema:
-                $ref: '#/components/schemas/convertUnits_200_response'
+                $ref: '#/components/schemas/convertUnitsAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9694,7 +9788,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Convert Units
+      summary: Convert Units API
       tags:
       - Math
       x-accepts:
@@ -9711,7 +9805,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/key-value-storage-api/
-      operationId: readKeyValueFromStore
+      operationId: readKeyValueFromStoreAPI
       parameters:
       - description: The key for which the value is stored (max length 255 characters).
         explode: false
@@ -9733,7 +9827,7 @@ paths:
                   value:
                     value: "100"
               schema:
-                $ref: '#/components/schemas/readKeyValueFromStore_200_response'
+                $ref: '#/components/schemas/readKeyValueFromStoreAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9747,7 +9841,7 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Read Key Value from Store
+      summary: Read Key Value from Store API
       tags:
       - Storage
       x-accepts:
@@ -9764,7 +9858,7 @@ paths:
       externalDocs:
         description: Read entire docs
         url: https://apileague.com/apis/key-value-storage-api/
-      operationId: storeKeyValueGET
+      operationId: storeKeyValueGETAPI
       parameters:
       - description: The key for which the value is stored (max length 255 characters).
         explode: false
@@ -9797,7 +9891,7 @@ paths:
                   value:
                     status: success
               schema:
-                $ref: '#/components/schemas/storeKeyValueGET_200_response'
+                $ref: '#/components/schemas/storeKeyValueGETAPI_200_response'
           description: Success
         "401":
           description: Unauthorized
@@ -9811,14 +9905,14 @@ paths:
           description: Not Acceptable
         "429":
           description: Too Many Requests
-      summary: Store Key Value (GET)
+      summary: Store Key Value (GET) API
       tags:
       - Storage
       x-accepts:
       - application/json
 components:
   schemas:
-    searchBooks_200_response_books_inner_inner:
+    searchBooksAPI_200_response_books_inner_inner:
       example:
         image: image
         id: 5
@@ -9833,7 +9927,7 @@ components:
         id:
           type: integer
       type: object
-    searchBooks_200_response:
+    searchBooksAPI_200_response:
       example:
         number: 6
         books:
@@ -9861,11 +9955,11 @@ components:
         books:
           items:
             items:
-              $ref: '#/components/schemas/searchBooks_200_response_books_inner_inner'
+              $ref: '#/components/schemas/searchBooksAPI_200_response_books_inner_inner'
             type: array
           type: array
       type: object
-    findSimilarBooks_200_response:
+    findSimilarBooksAPI_200_response:
       example:
         similar_books:
         - image: image
@@ -9877,10 +9971,10 @@ components:
       properties:
         similar_books:
           items:
-            $ref: '#/components/schemas/searchBooks_200_response_books_inner_inner'
+            $ref: '#/components/schemas/searchBooksAPI_200_response_books_inner_inner'
           type: array
       type: object
-    searchNews_200_response_news_inner:
+    searchNewsAPI_200_response_news_inner:
       example:
         summary: summary
         image: image
@@ -9938,7 +10032,7 @@ components:
             type: string
           type: array
       type: object
-    searchNews_200_response:
+    searchNewsAPI_200_response:
       example:
         news:
         - summary: summary
@@ -9983,10 +10077,10 @@ components:
           type: integer
         news:
           items:
-            $ref: '#/components/schemas/searchNews_200_response_news_inner'
+            $ref: '#/components/schemas/searchNewsAPI_200_response_news_inner'
           type: array
       type: object
-    topNews_200_response_top_news_inner_news_inner:
+    topNewsAPI_200_response_top_news_inner_news_inner:
       example:
         summary: summary
         image: image
@@ -10025,7 +10119,7 @@ components:
             type: string
           type: array
       type: object
-    topNews_200_response_top_news_inner:
+    topNewsAPI_200_response_top_news_inner:
       example:
         news:
         - summary: summary
@@ -10051,10 +10145,10 @@ components:
       properties:
         news:
           items:
-            $ref: '#/components/schemas/topNews_200_response_top_news_inner_news_inner'
+            $ref: '#/components/schemas/topNewsAPI_200_response_top_news_inner_news_inner'
           type: array
       type: object
-    topNews_200_response:
+    topNewsAPI_200_response:
       example:
         country: country
         top_news:
@@ -10104,7 +10198,7 @@ components:
       properties:
         top_news:
           items:
-            $ref: '#/components/schemas/topNews_200_response_top_news_inner'
+            $ref: '#/components/schemas/topNewsAPI_200_response_top_news_inner'
           type: array
         language:
           nullable: true
@@ -10113,7 +10207,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractNews_200_response_images_inner:
+    extractNewsAPI_200_response_images_inner:
       example:
         width: 0
         title: title
@@ -10131,7 +10225,7 @@ components:
         height:
           type: integer
       type: object
-    extractNews_200_response_videos_inner:
+    extractNewsAPI_200_response_videos_inner:
       example:
         summary: summary
         duration: 1
@@ -10154,7 +10248,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractNews_200_response:
+    extractNewsAPI_200_response:
       example:
         images:
         - width: 0
@@ -10196,11 +10290,11 @@ components:
           type: string
         images:
           items:
-            $ref: '#/components/schemas/extractNews_200_response_images_inner'
+            $ref: '#/components/schemas/extractNewsAPI_200_response_images_inner'
           type: array
         videos:
           items:
-            $ref: '#/components/schemas/extractNews_200_response_videos_inner'
+            $ref: '#/components/schemas/extractNewsAPI_200_response_videos_inner'
           type: array
         publish_date:
           nullable: true
@@ -10214,7 +10308,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchJokes_200_response_jokes_inner:
+    searchJokesAPI_200_response_jokes_inner:
       example:
         joke: joke
       properties:
@@ -10222,7 +10316,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchJokes_200_response:
+    searchJokesAPI_200_response:
       example:
         available: 0
         jokes:
@@ -10231,12 +10325,12 @@ components:
       properties:
         jokes:
           items:
-            $ref: '#/components/schemas/searchJokes_200_response_jokes_inner'
+            $ref: '#/components/schemas/searchJokesAPI_200_response_jokes_inner'
           type: array
         available:
           type: integer
       type: object
-    searchMemes_200_response_memes_inner:
+    searchMemesAPI_200_response_memes_inner:
       example:
         description: description
         type: type
@@ -10252,7 +10346,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchMemes_200_response:
+    searchMemesAPI_200_response:
       example:
         available: 0
         memes:
@@ -10265,12 +10359,12 @@ components:
       properties:
         memes:
           items:
-            $ref: '#/components/schemas/searchMemes_200_response_memes_inner'
+            $ref: '#/components/schemas/searchMemesAPI_200_response_memes_inner'
           type: array
         available:
           type: integer
       type: object
-    randomMeme_200_response:
+    randomMemeAPI_200_response:
       example:
         width: 0
         description: description
@@ -10295,7 +10389,7 @@ components:
         ratio:
           type: number
       type: object
-    searchGifs_200_response_images_inner:
+    searchGifsAPI_200_response_images_inner:
       example:
         width: 0
         url: url
@@ -10309,7 +10403,7 @@ components:
         height:
           type: integer
       type: object
-    searchGifs_200_response:
+    searchGifsAPI_200_response:
       example:
         images:
         - width: 0
@@ -10321,10 +10415,10 @@ components:
       properties:
         images:
           items:
-            $ref: '#/components/schemas/searchGifs_200_response_images_inner'
+            $ref: '#/components/schemas/searchGifsAPI_200_response_images_inner'
           type: array
       type: object
-    generateNonsenseWord_200_response:
+    generateNonsenseWordAPI_200_response:
       example:
         rating: 0.8008281904610115
         word: word
@@ -10335,7 +10429,7 @@ components:
         rating:
           type: number
       type: object
-    searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner:
+    searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner:
       example:
         image: image
         name: name
@@ -10350,7 +10444,7 @@ components:
         id:
           type: integer
       type: object
-    searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner:
+    searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner:
       example:
         number: 1
         ingredients:
@@ -10369,7 +10463,7 @@ components:
           type: integer
         ingredients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
           type: array
         equipment:
           items:
@@ -10380,7 +10474,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_instructions_inner:
+    searchDrinksAPI_200_response_drinks_inner_instructions_inner:
       example:
         name: name
         steps:
@@ -10414,10 +10508,10 @@ components:
           type: string
         steps:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner'
           type: array
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving:
       example:
         amount: 5
         unit: unit
@@ -10428,7 +10522,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown:
       example:
         percent_fat: 2.3021358869347655
         percent_carbs: 7.061401241503109
@@ -10441,7 +10535,7 @@ components:
         percent_protein:
           type: number
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner:
       example:
         amount: 3
         unit: unit
@@ -10456,7 +10550,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner:
       example:
         amount: 1
         unit: unit
@@ -10474,7 +10568,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner:
       example:
         amount: 2
         unit: unit
@@ -10502,10 +10596,10 @@ components:
           type: integer
         nutrients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner'
           type: array
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner:
+    searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner:
       example:
         amount: 1.4894159098541704
         unit: unit
@@ -10523,7 +10617,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_nutrition:
+    searchDrinksAPI_200_response_drinks_inner_nutrition:
       example:
         caloric_breakdown:
           percent_fat: 2.3021358869347655
@@ -10584,27 +10678,27 @@ components:
           percent_of_daily_needs: 1.0246457001441578
       properties:
         weight_per_serving:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving'
         caloric_breakdown:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown'
         flavonoids:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         ingredient_breakdown:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_ingredient_breakdown_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner'
           type: array
         properties:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         nutrients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
       type: object
-    searchDrinks_200_response_drinks_inner_credits:
+    searchDrinksAPI_200_response_drinks_inner_credits:
       example:
         text: text
         source_name: source_name
@@ -10620,7 +10714,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric:
+    searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_metric:
       example:
         amount: 1.1730742509559433
         unit_long: unit_long
@@ -10635,7 +10729,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_ingredients_inner_measures_us:
+    searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_us:
       example:
         amount: 4
         unit_long: unit_long
@@ -10650,7 +10744,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner_ingredients_inner_measures:
+    searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures:
       example:
         metric:
           amount: 1.1730742509559433
@@ -10662,11 +10756,11 @@ components:
           unit_short: unit_short
       properties:
         metric:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_metric'
         us:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_us'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_us'
       type: object
-    searchDrinks_200_response_drinks_inner_ingredients_inner:
+    searchDrinksAPI_200_response_drinks_inner_ingredients_inner:
       example:
         image: image
         name_clean: name_clean
@@ -10703,7 +10797,7 @@ components:
           nullable: true
           type: string
         measures:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures'
         original:
           nullable: true
           type: string
@@ -10727,7 +10821,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchDrinks_200_response_drinks_inner:
+    searchDrinksAPI_200_response_drinks_inner:
       example:
         flavors:
         - flavors
@@ -10911,7 +11005,7 @@ components:
           type: array
         instructions:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_instructions_inner'
           type: array
         images:
           items:
@@ -10919,12 +11013,12 @@ components:
             type: string
           type: array
         nutrition:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition'
         glass_type:
           nullable: true
           type: string
         credits:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_credits'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_credits'
         price_per_serving:
           type: number
         description:
@@ -10932,7 +11026,7 @@ components:
           type: string
         ingredients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner'
           type: array
         id:
           type: integer
@@ -10945,7 +11039,7 @@ components:
             type: string
           type: array
       type: object
-    searchDrinks_200_response:
+    searchDrinksAPI_200_response:
       example:
         number: 6
         offset: 0
@@ -11306,12 +11400,12 @@ components:
           type: integer
         drinks:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner'
           type: array
         total_results:
           type: integer
       type: object
-    searchRecipes_200_response_recipes_inner_nutrition_nutrients_inner:
+    searchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner:
       example:
         amount: 1.4658129805029452
         unit: unit
@@ -11326,7 +11420,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchRecipes_200_response_recipes_inner_nutrition:
+    searchRecipesAPI_200_response_recipes_inner_nutrition:
       example:
         nutrients:
         - amount: 1.4658129805029452
@@ -11338,10 +11432,10 @@ components:
       properties:
         nutrients:
           items:
-            $ref: '#/components/schemas/searchRecipes_200_response_recipes_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner'
           type: array
       type: object
-    searchRecipes_200_response_recipes_inner:
+    searchRecipesAPI_200_response_recipes_inner:
       example:
         images:
         - images
@@ -11363,14 +11457,14 @@ components:
             type: string
           type: array
         nutrition:
-          $ref: '#/components/schemas/searchRecipes_200_response_recipes_inner_nutrition'
+          $ref: '#/components/schemas/searchRecipesAPI_200_response_recipes_inner_nutrition'
         id:
           type: integer
         title:
           nullable: true
           type: string
       type: object
-    searchRecipes_200_response:
+    searchRecipesAPI_200_response:
       example:
         number: 6
         recipes:
@@ -11409,12 +11503,12 @@ components:
           type: integer
         recipes:
           items:
-            $ref: '#/components/schemas/searchRecipes_200_response_recipes_inner'
+            $ref: '#/components/schemas/searchRecipesAPI_200_response_recipes_inner'
           type: array
         total_results:
           type: integer
       type: object
-    retrieveRecipeInformation_200_response_dietary_properties:
+    retrieveRecipeInformationAPI_200_response_dietary_properties:
       example:
         low_fodmap: true
         vegetarian: true
@@ -11445,14 +11539,14 @@ components:
             type: string
           type: array
       type: object
-    retrieveRecipeInformation_200_response_times:
+    retrieveRecipeInformationAPI_200_response_times:
       example:
         total_minutes: 5
       properties:
         total_minutes:
           type: integer
       type: object
-    retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner:
+    retrieveRecipeInformationAPI_200_response_nutrition_ingredient_breakdown_inner:
       example:
         amount: 5.637376656633329
         unit: unit
@@ -11480,10 +11574,10 @@ components:
           type: integer
         nutrients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
       type: object
-    retrieveRecipeInformation_200_response_nutrition:
+    retrieveRecipeInformationAPI_200_response_nutrition:
       example:
         caloric_breakdown:
           percent_fat: 2.3021358869347655
@@ -11544,27 +11638,27 @@ components:
           percent_of_daily_needs: 1.0246457001441578
       properties:
         weight_per_serving:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving'
         caloric_breakdown:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown'
         flavonoids:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         ingredient_breakdown:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition_ingredient_breakdown_inner'
+            $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_nutrition_ingredient_breakdown_inner'
           type: array
         properties:
           items:
-            $ref: '#/components/schemas/searchRecipes_200_response_recipes_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner'
           type: array
         nutrients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
       type: object
-    retrieveRecipeInformation_200_response_taste:
+    retrieveRecipeInformationAPI_200_response_taste:
       example:
         fattiness: 7.061401241503109
         spiciness: 9
@@ -11589,7 +11683,7 @@ components:
         sourness:
           type: number
       type: object
-    retrieveRecipeInformation_200_response_ingredients_inner_measures:
+    retrieveRecipeInformationAPI_200_response_ingredients_inner_measures:
       example:
         metric:
           amount: 1.1730742509559433
@@ -11601,11 +11695,11 @@ components:
           unit_short: unit_short
       properties:
         metric:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_metric'
         us:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_ingredients_inner_measures_metric'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_ingredients_inner_measures_metric'
       type: object
-    retrieveRecipeInformation_200_response_ingredients_inner:
+    retrieveRecipeInformationAPI_200_response_ingredients_inner:
       example:
         image: image
         name_clean: name_clean
@@ -11642,7 +11736,7 @@ components:
           nullable: true
           type: string
         measures:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_ingredients_inner_measures'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_ingredients_inner_measures'
         original:
           nullable: true
           type: string
@@ -11666,7 +11760,7 @@ components:
           nullable: true
           type: string
       type: object
-    retrieveRecipeInformation_200_response_instructions_inner_steps_inner:
+    retrieveRecipeInformationAPI_200_response_instructions_inner_steps_inner:
       example:
         number: 6
         ingredients:
@@ -11689,17 +11783,17 @@ components:
           type: integer
         ingredients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
           type: array
         equipment:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner'
           type: array
         step:
           nullable: true
           type: string
       type: object
-    retrieveRecipeInformation_200_response_instructions_inner:
+    retrieveRecipeInformationAPI_200_response_instructions_inner:
       example:
         name: name
         steps:
@@ -11741,10 +11835,10 @@ components:
           type: string
         steps:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_instructions_inner_steps_inner'
+            $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_instructions_inner_steps_inner'
           type: array
       type: object
-    retrieveRecipeInformation_200_response_credits:
+    retrieveRecipeInformationAPI_200_response_credits:
       example:
         license: license
         text: text
@@ -11764,7 +11858,7 @@ components:
           nullable: true
           type: string
       type: object
-    retrieveRecipeInformation_200_response_scores:
+    retrieveRecipeInformationAPI_200_response_scores:
       example:
         meta_score: 7.457744773683766
         health_score: 4
@@ -11777,7 +11871,7 @@ components:
         health_score:
           type: integer
       type: object
-    retrieveRecipeInformation_200_response:
+    retrieveRecipeInformationAPI_200_response:
       example:
         instructions:
         - name: name
@@ -12010,15 +12104,15 @@ components:
             type: string
           type: array
         dietary_properties:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_dietary_properties'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_dietary_properties'
         price_per_serving:
           type: number
         times:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_times'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_times'
         nutrition:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_nutrition'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_nutrition'
         taste:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_taste'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_taste'
         cuisines:
           items:
             nullable: true
@@ -12036,18 +12130,18 @@ components:
           type: array
         ingredients:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_ingredients_inner'
+            $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_ingredients_inner'
           type: array
         instructions:
           items:
-            $ref: '#/components/schemas/retrieveRecipeInformation_200_response_instructions_inner'
+            $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_instructions_inner'
           type: array
         credits:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_credits'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_credits'
         scores:
-          $ref: '#/components/schemas/retrieveRecipeInformation_200_response_scores'
+          $ref: '#/components/schemas/retrieveRecipeInformationAPI_200_response_scores'
       type: object
-    computeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner:
+    computeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner:
       example:
         amount: 5
         unit: unit
@@ -12065,7 +12159,7 @@ components:
           nullable: true
           type: string
       type: object
-    computeNutrition_200_response_ingredient_breakdown_inner:
+    computeNutritionAPI_200_response_ingredient_breakdown_inner:
       example:
         amount: 0
         unit: unit
@@ -12093,10 +12187,10 @@ components:
           type: integer
         nutrients:
           items:
-            $ref: '#/components/schemas/computeNutrition_200_response_ingredient_breakdown_inner_nutrients_inner'
+            $ref: '#/components/schemas/computeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner'
           type: array
       type: object
-    computeNutrition_200_response:
+    computeNutritionAPI_200_response:
       example:
         caloric_breakdown:
           percent_fat: 2.3021358869347655
@@ -12158,26 +12252,26 @@ components:
       properties:
         nutrients:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner'
           type: array
         properties:
           items:
-            $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_flavonoids_inner'
+            $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner'
           type: array
         flavonoids:
           items:
-            $ref: '#/components/schemas/searchRecipes_200_response_recipes_inner_nutrition_nutrients_inner'
+            $ref: '#/components/schemas/searchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner'
           type: array
         ingredient_breakdown:
           items:
-            $ref: '#/components/schemas/computeNutrition_200_response_ingredient_breakdown_inner'
+            $ref: '#/components/schemas/computeNutritionAPI_200_response_ingredient_breakdown_inner'
           type: array
         caloric_breakdown:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_caloric_breakdown'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown'
         weight_per_serving:
-          $ref: '#/components/schemas/searchDrinks_200_response_drinks_inner_nutrition_weight_per_serving'
+          $ref: '#/components/schemas/searchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving'
       type: object
-    searchRestaurants_200_response_restaurants_inner_address:
+    searchRestaurantsAPI_200_response_restaurants_inner_address:
       example:
         zipcode: zipcode
         country: country
@@ -12217,7 +12311,7 @@ components:
         longitude:
           type: number
       type: object
-    searchRestaurants_200_response_restaurants_inner_local_hours_operational:
+    searchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational:
       example:
         sunday: sunday
         saturday: saturday
@@ -12249,7 +12343,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchRestaurants_200_response_restaurants_inner_local_hours:
+    searchRestaurantsAPI_200_response_restaurants_inner_local_hours:
       example:
         delivery:
           sunday: sunday
@@ -12285,15 +12379,15 @@ components:
           monday: monday
       properties:
         operational:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_local_hours_operational'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational'
         delivery:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_local_hours_operational'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational'
         pickup:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_local_hours_operational'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational'
         dine_in:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_local_hours_operational'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational'
       type: object
-    searchRestaurants_200_response_restaurants_inner:
+    searchRestaurantsAPI_200_response_restaurants_inner:
       example:
         offers_third_party_delivery: true
         address:
@@ -12361,7 +12455,7 @@ components:
         offers_third_party_delivery:
           type: boolean
         address:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_address'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_address'
         supports_upc_codes:
           type: boolean
         is_open:
@@ -12400,9 +12494,9 @@ components:
           nullable: true
           type: string
         local_hours:
-          $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner_local_hours'
+          $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner_local_hours'
       type: object
-    searchRestaurants_200_response:
+    searchRestaurantsAPI_200_response:
       example:
         restaurants:
         - offers_third_party_delivery: true
@@ -12532,10 +12626,10 @@ components:
       properties:
         restaurants:
           items:
-            $ref: '#/components/schemas/searchRestaurants_200_response_restaurants_inner'
+            $ref: '#/components/schemas/searchRestaurantsAPI_200_response_restaurants_inner'
           type: array
       type: object
-    randomTrivia_200_response:
+    randomTriviaAPI_200_response:
       example:
         trivia: trivia
       properties:
@@ -12543,7 +12637,7 @@ components:
           nullable: true
           type: string
       type: object
-    randomQuote_200_response:
+    randomQuoteAPI_200_response:
       example:
         quote: quote
         author: author
@@ -12555,7 +12649,7 @@ components:
           nullable: true
           type: string
       type: object
-    randomRiddle_200_response:
+    randomRiddleAPI_200_response:
       example:
         difficulty: difficulty
         answer: answer
@@ -12571,7 +12665,7 @@ components:
           nullable: true
           type: string
       type: object
-    randomPoem_200_response:
+    randomPoemAPI_200_response:
       example:
         poem: poem
         author: author
@@ -12587,7 +12681,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractContentFromAWebPage_200_response:
+    extractContentFromAWebPageAPI_200_response:
       example:
         images:
         - images
@@ -12611,7 +12705,7 @@ components:
             type: string
           type: array
       type: object
-    extractPublishDate_200_response:
+    extractPublishDateAPI_200_response:
       example:
         publish_date: publish_date
       properties:
@@ -12619,7 +12713,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractAuthors_200_response_authors_inner:
+    extractAuthorsAPI_200_response_authors_inner:
       example:
         link: link
         name: name
@@ -12631,7 +12725,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractAuthors_200_response:
+    extractAuthorsAPI_200_response:
       example:
         authors:
         - link: link
@@ -12641,10 +12735,10 @@ components:
       properties:
         authors:
           items:
-            $ref: '#/components/schemas/extractAuthors_200_response_authors_inner'
+            $ref: '#/components/schemas/extractAuthorsAPI_200_response_authors_inner'
           type: array
       type: object
-    searchWeb_200_response_results_inner:
+    searchWebAPI_200_response_results_inner:
       example:
         summary: summary
         title: title
@@ -12660,7 +12754,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchWeb_200_response:
+    searchWebAPI_200_response:
       example:
         results:
         - summary: summary
@@ -12672,10 +12766,10 @@ components:
       properties:
         results:
           items:
-            $ref: '#/components/schemas/searchWeb_200_response_results_inner'
+            $ref: '#/components/schemas/searchWebAPI_200_response_results_inner'
           type: array
       type: object
-    retrievePageRank_200_response:
+    retrievePageRankAPI_200_response:
       example:
         page_rank: 0.8008281904610115
         percentile: 1.4658129805029452
@@ -12688,7 +12782,7 @@ components:
         percentile:
           type: number
       type: object
-    verifyEmailAddress_200_response:
+    verifyEmailAddressAPI_200_response:
       example:
         result: result
         image: image
@@ -12737,7 +12831,7 @@ components:
         free_provider:
           type: boolean
       type: object
-    correctSpelling_200_response:
+    correctSpellingAPI_200_response:
       example:
         corrected_text: corrected_text
       properties:
@@ -12745,7 +12839,7 @@ components:
           nullable: true
           type: string
       type: object
-    detectLanguage_200_response_inner:
+    detectLanguageAPI_200_response_inner:
       example:
         confidence: 0.8008281904610115
         language: language
@@ -12756,7 +12850,7 @@ components:
         confidence:
           type: number
       type: object
-    detectSentiment_200_response_document:
+    detectSentimentAPI_200_response_document:
       example:
         sentiment: sentiment
         confidence: 0
@@ -12770,7 +12864,7 @@ components:
         average_confidence:
           type: integer
       type: object
-    detectSentiment_200_response_sentences_inner:
+    detectSentimentAPI_200_response_sentences_inner:
       example:
         sentiment: sentiment
         offset: 5
@@ -12787,7 +12881,7 @@ components:
         confidence:
           type: integer
       type: object
-    detectSentiment_200_response:
+    detectSentimentAPI_200_response:
       example:
         sentences:
         - sentiment: sentiment
@@ -12804,13 +12898,13 @@ components:
           average_confidence: 6
       properties:
         document:
-          $ref: '#/components/schemas/detectSentiment_200_response_document'
+          $ref: '#/components/schemas/detectSentimentAPI_200_response_document'
         sentences:
           items:
-            $ref: '#/components/schemas/detectSentiment_200_response_sentences_inner'
+            $ref: '#/components/schemas/detectSentimentAPI_200_response_sentences_inner'
           type: array
       type: object
-    scoreText_200_response_readability_mainscores:
+    scoreTextAPI_200_response_readability_mainscores:
       example:
         total: 5
         total_possible: 1
@@ -12820,7 +12914,7 @@ components:
         total:
           type: integer
       type: object
-    scoreText_200_response_readability_subscores:
+    scoreTextAPI_200_response_readability_subscores:
       example:
         reading_time_seconds: 5
         forcast: 2.3021358869347655
@@ -12851,7 +12945,7 @@ components:
         fog:
           type: number
       type: object
-    scoreText_200_response_readability:
+    scoreTextAPI_200_response_readability:
       example:
         mainscores:
           total: 5
@@ -12868,11 +12962,11 @@ components:
           fog: 1.2315135367772556
       properties:
         mainscores:
-          $ref: '#/components/schemas/scoreText_200_response_readability_mainscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_readability_mainscores'
         subscores:
-          $ref: '#/components/schemas/scoreText_200_response_readability_subscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_readability_subscores'
       type: object
-    scoreText_200_response_skimmability_mainscores:
+    scoreTextAPI_200_response_skimmability_mainscores:
       example:
         total: 1.4894159098541704
         total_possible: 1
@@ -12882,7 +12976,7 @@ components:
         total:
           type: number
       type: object
-    scoreText_200_response_skimmability_subscores:
+    scoreTextAPI_200_response_skimmability_subscores:
       example:
         image_score:
         - 7
@@ -12928,7 +13022,7 @@ components:
             type: integer
           type: array
       type: object
-    scoreText_200_response_skimmability:
+    scoreTextAPI_200_response_skimmability:
       example:
         mainscores:
           total: 1.4894159098541704
@@ -12954,11 +13048,11 @@ components:
           - 9
       properties:
         mainscores:
-          $ref: '#/components/schemas/scoreText_200_response_skimmability_mainscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_skimmability_mainscores'
         subscores:
-          $ref: '#/components/schemas/scoreText_200_response_skimmability_subscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_skimmability_subscores'
       type: object
-    scoreText_200_response_interestingness_subscores:
+    scoreTextAPI_200_response_interestingness_subscores:
       example:
         quote_score:
         - 6
@@ -12997,7 +13091,7 @@ components:
             type: integer
           type: array
       type: object
-    scoreText_200_response_interestingness:
+    scoreTextAPI_200_response_interestingness:
       example:
         mainscores:
           total: 1.4894159098541704
@@ -13020,11 +13114,11 @@ components:
           - 8
       properties:
         mainscores:
-          $ref: '#/components/schemas/scoreText_200_response_skimmability_mainscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_skimmability_mainscores'
         subscores:
-          $ref: '#/components/schemas/scoreText_200_response_interestingness_subscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_interestingness_subscores'
       type: object
-    scoreText_200_response_style_subscores:
+    scoreTextAPI_200_response_style_subscores:
       example:
         style_score:
         - 6
@@ -13049,7 +13143,7 @@ components:
             type: integer
           type: array
       type: object
-    scoreText_200_response_style:
+    scoreTextAPI_200_response_style:
       example:
         mainscores:
           total: 5
@@ -13066,11 +13160,11 @@ components:
           - 3
       properties:
         mainscores:
-          $ref: '#/components/schemas/scoreText_200_response_readability_mainscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_readability_mainscores'
         subscores:
-          $ref: '#/components/schemas/scoreText_200_response_style_subscores'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_style_subscores'
       type: object
-    scoreText_200_response:
+    scoreTextAPI_200_response:
       example:
         number_of_sentences: 6
         skimmability:
@@ -13152,17 +13246,17 @@ components:
         number_of_sentences:
           type: integer
         readability:
-          $ref: '#/components/schemas/scoreText_200_response_readability'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_readability'
         skimmability:
-          $ref: '#/components/schemas/scoreText_200_response_skimmability'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_skimmability'
         interestingness:
-          $ref: '#/components/schemas/scoreText_200_response_interestingness'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_interestingness'
         style:
-          $ref: '#/components/schemas/scoreText_200_response_style'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_style'
         total_score:
           type: number
       type: object
-    scoreReadability_200_response:
+    scoreReadabilityAPI_200_response:
       example:
         readability:
           mainscores:
@@ -13180,9 +13274,9 @@ components:
             fog: 1.2315135367772556
       properties:
         readability:
-          $ref: '#/components/schemas/scoreText_200_response_readability'
+          $ref: '#/components/schemas/scoreTextAPI_200_response_readability'
       type: object
-    extractDates_200_response_dates_inner:
+    extractDatesAPI_200_response_dates_inner:
       example:
         start_position: 0
         date: date
@@ -13203,7 +13297,7 @@ components:
         end_position:
           type: integer
       type: object
-    extractDates_200_response:
+    extractDatesAPI_200_response:
       example:
         dates:
         - start_position: 0
@@ -13219,10 +13313,10 @@ components:
       properties:
         dates:
           items:
-            $ref: '#/components/schemas/extractDates_200_response_dates_inner'
+            $ref: '#/components/schemas/extractDatesAPI_200_response_dates_inner'
           type: array
       type: object
-    detectGenderByName_200_response:
+    detectGenderByNameAPI_200_response:
       example:
         probability_female: 6.027456183070403
         popularity: 1.4658129805029452
@@ -13239,7 +13333,7 @@ components:
         popularity:
           type: number
       type: object
-    listWordSynonyms_200_response:
+    listWordSynonymsAPI_200_response:
       example:
         synonyms:
         - synonyms
@@ -13251,7 +13345,7 @@ components:
             type: string
           type: array
       type: object
-    tagPartOfSpeech_200_response:
+    tagPartOfSpeechAPI_200_response:
       example:
         tagged_text: tagged_text
       properties:
@@ -13259,7 +13353,7 @@ components:
           nullable: true
           type: string
       type: object
-    stemText_200_response:
+    stemTextAPI_200_response:
       example:
         stemmed: stemmed
         original: original
@@ -13271,7 +13365,7 @@ components:
           nullable: true
           type: string
       type: object
-    singularizeWord_200_response:
+    singularizeWordAPI_200_response:
       example:
         original: original
         singular: singular
@@ -13283,7 +13377,7 @@ components:
           nullable: true
           type: string
       type: object
-    pluralizeWord_200_response:
+    pluralizeWordAPI_200_response:
       example:
         original: original
         plural: plural
@@ -13295,7 +13389,7 @@ components:
           nullable: true
           type: string
       type: object
-    extractEntities_200_response_entities_inner:
+    extractEntitiesAPI_200_response_entities_inner:
       example:
         start_position: 0
         image: image
@@ -13317,7 +13411,7 @@ components:
         end_position:
           type: integer
       type: object
-    extractEntities_200_response:
+    extractEntitiesAPI_200_response:
       example:
         entities:
         - start_position: 0
@@ -13333,10 +13427,10 @@ components:
       properties:
         entities:
           items:
-            $ref: '#/components/schemas/extractEntities_200_response_entities_inner'
+            $ref: '#/components/schemas/extractEntitiesAPI_200_response_entities_inner'
           type: array
       type: object
-    searchRoyaltyFreeImages_200_response_images_inner_license:
+    searchRoyaltyFreeImagesAPI_200_response_images_inner_license:
       example:
         name: name
         link: link
@@ -13348,7 +13442,7 @@ components:
           nullable: true
           type: string
       type: object
-    searchRoyaltyFreeImages_200_response_images_inner:
+    searchRoyaltyFreeImagesAPI_200_response_images_inner:
       example:
         license:
           name: name
@@ -13362,7 +13456,7 @@ components:
         width:
           type: integer
         license:
-          $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response_images_inner_license'
+          $ref: '#/components/schemas/searchRoyaltyFreeImagesAPI_200_response_images_inner_license'
         thumbnail:
           nullable: true
           type: string
@@ -13375,7 +13469,7 @@ components:
         height:
           type: integer
       type: object
-    searchRoyaltyFreeImages_200_response:
+    searchRoyaltyFreeImagesAPI_200_response:
       example:
         images:
         - license:
@@ -13397,10 +13491,10 @@ components:
       properties:
         images:
           items:
-            $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response_images_inner'
+            $ref: '#/components/schemas/searchRoyaltyFreeImagesAPI_200_response_images_inner'
           type: array
       type: object
-    searchIcons_200_response:
+    searchIconsAPI_200_response:
       example:
         icons:
         - license:
@@ -13422,10 +13516,10 @@ components:
       properties:
         icons:
           items:
-            $ref: '#/components/schemas/searchRoyaltyFreeImages_200_response_images_inner'
+            $ref: '#/components/schemas/searchRoyaltyFreeImagesAPI_200_response_images_inner'
           type: array
       type: object
-    detectMainImageColor_200_response_inner:
+    detectMainImageColorAPI_200_response_inner:
       example:
         specific_color: specific_color
         main_color: main_color
@@ -13441,7 +13535,44 @@ components:
           nullable: true
           type: string
       type: object
-    convertUnits_200_response:
+    vectorSearchAPI_200_response_vectors_inner:
+      example:
+        license: license
+        author: author
+        image_url: image_url
+        title: title
+      properties:
+        license:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        author:
+          nullable: true
+          type: string
+        image_url:
+          nullable: true
+          type: string
+      type: object
+    vectorSearchAPI_200_response:
+      example:
+        vectors:
+        - license: license
+          author: author
+          image_url: image_url
+          title: title
+        - license: license
+          author: author
+          image_url: image_url
+          title: title
+      properties:
+        vectors:
+          items:
+            $ref: '#/components/schemas/vectorSearchAPI_200_response_vectors_inner'
+          type: array
+      type: object
+    convertUnitsAPI_200_response:
       example:
         target_unit: target_unit
         target_amount: 0.8008281904610115
@@ -13452,7 +13583,7 @@ components:
           nullable: true
           type: string
       type: object
-    readKeyValueFromStore_200_response:
+    readKeyValueFromStoreAPI_200_response:
       example:
         value: value
       properties:
@@ -13460,7 +13591,7 @@ components:
           nullable: true
           type: string
       type: object
-    storeKeyValueGET_200_response:
+    storeKeyValueGETAPI_200_response:
       example:
         status: status
       properties:

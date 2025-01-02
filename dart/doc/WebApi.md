@@ -9,18 +9,18 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extractAuthors**](WebApi.md#extractauthors) | **GET** /extract-authors | Extract Authors
-[**extractContentFromAWebPage**](WebApi.md#extractcontentfromawebpage) | **GET** /extract-content | Extract Content from a Web Page
-[**extractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date
-[**retrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank
-[**searchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web
-[**verifyEmailAddress**](WebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address
+[**extractAuthorsAPI**](WebApi.md#extractauthorsapi) | **GET** /extract-authors | Extract Authors API
+[**extractContentFromAWebPageAPI**](WebApi.md#extractcontentfromawebpageapi) | **GET** /extract-content | Extract Content from a Web Page API
+[**extractPublishDateAPI**](WebApi.md#extractpublishdateapi) | **GET** /extract-publish-date | Extract Publish Date API
+[**retrievePageRankAPI**](WebApi.md#retrievepagerankapi) | **GET** /retrieve-page-rank | Retrieve Page Rank API
+[**searchWebAPI**](WebApi.md#searchwebapi) | **GET** /search-web | Search Web API
+[**verifyEmailAddressAPI**](WebApi.md#verifyemailaddressapi) | **GET** /verify-email | Verify Email Address API
 
 
-# **extractAuthors**
-> ExtractAuthors200Response extractAuthors(url)
+# **extractAuthorsAPI**
+> ExtractAuthorsAPI200Response extractAuthorsAPI(url)
 
-Extract Authors
+Extract Authors API
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
@@ -40,10 +40,10 @@ final api_instance = WebApi();
 final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url with the article from which authors should be extracted.
 
 try {
-    final result = api_instance.extractAuthors(url);
+    final result = api_instance.extractAuthorsAPI(url);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->extractAuthors: $e\n');
+    print('Exception when calling WebApi->extractAuthorsAPI: $e\n');
 }
 ```
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
+[**ExtractAuthorsAPI200Response**](ExtractAuthorsAPI200Response.md)
 
 ### Authorization
 
@@ -68,10 +68,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extractContentFromAWebPage**
-> ExtractContentFromAWebPage200Response extractContentFromAWebPage(url)
+# **extractContentFromAWebPageAPI**
+> ExtractContentFromAWebPageAPI200Response extractContentFromAWebPageAPI(url)
 
-Extract Content from a Web Page
+Extract Content from a Web Page API
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
@@ -91,10 +91,10 @@ final api_instance = WebApi();
 final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the content will be extracted.
 
 try {
-    final result = api_instance.extractContentFromAWebPage(url);
+    final result = api_instance.extractContentFromAWebPageAPI(url);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->extractContentFromAWebPage: $e\n');
+    print('Exception when calling WebApi->extractContentFromAWebPageAPI: $e\n');
 }
 ```
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
+[**ExtractContentFromAWebPageAPI200Response**](ExtractContentFromAWebPageAPI200Response.md)
 
 ### Authorization
 
@@ -119,10 +119,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **extractPublishDate**
-> ExtractPublishDate200Response extractPublishDate(url)
+# **extractPublishDateAPI**
+> ExtractPublishDateAPI200Response extractPublishDateAPI(url)
 
-Extract Publish Date
+Extract Publish Date API
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
@@ -142,10 +142,10 @@ final api_instance = WebApi();
 final url = https://www.nytimes.com/2024/03/27/world/australia/economy-cost-of-living.html; // String | The url for which the publish date should be extracted.
 
 try {
-    final result = api_instance.extractPublishDate(url);
+    final result = api_instance.extractPublishDateAPI(url);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->extractPublishDate: $e\n');
+    print('Exception when calling WebApi->extractPublishDateAPI: $e\n');
 }
 ```
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+[**ExtractPublishDateAPI200Response**](ExtractPublishDateAPI200Response.md)
 
 ### Authorization
 
@@ -170,10 +170,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrievePageRank**
-> RetrievePageRank200Response retrievePageRank(domain)
+# **retrievePageRankAPI**
+> RetrievePageRankAPI200Response retrievePageRankAPI(domain)
 
-Retrieve Page Rank
+Retrieve Page Rank API
 
 This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
 
@@ -193,10 +193,10 @@ final api_instance = WebApi();
 final domain = amazon.com; // String | The domain for which the page rank should be returned.
 
 try {
-    final result = api_instance.retrievePageRank(domain);
+    final result = api_instance.retrievePageRankAPI(domain);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->retrievePageRank: $e\n');
+    print('Exception when calling WebApi->retrievePageRankAPI: $e\n');
 }
 ```
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
+[**RetrievePageRankAPI200Response**](RetrievePageRankAPI200Response.md)
 
 ### Authorization
 
@@ -221,10 +221,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchWeb**
-> SearchWeb200Response searchWeb(query, number)
+# **searchWebAPI**
+> SearchWebAPI200Response searchWebAPI(query, number)
 
-Search Web
+Search Web API
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
@@ -245,10 +245,10 @@ final query = penguins; // String | The search query.
 final number = 5; // int | The number of results to return in range [1,50]
 
 try {
-    final result = api_instance.searchWeb(query, number);
+    final result = api_instance.searchWebAPI(query, number);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->searchWeb: $e\n');
+    print('Exception when calling WebApi->searchWebAPI: $e\n');
 }
 ```
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchWeb200Response**](SearchWeb200Response.md)
+[**SearchWebAPI200Response**](SearchWebAPI200Response.md)
 
 ### Authorization
 
@@ -274,10 +274,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verifyEmailAddress**
-> VerifyEmailAddress200Response verifyEmailAddress(email)
+# **verifyEmailAddressAPI**
+> VerifyEmailAddressAPI200Response verifyEmailAddressAPI(email)
 
-Verify Email Address
+Verify Email Address API
 
 This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
 
@@ -297,10 +297,10 @@ final api_instance = WebApi();
 final email = maxtest@gmail.com; // String | The email address to verify.
 
 try {
-    final result = api_instance.verifyEmailAddress(email);
+    final result = api_instance.verifyEmailAddressAPI(email);
     print(result);
 } catch (e) {
-    print('Exception when calling WebApi->verifyEmailAddress: $e\n');
+    print('Exception when calling WebApi->verifyEmailAddressAPI: $e\n');
 }
 ```
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
+[**VerifyEmailAddressAPI200Response**](VerifyEmailAddressAPI200Response.md)
 
 ### Authorization
 

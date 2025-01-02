@@ -4,19 +4,19 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**computeNutrition**](FoodApi.md#computeNutrition) | **GET** /compute-nutrition | Compute Nutrition
-[**retrieveRecipeInformation**](FoodApi.md#retrieveRecipeInformation) | **GET** /retrieve-recipe | Retrieve Recipe Information
-[**searchDrinks**](FoodApi.md#searchDrinks) | **GET** /search-drinks | Search Drinks
-[**searchRecipes**](FoodApi.md#searchRecipes) | **GET** /search-recipes | Search Recipes
-[**searchRestaurants**](FoodApi.md#searchRestaurants) | **GET** /search-restaurants | Search Restaurants
+[**computeNutritionAPI**](FoodApi.md#computeNutritionAPI) | **GET** /compute-nutrition | Compute Nutrition API
+[**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
+[**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
+[**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
+[**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 
 
 
-## computeNutrition
+## computeNutritionAPI
 
-> ComputeNutrition200Response computeNutrition(ingredients, opts)
+> ComputeNutritionAPI200Response computeNutritionAPI(ingredients, opts)
 
-Compute Nutrition
+Compute Nutrition API
 
 Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
 
@@ -42,7 +42,7 @@ let opts = {
   'servings': 1, // Number | The number of servings the ingredients make. Nutrition is computed per serving.
   'reduceOils': true // Boolean | If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
 };
-apiInstance.computeNutrition(ingredients, opts, (error, data, response) => {
+apiInstance.computeNutritionAPI(ingredients, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeNutrition200Response**](ComputeNutrition200Response.md)
+[**ComputeNutritionAPI200Response**](ComputeNutritionAPI200Response.md)
 
 ### Authorization
 
@@ -74,11 +74,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## retrieveRecipeInformation
+## retrieveRecipeInformationAPI
 
-> RetrieveRecipeInformation200Response retrieveRecipeInformation(id, opts)
+> RetrieveRecipeInformationAPI200Response retrieveRecipeInformationAPI(id, opts)
 
-Retrieve Recipe Information
+Retrieve Recipe Information API
 
 Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
 
@@ -103,7 +103,7 @@ let id = 74987; // Number | The id of the recipe to retrieve.
 let opts = {
   'addWinePairing': true // Boolean | Whether to pair a wine to the recipe.
 };
-apiInstance.retrieveRecipeInformation(id, opts, (error, data, response) => {
+apiInstance.retrieveRecipeInformationAPI(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RetrieveRecipeInformation200Response**](RetrieveRecipeInformation200Response.md)
+[**RetrieveRecipeInformationAPI200Response**](RetrieveRecipeInformationAPI200Response.md)
 
 ### Authorization
 
@@ -134,11 +134,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchDrinks
+## searchDrinksAPI
 
-> SearchDrinks200Response searchDrinks(opts)
+> SearchDrinksAPI200Response searchDrinksAPI(opts)
 
-Search Drinks
+Search Drinks API
 
 Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
 
@@ -183,7 +183,7 @@ let opts = {
   'offset': 0, // Number | The number of drinks to skip, between 0 and 90.
   'number': 3 // Number | The number of drinks, between 1 and 10.
 };
-apiInstance.searchDrinks(opts, (error, data, response) => {
+apiInstance.searchDrinksAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchDrinks200Response**](SearchDrinks200Response.md)
+[**SearchDrinksAPI200Response**](SearchDrinksAPI200Response.md)
 
 ### Authorization
 
@@ -234,11 +234,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchRecipes
+## searchRecipesAPI
 
-> SearchRecipes200Response searchRecipes(opts)
+> SearchRecipesAPI200Response searchRecipesAPI(opts)
 
-Search Recipes
+Search Recipes API
 
 Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
 
@@ -351,7 +351,7 @@ let opts = {
   'offset': 0, // Number | The number of recipes to skip, between 0 and 900.
   'number': 3 // Number | The number of recipes, between 1 and 100.
 };
-apiInstance.searchRecipes(opts, (error, data, response) => {
+apiInstance.searchRecipesAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRecipes200Response**](SearchRecipes200Response.md)
+[**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
 
 ### Authorization
 
@@ -470,11 +470,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchRestaurants
+## searchRestaurantsAPI
 
-> SearchRestaurants200Response searchRestaurants(lat, lon, opts)
+> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, opts)
 
-Search Restaurants
+Search Restaurants API
 
 Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
 
@@ -507,7 +507,7 @@ let opts = {
   'page': 0, // Number | The page of the results.
   'sort': "rating" // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
 };
-apiInstance.searchRestaurants(lat, lon, opts, (error, data, response) => {
+apiInstance.searchRestaurantsAPI(lat, lon, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRestaurants200Response**](SearchRestaurants200Response.md)
+[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

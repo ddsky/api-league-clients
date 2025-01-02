@@ -2,113 +2,115 @@ import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/htt
 import { Configuration} from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
-import { ComputeNutrition200Response } from '../models/ComputeNutrition200Response';
-import { ComputeNutrition200ResponseIngredientBreakdownInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInner';
-import { ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutrition200ResponseIngredientBreakdownInnerNutrientsInner';
-import { ConvertUnits200Response } from '../models/ConvertUnits200Response';
-import { CorrectSpelling200Response } from '../models/CorrectSpelling200Response';
-import { DetectGenderByName200Response } from '../models/DetectGenderByName200Response';
-import { DetectLanguage200ResponseInner } from '../models/DetectLanguage200ResponseInner';
-import { DetectMainImageColor200ResponseInner } from '../models/DetectMainImageColor200ResponseInner';
-import { DetectSentiment200Response } from '../models/DetectSentiment200Response';
-import { DetectSentiment200ResponseDocument } from '../models/DetectSentiment200ResponseDocument';
-import { DetectSentiment200ResponseSentencesInner } from '../models/DetectSentiment200ResponseSentencesInner';
-import { ExtractAuthors200Response } from '../models/ExtractAuthors200Response';
-import { ExtractAuthors200ResponseAuthorsInner } from '../models/ExtractAuthors200ResponseAuthorsInner';
-import { ExtractContentFromAWebPage200Response } from '../models/ExtractContentFromAWebPage200Response';
-import { ExtractDates200Response } from '../models/ExtractDates200Response';
-import { ExtractDates200ResponseDatesInner } from '../models/ExtractDates200ResponseDatesInner';
-import { ExtractEntities200Response } from '../models/ExtractEntities200Response';
-import { ExtractEntities200ResponseEntitiesInner } from '../models/ExtractEntities200ResponseEntitiesInner';
-import { ExtractNews200Response } from '../models/ExtractNews200Response';
-import { ExtractNews200ResponseImagesInner } from '../models/ExtractNews200ResponseImagesInner';
-import { ExtractNews200ResponseVideosInner } from '../models/ExtractNews200ResponseVideosInner';
-import { ExtractPublishDate200Response } from '../models/ExtractPublishDate200Response';
-import { FindSimilarBooks200Response } from '../models/FindSimilarBooks200Response';
-import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
-import { ListWordSynonyms200Response } from '../models/ListWordSynonyms200Response';
-import { PluralizeWord200Response } from '../models/PluralizeWord200Response';
-import { RandomMeme200Response } from '../models/RandomMeme200Response';
-import { RandomPoem200Response } from '../models/RandomPoem200Response';
-import { RandomQuote200Response } from '../models/RandomQuote200Response';
-import { RandomRiddle200Response } from '../models/RandomRiddle200Response';
-import { RandomTrivia200Response } from '../models/RandomTrivia200Response';
-import { ReadKeyValueFromStore200Response } from '../models/ReadKeyValueFromStore200Response';
-import { RetrievePageRank200Response } from '../models/RetrievePageRank200Response';
-import { RetrieveRecipeInformation200Response } from '../models/RetrieveRecipeInformation200Response';
-import { RetrieveRecipeInformation200ResponseCredits } from '../models/RetrieveRecipeInformation200ResponseCredits';
-import { RetrieveRecipeInformation200ResponseDietaryProperties } from '../models/RetrieveRecipeInformation200ResponseDietaryProperties';
-import { RetrieveRecipeInformation200ResponseIngredientsInner } from '../models/RetrieveRecipeInformation200ResponseIngredientsInner';
-import { RetrieveRecipeInformation200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformation200ResponseIngredientsInnerMeasures';
-import { RetrieveRecipeInformation200ResponseInstructionsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInner';
-import { RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformation200ResponseInstructionsInnerStepsInner';
-import { RetrieveRecipeInformation200ResponseNutrition } from '../models/RetrieveRecipeInformation200ResponseNutrition';
-import { RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformation200ResponseNutritionIngredientBreakdownInner';
-import { RetrieveRecipeInformation200ResponseScores } from '../models/RetrieveRecipeInformation200ResponseScores';
-import { RetrieveRecipeInformation200ResponseTaste } from '../models/RetrieveRecipeInformation200ResponseTaste';
-import { RetrieveRecipeInformation200ResponseTimes } from '../models/RetrieveRecipeInformation200ResponseTimes';
-import { ScoreReadability200Response } from '../models/ScoreReadability200Response';
-import { ScoreText200Response } from '../models/ScoreText200Response';
-import { ScoreText200ResponseInterestingness } from '../models/ScoreText200ResponseInterestingness';
-import { ScoreText200ResponseInterestingnessSubscores } from '../models/ScoreText200ResponseInterestingnessSubscores';
-import { ScoreText200ResponseReadability } from '../models/ScoreText200ResponseReadability';
-import { ScoreText200ResponseReadabilityMainscores } from '../models/ScoreText200ResponseReadabilityMainscores';
-import { ScoreText200ResponseReadabilitySubscores } from '../models/ScoreText200ResponseReadabilitySubscores';
-import { ScoreText200ResponseSkimmability } from '../models/ScoreText200ResponseSkimmability';
-import { ScoreText200ResponseSkimmabilityMainscores } from '../models/ScoreText200ResponseSkimmabilityMainscores';
-import { ScoreText200ResponseSkimmabilitySubscores } from '../models/ScoreText200ResponseSkimmabilitySubscores';
-import { ScoreText200ResponseStyle } from '../models/ScoreText200ResponseStyle';
-import { ScoreText200ResponseStyleSubscores } from '../models/ScoreText200ResponseStyleSubscores';
-import { SearchBooks200Response } from '../models/SearchBooks200Response';
-import { SearchBooks200ResponseBooksInnerInner } from '../models/SearchBooks200ResponseBooksInnerInner';
-import { SearchDrinks200Response } from '../models/SearchDrinks200Response';
-import { SearchDrinks200ResponseDrinksInner } from '../models/SearchDrinks200ResponseDrinksInner';
-import { SearchDrinks200ResponseDrinksInnerCredits } from '../models/SearchDrinks200ResponseDrinksInnerCredits';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasures';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
-import { SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinks200ResponseDrinksInnerIngredientsInnerMeasuresUs';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInner';
-import { SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinks200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutrition } from '../models/SearchDrinks200ResponseDrinksInnerNutrition';
-import { SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinks200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionFlavonoidsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinks200ResponseDrinksInnerNutritionNutrientsInner';
-import { SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinks200ResponseDrinksInnerNutritionWeightPerServing';
-import { SearchGifs200Response } from '../models/SearchGifs200Response';
-import { SearchGifs200ResponseImagesInner } from '../models/SearchGifs200ResponseImagesInner';
-import { SearchIcons200Response } from '../models/SearchIcons200Response';
-import { SearchJokes200Response } from '../models/SearchJokes200Response';
-import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
-import { SearchMemes200Response } from '../models/SearchMemes200Response';
-import { SearchMemes200ResponseMemesInner } from '../models/SearchMemes200ResponseMemesInner';
-import { SearchNews200Response } from '../models/SearchNews200Response';
-import { SearchNews200ResponseNewsInner } from '../models/SearchNews200ResponseNewsInner';
-import { SearchRecipes200Response } from '../models/SearchRecipes200Response';
-import { SearchRecipes200ResponseRecipesInner } from '../models/SearchRecipes200ResponseRecipesInner';
-import { SearchRecipes200ResponseRecipesInnerNutrition } from '../models/SearchRecipes200ResponseRecipesInnerNutrition';
-import { SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipes200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurants200Response } from '../models/SearchRestaurants200Response';
-import { SearchRestaurants200ResponseRestaurantsInner } from '../models/SearchRestaurants200ResponseRestaurantsInner';
-import { SearchRestaurants200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurants200ResponseRestaurantsInnerAddress';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurants200ResponseRestaurantsInnerLocalHoursOperational';
-import { SearchRoyaltyFreeImages200Response } from '../models/SearchRoyaltyFreeImages200Response';
-import { SearchRoyaltyFreeImages200ResponseImagesInner } from '../models/SearchRoyaltyFreeImages200ResponseImagesInner';
-import { SearchRoyaltyFreeImages200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImages200ResponseImagesInnerLicense';
-import { SearchWeb200Response } from '../models/SearchWeb200Response';
-import { SearchWeb200ResponseResultsInner } from '../models/SearchWeb200ResponseResultsInner';
-import { SingularizeWord200Response } from '../models/SingularizeWord200Response';
-import { StemText200Response } from '../models/StemText200Response';
-import { StoreKeyValueGET200Response } from '../models/StoreKeyValueGET200Response';
-import { TagPartOfSpeech200Response } from '../models/TagPartOfSpeech200Response';
-import { TopNews200Response } from '../models/TopNews200Response';
-import { TopNews200ResponseTopNewsInner } from '../models/TopNews200ResponseTopNewsInner';
-import { TopNews200ResponseTopNewsInnerNewsInner } from '../models/TopNews200ResponseTopNewsInnerNewsInner';
-import { VerifyEmailAddress200Response } from '../models/VerifyEmailAddress200Response';
+import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
+import { ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
+import { ConvertUnitsAPI200Response } from '../models/ConvertUnitsAPI200Response';
+import { CorrectSpellingAPI200Response } from '../models/CorrectSpellingAPI200Response';
+import { DetectGenderByNameAPI200Response } from '../models/DetectGenderByNameAPI200Response';
+import { DetectLanguageAPI200ResponseInner } from '../models/DetectLanguageAPI200ResponseInner';
+import { DetectMainImageColorAPI200ResponseInner } from '../models/DetectMainImageColorAPI200ResponseInner';
+import { DetectSentimentAPI200Response } from '../models/DetectSentimentAPI200Response';
+import { DetectSentimentAPI200ResponseDocument } from '../models/DetectSentimentAPI200ResponseDocument';
+import { DetectSentimentAPI200ResponseSentencesInner } from '../models/DetectSentimentAPI200ResponseSentencesInner';
+import { ExtractAuthorsAPI200Response } from '../models/ExtractAuthorsAPI200Response';
+import { ExtractAuthorsAPI200ResponseAuthorsInner } from '../models/ExtractAuthorsAPI200ResponseAuthorsInner';
+import { ExtractContentFromAWebPageAPI200Response } from '../models/ExtractContentFromAWebPageAPI200Response';
+import { ExtractDatesAPI200Response } from '../models/ExtractDatesAPI200Response';
+import { ExtractDatesAPI200ResponseDatesInner } from '../models/ExtractDatesAPI200ResponseDatesInner';
+import { ExtractEntitiesAPI200Response } from '../models/ExtractEntitiesAPI200Response';
+import { ExtractEntitiesAPI200ResponseEntitiesInner } from '../models/ExtractEntitiesAPI200ResponseEntitiesInner';
+import { ExtractNewsAPI200Response } from '../models/ExtractNewsAPI200Response';
+import { ExtractNewsAPI200ResponseImagesInner } from '../models/ExtractNewsAPI200ResponseImagesInner';
+import { ExtractNewsAPI200ResponseVideosInner } from '../models/ExtractNewsAPI200ResponseVideosInner';
+import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
+import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
+import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
+import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
+import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
+import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
+import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
+import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
+import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
+import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
+import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
+import { RetrieveRecipeInformationAPI200ResponseDietaryProperties } from '../models/RetrieveRecipeInformationAPI200ResponseDietaryProperties';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInner } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInner';
+import { RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures } from '../models/RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInner';
+import { RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner } from '../models/RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner';
+import { RetrieveRecipeInformationAPI200ResponseNutrition } from '../models/RetrieveRecipeInformationAPI200ResponseNutrition';
+import { RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner } from '../models/RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner';
+import { RetrieveRecipeInformationAPI200ResponseScores } from '../models/RetrieveRecipeInformationAPI200ResponseScores';
+import { RetrieveRecipeInformationAPI200ResponseTaste } from '../models/RetrieveRecipeInformationAPI200ResponseTaste';
+import { RetrieveRecipeInformationAPI200ResponseTimes } from '../models/RetrieveRecipeInformationAPI200ResponseTimes';
+import { ScoreReadabilityAPI200Response } from '../models/ScoreReadabilityAPI200Response';
+import { ScoreTextAPI200Response } from '../models/ScoreTextAPI200Response';
+import { ScoreTextAPI200ResponseInterestingness } from '../models/ScoreTextAPI200ResponseInterestingness';
+import { ScoreTextAPI200ResponseInterestingnessSubscores } from '../models/ScoreTextAPI200ResponseInterestingnessSubscores';
+import { ScoreTextAPI200ResponseReadability } from '../models/ScoreTextAPI200ResponseReadability';
+import { ScoreTextAPI200ResponseReadabilityMainscores } from '../models/ScoreTextAPI200ResponseReadabilityMainscores';
+import { ScoreTextAPI200ResponseReadabilitySubscores } from '../models/ScoreTextAPI200ResponseReadabilitySubscores';
+import { ScoreTextAPI200ResponseSkimmability } from '../models/ScoreTextAPI200ResponseSkimmability';
+import { ScoreTextAPI200ResponseSkimmabilityMainscores } from '../models/ScoreTextAPI200ResponseSkimmabilityMainscores';
+import { ScoreTextAPI200ResponseSkimmabilitySubscores } from '../models/ScoreTextAPI200ResponseSkimmabilitySubscores';
+import { ScoreTextAPI200ResponseStyle } from '../models/ScoreTextAPI200ResponseStyle';
+import { ScoreTextAPI200ResponseStyleSubscores } from '../models/ScoreTextAPI200ResponseStyleSubscores';
+import { SearchBooksAPI200Response } from '../models/SearchBooksAPI200Response';
+import { SearchBooksAPI200ResponseBooksInnerInner } from '../models/SearchBooksAPI200ResponseBooksInnerInner';
+import { SearchDrinksAPI200Response } from '../models/SearchDrinksAPI200Response';
+import { SearchDrinksAPI200ResponseDrinksInner } from '../models/SearchDrinksAPI200ResponseDrinksInner';
+import { SearchDrinksAPI200ResponseDrinksInnerCredits } from '../models/SearchDrinksAPI200ResponseDrinksInnerCredits';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric';
+import { SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs } from '../models/SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
+import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
+import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
+import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
+import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
+import { SearchMemesAPI200ResponseMemesInner } from '../models/SearchMemesAPI200ResponseMemesInner';
+import { SearchNewsAPI200Response } from '../models/SearchNewsAPI200Response';
+import { SearchNewsAPI200ResponseNewsInner } from '../models/SearchNewsAPI200ResponseNewsInner';
+import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Response';
+import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
+import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
+import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
+import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
+import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
+import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
+import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
+import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
+import { SearchWebAPI200Response } from '../models/SearchWebAPI200Response';
+import { SearchWebAPI200ResponseResultsInner } from '../models/SearchWebAPI200ResponseResultsInner';
+import { SingularizeWordAPI200Response } from '../models/SingularizeWordAPI200Response';
+import { StemTextAPI200Response } from '../models/StemTextAPI200Response';
+import { StoreKeyValueGETAPI200Response } from '../models/StoreKeyValueGETAPI200Response';
+import { TagPartOfSpeechAPI200Response } from '../models/TagPartOfSpeechAPI200Response';
+import { TopNewsAPI200Response } from '../models/TopNewsAPI200Response';
+import { TopNewsAPI200ResponseTopNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInner';
+import { TopNewsAPI200ResponseTopNewsInnerNewsInner } from '../models/TopNewsAPI200ResponseTopNewsInnerNewsInner';
+import { VectorSearchAPI200Response } from '../models/VectorSearchAPI200Response';
+import { VectorSearchAPI200ResponseVectorsInner } from '../models/VectorSearchAPI200ResponseVectorsInner';
+import { VerifyEmailAddressAPI200Response } from '../models/VerifyEmailAddressAPI200Response';
 
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
 export class ObservableArtApi {
@@ -128,13 +130,13 @@ export class ObservableArtApi {
 
     /**
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500).
      * @param height The maximum height of the image (default 400, max. 500).
      */
-    public imageToAsciiArtByURLWithHttpInfo(url: string, width?: number, height?: number, _options?: Configuration): Observable<HttpInfo<string>> {
-        const requestContextPromise = this.requestFactory.imageToAsciiArtByURL(url, width, height, _options);
+    public imageToAsciiArtByURLAPIWithHttpInfo(url: string, width?: number, height?: number, _options?: Configuration): Observable<HttpInfo<string>> {
+        const requestContextPromise = this.requestFactory.imageToAsciiArtByURLAPI(url, width, height, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -148,29 +150,29 @@ export class ObservableArtApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.imageToAsciiArtByURLWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.imageToAsciiArtByURLAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
-     * Image to Ascii Art by URL
+     * Image to Ascii Art by URL API
      * @param url The URL to the image.
      * @param width The maximum width of the image (default 400, max. 500).
      * @param height The maximum height of the image (default 400, max. 500).
      */
-    public imageToAsciiArtByURL(url: string, width?: number, height?: number, _options?: Configuration): Observable<string> {
-        return this.imageToAsciiArtByURLWithHttpInfo(url, width, height, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
+    public imageToAsciiArtByURLAPI(url: string, width?: number, height?: number, _options?: Configuration): Observable<string> {
+        return this.imageToAsciiArtByURLAPIWithHttpInfo(url, width, height, _options).pipe(map((apiResponse: HttpInfo<string>) => apiResponse.data));
     }
 
     /**
      * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
-     * Random Poem
+     * Random Poem API
      * @param minLines The minimum number of lines of the poem.
      * @param maxLines The maximum number of lines of the poem.
      */
-    public randomPoemWithHttpInfo(minLines?: number, maxLines?: number, _options?: Configuration): Observable<HttpInfo<RandomPoem200Response>> {
-        const requestContextPromise = this.requestFactory.randomPoem(minLines, maxLines, _options);
+    public randomPoemAPIWithHttpInfo(minLines?: number, maxLines?: number, _options?: Configuration): Observable<HttpInfo<RandomPoemAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomPoemAPI(minLines, maxLines, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -184,18 +186,18 @@ export class ObservableArtApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomPoemWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomPoemAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Retrieve a random poem by many famous authors. You can filter poem\'s by length (number of lines).
-     * Random Poem
+     * Random Poem API
      * @param minLines The minimum number of lines of the poem.
      * @param maxLines The maximum number of lines of the poem.
      */
-    public randomPoem(minLines?: number, maxLines?: number, _options?: Configuration): Observable<RandomPoem200Response> {
-        return this.randomPoemWithHttpInfo(minLines, maxLines, _options).pipe(map((apiResponse: HttpInfo<RandomPoem200Response>) => apiResponse.data));
+    public randomPoemAPI(minLines?: number, maxLines?: number, _options?: Configuration): Observable<RandomPoemAPI200Response> {
+        return this.randomPoemAPIWithHttpInfo(minLines, maxLines, _options).pipe(map((apiResponse: HttpInfo<RandomPoemAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -217,13 +219,13 @@ export class ObservableBooksApi {
     }
 
     /**
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
-     * Find Similar Books
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100]
      */
-    public findSimilarBooksWithHttpInfo(id: number, number?: number, _options?: Configuration): Observable<HttpInfo<FindSimilarBooks200Response>> {
-        const requestContextPromise = this.requestFactory.findSimilarBooks(id, number, _options);
+    public findSimilarBooksAPIWithHttpInfo(id: number, number?: number, _options?: Configuration): Observable<HttpInfo<FindSimilarBooksAPI200Response>> {
+        const requestContextPromise = this.requestFactory.findSimilarBooksAPI(id, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -237,23 +239,23 @@ export class ObservableBooksApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.findSimilarBooksWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.findSimilarBooksAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
-     * Find Similar Books
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100]
      */
-    public findSimilarBooks(id: number, number?: number, _options?: Configuration): Observable<FindSimilarBooks200Response> {
-        return this.findSimilarBooksWithHttpInfo(id, number, _options).pipe(map((apiResponse: HttpInfo<FindSimilarBooks200Response>) => apiResponse.data));
+    public findSimilarBooksAPI(id: number, number?: number, _options?: Configuration): Observable<FindSimilarBooksAPI200Response> {
+        return this.findSimilarBooksAPIWithHttpInfo(id, number, _options).pipe(map((apiResponse: HttpInfo<FindSimilarBooksAPI200Response>) => apiResponse.data));
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
-     * Search Books
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
      * @param query The search query.
      * @param earliestPublishYear The books must have been published after this year.
      * @param latestPublishYear The books must have been published before this year.
@@ -269,8 +271,8 @@ export class ObservableBooksApi {
      * @param offset The number of books to skip in range [0,1000]
      * @param number The number of books to return in range [1,100]
      */
-    public searchBooksWithHttpInfo(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchBooks200Response>> {
-        const requestContextPromise = this.requestFactory.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _options);
+    public searchBooksAPIWithHttpInfo(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchBooksAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -284,13 +286,13 @@ export class ObservableBooksApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchBooksWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchBooksAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
-     * Search Books
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
      * @param query The search query.
      * @param earliestPublishYear The books must have been published after this year.
      * @param latestPublishYear The books must have been published before this year.
@@ -306,8 +308,8 @@ export class ObservableBooksApi {
      * @param offset The number of books to skip in range [0,1000]
      * @param number The number of books to return in range [1,100]
      */
-    public searchBooks(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Observable<SearchBooks200Response> {
-        return this.searchBooksWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchBooks200Response>) => apiResponse.data));
+    public searchBooksAPI(query?: string, earliestPublishYear?: number, latestPublishYear?: number, minRating?: number, maxRating?: number, genres?: string, authors?: string, isbn?: string, oclc?: string, sort?: string, sortDirection?: string, groupResults?: boolean, offset?: number, number?: number, _options?: Configuration): Observable<SearchBooksAPI200Response> {
+        return this.searchBooksAPIWithHttpInfo(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchBooksAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -330,13 +332,13 @@ export class ObservableFoodApi {
 
     /**
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
-     * Compute Nutrition
+     * Compute Nutrition API
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving.
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
      */
-    public computeNutritionWithHttpInfo(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Observable<HttpInfo<ComputeNutrition200Response>> {
-        const requestContextPromise = this.requestFactory.computeNutrition(ingredients, servings, reduceOils, _options);
+    public computeNutritionAPIWithHttpInfo(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Observable<HttpInfo<ComputeNutritionAPI200Response>> {
+        const requestContextPromise = this.requestFactory.computeNutritionAPI(ingredients, servings, reduceOils, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -350,29 +352,29 @@ export class ObservableFoodApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.computeNutritionWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.computeNutritionAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Compute detailed nutritional information for a given recipe (list of ingredients). The API will return the nutritional information for each ingredient, as well as the total nutritional content for the entire recipe. Aside from macro and micro nutrients, the API also returns flavanoid information and food properties such as glycemic index, glycemic load, and inflammation score.
-     * Compute Nutrition
+     * Compute Nutrition API
      * @param ingredients A comma-separated list of the ingredients of the recipe.
      * @param servings The number of servings the ingredients make. Nutrition is computed per serving.
      * @param reduceOils If there is oil in the ingredients, e.g. 3 tablespoons olive oil but they are used for frying, not all of the oil is consumed and therefore should not be added to the computed nutrition. In this case set reduce-oils to true.
      */
-    public computeNutrition(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Observable<ComputeNutrition200Response> {
-        return this.computeNutritionWithHttpInfo(ingredients, servings, reduceOils, _options).pipe(map((apiResponse: HttpInfo<ComputeNutrition200Response>) => apiResponse.data));
+    public computeNutritionAPI(ingredients: string, servings?: number, reduceOils?: boolean, _options?: Configuration): Observable<ComputeNutritionAPI200Response> {
+        return this.computeNutritionAPIWithHttpInfo(ingredients, servings, reduceOils, _options).pipe(map((apiResponse: HttpInfo<ComputeNutritionAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe.
      */
-    public retrieveRecipeInformationWithHttpInfo(id: number, addWinePairing?: boolean, _options?: Configuration): Observable<HttpInfo<RetrieveRecipeInformation200Response>> {
-        const requestContextPromise = this.requestFactory.retrieveRecipeInformation(id, addWinePairing, _options);
+    public retrieveRecipeInformationAPIWithHttpInfo(id: number, addWinePairing?: boolean, _options?: Configuration): Observable<HttpInfo<RetrieveRecipeInformationAPI200Response>> {
+        const requestContextPromise = this.requestFactory.retrieveRecipeInformationAPI(id, addWinePairing, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -386,23 +388,23 @@ export class ObservableFoodApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.retrieveRecipeInformationWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.retrieveRecipeInformationAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Get detailed recipe information such as dietary properties, macro and micro nutrients, used ingredients and their amounts, and more.
-     * Retrieve Recipe Information
+     * Retrieve Recipe Information API
      * @param id The id of the recipe to retrieve.
      * @param addWinePairing Whether to pair a wine to the recipe.
      */
-    public retrieveRecipeInformation(id: number, addWinePairing?: boolean, _options?: Configuration): Observable<RetrieveRecipeInformation200Response> {
-        return this.retrieveRecipeInformationWithHttpInfo(id, addWinePairing, _options).pipe(map((apiResponse: HttpInfo<RetrieveRecipeInformation200Response>) => apiResponse.data));
+    public retrieveRecipeInformationAPI(id: number, addWinePairing?: boolean, _options?: Configuration): Observable<RetrieveRecipeInformationAPI200Response> {
+        return this.retrieveRecipeInformationAPIWithHttpInfo(id, addWinePairing, _options).pipe(map((apiResponse: HttpInfo<RetrieveRecipeInformationAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
-     * Search Drinks
+     * Search Drinks API
      * @param query The search query.
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
      * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink.
@@ -426,8 +428,8 @@ export class ObservableFoodApi {
      * @param offset The number of drinks to skip, between 0 and 90.
      * @param number The number of drinks, between 1 and 10.
      */
-    public searchDrinksWithHttpInfo(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchDrinks200Response>> {
-        const requestContextPromise = this.requestFactory.searchDrinks(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number, _options);
+    public searchDrinksAPIWithHttpInfo(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchDrinksAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchDrinksAPI(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -441,13 +443,13 @@ export class ObservableFoodApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchDrinksWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchDrinksAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search for drinks by title, ingredients, flavor, type of glass, alcohol content, and more.
-     * Search Drinks
+     * Search Drinks API
      * @param query The search query.
      * @param glassTypes A comma-separated list (interpreted as OR) of glass types that the drink should be served in.
      * @param flavors A comma-separated list (interpreted as AND) of dominant flavors in the drink.
@@ -471,13 +473,13 @@ export class ObservableFoodApi {
      * @param offset The number of drinks to skip, between 0 and 90.
      * @param number The number of drinks, between 1 and 10.
      */
-    public searchDrinks(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchDrinks200Response> {
-        return this.searchDrinksWithHttpInfo(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchDrinks200Response>) => apiResponse.data));
+    public searchDrinksAPI(query?: string, glassTypes?: string, flavors?: string, diet?: string, includeIngredients?: string, excludeIngredients?: string, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minAlcoholPercent?: number, maxAlcoholPercent?: number, minCaffeine?: number, maxCaffeine?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchDrinksAPI200Response> {
+        return this.searchDrinksAPIWithHttpInfo(query, glassTypes, flavors, diet, includeIngredients, excludeIngredients, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minAlcoholPercent, maxAlcoholPercent, minCaffeine, maxCaffeine, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchDrinksAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
-     * Search Recipes
+     * Search Recipes API
      * @param query The search query.
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
      * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
@@ -569,8 +571,8 @@ export class ObservableFoodApi {
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
      */
-    public searchRecipesWithHttpInfo(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRecipes200Response>> {
-        const requestContextPromise = this.requestFactory.searchRecipes(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
+    public searchRecipesAPIWithHttpInfo(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRecipesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -584,13 +586,13 @@ export class ObservableFoodApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRecipesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRecipesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search and filter thousands of recipes with natural language, e.g. pasta recipes without mushrooms but with truffles. You can filter by ingredients, diet, cuisine, meal type, macro and micro nutrition, intolerances, and much more.
-     * Search Recipes
+     * Search Recipes API
      * @param query The search query.
      * @param cuisines The cuisine(s) of the recipes. One or more, comma-separated (will be interpreted as \&#39;OR\&#39;).
      * @param excludeCuisines The cuisine(s) the recipes must not match. One or more, comma-separated (will be interpreted as \&#39;AND\&#39;).
@@ -682,13 +684,13 @@ export class ObservableFoodApi {
      * @param offset The number of recipes to skip, between 0 and 900.
      * @param number The number of recipes, between 1 and 100.
      */
-    public searchRecipes(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchRecipes200Response> {
-        return this.searchRecipesWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchRecipes200Response>) => apiResponse.data));
+    public searchRecipesAPI(query?: string, cuisines?: string, excludeCuisines?: string, mealType?: string, diet?: string, intolerances?: string, equipment?: string, includeIngredients?: string, excludeIngredients?: string, fillIngredients?: boolean, addRecipeInformation?: boolean, maxTime?: number, minServings?: number, maxServings?: number, minCalories?: number, maxCalories?: number, minCarbs?: number, maxCarbs?: number, minProtein?: number, maxProtein?: number, minFat?: number, maxFat?: number, minSugar?: number, maxSugar?: number, minFiber?: number, maxFiber?: number, minFolate?: number, maxFolate?: number, minFolicAcid?: number, maxFolicAcid?: number, minIodine?: number, maxIodine?: number, minIron?: number, maxIron?: number, minZinc?: number, maxZinc?: number, minMagnesium?: number, maxMagnesium?: number, minManganese?: number, maxManganese?: number, minPhosphorus?: number, maxPhosphorus?: number, minPotassium?: number, maxPotassium?: number, minSodium?: number, maxSodium?: number, minSelenium?: number, maxSelenium?: number, minCopper?: number, maxCopper?: number, minCalcium?: number, maxCalcium?: number, minCholine?: number, maxCholine?: number, minCholesterol?: number, maxCholesterol?: number, minFluoride?: number, maxFluoride?: number, minAlcohol?: number, maxAlcohol?: number, minCaffeine?: number, maxCaffeine?: number, minSaturatedFat?: number, maxSaturatedFat?: number, minVitaminA?: number, maxVitaminA?: number, minVitaminC?: number, maxVitaminC?: number, minVitaminD?: number, maxVitaminD?: number, minVitaminE?: number, maxVitaminE?: number, minVitaminK?: number, maxVitaminK?: number, minVitaminB1?: number, maxVitaminB1?: number, minVitaminB2?: number, maxVitaminB2?: number, minVitaminB3?: number, maxVitaminB3?: number, minVitaminB5?: number, maxVitaminB5?: number, minVitaminB6?: number, maxVitaminB6?: number, minVitaminB12?: number, maxVitaminB12?: number, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchRecipesAPI200Response> {
+        return this.searchRecipesAPIWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchRecipesAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants
+     * Search Restaurants API
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
      * @param query The search query.
@@ -700,8 +702,8 @@ export class ObservableFoodApi {
      * @param page The page of the results.
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
      */
-    public searchRestaurantsWithHttpInfo(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<HttpInfo<SearchRestaurants200Response>> {
-        const requestContextPromise = this.requestFactory.searchRestaurants(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options);
+    public searchRestaurantsAPIWithHttpInfo(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<HttpInfo<SearchRestaurantsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -715,13 +717,13 @@ export class ObservableFoodApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRestaurantsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRestaurantsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants
+     * Search Restaurants API
      * @param lat The latitude to search around.
      * @param lon The longitude to search around.
      * @param query The search query.
@@ -733,8 +735,8 @@ export class ObservableFoodApi {
      * @param page The page of the results.
      * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
      */
-    public searchRestaurants(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<SearchRestaurants200Response> {
-        return this.searchRestaurantsWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options).pipe(map((apiResponse: HttpInfo<SearchRestaurants200Response>) => apiResponse.data));
+    public searchRestaurantsAPI(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<SearchRestaurantsAPI200Response> {
+        return this.searchRestaurantsAPIWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options).pipe(map((apiResponse: HttpInfo<SearchRestaurantsAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -757,10 +759,10 @@ export class ObservableHumorApi {
 
     /**
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      */
-    public generateNonsenseWordWithHttpInfo(_options?: Configuration): Observable<HttpInfo<GenerateNonsenseWord200Response>> {
-        const requestContextPromise = this.requestFactory.generateNonsenseWord(_options);
+    public generateNonsenseWordAPIWithHttpInfo(_options?: Configuration): Observable<HttpInfo<GenerateNonsenseWordAPI200Response>> {
+        const requestContextPromise = this.requestFactory.generateNonsenseWordAPI(_options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -774,28 +776,28 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.generateNonsenseWordWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.generateNonsenseWordAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      */
-    public generateNonsenseWord(_options?: Configuration): Observable<GenerateNonsenseWord200Response> {
-        return this.generateNonsenseWordWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<GenerateNonsenseWord200Response>) => apiResponse.data));
+    public generateNonsenseWordAPI(_options?: Configuration): Observable<GenerateNonsenseWordAPI200Response> {
+        return this.generateNonsenseWordAPIWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<GenerateNonsenseWordAPI200Response>) => apiResponse.data));
     }
 
     /**
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-     * Random Joke
+     * Random Joke API
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      */
-    public randomJokeWithHttpInfo(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Observable<HttpInfo<SearchJokes200ResponseJokesInner>> {
-        const requestContextPromise = this.requestFactory.randomJoke(includeTags, excludeTags, minRating, maxLength, _options);
+    public randomJokeAPIWithHttpInfo(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Observable<HttpInfo<SearchJokesAPI200ResponseJokesInner>> {
+        const requestContextPromise = this.requestFactory.randomJokeAPI(includeTags, excludeTags, minRating, maxLength, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -809,33 +811,33 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomJokeWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomJokeAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-     * Random Joke
+     * Random Joke API
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      */
-    public randomJoke(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Observable<SearchJokes200ResponseJokesInner> {
-        return this.randomJokeWithHttpInfo(includeTags, excludeTags, minRating, maxLength, _options).pipe(map((apiResponse: HttpInfo<SearchJokes200ResponseJokesInner>) => apiResponse.data));
+    public randomJokeAPI(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Observable<SearchJokesAPI200ResponseJokesInner> {
+        return this.randomJokeAPIWithHttpInfo(includeTags, excludeTags, minRating, maxLength, _options).pipe(map((apiResponse: HttpInfo<SearchJokesAPI200ResponseJokesInner>) => apiResponse.data));
     }
 
     /**
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-     * Random Meme
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
-    public randomMemeWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Observable<HttpInfo<RandomMeme200Response>> {
-        const requestContextPromise = this.requestFactory.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _options);
+    public randomMemeAPIWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Observable<HttpInfo<RandomMemeAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -849,31 +851,31 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomMemeWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomMemeAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-     * Random Meme
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
-    public randomMeme(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Observable<RandomMeme200Response> {
-        return this.randomMemeWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _options).pipe(map((apiResponse: HttpInfo<RandomMeme200Response>) => apiResponse.data));
+    public randomMemeAPI(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Observable<RandomMemeAPI200Response> {
+        return this.randomMemeAPIWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, _options).pipe(map((apiResponse: HttpInfo<RandomMemeAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-     * Search Gifs
+     * Search Gifs API
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10]
      */
-    public searchGifsWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchGifs200Response>> {
-        const requestContextPromise = this.requestFactory.searchGifs(query, number, _options);
+    public searchGifsAPIWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchGifsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchGifsAPI(query, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -887,23 +889,23 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchGifsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchGifsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-     * Search Gifs
+     * Search Gifs API
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10]
      */
-    public searchGifs(query: string, number?: number, _options?: Configuration): Observable<SearchGifs200Response> {
-        return this.searchGifsWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchGifs200Response>) => apiResponse.data));
+    public searchGifsAPI(query: string, number?: number, _options?: Configuration): Observable<SearchGifsAPI200Response> {
+        return this.searchGifsAPIWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchGifsAPI200Response>) => apiResponse.data));
     }
 
     /**
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-     * Search Jokes
+     * Search Jokes API
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
@@ -912,8 +914,8 @@ export class ObservableHumorApi {
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
      */
-    public searchJokesWithHttpInfo(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchJokes200Response>> {
-        const requestContextPromise = this.requestFactory.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _options);
+    public searchJokesAPIWithHttpInfo(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchJokesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -927,13 +929,13 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchJokesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchJokesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-     * Search Jokes
+     * Search Jokes API
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
@@ -942,13 +944,13 @@ export class ObservableHumorApi {
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
      */
-    public searchJokes(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Observable<SearchJokes200Response> {
-        return this.searchJokesWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchJokes200Response>) => apiResponse.data));
+    public searchJokesAPI(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Observable<SearchJokesAPI200Response> {
+        return this.searchJokesAPIWithHttpInfo(keywords, includeTags, excludeTags, minRating, maxLength, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchJokesAPI200Response>) => apiResponse.data));
     }
 
     /**
-     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
-     * Search Memes
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
+     * Search Memes API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
@@ -957,8 +959,8 @@ export class ObservableHumorApi {
      * @param offset The number of memes to skip, between 0 and 1000.
      * @param number The number of memes, between 1 and 10.
      */
-    public searchMemesWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchMemes200Response>> {
-        const requestContextPromise = this.requestFactory.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options);
+    public searchMemesAPIWithHttpInfo(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchMemesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -972,13 +974,13 @@ export class ObservableHumorApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchMemesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchMemesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
-     * Search Memes
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
+     * Search Memes API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
@@ -987,8 +989,8 @@ export class ObservableHumorApi {
      * @param offset The number of memes to skip, between 0 and 1000.
      * @param number The number of memes, between 1 and 10.
      */
-    public searchMemes(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Observable<SearchMemes200Response> {
-        return this.searchMemesWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchMemes200Response>) => apiResponse.data));
+    public searchMemesAPI(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Observable<SearchMemesAPI200Response> {
+        return this.searchMemesAPIWithHttpInfo(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchMemesAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1011,12 +1013,12 @@ export class ObservableKnowledgeApi {
 
     /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-     * Random Quote
+     * Random Quote API
      * @param minLength The minimum length of the quote in letters.
      * @param maxLength The maximum length of the quote in letters.
      */
-    public randomQuoteWithHttpInfo(minLength?: number, maxLength?: number, _options?: Configuration): Observable<HttpInfo<RandomQuote200Response>> {
-        const requestContextPromise = this.requestFactory.randomQuote(minLength, maxLength, _options);
+    public randomQuoteAPIWithHttpInfo(minLength?: number, maxLength?: number, _options?: Configuration): Observable<HttpInfo<RandomQuoteAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomQuoteAPI(minLength, maxLength, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1030,27 +1032,27 @@ export class ObservableKnowledgeApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomQuoteWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomQuoteAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
-     * Random Quote
+     * Random Quote API
      * @param minLength The minimum length of the quote in letters.
      * @param maxLength The maximum length of the quote in letters.
      */
-    public randomQuote(minLength?: number, maxLength?: number, _options?: Configuration): Observable<RandomQuote200Response> {
-        return this.randomQuoteWithHttpInfo(minLength, maxLength, _options).pipe(map((apiResponse: HttpInfo<RandomQuote200Response>) => apiResponse.data));
+    public randomQuoteAPI(minLength?: number, maxLength?: number, _options?: Configuration): Observable<RandomQuoteAPI200Response> {
+        return this.randomQuoteAPIWithHttpInfo(minLength, maxLength, _options).pipe(map((apiResponse: HttpInfo<RandomQuoteAPI200Response>) => apiResponse.data));
     }
 
     /**
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
-     * Random Riddle
+     * Random Riddle API
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
      */
-    public randomRiddleWithHttpInfo(difficulty?: string, _options?: Configuration): Observable<HttpInfo<RandomRiddle200Response>> {
-        const requestContextPromise = this.requestFactory.randomRiddle(difficulty, _options);
+    public randomRiddleAPIWithHttpInfo(difficulty?: string, _options?: Configuration): Observable<HttpInfo<RandomRiddleAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomRiddleAPI(difficulty, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1064,26 +1066,26 @@ export class ObservableKnowledgeApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomRiddleWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomRiddleAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
-     * Random Riddle
+     * Random Riddle API
      * @param difficulty The difficulty of the riddle, either \&quot;easy\&quot;, \&quot;medium\&quot;, or \&quot;hard\&quot;.
      */
-    public randomRiddle(difficulty?: string, _options?: Configuration): Observable<RandomRiddle200Response> {
-        return this.randomRiddleWithHttpInfo(difficulty, _options).pipe(map((apiResponse: HttpInfo<RandomRiddle200Response>) => apiResponse.data));
+    public randomRiddleAPI(difficulty?: string, _options?: Configuration): Observable<RandomRiddleAPI200Response> {
+        return this.randomRiddleAPIWithHttpInfo(difficulty, _options).pipe(map((apiResponse: HttpInfo<RandomRiddleAPI200Response>) => apiResponse.data));
     }
 
     /**
-     * This endpoint returns a random piece of trivia.
-     * Random Trivia
+     * This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+     * Random Trivia API
      * @param maxLength The maximum length of the trivia in letters.
      */
-    public randomTriviaWithHttpInfo(maxLength?: number, _options?: Configuration): Observable<HttpInfo<RandomTrivia200Response>> {
-        const requestContextPromise = this.requestFactory.randomTrivia(maxLength, _options);
+    public randomTriviaAPIWithHttpInfo(maxLength?: number, _options?: Configuration): Observable<HttpInfo<RandomTriviaAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomTriviaAPI(maxLength, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1097,17 +1099,17 @@ export class ObservableKnowledgeApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomTriviaWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomTriviaAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * This endpoint returns a random piece of trivia.
-     * Random Trivia
+     * This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+     * Random Trivia API
      * @param maxLength The maximum length of the trivia in letters.
      */
-    public randomTrivia(maxLength?: number, _options?: Configuration): Observable<RandomTrivia200Response> {
-        return this.randomTriviaWithHttpInfo(maxLength, _options).pipe(map((apiResponse: HttpInfo<RandomTrivia200Response>) => apiResponse.data));
+    public randomTriviaAPI(maxLength?: number, _options?: Configuration): Observable<RandomTriviaAPI200Response> {
+        return this.randomTriviaAPIWithHttpInfo(maxLength, _options).pipe(map((apiResponse: HttpInfo<RandomTriviaAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1130,14 +1132,14 @@ export class ObservableMathApi {
 
     /**
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
-     * Convert Units
+     * Convert Units API
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
      * @param targetUnit The unit to which should be converted.
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities.
      */
-    public convertUnitsWithHttpInfo(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Observable<HttpInfo<ConvertUnits200Response>> {
-        const requestContextPromise = this.requestFactory.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName, _options);
+    public convertUnitsAPIWithHttpInfo(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Observable<HttpInfo<ConvertUnitsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1151,20 +1153,20 @@ export class ObservableMathApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.convertUnitsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.convertUnitsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
-     * Convert Units
+     * Convert Units API
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
      * @param targetUnit The unit to which should be converted.
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities.
      */
-    public convertUnits(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Observable<ConvertUnits200Response> {
-        return this.convertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName, _options).pipe(map((apiResponse: HttpInfo<ConvertUnits200Response>) => apiResponse.data));
+    public convertUnitsAPI(sourceAmount: number, sourceUnit: string, targetUnit: string, foodName?: string, _options?: Configuration): Observable<ConvertUnitsAPI200Response> {
+        return this.convertUnitsAPIWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName, _options).pipe(map((apiResponse: HttpInfo<ConvertUnitsAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1187,11 +1189,11 @@ export class ObservableMediaApi {
 
     /**
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * @param url The url of the image for which the colors should be detected.
      */
-    public detectMainImageColorWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<Array<DetectMainImageColor200ResponseInner>>> {
-        const requestContextPromise = this.requestFactory.detectMainImageColor(url, _options);
+    public detectMainImageColorAPIWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<Array<DetectMainImageColorAPI200ResponseInner>>> {
+        const requestContextPromise = this.requestFactory.detectMainImageColorAPI(url, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1205,29 +1207,29 @@ export class ObservableMediaApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectMainImageColorWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectMainImageColorAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Detect the main color of an image. The API returns a list of colors and their hex codes. The API supports images in the following formats: JPEG, PNG, and GIF.
-     * Detect Main Image Color
+     * Detect Main Image Color API
      * @param url The url of the image for which the colors should be detected.
      */
-    public detectMainImageColor(url: string, _options?: Configuration): Observable<Array<DetectMainImageColor200ResponseInner>> {
-        return this.detectMainImageColorWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<Array<DetectMainImageColor200ResponseInner>>) => apiResponse.data));
+    public detectMainImageColorAPI(url: string, _options?: Configuration): Observable<Array<DetectMainImageColorAPI200ResponseInner>> {
+        return this.detectMainImageColorAPIWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<Array<DetectMainImageColorAPI200ResponseInner>>) => apiResponse.data));
     }
 
     /**
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
-     * Rescale Image
+     * Rescale Image API
      * @param url The url of the image to be rescaled.
      * @param width The desired width of the rescaled image.
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImageWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpInfo<HttpFile>> {
-        const requestContextPromise = this.requestFactory.rescaleImage(url, width, height, crop, _options);
+    public rescaleImageAPIWithHttpInfo(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpInfo<HttpFile>> {
+        const requestContextPromise = this.requestFactory.rescaleImageAPI(url, width, height, crop, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1241,31 +1243,31 @@ export class ObservableMediaApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.rescaleImageWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.rescaleImageAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image.
-     * Rescale Image
+     * Rescale Image API
      * @param url The url of the image to be rescaled.
      * @param width The desired width of the rescaled image.
      * @param height The desired height of the rescaled image.
      * @param crop Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though.
      */
-    public rescaleImage(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpFile> {
-        return this.rescaleImageWithHttpInfo(url, width, height, crop, _options).pipe(map((apiResponse: HttpInfo<HttpFile>) => apiResponse.data));
+    public rescaleImageAPI(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpFile> {
+        return this.rescaleImageAPIWithHttpInfo(url, width, height, crop, _options).pipe(map((apiResponse: HttpInfo<HttpFile>) => apiResponse.data));
     }
 
     /**
      * Search through millions of icons to match any topic you want.
-     * Search Icons
+     * Search Icons API
      * @param query The search query.
      * @param onlyPublicDomain If true, only public domain icons will be returned.
      * @param number The number of icons to return in range [1,100]
      */
-    public searchIconsWithHttpInfo(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<HttpInfo<SearchIcons200Response>> {
-        const requestContextPromise = this.requestFactory.searchIcons(query, onlyPublicDomain, number, _options);
+    public searchIconsAPIWithHttpInfo(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<HttpInfo<SearchIconsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchIconsAPI(query, onlyPublicDomain, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1279,29 +1281,29 @@ export class ObservableMediaApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchIconsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchIconsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search through millions of icons to match any topic you want.
-     * Search Icons
+     * Search Icons API
      * @param query The search query.
      * @param onlyPublicDomain If true, only public domain icons will be returned.
      * @param number The number of icons to return in range [1,100]
      */
-    public searchIcons(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<SearchIcons200Response> {
-        return this.searchIconsWithHttpInfo(query, onlyPublicDomain, number, _options).pipe(map((apiResponse: HttpInfo<SearchIcons200Response>) => apiResponse.data));
+    public searchIconsAPI(query: string, onlyPublicDomain?: boolean, number?: number, _options?: Configuration): Observable<SearchIconsAPI200Response> {
+        return this.searchIconsAPIWithHttpInfo(query, onlyPublicDomain, number, _options).pipe(map((apiResponse: HttpInfo<SearchIconsAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * @param query The search query.
      * @param number The number of images to return in range [1,100]
      */
-    public searchRoyaltyFreeImagesWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRoyaltyFreeImages200Response>> {
-        const requestContextPromise = this.requestFactory.searchRoyaltyFreeImages(query, number, _options);
+    public searchRoyaltyFreeImagesAPIWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchRoyaltyFreeImagesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchRoyaltyFreeImagesAPI(query, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1315,18 +1317,55 @@ export class ObservableMediaApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRoyaltyFreeImagesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRoyaltyFreeImagesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search through hundreds of thousands of royalty free images to match any topic you want. The images are returned in a list with the URL, width, and height of the image. Additionally, you can find the license type and link of the image.
-     * Search Royalty Free Images
+     * Search Royalty Free Images API
      * @param query The search query.
      * @param number The number of images to return in range [1,100]
      */
-    public searchRoyaltyFreeImages(query: string, number?: number, _options?: Configuration): Observable<SearchRoyaltyFreeImages200Response> {
-        return this.searchRoyaltyFreeImagesWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchRoyaltyFreeImages200Response>) => apiResponse.data));
+    public searchRoyaltyFreeImagesAPI(query: string, number?: number, _options?: Configuration): Observable<SearchRoyaltyFreeImagesAPI200Response> {
+        return this.searchRoyaltyFreeImagesAPIWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchRoyaltyFreeImagesAPI200Response>) => apiResponse.data));
+    }
+
+    /**
+     * Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+     * Vector Search API
+     * @param query The search query.
+     * @param offset The number of vectors to skip, between 0 and 1000
+     * @param number The number of vectors to return in range [1,10]
+     */
+    public vectorSearchAPIWithHttpInfo(query: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<VectorSearchAPI200Response>> {
+        const requestContextPromise = this.requestFactory.vectorSearchAPI(query, offset, number, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.vectorSearchAPIWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Search through over 700,000 free to use vector icons. The license is either \"PUBLIC_DOMAIN\" or \"ATTRIBUTION\". If it is \"ATTRIBUTION\" just attribute the author somewhere in your project.
+     * Vector Search API
+     * @param query The search query.
+     * @param offset The number of vectors to skip, between 0 and 1000
+     * @param number The number of vectors to return in range [1,10]
+     */
+    public vectorSearchAPI(query: string, offset?: number, number?: number, _options?: Configuration): Observable<VectorSearchAPI200Response> {
+        return this.vectorSearchAPIWithHttpInfo(query, offset, number, _options).pipe(map((apiResponse: HttpInfo<VectorSearchAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1349,12 +1388,12 @@ export class ObservableNewsApi {
 
     /**
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
-     * Extract News
+     * Extract News API
      * @param url The url of the news.
      * @param analyze Whether to analyze the news (extract entities etc.)
      */
-    public extractNewsWithHttpInfo(url: string, analyze: boolean, _options?: Configuration): Observable<HttpInfo<ExtractNews200Response>> {
-        const requestContextPromise = this.requestFactory.extractNews(url, analyze, _options);
+    public extractNewsAPIWithHttpInfo(url: string, analyze: boolean, _options?: Configuration): Observable<HttpInfo<ExtractNewsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractNewsAPI(url, analyze, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1368,24 +1407,24 @@ export class ObservableNewsApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractNewsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractNewsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
-     * Extract News
+     * Extract News API
      * @param url The url of the news.
      * @param analyze Whether to analyze the news (extract entities etc.)
      */
-    public extractNews(url: string, analyze: boolean, _options?: Configuration): Observable<ExtractNews200Response> {
-        return this.extractNewsWithHttpInfo(url, analyze, _options).pipe(map((apiResponse: HttpInfo<ExtractNews200Response>) => apiResponse.data));
+    public extractNewsAPI(url: string, analyze: boolean, _options?: Configuration): Observable<ExtractNewsAPI200Response> {
+        return this.extractNewsAPIWithHttpInfo(url, analyze, _options).pipe(map((apiResponse: HttpInfo<ExtractNewsAPI200Response>) => apiResponse.data));
     }
 
     /**
-     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * Search News
-     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News API
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @param language The ISO 6391 language code of the news.
      * @param minSentiment The minimal sentiment of the news in range [-1,1].
@@ -1402,8 +1441,8 @@ export class ObservableNewsApi {
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public searchNewsWithHttpInfo(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchNews200Response>> {
-        const requestContextPromise = this.requestFactory.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options);
+    public searchNewsAPIWithHttpInfo(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<HttpInfo<SearchNewsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchNewsAPI(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1417,14 +1456,14 @@ export class ObservableNewsApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchNewsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchNewsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
-     * Search News
-     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+     * Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+     * Search News API
+     * @param text The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
      * @param sourceCountries A comma-separated list of ISO 3166 country codes from which the news should originate.
      * @param language The ISO 6391 language code of the news.
      * @param minSentiment The minimal sentiment of the news in range [-1,1].
@@ -1441,20 +1480,20 @@ export class ObservableNewsApi {
      * @param offset The number of news to skip in range [0,10000]
      * @param number The number of news to return in range [1,100]
      */
-    public searchNews(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchNews200Response> {
-        return this.searchNewsWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchNews200Response>) => apiResponse.data));
+    public searchNewsAPI(text?: string, sourceCountries?: string, language?: string, minSentiment?: number, maxSentiment?: number, earliestPublishDate?: string, latestPublishDate?: string, newsSources?: string, authors?: string, categories?: string, entities?: string, locationFilter?: string, sort?: string, sortDirection?: string, offset?: number, number?: number, _options?: Configuration): Observable<SearchNewsAPI200Response> {
+        return this.searchNewsAPIWithHttpInfo(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchNewsAPI200Response>) => apiResponse.data));
     }
 
     /**
-     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
-     * Top News
+     * Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News API
      * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
      * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
      * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed.
      * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news.
      */
-    public topNewsWithHttpInfo(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<HttpInfo<TopNews200Response>> {
-        const requestContextPromise = this.requestFactory.topNews(sourceCountry, language, date, headlinesOnly, _options);
+    public topNewsAPIWithHttpInfo(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<HttpInfo<TopNewsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.topNewsAPI(sourceCountry, language, date, headlinesOnly, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1468,20 +1507,20 @@ export class ObservableNewsApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.topNewsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.topNewsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
-     * Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
-     * Top News
+     * Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+     * Top News API
      * @param sourceCountry The ISO 3166 country code of the country for which top news should be retrieved.
      * @param language The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
      * @param date The date for which the top news should be retrieved. If no date is given, the current day is assumed.
      * @param headlinesOnly Whether to only return basic information such as id, title, and url of the news.
      */
-    public topNews(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<TopNews200Response> {
-        return this.topNewsWithHttpInfo(sourceCountry, language, date, headlinesOnly, _options).pipe(map((apiResponse: HttpInfo<TopNews200Response>) => apiResponse.data));
+    public topNewsAPI(sourceCountry: string, language: string, date?: string, headlinesOnly?: boolean, _options?: Configuration): Observable<TopNewsAPI200Response> {
+        return this.topNewsAPIWithHttpInfo(sourceCountry, language, date, headlinesOnly, _options).pipe(map((apiResponse: HttpInfo<TopNewsAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1504,11 +1543,11 @@ export class ObservableStorageApi {
 
     /**
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * @param key The key for which the value is stored (max length 255 characters).
      */
-    public readKeyValueFromStoreWithHttpInfo(key: string, _options?: Configuration): Observable<HttpInfo<ReadKeyValueFromStore200Response>> {
-        const requestContextPromise = this.requestFactory.readKeyValueFromStore(key, _options);
+    public readKeyValueFromStoreAPIWithHttpInfo(key: string, _options?: Configuration): Observable<HttpInfo<ReadKeyValueFromStoreAPI200Response>> {
+        const requestContextPromise = this.requestFactory.readKeyValueFromStoreAPI(key, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1522,27 +1561,27 @@ export class ObservableStorageApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.readKeyValueFromStoreWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.readKeyValueFromStoreAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Read Key Value from Store
+     * Read Key Value from Store API
      * @param key The key for which the value is stored (max length 255 characters).
      */
-    public readKeyValueFromStore(key: string, _options?: Configuration): Observable<ReadKeyValueFromStore200Response> {
-        return this.readKeyValueFromStoreWithHttpInfo(key, _options).pipe(map((apiResponse: HttpInfo<ReadKeyValueFromStore200Response>) => apiResponse.data));
+    public readKeyValueFromStoreAPI(key: string, _options?: Configuration): Observable<ReadKeyValueFromStoreAPI200Response> {
+        return this.readKeyValueFromStoreAPIWithHttpInfo(key, _options).pipe(map((apiResponse: HttpInfo<ReadKeyValueFromStoreAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * @param key The key for which the value is stored (max length 255 characters).
      * @param value The value that is supposed to be stored (max length 10,000 characters).
      */
-    public storeKeyValueGETWithHttpInfo(key: string, value: string, _options?: Configuration): Observable<HttpInfo<StoreKeyValueGET200Response>> {
-        const requestContextPromise = this.requestFactory.storeKeyValueGET(key, value, _options);
+    public storeKeyValueGETAPIWithHttpInfo(key: string, value: string, _options?: Configuration): Observable<HttpInfo<StoreKeyValueGETAPI200Response>> {
+        const requestContextPromise = this.requestFactory.storeKeyValueGETAPI(key, value, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1556,18 +1595,18 @@ export class ObservableStorageApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.storeKeyValueGETWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.storeKeyValueGETAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
-     * Store Key Value (GET)
+     * Store Key Value (GET) API
      * @param key The key for which the value is stored (max length 255 characters).
      * @param value The value that is supposed to be stored (max length 10,000 characters).
      */
-    public storeKeyValueGET(key: string, value: string, _options?: Configuration): Observable<StoreKeyValueGET200Response> {
-        return this.storeKeyValueGETWithHttpInfo(key, value, _options).pipe(map((apiResponse: HttpInfo<StoreKeyValueGET200Response>) => apiResponse.data));
+    public storeKeyValueGETAPI(key: string, value: string, _options?: Configuration): Observable<StoreKeyValueGETAPI200Response> {
+        return this.storeKeyValueGETAPIWithHttpInfo(key, value, _options).pipe(map((apiResponse: HttpInfo<StoreKeyValueGETAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -1590,12 +1629,12 @@ export class ObservableTextApi {
 
     /**
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-     * Correct Spelling
+     * Correct Spelling API
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
      */
-    public correctSpellingWithHttpInfo(text: string, language: string, _options?: Configuration): Observable<HttpInfo<CorrectSpelling200Response>> {
-        const requestContextPromise = this.requestFactory.correctSpelling(text, language, _options);
+    public correctSpellingAPIWithHttpInfo(text: string, language: string, _options?: Configuration): Observable<HttpInfo<CorrectSpellingAPI200Response>> {
+        const requestContextPromise = this.requestFactory.correctSpellingAPI(text, language, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1609,27 +1648,27 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.correctSpellingWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.correctSpellingAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * The API corrects spelling mistakes in a given text. It returns the corrected text or the original text if nothing was corrected. This API supports text in the following languages: English (en), French (fr), German (de), Italian (it), and Spanish (es).
-     * Correct Spelling
+     * Correct Spelling API
      * @param text The text to be corrected.
      * @param language The language of the text, one of en, de, es, fr, or it.
      */
-    public correctSpelling(text: string, language: string, _options?: Configuration): Observable<CorrectSpelling200Response> {
-        return this.correctSpellingWithHttpInfo(text, language, _options).pipe(map((apiResponse: HttpInfo<CorrectSpelling200Response>) => apiResponse.data));
+    public correctSpellingAPI(text: string, language: string, _options?: Configuration): Observable<CorrectSpellingAPI200Response> {
+        return this.correctSpellingAPIWithHttpInfo(text, language, _options).pipe(map((apiResponse: HttpInfo<CorrectSpellingAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * @param name The name of the perso for which the sentiment should be detected.
      */
-    public detectGenderByNameWithHttpInfo(name: string, _options?: Configuration): Observable<HttpInfo<DetectGenderByName200Response>> {
-        const requestContextPromise = this.requestFactory.detectGenderByName(name, _options);
+    public detectGenderByNameAPIWithHttpInfo(name: string, _options?: Configuration): Observable<HttpInfo<DetectGenderByNameAPI200Response>> {
+        const requestContextPromise = this.requestFactory.detectGenderByNameAPI(name, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1643,26 +1682,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectGenderByNameWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectGenderByNameAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Detect the likelihood that a name is given to a male or female (aka to \"genderize\" a name). While there are more than two genders, this API is limited to the binary classification as the name is given to the baby when it is born and only the sex is known.
-     * Detect Gender by Name
+     * Detect Gender by Name API
      * @param name The name of the perso for which the sentiment should be detected.
      */
-    public detectGenderByName(name: string, _options?: Configuration): Observable<DetectGenderByName200Response> {
-        return this.detectGenderByNameWithHttpInfo(name, _options).pipe(map((apiResponse: HttpInfo<DetectGenderByName200Response>) => apiResponse.data));
+    public detectGenderByNameAPI(name: string, _options?: Configuration): Observable<DetectGenderByNameAPI200Response> {
+        return this.detectGenderByNameAPIWithHttpInfo(name, _options).pipe(map((apiResponse: HttpInfo<DetectGenderByNameAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
+     * Detect Language API
      * @param text The text for which the language should be detected.
      */
-    public detectLanguageWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<Array<DetectLanguage200ResponseInner>>> {
-        const requestContextPromise = this.requestFactory.detectLanguage(text, _options);
+    public detectLanguageAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<Array<DetectLanguageAPI200ResponseInner>>> {
+        const requestContextPromise = this.requestFactory.detectLanguageAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1676,26 +1715,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectLanguageWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectLanguageAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Detect the language of the given text. The API returns a list of languages and their confidence scores. The confidence score is a value between 0 and 1, where 1 means the language was detected with 100% confidence. The API supports text in 22 languages.
-     * Detect Language
+     * Detect Language API
      * @param text The text for which the language should be detected.
      */
-    public detectLanguage(text: string, _options?: Configuration): Observable<Array<DetectLanguage200ResponseInner>> {
-        return this.detectLanguageWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<Array<DetectLanguage200ResponseInner>>) => apiResponse.data));
+    public detectLanguageAPI(text: string, _options?: Configuration): Observable<Array<DetectLanguageAPI200ResponseInner>> {
+        return this.detectLanguageAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<Array<DetectLanguageAPI200ResponseInner>>) => apiResponse.data));
     }
 
     /**
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
+     * Detect Sentiment API
      * @param text The text for which the sentiment should be detected.
      */
-    public detectSentimentWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<DetectSentiment200Response>> {
-        const requestContextPromise = this.requestFactory.detectSentiment(text, _options);
+    public detectSentimentAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<DetectSentimentAPI200Response>> {
+        const requestContextPromise = this.requestFactory.detectSentimentAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1709,26 +1748,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectSentimentWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.detectSentimentAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Detect the sentiment (positive or negative) of a given text. The entire document is scored and also each individual sentence.
-     * Detect Sentiment
+     * Detect Sentiment API
      * @param text The text for which the sentiment should be detected.
      */
-    public detectSentiment(text: string, _options?: Configuration): Observable<DetectSentiment200Response> {
-        return this.detectSentimentWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<DetectSentiment200Response>) => apiResponse.data));
+    public detectSentimentAPI(text: string, _options?: Configuration): Observable<DetectSentimentAPI200Response> {
+        return this.detectSentimentAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<DetectSentimentAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-     * Extract Dates
+     * Extract Dates API
      * @param text The text from which dates should be extracted.
      */
-    public extractDatesWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ExtractDates200Response>> {
-        const requestContextPromise = this.requestFactory.extractDates(text, _options);
+    public extractDatesAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ExtractDatesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractDatesAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1742,26 +1781,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractDatesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractDatesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extract dates from a given text. The API will return a list of dates with their positions in the text and the normalized form of the date. A large list of date formats is supported. For example, the text could contain dates in the form of \"April 5th, 2035\", \"04/05/2035\", or \"05.04.2035\". The normalized date is the date in the form of a timestamp (milliseconds since 1970).
-     * Extract Dates
+     * Extract Dates API
      * @param text The text from which dates should be extracted.
      */
-    public extractDates(text: string, _options?: Configuration): Observable<ExtractDates200Response> {
-        return this.extractDatesWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ExtractDates200Response>) => apiResponse.data));
+    public extractDatesAPI(text: string, _options?: Configuration): Observable<ExtractDatesAPI200Response> {
+        return this.extractDatesAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ExtractDatesAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-     * Extract Entities
+     * Extract Entities API
      * @param text The text from which entities should be extracted.
      */
-    public extractEntitiesWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ExtractEntities200Response>> {
-        const requestContextPromise = this.requestFactory.extractEntities(text, _options);
+    public extractEntitiesAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ExtractEntitiesAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractEntitiesAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1775,26 +1814,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractEntitiesWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractEntitiesAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extract entities from a text. An entity is a word or a group of words that represent a concept. For example, the word \"Canada\" represents the concept of a country. The word \"Jim Carrey\" represents the concept of a person. The word \"Tesla\" represents the concept of a company. The API will return a list of entities found in the text. The entities are classified into different types such as person, location, organization, etc.
-     * Extract Entities
+     * Extract Entities API
      * @param text The text from which entities should be extracted.
      */
-    public extractEntities(text: string, _options?: Configuration): Observable<ExtractEntities200Response> {
-        return this.extractEntitiesWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ExtractEntities200Response>) => apiResponse.data));
+    public extractEntitiesAPI(text: string, _options?: Configuration): Observable<ExtractEntitiesAPI200Response> {
+        return this.extractEntitiesAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ExtractEntitiesAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Return synonyms of a word.
-     * List Word Synonyms
+     * List Word Synonyms API
      * @param word The (noun) word for which a list of synonyms should be returned.
      */
-    public listWordSynonymsWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<ListWordSynonyms200Response>> {
-        const requestContextPromise = this.requestFactory.listWordSynonyms(word, _options);
+    public listWordSynonymsAPIWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<ListWordSynonymsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.listWordSynonymsAPI(word, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1808,26 +1847,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listWordSynonymsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.listWordSynonymsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Return synonyms of a word.
-     * List Word Synonyms
+     * List Word Synonyms API
      * @param word The (noun) word for which a list of synonyms should be returned.
      */
-    public listWordSynonyms(word: string, _options?: Configuration): Observable<ListWordSynonyms200Response> {
-        return this.listWordSynonymsWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<ListWordSynonyms200Response>) => apiResponse.data));
+    public listWordSynonymsAPI(word: string, _options?: Configuration): Observable<ListWordSynonymsAPI200Response> {
+        return this.listWordSynonymsAPIWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<ListWordSynonymsAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Find the plural form of a word.
-     * Pluralize Word
+     * Pluralize Word API
      * @param word The (noun) word for which the plural form should be found.
      */
-    public pluralizeWordWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<PluralizeWord200Response>> {
-        const requestContextPromise = this.requestFactory.pluralizeWord(word, _options);
+    public pluralizeWordAPIWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<PluralizeWordAPI200Response>> {
+        const requestContextPromise = this.requestFactory.pluralizeWordAPI(word, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1841,26 +1880,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.pluralizeWordWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.pluralizeWordAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Find the plural form of a word.
-     * Pluralize Word
+     * Pluralize Word API
      * @param word The (noun) word for which the plural form should be found.
      */
-    public pluralizeWord(word: string, _options?: Configuration): Observable<PluralizeWord200Response> {
-        return this.pluralizeWordWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<PluralizeWord200Response>) => apiResponse.data));
+    public pluralizeWordAPI(word: string, _options?: Configuration): Observable<PluralizeWordAPI200Response> {
+        return this.pluralizeWordAPIWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<PluralizeWordAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-     * Score Readability
+     * Score Readability API
      * @param text The text to score for readability.
      */
-    public scoreReadabilityWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ScoreReadability200Response>> {
-        const requestContextPromise = this.requestFactory.scoreReadability(text, _options);
+    public scoreReadabilityAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<ScoreReadabilityAPI200Response>> {
+        const requestContextPromise = this.requestFactory.scoreReadabilityAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1874,27 +1913,27 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.scoreReadabilityWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.scoreReadabilityAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Score the readability of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is score with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau.
-     * Score Readability
+     * Score Readability API
      * @param text The text to score for readability.
      */
-    public scoreReadability(text: string, _options?: Configuration): Observable<ScoreReadability200Response> {
-        return this.scoreReadabilityWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ScoreReadability200Response>) => apiResponse.data));
+    public scoreReadabilityAPI(text: string, _options?: Configuration): Observable<ScoreReadabilityAPI200Response> {
+        return this.scoreReadabilityAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<ScoreReadabilityAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-     * Score Text
+     * Score Text API
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
      */
-    public scoreTextWithHttpInfo(title: string, text: string, _options?: Configuration): Observable<HttpInfo<ScoreText200Response>> {
-        const requestContextPromise = this.requestFactory.scoreText(title, text, _options);
+    public scoreTextAPIWithHttpInfo(title: string, text: string, _options?: Configuration): Observable<HttpInfo<ScoreTextAPI200Response>> {
+        const requestContextPromise = this.requestFactory.scoreTextAPI(title, text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1908,27 +1947,27 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.scoreTextWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.scoreTextAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Score the readability, skimmability, interestingness, and style of a text. The readability score is based on the average length of the sentences and the average length of the words in the text. The text is scored with multiple readability scores such as Flesch, Smog, ARI, LIX, Kincaid, Fog, and Coleman Liau. Additionally, information such as the estimated reading time in seconds is returned.
-     * Score Text
+     * Score Text API
      * @param title The title of the text to score.
      * @param text The text to score for multiple metrics.
      */
-    public scoreText(title: string, text: string, _options?: Configuration): Observable<ScoreText200Response> {
-        return this.scoreTextWithHttpInfo(title, text, _options).pipe(map((apiResponse: HttpInfo<ScoreText200Response>) => apiResponse.data));
+    public scoreTextAPI(title: string, text: string, _options?: Configuration): Observable<ScoreTextAPI200Response> {
+        return this.scoreTextAPIWithHttpInfo(title, text, _options).pipe(map((apiResponse: HttpInfo<ScoreTextAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Find the singular form of a word.
-     * Singularize Word
+     * Singularize Word API
      * @param word The (noun) word for which the singular form should be found.
      */
-    public singularizeWordWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<SingularizeWord200Response>> {
-        const requestContextPromise = this.requestFactory.singularizeWord(word, _options);
+    public singularizeWordAPIWithHttpInfo(word: string, _options?: Configuration): Observable<HttpInfo<SingularizeWordAPI200Response>> {
+        const requestContextPromise = this.requestFactory.singularizeWordAPI(word, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1942,26 +1981,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.singularizeWordWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.singularizeWordAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Find the singular form of a word.
-     * Singularize Word
+     * Singularize Word API
      * @param word The (noun) word for which the singular form should be found.
      */
-    public singularizeWord(word: string, _options?: Configuration): Observable<SingularizeWord200Response> {
-        return this.singularizeWordWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<SingularizeWord200Response>) => apiResponse.data));
+    public singularizeWordAPI(word: string, _options?: Configuration): Observable<SingularizeWordAPI200Response> {
+        return this.singularizeWordAPIWithHttpInfo(word, _options).pipe(map((apiResponse: HttpInfo<SingularizeWordAPI200Response>) => apiResponse.data));
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Stem Text
+     * Stem Text API
      * @param text The text to be stemmed.
      */
-    public stemTextWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<StemText200Response>> {
-        const requestContextPromise = this.requestFactory.stemText(text, _options);
+    public stemTextAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<StemTextAPI200Response>> {
+        const requestContextPromise = this.requestFactory.stemTextAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -1975,26 +2014,26 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.stemTextWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.stemTextAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * The Text Stemming API is used to get the root form of a word. It is useful for searching and natural language processing.
-     * Stem Text
+     * Stem Text API
      * @param text The text to be stemmed.
      */
-    public stemText(text: string, _options?: Configuration): Observable<StemText200Response> {
-        return this.stemTextWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<StemText200Response>) => apiResponse.data));
+    public stemTextAPI(text: string, _options?: Configuration): Observable<StemTextAPI200Response> {
+        return this.stemTextAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<StemTextAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * @param text The text to tag the part of speech.
      */
-    public tagPartOfSpeechWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<TagPartOfSpeech200Response>> {
-        const requestContextPromise = this.requestFactory.tagPartOfSpeech(text, _options);
+    public tagPartOfSpeechAPIWithHttpInfo(text: string, _options?: Configuration): Observable<HttpInfo<TagPartOfSpeechAPI200Response>> {
+        const requestContextPromise = this.requestFactory.tagPartOfSpeechAPI(text, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2008,17 +2047,17 @@ export class ObservableTextApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.tagPartOfSpeechWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.tagPartOfSpeechAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Part of speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. This is a simple API that takes a text and returns the tagged text.
-     * Tag Part of Speech
+     * Tag Part of Speech API
      * @param text The text to tag the part of speech.
      */
-    public tagPartOfSpeech(text: string, _options?: Configuration): Observable<TagPartOfSpeech200Response> {
-        return this.tagPartOfSpeechWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<TagPartOfSpeech200Response>) => apiResponse.data));
+    public tagPartOfSpeechAPI(text: string, _options?: Configuration): Observable<TagPartOfSpeechAPI200Response> {
+        return this.tagPartOfSpeechAPIWithHttpInfo(text, _options).pipe(map((apiResponse: HttpInfo<TagPartOfSpeechAPI200Response>) => apiResponse.data));
     }
 
 }
@@ -2041,11 +2080,11 @@ export class ObservableWebApi {
 
     /**
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-     * Extract Authors
+     * Extract Authors API
      * @param url The url with the article from which authors should be extracted.
      */
-    public extractAuthorsWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractAuthors200Response>> {
-        const requestContextPromise = this.requestFactory.extractAuthors(url, _options);
+    public extractAuthorsAPIWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractAuthorsAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractAuthorsAPI(url, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2059,26 +2098,26 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractAuthorsWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractAuthorsAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
-     * Extract Authors
+     * Extract Authors API
      * @param url The url with the article from which authors should be extracted.
      */
-    public extractAuthors(url: string, _options?: Configuration): Observable<ExtractAuthors200Response> {
-        return this.extractAuthorsWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractAuthors200Response>) => apiResponse.data));
+    public extractAuthorsAPI(url: string, _options?: Configuration): Observable<ExtractAuthorsAPI200Response> {
+        return this.extractAuthorsAPIWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractAuthorsAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-     * Extract Content from a Web Page
+     * Extract Content from a Web Page API
      * @param url The url for which the content will be extracted.
      */
-    public extractContentFromAWebPageWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractContentFromAWebPage200Response>> {
-        const requestContextPromise = this.requestFactory.extractContentFromAWebPage(url, _options);
+    public extractContentFromAWebPageAPIWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractContentFromAWebPageAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractContentFromAWebPageAPI(url, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2092,26 +2131,26 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractContentFromAWebPageWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractContentFromAWebPageAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
-     * Extract Content from a Web Page
+     * Extract Content from a Web Page API
      * @param url The url for which the content will be extracted.
      */
-    public extractContentFromAWebPage(url: string, _options?: Configuration): Observable<ExtractContentFromAWebPage200Response> {
-        return this.extractContentFromAWebPageWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractContentFromAWebPage200Response>) => apiResponse.data));
+    public extractContentFromAWebPageAPI(url: string, _options?: Configuration): Observable<ExtractContentFromAWebPageAPI200Response> {
+        return this.extractContentFromAWebPageAPIWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractContentFromAWebPageAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-     * Extract Publish Date
+     * Extract Publish Date API
      * @param url The url for which the publish date should be extracted.
      */
-    public extractPublishDateWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractPublishDate200Response>> {
-        const requestContextPromise = this.requestFactory.extractPublishDate(url, _options);
+    public extractPublishDateAPIWithHttpInfo(url: string, _options?: Configuration): Observable<HttpInfo<ExtractPublishDateAPI200Response>> {
+        const requestContextPromise = this.requestFactory.extractPublishDateAPI(url, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2125,26 +2164,26 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractPublishDateWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.extractPublishDateAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
-     * Extract Publish Date
+     * Extract Publish Date API
      * @param url The url for which the publish date should be extracted.
      */
-    public extractPublishDate(url: string, _options?: Configuration): Observable<ExtractPublishDate200Response> {
-        return this.extractPublishDateWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractPublishDate200Response>) => apiResponse.data));
+    public extractPublishDateAPI(url: string, _options?: Configuration): Observable<ExtractPublishDateAPI200Response> {
+        return this.extractPublishDateAPIWithHttpInfo(url, _options).pipe(map((apiResponse: HttpInfo<ExtractPublishDateAPI200Response>) => apiResponse.data));
     }
 
     /**
      * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
-     * Retrieve Page Rank
+     * Retrieve Page Rank API
      * @param domain The domain for which the page rank should be returned.
      */
-    public retrievePageRankWithHttpInfo(domain: string, _options?: Configuration): Observable<HttpInfo<RetrievePageRank200Response>> {
-        const requestContextPromise = this.requestFactory.retrievePageRank(domain, _options);
+    public retrievePageRankAPIWithHttpInfo(domain: string, _options?: Configuration): Observable<HttpInfo<RetrievePageRankAPI200Response>> {
+        const requestContextPromise = this.requestFactory.retrievePageRankAPI(domain, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2158,27 +2197,27 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.retrievePageRankWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.retrievePageRankAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
-     * Retrieve Page Rank
+     * Retrieve Page Rank API
      * @param domain The domain for which the page rank should be returned.
      */
-    public retrievePageRank(domain: string, _options?: Configuration): Observable<RetrievePageRank200Response> {
-        return this.retrievePageRankWithHttpInfo(domain, _options).pipe(map((apiResponse: HttpInfo<RetrievePageRank200Response>) => apiResponse.data));
+    public retrievePageRankAPI(domain: string, _options?: Configuration): Observable<RetrievePageRankAPI200Response> {
+        return this.retrievePageRankAPIWithHttpInfo(domain, _options).pipe(map((apiResponse: HttpInfo<RetrievePageRankAPI200Response>) => apiResponse.data));
     }
 
     /**
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-     * Search Web
+     * Search Web API
      * @param query The search query.
      * @param number The number of results to return in range [1,50]
      */
-    public searchWebWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchWeb200Response>> {
-        const requestContextPromise = this.requestFactory.searchWeb(query, number, _options);
+    public searchWebAPIWithHttpInfo(query: string, number?: number, _options?: Configuration): Observable<HttpInfo<SearchWebAPI200Response>> {
+        const requestContextPromise = this.requestFactory.searchWebAPI(query, number, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2192,27 +2231,27 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchWebWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchWebAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * Search the web for a given query. The API returns a list of results with the title, summary, and URL.
-     * Search Web
+     * Search Web API
      * @param query The search query.
      * @param number The number of results to return in range [1,50]
      */
-    public searchWeb(query: string, number?: number, _options?: Configuration): Observable<SearchWeb200Response> {
-        return this.searchWebWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchWeb200Response>) => apiResponse.data));
+    public searchWebAPI(query: string, number?: number, _options?: Configuration): Observable<SearchWebAPI200Response> {
+        return this.searchWebAPIWithHttpInfo(query, number, _options).pipe(map((apiResponse: HttpInfo<SearchWebAPI200Response>) => apiResponse.data));
     }
 
     /**
      * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
-     * Verify Email Address
+     * Verify Email Address API
      * @param email The email address to verify.
      */
-    public verifyEmailAddressWithHttpInfo(email: string, _options?: Configuration): Observable<HttpInfo<VerifyEmailAddress200Response>> {
-        const requestContextPromise = this.requestFactory.verifyEmailAddress(email, _options);
+    public verifyEmailAddressAPIWithHttpInfo(email: string, _options?: Configuration): Observable<HttpInfo<VerifyEmailAddressAPI200Response>> {
+        const requestContextPromise = this.requestFactory.verifyEmailAddressAPI(email, _options);
 
         // build promise chain
         let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -2226,17 +2265,17 @@ export class ObservableWebApi {
                 for (let middleware of this.configuration.middleware) {
                     middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
                 }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.verifyEmailAddressWithHttpInfo(rsp)));
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.verifyEmailAddressAPIWithHttpInfo(rsp)));
             }));
     }
 
     /**
      * This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
-     * Verify Email Address
+     * Verify Email Address API
      * @param email The email address to verify.
      */
-    public verifyEmailAddress(email: string, _options?: Configuration): Observable<VerifyEmailAddress200Response> {
-        return this.verifyEmailAddressWithHttpInfo(email, _options).pipe(map((apiResponse: HttpInfo<VerifyEmailAddress200Response>) => apiResponse.data));
+    public verifyEmailAddressAPI(email: string, _options?: Configuration): Observable<VerifyEmailAddressAPI200Response> {
+        return this.verifyEmailAddressAPIWithHttpInfo(email, _options).pipe(map((apiResponse: HttpInfo<VerifyEmailAddressAPI200Response>) => apiResponse.data));
     }
 
 }

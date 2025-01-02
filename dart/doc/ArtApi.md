@@ -9,14 +9,14 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**imageToAsciiArtByURL**](ArtApi.md#imagetoasciiartbyurl) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL
-[**randomPoem**](ArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem
+[**imageToAsciiArtByURLAPI**](ArtApi.md#imagetoasciiartbyurlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
+[**randomPoemAPI**](ArtApi.md#randompoemapi) | **GET** /retrieve-random-poem | Random Poem API
 
 
-# **imageToAsciiArtByURL**
-> String imageToAsciiArtByURL(url, width, height)
+# **imageToAsciiArtByURLAPI**
+> String imageToAsciiArtByURLAPI(url, width, height)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -38,10 +38,10 @@ final width = 200; // int | The maximum width of the image (default 400, max. 50
 final height = 200; // int | The maximum height of the image (default 400, max. 500).
 
 try {
-    final result = api_instance.imageToAsciiArtByURL(url, width, height);
+    final result = api_instance.imageToAsciiArtByURLAPI(url, width, height);
     print(result);
 } catch (e) {
-    print('Exception when calling ArtApi->imageToAsciiArtByURL: $e\n');
+    print('Exception when calling ArtApi->imageToAsciiArtByURLAPI: $e\n');
 }
 ```
 
@@ -68,10 +68,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **randomPoem**
-> RandomPoem200Response randomPoem(minLines, maxLines)
+# **randomPoemAPI**
+> RandomPoemAPI200Response randomPoemAPI(minLines, maxLines)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
@@ -92,10 +92,10 @@ final minLines = 5; // int | The minimum number of lines of the poem.
 final maxLines = 20; // int | The maximum number of lines of the poem.
 
 try {
-    final result = api_instance.randomPoem(minLines, maxLines);
+    final result = api_instance.randomPoemAPI(minLines, maxLines);
     print(result);
 } catch (e) {
-    print('Exception when calling ArtApi->randomPoem: $e\n');
+    print('Exception when calling ArtApi->randomPoemAPI: $e\n');
 }
 ```
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ defmodule APILeague.Api.News do
   import APILeague.RequestBuilder
 
   @doc """
-  Extract News
+  Extract News API
   Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
   ### Parameters
@@ -22,11 +22,11 @@ defmodule APILeague.Api.News do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.ExtractNews200Response.t}` on success
+  - `{:ok, APILeague.Model.ExtractNewsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec extract_news(Tesla.Env.client, String.t, boolean(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractNews200Response.t} | {:error, Tesla.Env.t}
-  def extract_news(connection, url, analyze, _opts \\ []) do
+  @spec extract_news_api(Tesla.Env.client, String.t, boolean(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ExtractNewsApi200Response.t} | {:error, Tesla.Env.t}
+  def extract_news_api(connection, url, analyze, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -38,7 +38,7 @@ defmodule APILeague.Api.News do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.ExtractNews200Response},
+      {200, APILeague.Model.ExtractNewsApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -49,14 +49,14 @@ defmodule APILeague.Api.News do
   end
 
   @doc """
-  Search News
-  Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  Search News API
+  Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
   ### Parameters
 
   - `connection` (APILeague.Connection): Connection to server
   - `opts` (keyword): Optional parameters
-    - `:text` (String.t): The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+    - `:text` (String.t): The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
     - `:"source-countries"` (String.t): A comma-separated list of ISO 3166 country codes from which the news should originate.
     - `:language` (String.t): The ISO 6391 language code of the news.
     - `:"min-sentiment"` (float()): The minimal sentiment of the news in range [-1,1].
@@ -75,11 +75,11 @@ defmodule APILeague.Api.News do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchNews200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchNewsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_news(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchNews200Response.t} | {:error, Tesla.Env.t}
-  def search_news(connection, opts \\ []) do
+  @spec search_news_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchNewsApi200Response.t} | {:error, Tesla.Env.t}
+  def search_news_api(connection, opts \\ []) do
     optional_params = %{
       :text => :query,
       :"source-countries" => :query,
@@ -109,7 +109,7 @@ defmodule APILeague.Api.News do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchNews200Response},
+      {200, APILeague.Model.SearchNewsApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -120,8 +120,8 @@ defmodule APILeague.Api.News do
   end
 
   @doc """
-  Top News
-  Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+  Top News API
+  Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
   ### Parameters
 
@@ -134,11 +134,11 @@ defmodule APILeague.Api.News do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.TopNews200Response.t}` on success
+  - `{:ok, APILeague.Model.TopNewsApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec top_news(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.TopNews200Response.t} | {:error, Tesla.Env.t}
-  def top_news(connection, source_country, language, opts \\ []) do
+  @spec top_news_api(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.TopNewsApi200Response.t} | {:error, Tesla.Env.t}
+  def top_news_api(connection, source_country, language, opts \\ []) do
     optional_params = %{
       :date => :query,
       :"headlines-only" => :query
@@ -156,7 +156,7 @@ defmodule APILeague.Api.News do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.TopNews200Response},
+      {200, APILeague.Model.TopNewsApi200Response},
       {401, false},
       {402, false},
       {403, false},

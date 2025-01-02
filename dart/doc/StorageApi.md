@@ -9,14 +9,14 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**readKeyValueFromStore**](StorageApi.md#readkeyvaluefromstore) | **GET** /read-key-value | Read Key Value from Store
-[**storeKeyValueGET**](StorageApi.md#storekeyvalueget) | **GET** /store-key-value | Store Key Value (GET)
+[**readKeyValueFromStoreAPI**](StorageApi.md#readkeyvaluefromstoreapi) | **GET** /read-key-value | Read Key Value from Store API
+[**storeKeyValueGETAPI**](StorageApi.md#storekeyvaluegetapi) | **GET** /store-key-value | Store Key Value (GET) API
 
 
-# **readKeyValueFromStore**
-> ReadKeyValueFromStore200Response readKeyValueFromStore(key)
+# **readKeyValueFromStoreAPI**
+> ReadKeyValueFromStoreAPI200Response readKeyValueFromStoreAPI(key)
 
-Read Key Value from Store
+Read Key Value from Store API
 
 Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -36,10 +36,10 @@ final api_instance = StorageApi();
 final key = visitors24h; // String | The key for which the value is stored (max length 255 characters).
 
 try {
-    final result = api_instance.readKeyValueFromStore(key);
+    final result = api_instance.readKeyValueFromStoreAPI(key);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->readKeyValueFromStore: $e\n');
+    print('Exception when calling StorageApi->readKeyValueFromStoreAPI: $e\n');
 }
 ```
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReadKeyValueFromStore200Response**](ReadKeyValueFromStore200Response.md)
+[**ReadKeyValueFromStoreAPI200Response**](ReadKeyValueFromStoreAPI200Response.md)
 
 ### Authorization
 
@@ -64,10 +64,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **storeKeyValueGET**
-> StoreKeyValueGET200Response storeKeyValueGET(key, value)
+# **storeKeyValueGETAPI**
+> StoreKeyValueGETAPI200Response storeKeyValueGETAPI(key, value)
 
-Store Key Value (GET)
+Store Key Value (GET) API
 
 Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
 
@@ -88,10 +88,10 @@ final key = visitors24h; // String | The key for which the value is stored (max 
 final value = 23578 visitors; // String | The value that is supposed to be stored (max length 10,000 characters).
 
 try {
-    final result = api_instance.storeKeyValueGET(key, value);
+    final result = api_instance.storeKeyValueGETAPI(key, value);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->storeKeyValueGET: $e\n');
+    print('Exception when calling StorageApi->storeKeyValueGETAPI: $e\n');
 }
 ```
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoreKeyValueGET200Response**](StoreKeyValueGET200Response.md)
+[**StoreKeyValueGETAPI200Response**](StoreKeyValueGETAPI200Response.md)
 
 ### Authorization
 

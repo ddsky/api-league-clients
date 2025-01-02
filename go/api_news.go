@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // NewsAPIService NewsAPI service
 type NewsAPIService service
 
-type ApiExtractNewsRequest struct {
+type ApiExtractNewsAPIRequest struct {
 	ctx context.Context
 	ApiService *NewsAPIService
 	url *string
@@ -31,47 +31,47 @@ type ApiExtractNewsRequest struct {
 }
 
 // The url of the news.
-func (r ApiExtractNewsRequest) Url(url string) ApiExtractNewsRequest {
+func (r ApiExtractNewsAPIRequest) Url(url string) ApiExtractNewsAPIRequest {
 	r.url = &url
 	return r
 }
 
 // Whether to analyze the news (extract entities etc.)
-func (r ApiExtractNewsRequest) Analyze(analyze bool) ApiExtractNewsRequest {
+func (r ApiExtractNewsAPIRequest) Analyze(analyze bool) ApiExtractNewsAPIRequest {
 	r.analyze = &analyze
 	return r
 }
 
-func (r ApiExtractNewsRequest) Execute() (*ExtractNews200Response, *http.Response, error) {
-	return r.ApiService.ExtractNewsExecute(r)
+func (r ApiExtractNewsAPIRequest) Execute() (*ExtractNewsAPI200Response, *http.Response, error) {
+	return r.ApiService.ExtractNewsAPIExecute(r)
 }
 
 /*
-ExtractNews Extract News
+ExtractNewsAPI Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractNewsRequest
+ @return ApiExtractNewsAPIRequest
 */
-func (a *NewsAPIService) ExtractNews(ctx context.Context) ApiExtractNewsRequest {
-	return ApiExtractNewsRequest{
+func (a *NewsAPIService) ExtractNewsAPI(ctx context.Context) ApiExtractNewsAPIRequest {
+	return ApiExtractNewsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ExtractNews200Response
-func (a *NewsAPIService) ExtractNewsExecute(r ApiExtractNewsRequest) (*ExtractNews200Response, *http.Response, error) {
+//  @return ExtractNewsAPI200Response
+func (a *NewsAPIService) ExtractNewsAPIExecute(r ApiExtractNewsAPIRequest) (*ExtractNewsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ExtractNews200Response
+		localVarReturnValue  *ExtractNewsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.ExtractNews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.ExtractNewsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -175,7 +175,7 @@ func (a *NewsAPIService) ExtractNewsExecute(r ApiExtractNewsRequest) (*ExtractNe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchNewsRequest struct {
+type ApiSearchNewsAPIRequest struct {
 	ctx context.Context
 	ApiService *NewsAPIService
 	text *string
@@ -196,132 +196,132 @@ type ApiSearchNewsRequest struct {
 	number *int32
 }
 
-// The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
-func (r ApiSearchNewsRequest) Text(text string) ApiSearchNewsRequest {
+// The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
+func (r ApiSearchNewsAPIRequest) Text(text string) ApiSearchNewsAPIRequest {
 	r.text = &text
 	return r
 }
 
 // A comma-separated list of ISO 3166 country codes from which the news should originate.
-func (r ApiSearchNewsRequest) SourceCountries(sourceCountries string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) SourceCountries(sourceCountries string) ApiSearchNewsAPIRequest {
 	r.sourceCountries = &sourceCountries
 	return r
 }
 
 // The ISO 6391 language code of the news.
-func (r ApiSearchNewsRequest) Language(language string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Language(language string) ApiSearchNewsAPIRequest {
 	r.language = &language
 	return r
 }
 
 // The minimal sentiment of the news in range [-1,1].
-func (r ApiSearchNewsRequest) MinSentiment(minSentiment float64) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) MinSentiment(minSentiment float64) ApiSearchNewsAPIRequest {
 	r.minSentiment = &minSentiment
 	return r
 }
 
 // The maximal sentiment of the news in range [-1,1].
-func (r ApiSearchNewsRequest) MaxSentiment(maxSentiment float64) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) MaxSentiment(maxSentiment float64) ApiSearchNewsAPIRequest {
 	r.maxSentiment = &maxSentiment
 	return r
 }
 
 // The news must have been published after this date.
-func (r ApiSearchNewsRequest) EarliestPublishDate(earliestPublishDate string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) EarliestPublishDate(earliestPublishDate string) ApiSearchNewsAPIRequest {
 	r.earliestPublishDate = &earliestPublishDate
 	return r
 }
 
 // The news must have been published before this date.
-func (r ApiSearchNewsRequest) LatestPublishDate(latestPublishDate string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) LatestPublishDate(latestPublishDate string) ApiSearchNewsAPIRequest {
 	r.latestPublishDate = &latestPublishDate
 	return r
 }
 
 // A comma-separated list of news sources from which the news should originate.
-func (r ApiSearchNewsRequest) NewsSources(newsSources string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) NewsSources(newsSources string) ApiSearchNewsAPIRequest {
 	r.newsSources = &newsSources
 	return r
 }
 
 // A comma-separated list of author names. Only news from any of the given authors will be returned.
-func (r ApiSearchNewsRequest) Authors(authors string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Authors(authors string) ApiSearchNewsAPIRequest {
 	r.authors = &authors
 	return r
 }
 
 // A comma-separated list of categories. Only news from any of the given categories will be returned. Possible categories are politics, sports, business, technology, entertainment, health, science, lifestyle, travel, culture, education, environment, other.
-func (r ApiSearchNewsRequest) Categories(categories string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Categories(categories string) ApiSearchNewsAPIRequest {
 	r.categories = &categories
 	return r
 }
 
 // Filter news by entities (ORG, PER, or LOC).
-func (r ApiSearchNewsRequest) Entities(entities string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Entities(entities string) ApiSearchNewsAPIRequest {
 	r.entities = &entities
 	return r
 }
 
 // Filter news by radius around a certain location. Format is \&quot;latitude,longitude,radius in kilometers\&quot;
-func (r ApiSearchNewsRequest) LocationFilter(locationFilter string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) LocationFilter(locationFilter string) ApiSearchNewsAPIRequest {
 	r.locationFilter = &locationFilter
 	return r
 }
 
 // The sorting criteria (publish-time).
-func (r ApiSearchNewsRequest) Sort(sort string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Sort(sort string) ApiSearchNewsAPIRequest {
 	r.sort = &sort
 	return r
 }
 
 // Whether to sort ascending or descending (ASC or DESC).
-func (r ApiSearchNewsRequest) SortDirection(sortDirection string) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) SortDirection(sortDirection string) ApiSearchNewsAPIRequest {
 	r.sortDirection = &sortDirection
 	return r
 }
 
 // The number of news to skip in range [0,10000]
-func (r ApiSearchNewsRequest) Offset(offset int32) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Offset(offset int32) ApiSearchNewsAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of news to return in range [1,100]
-func (r ApiSearchNewsRequest) Number(number int32) ApiSearchNewsRequest {
+func (r ApiSearchNewsAPIRequest) Number(number int32) ApiSearchNewsAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchNewsRequest) Execute() (*SearchNews200Response, *http.Response, error) {
-	return r.ApiService.SearchNewsExecute(r)
+func (r ApiSearchNewsAPIRequest) Execute() (*SearchNewsAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchNewsAPIExecute(r)
 }
 
 /*
-SearchNews Search News
+SearchNewsAPI Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchNewsRequest
+ @return ApiSearchNewsAPIRequest
 */
-func (a *NewsAPIService) SearchNews(ctx context.Context) ApiSearchNewsRequest {
-	return ApiSearchNewsRequest{
+func (a *NewsAPIService) SearchNewsAPI(ctx context.Context) ApiSearchNewsAPIRequest {
+	return ApiSearchNewsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchNews200Response
-func (a *NewsAPIService) SearchNewsExecute(r ApiSearchNewsRequest) (*SearchNews200Response, *http.Response, error) {
+//  @return SearchNewsAPI200Response
+func (a *NewsAPIService) SearchNewsAPIExecute(r ApiSearchNewsAPIRequest) (*SearchNewsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchNews200Response
+		localVarReturnValue  *SearchNewsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.SearchNews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.SearchNewsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -462,7 +462,7 @@ func (a *NewsAPIService) SearchNewsExecute(r ApiSearchNewsRequest) (*SearchNews2
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTopNewsRequest struct {
+type ApiTopNewsAPIRequest struct {
 	ctx context.Context
 	ApiService *NewsAPIService
 	sourceCountry *string
@@ -472,59 +472,59 @@ type ApiTopNewsRequest struct {
 }
 
 // The ISO 3166 country code of the country for which top news should be retrieved.
-func (r ApiTopNewsRequest) SourceCountry(sourceCountry string) ApiTopNewsRequest {
+func (r ApiTopNewsAPIRequest) SourceCountry(sourceCountry string) ApiTopNewsAPIRequest {
 	r.sourceCountry = &sourceCountry
 	return r
 }
 
 // The ISO 6391 language code of the top news. The language must be one spoken in the source-country.
-func (r ApiTopNewsRequest) Language(language string) ApiTopNewsRequest {
+func (r ApiTopNewsAPIRequest) Language(language string) ApiTopNewsAPIRequest {
 	r.language = &language
 	return r
 }
 
 // The date for which the top news should be retrieved. If no date is given, the current day is assumed.
-func (r ApiTopNewsRequest) Date(date string) ApiTopNewsRequest {
+func (r ApiTopNewsAPIRequest) Date(date string) ApiTopNewsAPIRequest {
 	r.date = &date
 	return r
 }
 
 // Whether to only return basic information such as id, title, and url of the news.
-func (r ApiTopNewsRequest) HeadlinesOnly(headlinesOnly bool) ApiTopNewsRequest {
+func (r ApiTopNewsAPIRequest) HeadlinesOnly(headlinesOnly bool) ApiTopNewsAPIRequest {
 	r.headlinesOnly = &headlinesOnly
 	return r
 }
 
-func (r ApiTopNewsRequest) Execute() (*TopNews200Response, *http.Response, error) {
-	return r.ApiService.TopNewsExecute(r)
+func (r ApiTopNewsAPIRequest) Execute() (*TopNewsAPI200Response, *http.Response, error) {
+	return r.ApiService.TopNewsAPIExecute(r)
 }
 
 /*
-TopNews Top News
+TopNewsAPI Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTopNewsRequest
+ @return ApiTopNewsAPIRequest
 */
-func (a *NewsAPIService) TopNews(ctx context.Context) ApiTopNewsRequest {
-	return ApiTopNewsRequest{
+func (a *NewsAPIService) TopNewsAPI(ctx context.Context) ApiTopNewsAPIRequest {
+	return ApiTopNewsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TopNews200Response
-func (a *NewsAPIService) TopNewsExecute(r ApiTopNewsRequest) (*TopNews200Response, *http.Response, error) {
+//  @return TopNewsAPI200Response
+func (a *NewsAPIService) TopNewsAPIExecute(r ApiTopNewsAPIRequest) (*TopNewsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TopNews200Response
+		localVarReturnValue  *TopNewsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.TopNews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NewsAPIService.TopNewsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

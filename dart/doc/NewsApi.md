@@ -9,15 +9,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extractNews**](NewsApi.md#extractnews) | **GET** /extract-news | Extract News
-[**searchNews**](NewsApi.md#searchnews) | **GET** /search-news | Search News
-[**topNews**](NewsApi.md#topnews) | **GET** /retrieve-top-news | Top News
+[**extractNewsAPI**](NewsApi.md#extractnewsapi) | **GET** /extract-news | Extract News API
+[**searchNewsAPI**](NewsApi.md#searchnewsapi) | **GET** /search-news | Search News API
+[**topNewsAPI**](NewsApi.md#topnewsapi) | **GET** /retrieve-top-news | Top News API
 
 
-# **extractNews**
-> ExtractNews200Response extractNews(url, analyze)
+# **extractNewsAPI**
+> ExtractNewsAPI200Response extractNewsAPI(url, analyze)
 
-Extract News
+Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -38,10 +38,10 @@ final url = https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-fou
 final analyze = true; // bool | Whether to analyze the news (extract entities etc.)
 
 try {
-    final result = api_instance.extractNews(url, analyze);
+    final result = api_instance.extractNewsAPI(url, analyze);
     print(result);
 } catch (e) {
-    print('Exception when calling NewsApi->extractNews: $e\n');
+    print('Exception when calling NewsApi->extractNewsAPI: $e\n');
 }
 ```
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractNews200Response**](ExtractNews200Response.md)
+[**ExtractNewsAPI200Response**](ExtractNewsAPI200Response.md)
 
 ### Authorization
 
@@ -67,12 +67,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchNews**
-> SearchNews200Response searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
+# **searchNewsAPI**
+> SearchNewsAPI200Response searchNewsAPI(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number)
 
-Search News
+Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 ```dart
@@ -87,7 +87,7 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
 
 final api_instance = NewsApi();
-final text = tesla; // String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+final text = tesla; // String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
 final sourceCountries = us,uk; // String | A comma-separated list of ISO 3166 country codes from which the news should originate.
 final language = en; // String | The ISO 6391 language code of the news.
 final minSentiment = -0.8; // double | The minimal sentiment of the news in range [-1,1].
@@ -105,10 +105,10 @@ final offset = 0; // int | The number of news to skip in range [0,10000]
 final number = 10; // int | The number of news to return in range [1,100]
 
 try {
-    final result = api_instance.searchNews(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
+    final result = api_instance.searchNewsAPI(text, sourceCountries, language, minSentiment, maxSentiment, earliestPublishDate, latestPublishDate, newsSources, authors, categories, entities, locationFilter, sort, sortDirection, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling NewsApi->searchNews: $e\n');
+    print('Exception when calling NewsApi->searchNewsAPI: $e\n');
 }
 ```
 
@@ -116,7 +116,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **text** | **String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | [optional] 
  **sourceCountries** | **String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
  **language** | **String**| The ISO 6391 language code of the news. | [optional] 
  **minSentiment** | **double**| The minimal sentiment of the news in range [-1,1]. | [optional] 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchNews200Response**](SearchNews200Response.md)
+[**SearchNewsAPI200Response**](SearchNewsAPI200Response.md)
 
 ### Authorization
 
@@ -148,12 +148,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **topNews**
-> TopNews200Response topNews(sourceCountry, language, date, headlinesOnly)
+# **topNewsAPI**
+> TopNewsAPI200Response topNewsAPI(sourceCountry, language, date, headlinesOnly)
 
-Top News
+Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Example
 ```dart
@@ -174,10 +174,10 @@ final date = 2024-05-30; // String | The date for which the top news should be r
 final headlinesOnly = false; // bool | Whether to only return basic information such as id, title, and url of the news.
 
 try {
-    final result = api_instance.topNews(sourceCountry, language, date, headlinesOnly);
+    final result = api_instance.topNewsAPI(sourceCountry, language, date, headlinesOnly);
     print(result);
 } catch (e) {
-    print('Exception when calling NewsApi->topNews: $e\n');
+    print('Exception when calling NewsApi->topNewsAPI: $e\n');
 }
 ```
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TopNews200Response**](TopNews200Response.md)
+[**TopNewsAPI200Response**](TopNewsAPI200Response.md)
 
 ### Authorization
 

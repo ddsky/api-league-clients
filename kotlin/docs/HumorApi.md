@@ -4,19 +4,19 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**generateNonsenseWord**](HumorApi.md#generateNonsenseWord) | **GET** /generate-nonsense-word | Generate Nonsense Word |
-| [**randomJoke**](HumorApi.md#randomJoke) | **GET** /retrieve-random-joke | Random Joke |
-| [**randomMeme**](HumorApi.md#randomMeme) | **GET** /retrieve-random-meme | Random Meme |
-| [**searchGifs**](HumorApi.md#searchGifs) | **GET** /search-gifs | Search Gifs |
-| [**searchJokes**](HumorApi.md#searchJokes) | **GET** /search-jokes | Search Jokes |
-| [**searchMemes**](HumorApi.md#searchMemes) | **GET** /search-memes | Search Memes |
+| [**generateNonsenseWordAPI**](HumorApi.md#generateNonsenseWordAPI) | **GET** /generate-nonsense-word | Generate Nonsense Word API |
+| [**randomJokeAPI**](HumorApi.md#randomJokeAPI) | **GET** /retrieve-random-joke | Random Joke API |
+| [**randomMemeAPI**](HumorApi.md#randomMemeAPI) | **GET** /retrieve-random-meme | Random Meme API |
+| [**searchGifsAPI**](HumorApi.md#searchGifsAPI) | **GET** /search-gifs | Search Gifs API |
+| [**searchJokesAPI**](HumorApi.md#searchJokesAPI) | **GET** /search-jokes | Search Jokes API |
+| [**searchMemesAPI**](HumorApi.md#searchMemesAPI) | **GET** /search-memes | Search Memes API |
 
 
-<a id="generateNonsenseWord"></a>
-# **generateNonsenseWord**
-> GenerateNonsenseWord200Response generateNonsenseWord()
+<a id="generateNonsenseWordAPI"></a>
+# **generateNonsenseWordAPI**
+> GenerateNonsenseWordAPI200Response generateNonsenseWordAPI()
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -28,13 +28,13 @@ Generate a funny sounding nonsense word. This is useful for generating random wo
 
 val apiInstance = HumorApi()
 try {
-    val result : GenerateNonsenseWord200Response = apiInstance.generateNonsenseWord()
+    val result : GenerateNonsenseWordAPI200Response = apiInstance.generateNonsenseWordAPI()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#generateNonsenseWord")
+    println("4xx response calling HumorApi#generateNonsenseWordAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#generateNonsenseWord")
+    println("5xx response calling HumorApi#generateNonsenseWordAPI")
     e.printStackTrace()
 }
 ```
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -61,11 +61,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="randomJoke"></a>
-# **randomJoke**
-> SearchJokes200ResponseJokesInner randomJoke(includeTags, excludeTags, minRating, maxLength)
+<a id="randomJokeAPI"></a>
+# **randomJokeAPI**
+> SearchJokesAPI200ResponseJokesInner randomJokeAPI(includeTags, excludeTags, minRating, maxLength)
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \&quot;nsfw\&quot; or \&quot;religious\&quot;.
 
@@ -81,13 +81,13 @@ val excludeTags : kotlin.String = nsfw,dark // kotlin.String | A comma-separated
 val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the jokes.
 val maxLength : kotlin.Int = 140 // kotlin.Int | The maximum length of the joke in letters.
 try {
-    val result : SearchJokes200ResponseJokesInner = apiInstance.randomJoke(includeTags, excludeTags, minRating, maxLength)
+    val result : SearchJokesAPI200ResponseJokesInner = apiInstance.randomJokeAPI(includeTags, excludeTags, minRating, maxLength)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#randomJoke")
+    println("4xx response calling HumorApi#randomJokeAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#randomJoke")
+    println("5xx response calling HumorApi#randomJokeAPI")
     e.printStackTrace()
 }
 ```
@@ -102,7 +102,7 @@ try {
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -119,13 +119,13 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="randomMeme"></a>
-# **randomMeme**
-> RandomMeme200Response randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+<a id="randomMemeAPI"></a>
+# **randomMemeAPI**
+> RandomMemeAPI200Response randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Example
 ```kotlin
@@ -140,13 +140,13 @@ val mediaType : kotlin.String = image // kotlin.String | The media type (either 
 val minRating : kotlin.Double = 0 // kotlin.Double | The minimum rating in range [0.0,1.0] of the meme.
 val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in days.
 try {
-    val result : RandomMeme200Response = apiInstance.randomMeme(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
+    val result : RandomMemeAPI200Response = apiInstance.randomMemeAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#randomMeme")
+    println("4xx response calling HumorApi#randomMemeAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#randomMeme")
+    println("5xx response calling HumorApi#randomMemeAPI")
     e.printStackTrace()
 }
 ```
@@ -162,7 +162,7 @@ try {
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -179,11 +179,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchGifs"></a>
-# **searchGifs**
-> SearchGifs200Response searchGifs(query, number)
+<a id="searchGifsAPI"></a>
+# **searchGifsAPI**
+> SearchGifsAPI200Response searchGifsAPI(query, number)
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -197,13 +197,13 @@ val apiInstance = HumorApi()
 val query : kotlin.String = dogs // kotlin.String | The search query.
 val number : kotlin.Int = 5 // kotlin.Int | The number of gifs to return in range [1,10]
 try {
-    val result : SearchGifs200Response = apiInstance.searchGifs(query, number)
+    val result : SearchGifsAPI200Response = apiInstance.searchGifsAPI(query, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#searchGifs")
+    println("4xx response calling HumorApi#searchGifsAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#searchGifs")
+    println("5xx response calling HumorApi#searchGifsAPI")
     e.printStackTrace()
 }
 ```
@@ -216,7 +216,7 @@ try {
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -233,11 +233,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchJokes"></a>
-# **searchJokes**
-> SearchJokes200Response searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+<a id="searchJokesAPI"></a>
+# **searchJokesAPI**
+> SearchJokesAPI200Response searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -256,13 +256,13 @@ val maxLength : kotlin.Double = 140 // kotlin.Double | The maximum length of the
 val offset : kotlin.Int = 0 // kotlin.Int | The number of jokes to skip, between 0 and 1000.
 val number : kotlin.Int = 3 // kotlin.Int | The number of jokes, between 1 and 10.
 try {
-    val result : SearchJokes200Response = apiInstance.searchJokes(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
+    val result : SearchJokesAPI200Response = apiInstance.searchJokesAPI(keywords, includeTags, excludeTags, minRating, maxLength, offset, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#searchJokes")
+    println("4xx response calling HumorApi#searchJokesAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#searchJokes")
+    println("5xx response calling HumorApi#searchJokesAPI")
     e.printStackTrace()
 }
 ```
@@ -280,7 +280,7 @@ try {
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -297,13 +297,13 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="searchMemes"></a>
-# **searchMemes**
-> SearchMemes200Response searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+<a id="searchMemesAPI"></a>
+# **searchMemesAPI**
+> SearchMemesAPI200Response searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you&#39;ll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You&#39;ll surely find something funny.
 
 ### Example
 ```kotlin
@@ -320,13 +320,13 @@ val maxAgeDays : kotlin.Int = 30 // kotlin.Int | The maximum age of the meme in 
 val offset : kotlin.Int = 0 // kotlin.Int | The number of memes to skip, between 0 and 1000.
 val number : kotlin.Int = 3 // kotlin.Int | The number of memes, between 1 and 10.
 try {
-    val result : SearchMemes200Response = apiInstance.searchMemes(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
+    val result : SearchMemesAPI200Response = apiInstance.searchMemesAPI(keywords, keywordsInImage, mediaType, minRating, maxAgeDays, offset, number)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling HumorApi#searchMemes")
+    println("4xx response calling HumorApi#searchMemesAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling HumorApi#searchMemes")
+    println("5xx response calling HumorApi#searchMemesAPI")
     e.printStackTrace()
 }
 ```
@@ -344,7 +344,7 @@ try {
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

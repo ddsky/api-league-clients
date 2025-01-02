@@ -4,13 +4,13 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ConvertUnits**](MathApi.md#convertunits) | **GET** /convert-units | Convert Units |
+| [**ConvertUnitsAPI**](MathApi.md#convertunitsapi) | **GET** /convert-units | Convert Units API |
 
-<a id="convertunits"></a>
-# **ConvertUnits**
-> ConvertUnits200Response ConvertUnits (double sourceAmount, string sourceUnit, string targetUnit, string? foodName = null)
+<a id="convertunitsapi"></a>
+# **ConvertUnitsAPI**
+> ConvertUnitsAPI200Response ConvertUnitsAPI (double sourceAmount, string sourceUnit, string targetUnit, string? foodName = null)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -24,7 +24,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ConvertUnitsExample
+    public class ConvertUnitsAPIExample
     {
         public static void Main()
         {
@@ -47,13 +47,13 @@ namespace Example
 
             try
             {
-                // Convert Units
-                ConvertUnits200Response result = apiInstance.ConvertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+                // Convert Units API
+                ConvertUnitsAPI200Response result = apiInstance.ConvertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MathApi.ConvertUnits: " + e.Message);
+                Debug.Print("Exception when calling MathApi.ConvertUnitsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +62,21 @@ namespace Example
 }
 ```
 
-#### Using the ConvertUnitsWithHttpInfo variant
+#### Using the ConvertUnitsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Convert Units
-    ApiResponse<ConvertUnits200Response> response = apiInstance.ConvertUnitsWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
+    // Convert Units API
+    ApiResponse<ConvertUnitsAPI200Response> response = apiInstance.ConvertUnitsAPIWithHttpInfo(sourceAmount, sourceUnit, targetUnit, foodName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MathApi.ConvertUnitsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MathApi.ConvertUnitsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -93,7 +93,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

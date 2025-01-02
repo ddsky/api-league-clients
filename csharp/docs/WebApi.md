@@ -4,18 +4,18 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ExtractAuthors**](WebApi.md#extractauthors) | **GET** /extract-authors | Extract Authors |
-| [**ExtractContentFromAWebPage**](WebApi.md#extractcontentfromawebpage) | **GET** /extract-content | Extract Content from a Web Page |
-| [**ExtractPublishDate**](WebApi.md#extractpublishdate) | **GET** /extract-publish-date | Extract Publish Date |
-| [**RetrievePageRank**](WebApi.md#retrievepagerank) | **GET** /retrieve-page-rank | Retrieve Page Rank |
-| [**SearchWeb**](WebApi.md#searchweb) | **GET** /search-web | Search Web |
-| [**VerifyEmailAddress**](WebApi.md#verifyemailaddress) | **GET** /verify-email | Verify Email Address |
+| [**ExtractAuthorsAPI**](WebApi.md#extractauthorsapi) | **GET** /extract-authors | Extract Authors API |
+| [**ExtractContentFromAWebPageAPI**](WebApi.md#extractcontentfromawebpageapi) | **GET** /extract-content | Extract Content from a Web Page API |
+| [**ExtractPublishDateAPI**](WebApi.md#extractpublishdateapi) | **GET** /extract-publish-date | Extract Publish Date API |
+| [**RetrievePageRankAPI**](WebApi.md#retrievepagerankapi) | **GET** /retrieve-page-rank | Retrieve Page Rank API |
+| [**SearchWebAPI**](WebApi.md#searchwebapi) | **GET** /search-web | Search Web API |
+| [**VerifyEmailAddressAPI**](WebApi.md#verifyemailaddressapi) | **GET** /verify-email | Verify Email Address API |
 
-<a id="extractauthors"></a>
-# **ExtractAuthors**
-> ExtractAuthors200Response ExtractAuthors (string url)
+<a id="extractauthorsapi"></a>
+# **ExtractAuthorsAPI**
+> ExtractAuthorsAPI200Response ExtractAuthorsAPI (string url)
 
-Extract Authors
+Extract Authors API
 
 Extracts the authors from a given URL. This API is useful for extracting the authors from a blog post or news article. The API will return a list of authors with their names and links to their profiles if available.
 
@@ -29,7 +29,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractAuthorsExample
+    public class ExtractAuthorsAPIExample
     {
         public static void Main()
         {
@@ -49,13 +49,13 @@ namespace Example
 
             try
             {
-                // Extract Authors
-                ExtractAuthors200Response result = apiInstance.ExtractAuthors(url);
+                // Extract Authors API
+                ExtractAuthorsAPI200Response result = apiInstance.ExtractAuthorsAPI(url);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.ExtractAuthors: " + e.Message);
+                Debug.Print("Exception when calling WebApi.ExtractAuthorsAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -64,21 +64,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractAuthorsWithHttpInfo variant
+#### Using the ExtractAuthorsAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract Authors
-    ApiResponse<ExtractAuthors200Response> response = apiInstance.ExtractAuthorsWithHttpInfo(url);
+    // Extract Authors API
+    ApiResponse<ExtractAuthorsAPI200Response> response = apiInstance.ExtractAuthorsAPIWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.ExtractAuthorsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.ExtractAuthorsAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -92,7 +92,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractAuthors200Response**](ExtractAuthors200Response.md)
+[**ExtractAuthorsAPI200Response**](ExtractAuthorsAPI200Response.md)
 
 ### Authorization
 
@@ -117,11 +117,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="extractcontentfromawebpage"></a>
-# **ExtractContentFromAWebPage**
-> ExtractContentFromAWebPage200Response ExtractContentFromAWebPage (string url)
+<a id="extractcontentfromawebpageapi"></a>
+# **ExtractContentFromAWebPageAPI**
+> ExtractContentFromAWebPageAPI200Response ExtractContentFromAWebPageAPI (string url)
 
-Extract Content from a Web Page
+Extract Content from a Web Page API
 
 Extract the main content from a web page. This API is useful for extracting the main text, title, and images from a web page. It can be used to create a summary of the content of a web page, or to extract the main content of a web page to display it in a different format.
 
@@ -135,7 +135,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractContentFromAWebPageExample
+    public class ExtractContentFromAWebPageAPIExample
     {
         public static void Main()
         {
@@ -155,13 +155,13 @@ namespace Example
 
             try
             {
-                // Extract Content from a Web Page
-                ExtractContentFromAWebPage200Response result = apiInstance.ExtractContentFromAWebPage(url);
+                // Extract Content from a Web Page API
+                ExtractContentFromAWebPageAPI200Response result = apiInstance.ExtractContentFromAWebPageAPI(url);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.ExtractContentFromAWebPage: " + e.Message);
+                Debug.Print("Exception when calling WebApi.ExtractContentFromAWebPageAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -170,21 +170,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractContentFromAWebPageWithHttpInfo variant
+#### Using the ExtractContentFromAWebPageAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract Content from a Web Page
-    ApiResponse<ExtractContentFromAWebPage200Response> response = apiInstance.ExtractContentFromAWebPageWithHttpInfo(url);
+    // Extract Content from a Web Page API
+    ApiResponse<ExtractContentFromAWebPageAPI200Response> response = apiInstance.ExtractContentFromAWebPageAPIWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.ExtractContentFromAWebPageWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.ExtractContentFromAWebPageAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -198,7 +198,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractContentFromAWebPage200Response**](ExtractContentFromAWebPage200Response.md)
+[**ExtractContentFromAWebPageAPI200Response**](ExtractContentFromAWebPageAPI200Response.md)
 
 ### Authorization
 
@@ -223,11 +223,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="extractpublishdate"></a>
-# **ExtractPublishDate**
-> ExtractPublishDate200Response ExtractPublishDate (string url)
+<a id="extractpublishdateapi"></a>
+# **ExtractPublishDateAPI**
+> ExtractPublishDateAPI200Response ExtractPublishDateAPI (string url)
 
-Extract Publish Date
+Extract Publish Date API
 
 Extract the publish date of an article (news or blog). The API will return the publish date of the article if it can be found. The date returned is in the format YYYY-MM-DD.
 
@@ -241,7 +241,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ExtractPublishDateExample
+    public class ExtractPublishDateAPIExample
     {
         public static void Main()
         {
@@ -261,13 +261,13 @@ namespace Example
 
             try
             {
-                // Extract Publish Date
-                ExtractPublishDate200Response result = apiInstance.ExtractPublishDate(url);
+                // Extract Publish Date API
+                ExtractPublishDateAPI200Response result = apiInstance.ExtractPublishDateAPI(url);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.ExtractPublishDate: " + e.Message);
+                Debug.Print("Exception when calling WebApi.ExtractPublishDateAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -276,21 +276,21 @@ namespace Example
 }
 ```
 
-#### Using the ExtractPublishDateWithHttpInfo variant
+#### Using the ExtractPublishDateAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Extract Publish Date
-    ApiResponse<ExtractPublishDate200Response> response = apiInstance.ExtractPublishDateWithHttpInfo(url);
+    // Extract Publish Date API
+    ApiResponse<ExtractPublishDateAPI200Response> response = apiInstance.ExtractPublishDateAPIWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.ExtractPublishDateWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.ExtractPublishDateAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -304,7 +304,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExtractPublishDate200Response**](ExtractPublishDate200Response.md)
+[**ExtractPublishDateAPI200Response**](ExtractPublishDateAPI200Response.md)
 
 ### Authorization
 
@@ -329,11 +329,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="retrievepagerank"></a>
-# **RetrievePageRank**
-> RetrievePageRank200Response RetrievePageRank (string domain)
+<a id="retrievepagerankapi"></a>
+# **RetrievePageRankAPI**
+> RetrievePageRankAPI200Response RetrievePageRankAPI (string domain)
 
-Retrieve Page Rank
+Retrieve Page Rank API
 
 This API allows you to retrieve the page rank of a given URL. The API returns the page rank, the position of the URL in the search results, and the percentile of the page rank.
 
@@ -347,7 +347,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RetrievePageRankExample
+    public class RetrievePageRankAPIExample
     {
         public static void Main()
         {
@@ -367,13 +367,13 @@ namespace Example
 
             try
             {
-                // Retrieve Page Rank
-                RetrievePageRank200Response result = apiInstance.RetrievePageRank(domain);
+                // Retrieve Page Rank API
+                RetrievePageRankAPI200Response result = apiInstance.RetrievePageRankAPI(domain);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.RetrievePageRank: " + e.Message);
+                Debug.Print("Exception when calling WebApi.RetrievePageRankAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -382,21 +382,21 @@ namespace Example
 }
 ```
 
-#### Using the RetrievePageRankWithHttpInfo variant
+#### Using the RetrievePageRankAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Retrieve Page Rank
-    ApiResponse<RetrievePageRank200Response> response = apiInstance.RetrievePageRankWithHttpInfo(domain);
+    // Retrieve Page Rank API
+    ApiResponse<RetrievePageRankAPI200Response> response = apiInstance.RetrievePageRankAPIWithHttpInfo(domain);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.RetrievePageRankWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.RetrievePageRankAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -410,7 +410,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RetrievePageRank200Response**](RetrievePageRank200Response.md)
+[**RetrievePageRankAPI200Response**](RetrievePageRankAPI200Response.md)
 
 ### Authorization
 
@@ -435,11 +435,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="searchweb"></a>
-# **SearchWeb**
-> SearchWeb200Response SearchWeb (string query, int? number = null)
+<a id="searchwebapi"></a>
+# **SearchWebAPI**
+> SearchWebAPI200Response SearchWebAPI (string query, int? number = null)
 
-Search Web
+Search Web API
 
 Search the web for a given query. The API returns a list of results with the title, summary, and URL.
 
@@ -453,7 +453,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class SearchWebExample
+    public class SearchWebAPIExample
     {
         public static void Main()
         {
@@ -474,13 +474,13 @@ namespace Example
 
             try
             {
-                // Search Web
-                SearchWeb200Response result = apiInstance.SearchWeb(query, number);
+                // Search Web API
+                SearchWebAPI200Response result = apiInstance.SearchWebAPI(query, number);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.SearchWeb: " + e.Message);
+                Debug.Print("Exception when calling WebApi.SearchWebAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -489,21 +489,21 @@ namespace Example
 }
 ```
 
-#### Using the SearchWebWithHttpInfo variant
+#### Using the SearchWebAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Search Web
-    ApiResponse<SearchWeb200Response> response = apiInstance.SearchWebWithHttpInfo(query, number);
+    // Search Web API
+    ApiResponse<SearchWebAPI200Response> response = apiInstance.SearchWebAPIWithHttpInfo(query, number);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.SearchWebWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.SearchWebAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -518,7 +518,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**SearchWeb200Response**](SearchWeb200Response.md)
+[**SearchWebAPI200Response**](SearchWebAPI200Response.md)
 
 ### Authorization
 
@@ -543,11 +543,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="verifyemailaddress"></a>
-# **VerifyEmailAddress**
-> VerifyEmailAddress200Response VerifyEmailAddress (string email)
+<a id="verifyemailaddressapi"></a>
+# **VerifyEmailAddressAPI**
+> VerifyEmailAddressAPI200Response VerifyEmailAddressAPI (string email)
 
-Verify Email Address
+Verify Email Address API
 
 This email checker API allows you to validate an email address. The validation will parse the name if possible and check whether the email is not just a disposable junk email address. The API will also check if the email is from a free provider like Gmail, Yahoo, or Hotmail.
 
@@ -561,7 +561,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class VerifyEmailAddressExample
+    public class VerifyEmailAddressAPIExample
     {
         public static void Main()
         {
@@ -581,13 +581,13 @@ namespace Example
 
             try
             {
-                // Verify Email Address
-                VerifyEmailAddress200Response result = apiInstance.VerifyEmailAddress(email);
+                // Verify Email Address API
+                VerifyEmailAddressAPI200Response result = apiInstance.VerifyEmailAddressAPI(email);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling WebApi.VerifyEmailAddress: " + e.Message);
+                Debug.Print("Exception when calling WebApi.VerifyEmailAddressAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -596,21 +596,21 @@ namespace Example
 }
 ```
 
-#### Using the VerifyEmailAddressWithHttpInfo variant
+#### Using the VerifyEmailAddressAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Verify Email Address
-    ApiResponse<VerifyEmailAddress200Response> response = apiInstance.VerifyEmailAddressWithHttpInfo(email);
+    // Verify Email Address API
+    ApiResponse<VerifyEmailAddressAPI200Response> response = apiInstance.VerifyEmailAddressAPIWithHttpInfo(email);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling WebApi.VerifyEmailAddressWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling WebApi.VerifyEmailAddressAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -624,7 +624,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**VerifyEmailAddress200Response**](VerifyEmailAddress200Response.md)
+[**VerifyEmailAddressAPI200Response**](VerifyEmailAddressAPI200Response.md)
 
 ### Authorization
 

@@ -1,18 +1,18 @@
 -module(apileague_books_api).
 
--export([find_similar_books/2, find_similar_books/3,
-         search_books/1, search_books/2]).
+-export([find_similar_books_api/2, find_similar_books_api/3,
+         search_books_api/1, search_books_api/2]).
 
 -define(BASE_URL, <<"">>).
 
-%% @doc Find Similar Books
-%% Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
--spec find_similar_books(ctx:ctx(), integer()) -> {ok, apileague_find_similar_books_200_response:apileague_find_similar_books_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-find_similar_books(Ctx, Id) ->
-    find_similar_books(Ctx, Id, #{}).
+%% @doc Find Similar Books API
+%% Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+-spec find_similar_books_api(ctx:ctx(), integer()) -> {ok, apileague_find_similar_books_api_200_response:apileague_find_similar_books_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+find_similar_books_api(Ctx, Id) ->
+    find_similar_books_api(Ctx, Id, #{}).
 
--spec find_similar_books(ctx:ctx(), integer(), maps:map()) -> {ok, apileague_find_similar_books_200_response:apileague_find_similar_books_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-find_similar_books(Ctx, Id, Optional) ->
+-spec find_similar_books_api(ctx:ctx(), integer(), maps:map()) -> {ok, apileague_find_similar_books_api_200_response:apileague_find_similar_books_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+find_similar_books_api(Ctx, Id, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -26,14 +26,14 @@ find_similar_books(Ctx, Id, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Search Books
-%% Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
--spec search_books(ctx:ctx()) -> {ok, apileague_search_books_200_response:apileague_search_books_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_books(Ctx) ->
-    search_books(Ctx, #{}).
+%% @doc Search Books API
+%% Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+-spec search_books_api(ctx:ctx()) -> {ok, apileague_search_books_api_200_response:apileague_search_books_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_books_api(Ctx) ->
+    search_books_api(Ctx, #{}).
 
--spec search_books(ctx:ctx(), maps:map()) -> {ok, apileague_search_books_200_response:apileague_search_books_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-search_books(Ctx, Optional) ->
+-spec search_books_api(ctx:ctx(), maps:map()) -> {ok, apileague_search_books_api_200_response:apileague_search_books_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+search_books_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 

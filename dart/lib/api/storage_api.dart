@@ -16,7 +16,7 @@ class StorageApi {
 
   final ApiClient apiClient;
 
-  /// Read Key Value from Store
+  /// Read Key Value from Store API
   ///
   /// Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
   ///
@@ -26,7 +26,7 @@ class StorageApi {
   ///
   /// * [String] key (required):
   ///   The key for which the value is stored (max length 255 characters).
-  Future<Response> readKeyValueFromStoreWithHttpInfo(String key,) async {
+  Future<Response> readKeyValueFromStoreAPIWithHttpInfo(String key,) async {
     // ignore: prefer_const_declarations
     final path = r'/read-key-value';
 
@@ -53,7 +53,7 @@ class StorageApi {
     );
   }
 
-  /// Read Key Value from Store
+  /// Read Key Value from Store API
   ///
   /// Read a value from the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
   ///
@@ -61,8 +61,8 @@ class StorageApi {
   ///
   /// * [String] key (required):
   ///   The key for which the value is stored (max length 255 characters).
-  Future<ReadKeyValueFromStore200Response?> readKeyValueFromStore(String key,) async {
-    final response = await readKeyValueFromStoreWithHttpInfo(key,);
+  Future<ReadKeyValueFromStoreAPI200Response?> readKeyValueFromStoreAPI(String key,) async {
+    final response = await readKeyValueFromStoreAPIWithHttpInfo(key,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -70,13 +70,13 @@ class StorageApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ReadKeyValueFromStore200Response',) as ReadKeyValueFromStore200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ReadKeyValueFromStoreAPI200Response',) as ReadKeyValueFromStoreAPI200Response;
     
     }
     return null;
   }
 
-  /// Store Key Value (GET)
+  /// Store Key Value (GET) API
   ///
   /// Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
   ///
@@ -89,7 +89,7 @@ class StorageApi {
   ///
   /// * [String] value (required):
   ///   The value that is supposed to be stored (max length 10,000 characters).
-  Future<Response> storeKeyValueGETWithHttpInfo(String key, String value,) async {
+  Future<Response> storeKeyValueGETAPIWithHttpInfo(String key, String value,) async {
     // ignore: prefer_const_declarations
     final path = r'/store-key-value';
 
@@ -117,7 +117,7 @@ class StorageApi {
     );
   }
 
-  /// Store Key Value (GET)
+  /// Store Key Value (GET) API
   ///
   /// Store a value in the key-value store. The key-value store is a simple storage system that allows you to store and retrieve data using a key. The data is stored in the cloud and can be accessed from anywhere. You can use the key-value store to store any type of data, such as text or numbers. The key-value store is a great way to store data that you want to access from multiple devices or locations.
   ///
@@ -128,8 +128,8 @@ class StorageApi {
   ///
   /// * [String] value (required):
   ///   The value that is supposed to be stored (max length 10,000 characters).
-  Future<StoreKeyValueGET200Response?> storeKeyValueGET(String key, String value,) async {
-    final response = await storeKeyValueGETWithHttpInfo(key, value,);
+  Future<StoreKeyValueGETAPI200Response?> storeKeyValueGETAPI(String key, String value,) async {
+    final response = await storeKeyValueGETAPIWithHttpInfo(key, value,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -137,7 +137,7 @@ class StorageApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StoreKeyValueGET200Response',) as StoreKeyValueGET200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StoreKeyValueGETAPI200Response',) as StoreKeyValueGETAPI200Response;
     
     }
     return null;

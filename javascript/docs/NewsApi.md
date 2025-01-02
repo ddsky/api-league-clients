@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**extractNews**](NewsApi.md#extractNews) | **GET** /extract-news | Extract News
-[**searchNews**](NewsApi.md#searchNews) | **GET** /search-news | Search News
-[**topNews**](NewsApi.md#topNews) | **GET** /retrieve-top-news | Top News
+[**extractNewsAPI**](NewsApi.md#extractNewsAPI) | **GET** /extract-news | Extract News API
+[**searchNewsAPI**](NewsApi.md#searchNewsAPI) | **GET** /search-news | Search News API
+[**topNewsAPI**](NewsApi.md#topNewsAPI) | **GET** /retrieve-top-news | Top News API
 
 
 
-## extractNews
+## extractNewsAPI
 
-> ExtractNews200Response extractNews(url, analyze)
+> ExtractNewsAPI200Response extractNewsAPI(url, analyze)
 
-Extract News
+Extract News API
 
 Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
 
@@ -37,7 +37,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 let apiInstance = new ApileagueJs.NewsApi();
 let url = "https://internetprotocol.co/hitech/2021/12/07/tesla-to-release-a-four-motor-cybertruck/"; // String | The url of the news.
 let analyze = true; // Boolean | Whether to analyze the news (extract entities etc.)
-apiInstance.extractNews(url, analyze, (error, data, response) => {
+apiInstance.extractNewsAPI(url, analyze, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractNews200Response**](ExtractNews200Response.md)
+[**ExtractNewsAPI200Response**](ExtractNewsAPI200Response.md)
 
 ### Authorization
 
@@ -68,13 +68,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## searchNews
+## searchNewsAPI
 
-> SearchNews200Response searchNews(opts)
+> SearchNewsAPI200Response searchNewsAPI(opts)
 
-Search News
+Search News API
 
-Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
 
 ### Example
 
@@ -94,7 +94,7 @@ headerApiKey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ApileagueJs.NewsApi();
 let opts = {
-  'text': "tesla", // String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  'text': "tesla", // String | The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
   'sourceCountries': "us,uk", // String | A comma-separated list of ISO 3166 country codes from which the news should originate.
   'language': "en", // String | The ISO 6391 language code of the news.
   'minSentiment': -0.8, // Number | The minimal sentiment of the news in range [-1,1].
@@ -111,7 +111,7 @@ let opts = {
   'offset': 0, // Number | The number of news to skip in range [0,10000]
   'number': 10 // Number | The number of news to return in range [1,100]
 };
-apiInstance.searchNews(opts, (error, data, response) => {
+apiInstance.searchNewsAPI(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -125,7 +125,7 @@ apiInstance.searchNews(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford | [optional] 
+ **text** | **String**| The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford. | [optional] 
  **sourceCountries** | **String**| A comma-separated list of ISO 3166 country codes from which the news should originate. | [optional] 
  **language** | **String**| The ISO 6391 language code of the news. | [optional] 
  **minSentiment** | **Number**| The minimal sentiment of the news in range [-1,1]. | [optional] 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchNews200Response**](SearchNews200Response.md)
+[**SearchNewsAPI200Response**](SearchNewsAPI200Response.md)
 
 ### Authorization
 
@@ -156,13 +156,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## topNews
+## topNewsAPI
 
-> TopNews200Response topNews(sourceCountry, language, opts)
+> TopNewsAPI200Response topNewsAPI(sourceCountry, language, opts)
 
-Top News
+Top News API
 
-Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
 
 ### Example
 
@@ -187,7 +187,7 @@ let opts = {
   'date': "2024-05-30", // String | The date for which the top news should be retrieved. If no date is given, the current day is assumed.
   'headlinesOnly': false // Boolean | Whether to only return basic information such as id, title, and url of the news.
 };
-apiInstance.topNews(sourceCountry, language, opts, (error, data, response) => {
+apiInstance.topNewsAPI(sourceCountry, language, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TopNews200Response**](TopNews200Response.md)
+[**TopNewsAPI200Response**](TopNewsAPI200Response.md)
 
 ### Authorization
 

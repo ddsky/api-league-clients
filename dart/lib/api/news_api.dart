@@ -16,7 +16,7 @@ class NewsApi {
 
   final ApiClient apiClient;
 
-  /// Extract News
+  /// Extract News API
   ///
   /// Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
   ///
@@ -29,7 +29,7 @@ class NewsApi {
   ///
   /// * [bool] analyze (required):
   ///   Whether to analyze the news (extract entities etc.)
-  Future<Response> extractNewsWithHttpInfo(String url, bool analyze,) async {
+  Future<Response> extractNewsAPIWithHttpInfo(String url, bool analyze,) async {
     // ignore: prefer_const_declarations
     final path = r'/extract-news';
 
@@ -57,7 +57,7 @@ class NewsApi {
     );
   }
 
-  /// Extract News
+  /// Extract News API
   ///
   /// Extract a news article from a website to a well structure JSON object. The API will return the title, text, URL, image, publish date, author, language, source country, and sentiment of the news article.
   ///
@@ -68,8 +68,8 @@ class NewsApi {
   ///
   /// * [bool] analyze (required):
   ///   Whether to analyze the news (extract entities etc.)
-  Future<ExtractNews200Response?> extractNews(String url, bool analyze,) async {
-    final response = await extractNewsWithHttpInfo(url, analyze,);
+  Future<ExtractNewsAPI200Response?> extractNewsAPI(String url, bool analyze,) async {
+    final response = await extractNewsAPIWithHttpInfo(url, analyze,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -77,22 +77,22 @@ class NewsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ExtractNews200Response',) as ExtractNews200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ExtractNewsAPI200Response',) as ExtractNewsAPI200Response;
     
     }
     return null;
   }
 
-  /// Search News
+  /// Search News API
   ///
-  /// Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  /// Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [String] text:
-  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
   ///
   /// * [String] sourceCountries:
   ///   A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -138,7 +138,7 @@ class NewsApi {
   ///
   /// * [int] number:
   ///   The number of news to return in range [1,100]
-  Future<Response> searchNewsWithHttpInfo({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
+  Future<Response> searchNewsAPIWithHttpInfo({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
     // ignore: prefer_const_declarations
     final path = r'/search-news';
 
@@ -212,14 +212,14 @@ class NewsApi {
     );
   }
 
-  /// Search News
+  /// Search News API
   ///
-  /// Search and filter news by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
+  /// Search and filter millions of news from over 200 countries in 90 languages by text, date, location, category, language, and more. The API returns a list of news articles matching the given criteria. You can set as many filtering parameters as you like, but you have to set at least one, e.g. text or language.
   ///
   /// Parameters:
   ///
   /// * [String] text:
-  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford
+  ///   The text to match in the news content (at least 3 characters, maximum 100 characters). By default all query terms are expected, you can use an uppercase OR to search for any terms, e.g. tesla OR ford. You can also exclude terms by putting a minus sign (-) in front of the term, e.g. tesla -ford.
   ///
   /// * [String] sourceCountries:
   ///   A comma-separated list of ISO 3166 country codes from which the news should originate.
@@ -265,8 +265,8 @@ class NewsApi {
   ///
   /// * [int] number:
   ///   The number of news to return in range [1,100]
-  Future<SearchNews200Response?> searchNews({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
-    final response = await searchNewsWithHttpInfo( text: text, sourceCountries: sourceCountries, language: language, minSentiment: minSentiment, maxSentiment: maxSentiment, earliestPublishDate: earliestPublishDate, latestPublishDate: latestPublishDate, newsSources: newsSources, authors: authors, categories: categories, entities: entities, locationFilter: locationFilter, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
+  Future<SearchNewsAPI200Response?> searchNewsAPI({ String? text, String? sourceCountries, String? language, double? minSentiment, double? maxSentiment, String? earliestPublishDate, String? latestPublishDate, String? newsSources, String? authors, String? categories, String? entities, String? locationFilter, String? sort, String? sortDirection, int? offset, int? number, }) async {
+    final response = await searchNewsAPIWithHttpInfo( text: text, sourceCountries: sourceCountries, language: language, minSentiment: minSentiment, maxSentiment: maxSentiment, earliestPublishDate: earliestPublishDate, latestPublishDate: latestPublishDate, newsSources: newsSources, authors: authors, categories: categories, entities: entities, locationFilter: locationFilter, sort: sort, sortDirection: sortDirection, offset: offset, number: number, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -274,15 +274,15 @@ class NewsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchNews200Response',) as SearchNews200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SearchNewsAPI200Response',) as SearchNewsAPI200Response;
     
     }
     return null;
   }
 
-  /// Top News
+  /// Top News API
   ///
-  /// Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+  /// Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -299,7 +299,7 @@ class NewsApi {
   ///
   /// * [bool] headlinesOnly:
   ///   Whether to only return basic information such as id, title, and url of the news.
-  Future<Response> topNewsWithHttpInfo(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
+  Future<Response> topNewsAPIWithHttpInfo(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
     // ignore: prefer_const_declarations
     final path = r'/retrieve-top-news';
 
@@ -333,9 +333,9 @@ class NewsApi {
     );
   }
 
-  /// Top News
+  /// Top News API
   ///
-  /// Get the top news from a country in a language for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
+  /// Get the top news from a country (over 220 are supported) in a language (over 90 are supported) for a specific date. The top news are clustered from multiple sources in the given country. The more news in a cluster the higher the cluster is ranked.
   ///
   /// Parameters:
   ///
@@ -350,8 +350,8 @@ class NewsApi {
   ///
   /// * [bool] headlinesOnly:
   ///   Whether to only return basic information such as id, title, and url of the news.
-  Future<TopNews200Response?> topNews(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
-    final response = await topNewsWithHttpInfo(sourceCountry, language,  date: date, headlinesOnly: headlinesOnly, );
+  Future<TopNewsAPI200Response?> topNewsAPI(String sourceCountry, String language, { String? date, bool? headlinesOnly, }) async {
+    final response = await topNewsAPIWithHttpInfo(sourceCountry, language,  date: date, headlinesOnly: headlinesOnly, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -359,7 +359,7 @@ class NewsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TopNews200Response',) as TopNews200Response;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TopNewsAPI200Response',) as TopNewsAPI200Response;
     
     }
     return null;

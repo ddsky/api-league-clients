@@ -4,16 +4,16 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**convertUnits()**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units |
+| [**convertUnitsAPI()**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API |
 
 
-## `convertUnits()`
+## `convertUnitsAPI()`
 
 ```php
-convertUnits($source_amount, $source_unit, $target_unit, $food_name): \OpenAPI\Client\Model\ConvertUnits200Response
+convertUnitsAPI($source_amount, $source_unit, $target_unit, $food_name): \OpenAPI\Client\Model\ConvertUnitsAPI200Response
 ```
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -47,10 +47,10 @@ $target_unit = lb; // string | The unit to which should be converted.
 $food_name = flour; // string | An optional food name. For converting foods the food is relevant as they have different densities.
 
 try {
-    $result = $apiInstance->convertUnits($source_amount, $source_unit, $target_unit, $food_name);
+    $result = $apiInstance->convertUnitsAPI($source_amount, $source_unit, $target_unit, $food_name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MathApi->convertUnits: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MathApi->convertUnitsAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -65,7 +65,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ConvertUnits200Response**](../Model/ConvertUnits200Response.md)
+[**\OpenAPI\Client\Model\ConvertUnitsAPI200Response**](../Model/ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**imageToAsciiArtByURL**](ArtApi.md#imageToAsciiArtByURL) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
-| [**randomPoem**](ArtApi.md#randomPoem) | **GET** /retrieve-random-poem | Random Poem |
+| [**imageToAsciiArtByURLAPI**](ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API |
+| [**randomPoemAPI**](ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API |
 
 
-<a id="imageToAsciiArtByURL"></a>
-# **imageToAsciiArtByURL**
-> kotlin.String imageToAsciiArtByURL(url, width, height)
+<a id="imageToAsciiArtByURLAPI"></a>
+# **imageToAsciiArtByURLAPI**
+> kotlin.String imageToAsciiArtByURLAPI(url, width, height)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -27,13 +27,13 @@ val url : kotlin.String = https://upload.wikimedia.org/wikipedia/commons/3/35/Ba
 val width : kotlin.Int = 200 // kotlin.Int | The maximum width of the image (default 400, max. 500).
 val height : kotlin.Int = 200 // kotlin.Int | The maximum height of the image (default 400, max. 500).
 try {
-    val result : kotlin.String = apiInstance.imageToAsciiArtByURL(url, width, height)
+    val result : kotlin.String = apiInstance.imageToAsciiArtByURLAPI(url, width, height)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ArtApi#imageToAsciiArtByURL")
+    println("4xx response calling ArtApi#imageToAsciiArtByURLAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ArtApi#imageToAsciiArtByURL")
+    println("5xx response calling ArtApi#imageToAsciiArtByURLAPI")
     e.printStackTrace()
 }
 ```
@@ -64,11 +64,11 @@ Configure headerApiKey:
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="randomPoem"></a>
-# **randomPoem**
-> RandomPoem200Response randomPoem(minLines, maxLines)
+<a id="randomPoemAPI"></a>
+# **randomPoemAPI**
+> RandomPoemAPI200Response randomPoemAPI(minLines, maxLines)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem&#39;s by length (number of lines).
 
@@ -82,13 +82,13 @@ val apiInstance = ArtApi()
 val minLines : kotlin.Int = 5 // kotlin.Int | The minimum number of lines of the poem.
 val maxLines : kotlin.Int = 20 // kotlin.Int | The maximum number of lines of the poem.
 try {
-    val result : RandomPoem200Response = apiInstance.randomPoem(minLines, maxLines)
+    val result : RandomPoemAPI200Response = apiInstance.randomPoemAPI(minLines, maxLines)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ArtApi#randomPoem")
+    println("4xx response calling ArtApi#randomPoemAPI")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ArtApi#randomPoem")
+    println("5xx response calling ArtApi#randomPoemAPI")
     e.printStackTrace()
 }
 ```
@@ -101,7 +101,7 @@ try {
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

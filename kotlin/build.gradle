@@ -1,5 +1,5 @@
 group 'com.apileague'
-version '1.6.3'
+version '1.6.4'
 
 wrapper {
     gradleVersion = '8.7'

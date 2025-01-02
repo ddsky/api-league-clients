@@ -22,11 +22,11 @@ func Test_apileague_BooksAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BooksAPIService FindSimilarBooks", func(t *testing.T) {
+	t.Run("Test BooksAPIService FindSimilarBooksAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.BooksAPI.FindSimilarBooks(context.Background()).Execute()
+		resp, httpRes, err := apiClient.BooksAPI.FindSimilarBooksAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_BooksAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BooksAPIService SearchBooks", func(t *testing.T) {
+	t.Run("Test BooksAPIService SearchBooksAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.BooksAPI.SearchBooks(context.Background()).Execute()
+		resp, httpRes, err := apiClient.BooksAPI.SearchBooksAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

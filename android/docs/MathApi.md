@@ -4,15 +4,15 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+[**convertUnitsAPI**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API
 
 
 
-## convertUnits
+## convertUnitsAPI
 
-> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+> ConvertUnitsAPI200Response convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -28,10 +28,10 @@ String sourceUnit = kg; // String | The source unit.
 String targetUnit = lb; // String | The unit to which should be converted.
 String foodName = flour; // String | An optional food name. For converting foods the food is relevant as they have different densities.
 try {
-    ConvertUnits200Response result = apiInstance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+    ConvertUnitsAPI200Response result = apiInstance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MathApi#convertUnits");
+    System.err.println("Exception when calling MathApi#convertUnitsAPI");
     e.printStackTrace();
 }
 ```
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertUnits) | **GET** /convert-units | Convert Units
+[**convertUnitsAPI**](MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API
 
 
-# **convertUnits**
-> ConvertUnits200Response convertUnits()
+# **convertUnitsAPI**
+> ConvertUnitsAPI200Response convertUnitsAPI()
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -22,7 +22,7 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .MathApi(configuration);
 
-let body:.MathApiConvertUnitsRequest = {
+let body:.MathApiConvertUnitsAPIRequest = {
   // number | The source amount.
   sourceAmount: 100,
   // string | The source unit.
@@ -33,7 +33,7 @@ let body:.MathApiConvertUnitsRequest = {
   foodName: "flour",
 };
 
-apiInstance.convertUnits(body).then((data:any) => {
+apiInstance.convertUnitsAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**ConvertUnits200Response**
+**ConvertUnitsAPI200Response**
 
 ### Authorization
 

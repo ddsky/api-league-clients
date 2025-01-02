@@ -9,13 +9,13 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convert_units**](MathApi.md#convert_units) | **GET** /convert-units | Convert Units
+[**convert_units_api**](MathApi.md#convert_units_api) | **GET** /convert-units | Convert Units API
 
 
-# **convert_units**
-> ConvertUnits200Response convert_units(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name)
+# **convert_units_api**
+> ConvertUnitsAPI200Response convert_units_api(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -41,11 +41,11 @@ my $target_unit = lb; # string | The unit to which should be converted.
 my $food_name = flour; # string | An optional food name. For converting foods the food is relevant as they have different densities.
 
 eval {
-    my $result = $api_instance->convert_units(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name);
+    my $result = $api_instance->convert_units_api(source_amount => $source_amount, source_unit => $source_unit, target_unit => $target_unit, food_name => $food_name);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MathApi->convert_units: $@\n";
+    warn "Exception when calling MathApi->convert_units_api: $@\n";
 }
 ```
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

@@ -4,13 +4,13 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**randomQuote**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote
-[**randomRiddle**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle
-[**randomTrivia**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia
+[**randomQuoteAPI**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API
+[**randomRiddleAPI**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API
+[**randomTriviaAPI**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API
 
 
-# **randomQuote**
-> RandomQuote200Response randomQuote()
+# **randomQuoteAPI**
+> RandomQuoteAPI200Response randomQuoteAPI()
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -24,14 +24,14 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .KnowledgeApi(configuration);
 
-let body:.KnowledgeApiRandomQuoteRequest = {
+let body:.KnowledgeApiRandomQuoteAPIRequest = {
   // number | The minimum length of the quote in letters. (optional)
   minLength: 120,
   // number | The maximum length of the quote in letters. (optional)
   maxLength: 300,
 };
 
-apiInstance.randomQuote(body).then((data:any) => {
+apiInstance.randomQuoteAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RandomQuote200Response**
+**RandomQuoteAPI200Response**
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **randomRiddle**
-> RandomRiddle200Response randomRiddle()
+# **randomRiddleAPI**
+> RandomRiddleAPI200Response randomRiddleAPI()
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -87,12 +87,12 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .KnowledgeApi(configuration);
 
-let body:.KnowledgeApiRandomRiddleRequest = {
+let body:.KnowledgeApiRandomRiddleAPIRequest = {
   // string | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\". (optional)
   difficulty: "easy",
 };
 
-apiInstance.randomRiddle(body).then((data:any) => {
+apiInstance.randomRiddleAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RandomRiddle200Response**
+**RandomRiddleAPI200Response**
 
 ### Authorization
 
@@ -132,10 +132,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **randomTrivia**
-> RandomTrivia200Response randomTrivia()
+# **randomTriviaAPI**
+> RandomTriviaAPI200Response randomTriviaAPI()
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Example
 
@@ -147,12 +147,12 @@ import * as fs from 'fs';
 const configuration = .createConfiguration();
 const apiInstance = new .KnowledgeApi(configuration);
 
-let body:.KnowledgeApiRandomTriviaRequest = {
+let body:.KnowledgeApiRandomTriviaAPIRequest = {
   // number | The maximum length of the trivia in letters. (optional)
   maxLength: 300,
 };
 
-apiInstance.randomTrivia(body).then((data:any) => {
+apiInstance.randomTriviaAPI(body).then((data:any) => {
   console.log('API called successfully. Returned data: ' + data);
 }).catch((error:any) => console.error(error));
 ```
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**RandomTrivia200Response**
+**RandomTriviaAPI200Response**
 
 ### Authorization
 

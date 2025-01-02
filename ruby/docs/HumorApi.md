@@ -4,19 +4,19 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**generate_nonsense_word**](HumorApi.md#generate_nonsense_word) | **GET** /generate-nonsense-word | Generate Nonsense Word |
-| [**random_joke**](HumorApi.md#random_joke) | **GET** /retrieve-random-joke | Random Joke |
-| [**random_meme**](HumorApi.md#random_meme) | **GET** /retrieve-random-meme | Random Meme |
-| [**search_gifs**](HumorApi.md#search_gifs) | **GET** /search-gifs | Search Gifs |
-| [**search_jokes**](HumorApi.md#search_jokes) | **GET** /search-jokes | Search Jokes |
-| [**search_memes**](HumorApi.md#search_memes) | **GET** /search-memes | Search Memes |
+| [**generate_nonsense_word_api**](HumorApi.md#generate_nonsense_word_api) | **GET** /generate-nonsense-word | Generate Nonsense Word API |
+| [**random_joke_api**](HumorApi.md#random_joke_api) | **GET** /retrieve-random-joke | Random Joke API |
+| [**random_meme_api**](HumorApi.md#random_meme_api) | **GET** /retrieve-random-meme | Random Meme API |
+| [**search_gifs_api**](HumorApi.md#search_gifs_api) | **GET** /search-gifs | Search Gifs API |
+| [**search_jokes_api**](HumorApi.md#search_jokes_api) | **GET** /search-jokes | Search Jokes API |
+| [**search_memes_api**](HumorApi.md#search_memes_api) | **GET** /search-memes | Search Memes API |
 
 
-## generate_nonsense_word
+## generate_nonsense_word_api
 
-> <GenerateNonsenseWord200Response> generate_nonsense_word
+> <GenerateNonsenseWordAPI200Response> generate_nonsense_word_api
 
-Generate Nonsense Word
+Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
@@ -41,29 +41,29 @@ end
 api_instance = OpenapiClient::HumorApi.new
 
 begin
-  # Generate Nonsense Word
-  result = api_instance.generate_nonsense_word
+  # Generate Nonsense Word API
+  result = api_instance.generate_nonsense_word_api
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->generate_nonsense_word: #{e}"
+  puts "Error when calling HumorApi->generate_nonsense_word_api: #{e}"
 end
 ```
 
-#### Using the generate_nonsense_word_with_http_info variant
+#### Using the generate_nonsense_word_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GenerateNonsenseWord200Response>, Integer, Hash)> generate_nonsense_word_with_http_info
+> <Array(<GenerateNonsenseWordAPI200Response>, Integer, Hash)> generate_nonsense_word_api_with_http_info
 
 ```ruby
 begin
-  # Generate Nonsense Word
-  data, status_code, headers = api_instance.generate_nonsense_word_with_http_info
+  # Generate Nonsense Word API
+  data, status_code, headers = api_instance.generate_nonsense_word_api_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GenerateNonsenseWord200Response>
+  p data # => <GenerateNonsenseWordAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->generate_nonsense_word_with_http_info: #{e}"
+  puts "Error when calling HumorApi->generate_nonsense_word_api_with_http_info: #{e}"
 end
 ```
 
@@ -73,7 +73,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GenerateNonsenseWord200Response**](GenerateNonsenseWord200Response.md)
+[**GenerateNonsenseWordAPI200Response**](GenerateNonsenseWordAPI200Response.md)
 
 ### Authorization
 
@@ -85,11 +85,11 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## random_joke
+## random_joke_api
 
-> <SearchJokes200ResponseJokesInner> random_joke(opts)
+> <SearchJokesAPI200ResponseJokesInner> random_joke_api(opts)
 
-Random Joke
+Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
 
@@ -120,29 +120,29 @@ opts = {
 }
 
 begin
-  # Random Joke
-  result = api_instance.random_joke(opts)
+  # Random Joke API
+  result = api_instance.random_joke_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->random_joke: #{e}"
+  puts "Error when calling HumorApi->random_joke_api: #{e}"
 end
 ```
 
-#### Using the random_joke_with_http_info variant
+#### Using the random_joke_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchJokes200ResponseJokesInner>, Integer, Hash)> random_joke_with_http_info(opts)
+> <Array(<SearchJokesAPI200ResponseJokesInner>, Integer, Hash)> random_joke_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Joke
-  data, status_code, headers = api_instance.random_joke_with_http_info(opts)
+  # Random Joke API
+  data, status_code, headers = api_instance.random_joke_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchJokes200ResponseJokesInner>
+  p data # => <SearchJokesAPI200ResponseJokesInner>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->random_joke_with_http_info: #{e}"
+  puts "Error when calling HumorApi->random_joke_api_with_http_info: #{e}"
 end
 ```
 
@@ -157,7 +157,7 @@ end
 
 ### Return type
 
-[**SearchJokes200ResponseJokesInner**](SearchJokes200ResponseJokesInner.md)
+[**SearchJokesAPI200ResponseJokesInner**](SearchJokesAPI200ResponseJokesInner.md)
 
 ### Authorization
 
@@ -169,13 +169,13 @@ end
 - **Accept**: application/json
 
 
-## random_meme
+## random_meme_api
 
-> <RandomMeme200Response> random_meme(opts)
+> <RandomMemeAPI200Response> random_meme_api(opts)
 
-Random Meme
+Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
 ### Examples
 
@@ -205,29 +205,29 @@ opts = {
 }
 
 begin
-  # Random Meme
-  result = api_instance.random_meme(opts)
+  # Random Meme API
+  result = api_instance.random_meme_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->random_meme: #{e}"
+  puts "Error when calling HumorApi->random_meme_api: #{e}"
 end
 ```
 
-#### Using the random_meme_with_http_info variant
+#### Using the random_meme_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RandomMeme200Response>, Integer, Hash)> random_meme_with_http_info(opts)
+> <Array(<RandomMemeAPI200Response>, Integer, Hash)> random_meme_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Random Meme
-  data, status_code, headers = api_instance.random_meme_with_http_info(opts)
+  # Random Meme API
+  data, status_code, headers = api_instance.random_meme_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RandomMeme200Response>
+  p data # => <RandomMemeAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->random_meme_with_http_info: #{e}"
+  puts "Error when calling HumorApi->random_meme_api_with_http_info: #{e}"
 end
 ```
 
@@ -243,7 +243,7 @@ end
 
 ### Return type
 
-[**RandomMeme200Response**](RandomMeme200Response.md)
+[**RandomMemeAPI200Response**](RandomMemeAPI200Response.md)
 
 ### Authorization
 
@@ -255,11 +255,11 @@ end
 - **Accept**: application/json
 
 
-## search_gifs
+## search_gifs_api
 
-> <SearchGifs200Response> search_gifs(query, opts)
+> <SearchGifsAPI200Response> search_gifs_api(query, opts)
 
-Search Gifs
+Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
@@ -288,29 +288,29 @@ opts = {
 }
 
 begin
-  # Search Gifs
-  result = api_instance.search_gifs(query, opts)
+  # Search Gifs API
+  result = api_instance.search_gifs_api(query, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_gifs: #{e}"
+  puts "Error when calling HumorApi->search_gifs_api: #{e}"
 end
 ```
 
-#### Using the search_gifs_with_http_info variant
+#### Using the search_gifs_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchGifs200Response>, Integer, Hash)> search_gifs_with_http_info(query, opts)
+> <Array(<SearchGifsAPI200Response>, Integer, Hash)> search_gifs_api_with_http_info(query, opts)
 
 ```ruby
 begin
-  # Search Gifs
-  data, status_code, headers = api_instance.search_gifs_with_http_info(query, opts)
+  # Search Gifs API
+  data, status_code, headers = api_instance.search_gifs_api_with_http_info(query, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchGifs200Response>
+  p data # => <SearchGifsAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_gifs_with_http_info: #{e}"
+  puts "Error when calling HumorApi->search_gifs_api_with_http_info: #{e}"
 end
 ```
 
@@ -323,7 +323,7 @@ end
 
 ### Return type
 
-[**SearchGifs200Response**](SearchGifs200Response.md)
+[**SearchGifsAPI200Response**](SearchGifsAPI200Response.md)
 
 ### Authorization
 
@@ -335,11 +335,11 @@ end
 - **Accept**: application/json
 
 
-## search_jokes
+## search_jokes_api
 
-> <SearchJokes200Response> search_jokes(opts)
+> <SearchJokesAPI200Response> search_jokes_api(opts)
 
-Search Jokes
+Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
@@ -373,29 +373,29 @@ opts = {
 }
 
 begin
-  # Search Jokes
-  result = api_instance.search_jokes(opts)
+  # Search Jokes API
+  result = api_instance.search_jokes_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_jokes: #{e}"
+  puts "Error when calling HumorApi->search_jokes_api: #{e}"
 end
 ```
 
-#### Using the search_jokes_with_http_info variant
+#### Using the search_jokes_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchJokes200Response>, Integer, Hash)> search_jokes_with_http_info(opts)
+> <Array(<SearchJokesAPI200Response>, Integer, Hash)> search_jokes_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search Jokes
-  data, status_code, headers = api_instance.search_jokes_with_http_info(opts)
+  # Search Jokes API
+  data, status_code, headers = api_instance.search_jokes_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchJokes200Response>
+  p data # => <SearchJokesAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_jokes_with_http_info: #{e}"
+  puts "Error when calling HumorApi->search_jokes_api_with_http_info: #{e}"
 end
 ```
 
@@ -413,7 +413,7 @@ end
 
 ### Return type
 
-[**SearchJokes200Response**](SearchJokes200Response.md)
+[**SearchJokesAPI200Response**](SearchJokesAPI200Response.md)
 
 ### Authorization
 
@@ -425,13 +425,13 @@ end
 - **Accept**: application/json
 
 
-## search_memes
+## search_memes_api
 
-> <SearchMemes200Response> search_memes(opts)
+> <SearchMemesAPI200Response> search_memes_api(opts)
 
-Search Memes
+Search Memes API
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
 ### Examples
 
@@ -463,29 +463,29 @@ opts = {
 }
 
 begin
-  # Search Memes
-  result = api_instance.search_memes(opts)
+  # Search Memes API
+  result = api_instance.search_memes_api(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_memes: #{e}"
+  puts "Error when calling HumorApi->search_memes_api: #{e}"
 end
 ```
 
-#### Using the search_memes_with_http_info variant
+#### Using the search_memes_api_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchMemes200Response>, Integer, Hash)> search_memes_with_http_info(opts)
+> <Array(<SearchMemesAPI200Response>, Integer, Hash)> search_memes_api_with_http_info(opts)
 
 ```ruby
 begin
-  # Search Memes
-  data, status_code, headers = api_instance.search_memes_with_http_info(opts)
+  # Search Memes API
+  data, status_code, headers = api_instance.search_memes_api_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchMemes200Response>
+  p data # => <SearchMemesAPI200Response>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling HumorApi->search_memes_with_http_info: #{e}"
+  puts "Error when calling HumorApi->search_memes_api_with_http_info: #{e}"
 end
 ```
 
@@ -503,7 +503,7 @@ end
 
 ### Return type
 
-[**SearchMemes200Response**](SearchMemes200Response.md)
+[**SearchMemesAPI200Response**](SearchMemesAPI200Response.md)
 
 ### Authorization
 

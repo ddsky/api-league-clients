@@ -4,18 +4,18 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**randomQuote()**](KnowledgeApi.md#randomQuote) | **GET** /retrieve-random-quote | Random Quote |
-| [**randomRiddle()**](KnowledgeApi.md#randomRiddle) | **GET** /retrieve-random-riddle | Random Riddle |
-| [**randomTrivia()**](KnowledgeApi.md#randomTrivia) | **GET** /retrieve-random-trivia | Random Trivia |
+| [**randomQuoteAPI()**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API |
+| [**randomRiddleAPI()**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API |
+| [**randomTriviaAPI()**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API |
 
 
-## `randomQuote()`
+## `randomQuoteAPI()`
 
 ```php
-randomQuote($min_length, $max_length): \OpenAPI\Client\Model\RandomQuote200Response
+randomQuoteAPI($min_length, $max_length): \OpenAPI\Client\Model\RandomQuoteAPI200Response
 ```
 
-Random Quote
+Random Quote API
 
 This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 
@@ -47,10 +47,10 @@ $min_length = 120; // int | The minimum length of the quote in letters.
 $max_length = 300; // int | The maximum length of the quote in letters.
 
 try {
-    $result = $apiInstance->randomQuote($min_length, $max_length);
+    $result = $apiInstance->randomQuoteAPI($min_length, $max_length);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KnowledgeApi->randomQuote: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KnowledgeApi->randomQuoteAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -63,7 +63,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RandomQuote200Response**](../Model/RandomQuote200Response.md)
+[**\OpenAPI\Client\Model\RandomQuoteAPI200Response**](../Model/RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -78,13 +78,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `randomRiddle()`
+## `randomRiddleAPI()`
 
 ```php
-randomRiddle($difficulty): \OpenAPI\Client\Model\RandomRiddle200Response
+randomRiddleAPI($difficulty): \OpenAPI\Client\Model\RandomRiddleAPI200Response
 ```
 
-Random Riddle
+Random Riddle API
 
 The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
 
@@ -115,10 +115,10 @@ $apiInstance = new OpenAPI\Client\Api\KnowledgeApi(
 $difficulty = easy; // string | The difficulty of the riddle, either \"easy\", \"medium\", or \"hard\".
 
 try {
-    $result = $apiInstance->randomRiddle($difficulty);
+    $result = $apiInstance->randomRiddleAPI($difficulty);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KnowledgeApi->randomRiddle: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KnowledgeApi->randomRiddleAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -130,7 +130,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RandomRiddle200Response**](../Model/RandomRiddle200Response.md)
+[**\OpenAPI\Client\Model\RandomRiddleAPI200Response**](../Model/RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -145,15 +145,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `randomTrivia()`
+## `randomTriviaAPI()`
 
 ```php
-randomTrivia($max_length): \OpenAPI\Client\Model\RandomTrivia200Response
+randomTriviaAPI($max_length): \OpenAPI\Client\Model\RandomTriviaAPI200Response
 ```
 
-Random Trivia
+Random Trivia API
 
-This endpoint returns a random piece of trivia.
+This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
 
 ### Example
 
@@ -182,10 +182,10 @@ $apiInstance = new OpenAPI\Client\Api\KnowledgeApi(
 $max_length = 300; // int | The maximum length of the trivia in letters.
 
 try {
-    $result = $apiInstance->randomTrivia($max_length);
+    $result = $apiInstance->randomTriviaAPI($max_length);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KnowledgeApi->randomTrivia: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KnowledgeApi->randomTriviaAPI: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\RandomTrivia200Response**](../Model/RandomTrivia200Response.md)
+[**\OpenAPI\Client\Model\RandomTriviaAPI200Response**](../Model/RandomTriviaAPI200Response.md)
 
 ### Authorization
 

@@ -22,11 +22,11 @@ func Test_apileague_NewsAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test NewsAPIService ExtractNews", func(t *testing.T) {
+	t.Run("Test NewsAPIService ExtractNewsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.NewsAPI.ExtractNews(context.Background()).Execute()
+		resp, httpRes, err := apiClient.NewsAPI.ExtractNewsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_apileague_NewsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test NewsAPIService SearchNews", func(t *testing.T) {
+	t.Run("Test NewsAPIService SearchNewsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.NewsAPI.SearchNews(context.Background()).Execute()
+		resp, httpRes, err := apiClient.NewsAPI.SearchNewsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_apileague_NewsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test NewsAPIService TopNews", func(t *testing.T) {
+	t.Run("Test NewsAPIService TopNewsAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.NewsAPI.TopNews(context.Background()).Execute()
+		resp, httpRes, err := apiClient.NewsAPI.TopNewsAPI(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

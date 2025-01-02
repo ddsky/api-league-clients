@@ -4,14 +4,14 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ImageToAsciiArtByURL**](ArtApi.md#imagetoasciiartbyurl) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL |
-| [**RandomPoem**](ArtApi.md#randompoem) | **GET** /retrieve-random-poem | Random Poem |
+| [**ImageToAsciiArtByURLAPI**](ArtApi.md#imagetoasciiartbyurlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API |
+| [**RandomPoemAPI**](ArtApi.md#randompoemapi) | **GET** /retrieve-random-poem | Random Poem API |
 
-<a id="imagetoasciiartbyurl"></a>
-# **ImageToAsciiArtByURL**
-> string ImageToAsciiArtByURL (string url, int? width = null, int? height = null)
+<a id="imagetoasciiartbyurlapi"></a>
+# **ImageToAsciiArtByURLAPI**
+> string ImageToAsciiArtByURLAPI (string url, int? width = null, int? height = null)
 
-Image to Ascii Art by URL
+Image to Ascii Art by URL API
 
 Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -25,7 +25,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class ImageToAsciiArtByURLExample
+    public class ImageToAsciiArtByURLAPIExample
     {
         public static void Main()
         {
@@ -47,13 +47,13 @@ namespace Example
 
             try
             {
-                // Image to Ascii Art by URL
-                string result = apiInstance.ImageToAsciiArtByURL(url, width, height);
+                // Image to Ascii Art by URL API
+                string result = apiInstance.ImageToAsciiArtByURLAPI(url, width, height);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArtApi.ImageToAsciiArtByURL: " + e.Message);
+                Debug.Print("Exception when calling ArtApi.ImageToAsciiArtByURLAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -62,21 +62,21 @@ namespace Example
 }
 ```
 
-#### Using the ImageToAsciiArtByURLWithHttpInfo variant
+#### Using the ImageToAsciiArtByURLAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Image to Ascii Art by URL
-    ApiResponse<string> response = apiInstance.ImageToAsciiArtByURLWithHttpInfo(url, width, height);
+    // Image to Ascii Art by URL API
+    ApiResponse<string> response = apiInstance.ImageToAsciiArtByURLAPIWithHttpInfo(url, width, height);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArtApi.ImageToAsciiArtByURLWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArtApi.ImageToAsciiArtByURLAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -117,11 +117,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="randompoem"></a>
-# **RandomPoem**
-> RandomPoem200Response RandomPoem (int? minLines = null, int? maxLines = null)
+<a id="randompoemapi"></a>
+# **RandomPoemAPI**
+> RandomPoemAPI200Response RandomPoemAPI (int? minLines = null, int? maxLines = null)
 
-Random Poem
+Random Poem API
 
 Retrieve a random poem by many famous authors. You can filter poem's by length (number of lines).
 
@@ -135,7 +135,7 @@ using apileague.Model;
 
 namespace Example
 {
-    public class RandomPoemExample
+    public class RandomPoemAPIExample
     {
         public static void Main()
         {
@@ -156,13 +156,13 @@ namespace Example
 
             try
             {
-                // Random Poem
-                RandomPoem200Response result = apiInstance.RandomPoem(minLines, maxLines);
+                // Random Poem API
+                RandomPoemAPI200Response result = apiInstance.RandomPoemAPI(minLines, maxLines);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ArtApi.RandomPoem: " + e.Message);
+                Debug.Print("Exception when calling ArtApi.RandomPoemAPI: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -171,21 +171,21 @@ namespace Example
 }
 ```
 
-#### Using the RandomPoemWithHttpInfo variant
+#### Using the RandomPoemAPIWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Random Poem
-    ApiResponse<RandomPoem200Response> response = apiInstance.RandomPoemWithHttpInfo(minLines, maxLines);
+    // Random Poem API
+    ApiResponse<RandomPoemAPI200Response> response = apiInstance.RandomPoemAPIWithHttpInfo(minLines, maxLines);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ArtApi.RandomPoemWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ArtApi.RandomPoemAPIWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -200,7 +200,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RandomPoem200Response**](RandomPoem200Response.md)
+[**RandomPoemAPI200Response**](RandomPoemAPI200Response.md)
 
 ### Authorization
 

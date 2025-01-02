@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,7 +23,7 @@ import (
 // BooksAPIService BooksAPI service
 type BooksAPIService service
 
-type ApiFindSimilarBooksRequest struct {
+type ApiFindSimilarBooksAPIRequest struct {
 	ctx context.Context
 	ApiService *BooksAPIService
 	id *int32
@@ -31,47 +31,47 @@ type ApiFindSimilarBooksRequest struct {
 }
 
 // The id of the book to which similar books should be found.
-func (r ApiFindSimilarBooksRequest) Id(id int32) ApiFindSimilarBooksRequest {
+func (r ApiFindSimilarBooksAPIRequest) Id(id int32) ApiFindSimilarBooksAPIRequest {
 	r.id = &id
 	return r
 }
 
 // The number of similar books to return in range [1,100]
-func (r ApiFindSimilarBooksRequest) Number(number int32) ApiFindSimilarBooksRequest {
+func (r ApiFindSimilarBooksAPIRequest) Number(number int32) ApiFindSimilarBooksAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiFindSimilarBooksRequest) Execute() (*FindSimilarBooks200Response, *http.Response, error) {
-	return r.ApiService.FindSimilarBooksExecute(r)
+func (r ApiFindSimilarBooksAPIRequest) Execute() (*FindSimilarBooksAPI200Response, *http.Response, error) {
+	return r.ApiService.FindSimilarBooksAPIExecute(r)
 }
 
 /*
-FindSimilarBooks Find Similar Books
+FindSimilarBooksAPI Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFindSimilarBooksRequest
+ @return ApiFindSimilarBooksAPIRequest
 */
-func (a *BooksAPIService) FindSimilarBooks(ctx context.Context) ApiFindSimilarBooksRequest {
-	return ApiFindSimilarBooksRequest{
+func (a *BooksAPIService) FindSimilarBooksAPI(ctx context.Context) ApiFindSimilarBooksAPIRequest {
+	return ApiFindSimilarBooksAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return FindSimilarBooks200Response
-func (a *BooksAPIService) FindSimilarBooksExecute(r ApiFindSimilarBooksRequest) (*FindSimilarBooks200Response, *http.Response, error) {
+//  @return FindSimilarBooksAPI200Response
+func (a *BooksAPIService) FindSimilarBooksAPIExecute(r ApiFindSimilarBooksAPIRequest) (*FindSimilarBooksAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *FindSimilarBooks200Response
+		localVarReturnValue  *FindSimilarBooksAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BooksAPIService.FindSimilarBooks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BooksAPIService.FindSimilarBooksAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -177,7 +177,7 @@ func (a *BooksAPIService) FindSimilarBooksExecute(r ApiFindSimilarBooksRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchBooksRequest struct {
+type ApiSearchBooksAPIRequest struct {
 	ctx context.Context
 	ApiService *BooksAPIService
 	query *string
@@ -197,119 +197,119 @@ type ApiSearchBooksRequest struct {
 }
 
 // The search query.
-func (r ApiSearchBooksRequest) Query(query string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Query(query string) ApiSearchBooksAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The books must have been published after this year.
-func (r ApiSearchBooksRequest) EarliestPublishYear(earliestPublishYear int32) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) EarliestPublishYear(earliestPublishYear int32) ApiSearchBooksAPIRequest {
 	r.earliestPublishYear = &earliestPublishYear
 	return r
 }
 
 // The books must have been published before this year.
-func (r ApiSearchBooksRequest) LatestPublishYear(latestPublishYear int32) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) LatestPublishYear(latestPublishYear int32) ApiSearchBooksAPIRequest {
 	r.latestPublishYear = &latestPublishYear
 	return r
 }
 
 // The minimum rating the book must have gotten in the interval [0,1].
-func (r ApiSearchBooksRequest) MinRating(minRating float64) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) MinRating(minRating float64) ApiSearchBooksAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The maximum rating the book must have gotten in the interval [0,1].
-func (r ApiSearchBooksRequest) MaxRating(maxRating float64) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) MaxRating(maxRating float64) ApiSearchBooksAPIRequest {
 	r.maxRating = &maxRating
 	return r
 }
 
 // A comma-separated list of genres. Only books from any of the given genres will be returned.
-func (r ApiSearchBooksRequest) Genres(genres string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Genres(genres string) ApiSearchBooksAPIRequest {
 	r.genres = &genres
 	return r
 }
 
 // A comma-separated list of author ids or names. Only books from any of the given authors will be returned. You can retrieve author ids from the search authors endpoint. Pass author names is slower and if two authors have the same name you can&#39;t disambiguate.
-func (r ApiSearchBooksRequest) Authors(authors string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Authors(authors string) ApiSearchBooksAPIRequest {
 	r.authors = &authors
 	return r
 }
 
 // Only the book matching the ISBN-13 will be returned
-func (r ApiSearchBooksRequest) Isbn(isbn string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Isbn(isbn string) ApiSearchBooksAPIRequest {
 	r.isbn = &isbn
 	return r
 }
 
 // Only the book matching the OCLC will be returned
-func (r ApiSearchBooksRequest) Oclc(oclc string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Oclc(oclc string) ApiSearchBooksAPIRequest {
 	r.oclc = &oclc
 	return r
 }
 
 // The sorting criteria (publish-date or rating).
-func (r ApiSearchBooksRequest) Sort(sort string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Sort(sort string) ApiSearchBooksAPIRequest {
 	r.sort = &sort
 	return r
 }
 
 // Whether to sort ascending or descending (ASC or DESC).
-func (r ApiSearchBooksRequest) SortDirection(sortDirection string) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) SortDirection(sortDirection string) ApiSearchBooksAPIRequest {
 	r.sortDirection = &sortDirection
 	return r
 }
 
 // Whether to group similar editions of the same book.
-func (r ApiSearchBooksRequest) GroupResults(groupResults bool) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) GroupResults(groupResults bool) ApiSearchBooksAPIRequest {
 	r.groupResults = &groupResults
 	return r
 }
 
 // The number of books to skip in range [0,1000]
-func (r ApiSearchBooksRequest) Offset(offset int32) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Offset(offset int32) ApiSearchBooksAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of books to return in range [1,100]
-func (r ApiSearchBooksRequest) Number(number int32) ApiSearchBooksRequest {
+func (r ApiSearchBooksAPIRequest) Number(number int32) ApiSearchBooksAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchBooksRequest) Execute() (*SearchBooks200Response, *http.Response, error) {
-	return r.ApiService.SearchBooksExecute(r)
+func (r ApiSearchBooksAPIRequest) Execute() (*SearchBooksAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchBooksAPIExecute(r)
 }
 
 /*
-SearchBooks Search Books
+SearchBooksAPI Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchBooksRequest
+ @return ApiSearchBooksAPIRequest
 */
-func (a *BooksAPIService) SearchBooks(ctx context.Context) ApiSearchBooksRequest {
-	return ApiSearchBooksRequest{
+func (a *BooksAPIService) SearchBooksAPI(ctx context.Context) ApiSearchBooksAPIRequest {
+	return ApiSearchBooksAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchBooks200Response
-func (a *BooksAPIService) SearchBooksExecute(r ApiSearchBooksRequest) (*SearchBooks200Response, *http.Response, error) {
+//  @return SearchBooksAPI200Response
+func (a *BooksAPIService) SearchBooksAPIExecute(r ApiSearchBooksAPIRequest) (*SearchBooksAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchBooks200Response
+		localVarReturnValue  *SearchBooksAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BooksAPIService.SearchBooks")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BooksAPIService.SearchBooksAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

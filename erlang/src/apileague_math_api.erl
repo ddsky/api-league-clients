@@ -1,17 +1,17 @@
 -module(apileague_math_api).
 
--export([convert_units/4, convert_units/5]).
+-export([convert_units_api/4, convert_units_api/5]).
 
 -define(BASE_URL, <<"">>).
 
-%% @doc Convert Units
+%% @doc Convert Units API
 %% Convert units from one to another. The API returns the amount and the unit of the target unit.
--spec convert_units(ctx:ctx(), float(), binary(), binary()) -> {ok, apileague_convert_units_200_response:apileague_convert_units_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-convert_units(Ctx, SourceAmount, SourceUnit, TargetUnit) ->
-    convert_units(Ctx, SourceAmount, SourceUnit, TargetUnit, #{}).
+-spec convert_units_api(ctx:ctx(), float(), binary(), binary()) -> {ok, apileague_convert_units_api_200_response:apileague_convert_units_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+convert_units_api(Ctx, SourceAmount, SourceUnit, TargetUnit) ->
+    convert_units_api(Ctx, SourceAmount, SourceUnit, TargetUnit, #{}).
 
--spec convert_units(ctx:ctx(), float(), binary(), binary(), maps:map()) -> {ok, apileague_convert_units_200_response:apileague_convert_units_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-convert_units(Ctx, SourceAmount, SourceUnit, TargetUnit, Optional) ->
+-spec convert_units_api(ctx:ctx(), float(), binary(), binary(), maps:map()) -> {ok, apileague_convert_units_api_200_response:apileague_convert_units_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+convert_units_api(Ctx, SourceAmount, SourceUnit, TargetUnit, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 

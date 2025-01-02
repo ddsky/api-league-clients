@@ -8,12 +8,12 @@ import {canConsumeForm, isCodeInRange} from '../util';
 import {SecurityAuthentication} from '../auth/auth';
 
 
-import { GenerateNonsenseWord200Response } from '../models/GenerateNonsenseWord200Response';
-import { RandomMeme200Response } from '../models/RandomMeme200Response';
-import { SearchGifs200Response } from '../models/SearchGifs200Response';
-import { SearchJokes200Response } from '../models/SearchJokes200Response';
-import { SearchJokes200ResponseJokesInner } from '../models/SearchJokes200ResponseJokesInner';
-import { SearchMemes200Response } from '../models/SearchMemes200Response';
+import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
+import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
+import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
+import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
+import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
+import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
 
 /**
  * no description
@@ -22,9 +22,9 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
-     * Generate Nonsense Word
+     * Generate Nonsense Word API
      */
-    public async generateNonsenseWord(_options?: Configuration): Promise<RequestContext> {
+    public async generateNonsenseWordAPI(_options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // Path Params
@@ -57,13 +57,13 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as \"nsfw\" or \"religious\".
-     * Random Joke
+     * Random Joke API
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
      * @param minRating The minimum rating in range [0.0,1.0] of the jokes.
      * @param maxLength The maximum length of the joke in letters.
      */
-    public async randomJoke(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Promise<RequestContext> {
+    public async randomJokeAPI(includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -119,15 +119,15 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
-     * Random Meme
+     * Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+     * Random Meme API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
      * @param minRating The minimum rating in range [0.0,1.0] of the meme.
      * @param maxAgeDays The maximum age of the meme in days.
      */
-    public async randomMeme(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Promise<RequestContext> {
+    public async randomMemeAPI(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -190,16 +190,16 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
-     * Search Gifs
+     * Search Gifs API
      * @param query The search query.
      * @param number The number of gifs to return in range [1,10]
      */
-    public async searchGifs(query: string, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchGifsAPI(query: string, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
         // verify required parameter 'query' is not null or undefined
         if (query === null || query === undefined) {
-            throw new RequiredError("HumorApi", "searchGifs", "query");
+            throw new RequiredError("HumorApi", "searchGifsAPI", "query");
         }
 
 
@@ -244,7 +244,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
 
     /**
      * With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
-     * Search Jokes
+     * Search Jokes API
      * @param keywords A comma-separated list of words that must occur in the joke.
      * @param includeTags A comma-separated list of tags the jokes should have.
      * @param excludeTags A comma-separated list of tags the jokes must not have.
@@ -253,7 +253,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of jokes to skip, between 0 and 1000.
      * @param number The number of jokes, between 1 and 10.
      */
-    public async searchJokes(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchJokesAPI(keywords?: string, includeTags?: string, excludeTags?: string, minRating?: number, maxLength?: number, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -327,8 +327,8 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
-     * With over 200,000 memes, you\'ll surely find something funny. You can even search for text within memes and filter by user ratings.
-     * Search Memes
+     * Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You\'ll surely find something funny.
+     * Search Memes API
      * @param keywords A comma-separated list of words that must occur in the meme.
      * @param keywordsInImage Whether the keywords must occur in the image.
      * @param mediaType The media type (either \&#39;image\&#39;, \&#39;video\&#39; or even specific format such as \&#39;jpg\&#39;, \&#39;png\&#39;, or \&#39;gif\&#39;).
@@ -337,7 +337,7 @@ export class HumorApiRequestFactory extends BaseAPIRequestFactory {
      * @param offset The number of memes to skip, between 0 and 1000.
      * @param number The number of memes, between 1 and 10.
      */
-    public async searchMemes(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
+    public async searchMemesAPI(keywords?: string, keywordsInImage?: boolean, mediaType?: string, minRating?: number, maxAgeDays?: number, offset?: number, number?: number, _options?: Configuration): Promise<RequestContext> {
         let _config = _options || this.configuration;
 
 
@@ -418,16 +418,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to generateNonsenseWord
+     * @params response Response returned by the server for a request to generateNonsenseWordAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async generateNonsenseWordWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GenerateNonsenseWord200Response >> {
+     public async generateNonsenseWordAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<GenerateNonsenseWordAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: GenerateNonsenseWord200Response = ObjectSerializer.deserialize(
+            const body: GenerateNonsenseWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GenerateNonsenseWord200Response", ""
-            ) as GenerateNonsenseWord200Response;
+                "GenerateNonsenseWordAPI200Response", ""
+            ) as GenerateNonsenseWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -451,10 +451,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: GenerateNonsenseWord200Response = ObjectSerializer.deserialize(
+            const body: GenerateNonsenseWordAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "GenerateNonsenseWord200Response", ""
-            ) as GenerateNonsenseWord200Response;
+                "GenerateNonsenseWordAPI200Response", ""
+            ) as GenerateNonsenseWordAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -465,16 +465,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomJoke
+     * @params response Response returned by the server for a request to randomJokeAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomJokeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchJokes200ResponseJokesInner >> {
+     public async randomJokeAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchJokesAPI200ResponseJokesInner >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchJokes200ResponseJokesInner = ObjectSerializer.deserialize(
+            const body: SearchJokesAPI200ResponseJokesInner = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchJokes200ResponseJokesInner", ""
-            ) as SearchJokes200ResponseJokesInner;
+                "SearchJokesAPI200ResponseJokesInner", ""
+            ) as SearchJokesAPI200ResponseJokesInner;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -498,10 +498,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchJokes200ResponseJokesInner = ObjectSerializer.deserialize(
+            const body: SearchJokesAPI200ResponseJokesInner = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchJokes200ResponseJokesInner", ""
-            ) as SearchJokes200ResponseJokesInner;
+                "SearchJokesAPI200ResponseJokesInner", ""
+            ) as SearchJokesAPI200ResponseJokesInner;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -512,16 +512,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to randomMeme
+     * @params response Response returned by the server for a request to randomMemeAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async randomMemeWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomMeme200Response >> {
+     public async randomMemeAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<RandomMemeAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: RandomMeme200Response = ObjectSerializer.deserialize(
+            const body: RandomMemeAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomMeme200Response", ""
-            ) as RandomMeme200Response;
+                "RandomMemeAPI200Response", ""
+            ) as RandomMemeAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -545,10 +545,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: RandomMeme200Response = ObjectSerializer.deserialize(
+            const body: RandomMemeAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "RandomMeme200Response", ""
-            ) as RandomMeme200Response;
+                "RandomMemeAPI200Response", ""
+            ) as RandomMemeAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -559,16 +559,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchGifs
+     * @params response Response returned by the server for a request to searchGifsAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchGifsWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchGifs200Response >> {
+     public async searchGifsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchGifsAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchGifs200Response = ObjectSerializer.deserialize(
+            const body: SearchGifsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchGifs200Response", ""
-            ) as SearchGifs200Response;
+                "SearchGifsAPI200Response", ""
+            ) as SearchGifsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -592,10 +592,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchGifs200Response = ObjectSerializer.deserialize(
+            const body: SearchGifsAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchGifs200Response", ""
-            ) as SearchGifs200Response;
+                "SearchGifsAPI200Response", ""
+            ) as SearchGifsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -606,16 +606,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchJokes
+     * @params response Response returned by the server for a request to searchJokesAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchJokesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchJokes200Response >> {
+     public async searchJokesAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchJokesAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchJokes200Response = ObjectSerializer.deserialize(
+            const body: SearchJokesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchJokes200Response", ""
-            ) as SearchJokes200Response;
+                "SearchJokesAPI200Response", ""
+            ) as SearchJokesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -639,10 +639,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchJokes200Response = ObjectSerializer.deserialize(
+            const body: SearchJokesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchJokes200Response", ""
-            ) as SearchJokes200Response;
+                "SearchJokesAPI200Response", ""
+            ) as SearchJokesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 
@@ -653,16 +653,16 @@ export class HumorApiResponseProcessor {
      * Unwraps the actual response sent by the server from the response context and deserializes the response content
      * to the expected objects
      *
-     * @params response Response returned by the server for a request to searchMemes
+     * @params response Response returned by the server for a request to searchMemesAPI
      * @throws ApiException if the response code was not in [200, 299]
      */
-     public async searchMemesWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchMemes200Response >> {
+     public async searchMemesAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchMemesAPI200Response >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchMemes200Response = ObjectSerializer.deserialize(
+            const body: SearchMemesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchMemes200Response", ""
-            ) as SearchMemes200Response;
+                "SearchMemesAPI200Response", ""
+            ) as SearchMemesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
         if (isCodeInRange("401", response.httpStatusCode)) {
@@ -686,10 +686,10 @@ export class HumorApiResponseProcessor {
 
         // Work around for missing responses in specification, e.g. for petstore.yaml
         if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchMemes200Response = ObjectSerializer.deserialize(
+            const body: SearchMemesAPI200Response = ObjectSerializer.deserialize(
                 ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchMemes200Response", ""
-            ) as SearchMemes200Response;
+                "SearchMemesAPI200Response", ""
+            ) as SearchMemesAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

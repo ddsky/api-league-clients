@@ -4,17 +4,17 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RandomQuote**](KnowledgeAPI.md#RandomQuote) | **Get** /retrieve-random-quote | Random Quote
-[**RandomRiddle**](KnowledgeAPI.md#RandomRiddle) | **Get** /retrieve-random-riddle | Random Riddle
-[**RandomTrivia**](KnowledgeAPI.md#RandomTrivia) | **Get** /retrieve-random-trivia | Random Trivia
+[**RandomQuoteAPI**](KnowledgeAPI.md#RandomQuoteAPI) | **Get** /retrieve-random-quote | Random Quote API
+[**RandomRiddleAPI**](KnowledgeAPI.md#RandomRiddleAPI) | **Get** /retrieve-random-riddle | Random Riddle API
+[**RandomTriviaAPI**](KnowledgeAPI.md#RandomTriviaAPI) | **Get** /retrieve-random-trivia | Random Trivia API
 
 
 
-## RandomQuote
+## RandomQuoteAPI
 
-> RandomQuote200Response RandomQuote(ctx).MinLength(minLength).MaxLength(maxLength).Execute()
+> RandomQuoteAPI200Response RandomQuoteAPI(ctx).MinLength(minLength).MaxLength(maxLength).Execute()
 
-Random Quote
+Random Quote API
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.KnowledgeAPI.RandomQuote(context.Background()).MinLength(minLength).MaxLength(maxLength).Execute()
+	resp, r, err := apiClient.KnowledgeAPI.RandomQuoteAPI(context.Background()).MinLength(minLength).MaxLength(maxLength).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomQuote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomQuoteAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomQuote`: RandomQuote200Response
-	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomQuote`: %v\n", resp)
+	// response from `RandomQuoteAPI`: RandomQuoteAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomQuoteAPI`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomQuoteRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomQuoteAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomQuote200Response**](RandomQuote200Response.md)
+[**RandomQuoteAPI200Response**](RandomQuoteAPI200Response.md)
 
 ### Authorization
 
@@ -78,11 +78,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RandomRiddle
+## RandomRiddleAPI
 
-> RandomRiddle200Response RandomRiddle(ctx).Difficulty(difficulty).Execute()
+> RandomRiddleAPI200Response RandomRiddleAPI(ctx).Difficulty(difficulty).Execute()
 
-Random Riddle
+Random Riddle API
 
 
 
@@ -103,13 +103,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.KnowledgeAPI.RandomRiddle(context.Background()).Difficulty(difficulty).Execute()
+	resp, r, err := apiClient.KnowledgeAPI.RandomRiddleAPI(context.Background()).Difficulty(difficulty).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomRiddle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomRiddleAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomRiddle`: RandomRiddle200Response
-	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomRiddle`: %v\n", resp)
+	// response from `RandomRiddleAPI`: RandomRiddleAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomRiddleAPI`: %v\n", resp)
 }
 ```
 
@@ -119,7 +119,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomRiddleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomRiddleAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomRiddle200Response**](RandomRiddle200Response.md)
+[**RandomRiddleAPI200Response**](RandomRiddleAPI200Response.md)
 
 ### Authorization
 
@@ -144,11 +144,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RandomTrivia
+## RandomTriviaAPI
 
-> RandomTrivia200Response RandomTrivia(ctx).MaxLength(maxLength).Execute()
+> RandomTriviaAPI200Response RandomTriviaAPI(ctx).MaxLength(maxLength).Execute()
 
-Random Trivia
+Random Trivia API
 
 
 
@@ -169,13 +169,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.KnowledgeAPI.RandomTrivia(context.Background()).MaxLength(maxLength).Execute()
+	resp, r, err := apiClient.KnowledgeAPI.RandomTriviaAPI(context.Background()).MaxLength(maxLength).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomTrivia``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomTriviaAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RandomTrivia`: RandomTrivia200Response
-	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomTrivia`: %v\n", resp)
+	// response from `RandomTriviaAPI`: RandomTriviaAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomTriviaAPI`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRandomTriviaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRandomTriviaAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RandomTrivia200Response**](RandomTrivia200Response.md)
+[**RandomTriviaAPI200Response**](RandomTriviaAPI200Response.md)
 
 ### Authorization
 

@@ -19,26 +19,26 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.BooksApi
-import com.apileague.client.model.FindSimilarBooks200Response
-import com.apileague.client.model.SearchBooks200Response
+import com.apileague.client.model.FindSimilarBooksAPI200Response
+import com.apileague.client.model.SearchBooksAPI200Response
 
 class BooksApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of BooksApi
         //val apiInstance = BooksApi()
 
-        // to test findSimilarBooks
-        should("test findSimilarBooks") {
-            // uncomment below to test findSimilarBooks
+        // to test findSimilarBooksAPI
+        should("test findSimilarBooksAPI") {
+            // uncomment below to test findSimilarBooksAPI
             //val id : kotlin.Int = 8302059 // kotlin.Int | The id of the book to which similar books should be found.
             //val number : kotlin.Int = 10 // kotlin.Int | The number of similar books to return in range [1,100]
-            //val result : FindSimilarBooks200Response = apiInstance.findSimilarBooks(id, number)
+            //val result : FindSimilarBooksAPI200Response = apiInstance.findSimilarBooksAPI(id, number)
             //result shouldBe ("TODO")
         }
 
-        // to test searchBooks
-        should("test searchBooks") {
-            // uncomment below to test searchBooks
+        // to test searchBooksAPI
+        should("test searchBooksAPI") {
+            // uncomment below to test searchBooksAPI
             //val query : kotlin.String = books about wizards // kotlin.String | The search query.
             //val earliestPublishYear : kotlin.Int = 2022 // kotlin.Int | The books must have been published after this year.
             //val latestPublishYear : kotlin.Int = 2023 // kotlin.Int | The books must have been published before this year.
@@ -53,7 +53,7 @@ class BooksApiTest : ShouldSpec() {
             //val groupResults : kotlin.Boolean = false // kotlin.Boolean | Whether to group similar editions of the same book.
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of books to skip in range [0,1000]
             //val number : kotlin.Int = 10 // kotlin.Int | The number of books to return in range [1,100]
-            //val result : SearchBooks200Response = apiInstance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+            //val result : SearchBooksAPI200Response = apiInstance.searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
             //result shouldBe ("TODO")
         }
 

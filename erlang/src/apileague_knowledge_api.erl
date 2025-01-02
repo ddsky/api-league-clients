@@ -1,19 +1,19 @@
 -module(apileague_knowledge_api).
 
--export([random_quote/1, random_quote/2,
-         random_riddle/1, random_riddle/2,
-         random_trivia/1, random_trivia/2]).
+-export([random_quote_api/1, random_quote_api/2,
+         random_riddle_api/1, random_riddle_api/2,
+         random_trivia_api/1, random_trivia_api/2]).
 
 -define(BASE_URL, <<"">>).
 
-%% @doc Random Quote
+%% @doc Random Quote API
 %% This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
--spec random_quote(ctx:ctx()) -> {ok, apileague_random_quote_200_response:apileague_random_quote_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_quote(Ctx) ->
-    random_quote(Ctx, #{}).
+-spec random_quote_api(ctx:ctx()) -> {ok, apileague_random_quote_api_200_response:apileague_random_quote_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_quote_api(Ctx) ->
+    random_quote_api(Ctx, #{}).
 
--spec random_quote(ctx:ctx(), maps:map()) -> {ok, apileague_random_quote_200_response:apileague_random_quote_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_quote(Ctx, Optional) ->
+-spec random_quote_api(ctx:ctx(), maps:map()) -> {ok, apileague_random_quote_api_200_response:apileague_random_quote_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_quote_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -27,14 +27,14 @@ random_quote(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Random Riddle
+%% @doc Random Riddle API
 %% The riddles API returns a random riddle or brain-teaser. Riddles are a great way to exercise your brain and keep it sharp. The API supports brain-teasers in three difficulty levels: easy, medium, and hard. You can also get a random riddle without specifying a difficulty level.
--spec random_riddle(ctx:ctx()) -> {ok, apileague_random_riddle_200_response:apileague_random_riddle_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_riddle(Ctx) ->
-    random_riddle(Ctx, #{}).
+-spec random_riddle_api(ctx:ctx()) -> {ok, apileague_random_riddle_api_200_response:apileague_random_riddle_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_riddle_api(Ctx) ->
+    random_riddle_api(Ctx, #{}).
 
--spec random_riddle(ctx:ctx(), maps:map()) -> {ok, apileague_random_riddle_200_response:apileague_random_riddle_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_riddle(Ctx, Optional) ->
+-spec random_riddle_api(ctx:ctx(), maps:map()) -> {ok, apileague_random_riddle_api_200_response:apileague_random_riddle_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_riddle_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 
@@ -48,14 +48,14 @@ random_riddle(Ctx, Optional) ->
 
     apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
-%% @doc Random Trivia
-%% This endpoint returns a random piece of trivia.
--spec random_trivia(ctx:ctx()) -> {ok, apileague_random_trivia_200_response:apileague_random_trivia_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_trivia(Ctx) ->
-    random_trivia(Ctx, #{}).
+%% @doc Random Trivia API
+%% This endpoint returns a random piece of trivia like \"Rio de Janeiro was once the capital of Portugal, making it the only European capital outside of Europe.\".
+-spec random_trivia_api(ctx:ctx()) -> {ok, apileague_random_trivia_api_200_response:apileague_random_trivia_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_trivia_api(Ctx) ->
+    random_trivia_api(Ctx, #{}).
 
--spec random_trivia(ctx:ctx(), maps:map()) -> {ok, apileague_random_trivia_200_response:apileague_random_trivia_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
-random_trivia(Ctx, Optional) ->
+-spec random_trivia_api(ctx:ctx(), maps:map()) -> {ok, apileague_random_trivia_api_200_response:apileague_random_trivia_api_200_response(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+random_trivia_api(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
 

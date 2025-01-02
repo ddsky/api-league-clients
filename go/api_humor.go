@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.3
+API version: 1.6.4
 Contact: mail@apileague.com
 */
 
@@ -23,41 +23,41 @@ import (
 // HumorAPIService HumorAPI service
 type HumorAPIService service
 
-type ApiGenerateNonsenseWordRequest struct {
+type ApiGenerateNonsenseWordAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 }
 
-func (r ApiGenerateNonsenseWordRequest) Execute() (*GenerateNonsenseWord200Response, *http.Response, error) {
-	return r.ApiService.GenerateNonsenseWordExecute(r)
+func (r ApiGenerateNonsenseWordAPIRequest) Execute() (*GenerateNonsenseWordAPI200Response, *http.Response, error) {
+	return r.ApiService.GenerateNonsenseWordAPIExecute(r)
 }
 
 /*
-GenerateNonsenseWord Generate Nonsense Word
+GenerateNonsenseWordAPI Generate Nonsense Word API
 
 Generate a funny sounding nonsense word. This is useful for generating random words for games, naming things, or just for fun. The response will contain the generated word and a rating of how funny it is.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGenerateNonsenseWordRequest
+ @return ApiGenerateNonsenseWordAPIRequest
 */
-func (a *HumorAPIService) GenerateNonsenseWord(ctx context.Context) ApiGenerateNonsenseWordRequest {
-	return ApiGenerateNonsenseWordRequest{
+func (a *HumorAPIService) GenerateNonsenseWordAPI(ctx context.Context) ApiGenerateNonsenseWordAPIRequest {
+	return ApiGenerateNonsenseWordAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GenerateNonsenseWord200Response
-func (a *HumorAPIService) GenerateNonsenseWordExecute(r ApiGenerateNonsenseWordRequest) (*GenerateNonsenseWord200Response, *http.Response, error) {
+//  @return GenerateNonsenseWordAPI200Response
+func (a *HumorAPIService) GenerateNonsenseWordAPIExecute(r ApiGenerateNonsenseWordAPIRequest) (*GenerateNonsenseWordAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenerateNonsenseWord200Response
+		localVarReturnValue  *GenerateNonsenseWordAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.GenerateNonsenseWord")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.GenerateNonsenseWordAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -150,7 +150,7 @@ func (a *HumorAPIService) GenerateNonsenseWordExecute(r ApiGenerateNonsenseWordR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRandomJokeRequest struct {
+type ApiRandomJokeAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 	includeTags *string
@@ -160,59 +160,59 @@ type ApiRandomJokeRequest struct {
 }
 
 // A comma-separated list of tags the jokes should have.
-func (r ApiRandomJokeRequest) IncludeTags(includeTags string) ApiRandomJokeRequest {
+func (r ApiRandomJokeAPIRequest) IncludeTags(includeTags string) ApiRandomJokeAPIRequest {
 	r.includeTags = &includeTags
 	return r
 }
 
 // A comma-separated list of tags the jokes must not have.
-func (r ApiRandomJokeRequest) ExcludeTags(excludeTags string) ApiRandomJokeRequest {
+func (r ApiRandomJokeAPIRequest) ExcludeTags(excludeTags string) ApiRandomJokeAPIRequest {
 	r.excludeTags = &excludeTags
 	return r
 }
 
 // The minimum rating in range [0.0,1.0] of the jokes.
-func (r ApiRandomJokeRequest) MinRating(minRating float64) ApiRandomJokeRequest {
+func (r ApiRandomJokeAPIRequest) MinRating(minRating float64) ApiRandomJokeAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The maximum length of the joke in letters.
-func (r ApiRandomJokeRequest) MaxLength(maxLength int32) ApiRandomJokeRequest {
+func (r ApiRandomJokeAPIRequest) MaxLength(maxLength int32) ApiRandomJokeAPIRequest {
 	r.maxLength = &maxLength
 	return r
 }
 
-func (r ApiRandomJokeRequest) Execute() (*SearchJokes200ResponseJokesInner, *http.Response, error) {
-	return r.ApiService.RandomJokeExecute(r)
+func (r ApiRandomJokeAPIRequest) Execute() (*SearchJokesAPI200ResponseJokesInner, *http.Response, error) {
+	return r.ApiService.RandomJokeAPIExecute(r)
 }
 
 /*
-RandomJoke Random Joke
+RandomJokeAPI Random Joke API
 
 This is a simple API that returns a random joke. You can filter the jokes by tags and keywords. To make sure they are safe for work, you could use the exclude-tags parameter to exclude jokes with certain tags such as "nsfw" or "religious".
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomJokeRequest
+ @return ApiRandomJokeAPIRequest
 */
-func (a *HumorAPIService) RandomJoke(ctx context.Context) ApiRandomJokeRequest {
-	return ApiRandomJokeRequest{
+func (a *HumorAPIService) RandomJokeAPI(ctx context.Context) ApiRandomJokeAPIRequest {
+	return ApiRandomJokeAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchJokes200ResponseJokesInner
-func (a *HumorAPIService) RandomJokeExecute(r ApiRandomJokeRequest) (*SearchJokes200ResponseJokesInner, *http.Response, error) {
+//  @return SearchJokesAPI200ResponseJokesInner
+func (a *HumorAPIService) RandomJokeAPIExecute(r ApiRandomJokeAPIRequest) (*SearchJokesAPI200ResponseJokesInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchJokes200ResponseJokesInner
+		localVarReturnValue  *SearchJokesAPI200ResponseJokesInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.RandomJoke")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.RandomJokeAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -317,7 +317,7 @@ func (a *HumorAPIService) RandomJokeExecute(r ApiRandomJokeRequest) (*SearchJoke
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRandomMemeRequest struct {
+type ApiRandomMemeAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 	keywords *string
@@ -328,65 +328,65 @@ type ApiRandomMemeRequest struct {
 }
 
 // A comma-separated list of words that must occur in the meme.
-func (r ApiRandomMemeRequest) Keywords(keywords string) ApiRandomMemeRequest {
+func (r ApiRandomMemeAPIRequest) Keywords(keywords string) ApiRandomMemeAPIRequest {
 	r.keywords = &keywords
 	return r
 }
 
 // Whether the keywords must occur in the image.
-func (r ApiRandomMemeRequest) KeywordsInImage(keywordsInImage bool) ApiRandomMemeRequest {
+func (r ApiRandomMemeAPIRequest) KeywordsInImage(keywordsInImage bool) ApiRandomMemeAPIRequest {
 	r.keywordsInImage = &keywordsInImage
 	return r
 }
 
 // The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
-func (r ApiRandomMemeRequest) MediaType(mediaType string) ApiRandomMemeRequest {
+func (r ApiRandomMemeAPIRequest) MediaType(mediaType string) ApiRandomMemeAPIRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The minimum rating in range [0.0,1.0] of the meme.
-func (r ApiRandomMemeRequest) MinRating(minRating float64) ApiRandomMemeRequest {
+func (r ApiRandomMemeAPIRequest) MinRating(minRating float64) ApiRandomMemeAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The maximum age of the meme in days.
-func (r ApiRandomMemeRequest) MaxAgeDays(maxAgeDays int32) ApiRandomMemeRequest {
+func (r ApiRandomMemeAPIRequest) MaxAgeDays(maxAgeDays int32) ApiRandomMemeAPIRequest {
 	r.maxAgeDays = &maxAgeDays
 	return r
 }
 
-func (r ApiRandomMemeRequest) Execute() (*RandomMeme200Response, *http.Response, error) {
-	return r.ApiService.RandomMemeExecute(r)
+func (r ApiRandomMemeAPIRequest) Execute() (*RandomMemeAPI200Response, *http.Response, error) {
+	return r.ApiService.RandomMemeAPIExecute(r)
 }
 
 /*
-RandomMeme Random Meme
+RandomMemeAPI Random Meme API
 
-Get a random meme out of over 200,000+ memes. To get the latest memes, you can use the max-age-days parameter.
+Get a random meme out of over 300,000+ memes. To get the latest memes, you can use the max-age-days parameter.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRandomMemeRequest
+ @return ApiRandomMemeAPIRequest
 */
-func (a *HumorAPIService) RandomMeme(ctx context.Context) ApiRandomMemeRequest {
-	return ApiRandomMemeRequest{
+func (a *HumorAPIService) RandomMemeAPI(ctx context.Context) ApiRandomMemeAPIRequest {
+	return ApiRandomMemeAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RandomMeme200Response
-func (a *HumorAPIService) RandomMemeExecute(r ApiRandomMemeRequest) (*RandomMeme200Response, *http.Response, error) {
+//  @return RandomMemeAPI200Response
+func (a *HumorAPIService) RandomMemeAPIExecute(r ApiRandomMemeAPIRequest) (*RandomMemeAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RandomMeme200Response
+		localVarReturnValue  *RandomMemeAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.RandomMeme")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.RandomMemeAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -494,7 +494,7 @@ func (a *HumorAPIService) RandomMemeExecute(r ApiRandomMemeRequest) (*RandomMeme
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchGifsRequest struct {
+type ApiSearchGifsAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 	query *string
@@ -502,47 +502,47 @@ type ApiSearchGifsRequest struct {
 }
 
 // The search query.
-func (r ApiSearchGifsRequest) Query(query string) ApiSearchGifsRequest {
+func (r ApiSearchGifsAPIRequest) Query(query string) ApiSearchGifsAPIRequest {
 	r.query = &query
 	return r
 }
 
 // The number of gifs to return in range [1,10]
-func (r ApiSearchGifsRequest) Number(number int32) ApiSearchGifsRequest {
+func (r ApiSearchGifsAPIRequest) Number(number int32) ApiSearchGifsAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchGifsRequest) Execute() (*SearchGifs200Response, *http.Response, error) {
-	return r.ApiService.SearchGifsExecute(r)
+func (r ApiSearchGifsAPIRequest) Execute() (*SearchGifsAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchGifsAPIExecute(r)
 }
 
 /*
-SearchGifs Search Gifs
+SearchGifsAPI Search Gifs API
 
 Search through hundreds of thousands of gifs to match any reaction you want. The gifs are returned in a list with the URL, width, and height of the gif.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchGifsRequest
+ @return ApiSearchGifsAPIRequest
 */
-func (a *HumorAPIService) SearchGifs(ctx context.Context) ApiSearchGifsRequest {
-	return ApiSearchGifsRequest{
+func (a *HumorAPIService) SearchGifsAPI(ctx context.Context) ApiSearchGifsAPIRequest {
+	return ApiSearchGifsAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchGifs200Response
-func (a *HumorAPIService) SearchGifsExecute(r ApiSearchGifsRequest) (*SearchGifs200Response, *http.Response, error) {
+//  @return SearchGifsAPI200Response
+func (a *HumorAPIService) SearchGifsAPIExecute(r ApiSearchGifsAPIRequest) (*SearchGifsAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchGifs200Response
+		localVarReturnValue  *SearchGifsAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchGifs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchGifsAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -645,7 +645,7 @@ func (a *HumorAPIService) SearchGifsExecute(r ApiSearchGifsRequest) (*SearchGifs
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchJokesRequest struct {
+type ApiSearchJokesAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 	keywords *string
@@ -658,77 +658,77 @@ type ApiSearchJokesRequest struct {
 }
 
 // A comma-separated list of words that must occur in the joke.
-func (r ApiSearchJokesRequest) Keywords(keywords string) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) Keywords(keywords string) ApiSearchJokesAPIRequest {
 	r.keywords = &keywords
 	return r
 }
 
 // A comma-separated list of tags the jokes should have.
-func (r ApiSearchJokesRequest) IncludeTags(includeTags string) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) IncludeTags(includeTags string) ApiSearchJokesAPIRequest {
 	r.includeTags = &includeTags
 	return r
 }
 
 // A comma-separated list of tags the jokes must not have.
-func (r ApiSearchJokesRequest) ExcludeTags(excludeTags string) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) ExcludeTags(excludeTags string) ApiSearchJokesAPIRequest {
 	r.excludeTags = &excludeTags
 	return r
 }
 
 // The minimum rating in range [0.0,1.0] of the jokes.
-func (r ApiSearchJokesRequest) MinRating(minRating float64) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) MinRating(minRating float64) ApiSearchJokesAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The maximum length of the joke in letters.
-func (r ApiSearchJokesRequest) MaxLength(maxLength float64) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) MaxLength(maxLength float64) ApiSearchJokesAPIRequest {
 	r.maxLength = &maxLength
 	return r
 }
 
 // The number of jokes to skip, between 0 and 1000.
-func (r ApiSearchJokesRequest) Offset(offset int32) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) Offset(offset int32) ApiSearchJokesAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of jokes, between 1 and 10.
-func (r ApiSearchJokesRequest) Number(number int32) ApiSearchJokesRequest {
+func (r ApiSearchJokesAPIRequest) Number(number int32) ApiSearchJokesAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchJokesRequest) Execute() (*SearchJokes200Response, *http.Response, error) {
-	return r.ApiService.SearchJokesExecute(r)
+func (r ApiSearchJokesAPIRequest) Execute() (*SearchJokesAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchJokesAPIExecute(r)
 }
 
 /*
-SearchJokes Search Jokes
+SearchJokesAPI Search Jokes API
 
 With over 50,000 jokes, you should find something for any occasion. There are 27 categories/tags to choose from, but you can also search for very specific words within jokes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchJokesRequest
+ @return ApiSearchJokesAPIRequest
 */
-func (a *HumorAPIService) SearchJokes(ctx context.Context) ApiSearchJokesRequest {
-	return ApiSearchJokesRequest{
+func (a *HumorAPIService) SearchJokesAPI(ctx context.Context) ApiSearchJokesAPIRequest {
+	return ApiSearchJokesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchJokes200Response
-func (a *HumorAPIService) SearchJokesExecute(r ApiSearchJokesRequest) (*SearchJokes200Response, *http.Response, error) {
+//  @return SearchJokesAPI200Response
+func (a *HumorAPIService) SearchJokesAPIExecute(r ApiSearchJokesAPIRequest) (*SearchJokesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchJokes200Response
+		localVarReturnValue  *SearchJokesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchJokes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchJokesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -842,7 +842,7 @@ func (a *HumorAPIService) SearchJokesExecute(r ApiSearchJokesRequest) (*SearchJo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchMemesRequest struct {
+type ApiSearchMemesAPIRequest struct {
 	ctx context.Context
 	ApiService *HumorAPIService
 	keywords *string
@@ -855,77 +855,77 @@ type ApiSearchMemesRequest struct {
 }
 
 // A comma-separated list of words that must occur in the meme.
-func (r ApiSearchMemesRequest) Keywords(keywords string) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) Keywords(keywords string) ApiSearchMemesAPIRequest {
 	r.keywords = &keywords
 	return r
 }
 
 // Whether the keywords must occur in the image.
-func (r ApiSearchMemesRequest) KeywordsInImage(keywordsInImage bool) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) KeywordsInImage(keywordsInImage bool) ApiSearchMemesAPIRequest {
 	r.keywordsInImage = &keywordsInImage
 	return r
 }
 
 // The media type (either &#39;image&#39;, &#39;video&#39; or even specific format such as &#39;jpg&#39;, &#39;png&#39;, or &#39;gif&#39;).
-func (r ApiSearchMemesRequest) MediaType(mediaType string) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) MediaType(mediaType string) ApiSearchMemesAPIRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The minimum rating in range [0.0,1.0] of the meme.
-func (r ApiSearchMemesRequest) MinRating(minRating float64) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) MinRating(minRating float64) ApiSearchMemesAPIRequest {
 	r.minRating = &minRating
 	return r
 }
 
 // The maximum age of the meme in days.
-func (r ApiSearchMemesRequest) MaxAgeDays(maxAgeDays int32) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) MaxAgeDays(maxAgeDays int32) ApiSearchMemesAPIRequest {
 	r.maxAgeDays = &maxAgeDays
 	return r
 }
 
 // The number of memes to skip, between 0 and 1000.
-func (r ApiSearchMemesRequest) Offset(offset int32) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) Offset(offset int32) ApiSearchMemesAPIRequest {
 	r.offset = &offset
 	return r
 }
 
 // The number of memes, between 1 and 10.
-func (r ApiSearchMemesRequest) Number(number int32) ApiSearchMemesRequest {
+func (r ApiSearchMemesAPIRequest) Number(number int32) ApiSearchMemesAPIRequest {
 	r.number = &number
 	return r
 }
 
-func (r ApiSearchMemesRequest) Execute() (*SearchMemes200Response, *http.Response, error) {
-	return r.ApiService.SearchMemesExecute(r)
+func (r ApiSearchMemesAPIRequest) Execute() (*SearchMemesAPI200Response, *http.Response, error) {
+	return r.ApiService.SearchMemesAPIExecute(r)
 }
 
 /*
-SearchMemes Search Memes
+SearchMemesAPI Search Memes API
 
-With over 200,000 memes, you'll surely find something funny. You can even search for text within memes and filter by user ratings.
+Search over 300,000 memes by keyword, rating, and age. Most memes are stills (images) but using the media-type you can also get videos. You can even search for text within memes. You'll surely find something funny.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchMemesRequest
+ @return ApiSearchMemesAPIRequest
 */
-func (a *HumorAPIService) SearchMemes(ctx context.Context) ApiSearchMemesRequest {
-	return ApiSearchMemesRequest{
+func (a *HumorAPIService) SearchMemesAPI(ctx context.Context) ApiSearchMemesAPIRequest {
+	return ApiSearchMemesAPIRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SearchMemes200Response
-func (a *HumorAPIService) SearchMemesExecute(r ApiSearchMemesRequest) (*SearchMemes200Response, *http.Response, error) {
+//  @return SearchMemesAPI200Response
+func (a *HumorAPIService) SearchMemesAPIExecute(r ApiSearchMemesAPIRequest) (*SearchMemesAPI200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchMemes200Response
+		localVarReturnValue  *SearchMemesAPI200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchMemes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HumorAPIService.SearchMemesAPI")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

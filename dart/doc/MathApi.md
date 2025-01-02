@@ -9,13 +9,13 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**convertUnits**](MathApi.md#convertunits) | **GET** /convert-units | Convert Units
+[**convertUnitsAPI**](MathApi.md#convertunitsapi) | **GET** /convert-units | Convert Units API
 
 
-# **convertUnits**
-> ConvertUnits200Response convertUnits(sourceAmount, sourceUnit, targetUnit, foodName)
+# **convertUnitsAPI**
+> ConvertUnitsAPI200Response convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName)
 
-Convert Units
+Convert Units API
 
 Convert units from one to another. The API returns the amount and the unit of the target unit.
 
@@ -38,10 +38,10 @@ final targetUnit = lb; // String | The unit to which should be converted.
 final foodName = flour; // String | An optional food name. For converting foods the food is relevant as they have different densities.
 
 try {
-    final result = api_instance.convertUnits(sourceAmount, sourceUnit, targetUnit, foodName);
+    final result = api_instance.convertUnitsAPI(sourceAmount, sourceUnit, targetUnit, foodName);
     print(result);
 } catch (e) {
-    print('Exception when calling MathApi->convertUnits: $e\n');
+    print('Exception when calling MathApi->convertUnitsAPI: $e\n');
 }
 ```
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConvertUnits200Response**](ConvertUnits200Response.md)
+[**ConvertUnitsAPI200Response**](ConvertUnitsAPI200Response.md)
 
 ### Authorization
 

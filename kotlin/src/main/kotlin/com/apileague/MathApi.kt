@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.ConvertUnits200Response
+import com.apileague.client.model.ConvertUnitsAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -46,13 +46,13 @@ class MathApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Convert Units
+     * Convert Units API
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
      * @param targetUnit The unit to which should be converted.
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
-     * @return ConvertUnits200Response
+     * @return ConvertUnitsAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ class MathApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun convertUnits(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String? = null) : ConvertUnits200Response {
-        val localVarResponse = convertUnitsWithHttpInfo(sourceAmount = sourceAmount, sourceUnit = sourceUnit, targetUnit = targetUnit, foodName = foodName)
+    fun convertUnitsAPI(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String? = null) : ConvertUnitsAPI200Response {
+        val localVarResponse = convertUnitsAPIWithHttpInfo(sourceAmount = sourceAmount, sourceUnit = sourceUnit, targetUnit = targetUnit, foodName = foodName)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ConvertUnits200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ConvertUnitsAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -80,28 +80,28 @@ class MathApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     }
 
     /**
-     * Convert Units
+     * Convert Units API
      * Convert units from one to another. The API returns the amount and the unit of the target unit.
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
      * @param targetUnit The unit to which should be converted.
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
-     * @return ApiResponse<ConvertUnits200Response?>
+     * @return ApiResponse<ConvertUnitsAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun convertUnitsWithHttpInfo(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String?) : ApiResponse<ConvertUnits200Response?> {
-        val localVariableConfig = convertUnitsRequestConfig(sourceAmount = sourceAmount, sourceUnit = sourceUnit, targetUnit = targetUnit, foodName = foodName)
+    fun convertUnitsAPIWithHttpInfo(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String?) : ApiResponse<ConvertUnitsAPI200Response?> {
+        val localVariableConfig = convertUnitsAPIRequestConfig(sourceAmount = sourceAmount, sourceUnit = sourceUnit, targetUnit = targetUnit, foodName = foodName)
 
-        return request<Unit, ConvertUnits200Response>(
+        return request<Unit, ConvertUnitsAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation convertUnits
+     * To obtain the request config of the operation convertUnitsAPI
      *
      * @param sourceAmount The source amount.
      * @param sourceUnit The source unit.
@@ -109,7 +109,7 @@ class MathApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
      * @param foodName An optional food name. For converting foods the food is relevant as they have different densities. (optional)
      * @return RequestConfig
      */
-    fun convertUnitsRequestConfig(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String?) : RequestConfig<Unit> {
+    fun convertUnitsAPIRequestConfig(sourceAmount: kotlin.Double, sourceUnit: kotlin.String, targetUnit: kotlin.String, foodName: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

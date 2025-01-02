@@ -4,18 +4,19 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DetectMainImageColor**](MediaAPI.md#DetectMainImageColor) | **Get** /detect-color | Detect Main Image Color
-[**RescaleImage**](MediaAPI.md#RescaleImage) | **Get** /rescale-image | Rescale Image
-[**SearchIcons**](MediaAPI.md#SearchIcons) | **Get** /search-icons | Search Icons
-[**SearchRoyaltyFreeImages**](MediaAPI.md#SearchRoyaltyFreeImages) | **Get** /search-images | Search Royalty Free Images
+[**DetectMainImageColorAPI**](MediaAPI.md#DetectMainImageColorAPI) | **Get** /detect-color | Detect Main Image Color API
+[**RescaleImageAPI**](MediaAPI.md#RescaleImageAPI) | **Get** /rescale-image | Rescale Image API
+[**SearchIconsAPI**](MediaAPI.md#SearchIconsAPI) | **Get** /search-icons | Search Icons API
+[**SearchRoyaltyFreeImagesAPI**](MediaAPI.md#SearchRoyaltyFreeImagesAPI) | **Get** /search-images | Search Royalty Free Images API
+[**VectorSearchAPI**](MediaAPI.md#VectorSearchAPI) | **Get** /search-vectors | Vector Search API
 
 
 
-## DetectMainImageColor
+## DetectMainImageColorAPI
 
-> []DetectMainImageColor200ResponseInner DetectMainImageColor(ctx).Url(url).Execute()
+> []DetectMainImageColorAPI200ResponseInner DetectMainImageColorAPI(ctx).Url(url).Execute()
 
-Detect Main Image Color
+Detect Main Image Color API
 
 
 
@@ -36,13 +37,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.DetectMainImageColor(context.Background()).Url(url).Execute()
+	resp, r, err := apiClient.MediaAPI.DetectMainImageColorAPI(context.Background()).Url(url).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.DetectMainImageColor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.DetectMainImageColorAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DetectMainImageColor`: []DetectMainImageColor200ResponseInner
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.DetectMainImageColor`: %v\n", resp)
+	// response from `DetectMainImageColorAPI`: []DetectMainImageColorAPI200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.DetectMainImageColorAPI`: %v\n", resp)
 }
 ```
 
@@ -52,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDetectMainImageColorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDetectMainImageColorAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -61,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DetectMainImageColor200ResponseInner**](DetectMainImageColor200ResponseInner.md)
+[**[]DetectMainImageColorAPI200ResponseInner**](DetectMainImageColorAPI200ResponseInner.md)
 
 ### Authorization
 
@@ -77,11 +78,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RescaleImage
+## RescaleImageAPI
 
-> *os.File RescaleImage(ctx).Url(url).Width(width).Height(height).Crop(crop).Execute()
+> *os.File RescaleImageAPI(ctx).Url(url).Width(width).Height(height).Crop(crop).Execute()
 
-Rescale Image
+Rescale Image API
 
 
 
@@ -105,13 +106,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.RescaleImage(context.Background()).Url(url).Width(width).Height(height).Crop(crop).Execute()
+	resp, r, err := apiClient.MediaAPI.RescaleImageAPI(context.Background()).Url(url).Width(width).Height(height).Crop(crop).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.RescaleImage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.RescaleImageAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RescaleImage`: *os.File
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.RescaleImage`: %v\n", resp)
+	// response from `RescaleImageAPI`: *os.File
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.RescaleImageAPI`: %v\n", resp)
 }
 ```
 
@@ -121,7 +122,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRescaleImageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRescaleImageAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -149,11 +150,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchIcons
+## SearchIconsAPI
 
-> SearchIcons200Response SearchIcons(ctx).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
+> SearchIconsAPI200Response SearchIconsAPI(ctx).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
 
-Search Icons
+Search Icons API
 
 
 
@@ -176,13 +177,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.SearchIcons(context.Background()).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
+	resp, r, err := apiClient.MediaAPI.SearchIconsAPI(context.Background()).Query(query).OnlyPublicDomain(onlyPublicDomain).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchIcons``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchIconsAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchIcons`: SearchIcons200Response
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchIcons`: %v\n", resp)
+	// response from `SearchIconsAPI`: SearchIconsAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchIconsAPI`: %v\n", resp)
 }
 ```
 
@@ -192,7 +193,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchIconsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchIconsAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -203,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchIcons200Response**](SearchIcons200Response.md)
+[**SearchIconsAPI200Response**](SearchIconsAPI200Response.md)
 
 ### Authorization
 
@@ -219,11 +220,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SearchRoyaltyFreeImages
+## SearchRoyaltyFreeImagesAPI
 
-> SearchRoyaltyFreeImages200Response SearchRoyaltyFreeImages(ctx).Query(query).Number(number).Execute()
+> SearchRoyaltyFreeImagesAPI200Response SearchRoyaltyFreeImagesAPI(ctx).Query(query).Number(number).Execute()
 
-Search Royalty Free Images
+Search Royalty Free Images API
 
 
 
@@ -245,13 +246,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaAPI.SearchRoyaltyFreeImages(context.Background()).Query(query).Number(number).Execute()
+	resp, r, err := apiClient.MediaAPI.SearchRoyaltyFreeImagesAPI(context.Background()).Query(query).Number(number).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchRoyaltyFreeImages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.SearchRoyaltyFreeImagesAPI``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchRoyaltyFreeImages`: SearchRoyaltyFreeImages200Response
-	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchRoyaltyFreeImages`: %v\n", resp)
+	// response from `SearchRoyaltyFreeImagesAPI`: SearchRoyaltyFreeImagesAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.SearchRoyaltyFreeImagesAPI`: %v\n", resp)
 }
 ```
 
@@ -261,7 +262,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSearchRoyaltyFreeImagesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSearchRoyaltyFreeImagesAPIRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -271,7 +272,77 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchRoyaltyFreeImages200Response**](SearchRoyaltyFreeImages200Response.md)
+[**SearchRoyaltyFreeImagesAPI200Response**](SearchRoyaltyFreeImagesAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VectorSearchAPI
+
+> VectorSearchAPI200Response VectorSearchAPI(ctx).Query(query).Offset(offset).Number(number).Execute()
+
+Vector Search API
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	query := "airplanes" // string | The search query.
+	offset := int32(0) // int32 | The number of vectors to skip, between 0 and 1000 (optional)
+	number := int32(3) // int32 | The number of vectors to return in range [1,10] (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.VectorSearchAPI(context.Background()).Query(query).Offset(offset).Number(number).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.VectorSearchAPI``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VectorSearchAPI`: VectorSearchAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.VectorSearchAPI`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVectorSearchAPIRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **string** | The search query. | 
+ **offset** | **int32** | The number of vectors to skip, between 0 and 1000 | 
+ **number** | **int32** | The number of vectors to return in range [1,10] | 
+
+### Return type
+
+[**VectorSearchAPI200Response**](VectorSearchAPI200Response.md)
 
 ### Authorization
 

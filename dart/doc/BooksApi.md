@@ -9,16 +9,16 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findSimilarBooks**](BooksApi.md#findsimilarbooks) | **GET** /list-similar-books | Find Similar Books
-[**searchBooks**](BooksApi.md#searchbooks) | **GET** /search-books | Search Books
+[**findSimilarBooksAPI**](BooksApi.md#findsimilarbooksapi) | **GET** /list-similar-books | Find Similar Books API
+[**searchBooksAPI**](BooksApi.md#searchbooksapi) | **GET** /search-books | Search Books API
 
 
-# **findSimilarBooks**
-> FindSimilarBooks200Response findSimilarBooks(id, number)
+# **findSimilarBooksAPI**
+> FindSimilarBooksAPI200Response findSimilarBooksAPI(id, number)
 
-Find Similar Books
+Find Similar Books API
 
-Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
 ### Example
 ```dart
@@ -37,10 +37,10 @@ final id = 8302059; // int | The id of the book to which similar books should be
 final number = 10; // int | The number of similar books to return in range [1,100]
 
 try {
-    final result = api_instance.findSimilarBooks(id, number);
+    final result = api_instance.findSimilarBooksAPI(id, number);
     print(result);
 } catch (e) {
-    print('Exception when calling BooksApi->findSimilarBooks: $e\n');
+    print('Exception when calling BooksApi->findSimilarBooksAPI: $e\n');
 }
 ```
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FindSimilarBooks200Response**](FindSimilarBooks200Response.md)
+[**FindSimilarBooksAPI200Response**](FindSimilarBooksAPI200Response.md)
 
 ### Authorization
 
@@ -66,12 +66,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchBooks**
-> SearchBooks200Response searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
+# **searchBooksAPI**
+> SearchBooksAPI200Response searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number)
 
-Search Books
+Search Books API
 
-Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
 ### Example
 ```dart
@@ -102,10 +102,10 @@ final offset = 0; // int | The number of books to skip in range [0,1000]
 final number = 10; // int | The number of books to return in range [1,100]
 
 try {
-    final result = api_instance.searchBooks(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
+    final result = api_instance.searchBooksAPI(query, earliestPublishYear, latestPublishYear, minRating, maxRating, genres, authors, isbn, oclc, sort, sortDirection, groupResults, offset, number);
     print(result);
 } catch (e) {
-    print('Exception when calling BooksApi->searchBooks: $e\n');
+    print('Exception when calling BooksApi->searchBooksAPI: $e\n');
 }
 ```
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchBooks200Response**](SearchBooks200Response.md)
+[**SearchBooksAPI200Response**](SearchBooksAPI200Response.md)
 
 ### Authorization
 

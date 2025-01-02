@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
-import com.apileague.client.model.FindSimilarBooks200Response
-import com.apileague.client.model.SearchBooks200Response
+import com.apileague.client.model.FindSimilarBooksAPI200Response
+import com.apileague.client.model.SearchBooksAPI200Response
 
 import com.squareup.moshi.Json
 
@@ -47,11 +47,11 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Find Similar Books
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100] (optional)
-     * @return FindSimilarBooks200Response
+     * @return FindSimilarBooksAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -60,11 +60,11 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun findSimilarBooks(id: kotlin.Int, number: kotlin.Int? = null) : FindSimilarBooks200Response {
-        val localVarResponse = findSimilarBooksWithHttpInfo(id = id, number = number)
+    fun findSimilarBooksAPI(id: kotlin.Int, number: kotlin.Int? = null) : FindSimilarBooksAPI200Response {
+        val localVarResponse = findSimilarBooksAPIWithHttpInfo(id = id, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as FindSimilarBooks200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as FindSimilarBooksAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -79,32 +79,32 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Find Similar Books
-     * Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+     * Find Similar Books API
+     * Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100] (optional)
-     * @return ApiResponse<FindSimilarBooks200Response?>
+     * @return ApiResponse<FindSimilarBooksAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun findSimilarBooksWithHttpInfo(id: kotlin.Int, number: kotlin.Int?) : ApiResponse<FindSimilarBooks200Response?> {
-        val localVariableConfig = findSimilarBooksRequestConfig(id = id, number = number)
+    fun findSimilarBooksAPIWithHttpInfo(id: kotlin.Int, number: kotlin.Int?) : ApiResponse<FindSimilarBooksAPI200Response?> {
+        val localVariableConfig = findSimilarBooksAPIRequestConfig(id = id, number = number)
 
-        return request<Unit, FindSimilarBooks200Response>(
+        return request<Unit, FindSimilarBooksAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation findSimilarBooks
+     * To obtain the request config of the operation findSimilarBooksAPI
      *
      * @param id The id of the book to which similar books should be found.
      * @param number The number of similar books to return in range [1,100] (optional)
      * @return RequestConfig
      */
-    fun findSimilarBooksRequestConfig(id: kotlin.Int, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun findSimilarBooksAPIRequestConfig(id: kotlin.Int, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -127,8 +127,8 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
@@ -143,7 +143,7 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param groupResults Whether to group similar editions of the same book. (optional)
      * @param offset The number of books to skip in range [0,1000] (optional)
      * @param number The number of books to return in range [1,100] (optional)
-     * @return SearchBooks200Response
+     * @return SearchBooksAPI200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -152,11 +152,11 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchBooks(query: kotlin.String? = null, earliestPublishYear: kotlin.Int? = null, latestPublishYear: kotlin.Int? = null, minRating: kotlin.Double? = null, maxRating: kotlin.Double? = null, genres: kotlin.String? = null, authors: kotlin.String? = null, isbn: kotlin.String? = null, oclc: kotlin.String? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, groupResults: kotlin.Boolean? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchBooks200Response {
-        val localVarResponse = searchBooksWithHttpInfo(query = query, earliestPublishYear = earliestPublishYear, latestPublishYear = latestPublishYear, minRating = minRating, maxRating = maxRating, genres = genres, authors = authors, isbn = isbn, oclc = oclc, sort = sort, sortDirection = sortDirection, groupResults = groupResults, offset = offset, number = number)
+    fun searchBooksAPI(query: kotlin.String? = null, earliestPublishYear: kotlin.Int? = null, latestPublishYear: kotlin.Int? = null, minRating: kotlin.Double? = null, maxRating: kotlin.Double? = null, genres: kotlin.String? = null, authors: kotlin.String? = null, isbn: kotlin.String? = null, oclc: kotlin.String? = null, sort: kotlin.String? = null, sortDirection: kotlin.String? = null, groupResults: kotlin.Boolean? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : SearchBooksAPI200Response {
+        val localVarResponse = searchBooksAPIWithHttpInfo(query = query, earliestPublishYear = earliestPublishYear, latestPublishYear = latestPublishYear, minRating = minRating, maxRating = maxRating, genres = genres, authors = authors, isbn = isbn, oclc = oclc, sort = sort, sortDirection = sortDirection, groupResults = groupResults, offset = offset, number = number)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchBooks200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchBooksAPI200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -171,8 +171,8 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
-     * Search Books
-     * Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+     * Search Books API
+     * Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
      * @param latestPublishYear The books must have been published before this year. (optional)
@@ -187,22 +187,22 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param groupResults Whether to group similar editions of the same book. (optional)
      * @param offset The number of books to skip in range [0,1000] (optional)
      * @param number The number of books to return in range [1,100] (optional)
-     * @return ApiResponse<SearchBooks200Response?>
+     * @return ApiResponse<SearchBooksAPI200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchBooksWithHttpInfo(query: kotlin.String?, earliestPublishYear: kotlin.Int?, latestPublishYear: kotlin.Int?, minRating: kotlin.Double?, maxRating: kotlin.Double?, genres: kotlin.String?, authors: kotlin.String?, isbn: kotlin.String?, oclc: kotlin.String?, sort: kotlin.String?, sortDirection: kotlin.String?, groupResults: kotlin.Boolean?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchBooks200Response?> {
-        val localVariableConfig = searchBooksRequestConfig(query = query, earliestPublishYear = earliestPublishYear, latestPublishYear = latestPublishYear, minRating = minRating, maxRating = maxRating, genres = genres, authors = authors, isbn = isbn, oclc = oclc, sort = sort, sortDirection = sortDirection, groupResults = groupResults, offset = offset, number = number)
+    fun searchBooksAPIWithHttpInfo(query: kotlin.String?, earliestPublishYear: kotlin.Int?, latestPublishYear: kotlin.Int?, minRating: kotlin.Double?, maxRating: kotlin.Double?, genres: kotlin.String?, authors: kotlin.String?, isbn: kotlin.String?, oclc: kotlin.String?, sort: kotlin.String?, sortDirection: kotlin.String?, groupResults: kotlin.Boolean?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<SearchBooksAPI200Response?> {
+        val localVariableConfig = searchBooksAPIRequestConfig(query = query, earliestPublishYear = earliestPublishYear, latestPublishYear = latestPublishYear, minRating = minRating, maxRating = maxRating, genres = genres, authors = authors, isbn = isbn, oclc = oclc, sort = sort, sortDirection = sortDirection, groupResults = groupResults, offset = offset, number = number)
 
-        return request<Unit, SearchBooks200Response>(
+        return request<Unit, SearchBooksAPI200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation searchBooks
+     * To obtain the request config of the operation searchBooksAPI
      *
      * @param query The search query. (optional)
      * @param earliestPublishYear The books must have been published after this year. (optional)
@@ -220,7 +220,7 @@ class BooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * @param number The number of books to return in range [1,100] (optional)
      * @return RequestConfig
      */
-    fun searchBooksRequestConfig(query: kotlin.String?, earliestPublishYear: kotlin.Int?, latestPublishYear: kotlin.Int?, minRating: kotlin.Double?, maxRating: kotlin.Double?, genres: kotlin.String?, authors: kotlin.String?, isbn: kotlin.String?, oclc: kotlin.String?, sort: kotlin.String?, sortDirection: kotlin.String?, groupResults: kotlin.Boolean?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+    fun searchBooksAPIRequestConfig(query: kotlin.String?, earliestPublishYear: kotlin.Int?, latestPublishYear: kotlin.Int?, minRating: kotlin.Double?, maxRating: kotlin.Double?, genres: kotlin.String?, authors: kotlin.String?, isbn: kotlin.String?, oclc: kotlin.String?, sort: kotlin.String?, sortDirection: kotlin.String?, groupResults: kotlin.Boolean?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {

@@ -10,8 +10,8 @@ defmodule APILeague.Api.Books do
   import APILeague.RequestBuilder
 
   @doc """
-  Find Similar Books
-  Find books that are similar to the given book. This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
+  Find Similar Books API
+  Find books that are similar to the given book (based on a set of over 4 million books). This is useful for recommending books to users based on their reading history or preferences. The response will contain a list of similar books with their title, id, and cover image.
 
   ### Parameters
 
@@ -22,11 +22,11 @@ defmodule APILeague.Api.Books do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.FindSimilarBooks200Response.t}` on success
+  - `{:ok, APILeague.Model.FindSimilarBooksApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec find_similar_books(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.FindSimilarBooks200Response.t} | {:error, Tesla.Env.t}
-  def find_similar_books(connection, id, opts \\ []) do
+  @spec find_similar_books_api(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.FindSimilarBooksApi200Response.t} | {:error, Tesla.Env.t}
+  def find_similar_books_api(connection, id, opts \\ []) do
     optional_params = %{
       :number => :query
     }
@@ -42,7 +42,7 @@ defmodule APILeague.Api.Books do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.FindSimilarBooks200Response},
+      {200, APILeague.Model.FindSimilarBooksApi200Response},
       {401, false},
       {402, false},
       {403, false},
@@ -53,8 +53,8 @@ defmodule APILeague.Api.Books do
   end
 
   @doc """
-  Search Books
-  Search and filter books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
+  Search Books API
+  Search and filter over 4 million books based on matching a query, the ISBN, rating, and more fields. The query is semantically parsed using our own large ontology. That means you can search paranormal books and the ontology knows that Aliens, Werewolves, Ghosts, and Shapeshifters fall into that category.
 
   ### Parameters
 
@@ -77,11 +77,11 @@ defmodule APILeague.Api.Books do
 
   ### Returns
 
-  - `{:ok, APILeague.Model.SearchBooks200Response.t}` on success
+  - `{:ok, APILeague.Model.SearchBooksApi200Response.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec search_books(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchBooks200Response.t} | {:error, Tesla.Env.t}
-  def search_books(connection, opts \\ []) do
+  @spec search_books_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.SearchBooksApi200Response.t} | {:error, Tesla.Env.t}
+  def search_books_api(connection, opts \\ []) do
     optional_params = %{
       :query => :query,
       :"earliest-publish-year" => :query,
@@ -109,7 +109,7 @@ defmodule APILeague.Api.Books do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, APILeague.Model.SearchBooks200Response},
+      {200, APILeague.Model.SearchBooksApi200Response},
       {401, false},
       {402, false},
       {403, false},
