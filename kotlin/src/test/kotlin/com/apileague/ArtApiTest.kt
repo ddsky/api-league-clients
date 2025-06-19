@@ -19,12 +19,34 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.ArtApi
+import com.apileague.client.model.ArtSearchAPI200Response
 import com.apileague.client.model.RandomPoemAPI200Response
+import com.apileague.client.model.RetrieveArtworkById200Response
 
 class ArtApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of ArtApi
         //val apiInstance = ArtApi()
+
+        // to test artSearchAPI
+        should("test artSearchAPI") {
+            // uncomment below to test artSearchAPI
+            //val query : kotlin.String = landscape paintings // kotlin.String | The search query.
+            //val earliestStartDate : kotlin.Int = 1750 // kotlin.Int | The artwork must have been created after this date.
+            //val latestStartDate : kotlin.Int = 1755 // kotlin.Int | The artwork must have been created before this date.
+            //val earliestEndDate : kotlin.Int = 1751 // kotlin.Int | For artworks with a period of creation, the completion date must be after this date.
+            //val latestEndDate : kotlin.Int = 1760 // kotlin.Int | For artworks with a period of creation, the completion date must be before this date.
+            //val minRatio : kotlin.Double = 0.8 // kotlin.Double | The minimum aspect ratio (width/height) the artwork image must have.
+            //val maxRatio : kotlin.Double = 1.5 // kotlin.Double | The maximum aspect ratio (width/height) the artwork image must have.
+            //val type : kotlin.String = painting // kotlin.String | The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+            //val material : kotlin.String = ivory // kotlin.String | The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+            //val technique : kotlin.String = etching // kotlin.String | The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+            //val origin : kotlin.String = Italy // kotlin.String | The country or region of origin for the artwork
+            //val offset : kotlin.Int = 0 // kotlin.Int | The number of artworks to skip in range [0,1000]
+            //val number : kotlin.Int = 10 // kotlin.Int | The number of artworks to return in range [1,10]
+            //val result : ArtSearchAPI200Response = apiInstance.artSearchAPI(query, earliestStartDate, latestStartDate, earliestEndDate, latestEndDate, minRatio, maxRatio, type, material, technique, origin, offset, number)
+            //result shouldBe ("TODO")
+        }
 
         // to test imageToAsciiArtByURLAPI
         should("test imageToAsciiArtByURLAPI") {
@@ -42,6 +64,14 @@ class ArtApiTest : ShouldSpec() {
             //val minLines : kotlin.Int = 5 // kotlin.Int | The minimum number of lines of the poem.
             //val maxLines : kotlin.Int = 20 // kotlin.Int | The maximum number of lines of the poem.
             //val result : RandomPoemAPI200Response = apiInstance.randomPoemAPI(minLines, maxLines)
+            //result shouldBe ("TODO")
+        }
+
+        // to test retrieveArtworkById
+        should("test retrieveArtworkById") {
+            // uncomment below to test retrieveArtworkById
+            //val id : kotlin.Int = 26226350 // kotlin.Int | The id of the artwork.
+            //val result : RetrieveArtworkById200Response = apiInstance.retrieveArtworkById(id)
             //result shouldBe ("TODO")
         }
 

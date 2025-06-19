@@ -22,6 +22,7 @@ apileague/api_response.py
 apileague/configuration.py
 apileague/exceptions.py
 apileague/models/__init__.py
+apileague/models/art_search_api200_response.py
 apileague/models/compute_nutrition_api200_response.py
 apileague/models/compute_nutrition_api200_response_ingredient_breakdown_inner.py
 apileague/models/compute_nutrition_api200_response_ingredient_breakdown_inner_nutrients_inner.py
@@ -54,6 +55,7 @@ apileague/models/random_quote_api200_response.py
 apileague/models/random_riddle_api200_response.py
 apileague/models/random_trivia_api200_response.py
 apileague/models/read_key_value_from_store_api200_response.py
+apileague/models/retrieve_artwork_by_id200_response.py
 apileague/models/retrieve_page_rank_api200_response.py
 apileague/models/retrieve_recipe_information_api200_response.py
 apileague/models/retrieve_recipe_information_api200_response_credits.py
@@ -134,6 +136,7 @@ apileague/models/verify_email_address_api200_response.py
 apileague/py.typed
 apileague/rest.py
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -173,6 +176,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -261,6 +265,7 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_art_api.py
+test/test_art_search_api200_response.py
 test/test_books_api.py
 test/test_compute_nutrition_api200_response.py
 test/test_compute_nutrition_api200_response_ingredient_breakdown_inner.py
@@ -300,6 +305,7 @@ test/test_random_quote_api200_response.py
 test/test_random_riddle_api200_response.py
 test/test_random_trivia_api200_response.py
 test/test_read_key_value_from_store_api200_response.py
+test/test_retrieve_artwork_by_id200_response.py
 test/test_retrieve_page_rank_api200_response.py
 test/test_retrieve_recipe_information_api200_response.py
 test/test_retrieve_recipe_information_api200_response_credits.py

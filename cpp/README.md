@@ -4,7 +4,7 @@
 
 API League
 
-- API version: 1.6.4
+- API version: 1.7.0
 - Generator version: 7.8.0-SNAPSHOT
 
 API League is a Hub for World Class APIs.
@@ -36,6 +36,16 @@ class Example : public QObject {
     QString create();
     qint32 create();
     qint32 create();
+    qint32 create();
+    qint32 create();
+    double create();
+    double create();
+    QString create();
+    QString create();
+    QString create();
+    QString create();
+    qint32 create();
+    qint32 create();
 public Q_SLOTS:
    void exampleFunction1();
 };
@@ -56,6 +66,26 @@ qint32 Example::create(){
     qint32 obj;
 qint32 Example::create(){
     qint32 obj;
+qint32 Example::create(){
+    qint32 obj;
+qint32 Example::create(){
+    qint32 obj;
+double Example::create(){
+    double obj;
+double Example::create(){
+    double obj;
+QString Example::create(){
+    QString obj;
+QString Example::create(){
+    QString obj;
+QString Example::create(){
+    QString obj;
+QString Example::create(){
+    QString obj;
+qint32 Example::create(){
+    qint32 obj;
+qint32 Example::create(){
+    qint32 obj;
  return obj;
 }
 
@@ -69,38 +99,148 @@ void Example::exampleFunction1(){
       apiInstance.setApiKey("YOUR API KEY NAME","YOUR API KEY");
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
 
-      QString url = create(); // QString | The URL to the image.
+      QString query = create(); // QString | The search query.
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
 
-      qint32 width = create(); // qint32 | The maximum width of the image (default 400, max. 500).
+      qint32 earliest_start_date = create(); // qint32 | The artwork must have been created after this date.
 
       QEventLoop loop;
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignal, [&]() {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
           loop.quit();
       });
-      connect(&apiInstance, &OAIArtApi::imageToAsciiArtByURLAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
           qDebug() << "Error happened while issuing request : " << error_str;
           loop.quit();
       });
 
-      qint32 height = create(); // qint32 | The maximum height of the image (default 400, max. 500).
-      apiInstance.imageToAsciiArtByURLAPI(urlwidthheight);
+      qint32 latest_start_date = create(); // qint32 | The artwork must have been created before this date.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      qint32 earliest_end_date = create(); // qint32 | For artworks with a period of creation, the completion date must be after this date.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      qint32 latest_end_date = create(); // qint32 | For artworks with a period of creation, the completion date must be before this date.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      double min_ratio = create(); // double | The minimum aspect ratio (width/height) the artwork image must have.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      double max_ratio = create(); // double | The maximum aspect ratio (width/height) the artwork image must have.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      QString type = create(); // QString | The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      QString material = create(); // QString | The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      QString technique = create(); // QString | The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      QString origin = create(); // QString | The country or region of origin for the artwork
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      qint32 offset = create(); // qint32 | The number of artworks to skip in range [0,1000]
+
+      QEventLoop loop;
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignal, [&]() {
+          loop.quit();
+      });
+      connect(&apiInstance, &OAIArtApi::artSearchAPISignalE, [&](QNetworkReply::NetworkError, QString error_str) {
+          qDebug() << "Error happened while issuing request : " << error_str;
+          loop.quit();
+      });
+
+      qint32 number = create(); // qint32 | The number of artworks to return in range [1,10]
+      apiInstance.artSearchAPI(queryearliest_start_datelatest_start_dateearliest_end_datelatest_end_datemin_ratiomax_ratiotypematerialtechniqueoriginoffsetnumber);
       QTimer::singleShot(5000, &loop, &QEventLoop::quit);
       loop.exec();
   }

@@ -1,6 +1,7 @@
 import { ResponseContext, RequestContext, HttpFile, HttpInfo } from '../http/http';
 import { Configuration} from '../configuration'
 
+import { ArtSearchAPI200Response } from '../models/ArtSearchAPI200Response';
 import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
 import { ComputeNutritionAPI200ResponseIngredientBreakdownInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
 import { ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
@@ -33,6 +34,7 @@ import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
 import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
 import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
 import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { RetrieveArtworkById200Response } from '../models/RetrieveArtworkById200Response';
 import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
 import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
 import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -114,6 +116,87 @@ import { VerifyEmailAddressAPI200Response } from '../models/VerifyEmailAddressAP
 import { ObservableArtApi } from "./ObservableAPI";
 import { ArtApiRequestFactory, ArtApiResponseProcessor} from "../apis/ArtApi";
 
+export interface ArtApiArtSearchAPIRequest {
+    /**
+     * The search query.
+     * @type string
+     * @memberof ArtApiartSearchAPI
+     */
+    query?: string
+    /**
+     * The artwork must have been created after this date.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    earliestStartDate?: number
+    /**
+     * The artwork must have been created before this date.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    latestStartDate?: number
+    /**
+     * For artworks with a period of creation, the completion date must be after this date.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    earliestEndDate?: number
+    /**
+     * For artworks with a period of creation, the completion date must be before this date.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    latestEndDate?: number
+    /**
+     * The minimum aspect ratio (width/height) the artwork image must have.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    minRatio?: number
+    /**
+     * The maximum aspect ratio (width/height) the artwork image must have.
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    maxRatio?: number
+    /**
+     * The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+     * @type string
+     * @memberof ArtApiartSearchAPI
+     */
+    type?: string
+    /**
+     * The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+     * @type string
+     * @memberof ArtApiartSearchAPI
+     */
+    material?: string
+    /**
+     * The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+     * @type string
+     * @memberof ArtApiartSearchAPI
+     */
+    technique?: string
+    /**
+     * The country or region of origin for the artwork
+     * @type string
+     * @memberof ArtApiartSearchAPI
+     */
+    origin?: string
+    /**
+     * The number of artworks to skip in range [0,1000]
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    offset?: number
+    /**
+     * The number of artworks to return in range [1,10]
+     * @type number
+     * @memberof ArtApiartSearchAPI
+     */
+    number?: number
+}
+
 export interface ArtApiImageToAsciiArtByURLAPIRequest {
     /**
      * The URL to the image.
@@ -150,11 +233,38 @@ export interface ArtApiRandomPoemAPIRequest {
     maxLines?: number
 }
 
+export interface ArtApiRetrieveArtworkByIdRequest {
+    /**
+     * The id of the artwork.
+     * @type number
+     * @memberof ArtApiretrieveArtworkById
+     */
+    id: number
+}
+
 export class ObjectArtApi {
     private api: ObservableArtApi
 
     public constructor(configuration: Configuration, requestFactory?: ArtApiRequestFactory, responseProcessor?: ArtApiResponseProcessor) {
         this.api = new ObservableArtApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+     * Art Search API
+     * @param param the request object
+     */
+    public artSearchAPIWithHttpInfo(param: ArtApiArtSearchAPIRequest = {}, options?: Configuration): Promise<HttpInfo<ArtSearchAPI200Response>> {
+        return this.api.artSearchAPIWithHttpInfo(param.query, param.earliestStartDate, param.latestStartDate, param.earliestEndDate, param.latestEndDate, param.minRatio, param.maxRatio, param.type, param.material, param.technique, param.origin, param.offset, param.number,  options).toPromise();
+    }
+
+    /**
+     * Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+     * Art Search API
+     * @param param the request object
+     */
+    public artSearchAPI(param: ArtApiArtSearchAPIRequest = {}, options?: Configuration): Promise<ArtSearchAPI200Response> {
+        return this.api.artSearchAPI(param.query, param.earliestStartDate, param.latestStartDate, param.earliestEndDate, param.latestEndDate, param.minRatio, param.maxRatio, param.type, param.material, param.technique, param.origin, param.offset, param.number,  options).toPromise();
     }
 
     /**
@@ -191,6 +301,24 @@ export class ObjectArtApi {
      */
     public randomPoemAPI(param: ArtApiRandomPoemAPIRequest = {}, options?: Configuration): Promise<RandomPoemAPI200Response> {
         return this.api.randomPoemAPI(param.minLines, param.maxLines,  options).toPromise();
+    }
+
+    /**
+     * Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+     * Retrieve Artwork by Id
+     * @param param the request object
+     */
+    public retrieveArtworkByIdWithHttpInfo(param: ArtApiRetrieveArtworkByIdRequest, options?: Configuration): Promise<HttpInfo<RetrieveArtworkById200Response>> {
+        return this.api.retrieveArtworkByIdWithHttpInfo(param.id,  options).toPromise();
+    }
+
+    /**
+     * Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+     * Retrieve Artwork by Id
+     * @param param the request object
+     */
+    public retrieveArtworkById(param: ArtApiRetrieveArtworkByIdRequest, options?: Configuration): Promise<RetrieveArtworkById200Response> {
+        return this.api.retrieveArtworkById(param.id,  options).toPromise();
     }
 
 }

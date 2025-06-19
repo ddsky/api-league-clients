@@ -4,6 +4,7 @@
 Cargo.toml
 README.md
 docs/ArtApi.md
+docs/ArtSearchApi200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionApi200Response.md
 docs/ComputeNutritionApi200ResponseIngredientBreakdownInner.md
@@ -43,6 +44,7 @@ docs/RandomQuoteApi200Response.md
 docs/RandomRiddleApi200Response.md
 docs/RandomTriviaApi200Response.md
 docs/ReadKeyValueFromStoreApi200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankApi200Response.md
 docs/RetrieveRecipeInformationApi200Response.md
 docs/RetrieveRecipeInformationApi200ResponseCredits.md
@@ -138,6 +140,7 @@ src/apis/storage_api.rs
 src/apis/text_api.rs
 src/apis/web_api.rs
 src/lib.rs
+src/models/art_search_api_200_response.rs
 src/models/compute_nutrition_api_200_response.rs
 src/models/compute_nutrition_api_200_response_ingredient_breakdown_inner.rs
 src/models/compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner.rs
@@ -171,6 +174,7 @@ src/models/random_quote_api_200_response.rs
 src/models/random_riddle_api_200_response.rs
 src/models/random_trivia_api_200_response.rs
 src/models/read_key_value_from_store_api_200_response.rs
+src/models/retrieve_artwork_by_id_200_response.rs
 src/models/retrieve_page_rank_api_200_response.rs
 src/models/retrieve_recipe_information_api_200_response.rs
 src/models/retrieve_recipe_information_api_200_response_credits.rs

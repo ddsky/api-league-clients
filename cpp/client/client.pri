@@ -2,6 +2,7 @@ QT += network
 
 HEADERS += \
 # Models
+    $${PWD}/OAIArtSearchAPI_200_response.h \
     $${PWD}/OAIComputeNutritionAPI_200_response.h \
     $${PWD}/OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner.h \
     $${PWD}/OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner.h \
@@ -34,6 +35,7 @@ HEADERS += \
     $${PWD}/OAIRandomRiddleAPI_200_response.h \
     $${PWD}/OAIRandomTriviaAPI_200_response.h \
     $${PWD}/OAIReadKeyValueFromStoreAPI_200_response.h \
+    $${PWD}/OAIRetrieveArtworkById_200_response.h \
     $${PWD}/OAIRetrievePageRankAPI_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response_credits.h \
@@ -135,6 +137,7 @@ HEADERS += \
 
 SOURCES += \
 # Models
+    $${PWD}/OAIArtSearchAPI_200_response.cpp \
     $${PWD}/OAIComputeNutritionAPI_200_response.cpp \
     $${PWD}/OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner.cpp \
     $${PWD}/OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner.cpp \
@@ -167,6 +170,7 @@ SOURCES += \
     $${PWD}/OAIRandomRiddleAPI_200_response.cpp \
     $${PWD}/OAIRandomTriviaAPI_200_response.cpp \
     $${PWD}/OAIReadKeyValueFromStoreAPI_200_response.cpp \
+    $${PWD}/OAIRetrieveArtworkById_200_response.cpp \
     $${PWD}/OAIRetrievePageRankAPI_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response_credits.cpp \

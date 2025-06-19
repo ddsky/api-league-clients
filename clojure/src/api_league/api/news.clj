@@ -102,6 +102,7 @@
             [api-league.specs.search-recipes-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-ingredients-inner :refer :all]
             [api-league.specs.pluralize-word-api-200-response :refer :all]
+            [api-league.specs.retrieve-artwork-by-id-200-response :refer :all]
             [api-league.specs.search-icons-api-200-response :refer :all]
             [api-league.specs.random-meme-api-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-api-200-response-times :refer :all]
@@ -112,6 +113,7 @@
             [api-league.specs.top-news-api-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.search-recipes-api-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.score-text-api-200-response-interestingness :refer :all]
+            [api-league.specs.art-search-api-200-response :refer :all]
             )
   (:import (java.io File)))
 

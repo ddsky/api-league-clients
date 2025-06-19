@@ -17,6 +17,7 @@ lib/api_league/api/text.ex
 lib/api_league/api/web.ex
 lib/api_league/connection.ex
 lib/api_league/deserializer.ex
+lib/api_league/model/art_search_api_200_response.ex
 lib/api_league/model/compute_nutrition_api_200_response.ex
 lib/api_league/model/compute_nutrition_api_200_response_ingredient_breakdown_inner.ex
 lib/api_league/model/compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner.ex
@@ -49,6 +50,7 @@ lib/api_league/model/random_quote_api_200_response.ex
 lib/api_league/model/random_riddle_api_200_response.ex
 lib/api_league/model/random_trivia_api_200_response.ex
 lib/api_league/model/read_key_value_from_store_api_200_response.ex
+lib/api_league/model/retrieve_artwork_by_id_200_response.ex
 lib/api_league/model/retrieve_page_rank_api_200_response.ex
 lib/api_league/model/retrieve_recipe_information_api_200_response.ex
 lib/api_league/model/retrieve_recipe_information_api_200_response_credits.ex

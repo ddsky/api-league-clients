@@ -10,6 +10,71 @@ defmodule APILeague.Api.Art do
   import APILeague.RequestBuilder
 
   @doc """
+  Art Search API
+  Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `opts` (keyword): Optional parameters
+    - `:query` (String.t): The search query.
+    - `:"earliest-start-date"` (integer()): The artwork must have been created after this date.
+    - `:"latest-start-date"` (integer()): The artwork must have been created before this date.
+    - `:"earliest-end-date"` (integer()): For artworks with a period of creation, the completion date must be after this date.
+    - `:"latest-end-date"` (integer()): For artworks with a period of creation, the completion date must be before this date.
+    - `:"min-ratio"` (float()): The minimum aspect ratio (width/height) the artwork image must have.
+    - `:"max-ratio"` (float()): The maximum aspect ratio (width/height) the artwork image must have.
+    - `:type` (String.t): The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+    - `:material` (String.t): The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+    - `:technique` (String.t): The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+    - `:origin` (String.t): The country or region of origin for the artwork
+    - `:offset` (integer()): The number of artworks to skip in range [0,1000]
+    - `:number` (integer()): The number of artworks to return in range [1,10]
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.ArtSearchApi200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec art_search_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.ArtSearchApi200Response.t} | {:error, Tesla.Env.t}
+  def art_search_api(connection, opts \\ []) do
+    optional_params = %{
+      :query => :query,
+      :"earliest-start-date" => :query,
+      :"latest-start-date" => :query,
+      :"earliest-end-date" => :query,
+      :"latest-end-date" => :query,
+      :"min-ratio" => :query,
+      :"max-ratio" => :query,
+      :type => :query,
+      :material => :query,
+      :technique => :query,
+      :origin => :query,
+      :offset => :query,
+      :number => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/search-artworks")
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.ArtSearchApi200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Image to Ascii Art by URL API
   Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
 
@@ -88,6 +153,43 @@ defmodule APILeague.Api.Art do
     |> Connection.request(request)
     |> evaluate_response([
       {200, APILeague.Model.RandomPoemApi200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Retrieve Artwork by Id
+  Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `id` (integer()): The id of the artwork.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.RetrieveArtworkById200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec retrieve_artwork_by_id(Tesla.Env.client, integer(), keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RetrieveArtworkById200Response.t} | {:error, Tesla.Env.t}
+  def retrieve_artwork_by_id(connection, id, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-artwork")
+      |> add_param(:query, :id, id)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.RetrieveArtworkById200Response},
       {401, false},
       {402, false},
       {403, false},

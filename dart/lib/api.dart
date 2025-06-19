@@ -40,6 +40,7 @@ part 'api/storage_api.dart';
 part 'api/text_api.dart';
 part 'api/web_api.dart';
 
+part 'model/art_search_api200_response.dart';
 part 'model/compute_nutrition_api200_response.dart';
 part 'model/compute_nutrition_api200_response_ingredient_breakdown_inner.dart';
 part 'model/compute_nutrition_api200_response_ingredient_breakdown_inner_nutrients_inner.dart';
@@ -72,6 +73,7 @@ part 'model/random_quote_api200_response.dart';
 part 'model/random_riddle_api200_response.dart';
 part 'model/random_trivia_api200_response.dart';
 part 'model/read_key_value_from_store_api200_response.dart';
+part 'model/retrieve_artwork_by_id200_response.dart';
 part 'model/retrieve_page_rank_api200_response.dart';
 part 'model/retrieve_recipe_information_api200_response.dart';
 part 'model/retrieve_recipe_information_api200_response_credits.dart';

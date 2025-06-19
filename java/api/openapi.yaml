@@ -6,7 +6,7 @@ info:
   description: API League is a Hub for World Class APIs.
   termsOfService: https://apileague.com/terms
   title: API League
-  version: 1.6.4
+  version: 1.7.0
 servers:
 - url: https://api.apileague.com
 security:
@@ -8109,6 +8109,297 @@ paths:
       - Art
       x-accepts:
       - text/plain
+  /search-artworks:
+    get:
+      deprecated: false
+      description: "Search and filter artworks by query, creation time, material,\
+        \ technique, and origin. The natural language search uses semantic AI to understand\
+        \ the context of your query, so you can search for artworks by their style,\
+        \ subject, or even emotions they evoke. The API returns a list of artworks\
+        \ matching the given criteria."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/art-search-api/
+      operationId: artSearchAPI
+      parameters:
+      - description: The search query.
+        explode: false
+        in: query
+        name: query
+        required: false
+        schema:
+          example: landscape paintings
+          maxLength: 300
+          pattern: "."
+          type: string
+        style: form
+      - description: The artwork must have been created after this date.
+        explode: false
+        in: query
+        name: earliest-start-date
+        required: false
+        schema:
+          example: 1750
+          format: int32
+          type: integer
+        style: form
+      - description: The artwork must have been created before this date.
+        explode: false
+        in: query
+        name: latest-start-date
+        required: false
+        schema:
+          example: 1755
+          format: int32
+          type: integer
+        style: form
+      - description: "For artworks with a period of creation, the completion date\
+          \ must be after this date."
+        explode: false
+        in: query
+        name: earliest-end-date
+        required: false
+        schema:
+          example: 1751
+          format: int32
+          type: integer
+        style: form
+      - description: "For artworks with a period of creation, the completion date\
+          \ must be before this date."
+        explode: false
+        in: query
+        name: latest-end-date
+        required: false
+        schema:
+          example: 1760
+          format: int32
+          type: integer
+        style: form
+      - description: The minimum aspect ratio (width/height) the artwork image must
+          have.
+        explode: false
+        in: query
+        name: min-ratio
+        required: false
+        schema:
+          example: 0.8
+          format: double
+          maximum: 10
+          minimum: 0
+          type: number
+        style: form
+      - description: The maximum aspect ratio (width/height) the artwork image must
+          have.
+        explode: false
+        in: query
+        name: max-ratio
+        required: false
+        schema:
+          example: 1.5
+          format: double
+          maximum: 10
+          minimum: 0
+          type: number
+        style: form
+      - description: "The artwork type. Possible values are tapestry, collotype, collage,\
+          \ printmaking, cutting, digital_art, sculpture, metalwork, fragment, token,\
+          \ embroidery, painting, jewellery, print, ornament, photograph, statuette,\
+          \ furniture, needlework, drawing, miniature, tile, stereograph, calligraphy."
+        explode: false
+        in: query
+        name: type
+        required: false
+        schema:
+          example: painting
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: "The art material used. Possible values are ferrous_lactate,\
+          \ ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware,\
+          \ in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts,\
+          \ porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite,\
+          \ cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate,\
+          \ ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany,\
+          \ electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta,\
+          \ glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor,\
+          \ diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool,\
+          \ ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel,\
+          \ copper, cardboard, plant_material, oak, wood."
+        explode: false
+        in: query
+        name: material
+        required: false
+        schema:
+          example: ivory
+          maxLength: 1000
+          pattern: "."
+          type: string
+        style: form
+      - description: "The art technique used. Possible values are engraving, grinding,\
+          \ embroidering, etching, vitrification, gilding, lithography, knitting,\
+          \ cyanotype, silkscreen, woodcut, printing, drypoint, photolithography,\
+          \ weaving, sawing, casting, glassblowing, block_printing, photographing,\
+          \ forging."
+        explode: false
+        in: query
+        name: technique
+        required: false
+        schema:
+          example: etching
+          maxLength: 13
+          pattern: "."
+          type: string
+        style: form
+      - description: The country or region of origin for the artwork
+        explode: false
+        in: query
+        name: origin
+        required: false
+        schema:
+          example: Italy
+          maxLength: 100
+          pattern: "."
+          type: string
+        style: form
+      - description: "The number of artworks to skip in range [0,1000]"
+        explode: false
+        in: query
+        name: offset
+        required: false
+        schema:
+          example: 0
+          format: int32
+          maximum: 1000
+          minimum: 0
+          type: integer
+        style: form
+      - description: "The number of artworks to return in range [1,10]"
+        explode: false
+        in: query
+        name: number
+        required: false
+        schema:
+          example: 10
+          format: int32
+          maximum: 10
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    available: 993
+                    number: 3
+                    offset: 0
+                    artworks:
+                    - title: Knightly Sword
+                      image: https://img.apileague.com/artworks/knightly_sword_unknown23_1450.jpg
+                      id: 25623857
+                    - title: Sculpture of a Kneeling Knight or King
+                      image: https://img.apileague.com/artworks/sculpture_of_a_kneeling_knight_or_king_unknown383_1250.jpg
+                      id: 25426886
+                    - title: A Knight in Armor
+                      image: https://img.apileague.com/artworks/a_knight_in_armor_unknown32_1907.jpg
+                      id: 25934005
+              schema:
+                $ref: '#/components/schemas/artSearchAPI_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Art Search API
+      tags:
+      - Art
+      x-accepts:
+      - application/json
+  /retrieve-artwork:
+    get:
+      deprecated: false
+      description: "Get one artwork by its id. The API returns the title, image URL,\
+        \ start and end date, and a description of the artwork."
+      externalDocs:
+        description: Read entire docs
+        url: https://apileague.com/apis/retrieve-artwork-api/
+      operationId: retrieveArtworkById
+      parameters:
+      - description: The id of the artwork.
+        explode: false
+        in: query
+        name: id
+        required: true
+        schema:
+          example: 26226350
+          format: int32
+          maximum: 99999999
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                Response:
+                  value:
+                    id: 25623857
+                    title: Knightly Sword
+                    image: https://img.apileague.com/artworks/knightly_sword_unknown23_1450.jpg
+                    start_date: 1401
+                    end_date: 1450
+                    description: "The image depicts a knightly sword, a prominent\
+                      \ weapon crafted between 1401 and 1450, showcasing the key characteristics\
+                      \ of medieval armament. This sword features a long, tapered\
+                      \ blade, designed for both cutting and thrusting, a hallmark\
+                      \ of the period's martial needs. The blade is wide at the hilt\
+                      \ and narrows sharply towards the tip, indicating a focus on\
+                      \ agility and precision in combat. \n\nThe hilt is adorned with\
+                      \ a distinctive crossguard that provides both defense and grip\
+                      \ stability, crucial in the heat of battle. The grip is wrapped\
+                      \ in dark leather, likely to ensure a strong hold, while the\
+                      \ pommel, often an intricate element in knightly swords, features\
+                      \ decorative detailing that may signify the sword's origin or\
+                      \ the status of its owner. \n\nHistorically, this sword reflects\
+                      \ the transition in European warfare and chivalric culture during\
+                      \ the late Middle Ages, where such weaponry symbolized not only\
+                      \ martial prowess but also nobility and honor in combat. It\
+                      \ stands as a testament to the craftsmanship of the era, merging\
+                      \ functionality with artistry, and provides insights into the\
+                      \ socio-political dynamics of knighthood and warfare of the\
+                      \ time."
+              schema:
+                $ref: '#/components/schemas/retrieveArtworkById_200_response'
+          description: Success
+        "401":
+          description: Unauthorized
+        "402":
+          description: Payment Required
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "406":
+          description: Not Acceptable
+        "429":
+          description: Too Many Requests
+      summary: Retrieve Artwork by Id
+      tags:
+      - Art
+      x-accepts:
+      - application/json
   /extract-content:
     get:
       deprecated: false
@@ -12678,6 +12969,55 @@ components:
           nullable: true
           type: string
         poem:
+          nullable: true
+          type: string
+      type: object
+    artSearchAPI_200_response:
+      example:
+        number: 6
+        offset: 1
+        artworks:
+        - image: image
+          id: 5
+          title: title
+        - image: image
+          id: 5
+          title: title
+        available: 0
+      properties:
+        available:
+          type: integer
+        number:
+          type: integer
+        offset:
+          type: integer
+        artworks:
+          items:
+            $ref: '#/components/schemas/searchBooksAPI_200_response_books_inner_inner'
+          type: array
+      type: object
+    retrieveArtworkById_200_response:
+      example:
+        end_date: 1
+        image: image
+        description: description
+        id: 0
+        title: title
+        start_date: 6
+      properties:
+        id:
+          type: integer
+        title:
+          nullable: true
+          type: string
+        image:
+          nullable: true
+          type: string
+        start_date:
+          type: integer
+        end_date:
+          type: integer
+        description:
           nullable: true
           type: string
       type: object

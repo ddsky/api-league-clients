@@ -5,6 +5,7 @@ api/openapi.yaml
 apileague.sln
 appveyor.yml
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -44,6 +45,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -136,6 +138,7 @@ src/apileague.Test/Api/NewsApiTests.cs
 src/apileague.Test/Api/StorageApiTests.cs
 src/apileague.Test/Api/TextApiTests.cs
 src/apileague.Test/Api/WebApiTests.cs
+src/apileague.Test/Model/ArtSearchAPI200ResponseTests.cs
 src/apileague.Test/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInnerTests.cs
 src/apileague.Test/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerTests.cs
 src/apileague.Test/Model/ComputeNutritionAPI200ResponseTests.cs
@@ -168,6 +171,7 @@ src/apileague.Test/Model/RandomQuoteAPI200ResponseTests.cs
 src/apileague.Test/Model/RandomRiddleAPI200ResponseTests.cs
 src/apileague.Test/Model/RandomTriviaAPI200ResponseTests.cs
 src/apileague.Test/Model/ReadKeyValueFromStoreAPI200ResponseTests.cs
+src/apileague.Test/Model/RetrieveArtworkById200ResponseTests.cs
 src/apileague.Test/Model/RetrievePageRankAPI200ResponseTests.cs
 src/apileague.Test/Model/RetrieveRecipeInformationAPI200ResponseCreditsTests.cs
 src/apileague.Test/Model/RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTests.cs
@@ -274,6 +278,7 @@ src/apileague/Client/OpenAPIDateConverter.cs
 src/apileague/Client/RequestOptions.cs
 src/apileague/Client/RetryConfiguration.cs
 src/apileague/Model/AbstractOpenAPISchema.cs
+src/apileague/Model/ArtSearchAPI200Response.cs
 src/apileague/Model/ComputeNutritionAPI200Response.cs
 src/apileague/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.cs
 src/apileague/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.cs
@@ -306,6 +311,7 @@ src/apileague/Model/RandomQuoteAPI200Response.cs
 src/apileague/Model/RandomRiddleAPI200Response.cs
 src/apileague/Model/RandomTriviaAPI200Response.cs
 src/apileague/Model/ReadKeyValueFromStoreAPI200Response.cs
+src/apileague/Model/RetrieveArtworkById200Response.cs
 src/apileague/Model/RetrievePageRankAPI200Response.cs
 src/apileague/Model/RetrieveRecipeInformationAPI200Response.cs
 src/apileague/Model/RetrieveRecipeInformationAPI200ResponseCredits.cs

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "apileague"
-version = "1.6.4"
+version = "1.7.0"
 description = "API League"
 authors = ["David Urbansky <mail@apileague.com>"]
 license = "NoLicense"

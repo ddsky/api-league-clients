@@ -18,6 +18,7 @@ configuration.ts
 encoder.ts
 git_push.sh
 index.ts
+model/artSearchAPI200Response.ts
 model/computeNutritionAPI200Response.ts
 model/computeNutritionAPI200ResponseIngredientBreakdownInner.ts
 model/computeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.ts
@@ -51,6 +52,7 @@ model/randomQuoteAPI200Response.ts
 model/randomRiddleAPI200Response.ts
 model/randomTriviaAPI200Response.ts
 model/readKeyValueFromStoreAPI200Response.ts
+model/retrieveArtworkById200Response.ts
 model/retrievePageRankAPI200Response.ts
 model/retrieveRecipeInformationAPI200Response.ts
 model/retrieveRecipeInformationAPI200ResponseCredits.ts

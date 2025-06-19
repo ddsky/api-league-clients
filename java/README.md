@@ -1,7 +1,7 @@
 # java-client
 
 API League
-- API version: 1.6.4
+- API version: 1.7.0
   - Generator version: 7.8.0-SNAPSHOT
 
 API League is a Hub for World Class APIs.
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.apileague</groupId>
   <artifactId>java-client</artifactId>
-  <version>1.6.4</version>
+  <version>1.7.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.apileague:java-client:1.6.4"
+     implementation "com.apileague:java-client:1.7.0"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/java-client-1.6.4.jar`
+* `target/java-client-1.7.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -105,14 +105,24 @@ public class Example {
     //headerApiKey.setApiKeyPrefix("Token");
 
     ArtApi apiInstance = new ArtApi(defaultClient);
-    String url = "https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png"; // String | The URL to the image.
-    Integer width = 200; // Integer | The maximum width of the image (default 400, max. 500).
-    Integer height = 200; // Integer | The maximum height of the image (default 400, max. 500).
+    String query = "landscape paintings"; // String | The search query.
+    Integer earliestStartDate = 1750; // Integer | The artwork must have been created after this date.
+    Integer latestStartDate = 1755; // Integer | The artwork must have been created before this date.
+    Integer earliestEndDate = 1751; // Integer | For artworks with a period of creation, the completion date must be after this date.
+    Integer latestEndDate = 1760; // Integer | For artworks with a period of creation, the completion date must be before this date.
+    Double minRatio = 0.8D; // Double | The minimum aspect ratio (width/height) the artwork image must have.
+    Double maxRatio = 1.5D; // Double | The maximum aspect ratio (width/height) the artwork image must have.
+    String type = "painting"; // String | The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+    String material = "ivory"; // String | The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+    String technique = "etching"; // String | The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+    String origin = "Italy"; // String | The country or region of origin for the artwork
+    Integer offset = 0; // Integer | The number of artworks to skip in range [0,1000]
+    Integer number = 10; // Integer | The number of artworks to return in range [1,10]
     try {
-      String result = apiInstance.imageToAsciiArtByURLAPI(url, width, height);
+      ArtSearchAPI200Response result = apiInstance.artSearchAPI(query, earliestStartDate, latestStartDate, earliestEndDate, latestEndDate, minRatio, maxRatio, type, material, technique, origin, offset, number);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ArtApi#imageToAsciiArtByURLAPI");
+      System.err.println("Exception when calling ArtApi#artSearchAPI");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -129,8 +139,10 @@ All URIs are relative to *https://api.apileague.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ArtApi* | [**artSearchAPI**](docs/ArtApi.md#artSearchAPI) | **GET** /search-artworks | Art Search API
 *ArtApi* | [**imageToAsciiArtByURLAPI**](docs/ArtApi.md#imageToAsciiArtByURLAPI) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
 *ArtApi* | [**randomPoemAPI**](docs/ArtApi.md#randomPoemAPI) | **GET** /retrieve-random-poem | Random Poem API
+*ArtApi* | [**retrieveArtworkById**](docs/ArtApi.md#retrieveArtworkById) | **GET** /retrieve-artwork | Retrieve Artwork by Id
 *BooksApi* | [**findSimilarBooksAPI**](docs/BooksApi.md#findSimilarBooksAPI) | **GET** /list-similar-books | Find Similar Books API
 *BooksApi* | [**searchBooksAPI**](docs/BooksApi.md#searchBooksAPI) | **GET** /search-books | Search Books API
 *FoodApi* | [**computeNutritionAPI**](docs/FoodApi.md#computeNutritionAPI) | **GET** /compute-nutrition | Compute Nutrition API
@@ -181,6 +193,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ArtSearchAPI200Response](docs/ArtSearchAPI200Response.md)
  - [ComputeNutritionAPI200Response](docs/ComputeNutritionAPI200Response.md)
  - [ComputeNutritionAPI200ResponseIngredientBreakdownInner](docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md)
  - [ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner](docs/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md)
@@ -213,6 +226,7 @@ Class | Method | HTTP request | Description
  - [RandomRiddleAPI200Response](docs/RandomRiddleAPI200Response.md)
  - [RandomTriviaAPI200Response](docs/RandomTriviaAPI200Response.md)
  - [ReadKeyValueFromStoreAPI200Response](docs/ReadKeyValueFromStoreAPI200Response.md)
+ - [RetrieveArtworkById200Response](docs/RetrieveArtworkById200Response.md)
  - [RetrievePageRankAPI200Response](docs/RetrievePageRankAPI200Response.md)
  - [RetrieveRecipeInformationAPI200Response](docs/RetrieveRecipeInformationAPI200Response.md)
  - [RetrieveRecipeInformationAPI200ResponseCredits](docs/RetrieveRecipeInformationAPI200ResponseCredits.md)

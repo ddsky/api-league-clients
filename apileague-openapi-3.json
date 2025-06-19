@@ -4,7 +4,7 @@
     "title": "API League",
     "description": "API League is a Hub for World Class APIs.",
     "termsOfService": "https://apileague.com/terms",
-    "version": "1.6.4",
+    "version": "1.7.0",
     "contact": {
       "name": "David Urbansky",
       "email": "mail@apileague.com"
@@ -12400,6 +12400,390 @@
         ],
         "description": "Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.",
         "operationId": "imageToAsciiArtByURLAPI",
+        "deprecated": false
+      }
+    },
+    "/search-artworks": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "available": {
+                      "type": "integer"
+                    },
+                    "number": {
+                      "type": "integer"
+                    },
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "artworks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "image": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "available": 993,
+                      "number": 3,
+                      "offset": 0,
+                      "artworks": [
+                        {
+                          "title": "Knightly Sword",
+                          "image": "https://img.apileague.com/artworks/knightly_sword_unknown23_1450.jpg",
+                          "id": 25623857
+                        },
+                        {
+                          "title": "Sculpture of a Kneeling Knight or King",
+                          "image": "https://img.apileague.com/artworks/sculpture_of_a_kneeling_knight_or_king_unknown383_1250.jpg",
+                          "id": 25426886
+                        },
+                        {
+                          "title": "A Knight in Armor",
+                          "image": "https://img.apileague.com/artworks/a_knight_in_armor_unknown32_1907.jpg",
+                          "id": 25934005
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 300,
+              "type": "string",
+              "example": "landscape paintings"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "earliest-start-date",
+            "description": "The artwork must have been created after this date.",
+            "schema": {
+              "format": "int32",
+              "type": "integer",
+              "example": 1750
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "latest-start-date",
+            "description": "The artwork must have been created before this date.",
+            "schema": {
+              "format": "int32",
+              "type": "integer",
+              "example": 1755
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "earliest-end-date",
+            "description": "For artworks with a period of creation, the completion date must be after this date.",
+            "schema": {
+              "format": "int32",
+              "type": "integer",
+              "example": 1751
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "latest-end-date",
+            "description": "For artworks with a period of creation, the completion date must be before this date.",
+            "schema": {
+              "format": "int32",
+              "type": "integer",
+              "example": 1760
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "min-ratio",
+            "description": "The minimum aspect ratio (width/height) the artwork image must have.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 10,
+              "type": "number",
+              "example": 0.8
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "max-ratio",
+            "description": "The maximum aspect ratio (width/height) the artwork image must have.",
+            "schema": {
+              "format": "double",
+              "minimum": 0,
+              "maximum": 10,
+              "type": "number",
+              "example": 1.5
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "type",
+            "description": "The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "painting"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "material",
+            "description": "The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 1000,
+              "type": "string",
+              "example": "ivory"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "technique",
+            "description": "The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 13,
+              "type": "string",
+              "example": "etching"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "origin",
+            "description": "The country or region of origin for the artwork",
+            "schema": {
+              "pattern": ".",
+              "maxLength": 100,
+              "type": "string",
+              "example": "Italy"
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "offset",
+            "description": "The number of artworks to skip in range [0,1000]",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 1000,
+              "type": "integer",
+              "example": 0
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          },
+          {
+            "name": "number",
+            "description": "The number of artworks to return in range [1,10]",
+            "schema": {
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 10,
+              "type": "integer",
+              "example": 10
+            },
+            "required": false,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/art-search-api/"
+        },
+        "summary": "Art Search API",
+        "tags": [
+          "Art"
+        ],
+        "description": "Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.",
+        "operationId": "artSearchAPI",
+        "deprecated": false
+      }
+    },
+    "/retrieve-artwork": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "title": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "image": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "start_date": {
+                      "type": "integer"
+                    },
+                    "end_date": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                },
+                "examples": {
+                  "Response": {
+                    "value": {
+                      "id": 25623857,
+                      "title": "Knightly Sword",
+                      "image": "https://img.apileague.com/artworks/knightly_sword_unknown23_1450.jpg",
+                      "start_date": 1401,
+                      "end_date": 1450,
+                      "description": "The image depicts a knightly sword, a prominent weapon crafted between 1401 and 1450, showcasing the key characteristics of medieval armament. This sword features a long, tapered blade, designed for both cutting and thrusting, a hallmark of the period's martial needs. The blade is wide at the hilt and narrows sharply towards the tip, indicating a focus on agility and precision in combat. \n\nThe hilt is adorned with a distinctive crossguard that provides both defense and grip stability, crucial in the heat of battle. The grip is wrapped in dark leather, likely to ensure a strong hold, while the pommel, often an intricate element in knightly swords, features decorative detailing that may signify the sword's origin or the status of its owner. \n\nHistorically, this sword reflects the transition in European warfare and chivalric culture during the late Middle Ages, where such weaponry symbolized not only martial prowess but also nobility and honor in combat. It stands as a testament to the craftsmanship of the era, merging functionality with artistry, and provides insights into the socio-political dynamics of knighthood and warfare of the time."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "402": {
+            "description": "Payment Required"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "406": {
+            "description": "Not Acceptable"
+          },
+          "429": {
+            "description": "Too Many Requests"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "The id of the artwork.",
+            "schema": {
+              "format": "int32",
+              "minimum": 0,
+              "maximum": 99999999,
+              "type": "integer",
+              "example": 26226350
+            },
+            "required": true,
+            "style": "form",
+            "explode": false,
+            "in": "query"
+          }
+        ],
+        "externalDocs": {
+          "description": "Read entire docs",
+          "url": "https://apileague.com/apis/retrieve-artwork-api/"
+        },
+        "summary": "Retrieve Artwork by Id",
+        "tags": [
+          "Art"
+        ],
+        "description": "Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.",
+        "operationId": "retrieveArtworkById",
         "deprecated": false
       }
     },

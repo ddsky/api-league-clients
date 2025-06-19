@@ -1,5 +1,5 @@
 package = "apileague"
-version = "1.6.4"
+version = "1.7.0"
 source = {
 	url = "https://github.com/ddsky/api-league-clients/tree/master/lua/.git"
 }
@@ -34,6 +34,7 @@ build = {
 		["apileague.api.storage_api"] = "apileague/api/storage_api.lua";
 		["apileague.api.text_api"] = "apileague/api/text_api.lua";
 		["apileague.api.web_api"] = "apileague/api/web_api.lua";
+		["apileague.model.art_search_api_200_response"] = "apileague/model/art_search_api_200_response.lua";
 		["apileague.model.compute_nutrition_api_200_response"] = "apileague/model/compute_nutrition_api_200_response.lua";
 		["apileague.model.compute_nutrition_api_200_response_ingredient_breakdown_inner"] = "apileague/model/compute_nutrition_api_200_response_ingredient_breakdown_inner.lua";
 		["apileague.model.compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner"] = "apileague/model/compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner.lua";
@@ -66,6 +67,7 @@ build = {
 		["apileague.model.random_riddle_api_200_response"] = "apileague/model/random_riddle_api_200_response.lua";
 		["apileague.model.random_trivia_api_200_response"] = "apileague/model/random_trivia_api_200_response.lua";
 		["apileague.model.read_key_value_from_store_api_200_response"] = "apileague/model/read_key_value_from_store_api_200_response.lua";
+		["apileague.model.retrieve_artwork_by_id_200_response"] = "apileague/model/retrieve_artwork_by_id_200_response.lua";
 		["apileague.model.retrieve_page_rank_api_200_response"] = "apileague/model/retrieve_page_rank_api_200_response.lua";
 		["apileague.model.retrieve_recipe_information_api_200_response"] = "apileague/model/retrieve_recipe_information_api_200_response.lua";
 		["apileague.model.retrieve_recipe_information_api_200_response_credits"] = "apileague/model/retrieve_recipe_information_api_200_response_credits.lua";

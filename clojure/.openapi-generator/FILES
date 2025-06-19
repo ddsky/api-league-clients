@@ -14,6 +14,7 @@ src/api_league/api/storage.clj
 src/api_league/api/text.clj
 src/api_league/api/web.clj
 src/api_league/core.clj
+src/api_league/specs/art_search_api_200_response.clj
 src/api_league/specs/compute_nutrition_api_200_response.clj
 src/api_league/specs/compute_nutrition_api_200_response_ingredient_breakdown_inner.clj
 src/api_league/specs/compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner.clj
@@ -46,6 +47,7 @@ src/api_league/specs/random_quote_api_200_response.clj
 src/api_league/specs/random_riddle_api_200_response.clj
 src/api_league/specs/random_trivia_api_200_response.clj
 src/api_league/specs/read_key_value_from_store_api_200_response.clj
+src/api_league/specs/retrieve_artwork_by_id_200_response.clj
 src/api_league/specs/retrieve_page_rank_api_200_response.clj
 src/api_league/specs/retrieve_recipe_information_api_200_response.clj
 src/api_league/specs/retrieve_recipe_information_api_200_response_credits.clj

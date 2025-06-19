@@ -20,6 +20,7 @@ main =
   hspec $ modifyMaxSize (const 10) $ do
     describe "JSON instances" $ do
       pure ()
+      propMimeEq MimeJSON (Proxy :: Proxy ArtSearchAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy ComputeNutritionAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy ComputeNutritionAPI200ResponseIngredientBreakdownInner)
       propMimeEq MimeJSON (Proxy :: Proxy ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner)
@@ -52,6 +53,7 @@ main =
       propMimeEq MimeJSON (Proxy :: Proxy RandomRiddleAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy RandomTriviaAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy ReadKeyValueFromStoreAPI200Response)
+      propMimeEq MimeJSON (Proxy :: Proxy RetrieveArtworkById200Response)
       propMimeEq MimeJSON (Proxy :: Proxy RetrievePageRankAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy RetrieveRecipeInformationAPI200Response)
       propMimeEq MimeJSON (Proxy :: Proxy RetrieveRecipeInformationAPI200ResponseCredits)

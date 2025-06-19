@@ -17,6 +17,15 @@ void main() {
   // final instance = ArtApi();
 
   group('tests for ArtApi', () {
+    // Art Search API
+    //
+    // Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+    //
+    //Future<ArtSearchAPI200Response> artSearchAPI({ String query, int earliestStartDate, int latestStartDate, int earliestEndDate, int latestEndDate, double minRatio, double maxRatio, String type, String material, String technique, String origin, int offset, int number }) async
+    test('test artSearchAPI', () async {
+      // TODO
+    });
+
     // Image to Ascii Art by URL API
     //
     // Convert an image to ASCII art. You can pass the image URL as a query parameter. The API returns the ASCII art as plain text. This endpoint is using the GET method and an image URL as a query parameter.
@@ -32,6 +41,15 @@ void main() {
     //
     //Future<RandomPoemAPI200Response> randomPoemAPI({ int minLines, int maxLines }) async
     test('test randomPoemAPI', () async {
+      // TODO
+    });
+
+    // Retrieve Artwork by Id
+    //
+    // Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+    //
+    //Future<RetrieveArtworkById200Response> retrieveArtworkById(int id) async
+    test('test retrieveArtworkById', () async {
       // TODO
     });
 

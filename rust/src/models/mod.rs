@@ -1,3 +1,5 @@
+pub mod art_search_api_200_response;
+pub use self::art_search_api_200_response::ArtSearchApi200Response;
 pub mod compute_nutrition_api_200_response;
 pub use self::compute_nutrition_api_200_response::ComputeNutritionApi200Response;
 pub mod compute_nutrition_api_200_response_ingredient_breakdown_inner;
@@ -62,6 +64,8 @@ pub mod random_trivia_api_200_response;
 pub use self::random_trivia_api_200_response::RandomTriviaApi200Response;
 pub mod read_key_value_from_store_api_200_response;
 pub use self::read_key_value_from_store_api_200_response::ReadKeyValueFromStoreApi200Response;
+pub mod retrieve_artwork_by_id_200_response;
+pub use self::retrieve_artwork_by_id_200_response::RetrieveArtworkById200Response;
 pub mod retrieve_page_rank_api_200_response;
 pub use self::retrieve_page_rank_api_200_response::RetrievePageRankApi200Response;
 pub mod retrieve_recipe_information_api_200_response;

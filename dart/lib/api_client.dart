@@ -182,6 +182,8 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
+        case 'ArtSearchAPI200Response':
+          return ArtSearchAPI200Response.fromJson(value);
         case 'ComputeNutritionAPI200Response':
           return ComputeNutritionAPI200Response.fromJson(value);
         case 'ComputeNutritionAPI200ResponseIngredientBreakdownInner':
@@ -246,6 +248,8 @@ class ApiClient {
           return RandomTriviaAPI200Response.fromJson(value);
         case 'ReadKeyValueFromStoreAPI200Response':
           return ReadKeyValueFromStoreAPI200Response.fromJson(value);
+        case 'RetrieveArtworkById200Response':
+          return RetrieveArtworkById200Response.fromJson(value);
         case 'RetrievePageRankAPI200Response':
           return RetrievePageRankAPI200Response.fromJson(value);
         case 'RetrieveRecipeInformationAPI200Response':

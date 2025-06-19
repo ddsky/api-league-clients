@@ -4,6 +4,8 @@ client/CMakeLists.txt
 client/Config.cmake.in
 client/OAIArtApi.cpp
 client/OAIArtApi.h
+client/OAIArtSearchAPI_200_response.cpp
+client/OAIArtSearchAPI_200_response.h
 client/OAIBooksApi.cpp
 client/OAIBooksApi.h
 client/OAIComputeNutritionAPI_200_response.cpp
@@ -92,6 +94,8 @@ client/OAIRandomTriviaAPI_200_response.cpp
 client/OAIRandomTriviaAPI_200_response.h
 client/OAIReadKeyValueFromStoreAPI_200_response.cpp
 client/OAIReadKeyValueFromStoreAPI_200_response.h
+client/OAIRetrieveArtworkById_200_response.cpp
+client/OAIRetrieveArtworkById_200_response.h
 client/OAIRetrievePageRankAPI_200_response.cpp
 client/OAIRetrievePageRankAPI_200_response.h
 client/OAIRetrieveRecipeInformationAPI_200_response.cpp

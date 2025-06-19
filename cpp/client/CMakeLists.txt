@@ -11,6 +11,7 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 add_library(${PROJECT_NAME}
+  OAIArtSearchAPI_200_response.h
   OAIComputeNutritionAPI_200_response.h
   OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner.h
   OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner.h
@@ -43,6 +44,7 @@ add_library(${PROJECT_NAME}
   OAIRandomRiddleAPI_200_response.h
   OAIRandomTriviaAPI_200_response.h
   OAIReadKeyValueFromStoreAPI_200_response.h
+  OAIRetrieveArtworkById_200_response.h
   OAIRetrievePageRankAPI_200_response.h
   OAIRetrieveRecipeInformationAPI_200_response.h
   OAIRetrieveRecipeInformationAPI_200_response_credits.h
@@ -139,6 +141,7 @@ add_library(${PROJECT_NAME}
   OAIServerConfiguration.h
   OAIServerVariable.h
   OAIOauth.h
+  OAIArtSearchAPI_200_response.cpp
   OAIComputeNutritionAPI_200_response.cpp
   OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner.cpp
   OAIComputeNutritionAPI_200_response_ingredient_breakdown_inner_nutrients_inner.cpp
@@ -171,6 +174,7 @@ add_library(${PROJECT_NAME}
   OAIRandomRiddleAPI_200_response.cpp
   OAIRandomTriviaAPI_200_response.cpp
   OAIReadKeyValueFromStoreAPI_200_response.cpp
+  OAIRetrieveArtworkById_200_response.cpp
   OAIRetrievePageRankAPI_200_response.cpp
   OAIRetrieveRecipeInformationAPI_200_response.cpp
   OAIRetrieveRecipeInformationAPI_200_response_credits.cpp

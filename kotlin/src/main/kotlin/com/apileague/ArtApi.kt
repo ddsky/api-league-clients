@@ -19,7 +19,9 @@ import java.io.IOException
 import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
+import com.apileague.client.model.ArtSearchAPI200Response
 import com.apileague.client.model.RandomPoemAPI200Response
+import com.apileague.client.model.RetrieveArtworkById200Response
 
 import com.squareup.moshi.Json
 
@@ -43,6 +45,154 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.apileague.com")
         }
+    }
+
+    /**
+     * Art Search API
+     * Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+     * @param query The search query. (optional)
+     * @param earliestStartDate The artwork must have been created after this date. (optional)
+     * @param latestStartDate The artwork must have been created before this date. (optional)
+     * @param earliestEndDate For artworks with a period of creation, the completion date must be after this date. (optional)
+     * @param latestEndDate For artworks with a period of creation, the completion date must be before this date. (optional)
+     * @param minRatio The minimum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param maxRatio The maximum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param type The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy. (optional)
+     * @param material The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood. (optional)
+     * @param technique The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging. (optional)
+     * @param origin The country or region of origin for the artwork (optional)
+     * @param offset The number of artworks to skip in range [0,1000] (optional)
+     * @param number The number of artworks to return in range [1,10] (optional)
+     * @return ArtSearchAPI200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun artSearchAPI(query: kotlin.String? = null, earliestStartDate: kotlin.Int? = null, latestStartDate: kotlin.Int? = null, earliestEndDate: kotlin.Int? = null, latestEndDate: kotlin.Int? = null, minRatio: kotlin.Double? = null, maxRatio: kotlin.Double? = null, type: kotlin.String? = null, material: kotlin.String? = null, technique: kotlin.String? = null, origin: kotlin.String? = null, offset: kotlin.Int? = null, number: kotlin.Int? = null) : ArtSearchAPI200Response {
+        val localVarResponse = artSearchAPIWithHttpInfo(query = query, earliestStartDate = earliestStartDate, latestStartDate = latestStartDate, earliestEndDate = earliestEndDate, latestEndDate = latestEndDate, minRatio = minRatio, maxRatio = maxRatio, type = type, material = material, technique = technique, origin = origin, offset = offset, number = number)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ArtSearchAPI200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Art Search API
+     * Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+     * @param query The search query. (optional)
+     * @param earliestStartDate The artwork must have been created after this date. (optional)
+     * @param latestStartDate The artwork must have been created before this date. (optional)
+     * @param earliestEndDate For artworks with a period of creation, the completion date must be after this date. (optional)
+     * @param latestEndDate For artworks with a period of creation, the completion date must be before this date. (optional)
+     * @param minRatio The minimum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param maxRatio The maximum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param type The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy. (optional)
+     * @param material The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood. (optional)
+     * @param technique The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging. (optional)
+     * @param origin The country or region of origin for the artwork (optional)
+     * @param offset The number of artworks to skip in range [0,1000] (optional)
+     * @param number The number of artworks to return in range [1,10] (optional)
+     * @return ApiResponse<ArtSearchAPI200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun artSearchAPIWithHttpInfo(query: kotlin.String?, earliestStartDate: kotlin.Int?, latestStartDate: kotlin.Int?, earliestEndDate: kotlin.Int?, latestEndDate: kotlin.Int?, minRatio: kotlin.Double?, maxRatio: kotlin.Double?, type: kotlin.String?, material: kotlin.String?, technique: kotlin.String?, origin: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : ApiResponse<ArtSearchAPI200Response?> {
+        val localVariableConfig = artSearchAPIRequestConfig(query = query, earliestStartDate = earliestStartDate, latestStartDate = latestStartDate, earliestEndDate = earliestEndDate, latestEndDate = latestEndDate, minRatio = minRatio, maxRatio = maxRatio, type = type, material = material, technique = technique, origin = origin, offset = offset, number = number)
+
+        return request<Unit, ArtSearchAPI200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation artSearchAPI
+     *
+     * @param query The search query. (optional)
+     * @param earliestStartDate The artwork must have been created after this date. (optional)
+     * @param latestStartDate The artwork must have been created before this date. (optional)
+     * @param earliestEndDate For artworks with a period of creation, the completion date must be after this date. (optional)
+     * @param latestEndDate For artworks with a period of creation, the completion date must be before this date. (optional)
+     * @param minRatio The minimum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param maxRatio The maximum aspect ratio (width/height) the artwork image must have. (optional)
+     * @param type The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy. (optional)
+     * @param material The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood. (optional)
+     * @param technique The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging. (optional)
+     * @param origin The country or region of origin for the artwork (optional)
+     * @param offset The number of artworks to skip in range [0,1000] (optional)
+     * @param number The number of artworks to return in range [1,10] (optional)
+     * @return RequestConfig
+     */
+    fun artSearchAPIRequestConfig(query: kotlin.String?, earliestStartDate: kotlin.Int?, latestStartDate: kotlin.Int?, earliestEndDate: kotlin.Int?, latestEndDate: kotlin.Int?, minRatio: kotlin.Double?, maxRatio: kotlin.Double?, type: kotlin.String?, material: kotlin.String?, technique: kotlin.String?, origin: kotlin.String?, offset: kotlin.Int?, number: kotlin.Int?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (query != null) {
+                    put("query", listOf(query.toString()))
+                }
+                if (earliestStartDate != null) {
+                    put("earliest-start-date", listOf(earliestStartDate.toString()))
+                }
+                if (latestStartDate != null) {
+                    put("latest-start-date", listOf(latestStartDate.toString()))
+                }
+                if (earliestEndDate != null) {
+                    put("earliest-end-date", listOf(earliestEndDate.toString()))
+                }
+                if (latestEndDate != null) {
+                    put("latest-end-date", listOf(latestEndDate.toString()))
+                }
+                if (minRatio != null) {
+                    put("min-ratio", listOf(minRatio.toString()))
+                }
+                if (maxRatio != null) {
+                    put("max-ratio", listOf(maxRatio.toString()))
+                }
+                if (type != null) {
+                    put("type", listOf(type.toString()))
+                }
+                if (material != null) {
+                    put("material", listOf(material.toString()))
+                }
+                if (technique != null) {
+                    put("technique", listOf(technique.toString()))
+                }
+                if (origin != null) {
+                    put("origin", listOf(origin.toString()))
+                }
+                if (offset != null) {
+                    put("offset", listOf(offset.toString()))
+                }
+                if (number != null) {
+                    put("number", listOf(number.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/search-artworks",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**
@@ -205,6 +355,80 @@ class ArtApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/retrieve-random-poem",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Retrieve Artwork by Id
+     * Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+     * @param id The id of the artwork.
+     * @return RetrieveArtworkById200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun retrieveArtworkById(id: kotlin.Int) : RetrieveArtworkById200Response {
+        val localVarResponse = retrieveArtworkByIdWithHttpInfo(id = id)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RetrieveArtworkById200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Retrieve Artwork by Id
+     * Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+     * @param id The id of the artwork.
+     * @return ApiResponse<RetrieveArtworkById200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun retrieveArtworkByIdWithHttpInfo(id: kotlin.Int) : ApiResponse<RetrieveArtworkById200Response?> {
+        val localVariableConfig = retrieveArtworkByIdRequestConfig(id = id)
+
+        return request<Unit, RetrieveArtworkById200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation retrieveArtworkById
+     *
+     * @param id The id of the artwork.
+     * @return RequestConfig
+     */
+    fun retrieveArtworkByIdRequestConfig(id: kotlin.Int) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("id", listOf(id.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/retrieve-artwork",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

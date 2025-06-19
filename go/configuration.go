@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.4
+API version: 1.7.0
 Contact: mail@apileague.com
 */
 
@@ -90,7 +90,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/1.6.4/go",
+		UserAgent:        "OpenAPI-Generator/1.7.0/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

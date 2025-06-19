@@ -4,6 +4,7 @@
 README.md
 analysis_options.yaml
 doc/ArtApi.md
+doc/ArtSearchAPI200Response.md
 doc/BooksApi.md
 doc/ComputeNutritionAPI200Response.md
 doc/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -43,6 +44,7 @@ doc/RandomQuoteAPI200Response.md
 doc/RandomRiddleAPI200Response.md
 doc/RandomTriviaAPI200Response.md
 doc/ReadKeyValueFromStoreAPI200Response.md
+doc/RetrieveArtworkById200Response.md
 doc/RetrievePageRankAPI200Response.md
 doc/RetrieveRecipeInformationAPI200Response.md
 doc/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -144,6 +146,7 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
+lib/model/art_search_api200_response.dart
 lib/model/compute_nutrition_api200_response.dart
 lib/model/compute_nutrition_api200_response_ingredient_breakdown_inner.dart
 lib/model/compute_nutrition_api200_response_ingredient_breakdown_inner_nutrients_inner.dart
@@ -176,6 +179,7 @@ lib/model/random_quote_api200_response.dart
 lib/model/random_riddle_api200_response.dart
 lib/model/random_trivia_api200_response.dart
 lib/model/read_key_value_from_store_api200_response.dart
+lib/model/retrieve_artwork_by_id200_response.dart
 lib/model/retrieve_page_rank_api200_response.dart
 lib/model/retrieve_recipe_information_api200_response.dart
 lib/model/retrieve_recipe_information_api200_response_credits.dart
@@ -255,6 +259,7 @@ lib/model/vector_search_api200_response_vectors_inner.dart
 lib/model/verify_email_address_api200_response.dart
 pubspec.yaml
 test/art_api_test.dart
+test/art_search_api200_response_test.dart
 test/books_api_test.dart
 test/compute_nutrition_api200_response_ingredient_breakdown_inner_nutrients_inner_test.dart
 test/compute_nutrition_api200_response_ingredient_breakdown_inner_test.dart
@@ -294,6 +299,7 @@ test/random_quote_api200_response_test.dart
 test/random_riddle_api200_response_test.dart
 test/random_trivia_api200_response_test.dart
 test/read_key_value_from_store_api200_response_test.dart
+test/retrieve_artwork_by_id200_response_test.dart
 test/retrieve_page_rank_api200_response_test.dart
 test/retrieve_recipe_information_api200_response_credits_test.dart
 test/retrieve_recipe_information_api200_response_dietary_properties_test.dart

@@ -4,6 +4,7 @@
 .travis.yml
 README.md
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -43,6 +44,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -139,6 +141,7 @@ src/api/StorageApi.js
 src/api/TextApi.js
 src/api/WebApi.js
 src/index.js
+src/model/ArtSearchAPI200Response.js
 src/model/ComputeNutritionAPI200Response.js
 src/model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.js
 src/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.js
@@ -171,6 +174,7 @@ src/model/RandomQuoteAPI200Response.js
 src/model/RandomRiddleAPI200Response.js
 src/model/RandomTriviaAPI200Response.js
 src/model/ReadKeyValueFromStoreAPI200Response.js
+src/model/RetrieveArtworkById200Response.js
 src/model/RetrievePageRankAPI200Response.js
 src/model/RetrieveRecipeInformationAPI200Response.js
 src/model/RetrieveRecipeInformationAPI200ResponseCredits.js
@@ -259,6 +263,7 @@ test/api/NewsApi.spec.js
 test/api/StorageApi.spec.js
 test/api/TextApi.spec.js
 test/api/WebApi.spec.js
+test/model/ArtSearchAPI200Response.spec.js
 test/model/ComputeNutritionAPI200Response.spec.js
 test/model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.spec.js
 test/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.spec.js
@@ -291,6 +296,7 @@ test/model/RandomQuoteAPI200Response.spec.js
 test/model/RandomRiddleAPI200Response.spec.js
 test/model/RandomTriviaAPI200Response.spec.js
 test/model/ReadKeyValueFromStoreAPI200Response.spec.js
+test/model/RetrieveArtworkById200Response.spec.js
 test/model/RetrievePageRankAPI200Response.spec.js
 test/model/RetrieveRecipeInformationAPI200Response.spec.js
 test/model/RetrieveRecipeInformationAPI200ResponseCredits.spec.js

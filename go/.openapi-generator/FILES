@@ -17,6 +17,7 @@ api_web.go
 client.go
 configuration.go
 docs/ArtAPI.md
+docs/ArtSearchAPI200Response.md
 docs/BooksAPI.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -56,6 +57,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -139,6 +141,7 @@ docs/WebAPI.md
 git_push.sh
 go.mod
 go.sum
+model_art_search_api_200_response.go
 model_compute_nutrition_api_200_response.go
 model_compute_nutrition_api_200_response_ingredient_breakdown_inner.go
 model_compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner.go
@@ -171,6 +174,7 @@ model_random_quote_api_200_response.go
 model_random_riddle_api_200_response.go
 model_random_trivia_api_200_response.go
 model_read_key_value_from_store_api_200_response.go
+model_retrieve_artwork_by_id_200_response.go
 model_retrieve_page_rank_api_200_response.go
 model_retrieve_recipe_information_api_200_response.go
 model_retrieve_recipe_information_api_200_response_credits.go

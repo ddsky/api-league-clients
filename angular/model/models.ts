@@ -1,3 +1,4 @@
+export * from './artSearchAPI200Response';
 export * from './computeNutritionAPI200Response';
 export * from './computeNutritionAPI200ResponseIngredientBreakdownInner';
 export * from './computeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
@@ -30,6 +31,7 @@ export * from './randomQuoteAPI200Response';
 export * from './randomRiddleAPI200Response';
 export * from './randomTriviaAPI200Response';
 export * from './readKeyValueFromStoreAPI200Response';
+export * from './retrieveArtworkById200Response';
 export * from './retrievePageRankAPI200Response';
 export * from './retrieveRecipeInformationAPI200Response';
 export * from './retrieveRecipeInformationAPI200ResponseCredits';

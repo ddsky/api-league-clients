@@ -2,6 +2,7 @@
 README.md
 build.gradle
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -41,6 +42,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -154,6 +156,7 @@ src/main/kotlin/com/apileague/NewsApi.kt
 src/main/kotlin/com/apileague/StorageApi.kt
 src/main/kotlin/com/apileague/TextApi.kt
 src/main/kotlin/com/apileague/WebApi.kt
+src/main/kotlin/com/apileague/client/model/ArtSearchAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/ComputeNutritionAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.kt
 src/main/kotlin/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.kt
@@ -186,6 +189,7 @@ src/main/kotlin/com/apileague/client/model/RandomQuoteAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomRiddleAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomTriviaAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/ReadKeyValueFromStoreAPI200Response.kt
+src/main/kotlin/com/apileague/client/model/RetrieveArtworkById200Response.kt
 src/main/kotlin/com/apileague/client/model/RetrievePageRankAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RetrieveRecipeInformationAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RetrieveRecipeInformationAPI200ResponseCredits.kt
@@ -274,6 +278,7 @@ src/test/kotlin/com/apileague/NewsApiTest.kt
 src/test/kotlin/com/apileague/StorageApiTest.kt
 src/test/kotlin/com/apileague/TextApiTest.kt
 src/test/kotlin/com/apileague/WebApiTest.kt
+src/test/kotlin/com/apileague/client/model/ArtSearchAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerTest.kt
 src/test/kotlin/com/apileague/client/model/ComputeNutritionAPI200ResponseTest.kt
@@ -306,6 +311,7 @@ src/test/kotlin/com/apileague/client/model/RandomQuoteAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomRiddleAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomTriviaAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ReadKeyValueFromStoreAPI200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/RetrieveArtworkById200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RetrievePageRankAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RetrieveRecipeInformationAPI200ResponseCreditsTest.kt
 src/test/kotlin/com/apileague/client/model/RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTest.kt

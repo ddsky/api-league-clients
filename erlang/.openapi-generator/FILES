@@ -3,6 +3,7 @@ README.md
 rebar.config
 src/apileague.app.src
 src/apileague_art_api.erl
+src/apileague_art_search_api_200_response.erl
 src/apileague_books_api.erl
 src/apileague_compute_nutrition_api_200_response.erl
 src/apileague_compute_nutrition_api_200_response_ingredient_breakdown_inner.erl
@@ -42,6 +43,7 @@ src/apileague_random_quote_api_200_response.erl
 src/apileague_random_riddle_api_200_response.erl
 src/apileague_random_trivia_api_200_response.erl
 src/apileague_read_key_value_from_store_api_200_response.erl
+src/apileague_retrieve_artwork_by_id_200_response.erl
 src/apileague_retrieve_page_rank_api_200_response.erl
 src/apileague_retrieve_recipe_information_api_200_response.erl
 src/apileague_retrieve_recipe_information_api_200_response_credits.erl

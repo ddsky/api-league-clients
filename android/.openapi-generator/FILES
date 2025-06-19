@@ -3,6 +3,7 @@
 README.md
 build.gradle
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -42,6 +43,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -148,6 +150,7 @@ src/main/java/com/apileague/client/Pair.java
 src/main/java/com/apileague/client/auth/ApiKeyAuth.java
 src/main/java/com/apileague/client/auth/Authentication.java
 src/main/java/com/apileague/client/auth/HttpBasicAuth.java
+src/main/java/com/apileague/client/model/ArtSearchAPI200Response.java
 src/main/java/com/apileague/client/model/ComputeNutritionAPI200Response.java
 src/main/java/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.java
 src/main/java/com/apileague/client/model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.java
@@ -180,6 +183,7 @@ src/main/java/com/apileague/client/model/RandomQuoteAPI200Response.java
 src/main/java/com/apileague/client/model/RandomRiddleAPI200Response.java
 src/main/java/com/apileague/client/model/RandomTriviaAPI200Response.java
 src/main/java/com/apileague/client/model/ReadKeyValueFromStoreAPI200Response.java
+src/main/java/com/apileague/client/model/RetrieveArtworkById200Response.java
 src/main/java/com/apileague/client/model/RetrievePageRankAPI200Response.java
 src/main/java/com/apileague/client/model/RetrieveRecipeInformationAPI200Response.java
 src/main/java/com/apileague/client/model/RetrieveRecipeInformationAPI200ResponseCredits.java

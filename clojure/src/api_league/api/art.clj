@@ -102,6 +102,7 @@
             [api-league.specs.search-recipes-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-ingredients-inner :refer :all]
             [api-league.specs.pluralize-word-api-200-response :refer :all]
+            [api-league.specs.retrieve-artwork-by-id-200-response :refer :all]
             [api-league.specs.search-icons-api-200-response :refer :all]
             [api-league.specs.random-meme-api-200-response :refer :all]
             [api-league.specs.retrieve-recipe-information-api-200-response-times :refer :all]
@@ -112,8 +113,34 @@
             [api-league.specs.top-news-api-200-response-top-news-inner-news-inner :refer :all]
             [api-league.specs.search-recipes-api-200-response-recipes-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.score-text-api-200-response-interestingness :refer :all]
+            [api-league.specs.art-search-api-200-response :refer :all]
             )
   (:import (java.io File)))
+
+
+(defn-spec art-search-api-with-http-info any?
+  "Art Search API
+  Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria."
+  ([] (art-search-api-with-http-info nil))
+  ([{:keys [query earliest-start-date latest-start-date earliest-end-date latest-end-date min-ratio max-ratio type material technique origin offset number]} (s/map-of keyword? any?)]
+   (call-api "/search-artworks" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"query" query "earliest-start-date" earliest-start-date "latest-start-date" latest-start-date "earliest-end-date" earliest-end-date "latest-end-date" latest-end-date "min-ratio" min-ratio "max-ratio" max-ratio "type" type "material" material "technique" technique "origin" origin "offset" offset "number" number }
+              :form-params   {}
+              :content-types []
+              :accepts       ["application/json"]
+              :auth-names    ["apiKey" "headerApiKey"]})))
+
+(defn-spec art-search-api art-search-api-200-response-spec
+  "Art Search API
+  Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria."
+  ([] (art-search-api nil))
+  ([optional-params any?]
+   (let [res (:data (art-search-api-with-http-info optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode art-search-api-200-response-spec res st/string-transformer)
+        res))))
 
 
 (defn-spec image-to-ascii-art-by-urlapi-with-http-info any?
@@ -165,5 +192,29 @@
      (if (:decode-models *api-context*)
         (st/decode random-poem-api-200-response-spec res st/string-transformer)
         res))))
+
+
+(defn-spec retrieve-artwork-by-id-with-http-info any?
+  "Retrieve Artwork by Id
+  Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork."
+  [id int?]
+  (check-required-params id)
+  (call-api "/retrieve-artwork" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"id" id }
+             :form-params   {}
+             :content-types []
+             :accepts       ["application/json"]
+             :auth-names    ["apiKey" "headerApiKey"]}))
+
+(defn-spec retrieve-artwork-by-id retrieve-artwork-by-id-200-response-spec
+  "Retrieve Artwork by Id
+  Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork."
+  [id int?]
+  (let [res (:data (retrieve-artwork-by-id-with-http-info id))]
+    (if (:decode-models *api-context*)
+       (st/decode retrieve-artwork-by-id-200-response-spec res st/string-transformer)
+       res)))
 
 

@@ -5,6 +5,7 @@ README.md
 bin/autodoc
 cpanfile
 docs/ArtApi.md
+docs/ArtSearchAPI200Response.md
 docs/BooksApi.md
 docs/ComputeNutritionAPI200Response.md
 docs/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
@@ -44,6 +45,7 @@ docs/RandomQuoteAPI200Response.md
 docs/RandomRiddleAPI200Response.md
 docs/RandomTriviaAPI200Response.md
 docs/ReadKeyValueFromStoreAPI200Response.md
+docs/RetrieveArtworkById200Response.md
 docs/RetrievePageRankAPI200Response.md
 docs/RetrieveRecipeInformationAPI200Response.md
 docs/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -136,6 +138,7 @@ lib/WWW/OpenAPIClient/KnowledgeApi.pm
 lib/WWW/OpenAPIClient/MathApi.pm
 lib/WWW/OpenAPIClient/MediaApi.pm
 lib/WWW/OpenAPIClient/NewsApi.pm
+lib/WWW/OpenAPIClient/Object/ArtSearchAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/ComputeNutritionAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/ComputeNutritionAPI200ResponseIngredientBreakdownInner.pm
 lib/WWW/OpenAPIClient/Object/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.pm
@@ -168,6 +171,7 @@ lib/WWW/OpenAPIClient/Object/RandomQuoteAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomRiddleAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/RandomTriviaAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/ReadKeyValueFromStoreAPI200Response.pm
+lib/WWW/OpenAPIClient/Object/RetrieveArtworkById200Response.pm
 lib/WWW/OpenAPIClient/Object/RetrievePageRankAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/RetrieveRecipeInformationAPI200Response.pm
 lib/WWW/OpenAPIClient/Object/RetrieveRecipeInformationAPI200ResponseCredits.pm
@@ -251,6 +255,7 @@ lib/WWW/OpenAPIClient/StorageApi.pm
 lib/WWW/OpenAPIClient/TextApi.pm
 lib/WWW/OpenAPIClient/WebApi.pm
 t/ArtApiTest.t
+t/ArtSearchAPI200ResponseTest.t
 t/BooksApiTest.t
 t/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInnerTest.t
 t/ComputeNutritionAPI200ResponseIngredientBreakdownInnerTest.t
@@ -290,6 +295,7 @@ t/RandomQuoteAPI200ResponseTest.t
 t/RandomRiddleAPI200ResponseTest.t
 t/RandomTriviaAPI200ResponseTest.t
 t/ReadKeyValueFromStoreAPI200ResponseTest.t
+t/RetrieveArtworkById200ResponseTest.t
 t/RetrievePageRankAPI200ResponseTest.t
 t/RetrieveRecipeInformationAPI200ResponseCreditsTest.t
 t/RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTest.t

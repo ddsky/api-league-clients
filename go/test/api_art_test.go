@@ -22,6 +22,18 @@ func Test_apileague_ArtAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test ArtAPIService ArtSearchAPI", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ArtAPI.ArtSearchAPI(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ArtAPIService ImageToAsciiArtByURLAPI", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -39,6 +51,18 @@ func Test_apileague_ArtAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.ArtAPI.RandomPoemAPI(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ArtAPIService RetrieveArtworkById", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ArtAPI.RetrieveArtworkById(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

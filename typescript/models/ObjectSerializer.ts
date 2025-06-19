@@ -1,3 +1,4 @@
+export * from '../models/ArtSearchAPI200Response';
 export * from '../models/ComputeNutritionAPI200Response';
 export * from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
 export * from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
@@ -30,6 +31,7 @@ export * from '../models/RandomQuoteAPI200Response';
 export * from '../models/RandomRiddleAPI200Response';
 export * from '../models/RandomTriviaAPI200Response';
 export * from '../models/ReadKeyValueFromStoreAPI200Response';
+export * from '../models/RetrieveArtworkById200Response';
 export * from '../models/RetrievePageRankAPI200Response';
 export * from '../models/RetrieveRecipeInformationAPI200Response';
 export * from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -108,6 +110,7 @@ export * from '../models/VectorSearchAPI200Response';
 export * from '../models/VectorSearchAPI200ResponseVectorsInner';
 export * from '../models/VerifyEmailAddressAPI200Response';
 
+import { ArtSearchAPI200Response } from '../models/ArtSearchAPI200Response';
 import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200Response';
 import { ComputeNutritionAPI200ResponseIngredientBreakdownInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInner';
 import { ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner } from '../models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner';
@@ -140,6 +143,7 @@ import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
 import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response';
 import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
 import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
+import { RetrieveArtworkById200Response } from '../models/RetrieveArtworkById200Response';
 import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
 import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
 import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -234,6 +238,7 @@ let enumsMap: Set<string> = new Set<string>([
 ]);
 
 let typeMap: {[index: string]: any} = {
+    "ArtSearchAPI200Response": ArtSearchAPI200Response,
     "ComputeNutritionAPI200Response": ComputeNutritionAPI200Response,
     "ComputeNutritionAPI200ResponseIngredientBreakdownInner": ComputeNutritionAPI200ResponseIngredientBreakdownInner,
     "ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner": ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner,
@@ -266,6 +271,7 @@ let typeMap: {[index: string]: any} = {
     "RandomRiddleAPI200Response": RandomRiddleAPI200Response,
     "RandomTriviaAPI200Response": RandomTriviaAPI200Response,
     "ReadKeyValueFromStoreAPI200Response": ReadKeyValueFromStoreAPI200Response,
+    "RetrieveArtworkById200Response": RetrieveArtworkById200Response,
     "RetrievePageRankAPI200Response": RetrievePageRankAPI200Response,
     "RetrieveRecipeInformationAPI200Response": RetrieveRecipeInformationAPI200Response,
     "RetrieveRecipeInformationAPI200ResponseCredits": RetrieveRecipeInformationAPI200ResponseCredits,

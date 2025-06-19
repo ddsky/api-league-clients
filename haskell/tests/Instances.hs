@@ -113,6 +113,17 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
+instance Arbitrary ArtSearchAPI200Response where
+  arbitrary = sized genArtSearchAPI200Response
+
+genArtSearchAPI200Response :: Int -> Gen ArtSearchAPI200Response
+genArtSearchAPI200Response n =
+  ArtSearchAPI200Response
+    <$> arbitraryReducedMaybe n -- artSearchAPI200ResponseAvailable :: Maybe Int
+    <*> arbitraryReducedMaybe n -- artSearchAPI200ResponseNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- artSearchAPI200ResponseOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- artSearchAPI200ResponseArtworks :: Maybe [SearchBooksAPI200ResponseBooksInnerInner]
+  
 instance Arbitrary ComputeNutritionAPI200Response where
   arbitrary = sized genComputeNutritionAPI200Response
 
@@ -431,6 +442,19 @@ genReadKeyValueFromStoreAPI200Response :: Int -> Gen ReadKeyValueFromStoreAPI200
 genReadKeyValueFromStoreAPI200Response n =
   ReadKeyValueFromStoreAPI200Response
     <$> arbitraryReducedMaybe n -- readKeyValueFromStoreAPI200ResponseValue :: Maybe Text
+  
+instance Arbitrary RetrieveArtworkById200Response where
+  arbitrary = sized genRetrieveArtworkById200Response
+
+genRetrieveArtworkById200Response :: Int -> Gen RetrieveArtworkById200Response
+genRetrieveArtworkById200Response n =
+  RetrieveArtworkById200Response
+    <$> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseStartDate :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseEndDate :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseDescription :: Maybe Text
   
 instance Arbitrary RetrievePageRankAPI200Response where
   arbitrary = sized genRetrievePageRankAPI200Response

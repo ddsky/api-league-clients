@@ -15,6 +15,7 @@ docs/Api/NewsApi.md
 docs/Api/StorageApi.md
 docs/Api/TextApi.md
 docs/Api/WebApi.md
+docs/Model/ArtSearchAPI200Response.md
 docs/Model/ComputeNutritionAPI200Response.md
 docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md
 docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md
@@ -47,6 +48,7 @@ docs/Model/RandomQuoteAPI200Response.md
 docs/Model/RandomRiddleAPI200Response.md
 docs/Model/RandomTriviaAPI200Response.md
 docs/Model/ReadKeyValueFromStoreAPI200Response.md
+docs/Model/RetrieveArtworkById200Response.md
 docs/Model/RetrievePageRankAPI200Response.md
 docs/Model/RetrieveRecipeInformationAPI200Response.md
 docs/Model/RetrieveRecipeInformationAPI200ResponseCredits.md
@@ -139,6 +141,7 @@ lib/Api/TextApi.php
 lib/Api/WebApi.php
 lib/Configuration.php
 lib/HeaderSelector.php
+lib/Model/ArtSearchAPI200Response.php
 lib/Model/ComputeNutritionAPI200Response.php
 lib/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.php
 lib/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.php
@@ -172,6 +175,7 @@ lib/Model/RandomQuoteAPI200Response.php
 lib/Model/RandomRiddleAPI200Response.php
 lib/Model/RandomTriviaAPI200Response.php
 lib/Model/ReadKeyValueFromStoreAPI200Response.php
+lib/Model/RetrieveArtworkById200Response.php
 lib/Model/RetrievePageRankAPI200Response.php
 lib/Model/RetrieveRecipeInformationAPI200Response.php
 lib/Model/RetrieveRecipeInformationAPI200ResponseCredits.php
@@ -262,6 +266,7 @@ test/Api/NewsApiTest.php
 test/Api/StorageApiTest.php
 test/Api/TextApiTest.php
 test/Api/WebApiTest.php
+test/Model/ArtSearchAPI200ResponseTest.php
 test/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInnerTest.php
 test/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerTest.php
 test/Model/ComputeNutritionAPI200ResponseTest.php
@@ -294,6 +299,7 @@ test/Model/RandomQuoteAPI200ResponseTest.php
 test/Model/RandomRiddleAPI200ResponseTest.php
 test/Model/RandomTriviaAPI200ResponseTest.php
 test/Model/ReadKeyValueFromStoreAPI200ResponseTest.php
+test/Model/RetrieveArtworkById200ResponseTest.php
 test/Model/RetrievePageRankAPI200ResponseTest.php
 test/Model/RetrieveRecipeInformationAPI200ResponseCreditsTest.php
 test/Model/RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTest.php

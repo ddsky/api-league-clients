@@ -66,15 +66,25 @@ $apiInstance = new OpenAPI\Client\Api\ArtApi(
     new GuzzleHttp\Client(),
     $config
 );
-$url = https://upload.wikimedia.org/wikipedia/commons/3/35/Basic_human_drawing.png; // string | The URL to the image.
-$width = 200; // int | The maximum width of the image (default 400, max. 500).
-$height = 200; // int | The maximum height of the image (default 400, max. 500).
+$query = landscape paintings; // string | The search query.
+$earliest_start_date = 1750; // int | The artwork must have been created after this date.
+$latest_start_date = 1755; // int | The artwork must have been created before this date.
+$earliest_end_date = 1751; // int | For artworks with a period of creation, the completion date must be after this date.
+$latest_end_date = 1760; // int | For artworks with a period of creation, the completion date must be before this date.
+$min_ratio = 0.8; // float | The minimum aspect ratio (width/height) the artwork image must have.
+$max_ratio = 1.5; // float | The maximum aspect ratio (width/height) the artwork image must have.
+$type = painting; // string | The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+$material = ivory; // string | The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+$technique = etching; // string | The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+$origin = Italy; // string | The country or region of origin for the artwork
+$offset = 0; // int | The number of artworks to skip in range [0,1000]
+$number = 10; // int | The number of artworks to return in range [1,10]
 
 try {
-    $result = $apiInstance->imageToAsciiArtByURLAPI($url, $width, $height);
+    $result = $apiInstance->artSearchAPI($query, $earliest_start_date, $latest_start_date, $earliest_end_date, $latest_end_date, $min_ratio, $max_ratio, $type, $material, $technique, $origin, $offset, $number);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ArtApi->imageToAsciiArtByURLAPI: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ArtApi->artSearchAPI: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -85,8 +95,10 @@ All URIs are relative to *https://api.apileague.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ArtApi* | [**artSearchAPI**](docs/Api/ArtApi.md#artsearchapi) | **GET** /search-artworks | Art Search API
 *ArtApi* | [**imageToAsciiArtByURLAPI**](docs/Api/ArtApi.md#imagetoasciiartbyurlapi) | **GET** /convert-image-to-ascii-txt | Image to Ascii Art by URL API
 *ArtApi* | [**randomPoemAPI**](docs/Api/ArtApi.md#randompoemapi) | **GET** /retrieve-random-poem | Random Poem API
+*ArtApi* | [**retrieveArtworkById**](docs/Api/ArtApi.md#retrieveartworkbyid) | **GET** /retrieve-artwork | Retrieve Artwork by Id
 *BooksApi* | [**findSimilarBooksAPI**](docs/Api/BooksApi.md#findsimilarbooksapi) | **GET** /list-similar-books | Find Similar Books API
 *BooksApi* | [**searchBooksAPI**](docs/Api/BooksApi.md#searchbooksapi) | **GET** /search-books | Search Books API
 *FoodApi* | [**computeNutritionAPI**](docs/Api/FoodApi.md#computenutritionapi) | **GET** /compute-nutrition | Compute Nutrition API
@@ -136,6 +148,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [ArtSearchAPI200Response](docs/Model/ArtSearchAPI200Response.md)
 - [ComputeNutritionAPI200Response](docs/Model/ComputeNutritionAPI200Response.md)
 - [ComputeNutritionAPI200ResponseIngredientBreakdownInner](docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInner.md)
 - [ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner](docs/Model/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md)
@@ -168,6 +181,7 @@ Class | Method | HTTP request | Description
 - [RandomRiddleAPI200Response](docs/Model/RandomRiddleAPI200Response.md)
 - [RandomTriviaAPI200Response](docs/Model/RandomTriviaAPI200Response.md)
 - [ReadKeyValueFromStoreAPI200Response](docs/Model/ReadKeyValueFromStoreAPI200Response.md)
+- [RetrieveArtworkById200Response](docs/Model/RetrieveArtworkById200Response.md)
 - [RetrievePageRankAPI200Response](docs/Model/RetrievePageRankAPI200Response.md)
 - [RetrieveRecipeInformationAPI200Response](docs/Model/RetrieveRecipeInformationAPI200Response.md)
 - [RetrieveRecipeInformationAPI200ResponseCredits](docs/Model/RetrieveRecipeInformationAPI200ResponseCredits.md)
@@ -280,7 +294,7 @@ mail@apileague.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.6.4`
-    - Package version: `1.6.4`
+- API version: `1.7.0`
+    - Package version: `1.7.0`
     - Generator version: `7.8.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

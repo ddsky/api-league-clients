@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.6.4
+API version: 1.7.0
 Contact: mail@apileague.com
 */
 
@@ -22,6 +22,263 @@ import (
 
 // ArtAPIService ArtAPI service
 type ArtAPIService service
+
+type ApiArtSearchAPIRequest struct {
+	ctx context.Context
+	ApiService *ArtAPIService
+	query *string
+	earliestStartDate *int32
+	latestStartDate *int32
+	earliestEndDate *int32
+	latestEndDate *int32
+	minRatio *float64
+	maxRatio *float64
+	type_ *string
+	material *string
+	technique *string
+	origin *string
+	offset *int32
+	number *int32
+}
+
+// The search query.
+func (r ApiArtSearchAPIRequest) Query(query string) ApiArtSearchAPIRequest {
+	r.query = &query
+	return r
+}
+
+// The artwork must have been created after this date.
+func (r ApiArtSearchAPIRequest) EarliestStartDate(earliestStartDate int32) ApiArtSearchAPIRequest {
+	r.earliestStartDate = &earliestStartDate
+	return r
+}
+
+// The artwork must have been created before this date.
+func (r ApiArtSearchAPIRequest) LatestStartDate(latestStartDate int32) ApiArtSearchAPIRequest {
+	r.latestStartDate = &latestStartDate
+	return r
+}
+
+// For artworks with a period of creation, the completion date must be after this date.
+func (r ApiArtSearchAPIRequest) EarliestEndDate(earliestEndDate int32) ApiArtSearchAPIRequest {
+	r.earliestEndDate = &earliestEndDate
+	return r
+}
+
+// For artworks with a period of creation, the completion date must be before this date.
+func (r ApiArtSearchAPIRequest) LatestEndDate(latestEndDate int32) ApiArtSearchAPIRequest {
+	r.latestEndDate = &latestEndDate
+	return r
+}
+
+// The minimum aspect ratio (width/height) the artwork image must have.
+func (r ApiArtSearchAPIRequest) MinRatio(minRatio float64) ApiArtSearchAPIRequest {
+	r.minRatio = &minRatio
+	return r
+}
+
+// The maximum aspect ratio (width/height) the artwork image must have.
+func (r ApiArtSearchAPIRequest) MaxRatio(maxRatio float64) ApiArtSearchAPIRequest {
+	r.maxRatio = &maxRatio
+	return r
+}
+
+// The artwork type. Possible values are tapestry, collotype, collage, printmaking, cutting, digital_art, sculpture, metalwork, fragment, token, embroidery, painting, jewellery, print, ornament, photograph, statuette, furniture, needlework, drawing, miniature, tile, stereograph, calligraphy.
+func (r ApiArtSearchAPIRequest) Type_(type_ string) ApiArtSearchAPIRequest {
+	r.type_ = &type_
+	return r
+}
+
+// The art material used. Possible values are ferrous_lactate, ink, textile, metal, bronze, canvas, stone, reduced_iron, horn, stoneware, in_shell_walnuts, chalk, velvet, silver, charcoal, gold_leaf, candied_walnuts, porcelain, walnut_halves, jade, cotton, paint, ferrous_fumarate, graphite, cobalt, sandstone, plastic, walnut_pieces, clay, walnuts, cupric_sulfate, ivory, ferric_orthophosphate, earthenware, tin, pen, linen, mahogany, electrolytic_iron, silk, crayon, black_walnuts, brush, beech_wood, terracotta, glass, lead, brass, oil_paint, pencil, leather, gold, marble, watercolor, diamond, iron, ferrous_sulfate, walnut_halves_and_pieces, gouache, wool, ceramic, parchment, cork, limestone, copper_gluconate, paper, pastel, copper, cardboard, plant_material, oak, wood.
+func (r ApiArtSearchAPIRequest) Material(material string) ApiArtSearchAPIRequest {
+	r.material = &material
+	return r
+}
+
+// The art technique used. Possible values are engraving, grinding, embroidering, etching, vitrification, gilding, lithography, knitting, cyanotype, silkscreen, woodcut, printing, drypoint, photolithography, weaving, sawing, casting, glassblowing, block_printing, photographing, forging.
+func (r ApiArtSearchAPIRequest) Technique(technique string) ApiArtSearchAPIRequest {
+	r.technique = &technique
+	return r
+}
+
+// The country or region of origin for the artwork
+func (r ApiArtSearchAPIRequest) Origin(origin string) ApiArtSearchAPIRequest {
+	r.origin = &origin
+	return r
+}
+
+// The number of artworks to skip in range [0,1000]
+func (r ApiArtSearchAPIRequest) Offset(offset int32) ApiArtSearchAPIRequest {
+	r.offset = &offset
+	return r
+}
+
+// The number of artworks to return in range [1,10]
+func (r ApiArtSearchAPIRequest) Number(number int32) ApiArtSearchAPIRequest {
+	r.number = &number
+	return r
+}
+
+func (r ApiArtSearchAPIRequest) Execute() (*ArtSearchAPI200Response, *http.Response, error) {
+	return r.ApiService.ArtSearchAPIExecute(r)
+}
+
+/*
+ArtSearchAPI Art Search API
+
+Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiArtSearchAPIRequest
+*/
+func (a *ArtAPIService) ArtSearchAPI(ctx context.Context) ApiArtSearchAPIRequest {
+	return ApiArtSearchAPIRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ArtSearchAPI200Response
+func (a *ArtAPIService) ArtSearchAPIExecute(r ApiArtSearchAPIRequest) (*ArtSearchAPI200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ArtSearchAPI200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.ArtSearchAPI")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/search-artworks"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.query != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "query", r.query, "")
+	}
+	if r.earliestStartDate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "earliest-start-date", r.earliestStartDate, "")
+	}
+	if r.latestStartDate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "latest-start-date", r.latestStartDate, "")
+	}
+	if r.earliestEndDate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "earliest-end-date", r.earliestEndDate, "")
+	}
+	if r.latestEndDate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "latest-end-date", r.latestEndDate, "")
+	}
+	if r.minRatio != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "min-ratio", r.minRatio, "")
+	}
+	if r.maxRatio != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max-ratio", r.maxRatio, "")
+	}
+	if r.type_ != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+	}
+	if r.material != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "material", r.material, "")
+	}
+	if r.technique != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "technique", r.technique, "")
+	}
+	if r.origin != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "origin", r.origin, "")
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "")
+	}
+	if r.number != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "number", r.number, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiImageToAsciiArtByURLAPIRequest struct {
 	ctx context.Context
@@ -249,6 +506,150 @@ func (a *ArtAPIService) RandomPoemAPIExecute(r ApiRandomPoemAPIRequest) (*Random
 	if r.maxLines != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "max-lines", r.maxLines, "")
 	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["apiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarQueryParams.Add("api-key", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["headerApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["x-api-key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiRetrieveArtworkByIdRequest struct {
+	ctx context.Context
+	ApiService *ArtAPIService
+	id *int32
+}
+
+// The id of the artwork.
+func (r ApiRetrieveArtworkByIdRequest) Id(id int32) ApiRetrieveArtworkByIdRequest {
+	r.id = &id
+	return r
+}
+
+func (r ApiRetrieveArtworkByIdRequest) Execute() (*RetrieveArtworkById200Response, *http.Response, error) {
+	return r.ApiService.RetrieveArtworkByIdExecute(r)
+}
+
+/*
+RetrieveArtworkById Retrieve Artwork by Id
+
+Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiRetrieveArtworkByIdRequest
+*/
+func (a *ArtAPIService) RetrieveArtworkById(ctx context.Context) ApiRetrieveArtworkByIdRequest {
+	return ApiRetrieveArtworkByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return RetrieveArtworkById200Response
+func (a *ArtAPIService) RetrieveArtworkByIdExecute(r ApiRetrieveArtworkByIdRequest) (*RetrieveArtworkById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RetrieveArtworkById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtAPIService.RetrieveArtworkById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/retrieve-artwork"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.id == nil {
+		return localVarReturnValue, nil, reportError("id is required and must be specified")
+	}
+	if *r.id < 0 {
+		return localVarReturnValue, nil, reportError("id must be greater than 0")
+	}
+	if *r.id > 99999999 {
+		return localVarReturnValue, nil, reportError("id must be less than 99999999")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

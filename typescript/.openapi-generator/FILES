@@ -32,6 +32,7 @@ http/http.ts
 http/isomorphic-fetch.ts
 index.ts
 middleware.ts
+models/ArtSearchAPI200Response.ts
 models/ComputeNutritionAPI200Response.ts
 models/ComputeNutritionAPI200ResponseIngredientBreakdownInner.ts
 models/ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.ts
@@ -65,6 +66,7 @@ models/RandomQuoteAPI200Response.ts
 models/RandomRiddleAPI200Response.ts
 models/RandomTriviaAPI200Response.ts
 models/ReadKeyValueFromStoreAPI200Response.ts
+models/RetrieveArtworkById200Response.ts
 models/RetrievePageRankAPI200Response.ts
 models/RetrieveRecipeInformationAPI200Response.ts
 models/RetrieveRecipeInformationAPI200ResponseCredits.ts
