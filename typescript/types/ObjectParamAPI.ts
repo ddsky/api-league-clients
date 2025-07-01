@@ -25,6 +25,8 @@ import { ExtractNewsAPI200ResponseImagesInner } from '../models/ExtractNewsAPI20
 import { ExtractNewsAPI200ResponseVideosInner } from '../models/ExtractNewsAPI200ResponseVideosInner';
 import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
 import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { FindSimilarGamesAPI200Response } from '../models/FindSimilarGamesAPI200Response';
+import { FindSimilarGamesAPI200ResponseResultsInner } from '../models/FindSimilarGamesAPI200ResponseResultsInner';
 import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
 import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
 import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
@@ -35,6 +37,12 @@ import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response
 import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
 import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
 import { RetrieveArtworkById200Response } from '../models/RetrieveArtworkById200Response';
+import { RetrieveGameById200Response } from '../models/RetrieveGameById200Response';
+import { RetrieveGameById200ResponseOffersInner } from '../models/RetrieveGameById200ResponseOffersInner';
+import { RetrieveGameById200ResponseOffersInnerPrice } from '../models/RetrieveGameById200ResponseOffersInnerPrice';
+import { RetrieveGameById200ResponseOfficialStoresInner } from '../models/RetrieveGameById200ResponseOfficialStoresInner';
+import { RetrieveGameById200ResponsePlaytime } from '../models/RetrieveGameById200ResponsePlaytime';
+import { RetrieveGameById200ResponseRating } from '../models/RetrieveGameById200ResponseRating';
 import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
 import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
 import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -79,6 +87,15 @@ import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner 
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+import { SearchGamesAPI200Response } from '../models/SearchGamesAPI200Response';
+import { SearchGamesAPI200ResponseActiveFilterOptionsInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
+import { SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner';
+import { SearchGamesAPI200ResponseFilterOptionsInner } from '../models/SearchGamesAPI200ResponseFilterOptionsInner';
+import { SearchGamesAPI200ResponseFilterOptionsInnerValuesInner } from '../models/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner';
+import { SearchGamesAPI200ResponseResultsInner } from '../models/SearchGamesAPI200ResponseResultsInner';
+import { SearchGamesAPI200ResponseResultsInnerPlatformsInner } from '../models/SearchGamesAPI200ResponseResultsInnerPlatformsInner';
+import { SearchGamesAPI200ResponseResultsInnerRating } from '../models/SearchGamesAPI200ResponseResultsInnerRating';
+import { SearchGamesAPI200ResponseSortingOptionsInner } from '../models/SearchGamesAPI200ResponseSortingOptionsInner';
 import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
 import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
 import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
@@ -1348,6 +1365,141 @@ export class ObjectFoodApi {
      */
     public searchRestaurantsAPI(param: FoodApiSearchRestaurantsAPIRequest, options?: Configuration): Promise<SearchRestaurantsAPI200Response> {
         return this.api.searchRestaurantsAPI(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
+    }
+
+}
+
+import { ObservableGamesApi } from "./ObservableAPI";
+import { GamesApiRequestFactory, GamesApiResponseProcessor} from "../apis/GamesApi";
+
+export interface GamesApiFindSimilarGamesAPIRequest {
+    /**
+     * The id of the game.
+     * @type number
+     * @memberof GamesApifindSimilarGamesAPI
+     */
+    id: number
+    /**
+     * Number of results to return between 1 and 10.
+     * @type number
+     * @memberof GamesApifindSimilarGamesAPI
+     */
+    limit?: number
+}
+
+export interface GamesApiRetrieveGameByIdRequest {
+    /**
+     * The id of the game.
+     * @type number
+     * @memberof GamesApiretrieveGameById
+     */
+    id: number
+}
+
+export interface GamesApiSearchGamesAPIRequest {
+    /**
+     * The search query.
+     * @type string
+     * @memberof GamesApisearchGamesAPI
+     */
+    query?: string
+    /**
+     * Pagination offset (start index) between 0 and 1000.
+     * @type number
+     * @memberof GamesApisearchGamesAPI
+     */
+    offset?: number
+    /**
+     * Number of results to return between 1 and 100.
+     * @type number
+     * @memberof GamesApisearchGamesAPI
+     */
+    limit?: number
+    /**
+     * JSON array of filters
+     * @type string
+     * @memberof GamesApisearchGamesAPI
+     */
+    filters?: string
+    /**
+     * Field to sort by
+     * @type string
+     * @memberof GamesApisearchGamesAPI
+     */
+    sort?: string
+    /**
+     * Sort order (asc or desc)
+     * @type string
+     * @memberof GamesApisearchGamesAPI
+     */
+    sortOrder?: string
+    /**
+     * Whether to generate filter options
+     * @type boolean
+     * @memberof GamesApisearchGamesAPI
+     */
+    generateFilterOptions?: boolean
+}
+
+export class ObjectGamesApi {
+    private api: ObservableGamesApi
+
+    public constructor(configuration: Configuration, requestFactory?: GamesApiRequestFactory, responseProcessor?: GamesApiResponseProcessor) {
+        this.api = new ObservableGamesApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * Find similar games based on a given game using AI. This API allows you to retrieve a list of games that are similar to a specified game, providing recommendations based on various factors such as genre, gameplay mechanics, and user preferences.
+     * Find Similar Games API
+     * @param param the request object
+     */
+    public findSimilarGamesAPIWithHttpInfo(param: GamesApiFindSimilarGamesAPIRequest, options?: Configuration): Promise<HttpInfo<FindSimilarGamesAPI200Response>> {
+        return this.api.findSimilarGamesAPIWithHttpInfo(param.id, param.limit,  options).toPromise();
+    }
+
+    /**
+     * Find similar games based on a given game using AI. This API allows you to retrieve a list of games that are similar to a specified game, providing recommendations based on various factors such as genre, gameplay mechanics, and user preferences.
+     * Find Similar Games API
+     * @param param the request object
+     */
+    public findSimilarGamesAPI(param: GamesApiFindSimilarGamesAPIRequest, options?: Configuration): Promise<FindSimilarGamesAPI200Response> {
+        return this.api.findSimilarGamesAPI(param.id, param.limit,  options).toPromise();
+    }
+
+    /**
+     * This API allows you to retrieve detailed information about a specific game by its unique identifier. Game details include the game\'s name, description, release date, developer, platforms, genres, tags, ratings, screenshots, videos, and more.
+     * Retrieve Game by Id
+     * @param param the request object
+     */
+    public retrieveGameByIdWithHttpInfo(param: GamesApiRetrieveGameByIdRequest, options?: Configuration): Promise<HttpInfo<RetrieveGameById200Response>> {
+        return this.api.retrieveGameByIdWithHttpInfo(param.id,  options).toPromise();
+    }
+
+    /**
+     * This API allows you to retrieve detailed information about a specific game by its unique identifier. Game details include the game\'s name, description, release date, developer, platforms, genres, tags, ratings, screenshots, videos, and more.
+     * Retrieve Game by Id
+     * @param param the request object
+     */
+    public retrieveGameById(param: GamesApiRetrieveGameByIdRequest, options?: Configuration): Promise<RetrieveGameById200Response> {
+        return this.api.retrieveGameById(param.id,  options).toPromise();
+    }
+
+    /**
+     * Search through a vast database of over half a million video games from more than 50 platforms. This API allows you to find games based on various criteria such as genre, platform, release date, and more. The results include detailed information about each game, including ratings, descriptions, and images.
+     * Search Games API
+     * @param param the request object
+     */
+    public searchGamesAPIWithHttpInfo(param: GamesApiSearchGamesAPIRequest = {}, options?: Configuration): Promise<HttpInfo<SearchGamesAPI200Response>> {
+        return this.api.searchGamesAPIWithHttpInfo(param.query, param.offset, param.limit, param.filters, param.sort, param.sortOrder, param.generateFilterOptions,  options).toPromise();
+    }
+
+    /**
+     * Search through a vast database of over half a million video games from more than 50 platforms. This API allows you to find games based on various criteria such as genre, platform, release date, and more. The results include detailed information about each game, including ratings, descriptions, and images.
+     * Search Games API
+     * @param param the request object
+     */
+    public searchGamesAPI(param: GamesApiSearchGamesAPIRequest = {}, options?: Configuration): Promise<SearchGamesAPI200Response> {
+        return this.api.searchGamesAPI(param.query, param.offset, param.limit, param.filters, param.sort, param.sortOrder, param.generateFilterOptions,  options).toPromise();
     }
 
 }

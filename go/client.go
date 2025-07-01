@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.7.0
+API version: 1.8.1
 Contact: mail@apileague.com
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the API League API v1.7.0
+// APIClient manages communication with the API League API v1.8.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -55,6 +55,8 @@ type APIClient struct {
 	BooksAPI *BooksAPIService
 
 	FoodAPI *FoodAPIService
+
+	GamesAPI *GamesAPIService
 
 	HumorAPI *HumorAPIService
 
@@ -92,6 +94,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ArtAPI = (*ArtAPIService)(&c.common)
 	c.BooksAPI = (*BooksAPIService)(&c.common)
 	c.FoodAPI = (*FoodAPIService)(&c.common)
+	c.GamesAPI = (*GamesAPIService)(&c.common)
 	c.HumorAPI = (*HumorAPIService)(&c.common)
 	c.KnowledgeAPI = (*KnowledgeAPIService)(&c.common)
 	c.MathAPI = (*MathAPIService)(&c.common)

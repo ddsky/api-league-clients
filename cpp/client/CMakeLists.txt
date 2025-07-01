@@ -35,6 +35,8 @@ add_library(${PROJECT_NAME}
   OAIExtractNewsAPI_200_response_videos_inner.h
   OAIExtractPublishDateAPI_200_response.h
   OAIFindSimilarBooksAPI_200_response.h
+  OAIFindSimilarGamesAPI_200_response.h
+  OAIFindSimilarGamesAPI_200_response_results_inner.h
   OAIGenerateNonsenseWordAPI_200_response.h
   OAIListWordSynonymsAPI_200_response.h
   OAIPluralizeWordAPI_200_response.h
@@ -45,6 +47,12 @@ add_library(${PROJECT_NAME}
   OAIRandomTriviaAPI_200_response.h
   OAIReadKeyValueFromStoreAPI_200_response.h
   OAIRetrieveArtworkById_200_response.h
+  OAIRetrieveGameById_200_response.h
+  OAIRetrieveGameById_200_response_offers_inner.h
+  OAIRetrieveGameById_200_response_offers_inner_price.h
+  OAIRetrieveGameById_200_response_official_stores_inner.h
+  OAIRetrieveGameById_200_response_playtime.h
+  OAIRetrieveGameById_200_response_rating.h
   OAIRetrievePageRankAPI_200_response.h
   OAIRetrieveRecipeInformationAPI_200_response.h
   OAIRetrieveRecipeInformationAPI_200_response_credits.h
@@ -89,6 +97,15 @@ add_library(${PROJECT_NAME}
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.h
+  OAISearchGamesAPI_200_response.h
+  OAISearchGamesAPI_200_response_active_filter_options_inner.h
+  OAISearchGamesAPI_200_response_active_filter_options_inner_values_inner.h
+  OAISearchGamesAPI_200_response_filter_options_inner.h
+  OAISearchGamesAPI_200_response_filter_options_inner_values_inner.h
+  OAISearchGamesAPI_200_response_results_inner.h
+  OAISearchGamesAPI_200_response_results_inner_platforms_inner.h
+  OAISearchGamesAPI_200_response_results_inner_rating.h
+  OAISearchGamesAPI_200_response_sorting_options_inner.h
   OAISearchGifsAPI_200_response.h
   OAISearchGifsAPI_200_response_images_inner.h
   OAISearchIconsAPI_200_response.h
@@ -125,6 +142,7 @@ add_library(${PROJECT_NAME}
   OAIArtApi.h
   OAIBooksApi.h
   OAIFoodApi.h
+  OAIGamesApi.h
   OAIHumorApi.h
   OAIKnowledgeApi.h
   OAIMathApi.h
@@ -165,6 +183,8 @@ add_library(${PROJECT_NAME}
   OAIExtractNewsAPI_200_response_videos_inner.cpp
   OAIExtractPublishDateAPI_200_response.cpp
   OAIFindSimilarBooksAPI_200_response.cpp
+  OAIFindSimilarGamesAPI_200_response.cpp
+  OAIFindSimilarGamesAPI_200_response_results_inner.cpp
   OAIGenerateNonsenseWordAPI_200_response.cpp
   OAIListWordSynonymsAPI_200_response.cpp
   OAIPluralizeWordAPI_200_response.cpp
@@ -175,6 +195,12 @@ add_library(${PROJECT_NAME}
   OAIRandomTriviaAPI_200_response.cpp
   OAIReadKeyValueFromStoreAPI_200_response.cpp
   OAIRetrieveArtworkById_200_response.cpp
+  OAIRetrieveGameById_200_response.cpp
+  OAIRetrieveGameById_200_response_offers_inner.cpp
+  OAIRetrieveGameById_200_response_offers_inner_price.cpp
+  OAIRetrieveGameById_200_response_official_stores_inner.cpp
+  OAIRetrieveGameById_200_response_playtime.cpp
+  OAIRetrieveGameById_200_response_rating.cpp
   OAIRetrievePageRankAPI_200_response.cpp
   OAIRetrieveRecipeInformationAPI_200_response.cpp
   OAIRetrieveRecipeInformationAPI_200_response_credits.cpp
@@ -219,6 +245,15 @@ add_library(${PROJECT_NAME}
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.cpp
+  OAISearchGamesAPI_200_response.cpp
+  OAISearchGamesAPI_200_response_active_filter_options_inner.cpp
+  OAISearchGamesAPI_200_response_active_filter_options_inner_values_inner.cpp
+  OAISearchGamesAPI_200_response_filter_options_inner.cpp
+  OAISearchGamesAPI_200_response_filter_options_inner_values_inner.cpp
+  OAISearchGamesAPI_200_response_results_inner.cpp
+  OAISearchGamesAPI_200_response_results_inner_platforms_inner.cpp
+  OAISearchGamesAPI_200_response_results_inner_rating.cpp
+  OAISearchGamesAPI_200_response_sorting_options_inner.cpp
   OAISearchGifsAPI_200_response.cpp
   OAISearchGifsAPI_200_response_images_inner.cpp
   OAISearchIconsAPI_200_response.cpp
@@ -255,6 +290,7 @@ add_library(${PROJECT_NAME}
   OAIArtApi.cpp
   OAIBooksApi.cpp
   OAIFoodApi.cpp
+  OAIGamesApi.cpp
   OAIHumorApi.cpp
   OAIKnowledgeApi.cpp
   OAIMathApi.cpp

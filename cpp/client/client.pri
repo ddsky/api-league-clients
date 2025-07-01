@@ -26,6 +26,8 @@ HEADERS += \
     $${PWD}/OAIExtractNewsAPI_200_response_videos_inner.h \
     $${PWD}/OAIExtractPublishDateAPI_200_response.h \
     $${PWD}/OAIFindSimilarBooksAPI_200_response.h \
+    $${PWD}/OAIFindSimilarGamesAPI_200_response.h \
+    $${PWD}/OAIFindSimilarGamesAPI_200_response_results_inner.h \
     $${PWD}/OAIGenerateNonsenseWordAPI_200_response.h \
     $${PWD}/OAIListWordSynonymsAPI_200_response.h \
     $${PWD}/OAIPluralizeWordAPI_200_response.h \
@@ -36,6 +38,12 @@ HEADERS += \
     $${PWD}/OAIRandomTriviaAPI_200_response.h \
     $${PWD}/OAIReadKeyValueFromStoreAPI_200_response.h \
     $${PWD}/OAIRetrieveArtworkById_200_response.h \
+    $${PWD}/OAIRetrieveGameById_200_response.h \
+    $${PWD}/OAIRetrieveGameById_200_response_offers_inner.h \
+    $${PWD}/OAIRetrieveGameById_200_response_offers_inner_price.h \
+    $${PWD}/OAIRetrieveGameById_200_response_official_stores_inner.h \
+    $${PWD}/OAIRetrieveGameById_200_response_playtime.h \
+    $${PWD}/OAIRetrieveGameById_200_response_rating.h \
     $${PWD}/OAIRetrievePageRankAPI_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response.h \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response_credits.h \
@@ -80,6 +88,15 @@ HEADERS += \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.h \
+    $${PWD}/OAISearchGamesAPI_200_response.h \
+    $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner_values_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_filter_options_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_filter_options_inner_values_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner_platforms_inner.h \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner_rating.h \
+    $${PWD}/OAISearchGamesAPI_200_response_sorting_options_inner.h \
     $${PWD}/OAISearchGifsAPI_200_response.h \
     $${PWD}/OAISearchGifsAPI_200_response_images_inner.h \
     $${PWD}/OAISearchIconsAPI_200_response.h \
@@ -117,6 +134,7 @@ HEADERS += \
     $${PWD}/OAIArtApi.h \
     $${PWD}/OAIBooksApi.h \
     $${PWD}/OAIFoodApi.h \
+    $${PWD}/OAIGamesApi.h \
     $${PWD}/OAIHumorApi.h \
     $${PWD}/OAIKnowledgeApi.h \
     $${PWD}/OAIMathApi.h \
@@ -161,6 +179,8 @@ SOURCES += \
     $${PWD}/OAIExtractNewsAPI_200_response_videos_inner.cpp \
     $${PWD}/OAIExtractPublishDateAPI_200_response.cpp \
     $${PWD}/OAIFindSimilarBooksAPI_200_response.cpp \
+    $${PWD}/OAIFindSimilarGamesAPI_200_response.cpp \
+    $${PWD}/OAIFindSimilarGamesAPI_200_response_results_inner.cpp \
     $${PWD}/OAIGenerateNonsenseWordAPI_200_response.cpp \
     $${PWD}/OAIListWordSynonymsAPI_200_response.cpp \
     $${PWD}/OAIPluralizeWordAPI_200_response.cpp \
@@ -171,6 +191,12 @@ SOURCES += \
     $${PWD}/OAIRandomTriviaAPI_200_response.cpp \
     $${PWD}/OAIReadKeyValueFromStoreAPI_200_response.cpp \
     $${PWD}/OAIRetrieveArtworkById_200_response.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response_offers_inner.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response_offers_inner_price.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response_official_stores_inner.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response_playtime.cpp \
+    $${PWD}/OAIRetrieveGameById_200_response_rating.cpp \
     $${PWD}/OAIRetrievePageRankAPI_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response.cpp \
     $${PWD}/OAIRetrieveRecipeInformationAPI_200_response_credits.cpp \
@@ -215,6 +241,15 @@ SOURCES += \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner_values_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_filter_options_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_filter_options_inner_values_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner_platforms_inner.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_results_inner_rating.cpp \
+    $${PWD}/OAISearchGamesAPI_200_response_sorting_options_inner.cpp \
     $${PWD}/OAISearchGifsAPI_200_response.cpp \
     $${PWD}/OAISearchGifsAPI_200_response_images_inner.cpp \
     $${PWD}/OAISearchIconsAPI_200_response.cpp \
@@ -252,6 +287,7 @@ SOURCES += \
     $${PWD}/OAIArtApi.cpp \
     $${PWD}/OAIBooksApi.cpp \
     $${PWD}/OAIFoodApi.cpp \
+    $${PWD}/OAIGamesApi.cpp \
     $${PWD}/OAIHumorApi.cpp \
     $${PWD}/OAIKnowledgeApi.cpp \
     $${PWD}/OAIMathApi.cpp \

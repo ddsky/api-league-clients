@@ -359,6 +359,33 @@ genFindSimilarBooksAPI200Response n =
   FindSimilarBooksAPI200Response
     <$> arbitraryReducedMaybe n -- findSimilarBooksAPI200ResponseSimilarBooks :: Maybe [SearchBooksAPI200ResponseBooksInnerInner]
   
+instance Arbitrary FindSimilarGamesAPI200Response where
+  arbitrary = sized genFindSimilarGamesAPI200Response
+
+genFindSimilarGamesAPI200Response :: Int -> Gen FindSimilarGamesAPI200Response
+genFindSimilarGamesAPI200Response n =
+  FindSimilarGamesAPI200Response
+    <$> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResults :: Maybe [FindSimilarGamesAPI200ResponseResultsInner]
+  
+instance Arbitrary FindSimilarGamesAPI200ResponseResultsInner where
+  arbitrary = sized genFindSimilarGamesAPI200ResponseResultsInner
+
+genFindSimilarGamesAPI200ResponseResultsInner :: Int -> Gen FindSimilarGamesAPI200ResponseResultsInner
+genFindSimilarGamesAPI200ResponseResultsInner n =
+  FindSimilarGamesAPI200ResponseResultsInner
+    <$> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerShortDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerMicroTrailer :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerYear :: Maybe Int
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerGenre :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerLink :: Maybe Text
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerRating :: Maybe SearchGamesAPI200ResponseResultsInnerRating
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerAdultOnly :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerScreenshots :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- findSimilarGamesAPI200ResponseResultsInnerGameplay :: Maybe Text
+  
 instance Arbitrary GenerateNonsenseWordAPI200Response where
   arbitrary = sized genGenerateNonsenseWordAPI200Response
 
@@ -455,6 +482,95 @@ genRetrieveArtworkById200Response n =
     <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseStartDate :: Maybe Int
     <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseEndDate :: Maybe Int
     <*> arbitraryReducedMaybe n -- retrieveArtworkById200ResponseDescription :: Maybe Text
+  
+instance Arbitrary RetrieveGameById200Response where
+  arbitrary = sized genRetrieveGameById200Response
+
+genRetrieveGameById200Response :: Int -> Gen RetrieveGameById200Response
+genRetrieveGameById200Response n =
+  RetrieveGameById200Response
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponseId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseGameplay :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseLink :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseXUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRating :: Maybe RetrieveGameById200ResponseRating
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseShortDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseReleaseDate :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseDeveloper :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytime :: Maybe RetrieveGameById200ResponsePlaytime
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlatforms :: Maybe [SearchGamesAPI200ResponseResultsInnerPlatformsInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseTags :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseGenres :: Maybe [SearchGamesAPI200ResponseResultsInnerPlatformsInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseGenre :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseThemes :: Maybe [SearchGamesAPI200ResponseResultsInnerPlatformsInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseAdultOnly :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlayModes :: Maybe [SearchGamesAPI200ResponseResultsInnerPlatformsInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseScreenshots :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseVideos :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffers :: Maybe [RetrieveGameById200ResponseOffersInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOfficialStores :: Maybe [RetrieveGameById200ResponseOfficialStoresInner]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseMicroTrailer :: Maybe Text
+  
+instance Arbitrary RetrieveGameById200ResponseOffersInner where
+  arbitrary = sized genRetrieveGameById200ResponseOffersInner
+
+genRetrieveGameById200ResponseOffersInner :: Int -> Gen RetrieveGameById200ResponseOffersInner
+genRetrieveGameById200ResponseOffersInner n =
+  RetrieveGameById200ResponseOffersInner
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerStoreName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerTitle :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPrice :: Maybe RetrieveGameById200ResponseOffersInnerPrice
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPlatform :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerUrl :: Maybe Text
+  
+instance Arbitrary RetrieveGameById200ResponseOffersInnerPrice where
+  arbitrary = sized genRetrieveGameById200ResponseOffersInnerPrice
+
+genRetrieveGameById200ResponseOffersInnerPrice :: Int -> Gen RetrieveGameById200ResponseOffersInnerPrice
+genRetrieveGameById200ResponseOffersInnerPrice n =
+  RetrieveGameById200ResponseOffersInnerPrice
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPriceCurrency :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPriceDiscountPercent :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPriceValue :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOffersInnerPriceInitial :: Maybe Double
+  
+instance Arbitrary RetrieveGameById200ResponseOfficialStoresInner where
+  arbitrary = sized genRetrieveGameById200ResponseOfficialStoresInner
+
+genRetrieveGameById200ResponseOfficialStoresInner :: Int -> Gen RetrieveGameById200ResponseOfficialStoresInner
+genRetrieveGameById200ResponseOfficialStoresInner n =
+  RetrieveGameById200ResponseOfficialStoresInner
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponseOfficialStoresInnerUrl :: Maybe Text
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseOfficialStoresInnerSource :: Maybe Text
+  
+instance Arbitrary RetrieveGameById200ResponsePlaytime where
+  arbitrary = sized genRetrieveGameById200ResponsePlaytime
+
+genRetrieveGameById200ResponsePlaytime :: Int -> Gen RetrieveGameById200ResponsePlaytime
+genRetrieveGameById200ResponsePlaytime n =
+  RetrieveGameById200ResponsePlaytime
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimePercentiles :: Maybe [Int]
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimeMin :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimeMedian :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimeMax :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimeMean :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponsePlaytimeMentions :: Maybe Int
+  
+instance Arbitrary RetrieveGameById200ResponseRating where
+  arbitrary = sized genRetrieveGameById200ResponseRating
+
+genRetrieveGameById200ResponseRating :: Int -> Gen RetrieveGameById200ResponseRating
+genRetrieveGameById200ResponseRating n =
+  RetrieveGameById200ResponseRating
+    <$> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingCount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingCountCritics :: Maybe Int
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingMeanPlayers :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingMeanCritics :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingMean :: Maybe Double
+    <*> arbitraryReducedMaybe n -- retrieveGameById200ResponseRatingCountPlayers :: Maybe Int
   
 instance Arbitrary RetrievePageRankAPI200Response where
   arbitrary = sized genRetrievePageRankAPI200Response
@@ -960,6 +1076,111 @@ genSearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing n =
   SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
     <$> arbitraryReducedMaybe n -- searchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServingAmount :: Maybe Int
     <*> arbitraryReducedMaybe n -- searchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServingUnit :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200Response where
+  arbitrary = sized genSearchGamesAPI200Response
+
+genSearchGamesAPI200Response :: Int -> Gen SearchGamesAPI200Response
+genSearchGamesAPI200Response n =
+  SearchGamesAPI200Response
+    <$> arbitraryReducedMaybeValue n -- searchGamesAPI200ResponseSorting :: Maybe A.Value
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptions :: Maybe [SearchGamesAPI200ResponseActiveFilterOptionsInner]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseQuery :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseTotalResults :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseLimit :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseOffset :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResults :: Maybe [SearchGamesAPI200ResponseResultsInner]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptions :: Maybe [SearchGamesAPI200ResponseFilterOptionsInner]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseSortingOptions :: Maybe [SearchGamesAPI200ResponseSortingOptionsInner]
+  
+instance Arbitrary SearchGamesAPI200ResponseActiveFilterOptionsInner where
+  arbitrary = sized genSearchGamesAPI200ResponseActiveFilterOptionsInner
+
+genSearchGamesAPI200ResponseActiveFilterOptionsInner :: Int -> Gen SearchGamesAPI200ResponseActiveFilterOptionsInner
+genSearchGamesAPI200ResponseActiveFilterOptionsInner n =
+  SearchGamesAPI200ResponseActiveFilterOptionsInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptionsInnerKey :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptionsInnerConnection :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptionsInnerValues :: Maybe [SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner]
+  
+instance Arbitrary SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner where
+  arbitrary = sized genSearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner
+
+genSearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner :: Int -> Gen SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner
+genSearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner n =
+  SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptionsInnerValuesInnerMatch :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseActiveFilterOptionsInnerValuesInnerValue :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200ResponseFilterOptionsInner where
+  arbitrary = sized genSearchGamesAPI200ResponseFilterOptionsInner
+
+genSearchGamesAPI200ResponseFilterOptionsInner :: Int -> Gen SearchGamesAPI200ResponseFilterOptionsInner
+genSearchGamesAPI200ResponseFilterOptionsInner n =
+  SearchGamesAPI200ResponseFilterOptionsInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerFilterType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerKey :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerValues :: Maybe [SearchGamesAPI200ResponseFilterOptionsInnerValuesInner]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerFilterConnection :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200ResponseFilterOptionsInnerValuesInner where
+  arbitrary = sized genSearchGamesAPI200ResponseFilterOptionsInnerValuesInner
+
+genSearchGamesAPI200ResponseFilterOptionsInnerValuesInner :: Int -> Gen SearchGamesAPI200ResponseFilterOptionsInnerValuesInner
+genSearchGamesAPI200ResponseFilterOptionsInnerValuesInner n =
+  SearchGamesAPI200ResponseFilterOptionsInnerValuesInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerValuesInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerValuesInnerCount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseFilterOptionsInnerValuesInnerKey :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200ResponseResultsInner where
+  arbitrary = sized genSearchGamesAPI200ResponseResultsInner
+
+genSearchGamesAPI200ResponseResultsInner :: Int -> Gen SearchGamesAPI200ResponseResultsInner
+genSearchGamesAPI200ResponseResultsInner n =
+  SearchGamesAPI200ResponseResultsInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerImage :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerShortDescription :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerYear :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerLink :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerRating :: Maybe SearchGamesAPI200ResponseResultsInnerRating
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerAdultOnly :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerScreenshots :: Maybe [Text]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerPlatforms :: Maybe [SearchGamesAPI200ResponseResultsInnerPlatformsInner]
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerMicroTrailer :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerGenre :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerId :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerGameplay :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200ResponseResultsInnerPlatformsInner where
+  arbitrary = sized genSearchGamesAPI200ResponseResultsInnerPlatformsInner
+
+genSearchGamesAPI200ResponseResultsInnerPlatformsInner :: Int -> Gen SearchGamesAPI200ResponseResultsInnerPlatformsInner
+genSearchGamesAPI200ResponseResultsInnerPlatformsInner n =
+  SearchGamesAPI200ResponseResultsInnerPlatformsInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerPlatformsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerPlatformsInnerValue :: Maybe Text
+  
+instance Arbitrary SearchGamesAPI200ResponseResultsInnerRating where
+  arbitrary = sized genSearchGamesAPI200ResponseResultsInnerRating
+
+genSearchGamesAPI200ResponseResultsInnerRating :: Int -> Gen SearchGamesAPI200ResponseResultsInnerRating
+genSearchGamesAPI200ResponseResultsInnerRating n =
+  SearchGamesAPI200ResponseResultsInnerRating
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerRatingCount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseResultsInnerRatingMean :: Maybe Double
+  
+instance Arbitrary SearchGamesAPI200ResponseSortingOptionsInner where
+  arbitrary = sized genSearchGamesAPI200ResponseSortingOptionsInner
+
+genSearchGamesAPI200ResponseSortingOptionsInner :: Int -> Gen SearchGamesAPI200ResponseSortingOptionsInner
+genSearchGamesAPI200ResponseSortingOptionsInner n =
+  SearchGamesAPI200ResponseSortingOptionsInner
+    <$> arbitraryReducedMaybe n -- searchGamesAPI200ResponseSortingOptionsInnerName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseSortingOptionsInnerKey :: Maybe Text
+    <*> arbitraryReducedMaybe n -- searchGamesAPI200ResponseSortingOptionsInnerSort :: Maybe Text
   
 instance Arbitrary SearchGifsAPI200Response where
   arbitrary = sized genSearchGifsAPI200Response

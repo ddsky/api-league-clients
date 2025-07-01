@@ -106,6 +106,9 @@ Class | Method | HTTP request | Description
 *FoodApi* | [**searchDrinksAPI**](docs/Api/FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API
 *FoodApi* | [**searchRecipesAPI**](docs/Api/FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API
 *FoodApi* | [**searchRestaurantsAPI**](docs/Api/FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API
+*GamesApi* | [**findSimilarGamesAPI**](docs/Api/GamesApi.md#findsimilargamesapi) | **GET** /list-similar-games | Find Similar Games API
+*GamesApi* | [**retrieveGameById**](docs/Api/GamesApi.md#retrievegamebyid) | **GET** /retrieve-game | Retrieve Game by Id
+*GamesApi* | [**searchGamesAPI**](docs/Api/GamesApi.md#searchgamesapi) | **GET** /search-games | Search Games API
 *HumorApi* | [**generateNonsenseWordAPI**](docs/Api/HumorApi.md#generatenonsensewordapi) | **GET** /generate-nonsense-word | Generate Nonsense Word API
 *HumorApi* | [**randomJokeAPI**](docs/Api/HumorApi.md#randomjokeapi) | **GET** /retrieve-random-joke | Random Joke API
 *HumorApi* | [**randomMemeAPI**](docs/Api/HumorApi.md#randommemeapi) | **GET** /retrieve-random-meme | Random Meme API
@@ -172,6 +175,8 @@ Class | Method | HTTP request | Description
 - [ExtractNewsAPI200ResponseVideosInner](docs/Model/ExtractNewsAPI200ResponseVideosInner.md)
 - [ExtractPublishDateAPI200Response](docs/Model/ExtractPublishDateAPI200Response.md)
 - [FindSimilarBooksAPI200Response](docs/Model/FindSimilarBooksAPI200Response.md)
+- [FindSimilarGamesAPI200Response](docs/Model/FindSimilarGamesAPI200Response.md)
+- [FindSimilarGamesAPI200ResponseResultsInner](docs/Model/FindSimilarGamesAPI200ResponseResultsInner.md)
 - [GenerateNonsenseWordAPI200Response](docs/Model/GenerateNonsenseWordAPI200Response.md)
 - [ListWordSynonymsAPI200Response](docs/Model/ListWordSynonymsAPI200Response.md)
 - [PluralizeWordAPI200Response](docs/Model/PluralizeWordAPI200Response.md)
@@ -182,6 +187,12 @@ Class | Method | HTTP request | Description
 - [RandomTriviaAPI200Response](docs/Model/RandomTriviaAPI200Response.md)
 - [ReadKeyValueFromStoreAPI200Response](docs/Model/ReadKeyValueFromStoreAPI200Response.md)
 - [RetrieveArtworkById200Response](docs/Model/RetrieveArtworkById200Response.md)
+- [RetrieveGameById200Response](docs/Model/RetrieveGameById200Response.md)
+- [RetrieveGameById200ResponseOffersInner](docs/Model/RetrieveGameById200ResponseOffersInner.md)
+- [RetrieveGameById200ResponseOffersInnerPrice](docs/Model/RetrieveGameById200ResponseOffersInnerPrice.md)
+- [RetrieveGameById200ResponseOfficialStoresInner](docs/Model/RetrieveGameById200ResponseOfficialStoresInner.md)
+- [RetrieveGameById200ResponsePlaytime](docs/Model/RetrieveGameById200ResponsePlaytime.md)
+- [RetrieveGameById200ResponseRating](docs/Model/RetrieveGameById200ResponseRating.md)
 - [RetrievePageRankAPI200Response](docs/Model/RetrievePageRankAPI200Response.md)
 - [RetrieveRecipeInformationAPI200Response](docs/Model/RetrieveRecipeInformationAPI200Response.md)
 - [RetrieveRecipeInformationAPI200ResponseCredits](docs/Model/RetrieveRecipeInformationAPI200ResponseCredits.md)
@@ -226,6 +237,15 @@ Class | Method | HTTP request | Description
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md)
+- [SearchGamesAPI200Response](docs/Model/SearchGamesAPI200Response.md)
+- [SearchGamesAPI200ResponseActiveFilterOptionsInner](docs/Model/SearchGamesAPI200ResponseActiveFilterOptionsInner.md)
+- [SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner](docs/Model/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner.md)
+- [SearchGamesAPI200ResponseFilterOptionsInner](docs/Model/SearchGamesAPI200ResponseFilterOptionsInner.md)
+- [SearchGamesAPI200ResponseFilterOptionsInnerValuesInner](docs/Model/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md)
+- [SearchGamesAPI200ResponseResultsInner](docs/Model/SearchGamesAPI200ResponseResultsInner.md)
+- [SearchGamesAPI200ResponseResultsInnerPlatformsInner](docs/Model/SearchGamesAPI200ResponseResultsInnerPlatformsInner.md)
+- [SearchGamesAPI200ResponseResultsInnerRating](docs/Model/SearchGamesAPI200ResponseResultsInnerRating.md)
+- [SearchGamesAPI200ResponseSortingOptionsInner](docs/Model/SearchGamesAPI200ResponseSortingOptionsInner.md)
 - [SearchGifsAPI200Response](docs/Model/SearchGifsAPI200Response.md)
 - [SearchGifsAPI200ResponseImagesInner](docs/Model/SearchGifsAPI200ResponseImagesInner.md)
 - [SearchIconsAPI200Response](docs/Model/SearchIconsAPI200Response.md)
@@ -294,7 +314,7 @@ mail@apileague.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.7.0`
-    - Package version: `1.7.0`
+- API version: `1.8.1`
+    - Package version: `1.8.1`
     - Generator version: `7.8.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -8,5 +8,5 @@ export * from "./servers";
 export { RequiredError } from "./apis/baseapi";
 
 export { PromiseMiddleware as Middleware } from './middleware';
-export { PromiseArtApi as ArtApi,  PromiseBooksApi as BooksApi,  PromiseFoodApi as FoodApi,  PromiseHumorApi as HumorApi,  PromiseKnowledgeApi as KnowledgeApi,  PromiseMathApi as MathApi,  PromiseMediaApi as MediaApi,  PromiseNewsApi as NewsApi,  PromiseStorageApi as StorageApi,  PromiseTextApi as TextApi,  PromiseWebApi as WebApi } from './types/PromiseAPI';
+export { PromiseArtApi as ArtApi,  PromiseBooksApi as BooksApi,  PromiseFoodApi as FoodApi,  PromiseGamesApi as GamesApi,  PromiseHumorApi as HumorApi,  PromiseKnowledgeApi as KnowledgeApi,  PromiseMathApi as MathApi,  PromiseMediaApi as MediaApi,  PromiseNewsApi as NewsApi,  PromiseStorageApi as StorageApi,  PromiseTextApi as TextApi,  PromiseWebApi as WebApi } from './types/PromiseAPI';
 

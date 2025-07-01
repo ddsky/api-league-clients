@@ -1,4 +1,4 @@
-(defproject api-league "1.7.0"
+(defproject api-league "1.8.1"
   :description "API League is a Hub for World Class APIs."
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [metosin/spec-tools "0.7.0"]

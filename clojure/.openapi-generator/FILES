@@ -5,6 +5,7 @@ project.clj
 src/api_league/api/art.clj
 src/api_league/api/books.clj
 src/api_league/api/food.clj
+src/api_league/api/games.clj
 src/api_league/api/humor.clj
 src/api_league/api/knowledge.clj
 src/api_league/api/math.clj
@@ -38,6 +39,8 @@ src/api_league/specs/extract_news_api_200_response_images_inner.clj
 src/api_league/specs/extract_news_api_200_response_videos_inner.clj
 src/api_league/specs/extract_publish_date_api_200_response.clj
 src/api_league/specs/find_similar_books_api_200_response.clj
+src/api_league/specs/find_similar_games_api_200_response.clj
+src/api_league/specs/find_similar_games_api_200_response_results_inner.clj
 src/api_league/specs/generate_nonsense_word_api_200_response.clj
 src/api_league/specs/list_word_synonyms_api_200_response.clj
 src/api_league/specs/pluralize_word_api_200_response.clj
@@ -48,6 +51,12 @@ src/api_league/specs/random_riddle_api_200_response.clj
 src/api_league/specs/random_trivia_api_200_response.clj
 src/api_league/specs/read_key_value_from_store_api_200_response.clj
 src/api_league/specs/retrieve_artwork_by_id_200_response.clj
+src/api_league/specs/retrieve_game_by_id_200_response.clj
+src/api_league/specs/retrieve_game_by_id_200_response_offers_inner.clj
+src/api_league/specs/retrieve_game_by_id_200_response_offers_inner_price.clj
+src/api_league/specs/retrieve_game_by_id_200_response_official_stores_inner.clj
+src/api_league/specs/retrieve_game_by_id_200_response_playtime.clj
+src/api_league/specs/retrieve_game_by_id_200_response_rating.clj
 src/api_league/specs/retrieve_page_rank_api_200_response.clj
 src/api_league/specs/retrieve_recipe_information_api_200_response.clj
 src/api_league/specs/retrieve_recipe_information_api_200_response_credits.clj
@@ -92,6 +101,15 @@ src/api_league/specs/search_drinks_api_200_response_drinks_inner_nutrition_ingre
 src/api_league/specs/search_drinks_api_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.clj
 src/api_league/specs/search_drinks_api_200_response_drinks_inner_nutrition_nutrients_inner.clj
 src/api_league/specs/search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving.clj
+src/api_league/specs/search_games_api_200_response.clj
+src/api_league/specs/search_games_api_200_response_active_filter_options_inner.clj
+src/api_league/specs/search_games_api_200_response_active_filter_options_inner_values_inner.clj
+src/api_league/specs/search_games_api_200_response_filter_options_inner.clj
+src/api_league/specs/search_games_api_200_response_filter_options_inner_values_inner.clj
+src/api_league/specs/search_games_api_200_response_results_inner.clj
+src/api_league/specs/search_games_api_200_response_results_inner_platforms_inner.clj
+src/api_league/specs/search_games_api_200_response_results_inner_rating.clj
+src/api_league/specs/search_games_api_200_response_sorting_options_inner.clj
 src/api_league/specs/search_gifs_api_200_response.clj
 src/api_league/specs/search_gifs_api_200_response_images_inner.clj
 src/api_league/specs/search_icons_api_200_response.clj

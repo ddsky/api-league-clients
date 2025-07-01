@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.7.0</version>
+    <version>1.8.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.7.0"
+compile "com.apileague:android-client:1.8.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.7.0.jar
+- target/android-client-1.8.1.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -106,6 +106,9 @@ Class | Method | HTTP request | Description
 *FoodApi* | [**searchDrinksAPI**](docs/FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
 *FoodApi* | [**searchRecipesAPI**](docs/FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
 *FoodApi* | [**searchRestaurantsAPI**](docs/FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
+*GamesApi* | [**findSimilarGamesAPI**](docs/GamesApi.md#findSimilarGamesAPI) | **GET** /list-similar-games | Find Similar Games API
+*GamesApi* | [**retrieveGameById**](docs/GamesApi.md#retrieveGameById) | **GET** /retrieve-game | Retrieve Game by Id
+*GamesApi* | [**searchGamesAPI**](docs/GamesApi.md#searchGamesAPI) | **GET** /search-games | Search Games API
 *HumorApi* | [**generateNonsenseWordAPI**](docs/HumorApi.md#generateNonsenseWordAPI) | **GET** /generate-nonsense-word | Generate Nonsense Word API
 *HumorApi* | [**randomJokeAPI**](docs/HumorApi.md#randomJokeAPI) | **GET** /retrieve-random-joke | Random Joke API
 *HumorApi* | [**randomMemeAPI**](docs/HumorApi.md#randomMemeAPI) | **GET** /retrieve-random-meme | Random Meme API
@@ -173,6 +176,8 @@ Class | Method | HTTP request | Description
  - [ExtractNewsAPI200ResponseVideosInner](docs/ExtractNewsAPI200ResponseVideosInner.md)
  - [ExtractPublishDateAPI200Response](docs/ExtractPublishDateAPI200Response.md)
  - [FindSimilarBooksAPI200Response](docs/FindSimilarBooksAPI200Response.md)
+ - [FindSimilarGamesAPI200Response](docs/FindSimilarGamesAPI200Response.md)
+ - [FindSimilarGamesAPI200ResponseResultsInner](docs/FindSimilarGamesAPI200ResponseResultsInner.md)
  - [GenerateNonsenseWordAPI200Response](docs/GenerateNonsenseWordAPI200Response.md)
  - [ListWordSynonymsAPI200Response](docs/ListWordSynonymsAPI200Response.md)
  - [PluralizeWordAPI200Response](docs/PluralizeWordAPI200Response.md)
@@ -183,6 +188,12 @@ Class | Method | HTTP request | Description
  - [RandomTriviaAPI200Response](docs/RandomTriviaAPI200Response.md)
  - [ReadKeyValueFromStoreAPI200Response](docs/ReadKeyValueFromStoreAPI200Response.md)
  - [RetrieveArtworkById200Response](docs/RetrieveArtworkById200Response.md)
+ - [RetrieveGameById200Response](docs/RetrieveGameById200Response.md)
+ - [RetrieveGameById200ResponseOffersInner](docs/RetrieveGameById200ResponseOffersInner.md)
+ - [RetrieveGameById200ResponseOffersInnerPrice](docs/RetrieveGameById200ResponseOffersInnerPrice.md)
+ - [RetrieveGameById200ResponseOfficialStoresInner](docs/RetrieveGameById200ResponseOfficialStoresInner.md)
+ - [RetrieveGameById200ResponsePlaytime](docs/RetrieveGameById200ResponsePlaytime.md)
+ - [RetrieveGameById200ResponseRating](docs/RetrieveGameById200ResponseRating.md)
  - [RetrievePageRankAPI200Response](docs/RetrievePageRankAPI200Response.md)
  - [RetrieveRecipeInformationAPI200Response](docs/RetrieveRecipeInformationAPI200Response.md)
  - [RetrieveRecipeInformationAPI200ResponseCredits](docs/RetrieveRecipeInformationAPI200ResponseCredits.md)
@@ -227,6 +238,15 @@ Class | Method | HTTP request | Description
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md)
+ - [SearchGamesAPI200Response](docs/SearchGamesAPI200Response.md)
+ - [SearchGamesAPI200ResponseActiveFilterOptionsInner](docs/SearchGamesAPI200ResponseActiveFilterOptionsInner.md)
+ - [SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner](docs/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner.md)
+ - [SearchGamesAPI200ResponseFilterOptionsInner](docs/SearchGamesAPI200ResponseFilterOptionsInner.md)
+ - [SearchGamesAPI200ResponseFilterOptionsInnerValuesInner](docs/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md)
+ - [SearchGamesAPI200ResponseResultsInner](docs/SearchGamesAPI200ResponseResultsInner.md)
+ - [SearchGamesAPI200ResponseResultsInnerPlatformsInner](docs/SearchGamesAPI200ResponseResultsInnerPlatformsInner.md)
+ - [SearchGamesAPI200ResponseResultsInnerRating](docs/SearchGamesAPI200ResponseResultsInnerRating.md)
+ - [SearchGamesAPI200ResponseSortingOptionsInner](docs/SearchGamesAPI200ResponseSortingOptionsInner.md)
  - [SearchGifsAPI200Response](docs/SearchGifsAPI200Response.md)
  - [SearchGifsAPI200ResponseImagesInner](docs/SearchGifsAPI200ResponseImagesInner.md)
  - [SearchIconsAPI200Response](docs/SearchIconsAPI200Response.md)

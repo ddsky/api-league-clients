@@ -8,7 +8,7 @@ description:    .
                 .
                 base path: https://api.apileague.com
                 .
-                API League API version: 1.7.0
+                API League API version: 1.8.1
                 .
                 OpenAPI version: 3.0.0
                 .
@@ -69,6 +69,7 @@ library
       APILeague.API.Art
       APILeague.API.Books
       APILeague.API.Food
+      APILeague.API.Games
       APILeague.API.Humor
       APILeague.API.Knowledge
       APILeague.API.Math

@@ -230,6 +230,10 @@ class ApiClient {
           return ExtractPublishDateAPI200Response.fromJson(value);
         case 'FindSimilarBooksAPI200Response':
           return FindSimilarBooksAPI200Response.fromJson(value);
+        case 'FindSimilarGamesAPI200Response':
+          return FindSimilarGamesAPI200Response.fromJson(value);
+        case 'FindSimilarGamesAPI200ResponseResultsInner':
+          return FindSimilarGamesAPI200ResponseResultsInner.fromJson(value);
         case 'GenerateNonsenseWordAPI200Response':
           return GenerateNonsenseWordAPI200Response.fromJson(value);
         case 'ListWordSynonymsAPI200Response':
@@ -250,6 +254,18 @@ class ApiClient {
           return ReadKeyValueFromStoreAPI200Response.fromJson(value);
         case 'RetrieveArtworkById200Response':
           return RetrieveArtworkById200Response.fromJson(value);
+        case 'RetrieveGameById200Response':
+          return RetrieveGameById200Response.fromJson(value);
+        case 'RetrieveGameById200ResponseOffersInner':
+          return RetrieveGameById200ResponseOffersInner.fromJson(value);
+        case 'RetrieveGameById200ResponseOffersInnerPrice':
+          return RetrieveGameById200ResponseOffersInnerPrice.fromJson(value);
+        case 'RetrieveGameById200ResponseOfficialStoresInner':
+          return RetrieveGameById200ResponseOfficialStoresInner.fromJson(value);
+        case 'RetrieveGameById200ResponsePlaytime':
+          return RetrieveGameById200ResponsePlaytime.fromJson(value);
+        case 'RetrieveGameById200ResponseRating':
+          return RetrieveGameById200ResponseRating.fromJson(value);
         case 'RetrievePageRankAPI200Response':
           return RetrievePageRankAPI200Response.fromJson(value);
         case 'RetrieveRecipeInformationAPI200Response':
@@ -338,6 +354,24 @@ class ApiClient {
           return SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.fromJson(value);
+        case 'SearchGamesAPI200Response':
+          return SearchGamesAPI200Response.fromJson(value);
+        case 'SearchGamesAPI200ResponseActiveFilterOptionsInner':
+          return SearchGamesAPI200ResponseActiveFilterOptionsInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner':
+          return SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseFilterOptionsInner':
+          return SearchGamesAPI200ResponseFilterOptionsInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseFilterOptionsInnerValuesInner':
+          return SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseResultsInner':
+          return SearchGamesAPI200ResponseResultsInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseResultsInnerPlatformsInner':
+          return SearchGamesAPI200ResponseResultsInnerPlatformsInner.fromJson(value);
+        case 'SearchGamesAPI200ResponseResultsInnerRating':
+          return SearchGamesAPI200ResponseResultsInnerRating.fromJson(value);
+        case 'SearchGamesAPI200ResponseSortingOptionsInner':
+          return SearchGamesAPI200ResponseSortingOptionsInner.fromJson(value);
         case 'SearchGifsAPI200Response':
           return SearchGifsAPI200Response.fromJson(value);
         case 'SearchGifsAPI200ResponseImagesInner':

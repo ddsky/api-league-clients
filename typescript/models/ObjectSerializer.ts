@@ -22,6 +22,8 @@ export * from '../models/ExtractNewsAPI200ResponseImagesInner';
 export * from '../models/ExtractNewsAPI200ResponseVideosInner';
 export * from '../models/ExtractPublishDateAPI200Response';
 export * from '../models/FindSimilarBooksAPI200Response';
+export * from '../models/FindSimilarGamesAPI200Response';
+export * from '../models/FindSimilarGamesAPI200ResponseResultsInner';
 export * from '../models/GenerateNonsenseWordAPI200Response';
 export * from '../models/ListWordSynonymsAPI200Response';
 export * from '../models/PluralizeWordAPI200Response';
@@ -32,6 +34,12 @@ export * from '../models/RandomRiddleAPI200Response';
 export * from '../models/RandomTriviaAPI200Response';
 export * from '../models/ReadKeyValueFromStoreAPI200Response';
 export * from '../models/RetrieveArtworkById200Response';
+export * from '../models/RetrieveGameById200Response';
+export * from '../models/RetrieveGameById200ResponseOffersInner';
+export * from '../models/RetrieveGameById200ResponseOffersInnerPrice';
+export * from '../models/RetrieveGameById200ResponseOfficialStoresInner';
+export * from '../models/RetrieveGameById200ResponsePlaytime';
+export * from '../models/RetrieveGameById200ResponseRating';
 export * from '../models/RetrievePageRankAPI200Response';
 export * from '../models/RetrieveRecipeInformationAPI200Response';
 export * from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -76,6 +84,15 @@ export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredien
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+export * from '../models/SearchGamesAPI200Response';
+export * from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
+export * from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner';
+export * from '../models/SearchGamesAPI200ResponseFilterOptionsInner';
+export * from '../models/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner';
+export * from '../models/SearchGamesAPI200ResponseResultsInner';
+export * from '../models/SearchGamesAPI200ResponseResultsInnerPlatformsInner';
+export * from '../models/SearchGamesAPI200ResponseResultsInnerRating';
+export * from '../models/SearchGamesAPI200ResponseSortingOptionsInner';
 export * from '../models/SearchGifsAPI200Response';
 export * from '../models/SearchGifsAPI200ResponseImagesInner';
 export * from '../models/SearchIconsAPI200Response';
@@ -134,6 +151,8 @@ import { ExtractNewsAPI200ResponseImagesInner } from '../models/ExtractNewsAPI20
 import { ExtractNewsAPI200ResponseVideosInner } from '../models/ExtractNewsAPI200ResponseVideosInner';
 import { ExtractPublishDateAPI200Response } from '../models/ExtractPublishDateAPI200Response';
 import { FindSimilarBooksAPI200Response } from '../models/FindSimilarBooksAPI200Response';
+import { FindSimilarGamesAPI200Response } from '../models/FindSimilarGamesAPI200Response';
+import { FindSimilarGamesAPI200ResponseResultsInner } from '../models/FindSimilarGamesAPI200ResponseResultsInner';
 import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
 import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
 import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
@@ -144,6 +163,12 @@ import { RandomRiddleAPI200Response } from '../models/RandomRiddleAPI200Response
 import { RandomTriviaAPI200Response } from '../models/RandomTriviaAPI200Response';
 import { ReadKeyValueFromStoreAPI200Response } from '../models/ReadKeyValueFromStoreAPI200Response';
 import { RetrieveArtworkById200Response } from '../models/RetrieveArtworkById200Response';
+import { RetrieveGameById200Response } from '../models/RetrieveGameById200Response';
+import { RetrieveGameById200ResponseOffersInner } from '../models/RetrieveGameById200ResponseOffersInner';
+import { RetrieveGameById200ResponseOffersInnerPrice } from '../models/RetrieveGameById200ResponseOffersInnerPrice';
+import { RetrieveGameById200ResponseOfficialStoresInner } from '../models/RetrieveGameById200ResponseOfficialStoresInner';
+import { RetrieveGameById200ResponsePlaytime } from '../models/RetrieveGameById200ResponsePlaytime';
+import { RetrieveGameById200ResponseRating } from '../models/RetrieveGameById200ResponseRating';
 import { RetrievePageRankAPI200Response } from '../models/RetrievePageRankAPI200Response';
 import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
 import { RetrieveRecipeInformationAPI200ResponseCredits } from '../models/RetrieveRecipeInformationAPI200ResponseCredits';
@@ -188,6 +213,15 @@ import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner 
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
+import { SearchGamesAPI200Response } from '../models/SearchGamesAPI200Response';
+import { SearchGamesAPI200ResponseActiveFilterOptionsInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
+import { SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner';
+import { SearchGamesAPI200ResponseFilterOptionsInner } from '../models/SearchGamesAPI200ResponseFilterOptionsInner';
+import { SearchGamesAPI200ResponseFilterOptionsInnerValuesInner } from '../models/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner';
+import { SearchGamesAPI200ResponseResultsInner } from '../models/SearchGamesAPI200ResponseResultsInner';
+import { SearchGamesAPI200ResponseResultsInnerPlatformsInner } from '../models/SearchGamesAPI200ResponseResultsInnerPlatformsInner';
+import { SearchGamesAPI200ResponseResultsInnerRating } from '../models/SearchGamesAPI200ResponseResultsInnerRating';
+import { SearchGamesAPI200ResponseSortingOptionsInner } from '../models/SearchGamesAPI200ResponseSortingOptionsInner';
 import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
 import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
 import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
@@ -262,6 +296,8 @@ let typeMap: {[index: string]: any} = {
     "ExtractNewsAPI200ResponseVideosInner": ExtractNewsAPI200ResponseVideosInner,
     "ExtractPublishDateAPI200Response": ExtractPublishDateAPI200Response,
     "FindSimilarBooksAPI200Response": FindSimilarBooksAPI200Response,
+    "FindSimilarGamesAPI200Response": FindSimilarGamesAPI200Response,
+    "FindSimilarGamesAPI200ResponseResultsInner": FindSimilarGamesAPI200ResponseResultsInner,
     "GenerateNonsenseWordAPI200Response": GenerateNonsenseWordAPI200Response,
     "ListWordSynonymsAPI200Response": ListWordSynonymsAPI200Response,
     "PluralizeWordAPI200Response": PluralizeWordAPI200Response,
@@ -272,6 +308,12 @@ let typeMap: {[index: string]: any} = {
     "RandomTriviaAPI200Response": RandomTriviaAPI200Response,
     "ReadKeyValueFromStoreAPI200Response": ReadKeyValueFromStoreAPI200Response,
     "RetrieveArtworkById200Response": RetrieveArtworkById200Response,
+    "RetrieveGameById200Response": RetrieveGameById200Response,
+    "RetrieveGameById200ResponseOffersInner": RetrieveGameById200ResponseOffersInner,
+    "RetrieveGameById200ResponseOffersInnerPrice": RetrieveGameById200ResponseOffersInnerPrice,
+    "RetrieveGameById200ResponseOfficialStoresInner": RetrieveGameById200ResponseOfficialStoresInner,
+    "RetrieveGameById200ResponsePlaytime": RetrieveGameById200ResponsePlaytime,
+    "RetrieveGameById200ResponseRating": RetrieveGameById200ResponseRating,
     "RetrievePageRankAPI200Response": RetrievePageRankAPI200Response,
     "RetrieveRecipeInformationAPI200Response": RetrieveRecipeInformationAPI200Response,
     "RetrieveRecipeInformationAPI200ResponseCredits": RetrieveRecipeInformationAPI200ResponseCredits,
@@ -316,6 +358,15 @@ let typeMap: {[index: string]: any} = {
     "SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing,
+    "SearchGamesAPI200Response": SearchGamesAPI200Response,
+    "SearchGamesAPI200ResponseActiveFilterOptionsInner": SearchGamesAPI200ResponseActiveFilterOptionsInner,
+    "SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner": SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner,
+    "SearchGamesAPI200ResponseFilterOptionsInner": SearchGamesAPI200ResponseFilterOptionsInner,
+    "SearchGamesAPI200ResponseFilterOptionsInnerValuesInner": SearchGamesAPI200ResponseFilterOptionsInnerValuesInner,
+    "SearchGamesAPI200ResponseResultsInner": SearchGamesAPI200ResponseResultsInner,
+    "SearchGamesAPI200ResponseResultsInnerPlatformsInner": SearchGamesAPI200ResponseResultsInnerPlatformsInner,
+    "SearchGamesAPI200ResponseResultsInnerRating": SearchGamesAPI200ResponseResultsInnerRating,
+    "SearchGamesAPI200ResponseSortingOptionsInner": SearchGamesAPI200ResponseSortingOptionsInner,
     "SearchGifsAPI200Response": SearchGifsAPI200Response,
     "SearchGifsAPI200ResponseImagesInner": SearchGifsAPI200ResponseImagesInner,
     "SearchIconsAPI200Response": SearchIconsAPI200Response,

@@ -6,6 +6,7 @@ api/api.ts
 api/art.service.ts
 api/books.service.ts
 api/food.service.ts
+api/games.service.ts
 api/humor.service.ts
 api/knowledge.service.ts
 api/math.service.ts
@@ -42,6 +43,8 @@ model/extractNewsAPI200ResponseImagesInner.ts
 model/extractNewsAPI200ResponseVideosInner.ts
 model/extractPublishDateAPI200Response.ts
 model/findSimilarBooksAPI200Response.ts
+model/findSimilarGamesAPI200Response.ts
+model/findSimilarGamesAPI200ResponseResultsInner.ts
 model/generateNonsenseWordAPI200Response.ts
 model/listWordSynonymsAPI200Response.ts
 model/models.ts
@@ -53,6 +56,12 @@ model/randomRiddleAPI200Response.ts
 model/randomTriviaAPI200Response.ts
 model/readKeyValueFromStoreAPI200Response.ts
 model/retrieveArtworkById200Response.ts
+model/retrieveGameById200Response.ts
+model/retrieveGameById200ResponseOffersInner.ts
+model/retrieveGameById200ResponseOffersInnerPrice.ts
+model/retrieveGameById200ResponseOfficialStoresInner.ts
+model/retrieveGameById200ResponsePlaytime.ts
+model/retrieveGameById200ResponseRating.ts
 model/retrievePageRankAPI200Response.ts
 model/retrieveRecipeInformationAPI200Response.ts
 model/retrieveRecipeInformationAPI200ResponseCredits.ts
@@ -97,6 +106,15 @@ model/searchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.ts
 model/searchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.ts
 model/searchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.ts
 model/searchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.ts
+model/searchGamesAPI200Response.ts
+model/searchGamesAPI200ResponseActiveFilterOptionsInner.ts
+model/searchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner.ts
+model/searchGamesAPI200ResponseFilterOptionsInner.ts
+model/searchGamesAPI200ResponseFilterOptionsInnerValuesInner.ts
+model/searchGamesAPI200ResponseResultsInner.ts
+model/searchGamesAPI200ResponseResultsInnerPlatformsInner.ts
+model/searchGamesAPI200ResponseResultsInnerRating.ts
+model/searchGamesAPI200ResponseSortingOptionsInner.ts
 model/searchGifsAPI200Response.ts
 model/searchGifsAPI200ResponseImagesInner.ts
 model/searchIconsAPI200Response.ts

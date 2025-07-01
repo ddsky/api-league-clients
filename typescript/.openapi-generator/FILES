@@ -3,6 +3,7 @@
 ArtApi.md
 BooksApi.md
 FoodApi.md
+GamesApi.md
 HumorApi.md
 KnowledgeApi.md
 MathApi.md
@@ -15,6 +16,7 @@ WebApi.md
 apis/ArtApi.ts
 apis/BooksApi.ts
 apis/FoodApi.ts
+apis/GamesApi.ts
 apis/HumorApi.ts
 apis/KnowledgeApi.ts
 apis/MathApi.ts
@@ -56,6 +58,8 @@ models/ExtractNewsAPI200ResponseImagesInner.ts
 models/ExtractNewsAPI200ResponseVideosInner.ts
 models/ExtractPublishDateAPI200Response.ts
 models/FindSimilarBooksAPI200Response.ts
+models/FindSimilarGamesAPI200Response.ts
+models/FindSimilarGamesAPI200ResponseResultsInner.ts
 models/GenerateNonsenseWordAPI200Response.ts
 models/ListWordSynonymsAPI200Response.ts
 models/ObjectSerializer.ts
@@ -67,6 +71,12 @@ models/RandomRiddleAPI200Response.ts
 models/RandomTriviaAPI200Response.ts
 models/ReadKeyValueFromStoreAPI200Response.ts
 models/RetrieveArtworkById200Response.ts
+models/RetrieveGameById200Response.ts
+models/RetrieveGameById200ResponseOffersInner.ts
+models/RetrieveGameById200ResponseOffersInnerPrice.ts
+models/RetrieveGameById200ResponseOfficialStoresInner.ts
+models/RetrieveGameById200ResponsePlaytime.ts
+models/RetrieveGameById200ResponseRating.ts
 models/RetrievePageRankAPI200Response.ts
 models/RetrieveRecipeInformationAPI200Response.ts
 models/RetrieveRecipeInformationAPI200ResponseCredits.ts
@@ -111,6 +121,15 @@ models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.ts
 models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.ts
 models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.ts
 models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.ts
+models/SearchGamesAPI200Response.ts
+models/SearchGamesAPI200ResponseActiveFilterOptionsInner.ts
+models/SearchGamesAPI200ResponseActiveFilterOptionsInnerValuesInner.ts
+models/SearchGamesAPI200ResponseFilterOptionsInner.ts
+models/SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.ts
+models/SearchGamesAPI200ResponseResultsInner.ts
+models/SearchGamesAPI200ResponseResultsInnerPlatformsInner.ts
+models/SearchGamesAPI200ResponseResultsInnerRating.ts
+models/SearchGamesAPI200ResponseSortingOptionsInner.ts
 models/SearchGifsAPI200Response.ts
 models/SearchGifsAPI200ResponseImagesInner.ts
 models/SearchIconsAPI200Response.ts

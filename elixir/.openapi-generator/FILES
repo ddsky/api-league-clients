@@ -7,6 +7,7 @@ config/runtime.exs
 lib/api_league/api/art.ex
 lib/api_league/api/books.ex
 lib/api_league/api/food.ex
+lib/api_league/api/games.ex
 lib/api_league/api/humor.ex
 lib/api_league/api/knowledge.ex
 lib/api_league/api/math.ex
@@ -41,6 +42,8 @@ lib/api_league/model/extract_news_api_200_response_images_inner.ex
 lib/api_league/model/extract_news_api_200_response_videos_inner.ex
 lib/api_league/model/extract_publish_date_api_200_response.ex
 lib/api_league/model/find_similar_books_api_200_response.ex
+lib/api_league/model/find_similar_games_api_200_response.ex
+lib/api_league/model/find_similar_games_api_200_response_results_inner.ex
 lib/api_league/model/generate_nonsense_word_api_200_response.ex
 lib/api_league/model/list_word_synonyms_api_200_response.ex
 lib/api_league/model/pluralize_word_api_200_response.ex
@@ -51,6 +54,12 @@ lib/api_league/model/random_riddle_api_200_response.ex
 lib/api_league/model/random_trivia_api_200_response.ex
 lib/api_league/model/read_key_value_from_store_api_200_response.ex
 lib/api_league/model/retrieve_artwork_by_id_200_response.ex
+lib/api_league/model/retrieve_game_by_id_200_response.ex
+lib/api_league/model/retrieve_game_by_id_200_response_offers_inner.ex
+lib/api_league/model/retrieve_game_by_id_200_response_offers_inner_price.ex
+lib/api_league/model/retrieve_game_by_id_200_response_official_stores_inner.ex
+lib/api_league/model/retrieve_game_by_id_200_response_playtime.ex
+lib/api_league/model/retrieve_game_by_id_200_response_rating.ex
 lib/api_league/model/retrieve_page_rank_api_200_response.ex
 lib/api_league/model/retrieve_recipe_information_api_200_response.ex
 lib/api_league/model/retrieve_recipe_information_api_200_response_credits.ex
@@ -95,6 +104,15 @@ lib/api_league/model/search_drinks_api_200_response_drinks_inner_nutrition_ingre
 lib/api_league/model/search_drinks_api_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.ex
 lib/api_league/model/search_drinks_api_200_response_drinks_inner_nutrition_nutrients_inner.ex
 lib/api_league/model/search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving.ex
+lib/api_league/model/search_games_api_200_response.ex
+lib/api_league/model/search_games_api_200_response_active_filter_options_inner.ex
+lib/api_league/model/search_games_api_200_response_active_filter_options_inner_values_inner.ex
+lib/api_league/model/search_games_api_200_response_filter_options_inner.ex
+lib/api_league/model/search_games_api_200_response_filter_options_inner_values_inner.ex
+lib/api_league/model/search_games_api_200_response_results_inner.ex
+lib/api_league/model/search_games_api_200_response_results_inner_platforms_inner.ex
+lib/api_league/model/search_games_api_200_response_results_inner_rating.ex
+lib/api_league/model/search_games_api_200_response_sorting_options_inner.ex
 lib/api_league/model/search_gifs_api_200_response.ex
 lib/api_league/model/search_gifs_api_200_response_images_inner.ex
 lib/api_league/model/search_icons_api_200_response.ex

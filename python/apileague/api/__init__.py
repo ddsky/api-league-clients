@@ -4,6 +4,7 @@
 from apileague.api.art_api import ArtApi
 from apileague.api.books_api import BooksApi
 from apileague.api.food_api import FoodApi
+from apileague.api.games_api import GamesApi
 from apileague.api.humor_api import HumorApi
 from apileague.api.knowledge_api import KnowledgeApi
 from apileague.api.math_api import MathApi
