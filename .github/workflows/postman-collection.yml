@@ -27,9 +27,15 @@ jobs:
             -o postman-collection.json \
             -p
 
+      - name: Wrap collection JSON for Postman API
+        run: |
+          echo '{"collection":' > postman-collection-wrapped.json
+          cat postman-collection.json >> postman-collection-wrapped.json
+          echo '}' >> postman-collection-wrapped.json
+
       - name: Update Postman collection via API
         run: |
           curl -X PUT "https://api.getpostman.com/collections/${POSTMAN_COLLECTION_ID}" \
             -H "X-Api-Key: ${{ secrets.POSTMAN_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d @postman-collection.json
+            --data-binary @postman-collection-wrapped.json
