@@ -24,9 +24,27 @@ jobs:
           postman_api_key: ${{ secrets.POSTMAN_API_KEY }}
           openapi_schema_path: './apileague-openapi-3.json'
 
+      - name: Write collection to disk
+        run: |
+          cat <<'EOF' > postman-collection.json
+          ${{ steps.transform.outputs.postman_collection }}
+          EOF
+
+      - name: Wrap collection for Postman API
+        env:
+          POSTMAN_COLLECTION_ID: ${{ env.POSTMAN_COLLECTION_ID }}
+        run: |
+          jq --arg collection_id "$POSTMAN_COLLECTION_ID" \
+            '.info = (.info // {}) | .info._postman_id = $collection_id | .info.uid = $collection_id | {collection: .}' \
+            postman-collection.json > postman-collection-body.json
+
       - name: Update Postman collection
-        uses: stcalica/postman-publish-action/actions/update-collection@v1
-        with:
-          postman_api_key: ${{ secrets.POSTMAN_API_KEY }}
-          collection_id: ${{ env.POSTMAN_COLLECTION_ID }}
-          collection_data: ${{ steps.transform.outputs.postman_collection }}
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+          POSTMAN_COLLECTION_ID: ${{ env.POSTMAN_COLLECTION_ID }}
+        run: |
+          curl --fail --request PUT \
+            --url "https://api.getpostman.com/collections/${POSTMAN_COLLECTION_ID}" \
+            --header "X-Api-Key: ${POSTMAN_API_KEY}" \
+            --header "Content-Type: application/json" \
+            --data-binary @postman-collection-body.json
