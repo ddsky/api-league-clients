@@ -30,11 +30,6 @@ jobs:
           ${{ steps.transform.outputs.postman_collection }}
           EOF
 
-      - name: Wrap collection for Postman API
-        run: |
-          jq -n --slurpfile collection postman-collection.json '{collection: $collection[0]}' \
-            > postman-collection-body.json
-
       - name: Update Postman collection
         env:
           POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
@@ -44,4 +39,4 @@ jobs:
             --url "https://api.getpostman.com/collections/${POSTMAN_COLLECTION_ID}" \
             --header "X-Api-Key: ${POSTMAN_API_KEY}" \
             --header "Content-Type: application/json" \
-            --data-binary @postman-collection-body.json
+            --data-binary @postman-collection.json
