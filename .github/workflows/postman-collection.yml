@@ -8,28 +8,24 @@ on:
 
 jobs:
   publish-postman:
-    name: Publish Postman Collection
     runs-on: ubuntu-latest
-    env:
-      POSTMAN_COLLECTION_ID: ${{ vars.POSTMAN_COLLECTION_ID }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Transform OpenAPI to Postman collection (file)
-        uses: stcalica/postman-publish-action/actions/transform-openapi-from-file@v1
-        with:
-          postman_api_key: ${{ secrets.POSTMAN_API_KEY }}
-          openapi_schema_path: './apileague-openapi-3.json'
-          # this is the file that will be written on the runner
-          output_file: './postman-collection.json'
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
 
-      - name: Update Postman collection from file
-        uses: stcalica/postman-publish-action/actions/update-collection-from-file@v1
-        with:
-          postman_api_key: ${{ secrets.POSTMAN_API_KEY }}
-          collection_id: ${{ env.POSTMAN_COLLECTION_ID }}
-          # name may be collection_file / collection_path; check action.yml,
-          # but conceptually this is the path to the file above
-          collection_file: './postman-collection.json'
+      - name: Log in to Postman CLI
+        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+
+      - name: Convert OpenAPI to Postman Collection
+        run: |
+          postman collection convert apileague-openapi-3.json \
+            --output postman-collection.json
+
+      - name: Push to Postman
+        run: |
+          postman collection push ${{ vars.POSTMAN_COLLECTION_ID }} \
+            --file postman-collection.json
