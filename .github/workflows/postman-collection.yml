@@ -8,24 +8,28 @@ on:
 
 jobs:
   publish-postman:
+    name: Publish Postman Collection
     runs-on: ubuntu-latest
+    env:
+      POSTMAN_COLLECTION_ID: ${{ vars.POSTMAN_COLLECTION_ID }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install Postman CLI
-        run: |
-          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-
-      - name: Log in to Postman CLI
-        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
+      - name: Install OpenAPI -> Postman converter
+        run: npm i -g openapi-to-postmanv2
 
       - name: Convert OpenAPI to Postman Collection
         run: |
-          postman collection convert apileague-openapi-3.json \
-            --output postman-collection.json
+          openapi2postmanv2 \
+            -s apileague-openapi-3.json \
+            -o postman-collection.json \
+            -p
 
-      - name: Push to Postman
+      - name: Update Postman collection via API
         run: |
-          postman collection push ${{ vars.POSTMAN_COLLECTION_ID }} \
-            --file postman-collection.json
+          curl -X PUT "https://api.getpostman.com/collections/${POSTMAN_COLLECTION_ID}" \
+            -H "X-Api-Key: ${{ secrets.POSTMAN_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d @postman-collection.json
