@@ -7,13 +7,13 @@
 
 (def retrieve-recipe-information-api-200-response-taste-data
   {
-   (ds/opt :fattiness) float?
-   (ds/opt :spiciness) int?
+   (ds/opt :sweetness) float?
    (ds/opt :saltiness) int?
+   (ds/opt :sourness) float?
    (ds/opt :bitterness) float?
    (ds/opt :savoriness) float?
-   (ds/opt :sweetness) float?
-   (ds/opt :sourness) float?
+   (ds/opt :fattiness) float?
+   (ds/opt :spiciness) int?
    })
 
 (def retrieve-recipe-information-api-200-response-taste-spec

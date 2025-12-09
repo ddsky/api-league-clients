@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API
 [**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API
-[**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API
 
 
 # **compute_nutrition_api**
@@ -450,79 +449,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_restaurants_api**
-> SearchRestaurantsAPI200Response search_restaurants_api(lat => $lat, lon => $lon, query => $query, distance => $distance, budget => $budget, min_rating => $min_rating, cuisine => $cuisine, is_open => $is_open, page => $page, sort => $sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-```perl
-use Data::Dumper;
-use WWW::OpenAPIClient::FoodApi;
-my $api_instance = WWW::OpenAPIClient::FoodApi->new(
-
-    # Configure API key authorization: apiKey
-    api_key => {'api-key' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'api-key' => 'Bearer'},
-    # Configure API key authorization: headerApiKey
-    api_key => {'x-api-key' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'x-api-key' => 'Bearer'},
-);
-
-my $lat = 32.715736; # double | The latitude to search around.
-my $lon = -117.161087; # double | The longitude to search around.
-my $query = burger; # string | The search query.
-my $distance = 5; # int | The maximum distance of the restaurant in miles around the given location.
-my $budget = 25; # double | The budget in USD for the meal.
-my $min_rating = 4.4; # double | The minimum rating of the restaurants in range [0,5].
-my $cuisine = Mexican; # string | The cuisine that the restaurants should support.
-my $is_open = true; # boolean | Whether the restaurants have to be open now.
-my $page = 0; # int | The page of the results.
-my $sort = rating; # string | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-
-eval {
-    my $result = $api_instance->search_restaurants_api(lat => $lat, lon => $lon, query => $query, distance => $distance, budget => $budget, min_rating => $min_rating, cuisine => $cuisine, is_open => $is_open, page => $page, sort => $sort);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling FoodApi->search_restaurants_api: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **double**| The latitude to search around. | 
- **lon** | **double**| The longitude to search around. | 
- **query** | **string**| The search query. | [optional] 
- **distance** | **int**| The maximum distance of the restaurant in miles around the given location. | [optional] 
- **budget** | **double**| The budget in USD for the meal. | [optional] 
- **min_rating** | **double**| The minimum rating of the restaurants in range [0,5]. | [optional] 
- **cuisine** | **string**| The cuisine that the restaurants should support. | [optional] 
- **is_open** | **boolean**| Whether the restaurants have to be open now. | [optional] 
- **page** | **int**| The page of the results. | [optional] 
- **sort** | **string**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] 
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

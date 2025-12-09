@@ -16,6 +16,11 @@ void main() {
   // final instance = SearchBooksAPI200ResponseBooksInnerInner();
 
   group('test SearchBooksAPI200ResponseBooksInnerInner', () {
+    // int id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
     // String title
     test('to test the property `title`', () async {
       // TODO
@@ -23,11 +28,6 @@ void main() {
 
     // String image
     test('to test the property `image`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
       // TODO
     });
 

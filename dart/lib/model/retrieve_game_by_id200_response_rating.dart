@@ -13,45 +13,13 @@ part of openapi.api;
 class RetrieveGameById200ResponseRating {
   /// Returns a new [RetrieveGameById200ResponseRating] instance.
   RetrieveGameById200ResponseRating({
-    this.count,
-    this.countCritics,
-    this.meanPlayers,
-    this.meanCritics,
     this.mean,
+    this.count,
+    this.meanPlayers,
     this.countPlayers,
+    this.meanCritics,
+    this.countCritics,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? count;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? countCritics;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? meanPlayers;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? meanCritics;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -67,61 +35,93 @@ class RetrieveGameById200ResponseRating {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? count;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? meanPlayers;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? countPlayers;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? meanCritics;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? countCritics;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveGameById200ResponseRating &&
-    other.count == count &&
-    other.countCritics == countCritics &&
-    other.meanPlayers == meanPlayers &&
-    other.meanCritics == meanCritics &&
     other.mean == mean &&
-    other.countPlayers == countPlayers;
+    other.count == count &&
+    other.meanPlayers == meanPlayers &&
+    other.countPlayers == countPlayers &&
+    other.meanCritics == meanCritics &&
+    other.countCritics == countCritics;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (count == null ? 0 : count!.hashCode) +
-    (countCritics == null ? 0 : countCritics!.hashCode) +
-    (meanPlayers == null ? 0 : meanPlayers!.hashCode) +
-    (meanCritics == null ? 0 : meanCritics!.hashCode) +
     (mean == null ? 0 : mean!.hashCode) +
-    (countPlayers == null ? 0 : countPlayers!.hashCode);
+    (count == null ? 0 : count!.hashCode) +
+    (meanPlayers == null ? 0 : meanPlayers!.hashCode) +
+    (countPlayers == null ? 0 : countPlayers!.hashCode) +
+    (meanCritics == null ? 0 : meanCritics!.hashCode) +
+    (countCritics == null ? 0 : countCritics!.hashCode);
 
   @override
-  String toString() => 'RetrieveGameById200ResponseRating[count=$count, countCritics=$countCritics, meanPlayers=$meanPlayers, meanCritics=$meanCritics, mean=$mean, countPlayers=$countPlayers]';
+  String toString() => 'RetrieveGameById200ResponseRating[mean=$mean, count=$count, meanPlayers=$meanPlayers, countPlayers=$countPlayers, meanCritics=$meanCritics, countCritics=$countCritics]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.mean != null) {
+      json[r'mean'] = this.mean;
+    } else {
+      json[r'mean'] = null;
+    }
     if (this.count != null) {
       json[r'count'] = this.count;
     } else {
       json[r'count'] = null;
-    }
-    if (this.countCritics != null) {
-      json[r'count_critics'] = this.countCritics;
-    } else {
-      json[r'count_critics'] = null;
     }
     if (this.meanPlayers != null) {
       json[r'mean_players'] = this.meanPlayers;
     } else {
       json[r'mean_players'] = null;
     }
+    if (this.countPlayers != null) {
+      json[r'count_players'] = this.countPlayers;
+    } else {
+      json[r'count_players'] = null;
+    }
     if (this.meanCritics != null) {
       json[r'mean_critics'] = this.meanCritics;
     } else {
       json[r'mean_critics'] = null;
     }
-    if (this.mean != null) {
-      json[r'mean'] = this.mean;
+    if (this.countCritics != null) {
+      json[r'count_critics'] = this.countCritics;
     } else {
-      json[r'mean'] = null;
-    }
-    if (this.countPlayers != null) {
-      json[r'count_players'] = this.countPlayers;
-    } else {
-      json[r'count_players'] = null;
+      json[r'count_critics'] = null;
     }
     return json;
   }
@@ -145,12 +145,12 @@ class RetrieveGameById200ResponseRating {
       }());
 
       return RetrieveGameById200ResponseRating(
-        count: mapValueOfType<int>(json, r'count'),
-        countCritics: mapValueOfType<int>(json, r'count_critics'),
-        meanPlayers: num.parse('${json[r'mean_players']}'),
-        meanCritics: num.parse('${json[r'mean_critics']}'),
         mean: num.parse('${json[r'mean']}'),
+        count: mapValueOfType<int>(json, r'count'),
+        meanPlayers: num.parse('${json[r'mean_players']}'),
         countPlayers: mapValueOfType<int>(json, r'count_players'),
+        meanCritics: num.parse('${json[r'mean_critics']}'),
+        countCritics: mapValueOfType<int>(json, r'count_critics'),
       );
     }
     return null;

@@ -15,7 +15,7 @@
 
 package com.apileague.client.model
 
-import com.apileague.client.model.SearchRoyaltyFreeImagesAPI200ResponseImagesInner
+import com.apileague.client.model.SearchIconsAPI200ResponseIconsInner
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -30,7 +30,7 @@ import com.squareup.moshi.JsonClass
 data class SearchIconsAPI200Response (
 
     @Json(name = "icons")
-    val icons: kotlin.collections.List<SearchRoyaltyFreeImagesAPI200ResponseImagesInner>? = null
+    val icons: kotlin.collections.List<SearchIconsAPI200ResponseIconsInner>? = null
 
 ) {
 

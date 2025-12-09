@@ -31,16 +31,16 @@ class SearchGamesAPI200ResponseSortingOptionsInnerTest : ShouldSpec() {
             //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `key`
-        should("test key") {
-            // uncomment below to test the property
-            //modelInstance.key shouldBe ("TODO")
-        }
-
         // to test the property `sort`
         should("test sort") {
             // uncomment below to test the property
             //modelInstance.sort shouldBe ("TODO")
+        }
+
+        // to test the property `key`
+        should("test key") {
+            // uncomment below to test the property
+            //modelInstance.key shouldBe ("TODO")
         }
 
     }

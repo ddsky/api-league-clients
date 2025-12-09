@@ -16,28 +16,8 @@ void main() {
   // final instance = SearchNewsAPI200ResponseNewsInner();
 
   group('test SearchNewsAPI200ResponseNewsInner', () {
-    // String summary
-    test('to test the property `summary`', () async {
-      // TODO
-    });
-
-    // String image
-    test('to test the property `image`', () async {
-      // TODO
-    });
-
-    // num sentiment
-    test('to test the property `sentiment`', () async {
-      // TODO
-    });
-
-    // String language
-    test('to test the property `language`', () async {
-      // TODO
-    });
-
-    // String video
-    test('to test the property `video`', () async {
+    // int id
+    test('to test the property `id`', () async {
       // TODO
     });
 
@@ -46,28 +26,28 @@ void main() {
       // TODO
     });
 
-    // String url
-    test('to test the property `url`', () async {
-      // TODO
-    });
-
-    // String sourceCountry
-    test('to test the property `sourceCountry`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
     // String text
     test('to test the property `text`', () async {
       // TODO
     });
 
-    // String category
-    test('to test the property `category`', () async {
+    // String summary
+    test('to test the property `summary`', () async {
+      // TODO
+    });
+
+    // String url
+    test('to test the property `url`', () async {
+      // TODO
+    });
+
+    // String image
+    test('to test the property `image`', () async {
+      // TODO
+    });
+
+    // String video
+    test('to test the property `video`', () async {
       // TODO
     });
 
@@ -78,6 +58,26 @@ void main() {
 
     // List<String> authors (default value: const [])
     test('to test the property `authors`', () async {
+      // TODO
+    });
+
+    // String category
+    test('to test the property `category`', () async {
+      // TODO
+    });
+
+    // String language
+    test('to test the property `language`', () async {
+      // TODO
+    });
+
+    // String sourceCountry
+    test('to test the property `sourceCountry`', () async {
+      // TODO
+    });
+
+    // num sentiment
+    test('to test the property `sentiment`', () async {
       // TODO
     });
 

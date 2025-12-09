@@ -25,22 +25,28 @@ class ScoreTextAPI200ResponseSkimmabilitySubscoresTest : ShouldSpec() {
         // uncomment below to create an instance of ScoreTextAPI200ResponseSkimmabilitySubscores
         //val modelInstance = ScoreTextAPI200ResponseSkimmabilitySubscores()
 
+        // to test the property `highlightedWordRatioScore`
+        should("test highlightedWordRatioScore") {
+            // uncomment below to test the property
+            //modelInstance.highlightedWordRatioScore shouldBe ("TODO")
+        }
+
         // to test the property `bulletPointRatioScore`
         should("test bulletPointRatioScore") {
             // uncomment below to test the property
             //modelInstance.bulletPointRatioScore shouldBe ("TODO")
         }
 
+        // to test the property `paragraphHeadlineRatioScore`
+        should("test paragraphHeadlineRatioScore") {
+            // uncomment below to test the property
+            //modelInstance.paragraphHeadlineRatioScore shouldBe ("TODO")
+        }
+
         // to test the property `imageScore`
         should("test imageScore") {
             // uncomment below to test the property
             //modelInstance.imageScore shouldBe ("TODO")
-        }
-
-        // to test the property `highlightedWordRatioScore`
-        should("test highlightedWordRatioScore") {
-            // uncomment below to test the property
-            //modelInstance.highlightedWordRatioScore shouldBe ("TODO")
         }
 
         // to test the property `videoScore`
@@ -53,12 +59,6 @@ class ScoreTextAPI200ResponseSkimmabilitySubscoresTest : ShouldSpec() {
         should("test paragraphScore") {
             // uncomment below to test the property
             //modelInstance.paragraphScore shouldBe ("TODO")
-        }
-
-        // to test the property `paragraphHeadlineRatioScore`
-        should("test paragraphHeadlineRatioScore") {
-            // uncomment below to test the property
-            //modelInstance.paragraphHeadlineRatioScore shouldBe ("TODO")
         }
 
     }

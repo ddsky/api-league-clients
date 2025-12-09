@@ -23,7 +23,7 @@ class ComputeNutritionAPI200Response {
 
   List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner> nutrients;
 
-  List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner> properties;
+  List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner> properties;
 
   List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner> flavonoids;
 
@@ -106,7 +106,7 @@ class ComputeNutritionAPI200Response {
 
       return ComputeNutritionAPI200Response(
         nutrients: SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.listFromJson(json[r'nutrients']),
-        properties: SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.listFromJson(json[r'properties']),
+        properties: SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.listFromJson(json[r'properties']),
         flavonoids: SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.listFromJson(json[r'flavonoids']),
         ingredientBreakdown: ComputeNutritionAPI200ResponseIngredientBreakdownInner.listFromJson(json[r'ingredient_breakdown']),
         caloricBreakdown: SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.fromJson(json[r'caloric_breakdown']),

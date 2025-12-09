@@ -8,18 +8,18 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseNutritionIngred
 
   @derive Jason.Encoder
   defstruct [
+    :id,
     :name,
     :amount,
     :unit,
-    :id,
     :nutrients
   ]
 
   @type t :: %__MODULE__{
+    :id => integer() | nil,
     :name => String.t | nil,
     :amount => float() | nil,
     :unit => String.t | nil,
-    :id => integer() | nil,
     :nutrients => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner.t] | nil
   }
 

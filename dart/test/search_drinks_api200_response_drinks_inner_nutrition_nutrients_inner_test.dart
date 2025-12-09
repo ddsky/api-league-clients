@@ -21,11 +21,6 @@ void main() {
       // TODO
     });
 
-    // num percentOfDailyNeeds
-    test('to test the property `percentOfDailyNeeds`', () async {
-      // TODO
-    });
-
     // num amount
     test('to test the property `amount`', () async {
       // TODO
@@ -33,6 +28,11 @@ void main() {
 
     // String unit
     test('to test the property `unit`', () async {
+      // TODO
+    });
+
+    // num percentOfDailyNeeds
+    test('to test the property `percentOfDailyNeeds`', () async {
       // TODO
     });
 

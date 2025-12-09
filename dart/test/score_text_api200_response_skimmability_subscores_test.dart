@@ -16,33 +16,33 @@ void main() {
   // final instance = ScoreTextAPI200ResponseSkimmabilitySubscores();
 
   group('test ScoreTextAPI200ResponseSkimmabilitySubscores', () {
-    // List<int> bulletPointRatioScore (default value: const [])
-    test('to test the property `bulletPointRatioScore`', () async {
-      // TODO
-    });
-
-    // List<int> imageScore (default value: const [])
-    test('to test the property `imageScore`', () async {
-      // TODO
-    });
-
-    // List<int> highlightedWordRatioScore (default value: const [])
+    // List<num> highlightedWordRatioScore (default value: const [])
     test('to test the property `highlightedWordRatioScore`', () async {
       // TODO
     });
 
-    // List<int> videoScore (default value: const [])
+    // List<num> bulletPointRatioScore (default value: const [])
+    test('to test the property `bulletPointRatioScore`', () async {
+      // TODO
+    });
+
+    // List<num> paragraphHeadlineRatioScore (default value: const [])
+    test('to test the property `paragraphHeadlineRatioScore`', () async {
+      // TODO
+    });
+
+    // List<num> imageScore (default value: const [])
+    test('to test the property `imageScore`', () async {
+      // TODO
+    });
+
+    // List<num> videoScore (default value: const [])
     test('to test the property `videoScore`', () async {
       // TODO
     });
 
-    // List<int> paragraphScore (default value: const [])
+    // List<num> paragraphScore (default value: const [])
     test('to test the property `paragraphScore`', () async {
-      // TODO
-    });
-
-    // List<int> paragraphHeadlineRatioScore (default value: const [])
-    test('to test the property `paragraphHeadlineRatioScore`', () async {
       // TODO
     });
 

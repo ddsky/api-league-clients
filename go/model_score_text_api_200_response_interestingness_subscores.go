@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &ScoreTextAPI200ResponseInterestingnessSubscores{}
 
 // ScoreTextAPI200ResponseInterestingnessSubscores struct for ScoreTextAPI200ResponseInterestingnessSubscores
 type ScoreTextAPI200ResponseInterestingnessSubscores struct {
-	TitleRatingScore []int32 `json:"title_rating_score,omitempty"`
-	QuoteScore []int32 `json:"quote_score,omitempty"`
-	LengthScore []int32 `json:"length_score,omitempty"`
-	LinkScore []int32 `json:"link_score,omitempty"`
-	GoogleHitsScore []int32 `json:"google_hits_score,omitempty"`
+	GoogleHitsScore []float32 `json:"google_hits_score,omitempty"`
+	LinkScore []float32 `json:"link_score,omitempty"`
+	QuoteScore []float32 `json:"quote_score,omitempty"`
+	TitleRatingScore []float32 `json:"title_rating_score,omitempty"`
+	LengthScore []float32 `json:"length_score,omitempty"`
 }
 
 // NewScoreTextAPI200ResponseInterestingnessSubscores instantiates a new ScoreTextAPI200ResponseInterestingnessSubscores object
@@ -44,138 +44,10 @@ func NewScoreTextAPI200ResponseInterestingnessSubscoresWithDefaults() *ScoreText
 	return &this
 }
 
-// GetTitleRatingScore returns the TitleRatingScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScore() []int32 {
-	if o == nil || IsNil(o.TitleRatingScore) {
-		var ret []int32
-		return ret
-	}
-	return o.TitleRatingScore
-}
-
-// GetTitleRatingScoreOk returns a tuple with the TitleRatingScore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScoreOk() ([]int32, bool) {
-	if o == nil || IsNil(o.TitleRatingScore) {
-		return nil, false
-	}
-	return o.TitleRatingScore, true
-}
-
-// HasTitleRatingScore returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasTitleRatingScore() bool {
-	if o != nil && !IsNil(o.TitleRatingScore) {
-		return true
-	}
-
-	return false
-}
-
-// SetTitleRatingScore gets a reference to the given []int32 and assigns it to the TitleRatingScore field.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetTitleRatingScore(v []int32) {
-	o.TitleRatingScore = v
-}
-
-// GetQuoteScore returns the QuoteScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScore() []int32 {
-	if o == nil || IsNil(o.QuoteScore) {
-		var ret []int32
-		return ret
-	}
-	return o.QuoteScore
-}
-
-// GetQuoteScoreOk returns a tuple with the QuoteScore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScoreOk() ([]int32, bool) {
-	if o == nil || IsNil(o.QuoteScore) {
-		return nil, false
-	}
-	return o.QuoteScore, true
-}
-
-// HasQuoteScore returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasQuoteScore() bool {
-	if o != nil && !IsNil(o.QuoteScore) {
-		return true
-	}
-
-	return false
-}
-
-// SetQuoteScore gets a reference to the given []int32 and assigns it to the QuoteScore field.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetQuoteScore(v []int32) {
-	o.QuoteScore = v
-}
-
-// GetLengthScore returns the LengthScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScore() []int32 {
-	if o == nil || IsNil(o.LengthScore) {
-		var ret []int32
-		return ret
-	}
-	return o.LengthScore
-}
-
-// GetLengthScoreOk returns a tuple with the LengthScore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScoreOk() ([]int32, bool) {
-	if o == nil || IsNil(o.LengthScore) {
-		return nil, false
-	}
-	return o.LengthScore, true
-}
-
-// HasLengthScore returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLengthScore() bool {
-	if o != nil && !IsNil(o.LengthScore) {
-		return true
-	}
-
-	return false
-}
-
-// SetLengthScore gets a reference to the given []int32 and assigns it to the LengthScore field.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLengthScore(v []int32) {
-	o.LengthScore = v
-}
-
-// GetLinkScore returns the LinkScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScore() []int32 {
-	if o == nil || IsNil(o.LinkScore) {
-		var ret []int32
-		return ret
-	}
-	return o.LinkScore
-}
-
-// GetLinkScoreOk returns a tuple with the LinkScore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScoreOk() ([]int32, bool) {
-	if o == nil || IsNil(o.LinkScore) {
-		return nil, false
-	}
-	return o.LinkScore, true
-}
-
-// HasLinkScore returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLinkScore() bool {
-	if o != nil && !IsNil(o.LinkScore) {
-		return true
-	}
-
-	return false
-}
-
-// SetLinkScore gets a reference to the given []int32 and assigns it to the LinkScore field.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLinkScore(v []int32) {
-	o.LinkScore = v
-}
-
 // GetGoogleHitsScore returns the GoogleHitsScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScore() []int32 {
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScore() []float32 {
 	if o == nil || IsNil(o.GoogleHitsScore) {
-		var ret []int32
+		var ret []float32
 		return ret
 	}
 	return o.GoogleHitsScore
@@ -183,7 +55,7 @@ func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScore() [
 
 // GetGoogleHitsScoreOk returns a tuple with the GoogleHitsScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScoreOk() ([]int32, bool) {
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScoreOk() ([]float32, bool) {
 	if o == nil || IsNil(o.GoogleHitsScore) {
 		return nil, false
 	}
@@ -199,9 +71,137 @@ func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasGoogleHitsScore() b
 	return false
 }
 
-// SetGoogleHitsScore gets a reference to the given []int32 and assigns it to the GoogleHitsScore field.
-func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetGoogleHitsScore(v []int32) {
+// SetGoogleHitsScore gets a reference to the given []float32 and assigns it to the GoogleHitsScore field.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetGoogleHitsScore(v []float32) {
 	o.GoogleHitsScore = v
+}
+
+// GetLinkScore returns the LinkScore field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScore() []float32 {
+	if o == nil || IsNil(o.LinkScore) {
+		var ret []float32
+		return ret
+	}
+	return o.LinkScore
+}
+
+// GetLinkScoreOk returns a tuple with the LinkScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScoreOk() ([]float32, bool) {
+	if o == nil || IsNil(o.LinkScore) {
+		return nil, false
+	}
+	return o.LinkScore, true
+}
+
+// HasLinkScore returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLinkScore() bool {
+	if o != nil && !IsNil(o.LinkScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinkScore gets a reference to the given []float32 and assigns it to the LinkScore field.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLinkScore(v []float32) {
+	o.LinkScore = v
+}
+
+// GetQuoteScore returns the QuoteScore field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScore() []float32 {
+	if o == nil || IsNil(o.QuoteScore) {
+		var ret []float32
+		return ret
+	}
+	return o.QuoteScore
+}
+
+// GetQuoteScoreOk returns a tuple with the QuoteScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScoreOk() ([]float32, bool) {
+	if o == nil || IsNil(o.QuoteScore) {
+		return nil, false
+	}
+	return o.QuoteScore, true
+}
+
+// HasQuoteScore returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasQuoteScore() bool {
+	if o != nil && !IsNil(o.QuoteScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuoteScore gets a reference to the given []float32 and assigns it to the QuoteScore field.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetQuoteScore(v []float32) {
+	o.QuoteScore = v
+}
+
+// GetTitleRatingScore returns the TitleRatingScore field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScore() []float32 {
+	if o == nil || IsNil(o.TitleRatingScore) {
+		var ret []float32
+		return ret
+	}
+	return o.TitleRatingScore
+}
+
+// GetTitleRatingScoreOk returns a tuple with the TitleRatingScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScoreOk() ([]float32, bool) {
+	if o == nil || IsNil(o.TitleRatingScore) {
+		return nil, false
+	}
+	return o.TitleRatingScore, true
+}
+
+// HasTitleRatingScore returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasTitleRatingScore() bool {
+	if o != nil && !IsNil(o.TitleRatingScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetTitleRatingScore gets a reference to the given []float32 and assigns it to the TitleRatingScore field.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetTitleRatingScore(v []float32) {
+	o.TitleRatingScore = v
+}
+
+// GetLengthScore returns the LengthScore field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScore() []float32 {
+	if o == nil || IsNil(o.LengthScore) {
+		var ret []float32
+		return ret
+	}
+	return o.LengthScore
+}
+
+// GetLengthScoreOk returns a tuple with the LengthScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScoreOk() ([]float32, bool) {
+	if o == nil || IsNil(o.LengthScore) {
+		return nil, false
+	}
+	return o.LengthScore, true
+}
+
+// HasLengthScore returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLengthScore() bool {
+	if o != nil && !IsNil(o.LengthScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetLengthScore gets a reference to the given []float32 and assigns it to the LengthScore field.
+func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLengthScore(v []float32) {
+	o.LengthScore = v
 }
 
 func (o ScoreTextAPI200ResponseInterestingnessSubscores) MarshalJSON() ([]byte, error) {
@@ -214,20 +214,20 @@ func (o ScoreTextAPI200ResponseInterestingnessSubscores) MarshalJSON() ([]byte, 
 
 func (o ScoreTextAPI200ResponseInterestingnessSubscores) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TitleRatingScore) {
-		toSerialize["title_rating_score"] = o.TitleRatingScore
-	}
-	if !IsNil(o.QuoteScore) {
-		toSerialize["quote_score"] = o.QuoteScore
-	}
-	if !IsNil(o.LengthScore) {
-		toSerialize["length_score"] = o.LengthScore
+	if !IsNil(o.GoogleHitsScore) {
+		toSerialize["google_hits_score"] = o.GoogleHitsScore
 	}
 	if !IsNil(o.LinkScore) {
 		toSerialize["link_score"] = o.LinkScore
 	}
-	if !IsNil(o.GoogleHitsScore) {
-		toSerialize["google_hits_score"] = o.GoogleHitsScore
+	if !IsNil(o.QuoteScore) {
+		toSerialize["quote_score"] = o.QuoteScore
+	}
+	if !IsNil(o.TitleRatingScore) {
+		toSerialize["title_rating_score"] = o.TitleRatingScore
+	}
+	if !IsNil(o.LengthScore) {
+		toSerialize["length_score"] = o.LengthScore
 	}
 	return toSerialize, nil
 }

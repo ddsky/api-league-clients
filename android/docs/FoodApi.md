@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
 [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
-[**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 
 
 
@@ -411,70 +410,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## searchRestaurantsAPI
-
-> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-
-```java
-// Import classes:
-//import com.apileague.FoodApi;
-
-FoodApi apiInstance = new FoodApi();
-Double lat = 32.715736; // Double | The latitude to search around.
-Double lon = -117.161087; // Double | The longitude to search around.
-String query = burger; // String | The search query.
-Integer distance = 5; // Integer | The maximum distance of the restaurant in miles around the given location.
-Double budget = 25; // Double | The budget in USD for the meal.
-Double minRating = 4.4; // Double | The minimum rating of the restaurants in range [0,5].
-String cuisine = Mexican; // String | The cuisine that the restaurants should support.
-Boolean isOpen = true; // Boolean | Whether the restaurants have to be open now.
-Integer page = 0; // Integer | The page of the results.
-String sort = rating; // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-try {
-    SearchRestaurantsAPI200Response result = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FoodApi#searchRestaurantsAPI");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **Double**| The latitude to search around. | [default to null]
- **lon** | **Double**| The longitude to search around. | [default to null]
- **query** | **String**| The search query. | [optional] [default to null]
- **distance** | **Integer**| The maximum distance of the restaurant in miles around the given location. | [optional] [default to null]
- **budget** | **Double**| The budget in USD for the meal. | [optional] [default to null]
- **minRating** | **Double**| The minimum rating of the restaurants in range [0,5]. | [optional] [default to null]
- **cuisine** | **String**| The cuisine that the restaurants should support. | [optional] [default to null]
- **isOpen** | **Boolean**| Whether the restaurants have to be open now. | [optional] [default to null]
- **page** | **Integer**| The page of the results. | [optional] [default to null]
- **sort** | **String**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] [default to null]
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nutrients** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
-**properties** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
+**properties** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
 **flavonoids** | [**List[SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner]**](SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md) |  | [optional] 
 **ingredient_breakdown** | [**List[ComputeNutritionAPI200ResponseIngredientBreakdownInner]**](ComputeNutritionAPI200ResponseIngredientBreakdownInner.md) |  | [optional] 
 **caloric_breakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 

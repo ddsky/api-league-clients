@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**HexCode** | Pointer to **NullableString** |  | [optional] 
 **SpecificColor** | Pointer to **NullableString** |  | [optional] 
 **MainColor** | Pointer to **NullableString** |  | [optional] 
-**HexCode** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -27,6 +27,41 @@ NewDetectMainImageColorAPI200ResponseInnerWithDefaults instantiates a new Detect
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetHexCode
+
+`func (o *DetectMainImageColorAPI200ResponseInner) GetHexCode() string`
+
+GetHexCode returns the HexCode field if non-nil, zero value otherwise.
+
+### GetHexCodeOk
+
+`func (o *DetectMainImageColorAPI200ResponseInner) GetHexCodeOk() (*string, bool)`
+
+GetHexCodeOk returns a tuple with the HexCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHexCode
+
+`func (o *DetectMainImageColorAPI200ResponseInner) SetHexCode(v string)`
+
+SetHexCode sets HexCode field to given value.
+
+### HasHexCode
+
+`func (o *DetectMainImageColorAPI200ResponseInner) HasHexCode() bool`
+
+HasHexCode returns a boolean if a field has been set.
+
+### SetHexCodeNil
+
+`func (o *DetectMainImageColorAPI200ResponseInner) SetHexCodeNil(b bool)`
+
+ SetHexCodeNil sets the value for HexCode to be an explicit nil
+
+### UnsetHexCode
+`func (o *DetectMainImageColorAPI200ResponseInner) UnsetHexCode()`
+
+UnsetHexCode ensures that no value is present for HexCode, not even an explicit nil
 ### GetSpecificColor
 
 `func (o *DetectMainImageColorAPI200ResponseInner) GetSpecificColor() string`
@@ -97,41 +132,6 @@ HasMainColor returns a boolean if a field has been set.
 `func (o *DetectMainImageColorAPI200ResponseInner) UnsetMainColor()`
 
 UnsetMainColor ensures that no value is present for MainColor, not even an explicit nil
-### GetHexCode
-
-`func (o *DetectMainImageColorAPI200ResponseInner) GetHexCode() string`
-
-GetHexCode returns the HexCode field if non-nil, zero value otherwise.
-
-### GetHexCodeOk
-
-`func (o *DetectMainImageColorAPI200ResponseInner) GetHexCodeOk() (*string, bool)`
-
-GetHexCodeOk returns a tuple with the HexCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHexCode
-
-`func (o *DetectMainImageColorAPI200ResponseInner) SetHexCode(v string)`
-
-SetHexCode sets HexCode field to given value.
-
-### HasHexCode
-
-`func (o *DetectMainImageColorAPI200ResponseInner) HasHexCode() bool`
-
-HasHexCode returns a boolean if a field has been set.
-
-### SetHexCodeNil
-
-`func (o *DetectMainImageColorAPI200ResponseInner) SetHexCodeNil(b bool)`
-
- SetHexCodeNil sets the value for HexCode to be an explicit nil
-
-### UnsetHexCode
-`func (o *DetectMainImageColorAPI200ResponseInner) UnsetHexCode()`
-
-UnsetHexCode ensures that no value is present for HexCode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

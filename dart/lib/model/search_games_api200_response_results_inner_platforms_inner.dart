@@ -13,39 +13,39 @@ part of openapi.api;
 class SearchGamesAPI200ResponseResultsInnerPlatformsInner {
   /// Returns a new [SearchGamesAPI200ResponseResultsInnerPlatformsInner] instance.
   SearchGamesAPI200ResponseResultsInnerPlatformsInner({
-    this.name,
     this.value,
+    this.name,
   });
-
-  String? name;
 
   String? value;
 
+  String? name;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseResultsInnerPlatformsInner &&
-    other.name == name &&
-    other.value == value;
+    other.value == value &&
+    other.name == name;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (name == null ? 0 : name!.hashCode) +
-    (value == null ? 0 : value!.hashCode);
+    (value == null ? 0 : value!.hashCode) +
+    (name == null ? 0 : name!.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseResultsInnerPlatformsInner[name=$name, value=$value]';
+  String toString() => 'SearchGamesAPI200ResponseResultsInnerPlatformsInner[value=$value, name=$name]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.name != null) {
-      json[r'name'] = this.name;
-    } else {
-      json[r'name'] = null;
-    }
     if (this.value != null) {
       json[r'value'] = this.value;
     } else {
       json[r'value'] = null;
+    }
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
     return json;
   }
@@ -69,8 +69,8 @@ class SearchGamesAPI200ResponseResultsInnerPlatformsInner {
       }());
 
       return SearchGamesAPI200ResponseResultsInnerPlatformsInner(
-        name: mapValueOfType<String>(json, r'name'),
         value: mapValueOfType<String>(json, r'value'),
+        name: mapValueOfType<String>(json, r'name'),
       );
     }
     return null;

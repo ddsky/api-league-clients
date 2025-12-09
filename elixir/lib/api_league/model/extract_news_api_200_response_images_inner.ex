@@ -8,16 +8,16 @@ defmodule APILeague.Model.ExtractNewsApi200ResponseImagesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :width,
     :title,
     :url,
+    :width,
     :height
   ]
 
   @type t :: %__MODULE__{
-    :width => integer() | nil,
     :title => String.t | nil,
     :url => String.t | nil,
+    :width => integer() | nil,
     :height => integer() | nil
   }
 

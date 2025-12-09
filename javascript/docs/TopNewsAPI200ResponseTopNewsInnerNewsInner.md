@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | **String** |  | [optional] 
-**image** | **String** |  | [optional] 
 **id** | **Number** |  | [optional] 
-**text** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
-**publishDate** | **String** |  | [optional] 
+**text** | **String** |  | [optional] 
+**summary** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
+**image** | **String** |  | [optional] 
+**publishDate** | **String** |  | [optional] 
 **authors** | **[String]** |  | [optional] 
 
 

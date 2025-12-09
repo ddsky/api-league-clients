@@ -7,15 +7,15 @@
 
 (def score-text-api-200-response-readability-subscores-data
   {
-   (ds/opt :reading_time_seconds) int?
    (ds/opt :forcast) float?
    (ds/opt :flesch) float?
    (ds/opt :smog) float?
    (ds/opt :ari) float?
    (ds/opt :lix) float?
-   (ds/opt :coleman_liau) float?
    (ds/opt :kincaid) float?
    (ds/opt :fog) float?
+   (ds/opt :coleman_liau) float?
+   (ds/opt :reading_time_seconds) int?
    })
 
 (def score-text-api-200-response-readability-subscores-spec

@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **kotlin.String** |  |  [optional] |
-| **filterType** | **kotlin.String** |  |  [optional] |
 | **key** | **kotlin.String** |  |  [optional] |
 | **propertyValues** | [**kotlin.collections.List&lt;SearchGamesAPI200ResponseFilterOptionsInnerValuesInner&gt;**](SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md) |  |  [optional] |
+| **filterType** | **kotlin.String** |  |  [optional] |
 | **filterConnection** | **kotlin.String** |  |  [optional] |
 
 

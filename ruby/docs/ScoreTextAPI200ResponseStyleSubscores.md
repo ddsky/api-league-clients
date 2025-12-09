@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **abbreviation_score** | **Array&lt;Integer&gt;** |  | [optional] |
-| **style_score** | **Array&lt;Integer&gt;** |  | [optional] |
-| **spelling_score** | **Array&lt;Integer&gt;** |  | [optional] |
+| **abbreviation_score** | **Array&lt;Float&gt;** |  | [optional] |
+| **style_score** | **Array&lt;Float&gt;** |  | [optional] |
+| **spelling_score** | **Array&lt;Float&gt;** |  | [optional] |
 
 ## Example
 

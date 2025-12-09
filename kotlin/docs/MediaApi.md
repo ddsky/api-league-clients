@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------------- | ------------- | ------------- |
 | [**detectMainImageColorAPI**](MediaApi.md#detectMainImageColorAPI) | **GET** /detect-color | Detect Main Image Color API |
 | [**rescaleImageAPI**](MediaApi.md#rescaleImageAPI) | **GET** /rescale-image | Rescale Image API |
+| [**screenshotAPI**](MediaApi.md#screenshotAPI) | **GET** /take-screenshot | Screenshot API |
 | [**searchIconsAPI**](MediaApi.md#searchIconsAPI) | **GET** /search-icons | Search Icons API |
 | [**searchRoyaltyFreeImagesAPI**](MediaApi.md#searchRoyaltyFreeImagesAPI) | **GET** /search-images | Search Royalty Free Images API |
 | [**vectorSearchAPI**](MediaApi.md#vectorSearchAPI) | **GET** /search-vectors | Vector Search API |
@@ -101,6 +102,62 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **crop** | **kotlin.Boolean**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | |
+
+### Return type
+
+[**java.io.File**](java.io.File.md)
+
+### Authorization
+
+
+Configure apiKey:
+    ApiClient.apiKey["api-key"] = ""
+    ApiClient.apiKeyPrefix["api-key"] = ""
+Configure headerApiKey:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+<a id="screenshotAPI"></a>
+# **screenshotAPI**
+> java.io.File screenshotAPI(url, width, height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+```kotlin
+// Import classes:
+//import apileague.infrastructure.*
+//import com.apileague.client.model.*
+
+val apiInstance = MediaApi()
+val url : kotlin.String = https://nytimes.com // kotlin.String | The url of the web page for which a screenshot should be taken.
+val width : kotlin.Int = 400 // kotlin.Int | The desired width of the screenshot.
+val height : kotlin.Int = 300 // kotlin.Int | The desired height of the screenshot.
+try {
+    val result : java.io.File = apiInstance.screenshotAPI(url, width, height)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling MediaApi#screenshotAPI")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling MediaApi#screenshotAPI")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **url** | **kotlin.String**| The url of the web page for which a screenshot should be taken. | |
+| **width** | **kotlin.Int**| The desired width of the screenshot. | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **height** | **kotlin.Int**| The desired height of the screenshot. | |
 
 ### Return type
 

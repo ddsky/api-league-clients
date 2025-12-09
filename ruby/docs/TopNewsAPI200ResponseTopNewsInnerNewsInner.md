@@ -4,13 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **summary** | **String** |  | [optional] |
-| **image** | **String** |  | [optional] |
 | **id** | **Integer** |  | [optional] |
-| **text** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
-| **publish_date** | **String** |  | [optional] |
+| **text** | **String** |  | [optional] |
+| **summary** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
+| **image** | **String** |  | [optional] |
+| **publish_date** | **String** |  | [optional] |
 | **authors** | **Array&lt;String&gt;** |  | [optional] |
 
 ## Example
@@ -19,13 +19,13 @@
 require 'openapi_client'
 
 instance = OpenapiClient::TopNewsAPI200ResponseTopNewsInnerNewsInner.new(
-  summary: null,
-  image: null,
   id: null,
-  text: null,
   title: null,
-  publish_date: null,
+  text: null,
+  summary: null,
   url: null,
+  image: null,
+  publish_date: null,
   authors: null
 )
 ```

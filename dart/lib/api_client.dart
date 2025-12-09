@@ -240,6 +240,10 @@ class ApiClient {
           return ListWordSynonymsAPI200Response.fromJson(value);
         case 'PluralizeWordAPI200Response':
           return PluralizeWordAPI200Response.fromJson(value);
+        case 'RandomAffirmationAPI200Response':
+          return RandomAffirmationAPI200Response.fromJson(value);
+        case 'RandomLifeHackAPI200Response':
+          return RandomLifeHackAPI200Response.fromJson(value);
         case 'RandomMemeAPI200Response':
           return RandomMemeAPI200Response.fromJson(value);
         case 'RandomPoemAPI200Response':
@@ -344,14 +348,14 @@ class ApiClient {
           return SearchDrinksAPI200ResponseDrinksInnerNutrition.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.fromJson(value);
-        case 'SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner':
-          return SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.fromJson(value);
+        case 'SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner':
+          return SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.fromJson(value);
         case 'SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing':
           return SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.fromJson(value);
         case 'SearchGamesAPI200Response':
@@ -378,6 +382,8 @@ class ApiClient {
           return SearchGifsAPI200ResponseImagesInner.fromJson(value);
         case 'SearchIconsAPI200Response':
           return SearchIconsAPI200Response.fromJson(value);
+        case 'SearchIconsAPI200ResponseIconsInner':
+          return SearchIconsAPI200ResponseIconsInner.fromJson(value);
         case 'SearchJokesAPI200Response':
           return SearchJokesAPI200Response.fromJson(value);
         case 'SearchJokesAPI200ResponseJokesInner':
@@ -398,16 +404,6 @@ class ApiClient {
           return SearchRecipesAPI200ResponseRecipesInnerNutrition.fromJson(value);
         case 'SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner':
           return SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.fromJson(value);
-        case 'SearchRestaurantsAPI200Response':
-          return SearchRestaurantsAPI200Response.fromJson(value);
-        case 'SearchRestaurantsAPI200ResponseRestaurantsInner':
-          return SearchRestaurantsAPI200ResponseRestaurantsInner.fromJson(value);
-        case 'SearchRestaurantsAPI200ResponseRestaurantsInnerAddress':
-          return SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.fromJson(value);
-        case 'SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours':
-          return SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.fromJson(value);
-        case 'SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational':
-          return SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.fromJson(value);
         case 'SearchRoyaltyFreeImagesAPI200Response':
           return SearchRoyaltyFreeImagesAPI200Response.fromJson(value);
         case 'SearchRoyaltyFreeImagesAPI200ResponseImagesInner':

@@ -8,10 +8,10 @@
 
 (def search-drinks-api-200-response-drinks-inner-nutrition-ingredient-breakdown-inner-data
   {
+   (ds/opt :id) int?
    (ds/opt :name) string?
    (ds/opt :amount) int?
    (ds/opt :unit) string?
-   (ds/opt :id) int?
    (ds/opt :nutrients) (s/coll-of search-drinks-api-200-response-drinks-inner-nutrition-ingredient-breakdown-inner-nutrients-inner-spec)
    })
 

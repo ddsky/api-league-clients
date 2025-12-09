@@ -5,31 +5,31 @@
 -export_type([apileague_top_news_api_200_response_top_news_inner_news_inner/0]).
 
 -type apileague_top_news_api_200_response_top_news_inner_news_inner() ::
-    #{ 'summary' => binary(),
-       'image' => binary(),
-       'id' => integer(),
-       'text' => binary(),
+    #{ 'id' => integer(),
        'title' => binary(),
-       'publish_date' => binary(),
+       'text' => binary(),
+       'summary' => binary(),
        'url' => binary(),
+       'image' => binary(),
+       'publish_date' => binary(),
        'authors' => list()
      }.
 
-encode(#{ 'summary' := Summary,
-          'image' := Image,
-          'id' := Id,
-          'text' := Text,
+encode(#{ 'id' := Id,
           'title' := Title,
-          'publish_date' := PublishDate,
+          'text' := Text,
+          'summary' := Summary,
           'url' := Url,
+          'image' := Image,
+          'publish_date' := PublishDate,
           'authors' := Authors
         }) ->
-    #{ 'summary' => Summary,
-       'image' => Image,
-       'id' => Id,
-       'text' => Text,
+    #{ 'id' => Id,
        'title' => Title,
-       'publish_date' => PublishDate,
+       'text' => Text,
+       'summary' => Summary,
        'url' => Url,
+       'image' => Image,
+       'publish_date' => PublishDate,
        'authors' => Authors
      }.

@@ -25,16 +25,16 @@ class RetrieveGameById200ResponseRatingTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveGameById200ResponseRating
         //val modelInstance = RetrieveGameById200ResponseRating()
 
+        // to test the property `mean`
+        should("test mean") {
+            // uncomment below to test the property
+            //modelInstance.mean shouldBe ("TODO")
+        }
+
         // to test the property `count`
         should("test count") {
             // uncomment below to test the property
             //modelInstance.count shouldBe ("TODO")
-        }
-
-        // to test the property `countCritics`
-        should("test countCritics") {
-            // uncomment below to test the property
-            //modelInstance.countCritics shouldBe ("TODO")
         }
 
         // to test the property `meanPlayers`
@@ -43,22 +43,22 @@ class RetrieveGameById200ResponseRatingTest : ShouldSpec() {
             //modelInstance.meanPlayers shouldBe ("TODO")
         }
 
+        // to test the property `countPlayers`
+        should("test countPlayers") {
+            // uncomment below to test the property
+            //modelInstance.countPlayers shouldBe ("TODO")
+        }
+
         // to test the property `meanCritics`
         should("test meanCritics") {
             // uncomment below to test the property
             //modelInstance.meanCritics shouldBe ("TODO")
         }
 
-        // to test the property `mean`
-        should("test mean") {
+        // to test the property `countCritics`
+        should("test countCritics") {
             // uncomment below to test the property
-            //modelInstance.mean shouldBe ("TODO")
-        }
-
-        // to test the property `countPlayers`
-        should("test countPlayers") {
-            // uncomment below to test the property
-            //modelInstance.countPlayers shouldBe ("TODO")
+            //modelInstance.countCritics shouldBe ("TODO")
         }
 
     }

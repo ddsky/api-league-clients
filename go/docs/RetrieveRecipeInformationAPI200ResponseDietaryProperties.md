@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LowFodmap** | Pointer to **bool** |  | [optional] 
 **Vegetarian** | Pointer to **bool** |  | [optional] 
 **Vegan** | Pointer to **bool** |  | [optional] 
 **GlutenFree** | Pointer to **bool** |  | [optional] 
 **DairyFree** | Pointer to **bool** |  | [optional] 
+**LowFodmap** | Pointer to **bool** |  | [optional] 
 **Gaps** | Pointer to **NullableString** |  | [optional] 
 **Diets** | Pointer to **[]string** |  | [optional] 
 
@@ -30,31 +30,6 @@ will change when the set of required properties is changed
 NewRetrieveRecipeInformationAPI200ResponseDietaryPropertiesWithDefaults instantiates a new RetrieveRecipeInformationAPI200ResponseDietaryProperties object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetLowFodmap
-
-`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmap() bool`
-
-GetLowFodmap returns the LowFodmap field if non-nil, zero value otherwise.
-
-### GetLowFodmapOk
-
-`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmapOk() (*bool, bool)`
-
-GetLowFodmapOk returns a tuple with the LowFodmap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLowFodmap
-
-`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) SetLowFodmap(v bool)`
-
-SetLowFodmap sets LowFodmap field to given value.
-
-### HasLowFodmap
-
-`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) HasLowFodmap() bool`
-
-HasLowFodmap returns a boolean if a field has been set.
 
 ### GetVegetarian
 
@@ -155,6 +130,31 @@ SetDairyFree sets DairyFree field to given value.
 `func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) HasDairyFree() bool`
 
 HasDairyFree returns a boolean if a field has been set.
+
+### GetLowFodmap
+
+`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmap() bool`
+
+GetLowFodmap returns the LowFodmap field if non-nil, zero value otherwise.
+
+### GetLowFodmapOk
+
+`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmapOk() (*bool, bool)`
+
+GetLowFodmapOk returns a tuple with the LowFodmap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLowFodmap
+
+`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) SetLowFodmap(v bool)`
+
+SetLowFodmap sets LowFodmap field to given value.
+
+### HasLowFodmap
+
+`func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) HasLowFodmap() bool`
+
+HasLowFodmap returns a boolean if a field has been set.
 
 ### GetGaps
 

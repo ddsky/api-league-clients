@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **String** |  |  [optional]
 **source** | **String** |  |  [optional]
+**url** | **String** |  |  [optional]
 
 
 

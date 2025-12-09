@@ -13,55 +13,19 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInner {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInner] instance.
   SearchDrinksAPI200ResponseDrinksInner({
-    this.flavors = const [],
-    this.instructions = const [],
-    this.images = const [],
-    this.nutrition,
-    this.glassType,
-    this.credits,
-    this.pricePerServing,
-    this.description,
-    this.ingredients = const [],
     this.id,
     this.title,
+    this.images = const [],
+    this.pricePerServing,
+    this.nutrition,
+    this.flavors = const [],
+    this.glassType,
+    this.description,
     this.cuisines = const [],
+    this.ingredients = const [],
+    this.instructions = const [],
+    this.credits,
   });
-
-  List<String> flavors;
-
-  List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner> instructions;
-
-  List<String> images;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  SearchDrinksAPI200ResponseDrinksInnerNutrition? nutrition;
-
-  String? glassType;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  SearchDrinksAPI200ResponseDrinksInnerCredits? credits;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? pricePerServing;
-
-  String? description;
-
-  List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner> ingredients;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -73,73 +37,80 @@ class SearchDrinksAPI200ResponseDrinksInner {
 
   String? title;
 
+  List<String> images;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? pricePerServing;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  SearchDrinksAPI200ResponseDrinksInnerNutrition? nutrition;
+
+  List<String> flavors;
+
+  String? glassType;
+
+  String? description;
+
   List<String> cuisines;
+
+  List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner> ingredients;
+
+  List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner> instructions;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  SearchDrinksAPI200ResponseDrinksInnerCredits? credits;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInner &&
-    _deepEquality.equals(other.flavors, flavors) &&
-    _deepEquality.equals(other.instructions, instructions) &&
-    _deepEquality.equals(other.images, images) &&
-    other.nutrition == nutrition &&
-    other.glassType == glassType &&
-    other.credits == credits &&
-    other.pricePerServing == pricePerServing &&
-    other.description == description &&
-    _deepEquality.equals(other.ingredients, ingredients) &&
     other.id == id &&
     other.title == title &&
-    _deepEquality.equals(other.cuisines, cuisines);
+    _deepEquality.equals(other.images, images) &&
+    other.pricePerServing == pricePerServing &&
+    other.nutrition == nutrition &&
+    _deepEquality.equals(other.flavors, flavors) &&
+    other.glassType == glassType &&
+    other.description == description &&
+    _deepEquality.equals(other.cuisines, cuisines) &&
+    _deepEquality.equals(other.ingredients, ingredients) &&
+    _deepEquality.equals(other.instructions, instructions) &&
+    other.credits == credits;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (flavors.hashCode) +
-    (instructions.hashCode) +
-    (images.hashCode) +
-    (nutrition == null ? 0 : nutrition!.hashCode) +
-    (glassType == null ? 0 : glassType!.hashCode) +
-    (credits == null ? 0 : credits!.hashCode) +
-    (pricePerServing == null ? 0 : pricePerServing!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (ingredients.hashCode) +
     (id == null ? 0 : id!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
-    (cuisines.hashCode);
+    (images.hashCode) +
+    (pricePerServing == null ? 0 : pricePerServing!.hashCode) +
+    (nutrition == null ? 0 : nutrition!.hashCode) +
+    (flavors.hashCode) +
+    (glassType == null ? 0 : glassType!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (cuisines.hashCode) +
+    (ingredients.hashCode) +
+    (instructions.hashCode) +
+    (credits == null ? 0 : credits!.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInner[flavors=$flavors, instructions=$instructions, images=$images, nutrition=$nutrition, glassType=$glassType, credits=$credits, pricePerServing=$pricePerServing, description=$description, ingredients=$ingredients, id=$id, title=$title, cuisines=$cuisines]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInner[id=$id, title=$title, images=$images, pricePerServing=$pricePerServing, nutrition=$nutrition, flavors=$flavors, glassType=$glassType, description=$description, cuisines=$cuisines, ingredients=$ingredients, instructions=$instructions, credits=$credits]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'flavors'] = this.flavors;
-      json[r'instructions'] = this.instructions;
-      json[r'images'] = this.images;
-    if (this.nutrition != null) {
-      json[r'nutrition'] = this.nutrition;
-    } else {
-      json[r'nutrition'] = null;
-    }
-    if (this.glassType != null) {
-      json[r'glass_type'] = this.glassType;
-    } else {
-      json[r'glass_type'] = null;
-    }
-    if (this.credits != null) {
-      json[r'credits'] = this.credits;
-    } else {
-      json[r'credits'] = null;
-    }
-    if (this.pricePerServing != null) {
-      json[r'price_per_serving'] = this.pricePerServing;
-    } else {
-      json[r'price_per_serving'] = null;
-    }
-    if (this.description != null) {
-      json[r'description'] = this.description;
-    } else {
-      json[r'description'] = null;
-    }
-      json[r'ingredients'] = this.ingredients;
     if (this.id != null) {
       json[r'id'] = this.id;
     } else {
@@ -150,7 +121,36 @@ class SearchDrinksAPI200ResponseDrinksInner {
     } else {
       json[r'title'] = null;
     }
+      json[r'images'] = this.images;
+    if (this.pricePerServing != null) {
+      json[r'price_per_serving'] = this.pricePerServing;
+    } else {
+      json[r'price_per_serving'] = null;
+    }
+    if (this.nutrition != null) {
+      json[r'nutrition'] = this.nutrition;
+    } else {
+      json[r'nutrition'] = null;
+    }
+      json[r'flavors'] = this.flavors;
+    if (this.glassType != null) {
+      json[r'glass_type'] = this.glassType;
+    } else {
+      json[r'glass_type'] = null;
+    }
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
+    }
       json[r'cuisines'] = this.cuisines;
+      json[r'ingredients'] = this.ingredients;
+      json[r'instructions'] = this.instructions;
+    if (this.credits != null) {
+      json[r'credits'] = this.credits;
+    } else {
+      json[r'credits'] = null;
+    }
     return json;
   }
 
@@ -173,24 +173,24 @@ class SearchDrinksAPI200ResponseDrinksInner {
       }());
 
       return SearchDrinksAPI200ResponseDrinksInner(
-        flavors: json[r'flavors'] is Iterable
-            ? (json[r'flavors'] as Iterable).cast<String>().toList(growable: false)
-            : const [],
-        instructions: SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.listFromJson(json[r'instructions']),
+        id: mapValueOfType<int>(json, r'id'),
+        title: mapValueOfType<String>(json, r'title'),
         images: json[r'images'] is Iterable
             ? (json[r'images'] as Iterable).cast<String>().toList(growable: false)
             : const [],
-        nutrition: SearchDrinksAPI200ResponseDrinksInnerNutrition.fromJson(json[r'nutrition']),
-        glassType: mapValueOfType<String>(json, r'glass_type'),
-        credits: SearchDrinksAPI200ResponseDrinksInnerCredits.fromJson(json[r'credits']),
         pricePerServing: num.parse('${json[r'price_per_serving']}'),
+        nutrition: SearchDrinksAPI200ResponseDrinksInnerNutrition.fromJson(json[r'nutrition']),
+        flavors: json[r'flavors'] is Iterable
+            ? (json[r'flavors'] as Iterable).cast<String>().toList(growable: false)
+            : const [],
+        glassType: mapValueOfType<String>(json, r'glass_type'),
         description: mapValueOfType<String>(json, r'description'),
-        ingredients: SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.listFromJson(json[r'ingredients']),
-        id: mapValueOfType<int>(json, r'id'),
-        title: mapValueOfType<String>(json, r'title'),
         cuisines: json[r'cuisines'] is Iterable
             ? (json[r'cuisines'] as Iterable).cast<String>().toList(growable: false)
             : const [],
+        ingredients: SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.listFromJson(json[r'ingredients']),
+        instructions: SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.listFromJson(json[r'instructions']),
+        credits: SearchDrinksAPI200ResponseDrinksInnerCredits.fromJson(json[r'credits']),
       );
     }
     return null;

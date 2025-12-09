@@ -8,35 +8,35 @@ defmodule APILeague.Model.SearchGamesApi200ResponseResultsInner do
 
   @derive Jason.Encoder
   defstruct [
-    :image,
-    :short_description,
+    :id,
     :year,
+    :name,
+    :genre,
+    :image,
     :link,
     :rating,
     :adult_only,
     :screenshots,
-    :platforms,
     :micro_trailer,
-    :name,
-    :genre,
-    :id,
-    :gameplay
+    :gameplay,
+    :short_description,
+    :platforms
   ]
 
   @type t :: %__MODULE__{
-    :image => String.t | nil,
-    :short_description => String.t | nil,
+    :id => integer() | nil,
     :year => integer() | nil,
+    :name => String.t | nil,
+    :genre => String.t | nil,
+    :image => String.t | nil,
     :link => String.t | nil,
     :rating => APILeague.Model.SearchGamesApi200ResponseResultsInnerRating.t | nil,
     :adult_only => boolean() | nil,
     :screenshots => [String.t] | nil,
-    :platforms => [APILeague.Model.SearchGamesApi200ResponseResultsInnerPlatformsInner.t] | nil,
     :micro_trailer => String.t | nil,
-    :name => String.t | nil,
-    :genre => String.t | nil,
-    :id => integer() | nil,
-    :gameplay => String.t | nil
+    :gameplay => String.t | nil,
+    :short_description => String.t | nil,
+    :platforms => [APILeague.Model.SearchGamesApi200ResponseResultsInnerPlatformsInner.t] | nil
   }
 
   alias APILeague.Deserializer

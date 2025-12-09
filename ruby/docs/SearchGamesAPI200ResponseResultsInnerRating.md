@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **count** | **Integer** |  | [optional] |
 | **mean** | **Float** |  | [optional] |
+| **count** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -13,8 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchGamesAPI200ResponseResultsInnerRating.new(
-  count: null,
-  mean: null
+  mean: null,
+  count: null
 )
 ```
 

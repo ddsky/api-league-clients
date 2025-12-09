@@ -22,39 +22,39 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param summary 
- * @param image 
  * @param id 
- * @param text 
  * @param title 
- * @param publishDate 
+ * @param text 
+ * @param summary 
  * @param url 
+ * @param image 
+ * @param publishDate 
  * @param authors 
  */
 
 
 data class TopNewsAPI200ResponseTopNewsInnerNewsInner (
 
-    @Json(name = "summary")
-    val summary: kotlin.String? = null,
-
-    @Json(name = "image")
-    val image: kotlin.String? = null,
-
     @Json(name = "id")
     val id: kotlin.Int? = null,
-
-    @Json(name = "text")
-    val text: kotlin.String? = null,
 
     @Json(name = "title")
     val title: kotlin.String? = null,
 
-    @Json(name = "publish_date")
-    val publishDate: kotlin.String? = null,
+    @Json(name = "text")
+    val text: kotlin.String? = null,
+
+    @Json(name = "summary")
+    val summary: kotlin.String? = null,
 
     @Json(name = "url")
     val url: kotlin.String? = null,
+
+    @Json(name = "image")
+    val image: kotlin.String? = null,
+
+    @Json(name = "publish_date")
+    val publishDate: kotlin.String? = null,
 
     @Json(name = "authors")
     val authors: kotlin.collections.List<kotlin.String>? = null

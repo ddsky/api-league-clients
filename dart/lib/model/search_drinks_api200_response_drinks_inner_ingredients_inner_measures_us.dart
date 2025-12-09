@@ -13,12 +13,10 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs] instance.
   SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs({
-    this.unitShort,
     this.amount,
+    this.unitShort,
     this.unitLong,
   });
-
-  String? unitShort;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -28,35 +26,37 @@ class SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs {
   ///
   int? amount;
 
+  String? unitShort;
+
   String? unitLong;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs &&
-    other.unitShort == unitShort &&
     other.amount == amount &&
+    other.unitShort == unitShort &&
     other.unitLong == unitLong;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (unitShort == null ? 0 : unitShort!.hashCode) +
     (amount == null ? 0 : amount!.hashCode) +
+    (unitShort == null ? 0 : unitShort!.hashCode) +
     (unitLong == null ? 0 : unitLong!.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs[unitShort=$unitShort, amount=$amount, unitLong=$unitLong]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs[amount=$amount, unitShort=$unitShort, unitLong=$unitLong]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.unitShort != null) {
-      json[r'unit_short'] = this.unitShort;
-    } else {
-      json[r'unit_short'] = null;
-    }
     if (this.amount != null) {
       json[r'amount'] = this.amount;
     } else {
       json[r'amount'] = null;
+    }
+    if (this.unitShort != null) {
+      json[r'unit_short'] = this.unitShort;
+    } else {
+      json[r'unit_short'] = null;
     }
     if (this.unitLong != null) {
       json[r'unit_long'] = this.unitLong;
@@ -85,8 +85,8 @@ class SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs {
       }());
 
       return SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs(
-        unitShort: mapValueOfType<String>(json, r'unit_short'),
         amount: mapValueOfType<int>(json, r'amount'),
+        unitShort: mapValueOfType<String>(json, r'unit_short'),
         unitLong: mapValueOfType<String>(json, r'unit_long'),
       );
     }

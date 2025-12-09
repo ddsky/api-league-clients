@@ -21,13 +21,13 @@ void main() {
       // TODO
     });
 
-    // String key
-    test('to test the property `key`', () async {
+    // String sort
+    test('to test the property `sort`', () async {
       // TODO
     });
 
-    // String sort
-    test('to test the property `sort`', () async {
+    // String key
+    test('to test the property `key`', () async {
       // TODO
     });
 

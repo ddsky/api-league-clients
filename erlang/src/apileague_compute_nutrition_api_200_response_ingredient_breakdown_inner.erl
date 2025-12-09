@@ -5,22 +5,22 @@
 -export_type([apileague_compute_nutrition_api_200_response_ingredient_breakdown_inner/0]).
 
 -type apileague_compute_nutrition_api_200_response_ingredient_breakdown_inner() ::
-    #{ 'name' => binary(),
+    #{ 'id' => integer(),
+       'name' => binary(),
        'amount' => integer(),
        'unit' => binary(),
-       'id' => integer(),
        'nutrients' => list()
      }.
 
-encode(#{ 'name' := Name,
+encode(#{ 'id' := Id,
+          'name' := Name,
           'amount' := Amount,
           'unit' := Unit,
-          'id' := Id,
           'nutrients' := Nutrients
         }) ->
-    #{ 'name' => Name,
+    #{ 'id' => Id,
+       'name' => Name,
        'amount' => Amount,
        'unit' => Unit,
-       'id' => Id,
        'nutrients' => Nutrients
      }.

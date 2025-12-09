@@ -7,8 +7,8 @@
 
 (def vector-search-api-200-response-vectors-inner-data
   {
-   (ds/opt :license) string?
    (ds/opt :title) string?
+   (ds/opt :license) string?
    (ds/opt :author) string?
    (ds/opt :image_url) string?
    })

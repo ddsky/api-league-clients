@@ -8,15 +8,15 @@ defmodule APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricB
 
   @derive Jason.Encoder
   defstruct [
-    :percent_fat,
     :percent_carbs,
-    :percent_protein
+    :percent_protein,
+    :percent_fat
   ]
 
   @type t :: %__MODULE__{
-    :percent_fat => float() | nil,
     :percent_carbs => float() | nil,
-    :percent_protein => float() | nil
+    :percent_protein => float() | nil,
+    :percent_fat => float() | nil
   }
 
   def decode(value) do

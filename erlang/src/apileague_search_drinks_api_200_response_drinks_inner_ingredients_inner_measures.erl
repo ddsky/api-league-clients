@@ -5,13 +5,13 @@
 -export_type([apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures/0]).
 
 -type apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures() ::
-    #{ 'metric' => apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_metric:apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_metric(),
-       'us' => apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_us:apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_us()
+    #{ 'us' => apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_us:apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_us(),
+       'metric' => apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_metric:apileague_search_drinks_api_200_response_drinks_inner_ingredients_inner_measures_metric()
      }.
 
-encode(#{ 'metric' := Metric,
-          'us' := Us
+encode(#{ 'us' := Us,
+          'metric' := Metric
         }) ->
-    #{ 'metric' => Metric,
-       'us' => Us
+    #{ 'us' => Us,
+       'metric' => Metric
      }.

@@ -7,8 +7,8 @@
 
 (def search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-us-data
   {
-   (ds/opt :unit_short) string?
    (ds/opt :amount) int?
+   (ds/opt :unit_short) string?
    (ds/opt :unit_long) string?
    })
 

@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **url** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **summary** | **String** |  | [optional] |
-| **url** | **String** |  | [optional] |
 
 ## Example
 
@@ -14,9 +14,9 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchWebAPI200ResponseResultsInner.new(
+  url: null,
   title: null,
-  summary: null,
-  url: null
+  summary: null
 )
 ```
 

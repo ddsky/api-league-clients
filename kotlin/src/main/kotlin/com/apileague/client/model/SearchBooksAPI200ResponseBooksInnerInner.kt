@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param id 
  * @param title 
  * @param image 
- * @param id 
  */
 
 
 data class SearchBooksAPI200ResponseBooksInnerInner (
 
+    @Json(name = "id")
+    val id: kotlin.Int? = null,
+
     @Json(name = "title")
     val title: kotlin.String? = null,
 
     @Json(name = "image")
-    val image: kotlin.String? = null,
-
-    @Json(name = "id")
-    val id: kotlin.Int? = null
+    val image: kotlin.String? = null
 
 ) {
 

@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **number** | **kotlin.Int** |  |  [optional] |
+| **step** | **kotlin.String** |  |  [optional] |
 | **ingredients** | [**kotlin.collections.List&lt;SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  |  [optional] |
 | **equipment** | [**kotlin.collections.List&lt;SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  |  [optional] |
-| **step** | **kotlin.String** |  |  [optional] |
 
 
 

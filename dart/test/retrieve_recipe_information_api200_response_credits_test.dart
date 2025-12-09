@@ -16,8 +16,13 @@ void main() {
   // final instance = RetrieveRecipeInformationAPI200ResponseCredits();
 
   group('test RetrieveRecipeInformationAPI200ResponseCredits', () {
-    // String license
-    test('to test the property `license`', () async {
+    // String sourceName
+    test('to test the property `sourceName`', () async {
+      // TODO
+    });
+
+    // String sourceUrl
+    test('to test the property `sourceUrl`', () async {
       // TODO
     });
 
@@ -26,13 +31,8 @@ void main() {
       // TODO
     });
 
-    // String sourceName
-    test('to test the property `sourceName`', () async {
-      // TODO
-    });
-
-    // String sourceUrl
-    test('to test the property `sourceUrl`', () async {
+    // String license
+    test('to test the property `license`', () async {
       // TODO
     });
 

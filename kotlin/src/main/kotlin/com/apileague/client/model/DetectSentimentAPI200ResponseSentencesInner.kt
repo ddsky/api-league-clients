@@ -22,17 +22,14 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param length 
  * @param sentiment 
  * @param offset 
  * @param confidence 
+ * @param length 
  */
 
 
 data class DetectSentimentAPI200ResponseSentencesInner (
-
-    @Json(name = "length")
-    val length: kotlin.Int? = null,
 
     @Json(name = "sentiment")
     val sentiment: kotlin.String? = null,
@@ -41,7 +38,10 @@ data class DetectSentimentAPI200ResponseSentencesInner (
     val offset: kotlin.Int? = null,
 
     @Json(name = "confidence")
-    val confidence: kotlin.Int? = null
+    val confidence: kotlin.Int? = null,
+
+    @Json(name = "length")
+    val length: kotlin.Int? = null
 
 ) {
 

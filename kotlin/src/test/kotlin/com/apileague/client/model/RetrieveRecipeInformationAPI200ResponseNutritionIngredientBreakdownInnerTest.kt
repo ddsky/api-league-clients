@@ -26,6 +26,12 @@ class RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInnerTe
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner()
 
+        // to test the property `id`
+        should("test id") {
+            // uncomment below to test the property
+            //modelInstance.id shouldBe ("TODO")
+        }
+
         // to test the property `name`
         should("test name") {
             // uncomment below to test the property
@@ -42,12 +48,6 @@ class RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInnerTe
         should("test unit") {
             // uncomment below to test the property
             //modelInstance.unit shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
         }
 
         // to test the property `nutrients`

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**store_name** | **str** |  | [optional] 
-**title** | **str** |  | [optional] 
 **price** | [**RetrieveGameById200ResponseOffersInnerPrice**](RetrieveGameById200ResponseOffersInnerPrice.md) |  | [optional] 
+**store_name** | **str** |  | [optional] 
 **platform** | **str** |  | [optional] 
+**title** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 
 ## Example

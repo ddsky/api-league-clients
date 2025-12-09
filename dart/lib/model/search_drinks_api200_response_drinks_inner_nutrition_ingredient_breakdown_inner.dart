@@ -13,12 +13,20 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner] instance.
   SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner({
+    this.id,
     this.name,
     this.amount,
     this.unit,
-    this.id,
     this.nutrients = const [],
   });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
   String? name;
 
@@ -32,38 +40,35 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner {
 
   String? unit;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? id;
-
   List<SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner> nutrients;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner &&
+    other.id == id &&
     other.name == name &&
     other.amount == amount &&
     other.unit == unit &&
-    other.id == id &&
     _deepEquality.equals(other.nutrients, nutrients);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (amount == null ? 0 : amount!.hashCode) +
     (unit == null ? 0 : unit!.hashCode) +
-    (id == null ? 0 : id!.hashCode) +
     (nutrients.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner[name=$name, amount=$amount, unit=$unit, id=$id, nutrients=$nutrients]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner[id=$id, name=$name, amount=$amount, unit=$unit, nutrients=$nutrients]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
@@ -78,11 +83,6 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner {
       json[r'unit'] = this.unit;
     } else {
       json[r'unit'] = null;
-    }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
     }
       json[r'nutrients'] = this.nutrients;
     return json;
@@ -107,10 +107,10 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner {
       }());
 
       return SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner(
+        id: mapValueOfType<int>(json, r'id'),
         name: mapValueOfType<String>(json, r'name'),
         amount: mapValueOfType<int>(json, r'amount'),
         unit: mapValueOfType<String>(json, r'unit'),
-        id: mapValueOfType<int>(json, r'id'),
         nutrients: SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.listFromJson(json[r'nutrients']),
       );
     }

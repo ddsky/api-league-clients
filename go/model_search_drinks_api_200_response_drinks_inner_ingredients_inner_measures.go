@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMea
 
 // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures struct for SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures
 type SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures struct {
-	Metric *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric `json:"metric,omitempty"`
 	Us *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs `json:"us,omitempty"`
+	Metric *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric `json:"metric,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures instantiates a new SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures object
@@ -39,38 +39,6 @@ func NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures() *SearchD
 func NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresWithDefaults() *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures {
 	this := SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures{}
 	return &this
-}
-
-// GetMetric returns the Metric field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) GetMetric() SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric {
-	if o == nil || IsNil(o.Metric) {
-		var ret SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric
-		return ret
-	}
-	return *o.Metric
-}
-
-// GetMetricOk returns a tuple with the Metric field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) GetMetricOk() (*SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool) {
-	if o == nil || IsNil(o.Metric) {
-		return nil, false
-	}
-	return o.Metric, true
-}
-
-// HasMetric returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) HasMetric() bool {
-	if o != nil && !IsNil(o.Metric) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetric gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric and assigns it to the Metric field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) SetMetric(v SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) {
-	o.Metric = &v
 }
 
 // GetUs returns the Us field value if set, zero value otherwise.
@@ -105,6 +73,38 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) SetUs(v 
 	o.Us = &v
 }
 
+// GetMetric returns the Metric field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) GetMetric() SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric {
+	if o == nil || IsNil(o.Metric) {
+		var ret SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric
+		return ret
+	}
+	return *o.Metric
+}
+
+// GetMetricOk returns a tuple with the Metric field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) GetMetricOk() (*SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool) {
+	if o == nil || IsNil(o.Metric) {
+		return nil, false
+	}
+	return o.Metric, true
+}
+
+// HasMetric returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) HasMetric() bool {
+	if o != nil && !IsNil(o.Metric) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetric gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric and assigns it to the Metric field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) SetMetric(v SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) {
+	o.Metric = &v
+}
+
 func (o SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -115,11 +115,11 @@ func (o SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) MarshalJS
 
 func (o SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Metric) {
-		toSerialize["metric"] = o.Metric
-	}
 	if !IsNil(o.Us) {
 		toSerialize["us"] = o.Us
+	}
+	if !IsNil(o.Metric) {
+		toSerialize["metric"] = o.Metric
 	}
 	return toSerialize, nil
 }

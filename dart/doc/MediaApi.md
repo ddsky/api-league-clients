@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColorAPI**](MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API
 [**rescaleImageAPI**](MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API
+[**screenshotAPI**](MediaApi.md#screenshotapi) | **GET** /take-screenshot | Screenshot API
 [**searchIconsAPI**](MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API
 [**searchRoyaltyFreeImagesAPI**](MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API
 [**vectorSearchAPI**](MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API
@@ -108,6 +109,61 @@ Name | Type | Description  | Notes
  **width** | **int**| The desired width of the rescaled image. | 
  **height** | **int**| The desired height of the rescaled image. | 
  **crop** | **bool**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | 
+
+### Return type
+
+[**MultipartFile**](MultipartFile.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **screenshotAPI**
+> MultipartFile screenshotAPI(url, width, height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = MediaApi();
+final url = https://nytimes.com; // String | The url of the web page for which a screenshot should be taken.
+final width = 400; // int | The desired width of the screenshot.
+final height = 300; // int | The desired height of the screenshot.
+
+try {
+    final result = api_instance.screenshotAPI(url, width, height);
+    print(result);
+} catch (e) {
+    print('Exception when calling MediaApi->screenshotAPI: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **String**| The url of the web page for which a screenshot should be taken. | 
+ **width** | **int**| The desired width of the screenshot. | 
+ **height** | **int**| The desired height of the screenshot. | 
 
 ### Return type
 

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &ExtractEntitiesAPI200ResponseEntitiesInner{}
 
 // ExtractEntitiesAPI200ResponseEntitiesInner struct for ExtractEntitiesAPI200ResponseEntitiesInner
 type ExtractEntitiesAPI200ResponseEntitiesInner struct {
-	StartPosition *int32 `json:"start_position,omitempty"`
-	Image NullableString `json:"image,omitempty"`
 	Type NullableString `json:"type,omitempty"`
 	Value NullableString `json:"value,omitempty"`
+	StartPosition *int32 `json:"start_position,omitempty"`
 	EndPosition *int32 `json:"end_position,omitempty"`
+	Image NullableString `json:"image,omitempty"`
 }
 
 // NewExtractEntitiesAPI200ResponseEntitiesInner instantiates a new ExtractEntitiesAPI200ResponseEntitiesInner object
@@ -42,80 +42,6 @@ func NewExtractEntitiesAPI200ResponseEntitiesInner() *ExtractEntitiesAPI200Respo
 func NewExtractEntitiesAPI200ResponseEntitiesInnerWithDefaults() *ExtractEntitiesAPI200ResponseEntitiesInner {
 	this := ExtractEntitiesAPI200ResponseEntitiesInner{}
 	return &this
-}
-
-// GetStartPosition returns the StartPosition field value if set, zero value otherwise.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPosition() int32 {
-	if o == nil || IsNil(o.StartPosition) {
-		var ret int32
-		return ret
-	}
-	return *o.StartPosition
-}
-
-// GetStartPositionOk returns a tuple with the StartPosition field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPositionOk() (*int32, bool) {
-	if o == nil || IsNil(o.StartPosition) {
-		return nil, false
-	}
-	return o.StartPosition, true
-}
-
-// HasStartPosition returns a boolean if a field has been set.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasStartPosition() bool {
-	if o != nil && !IsNil(o.StartPosition) {
-		return true
-	}
-
-	return false
-}
-
-// SetStartPosition gets a reference to the given int32 and assigns it to the StartPosition field.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetStartPosition(v int32) {
-	o.StartPosition = &v
-}
-
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImage() string {
-	if o == nil || IsNil(o.Image.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Image.Get()
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Image.Get(), o.Image.IsSet()
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given NullableString and assigns it to the Image field.
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImage(v string) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImageNil() {
-	o.Image.Set(nil)
-}
-
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetImage() {
-	o.Image.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -202,6 +128,38 @@ func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetValue() {
 	o.Value.Unset()
 }
 
+// GetStartPosition returns the StartPosition field value if set, zero value otherwise.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPosition() int32 {
+	if o == nil || IsNil(o.StartPosition) {
+		var ret int32
+		return ret
+	}
+	return *o.StartPosition
+}
+
+// GetStartPositionOk returns a tuple with the StartPosition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPositionOk() (*int32, bool) {
+	if o == nil || IsNil(o.StartPosition) {
+		return nil, false
+	}
+	return o.StartPosition, true
+}
+
+// HasStartPosition returns a boolean if a field has been set.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasStartPosition() bool {
+	if o != nil && !IsNil(o.StartPosition) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartPosition gets a reference to the given int32 and assigns it to the StartPosition field.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetStartPosition(v int32) {
+	o.StartPosition = &v
+}
+
 // GetEndPosition returns the EndPosition field value if set, zero value otherwise.
 func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetEndPosition() int32 {
 	if o == nil || IsNil(o.EndPosition) {
@@ -234,6 +192,48 @@ func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetEndPosition(v int32) {
 	o.EndPosition = &v
 }
 
+// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImage() string {
+	if o == nil || IsNil(o.Image.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Image.Get()
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Image.Get(), o.Image.IsSet()
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasImage() bool {
+	if o != nil && o.Image.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given NullableString and assigns it to the Image field.
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImage(v string) {
+	o.Image.Set(&v)
+}
+// SetImageNil sets the value for Image to be an explicit nil
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImageNil() {
+	o.Image.Set(nil)
+}
+
+// UnsetImage ensures that no value is present for Image, not even an explicit nil
+func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetImage() {
+	o.Image.Unset()
+}
+
 func (o ExtractEntitiesAPI200ResponseEntitiesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -244,20 +244,20 @@ func (o ExtractEntitiesAPI200ResponseEntitiesInner) MarshalJSON() ([]byte, error
 
 func (o ExtractEntitiesAPI200ResponseEntitiesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartPosition) {
-		toSerialize["start_position"] = o.StartPosition
-	}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
-	}
 	if o.Type.IsSet() {
 		toSerialize["type"] = o.Type.Get()
 	}
 	if o.Value.IsSet() {
 		toSerialize["value"] = o.Value.Get()
 	}
+	if !IsNil(o.StartPosition) {
+		toSerialize["start_position"] = o.StartPosition
+	}
 	if !IsNil(o.EndPosition) {
 		toSerialize["end_position"] = o.EndPosition
+	}
+	if o.Image.IsSet() {
+		toSerialize["image"] = o.Image.Get()
 	}
 	return toSerialize, nil
 }

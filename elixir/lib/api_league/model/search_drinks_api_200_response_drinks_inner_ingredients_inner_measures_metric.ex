@@ -8,14 +8,14 @@ defmodule APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerM
 
   @derive Jason.Encoder
   defstruct [
-    :unit_short,
     :amount,
+    :unit_short,
     :unit_long
   ]
 
   @type t :: %__MODULE__{
-    :unit_short => String.t | nil,
     :amount => float() | nil,
+    :unit_short => String.t | nil,
     :unit_long => String.t | nil
   }
 

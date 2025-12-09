@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Image** | Pointer to **NullableString** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -26,6 +26,31 @@ will change when the set of required properties is changed
 NewSearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInnerWithDefaults instantiates a new SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -97,31 +122,6 @@ HasImage returns a boolean if a field has been set.
 `func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) UnsetImage()`
 
 UnsetImage ensures that no value is present for Image, not even an explicit nil
-### GetId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetId() int32`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetIdOk() (*int32, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) SetId(v int32)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

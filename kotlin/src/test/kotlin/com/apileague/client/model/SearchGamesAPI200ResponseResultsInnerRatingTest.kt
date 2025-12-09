@@ -25,16 +25,16 @@ class SearchGamesAPI200ResponseResultsInnerRatingTest : ShouldSpec() {
         // uncomment below to create an instance of SearchGamesAPI200ResponseResultsInnerRating
         //val modelInstance = SearchGamesAPI200ResponseResultsInnerRating()
 
-        // to test the property `count`
-        should("test count") {
-            // uncomment below to test the property
-            //modelInstance.count shouldBe ("TODO")
-        }
-
         // to test the property `mean`
         should("test mean") {
             // uncomment below to test the property
             //modelInstance.mean shouldBe ("TODO")
+        }
+
+        // to test the property `count`
+        should("test count") {
+            // uncomment below to test the property
+            //modelInstance.count shouldBe ("TODO")
         }
 
     }

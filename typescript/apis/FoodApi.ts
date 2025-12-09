@@ -12,7 +12,6 @@ import { ComputeNutritionAPI200Response } from '../models/ComputeNutritionAPI200
 import { RetrieveRecipeInformationAPI200Response } from '../models/RetrieveRecipeInformationAPI200Response';
 import { SearchDrinksAPI200Response } from '../models/SearchDrinksAPI200Response';
 import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Response';
-import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
 
 /**
  * no description
@@ -988,121 +987,6 @@ export class FoodApiRequestFactory extends BaseAPIRequestFactory {
         return requestContext;
     }
 
-    /**
-     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants API
-     * @param lat The latitude to search around.
-     * @param lon The longitude to search around.
-     * @param query The search query.
-     * @param distance The maximum distance of the restaurant in miles around the given location.
-     * @param budget The budget in USD for the meal.
-     * @param minRating The minimum rating of the restaurants in range [0,5].
-     * @param cuisine The cuisine that the restaurants should support.
-     * @param isOpen Whether the restaurants have to be open now.
-     * @param page The page of the results.
-     * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-     */
-    public async searchRestaurantsAPI(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Promise<RequestContext> {
-        let _config = _options || this.configuration;
-
-        // verify required parameter 'lat' is not null or undefined
-        if (lat === null || lat === undefined) {
-            throw new RequiredError("FoodApi", "searchRestaurantsAPI", "lat");
-        }
-
-
-        // verify required parameter 'lon' is not null or undefined
-        if (lon === null || lon === undefined) {
-            throw new RequiredError("FoodApi", "searchRestaurantsAPI", "lon");
-        }
-
-
-
-
-
-
-
-
-
-
-        // Path Params
-        const localVarPath = '/search-restaurants';
-
-        // Make Request Context
-        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
-
-        // Query Params
-        if (query !== undefined) {
-            requestContext.setQueryParam("query", ObjectSerializer.serialize(query, "string", ""));
-        }
-
-        // Query Params
-        if (lat !== undefined) {
-            requestContext.setQueryParam("lat", ObjectSerializer.serialize(lat, "number", "double"));
-        }
-
-        // Query Params
-        if (lon !== undefined) {
-            requestContext.setQueryParam("lon", ObjectSerializer.serialize(lon, "number", "double"));
-        }
-
-        // Query Params
-        if (distance !== undefined) {
-            requestContext.setQueryParam("distance", ObjectSerializer.serialize(distance, "number", "int32"));
-        }
-
-        // Query Params
-        if (budget !== undefined) {
-            requestContext.setQueryParam("budget", ObjectSerializer.serialize(budget, "number", "double"));
-        }
-
-        // Query Params
-        if (minRating !== undefined) {
-            requestContext.setQueryParam("min-rating", ObjectSerializer.serialize(minRating, "number", "double"));
-        }
-
-        // Query Params
-        if (cuisine !== undefined) {
-            requestContext.setQueryParam("cuisine", ObjectSerializer.serialize(cuisine, "string", ""));
-        }
-
-        // Query Params
-        if (isOpen !== undefined) {
-            requestContext.setQueryParam("is-open", ObjectSerializer.serialize(isOpen, "boolean", ""));
-        }
-
-        // Query Params
-        if (page !== undefined) {
-            requestContext.setQueryParam("page", ObjectSerializer.serialize(page, "number", "int32"));
-        }
-
-        // Query Params
-        if (sort !== undefined) {
-            requestContext.setQueryParam("sort", ObjectSerializer.serialize(sort, "string", ""));
-        }
-
-
-        let authMethod: SecurityAuthentication | undefined;
-        // Apply auth methods
-        authMethod = _config.authMethods["apiKey"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        // Apply auth methods
-        authMethod = _config.authMethods["headerApiKey"]
-        if (authMethod?.applySecurityAuthentication) {
-            await authMethod?.applySecurityAuthentication(requestContext);
-        }
-        
-        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
-        if (defaultAuth?.applySecurityAuthentication) {
-            await defaultAuth?.applySecurityAuthentication(requestContext);
-        }
-
-        return requestContext;
-    }
-
 }
 
 export class FoodApiResponseProcessor {
@@ -1289,53 +1173,6 @@ export class FoodApiResponseProcessor {
                 ObjectSerializer.parse(await response.body.text(), contentType),
                 "SearchRecipesAPI200Response", ""
             ) as SearchRecipesAPI200Response;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-
-        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
-    }
-
-    /**
-     * Unwraps the actual response sent by the server from the response context and deserializes the response content
-     * to the expected objects
-     *
-     * @params response Response returned by the server for a request to searchRestaurantsAPI
-     * @throws ApiException if the response code was not in [200, 299]
-     */
-     public async searchRestaurantsAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<SearchRestaurantsAPI200Response >> {
-        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
-        if (isCodeInRange("200", response.httpStatusCode)) {
-            const body: SearchRestaurantsAPI200Response = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRestaurantsAPI200Response", ""
-            ) as SearchRestaurantsAPI200Response;
-            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
-        }
-        if (isCodeInRange("401", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
-        }
-        if (isCodeInRange("402", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
-        }
-        if (isCodeInRange("403", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
-        }
-        if (isCodeInRange("404", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
-        }
-        if (isCodeInRange("406", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
-        }
-        if (isCodeInRange("429", response.httpStatusCode)) {
-            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
-        }
-
-        // Work around for missing responses in specification, e.g. for petstore.yaml
-        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
-            const body: SearchRestaurantsAPI200Response = ObjectSerializer.deserialize(
-                ObjectSerializer.parse(await response.body.text(), contentType),
-                "SearchRestaurantsAPI200Response", ""
-            ) as SearchRestaurantsAPI200Response;
             return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
         }
 

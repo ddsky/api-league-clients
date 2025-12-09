@@ -13,24 +13,16 @@ part of openapi.api;
 class ScoreTextAPI200ResponseReadabilitySubscores {
   /// Returns a new [ScoreTextAPI200ResponseReadabilitySubscores] instance.
   ScoreTextAPI200ResponseReadabilitySubscores({
-    this.readingTimeSeconds,
     this.forcast,
     this.flesch,
     this.smog,
     this.ari,
     this.lix,
-    this.colemanLiau,
     this.kincaid,
     this.fog,
+    this.colemanLiau,
+    this.readingTimeSeconds,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? readingTimeSeconds;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -78,14 +70,6 @@ class ScoreTextAPI200ResponseReadabilitySubscores {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? colemanLiau;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
   num? kincaid;
 
   ///
@@ -96,41 +80,52 @@ class ScoreTextAPI200ResponseReadabilitySubscores {
   ///
   num? fog;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? colemanLiau;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? readingTimeSeconds;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ScoreTextAPI200ResponseReadabilitySubscores &&
-    other.readingTimeSeconds == readingTimeSeconds &&
     other.forcast == forcast &&
     other.flesch == flesch &&
     other.smog == smog &&
     other.ari == ari &&
     other.lix == lix &&
-    other.colemanLiau == colemanLiau &&
     other.kincaid == kincaid &&
-    other.fog == fog;
+    other.fog == fog &&
+    other.colemanLiau == colemanLiau &&
+    other.readingTimeSeconds == readingTimeSeconds;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (readingTimeSeconds == null ? 0 : readingTimeSeconds!.hashCode) +
     (forcast == null ? 0 : forcast!.hashCode) +
     (flesch == null ? 0 : flesch!.hashCode) +
     (smog == null ? 0 : smog!.hashCode) +
     (ari == null ? 0 : ari!.hashCode) +
     (lix == null ? 0 : lix!.hashCode) +
-    (colemanLiau == null ? 0 : colemanLiau!.hashCode) +
     (kincaid == null ? 0 : kincaid!.hashCode) +
-    (fog == null ? 0 : fog!.hashCode);
+    (fog == null ? 0 : fog!.hashCode) +
+    (colemanLiau == null ? 0 : colemanLiau!.hashCode) +
+    (readingTimeSeconds == null ? 0 : readingTimeSeconds!.hashCode);
 
   @override
-  String toString() => 'ScoreTextAPI200ResponseReadabilitySubscores[readingTimeSeconds=$readingTimeSeconds, forcast=$forcast, flesch=$flesch, smog=$smog, ari=$ari, lix=$lix, colemanLiau=$colemanLiau, kincaid=$kincaid, fog=$fog]';
+  String toString() => 'ScoreTextAPI200ResponseReadabilitySubscores[forcast=$forcast, flesch=$flesch, smog=$smog, ari=$ari, lix=$lix, kincaid=$kincaid, fog=$fog, colemanLiau=$colemanLiau, readingTimeSeconds=$readingTimeSeconds]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.readingTimeSeconds != null) {
-      json[r'reading_time_seconds'] = this.readingTimeSeconds;
-    } else {
-      json[r'reading_time_seconds'] = null;
-    }
     if (this.forcast != null) {
       json[r'forcast'] = this.forcast;
     } else {
@@ -156,11 +151,6 @@ class ScoreTextAPI200ResponseReadabilitySubscores {
     } else {
       json[r'lix'] = null;
     }
-    if (this.colemanLiau != null) {
-      json[r'coleman_liau'] = this.colemanLiau;
-    } else {
-      json[r'coleman_liau'] = null;
-    }
     if (this.kincaid != null) {
       json[r'kincaid'] = this.kincaid;
     } else {
@@ -170,6 +160,16 @@ class ScoreTextAPI200ResponseReadabilitySubscores {
       json[r'fog'] = this.fog;
     } else {
       json[r'fog'] = null;
+    }
+    if (this.colemanLiau != null) {
+      json[r'coleman_liau'] = this.colemanLiau;
+    } else {
+      json[r'coleman_liau'] = null;
+    }
+    if (this.readingTimeSeconds != null) {
+      json[r'reading_time_seconds'] = this.readingTimeSeconds;
+    } else {
+      json[r'reading_time_seconds'] = null;
     }
     return json;
   }
@@ -193,15 +193,15 @@ class ScoreTextAPI200ResponseReadabilitySubscores {
       }());
 
       return ScoreTextAPI200ResponseReadabilitySubscores(
-        readingTimeSeconds: mapValueOfType<int>(json, r'reading_time_seconds'),
         forcast: num.parse('${json[r'forcast']}'),
         flesch: num.parse('${json[r'flesch']}'),
         smog: num.parse('${json[r'smog']}'),
         ari: num.parse('${json[r'ari']}'),
         lix: num.parse('${json[r'lix']}'),
-        colemanLiau: num.parse('${json[r'coleman_liau']}'),
         kincaid: num.parse('${json[r'kincaid']}'),
         fog: num.parse('${json[r'fog']}'),
+        colemanLiau: num.parse('${json[r'coleman_liau']}'),
+        readingTimeSeconds: mapValueOfType<int>(json, r'reading_time_seconds'),
       );
     }
     return null;

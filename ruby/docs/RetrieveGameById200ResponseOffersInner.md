@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **store_name** | **String** |  | [optional] |
-| **title** | **String** |  | [optional] |
 | **price** | [**RetrieveGameById200ResponseOffersInnerPrice**](RetrieveGameById200ResponseOffersInnerPrice.md) |  | [optional] |
+| **store_name** | **String** |  | [optional] |
 | **platform** | **String** |  | [optional] |
+| **title** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
 
 ## Example
@@ -16,10 +16,10 @@
 require 'openapi_client'
 
 instance = OpenapiClient::RetrieveGameById200ResponseOffersInner.new(
-  store_name: null,
-  title: null,
   price: null,
+  store_name: null,
   platform: null,
+  title: null,
   url: null
 )
 ```

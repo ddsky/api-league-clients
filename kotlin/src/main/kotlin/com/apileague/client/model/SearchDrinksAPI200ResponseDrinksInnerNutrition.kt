@@ -16,9 +16,9 @@
 package com.apileague.client.model
 
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
-import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner
+import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
 
 import com.squareup.moshi.Json
@@ -27,34 +27,34 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param weightPerServing 
- * @param caloricBreakdown 
+ * @param nutrients 
+ * @param properties 
  * @param flavonoids 
  * @param ingredientBreakdown 
- * @param properties 
- * @param nutrients 
+ * @param caloricBreakdown 
+ * @param weightPerServing 
  */
 
 
 data class SearchDrinksAPI200ResponseDrinksInnerNutrition (
 
-    @Json(name = "weight_per_serving")
-    val weightPerServing: SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing? = null,
+    @Json(name = "nutrients")
+    val nutrients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner>? = null,
 
-    @Json(name = "caloric_breakdown")
-    val caloricBreakdown: SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown? = null,
+    @Json(name = "properties")
+    val properties: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner>? = null,
 
     @Json(name = "flavonoids")
-    val flavonoids: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner>? = null,
+    val flavonoids: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner>? = null,
 
     @Json(name = "ingredient_breakdown")
     val ingredientBreakdown: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner>? = null,
 
-    @Json(name = "properties")
-    val properties: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner>? = null,
+    @Json(name = "caloric_breakdown")
+    val caloricBreakdown: SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown? = null,
 
-    @Json(name = "nutrients")
-    val nutrients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner>? = null
+    @Json(name = "weight_per_serving")
+    val weightPerServing: SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing? = null
 
 ) {
 

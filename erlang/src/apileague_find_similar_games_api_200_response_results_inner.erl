@@ -5,43 +5,43 @@
 -export_type([apileague_find_similar_games_api_200_response_results_inner/0]).
 
 -type apileague_find_similar_games_api_200_response_results_inner() ::
-    #{ 'image' => binary(),
-       'short_description' => binary(),
-       'micro_trailer' => binary(),
+    #{ 'id' => integer(),
        'year' => integer(),
        'name' => binary(),
        'genre' => binary(),
+       'image' => binary(),
        'link' => binary(),
        'rating' => apileague_search_games_api_200_response_results_inner_rating:apileague_search_games_api_200_response_results_inner_rating(),
-       'id' => integer(),
        'adult_only' => boolean(),
        'screenshots' => list(),
-       'gameplay' => binary()
+       'micro_trailer' => binary(),
+       'gameplay' => binary(),
+       'short_description' => binary()
      }.
 
-encode(#{ 'image' := Image,
-          'short_description' := ShortDescription,
-          'micro_trailer' := MicroTrailer,
+encode(#{ 'id' := Id,
           'year' := Year,
           'name' := Name,
           'genre' := Genre,
+          'image' := Image,
           'link' := Link,
           'rating' := Rating,
-          'id' := Id,
           'adult_only' := AdultOnly,
           'screenshots' := Screenshots,
-          'gameplay' := Gameplay
+          'micro_trailer' := MicroTrailer,
+          'gameplay' := Gameplay,
+          'short_description' := ShortDescription
         }) ->
-    #{ 'image' => Image,
-       'short_description' => ShortDescription,
-       'micro_trailer' => MicroTrailer,
+    #{ 'id' => Id,
        'year' => Year,
        'name' => Name,
        'genre' => Genre,
+       'image' => Image,
        'link' => Link,
        'rating' => Rating,
-       'id' => Id,
        'adult_only' => AdultOnly,
        'screenshots' => Screenshots,
-       'gameplay' => Gameplay
+       'micro_trailer' => MicroTrailer,
+       'gameplay' => Gameplay,
+       'short_description' => ShortDescription
      }.

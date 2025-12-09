@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hex_code** | **string** |  | [optional]
 **specific_color** | **string** |  | [optional]
 **main_color** | **string** |  | [optional]
-**hex_code** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

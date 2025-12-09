@@ -25,28 +25,10 @@ class TopNewsAPI200ResponseTopNewsInnerNewsInnerTest : ShouldSpec() {
         // uncomment below to create an instance of TopNewsAPI200ResponseTopNewsInnerNewsInner
         //val modelInstance = TopNewsAPI200ResponseTopNewsInnerNewsInner()
 
-        // to test the property `summary`
-        should("test summary") {
-            // uncomment below to test the property
-            //modelInstance.summary shouldBe ("TODO")
-        }
-
-        // to test the property `image`
-        should("test image") {
-            // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
-        }
-
         // to test the property `id`
         should("test id") {
             // uncomment below to test the property
             //modelInstance.id shouldBe ("TODO")
-        }
-
-        // to test the property `text`
-        should("test text") {
-            // uncomment below to test the property
-            //modelInstance.text shouldBe ("TODO")
         }
 
         // to test the property `title`
@@ -55,16 +37,34 @@ class TopNewsAPI200ResponseTopNewsInnerNewsInnerTest : ShouldSpec() {
             //modelInstance.title shouldBe ("TODO")
         }
 
-        // to test the property `publishDate`
-        should("test publishDate") {
+        // to test the property `text`
+        should("test text") {
             // uncomment below to test the property
-            //modelInstance.publishDate shouldBe ("TODO")
+            //modelInstance.text shouldBe ("TODO")
+        }
+
+        // to test the property `summary`
+        should("test summary") {
+            // uncomment below to test the property
+            //modelInstance.summary shouldBe ("TODO")
         }
 
         // to test the property `url`
         should("test url") {
             // uncomment below to test the property
             //modelInstance.url shouldBe ("TODO")
+        }
+
+        // to test the property `image`
+        should("test image") {
+            // uncomment below to test the property
+            //modelInstance.image shouldBe ("TODO")
+        }
+
+        // to test the property `publishDate`
+        should("test publishDate") {
+            // uncomment below to test the property
+            //modelInstance.publishDate shouldBe ("TODO")
         }
 
         // to test the property `authors`

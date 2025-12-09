@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseScores{}
 
 // RetrieveRecipeInformationAPI200ResponseScores struct for RetrieveRecipeInformationAPI200ResponseScores
 type RetrieveRecipeInformationAPI200ResponseScores struct {
-	MetaScore *float32 `json:"meta_score,omitempty"`
 	WeightWatcherSmartPoints *int32 `json:"weight_watcher_smart_points,omitempty"`
 	HealthScore *int32 `json:"health_score,omitempty"`
+	MetaScore *float32 `json:"meta_score,omitempty"`
 }
 
 // NewRetrieveRecipeInformationAPI200ResponseScores instantiates a new RetrieveRecipeInformationAPI200ResponseScores object
@@ -40,38 +40,6 @@ func NewRetrieveRecipeInformationAPI200ResponseScores() *RetrieveRecipeInformati
 func NewRetrieveRecipeInformationAPI200ResponseScoresWithDefaults() *RetrieveRecipeInformationAPI200ResponseScores {
 	this := RetrieveRecipeInformationAPI200ResponseScores{}
 	return &this
-}
-
-// GetMetaScore returns the MetaScore field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseScores) GetMetaScore() float32 {
-	if o == nil || IsNil(o.MetaScore) {
-		var ret float32
-		return ret
-	}
-	return *o.MetaScore
-}
-
-// GetMetaScoreOk returns a tuple with the MetaScore field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseScores) GetMetaScoreOk() (*float32, bool) {
-	if o == nil || IsNil(o.MetaScore) {
-		return nil, false
-	}
-	return o.MetaScore, true
-}
-
-// HasMetaScore returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseScores) HasMetaScore() bool {
-	if o != nil && !IsNil(o.MetaScore) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetaScore gets a reference to the given float32 and assigns it to the MetaScore field.
-func (o *RetrieveRecipeInformationAPI200ResponseScores) SetMetaScore(v float32) {
-	o.MetaScore = &v
 }
 
 // GetWeightWatcherSmartPoints returns the WeightWatcherSmartPoints field value if set, zero value otherwise.
@@ -138,6 +106,38 @@ func (o *RetrieveRecipeInformationAPI200ResponseScores) SetHealthScore(v int32) 
 	o.HealthScore = &v
 }
 
+// GetMetaScore returns the MetaScore field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseScores) GetMetaScore() float32 {
+	if o == nil || IsNil(o.MetaScore) {
+		var ret float32
+		return ret
+	}
+	return *o.MetaScore
+}
+
+// GetMetaScoreOk returns a tuple with the MetaScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseScores) GetMetaScoreOk() (*float32, bool) {
+	if o == nil || IsNil(o.MetaScore) {
+		return nil, false
+	}
+	return o.MetaScore, true
+}
+
+// HasMetaScore returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseScores) HasMetaScore() bool {
+	if o != nil && !IsNil(o.MetaScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetaScore gets a reference to the given float32 and assigns it to the MetaScore field.
+func (o *RetrieveRecipeInformationAPI200ResponseScores) SetMetaScore(v float32) {
+	o.MetaScore = &v
+}
+
 func (o RetrieveRecipeInformationAPI200ResponseScores) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -148,14 +148,14 @@ func (o RetrieveRecipeInformationAPI200ResponseScores) MarshalJSON() ([]byte, er
 
 func (o RetrieveRecipeInformationAPI200ResponseScores) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MetaScore) {
-		toSerialize["meta_score"] = o.MetaScore
-	}
 	if !IsNil(o.WeightWatcherSmartPoints) {
 		toSerialize["weight_watcher_smart_points"] = o.WeightWatcherSmartPoints
 	}
 	if !IsNil(o.HealthScore) {
 		toSerialize["health_score"] = o.HealthScore
+	}
+	if !IsNil(o.MetaScore) {
+		toSerialize["meta_score"] = o.MetaScore
 	}
 	return toSerialize, nil
 }

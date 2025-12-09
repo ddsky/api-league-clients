@@ -22,26 +22,26 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param fattiness 
- * @param spiciness 
+ * @param sweetness 
  * @param saltiness 
+ * @param sourness 
  * @param bitterness 
  * @param savoriness 
- * @param sweetness 
- * @param sourness 
+ * @param fattiness 
+ * @param spiciness 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseTaste (
 
-    @Json(name = "fattiness")
-    val fattiness: java.math.BigDecimal? = null,
-
-    @Json(name = "spiciness")
-    val spiciness: kotlin.Int? = null,
+    @Json(name = "sweetness")
+    val sweetness: java.math.BigDecimal? = null,
 
     @Json(name = "saltiness")
     val saltiness: kotlin.Int? = null,
+
+    @Json(name = "sourness")
+    val sourness: java.math.BigDecimal? = null,
 
     @Json(name = "bitterness")
     val bitterness: java.math.BigDecimal? = null,
@@ -49,11 +49,11 @@ data class RetrieveRecipeInformationAPI200ResponseTaste (
     @Json(name = "savoriness")
     val savoriness: java.math.BigDecimal? = null,
 
-    @Json(name = "sweetness")
-    val sweetness: java.math.BigDecimal? = null,
+    @Json(name = "fattiness")
+    val fattiness: java.math.BigDecimal? = null,
 
-    @Json(name = "sourness")
-    val sourness: java.math.BigDecimal? = null
+    @Json(name = "spiciness")
+    val spiciness: kotlin.Int? = null
 
 ) {
 

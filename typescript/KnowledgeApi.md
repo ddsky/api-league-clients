@@ -4,10 +4,126 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**randomAffirmationAPI**](KnowledgeApi.md#randomAffirmationAPI) | **GET** /retrieve-random-affirmation | Random Affirmation API
+[**randomLifeHackAPI**](KnowledgeApi.md#randomLifeHackAPI) | **GET** /retrieve-random-life-hack | Random Life Hack API
 [**randomQuoteAPI**](KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API
 [**randomRiddleAPI**](KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API
 [**randomTriviaAPI**](KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API
 
+
+# **randomAffirmationAPI**
+> RandomAffirmationAPI200Response randomAffirmationAPI()
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .KnowledgeApi(configuration);
+
+let body:any = {};
+
+apiInstance.randomAffirmationAPI(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**RandomAffirmationAPI200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **randomLifeHackAPI**
+> RandomLifeHackAPI200Response randomLifeHackAPI()
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .KnowledgeApi(configuration);
+
+let body:.KnowledgeApiRandomLifeHackAPIRequest = {
+  // number | The maximum length of the hack in letters. (optional)
+  maxLength: 300,
+};
+
+apiInstance.randomLifeHackAPI(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **maxLength** | [**number**] | The maximum length of the hack in letters. | (optional) defaults to undefined
+
+
+### Return type
+
+**RandomLifeHackAPI200Response**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **randomQuoteAPI**
 > RandomQuoteAPI200Response randomQuoteAPI()

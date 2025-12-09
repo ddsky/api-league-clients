@@ -13,13 +13,17 @@ part of openapi.api;
 class SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
   /// Returns a new [SearchRoyaltyFreeImagesAPI200ResponseImagesInner] instance.
   SearchRoyaltyFreeImagesAPI200ResponseImagesInner({
-    this.width,
-    this.license,
-    this.thumbnail,
-    this.id,
     this.url,
+    this.thumbnail,
+    this.width,
     this.height,
+    this.license,
+    this.id,
   });
+
+  String? url;
+
+  String? thumbnail;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -35,13 +39,7 @@ class SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense? license;
-
-  String? thumbnail;
-
-  String? id;
-
-  String? url;
+  int? height;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -49,61 +47,63 @@ class SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? height;
+  SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense? license;
+
+  String? id;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchRoyaltyFreeImagesAPI200ResponseImagesInner &&
-    other.width == width &&
-    other.license == license &&
-    other.thumbnail == thumbnail &&
-    other.id == id &&
     other.url == url &&
-    other.height == height;
+    other.thumbnail == thumbnail &&
+    other.width == width &&
+    other.height == height &&
+    other.license == license &&
+    other.id == id;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (width == null ? 0 : width!.hashCode) +
-    (license == null ? 0 : license!.hashCode) +
-    (thumbnail == null ? 0 : thumbnail!.hashCode) +
-    (id == null ? 0 : id!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
-    (height == null ? 0 : height!.hashCode);
+    (thumbnail == null ? 0 : thumbnail!.hashCode) +
+    (width == null ? 0 : width!.hashCode) +
+    (height == null ? 0 : height!.hashCode) +
+    (license == null ? 0 : license!.hashCode) +
+    (id == null ? 0 : id!.hashCode);
 
   @override
-  String toString() => 'SearchRoyaltyFreeImagesAPI200ResponseImagesInner[width=$width, license=$license, thumbnail=$thumbnail, id=$id, url=$url, height=$height]';
+  String toString() => 'SearchRoyaltyFreeImagesAPI200ResponseImagesInner[url=$url, thumbnail=$thumbnail, width=$width, height=$height, license=$license, id=$id]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.width != null) {
-      json[r'width'] = this.width;
+    if (this.url != null) {
+      json[r'url'] = this.url;
     } else {
-      json[r'width'] = null;
-    }
-    if (this.license != null) {
-      json[r'license'] = this.license;
-    } else {
-      json[r'license'] = null;
+      json[r'url'] = null;
     }
     if (this.thumbnail != null) {
       json[r'thumbnail'] = this.thumbnail;
     } else {
       json[r'thumbnail'] = null;
     }
-    if (this.id != null) {
-      json[r'id'] = this.id;
+    if (this.width != null) {
+      json[r'width'] = this.width;
     } else {
-      json[r'id'] = null;
-    }
-    if (this.url != null) {
-      json[r'url'] = this.url;
-    } else {
-      json[r'url'] = null;
+      json[r'width'] = null;
     }
     if (this.height != null) {
       json[r'height'] = this.height;
     } else {
       json[r'height'] = null;
+    }
+    if (this.license != null) {
+      json[r'license'] = this.license;
+    } else {
+      json[r'license'] = null;
+    }
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
     return json;
   }
@@ -127,12 +127,12 @@ class SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
       }());
 
       return SearchRoyaltyFreeImagesAPI200ResponseImagesInner(
-        width: mapValueOfType<int>(json, r'width'),
-        license: SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.fromJson(json[r'license']),
-        thumbnail: mapValueOfType<String>(json, r'thumbnail'),
-        id: mapValueOfType<String>(json, r'id'),
         url: mapValueOfType<String>(json, r'url'),
+        thumbnail: mapValueOfType<String>(json, r'thumbnail'),
+        width: mapValueOfType<int>(json, r'width'),
         height: mapValueOfType<int>(json, r'height'),
+        license: SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.fromJson(json[r'license']),
+        id: mapValueOfType<String>(json, r'id'),
       );
     }
     return null;

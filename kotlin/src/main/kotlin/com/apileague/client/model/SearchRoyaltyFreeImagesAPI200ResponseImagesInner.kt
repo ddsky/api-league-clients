@@ -23,34 +23,34 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param width 
- * @param license 
- * @param thumbnail 
- * @param id 
  * @param url 
+ * @param thumbnail 
+ * @param width 
  * @param height 
+ * @param license 
+ * @param id 
  */
 
 
 data class SearchRoyaltyFreeImagesAPI200ResponseImagesInner (
 
-    @Json(name = "width")
-    val width: kotlin.Int? = null,
-
-    @Json(name = "license")
-    val license: SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense? = null,
+    @Json(name = "url")
+    val url: kotlin.String? = null,
 
     @Json(name = "thumbnail")
     val thumbnail: kotlin.String? = null,
 
-    @Json(name = "id")
-    val id: kotlin.String? = null,
-
-    @Json(name = "url")
-    val url: kotlin.String? = null,
+    @Json(name = "width")
+    val width: kotlin.Int? = null,
 
     @Json(name = "height")
-    val height: kotlin.Int? = null
+    val height: kotlin.Int? = null,
+
+    @Json(name = "license")
+    val license: SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense? = null,
+
+    @Json(name = "id")
+    val id: kotlin.String? = null
 
 ) {
 

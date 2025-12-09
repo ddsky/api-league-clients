@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UnitShort** | Pointer to **NullableString** |  | [optional] 
 **Amount** | Pointer to **float32** |  | [optional] 
+**UnitShort** | Pointer to **NullableString** |  | [optional] 
 **UnitLong** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -26,6 +26,31 @@ will change when the set of required properties is changed
 NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetricWithDefaults instantiates a new SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAmount
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmount() float32`
+
+GetAmount returns the Amount field if non-nil, zero value otherwise.
+
+### GetAmountOk
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmountOk() (*float32, bool)`
+
+GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmount
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) SetAmount(v float32)`
+
+SetAmount sets Amount field to given value.
+
+### HasAmount
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) HasAmount() bool`
+
+HasAmount returns a boolean if a field has been set.
 
 ### GetUnitShort
 
@@ -62,31 +87,6 @@ HasUnitShort returns a boolean if a field has been set.
 `func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) UnsetUnitShort()`
 
 UnsetUnitShort ensures that no value is present for UnitShort, not even an explicit nil
-### GetAmount
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmount() float32`
-
-GetAmount returns the Amount field if non-nil, zero value otherwise.
-
-### GetAmountOk
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmountOk() (*float32, bool)`
-
-GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAmount
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) SetAmount(v float32)`
-
-SetAmount sets Amount field to given value.
-
-### HasAmount
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) HasAmount() bool`
-
-HasAmount returns a boolean if a field has been set.
-
 ### GetUnitLong
 
 `func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetUnitLong() string`

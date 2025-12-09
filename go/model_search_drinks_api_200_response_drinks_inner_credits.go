@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerCredits{}
 
 // SearchDrinksAPI200ResponseDrinksInnerCredits struct for SearchDrinksAPI200ResponseDrinksInnerCredits
 type SearchDrinksAPI200ResponseDrinksInnerCredits struct {
-	Text NullableString `json:"text,omitempty"`
 	SourceName NullableString `json:"source_name,omitempty"`
 	SourceUrl NullableString `json:"source_url,omitempty"`
+	Text NullableString `json:"text,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerCredits instantiates a new SearchDrinksAPI200ResponseDrinksInnerCredits object
@@ -40,48 +40,6 @@ func NewSearchDrinksAPI200ResponseDrinksInnerCredits() *SearchDrinksAPI200Respon
 func NewSearchDrinksAPI200ResponseDrinksInnerCreditsWithDefaults() *SearchDrinksAPI200ResponseDrinksInnerCredits {
 	this := SearchDrinksAPI200ResponseDrinksInnerCredits{}
 	return &this
-}
-
-// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) GetText() string {
-	if o == nil || IsNil(o.Text.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Text.Get()
-}
-
-// GetTextOk returns a tuple with the Text field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) GetTextOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Text.Get(), o.Text.IsSet()
-}
-
-// HasText returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) HasText() bool {
-	if o != nil && o.Text.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetText gets a reference to the given NullableString and assigns it to the Text field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) SetText(v string) {
-	o.Text.Set(&v)
-}
-// SetTextNil sets the value for Text to be an explicit nil
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) SetTextNil() {
-	o.Text.Set(nil)
-}
-
-// UnsetText ensures that no value is present for Text, not even an explicit nil
-func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) UnsetText() {
-	o.Text.Unset()
 }
 
 // GetSourceName returns the SourceName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -168,6 +126,48 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) UnsetSourceUrl() {
 	o.SourceUrl.Unset()
 }
 
+// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) GetText() string {
+	if o == nil || IsNil(o.Text.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Text.Get()
+}
+
+// GetTextOk returns a tuple with the Text field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) GetTextOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Text.Get(), o.Text.IsSet()
+}
+
+// HasText returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) HasText() bool {
+	if o != nil && o.Text.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetText gets a reference to the given NullableString and assigns it to the Text field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) SetText(v string) {
+	o.Text.Set(&v)
+}
+// SetTextNil sets the value for Text to be an explicit nil
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) SetTextNil() {
+	o.Text.Set(nil)
+}
+
+// UnsetText ensures that no value is present for Text, not even an explicit nil
+func (o *SearchDrinksAPI200ResponseDrinksInnerCredits) UnsetText() {
+	o.Text.Unset()
+}
+
 func (o SearchDrinksAPI200ResponseDrinksInnerCredits) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -178,14 +178,14 @@ func (o SearchDrinksAPI200ResponseDrinksInnerCredits) MarshalJSON() ([]byte, err
 
 func (o SearchDrinksAPI200ResponseDrinksInnerCredits) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Text.IsSet() {
-		toSerialize["text"] = o.Text.Get()
-	}
 	if o.SourceName.IsSet() {
 		toSerialize["source_name"] = o.SourceName.Get()
 	}
 	if o.SourceUrl.IsSet() {
 		toSerialize["source_url"] = o.SourceUrl.Get()
+	}
+	if o.Text.IsSet() {
+		toSerialize["text"] = o.Text.Get()
 	}
 	return toSerialize, nil
 }

@@ -5,25 +5,25 @@
 -export_type([apileague_score_text_api_200_response_skimmability_subscores/0]).
 
 -type apileague_score_text_api_200_response_skimmability_subscores() ::
-    #{ 'bullet_point_ratio_score' => list(),
+    #{ 'highlighted_word_ratio_score' => list(),
+       'bullet_point_ratio_score' => list(),
+       'paragraph_headline_ratio_score' => list(),
        'image_score' => list(),
-       'highlighted_word_ratio_score' => list(),
        'video_score' => list(),
-       'paragraph_score' => list(),
-       'paragraph_headline_ratio_score' => list()
+       'paragraph_score' => list()
      }.
 
-encode(#{ 'bullet_point_ratio_score' := BulletPointRatioScore,
+encode(#{ 'highlighted_word_ratio_score' := HighlightedWordRatioScore,
+          'bullet_point_ratio_score' := BulletPointRatioScore,
+          'paragraph_headline_ratio_score' := ParagraphHeadlineRatioScore,
           'image_score' := ImageScore,
-          'highlighted_word_ratio_score' := HighlightedWordRatioScore,
           'video_score' := VideoScore,
-          'paragraph_score' := ParagraphScore,
-          'paragraph_headline_ratio_score' := ParagraphHeadlineRatioScore
+          'paragraph_score' := ParagraphScore
         }) ->
-    #{ 'bullet_point_ratio_score' => BulletPointRatioScore,
+    #{ 'highlighted_word_ratio_score' => HighlightedWordRatioScore,
+       'bullet_point_ratio_score' => BulletPointRatioScore,
+       'paragraph_headline_ratio_score' => ParagraphHeadlineRatioScore,
        'image_score' => ImageScore,
-       'highlighted_word_ratio_score' => HighlightedWordRatioScore,
        'video_score' => VideoScore,
-       'paragraph_score' => ParagraphScore,
-       'paragraph_headline_ratio_score' => ParagraphHeadlineRatioScore
+       'paragraph_score' => ParagraphScore
      }.

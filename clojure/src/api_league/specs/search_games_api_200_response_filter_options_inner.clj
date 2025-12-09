@@ -9,9 +9,9 @@
 (def search-games-api-200-response-filter-options-inner-data
   {
    (ds/opt :name) string?
-   (ds/opt :filter_type) string?
    (ds/opt :key) string?
    (ds/opt :values) (s/coll-of search-games-api-200-response-filter-options-inner-values-inner-spec)
+   (ds/opt :filter_type) string?
    (ds/opt :filter_connection) string?
    })
 

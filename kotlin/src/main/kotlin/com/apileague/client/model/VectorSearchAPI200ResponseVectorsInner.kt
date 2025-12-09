@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param license 
  * @param title 
+ * @param license 
  * @param author 
  * @param imageUrl 
  */
@@ -31,11 +31,11 @@ import com.squareup.moshi.JsonClass
 
 data class VectorSearchAPI200ResponseVectorsInner (
 
-    @Json(name = "license")
-    val license: kotlin.String? = null,
-
     @Json(name = "title")
     val title: kotlin.String? = null,
+
+    @Json(name = "license")
+    val license: kotlin.String? = null,
 
     @Json(name = "author")
     val author: kotlin.String? = null,

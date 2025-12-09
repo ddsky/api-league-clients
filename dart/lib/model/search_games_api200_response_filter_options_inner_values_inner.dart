@@ -14,11 +14,13 @@ class SearchGamesAPI200ResponseFilterOptionsInnerValuesInner {
   /// Returns a new [SearchGamesAPI200ResponseFilterOptionsInnerValuesInner] instance.
   SearchGamesAPI200ResponseFilterOptionsInnerValuesInner({
     this.name,
-    this.count,
     this.key,
+    this.count,
   });
 
   String? name;
+
+  String? key;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -28,23 +30,21 @@ class SearchGamesAPI200ResponseFilterOptionsInnerValuesInner {
   ///
   int? count;
 
-  String? key;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseFilterOptionsInnerValuesInner &&
     other.name == name &&
-    other.count == count &&
-    other.key == key;
+    other.key == key &&
+    other.count == count;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (count == null ? 0 : count!.hashCode) +
-    (key == null ? 0 : key!.hashCode);
+    (key == null ? 0 : key!.hashCode) +
+    (count == null ? 0 : count!.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseFilterOptionsInnerValuesInner[name=$name, count=$count, key=$key]';
+  String toString() => 'SearchGamesAPI200ResponseFilterOptionsInnerValuesInner[name=$name, key=$key, count=$count]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -53,15 +53,15 @@ class SearchGamesAPI200ResponseFilterOptionsInnerValuesInner {
     } else {
       json[r'name'] = null;
     }
-    if (this.count != null) {
-      json[r'count'] = this.count;
-    } else {
-      json[r'count'] = null;
-    }
     if (this.key != null) {
       json[r'key'] = this.key;
     } else {
       json[r'key'] = null;
+    }
+    if (this.count != null) {
+      json[r'count'] = this.count;
+    } else {
+      json[r'count'] = null;
     }
     return json;
   }
@@ -86,8 +86,8 @@ class SearchGamesAPI200ResponseFilterOptionsInnerValuesInner {
 
       return SearchGamesAPI200ResponseFilterOptionsInnerValuesInner(
         name: mapValueOfType<String>(json, r'name'),
-        count: mapValueOfType<int>(json, r'count'),
         key: mapValueOfType<String>(json, r'key'),
+        count: mapValueOfType<int>(json, r'count'),
       );
     }
     return null;

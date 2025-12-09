@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**License** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
+**License** | Pointer to **NullableString** |  | [optional] 
 **Author** | Pointer to **NullableString** |  | [optional] 
 **ImageUrl** | Pointer to **NullableString** |  | [optional] 
 
@@ -28,41 +28,6 @@ NewVectorSearchAPI200ResponseVectorsInnerWithDefaults instantiates a new VectorS
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLicense
-
-`func (o *VectorSearchAPI200ResponseVectorsInner) GetLicense() string`
-
-GetLicense returns the License field if non-nil, zero value otherwise.
-
-### GetLicenseOk
-
-`func (o *VectorSearchAPI200ResponseVectorsInner) GetLicenseOk() (*string, bool)`
-
-GetLicenseOk returns a tuple with the License field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLicense
-
-`func (o *VectorSearchAPI200ResponseVectorsInner) SetLicense(v string)`
-
-SetLicense sets License field to given value.
-
-### HasLicense
-
-`func (o *VectorSearchAPI200ResponseVectorsInner) HasLicense() bool`
-
-HasLicense returns a boolean if a field has been set.
-
-### SetLicenseNil
-
-`func (o *VectorSearchAPI200ResponseVectorsInner) SetLicenseNil(b bool)`
-
- SetLicenseNil sets the value for License to be an explicit nil
-
-### UnsetLicense
-`func (o *VectorSearchAPI200ResponseVectorsInner) UnsetLicense()`
-
-UnsetLicense ensures that no value is present for License, not even an explicit nil
 ### GetTitle
 
 `func (o *VectorSearchAPI200ResponseVectorsInner) GetTitle() string`
@@ -98,6 +63,41 @@ HasTitle returns a boolean if a field has been set.
 `func (o *VectorSearchAPI200ResponseVectorsInner) UnsetTitle()`
 
 UnsetTitle ensures that no value is present for Title, not even an explicit nil
+### GetLicense
+
+`func (o *VectorSearchAPI200ResponseVectorsInner) GetLicense() string`
+
+GetLicense returns the License field if non-nil, zero value otherwise.
+
+### GetLicenseOk
+
+`func (o *VectorSearchAPI200ResponseVectorsInner) GetLicenseOk() (*string, bool)`
+
+GetLicenseOk returns a tuple with the License field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicense
+
+`func (o *VectorSearchAPI200ResponseVectorsInner) SetLicense(v string)`
+
+SetLicense sets License field to given value.
+
+### HasLicense
+
+`func (o *VectorSearchAPI200ResponseVectorsInner) HasLicense() bool`
+
+HasLicense returns a boolean if a field has been set.
+
+### SetLicenseNil
+
+`func (o *VectorSearchAPI200ResponseVectorsInner) SetLicenseNil(b bool)`
+
+ SetLicenseNil sets the value for License to be an explicit nil
+
+### UnsetLicense
+`func (o *VectorSearchAPI200ResponseVectorsInner) UnsetLicense()`
+
+UnsetLicense ensures that no value is present for License, not even an explicit nil
 ### GetAuthor
 
 `func (o *VectorSearchAPI200ResponseVectorsInner) GetAuthor() string`

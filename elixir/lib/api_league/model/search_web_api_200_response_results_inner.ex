@@ -8,15 +8,15 @@ defmodule APILeague.Model.SearchWebApi200ResponseResultsInner do
 
   @derive Jason.Encoder
   defstruct [
+    :url,
     :title,
-    :summary,
-    :url
+    :summary
   ]
 
   @type t :: %__MODULE__{
+    :url => String.t | nil,
     :title => String.t | nil,
-    :summary => String.t | nil,
-    :url => String.t | nil
+    :summary => String.t | nil
   }
 
   def decode(value) do

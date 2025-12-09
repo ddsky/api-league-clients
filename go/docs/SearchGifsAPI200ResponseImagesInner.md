@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Width** | Pointer to **int32** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
+**Width** | Pointer to **int32** |  | [optional] 
 **Height** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewSearchGifsAPI200ResponseImagesInnerWithDefaults instantiates a new SearchGifsAPI200ResponseImagesInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetWidth
-
-`func (o *SearchGifsAPI200ResponseImagesInner) GetWidth() int32`
-
-GetWidth returns the Width field if non-nil, zero value otherwise.
-
-### GetWidthOk
-
-`func (o *SearchGifsAPI200ResponseImagesInner) GetWidthOk() (*int32, bool)`
-
-GetWidthOk returns a tuple with the Width field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWidth
-
-`func (o *SearchGifsAPI200ResponseImagesInner) SetWidth(v int32)`
-
-SetWidth sets Width field to given value.
-
-### HasWidth
-
-`func (o *SearchGifsAPI200ResponseImagesInner) HasWidth() bool`
-
-HasWidth returns a boolean if a field has been set.
 
 ### GetUrl
 
@@ -87,6 +62,31 @@ HasUrl returns a boolean if a field has been set.
 `func (o *SearchGifsAPI200ResponseImagesInner) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
+### GetWidth
+
+`func (o *SearchGifsAPI200ResponseImagesInner) GetWidth() int32`
+
+GetWidth returns the Width field if non-nil, zero value otherwise.
+
+### GetWidthOk
+
+`func (o *SearchGifsAPI200ResponseImagesInner) GetWidthOk() (*int32, bool)`
+
+GetWidthOk returns a tuple with the Width field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWidth
+
+`func (o *SearchGifsAPI200ResponseImagesInner) SetWidth(v int32)`
+
+SetWidth sets Width field to given value.
+
+### HasWidth
+
+`func (o *SearchGifsAPI200ResponseImagesInner) HasWidth() bool`
+
+HasWidth returns a boolean if a field has been set.
+
 ### GetHeight
 
 `func (o *SearchGifsAPI200ResponseImagesInner) GetHeight() int32`

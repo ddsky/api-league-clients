@@ -25,12 +25,6 @@ class ExtractNewsAPI200ResponseImagesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of ExtractNewsAPI200ResponseImagesInner
         //val modelInstance = ExtractNewsAPI200ResponseImagesInner()
 
-        // to test the property `width`
-        should("test width") {
-            // uncomment below to test the property
-            //modelInstance.width shouldBe ("TODO")
-        }
-
         // to test the property `title`
         should("test title") {
             // uncomment below to test the property
@@ -41,6 +35,12 @@ class ExtractNewsAPI200ResponseImagesInnerTest : ShouldSpec() {
         should("test url") {
             // uncomment below to test the property
             //modelInstance.url shouldBe ("TODO")
+        }
+
+        // to test the property `width`
+        should("test width") {
+            // uncomment below to test the property
+            //modelInstance.width shouldBe ("TODO")
         }
 
         // to test the property `height`

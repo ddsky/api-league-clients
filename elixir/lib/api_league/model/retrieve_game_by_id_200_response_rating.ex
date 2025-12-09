@@ -8,21 +8,21 @@ defmodule APILeague.Model.RetrieveGameById200ResponseRating do
 
   @derive Jason.Encoder
   defstruct [
-    :count,
-    :count_critics,
-    :mean_players,
-    :mean_critics,
     :mean,
-    :count_players
+    :count,
+    :mean_players,
+    :count_players,
+    :mean_critics,
+    :count_critics
   ]
 
   @type t :: %__MODULE__{
-    :count => integer() | nil,
-    :count_critics => integer() | nil,
-    :mean_players => float() | nil,
-    :mean_critics => float() | nil,
     :mean => float() | nil,
-    :count_players => integer() | nil
+    :count => integer() | nil,
+    :mean_players => float() | nil,
+    :count_players => integer() | nil,
+    :mean_critics => float() | nil,
+    :count_critics => integer() | nil
   }
 
   def decode(value) do

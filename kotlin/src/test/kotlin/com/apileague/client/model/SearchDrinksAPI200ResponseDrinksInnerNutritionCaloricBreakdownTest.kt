@@ -25,12 +25,6 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdownTest : Shoul
         // uncomment below to create an instance of SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
         //val modelInstance = SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown()
 
-        // to test the property `percentFat`
-        should("test percentFat") {
-            // uncomment below to test the property
-            //modelInstance.percentFat shouldBe ("TODO")
-        }
-
         // to test the property `percentCarbs`
         should("test percentCarbs") {
             // uncomment below to test the property
@@ -41,6 +35,12 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdownTest : Shoul
         should("test percentProtein") {
             // uncomment below to test the property
             //modelInstance.percentProtein shouldBe ("TODO")
+        }
+
+        // to test the property `percentFat`
+        should("test percentFat") {
+            // uncomment below to test the property
+            //modelInstance.percentFat shouldBe ("TODO")
         }
 
     }

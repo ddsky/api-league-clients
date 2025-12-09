@@ -16,6 +16,11 @@ void main() {
   // final instance = DetectMainImageColorAPI200ResponseInner();
 
   group('test DetectMainImageColorAPI200ResponseInner', () {
+    // String hexCode
+    test('to test the property `hexCode`', () async {
+      // TODO
+    });
+
     // String specificColor
     test('to test the property `specificColor`', () async {
       // TODO
@@ -23,11 +28,6 @@ void main() {
 
     // String mainColor
     test('to test the property `mainColor`', () async {
-      // TODO
-    });
-
-    // String hexCode
-    test('to test the property `hexCode`', () async {
       // TODO
     });
 

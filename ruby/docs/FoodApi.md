@@ -8,7 +8,6 @@ All URIs are relative to *https://api.apileague.com*
 | [**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
 | [**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API |
 | [**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API |
-| [**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API |
 
 
 ## compute_nutrition_api
@@ -538,102 +537,6 @@ end
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## search_restaurants_api
-
-> <SearchRestaurantsAPI200Response> search_restaurants_api(lat, lon, opts)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: apiKey
-  config.api_key['apiKey'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['apiKey'] = 'Bearer'
-
-  # Configure API key authorization: headerApiKey
-  config.api_key['headerApiKey'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['headerApiKey'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::FoodApi.new
-lat = 32.715736 # Float | The latitude to search around.
-lon = -117.161087 # Float | The longitude to search around.
-opts = {
-  query: 'burger', # String | The search query.
-  distance: 5, # Integer | The maximum distance of the restaurant in miles around the given location.
-  budget: 25, # Float | The budget in USD for the meal.
-  min_rating: 4.4, # Float | The minimum rating of the restaurants in range [0,5].
-  cuisine: 'Mexican', # String | The cuisine that the restaurants should support.
-  is_open: true, # Boolean | Whether the restaurants have to be open now.
-  page: 0, # Integer | The page of the results.
-  sort: 'rating' # String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-}
-
-begin
-  # Search Restaurants API
-  result = api_instance.search_restaurants_api(lat, lon, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_restaurants_api: #{e}"
-end
-```
-
-#### Using the search_restaurants_api_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SearchRestaurantsAPI200Response>, Integer, Hash)> search_restaurants_api_with_http_info(lat, lon, opts)
-
-```ruby
-begin
-  # Search Restaurants API
-  data, status_code, headers = api_instance.search_restaurants_api_with_http_info(lat, lon, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SearchRestaurantsAPI200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling FoodApi->search_restaurants_api_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **lat** | **Float** | The latitude to search around. |  |
-| **lon** | **Float** | The longitude to search around. |  |
-| **query** | **String** | The search query. | [optional] |
-| **distance** | **Integer** | The maximum distance of the restaurant in miles around the given location. | [optional] |
-| **budget** | **Float** | The budget in USD for the meal. | [optional] |
-| **min_rating** | **Float** | The minimum rating of the restaurants in range [0,5]. | [optional] |
-| **cuisine** | **String** | The cuisine that the restaurants should support. | [optional] |
-| **is_open** | **Boolean** | Whether the restaurants have to be open now. | [optional] |
-| **page** | **Integer** | The page of the results. | [optional] |
-| **sort** | **String** | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] |
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

@@ -7,9 +7,9 @@
 
 (def search-drinks-api-200-response-drinks-inner-nutrition-caloric-breakdown-data
   {
-   (ds/opt :percent_fat) float?
    (ds/opt :percent_carbs) float?
    (ds/opt :percent_protein) float?
+   (ds/opt :percent_fat) float?
    })
 
 (def search-drinks-api-200-response-drinks-inner-nutrition-caloric-breakdown-spec

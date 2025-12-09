@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentiles** | **List[int]** |  | [optional] 
+**percentiles** | **List[float]** |  | [optional] 
 **min** | **int** |  | [optional] 
 **median** | **int** |  | [optional] 
 **max** | **int** |  | [optional] 

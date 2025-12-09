@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **start_position** | **Integer** |  | [optional] |
-| **image** | **String** |  | [optional] |
 | **type** | **String** |  | [optional] |
 | **value** | **String** |  | [optional] |
+| **start_position** | **Integer** |  | [optional] |
 | **end_position** | **Integer** |  | [optional] |
+| **image** | **String** |  | [optional] |
 
 ## Example
 
@@ -16,11 +16,11 @@
 require 'openapi_client'
 
 instance = OpenapiClient::ExtractEntitiesAPI200ResponseEntitiesInner.new(
-  start_position: null,
-  image: null,
   type: null,
   value: null,
-  end_position: null
+  start_position: null,
+  end_position: null,
+  image: null
 )
 ```
 

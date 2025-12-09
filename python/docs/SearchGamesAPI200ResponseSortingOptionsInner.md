@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**key** | **str** |  | [optional] 
 **sort** | **str** |  | [optional] 
+**key** | **str** |  | [optional] 
 
 ## Example
 

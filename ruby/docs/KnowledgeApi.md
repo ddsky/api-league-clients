@@ -4,9 +4,162 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**random_affirmation_api**](KnowledgeApi.md#random_affirmation_api) | **GET** /retrieve-random-affirmation | Random Affirmation API |
+| [**random_life_hack_api**](KnowledgeApi.md#random_life_hack_api) | **GET** /retrieve-random-life-hack | Random Life Hack API |
 | [**random_quote_api**](KnowledgeApi.md#random_quote_api) | **GET** /retrieve-random-quote | Random Quote API |
 | [**random_riddle_api**](KnowledgeApi.md#random_riddle_api) | **GET** /retrieve-random-riddle | Random Riddle API |
 | [**random_trivia_api**](KnowledgeApi.md#random_trivia_api) | **GET** /retrieve-random-trivia | Random Trivia API |
+
+
+## random_affirmation_api
+
+> <RandomAffirmationAPI200Response> random_affirmation_api
+
+Random Affirmation API
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::KnowledgeApi.new
+
+begin
+  # Random Affirmation API
+  result = api_instance.random_affirmation_api
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_affirmation_api: #{e}"
+end
+```
+
+#### Using the random_affirmation_api_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RandomAffirmationAPI200Response>, Integer, Hash)> random_affirmation_api_with_http_info
+
+```ruby
+begin
+  # Random Affirmation API
+  data, status_code, headers = api_instance.random_affirmation_api_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RandomAffirmationAPI200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_affirmation_api_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RandomAffirmationAPI200Response**](RandomAffirmationAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## random_life_hack_api
+
+> <RandomLifeHackAPI200Response> random_life_hack_api(opts)
+
+Random Life Hack API
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::KnowledgeApi.new
+opts = {
+  max_length: 300 # Integer | The maximum length of the hack in letters.
+}
+
+begin
+  # Random Life Hack API
+  result = api_instance.random_life_hack_api(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_life_hack_api: #{e}"
+end
+```
+
+#### Using the random_life_hack_api_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RandomLifeHackAPI200Response>, Integer, Hash)> random_life_hack_api_with_http_info(opts)
+
+```ruby
+begin
+  # Random Life Hack API
+  data, status_code, headers = api_instance.random_life_hack_api_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RandomLifeHackAPI200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling KnowledgeApi->random_life_hack_api_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **max_length** | **Integer** | The maximum length of the hack in letters. | [optional] |
+
+### Return type
+
+[**RandomLifeHackAPI200Response**](RandomLifeHackAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## random_quote_api

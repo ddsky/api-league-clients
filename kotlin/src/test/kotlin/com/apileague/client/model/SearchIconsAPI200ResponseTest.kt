@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.client.model.SearchIconsAPI200Response
-import com.apileague.client.model.SearchRoyaltyFreeImagesAPI200ResponseImagesInner
+import com.apileague.client.model.SearchIconsAPI200ResponseIconsInner
 
 class SearchIconsAPI200ResponseTest : ShouldSpec() {
     init {

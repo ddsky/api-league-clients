@@ -5,13 +5,13 @@
 -export_type([apileague_score_text_api_200_response_skimmability_mainscores/0]).
 
 -type apileague_score_text_api_200_response_skimmability_mainscores() ::
-    #{ 'total_possible' => integer(),
-       'total' => integer()
+    #{ 'total' => integer(),
+       'total_possible' => integer()
      }.
 
-encode(#{ 'total_possible' := TotalPossible,
-          'total' := Total
+encode(#{ 'total' := Total,
+          'total_possible' := TotalPossible
         }) ->
-    #{ 'total_possible' => TotalPossible,
-       'total' => Total
+    #{ 'total' => Total,
+       'total_possible' => TotalPossible
      }.

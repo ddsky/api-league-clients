@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**images** | **List[Optional[str]]** |  | [optional] 
-**nutrition** | [**SearchRecipesAPI200ResponseRecipesInnerNutrition**](SearchRecipesAPI200ResponseRecipesInnerNutrition.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **title** | **str** |  | [optional] 
+**images** | **List[Optional[str]]** |  | [optional] 
+**nutrition** | [**SearchRecipesAPI200ResponseRecipesInnerNutrition**](SearchRecipesAPI200ResponseRecipesInnerNutrition.md) |  | [optional] 
 
 ## Example
 

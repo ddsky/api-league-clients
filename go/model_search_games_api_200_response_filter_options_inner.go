@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SearchGamesAPI200ResponseFilterOptionsInner{}
 // SearchGamesAPI200ResponseFilterOptionsInner struct for SearchGamesAPI200ResponseFilterOptionsInner
 type SearchGamesAPI200ResponseFilterOptionsInner struct {
 	Name NullableString `json:"name,omitempty"`
-	FilterType NullableString `json:"filter_type,omitempty"`
 	Key NullableString `json:"key,omitempty"`
 	Values []SearchGamesAPI200ResponseFilterOptionsInnerValuesInner `json:"values,omitempty"`
+	FilterType NullableString `json:"filter_type,omitempty"`
 	FilterConnection NullableString `json:"filter_connection,omitempty"`
 }
 
@@ -84,48 +84,6 @@ func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetNameNil() {
 // UnsetName ensures that no value is present for Name, not even an explicit nil
 func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetName() {
 	o.Name.Unset()
-}
-
-// GetFilterType returns the FilterType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterType() string {
-	if o == nil || IsNil(o.FilterType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.FilterType.Get()
-}
-
-// GetFilterTypeOk returns a tuple with the FilterType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.FilterType.Get(), o.FilterType.IsSet()
-}
-
-// HasFilterType returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) HasFilterType() bool {
-	if o != nil && o.FilterType.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetFilterType gets a reference to the given NullableString and assigns it to the FilterType field.
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterType(v string) {
-	o.FilterType.Set(&v)
-}
-// SetFilterTypeNil sets the value for FilterType to be an explicit nil
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterTypeNil() {
-	o.FilterType.Set(nil)
-}
-
-// UnsetFilterType ensures that no value is present for FilterType, not even an explicit nil
-func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetFilterType() {
-	o.FilterType.Unset()
 }
 
 // GetKey returns the Key field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -202,6 +160,48 @@ func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetValues(v []SearchGamesA
 	o.Values = v
 }
 
+// GetFilterType returns the FilterType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterType() string {
+	if o == nil || IsNil(o.FilterType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FilterType.Get()
+}
+
+// GetFilterTypeOk returns a tuple with the FilterType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FilterType.Get(), o.FilterType.IsSet()
+}
+
+// HasFilterType returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) HasFilterType() bool {
+	if o != nil && o.FilterType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFilterType gets a reference to the given NullableString and assigns it to the FilterType field.
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterType(v string) {
+	o.FilterType.Set(&v)
+}
+// SetFilterTypeNil sets the value for FilterType to be an explicit nil
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterTypeNil() {
+	o.FilterType.Set(nil)
+}
+
+// UnsetFilterType ensures that no value is present for FilterType, not even an explicit nil
+func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetFilterType() {
+	o.FilterType.Unset()
+}
+
 // GetFilterConnection returns the FilterConnection field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterConnection() string {
 	if o == nil || IsNil(o.FilterConnection.Get()) {
@@ -257,14 +257,14 @@ func (o SearchGamesAPI200ResponseFilterOptionsInner) ToMap() (map[string]interfa
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if o.FilterType.IsSet() {
-		toSerialize["filter_type"] = o.FilterType.Get()
-	}
 	if o.Key.IsSet() {
 		toSerialize["key"] = o.Key.Get()
 	}
 	if !IsNil(o.Values) {
 		toSerialize["values"] = o.Values
+	}
+	if o.FilterType.IsSet() {
+		toSerialize["filter_type"] = o.FilterType.Get()
 	}
 	if o.FilterConnection.IsSet() {
 		toSerialize["filter_connection"] = o.FilterConnection.Get()

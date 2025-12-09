@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**PercentOfDailyNeeds** | Pointer to **float32** |  | [optional] 
 **Amount** | Pointer to **float32** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
+**PercentOfDailyNeeds** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
@@ -63,31 +63,6 @@ HasName returns a boolean if a field has been set.
 `func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetPercentOfDailyNeeds
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) GetPercentOfDailyNeeds() float32`
-
-GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field if non-nil, zero value otherwise.
-
-### GetPercentOfDailyNeedsOk
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) GetPercentOfDailyNeedsOk() (*float32, bool)`
-
-GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPercentOfDailyNeeds
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) SetPercentOfDailyNeeds(v float32)`
-
-SetPercentOfDailyNeeds sets PercentOfDailyNeeds field to given value.
-
-### HasPercentOfDailyNeeds
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) HasPercentOfDailyNeeds() bool`
-
-HasPercentOfDailyNeeds returns a boolean if a field has been set.
-
 ### GetAmount
 
 `func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) GetAmount() float32`
@@ -148,6 +123,31 @@ HasUnit returns a boolean if a field has been set.
 `func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) UnsetUnit()`
 
 UnsetUnit ensures that no value is present for Unit, not even an explicit nil
+### GetPercentOfDailyNeeds
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) GetPercentOfDailyNeeds() float32`
+
+GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field if non-nil, zero value otherwise.
+
+### GetPercentOfDailyNeedsOk
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) GetPercentOfDailyNeedsOk() (*float32, bool)`
+
+GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPercentOfDailyNeeds
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) SetPercentOfDailyNeeds(v float32)`
+
+SetPercentOfDailyNeeds sets PercentOfDailyNeeds field to given value.
+
+### HasPercentOfDailyNeeds
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) HasPercentOfDailyNeeds() bool`
+
+HasPercentOfDailyNeeds returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

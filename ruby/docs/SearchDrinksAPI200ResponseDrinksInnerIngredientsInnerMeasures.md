@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **metric** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] |
 | **us** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs.md) |  | [optional] |
+| **metric** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] |
 
 ## Example
 
@@ -13,8 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures.new(
-  metric: null,
-  us: null
+  us: null,
+  metric: null
 )
 ```
 

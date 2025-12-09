@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &ComputeNutritionAPI200Response{}
 // ComputeNutritionAPI200Response struct for ComputeNutritionAPI200Response
 type ComputeNutritionAPI200Response struct {
 	Nutrients []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner `json:"nutrients,omitempty"`
-	Properties []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner `json:"properties,omitempty"`
+	Properties []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner `json:"properties,omitempty"`
 	Flavonoids []SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner `json:"flavonoids,omitempty"`
 	IngredientBreakdown []ComputeNutritionAPI200ResponseIngredientBreakdownInner `json:"ingredient_breakdown,omitempty"`
 	CaloricBreakdown *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown `json:"caloric_breakdown,omitempty"`
@@ -78,9 +78,9 @@ func (o *ComputeNutritionAPI200Response) SetNutrients(v []SearchDrinksAPI200Resp
 }
 
 // GetProperties returns the Properties field value if set, zero value otherwise.
-func (o *ComputeNutritionAPI200Response) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner {
+func (o *ComputeNutritionAPI200Response) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner {
 	if o == nil || IsNil(o.Properties) {
-		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
+		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 		return ret
 	}
 	return o.Properties
@@ -88,7 +88,7 @@ func (o *ComputeNutritionAPI200Response) GetProperties() []SearchDrinksAPI200Res
 
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeNutritionAPI200Response) GetPropertiesOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool) {
+func (o *ComputeNutritionAPI200Response) GetPropertiesOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool) {
 	if o == nil || IsNil(o.Properties) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *ComputeNutritionAPI200Response) HasProperties() bool {
 	return false
 }
 
-// SetProperties gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner and assigns it to the Properties field.
-func (o *ComputeNutritionAPI200Response) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner) {
+// SetProperties gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner and assigns it to the Properties field.
+func (o *ComputeNutritionAPI200Response) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner) {
 	o.Properties = v
 }
 

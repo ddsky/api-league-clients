@@ -16,11 +16,6 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown', () {
-    // num percentFat
-    test('to test the property `percentFat`', () async {
-      // TODO
-    });
-
     // num percentCarbs
     test('to test the property `percentCarbs`', () async {
       // TODO
@@ -28,6 +23,11 @@ void main() {
 
     // num percentProtein
     test('to test the property `percentProtein`', () async {
+      // TODO
+    });
+
+    // num percentFat
+    test('to test the property `percentFat`', () async {
       // TODO
     });
 

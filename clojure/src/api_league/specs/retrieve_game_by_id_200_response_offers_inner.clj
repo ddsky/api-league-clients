@@ -8,10 +8,10 @@
 
 (def retrieve-game-by-id-200-response-offers-inner-data
   {
-   (ds/opt :store_name) string?
-   (ds/opt :title) string?
    (ds/opt :price) retrieve-game-by-id-200-response-offers-inner-price-spec
+   (ds/opt :store_name) string?
    (ds/opt :platform) string?
+   (ds/opt :title) string?
    (ds/opt :url) string?
    })
 

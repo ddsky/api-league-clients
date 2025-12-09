@@ -8,15 +8,15 @@ defmodule APILeague.Model.SearchMemesApi200ResponseMemesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :type,
     :description,
-    :url
+    :url,
+    :type
   ]
 
   @type t :: %__MODULE__{
-    :type => String.t | nil,
     :description => String.t | nil,
-    :url => String.t | nil
+    :url => String.t | nil,
+    :type => String.t | nil
   }
 
   def decode(value) do

@@ -16,11 +16,6 @@ void main() {
   // final instance = RetrieveRecipeInformationAPI200ResponseScores();
 
   group('test RetrieveRecipeInformationAPI200ResponseScores', () {
-    // num metaScore
-    test('to test the property `metaScore`', () async {
-      // TODO
-    });
-
     // int weightWatcherSmartPoints
     test('to test the property `weightWatcherSmartPoints`', () async {
       // TODO
@@ -28,6 +23,11 @@ void main() {
 
     // int healthScore
     test('to test the property `healthScore`', () async {
+      // TODO
+    });
+
+    // num metaScore
+    test('to test the property `metaScore`', () async {
       // TODO
     });
 

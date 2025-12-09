@@ -5,16 +5,16 @@
 -export_type([apileague_retrieve_recipe_information_api_200_response_scores/0]).
 
 -type apileague_retrieve_recipe_information_api_200_response_scores() ::
-    #{ 'meta_score' => integer(),
-       'weight_watcher_smart_points' => integer(),
-       'health_score' => integer()
+    #{ 'weight_watcher_smart_points' => integer(),
+       'health_score' => integer(),
+       'meta_score' => integer()
      }.
 
-encode(#{ 'meta_score' := MetaScore,
-          'weight_watcher_smart_points' := WeightWatcherSmartPoints,
-          'health_score' := HealthScore
+encode(#{ 'weight_watcher_smart_points' := WeightWatcherSmartPoints,
+          'health_score' := HealthScore,
+          'meta_score' := MetaScore
         }) ->
-    #{ 'meta_score' => MetaScore,
-       'weight_watcher_smart_points' => WeightWatcherSmartPoints,
-       'health_score' => HealthScore
+    #{ 'weight_watcher_smart_points' => WeightWatcherSmartPoints,
+       'health_score' => HealthScore,
+       'meta_score' => MetaScore
      }.

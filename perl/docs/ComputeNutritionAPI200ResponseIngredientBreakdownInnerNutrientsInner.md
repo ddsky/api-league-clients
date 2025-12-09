@@ -9,9 +9,9 @@ use WWW::OpenAPIClient::Object::ComputeNutritionAPI200ResponseIngredientBreakdow
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
-**percent_of_daily_needs** | **int** |  | [optional] 
 **amount** | **int** |  | [optional] 
 **unit** | **string** |  | [optional] 
+**percent_of_daily_needs** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

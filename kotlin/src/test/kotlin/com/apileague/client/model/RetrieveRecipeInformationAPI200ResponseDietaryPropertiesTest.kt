@@ -25,12 +25,6 @@ class RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTest : ShouldSpec(
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseDietaryProperties
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseDietaryProperties()
 
-        // to test the property `lowFodmap`
-        should("test lowFodmap") {
-            // uncomment below to test the property
-            //modelInstance.lowFodmap shouldBe ("TODO")
-        }
-
         // to test the property `vegetarian`
         should("test vegetarian") {
             // uncomment below to test the property
@@ -53,6 +47,12 @@ class RetrieveRecipeInformationAPI200ResponseDietaryPropertiesTest : ShouldSpec(
         should("test dairyFree") {
             // uncomment below to test the property
             //modelInstance.dairyFree shouldBe ("TODO")
+        }
+
+        // to test the property `lowFodmap`
+        should("test lowFodmap") {
+            // uncomment below to test the property
+            //modelInstance.lowFodmap shouldBe ("TODO")
         }
 
         // to test the property `gaps`

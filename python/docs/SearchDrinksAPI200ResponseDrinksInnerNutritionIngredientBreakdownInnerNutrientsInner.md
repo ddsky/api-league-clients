@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**percent_of_daily_needs** | **float** |  | [optional] 
 **amount** | **int** |  | [optional] 
 **unit** | **str** |  | [optional] 
+**percent_of_daily_needs** | **float** |  | [optional] 
 
 ## Example
 

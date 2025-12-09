@@ -6,18 +6,18 @@
 
 -type apileague_search_drinks_api_200_response_drinks_inner_instructions_inner_steps_inner() ::
     #{ 'number' => integer(),
+       'step' => binary(),
        'ingredients' => list(),
-       'equipment' => list(),
-       'step' => binary()
+       'equipment' => list()
      }.
 
 encode(#{ 'number' := Number,
+          'step' := Step,
           'ingredients' := Ingredients,
-          'equipment' := Equipment,
-          'step' := Step
+          'equipment' := Equipment
         }) ->
     #{ 'number' => Number,
+       'step' => Step,
        'ingredients' => Ingredients,
-       'equipment' => Equipment,
-       'step' => Step
+       'equipment' => Equipment
      }.

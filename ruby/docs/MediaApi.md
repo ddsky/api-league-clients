@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 | ------ | ------------ | ----------- |
 | [**detect_main_image_color_api**](MediaApi.md#detect_main_image_color_api) | **GET** /detect-color | Detect Main Image Color API |
 | [**rescale_image_api**](MediaApi.md#rescale_image_api) | **GET** /rescale-image | Rescale Image API |
+| [**screenshot_api**](MediaApi.md#screenshot_api) | **GET** /take-screenshot | Screenshot API |
 | [**search_icons_api**](MediaApi.md#search_icons_api) | **GET** /search-icons | Search Icons API |
 | [**search_royalty_free_images_api**](MediaApi.md#search_royalty_free_images_api) | **GET** /search-images | Search Royalty Free Images API |
 | [**vector_search_api**](MediaApi.md#vector_search_api) | **GET** /search-vectors | Vector Search API |
@@ -154,6 +155,86 @@ end
 | **width** | **Integer** | The desired width of the rescaled image. |  |
 | **height** | **Integer** | The desired height of the rescaled image. |  |
 | **crop** | **Boolean** | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+
+## screenshot_api
+
+> File screenshot_api(url, width, height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure API key authorization: headerApiKey
+  config.api_key['headerApiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['headerApiKey'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::MediaApi.new
+url = 'https://nytimes.com' # String | The url of the web page for which a screenshot should be taken.
+width = 400 # Integer | The desired width of the screenshot.
+height = 300 # Integer | The desired height of the screenshot.
+
+begin
+  # Screenshot API
+  result = api_instance.screenshot_api(url, width, height)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MediaApi->screenshot_api: #{e}"
+end
+```
+
+#### Using the screenshot_api_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> screenshot_api_with_http_info(url, width, height)
+
+```ruby
+begin
+  # Screenshot API
+  data, status_code, headers = api_instance.screenshot_api_with_http_info(url, width, height)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MediaApi->screenshot_api_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **url** | **String** | The url of the web page for which a screenshot should be taken. |  |
+| **width** | **Integer** | The desired width of the screenshot. |  |
+| **height** | **Integer** | The desired height of the screenshot. |  |
 
 ### Return type
 

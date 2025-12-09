@@ -5,22 +5,22 @@
 -export_type([apileague_extract_entities_api_200_response_entities_inner/0]).
 
 -type apileague_extract_entities_api_200_response_entities_inner() ::
-    #{ 'start_position' => integer(),
-       'image' => binary(),
-       'type' => binary(),
+    #{ 'type' => binary(),
        'value' => binary(),
-       'end_position' => integer()
+       'start_position' => integer(),
+       'end_position' => integer(),
+       'image' => binary()
      }.
 
-encode(#{ 'start_position' := StartPosition,
-          'image' := Image,
-          'type' := Type,
+encode(#{ 'type' := Type,
           'value' := Value,
-          'end_position' := EndPosition
+          'start_position' := StartPosition,
+          'end_position' := EndPosition,
+          'image' := Image
         }) ->
-    #{ 'start_position' => StartPosition,
-       'image' => Image,
-       'type' => Type,
+    #{ 'type' => Type,
        'value' => Value,
-       'end_position' => EndPosition
+       'start_position' => StartPosition,
+       'end_position' => EndPosition,
+       'image' => Image
      }.

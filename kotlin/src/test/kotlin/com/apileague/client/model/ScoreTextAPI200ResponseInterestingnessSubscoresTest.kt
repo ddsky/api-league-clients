@@ -25,22 +25,10 @@ class ScoreTextAPI200ResponseInterestingnessSubscoresTest : ShouldSpec() {
         // uncomment below to create an instance of ScoreTextAPI200ResponseInterestingnessSubscores
         //val modelInstance = ScoreTextAPI200ResponseInterestingnessSubscores()
 
-        // to test the property `titleRatingScore`
-        should("test titleRatingScore") {
+        // to test the property `googleHitsScore`
+        should("test googleHitsScore") {
             // uncomment below to test the property
-            //modelInstance.titleRatingScore shouldBe ("TODO")
-        }
-
-        // to test the property `quoteScore`
-        should("test quoteScore") {
-            // uncomment below to test the property
-            //modelInstance.quoteScore shouldBe ("TODO")
-        }
-
-        // to test the property `lengthScore`
-        should("test lengthScore") {
-            // uncomment below to test the property
-            //modelInstance.lengthScore shouldBe ("TODO")
+            //modelInstance.googleHitsScore shouldBe ("TODO")
         }
 
         // to test the property `linkScore`
@@ -49,10 +37,22 @@ class ScoreTextAPI200ResponseInterestingnessSubscoresTest : ShouldSpec() {
             //modelInstance.linkScore shouldBe ("TODO")
         }
 
-        // to test the property `googleHitsScore`
-        should("test googleHitsScore") {
+        // to test the property `quoteScore`
+        should("test quoteScore") {
             // uncomment below to test the property
-            //modelInstance.googleHitsScore shouldBe ("TODO")
+            //modelInstance.quoteScore shouldBe ("TODO")
+        }
+
+        // to test the property `titleRatingScore`
+        should("test titleRatingScore") {
+            // uncomment below to test the property
+            //modelInstance.titleRatingScore shouldBe ("TODO")
+        }
+
+        // to test the property `lengthScore`
+        should("test lengthScore") {
+            // uncomment below to test the property
+            //modelInstance.lengthScore shouldBe ("TODO")
         }
 
     }

@@ -13,24 +13,28 @@ part of openapi.api;
 class SearchGamesAPI200ResponseResultsInner {
   /// Returns a new [SearchGamesAPI200ResponseResultsInner] instance.
   SearchGamesAPI200ResponseResultsInner({
-    this.image,
-    this.shortDescription,
+    this.id,
     this.year,
+    this.name,
+    this.genre,
+    this.image,
     this.link,
     this.rating,
     this.adultOnly,
     this.screenshots = const [],
-    this.platforms = const [],
     this.microTrailer,
-    this.name,
-    this.genre,
-    this.id,
     this.gameplay,
+    this.shortDescription,
+    this.platforms = const [],
   });
 
-  String? image;
-
-  String? shortDescription;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -39,6 +43,12 @@ class SearchGamesAPI200ResponseResultsInner {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   int? year;
+
+  String? name;
+
+  String? genre;
+
+  String? image;
 
   String? link;
 
@@ -60,76 +70,76 @@ class SearchGamesAPI200ResponseResultsInner {
 
   List<String> screenshots;
 
-  List<SearchGamesAPI200ResponseResultsInnerPlatformsInner> platforms;
-
   String? microTrailer;
-
-  String? name;
-
-  String? genre;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? id;
 
   String? gameplay;
 
+  String? shortDescription;
+
+  List<SearchGamesAPI200ResponseResultsInnerPlatformsInner> platforms;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseResultsInner &&
-    other.image == image &&
-    other.shortDescription == shortDescription &&
+    other.id == id &&
     other.year == year &&
+    other.name == name &&
+    other.genre == genre &&
+    other.image == image &&
     other.link == link &&
     other.rating == rating &&
     other.adultOnly == adultOnly &&
     _deepEquality.equals(other.screenshots, screenshots) &&
-    _deepEquality.equals(other.platforms, platforms) &&
     other.microTrailer == microTrailer &&
-    other.name == name &&
-    other.genre == genre &&
-    other.id == id &&
-    other.gameplay == gameplay;
+    other.gameplay == gameplay &&
+    other.shortDescription == shortDescription &&
+    _deepEquality.equals(other.platforms, platforms);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (image == null ? 0 : image!.hashCode) +
-    (shortDescription == null ? 0 : shortDescription!.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
     (year == null ? 0 : year!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (genre == null ? 0 : genre!.hashCode) +
+    (image == null ? 0 : image!.hashCode) +
     (link == null ? 0 : link!.hashCode) +
     (rating == null ? 0 : rating!.hashCode) +
     (adultOnly == null ? 0 : adultOnly!.hashCode) +
     (screenshots.hashCode) +
-    (platforms.hashCode) +
     (microTrailer == null ? 0 : microTrailer!.hashCode) +
-    (name == null ? 0 : name!.hashCode) +
-    (genre == null ? 0 : genre!.hashCode) +
-    (id == null ? 0 : id!.hashCode) +
-    (gameplay == null ? 0 : gameplay!.hashCode);
+    (gameplay == null ? 0 : gameplay!.hashCode) +
+    (shortDescription == null ? 0 : shortDescription!.hashCode) +
+    (platforms.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseResultsInner[image=$image, shortDescription=$shortDescription, year=$year, link=$link, rating=$rating, adultOnly=$adultOnly, screenshots=$screenshots, platforms=$platforms, microTrailer=$microTrailer, name=$name, genre=$genre, id=$id, gameplay=$gameplay]';
+  String toString() => 'SearchGamesAPI200ResponseResultsInner[id=$id, year=$year, name=$name, genre=$genre, image=$image, link=$link, rating=$rating, adultOnly=$adultOnly, screenshots=$screenshots, microTrailer=$microTrailer, gameplay=$gameplay, shortDescription=$shortDescription, platforms=$platforms]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.image != null) {
-      json[r'image'] = this.image;
+    if (this.id != null) {
+      json[r'id'] = this.id;
     } else {
-      json[r'image'] = null;
-    }
-    if (this.shortDescription != null) {
-      json[r'short_description'] = this.shortDescription;
-    } else {
-      json[r'short_description'] = null;
+      json[r'id'] = null;
     }
     if (this.year != null) {
       json[r'year'] = this.year;
     } else {
       json[r'year'] = null;
+    }
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.genre != null) {
+      json[r'genre'] = this.genre;
+    } else {
+      json[r'genre'] = null;
+    }
+    if (this.image != null) {
+      json[r'image'] = this.image;
+    } else {
+      json[r'image'] = null;
     }
     if (this.link != null) {
       json[r'link'] = this.link;
@@ -147,32 +157,22 @@ class SearchGamesAPI200ResponseResultsInner {
       json[r'adult_only'] = null;
     }
       json[r'screenshots'] = this.screenshots;
-      json[r'platforms'] = this.platforms;
     if (this.microTrailer != null) {
       json[r'micro_trailer'] = this.microTrailer;
     } else {
       json[r'micro_trailer'] = null;
-    }
-    if (this.name != null) {
-      json[r'name'] = this.name;
-    } else {
-      json[r'name'] = null;
-    }
-    if (this.genre != null) {
-      json[r'genre'] = this.genre;
-    } else {
-      json[r'genre'] = null;
-    }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
     }
     if (this.gameplay != null) {
       json[r'gameplay'] = this.gameplay;
     } else {
       json[r'gameplay'] = null;
     }
+    if (this.shortDescription != null) {
+      json[r'short_description'] = this.shortDescription;
+    } else {
+      json[r'short_description'] = null;
+    }
+      json[r'platforms'] = this.platforms;
     return json;
   }
 
@@ -195,21 +195,21 @@ class SearchGamesAPI200ResponseResultsInner {
       }());
 
       return SearchGamesAPI200ResponseResultsInner(
-        image: mapValueOfType<String>(json, r'image'),
-        shortDescription: mapValueOfType<String>(json, r'short_description'),
+        id: mapValueOfType<int>(json, r'id'),
         year: mapValueOfType<int>(json, r'year'),
+        name: mapValueOfType<String>(json, r'name'),
+        genre: mapValueOfType<String>(json, r'genre'),
+        image: mapValueOfType<String>(json, r'image'),
         link: mapValueOfType<String>(json, r'link'),
         rating: SearchGamesAPI200ResponseResultsInnerRating.fromJson(json[r'rating']),
         adultOnly: mapValueOfType<bool>(json, r'adult_only'),
         screenshots: json[r'screenshots'] is Iterable
             ? (json[r'screenshots'] as Iterable).cast<String>().toList(growable: false)
             : const [],
-        platforms: SearchGamesAPI200ResponseResultsInnerPlatformsInner.listFromJson(json[r'platforms']),
         microTrailer: mapValueOfType<String>(json, r'micro_trailer'),
-        name: mapValueOfType<String>(json, r'name'),
-        genre: mapValueOfType<String>(json, r'genre'),
-        id: mapValueOfType<int>(json, r'id'),
         gameplay: mapValueOfType<String>(json, r'gameplay'),
+        shortDescription: mapValueOfType<String>(json, r'short_description'),
+        platforms: SearchGamesAPI200ResponseResultsInnerPlatformsInner.listFromJson(json[r'platforms']),
       );
     }
     return null;

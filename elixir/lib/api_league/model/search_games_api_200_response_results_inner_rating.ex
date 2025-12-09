@@ -8,13 +8,13 @@ defmodule APILeague.Model.SearchGamesApi200ResponseResultsInnerRating do
 
   @derive Jason.Encoder
   defstruct [
-    :count,
-    :mean
+    :mean,
+    :count
   ]
 
   @type t :: %__MODULE__{
-    :count => integer() | nil,
-    :mean => float() | nil
+    :mean => float() | nil,
+    :count => integer() | nil
   }
 
   def decode(value) do

@@ -22,18 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param url 
  * @param source 
+ * @param url 
  */
 
 
 data class RetrieveGameById200ResponseOfficialStoresInner (
 
-    @Json(name = "url")
-    val url: kotlin.String? = null,
-
     @Json(name = "source")
-    val source: kotlin.String? = null
+    val source: kotlin.String? = null,
+
+    @Json(name = "url")
+    val url: kotlin.String? = null
 
 ) {
 

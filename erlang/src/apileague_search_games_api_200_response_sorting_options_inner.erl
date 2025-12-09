@@ -6,15 +6,15 @@
 
 -type apileague_search_games_api_200_response_sorting_options_inner() ::
     #{ 'name' => binary(),
-       'key' => binary(),
-       'sort' => binary()
+       'sort' => binary(),
+       'key' => binary()
      }.
 
 encode(#{ 'name' := Name,
-          'key' := Key,
-          'sort' := Sort
+          'sort' := Sort,
+          'key' := Key
         }) ->
     #{ 'name' => Name,
-       'key' => Key,
-       'sort' => Sort
+       'sort' => Sort,
+       'key' => Key
      }.

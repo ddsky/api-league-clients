@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param percentFat 
  * @param percentCarbs 
  * @param percentProtein 
+ * @param percentFat 
  */
 
 
 data class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown (
 
-    @Json(name = "percent_fat")
-    val percentFat: java.math.BigDecimal? = null,
-
     @Json(name = "percent_carbs")
     val percentCarbs: java.math.BigDecimal? = null,
 
     @Json(name = "percent_protein")
-    val percentProtein: java.math.BigDecimal? = null
+    val percentProtein: java.math.BigDecimal? = null,
+
+    @Json(name = "percent_fat")
+    val percentFat: java.math.BigDecimal? = null
 
 ) {
 

@@ -9,9 +9,9 @@
 (def search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-data
   {
    (ds/opt :number) int?
+   (ds/opt :step) string?
    (ds/opt :ingredients) (s/coll-of search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner-spec)
    (ds/opt :equipment) (s/coll-of string?)
-   (ds/opt :step) string?
    })
 
 (def search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-spec

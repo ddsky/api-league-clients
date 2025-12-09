@@ -6,12 +6,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bulletPointRatioScore** | **List&lt;Integer&gt;** |  |  [optional]
-**imageScore** | **List&lt;Integer&gt;** |  |  [optional]
-**highlightedWordRatioScore** | **List&lt;Integer&gt;** |  |  [optional]
-**videoScore** | **List&lt;Integer&gt;** |  |  [optional]
-**paragraphScore** | **List&lt;Integer&gt;** |  |  [optional]
-**paragraphHeadlineRatioScore** | **List&lt;Integer&gt;** |  |  [optional]
+**highlightedWordRatioScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**bulletPointRatioScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**paragraphHeadlineRatioScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**imageScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**videoScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**paragraphScore** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
 
 
 

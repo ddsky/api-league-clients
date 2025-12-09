@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **width** | **Integer** |  | [optional] |
-| **license** | [**SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense**](SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md) |  | [optional] |
-| **thumbnail** | **String** |  | [optional] |
-| **id** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
+| **thumbnail** | **String** |  | [optional] |
+| **width** | **Integer** |  | [optional] |
 | **height** | **Integer** |  | [optional] |
+| **license** | [**SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense**](SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md) |  | [optional] |
+| **id** | **String** |  | [optional] |
 
 ## Example
 
@@ -17,12 +17,12 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchRoyaltyFreeImagesAPI200ResponseImagesInner.new(
-  width: null,
-  license: null,
-  thumbnail: null,
-  id: null,
   url: null,
-  height: null
+  thumbnail: null,
+  width: null,
+  height: null,
+  license: null,
+  id: null
 )
 ```
 

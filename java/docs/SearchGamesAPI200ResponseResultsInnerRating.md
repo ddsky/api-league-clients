@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**count** | **Integer** |  |  [optional] |
 |**mean** | **BigDecimal** |  |  [optional] |
+|**count** | **Integer** |  |  [optional] |
 
 
 

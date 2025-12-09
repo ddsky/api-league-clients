@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **total_possible** | **Integer** |  | [optional] |
 | **total** | **Float** |  | [optional] |
+| **total_possible** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -13,8 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::ScoreTextAPI200ResponseSkimmabilityMainscores.new(
-  total_possible: null,
-  total: null
+  total: null,
+  total_possible: null
 )
 ```
 

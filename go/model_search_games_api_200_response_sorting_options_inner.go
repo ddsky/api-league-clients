@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,8 +21,8 @@ var _ MappedNullable = &SearchGamesAPI200ResponseSortingOptionsInner{}
 // SearchGamesAPI200ResponseSortingOptionsInner struct for SearchGamesAPI200ResponseSortingOptionsInner
 type SearchGamesAPI200ResponseSortingOptionsInner struct {
 	Name NullableString `json:"name,omitempty"`
-	Key NullableString `json:"key,omitempty"`
 	Sort NullableString `json:"sort,omitempty"`
+	Key NullableString `json:"key,omitempty"`
 }
 
 // NewSearchGamesAPI200ResponseSortingOptionsInner instantiates a new SearchGamesAPI200ResponseSortingOptionsInner object
@@ -84,48 +84,6 @@ func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetName() {
 	o.Name.Unset()
 }
 
-// GetKey returns the Key field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKey() string {
-	if o == nil || IsNil(o.Key.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Key.Get()
-}
-
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKeyOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Key.Get(), o.Key.IsSet()
-}
-
-// HasKey returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) HasKey() bool {
-	if o != nil && o.Key.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetKey gets a reference to the given NullableString and assigns it to the Key field.
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKey(v string) {
-	o.Key.Set(&v)
-}
-// SetKeyNil sets the value for Key to be an explicit nil
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKeyNil() {
-	o.Key.Set(nil)
-}
-
-// UnsetKey ensures that no value is present for Key, not even an explicit nil
-func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetKey() {
-	o.Key.Unset()
-}
-
 // GetSort returns the Sort field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetSort() string {
 	if o == nil || IsNil(o.Sort.Get()) {
@@ -168,6 +126,48 @@ func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetSort() {
 	o.Sort.Unset()
 }
 
+// GetKey returns the Key field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKey() string {
+	if o == nil || IsNil(o.Key.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Key.Get()
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKeyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Key.Get(), o.Key.IsSet()
+}
+
+// HasKey returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) HasKey() bool {
+	if o != nil && o.Key.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given NullableString and assigns it to the Key field.
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKey(v string) {
+	o.Key.Set(&v)
+}
+// SetKeyNil sets the value for Key to be an explicit nil
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKeyNil() {
+	o.Key.Set(nil)
+}
+
+// UnsetKey ensures that no value is present for Key, not even an explicit nil
+func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetKey() {
+	o.Key.Unset()
+}
+
 func (o SearchGamesAPI200ResponseSortingOptionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -181,11 +181,11 @@ func (o SearchGamesAPI200ResponseSortingOptionsInner) ToMap() (map[string]interf
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if o.Key.IsSet() {
-		toSerialize["key"] = o.Key.Get()
-	}
 	if o.Sort.IsSet() {
 		toSerialize["sort"] = o.Sort.Get()
+	}
+	if o.Key.IsSet() {
+		toSerialize["key"] = o.Key.Get()
 	}
 	return toSerialize, nil
 }

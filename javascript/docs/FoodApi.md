@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
 [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
-[**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 
 
 
@@ -459,82 +458,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## searchRestaurantsAPI
-
-> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, opts)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-
-```javascript
-import ApileagueJs from 'apileague-js';
-let defaultClient = ApileagueJs.ApiClient.instance;
-// Configure API key authorization: apiKey
-let apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: headerApiKey
-let headerApiKey = defaultClient.authentications['headerApiKey'];
-headerApiKey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//headerApiKey.apiKeyPrefix = 'Token';
-
-let apiInstance = new ApileagueJs.FoodApi();
-let lat = 32.715736; // Number | The latitude to search around.
-let lon = -117.161087; // Number | The longitude to search around.
-let opts = {
-  'query': "burger", // String | The search query.
-  'distance': 5, // Number | The maximum distance of the restaurant in miles around the given location.
-  'budget': 25, // Number | The budget in USD for the meal.
-  'minRating': 4.4, // Number | The minimum rating of the restaurants in range [0,5].
-  'cuisine': "Mexican", // String | The cuisine that the restaurants should support.
-  'isOpen': true, // Boolean | Whether the restaurants have to be open now.
-  'page': 0, // Number | The page of the results.
-  'sort': "rating" // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-};
-apiInstance.searchRestaurantsAPI(lat, lon, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **Number**| The latitude to search around. | 
- **lon** | **Number**| The longitude to search around. | 
- **query** | **String**| The search query. | [optional] 
- **distance** | **Number**| The maximum distance of the restaurant in miles around the given location. | [optional] 
- **budget** | **Number**| The budget in USD for the meal. | [optional] 
- **minRating** | **Number**| The minimum rating of the restaurants in range [0,5]. | [optional] 
- **cuisine** | **String**| The cuisine that the restaurants should support. | [optional] 
- **isOpen** | **Boolean**| Whether the restaurants have to be open now. | [optional] 
- **page** | **Number**| The page of the results. | [optional] 
- **sort** | **String**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] 
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

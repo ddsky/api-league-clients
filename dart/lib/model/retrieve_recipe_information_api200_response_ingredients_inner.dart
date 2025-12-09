@@ -13,49 +13,19 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseIngredientsInner {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseIngredientsInner] instance.
   RetrieveRecipeInformationAPI200ResponseIngredientsInner({
-    this.image,
-    this.nameClean,
-    this.amount,
-    this.unit,
-    this.measures,
-    this.original,
-    this.meta = const [],
-    this.originalName,
-    this.name,
     this.id,
     this.aisle,
+    this.image,
     this.consistency,
+    this.name,
+    this.original,
+    this.amount,
+    this.unit,
+    this.meta = const [],
+    this.measures,
+    this.originalName,
+    this.nameClean,
   });
-
-  String? image;
-
-  String? nameClean;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? amount;
-
-  String? unit;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures? measures;
-
-  String? original;
-
-  List<String> meta;
-
-  String? originalName;
-
-  String? name;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -67,53 +37,103 @@ class RetrieveRecipeInformationAPI200ResponseIngredientsInner {
 
   String? aisle;
 
+  String? image;
+
   String? consistency;
+
+  String? name;
+
+  String? original;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? amount;
+
+  String? unit;
+
+  List<String> meta;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures? measures;
+
+  String? originalName;
+
+  String? nameClean;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseIngredientsInner &&
-    other.image == image &&
-    other.nameClean == nameClean &&
-    other.amount == amount &&
-    other.unit == unit &&
-    other.measures == measures &&
-    other.original == original &&
-    _deepEquality.equals(other.meta, meta) &&
-    other.originalName == originalName &&
-    other.name == name &&
     other.id == id &&
     other.aisle == aisle &&
-    other.consistency == consistency;
+    other.image == image &&
+    other.consistency == consistency &&
+    other.name == name &&
+    other.original == original &&
+    other.amount == amount &&
+    other.unit == unit &&
+    _deepEquality.equals(other.meta, meta) &&
+    other.measures == measures &&
+    other.originalName == originalName &&
+    other.nameClean == nameClean;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (image == null ? 0 : image!.hashCode) +
-    (nameClean == null ? 0 : nameClean!.hashCode) +
-    (amount == null ? 0 : amount!.hashCode) +
-    (unit == null ? 0 : unit!.hashCode) +
-    (measures == null ? 0 : measures!.hashCode) +
-    (original == null ? 0 : original!.hashCode) +
-    (meta.hashCode) +
-    (originalName == null ? 0 : originalName!.hashCode) +
-    (name == null ? 0 : name!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
     (aisle == null ? 0 : aisle!.hashCode) +
-    (consistency == null ? 0 : consistency!.hashCode);
+    (image == null ? 0 : image!.hashCode) +
+    (consistency == null ? 0 : consistency!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (original == null ? 0 : original!.hashCode) +
+    (amount == null ? 0 : amount!.hashCode) +
+    (unit == null ? 0 : unit!.hashCode) +
+    (meta.hashCode) +
+    (measures == null ? 0 : measures!.hashCode) +
+    (originalName == null ? 0 : originalName!.hashCode) +
+    (nameClean == null ? 0 : nameClean!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseIngredientsInner[image=$image, nameClean=$nameClean, amount=$amount, unit=$unit, measures=$measures, original=$original, meta=$meta, originalName=$originalName, name=$name, id=$id, aisle=$aisle, consistency=$consistency]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseIngredientsInner[id=$id, aisle=$aisle, image=$image, consistency=$consistency, name=$name, original=$original, amount=$amount, unit=$unit, meta=$meta, measures=$measures, originalName=$originalName, nameClean=$nameClean]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
+    if (this.aisle != null) {
+      json[r'aisle'] = this.aisle;
+    } else {
+      json[r'aisle'] = null;
+    }
     if (this.image != null) {
       json[r'image'] = this.image;
     } else {
       json[r'image'] = null;
     }
-    if (this.nameClean != null) {
-      json[r'name_clean'] = this.nameClean;
+    if (this.consistency != null) {
+      json[r'consistency'] = this.consistency;
     } else {
-      json[r'name_clean'] = null;
+      json[r'consistency'] = null;
+    }
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.original != null) {
+      json[r'original'] = this.original;
+    } else {
+      json[r'original'] = null;
     }
     if (this.amount != null) {
       json[r'amount'] = this.amount;
@@ -125,41 +145,21 @@ class RetrieveRecipeInformationAPI200ResponseIngredientsInner {
     } else {
       json[r'unit'] = null;
     }
+      json[r'meta'] = this.meta;
     if (this.measures != null) {
       json[r'measures'] = this.measures;
     } else {
       json[r'measures'] = null;
     }
-    if (this.original != null) {
-      json[r'original'] = this.original;
-    } else {
-      json[r'original'] = null;
-    }
-      json[r'meta'] = this.meta;
     if (this.originalName != null) {
       json[r'original_name'] = this.originalName;
     } else {
       json[r'original_name'] = null;
     }
-    if (this.name != null) {
-      json[r'name'] = this.name;
+    if (this.nameClean != null) {
+      json[r'name_clean'] = this.nameClean;
     } else {
-      json[r'name'] = null;
-    }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
-    }
-    if (this.aisle != null) {
-      json[r'aisle'] = this.aisle;
-    } else {
-      json[r'aisle'] = null;
-    }
-    if (this.consistency != null) {
-      json[r'consistency'] = this.consistency;
-    } else {
-      json[r'consistency'] = null;
+      json[r'name_clean'] = null;
     }
     return json;
   }
@@ -183,20 +183,20 @@ class RetrieveRecipeInformationAPI200ResponseIngredientsInner {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseIngredientsInner(
+        id: mapValueOfType<int>(json, r'id'),
+        aisle: mapValueOfType<String>(json, r'aisle'),
         image: mapValueOfType<String>(json, r'image'),
-        nameClean: mapValueOfType<String>(json, r'name_clean'),
+        consistency: mapValueOfType<String>(json, r'consistency'),
+        name: mapValueOfType<String>(json, r'name'),
+        original: mapValueOfType<String>(json, r'original'),
         amount: num.parse('${json[r'amount']}'),
         unit: mapValueOfType<String>(json, r'unit'),
-        measures: RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.fromJson(json[r'measures']),
-        original: mapValueOfType<String>(json, r'original'),
         meta: json[r'meta'] is Iterable
             ? (json[r'meta'] as Iterable).cast<String>().toList(growable: false)
             : const [],
+        measures: RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.fromJson(json[r'measures']),
         originalName: mapValueOfType<String>(json, r'original_name'),
-        name: mapValueOfType<String>(json, r'name'),
-        id: mapValueOfType<int>(json, r'id'),
-        aisle: mapValueOfType<String>(json, r'aisle'),
-        consistency: mapValueOfType<String>(json, r'consistency'),
+        nameClean: mapValueOfType<String>(json, r'name_clean'),
       );
     }
     return null;

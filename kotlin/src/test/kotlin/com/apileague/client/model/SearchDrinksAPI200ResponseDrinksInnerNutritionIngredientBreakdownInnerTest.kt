@@ -26,6 +26,12 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerTest
         // uncomment below to create an instance of SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner
         //val modelInstance = SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner()
 
+        // to test the property `id`
+        should("test id") {
+            // uncomment below to test the property
+            //modelInstance.id shouldBe ("TODO")
+        }
+
         // to test the property `name`
         should("test name") {
             // uncomment below to test the property
@@ -42,12 +48,6 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerTest
         should("test unit") {
             // uncomment below to test the property
             //modelInstance.unit shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
         }
 
         // to test the property `nutrients`

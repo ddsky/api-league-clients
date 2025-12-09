@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param text 
  * @param sourceName 
  * @param sourceUrl 
+ * @param text 
  */
 
 
 data class SearchDrinksAPI200ResponseDrinksInnerCredits (
 
-    @Json(name = "text")
-    val text: kotlin.String? = null,
-
     @Json(name = "source_name")
     val sourceName: kotlin.String? = null,
 
     @Json(name = "source_url")
-    val sourceUrl: kotlin.String? = null
+    val sourceUrl: kotlin.String? = null,
+
+    @Json(name = "text")
+    val text: kotlin.String? = null
 
 ) {
 

@@ -4,10 +4,69 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**random_affirmation_api**](KnowledgeApi.md#random_affirmation_api) | **GET** /retrieve-random-affirmation | Random Affirmation API
+[**random_life_hack_api**](KnowledgeApi.md#random_life_hack_api) | **GET** /retrieve-random-life-hack | Random Life Hack API
 [**random_quote_api**](KnowledgeApi.md#random_quote_api) | **GET** /retrieve-random-quote | Random Quote API
 [**random_riddle_api**](KnowledgeApi.md#random_riddle_api) | **GET** /retrieve-random-riddle | Random Riddle API
 [**random_trivia_api**](KnowledgeApi.md#random_trivia_api) | **GET** /retrieve-random-trivia | Random Trivia API
 
+
+
+## random_affirmation_api
+
+> models::RandomAffirmationApi200Response random_affirmation_api()
+Random Affirmation API
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::RandomAffirmationApi200Response**](randomAffirmationAPI_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## random_life_hack_api
+
+> models::RandomLifeHackApi200Response random_life_hack_api(max_length)
+Random Life Hack API
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**max_length** | Option<**i32**> | The maximum length of the hack in letters. |  |
+
+### Return type
+
+[**models::RandomLifeHackApi200Response**](randomLifeHackAPI_200_response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## random_quote_api

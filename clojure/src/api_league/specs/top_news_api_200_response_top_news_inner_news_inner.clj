@@ -7,13 +7,13 @@
 
 (def top-news-api-200-response-top-news-inner-news-inner-data
   {
-   (ds/opt :summary) string?
-   (ds/opt :image) string?
    (ds/opt :id) int?
-   (ds/opt :text) string?
    (ds/opt :title) string?
-   (ds/opt :publish_date) string?
+   (ds/opt :text) string?
+   (ds/opt :summary) string?
    (ds/opt :url) string?
+   (ds/opt :image) string?
+   (ds/opt :publish_date) string?
    (ds/opt :authors) (s/coll-of string?)
    })
 

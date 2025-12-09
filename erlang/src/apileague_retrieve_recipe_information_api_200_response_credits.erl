@@ -5,19 +5,19 @@
 -export_type([apileague_retrieve_recipe_information_api_200_response_credits/0]).
 
 -type apileague_retrieve_recipe_information_api_200_response_credits() ::
-    #{ 'license' => binary(),
+    #{ 'source_name' => binary(),
+       'source_url' => binary(),
        'text' => binary(),
-       'source_name' => binary(),
-       'source_url' => binary()
+       'license' => binary()
      }.
 
-encode(#{ 'license' := License,
+encode(#{ 'source_name' := SourceName,
+          'source_url' := SourceUrl,
           'text' := Text,
-          'source_name' := SourceName,
-          'source_url' := SourceUrl
+          'license' := License
         }) ->
-    #{ 'license' => License,
+    #{ 'source_name' => SourceName,
+       'source_url' => SourceUrl,
        'text' => Text,
-       'source_name' => SourceName,
-       'source_url' => SourceUrl
+       'license' => License
      }.

@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**bulletPointRatioScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**imageScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**highlightedWordRatioScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**videoScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**paragraphScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**paragraphHeadlineRatioScore** | **List&lt;Integer&gt;** |  |  [optional] |
+|**highlightedWordRatioScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**bulletPointRatioScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**paragraphHeadlineRatioScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**imageScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**videoScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**paragraphScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
 
 
 

@@ -16,6 +16,116 @@ class KnowledgeApi {
 
   final ApiClient apiClient;
 
+  /// Random Affirmation API
+  ///
+  /// This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> randomAffirmationAPIWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/retrieve-random-affirmation';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Random Affirmation API
+  ///
+  /// This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+  Future<RandomAffirmationAPI200Response?> randomAffirmationAPI() async {
+    final response = await randomAffirmationAPIWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomAffirmationAPI200Response',) as RandomAffirmationAPI200Response;
+    
+    }
+    return null;
+  }
+
+  /// Random Life Hack API
+  ///
+  /// This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [int] maxLength:
+  ///   The maximum length of the hack in letters.
+  Future<Response> randomLifeHackAPIWithHttpInfo({ int? maxLength, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/retrieve-random-life-hack';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (maxLength != null) {
+      queryParams.addAll(_queryParams('', 'max-length', maxLength));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Random Life Hack API
+  ///
+  /// This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+  ///
+  /// Parameters:
+  ///
+  /// * [int] maxLength:
+  ///   The maximum length of the hack in letters.
+  Future<RandomLifeHackAPI200Response?> randomLifeHackAPI({ int? maxLength, }) async {
+    final response = await randomLifeHackAPIWithHttpInfo( maxLength: maxLength, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'RandomLifeHackAPI200Response',) as RandomLifeHackAPI200Response;
+    
+    }
+    return null;
+  }
+
   /// Random Quote API
   ///
   /// This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.

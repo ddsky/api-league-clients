@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColorAPI**](MediaApi.md#detectMainImageColorAPI) | **GET** /detect-color | Detect Main Image Color API
 [**rescaleImageAPI**](MediaApi.md#rescaleImageAPI) | **GET** /rescale-image | Rescale Image API
+[**screenshotAPI**](MediaApi.md#screenshotAPI) | **GET** /take-screenshot | Screenshot API
 [**searchIconsAPI**](MediaApi.md#searchIconsAPI) | **GET** /search-icons | Search Icons API
 [**searchRoyaltyFreeImagesAPI**](MediaApi.md#searchRoyaltyFreeImagesAPI) | **GET** /search-images | Search Royalty Free Images API
 [**vectorSearchAPI**](MediaApi.md#vectorSearchAPI) | **GET** /search-vectors | Vector Search API
@@ -111,6 +112,72 @@ Name | Type | Description  | Notes
  **width** | [**number**] | The desired width of the rescaled image. | defaults to undefined
  **height** | [**number**] | The desired height of the rescaled image. | defaults to undefined
  **crop** | [**boolean**] | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | defaults to undefined
+
+
+### Return type
+
+**HttpFile**
+
+### Authorization
+
+[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **screenshotAPI**
+> HttpFile screenshotAPI()
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+
+
+```typescript
+import {  } from '';
+import * as fs from 'fs';
+
+const configuration = .createConfiguration();
+const apiInstance = new .MediaApi(configuration);
+
+let body:.MediaApiScreenshotAPIRequest = {
+  // string | The url of the web page for which a screenshot should be taken.
+  url: "https://nytimes.com",
+  // number | The desired width of the screenshot.
+  width: 400,
+  // number | The desired height of the screenshot.
+  height: 300,
+};
+
+apiInstance.screenshotAPI(body).then((data:any) => {
+  console.log('API called successfully. Returned data: ' + data);
+}).catch((error:any) => console.error(error));
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | [**string**] | The url of the web page for which a screenshot should be taken. | defaults to undefined
+ **width** | [**number**] | The desired width of the screenshot. | defaults to undefined
+ **height** | [**number**] | The desired height of the screenshot. | defaults to undefined
 
 
 ### Return type

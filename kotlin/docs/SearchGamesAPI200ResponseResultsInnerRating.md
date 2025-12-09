@@ -4,8 +4,8 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **count** | **kotlin.Int** |  |  [optional] |
 | **mean** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **count** | **kotlin.Int** |  |  [optional] |
 
 
 

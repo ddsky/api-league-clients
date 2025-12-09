@@ -32,6 +32,12 @@ class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerTest : Sho
             //modelInstance.number shouldBe ("TODO")
         }
 
+        // to test the property `step`
+        should("test step") {
+            // uncomment below to test the property
+            //modelInstance.step shouldBe ("TODO")
+        }
+
         // to test the property `ingredients`
         should("test ingredients") {
             // uncomment below to test the property
@@ -42,12 +48,6 @@ class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerTest : Sho
         should("test equipment") {
             // uncomment below to test the property
             //modelInstance.equipment shouldBe ("TODO")
-        }
-
-        // to test the property `step`
-        should("test step") {
-            // uncomment below to test the property
-            //modelInstance.step shouldBe ("TODO")
         }
 
     }

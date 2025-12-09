@@ -16,18 +16,18 @@ void main() {
   // final instance = RetrieveRecipeInformationAPI200ResponseTaste();
 
   group('test RetrieveRecipeInformationAPI200ResponseTaste', () {
-    // num fattiness
-    test('to test the property `fattiness`', () async {
-      // TODO
-    });
-
-    // int spiciness
-    test('to test the property `spiciness`', () async {
+    // num sweetness
+    test('to test the property `sweetness`', () async {
       // TODO
     });
 
     // int saltiness
     test('to test the property `saltiness`', () async {
+      // TODO
+    });
+
+    // num sourness
+    test('to test the property `sourness`', () async {
       // TODO
     });
 
@@ -41,13 +41,13 @@ void main() {
       // TODO
     });
 
-    // num sweetness
-    test('to test the property `sweetness`', () async {
+    // num fattiness
+    test('to test the property `fattiness`', () async {
       // TODO
     });
 
-    // num sourness
-    test('to test the property `sourness`', () async {
+    // int spiciness
+    test('to test the property `spiciness`', () async {
       // TODO
     });
 

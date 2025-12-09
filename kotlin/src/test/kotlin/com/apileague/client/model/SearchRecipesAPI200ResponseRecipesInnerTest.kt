@@ -26,18 +26,6 @@ class SearchRecipesAPI200ResponseRecipesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchRecipesAPI200ResponseRecipesInner
         //val modelInstance = SearchRecipesAPI200ResponseRecipesInner()
 
-        // to test the property `images`
-        should("test images") {
-            // uncomment below to test the property
-            //modelInstance.images shouldBe ("TODO")
-        }
-
-        // to test the property `nutrition`
-        should("test nutrition") {
-            // uncomment below to test the property
-            //modelInstance.nutrition shouldBe ("TODO")
-        }
-
         // to test the property `id`
         should("test id") {
             // uncomment below to test the property
@@ -48,6 +36,18 @@ class SearchRecipesAPI200ResponseRecipesInnerTest : ShouldSpec() {
         should("test title") {
             // uncomment below to test the property
             //modelInstance.title shouldBe ("TODO")
+        }
+
+        // to test the property `images`
+        should("test images") {
+            // uncomment below to test the property
+            //modelInstance.images shouldBe ("TODO")
+        }
+
+        // to test the property `nutrition`
+        should("test nutrition") {
+            // uncomment below to test the property
+            //modelInstance.nutrition shouldBe ("TODO")
         }
 
     }

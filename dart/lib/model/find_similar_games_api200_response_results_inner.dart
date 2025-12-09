@@ -13,25 +13,27 @@ part of openapi.api;
 class FindSimilarGamesAPI200ResponseResultsInner {
   /// Returns a new [FindSimilarGamesAPI200ResponseResultsInner] instance.
   FindSimilarGamesAPI200ResponseResultsInner({
-    this.image,
-    this.shortDescription,
-    this.microTrailer,
+    this.id,
     this.year,
     this.name,
     this.genre,
+    this.image,
     this.link,
     this.rating,
-    this.id,
     this.adultOnly,
     this.screenshots = const [],
+    this.microTrailer,
     this.gameplay,
+    this.shortDescription,
   });
 
-  String? image;
-
-  String? shortDescription;
-
-  String? microTrailer;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? id;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -44,6 +46,8 @@ class FindSimilarGamesAPI200ResponseResultsInner {
   String? name;
 
   String? genre;
+
+  String? image;
 
   String? link;
 
@@ -61,70 +65,56 @@ class FindSimilarGamesAPI200ResponseResultsInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? id;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
   bool? adultOnly;
 
   List<String> screenshots;
 
+  String? microTrailer;
+
   String? gameplay;
+
+  String? shortDescription;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is FindSimilarGamesAPI200ResponseResultsInner &&
-    other.image == image &&
-    other.shortDescription == shortDescription &&
-    other.microTrailer == microTrailer &&
+    other.id == id &&
     other.year == year &&
     other.name == name &&
     other.genre == genre &&
+    other.image == image &&
     other.link == link &&
     other.rating == rating &&
-    other.id == id &&
     other.adultOnly == adultOnly &&
     _deepEquality.equals(other.screenshots, screenshots) &&
-    other.gameplay == gameplay;
+    other.microTrailer == microTrailer &&
+    other.gameplay == gameplay &&
+    other.shortDescription == shortDescription;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (image == null ? 0 : image!.hashCode) +
-    (shortDescription == null ? 0 : shortDescription!.hashCode) +
-    (microTrailer == null ? 0 : microTrailer!.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
     (year == null ? 0 : year!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (genre == null ? 0 : genre!.hashCode) +
+    (image == null ? 0 : image!.hashCode) +
     (link == null ? 0 : link!.hashCode) +
     (rating == null ? 0 : rating!.hashCode) +
-    (id == null ? 0 : id!.hashCode) +
     (adultOnly == null ? 0 : adultOnly!.hashCode) +
     (screenshots.hashCode) +
-    (gameplay == null ? 0 : gameplay!.hashCode);
+    (microTrailer == null ? 0 : microTrailer!.hashCode) +
+    (gameplay == null ? 0 : gameplay!.hashCode) +
+    (shortDescription == null ? 0 : shortDescription!.hashCode);
 
   @override
-  String toString() => 'FindSimilarGamesAPI200ResponseResultsInner[image=$image, shortDescription=$shortDescription, microTrailer=$microTrailer, year=$year, name=$name, genre=$genre, link=$link, rating=$rating, id=$id, adultOnly=$adultOnly, screenshots=$screenshots, gameplay=$gameplay]';
+  String toString() => 'FindSimilarGamesAPI200ResponseResultsInner[id=$id, year=$year, name=$name, genre=$genre, image=$image, link=$link, rating=$rating, adultOnly=$adultOnly, screenshots=$screenshots, microTrailer=$microTrailer, gameplay=$gameplay, shortDescription=$shortDescription]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.image != null) {
-      json[r'image'] = this.image;
+    if (this.id != null) {
+      json[r'id'] = this.id;
     } else {
-      json[r'image'] = null;
-    }
-    if (this.shortDescription != null) {
-      json[r'short_description'] = this.shortDescription;
-    } else {
-      json[r'short_description'] = null;
-    }
-    if (this.microTrailer != null) {
-      json[r'micro_trailer'] = this.microTrailer;
-    } else {
-      json[r'micro_trailer'] = null;
+      json[r'id'] = null;
     }
     if (this.year != null) {
       json[r'year'] = this.year;
@@ -141,6 +131,11 @@ class FindSimilarGamesAPI200ResponseResultsInner {
     } else {
       json[r'genre'] = null;
     }
+    if (this.image != null) {
+      json[r'image'] = this.image;
+    } else {
+      json[r'image'] = null;
+    }
     if (this.link != null) {
       json[r'link'] = this.link;
     } else {
@@ -151,21 +146,26 @@ class FindSimilarGamesAPI200ResponseResultsInner {
     } else {
       json[r'rating'] = null;
     }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
-    }
     if (this.adultOnly != null) {
       json[r'adult_only'] = this.adultOnly;
     } else {
       json[r'adult_only'] = null;
     }
       json[r'screenshots'] = this.screenshots;
+    if (this.microTrailer != null) {
+      json[r'micro_trailer'] = this.microTrailer;
+    } else {
+      json[r'micro_trailer'] = null;
+    }
     if (this.gameplay != null) {
       json[r'gameplay'] = this.gameplay;
     } else {
       json[r'gameplay'] = null;
+    }
+    if (this.shortDescription != null) {
+      json[r'short_description'] = this.shortDescription;
+    } else {
+      json[r'short_description'] = null;
     }
     return json;
   }
@@ -189,20 +189,20 @@ class FindSimilarGamesAPI200ResponseResultsInner {
       }());
 
       return FindSimilarGamesAPI200ResponseResultsInner(
-        image: mapValueOfType<String>(json, r'image'),
-        shortDescription: mapValueOfType<String>(json, r'short_description'),
-        microTrailer: mapValueOfType<String>(json, r'micro_trailer'),
+        id: mapValueOfType<int>(json, r'id'),
         year: mapValueOfType<int>(json, r'year'),
         name: mapValueOfType<String>(json, r'name'),
         genre: mapValueOfType<String>(json, r'genre'),
+        image: mapValueOfType<String>(json, r'image'),
         link: mapValueOfType<String>(json, r'link'),
         rating: SearchGamesAPI200ResponseResultsInnerRating.fromJson(json[r'rating']),
-        id: mapValueOfType<int>(json, r'id'),
         adultOnly: mapValueOfType<bool>(json, r'adult_only'),
         screenshots: json[r'screenshots'] is Iterable
             ? (json[r'screenshots'] as Iterable).cast<String>().toList(growable: false)
             : const [],
+        microTrailer: mapValueOfType<String>(json, r'micro_trailer'),
         gameplay: mapValueOfType<String>(json, r'gameplay'),
+        shortDescription: mapValueOfType<String>(json, r'short_description'),
       );
     }
     return null;

@@ -90,6 +90,47 @@ defmodule APILeague.Api.Media do
   end
 
   @doc """
+  Screenshot API
+  Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `url` (String.t): The url of the web page for which a screenshot should be taken.
+  - `width` (integer()): The desired width of the screenshot.
+  - `height` (integer()): The desired height of the screenshot.
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, String.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec screenshot_api(Tesla.Env.client, String.t, integer(), integer(), keyword()) :: {:ok, nil} | {:ok, String.t} | {:error, Tesla.Env.t}
+  def screenshot_api(connection, url, width, height, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/take-screenshot")
+      |> add_param(:query, :url, url)
+      |> add_param(:query, :width, width)
+      |> add_param(:query, :height, height)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, false},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Search Icons API
   Search through millions of icons to match any topic you want.
 

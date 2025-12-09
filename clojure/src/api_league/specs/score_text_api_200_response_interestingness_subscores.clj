@@ -7,11 +7,11 @@
 
 (def score-text-api-200-response-interestingness-subscores-data
   {
-   (ds/opt :title_rating_score) (s/coll-of int?)
-   (ds/opt :quote_score) (s/coll-of int?)
-   (ds/opt :length_score) (s/coll-of int?)
-   (ds/opt :link_score) (s/coll-of int?)
-   (ds/opt :google_hits_score) (s/coll-of int?)
+   (ds/opt :google_hits_score) (s/coll-of float?)
+   (ds/opt :link_score) (s/coll-of float?)
+   (ds/opt :quote_score) (s/coll-of float?)
+   (ds/opt :title_rating_score) (s/coll-of float?)
+   (ds/opt :length_score) (s/coll-of float?)
    })
 
 (def score-text-api-200-response-interestingness-subscores-spec

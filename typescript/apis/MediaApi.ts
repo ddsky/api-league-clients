@@ -149,6 +149,77 @@ export class MediaApiRequestFactory extends BaseAPIRequestFactory {
     }
 
     /**
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * Screenshot API
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     */
+    public async screenshotAPI(url: string, width: number, height: number, _options?: Configuration): Promise<RequestContext> {
+        let _config = _options || this.configuration;
+
+        // verify required parameter 'url' is not null or undefined
+        if (url === null || url === undefined) {
+            throw new RequiredError("MediaApi", "screenshotAPI", "url");
+        }
+
+
+        // verify required parameter 'width' is not null or undefined
+        if (width === null || width === undefined) {
+            throw new RequiredError("MediaApi", "screenshotAPI", "width");
+        }
+
+
+        // verify required parameter 'height' is not null or undefined
+        if (height === null || height === undefined) {
+            throw new RequiredError("MediaApi", "screenshotAPI", "height");
+        }
+
+
+        // Path Params
+        const localVarPath = '/take-screenshot';
+
+        // Make Request Context
+        const requestContext = _config.baseServer.makeRequestContext(localVarPath, HttpMethod.GET);
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+
+        // Query Params
+        if (url !== undefined) {
+            requestContext.setQueryParam("url", ObjectSerializer.serialize(url, "string", ""));
+        }
+
+        // Query Params
+        if (width !== undefined) {
+            requestContext.setQueryParam("width", ObjectSerializer.serialize(width, "number", "int32"));
+        }
+
+        // Query Params
+        if (height !== undefined) {
+            requestContext.setQueryParam("height", ObjectSerializer.serialize(height, "number", "int32"));
+        }
+
+
+        let authMethod: SecurityAuthentication | undefined;
+        // Apply auth methods
+        authMethod = _config.authMethods["apiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        // Apply auth methods
+        authMethod = _config.authMethods["headerApiKey"]
+        if (authMethod?.applySecurityAuthentication) {
+            await authMethod?.applySecurityAuthentication(requestContext);
+        }
+        
+        const defaultAuth: SecurityAuthentication | undefined = _options?.authMethods?.default || this.configuration?.authMethods?.default
+        if (defaultAuth?.applySecurityAuthentication) {
+            await defaultAuth?.applySecurityAuthentication(requestContext);
+        }
+
+        return requestContext;
+    }
+
+    /**
      * Search through millions of icons to match any topic you want.
      * Search Icons API
      * @param query The search query.
@@ -383,6 +454,50 @@ export class MediaApiResponseProcessor {
      * @throws ApiException if the response code was not in [200, 299]
      */
      public async rescaleImageAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<HttpFile >> {
+        const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        if (isCodeInRange("200", response.httpStatusCode)) {
+            const body: HttpFile = await response.getBodyAsFile() as any as HttpFile;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+        if (isCodeInRange("401", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Unauthorized", undefined, response.headers);
+        }
+        if (isCodeInRange("402", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Payment Required", undefined, response.headers);
+        }
+        if (isCodeInRange("403", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Forbidden", undefined, response.headers);
+        }
+        if (isCodeInRange("404", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Found", undefined, response.headers);
+        }
+        if (isCodeInRange("406", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Not Acceptable", undefined, response.headers);
+        }
+        if (isCodeInRange("429", response.httpStatusCode)) {
+            throw new ApiException<undefined>(response.httpStatusCode, "Too Many Requests", undefined, response.headers);
+        }
+
+        // Work around for missing responses in specification, e.g. for petstore.yaml
+        if (response.httpStatusCode >= 200 && response.httpStatusCode <= 299) {
+            const body: HttpFile = ObjectSerializer.deserialize(
+                ObjectSerializer.parse(await response.body.text(), contentType),
+                "HttpFile", "binary"
+            ) as HttpFile;
+            return new HttpInfo(response.httpStatusCode, response.headers, response.body, body);
+        }
+
+        throw new ApiException<string | Blob | undefined>(response.httpStatusCode, "Unknown API Status Code!", await response.getBodyAsAny(), response.headers);
+    }
+
+    /**
+     * Unwraps the actual response sent by the server from the response context and deserializes the response content
+     * to the expected objects
+     *
+     * @params response Response returned by the server for a request to screenshotAPI
+     * @throws ApiException if the response code was not in [200, 299]
+     */
+     public async screenshotAPIWithHttpInfo(response: ResponseContext): Promise<HttpInfo<HttpFile >> {
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
         if (isCodeInRange("200", response.httpStatusCode)) {
             const body: HttpFile = await response.getBodyAsFile() as any as HttpFile;

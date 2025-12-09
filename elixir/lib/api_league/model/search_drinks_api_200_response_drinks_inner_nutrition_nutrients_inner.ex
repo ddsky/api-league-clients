@@ -9,16 +9,16 @@ defmodule APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrient
   @derive Jason.Encoder
   defstruct [
     :name,
-    :percent_of_daily_needs,
     :amount,
-    :unit
+    :unit,
+    :percent_of_daily_needs
   ]
 
   @type t :: %__MODULE__{
     :name => String.t | nil,
-    :percent_of_daily_needs => float() | nil,
     :amount => float() | nil,
-    :unit => String.t | nil
+    :unit => String.t | nil,
+    :percent_of_daily_needs => float() | nil
   }
 
   def decode(value) do

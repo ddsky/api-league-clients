@@ -14,9 +14,9 @@ class RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner] instance.
   RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner({
     this.number,
+    this.step,
     this.ingredients = const [],
     this.equipment = const [],
-    this.step,
   });
 
   ///
@@ -27,29 +27,29 @@ class RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner {
   ///
   int? number;
 
+  String? step;
+
   List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> ingredients;
 
   List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> equipment;
 
-  String? step;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner &&
     other.number == number &&
+    other.step == step &&
     _deepEquality.equals(other.ingredients, ingredients) &&
-    _deepEquality.equals(other.equipment, equipment) &&
-    other.step == step;
+    _deepEquality.equals(other.equipment, equipment);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (number == null ? 0 : number!.hashCode) +
+    (step == null ? 0 : step!.hashCode) +
     (ingredients.hashCode) +
-    (equipment.hashCode) +
-    (step == null ? 0 : step!.hashCode);
+    (equipment.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner[number=$number, ingredients=$ingredients, equipment=$equipment, step=$step]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner[number=$number, step=$step, ingredients=$ingredients, equipment=$equipment]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -58,13 +58,13 @@ class RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner {
     } else {
       json[r'number'] = null;
     }
-      json[r'ingredients'] = this.ingredients;
-      json[r'equipment'] = this.equipment;
     if (this.step != null) {
       json[r'step'] = this.step;
     } else {
       json[r'step'] = null;
     }
+      json[r'ingredients'] = this.ingredients;
+      json[r'equipment'] = this.equipment;
     return json;
   }
 
@@ -88,9 +88,9 @@ class RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner {
 
       return RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner(
         number: mapValueOfType<int>(json, r'number'),
+        step: mapValueOfType<String>(json, r'step'),
         ingredients: SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'ingredients']),
         equipment: SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.listFromJson(json[r'equipment']),
-        step: mapValueOfType<String>(json, r'step'),
       );
     }
     return null;

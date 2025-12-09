@@ -8,9 +8,9 @@
 (def search-drinks-api-200-response-drinks-inner-nutrition-nutrients-inner-data
   {
    (ds/opt :name) string?
-   (ds/opt :percent_of_daily_needs) float?
    (ds/opt :amount) float?
    (ds/opt :unit) string?
+   (ds/opt :percent_of_daily_needs) float?
    })
 
 (def search-drinks-api-200-response-drinks-inner-nutrition-nutrients-inner-spec

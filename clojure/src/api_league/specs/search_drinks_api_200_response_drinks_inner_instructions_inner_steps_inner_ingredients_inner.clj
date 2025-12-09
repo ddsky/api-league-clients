@@ -7,9 +7,9 @@
 
 (def search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner-data
   {
+   (ds/opt :id) int?
    (ds/opt :name) string?
    (ds/opt :image) string?
-   (ds/opt :id) int?
    })
 
 (def search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner-spec

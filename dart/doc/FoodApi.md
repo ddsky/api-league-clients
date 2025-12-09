@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**retrieveRecipeInformationAPI**](FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**searchDrinksAPI**](FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API
 [**searchRecipesAPI**](FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API
-[**searchRestaurantsAPI**](FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API
 
 
 # **computeNutritionAPI**
@@ -434,75 +433,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **searchRestaurantsAPI**
-> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-```dart
-import 'package:openapi/api.dart';
-// TODO Configure API key authorization: apiKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: headerApiKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
-
-final api_instance = FoodApi();
-final lat = 32.715736; // double | The latitude to search around.
-final lon = -117.161087; // double | The longitude to search around.
-final query = burger; // String | The search query.
-final distance = 5; // int | The maximum distance of the restaurant in miles around the given location.
-final budget = 25; // double | The budget in USD for the meal.
-final minRating = 4.4; // double | The minimum rating of the restaurants in range [0,5].
-final cuisine = Mexican; // String | The cuisine that the restaurants should support.
-final isOpen = true; // bool | Whether the restaurants have to be open now.
-final page = 0; // int | The page of the results.
-final sort = rating; // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-
-try {
-    final result = api_instance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
-    print(result);
-} catch (e) {
-    print('Exception when calling FoodApi->searchRestaurantsAPI: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **double**| The latitude to search around. | 
- **lon** | **double**| The longitude to search around. | 
- **query** | **String**| The search query. | [optional] 
- **distance** | **int**| The maximum distance of the restaurant in miles around the given location. | [optional] 
- **budget** | **double**| The budget in USD for the meal. | [optional] 
- **minRating** | **double**| The minimum rating of the restaurants in range [0,5]. | [optional] 
- **cuisine** | **String**| The cuisine that the restaurants should support. | [optional] 
- **isOpen** | **bool**| Whether the restaurants have to be open now. | [optional] 
- **page** | **int**| The page of the results. | [optional] 
- **sort** | **String**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] 
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

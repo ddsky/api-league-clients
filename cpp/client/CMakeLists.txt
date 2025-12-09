@@ -40,6 +40,8 @@ add_library(${PROJECT_NAME}
   OAIGenerateNonsenseWordAPI_200_response.h
   OAIListWordSynonymsAPI_200_response.h
   OAIPluralizeWordAPI_200_response.h
+  OAIRandomAffirmationAPI_200_response.h
+  OAIRandomLifeHackAPI_200_response.h
   OAIRandomMemeAPI_200_response.h
   OAIRandomPoemAPI_200_response.h
   OAIRandomQuoteAPI_200_response.h
@@ -92,10 +94,10 @@ add_library(${PROJECT_NAME}
   OAISearchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown.h
-  OAISearchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.h
+  OAISearchDrinksAPI_200_response_drinks_inner_nutrition_properties_inner.h
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.h
   OAISearchGamesAPI_200_response.h
   OAISearchGamesAPI_200_response_active_filter_options_inner.h
@@ -109,6 +111,7 @@ add_library(${PROJECT_NAME}
   OAISearchGifsAPI_200_response.h
   OAISearchGifsAPI_200_response_images_inner.h
   OAISearchIconsAPI_200_response.h
+  OAISearchIconsAPI_200_response_icons_inner.h
   OAISearchJokesAPI_200_response.h
   OAISearchJokesAPI_200_response_jokes_inner.h
   OAISearchMemesAPI_200_response.h
@@ -119,11 +122,6 @@ add_library(${PROJECT_NAME}
   OAISearchRecipesAPI_200_response_recipes_inner.h
   OAISearchRecipesAPI_200_response_recipes_inner_nutrition.h
   OAISearchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner.h
-  OAISearchRestaurantsAPI_200_response.h
-  OAISearchRestaurantsAPI_200_response_restaurants_inner.h
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_address.h
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours.h
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational.h
   OAISearchRoyaltyFreeImagesAPI_200_response.h
   OAISearchRoyaltyFreeImagesAPI_200_response_images_inner.h
   OAISearchRoyaltyFreeImagesAPI_200_response_images_inner_license.h
@@ -188,6 +186,8 @@ add_library(${PROJECT_NAME}
   OAIGenerateNonsenseWordAPI_200_response.cpp
   OAIListWordSynonymsAPI_200_response.cpp
   OAIPluralizeWordAPI_200_response.cpp
+  OAIRandomAffirmationAPI_200_response.cpp
+  OAIRandomLifeHackAPI_200_response.cpp
   OAIRandomMemeAPI_200_response.cpp
   OAIRandomPoemAPI_200_response.cpp
   OAIRandomQuoteAPI_200_response.cpp
@@ -240,10 +240,10 @@ add_library(${PROJECT_NAME}
   OAISearchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown.cpp
-  OAISearchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.cpp
+  OAISearchDrinksAPI_200_response_drinks_inner_nutrition_properties_inner.cpp
   OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.cpp
   OAISearchGamesAPI_200_response.cpp
   OAISearchGamesAPI_200_response_active_filter_options_inner.cpp
@@ -257,6 +257,7 @@ add_library(${PROJECT_NAME}
   OAISearchGifsAPI_200_response.cpp
   OAISearchGifsAPI_200_response_images_inner.cpp
   OAISearchIconsAPI_200_response.cpp
+  OAISearchIconsAPI_200_response_icons_inner.cpp
   OAISearchJokesAPI_200_response.cpp
   OAISearchJokesAPI_200_response_jokes_inner.cpp
   OAISearchMemesAPI_200_response.cpp
@@ -267,11 +268,6 @@ add_library(${PROJECT_NAME}
   OAISearchRecipesAPI_200_response_recipes_inner.cpp
   OAISearchRecipesAPI_200_response_recipes_inner_nutrition.cpp
   OAISearchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner.cpp
-  OAISearchRestaurantsAPI_200_response.cpp
-  OAISearchRestaurantsAPI_200_response_restaurants_inner.cpp
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_address.cpp
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours.cpp
-  OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational.cpp
   OAISearchRoyaltyFreeImagesAPI_200_response.cpp
   OAISearchRoyaltyFreeImagesAPI_200_response_images_inner.cpp
   OAISearchRoyaltyFreeImagesAPI_200_response_images_inner_license.cpp

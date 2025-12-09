@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**width** | **Integer** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
+|**width** | **Integer** |  |  [optional] |
 |**height** | **Integer** |  |  [optional] |
 
 

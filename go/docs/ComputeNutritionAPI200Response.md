@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Nutrients** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
-**Properties** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
+**Properties** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
 **Flavonoids** | Pointer to [**[]SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner**](SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md) |  | [optional] 
 **IngredientBreakdown** | Pointer to [**[]ComputeNutritionAPI200ResponseIngredientBreakdownInner**](ComputeNutritionAPI200ResponseIngredientBreakdownInner.md) |  | [optional] 
 **CaloricBreakdown** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
@@ -57,20 +57,20 @@ HasNutrients returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *ComputeNutritionAPI200Response) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner`
+`func (o *ComputeNutritionAPI200Response) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *ComputeNutritionAPI200Response) GetPropertiesOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool)`
+`func (o *ComputeNutritionAPI200Response) GetPropertiesOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *ComputeNutritionAPI200Response) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner)`
+`func (o *ComputeNutritionAPI200Response) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner)`
 
 SetProperties sets Properties field to given value.
 

@@ -4,7 +4,6 @@
             [spec-tools.core :as st]
             [orchestra.core :refer [defn-spec]]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-metric :refer :all]
-            [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-flavonoids-inner :refer :all]
             [api-league.specs.random-riddle-api-200-response :refer :all]
             [api-league.specs.search-games-api-200-response-sorting-options-inner :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-us :refer :all]
@@ -17,7 +16,6 @@
             [api-league.specs.search-web-api-200-response-results-inner :refer :all]
             [api-league.specs.retrieve-game-by-id-200-response-rating :refer :all]
             [api-league.specs.retrieve-recipe-information-api-200-response-dietary-properties :refer :all]
-            [api-league.specs.search-restaurants-api-200-response-restaurants-inner-address :refer :all]
             [api-league.specs.score-text-api-200-response-style-subscores :refer :all]
             [api-league.specs.extract-entities-api-200-response-entities-inner :refer :all]
             [api-league.specs.singularize-word-api-200-response :refer :all]
@@ -29,12 +27,10 @@
             [api-league.specs.score-text-api-200-response-readability :refer :all]
             [api-league.specs.read-key-value-from-store-api-200-response :refer :all]
             [api-league.specs.detect-gender-by-name-api-200-response :refer :all]
-            [api-league.specs.search-restaurants-api-200-response-restaurants-inner :refer :all]
             [api-league.specs.compute-nutrition-api-200-response-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-ingredient-breakdown-inner :refer :all]
             [api-league.specs.search-games-api-200-response-filter-options-inner :refer :all]
             [api-league.specs.top-news-api-200-response-top-news-inner :refer :all]
-            [api-league.specs.search-restaurants-api-200-response-restaurants-inner-local-hours-operational :refer :all]
             [api-league.specs.find-similar-books-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-caloric-breakdown :refer :all]
             [api-league.specs.tag-part-of-speech-api-200-response :refer :all]
@@ -42,6 +38,7 @@
             [api-league.specs.score-text-api-200-response-interestingness-subscores :refer :all]
             [api-league.specs.generate-nonsense-word-api-200-response :refer :all]
             [api-league.specs.search-games-api-200-response-results-inner-platforms-inner :refer :all]
+            [api-league.specs.random-life-hack-api-200-response :refer :all]
             [api-league.specs.correct-spelling-api-200-response :refer :all]
             [api-league.specs.score-text-api-200-response-skimmability-mainscores :refer :all]
             [api-league.specs.retrieve-game-by-id-200-response-official-stores-inner :refer :all]
@@ -53,6 +50,7 @@
             [api-league.specs.extract-publish-date-api-200-response :refer :all]
             [api-league.specs.search-royalty-free-images-api-200-response-images-inner :refer :all]
             [api-league.specs.detect-sentiment-api-200-response :refer :all]
+            [api-league.specs.random-affirmation-api-200-response :refer :all]
             [api-league.specs.find-similar-games-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-ingredient-breakdown-inner-nutrients-inner :refer :all]
             [api-league.specs.score-readability-api-200-response :refer :all]
@@ -64,6 +62,7 @@
             [api-league.specs.stem-text-api-200-response :refer :all]
             [api-league.specs.find-similar-games-api-200-response-results-inner :refer :all]
             [api-league.specs.search-royalty-free-images-api-200-response :refer :all]
+            [api-league.specs.search-icons-api-200-response-icons-inner :refer :all]
             [api-league.specs.extract-news-api-200-response-images-inner :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner :refer :all]
             [api-league.specs.extract-content-from-a-web-page-api-200-response :refer :all]
@@ -77,7 +76,6 @@
             [api-league.specs.search-royalty-free-images-api-200-response-images-inner-license :refer :all]
             [api-league.specs.retrieve-recipe-information-api-200-response-credits :refer :all]
             [api-league.specs.extract-news-api-200-response-videos-inner :refer :all]
-            [api-league.specs.search-restaurants-api-200-response-restaurants-inner-local-hours :refer :all]
             [api-league.specs.search-games-api-200-response-active-filter-options-inner-values-inner :refer :all]
             [api-league.specs.extract-dates-api-200-response-dates-inner :refer :all]
             [api-league.specs.store-key-value-getapi-200-response :refer :all]
@@ -102,7 +100,6 @@
             [api-league.specs.search-drinks-api-200-response-drinks-inner-instructions-inner :refer :all]
             [api-league.specs.search-gifs-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-credits :refer :all]
-            [api-league.specs.search-restaurants-api-200-response :refer :all]
             [api-league.specs.extract-authors-api-200-response :refer :all]
             [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-nutrients-inner :refer :all]
             [api-league.specs.retrieve-recipe-information-api-200-response-scores :refer :all]
@@ -131,6 +128,7 @@
             [api-league.specs.score-text-api-200-response-interestingness :refer :all]
             [api-league.specs.search-games-api-200-response-results-inner-rating :refer :all]
             [api-league.specs.art-search-api-200-response :refer :all]
+            [api-league.specs.search-drinks-api-200-response-drinks-inner-nutrition-properties-inner :refer :all]
             )
   (:import (java.io File)))
 
@@ -178,6 +176,30 @@
   Rescale an image to a specific width and height. The image will be resized to fit the specified width and height while maintaining the original aspect ratio unless the crop parameter is set to true. The image will be returned in the same format as the original image."
   [url string?, width int?, height int?, crop boolean?]
   (let [res (:data (rescale-image-api-with-http-info url width height crop))]
+    (if (:decode-models *api-context*)
+       (st/decode any? res st/string-transformer)
+       res)))
+
+
+(defn-spec screenshot-api-with-http-info any?
+  "Screenshot API
+  Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image."
+  [url string?, width int?, height int?]
+  (check-required-params url width height)
+  (call-api "/take-screenshot" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"url" url "width" width "height" height }
+             :form-params   {}
+             :content-types []
+             :accepts       ["application/octet-stream"]
+             :auth-names    ["apiKey" "headerApiKey"]}))
+
+(defn-spec screenshot-api any?
+  "Screenshot API
+  Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image."
+  [url string?, width int?, height int?]
+  (let [res (:data (screenshot-api-with-http-info url width height))]
     (if (:decode-models *api-context*)
        (st/decode any? res st/string-transformer)
        res)))

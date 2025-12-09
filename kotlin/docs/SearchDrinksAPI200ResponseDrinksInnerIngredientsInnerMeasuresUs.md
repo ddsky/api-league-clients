@@ -4,8 +4,8 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **unitShort** | **kotlin.String** |  |  [optional] |
 | **amount** | **kotlin.Int** |  |  [optional] |
+| **unitShort** | **kotlin.String** |  |  [optional] |
 | **unitLong** | **kotlin.String** |  |  [optional] |
 
 

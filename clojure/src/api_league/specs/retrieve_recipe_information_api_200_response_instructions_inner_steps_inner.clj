@@ -10,9 +10,9 @@
 (def retrieve-recipe-information-api-200-response-instructions-inner-steps-inner-data
   {
    (ds/opt :number) int?
+   (ds/opt :step) string?
    (ds/opt :ingredients) (s/coll-of search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner-spec)
    (ds/opt :equipment) (s/coll-of search-drinks-api-200-response-drinks-inner-instructions-inner-steps-inner-ingredients-inner-spec)
-   (ds/opt :step) string?
    })
 
 (def retrieve-recipe-information-api-200-response-instructions-inner-steps-inner-spec

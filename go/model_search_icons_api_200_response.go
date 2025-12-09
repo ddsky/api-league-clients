@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &SearchIconsAPI200Response{}
 
 // SearchIconsAPI200Response struct for SearchIconsAPI200Response
 type SearchIconsAPI200Response struct {
-	Icons []SearchRoyaltyFreeImagesAPI200ResponseImagesInner `json:"icons,omitempty"`
+	Icons []SearchIconsAPI200ResponseIconsInner `json:"icons,omitempty"`
 }
 
 // NewSearchIconsAPI200Response instantiates a new SearchIconsAPI200Response object
@@ -41,9 +41,9 @@ func NewSearchIconsAPI200ResponseWithDefaults() *SearchIconsAPI200Response {
 }
 
 // GetIcons returns the Icons field value if set, zero value otherwise.
-func (o *SearchIconsAPI200Response) GetIcons() []SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
+func (o *SearchIconsAPI200Response) GetIcons() []SearchIconsAPI200ResponseIconsInner {
 	if o == nil || IsNil(o.Icons) {
-		var ret []SearchRoyaltyFreeImagesAPI200ResponseImagesInner
+		var ret []SearchIconsAPI200ResponseIconsInner
 		return ret
 	}
 	return o.Icons
@@ -51,7 +51,7 @@ func (o *SearchIconsAPI200Response) GetIcons() []SearchRoyaltyFreeImagesAPI200Re
 
 // GetIconsOk returns a tuple with the Icons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchIconsAPI200Response) GetIconsOk() ([]SearchRoyaltyFreeImagesAPI200ResponseImagesInner, bool) {
+func (o *SearchIconsAPI200Response) GetIconsOk() ([]SearchIconsAPI200ResponseIconsInner, bool) {
 	if o == nil || IsNil(o.Icons) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *SearchIconsAPI200Response) HasIcons() bool {
 	return false
 }
 
-// SetIcons gets a reference to the given []SearchRoyaltyFreeImagesAPI200ResponseImagesInner and assigns it to the Icons field.
-func (o *SearchIconsAPI200Response) SetIcons(v []SearchRoyaltyFreeImagesAPI200ResponseImagesInner) {
+// SetIcons gets a reference to the given []SearchIconsAPI200ResponseIconsInner and assigns it to the Icons field.
+func (o *SearchIconsAPI200Response) SetIcons(v []SearchIconsAPI200ResponseIconsInner) {
 	o.Icons = v
 }
 

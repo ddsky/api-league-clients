@@ -8,21 +8,21 @@ defmodule APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerM
 
   @derive Jason.Encoder
   defstruct [
-    :metric,
-    :us
+    :us,
+    :metric
   ]
 
   @type t :: %__MODULE__{
-    :metric => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresMetric.t | nil,
-    :us => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresUs.t | nil
+    :us => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresUs.t | nil,
+    :metric => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresMetric.t | nil
   }
 
   alias APILeague.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:metric, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresMetric)
      |> Deserializer.deserialize(:us, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresUs)
+     |> Deserializer.deserialize(:metric, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerIngredientsInnerMeasuresMetric)
   end
 end
 

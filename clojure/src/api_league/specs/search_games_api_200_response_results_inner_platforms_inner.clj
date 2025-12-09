@@ -7,8 +7,8 @@
 
 (def search-games-api-200-response-results-inner-platforms-inner-data
   {
-   (ds/opt :name) string?
    (ds/opt :value) string?
+   (ds/opt :name) string?
    })
 
 (def search-games-api-200-response-results-inner-platforms-inner-spec

@@ -13,17 +13,9 @@ part of openapi.api;
 class ScoreTextAPI200ResponseSkimmabilityMainscores {
   /// Returns a new [ScoreTextAPI200ResponseSkimmabilityMainscores] instance.
   ScoreTextAPI200ResponseSkimmabilityMainscores({
-    this.totalPossible,
     this.total,
+    this.totalPossible,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? totalPossible;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -33,31 +25,39 @@ class ScoreTextAPI200ResponseSkimmabilityMainscores {
   ///
   num? total;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? totalPossible;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ScoreTextAPI200ResponseSkimmabilityMainscores &&
-    other.totalPossible == totalPossible &&
-    other.total == total;
+    other.total == total &&
+    other.totalPossible == totalPossible;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (totalPossible == null ? 0 : totalPossible!.hashCode) +
-    (total == null ? 0 : total!.hashCode);
+    (total == null ? 0 : total!.hashCode) +
+    (totalPossible == null ? 0 : totalPossible!.hashCode);
 
   @override
-  String toString() => 'ScoreTextAPI200ResponseSkimmabilityMainscores[totalPossible=$totalPossible, total=$total]';
+  String toString() => 'ScoreTextAPI200ResponseSkimmabilityMainscores[total=$total, totalPossible=$totalPossible]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.totalPossible != null) {
-      json[r'total_possible'] = this.totalPossible;
-    } else {
-      json[r'total_possible'] = null;
-    }
     if (this.total != null) {
       json[r'total'] = this.total;
     } else {
       json[r'total'] = null;
+    }
+    if (this.totalPossible != null) {
+      json[r'total_possible'] = this.totalPossible;
+    } else {
+      json[r'total_possible'] = null;
     }
     return json;
   }
@@ -81,8 +81,8 @@ class ScoreTextAPI200ResponseSkimmabilityMainscores {
       }());
 
       return ScoreTextAPI200ResponseSkimmabilityMainscores(
-        totalPossible: mapValueOfType<int>(json, r'total_possible'),
         total: num.parse('${json[r'total']}'),
+        totalPossible: mapValueOfType<int>(json, r'total_possible'),
       );
     }
     return null;

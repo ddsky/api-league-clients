@@ -5,16 +5,16 @@
 -export_type([apileague_search_books_api_200_response_books_inner_inner/0]).
 
 -type apileague_search_books_api_200_response_books_inner_inner() ::
-    #{ 'title' => binary(),
-       'image' => binary(),
-       'id' => integer()
+    #{ 'id' => integer(),
+       'title' => binary(),
+       'image' => binary()
      }.
 
-encode(#{ 'title' := Title,
-          'image' := Image,
-          'id' := Id
+encode(#{ 'id' := Id,
+          'title' := Title,
+          'image' := Image
         }) ->
-    #{ 'title' => Title,
-       'image' => Image,
-       'id' => Id
+    #{ 'id' => Id,
+       'title' => Title,
+       'image' => Image
      }.

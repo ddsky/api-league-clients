@@ -7,13 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**fattiness** | **BigDecimal** |  |  [optional] |
-|**spiciness** | **Integer** |  |  [optional] |
+|**sweetness** | **BigDecimal** |  |  [optional] |
 |**saltiness** | **Integer** |  |  [optional] |
+|**sourness** | **BigDecimal** |  |  [optional] |
 |**bitterness** | **BigDecimal** |  |  [optional] |
 |**savoriness** | **BigDecimal** |  |  [optional] |
-|**sweetness** | **BigDecimal** |  |  [optional] |
-|**sourness** | **BigDecimal** |  |  [optional] |
+|**fattiness** | **BigDecimal** |  |  [optional] |
+|**spiciness** | **Integer** |  |  [optional] |
 
 
 

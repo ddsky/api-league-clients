@@ -5,16 +5,16 @@
 -export_type([apileague_search_web_api_200_response_results_inner/0]).
 
 -type apileague_search_web_api_200_response_results_inner() ::
-    #{ 'title' => binary(),
-       'summary' => binary(),
-       'url' => binary()
+    #{ 'url' => binary(),
+       'title' => binary(),
+       'summary' => binary()
      }.
 
-encode(#{ 'title' := Title,
-          'summary' := Summary,
-          'url' := Url
+encode(#{ 'url' := Url,
+          'title' := Title,
+          'summary' := Summary
         }) ->
-    #{ 'title' => Title,
-       'summary' => Summary,
-       'url' => Url
+    #{ 'url' => Url,
+       'title' => Title,
+       'summary' => Summary
      }.

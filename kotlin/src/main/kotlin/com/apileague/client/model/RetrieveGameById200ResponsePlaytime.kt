@@ -34,7 +34,7 @@ import com.squareup.moshi.JsonClass
 data class RetrieveGameById200ResponsePlaytime (
 
     @Json(name = "percentiles")
-    val percentiles: kotlin.collections.List<kotlin.Int>? = null,
+    val percentiles: kotlin.collections.List<java.math.BigDecimal>? = null,
 
     @Json(name = "min")
     val min: kotlin.Int? = null,

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,13 +20,13 @@ var _ MappedNullable = &TopNewsAPI200ResponseTopNewsInnerNewsInner{}
 
 // TopNewsAPI200ResponseTopNewsInnerNewsInner struct for TopNewsAPI200ResponseTopNewsInnerNewsInner
 type TopNewsAPI200ResponseTopNewsInnerNewsInner struct {
-	Summary NullableString `json:"summary,omitempty"`
-	Image NullableString `json:"image,omitempty"`
 	Id *int32 `json:"id,omitempty"`
-	Text NullableString `json:"text,omitempty"`
 	Title NullableString `json:"title,omitempty"`
-	PublishDate NullableString `json:"publish_date,omitempty"`
+	Text NullableString `json:"text,omitempty"`
+	Summary NullableString `json:"summary,omitempty"`
 	Url NullableString `json:"url,omitempty"`
+	Image NullableString `json:"image,omitempty"`
+	PublishDate NullableString `json:"publish_date,omitempty"`
 	Authors []*string `json:"authors,omitempty"`
 }
 
@@ -45,90 +45,6 @@ func NewTopNewsAPI200ResponseTopNewsInnerNewsInner() *TopNewsAPI200ResponseTopNe
 func NewTopNewsAPI200ResponseTopNewsInnerNewsInnerWithDefaults() *TopNewsAPI200ResponseTopNewsInnerNewsInner {
 	this := TopNewsAPI200ResponseTopNewsInnerNewsInner{}
 	return &this
-}
-
-// GetSummary returns the Summary field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummary() string {
-	if o == nil || IsNil(o.Summary.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Summary.Get()
-}
-
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummaryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Summary.Get(), o.Summary.IsSet()
-}
-
-// HasSummary returns a boolean if a field has been set.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasSummary() bool {
-	if o != nil && o.Summary.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetSummary gets a reference to the given NullableString and assigns it to the Summary field.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummary(v string) {
-	o.Summary.Set(&v)
-}
-// SetSummaryNil sets the value for Summary to be an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummaryNil() {
-	o.Summary.Set(nil)
-}
-
-// UnsetSummary ensures that no value is present for Summary, not even an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetSummary() {
-	o.Summary.Unset()
-}
-
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImage() string {
-	if o == nil || IsNil(o.Image.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Image.Get()
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Image.Get(), o.Image.IsSet()
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given NullableString and assigns it to the Image field.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImage(v string) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImageNil() {
-	o.Image.Set(nil)
-}
-
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetImage() {
-	o.Image.Unset()
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -161,48 +77,6 @@ func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasId() bool {
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetId(v int32) {
 	o.Id = &v
-}
-
-// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetText() string {
-	if o == nil || IsNil(o.Text.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Text.Get()
-}
-
-// GetTextOk returns a tuple with the Text field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetTextOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Text.Get(), o.Text.IsSet()
-}
-
-// HasText returns a boolean if a field has been set.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasText() bool {
-	if o != nil && o.Text.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetText gets a reference to the given NullableString and assigns it to the Text field.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetText(v string) {
-	o.Text.Set(&v)
-}
-// SetTextNil sets the value for Text to be an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetTextNil() {
-	o.Text.Set(nil)
-}
-
-// UnsetText ensures that no value is present for Text, not even an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetText() {
-	o.Text.Unset()
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -247,46 +121,88 @@ func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetTitle() {
 	o.Title.Unset()
 }
 
-// GetPublishDate returns the PublishDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDate() string {
-	if o == nil || IsNil(o.PublishDate.Get()) {
+// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetText() string {
+	if o == nil || IsNil(o.Text.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PublishDate.Get()
+	return *o.Text.Get()
 }
 
-// GetPublishDateOk returns a tuple with the PublishDate field value if set, nil otherwise
+// GetTextOk returns a tuple with the Text field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDateOk() (*string, bool) {
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetTextOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.PublishDate.Get(), o.PublishDate.IsSet()
+	return o.Text.Get(), o.Text.IsSet()
 }
 
-// HasPublishDate returns a boolean if a field has been set.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasPublishDate() bool {
-	if o != nil && o.PublishDate.IsSet() {
+// HasText returns a boolean if a field has been set.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasText() bool {
+	if o != nil && o.Text.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPublishDate gets a reference to the given NullableString and assigns it to the PublishDate field.
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDate(v string) {
-	o.PublishDate.Set(&v)
+// SetText gets a reference to the given NullableString and assigns it to the Text field.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetText(v string) {
+	o.Text.Set(&v)
 }
-// SetPublishDateNil sets the value for PublishDate to be an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDateNil() {
-	o.PublishDate.Set(nil)
+// SetTextNil sets the value for Text to be an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetTextNil() {
+	o.Text.Set(nil)
 }
 
-// UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
-func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetPublishDate() {
-	o.PublishDate.Unset()
+// UnsetText ensures that no value is present for Text, not even an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetText() {
+	o.Text.Unset()
+}
+
+// GetSummary returns the Summary field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummary() string {
+	if o == nil || IsNil(o.Summary.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Summary.Get()
+}
+
+// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummaryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Summary.Get(), o.Summary.IsSet()
+}
+
+// HasSummary returns a boolean if a field has been set.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasSummary() bool {
+	if o != nil && o.Summary.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSummary gets a reference to the given NullableString and assigns it to the Summary field.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummary(v string) {
+	o.Summary.Set(&v)
+}
+// SetSummaryNil sets the value for Summary to be an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummaryNil() {
+	o.Summary.Set(nil)
+}
+
+// UnsetSummary ensures that no value is present for Summary, not even an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetSummary() {
+	o.Summary.Unset()
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -331,6 +247,90 @@ func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetUrl() {
 	o.Url.Unset()
 }
 
+// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImage() string {
+	if o == nil || IsNil(o.Image.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Image.Get()
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Image.Get(), o.Image.IsSet()
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasImage() bool {
+	if o != nil && o.Image.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given NullableString and assigns it to the Image field.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImage(v string) {
+	o.Image.Set(&v)
+}
+// SetImageNil sets the value for Image to be an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImageNil() {
+	o.Image.Set(nil)
+}
+
+// UnsetImage ensures that no value is present for Image, not even an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetImage() {
+	o.Image.Unset()
+}
+
+// GetPublishDate returns the PublishDate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDate() string {
+	if o == nil || IsNil(o.PublishDate.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PublishDate.Get()
+}
+
+// GetPublishDateOk returns a tuple with the PublishDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDateOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PublishDate.Get(), o.PublishDate.IsSet()
+}
+
+// HasPublishDate returns a boolean if a field has been set.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasPublishDate() bool {
+	if o != nil && o.PublishDate.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPublishDate gets a reference to the given NullableString and assigns it to the PublishDate field.
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDate(v string) {
+	o.PublishDate.Set(&v)
+}
+// SetPublishDateNil sets the value for PublishDate to be an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDateNil() {
+	o.PublishDate.Set(nil)
+}
+
+// UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
+func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetPublishDate() {
+	o.PublishDate.Unset()
+}
+
 // GetAuthors returns the Authors field value if set, zero value otherwise.
 func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetAuthors() []*string {
 	if o == nil || IsNil(o.Authors) {
@@ -373,26 +373,26 @@ func (o TopNewsAPI200ResponseTopNewsInnerNewsInner) MarshalJSON() ([]byte, error
 
 func (o TopNewsAPI200ResponseTopNewsInnerNewsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Summary.IsSet() {
-		toSerialize["summary"] = o.Summary.Get()
-	}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
-	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
-	}
-	if o.Text.IsSet() {
-		toSerialize["text"] = o.Text.Get()
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if o.PublishDate.IsSet() {
-		toSerialize["publish_date"] = o.PublishDate.Get()
+	if o.Text.IsSet() {
+		toSerialize["text"] = o.Text.Get()
+	}
+	if o.Summary.IsSet() {
+		toSerialize["summary"] = o.Summary.Get()
 	}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
+	}
+	if o.Image.IsSet() {
+		toSerialize["image"] = o.Image.Get()
+	}
+	if o.PublishDate.IsSet() {
+		toSerialize["publish_date"] = o.PublishDate.Get()
 	}
 	if !IsNil(o.Authors) {
 		toSerialize["authors"] = o.Authors

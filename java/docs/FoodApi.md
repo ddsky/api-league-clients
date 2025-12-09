@@ -8,7 +8,6 @@ All URIs are relative to *https://api.apileague.com*
 | [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
 | [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API |
 | [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API |
-| [**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API |
 
 
 <a id="computeNutritionAPI"></a>
@@ -540,105 +539,6 @@ public class Example {
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **401** | Unauthorized |  -  |
-| **402** | Payment Required |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **406** | Not Acceptable |  -  |
-| **429** | Too Many Requests |  -  |
-
-<a id="searchRestaurantsAPI"></a>
-# **searchRestaurantsAPI**
-> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-```java
-// Import classes:
-import com.apileague.client.ApiClient;
-import com.apileague.client.ApiException;
-import com.apileague.client.Configuration;
-import com.apileague.client.auth.*;
-import com.apileague.client.models.*;
-import com.apileague.FoodApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.apileague.com");
-    
-    // Configure API key authorization: apiKey
-    ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
-    apiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apiKey.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: headerApiKey
-    ApiKeyAuth headerApiKey = (ApiKeyAuth) defaultClient.getAuthentication("headerApiKey");
-    headerApiKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //headerApiKey.setApiKeyPrefix("Token");
-
-    FoodApi apiInstance = new FoodApi(defaultClient);
-    Double lat = 32.715736D; // Double | The latitude to search around.
-    Double lon = -117.161087D; // Double | The longitude to search around.
-    String query = "burger"; // String | The search query.
-    Integer distance = 5; // Integer | The maximum distance of the restaurant in miles around the given location.
-    Double budget = 25D; // Double | The budget in USD for the meal.
-    Double minRating = 4.4D; // Double | The minimum rating of the restaurants in range [0,5].
-    String cuisine = "Mexican"; // String | The cuisine that the restaurants should support.
-    Boolean isOpen = true; // Boolean | Whether the restaurants have to be open now.
-    Integer page = 0; // Integer | The page of the results.
-    String sort = "rating"; // String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-    try {
-      SearchRestaurantsAPI200Response result = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling FoodApi#searchRestaurantsAPI");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **lat** | **Double**| The latitude to search around. | |
-| **lon** | **Double**| The longitude to search around. | |
-| **query** | **String**| The search query. | [optional] |
-| **distance** | **Integer**| The maximum distance of the restaurant in miles around the given location. | [optional] |
-| **budget** | **Double**| The budget in USD for the meal. | [optional] |
-| **minRating** | **Double**| The minimum rating of the restaurants in range [0,5]. | [optional] |
-| **cuisine** | **String**| The cuisine that the restaurants should support. | [optional] |
-| **isOpen** | **Boolean**| Whether the restaurants have to be open now. | [optional] |
-| **page** | **Integer**| The page of the results. | [optional] |
-| **sort** | **String**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] |
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

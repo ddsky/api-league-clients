@@ -13,21 +13,11 @@ part of openapi.api;
 class SearchRecipesAPI200ResponseRecipesInner {
   /// Returns a new [SearchRecipesAPI200ResponseRecipesInner] instance.
   SearchRecipesAPI200ResponseRecipesInner({
-    this.images = const [],
-    this.nutrition,
     this.id,
     this.title,
+    this.images = const [],
+    this.nutrition,
   });
-
-  List<String> images;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  SearchRecipesAPI200ResponseRecipesInnerNutrition? nutrition;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -39,32 +29,36 @@ class SearchRecipesAPI200ResponseRecipesInner {
 
   String? title;
 
+  List<String> images;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  SearchRecipesAPI200ResponseRecipesInnerNutrition? nutrition;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchRecipesAPI200ResponseRecipesInner &&
-    _deepEquality.equals(other.images, images) &&
-    other.nutrition == nutrition &&
     other.id == id &&
-    other.title == title;
+    other.title == title &&
+    _deepEquality.equals(other.images, images) &&
+    other.nutrition == nutrition;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (images.hashCode) +
-    (nutrition == null ? 0 : nutrition!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
-    (title == null ? 0 : title!.hashCode);
+    (title == null ? 0 : title!.hashCode) +
+    (images.hashCode) +
+    (nutrition == null ? 0 : nutrition!.hashCode);
 
   @override
-  String toString() => 'SearchRecipesAPI200ResponseRecipesInner[images=$images, nutrition=$nutrition, id=$id, title=$title]';
+  String toString() => 'SearchRecipesAPI200ResponseRecipesInner[id=$id, title=$title, images=$images, nutrition=$nutrition]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'images'] = this.images;
-    if (this.nutrition != null) {
-      json[r'nutrition'] = this.nutrition;
-    } else {
-      json[r'nutrition'] = null;
-    }
     if (this.id != null) {
       json[r'id'] = this.id;
     } else {
@@ -74,6 +68,12 @@ class SearchRecipesAPI200ResponseRecipesInner {
       json[r'title'] = this.title;
     } else {
       json[r'title'] = null;
+    }
+      json[r'images'] = this.images;
+    if (this.nutrition != null) {
+      json[r'nutrition'] = this.nutrition;
+    } else {
+      json[r'nutrition'] = null;
     }
     return json;
   }
@@ -97,12 +97,12 @@ class SearchRecipesAPI200ResponseRecipesInner {
       }());
 
       return SearchRecipesAPI200ResponseRecipesInner(
+        id: mapValueOfType<int>(json, r'id'),
+        title: mapValueOfType<String>(json, r'title'),
         images: json[r'images'] is Iterable
             ? (json[r'images'] as Iterable).cast<String>().toList(growable: false)
             : const [],
         nutrition: SearchRecipesAPI200ResponseRecipesInnerNutrition.fromJson(json[r'nutrition']),
-        id: mapValueOfType<int>(json, r'id'),
-        title: mapValueOfType<String>(json, r'title'),
       );
     }
     return null;

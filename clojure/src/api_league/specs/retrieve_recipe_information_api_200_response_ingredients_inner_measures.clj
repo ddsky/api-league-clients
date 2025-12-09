@@ -9,8 +9,8 @@
 
 (def retrieve-recipe-information-api-200-response-ingredients-inner-measures-data
   {
-   (ds/opt :metric) search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-metric-spec
    (ds/opt :us) search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-metric-spec
+   (ds/opt :metric) search-drinks-api-200-response-drinks-inner-ingredients-inner-measures-metric-spec
    })
 
 (def retrieve-recipe-information-api-200-response-ingredients-inner-measures-spec

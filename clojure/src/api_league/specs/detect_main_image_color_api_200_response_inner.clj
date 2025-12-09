@@ -7,9 +7,9 @@
 
 (def detect-main-image-color-api-200-response-inner-data
   {
+   (ds/opt :hex_code) string?
    (ds/opt :specific_color) string?
    (ds/opt :main_color) string?
-   (ds/opt :hex_code) string?
    })
 
 (def detect-main-image-color-api-200-response-inner-spec

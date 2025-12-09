@@ -6,15 +6,15 @@
 
 -type apileague_search_games_api_200_response_filter_options_inner_values_inner() ::
     #{ 'name' => binary(),
-       'count' => integer(),
-       'key' => binary()
+       'key' => binary(),
+       'count' => integer()
      }.
 
 encode(#{ 'name' := Name,
-          'count' := Count,
-          'key' := Key
+          'key' := Key,
+          'count' := Count
         }) ->
     #{ 'name' => Name,
-       'count' => Count,
-       'key' => Key
+       'key' => Key,
+       'count' => Count
      }.

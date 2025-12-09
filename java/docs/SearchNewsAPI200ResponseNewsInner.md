@@ -7,19 +7,19 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**summary** | **String** |  |  [optional] |
-|**image** | **String** |  |  [optional] |
-|**sentiment** | **BigDecimal** |  |  [optional] |
-|**language** | **String** |  |  [optional] |
-|**video** | **String** |  |  [optional] |
-|**title** | **String** |  |  [optional] |
-|**url** | **String** |  |  [optional] |
-|**sourceCountry** | **String** |  |  [optional] |
 |**id** | **Integer** |  |  [optional] |
+|**title** | **String** |  |  [optional] |
 |**text** | **String** |  |  [optional] |
-|**category** | **String** |  |  [optional] |
+|**summary** | **String** |  |  [optional] |
+|**url** | **String** |  |  [optional] |
+|**image** | **String** |  |  [optional] |
+|**video** | **String** |  |  [optional] |
 |**publishDate** | **String** |  |  [optional] |
 |**authors** | **List&lt;String&gt;** |  |  [optional] |
+|**category** | **String** |  |  [optional] |
+|**language** | **String** |  |  [optional] |
+|**sourceCountry** | **String** |  |  [optional] |
+|**sentiment** | **BigDecimal** |  |  [optional] |
 
 
 

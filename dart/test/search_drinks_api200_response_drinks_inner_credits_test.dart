@@ -16,11 +16,6 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerCredits();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerCredits', () {
-    // String text
-    test('to test the property `text`', () async {
-      // TODO
-    });
-
     // String sourceName
     test('to test the property `sourceName`', () async {
       // TODO
@@ -28,6 +23,11 @@ void main() {
 
     // String sourceUrl
     test('to test the property `sourceUrl`', () async {
+      // TODO
+    });
+
+    // String text
+    test('to test the property `text`', () async {
       // TODO
     });
 

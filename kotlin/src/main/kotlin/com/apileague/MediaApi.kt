@@ -209,6 +209,88 @@ class MediaApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     }
 
     /**
+     * Screenshot API
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     * @return java.io.File
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun screenshotAPI(url: kotlin.String, width: kotlin.Int, height: kotlin.Int) : java.io.File {
+        val localVarResponse = screenshotAPIWithHttpInfo(url = url, width = width, height = height)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as java.io.File
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Screenshot API
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     * @return ApiResponse<java.io.File?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun screenshotAPIWithHttpInfo(url: kotlin.String, width: kotlin.Int, height: kotlin.Int) : ApiResponse<java.io.File?> {
+        val localVariableConfig = screenshotAPIRequestConfig(url = url, width = width, height = height)
+
+        return request<Unit, java.io.File>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation screenshotAPI
+     *
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     * @return RequestConfig
+     */
+    fun screenshotAPIRequestConfig(url: kotlin.String, width: kotlin.Int, height: kotlin.Int) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                put("url", listOf(url.toString()))
+                put("width", listOf(width.toString()))
+                put("height", listOf(height.toString()))
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/octet-stream"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/take-screenshot",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * Search Icons API
      * Search through millions of icons to match any topic you want.
      * @param query The search query.

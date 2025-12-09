@@ -13,17 +13,9 @@ part of openapi.api;
 class SearchGamesAPI200ResponseResultsInnerRating {
   /// Returns a new [SearchGamesAPI200ResponseResultsInnerRating] instance.
   SearchGamesAPI200ResponseResultsInnerRating({
-    this.count,
     this.mean,
+    this.count,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? count;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -33,31 +25,39 @@ class SearchGamesAPI200ResponseResultsInnerRating {
   ///
   num? mean;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? count;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseResultsInnerRating &&
-    other.count == count &&
-    other.mean == mean;
+    other.mean == mean &&
+    other.count == count;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (count == null ? 0 : count!.hashCode) +
-    (mean == null ? 0 : mean!.hashCode);
+    (mean == null ? 0 : mean!.hashCode) +
+    (count == null ? 0 : count!.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseResultsInnerRating[count=$count, mean=$mean]';
+  String toString() => 'SearchGamesAPI200ResponseResultsInnerRating[mean=$mean, count=$count]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.count != null) {
-      json[r'count'] = this.count;
-    } else {
-      json[r'count'] = null;
-    }
     if (this.mean != null) {
       json[r'mean'] = this.mean;
     } else {
       json[r'mean'] = null;
+    }
+    if (this.count != null) {
+      json[r'count'] = this.count;
+    } else {
+      json[r'count'] = null;
     }
     return json;
   }
@@ -81,8 +81,8 @@ class SearchGamesAPI200ResponseResultsInnerRating {
       }());
 
       return SearchGamesAPI200ResponseResultsInnerRating(
-        count: mapValueOfType<int>(json, r'count'),
         mean: num.parse('${json[r'mean']}'),
+        count: mapValueOfType<int>(json, r'count'),
       );
     }
     return null;

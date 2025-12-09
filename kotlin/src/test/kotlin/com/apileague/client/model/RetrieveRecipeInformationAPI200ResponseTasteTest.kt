@@ -25,22 +25,22 @@ class RetrieveRecipeInformationAPI200ResponseTasteTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseTaste
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseTaste()
 
-        // to test the property `fattiness`
-        should("test fattiness") {
+        // to test the property `sweetness`
+        should("test sweetness") {
             // uncomment below to test the property
-            //modelInstance.fattiness shouldBe ("TODO")
-        }
-
-        // to test the property `spiciness`
-        should("test spiciness") {
-            // uncomment below to test the property
-            //modelInstance.spiciness shouldBe ("TODO")
+            //modelInstance.sweetness shouldBe ("TODO")
         }
 
         // to test the property `saltiness`
         should("test saltiness") {
             // uncomment below to test the property
             //modelInstance.saltiness shouldBe ("TODO")
+        }
+
+        // to test the property `sourness`
+        should("test sourness") {
+            // uncomment below to test the property
+            //modelInstance.sourness shouldBe ("TODO")
         }
 
         // to test the property `bitterness`
@@ -55,16 +55,16 @@ class RetrieveRecipeInformationAPI200ResponseTasteTest : ShouldSpec() {
             //modelInstance.savoriness shouldBe ("TODO")
         }
 
-        // to test the property `sweetness`
-        should("test sweetness") {
+        // to test the property `fattiness`
+        should("test fattiness") {
             // uncomment below to test the property
-            //modelInstance.sweetness shouldBe ("TODO")
+            //modelInstance.fattiness shouldBe ("TODO")
         }
 
-        // to test the property `sourness`
-        should("test sourness") {
+        // to test the property `spiciness`
+        should("test spiciness") {
             // uncomment below to test the property
-            //modelInstance.sourness shouldBe ("TODO")
+            //modelInstance.spiciness shouldBe ("TODO")
         }
 
     }

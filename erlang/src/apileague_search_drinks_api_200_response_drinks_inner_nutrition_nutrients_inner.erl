@@ -6,18 +6,18 @@
 
 -type apileague_search_drinks_api_200_response_drinks_inner_nutrition_nutrients_inner() ::
     #{ 'name' => binary(),
-       'percent_of_daily_needs' => integer(),
        'amount' => integer(),
-       'unit' => binary()
+       'unit' => binary(),
+       'percent_of_daily_needs' => integer()
      }.
 
 encode(#{ 'name' := Name,
-          'percent_of_daily_needs' := PercentOfDailyNeeds,
           'amount' := Amount,
-          'unit' := Unit
+          'unit' := Unit,
+          'percent_of_daily_needs' := PercentOfDailyNeeds
         }) ->
     #{ 'name' => Name,
-       'percent_of_daily_needs' => PercentOfDailyNeeds,
        'amount' => Amount,
-       'unit' => Unit
+       'unit' => Unit,
+       'percent_of_daily_needs' => PercentOfDailyNeeds
      }.

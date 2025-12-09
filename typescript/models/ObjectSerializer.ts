@@ -27,6 +27,8 @@ export * from '../models/FindSimilarGamesAPI200ResponseResultsInner';
 export * from '../models/GenerateNonsenseWordAPI200Response';
 export * from '../models/ListWordSynonymsAPI200Response';
 export * from '../models/PluralizeWordAPI200Response';
+export * from '../models/RandomAffirmationAPI200Response';
+export * from '../models/RandomLifeHackAPI200Response';
 export * from '../models/RandomMemeAPI200Response';
 export * from '../models/RandomPoemAPI200Response';
 export * from '../models/RandomQuoteAPI200Response';
@@ -79,10 +81,10 @@ export * from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerS
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
-export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner';
 export * from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
 export * from '../models/SearchGamesAPI200Response';
 export * from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
@@ -96,6 +98,7 @@ export * from '../models/SearchGamesAPI200ResponseSortingOptionsInner';
 export * from '../models/SearchGifsAPI200Response';
 export * from '../models/SearchGifsAPI200ResponseImagesInner';
 export * from '../models/SearchIconsAPI200Response';
+export * from '../models/SearchIconsAPI200ResponseIconsInner';
 export * from '../models/SearchJokesAPI200Response';
 export * from '../models/SearchJokesAPI200ResponseJokesInner';
 export * from '../models/SearchMemesAPI200Response';
@@ -106,11 +109,6 @@ export * from '../models/SearchRecipesAPI200Response';
 export * from '../models/SearchRecipesAPI200ResponseRecipesInner';
 export * from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
 export * from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
-export * from '../models/SearchRestaurantsAPI200Response';
-export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
-export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
-export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
-export * from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
 export * from '../models/SearchRoyaltyFreeImagesAPI200Response';
 export * from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
 export * from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
@@ -156,6 +154,8 @@ import { FindSimilarGamesAPI200ResponseResultsInner } from '../models/FindSimila
 import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
 import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
 import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomAffirmationAPI200Response } from '../models/RandomAffirmationAPI200Response';
+import { RandomLifeHackAPI200Response } from '../models/RandomLifeHackAPI200Response';
 import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
 import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
 import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
@@ -208,10 +208,10 @@ import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from
 import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGamesAPI200Response } from '../models/SearchGamesAPI200Response';
 import { SearchGamesAPI200ResponseActiveFilterOptionsInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
@@ -225,6 +225,7 @@ import { SearchGamesAPI200ResponseSortingOptionsInner } from '../models/SearchGa
 import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
 import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
 import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchIconsAPI200ResponseIconsInner } from '../models/SearchIconsAPI200ResponseIconsInner';
 import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
 import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
 import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
@@ -235,11 +236,6 @@ import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Respon
 import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
 import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
 import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
-import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
 import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
@@ -301,6 +297,8 @@ let typeMap: {[index: string]: any} = {
     "GenerateNonsenseWordAPI200Response": GenerateNonsenseWordAPI200Response,
     "ListWordSynonymsAPI200Response": ListWordSynonymsAPI200Response,
     "PluralizeWordAPI200Response": PluralizeWordAPI200Response,
+    "RandomAffirmationAPI200Response": RandomAffirmationAPI200Response,
+    "RandomLifeHackAPI200Response": RandomLifeHackAPI200Response,
     "RandomMemeAPI200Response": RandomMemeAPI200Response,
     "RandomPoemAPI200Response": RandomPoemAPI200Response,
     "RandomQuoteAPI200Response": RandomQuoteAPI200Response,
@@ -353,10 +351,10 @@ let typeMap: {[index: string]: any} = {
     "SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner": SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutrition": SearchDrinksAPI200ResponseDrinksInnerNutrition,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown": SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown,
-    "SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner": SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner": SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner,
+    "SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner": SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner,
     "SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing": SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing,
     "SearchGamesAPI200Response": SearchGamesAPI200Response,
     "SearchGamesAPI200ResponseActiveFilterOptionsInner": SearchGamesAPI200ResponseActiveFilterOptionsInner,
@@ -370,6 +368,7 @@ let typeMap: {[index: string]: any} = {
     "SearchGifsAPI200Response": SearchGifsAPI200Response,
     "SearchGifsAPI200ResponseImagesInner": SearchGifsAPI200ResponseImagesInner,
     "SearchIconsAPI200Response": SearchIconsAPI200Response,
+    "SearchIconsAPI200ResponseIconsInner": SearchIconsAPI200ResponseIconsInner,
     "SearchJokesAPI200Response": SearchJokesAPI200Response,
     "SearchJokesAPI200ResponseJokesInner": SearchJokesAPI200ResponseJokesInner,
     "SearchMemesAPI200Response": SearchMemesAPI200Response,
@@ -380,11 +379,6 @@ let typeMap: {[index: string]: any} = {
     "SearchRecipesAPI200ResponseRecipesInner": SearchRecipesAPI200ResponseRecipesInner,
     "SearchRecipesAPI200ResponseRecipesInnerNutrition": SearchRecipesAPI200ResponseRecipesInnerNutrition,
     "SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner": SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner,
-    "SearchRestaurantsAPI200Response": SearchRestaurantsAPI200Response,
-    "SearchRestaurantsAPI200ResponseRestaurantsInner": SearchRestaurantsAPI200ResponseRestaurantsInner,
-    "SearchRestaurantsAPI200ResponseRestaurantsInnerAddress": SearchRestaurantsAPI200ResponseRestaurantsInnerAddress,
-    "SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours": SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours,
-    "SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational": SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational,
     "SearchRoyaltyFreeImagesAPI200Response": SearchRoyaltyFreeImagesAPI200Response,
     "SearchRoyaltyFreeImagesAPI200ResponseImagesInner": SearchRoyaltyFreeImagesAPI200ResponseImagesInner,
     "SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense": SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense,

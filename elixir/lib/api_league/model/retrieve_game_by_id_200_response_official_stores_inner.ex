@@ -8,13 +8,13 @@ defmodule APILeague.Model.RetrieveGameById200ResponseOfficialStoresInner do
 
   @derive Jason.Encoder
   defstruct [
-    :url,
-    :source
+    :source,
+    :url
   ]
 
   @type t :: %__MODULE__{
-    :url => String.t | nil,
-    :source => String.t | nil
+    :source => String.t | nil,
+    :url => String.t | nil
   }
 
   def decode(value) do

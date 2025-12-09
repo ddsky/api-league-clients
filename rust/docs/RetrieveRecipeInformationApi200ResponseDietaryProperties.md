@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**low_fodmap** | Option<**bool**> |  | [optional]
 **vegetarian** | Option<**bool**> |  | [optional]
 **vegan** | Option<**bool**> |  | [optional]
 **gluten_free** | Option<**bool**> |  | [optional]
 **dairy_free** | Option<**bool**> |  | [optional]
+**low_fodmap** | Option<**bool**> |  | [optional]
 **gaps** | Option<**String**> |  | [optional]
 **diets** | Option<**Vec<String>**> |  | [optional]
 

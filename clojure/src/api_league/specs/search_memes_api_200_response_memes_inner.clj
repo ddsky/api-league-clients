@@ -7,9 +7,9 @@
 
 (def search-memes-api-200-response-memes-inner-data
   {
-   (ds/opt :type) string?
    (ds/opt :description) string?
    (ds/opt :url) string?
+   (ds/opt :type) string?
    })
 
 (def search-memes-api-200-response-memes-inner-spec

@@ -16,11 +16,6 @@ void main() {
   // final instance = RetrieveRecipeInformationAPI200ResponseDietaryProperties();
 
   group('test RetrieveRecipeInformationAPI200ResponseDietaryProperties', () {
-    // bool lowFodmap
-    test('to test the property `lowFodmap`', () async {
-      // TODO
-    });
-
     // bool vegetarian
     test('to test the property `vegetarian`', () async {
       // TODO
@@ -38,6 +33,11 @@ void main() {
 
     // bool dairyFree
     test('to test the property `dairyFree`', () async {
+      // TODO
+    });
+
+    // bool lowFodmap
+    test('to test the property `lowFodmap`', () async {
       // TODO
     });
 

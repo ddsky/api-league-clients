@@ -27,22 +27,34 @@ class SearchGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchGamesAPI200ResponseResultsInner
         //val modelInstance = SearchGamesAPI200ResponseResultsInner()
 
-        // to test the property `image`
-        should("test image") {
+        // to test the property `id`
+        should("test id") {
             // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
-        }
-
-        // to test the property `shortDescription`
-        should("test shortDescription") {
-            // uncomment below to test the property
-            //modelInstance.shortDescription shouldBe ("TODO")
+            //modelInstance.id shouldBe ("TODO")
         }
 
         // to test the property `year`
         should("test year") {
             // uncomment below to test the property
             //modelInstance.year shouldBe ("TODO")
+        }
+
+        // to test the property `name`
+        should("test name") {
+            // uncomment below to test the property
+            //modelInstance.name shouldBe ("TODO")
+        }
+
+        // to test the property `genre`
+        should("test genre") {
+            // uncomment below to test the property
+            //modelInstance.genre shouldBe ("TODO")
+        }
+
+        // to test the property `image`
+        should("test image") {
+            // uncomment below to test the property
+            //modelInstance.image shouldBe ("TODO")
         }
 
         // to test the property `link`
@@ -69,40 +81,28 @@ class SearchGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
             //modelInstance.screenshots shouldBe ("TODO")
         }
 
-        // to test the property `platforms`
-        should("test platforms") {
-            // uncomment below to test the property
-            //modelInstance.platforms shouldBe ("TODO")
-        }
-
         // to test the property `microTrailer`
         should("test microTrailer") {
             // uncomment below to test the property
             //modelInstance.microTrailer shouldBe ("TODO")
         }
 
-        // to test the property `name`
-        should("test name") {
-            // uncomment below to test the property
-            //modelInstance.name shouldBe ("TODO")
-        }
-
-        // to test the property `genre`
-        should("test genre") {
-            // uncomment below to test the property
-            //modelInstance.genre shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
-        }
-
         // to test the property `gameplay`
         should("test gameplay") {
             // uncomment below to test the property
             //modelInstance.gameplay shouldBe ("TODO")
+        }
+
+        // to test the property `shortDescription`
+        should("test shortDescription") {
+            // uncomment below to test the property
+            //modelInstance.shortDescription shouldBe ("TODO")
+        }
+
+        // to test the property `platforms`
+        should("test platforms") {
+            // uncomment below to test the property
+            //modelInstance.platforms shouldBe ("TODO")
         }
 
     }

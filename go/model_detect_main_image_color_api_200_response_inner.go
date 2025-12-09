@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &DetectMainImageColorAPI200ResponseInner{}
 
 // DetectMainImageColorAPI200ResponseInner struct for DetectMainImageColorAPI200ResponseInner
 type DetectMainImageColorAPI200ResponseInner struct {
+	HexCode NullableString `json:"hex_code,omitempty"`
 	SpecificColor NullableString `json:"specific_color,omitempty"`
 	MainColor NullableString `json:"main_color,omitempty"`
-	HexCode NullableString `json:"hex_code,omitempty"`
 }
 
 // NewDetectMainImageColorAPI200ResponseInner instantiates a new DetectMainImageColorAPI200ResponseInner object
@@ -40,6 +40,48 @@ func NewDetectMainImageColorAPI200ResponseInner() *DetectMainImageColorAPI200Res
 func NewDetectMainImageColorAPI200ResponseInnerWithDefaults() *DetectMainImageColorAPI200ResponseInner {
 	this := DetectMainImageColorAPI200ResponseInner{}
 	return &this
+}
+
+// GetHexCode returns the HexCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DetectMainImageColorAPI200ResponseInner) GetHexCode() string {
+	if o == nil || IsNil(o.HexCode.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.HexCode.Get()
+}
+
+// GetHexCodeOk returns a tuple with the HexCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DetectMainImageColorAPI200ResponseInner) GetHexCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.HexCode.Get(), o.HexCode.IsSet()
+}
+
+// HasHexCode returns a boolean if a field has been set.
+func (o *DetectMainImageColorAPI200ResponseInner) HasHexCode() bool {
+	if o != nil && o.HexCode.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetHexCode gets a reference to the given NullableString and assigns it to the HexCode field.
+func (o *DetectMainImageColorAPI200ResponseInner) SetHexCode(v string) {
+	o.HexCode.Set(&v)
+}
+// SetHexCodeNil sets the value for HexCode to be an explicit nil
+func (o *DetectMainImageColorAPI200ResponseInner) SetHexCodeNil() {
+	o.HexCode.Set(nil)
+}
+
+// UnsetHexCode ensures that no value is present for HexCode, not even an explicit nil
+func (o *DetectMainImageColorAPI200ResponseInner) UnsetHexCode() {
+	o.HexCode.Unset()
 }
 
 // GetSpecificColor returns the SpecificColor field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -126,48 +168,6 @@ func (o *DetectMainImageColorAPI200ResponseInner) UnsetMainColor() {
 	o.MainColor.Unset()
 }
 
-// GetHexCode returns the HexCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DetectMainImageColorAPI200ResponseInner) GetHexCode() string {
-	if o == nil || IsNil(o.HexCode.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.HexCode.Get()
-}
-
-// GetHexCodeOk returns a tuple with the HexCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DetectMainImageColorAPI200ResponseInner) GetHexCodeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.HexCode.Get(), o.HexCode.IsSet()
-}
-
-// HasHexCode returns a boolean if a field has been set.
-func (o *DetectMainImageColorAPI200ResponseInner) HasHexCode() bool {
-	if o != nil && o.HexCode.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetHexCode gets a reference to the given NullableString and assigns it to the HexCode field.
-func (o *DetectMainImageColorAPI200ResponseInner) SetHexCode(v string) {
-	o.HexCode.Set(&v)
-}
-// SetHexCodeNil sets the value for HexCode to be an explicit nil
-func (o *DetectMainImageColorAPI200ResponseInner) SetHexCodeNil() {
-	o.HexCode.Set(nil)
-}
-
-// UnsetHexCode ensures that no value is present for HexCode, not even an explicit nil
-func (o *DetectMainImageColorAPI200ResponseInner) UnsetHexCode() {
-	o.HexCode.Unset()
-}
-
 func (o DetectMainImageColorAPI200ResponseInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -178,14 +178,14 @@ func (o DetectMainImageColorAPI200ResponseInner) MarshalJSON() ([]byte, error) {
 
 func (o DetectMainImageColorAPI200ResponseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.HexCode.IsSet() {
+		toSerialize["hex_code"] = o.HexCode.Get()
+	}
 	if o.SpecificColor.IsSet() {
 		toSerialize["specific_color"] = o.SpecificColor.Get()
 	}
 	if o.MainColor.IsSet() {
 		toSerialize["main_color"] = o.MainColor.Get()
-	}
-	if o.HexCode.IsSet() {
-		toSerialize["hex_code"] = o.HexCode.Get()
 	}
 	return toSerialize, nil
 }

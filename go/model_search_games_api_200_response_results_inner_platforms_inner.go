@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &SearchGamesAPI200ResponseResultsInnerPlatformsInner{}
 
 // SearchGamesAPI200ResponseResultsInnerPlatformsInner struct for SearchGamesAPI200ResponseResultsInnerPlatformsInner
 type SearchGamesAPI200ResponseResultsInnerPlatformsInner struct {
-	Name NullableString `json:"name,omitempty"`
 	Value NullableString `json:"value,omitempty"`
+	Name NullableString `json:"name,omitempty"`
 }
 
 // NewSearchGamesAPI200ResponseResultsInnerPlatformsInner instantiates a new SearchGamesAPI200ResponseResultsInnerPlatformsInner object
@@ -39,48 +39,6 @@ func NewSearchGamesAPI200ResponseResultsInnerPlatformsInner() *SearchGamesAPI200
 func NewSearchGamesAPI200ResponseResultsInnerPlatformsInnerWithDefaults() *SearchGamesAPI200ResponseResultsInnerPlatformsInner {
 	this := SearchGamesAPI200ResponseResultsInnerPlatformsInner{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) HasName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) SetName(v string) {
-	o.Name.Set(&v)
-}
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) UnsetName() {
-	o.Name.Unset()
 }
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -125,6 +83,48 @@ func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) UnsetValue() {
 	o.Value.Unset()
 }
 
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) GetName() string {
+	if o == nil || IsNil(o.Name.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Name.Get()
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Name.Get(), o.Name.IsSet()
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) HasName() bool {
+	if o != nil && o.Name.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) SetName(v string) {
+	o.Name.Set(&v)
+}
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInnerPlatformsInner) UnsetName() {
+	o.Name.Unset()
+}
+
 func (o SearchGamesAPI200ResponseResultsInnerPlatformsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o SearchGamesAPI200ResponseResultsInnerPlatformsInner) MarshalJSON() ([]by
 
 func (o SearchGamesAPI200ResponseResultsInnerPlatformsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
-	}
 	if o.Value.IsSet() {
 		toSerialize["value"] = o.Value.Get()
+	}
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
 	return toSerialize, nil
 }

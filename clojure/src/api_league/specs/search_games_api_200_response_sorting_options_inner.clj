@@ -8,8 +8,8 @@
 (def search-games-api-200-response-sorting-options-inner-data
   {
    (ds/opt :name) string?
-   (ds/opt :key) string?
    (ds/opt :sort) string?
+   (ds/opt :key) string?
    })
 
 (def search-games-api-200-response-sorting-options-inner-spec

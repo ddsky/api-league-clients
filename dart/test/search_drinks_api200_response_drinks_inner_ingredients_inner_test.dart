@@ -16,13 +16,33 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerIngredientsInner();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerIngredientsInner', () {
+    // int id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // String aisle
+    test('to test the property `aisle`', () async {
+      // TODO
+    });
+
     // String image
     test('to test the property `image`', () async {
       // TODO
     });
 
-    // String nameClean
-    test('to test the property `nameClean`', () async {
+    // String consistency
+    test('to test the property `consistency`', () async {
+      // TODO
+    });
+
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // String original
+    test('to test the property `original`', () async {
       // TODO
     });
 
@@ -36,18 +56,13 @@ void main() {
       // TODO
     });
 
-    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures measures
-    test('to test the property `measures`', () async {
-      // TODO
-    });
-
-    // String original
-    test('to test the property `original`', () async {
-      // TODO
-    });
-
     // List<String> meta (default value: const [])
     test('to test the property `meta`', () async {
+      // TODO
+    });
+
+    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures measures
+    test('to test the property `measures`', () async {
       // TODO
     });
 
@@ -56,23 +71,8 @@ void main() {
       // TODO
     });
 
-    // String name
-    test('to test the property `name`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // String aisle
-    test('to test the property `aisle`', () async {
-      // TODO
-    });
-
-    // String consistency
-    test('to test the property `consistency`', () async {
+    // String nameClean
+    test('to test the property `nameClean`', () async {
       // TODO
     });
 

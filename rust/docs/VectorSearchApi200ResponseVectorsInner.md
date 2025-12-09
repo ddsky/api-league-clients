@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**license** | Option<**String**> |  | [optional]
 **title** | Option<**String**> |  | [optional]
+**license** | Option<**String**> |  | [optional]
 **author** | Option<**String**> |  | [optional]
 **image_url** | Option<**String**> |  | [optional]
 

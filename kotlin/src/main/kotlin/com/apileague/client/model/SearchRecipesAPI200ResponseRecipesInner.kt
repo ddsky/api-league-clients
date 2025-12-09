@@ -23,26 +23,26 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param images 
- * @param nutrition 
  * @param id 
  * @param title 
+ * @param images 
+ * @param nutrition 
  */
 
 
 data class SearchRecipesAPI200ResponseRecipesInner (
 
-    @Json(name = "images")
-    val images: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "nutrition")
-    val nutrition: SearchRecipesAPI200ResponseRecipesInnerNutrition? = null,
-
     @Json(name = "id")
     val id: kotlin.Int? = null,
 
     @Json(name = "title")
-    val title: kotlin.String? = null
+    val title: kotlin.String? = null,
+
+    @Json(name = "images")
+    val images: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "nutrition")
+    val nutrition: SearchRecipesAPI200ResponseRecipesInnerNutrition? = null
 
 ) {
 

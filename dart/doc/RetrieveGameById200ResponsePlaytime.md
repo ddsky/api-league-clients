@@ -8,7 +8,7 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentiles** | **List<int>** |  | [optional] [default to const []]
+**percentiles** | **List<num>** |  | [optional] [default to const []]
 **min** | **int** |  | [optional] 
 **median** | **int** |  | [optional] 
 **max** | **int** |  | [optional] 

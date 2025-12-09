@@ -25,12 +25,6 @@ class ScoreTextAPI200ResponseReadabilitySubscoresTest : ShouldSpec() {
         // uncomment below to create an instance of ScoreTextAPI200ResponseReadabilitySubscores
         //val modelInstance = ScoreTextAPI200ResponseReadabilitySubscores()
 
-        // to test the property `readingTimeSeconds`
-        should("test readingTimeSeconds") {
-            // uncomment below to test the property
-            //modelInstance.readingTimeSeconds shouldBe ("TODO")
-        }
-
         // to test the property `forcast`
         should("test forcast") {
             // uncomment below to test the property
@@ -61,12 +55,6 @@ class ScoreTextAPI200ResponseReadabilitySubscoresTest : ShouldSpec() {
             //modelInstance.lix shouldBe ("TODO")
         }
 
-        // to test the property `colemanLiau`
-        should("test colemanLiau") {
-            // uncomment below to test the property
-            //modelInstance.colemanLiau shouldBe ("TODO")
-        }
-
         // to test the property `kincaid`
         should("test kincaid") {
             // uncomment below to test the property
@@ -77,6 +65,18 @@ class ScoreTextAPI200ResponseReadabilitySubscoresTest : ShouldSpec() {
         should("test fog") {
             // uncomment below to test the property
             //modelInstance.fog shouldBe ("TODO")
+        }
+
+        // to test the property `colemanLiau`
+        should("test colemanLiau") {
+            // uncomment below to test the property
+            //modelInstance.colemanLiau shouldBe ("TODO")
+        }
+
+        // to test the property `readingTimeSeconds`
+        should("test readingTimeSeconds") {
+            // uncomment below to test the property
+            //modelInstance.readingTimeSeconds shouldBe ("TODO")
         }
 
     }

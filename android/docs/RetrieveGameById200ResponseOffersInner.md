@@ -6,10 +6,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storeName** | **String** |  |  [optional]
-**title** | **String** |  |  [optional]
 **price** | [**RetrieveGameById200ResponseOffersInnerPrice**](RetrieveGameById200ResponseOffersInnerPrice.md) |  |  [optional]
+**storeName** | **String** |  |  [optional]
 **platform** | **String** |  |  [optional]
+**title** | **String** |  |  [optional]
 **url** | **String** |  |  [optional]
 
 

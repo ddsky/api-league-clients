@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerNutritionIngredient
 // SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner struct for SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner
 type SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner struct {
 	Name NullableString `json:"name,omitempty"`
-	PercentOfDailyNeeds *float32 `json:"percent_of_daily_needs,omitempty"`
 	Amount *int32 `json:"amount,omitempty"`
 	Unit NullableString `json:"unit,omitempty"`
+	PercentOfDailyNeeds *float32 `json:"percent_of_daily_needs,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner instantiates a new SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner object
@@ -83,38 +83,6 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerN
 // UnsetName ensures that no value is present for Name, not even an explicit nil
 func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) UnsetName() {
 	o.Name.Unset()
-}
-
-// GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() float32 {
-	if o == nil || IsNil(o.PercentOfDailyNeeds) {
-		var ret float32
-		return ret
-	}
-	return *o.PercentOfDailyNeeds
-}
-
-// GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*float32, bool) {
-	if o == nil || IsNil(o.PercentOfDailyNeeds) {
-		return nil, false
-	}
-	return o.PercentOfDailyNeeds, true
-}
-
-// HasPercentOfDailyNeeds returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool {
-	if o != nil && !IsNil(o.PercentOfDailyNeeds) {
-		return true
-	}
-
-	return false
-}
-
-// SetPercentOfDailyNeeds gets a reference to the given float32 and assigns it to the PercentOfDailyNeeds field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v float32) {
-	o.PercentOfDailyNeeds = &v
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
@@ -191,6 +159,38 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerN
 	o.Unit.Unset()
 }
 
+// GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() float32 {
+	if o == nil || IsNil(o.PercentOfDailyNeeds) {
+		var ret float32
+		return ret
+	}
+	return *o.PercentOfDailyNeeds
+}
+
+// GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*float32, bool) {
+	if o == nil || IsNil(o.PercentOfDailyNeeds) {
+		return nil, false
+	}
+	return o.PercentOfDailyNeeds, true
+}
+
+// HasPercentOfDailyNeeds returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool {
+	if o != nil && !IsNil(o.PercentOfDailyNeeds) {
+		return true
+	}
+
+	return false
+}
+
+// SetPercentOfDailyNeeds gets a reference to the given float32 and assigns it to the PercentOfDailyNeeds field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v float32) {
+	o.PercentOfDailyNeeds = &v
+}
+
 func (o SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -204,14 +204,14 @@ func (o SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNu
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !IsNil(o.PercentOfDailyNeeds) {
-		toSerialize["percent_of_daily_needs"] = o.PercentOfDailyNeeds
-	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount
 	}
 	if o.Unit.IsSet() {
 		toSerialize["unit"] = o.Unit.Get()
+	}
+	if !IsNil(o.PercentOfDailyNeeds) {
+		toSerialize["percent_of_daily_needs"] = o.PercentOfDailyNeeds
 	}
 	return toSerialize, nil
 }

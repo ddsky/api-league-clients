@@ -23,49 +23,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param image 
- * @param nameClean 
- * @param amount 
- * @param unit 
- * @param measures 
- * @param original 
- * @param meta 
- * @param originalName 
- * @param name 
  * @param id 
  * @param aisle 
+ * @param image 
  * @param consistency 
+ * @param name 
+ * @param original 
+ * @param amount 
+ * @param unit 
+ * @param meta 
+ * @param measures 
+ * @param originalName 
+ * @param nameClean 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseIngredientsInner (
-
-    @Json(name = "image")
-    val image: kotlin.String? = null,
-
-    @Json(name = "name_clean")
-    val nameClean: kotlin.String? = null,
-
-    @Json(name = "amount")
-    val amount: java.math.BigDecimal? = null,
-
-    @Json(name = "unit")
-    val unit: kotlin.String? = null,
-
-    @Json(name = "measures")
-    val measures: RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures? = null,
-
-    @Json(name = "original")
-    val original: kotlin.String? = null,
-
-    @Json(name = "meta")
-    val meta: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "original_name")
-    val originalName: kotlin.String? = null,
-
-    @Json(name = "name")
-    val name: kotlin.String? = null,
 
     @Json(name = "id")
     val id: kotlin.Int? = null,
@@ -73,8 +46,35 @@ data class RetrieveRecipeInformationAPI200ResponseIngredientsInner (
     @Json(name = "aisle")
     val aisle: kotlin.String? = null,
 
+    @Json(name = "image")
+    val image: kotlin.String? = null,
+
     @Json(name = "consistency")
-    val consistency: kotlin.String? = null
+    val consistency: kotlin.String? = null,
+
+    @Json(name = "name")
+    val name: kotlin.String? = null,
+
+    @Json(name = "original")
+    val original: kotlin.String? = null,
+
+    @Json(name = "amount")
+    val amount: java.math.BigDecimal? = null,
+
+    @Json(name = "unit")
+    val unit: kotlin.String? = null,
+
+    @Json(name = "meta")
+    val meta: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "measures")
+    val measures: RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures? = null,
+
+    @Json(name = "original_name")
+    val originalName: kotlin.String? = null,
+
+    @Json(name = "name_clean")
+    val nameClean: kotlin.String? = null
 
 ) {
 

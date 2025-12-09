@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **Integer** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **image** | **String** |  | [optional] |
-| **id** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -14,9 +14,9 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.new(
+  id: null,
   name: null,
-  image: null,
-  id: null
+  image: null
 )
 ```
 

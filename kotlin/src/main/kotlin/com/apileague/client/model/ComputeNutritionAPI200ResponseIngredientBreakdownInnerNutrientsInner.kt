@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name 
- * @param percentOfDailyNeeds 
  * @param amount 
  * @param unit 
+ * @param percentOfDailyNeeds 
  */
 
 
@@ -34,14 +34,14 @@ data class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner 
     @Json(name = "name")
     val name: kotlin.String? = null,
 
-    @Json(name = "percent_of_daily_needs")
-    val percentOfDailyNeeds: kotlin.Int? = null,
-
     @Json(name = "amount")
     val amount: kotlin.Int? = null,
 
     @Json(name = "unit")
-    val unit: kotlin.String? = null
+    val unit: kotlin.String? = null,
+
+    @Json(name = "percent_of_daily_needs")
+    val percentOfDailyNeeds: kotlin.Int? = null
 
 ) {
 

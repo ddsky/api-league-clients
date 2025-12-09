@@ -5,19 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | **str** |  | [optional] 
-**image** | **str** |  | [optional] 
-**sentiment** | **float** |  | [optional] 
-**language** | **str** |  | [optional] 
-**video** | **str** |  | [optional] 
-**title** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
-**source_country** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
+**title** | **str** |  | [optional] 
 **text** | **str** |  | [optional] 
-**category** | **str** |  | [optional] 
+**summary** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
+**image** | **str** |  | [optional] 
+**video** | **str** |  | [optional] 
 **publish_date** | **str** |  | [optional] 
 **authors** | **List[Optional[str]]** |  | [optional] 
+**category** | **str** |  | [optional] 
+**language** | **str** |  | [optional] 
+**source_country** | **str** |  | [optional] 
+**sentiment** | **float** |  | [optional] 
 
 ## Example
 

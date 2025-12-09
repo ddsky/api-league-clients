@@ -8,33 +8,33 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseNutrition do
 
   @derive Jason.Encoder
   defstruct [
-    :weight_per_serving,
-    :caloric_breakdown,
+    :nutrients,
+    :properties,
     :flavonoids,
     :ingredient_breakdown,
-    :properties,
-    :nutrients
+    :caloric_breakdown,
+    :weight_per_serving
   ]
 
   @type t :: %__MODULE__{
-    :weight_per_serving => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionWeightPerServing.t | nil,
-    :caloric_breakdown => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown.t | nil,
-    :flavonoids => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionFlavonoidsInner.t] | nil,
-    :ingredient_breakdown => [APILeague.Model.RetrieveRecipeInformationApi200ResponseNutritionIngredientBreakdownInner.t] | nil,
+    :nutrients => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner.t] | nil,
     :properties => [APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner.t] | nil,
-    :nutrients => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner.t] | nil
+    :flavonoids => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionPropertiesInner.t] | nil,
+    :ingredient_breakdown => [APILeague.Model.RetrieveRecipeInformationApi200ResponseNutritionIngredientBreakdownInner.t] | nil,
+    :caloric_breakdown => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown.t | nil,
+    :weight_per_serving => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionWeightPerServing.t | nil
   }
 
   alias APILeague.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:weight_per_serving, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionWeightPerServing)
-     |> Deserializer.deserialize(:caloric_breakdown, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown)
-     |> Deserializer.deserialize(:flavonoids, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionFlavonoidsInner)
-     |> Deserializer.deserialize(:ingredient_breakdown, :list, APILeague.Model.RetrieveRecipeInformationApi200ResponseNutritionIngredientBreakdownInner)
-     |> Deserializer.deserialize(:properties, :list, APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner)
      |> Deserializer.deserialize(:nutrients, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner)
+     |> Deserializer.deserialize(:properties, :list, APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner)
+     |> Deserializer.deserialize(:flavonoids, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionPropertiesInner)
+     |> Deserializer.deserialize(:ingredient_breakdown, :list, APILeague.Model.RetrieveRecipeInformationApi200ResponseNutritionIngredientBreakdownInner)
+     |> Deserializer.deserialize(:caloric_breakdown, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown)
+     |> Deserializer.deserialize(:weight_per_serving, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionWeightPerServing)
   end
 end
 

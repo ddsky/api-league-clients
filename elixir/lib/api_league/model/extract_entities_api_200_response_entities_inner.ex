@@ -8,19 +8,19 @@ defmodule APILeague.Model.ExtractEntitiesApi200ResponseEntitiesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :start_position,
-    :image,
     :type,
     :value,
-    :end_position
+    :start_position,
+    :end_position,
+    :image
   ]
 
   @type t :: %__MODULE__{
-    :start_position => integer() | nil,
-    :image => String.t | nil,
     :type => String.t | nil,
     :value => String.t | nil,
-    :end_position => integer() | nil
+    :start_position => integer() | nil,
+    :end_position => integer() | nil,
+    :image => String.t | nil
   }
 
   def decode(value) do

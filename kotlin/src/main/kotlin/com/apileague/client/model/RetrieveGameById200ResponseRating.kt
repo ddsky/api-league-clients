@@ -22,34 +22,34 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param count 
- * @param countCritics 
- * @param meanPlayers 
- * @param meanCritics 
  * @param mean 
+ * @param count 
+ * @param meanPlayers 
  * @param countPlayers 
+ * @param meanCritics 
+ * @param countCritics 
  */
 
 
 data class RetrieveGameById200ResponseRating (
 
+    @Json(name = "mean")
+    val mean: java.math.BigDecimal? = null,
+
     @Json(name = "count")
     val count: kotlin.Int? = null,
-
-    @Json(name = "count_critics")
-    val countCritics: kotlin.Int? = null,
 
     @Json(name = "mean_players")
     val meanPlayers: java.math.BigDecimal? = null,
 
+    @Json(name = "count_players")
+    val countPlayers: kotlin.Int? = null,
+
     @Json(name = "mean_critics")
     val meanCritics: java.math.BigDecimal? = null,
 
-    @Json(name = "mean")
-    val mean: java.math.BigDecimal? = null,
-
-    @Json(name = "count_players")
-    val countPlayers: kotlin.Int? = null
+    @Json(name = "count_critics")
+    val countCritics: kotlin.Int? = null
 
 ) {
 

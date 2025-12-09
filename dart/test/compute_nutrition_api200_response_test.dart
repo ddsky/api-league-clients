@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner> properties (default value: const [])
+    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner> properties (default value: const [])
     test('to test the property `properties`', () async {
       // TODO
     });

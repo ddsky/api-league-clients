@@ -2,6 +2,7 @@
 
 -export([detect_main_image_color_api/2, detect_main_image_color_api/3,
          rescale_image_api/5, rescale_image_api/6,
+         screenshot_api/4, screenshot_api/5,
          search_icons_api/2, search_icons_api/3,
          search_royalty_free_images_api/2, search_royalty_free_images_api/3,
          vector_search_api/2, vector_search_api/3]).
@@ -43,6 +44,27 @@ rescale_image_api(Ctx, Url, Width, Height, Crop, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/rescale-image"],
     QS = lists:flatten([{<<"url">>, Url}, {<<"width">>, Width}, {<<"height">>, Height}, {<<"crop">>, Crop}])++apileague_utils:optional_params([], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = apileague_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    apileague_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Screenshot API
+%% Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+-spec screenshot_api(ctx:ctx(), binary(), integer(), integer()) -> {ok, binary(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+screenshot_api(Ctx, Url, Width, Height) ->
+    screenshot_api(Ctx, Url, Width, Height, #{}).
+
+-spec screenshot_api(ctx:ctx(), binary(), integer(), integer(), maps:map()) -> {ok, binary(), apileague_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), apileague_utils:response_info()}.
+screenshot_api(Ctx, Url, Width, Height, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(apileague_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/take-screenshot"],
+    QS = lists:flatten([{<<"url">>, Url}, {<<"width">>, Width}, {<<"height">>, Height}])++apileague_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = apileague_utils:select_header_content_type([]),

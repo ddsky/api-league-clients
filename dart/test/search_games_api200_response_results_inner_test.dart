@@ -16,18 +16,28 @@ void main() {
   // final instance = SearchGamesAPI200ResponseResultsInner();
 
   group('test SearchGamesAPI200ResponseResultsInner', () {
-    // String image
-    test('to test the property `image`', () async {
-      // TODO
-    });
-
-    // String shortDescription
-    test('to test the property `shortDescription`', () async {
+    // int id
+    test('to test the property `id`', () async {
       // TODO
     });
 
     // int year
     test('to test the property `year`', () async {
+      // TODO
+    });
+
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // String genre
+    test('to test the property `genre`', () async {
+      // TODO
+    });
+
+    // String image
+    test('to test the property `image`', () async {
       // TODO
     });
 
@@ -51,33 +61,23 @@ void main() {
       // TODO
     });
 
-    // List<SearchGamesAPI200ResponseResultsInnerPlatformsInner> platforms (default value: const [])
-    test('to test the property `platforms`', () async {
-      // TODO
-    });
-
     // String microTrailer
     test('to test the property `microTrailer`', () async {
       // TODO
     });
 
-    // String name
-    test('to test the property `name`', () async {
-      // TODO
-    });
-
-    // String genre
-    test('to test the property `genre`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
     // String gameplay
     test('to test the property `gameplay`', () async {
+      // TODO
+    });
+
+    // String shortDescription
+    test('to test the property `shortDescription`', () async {
+      // TODO
+    });
+
+    // List<SearchGamesAPI200ResponseResultsInnerPlatformsInner> platforms (default value: const [])
+    test('to test the property `platforms`', () async {
       // TODO
     });
 

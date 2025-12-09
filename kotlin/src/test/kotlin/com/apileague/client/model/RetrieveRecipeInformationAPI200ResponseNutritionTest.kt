@@ -21,8 +21,8 @@ import io.kotlintest.specs.ShouldSpec
 import com.apileague.client.model.RetrieveRecipeInformationAPI200ResponseNutrition
 import com.apileague.client.model.RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
-import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner
+import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
 import com.apileague.client.model.SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner
 
@@ -31,16 +31,16 @@ class RetrieveRecipeInformationAPI200ResponseNutritionTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseNutrition
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseNutrition()
 
-        // to test the property `weightPerServing`
-        should("test weightPerServing") {
+        // to test the property `nutrients`
+        should("test nutrients") {
             // uncomment below to test the property
-            //modelInstance.weightPerServing shouldBe ("TODO")
+            //modelInstance.nutrients shouldBe ("TODO")
         }
 
-        // to test the property `caloricBreakdown`
-        should("test caloricBreakdown") {
+        // to test the property `properties`
+        should("test properties") {
             // uncomment below to test the property
-            //modelInstance.caloricBreakdown shouldBe ("TODO")
+            //modelInstance.properties shouldBe ("TODO")
         }
 
         // to test the property `flavonoids`
@@ -55,16 +55,16 @@ class RetrieveRecipeInformationAPI200ResponseNutritionTest : ShouldSpec() {
             //modelInstance.ingredientBreakdown shouldBe ("TODO")
         }
 
-        // to test the property `properties`
-        should("test properties") {
+        // to test the property `caloricBreakdown`
+        should("test caloricBreakdown") {
             // uncomment below to test the property
-            //modelInstance.properties shouldBe ("TODO")
+            //modelInstance.caloricBreakdown shouldBe ("TODO")
         }
 
-        // to test the property `nutrients`
-        should("test nutrients") {
+        // to test the property `weightPerServing`
+        should("test weightPerServing") {
             // uncomment below to test the property
-            //modelInstance.nutrients shouldBe ("TODO")
+            //modelInstance.weightPerServing shouldBe ("TODO")
         }
 
     }

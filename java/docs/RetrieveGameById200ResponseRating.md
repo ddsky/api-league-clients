@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**count** | **Integer** |  |  [optional] |
-|**countCritics** | **Integer** |  |  [optional] |
-|**meanPlayers** | **BigDecimal** |  |  [optional] |
-|**meanCritics** | **BigDecimal** |  |  [optional] |
 |**mean** | **BigDecimal** |  |  [optional] |
+|**count** | **Integer** |  |  [optional] |
+|**meanPlayers** | **BigDecimal** |  |  [optional] |
 |**countPlayers** | **Integer** |  |  [optional] |
+|**meanCritics** | **BigDecimal** |  |  [optional] |
+|**countCritics** | **Integer** |  |  [optional] |
 
 
 

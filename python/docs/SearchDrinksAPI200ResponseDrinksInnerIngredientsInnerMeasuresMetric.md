@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unit_short** | **str** |  | [optional] 
 **amount** | **float** |  | [optional] 
+**unit_short** | **str** |  | [optional] 
 **unit_long** | **str** |  | [optional] 
 
 ## Example

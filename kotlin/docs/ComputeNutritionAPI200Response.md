@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **nutrients** | [**kotlin.collections.List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  |  [optional] |
-| **properties** | [**kotlin.collections.List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  |  [optional] |
+| **properties** | [**kotlin.collections.List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  |  [optional] |
 | **flavonoids** | [**kotlin.collections.List&lt;SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner&gt;**](SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md) |  |  [optional] |
 | **ingredientBreakdown** | [**kotlin.collections.List&lt;ComputeNutritionAPI200ResponseIngredientBreakdownInner&gt;**](ComputeNutritionAPI200ResponseIngredientBreakdownInner.md) |  |  [optional] |
 | **caloricBreakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  |  [optional] |

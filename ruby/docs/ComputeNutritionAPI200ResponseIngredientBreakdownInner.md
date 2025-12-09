@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **Integer** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **amount** | **Integer** |  | [optional] |
 | **unit** | **String** |  | [optional] |
-| **id** | **Integer** |  | [optional] |
 | **nutrients** | [**Array&lt;ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner&gt;**](ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md) |  | [optional] |
 
 ## Example
@@ -16,10 +16,10 @@
 require 'openapi_client'
 
 instance = OpenapiClient::ComputeNutritionAPI200ResponseIngredientBreakdownInner.new(
+  id: null,
   name: null,
   amount: null,
   unit: null,
-  id: null,
   nutrients: null
 )
 ```

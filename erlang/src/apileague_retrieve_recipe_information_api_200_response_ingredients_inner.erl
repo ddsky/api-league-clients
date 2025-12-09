@@ -5,43 +5,43 @@
 -export_type([apileague_retrieve_recipe_information_api_200_response_ingredients_inner/0]).
 
 -type apileague_retrieve_recipe_information_api_200_response_ingredients_inner() ::
-    #{ 'image' => binary(),
-       'name_clean' => binary(),
+    #{ 'id' => integer(),
+       'aisle' => binary(),
+       'image' => binary(),
+       'consistency' => binary(),
+       'name' => binary(),
+       'original' => binary(),
        'amount' => integer(),
        'unit' => binary(),
-       'measures' => apileague_retrieve_recipe_information_api_200_response_ingredients_inner_measures:apileague_retrieve_recipe_information_api_200_response_ingredients_inner_measures(),
-       'original' => binary(),
        'meta' => list(),
+       'measures' => apileague_retrieve_recipe_information_api_200_response_ingredients_inner_measures:apileague_retrieve_recipe_information_api_200_response_ingredients_inner_measures(),
        'original_name' => binary(),
-       'name' => binary(),
-       'id' => integer(),
-       'aisle' => binary(),
-       'consistency' => binary()
+       'name_clean' => binary()
      }.
 
-encode(#{ 'image' := Image,
-          'name_clean' := NameClean,
+encode(#{ 'id' := Id,
+          'aisle' := Aisle,
+          'image' := Image,
+          'consistency' := Consistency,
+          'name' := Name,
+          'original' := Original,
           'amount' := Amount,
           'unit' := Unit,
-          'measures' := Measures,
-          'original' := Original,
           'meta' := Meta,
+          'measures' := Measures,
           'original_name' := OriginalName,
-          'name' := Name,
-          'id' := Id,
-          'aisle' := Aisle,
-          'consistency' := Consistency
+          'name_clean' := NameClean
         }) ->
-    #{ 'image' => Image,
-       'name_clean' => NameClean,
+    #{ 'id' => Id,
+       'aisle' => Aisle,
+       'image' => Image,
+       'consistency' => Consistency,
+       'name' => Name,
+       'original' => Original,
        'amount' => Amount,
        'unit' => Unit,
-       'measures' => Measures,
-       'original' => Original,
        'meta' => Meta,
+       'measures' => Measures,
        'original_name' => OriginalName,
-       'name' => Name,
-       'id' => Id,
-       'aisle' => Aisle,
-       'consistency' => Consistency
+       'name_clean' => NameClean
      }.

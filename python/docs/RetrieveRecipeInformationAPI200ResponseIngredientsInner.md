@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | **str** |  | [optional] 
-**name_clean** | **str** |  | [optional] 
-**amount** | **float** |  | [optional] 
-**unit** | **str** |  | [optional] 
-**measures** | [**RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures**](RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.md) |  | [optional] 
-**original** | **str** |  | [optional] 
-**meta** | **List[Optional[str]]** |  | [optional] 
-**original_name** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **aisle** | **str** |  | [optional] 
+**image** | **str** |  | [optional] 
 **consistency** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**original** | **str** |  | [optional] 
+**amount** | **float** |  | [optional] 
+**unit** | **str** |  | [optional] 
+**meta** | **List[Optional[str]]** |  | [optional] 
+**measures** | [**RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures**](RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.md) |  | [optional] 
+**original_name** | **str** |  | [optional] 
+**name_clean** | **str** |  | [optional] 
 
 ## Example
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**icons** | [**List[SearchRoyaltyFreeImagesAPI200ResponseImagesInner]**](SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md) |  | [optional] 
+**icons** | [**List[SearchIconsAPI200ResponseIconsInner]**](SearchIconsAPI200ResponseIconsInner.md) |  | [optional] 
 
 ## Example
 

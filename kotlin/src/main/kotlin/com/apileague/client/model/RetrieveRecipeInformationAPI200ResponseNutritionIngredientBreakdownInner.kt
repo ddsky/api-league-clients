@@ -23,15 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param id 
  * @param name 
  * @param amount 
  * @param unit 
- * @param id 
  * @param nutrients 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner (
+
+    @Json(name = "id")
+    val id: kotlin.Int? = null,
 
     @Json(name = "name")
     val name: kotlin.String? = null,
@@ -41,9 +44,6 @@ data class RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownIn
 
     @Json(name = "unit")
     val unit: kotlin.String? = null,
-
-    @Json(name = "id")
-    val id: kotlin.Int? = null,
 
     @Json(name = "nutrients")
     val nutrients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner>? = null

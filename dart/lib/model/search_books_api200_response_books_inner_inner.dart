@@ -13,14 +13,10 @@ part of openapi.api;
 class SearchBooksAPI200ResponseBooksInnerInner {
   /// Returns a new [SearchBooksAPI200ResponseBooksInnerInner] instance.
   SearchBooksAPI200ResponseBooksInnerInner({
+    this.id,
     this.title,
     this.image,
-    this.id,
   });
-
-  String? title;
-
-  String? image;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -30,24 +26,33 @@ class SearchBooksAPI200ResponseBooksInnerInner {
   ///
   int? id;
 
+  String? title;
+
+  String? image;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchBooksAPI200ResponseBooksInnerInner &&
+    other.id == id &&
     other.title == title &&
-    other.image == image &&
-    other.id == id;
+    other.image == image;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
-    (image == null ? 0 : image!.hashCode) +
-    (id == null ? 0 : id!.hashCode);
+    (image == null ? 0 : image!.hashCode);
 
   @override
-  String toString() => 'SearchBooksAPI200ResponseBooksInnerInner[title=$title, image=$image, id=$id]';
+  String toString() => 'SearchBooksAPI200ResponseBooksInnerInner[id=$id, title=$title, image=$image]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
     if (this.title != null) {
       json[r'title'] = this.title;
     } else {
@@ -57,11 +62,6 @@ class SearchBooksAPI200ResponseBooksInnerInner {
       json[r'image'] = this.image;
     } else {
       json[r'image'] = null;
-    }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
     }
     return json;
   }
@@ -85,9 +85,9 @@ class SearchBooksAPI200ResponseBooksInnerInner {
       }());
 
       return SearchBooksAPI200ResponseBooksInnerInner(
+        id: mapValueOfType<int>(json, r'id'),
         title: mapValueOfType<String>(json, r'title'),
         image: mapValueOfType<String>(json, r'image'),
-        id: mapValueOfType<int>(json, r'id'),
       );
     }
     return null;

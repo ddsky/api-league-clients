@@ -7,9 +7,9 @@
 
 (def search-web-api-200-response-results-inner-data
   {
+   (ds/opt :url) string?
    (ds/opt :title) string?
    (ds/opt :summary) string?
-   (ds/opt :url) string?
    })
 
 (def search-web-api-200-response-results-inner-spec

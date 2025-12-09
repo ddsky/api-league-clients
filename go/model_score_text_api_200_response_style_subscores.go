@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ScoreTextAPI200ResponseStyleSubscores{}
 
 // ScoreTextAPI200ResponseStyleSubscores struct for ScoreTextAPI200ResponseStyleSubscores
 type ScoreTextAPI200ResponseStyleSubscores struct {
-	AbbreviationScore []int32 `json:"abbreviation_score,omitempty"`
-	StyleScore []int32 `json:"style_score,omitempty"`
-	SpellingScore []int32 `json:"spelling_score,omitempty"`
+	AbbreviationScore []float32 `json:"abbreviation_score,omitempty"`
+	StyleScore []float32 `json:"style_score,omitempty"`
+	SpellingScore []float32 `json:"spelling_score,omitempty"`
 }
 
 // NewScoreTextAPI200ResponseStyleSubscores instantiates a new ScoreTextAPI200ResponseStyleSubscores object
@@ -43,9 +43,9 @@ func NewScoreTextAPI200ResponseStyleSubscoresWithDefaults() *ScoreTextAPI200Resp
 }
 
 // GetAbbreviationScore returns the AbbreviationScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetAbbreviationScore() []int32 {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetAbbreviationScore() []float32 {
 	if o == nil || IsNil(o.AbbreviationScore) {
-		var ret []int32
+		var ret []float32
 		return ret
 	}
 	return o.AbbreviationScore
@@ -53,7 +53,7 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) GetAbbreviationScore() []int32 {
 
 // GetAbbreviationScoreOk returns a tuple with the AbbreviationScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetAbbreviationScoreOk() ([]int32, bool) {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetAbbreviationScoreOk() ([]float32, bool) {
 	if o == nil || IsNil(o.AbbreviationScore) {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) HasAbbreviationScore() bool {
 	return false
 }
 
-// SetAbbreviationScore gets a reference to the given []int32 and assigns it to the AbbreviationScore field.
-func (o *ScoreTextAPI200ResponseStyleSubscores) SetAbbreviationScore(v []int32) {
+// SetAbbreviationScore gets a reference to the given []float32 and assigns it to the AbbreviationScore field.
+func (o *ScoreTextAPI200ResponseStyleSubscores) SetAbbreviationScore(v []float32) {
 	o.AbbreviationScore = v
 }
 
 // GetStyleScore returns the StyleScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetStyleScore() []int32 {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetStyleScore() []float32 {
 	if o == nil || IsNil(o.StyleScore) {
-		var ret []int32
+		var ret []float32
 		return ret
 	}
 	return o.StyleScore
@@ -85,7 +85,7 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) GetStyleScore() []int32 {
 
 // GetStyleScoreOk returns a tuple with the StyleScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetStyleScoreOk() ([]int32, bool) {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetStyleScoreOk() ([]float32, bool) {
 	if o == nil || IsNil(o.StyleScore) {
 		return nil, false
 	}
@@ -101,15 +101,15 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) HasStyleScore() bool {
 	return false
 }
 
-// SetStyleScore gets a reference to the given []int32 and assigns it to the StyleScore field.
-func (o *ScoreTextAPI200ResponseStyleSubscores) SetStyleScore(v []int32) {
+// SetStyleScore gets a reference to the given []float32 and assigns it to the StyleScore field.
+func (o *ScoreTextAPI200ResponseStyleSubscores) SetStyleScore(v []float32) {
 	o.StyleScore = v
 }
 
 // GetSpellingScore returns the SpellingScore field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetSpellingScore() []int32 {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetSpellingScore() []float32 {
 	if o == nil || IsNil(o.SpellingScore) {
-		var ret []int32
+		var ret []float32
 		return ret
 	}
 	return o.SpellingScore
@@ -117,7 +117,7 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) GetSpellingScore() []int32 {
 
 // GetSpellingScoreOk returns a tuple with the SpellingScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseStyleSubscores) GetSpellingScoreOk() ([]int32, bool) {
+func (o *ScoreTextAPI200ResponseStyleSubscores) GetSpellingScoreOk() ([]float32, bool) {
 	if o == nil || IsNil(o.SpellingScore) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *ScoreTextAPI200ResponseStyleSubscores) HasSpellingScore() bool {
 	return false
 }
 
-// SetSpellingScore gets a reference to the given []int32 and assigns it to the SpellingScore field.
-func (o *ScoreTextAPI200ResponseStyleSubscores) SetSpellingScore(v []int32) {
+// SetSpellingScore gets a reference to the given []float32 and assigns it to the SpellingScore field.
+func (o *ScoreTextAPI200ResponseStyleSubscores) SetSpellingScore(v []float32) {
 	o.SpellingScore = v
 }
 

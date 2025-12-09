@@ -5,13 +5,13 @@
 -export_type([apileague_search_games_api_200_response_results_inner_rating/0]).
 
 -type apileague_search_games_api_200_response_results_inner_rating() ::
-    #{ 'count' => integer(),
-       'mean' => integer()
+    #{ 'mean' => integer(),
+       'count' => integer()
      }.
 
-encode(#{ 'count' := Count,
-          'mean' := Mean
+encode(#{ 'mean' := Mean,
+          'count' := Count
         }) ->
-    #{ 'count' => Count,
-       'mean' => Mean
+    #{ 'mean' => Mean,
+       'count' => Count
      }.

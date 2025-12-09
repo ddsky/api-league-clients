@@ -8,13 +8,13 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fattiness** | **num** |  | [optional] 
-**spiciness** | **int** |  | [optional] 
+**sweetness** | **num** |  | [optional] 
 **saltiness** | **int** |  | [optional] 
+**sourness** | **num** |  | [optional] 
 **bitterness** | **num** |  | [optional] 
 **savoriness** | **num** |  | [optional] 
-**sweetness** | **num** |  | [optional] 
-**sourness** | **num** |  | [optional] 
+**fattiness** | **num** |  | [optional] 
+**spiciness** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

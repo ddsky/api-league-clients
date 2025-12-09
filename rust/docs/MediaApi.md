@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detect_main_image_color_api**](MediaApi.md#detect_main_image_color_api) | **GET** /detect-color | Detect Main Image Color API
 [**rescale_image_api**](MediaApi.md#rescale_image_api) | **GET** /rescale-image | Rescale Image API
+[**screenshot_api**](MediaApi.md#screenshot_api) | **GET** /take-screenshot | Screenshot API
 [**search_icons_api**](MediaApi.md#search_icons_api) | **GET** /search-icons | Search Icons API
 [**search_royalty_free_images_api**](MediaApi.md#search_royalty_free_images_api) | **GET** /search-images | Search Royalty Free Images API
 [**vector_search_api**](MediaApi.md#vector_search_api) | **GET** /search-vectors | Vector Search API
@@ -58,6 +59,38 @@ Name | Type | Description  | Required | Notes
 **width** | **i32** | The desired width of the rescaled image. | [required] |
 **height** | **i32** | The desired height of the rescaled image. | [required] |
 **crop** | **bool** | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | [required] |
+
+### Return type
+
+[**std::path::PathBuf**](std::path::PathBuf.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## screenshot_api
+
+> std::path::PathBuf screenshot_api(url, width, height)
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**url** | **String** | The url of the web page for which a screenshot should be taken. | [required] |
+**width** | **i32** | The desired width of the screenshot. | [required] |
+**height** | **i32** | The desired height of the screenshot. | [required] |
 
 ### Return type
 

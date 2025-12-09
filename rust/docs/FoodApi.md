@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API
 [**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API
-[**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API
 
 
 
@@ -232,45 +231,6 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::SearchRecipesApi200Response**](searchRecipesAPI_200_response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## search_restaurants_api
-
-> models::SearchRestaurantsApi200Response search_restaurants_api(lat, lon, query, distance, budget, min_rating, cuisine, is_open, page, sort)
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**lat** | **f64** | The latitude to search around. | [required] |
-**lon** | **f64** | The longitude to search around. | [required] |
-**query** | Option<**String**> | The search query. |  |
-**distance** | Option<**i32**> | The maximum distance of the restaurant in miles around the given location. |  |
-**budget** | Option<**f64**> | The budget in USD for the meal. |  |
-**min_rating** | Option<**f64**> | The minimum rating of the restaurants in range [0,5]. |  |
-**cuisine** | Option<**String**> | The cuisine that the restaurants should support. |  |
-**is_open** | Option<**bool**> | Whether the restaurants have to be open now. |  |
-**page** | Option<**i32**> | The page of the results. |  |
-**sort** | Option<**String**> | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. |  |
-
-### Return type
-
-[**models::SearchRestaurantsApi200Response**](searchRestaurantsAPI_200_response.md)
 
 ### Authorization
 

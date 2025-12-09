@@ -8,8 +8,8 @@ use WWW::OpenAPIClient::Object::SearchDrinksAPI200ResponseDrinksInnerIngredients
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unit_short** | **string** |  | [optional] 
 **amount** | **int** |  | [optional] 
+**unit_short** | **string** |  | [optional] 
 **unit_long** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

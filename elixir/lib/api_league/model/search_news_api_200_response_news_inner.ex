@@ -8,35 +8,35 @@ defmodule APILeague.Model.SearchNewsApi200ResponseNewsInner do
 
   @derive Jason.Encoder
   defstruct [
-    :summary,
-    :image,
-    :sentiment,
-    :language,
-    :video,
-    :title,
-    :url,
-    :source_country,
     :id,
+    :title,
     :text,
-    :category,
+    :summary,
+    :url,
+    :image,
+    :video,
     :publish_date,
-    :authors
+    :authors,
+    :category,
+    :language,
+    :source_country,
+    :sentiment
   ]
 
   @type t :: %__MODULE__{
-    :summary => String.t | nil,
-    :image => String.t | nil,
-    :sentiment => float() | nil,
-    :language => String.t | nil,
-    :video => String.t | nil,
-    :title => String.t | nil,
-    :url => String.t | nil,
-    :source_country => String.t | nil,
     :id => integer() | nil,
+    :title => String.t | nil,
     :text => String.t | nil,
-    :category => String.t | nil,
+    :summary => String.t | nil,
+    :url => String.t | nil,
+    :image => String.t | nil,
+    :video => String.t | nil,
     :publish_date => String.t | nil,
-    :authors => [String.t] | nil
+    :authors => [String.t] | nil,
+    :category => String.t | nil,
+    :language => String.t | nil,
+    :source_country => String.t | nil,
+    :sentiment => float() | nil
   }
 
   def decode(value) do

@@ -5,22 +5,22 @@
 -export_type([apileague_retrieve_game_by_id_200_response_offers_inner/0]).
 
 -type apileague_retrieve_game_by_id_200_response_offers_inner() ::
-    #{ 'store_name' => binary(),
-       'title' => binary(),
-       'price' => apileague_retrieve_game_by_id_200_response_offers_inner_price:apileague_retrieve_game_by_id_200_response_offers_inner_price(),
+    #{ 'price' => apileague_retrieve_game_by_id_200_response_offers_inner_price:apileague_retrieve_game_by_id_200_response_offers_inner_price(),
+       'store_name' => binary(),
        'platform' => binary(),
+       'title' => binary(),
        'url' => binary()
      }.
 
-encode(#{ 'store_name' := StoreName,
-          'title' := Title,
-          'price' := Price,
+encode(#{ 'price' := Price,
+          'store_name' := StoreName,
           'platform' := Platform,
+          'title' := Title,
           'url' := Url
         }) ->
-    #{ 'store_name' => StoreName,
-       'title' => Title,
-       'price' => Price,
+    #{ 'price' => Price,
+       'store_name' => StoreName,
        'platform' => Platform,
+       'title' => Title,
        'url' => Url
      }.

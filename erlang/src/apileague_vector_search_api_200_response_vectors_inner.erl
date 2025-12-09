@@ -5,19 +5,19 @@
 -export_type([apileague_vector_search_api_200_response_vectors_inner/0]).
 
 -type apileague_vector_search_api_200_response_vectors_inner() ::
-    #{ 'license' => binary(),
-       'title' => binary(),
+    #{ 'title' => binary(),
+       'license' => binary(),
        'author' => binary(),
        'image_url' => binary()
      }.
 
-encode(#{ 'license' := License,
-          'title' := Title,
+encode(#{ 'title' := Title,
+          'license' := License,
           'author' := Author,
           'image_url' := ImageUrl
         }) ->
-    #{ 'license' => License,
-       'title' => Title,
+    #{ 'title' => Title,
+       'license' => License,
        'author' => Author,
        'image_url' => ImageUrl
      }.

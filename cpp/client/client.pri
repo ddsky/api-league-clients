@@ -31,6 +31,8 @@ HEADERS += \
     $${PWD}/OAIGenerateNonsenseWordAPI_200_response.h \
     $${PWD}/OAIListWordSynonymsAPI_200_response.h \
     $${PWD}/OAIPluralizeWordAPI_200_response.h \
+    $${PWD}/OAIRandomAffirmationAPI_200_response.h \
+    $${PWD}/OAIRandomLifeHackAPI_200_response.h \
     $${PWD}/OAIRandomMemeAPI_200_response.h \
     $${PWD}/OAIRandomPoemAPI_200_response.h \
     $${PWD}/OAIRandomQuoteAPI_200_response.h \
@@ -83,10 +85,10 @@ HEADERS += \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown.h \
-    $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.h \
+    $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_properties_inner.h \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.h \
     $${PWD}/OAISearchGamesAPI_200_response.h \
     $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner.h \
@@ -100,6 +102,7 @@ HEADERS += \
     $${PWD}/OAISearchGifsAPI_200_response.h \
     $${PWD}/OAISearchGifsAPI_200_response_images_inner.h \
     $${PWD}/OAISearchIconsAPI_200_response.h \
+    $${PWD}/OAISearchIconsAPI_200_response_icons_inner.h \
     $${PWD}/OAISearchJokesAPI_200_response.h \
     $${PWD}/OAISearchJokesAPI_200_response_jokes_inner.h \
     $${PWD}/OAISearchMemesAPI_200_response.h \
@@ -110,11 +113,6 @@ HEADERS += \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner.h \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner_nutrition.h \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner.h \
-    $${PWD}/OAISearchRestaurantsAPI_200_response.h \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner.h \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_address.h \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours.h \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational.h \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response.h \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response_images_inner.h \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response_images_inner_license.h \
@@ -184,6 +182,8 @@ SOURCES += \
     $${PWD}/OAIGenerateNonsenseWordAPI_200_response.cpp \
     $${PWD}/OAIListWordSynonymsAPI_200_response.cpp \
     $${PWD}/OAIPluralizeWordAPI_200_response.cpp \
+    $${PWD}/OAIRandomAffirmationAPI_200_response.cpp \
+    $${PWD}/OAIRandomLifeHackAPI_200_response.cpp \
     $${PWD}/OAIRandomMemeAPI_200_response.cpp \
     $${PWD}/OAIRandomPoemAPI_200_response.cpp \
     $${PWD}/OAIRandomQuoteAPI_200_response.cpp \
@@ -236,10 +236,10 @@ SOURCES += \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_instructions_inner_steps_inner_ingredients_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown.cpp \
-    $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_ingredient_breakdown_inner_nutrients_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.cpp \
+    $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_properties_inner.cpp \
     $${PWD}/OAISearchDrinksAPI_200_response_drinks_inner_nutrition_weight_per_serving.cpp \
     $${PWD}/OAISearchGamesAPI_200_response.cpp \
     $${PWD}/OAISearchGamesAPI_200_response_active_filter_options_inner.cpp \
@@ -253,6 +253,7 @@ SOURCES += \
     $${PWD}/OAISearchGifsAPI_200_response.cpp \
     $${PWD}/OAISearchGifsAPI_200_response_images_inner.cpp \
     $${PWD}/OAISearchIconsAPI_200_response.cpp \
+    $${PWD}/OAISearchIconsAPI_200_response_icons_inner.cpp \
     $${PWD}/OAISearchJokesAPI_200_response.cpp \
     $${PWD}/OAISearchJokesAPI_200_response_jokes_inner.cpp \
     $${PWD}/OAISearchMemesAPI_200_response.cpp \
@@ -263,11 +264,6 @@ SOURCES += \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner.cpp \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner_nutrition.cpp \
     $${PWD}/OAISearchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner.cpp \
-    $${PWD}/OAISearchRestaurantsAPI_200_response.cpp \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner.cpp \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_address.cpp \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours.cpp \
-    $${PWD}/OAISearchRestaurantsAPI_200_response_restaurants_inner_local_hours_operational.cpp \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response.cpp \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response_images_inner.cpp \
     $${PWD}/OAISearchRoyaltyFreeImagesAPI_200_response_images_inner_license.cpp \

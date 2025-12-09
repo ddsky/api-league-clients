@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,19 +20,19 @@ var _ MappedNullable = &SearchGamesAPI200ResponseResultsInner{}
 
 // SearchGamesAPI200ResponseResultsInner struct for SearchGamesAPI200ResponseResultsInner
 type SearchGamesAPI200ResponseResultsInner struct {
-	Image NullableString `json:"image,omitempty"`
-	ShortDescription NullableString `json:"short_description,omitempty"`
+	Id *int32 `json:"id,omitempty"`
 	Year *int32 `json:"year,omitempty"`
+	Name NullableString `json:"name,omitempty"`
+	Genre NullableString `json:"genre,omitempty"`
+	Image NullableString `json:"image,omitempty"`
 	Link NullableString `json:"link,omitempty"`
 	Rating *SearchGamesAPI200ResponseResultsInnerRating `json:"rating,omitempty"`
 	AdultOnly *bool `json:"adult_only,omitempty"`
 	Screenshots []*string `json:"screenshots,omitempty"`
-	Platforms []SearchGamesAPI200ResponseResultsInnerPlatformsInner `json:"platforms,omitempty"`
 	MicroTrailer NullableString `json:"micro_trailer,omitempty"`
-	Name NullableString `json:"name,omitempty"`
-	Genre NullableString `json:"genre,omitempty"`
-	Id *int32 `json:"id,omitempty"`
 	Gameplay NullableString `json:"gameplay,omitempty"`
+	ShortDescription NullableString `json:"short_description,omitempty"`
+	Platforms []SearchGamesAPI200ResponseResultsInnerPlatformsInner `json:"platforms,omitempty"`
 }
 
 // NewSearchGamesAPI200ResponseResultsInner instantiates a new SearchGamesAPI200ResponseResultsInner object
@@ -50,6 +50,154 @@ func NewSearchGamesAPI200ResponseResultsInner() *SearchGamesAPI200ResponseResult
 func NewSearchGamesAPI200ResponseResultsInnerWithDefaults() *SearchGamesAPI200ResponseResultsInner {
 	this := SearchGamesAPI200ResponseResultsInner{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SearchGamesAPI200ResponseResultsInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetId(v int32) {
+	o.Id = &v
+}
+
+// GetYear returns the Year field value if set, zero value otherwise.
+func (o *SearchGamesAPI200ResponseResultsInner) GetYear() int32 {
+	if o == nil || IsNil(o.Year) {
+		var ret int32
+		return ret
+	}
+	return *o.Year
+}
+
+// GetYearOk returns a tuple with the Year field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) GetYearOk() (*int32, bool) {
+	if o == nil || IsNil(o.Year) {
+		return nil, false
+	}
+	return o.Year, true
+}
+
+// HasYear returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasYear() bool {
+	if o != nil && !IsNil(o.Year) {
+		return true
+	}
+
+	return false
+}
+
+// SetYear gets a reference to the given int32 and assigns it to the Year field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetYear(v int32) {
+	o.Year = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseResultsInner) GetName() string {
+	if o == nil || IsNil(o.Name.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Name.Get()
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseResultsInner) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Name.Get(), o.Name.IsSet()
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasName() bool {
+	if o != nil && o.Name.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetName(v string) {
+	o.Name.Set(&v)
+}
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) UnsetName() {
+	o.Name.Unset()
+}
+
+// GetGenre returns the Genre field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseResultsInner) GetGenre() string {
+	if o == nil || IsNil(o.Genre.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Genre.Get()
+}
+
+// GetGenreOk returns a tuple with the Genre field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseResultsInner) GetGenreOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Genre.Get(), o.Genre.IsSet()
+}
+
+// HasGenre returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasGenre() bool {
+	if o != nil && o.Genre.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetGenre gets a reference to the given NullableString and assigns it to the Genre field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetGenre(v string) {
+	o.Genre.Set(&v)
+}
+// SetGenreNil sets the value for Genre to be an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) SetGenreNil() {
+	o.Genre.Set(nil)
+}
+
+// UnsetGenre ensures that no value is present for Genre, not even an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) UnsetGenre() {
+	o.Genre.Unset()
 }
 
 // GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -92,80 +240,6 @@ func (o *SearchGamesAPI200ResponseResultsInner) SetImageNil() {
 // UnsetImage ensures that no value is present for Image, not even an explicit nil
 func (o *SearchGamesAPI200ResponseResultsInner) UnsetImage() {
 	o.Image.Unset()
-}
-
-// GetShortDescription returns the ShortDescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseResultsInner) GetShortDescription() string {
-	if o == nil || IsNil(o.ShortDescription.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ShortDescription.Get()
-}
-
-// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseResultsInner) GetShortDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ShortDescription.Get(), o.ShortDescription.IsSet()
-}
-
-// HasShortDescription returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasShortDescription() bool {
-	if o != nil && o.ShortDescription.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetShortDescription gets a reference to the given NullableString and assigns it to the ShortDescription field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetShortDescription(v string) {
-	o.ShortDescription.Set(&v)
-}
-// SetShortDescriptionNil sets the value for ShortDescription to be an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) SetShortDescriptionNil() {
-	o.ShortDescription.Set(nil)
-}
-
-// UnsetShortDescription ensures that no value is present for ShortDescription, not even an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) UnsetShortDescription() {
-	o.ShortDescription.Unset()
-}
-
-// GetYear returns the Year field value if set, zero value otherwise.
-func (o *SearchGamesAPI200ResponseResultsInner) GetYear() int32 {
-	if o == nil || IsNil(o.Year) {
-		var ret int32
-		return ret
-	}
-	return *o.Year
-}
-
-// GetYearOk returns a tuple with the Year field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) GetYearOk() (*int32, bool) {
-	if o == nil || IsNil(o.Year) {
-		return nil, false
-	}
-	return o.Year, true
-}
-
-// HasYear returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasYear() bool {
-	if o != nil && !IsNil(o.Year) {
-		return true
-	}
-
-	return false
-}
-
-// SetYear gets a reference to the given int32 and assigns it to the Year field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetYear(v int32) {
-	o.Year = &v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -306,38 +380,6 @@ func (o *SearchGamesAPI200ResponseResultsInner) SetScreenshots(v []*string) {
 	o.Screenshots = v
 }
 
-// GetPlatforms returns the Platforms field value if set, zero value otherwise.
-func (o *SearchGamesAPI200ResponseResultsInner) GetPlatforms() []SearchGamesAPI200ResponseResultsInnerPlatformsInner {
-	if o == nil || IsNil(o.Platforms) {
-		var ret []SearchGamesAPI200ResponseResultsInnerPlatformsInner
-		return ret
-	}
-	return o.Platforms
-}
-
-// GetPlatformsOk returns a tuple with the Platforms field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) GetPlatformsOk() ([]SearchGamesAPI200ResponseResultsInnerPlatformsInner, bool) {
-	if o == nil || IsNil(o.Platforms) {
-		return nil, false
-	}
-	return o.Platforms, true
-}
-
-// HasPlatforms returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasPlatforms() bool {
-	if o != nil && !IsNil(o.Platforms) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlatforms gets a reference to the given []SearchGamesAPI200ResponseResultsInnerPlatformsInner and assigns it to the Platforms field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetPlatforms(v []SearchGamesAPI200ResponseResultsInnerPlatformsInner) {
-	o.Platforms = v
-}
-
 // GetMicroTrailer returns the MicroTrailer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchGamesAPI200ResponseResultsInner) GetMicroTrailer() string {
 	if o == nil || IsNil(o.MicroTrailer.Get()) {
@@ -378,122 +420,6 @@ func (o *SearchGamesAPI200ResponseResultsInner) SetMicroTrailerNil() {
 // UnsetMicroTrailer ensures that no value is present for MicroTrailer, not even an explicit nil
 func (o *SearchGamesAPI200ResponseResultsInner) UnsetMicroTrailer() {
 	o.MicroTrailer.Unset()
-}
-
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseResultsInner) GetName() string {
-	if o == nil || IsNil(o.Name.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Name.Get()
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseResultsInner) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Name.Get(), o.Name.IsSet()
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetName(v string) {
-	o.Name.Set(&v)
-}
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) UnsetName() {
-	o.Name.Unset()
-}
-
-// GetGenre returns the Genre field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchGamesAPI200ResponseResultsInner) GetGenre() string {
-	if o == nil || IsNil(o.Genre.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Genre.Get()
-}
-
-// GetGenreOk returns a tuple with the Genre field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchGamesAPI200ResponseResultsInner) GetGenreOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Genre.Get(), o.Genre.IsSet()
-}
-
-// HasGenre returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasGenre() bool {
-	if o != nil && o.Genre.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetGenre gets a reference to the given NullableString and assigns it to the Genre field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetGenre(v string) {
-	o.Genre.Set(&v)
-}
-// SetGenreNil sets the value for Genre to be an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) SetGenreNil() {
-	o.Genre.Set(nil)
-}
-
-// UnsetGenre ensures that no value is present for Genre, not even an explicit nil
-func (o *SearchGamesAPI200ResponseResultsInner) UnsetGenre() {
-	o.Genre.Unset()
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchGamesAPI200ResponseResultsInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseResultsInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SearchGamesAPI200ResponseResultsInner) SetId(v int32) {
-	o.Id = &v
 }
 
 // GetGameplay returns the Gameplay field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -538,6 +464,80 @@ func (o *SearchGamesAPI200ResponseResultsInner) UnsetGameplay() {
 	o.Gameplay.Unset()
 }
 
+// GetShortDescription returns the ShortDescription field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchGamesAPI200ResponseResultsInner) GetShortDescription() string {
+	if o == nil || IsNil(o.ShortDescription.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ShortDescription.Get()
+}
+
+// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchGamesAPI200ResponseResultsInner) GetShortDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ShortDescription.Get(), o.ShortDescription.IsSet()
+}
+
+// HasShortDescription returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasShortDescription() bool {
+	if o != nil && o.ShortDescription.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetShortDescription gets a reference to the given NullableString and assigns it to the ShortDescription field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetShortDescription(v string) {
+	o.ShortDescription.Set(&v)
+}
+// SetShortDescriptionNil sets the value for ShortDescription to be an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) SetShortDescriptionNil() {
+	o.ShortDescription.Set(nil)
+}
+
+// UnsetShortDescription ensures that no value is present for ShortDescription, not even an explicit nil
+func (o *SearchGamesAPI200ResponseResultsInner) UnsetShortDescription() {
+	o.ShortDescription.Unset()
+}
+
+// GetPlatforms returns the Platforms field value if set, zero value otherwise.
+func (o *SearchGamesAPI200ResponseResultsInner) GetPlatforms() []SearchGamesAPI200ResponseResultsInnerPlatformsInner {
+	if o == nil || IsNil(o.Platforms) {
+		var ret []SearchGamesAPI200ResponseResultsInnerPlatformsInner
+		return ret
+	}
+	return o.Platforms
+}
+
+// GetPlatformsOk returns a tuple with the Platforms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) GetPlatformsOk() ([]SearchGamesAPI200ResponseResultsInnerPlatformsInner, bool) {
+	if o == nil || IsNil(o.Platforms) {
+		return nil, false
+	}
+	return o.Platforms, true
+}
+
+// HasPlatforms returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseResultsInner) HasPlatforms() bool {
+	if o != nil && !IsNil(o.Platforms) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlatforms gets a reference to the given []SearchGamesAPI200ResponseResultsInnerPlatformsInner and assigns it to the Platforms field.
+func (o *SearchGamesAPI200ResponseResultsInner) SetPlatforms(v []SearchGamesAPI200ResponseResultsInnerPlatformsInner) {
+	o.Platforms = v
+}
+
 func (o SearchGamesAPI200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -548,14 +548,20 @@ func (o SearchGamesAPI200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchGamesAPI200ResponseResultsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
-	}
-	if o.ShortDescription.IsSet() {
-		toSerialize["short_description"] = o.ShortDescription.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Year) {
 		toSerialize["year"] = o.Year
+	}
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
+	}
+	if o.Genre.IsSet() {
+		toSerialize["genre"] = o.Genre.Get()
+	}
+	if o.Image.IsSet() {
+		toSerialize["image"] = o.Image.Get()
 	}
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
@@ -569,23 +575,17 @@ func (o SearchGamesAPI200ResponseResultsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Screenshots) {
 		toSerialize["screenshots"] = o.Screenshots
 	}
-	if !IsNil(o.Platforms) {
-		toSerialize["platforms"] = o.Platforms
-	}
 	if o.MicroTrailer.IsSet() {
 		toSerialize["micro_trailer"] = o.MicroTrailer.Get()
 	}
-	if o.Name.IsSet() {
-		toSerialize["name"] = o.Name.Get()
-	}
-	if o.Genre.IsSet() {
-		toSerialize["genre"] = o.Genre.Get()
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
 	if o.Gameplay.IsSet() {
 		toSerialize["gameplay"] = o.Gameplay.Get()
+	}
+	if o.ShortDescription.IsSet() {
+		toSerialize["short_description"] = o.ShortDescription.Get()
+	}
+	if !IsNil(o.Platforms) {
+		toSerialize["platforms"] = o.Platforms
 	}
 	return toSerialize, nil
 }

@@ -25,12 +25,6 @@ class SearchDrinksAPI200ResponseDrinksInnerCreditsTest : ShouldSpec() {
         // uncomment below to create an instance of SearchDrinksAPI200ResponseDrinksInnerCredits
         //val modelInstance = SearchDrinksAPI200ResponseDrinksInnerCredits()
 
-        // to test the property `text`
-        should("test text") {
-            // uncomment below to test the property
-            //modelInstance.text shouldBe ("TODO")
-        }
-
         // to test the property `sourceName`
         should("test sourceName") {
             // uncomment below to test the property
@@ -41,6 +35,12 @@ class SearchDrinksAPI200ResponseDrinksInnerCreditsTest : ShouldSpec() {
         should("test sourceUrl") {
             // uncomment below to test the property
             //modelInstance.sourceUrl shouldBe ("TODO")
+        }
+
+        // to test the property `text`
+        should("test text") {
+            // uncomment below to test the property
+            //modelInstance.text shouldBe ("TODO")
         }
 
     }

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **amount** | **int** |  | [optional] 
 **unit** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
 **nutrients** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
 
 ## Example

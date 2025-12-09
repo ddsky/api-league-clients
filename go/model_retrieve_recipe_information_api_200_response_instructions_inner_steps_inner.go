@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseInstructionsInner
 // RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner struct for RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner
 type RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner struct {
 	Number *int32 `json:"number,omitempty"`
+	Step NullableString `json:"step,omitempty"`
 	Ingredients []SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner `json:"ingredients,omitempty"`
 	Equipment []SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner `json:"equipment,omitempty"`
-	Step NullableString `json:"step,omitempty"`
 }
 
 // NewRetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner instantiates a new RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner object
@@ -73,6 +73,48 @@ func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) Has
 // SetNumber gets a reference to the given int32 and assigns it to the Number field.
 func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) SetNumber(v int32) {
 	o.Number = &v
+}
+
+// GetStep returns the Step field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) GetStep() string {
+	if o == nil || IsNil(o.Step.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Step.Get()
+}
+
+// GetStepOk returns a tuple with the Step field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) GetStepOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Step.Get(), o.Step.IsSet()
+}
+
+// HasStep returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) HasStep() bool {
+	if o != nil && o.Step.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStep gets a reference to the given NullableString and assigns it to the Step field.
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) SetStep(v string) {
+	o.Step.Set(&v)
+}
+// SetStepNil sets the value for Step to be an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) SetStepNil() {
+	o.Step.Set(nil)
+}
+
+// UnsetStep ensures that no value is present for Step, not even an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) UnsetStep() {
+	o.Step.Unset()
 }
 
 // GetIngredients returns the Ingredients field value if set, zero value otherwise.
@@ -139,48 +181,6 @@ func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) Set
 	o.Equipment = v
 }
 
-// GetStep returns the Step field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) GetStep() string {
-	if o == nil || IsNil(o.Step.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Step.Get()
-}
-
-// GetStepOk returns a tuple with the Step field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) GetStepOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Step.Get(), o.Step.IsSet()
-}
-
-// HasStep returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) HasStep() bool {
-	if o != nil && o.Step.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetStep gets a reference to the given NullableString and assigns it to the Step field.
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) SetStep(v string) {
-	o.Step.Set(&v)
-}
-// SetStepNil sets the value for Step to be an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) SetStepNil() {
-	o.Step.Set(nil)
-}
-
-// UnsetStep ensures that no value is present for Step, not even an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) UnsetStep() {
-	o.Step.Unset()
-}
-
 func (o RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -194,14 +194,14 @@ func (o RetrieveRecipeInformationAPI200ResponseInstructionsInnerStepsInner) ToMa
 	if !IsNil(o.Number) {
 		toSerialize["number"] = o.Number
 	}
+	if o.Step.IsSet() {
+		toSerialize["step"] = o.Step.Get()
+	}
 	if !IsNil(o.Ingredients) {
 		toSerialize["ingredients"] = o.Ingredients
 	}
 	if !IsNil(o.Equipment) {
 		toSerialize["equipment"] = o.Equipment
-	}
-	if o.Step.IsSet() {
-		toSerialize["step"] = o.Step.Get()
 	}
 	return toSerialize, nil
 }

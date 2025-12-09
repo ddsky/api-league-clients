@@ -7,9 +7,9 @@
 
 (def retrieve-recipe-information-api-200-response-scores-data
   {
-   (ds/opt :meta_score) float?
    (ds/opt :weight_watcher_smart_points) int?
    (ds/opt :health_score) int?
+   (ds/opt :meta_score) float?
    })
 
 (def retrieve-recipe-information-api-200-response-scores-spec

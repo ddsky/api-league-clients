@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &SearchGifsAPI200ResponseImagesInner{}
 
 // SearchGifsAPI200ResponseImagesInner struct for SearchGifsAPI200ResponseImagesInner
 type SearchGifsAPI200ResponseImagesInner struct {
-	Width *int32 `json:"width,omitempty"`
 	Url NullableString `json:"url,omitempty"`
+	Width *int32 `json:"width,omitempty"`
 	Height *int32 `json:"height,omitempty"`
 }
 
@@ -40,38 +40,6 @@ func NewSearchGifsAPI200ResponseImagesInner() *SearchGifsAPI200ResponseImagesInn
 func NewSearchGifsAPI200ResponseImagesInnerWithDefaults() *SearchGifsAPI200ResponseImagesInner {
 	this := SearchGifsAPI200ResponseImagesInner{}
 	return &this
-}
-
-// GetWidth returns the Width field value if set, zero value otherwise.
-func (o *SearchGifsAPI200ResponseImagesInner) GetWidth() int32 {
-	if o == nil || IsNil(o.Width) {
-		var ret int32
-		return ret
-	}
-	return *o.Width
-}
-
-// GetWidthOk returns a tuple with the Width field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchGifsAPI200ResponseImagesInner) GetWidthOk() (*int32, bool) {
-	if o == nil || IsNil(o.Width) {
-		return nil, false
-	}
-	return o.Width, true
-}
-
-// HasWidth returns a boolean if a field has been set.
-func (o *SearchGifsAPI200ResponseImagesInner) HasWidth() bool {
-	if o != nil && !IsNil(o.Width) {
-		return true
-	}
-
-	return false
-}
-
-// SetWidth gets a reference to the given int32 and assigns it to the Width field.
-func (o *SearchGifsAPI200ResponseImagesInner) SetWidth(v int32) {
-	o.Width = &v
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -116,6 +84,38 @@ func (o *SearchGifsAPI200ResponseImagesInner) UnsetUrl() {
 	o.Url.Unset()
 }
 
+// GetWidth returns the Width field value if set, zero value otherwise.
+func (o *SearchGifsAPI200ResponseImagesInner) GetWidth() int32 {
+	if o == nil || IsNil(o.Width) {
+		var ret int32
+		return ret
+	}
+	return *o.Width
+}
+
+// GetWidthOk returns a tuple with the Width field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchGifsAPI200ResponseImagesInner) GetWidthOk() (*int32, bool) {
+	if o == nil || IsNil(o.Width) {
+		return nil, false
+	}
+	return o.Width, true
+}
+
+// HasWidth returns a boolean if a field has been set.
+func (o *SearchGifsAPI200ResponseImagesInner) HasWidth() bool {
+	if o != nil && !IsNil(o.Width) {
+		return true
+	}
+
+	return false
+}
+
+// SetWidth gets a reference to the given int32 and assigns it to the Width field.
+func (o *SearchGifsAPI200ResponseImagesInner) SetWidth(v int32) {
+	o.Width = &v
+}
+
 // GetHeight returns the Height field value if set, zero value otherwise.
 func (o *SearchGifsAPI200ResponseImagesInner) GetHeight() int32 {
 	if o == nil || IsNil(o.Height) {
@@ -158,11 +158,11 @@ func (o SearchGifsAPI200ResponseImagesInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchGifsAPI200ResponseImagesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Width) {
-		toSerialize["width"] = o.Width
-	}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
+	}
+	if !IsNil(o.Width) {
+		toSerialize["width"] = o.Width
 	}
 	if !IsNil(o.Height) {
 		toSerialize["height"] = o.Height

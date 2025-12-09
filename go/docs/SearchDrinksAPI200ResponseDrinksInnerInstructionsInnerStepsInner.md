@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Number** | Pointer to **int32** |  | [optional] 
+**Step** | Pointer to **NullableString** |  | [optional] 
 **Ingredients** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
 **Equipment** | Pointer to **[]string** |  | [optional] 
-**Step** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -53,6 +53,41 @@ SetNumber sets Number field to given value.
 
 HasNumber returns a boolean if a field has been set.
 
+### GetStep
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStep() string`
+
+GetStep returns the Step field if non-nil, zero value otherwise.
+
+### GetStepOk
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStepOk() (*string, bool)`
+
+GetStepOk returns a tuple with the Step field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStep
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStep(v string)`
+
+SetStep sets Step field to given value.
+
+### HasStep
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) HasStep() bool`
+
+HasStep returns a boolean if a field has been set.
+
+### SetStepNil
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStepNil(b bool)`
+
+ SetStepNil sets the value for Step to be an explicit nil
+
+### UnsetStep
+`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) UnsetStep()`
+
+UnsetStep ensures that no value is present for Step, not even an explicit nil
 ### GetIngredients
 
 `func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetIngredients() []SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner`
@@ -103,41 +138,6 @@ SetEquipment sets Equipment field to given value.
 
 HasEquipment returns a boolean if a field has been set.
 
-### GetStep
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStep() string`
-
-GetStep returns the Step field if non-nil, zero value otherwise.
-
-### GetStepOk
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStepOk() (*string, bool)`
-
-GetStepOk returns a tuple with the Step field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStep
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStep(v string)`
-
-SetStep sets Step field to given value.
-
-### HasStep
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) HasStep() bool`
-
-HasStep returns a boolean if a field has been set.
-
-### SetStepNil
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStepNil(b bool)`
-
- SetStepNil sets the value for Step to be an explicit nil
-
-### UnsetStep
-`func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) UnsetStep()`
-
-UnsetStep ensures that no value is present for Step, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

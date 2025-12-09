@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**startPosition** | **Integer** |  |  [optional] |
-|**image** | **String** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 |**value** | **String** |  |  [optional] |
+|**startPosition** | **Integer** |  |  [optional] |
 |**endPosition** | **Integer** |  |  [optional] |
+|**image** | **String** |  |  [optional] |
 
 
 

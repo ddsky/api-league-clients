@@ -8,10 +8,10 @@ use WWW::OpenAPIClient::Object::SearchDrinksAPI200ResponseDrinksInnerNutritionIn
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
 **name** | **string** |  | [optional] 
 **amount** | **int** |  | [optional] 
 **unit** | **string** |  | [optional] 
-**id** | **int** |  | [optional] 
 **nutrients** | [**ARRAY[SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

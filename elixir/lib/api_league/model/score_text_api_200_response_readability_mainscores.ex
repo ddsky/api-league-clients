@@ -8,13 +8,13 @@ defmodule APILeague.Model.ScoreTextApi200ResponseReadabilityMainscores do
 
   @derive Jason.Encoder
   defstruct [
-    :total_possible,
-    :total
+    :total,
+    :total_possible
   ]
 
   @type t :: %__MODULE__{
-    :total_possible => integer() | nil,
-    :total => integer() | nil
+    :total => integer() | nil,
+    :total_possible => integer() | nil
   }
 
   def decode(value) do

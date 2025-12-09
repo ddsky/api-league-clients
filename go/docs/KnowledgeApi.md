@@ -4,10 +4,139 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**RandomAffirmationAPI**](KnowledgeAPI.md#RandomAffirmationAPI) | **Get** /retrieve-random-affirmation | Random Affirmation API
+[**RandomLifeHackAPI**](KnowledgeAPI.md#RandomLifeHackAPI) | **Get** /retrieve-random-life-hack | Random Life Hack API
 [**RandomQuoteAPI**](KnowledgeAPI.md#RandomQuoteAPI) | **Get** /retrieve-random-quote | Random Quote API
 [**RandomRiddleAPI**](KnowledgeAPI.md#RandomRiddleAPI) | **Get** /retrieve-random-riddle | Random Riddle API
 [**RandomTriviaAPI**](KnowledgeAPI.md#RandomTriviaAPI) | **Get** /retrieve-random-trivia | Random Trivia API
 
+
+
+## RandomAffirmationAPI
+
+> RandomAffirmationAPI200Response RandomAffirmationAPI(ctx).Execute()
+
+Random Affirmation API
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KnowledgeAPI.RandomAffirmationAPI(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomAffirmationAPI``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomAffirmationAPI`: RandomAffirmationAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomAffirmationAPI`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRandomAffirmationAPIRequest struct via the builder pattern
+
+
+### Return type
+
+[**RandomAffirmationAPI200Response**](RandomAffirmationAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RandomLifeHackAPI
+
+> RandomLifeHackAPI200Response RandomLifeHackAPI(ctx).MaxLength(maxLength).Execute()
+
+Random Life Hack API
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	maxLength := int32(300) // int32 | The maximum length of the hack in letters. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.KnowledgeAPI.RandomLifeHackAPI(context.Background()).MaxLength(maxLength).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `KnowledgeAPI.RandomLifeHackAPI``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `RandomLifeHackAPI`: RandomLifeHackAPI200Response
+	fmt.Fprintf(os.Stdout, "Response from `KnowledgeAPI.RandomLifeHackAPI`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRandomLifeHackAPIRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **maxLength** | **int32** | The maximum length of the hack in letters. | 
+
+### Return type
+
+[**RandomLifeHackAPI200Response**](RandomLifeHackAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## RandomQuoteAPI

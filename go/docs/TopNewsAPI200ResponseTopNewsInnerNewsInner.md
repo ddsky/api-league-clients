@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Summary** | Pointer to **NullableString** |  | [optional] 
-**Image** | Pointer to **NullableString** |  | [optional] 
 **Id** | Pointer to **int32** |  | [optional] 
-**Text** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
-**PublishDate** | Pointer to **NullableString** |  | [optional] 
+**Text** | Pointer to **NullableString** |  | [optional] 
+**Summary** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
+**Image** | Pointer to **NullableString** |  | [optional] 
+**PublishDate** | Pointer to **NullableString** |  | [optional] 
 **Authors** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -32,76 +32,6 @@ NewTopNewsAPI200ResponseTopNewsInnerNewsInnerWithDefaults instantiates a new Top
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSummary
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummary() string`
-
-GetSummary returns the Summary field if non-nil, zero value otherwise.
-
-### GetSummaryOk
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummaryOk() (*string, bool)`
-
-GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSummary
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummary(v string)`
-
-SetSummary sets Summary field to given value.
-
-### HasSummary
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasSummary() bool`
-
-HasSummary returns a boolean if a field has been set.
-
-### SetSummaryNil
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummaryNil(b bool)`
-
- SetSummaryNil sets the value for Summary to be an explicit nil
-
-### UnsetSummary
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetSummary()`
-
-UnsetSummary ensures that no value is present for Summary, not even an explicit nil
-### GetImage
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImage() string`
-
-GetImage returns the Image field if non-nil, zero value otherwise.
-
-### GetImageOk
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImageOk() (*string, bool)`
-
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImage
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImage(v string)`
-
-SetImage sets Image field to given value.
-
-### HasImage
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasImage() bool`
-
-HasImage returns a boolean if a field has been set.
-
-### SetImageNil
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImageNil(b bool)`
-
- SetImageNil sets the value for Image to be an explicit nil
-
-### UnsetImage
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetImage()`
-
-UnsetImage ensures that no value is present for Image, not even an explicit nil
 ### GetId
 
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetId() int32`
@@ -127,41 +57,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetText
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetText() string`
-
-GetText returns the Text field if non-nil, zero value otherwise.
-
-### GetTextOk
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetTextOk() (*string, bool)`
-
-GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetText
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetText(v string)`
-
-SetText sets Text field to given value.
-
-### HasText
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasText() bool`
-
-HasText returns a boolean if a field has been set.
-
-### SetTextNil
-
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetTextNil(b bool)`
-
- SetTextNil sets the value for Text to be an explicit nil
-
-### UnsetText
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetText()`
-
-UnsetText ensures that no value is present for Text, not even an explicit nil
 ### GetTitle
 
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetTitle() string`
@@ -197,41 +92,76 @@ HasTitle returns a boolean if a field has been set.
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetTitle()`
 
 UnsetTitle ensures that no value is present for Title, not even an explicit nil
-### GetPublishDate
+### GetText
 
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDate() string`
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetText() string`
 
-GetPublishDate returns the PublishDate field if non-nil, zero value otherwise.
+GetText returns the Text field if non-nil, zero value otherwise.
 
-### GetPublishDateOk
+### GetTextOk
 
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDateOk() (*string, bool)`
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetTextOk() (*string, bool)`
 
-GetPublishDateOk returns a tuple with the PublishDate field if it's non-nil, zero value otherwise
+GetTextOk returns a tuple with the Text field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPublishDate
+### SetText
 
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDate(v string)`
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetText(v string)`
 
-SetPublishDate sets PublishDate field to given value.
+SetText sets Text field to given value.
 
-### HasPublishDate
+### HasText
 
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasPublishDate() bool`
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasText() bool`
 
-HasPublishDate returns a boolean if a field has been set.
+HasText returns a boolean if a field has been set.
 
-### SetPublishDateNil
+### SetTextNil
 
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDateNil(b bool)`
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetTextNil(b bool)`
 
- SetPublishDateNil sets the value for PublishDate to be an explicit nil
+ SetTextNil sets the value for Text to be an explicit nil
 
-### UnsetPublishDate
-`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetPublishDate()`
+### UnsetText
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetText()`
 
-UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
+UnsetText ensures that no value is present for Text, not even an explicit nil
+### GetSummary
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummary() string`
+
+GetSummary returns the Summary field if non-nil, zero value otherwise.
+
+### GetSummaryOk
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetSummaryOk() (*string, bool)`
+
+GetSummaryOk returns a tuple with the Summary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSummary
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummary(v string)`
+
+SetSummary sets Summary field to given value.
+
+### HasSummary
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasSummary() bool`
+
+HasSummary returns a boolean if a field has been set.
+
+### SetSummaryNil
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetSummaryNil(b bool)`
+
+ SetSummaryNil sets the value for Summary to be an explicit nil
+
+### UnsetSummary
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetSummary()`
+
+UnsetSummary ensures that no value is present for Summary, not even an explicit nil
 ### GetUrl
 
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetUrl() string`
@@ -267,6 +197,76 @@ HasUrl returns a boolean if a field has been set.
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
+### GetImage
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImage() string`
+
+GetImage returns the Image field if non-nil, zero value otherwise.
+
+### GetImageOk
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetImageOk() (*string, bool)`
+
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImage
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImage(v string)`
+
+SetImage sets Image field to given value.
+
+### HasImage
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasImage() bool`
+
+HasImage returns a boolean if a field has been set.
+
+### SetImageNil
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetImageNil(b bool)`
+
+ SetImageNil sets the value for Image to be an explicit nil
+
+### UnsetImage
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetImage()`
+
+UnsetImage ensures that no value is present for Image, not even an explicit nil
+### GetPublishDate
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDate() string`
+
+GetPublishDate returns the PublishDate field if non-nil, zero value otherwise.
+
+### GetPublishDateOk
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetPublishDateOk() (*string, bool)`
+
+GetPublishDateOk returns a tuple with the PublishDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishDate
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDate(v string)`
+
+SetPublishDate sets PublishDate field to given value.
+
+### HasPublishDate
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) HasPublishDate() bool`
+
+HasPublishDate returns a boolean if a field has been set.
+
+### SetPublishDateNil
+
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) SetPublishDateNil(b bool)`
+
+ SetPublishDateNil sets the value for PublishDate to be an explicit nil
+
+### UnsetPublishDate
+`func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) UnsetPublishDate()`
+
+UnsetPublishDate ensures that no value is present for PublishDate, not even an explicit nil
 ### GetAuthors
 
 `func (o *TopNewsAPI200ResponseTopNewsInnerNewsInner) GetAuthors() []*string`

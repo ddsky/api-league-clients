@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &RetrieveGameById200ResponseOffersInner{}
 
 // RetrieveGameById200ResponseOffersInner struct for RetrieveGameById200ResponseOffersInner
 type RetrieveGameById200ResponseOffersInner struct {
-	StoreName NullableString `json:"store_name,omitempty"`
-	Title NullableString `json:"title,omitempty"`
 	Price *RetrieveGameById200ResponseOffersInnerPrice `json:"price,omitempty"`
+	StoreName NullableString `json:"store_name,omitempty"`
 	Platform NullableString `json:"platform,omitempty"`
+	Title NullableString `json:"title,omitempty"`
 	Url NullableString `json:"url,omitempty"`
 }
 
@@ -42,6 +42,38 @@ func NewRetrieveGameById200ResponseOffersInner() *RetrieveGameById200ResponseOff
 func NewRetrieveGameById200ResponseOffersInnerWithDefaults() *RetrieveGameById200ResponseOffersInner {
 	this := RetrieveGameById200ResponseOffersInner{}
 	return &this
+}
+
+// GetPrice returns the Price field value if set, zero value otherwise.
+func (o *RetrieveGameById200ResponseOffersInner) GetPrice() RetrieveGameById200ResponseOffersInnerPrice {
+	if o == nil || IsNil(o.Price) {
+		var ret RetrieveGameById200ResponseOffersInnerPrice
+		return ret
+	}
+	return *o.Price
+}
+
+// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveGameById200ResponseOffersInner) GetPriceOk() (*RetrieveGameById200ResponseOffersInnerPrice, bool) {
+	if o == nil || IsNil(o.Price) {
+		return nil, false
+	}
+	return o.Price, true
+}
+
+// HasPrice returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseOffersInner) HasPrice() bool {
+	if o != nil && !IsNil(o.Price) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrice gets a reference to the given RetrieveGameById200ResponseOffersInnerPrice and assigns it to the Price field.
+func (o *RetrieveGameById200ResponseOffersInner) SetPrice(v RetrieveGameById200ResponseOffersInnerPrice) {
+	o.Price = &v
 }
 
 // GetStoreName returns the StoreName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -86,80 +118,6 @@ func (o *RetrieveGameById200ResponseOffersInner) UnsetStoreName() {
 	o.StoreName.Unset()
 }
 
-// GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetrieveGameById200ResponseOffersInner) GetTitle() string {
-	if o == nil || IsNil(o.Title.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Title.Get()
-}
-
-// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetrieveGameById200ResponseOffersInner) GetTitleOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Title.Get(), o.Title.IsSet()
-}
-
-// HasTitle returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseOffersInner) HasTitle() bool {
-	if o != nil && o.Title.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTitle gets a reference to the given NullableString and assigns it to the Title field.
-func (o *RetrieveGameById200ResponseOffersInner) SetTitle(v string) {
-	o.Title.Set(&v)
-}
-// SetTitleNil sets the value for Title to be an explicit nil
-func (o *RetrieveGameById200ResponseOffersInner) SetTitleNil() {
-	o.Title.Set(nil)
-}
-
-// UnsetTitle ensures that no value is present for Title, not even an explicit nil
-func (o *RetrieveGameById200ResponseOffersInner) UnsetTitle() {
-	o.Title.Unset()
-}
-
-// GetPrice returns the Price field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponseOffersInner) GetPrice() RetrieveGameById200ResponseOffersInnerPrice {
-	if o == nil || IsNil(o.Price) {
-		var ret RetrieveGameById200ResponseOffersInnerPrice
-		return ret
-	}
-	return *o.Price
-}
-
-// GetPriceOk returns a tuple with the Price field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponseOffersInner) GetPriceOk() (*RetrieveGameById200ResponseOffersInnerPrice, bool) {
-	if o == nil || IsNil(o.Price) {
-		return nil, false
-	}
-	return o.Price, true
-}
-
-// HasPrice returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseOffersInner) HasPrice() bool {
-	if o != nil && !IsNil(o.Price) {
-		return true
-	}
-
-	return false
-}
-
-// SetPrice gets a reference to the given RetrieveGameById200ResponseOffersInnerPrice and assigns it to the Price field.
-func (o *RetrieveGameById200ResponseOffersInner) SetPrice(v RetrieveGameById200ResponseOffersInnerPrice) {
-	o.Price = &v
-}
-
 // GetPlatform returns the Platform field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RetrieveGameById200ResponseOffersInner) GetPlatform() string {
 	if o == nil || IsNil(o.Platform.Get()) {
@@ -200,6 +158,48 @@ func (o *RetrieveGameById200ResponseOffersInner) SetPlatformNil() {
 // UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 func (o *RetrieveGameById200ResponseOffersInner) UnsetPlatform() {
 	o.Platform.Unset()
+}
+
+// GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RetrieveGameById200ResponseOffersInner) GetTitle() string {
+	if o == nil || IsNil(o.Title.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Title.Get()
+}
+
+// GetTitleOk returns a tuple with the Title field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RetrieveGameById200ResponseOffersInner) GetTitleOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Title.Get(), o.Title.IsSet()
+}
+
+// HasTitle returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseOffersInner) HasTitle() bool {
+	if o != nil && o.Title.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTitle gets a reference to the given NullableString and assigns it to the Title field.
+func (o *RetrieveGameById200ResponseOffersInner) SetTitle(v string) {
+	o.Title.Set(&v)
+}
+// SetTitleNil sets the value for Title to be an explicit nil
+func (o *RetrieveGameById200ResponseOffersInner) SetTitleNil() {
+	o.Title.Set(nil)
+}
+
+// UnsetTitle ensures that no value is present for Title, not even an explicit nil
+func (o *RetrieveGameById200ResponseOffersInner) UnsetTitle() {
+	o.Title.Unset()
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -254,17 +254,17 @@ func (o RetrieveGameById200ResponseOffersInner) MarshalJSON() ([]byte, error) {
 
 func (o RetrieveGameById200ResponseOffersInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.StoreName.IsSet() {
-		toSerialize["store_name"] = o.StoreName.Get()
-	}
-	if o.Title.IsSet() {
-		toSerialize["title"] = o.Title.Get()
-	}
 	if !IsNil(o.Price) {
 		toSerialize["price"] = o.Price
 	}
+	if o.StoreName.IsSet() {
+		toSerialize["store_name"] = o.StoreName.Get()
+	}
 	if o.Platform.IsSet() {
 		toSerialize["platform"] = o.Platform.Get()
+	}
+	if o.Title.IsSet() {
+		toSerialize["title"] = o.Title.Get()
 	}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()

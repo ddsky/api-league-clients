@@ -7,10 +7,10 @@
 
 (def retrieve-recipe-information-api-200-response-credits-data
   {
-   (ds/opt :license) string?
-   (ds/opt :text) string?
    (ds/opt :source_name) string?
    (ds/opt :source_url) string?
+   (ds/opt :text) string?
+   (ds/opt :license) string?
    })
 
 (def retrieve-recipe-information-api-200-response-credits-spec

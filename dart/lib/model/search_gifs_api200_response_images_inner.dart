@@ -13,10 +13,12 @@ part of openapi.api;
 class SearchGifsAPI200ResponseImagesInner {
   /// Returns a new [SearchGifsAPI200ResponseImagesInner] instance.
   SearchGifsAPI200ResponseImagesInner({
-    this.width,
     this.url,
+    this.width,
     this.height,
   });
+
+  String? url;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -25,8 +27,6 @@ class SearchGifsAPI200ResponseImagesInner {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   int? width;
-
-  String? url;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -38,31 +38,31 @@ class SearchGifsAPI200ResponseImagesInner {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGifsAPI200ResponseImagesInner &&
-    other.width == width &&
     other.url == url &&
+    other.width == width &&
     other.height == height;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (width == null ? 0 : width!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
+    (width == null ? 0 : width!.hashCode) +
     (height == null ? 0 : height!.hashCode);
 
   @override
-  String toString() => 'SearchGifsAPI200ResponseImagesInner[width=$width, url=$url, height=$height]';
+  String toString() => 'SearchGifsAPI200ResponseImagesInner[url=$url, width=$width, height=$height]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.width != null) {
-      json[r'width'] = this.width;
-    } else {
-      json[r'width'] = null;
-    }
     if (this.url != null) {
       json[r'url'] = this.url;
     } else {
       json[r'url'] = null;
+    }
+    if (this.width != null) {
+      json[r'width'] = this.width;
+    } else {
+      json[r'width'] = null;
     }
     if (this.height != null) {
       json[r'height'] = this.height;
@@ -91,8 +91,8 @@ class SearchGifsAPI200ResponseImagesInner {
       }());
 
       return SearchGifsAPI200ResponseImagesInner(
-        width: mapValueOfType<int>(json, r'width'),
         url: mapValueOfType<String>(json, r'url'),
+        width: mapValueOfType<int>(json, r'width'),
         height: mapValueOfType<int>(json, r'height'),
       );
     }

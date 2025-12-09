@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,18 +20,18 @@ var _ MappedNullable = &FindSimilarGamesAPI200ResponseResultsInner{}
 
 // FindSimilarGamesAPI200ResponseResultsInner struct for FindSimilarGamesAPI200ResponseResultsInner
 type FindSimilarGamesAPI200ResponseResultsInner struct {
-	Image NullableString `json:"image,omitempty"`
-	ShortDescription NullableString `json:"short_description,omitempty"`
-	MicroTrailer NullableString `json:"micro_trailer,omitempty"`
+	Id *int32 `json:"id,omitempty"`
 	Year *int32 `json:"year,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Genre NullableString `json:"genre,omitempty"`
+	Image NullableString `json:"image,omitempty"`
 	Link NullableString `json:"link,omitempty"`
 	Rating *SearchGamesAPI200ResponseResultsInnerRating `json:"rating,omitempty"`
-	Id *int32 `json:"id,omitempty"`
 	AdultOnly *bool `json:"adult_only,omitempty"`
 	Screenshots []*string `json:"screenshots,omitempty"`
+	MicroTrailer NullableString `json:"micro_trailer,omitempty"`
 	Gameplay NullableString `json:"gameplay,omitempty"`
+	ShortDescription NullableString `json:"short_description,omitempty"`
 }
 
 // NewFindSimilarGamesAPI200ResponseResultsInner instantiates a new FindSimilarGamesAPI200ResponseResultsInner object
@@ -51,130 +51,36 @@ func NewFindSimilarGamesAPI200ResponseResultsInnerWithDefaults() *FindSimilarGam
 	return &this
 }
 
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetImage() string {
-	if o == nil || IsNil(o.Image.Get()) {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
 		return ret
 	}
-	return *o.Image.Get()
+	return *o.Id
 }
 
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetImageOk() (*string, bool) {
-	if o == nil {
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Image.Get(), o.Image.IsSet()
+	return o.Id, true
 }
 
-// HasImage returns a boolean if a field has been set.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetImage gets a reference to the given NullableString and assigns it to the Image field.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetImage(v string) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetImageNil() {
-	o.Image.Set(nil)
-}
-
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetImage() {
-	o.Image.Unset()
-}
-
-// GetShortDescription returns the ShortDescription field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetShortDescription() string {
-	if o == nil || IsNil(o.ShortDescription.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ShortDescription.Get()
-}
-
-// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetShortDescriptionOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ShortDescription.Get(), o.ShortDescription.IsSet()
-}
-
-// HasShortDescription returns a boolean if a field has been set.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) HasShortDescription() bool {
-	if o != nil && o.ShortDescription.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetShortDescription gets a reference to the given NullableString and assigns it to the ShortDescription field.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetShortDescription(v string) {
-	o.ShortDescription.Set(&v)
-}
-// SetShortDescriptionNil sets the value for ShortDescription to be an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetShortDescriptionNil() {
-	o.ShortDescription.Set(nil)
-}
-
-// UnsetShortDescription ensures that no value is present for ShortDescription, not even an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetShortDescription() {
-	o.ShortDescription.Unset()
-}
-
-// GetMicroTrailer returns the MicroTrailer field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetMicroTrailer() string {
-	if o == nil || IsNil(o.MicroTrailer.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.MicroTrailer.Get()
-}
-
-// GetMicroTrailerOk returns a tuple with the MicroTrailer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetMicroTrailerOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.MicroTrailer.Get(), o.MicroTrailer.IsSet()
-}
-
-// HasMicroTrailer returns a boolean if a field has been set.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) HasMicroTrailer() bool {
-	if o != nil && o.MicroTrailer.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetMicroTrailer gets a reference to the given NullableString and assigns it to the MicroTrailer field.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetMicroTrailer(v string) {
-	o.MicroTrailer.Set(&v)
-}
-// SetMicroTrailerNil sets the value for MicroTrailer to be an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetMicroTrailerNil() {
-	o.MicroTrailer.Set(nil)
-}
-
-// UnsetMicroTrailer ensures that no value is present for MicroTrailer, not even an explicit nil
-func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetMicroTrailer() {
-	o.MicroTrailer.Unset()
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetYear returns the Year field value if set, zero value otherwise.
@@ -293,6 +199,48 @@ func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetGenre() {
 	o.Genre.Unset()
 }
 
+// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetImage() string {
+	if o == nil || IsNil(o.Image.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Image.Get()
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetImageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Image.Get(), o.Image.IsSet()
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) HasImage() bool {
+	if o != nil && o.Image.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given NullableString and assigns it to the Image field.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetImage(v string) {
+	o.Image.Set(&v)
+}
+// SetImageNil sets the value for Image to be an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetImageNil() {
+	o.Image.Set(nil)
+}
+
+// UnsetImage ensures that no value is present for Image, not even an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetImage() {
+	o.Image.Unset()
+}
+
 // GetLink returns the Link field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FindSimilarGamesAPI200ResponseResultsInner) GetLink() string {
 	if o == nil || IsNil(o.Link.Get()) {
@@ -367,38 +315,6 @@ func (o *FindSimilarGamesAPI200ResponseResultsInner) SetRating(v SearchGamesAPI2
 	o.Rating = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *FindSimilarGamesAPI200ResponseResultsInner) SetId(v int32) {
-	o.Id = &v
-}
-
 // GetAdultOnly returns the AdultOnly field value if set, zero value otherwise.
 func (o *FindSimilarGamesAPI200ResponseResultsInner) GetAdultOnly() bool {
 	if o == nil || IsNil(o.AdultOnly) {
@@ -463,6 +379,48 @@ func (o *FindSimilarGamesAPI200ResponseResultsInner) SetScreenshots(v []*string)
 	o.Screenshots = v
 }
 
+// GetMicroTrailer returns the MicroTrailer field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetMicroTrailer() string {
+	if o == nil || IsNil(o.MicroTrailer.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MicroTrailer.Get()
+}
+
+// GetMicroTrailerOk returns a tuple with the MicroTrailer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetMicroTrailerOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MicroTrailer.Get(), o.MicroTrailer.IsSet()
+}
+
+// HasMicroTrailer returns a boolean if a field has been set.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) HasMicroTrailer() bool {
+	if o != nil && o.MicroTrailer.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMicroTrailer gets a reference to the given NullableString and assigns it to the MicroTrailer field.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetMicroTrailer(v string) {
+	o.MicroTrailer.Set(&v)
+}
+// SetMicroTrailerNil sets the value for MicroTrailer to be an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetMicroTrailerNil() {
+	o.MicroTrailer.Set(nil)
+}
+
+// UnsetMicroTrailer ensures that no value is present for MicroTrailer, not even an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetMicroTrailer() {
+	o.MicroTrailer.Unset()
+}
+
 // GetGameplay returns the Gameplay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FindSimilarGamesAPI200ResponseResultsInner) GetGameplay() string {
 	if o == nil || IsNil(o.Gameplay.Get()) {
@@ -505,6 +463,48 @@ func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetGameplay() {
 	o.Gameplay.Unset()
 }
 
+// GetShortDescription returns the ShortDescription field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetShortDescription() string {
+	if o == nil || IsNil(o.ShortDescription.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ShortDescription.Get()
+}
+
+// GetShortDescriptionOk returns a tuple with the ShortDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FindSimilarGamesAPI200ResponseResultsInner) GetShortDescriptionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ShortDescription.Get(), o.ShortDescription.IsSet()
+}
+
+// HasShortDescription returns a boolean if a field has been set.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) HasShortDescription() bool {
+	if o != nil && o.ShortDescription.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetShortDescription gets a reference to the given NullableString and assigns it to the ShortDescription field.
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetShortDescription(v string) {
+	o.ShortDescription.Set(&v)
+}
+// SetShortDescriptionNil sets the value for ShortDescription to be an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) SetShortDescriptionNil() {
+	o.ShortDescription.Set(nil)
+}
+
+// UnsetShortDescription ensures that no value is present for ShortDescription, not even an explicit nil
+func (o *FindSimilarGamesAPI200ResponseResultsInner) UnsetShortDescription() {
+	o.ShortDescription.Unset()
+}
+
 func (o FindSimilarGamesAPI200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -515,14 +515,8 @@ func (o FindSimilarGamesAPI200ResponseResultsInner) MarshalJSON() ([]byte, error
 
 func (o FindSimilarGamesAPI200ResponseResultsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
-	}
-	if o.ShortDescription.IsSet() {
-		toSerialize["short_description"] = o.ShortDescription.Get()
-	}
-	if o.MicroTrailer.IsSet() {
-		toSerialize["micro_trailer"] = o.MicroTrailer.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Year) {
 		toSerialize["year"] = o.Year
@@ -533,14 +527,14 @@ func (o FindSimilarGamesAPI200ResponseResultsInner) ToMap() (map[string]interfac
 	if o.Genre.IsSet() {
 		toSerialize["genre"] = o.Genre.Get()
 	}
+	if o.Image.IsSet() {
+		toSerialize["image"] = o.Image.Get()
+	}
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
 	}
 	if !IsNil(o.Rating) {
 		toSerialize["rating"] = o.Rating
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.AdultOnly) {
 		toSerialize["adult_only"] = o.AdultOnly
@@ -548,8 +542,14 @@ func (o FindSimilarGamesAPI200ResponseResultsInner) ToMap() (map[string]interfac
 	if !IsNil(o.Screenshots) {
 		toSerialize["screenshots"] = o.Screenshots
 	}
+	if o.MicroTrailer.IsSet() {
+		toSerialize["micro_trailer"] = o.MicroTrailer.Get()
+	}
 	if o.Gameplay.IsSet() {
 		toSerialize["gameplay"] = o.Gameplay.Get()
+	}
+	if o.ShortDescription.IsSet() {
+		toSerialize["short_description"] = o.ShortDescription.Get()
 	}
 	return toSerialize, nil
 }

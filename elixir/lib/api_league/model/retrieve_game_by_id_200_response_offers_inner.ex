@@ -8,18 +8,18 @@ defmodule APILeague.Model.RetrieveGameById200ResponseOffersInner do
 
   @derive Jason.Encoder
   defstruct [
-    :store_name,
-    :title,
     :price,
+    :store_name,
     :platform,
+    :title,
     :url
   ]
 
   @type t :: %__MODULE__{
-    :store_name => String.t | nil,
-    :title => String.t | nil,
     :price => APILeague.Model.RetrieveGameById200ResponseOffersInnerPrice.t | nil,
+    :store_name => String.t | nil,
     :platform => String.t | nil,
+    :title => String.t | nil,
     :url => String.t | nil
   }
 

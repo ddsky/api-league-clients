@@ -4,18 +4,18 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **image** | **String** |  | [optional] |
-| **short_description** | **String** |  | [optional] |
-| **micro_trailer** | **String** |  | [optional] |
+| **id** | **Integer** |  | [optional] |
 | **year** | **Integer** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **genre** | **String** |  | [optional] |
+| **image** | **String** |  | [optional] |
 | **link** | **String** |  | [optional] |
 | **rating** | [**SearchGamesAPI200ResponseResultsInnerRating**](SearchGamesAPI200ResponseResultsInnerRating.md) |  | [optional] |
-| **id** | **Integer** |  | [optional] |
 | **adult_only** | **Boolean** |  | [optional] |
 | **screenshots** | **Array&lt;String&gt;** |  | [optional] |
+| **micro_trailer** | **String** |  | [optional] |
 | **gameplay** | **String** |  | [optional] |
+| **short_description** | **String** |  | [optional] |
 
 ## Example
 
@@ -23,18 +23,18 @@
 require 'openapi_client'
 
 instance = OpenapiClient::FindSimilarGamesAPI200ResponseResultsInner.new(
-  image: null,
-  short_description: null,
-  micro_trailer: null,
+  id: null,
   year: null,
   name: null,
   genre: null,
+  image: null,
   link: null,
   rating: null,
-  id: null,
   adult_only: null,
   screenshots: null,
-  gameplay: null
+  micro_trailer: null,
+  gameplay: null,
+  short_description: null
 )
 ```
 

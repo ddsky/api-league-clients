@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **Number** |  | [optional] 
 **name** | **String** |  | [optional] 
 **amount** | **Number** |  | [optional] 
 **unit** | **String** |  | [optional] 
-**id** | **Number** |  | [optional] 
 **nutrients** | [**[ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner]**](ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
 
 

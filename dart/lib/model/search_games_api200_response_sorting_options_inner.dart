@@ -14,31 +14,31 @@ class SearchGamesAPI200ResponseSortingOptionsInner {
   /// Returns a new [SearchGamesAPI200ResponseSortingOptionsInner] instance.
   SearchGamesAPI200ResponseSortingOptionsInner({
     this.name,
-    this.key,
     this.sort,
+    this.key,
   });
 
   String? name;
 
-  String? key;
-
   String? sort;
+
+  String? key;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseSortingOptionsInner &&
     other.name == name &&
-    other.key == key &&
-    other.sort == sort;
+    other.sort == sort &&
+    other.key == key;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (key == null ? 0 : key!.hashCode) +
-    (sort == null ? 0 : sort!.hashCode);
+    (sort == null ? 0 : sort!.hashCode) +
+    (key == null ? 0 : key!.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseSortingOptionsInner[name=$name, key=$key, sort=$sort]';
+  String toString() => 'SearchGamesAPI200ResponseSortingOptionsInner[name=$name, sort=$sort, key=$key]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -47,15 +47,15 @@ class SearchGamesAPI200ResponseSortingOptionsInner {
     } else {
       json[r'name'] = null;
     }
-    if (this.key != null) {
-      json[r'key'] = this.key;
-    } else {
-      json[r'key'] = null;
-    }
     if (this.sort != null) {
       json[r'sort'] = this.sort;
     } else {
       json[r'sort'] = null;
+    }
+    if (this.key != null) {
+      json[r'key'] = this.key;
+    } else {
+      json[r'key'] = null;
     }
     return json;
   }
@@ -80,8 +80,8 @@ class SearchGamesAPI200ResponseSortingOptionsInner {
 
       return SearchGamesAPI200ResponseSortingOptionsInner(
         name: mapValueOfType<String>(json, r'name'),
-        key: mapValueOfType<String>(json, r'key'),
         sort: mapValueOfType<String>(json, r'sort'),
+        key: mapValueOfType<String>(json, r'key'),
       );
     }
     return null;

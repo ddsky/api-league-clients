@@ -16,17 +16,17 @@ void main() {
   // final instance = ScoreTextAPI200ResponseStyleSubscores();
 
   group('test ScoreTextAPI200ResponseStyleSubscores', () {
-    // List<int> abbreviationScore (default value: const [])
+    // List<num> abbreviationScore (default value: const [])
     test('to test the property `abbreviationScore`', () async {
       // TODO
     });
 
-    // List<int> styleScore (default value: const [])
+    // List<num> styleScore (default value: const [])
     test('to test the property `styleScore`', () async {
       // TODO
     });
 
-    // List<int> spellingScore (default value: const [])
+    // List<num> spellingScore (default value: const [])
     test('to test the property `spellingScore`', () async {
       // TODO
     });

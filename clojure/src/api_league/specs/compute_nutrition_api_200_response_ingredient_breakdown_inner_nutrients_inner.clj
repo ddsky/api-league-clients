@@ -8,9 +8,9 @@
 (def compute-nutrition-api-200-response-ingredient-breakdown-inner-nutrients-inner-data
   {
    (ds/opt :name) string?
-   (ds/opt :percent_of_daily_needs) int?
    (ds/opt :amount) int?
    (ds/opt :unit) string?
+   (ds/opt :percent_of_daily_needs) int?
    })
 
 (def compute-nutrition-api-200-response-ingredient-breakdown-inner-nutrients-inner-spec

@@ -22,18 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param name 
  * @param `value` 
+ * @param name 
  */
 
 
 data class SearchGamesAPI200ResponseResultsInnerPlatformsInner (
 
-    @Json(name = "name")
-    val name: kotlin.String? = null,
-
     @Json(name = "value")
-    val `value`: kotlin.String? = null
+    val `value`: kotlin.String? = null,
+
+    @Json(name = "name")
+    val name: kotlin.String? = null
 
 ) {
 

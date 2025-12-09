@@ -4,10 +4,192 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**random_affirmation_api**](KnowledgeApi.md#random_affirmation_api) | **GET** /retrieve-random-affirmation | Random Affirmation API
+[**random_life_hack_api**](KnowledgeApi.md#random_life_hack_api) | **GET** /retrieve-random-life-hack | Random Life Hack API
 [**random_quote_api**](KnowledgeApi.md#random_quote_api) | **GET** /retrieve-random-quote | Random Quote API
 [**random_riddle_api**](KnowledgeApi.md#random_riddle_api) | **GET** /retrieve-random-riddle | Random Riddle API
 [**random_trivia_api**](KnowledgeApi.md#random_trivia_api) | **GET** /retrieve-random-trivia | Random Trivia API
 
+
+# **random_affirmation_api**
+> RandomAffirmationAPI200Response random_affirmation_api()
+
+Random Affirmation API
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.random_affirmation_api200_response import RandomAffirmationAPI200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.KnowledgeApi(api_client)
+
+    try:
+        # Random Affirmation API
+        api_response = api_instance.random_affirmation_api()
+        print("The response of KnowledgeApi->random_affirmation_api:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KnowledgeApi->random_affirmation_api: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RandomAffirmationAPI200Response**](RandomAffirmationAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **random_life_hack_api**
+> RandomLifeHackAPI200Response random_life_hack_api(max_length=max_length)
+
+Random Life Hack API
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.models.random_life_hack_api200_response import RandomLifeHackAPI200Response
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.KnowledgeApi(api_client)
+    max_length = 300 # int | The maximum length of the hack in letters. (optional)
+
+    try:
+        # Random Life Hack API
+        api_response = api_instance.random_life_hack_api(max_length=max_length)
+        print("The response of KnowledgeApi->random_life_hack_api:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling KnowledgeApi->random_life_hack_api: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **max_length** | **int**| The maximum length of the hack in letters. | [optional] 
+
+### Return type
+
+[**RandomLifeHackAPI200Response**](RandomLifeHackAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **random_quote_api**
 > RandomQuoteAPI200Response random_quote_api(min_length=min_length, max_length=max_length)

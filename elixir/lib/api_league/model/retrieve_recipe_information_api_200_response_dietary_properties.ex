@@ -8,21 +8,21 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseDietaryProperti
 
   @derive Jason.Encoder
   defstruct [
-    :low_fodmap,
     :vegetarian,
     :vegan,
     :gluten_free,
     :dairy_free,
+    :low_fodmap,
     :gaps,
     :diets
   ]
 
   @type t :: %__MODULE__{
-    :low_fodmap => boolean() | nil,
     :vegetarian => boolean() | nil,
     :vegan => boolean() | nil,
     :gluten_free => boolean() | nil,
     :dairy_free => boolean() | nil,
+    :low_fodmap => boolean() | nil,
     :gaps => String.t | nil,
     :diets => [String.t] | nil
   }

@@ -7,11 +7,11 @@
 
 (def extract-entities-api-200-response-entities-inner-data
   {
-   (ds/opt :start_position) int?
-   (ds/opt :image) string?
    (ds/opt :type) string?
    (ds/opt :value) string?
+   (ds/opt :start_position) int?
    (ds/opt :end_position) int?
+   (ds/opt :image) string?
    })
 
 (def extract-entities-api-200-response-entities-inner-spec

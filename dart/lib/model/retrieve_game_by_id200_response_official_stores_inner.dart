@@ -13,39 +13,39 @@ part of openapi.api;
 class RetrieveGameById200ResponseOfficialStoresInner {
   /// Returns a new [RetrieveGameById200ResponseOfficialStoresInner] instance.
   RetrieveGameById200ResponseOfficialStoresInner({
-    this.url,
     this.source_,
+    this.url,
   });
-
-  String? url;
 
   String? source_;
 
+  String? url;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveGameById200ResponseOfficialStoresInner &&
-    other.url == url &&
-    other.source_ == source_;
+    other.source_ == source_ &&
+    other.url == url;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (url == null ? 0 : url!.hashCode) +
-    (source_ == null ? 0 : source_!.hashCode);
+    (source_ == null ? 0 : source_!.hashCode) +
+    (url == null ? 0 : url!.hashCode);
 
   @override
-  String toString() => 'RetrieveGameById200ResponseOfficialStoresInner[url=$url, source_=$source_]';
+  String toString() => 'RetrieveGameById200ResponseOfficialStoresInner[source_=$source_, url=$url]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.url != null) {
-      json[r'url'] = this.url;
-    } else {
-      json[r'url'] = null;
-    }
     if (this.source_ != null) {
       json[r'source'] = this.source_;
     } else {
       json[r'source'] = null;
+    }
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
     }
     return json;
   }
@@ -69,8 +69,8 @@ class RetrieveGameById200ResponseOfficialStoresInner {
       }());
 
       return RetrieveGameById200ResponseOfficialStoresInner(
-        url: mapValueOfType<String>(json, r'url'),
         source_: mapValueOfType<String>(json, r'source'),
+        url: mapValueOfType<String>(json, r'url'),
       );
     }
     return null;

@@ -8,19 +8,19 @@ defmodule APILeague.Model.ExtractNewsApi200ResponseVideosInner do
 
   @derive Jason.Encoder
   defstruct [
+    :title,
+    :url,
     :summary,
     :duration,
-    :thumbnail,
-    :title,
-    :url
+    :thumbnail
   ]
 
   @type t :: %__MODULE__{
+    :title => String.t | nil,
+    :url => String.t | nil,
     :summary => String.t | nil,
     :duration => integer() | nil,
-    :thumbnail => String.t | nil,
-    :title => String.t | nil,
-    :url => String.t | nil
+    :thumbnail => String.t | nil
   }
 
   def decode(value) do

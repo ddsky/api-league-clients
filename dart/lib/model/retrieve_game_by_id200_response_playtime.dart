@@ -21,7 +21,7 @@ class RetrieveGameById200ResponsePlaytime {
     this.mentions,
   });
 
-  List<int> percentiles;
+  List<num> percentiles;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -136,7 +136,7 @@ class RetrieveGameById200ResponsePlaytime {
 
       return RetrieveGameById200ResponsePlaytime(
         percentiles: json[r'percentiles'] is Iterable
-            ? (json[r'percentiles'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'percentiles'] as Iterable).cast<num>().toList(growable: false)
             : const [],
         min: mapValueOfType<int>(json, r'min'),
         median: mapValueOfType<int>(json, r'median'),

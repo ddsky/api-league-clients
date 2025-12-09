@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalPossible** | **Integer** |  |  [optional]
 **total** | **Integer** |  |  [optional]
+**totalPossible** | **Integer** |  |  [optional]
 
 
 

@@ -13,40 +13,35 @@ part of openapi.api;
 class SearchMemesAPI200ResponseMemesInner {
   /// Returns a new [SearchMemesAPI200ResponseMemesInner] instance.
   SearchMemesAPI200ResponseMemesInner({
-    this.type,
     this.description,
     this.url,
+    this.type,
   });
-
-  String? type;
 
   String? description;
 
   String? url;
 
+  String? type;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchMemesAPI200ResponseMemesInner &&
-    other.type == type &&
     other.description == description &&
-    other.url == url;
+    other.url == url &&
+    other.type == type;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (type == null ? 0 : type!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+    (url == null ? 0 : url!.hashCode) +
+    (type == null ? 0 : type!.hashCode);
 
   @override
-  String toString() => 'SearchMemesAPI200ResponseMemesInner[type=$type, description=$description, url=$url]';
+  String toString() => 'SearchMemesAPI200ResponseMemesInner[description=$description, url=$url, type=$type]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.type != null) {
-      json[r'type'] = this.type;
-    } else {
-      json[r'type'] = null;
-    }
     if (this.description != null) {
       json[r'description'] = this.description;
     } else {
@@ -56,6 +51,11 @@ class SearchMemesAPI200ResponseMemesInner {
       json[r'url'] = this.url;
     } else {
       json[r'url'] = null;
+    }
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
     return json;
   }
@@ -79,9 +79,9 @@ class SearchMemesAPI200ResponseMemesInner {
       }());
 
       return SearchMemesAPI200ResponseMemesInner(
-        type: mapValueOfType<String>(json, r'type'),
         description: mapValueOfType<String>(json, r'description'),
         url: mapValueOfType<String>(json, r'url'),
+        type: mapValueOfType<String>(json, r'type'),
       );
     }
     return null;

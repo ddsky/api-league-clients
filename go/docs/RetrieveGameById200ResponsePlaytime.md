@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Percentiles** | Pointer to **[]int32** |  | [optional] 
+**Percentiles** | Pointer to **[]float32** |  | [optional] 
 **Min** | Pointer to **int32** |  | [optional] 
 **Median** | Pointer to **int32** |  | [optional] 
 **Max** | Pointer to **int32** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPercentiles
 
-`func (o *RetrieveGameById200ResponsePlaytime) GetPercentiles() []int32`
+`func (o *RetrieveGameById200ResponsePlaytime) GetPercentiles() []float32`
 
 GetPercentiles returns the Percentiles field if non-nil, zero value otherwise.
 
 ### GetPercentilesOk
 
-`func (o *RetrieveGameById200ResponsePlaytime) GetPercentilesOk() (*[]int32, bool)`
+`func (o *RetrieveGameById200ResponsePlaytime) GetPercentilesOk() (*[]float32, bool)`
 
 GetPercentilesOk returns a tuple with the Percentiles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPercentiles
 
-`func (o *RetrieveGameById200ResponsePlaytime) SetPercentiles(v []int32)`
+`func (o *RetrieveGameById200ResponsePlaytime) SetPercentiles(v []float32)`
 
 SetPercentiles sets Percentiles field to given value.
 

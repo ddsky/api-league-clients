@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detect_main_image_color_api**](MediaApi.md#detect_main_image_color_api) | **GET** /detect-color | Detect Main Image Color API
 [**rescale_image_api**](MediaApi.md#rescale_image_api) | **GET** /rescale-image | Rescale Image API
+[**screenshot_api**](MediaApi.md#screenshot_api) | **GET** /take-screenshot | Screenshot API
 [**search_icons_api**](MediaApi.md#search_icons_api) | **GET** /search-icons | Search Icons API
 [**search_royalty_free_images_api**](MediaApi.md#search_royalty_free_images_api) | **GET** /search-images | Search Royalty Free Images API
 [**vector_search_api**](MediaApi.md#vector_search_api) | **GET** /search-vectors | Vector Search API
@@ -172,6 +173,101 @@ Name | Type | Description  | Notes
  **width** | **int**| The desired width of the rescaled image. | 
  **height** | **int**| The desired height of the rescaled image. | 
  **crop** | **bool**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | 
+
+### Return type
+
+**bytearray**
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**401** | Unauthorized |  -  |
+**402** | Payment Required |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**406** | Not Acceptable |  -  |
+**429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **screenshot_api**
+> bytearray screenshot_api(url, width, height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+
+* Api Key Authentication (apiKey):
+* Api Key Authentication (headerApiKey):
+
+```python
+import apileague
+from apileague.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.apileague.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = apileague.Configuration(
+    host = "https://api.apileague.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
+# Configure API key authorization: headerApiKey
+configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with apileague.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = apileague.MediaApi(api_client)
+    url = 'https://nytimes.com' # str | The url of the web page for which a screenshot should be taken.
+    width = 400 # int | The desired width of the screenshot.
+    height = 300 # int | The desired height of the screenshot.
+
+    try:
+        # Screenshot API
+        api_response = api_instance.screenshot_api(url, width, height)
+        print("The response of MediaApi->screenshot_api:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MediaApi->screenshot_api: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **str**| The url of the web page for which a screenshot should be taken. | 
+ **width** | **int**| The desired width of the screenshot. | 
+ **height** | **int**| The desired height of the screenshot. | 
 
 ### Return type
 

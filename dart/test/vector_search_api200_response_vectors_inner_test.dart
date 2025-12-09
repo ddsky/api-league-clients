@@ -16,13 +16,13 @@ void main() {
   // final instance = VectorSearchAPI200ResponseVectorsInner();
 
   group('test VectorSearchAPI200ResponseVectorsInner', () {
-    // String license
-    test('to test the property `license`', () async {
+    // String title
+    test('to test the property `title`', () async {
       // TODO
     });
 
-    // String title
-    test('to test the property `title`', () async {
+    // String license
+    test('to test the property `license`', () async {
       // TODO
     });
 

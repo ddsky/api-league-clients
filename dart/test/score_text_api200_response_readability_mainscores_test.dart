@@ -16,13 +16,13 @@ void main() {
   // final instance = ScoreTextAPI200ResponseReadabilityMainscores();
 
   group('test ScoreTextAPI200ResponseReadabilityMainscores', () {
-    // int totalPossible
-    test('to test the property `totalPossible`', () async {
+    // int total
+    test('to test the property `total`', () async {
       // TODO
     });
 
-    // int total
-    test('to test the property `total`', () async {
+    // int totalPossible
+    test('to test the property `totalPossible`', () async {
       // TODO
     });
 

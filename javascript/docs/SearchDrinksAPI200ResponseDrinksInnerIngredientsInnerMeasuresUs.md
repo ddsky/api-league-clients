@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unitShort** | **String** |  | [optional] 
 **amount** | **Number** |  | [optional] 
+**unitShort** | **String** |  | [optional] 
 **unitLong** | **String** |  | [optional] 
 
 

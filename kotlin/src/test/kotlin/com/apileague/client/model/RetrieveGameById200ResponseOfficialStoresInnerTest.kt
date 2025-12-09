@@ -25,16 +25,16 @@ class RetrieveGameById200ResponseOfficialStoresInnerTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveGameById200ResponseOfficialStoresInner
         //val modelInstance = RetrieveGameById200ResponseOfficialStoresInner()
 
-        // to test the property `url`
-        should("test url") {
-            // uncomment below to test the property
-            //modelInstance.url shouldBe ("TODO")
-        }
-
         // to test the property `source`
         should("test source") {
             // uncomment below to test the property
             //modelInstance.source shouldBe ("TODO")
+        }
+
+        // to test the property `url`
+        should("test url") {
+            // uncomment below to test the property
+            //modelInstance.url shouldBe ("TODO")
         }
 
     }

@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &ComputeNutritionAPI200ResponseIngredientBreakdownInnerNu
 // ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner struct for ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner
 type ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner struct {
 	Name NullableString `json:"name,omitempty"`
-	PercentOfDailyNeeds *int32 `json:"percent_of_daily_needs,omitempty"`
 	Amount *int32 `json:"amount,omitempty"`
 	Unit NullableString `json:"unit,omitempty"`
+	PercentOfDailyNeeds *int32 `json:"percent_of_daily_needs,omitempty"`
 }
 
 // NewComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner instantiates a new ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner object
@@ -83,38 +83,6 @@ func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) S
 // UnsetName ensures that no value is present for Name, not even an explicit nil
 func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) UnsetName() {
 	o.Name.Unset()
-}
-
-// GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field value if set, zero value otherwise.
-func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() int32 {
-	if o == nil || IsNil(o.PercentOfDailyNeeds) {
-		var ret int32
-		return ret
-	}
-	return *o.PercentOfDailyNeeds
-}
-
-// GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*int32, bool) {
-	if o == nil || IsNil(o.PercentOfDailyNeeds) {
-		return nil, false
-	}
-	return o.PercentOfDailyNeeds, true
-}
-
-// HasPercentOfDailyNeeds returns a boolean if a field has been set.
-func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool {
-	if o != nil && !IsNil(o.PercentOfDailyNeeds) {
-		return true
-	}
-
-	return false
-}
-
-// SetPercentOfDailyNeeds gets a reference to the given int32 and assigns it to the PercentOfDailyNeeds field.
-func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v int32) {
-	o.PercentOfDailyNeeds = &v
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
@@ -191,6 +159,38 @@ func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) U
 	o.Unit.Unset()
 }
 
+// GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field value if set, zero value otherwise.
+func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() int32 {
+	if o == nil || IsNil(o.PercentOfDailyNeeds) {
+		var ret int32
+		return ret
+	}
+	return *o.PercentOfDailyNeeds
+}
+
+// GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*int32, bool) {
+	if o == nil || IsNil(o.PercentOfDailyNeeds) {
+		return nil, false
+	}
+	return o.PercentOfDailyNeeds, true
+}
+
+// HasPercentOfDailyNeeds returns a boolean if a field has been set.
+func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool {
+	if o != nil && !IsNil(o.PercentOfDailyNeeds) {
+		return true
+	}
+
+	return false
+}
+
+// SetPercentOfDailyNeeds gets a reference to the given int32 and assigns it to the PercentOfDailyNeeds field.
+func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v int32) {
+	o.PercentOfDailyNeeds = &v
+}
+
 func (o ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -204,14 +204,14 @@ func (o ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) To
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !IsNil(o.PercentOfDailyNeeds) {
-		toSerialize["percent_of_daily_needs"] = o.PercentOfDailyNeeds
-	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount
 	}
 	if o.Unit.IsSet() {
 		toSerialize["unit"] = o.Unit.Get()
+	}
+	if !IsNil(o.PercentOfDailyNeeds) {
+		toSerialize["percent_of_daily_needs"] = o.PercentOfDailyNeeds
 	}
 	return toSerialize, nil
 }

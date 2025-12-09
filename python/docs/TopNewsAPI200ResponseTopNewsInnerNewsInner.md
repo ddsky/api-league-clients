@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | **str** |  | [optional] 
-**image** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
-**text** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**publish_date** | **str** |  | [optional] 
+**text** | **str** |  | [optional] 
+**summary** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
+**image** | **str** |  | [optional] 
+**publish_date** | **str** |  | [optional] 
 **authors** | **List[Optional[str]]** |  | [optional] 
 
 ## Example

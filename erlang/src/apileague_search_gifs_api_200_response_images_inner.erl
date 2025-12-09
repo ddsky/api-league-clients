@@ -5,16 +5,16 @@
 -export_type([apileague_search_gifs_api_200_response_images_inner/0]).
 
 -type apileague_search_gifs_api_200_response_images_inner() ::
-    #{ 'width' => integer(),
-       'url' => binary(),
+    #{ 'url' => binary(),
+       'width' => integer(),
        'height' => integer()
      }.
 
-encode(#{ 'width' := Width,
-          'url' := Url,
+encode(#{ 'url' := Url,
+          'width' := Width,
           'height' := Height
         }) ->
-    #{ 'width' => Width,
-       'url' => Url,
+    #{ 'url' => Url,
+       'width' => Width,
        'height' => Height
      }.

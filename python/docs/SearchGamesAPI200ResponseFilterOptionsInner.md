@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**filter_type** | **str** |  | [optional] 
 **key** | **str** |  | [optional] 
 **values** | [**List[SearchGamesAPI200ResponseFilterOptionsInnerValuesInner]**](SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md) |  | [optional] 
+**filter_type** | **str** |  | [optional] 
 **filter_connection** | **str** |  | [optional] 
 
 ## Example

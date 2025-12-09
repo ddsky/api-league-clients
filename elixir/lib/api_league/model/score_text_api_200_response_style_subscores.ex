@@ -14,9 +14,9 @@ defmodule APILeague.Model.ScoreTextApi200ResponseStyleSubscores do
   ]
 
   @type t :: %__MODULE__{
-    :abbreviation_score => [integer()] | nil,
-    :style_score => [integer()] | nil,
-    :spelling_score => [integer()] | nil
+    :abbreviation_score => [float()] | nil,
+    :style_score => [float()] | nil,
+    :spelling_score => [float()] | nil
   }
 
   def decode(value) do

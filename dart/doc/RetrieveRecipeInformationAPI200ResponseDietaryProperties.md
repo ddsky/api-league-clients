@@ -8,11 +8,11 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lowFodmap** | **bool** |  | [optional] 
 **vegetarian** | **bool** |  | [optional] 
 **vegan** | **bool** |  | [optional] 
 **glutenFree** | **bool** |  | [optional] 
 **dairyFree** | **bool** |  | [optional] 
+**lowFodmap** | **bool** |  | [optional] 
 **gaps** | **String** |  | [optional] 
 **diets** | **List<String>** |  | [optional] [default to const []]
 

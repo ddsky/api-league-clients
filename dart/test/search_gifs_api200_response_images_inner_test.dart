@@ -16,13 +16,13 @@ void main() {
   // final instance = SearchGifsAPI200ResponseImagesInner();
 
   group('test SearchGifsAPI200ResponseImagesInner', () {
-    // int width
-    test('to test the property `width`', () async {
+    // String url
+    test('to test the property `url`', () async {
       // TODO
     });
 
-    // String url
-    test('to test the property `url`', () async {
+    // int width
+    test('to test the property `width`', () async {
       // TODO
     });
 

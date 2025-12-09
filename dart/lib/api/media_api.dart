@@ -160,6 +160,80 @@ class MediaApi {
     return null;
   }
 
+  /// Screenshot API
+  ///
+  /// Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] url (required):
+  ///   The url of the web page for which a screenshot should be taken.
+  ///
+  /// * [int] width (required):
+  ///   The desired width of the screenshot.
+  ///
+  /// * [int] height (required):
+  ///   The desired height of the screenshot.
+  Future<Response> screenshotAPIWithHttpInfo(String url, int width, int height,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/take-screenshot';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+      queryParams.addAll(_queryParams('', 'url', url));
+      queryParams.addAll(_queryParams('', 'width', width));
+      queryParams.addAll(_queryParams('', 'height', height));
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Screenshot API
+  ///
+  /// Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] url (required):
+  ///   The url of the web page for which a screenshot should be taken.
+  ///
+  /// * [int] width (required):
+  ///   The desired width of the screenshot.
+  ///
+  /// * [int] height (required):
+  ///   The desired height of the screenshot.
+  Future<MultipartFile?> screenshotAPI(String url, int width, int height,) async {
+    final response = await screenshotAPIWithHttpInfo(url, width, height,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'MultipartFile',) as MultipartFile;
+    
+    }
+    return null;
+  }
+
   /// Search Icons API
   ///
   /// Search through millions of icons to match any topic you want.

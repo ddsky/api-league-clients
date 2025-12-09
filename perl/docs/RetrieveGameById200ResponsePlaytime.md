@@ -8,7 +8,7 @@ use WWW::OpenAPIClient::Object::RetrieveGameById200ResponsePlaytime;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentiles** | **ARRAY[int]** |  | [optional] 
+**percentiles** | **ARRAY[double]** |  | [optional] 
 **min** | **int** |  | [optional] 
 **median** | **int** |  | [optional] 
 **max** | **int** |  | [optional] 

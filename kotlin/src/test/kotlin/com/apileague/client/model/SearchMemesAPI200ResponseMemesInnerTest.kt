@@ -25,12 +25,6 @@ class SearchMemesAPI200ResponseMemesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchMemesAPI200ResponseMemesInner
         //val modelInstance = SearchMemesAPI200ResponseMemesInner()
 
-        // to test the property `type`
-        should("test type") {
-            // uncomment below to test the property
-            //modelInstance.type shouldBe ("TODO")
-        }
-
         // to test the property `description`
         should("test description") {
             // uncomment below to test the property
@@ -41,6 +35,12 @@ class SearchMemesAPI200ResponseMemesInnerTest : ShouldSpec() {
         should("test url") {
             // uncomment below to test the property
             //modelInstance.url shouldBe ("TODO")
+        }
+
+        // to test the property `type`
+        should("test type") {
+            // uncomment below to test the property
+            //modelInstance.type shouldBe ("TODO")
         }
 
     }

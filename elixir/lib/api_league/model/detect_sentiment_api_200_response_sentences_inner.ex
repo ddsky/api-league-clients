@@ -8,17 +8,17 @@ defmodule APILeague.Model.DetectSentimentApi200ResponseSentencesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :length,
     :sentiment,
     :offset,
-    :confidence
+    :confidence,
+    :length
   ]
 
   @type t :: %__MODULE__{
-    :length => integer() | nil,
     :sentiment => String.t | nil,
     :offset => integer() | nil,
-    :confidence => integer() | nil
+    :confidence => integer() | nil,
+    :length => integer() | nil
   }
 
   def decode(value) do

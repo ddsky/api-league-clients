@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,9 +21,9 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerSt
 // SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner struct for SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner
 type SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner struct {
 	Number *int32 `json:"number,omitempty"`
+	Step NullableString `json:"step,omitempty"`
 	Ingredients []SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner `json:"ingredients,omitempty"`
 	Equipment []*string `json:"equipment,omitempty"`
-	Step NullableString `json:"step,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner instantiates a new SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner object
@@ -73,6 +73,48 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) HasNu
 // SetNumber gets a reference to the given int32 and assigns it to the Number field.
 func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetNumber(v int32) {
 	o.Number = &v
+}
+
+// GetStep returns the Step field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStep() string {
+	if o == nil || IsNil(o.Step.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Step.Get()
+}
+
+// GetStepOk returns a tuple with the Step field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStepOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Step.Get(), o.Step.IsSet()
+}
+
+// HasStep returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) HasStep() bool {
+	if o != nil && o.Step.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetStep gets a reference to the given NullableString and assigns it to the Step field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStep(v string) {
+	o.Step.Set(&v)
+}
+// SetStepNil sets the value for Step to be an explicit nil
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStepNil() {
+	o.Step.Set(nil)
+}
+
+// UnsetStep ensures that no value is present for Step, not even an explicit nil
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) UnsetStep() {
+	o.Step.Unset()
 }
 
 // GetIngredients returns the Ingredients field value if set, zero value otherwise.
@@ -139,48 +181,6 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetEq
 	o.Equipment = v
 }
 
-// GetStep returns the Step field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStep() string {
-	if o == nil || IsNil(o.Step.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Step.Get()
-}
-
-// GetStepOk returns a tuple with the Step field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) GetStepOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Step.Get(), o.Step.IsSet()
-}
-
-// HasStep returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) HasStep() bool {
-	if o != nil && o.Step.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetStep gets a reference to the given NullableString and assigns it to the Step field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStep(v string) {
-	o.Step.Set(&v)
-}
-// SetStepNil sets the value for Step to be an explicit nil
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) SetStepNil() {
-	o.Step.Set(nil)
-}
-
-// UnsetStep ensures that no value is present for Step, not even an explicit nil
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) UnsetStep() {
-	o.Step.Unset()
-}
-
 func (o SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -194,14 +194,14 @@ func (o SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner) ToMap(
 	if !IsNil(o.Number) {
 		toSerialize["number"] = o.Number
 	}
+	if o.Step.IsSet() {
+		toSerialize["step"] = o.Step.Get()
+	}
 	if !IsNil(o.Ingredients) {
 		toSerialize["ingredients"] = o.Ingredients
 	}
 	if !IsNil(o.Equipment) {
 		toSerialize["equipment"] = o.Equipment
-	}
-	if o.Step.IsSet() {
-		toSerialize["step"] = o.Step.Get()
 	}
 	return toSerialize, nil
 }

@@ -8,7 +8,6 @@ All URIs are relative to *https://api.apileague.com*
 | [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
 | [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API |
 | [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API |
-| [**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API |
 
 
 <a id="computeNutritionAPI"></a>
@@ -429,76 +428,6 @@ try {
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-
-Configure apiKey:
-    ApiClient.apiKey["api-key"] = ""
-    ApiClient.apiKeyPrefix["api-key"] = ""
-Configure headerApiKey:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="searchRestaurantsAPI"></a>
-# **searchRestaurantsAPI**
-> SearchRestaurantsAPI200Response searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-```kotlin
-// Import classes:
-//import apileague.infrastructure.*
-//import com.apileague.client.model.*
-
-val apiInstance = FoodApi()
-val lat : kotlin.Double = 32.715736 // kotlin.Double | The latitude to search around.
-val lon : kotlin.Double = -117.161087 // kotlin.Double | The longitude to search around.
-val query : kotlin.String = burger // kotlin.String | The search query.
-val distance : kotlin.Int = 5 // kotlin.Int | The maximum distance of the restaurant in miles around the given location.
-val budget : kotlin.Double = 25 // kotlin.Double | The budget in USD for the meal.
-val minRating : kotlin.Double = 4.4 // kotlin.Double | The minimum rating of the restaurants in range [0,5].
-val cuisine : kotlin.String = Mexican // kotlin.String | The cuisine that the restaurants should support.
-val isOpen : kotlin.Boolean = true // kotlin.Boolean | Whether the restaurants have to be open now.
-val page : kotlin.Int = 0 // kotlin.Int | The page of the results.
-val sort : kotlin.String = rating // kotlin.String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-try {
-    val result : SearchRestaurantsAPI200Response = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling FoodApi#searchRestaurantsAPI")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling FoodApi#searchRestaurantsAPI")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **lat** | **kotlin.Double**| The latitude to search around. | |
-| **lon** | **kotlin.Double**| The longitude to search around. | |
-| **query** | **kotlin.String**| The search query. | [optional] |
-| **distance** | **kotlin.Int**| The maximum distance of the restaurant in miles around the given location. | [optional] |
-| **budget** | **kotlin.Double**| The budget in USD for the meal. | [optional] |
-| **minRating** | **kotlin.Double**| The minimum rating of the restaurants in range [0,5]. | [optional] |
-| **cuisine** | **kotlin.String**| The cuisine that the restaurants should support. | [optional] |
-| **isOpen** | **kotlin.Boolean**| Whether the restaurants have to be open now. | [optional] |
-| **page** | **kotlin.Int**| The page of the results. | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **sort** | **kotlin.String**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] |
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

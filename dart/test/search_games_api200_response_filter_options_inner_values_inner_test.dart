@@ -21,13 +21,13 @@ void main() {
       // TODO
     });
 
-    // int count
-    test('to test the property `count`', () async {
+    // String key
+    test('to test the property `key`', () async {
       // TODO
     });
 
-    // String key
-    test('to test the property `key`', () async {
+    // int count
+    test('to test the property `count`', () async {
       // TODO
     });
 

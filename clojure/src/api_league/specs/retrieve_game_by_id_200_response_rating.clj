@@ -7,12 +7,12 @@
 
 (def retrieve-game-by-id-200-response-rating-data
   {
-   (ds/opt :count) int?
-   (ds/opt :count_critics) int?
-   (ds/opt :mean_players) float?
-   (ds/opt :mean_critics) float?
    (ds/opt :mean) float?
+   (ds/opt :count) int?
+   (ds/opt :mean_players) float?
    (ds/opt :count_players) int?
+   (ds/opt :mean_critics) float?
+   (ds/opt :count_critics) int?
    })
 
 (def retrieve-game-by-id-200-response-rating-spec

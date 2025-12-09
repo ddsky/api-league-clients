@@ -5,25 +5,25 @@
 -export_type([apileague_retrieve_recipe_information_api_200_response_nutrition/0]).
 
 -type apileague_retrieve_recipe_information_api_200_response_nutrition() ::
-    #{ 'weight_per_serving' => apileague_search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving:apileague_search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving(),
-       'caloric_breakdown' => apileague_search_drinks_api_200_response_drinks_inner_nutrition_caloric_breakdown:apileague_search_drinks_api_200_response_drinks_inner_nutrition_caloric_breakdown(),
+    #{ 'nutrients' => list(),
+       'properties' => list(),
        'flavonoids' => list(),
        'ingredient_breakdown' => list(),
-       'properties' => list(),
-       'nutrients' => list()
+       'caloric_breakdown' => apileague_search_drinks_api_200_response_drinks_inner_nutrition_caloric_breakdown:apileague_search_drinks_api_200_response_drinks_inner_nutrition_caloric_breakdown(),
+       'weight_per_serving' => apileague_search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving:apileague_search_drinks_api_200_response_drinks_inner_nutrition_weight_per_serving()
      }.
 
-encode(#{ 'weight_per_serving' := WeightPerServing,
-          'caloric_breakdown' := CaloricBreakdown,
+encode(#{ 'nutrients' := Nutrients,
+          'properties' := Properties,
           'flavonoids' := Flavonoids,
           'ingredient_breakdown' := IngredientBreakdown,
-          'properties' := Properties,
-          'nutrients' := Nutrients
+          'caloric_breakdown' := CaloricBreakdown,
+          'weight_per_serving' := WeightPerServing
         }) ->
-    #{ 'weight_per_serving' => WeightPerServing,
-       'caloric_breakdown' => CaloricBreakdown,
+    #{ 'nutrients' => Nutrients,
+       'properties' => Properties,
        'flavonoids' => Flavonoids,
        'ingredient_breakdown' => IngredientBreakdown,
-       'properties' => Properties,
-       'nutrients' => Nutrients
+       'caloric_breakdown' => CaloricBreakdown,
+       'weight_per_serving' => WeightPerServing
      }.

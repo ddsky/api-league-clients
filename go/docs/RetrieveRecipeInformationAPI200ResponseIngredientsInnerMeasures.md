@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Metric** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
 **Us** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
+**Metric** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewRetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasuresWithDefaults instantiates a new RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMetric
-
-`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) GetMetric() SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric`
-
-GetMetric returns the Metric field if non-nil, zero value otherwise.
-
-### GetMetricOk
-
-`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) GetMetricOk() (*SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool)`
-
-GetMetricOk returns a tuple with the Metric field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetric
-
-`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) SetMetric(v SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric)`
-
-SetMetric sets Metric field to given value.
-
-### HasMetric
-
-`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) HasMetric() bool`
-
-HasMetric returns a boolean if a field has been set.
 
 ### GetUs
 
@@ -75,6 +50,31 @@ SetUs sets Us field to given value.
 `func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) HasUs() bool`
 
 HasUs returns a boolean if a field has been set.
+
+### GetMetric
+
+`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) GetMetric() SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric`
+
+GetMetric returns the Metric field if non-nil, zero value otherwise.
+
+### GetMetricOk
+
+`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) GetMetricOk() (*SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric, bool)`
+
+GetMetricOk returns a tuple with the Metric field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetric
+
+`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) SetMetric(v SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric)`
+
+SetMetric sets Metric field to given value.
+
+### HasMetric
+
+`func (o *RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures) HasMetric() bool`
+
+HasMetric returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

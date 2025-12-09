@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**hexCode** | **String** |  |  [optional] |
 |**specificColor** | **String** |  |  [optional] |
 |**mainColor** | **String** |  |  [optional] |
-|**hexCode** | **String** |  |  [optional] |
 
 
 

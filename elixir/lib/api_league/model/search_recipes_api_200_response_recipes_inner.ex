@@ -8,17 +8,17 @@ defmodule APILeague.Model.SearchRecipesApi200ResponseRecipesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :images,
-    :nutrition,
     :id,
-    :title
+    :title,
+    :images,
+    :nutrition
   ]
 
   @type t :: %__MODULE__{
-    :images => [String.t] | nil,
-    :nutrition => APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutrition.t | nil,
     :id => integer() | nil,
-    :title => String.t | nil
+    :title => String.t | nil,
+    :images => [String.t] | nil,
+    :nutrition => APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutrition.t | nil
   }
 
   alias APILeague.Deserializer

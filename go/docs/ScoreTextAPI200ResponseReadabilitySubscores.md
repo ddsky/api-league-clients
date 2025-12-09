@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ReadingTimeSeconds** | Pointer to **int32** |  | [optional] 
 **Forcast** | Pointer to **float32** |  | [optional] 
 **Flesch** | Pointer to **float32** |  | [optional] 
 **Smog** | Pointer to **float32** |  | [optional] 
 **Ari** | Pointer to **float32** |  | [optional] 
 **Lix** | Pointer to **float32** |  | [optional] 
-**ColemanLiau** | Pointer to **float32** |  | [optional] 
 **Kincaid** | Pointer to **float32** |  | [optional] 
 **Fog** | Pointer to **float32** |  | [optional] 
+**ColemanLiau** | Pointer to **float32** |  | [optional] 
+**ReadingTimeSeconds** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -32,31 +32,6 @@ will change when the set of required properties is changed
 NewScoreTextAPI200ResponseReadabilitySubscoresWithDefaults instantiates a new ScoreTextAPI200ResponseReadabilitySubscores object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetReadingTimeSeconds
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSeconds() int32`
-
-GetReadingTimeSeconds returns the ReadingTimeSeconds field if non-nil, zero value otherwise.
-
-### GetReadingTimeSecondsOk
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSecondsOk() (*int32, bool)`
-
-GetReadingTimeSecondsOk returns a tuple with the ReadingTimeSeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadingTimeSeconds
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetReadingTimeSeconds(v int32)`
-
-SetReadingTimeSeconds sets ReadingTimeSeconds field to given value.
-
-### HasReadingTimeSeconds
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasReadingTimeSeconds() bool`
-
-HasReadingTimeSeconds returns a boolean if a field has been set.
 
 ### GetForcast
 
@@ -183,31 +158,6 @@ SetLix sets Lix field to given value.
 
 HasLix returns a boolean if a field has been set.
 
-### GetColemanLiau
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiau() float32`
-
-GetColemanLiau returns the ColemanLiau field if non-nil, zero value otherwise.
-
-### GetColemanLiauOk
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiauOk() (*float32, bool)`
-
-GetColemanLiauOk returns a tuple with the ColemanLiau field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetColemanLiau
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetColemanLiau(v float32)`
-
-SetColemanLiau sets ColemanLiau field to given value.
-
-### HasColemanLiau
-
-`func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasColemanLiau() bool`
-
-HasColemanLiau returns a boolean if a field has been set.
-
 ### GetKincaid
 
 `func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetKincaid() float32`
@@ -257,6 +207,56 @@ SetFog sets Fog field to given value.
 `func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasFog() bool`
 
 HasFog returns a boolean if a field has been set.
+
+### GetColemanLiau
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiau() float32`
+
+GetColemanLiau returns the ColemanLiau field if non-nil, zero value otherwise.
+
+### GetColemanLiauOk
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiauOk() (*float32, bool)`
+
+GetColemanLiauOk returns a tuple with the ColemanLiau field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColemanLiau
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetColemanLiau(v float32)`
+
+SetColemanLiau sets ColemanLiau field to given value.
+
+### HasColemanLiau
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasColemanLiau() bool`
+
+HasColemanLiau returns a boolean if a field has been set.
+
+### GetReadingTimeSeconds
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSeconds() int32`
+
+GetReadingTimeSeconds returns the ReadingTimeSeconds field if non-nil, zero value otherwise.
+
+### GetReadingTimeSecondsOk
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSecondsOk() (*int32, bool)`
+
+GetReadingTimeSecondsOk returns a tuple with the ReadingTimeSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadingTimeSeconds
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetReadingTimeSeconds(v int32)`
+
+SetReadingTimeSeconds sets ReadingTimeSeconds field to given value.
+
+### HasReadingTimeSeconds
+
+`func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasReadingTimeSeconds() bool`
+
+HasReadingTimeSeconds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

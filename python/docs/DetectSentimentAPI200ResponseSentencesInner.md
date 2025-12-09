@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**length** | **int** |  | [optional] 
 **sentiment** | **str** |  | [optional] 
 **offset** | **int** |  | [optional] 
 **confidence** | **int** |  | [optional] 
+**length** | **int** |  | [optional] 
 
 ## Example
 

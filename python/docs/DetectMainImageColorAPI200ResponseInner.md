@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**hex_code** | **str** |  | [optional] 
 **specific_color** | **str** |  | [optional] 
 **main_color** | **str** |  | [optional] 
-**hex_code** | **str** |  | [optional] 
 
 ## Example
 

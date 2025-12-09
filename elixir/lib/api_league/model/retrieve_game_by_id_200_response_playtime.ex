@@ -17,7 +17,7 @@ defmodule APILeague.Model.RetrieveGameById200ResponsePlaytime do
   ]
 
   @type t :: %__MODULE__{
-    :percentiles => [integer()] | nil,
+    :percentiles => [float()] | nil,
     :min => integer() | nil,
     :median => integer() | nil,
     :max => integer() | nil,

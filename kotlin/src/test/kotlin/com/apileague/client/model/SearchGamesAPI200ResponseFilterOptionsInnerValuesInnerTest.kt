@@ -31,16 +31,16 @@ class SearchGamesAPI200ResponseFilterOptionsInnerValuesInnerTest : ShouldSpec() 
             //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `count`
-        should("test count") {
-            // uncomment below to test the property
-            //modelInstance.count shouldBe ("TODO")
-        }
-
         // to test the property `key`
         should("test key") {
             // uncomment below to test the property
             //modelInstance.key shouldBe ("TODO")
+        }
+
+        // to test the property `count`
+        should("test count") {
+            // uncomment below to test the property
+            //modelInstance.count shouldBe ("TODO")
         }
 
     }

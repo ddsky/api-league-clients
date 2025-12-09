@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &RetrieveGameById200ResponsePlaytime{}
 
 // RetrieveGameById200ResponsePlaytime struct for RetrieveGameById200ResponsePlaytime
 type RetrieveGameById200ResponsePlaytime struct {
-	Percentiles []int32 `json:"percentiles,omitempty"`
+	Percentiles []float32 `json:"percentiles,omitempty"`
 	Min *int32 `json:"min,omitempty"`
 	Median *int32 `json:"median,omitempty"`
 	Max *int32 `json:"max,omitempty"`
@@ -46,9 +46,9 @@ func NewRetrieveGameById200ResponsePlaytimeWithDefaults() *RetrieveGameById200Re
 }
 
 // GetPercentiles returns the Percentiles field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponsePlaytime) GetPercentiles() []int32 {
+func (o *RetrieveGameById200ResponsePlaytime) GetPercentiles() []float32 {
 	if o == nil || IsNil(o.Percentiles) {
-		var ret []int32
+		var ret []float32
 		return ret
 	}
 	return o.Percentiles
@@ -56,7 +56,7 @@ func (o *RetrieveGameById200ResponsePlaytime) GetPercentiles() []int32 {
 
 // GetPercentilesOk returns a tuple with the Percentiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponsePlaytime) GetPercentilesOk() ([]int32, bool) {
+func (o *RetrieveGameById200ResponsePlaytime) GetPercentilesOk() ([]float32, bool) {
 	if o == nil || IsNil(o.Percentiles) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *RetrieveGameById200ResponsePlaytime) HasPercentiles() bool {
 	return false
 }
 
-// SetPercentiles gets a reference to the given []int32 and assigns it to the Percentiles field.
-func (o *RetrieveGameById200ResponsePlaytime) SetPercentiles(v []int32) {
+// SetPercentiles gets a reference to the given []float32 and assigns it to the Percentiles field.
+func (o *RetrieveGameById200ResponsePlaytime) SetPercentiles(v []float32) {
 	o.Percentiles = v
 }
 

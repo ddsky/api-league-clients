@@ -25,16 +25,16 @@ class SearchGifsAPI200ResponseImagesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchGifsAPI200ResponseImagesInner
         //val modelInstance = SearchGifsAPI200ResponseImagesInner()
 
-        // to test the property `width`
-        should("test width") {
-            // uncomment below to test the property
-            //modelInstance.width shouldBe ("TODO")
-        }
-
         // to test the property `url`
         should("test url") {
             // uncomment below to test the property
             //modelInstance.url shouldBe ("TODO")
+        }
+
+        // to test the property `width`
+        should("test width") {
+            // uncomment below to test the property
+            //modelInstance.width shouldBe ("TODO")
         }
 
         // to test the property `height`

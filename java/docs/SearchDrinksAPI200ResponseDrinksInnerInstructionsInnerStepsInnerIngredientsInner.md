@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**id** | **Integer** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**image** | **String** |  |  [optional] |
-|**id** | **Integer** |  |  [optional] |
 
 
 

@@ -24,9 +24,9 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param number 
+ * @param step 
  * @param ingredients 
  * @param equipment 
- * @param step 
  */
 
 
@@ -35,14 +35,14 @@ data class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner (
     @Json(name = "number")
     val number: kotlin.Int? = null,
 
+    @Json(name = "step")
+    val step: kotlin.String? = null,
+
     @Json(name = "ingredients")
     val ingredients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner>? = null,
 
     @Json(name = "equipment")
-    val equipment: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "step")
-    val step: kotlin.String? = null
+    val equipment: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

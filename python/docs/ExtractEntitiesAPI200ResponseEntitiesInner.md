@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_position** | **int** |  | [optional] 
-**image** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
+**start_position** | **int** |  | [optional] 
 **end_position** | **int** |  | [optional] 
+**image** | **str** |  | [optional] 
 
 ## Example
 

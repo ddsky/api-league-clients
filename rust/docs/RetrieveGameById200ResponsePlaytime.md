@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentiles** | Option<**Vec<i32>**> |  | [optional]
+**percentiles** | Option<**Vec<f64>**> |  | [optional]
 **min** | Option<**i32**> |  | [optional]
 **median** | Option<**i32**> |  | [optional]
 **max** | Option<**i32**> |  | [optional]

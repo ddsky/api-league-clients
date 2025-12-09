@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMea
 
 // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric struct for SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric
 type SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric struct {
-	UnitShort NullableString `json:"unit_short,omitempty"`
 	Amount *float32 `json:"amount,omitempty"`
+	UnitShort NullableString `json:"unit_short,omitempty"`
 	UnitLong NullableString `json:"unit_long,omitempty"`
 }
 
@@ -40,6 +40,38 @@ func NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric() *S
 func NewSearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetricWithDefaults() *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric {
 	this := SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric{}
 	return &this
+}
+
+// GetAmount returns the Amount field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmount() float32 {
+	if o == nil || IsNil(o.Amount) {
+		var ret float32
+		return ret
+	}
+	return *o.Amount
+}
+
+// GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmountOk() (*float32, bool) {
+	if o == nil || IsNil(o.Amount) {
+		return nil, false
+	}
+	return o.Amount, true
+}
+
+// HasAmount returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) HasAmount() bool {
+	if o != nil && !IsNil(o.Amount) {
+		return true
+	}
+
+	return false
+}
+
+// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) SetAmount(v float32) {
+	o.Amount = &v
 }
 
 // GetUnitShort returns the UnitShort field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -82,38 +114,6 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) Se
 // UnsetUnitShort ensures that no value is present for UnitShort, not even an explicit nil
 func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) UnsetUnitShort() {
 	o.UnitShort.Unset()
-}
-
-// GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmount() float32 {
-	if o == nil || IsNil(o.Amount) {
-		var ret float32
-		return ret
-	}
-	return *o.Amount
-}
-
-// GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) GetAmountOk() (*float32, bool) {
-	if o == nil || IsNil(o.Amount) {
-		return nil, false
-	}
-	return o.Amount, true
-}
-
-// HasAmount returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) HasAmount() bool {
-	if o != nil && !IsNil(o.Amount) {
-		return true
-	}
-
-	return false
-}
-
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) SetAmount(v float32) {
-	o.Amount = &v
 }
 
 // GetUnitLong returns the UnitLong field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -168,11 +168,11 @@ func (o SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) Mar
 
 func (o SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.UnitShort.IsSet() {
-		toSerialize["unit_short"] = o.UnitShort.Get()
-	}
 	if !IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount
+	}
+	if o.UnitShort.IsSet() {
+		toSerialize["unit_short"] = o.UnitShort.Get()
 	}
 	if o.UnitLong.IsSet() {
 		toSerialize["unit_long"] = o.UnitLong.Get()

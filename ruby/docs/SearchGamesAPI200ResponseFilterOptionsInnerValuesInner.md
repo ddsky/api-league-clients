@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  | [optional] |
-| **count** | **Integer** |  | [optional] |
 | **key** | **String** |  | [optional] |
+| **count** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -15,8 +15,8 @@ require 'openapi_client'
 
 instance = OpenapiClient::SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.new(
   name: null,
-  count: null,
-  key: null
+  key: null,
+  count: null
 )
 ```
 

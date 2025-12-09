@@ -8,18 +8,18 @@ use WWW::OpenAPIClient::Object::RetrieveRecipeInformationAPI200ResponseIngredien
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | **string** |  | [optional] 
-**name_clean** | **string** |  | [optional] 
-**amount** | **double** |  | [optional] 
-**unit** | **string** |  | [optional] 
-**measures** | [**RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures**](RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.md) |  | [optional] 
-**original** | **string** |  | [optional] 
-**meta** | **ARRAY[string]** |  | [optional] 
-**original_name** | **string** |  | [optional] 
-**name** | **string** |  | [optional] 
 **id** | **int** |  | [optional] 
 **aisle** | **string** |  | [optional] 
+**image** | **string** |  | [optional] 
 **consistency** | **string** |  | [optional] 
+**name** | **string** |  | [optional] 
+**original** | **string** |  | [optional] 
+**amount** | **double** |  | [optional] 
+**unit** | **string** |  | [optional] 
+**meta** | **ARRAY[string]** |  | [optional] 
+**measures** | [**RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures**](RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures.md) |  | [optional] 
+**original_name** | **string** |  | [optional] 
+**name_clean** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

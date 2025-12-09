@@ -13,21 +13,21 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseNutrition {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseNutrition] instance.
   RetrieveRecipeInformationAPI200ResponseNutrition({
-    this.weightPerServing,
-    this.caloricBreakdown,
+    this.nutrients = const [],
+    this.properties = const [],
     this.flavonoids = const [],
     this.ingredientBreakdown = const [],
-    this.properties = const [],
-    this.nutrients = const [],
+    this.caloricBreakdown,
+    this.weightPerServing,
   });
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing? weightPerServing;
+  List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner> nutrients;
+
+  List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner> properties;
+
+  List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner> flavonoids;
+
+  List<RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner> ingredientBreakdown;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -37,52 +37,52 @@ class RetrieveRecipeInformationAPI200ResponseNutrition {
   ///
   SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown? caloricBreakdown;
 
-  List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner> flavonoids;
-
-  List<RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner> ingredientBreakdown;
-
-  List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner> properties;
-
-  List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner> nutrients;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing? weightPerServing;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseNutrition &&
-    other.weightPerServing == weightPerServing &&
-    other.caloricBreakdown == caloricBreakdown &&
+    _deepEquality.equals(other.nutrients, nutrients) &&
+    _deepEquality.equals(other.properties, properties) &&
     _deepEquality.equals(other.flavonoids, flavonoids) &&
     _deepEquality.equals(other.ingredientBreakdown, ingredientBreakdown) &&
-    _deepEquality.equals(other.properties, properties) &&
-    _deepEquality.equals(other.nutrients, nutrients);
+    other.caloricBreakdown == caloricBreakdown &&
+    other.weightPerServing == weightPerServing;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (weightPerServing == null ? 0 : weightPerServing!.hashCode) +
-    (caloricBreakdown == null ? 0 : caloricBreakdown!.hashCode) +
+    (nutrients.hashCode) +
+    (properties.hashCode) +
     (flavonoids.hashCode) +
     (ingredientBreakdown.hashCode) +
-    (properties.hashCode) +
-    (nutrients.hashCode);
+    (caloricBreakdown == null ? 0 : caloricBreakdown!.hashCode) +
+    (weightPerServing == null ? 0 : weightPerServing!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseNutrition[weightPerServing=$weightPerServing, caloricBreakdown=$caloricBreakdown, flavonoids=$flavonoids, ingredientBreakdown=$ingredientBreakdown, properties=$properties, nutrients=$nutrients]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseNutrition[nutrients=$nutrients, properties=$properties, flavonoids=$flavonoids, ingredientBreakdown=$ingredientBreakdown, caloricBreakdown=$caloricBreakdown, weightPerServing=$weightPerServing]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.weightPerServing != null) {
-      json[r'weight_per_serving'] = this.weightPerServing;
-    } else {
-      json[r'weight_per_serving'] = null;
-    }
+      json[r'nutrients'] = this.nutrients;
+      json[r'properties'] = this.properties;
+      json[r'flavonoids'] = this.flavonoids;
+      json[r'ingredient_breakdown'] = this.ingredientBreakdown;
     if (this.caloricBreakdown != null) {
       json[r'caloric_breakdown'] = this.caloricBreakdown;
     } else {
       json[r'caloric_breakdown'] = null;
     }
-      json[r'flavonoids'] = this.flavonoids;
-      json[r'ingredient_breakdown'] = this.ingredientBreakdown;
-      json[r'properties'] = this.properties;
-      json[r'nutrients'] = this.nutrients;
+    if (this.weightPerServing != null) {
+      json[r'weight_per_serving'] = this.weightPerServing;
+    } else {
+      json[r'weight_per_serving'] = null;
+    }
     return json;
   }
 
@@ -105,12 +105,12 @@ class RetrieveRecipeInformationAPI200ResponseNutrition {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseNutrition(
-        weightPerServing: SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.fromJson(json[r'weight_per_serving']),
-        caloricBreakdown: SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.fromJson(json[r'caloric_breakdown']),
-        flavonoids: SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.listFromJson(json[r'flavonoids']),
-        ingredientBreakdown: RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner.listFromJson(json[r'ingredient_breakdown']),
-        properties: SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.listFromJson(json[r'properties']),
         nutrients: SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.listFromJson(json[r'nutrients']),
+        properties: SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.listFromJson(json[r'properties']),
+        flavonoids: SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.listFromJson(json[r'flavonoids']),
+        ingredientBreakdown: RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner.listFromJson(json[r'ingredient_breakdown']),
+        caloricBreakdown: SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.fromJson(json[r'caloric_breakdown']),
+        weightPerServing: SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.fromJson(json[r'weight_per_serving']),
       );
     }
     return null;

@@ -23,27 +23,27 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param storeName 
- * @param title 
  * @param price 
+ * @param storeName 
  * @param platform 
+ * @param title 
  * @param url 
  */
 
 
 data class RetrieveGameById200ResponseOffersInner (
 
-    @Json(name = "store_name")
-    val storeName: kotlin.String? = null,
-
-    @Json(name = "title")
-    val title: kotlin.String? = null,
-
     @Json(name = "price")
     val price: RetrieveGameById200ResponseOffersInnerPrice? = null,
 
+    @Json(name = "store_name")
+    val storeName: kotlin.String? = null,
+
     @Json(name = "platform")
     val platform: kotlin.String? = null,
+
+    @Json(name = "title")
+    val title: kotlin.String? = null,
 
     @Json(name = "url")
     val url: kotlin.String? = null

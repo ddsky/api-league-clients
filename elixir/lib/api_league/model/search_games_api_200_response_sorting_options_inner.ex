@@ -9,14 +9,14 @@ defmodule APILeague.Model.SearchGamesApi200ResponseSortingOptionsInner do
   @derive Jason.Encoder
   defstruct [
     :name,
-    :key,
-    :sort
+    :sort,
+    :key
   ]
 
   @type t :: %__MODULE__{
     :name => String.t | nil,
-    :key => String.t | nil,
-    :sort => String.t | nil
+    :sort => String.t | nil,
+    :key => String.t | nil
   }
 
   def decode(value) do

@@ -22,34 +22,34 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param bulletPointRatioScore 
- * @param imageScore 
  * @param highlightedWordRatioScore 
+ * @param bulletPointRatioScore 
+ * @param paragraphHeadlineRatioScore 
+ * @param imageScore 
  * @param videoScore 
  * @param paragraphScore 
- * @param paragraphHeadlineRatioScore 
  */
 
 
 data class ScoreTextAPI200ResponseSkimmabilitySubscores (
 
-    @Json(name = "bullet_point_ratio_score")
-    val bulletPointRatioScore: kotlin.collections.List<kotlin.Int>? = null,
-
-    @Json(name = "image_score")
-    val imageScore: kotlin.collections.List<kotlin.Int>? = null,
-
     @Json(name = "highlighted_word_ratio_score")
-    val highlightedWordRatioScore: kotlin.collections.List<kotlin.Int>? = null,
+    val highlightedWordRatioScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
-    @Json(name = "video_score")
-    val videoScore: kotlin.collections.List<kotlin.Int>? = null,
-
-    @Json(name = "paragraph_score")
-    val paragraphScore: kotlin.collections.List<kotlin.Int>? = null,
+    @Json(name = "bullet_point_ratio_score")
+    val bulletPointRatioScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
     @Json(name = "paragraph_headline_ratio_score")
-    val paragraphHeadlineRatioScore: kotlin.collections.List<kotlin.Int>? = null
+    val paragraphHeadlineRatioScore: kotlin.collections.List<java.math.BigDecimal>? = null,
+
+    @Json(name = "image_score")
+    val imageScore: kotlin.collections.List<java.math.BigDecimal>? = null,
+
+    @Json(name = "video_score")
+    val videoScore: kotlin.collections.List<java.math.BigDecimal>? = null,
+
+    @Json(name = "paragraph_score")
+    val paragraphScore: kotlin.collections.List<java.math.BigDecimal>? = null
 
 ) {
 

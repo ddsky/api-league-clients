@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta_score** | **float** |  | [optional] 
 **weight_watcher_smart_points** | **int** |  | [optional] 
 **health_score** | **int** |  | [optional] 
+**meta_score** | **float** |  | [optional] 
 
 ## Example
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Fattiness** | Pointer to **float32** |  | [optional] 
-**Spiciness** | Pointer to **int32** |  | [optional] 
+**Sweetness** | Pointer to **float32** |  | [optional] 
 **Saltiness** | Pointer to **int32** |  | [optional] 
+**Sourness** | Pointer to **float32** |  | [optional] 
 **Bitterness** | Pointer to **float32** |  | [optional] 
 **Savoriness** | Pointer to **float32** |  | [optional] 
-**Sweetness** | Pointer to **float32** |  | [optional] 
-**Sourness** | Pointer to **float32** |  | [optional] 
+**Fattiness** | Pointer to **float32** |  | [optional] 
+**Spiciness** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -31,55 +31,30 @@ NewRetrieveRecipeInformationAPI200ResponseTasteWithDefaults instantiates a new R
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetFattiness
+### GetSweetness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattiness() float32`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetness() float32`
 
-GetFattiness returns the Fattiness field if non-nil, zero value otherwise.
+GetSweetness returns the Sweetness field if non-nil, zero value otherwise.
 
-### GetFattinessOk
+### GetSweetnessOk
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattinessOk() (*float32, bool)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetnessOk() (*float32, bool)`
 
-GetFattinessOk returns a tuple with the Fattiness field if it's non-nil, zero value otherwise
+GetSweetnessOk returns a tuple with the Sweetness field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFattiness
+### SetSweetness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetFattiness(v float32)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSweetness(v float32)`
 
-SetFattiness sets Fattiness field to given value.
+SetSweetness sets Sweetness field to given value.
 
-### HasFattiness
+### HasSweetness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasFattiness() bool`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSweetness() bool`
 
-HasFattiness returns a boolean if a field has been set.
-
-### GetSpiciness
-
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpiciness() int32`
-
-GetSpiciness returns the Spiciness field if non-nil, zero value otherwise.
-
-### GetSpicinessOk
-
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpicinessOk() (*int32, bool)`
-
-GetSpicinessOk returns a tuple with the Spiciness field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSpiciness
-
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSpiciness(v int32)`
-
-SetSpiciness sets Spiciness field to given value.
-
-### HasSpiciness
-
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSpiciness() bool`
-
-HasSpiciness returns a boolean if a field has been set.
+HasSweetness returns a boolean if a field has been set.
 
 ### GetSaltiness
 
@@ -105,6 +80,31 @@ SetSaltiness sets Saltiness field to given value.
 `func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSaltiness() bool`
 
 HasSaltiness returns a boolean if a field has been set.
+
+### GetSourness
+
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSourness() float32`
+
+GetSourness returns the Sourness field if non-nil, zero value otherwise.
+
+### GetSournessOk
+
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSournessOk() (*float32, bool)`
+
+GetSournessOk returns a tuple with the Sourness field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourness
+
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSourness(v float32)`
+
+SetSourness sets Sourness field to given value.
+
+### HasSourness
+
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSourness() bool`
+
+HasSourness returns a boolean if a field has been set.
 
 ### GetBitterness
 
@@ -156,55 +156,55 @@ SetSavoriness sets Savoriness field to given value.
 
 HasSavoriness returns a boolean if a field has been set.
 
-### GetSweetness
+### GetFattiness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetness() float32`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattiness() float32`
 
-GetSweetness returns the Sweetness field if non-nil, zero value otherwise.
+GetFattiness returns the Fattiness field if non-nil, zero value otherwise.
 
-### GetSweetnessOk
+### GetFattinessOk
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetnessOk() (*float32, bool)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattinessOk() (*float32, bool)`
 
-GetSweetnessOk returns a tuple with the Sweetness field if it's non-nil, zero value otherwise
+GetFattinessOk returns a tuple with the Fattiness field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSweetness
+### SetFattiness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSweetness(v float32)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetFattiness(v float32)`
 
-SetSweetness sets Sweetness field to given value.
+SetFattiness sets Fattiness field to given value.
 
-### HasSweetness
+### HasFattiness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSweetness() bool`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasFattiness() bool`
 
-HasSweetness returns a boolean if a field has been set.
+HasFattiness returns a boolean if a field has been set.
 
-### GetSourness
+### GetSpiciness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSourness() float32`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpiciness() int32`
 
-GetSourness returns the Sourness field if non-nil, zero value otherwise.
+GetSpiciness returns the Spiciness field if non-nil, zero value otherwise.
 
-### GetSournessOk
+### GetSpicinessOk
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSournessOk() (*float32, bool)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpicinessOk() (*int32, bool)`
 
-GetSournessOk returns a tuple with the Sourness field if it's non-nil, zero value otherwise
+GetSpicinessOk returns a tuple with the Spiciness field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSourness
+### SetSpiciness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSourness(v float32)`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSpiciness(v int32)`
 
-SetSourness sets Sourness field to given value.
+SetSpiciness sets Spiciness field to given value.
 
-### HasSourness
+### HasSpiciness
 
-`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSourness() bool`
+`func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSpiciness() bool`
 
-HasSourness returns a boolean if a field has been set.
+HasSpiciness returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

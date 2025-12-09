@@ -16,6 +16,16 @@ void main() {
   // final instance = ExtractNewsAPI200ResponseVideosInner();
 
   group('test ExtractNewsAPI200ResponseVideosInner', () {
+    // String title
+    test('to test the property `title`', () async {
+      // TODO
+    });
+
+    // String url
+    test('to test the property `url`', () async {
+      // TODO
+    });
+
     // String summary
     test('to test the property `summary`', () async {
       // TODO
@@ -28,16 +38,6 @@ void main() {
 
     // String thumbnail
     test('to test the property `thumbnail`', () async {
-      // TODO
-    });
-
-    // String title
-    test('to test the property `title`', () async {
-      // TODO
-    });
-
-    // String url
-    test('to test the property `url`', () async {
       // TODO
     });
 

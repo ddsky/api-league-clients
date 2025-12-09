@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  | [optional] |
-| **key** | **String** |  | [optional] |
 | **sort** | **String** |  | [optional] |
+| **key** | **String** |  | [optional] |
 
 ## Example
 
@@ -15,8 +15,8 @@ require 'openapi_client'
 
 instance = OpenapiClient::SearchGamesAPI200ResponseSortingOptionsInner.new(
   name: null,
-  key: null,
-  sort: null
+  sort: null,
+  key: null
 )
 ```
 

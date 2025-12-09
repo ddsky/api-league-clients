@@ -40,6 +40,8 @@ docs/MathApi.md
 docs/MediaApi.md
 docs/NewsApi.md
 docs/PluralizeWordAPI200Response.md
+docs/RandomAffirmationAPI200Response.md
+docs/RandomLifeHackAPI200Response.md
 docs/RandomMemeAPI200Response.md
 docs/RandomPoemAPI200Response.md
 docs/RandomQuoteAPI200Response.md
@@ -92,10 +94,10 @@ docs/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutrition.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md
-docs/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md
+docs/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGamesAPI200Response.md
 docs/SearchGamesAPI200ResponseActiveFilterOptionsInner.md
@@ -109,6 +111,7 @@ docs/SearchGamesAPI200ResponseSortingOptionsInner.md
 docs/SearchGifsAPI200Response.md
 docs/SearchGifsAPI200ResponseImagesInner.md
 docs/SearchIconsAPI200Response.md
+docs/SearchIconsAPI200ResponseIconsInner.md
 docs/SearchJokesAPI200Response.md
 docs/SearchJokesAPI200ResponseJokesInner.md
 docs/SearchMemesAPI200Response.md
@@ -119,11 +122,6 @@ docs/SearchRecipesAPI200Response.md
 docs/SearchRecipesAPI200ResponseRecipesInner.md
 docs/SearchRecipesAPI200ResponseRecipesInnerNutrition.md
 docs/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md
-docs/SearchRestaurantsAPI200Response.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInner.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.md
 docs/SearchRoyaltyFreeImagesAPI200Response.md
 docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md
 docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md
@@ -198,6 +196,8 @@ src/main/java/com/apileague/client/model/FindSimilarGamesAPI200ResponseResultsIn
 src/main/java/com/apileague/client/model/GenerateNonsenseWordAPI200Response.java
 src/main/java/com/apileague/client/model/ListWordSynonymsAPI200Response.java
 src/main/java/com/apileague/client/model/PluralizeWordAPI200Response.java
+src/main/java/com/apileague/client/model/RandomAffirmationAPI200Response.java
+src/main/java/com/apileague/client/model/RandomLifeHackAPI200Response.java
 src/main/java/com/apileague/client/model/RandomMemeAPI200Response.java
 src/main/java/com/apileague/client/model/RandomPoemAPI200Response.java
 src/main/java/com/apileague/client/model/RandomQuoteAPI200Response.java
@@ -250,10 +250,10 @@ src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerIn
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutrition.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.java
-src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.java
+src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.java
 src/main/java/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.java
 src/main/java/com/apileague/client/model/SearchGamesAPI200Response.java
 src/main/java/com/apileague/client/model/SearchGamesAPI200ResponseActiveFilterOptionsInner.java
@@ -267,6 +267,7 @@ src/main/java/com/apileague/client/model/SearchGamesAPI200ResponseSortingOptions
 src/main/java/com/apileague/client/model/SearchGifsAPI200Response.java
 src/main/java/com/apileague/client/model/SearchGifsAPI200ResponseImagesInner.java
 src/main/java/com/apileague/client/model/SearchIconsAPI200Response.java
+src/main/java/com/apileague/client/model/SearchIconsAPI200ResponseIconsInner.java
 src/main/java/com/apileague/client/model/SearchJokesAPI200Response.java
 src/main/java/com/apileague/client/model/SearchJokesAPI200ResponseJokesInner.java
 src/main/java/com/apileague/client/model/SearchMemesAPI200Response.java
@@ -277,11 +278,6 @@ src/main/java/com/apileague/client/model/SearchRecipesAPI200Response.java
 src/main/java/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInner.java
 src/main/java/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerNutrition.java
 src/main/java/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.java
-src/main/java/com/apileague/client/model/SearchRestaurantsAPI200Response.java
-src/main/java/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInner.java
-src/main/java/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.java
-src/main/java/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.java
-src/main/java/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.java
 src/main/java/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200Response.java
 src/main/java/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.java
 src/main/java/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.java

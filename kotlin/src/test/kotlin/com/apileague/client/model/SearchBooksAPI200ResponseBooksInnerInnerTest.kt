@@ -25,6 +25,12 @@ class SearchBooksAPI200ResponseBooksInnerInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchBooksAPI200ResponseBooksInnerInner
         //val modelInstance = SearchBooksAPI200ResponseBooksInnerInner()
 
+        // to test the property `id`
+        should("test id") {
+            // uncomment below to test the property
+            //modelInstance.id shouldBe ("TODO")
+        }
+
         // to test the property `title`
         should("test title") {
             // uncomment below to test the property
@@ -35,12 +41,6 @@ class SearchBooksAPI200ResponseBooksInnerInnerTest : ShouldSpec() {
         should("test image") {
             // uncomment below to test the property
             //modelInstance.image shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
         }
 
     }

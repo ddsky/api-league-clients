@@ -22,19 +22,19 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param width 
  * @param url 
+ * @param width 
  * @param height 
  */
 
 
 data class SearchGifsAPI200ResponseImagesInner (
 
-    @Json(name = "width")
-    val width: kotlin.Int? = null,
-
     @Json(name = "url")
     val url: kotlin.String? = null,
+
+    @Json(name = "width")
+    val width: kotlin.Int? = null,
 
     @Json(name = "height")
     val height: kotlin.Int? = null

@@ -18,7 +18,7 @@ defmodule APILeague.Model.ComputeNutritionApi200Response do
 
   @type t :: %__MODULE__{
     :nutrients => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner.t] | nil,
-    :properties => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionFlavonoidsInner.t] | nil,
+    :properties => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionPropertiesInner.t] | nil,
     :flavonoids => [APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner.t] | nil,
     :ingredient_breakdown => [APILeague.Model.ComputeNutritionApi200ResponseIngredientBreakdownInner.t] | nil,
     :caloric_breakdown => APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown.t | nil,
@@ -30,7 +30,7 @@ defmodule APILeague.Model.ComputeNutritionApi200Response do
   def decode(value) do
     value
      |> Deserializer.deserialize(:nutrients, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner)
-     |> Deserializer.deserialize(:properties, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionFlavonoidsInner)
+     |> Deserializer.deserialize(:properties, :list, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionPropertiesInner)
      |> Deserializer.deserialize(:flavonoids, :list, APILeague.Model.SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner)
      |> Deserializer.deserialize(:ingredient_breakdown, :list, APILeague.Model.ComputeNutritionApi200ResponseIngredientBreakdownInner)
      |> Deserializer.deserialize(:caloric_breakdown, :struct, APILeague.Model.SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown)

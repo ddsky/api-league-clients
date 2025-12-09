@@ -16,13 +16,13 @@ void main() {
   // final instance = SearchGamesAPI200ResponseResultsInnerPlatformsInner();
 
   group('test SearchGamesAPI200ResponseResultsInnerPlatformsInner', () {
-    // String name
-    test('to test the property `name`', () async {
+    // String value
+    test('to test the property `value`', () async {
       // TODO
     });
 
-    // String value
-    test('to test the property `value`', () async {
+    // String name
+    test('to test the property `name`', () async {
       // TODO
     });
 

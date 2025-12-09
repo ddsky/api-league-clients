@@ -8,33 +8,33 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseIngredientsInne
 
   @derive Jason.Encoder
   defstruct [
-    :image,
-    :name_clean,
-    :amount,
-    :unit,
-    :measures,
-    :original,
-    :meta,
-    :original_name,
-    :name,
     :id,
     :aisle,
-    :consistency
+    :image,
+    :consistency,
+    :name,
+    :original,
+    :amount,
+    :unit,
+    :meta,
+    :measures,
+    :original_name,
+    :name_clean
   ]
 
   @type t :: %__MODULE__{
-    :image => String.t | nil,
-    :name_clean => String.t | nil,
-    :amount => float() | nil,
-    :unit => String.t | nil,
-    :measures => APILeague.Model.RetrieveRecipeInformationApi200ResponseIngredientsInnerMeasures.t | nil,
-    :original => String.t | nil,
-    :meta => [String.t] | nil,
-    :original_name => String.t | nil,
-    :name => String.t | nil,
     :id => integer() | nil,
     :aisle => String.t | nil,
-    :consistency => String.t | nil
+    :image => String.t | nil,
+    :consistency => String.t | nil,
+    :name => String.t | nil,
+    :original => String.t | nil,
+    :amount => float() | nil,
+    :unit => String.t | nil,
+    :meta => [String.t] | nil,
+    :measures => APILeague.Model.RetrieveRecipeInformationApi200ResponseIngredientsInnerMeasures.t | nil,
+    :original_name => String.t | nil,
+    :name_clean => String.t | nil
   }
 
   alias APILeague.Deserializer

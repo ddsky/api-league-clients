@@ -22,19 +22,19 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param unitShort 
  * @param amount 
+ * @param unitShort 
  * @param unitLong 
  */
 
 
 data class SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs (
 
-    @Json(name = "unit_short")
-    val unitShort: kotlin.String? = null,
-
     @Json(name = "amount")
     val amount: kotlin.Int? = null,
+
+    @Json(name = "unit_short")
+    val unitShort: kotlin.String? = null,
 
     @Json(name = "unit_long")
     val unitLong: kotlin.String? = null

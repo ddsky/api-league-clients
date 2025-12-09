@@ -25,6 +25,12 @@ class SearchWebAPI200ResponseResultsInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchWebAPI200ResponseResultsInner
         //val modelInstance = SearchWebAPI200ResponseResultsInner()
 
+        // to test the property `url`
+        should("test url") {
+            // uncomment below to test the property
+            //modelInstance.url shouldBe ("TODO")
+        }
+
         // to test the property `title`
         should("test title") {
             // uncomment below to test the property
@@ -35,12 +41,6 @@ class SearchWebAPI200ResponseResultsInnerTest : ShouldSpec() {
         should("test summary") {
             // uncomment below to test the property
             //modelInstance.summary shouldBe ("TODO")
-        }
-
-        // to test the property `url`
-        should("test url") {
-            // uncomment below to test the property
-            //modelInstance.url shouldBe ("TODO")
         }
 
     }

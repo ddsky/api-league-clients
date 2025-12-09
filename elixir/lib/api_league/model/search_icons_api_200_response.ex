@@ -12,14 +12,14 @@ defmodule APILeague.Model.SearchIconsApi200Response do
   ]
 
   @type t :: %__MODULE__{
-    :icons => [APILeague.Model.SearchRoyaltyFreeImagesApi200ResponseImagesInner.t] | nil
+    :icons => [APILeague.Model.SearchIconsApi200ResponseIconsInner.t] | nil
   }
 
   alias APILeague.Deserializer
 
   def decode(value) do
     value
-     |> Deserializer.deserialize(:icons, :list, APILeague.Model.SearchRoyaltyFreeImagesApi200ResponseImagesInner)
+     |> Deserializer.deserialize(:icons, :list, APILeague.Model.SearchIconsApi200ResponseIconsInner)
   end
 end
 

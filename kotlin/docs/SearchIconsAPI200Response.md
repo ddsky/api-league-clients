@@ -4,7 +4,7 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **icons** | [**kotlin.collections.List&lt;SearchRoyaltyFreeImagesAPI200ResponseImagesInner&gt;**](SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md) |  |  [optional] |
+| **icons** | [**kotlin.collections.List&lt;SearchIconsAPI200ResponseIconsInner&gt;**](SearchIconsAPI200ResponseIconsInner.md) |  |  [optional] |
 
 
 

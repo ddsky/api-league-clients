@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name 
- * @param count 
  * @param key 
+ * @param count 
  */
 
 
@@ -33,11 +33,11 @@ data class SearchGamesAPI200ResponseFilterOptionsInnerValuesInner (
     @Json(name = "name")
     val name: kotlin.String? = null,
 
-    @Json(name = "count")
-    val count: kotlin.Int? = null,
-
     @Json(name = "key")
-    val key: kotlin.String? = null
+    val key: kotlin.String? = null,
+
+    @Json(name = "count")
+    val count: kotlin.Int? = null
 
 ) {
 

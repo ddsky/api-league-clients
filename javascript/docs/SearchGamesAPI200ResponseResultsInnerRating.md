@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Number** |  | [optional] 
 **mean** | **Number** |  | [optional] 
+**count** | **Number** |  | [optional] 
 
 

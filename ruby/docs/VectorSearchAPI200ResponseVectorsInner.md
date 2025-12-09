@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **license** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
+| **license** | **String** |  | [optional] |
 | **author** | **String** |  | [optional] |
 | **image_url** | **String** |  | [optional] |
 
@@ -15,8 +15,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::VectorSearchAPI200ResponseVectorsInner.new(
-  license: null,
   title: null,
+  license: null,
   author: null,
   image_url: null
 )

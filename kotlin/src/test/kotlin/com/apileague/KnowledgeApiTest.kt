@@ -19,6 +19,8 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import com.apileague.KnowledgeApi
+import com.apileague.client.model.RandomAffirmationAPI200Response
+import com.apileague.client.model.RandomLifeHackAPI200Response
 import com.apileague.client.model.RandomQuoteAPI200Response
 import com.apileague.client.model.RandomRiddleAPI200Response
 import com.apileague.client.model.RandomTriviaAPI200Response
@@ -27,6 +29,21 @@ class KnowledgeApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of KnowledgeApi
         //val apiInstance = KnowledgeApi()
+
+        // to test randomAffirmationAPI
+        should("test randomAffirmationAPI") {
+            // uncomment below to test randomAffirmationAPI
+            //val result : RandomAffirmationAPI200Response = apiInstance.randomAffirmationAPI()
+            //result shouldBe ("TODO")
+        }
+
+        // to test randomLifeHackAPI
+        should("test randomLifeHackAPI") {
+            // uncomment below to test randomLifeHackAPI
+            //val maxLength : kotlin.Int = 300 // kotlin.Int | The maximum length of the hack in letters.
+            //val result : RandomLifeHackAPI200Response = apiInstance.randomLifeHackAPI(maxLength)
+            //result shouldBe ("TODO")
+        }
 
         // to test randomQuoteAPI
         should("test randomQuoteAPI") {

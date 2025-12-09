@@ -5,25 +5,25 @@
 -export_type([apileague_search_royalty_free_images_api_200_response_images_inner/0]).
 
 -type apileague_search_royalty_free_images_api_200_response_images_inner() ::
-    #{ 'width' => integer(),
-       'license' => apileague_search_royalty_free_images_api_200_response_images_inner_license:apileague_search_royalty_free_images_api_200_response_images_inner_license(),
+    #{ 'url' => binary(),
        'thumbnail' => binary(),
-       'id' => binary(),
-       'url' => binary(),
-       'height' => integer()
+       'width' => integer(),
+       'height' => integer(),
+       'license' => apileague_search_royalty_free_images_api_200_response_images_inner_license:apileague_search_royalty_free_images_api_200_response_images_inner_license(),
+       'id' => binary()
      }.
 
-encode(#{ 'width' := Width,
-          'license' := License,
+encode(#{ 'url' := Url,
           'thumbnail' := Thumbnail,
-          'id' := Id,
-          'url' := Url,
-          'height' := Height
+          'width' := Width,
+          'height' := Height,
+          'license' := License,
+          'id' := Id
         }) ->
-    #{ 'width' => Width,
-       'license' => License,
+    #{ 'url' => Url,
        'thumbnail' => Thumbnail,
-       'id' => Id,
-       'url' => Url,
-       'height' => Height
+       'width' => Width,
+       'height' => Height,
+       'license' => License,
+       'id' => Id
      }.

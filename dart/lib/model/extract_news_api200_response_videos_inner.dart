@@ -13,12 +13,16 @@ part of openapi.api;
 class ExtractNewsAPI200ResponseVideosInner {
   /// Returns a new [ExtractNewsAPI200ResponseVideosInner] instance.
   ExtractNewsAPI200ResponseVideosInner({
+    this.title,
+    this.url,
     this.summary,
     this.duration,
     this.thumbnail,
-    this.title,
-    this.url,
   });
+
+  String? title;
+
+  String? url;
 
   String? summary;
 
@@ -32,32 +36,38 @@ class ExtractNewsAPI200ResponseVideosInner {
 
   String? thumbnail;
 
-  String? title;
-
-  String? url;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is ExtractNewsAPI200ResponseVideosInner &&
+    other.title == title &&
+    other.url == url &&
     other.summary == summary &&
     other.duration == duration &&
-    other.thumbnail == thumbnail &&
-    other.title == title &&
-    other.url == url;
+    other.thumbnail == thumbnail;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (title == null ? 0 : title!.hashCode) +
+    (url == null ? 0 : url!.hashCode) +
     (summary == null ? 0 : summary!.hashCode) +
     (duration == null ? 0 : duration!.hashCode) +
-    (thumbnail == null ? 0 : thumbnail!.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+    (thumbnail == null ? 0 : thumbnail!.hashCode);
 
   @override
-  String toString() => 'ExtractNewsAPI200ResponseVideosInner[summary=$summary, duration=$duration, thumbnail=$thumbnail, title=$title, url=$url]';
+  String toString() => 'ExtractNewsAPI200ResponseVideosInner[title=$title, url=$url, summary=$summary, duration=$duration, thumbnail=$thumbnail]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.title != null) {
+      json[r'title'] = this.title;
+    } else {
+      json[r'title'] = null;
+    }
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
+    }
     if (this.summary != null) {
       json[r'summary'] = this.summary;
     } else {
@@ -72,16 +82,6 @@ class ExtractNewsAPI200ResponseVideosInner {
       json[r'thumbnail'] = this.thumbnail;
     } else {
       json[r'thumbnail'] = null;
-    }
-    if (this.title != null) {
-      json[r'title'] = this.title;
-    } else {
-      json[r'title'] = null;
-    }
-    if (this.url != null) {
-      json[r'url'] = this.url;
-    } else {
-      json[r'url'] = null;
     }
     return json;
   }
@@ -105,11 +105,11 @@ class ExtractNewsAPI200ResponseVideosInner {
       }());
 
       return ExtractNewsAPI200ResponseVideosInner(
+        title: mapValueOfType<String>(json, r'title'),
+        url: mapValueOfType<String>(json, r'url'),
         summary: mapValueOfType<String>(json, r'summary'),
         duration: mapValueOfType<int>(json, r'duration'),
         thumbnail: mapValueOfType<String>(json, r'thumbnail'),
-        title: mapValueOfType<String>(json, r'title'),
-        url: mapValueOfType<String>(json, r'url'),
       );
     }
     return null;

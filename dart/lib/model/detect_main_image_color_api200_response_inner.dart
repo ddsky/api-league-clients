@@ -13,35 +13,40 @@ part of openapi.api;
 class DetectMainImageColorAPI200ResponseInner {
   /// Returns a new [DetectMainImageColorAPI200ResponseInner] instance.
   DetectMainImageColorAPI200ResponseInner({
+    this.hexCode,
     this.specificColor,
     this.mainColor,
-    this.hexCode,
   });
+
+  String? hexCode;
 
   String? specificColor;
 
   String? mainColor;
 
-  String? hexCode;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is DetectMainImageColorAPI200ResponseInner &&
+    other.hexCode == hexCode &&
     other.specificColor == specificColor &&
-    other.mainColor == mainColor &&
-    other.hexCode == hexCode;
+    other.mainColor == mainColor;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (hexCode == null ? 0 : hexCode!.hashCode) +
     (specificColor == null ? 0 : specificColor!.hashCode) +
-    (mainColor == null ? 0 : mainColor!.hashCode) +
-    (hexCode == null ? 0 : hexCode!.hashCode);
+    (mainColor == null ? 0 : mainColor!.hashCode);
 
   @override
-  String toString() => 'DetectMainImageColorAPI200ResponseInner[specificColor=$specificColor, mainColor=$mainColor, hexCode=$hexCode]';
+  String toString() => 'DetectMainImageColorAPI200ResponseInner[hexCode=$hexCode, specificColor=$specificColor, mainColor=$mainColor]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.hexCode != null) {
+      json[r'hex_code'] = this.hexCode;
+    } else {
+      json[r'hex_code'] = null;
+    }
     if (this.specificColor != null) {
       json[r'specific_color'] = this.specificColor;
     } else {
@@ -51,11 +56,6 @@ class DetectMainImageColorAPI200ResponseInner {
       json[r'main_color'] = this.mainColor;
     } else {
       json[r'main_color'] = null;
-    }
-    if (this.hexCode != null) {
-      json[r'hex_code'] = this.hexCode;
-    } else {
-      json[r'hex_code'] = null;
     }
     return json;
   }
@@ -79,9 +79,9 @@ class DetectMainImageColorAPI200ResponseInner {
       }());
 
       return DetectMainImageColorAPI200ResponseInner(
+        hexCode: mapValueOfType<String>(json, r'hex_code'),
         specificColor: mapValueOfType<String>(json, r'specific_color'),
         mainColor: mapValueOfType<String>(json, r'main_color'),
-        hexCode: mapValueOfType<String>(json, r'hex_code'),
       );
     }
     return null;

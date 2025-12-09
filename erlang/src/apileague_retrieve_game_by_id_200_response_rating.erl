@@ -5,25 +5,25 @@
 -export_type([apileague_retrieve_game_by_id_200_response_rating/0]).
 
 -type apileague_retrieve_game_by_id_200_response_rating() ::
-    #{ 'count' => integer(),
-       'count_critics' => integer(),
+    #{ 'mean' => integer(),
+       'count' => integer(),
        'mean_players' => integer(),
+       'count_players' => integer(),
        'mean_critics' => integer(),
-       'mean' => integer(),
-       'count_players' => integer()
+       'count_critics' => integer()
      }.
 
-encode(#{ 'count' := Count,
-          'count_critics' := CountCritics,
+encode(#{ 'mean' := Mean,
+          'count' := Count,
           'mean_players' := MeanPlayers,
+          'count_players' := CountPlayers,
           'mean_critics' := MeanCritics,
-          'mean' := Mean,
-          'count_players' := CountPlayers
+          'count_critics' := CountCritics
         }) ->
-    #{ 'count' => Count,
-       'count_critics' => CountCritics,
+    #{ 'mean' => Mean,
+       'count' => Count,
        'mean_players' => MeanPlayers,
+       'count_players' => CountPlayers,
        'mean_critics' => MeanCritics,
-       'mean' => Mean,
-       'count_players' => CountPlayers
+       'count_critics' => CountCritics
      }.

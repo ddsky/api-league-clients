@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**flavors** | **List[Optional[str]]** |  | [optional] 
-**instructions** | [**List[SearchDrinksAPI200ResponseDrinksInnerInstructionsInner]**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.md) |  | [optional] 
-**images** | **List[Optional[str]]** |  | [optional] 
-**nutrition** | [**SearchDrinksAPI200ResponseDrinksInnerNutrition**](SearchDrinksAPI200ResponseDrinksInnerNutrition.md) |  | [optional] 
-**glass_type** | **str** |  | [optional] 
-**credits** | [**SearchDrinksAPI200ResponseDrinksInnerCredits**](SearchDrinksAPI200ResponseDrinksInnerCredits.md) |  | [optional] 
-**price_per_serving** | **float** |  | [optional] 
-**description** | **str** |  | [optional] 
-**ingredients** | [**List[SearchDrinksAPI200ResponseDrinksInnerIngredientsInner]**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **title** | **str** |  | [optional] 
+**images** | **List[Optional[str]]** |  | [optional] 
+**price_per_serving** | **float** |  | [optional] 
+**nutrition** | [**SearchDrinksAPI200ResponseDrinksInnerNutrition**](SearchDrinksAPI200ResponseDrinksInnerNutrition.md) |  | [optional] 
+**flavors** | **List[Optional[str]]** |  | [optional] 
+**glass_type** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **cuisines** | **List[Optional[str]]** |  | [optional] 
+**ingredients** | [**List[SearchDrinksAPI200ResponseDrinksInnerIngredientsInner]**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.md) |  | [optional] 
+**instructions** | [**List[SearchDrinksAPI200ResponseDrinksInnerInstructionsInner]**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.md) |  | [optional] 
+**credits** | [**SearchDrinksAPI200ResponseDrinksInnerCredits**](SearchDrinksAPI200ResponseDrinksInnerCredits.md) |  | [optional] 
 
 ## Example
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Amount** | Pointer to **int32** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
 **Nutrients** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] 
 
 ## Methods
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewSearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerWithDefaults instantiates a new SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -124,31 +149,6 @@ HasUnit returns a boolean if a field has been set.
 `func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) UnsetUnit()`
 
 UnsetUnit ensures that no value is present for Unit, not even an explicit nil
-### GetId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) GetId() int32`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) GetIdOk() (*int32, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) SetId(v int32)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
 ### GetNutrients
 
 `func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner`

@@ -6,18 +6,18 @@
 
 -type apileague_compute_nutrition_api_200_response_ingredient_breakdown_inner_nutrients_inner() ::
     #{ 'name' => binary(),
-       'percent_of_daily_needs' => integer(),
        'amount' => integer(),
-       'unit' => binary()
+       'unit' => binary(),
+       'percent_of_daily_needs' => integer()
      }.
 
 encode(#{ 'name' := Name,
-          'percent_of_daily_needs' := PercentOfDailyNeeds,
           'amount' := Amount,
-          'unit' := Unit
+          'unit' := Unit,
+          'percent_of_daily_needs' := PercentOfDailyNeeds
         }) ->
     #{ 'name' => Name,
-       'percent_of_daily_needs' => PercentOfDailyNeeds,
        'amount' => Amount,
-       'unit' => Unit
+       'unit' => Unit,
+       'percent_of_daily_needs' => PercentOfDailyNeeds
      }.

@@ -23,31 +23,25 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param image 
- * @param shortDescription 
- * @param microTrailer 
+ * @param id 
  * @param year 
  * @param name 
  * @param genre 
+ * @param image 
  * @param link 
  * @param rating 
- * @param id 
  * @param adultOnly 
  * @param screenshots 
+ * @param microTrailer 
  * @param gameplay 
+ * @param shortDescription 
  */
 
 
 data class FindSimilarGamesAPI200ResponseResultsInner (
 
-    @Json(name = "image")
-    val image: kotlin.String? = null,
-
-    @Json(name = "short_description")
-    val shortDescription: kotlin.String? = null,
-
-    @Json(name = "micro_trailer")
-    val microTrailer: kotlin.String? = null,
+    @Json(name = "id")
+    val id: kotlin.Int? = null,
 
     @Json(name = "year")
     val year: kotlin.Int? = null,
@@ -58,14 +52,14 @@ data class FindSimilarGamesAPI200ResponseResultsInner (
     @Json(name = "genre")
     val genre: kotlin.String? = null,
 
+    @Json(name = "image")
+    val image: kotlin.String? = null,
+
     @Json(name = "link")
     val link: kotlin.String? = null,
 
     @Json(name = "rating")
     val rating: SearchGamesAPI200ResponseResultsInnerRating? = null,
-
-    @Json(name = "id")
-    val id: kotlin.Int? = null,
 
     @Json(name = "adult_only")
     val adultOnly: kotlin.Boolean? = null,
@@ -73,8 +67,14 @@ data class FindSimilarGamesAPI200ResponseResultsInner (
     @Json(name = "screenshots")
     val screenshots: kotlin.collections.List<kotlin.String>? = null,
 
+    @Json(name = "micro_trailer")
+    val microTrailer: kotlin.String? = null,
+
     @Json(name = "gameplay")
-    val gameplay: kotlin.String? = null
+    val gameplay: kotlin.String? = null,
+
+    @Json(name = "short_description")
+    val shortDescription: kotlin.String? = null
 
 ) {
 

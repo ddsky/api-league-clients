@@ -13,19 +13,15 @@ part of openapi.api;
 class TopNewsAPI200ResponseTopNewsInnerNewsInner {
   /// Returns a new [TopNewsAPI200ResponseTopNewsInnerNewsInner] instance.
   TopNewsAPI200ResponseTopNewsInnerNewsInner({
-    this.summary,
-    this.image,
     this.id,
-    this.text,
     this.title,
-    this.publishDate,
+    this.text,
+    this.summary,
     this.url,
+    this.image,
+    this.publishDate,
     this.authors = const [],
   });
-
-  String? summary;
-
-  String? image;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -35,78 +31,82 @@ class TopNewsAPI200ResponseTopNewsInnerNewsInner {
   ///
   int? id;
 
-  String? text;
-
   String? title;
 
-  String? publishDate;
+  String? text;
+
+  String? summary;
 
   String? url;
+
+  String? image;
+
+  String? publishDate;
 
   List<String> authors;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is TopNewsAPI200ResponseTopNewsInnerNewsInner &&
-    other.summary == summary &&
-    other.image == image &&
     other.id == id &&
-    other.text == text &&
     other.title == title &&
-    other.publishDate == publishDate &&
+    other.text == text &&
+    other.summary == summary &&
     other.url == url &&
+    other.image == image &&
+    other.publishDate == publishDate &&
     _deepEquality.equals(other.authors, authors);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (summary == null ? 0 : summary!.hashCode) +
-    (image == null ? 0 : image!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
-    (text == null ? 0 : text!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
-    (publishDate == null ? 0 : publishDate!.hashCode) +
+    (text == null ? 0 : text!.hashCode) +
+    (summary == null ? 0 : summary!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
+    (image == null ? 0 : image!.hashCode) +
+    (publishDate == null ? 0 : publishDate!.hashCode) +
     (authors.hashCode);
 
   @override
-  String toString() => 'TopNewsAPI200ResponseTopNewsInnerNewsInner[summary=$summary, image=$image, id=$id, text=$text, title=$title, publishDate=$publishDate, url=$url, authors=$authors]';
+  String toString() => 'TopNewsAPI200ResponseTopNewsInnerNewsInner[id=$id, title=$title, text=$text, summary=$summary, url=$url, image=$image, publishDate=$publishDate, authors=$authors]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.summary != null) {
-      json[r'summary'] = this.summary;
-    } else {
-      json[r'summary'] = null;
-    }
-    if (this.image != null) {
-      json[r'image'] = this.image;
-    } else {
-      json[r'image'] = null;
-    }
     if (this.id != null) {
       json[r'id'] = this.id;
     } else {
       json[r'id'] = null;
-    }
-    if (this.text != null) {
-      json[r'text'] = this.text;
-    } else {
-      json[r'text'] = null;
     }
     if (this.title != null) {
       json[r'title'] = this.title;
     } else {
       json[r'title'] = null;
     }
-    if (this.publishDate != null) {
-      json[r'publish_date'] = this.publishDate;
+    if (this.text != null) {
+      json[r'text'] = this.text;
     } else {
-      json[r'publish_date'] = null;
+      json[r'text'] = null;
+    }
+    if (this.summary != null) {
+      json[r'summary'] = this.summary;
+    } else {
+      json[r'summary'] = null;
     }
     if (this.url != null) {
       json[r'url'] = this.url;
     } else {
       json[r'url'] = null;
+    }
+    if (this.image != null) {
+      json[r'image'] = this.image;
+    } else {
+      json[r'image'] = null;
+    }
+    if (this.publishDate != null) {
+      json[r'publish_date'] = this.publishDate;
+    } else {
+      json[r'publish_date'] = null;
     }
       json[r'authors'] = this.authors;
     return json;
@@ -131,13 +131,13 @@ class TopNewsAPI200ResponseTopNewsInnerNewsInner {
       }());
 
       return TopNewsAPI200ResponseTopNewsInnerNewsInner(
-        summary: mapValueOfType<String>(json, r'summary'),
-        image: mapValueOfType<String>(json, r'image'),
         id: mapValueOfType<int>(json, r'id'),
-        text: mapValueOfType<String>(json, r'text'),
         title: mapValueOfType<String>(json, r'title'),
-        publishDate: mapValueOfType<String>(json, r'publish_date'),
+        text: mapValueOfType<String>(json, r'text'),
+        summary: mapValueOfType<String>(json, r'summary'),
         url: mapValueOfType<String>(json, r'url'),
+        image: mapValueOfType<String>(json, r'image'),
+        publishDate: mapValueOfType<String>(json, r'publish_date'),
         authors: json[r'authors'] is Iterable
             ? (json[r'authors'] as Iterable).cast<String>().toList(growable: false)
             : const [],

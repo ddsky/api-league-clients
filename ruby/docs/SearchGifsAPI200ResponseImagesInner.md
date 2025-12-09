@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **width** | **Integer** |  | [optional] |
 | **url** | **String** |  | [optional] |
+| **width** | **Integer** |  | [optional] |
 | **height** | **Integer** |  | [optional] |
 
 ## Example
@@ -14,8 +14,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchGifsAPI200ResponseImagesInner.new(
-  width: null,
   url: null,
+  width: null,
   height: null
 )
 ```

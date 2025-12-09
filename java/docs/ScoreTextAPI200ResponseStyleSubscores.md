@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**abbreviationScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**styleScore** | **List&lt;Integer&gt;** |  |  [optional] |
-|**spellingScore** | **List&lt;Integer&gt;** |  |  [optional] |
+|**abbreviationScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**styleScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
+|**spellingScore** | **List&lt;BigDecimal&gt;** |  |  [optional] |
 
 
 

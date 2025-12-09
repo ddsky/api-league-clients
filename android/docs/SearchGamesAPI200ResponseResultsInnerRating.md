@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Integer** |  |  [optional]
 **mean** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**count** | **Integer** |  |  [optional]
 
 
 

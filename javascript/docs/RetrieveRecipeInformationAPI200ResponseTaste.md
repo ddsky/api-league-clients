@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fattiness** | **Number** |  | [optional] 
-**spiciness** | **Number** |  | [optional] 
+**sweetness** | **Number** |  | [optional] 
 **saltiness** | **Number** |  | [optional] 
+**sourness** | **Number** |  | [optional] 
 **bitterness** | **Number** |  | [optional] 
 **savoriness** | **Number** |  | [optional] 
-**sweetness** | **Number** |  | [optional] 
-**sourness** | **Number** |  | [optional] 
+**fattiness** | **Number** |  | [optional] 
+**spiciness** | **Number** |  | [optional] 
 
 

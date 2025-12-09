@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nutrients** | Option<[**Vec<models::SearchDrinksApi200ResponseDrinksInnerNutritionNutrientsInner>**](searchDrinksAPI_200_response_drinks_inner_nutrition_nutrients_inner.md)> |  | [optional]
-**properties** | Option<[**Vec<models::SearchDrinksApi200ResponseDrinksInnerNutritionFlavonoidsInner>**](searchDrinksAPI_200_response_drinks_inner_nutrition_flavonoids_inner.md)> |  | [optional]
+**properties** | Option<[**Vec<models::SearchDrinksApi200ResponseDrinksInnerNutritionPropertiesInner>**](searchDrinksAPI_200_response_drinks_inner_nutrition_properties_inner.md)> |  | [optional]
 **flavonoids** | Option<[**Vec<models::SearchRecipesApi200ResponseRecipesInnerNutritionNutrientsInner>**](searchRecipesAPI_200_response_recipes_inner_nutrition_nutrients_inner.md)> |  | [optional]
 **ingredient_breakdown** | Option<[**Vec<models::ComputeNutritionApi200ResponseIngredientBreakdownInner>**](computeNutritionAPI_200_response_ingredient_breakdown_inner.md)> |  | [optional]
 **caloric_breakdown** | Option<[**models::SearchDrinksApi200ResponseDrinksInnerNutritionCaloricBreakdown**](searchDrinksAPI_200_response_drinks_inner_nutrition_caloric_breakdown.md)> |  | [optional]

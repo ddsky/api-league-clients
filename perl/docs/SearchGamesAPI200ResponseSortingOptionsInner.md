@@ -9,8 +9,8 @@ use WWW::OpenAPIClient::Object::SearchGamesAPI200ResponseSortingOptionsInner;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
-**key** | **string** |  | [optional] 
 **sort** | **string** |  | [optional] 
+**key** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

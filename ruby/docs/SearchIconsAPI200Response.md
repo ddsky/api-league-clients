@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **icons** | [**Array&lt;SearchRoyaltyFreeImagesAPI200ResponseImagesInner&gt;**](SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md) |  | [optional] |
+| **icons** | [**Array&lt;SearchIconsAPI200ResponseIconsInner&gt;**](SearchIconsAPI200ResponseIconsInner.md) |  | [optional] |
 
 ## Example
 

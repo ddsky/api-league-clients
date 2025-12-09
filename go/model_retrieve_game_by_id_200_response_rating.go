@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &RetrieveGameById200ResponseRating{}
 
 // RetrieveGameById200ResponseRating struct for RetrieveGameById200ResponseRating
 type RetrieveGameById200ResponseRating struct {
-	Count *int32 `json:"count,omitempty"`
-	CountCritics *int32 `json:"count_critics,omitempty"`
-	MeanPlayers *float32 `json:"mean_players,omitempty"`
-	MeanCritics *float32 `json:"mean_critics,omitempty"`
 	Mean *float32 `json:"mean,omitempty"`
+	Count *int32 `json:"count,omitempty"`
+	MeanPlayers *float32 `json:"mean_players,omitempty"`
 	CountPlayers *int32 `json:"count_players,omitempty"`
+	MeanCritics *float32 `json:"mean_critics,omitempty"`
+	CountCritics *int32 `json:"count_critics,omitempty"`
 }
 
 // NewRetrieveGameById200ResponseRating instantiates a new RetrieveGameById200ResponseRating object
@@ -43,134 +43,6 @@ func NewRetrieveGameById200ResponseRating() *RetrieveGameById200ResponseRating {
 func NewRetrieveGameById200ResponseRatingWithDefaults() *RetrieveGameById200ResponseRating {
 	this := RetrieveGameById200ResponseRating{}
 	return &this
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponseRating) GetCount() int32 {
-	if o == nil || IsNil(o.Count) {
-		var ret int32
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponseRating) GetCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// HasCount returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseRating) HasCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *RetrieveGameById200ResponseRating) SetCount(v int32) {
-	o.Count = &v
-}
-
-// GetCountCritics returns the CountCritics field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponseRating) GetCountCritics() int32 {
-	if o == nil || IsNil(o.CountCritics) {
-		var ret int32
-		return ret
-	}
-	return *o.CountCritics
-}
-
-// GetCountCriticsOk returns a tuple with the CountCritics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponseRating) GetCountCriticsOk() (*int32, bool) {
-	if o == nil || IsNil(o.CountCritics) {
-		return nil, false
-	}
-	return o.CountCritics, true
-}
-
-// HasCountCritics returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseRating) HasCountCritics() bool {
-	if o != nil && !IsNil(o.CountCritics) {
-		return true
-	}
-
-	return false
-}
-
-// SetCountCritics gets a reference to the given int32 and assigns it to the CountCritics field.
-func (o *RetrieveGameById200ResponseRating) SetCountCritics(v int32) {
-	o.CountCritics = &v
-}
-
-// GetMeanPlayers returns the MeanPlayers field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponseRating) GetMeanPlayers() float32 {
-	if o == nil || IsNil(o.MeanPlayers) {
-		var ret float32
-		return ret
-	}
-	return *o.MeanPlayers
-}
-
-// GetMeanPlayersOk returns a tuple with the MeanPlayers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponseRating) GetMeanPlayersOk() (*float32, bool) {
-	if o == nil || IsNil(o.MeanPlayers) {
-		return nil, false
-	}
-	return o.MeanPlayers, true
-}
-
-// HasMeanPlayers returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseRating) HasMeanPlayers() bool {
-	if o != nil && !IsNil(o.MeanPlayers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeanPlayers gets a reference to the given float32 and assigns it to the MeanPlayers field.
-func (o *RetrieveGameById200ResponseRating) SetMeanPlayers(v float32) {
-	o.MeanPlayers = &v
-}
-
-// GetMeanCritics returns the MeanCritics field value if set, zero value otherwise.
-func (o *RetrieveGameById200ResponseRating) GetMeanCritics() float32 {
-	if o == nil || IsNil(o.MeanCritics) {
-		var ret float32
-		return ret
-	}
-	return *o.MeanCritics
-}
-
-// GetMeanCriticsOk returns a tuple with the MeanCritics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveGameById200ResponseRating) GetMeanCriticsOk() (*float32, bool) {
-	if o == nil || IsNil(o.MeanCritics) {
-		return nil, false
-	}
-	return o.MeanCritics, true
-}
-
-// HasMeanCritics returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseRating) HasMeanCritics() bool {
-	if o != nil && !IsNil(o.MeanCritics) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeanCritics gets a reference to the given float32 and assigns it to the MeanCritics field.
-func (o *RetrieveGameById200ResponseRating) SetMeanCritics(v float32) {
-	o.MeanCritics = &v
 }
 
 // GetMean returns the Mean field value if set, zero value otherwise.
@@ -205,6 +77,70 @@ func (o *RetrieveGameById200ResponseRating) SetMean(v float32) {
 	o.Mean = &v
 }
 
+// GetCount returns the Count field value if set, zero value otherwise.
+func (o *RetrieveGameById200ResponseRating) GetCount() int32 {
+	if o == nil || IsNil(o.Count) {
+		var ret int32
+		return ret
+	}
+	return *o.Count
+}
+
+// GetCountOk returns a tuple with the Count field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveGameById200ResponseRating) GetCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.Count) {
+		return nil, false
+	}
+	return o.Count, true
+}
+
+// HasCount returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseRating) HasCount() bool {
+	if o != nil && !IsNil(o.Count) {
+		return true
+	}
+
+	return false
+}
+
+// SetCount gets a reference to the given int32 and assigns it to the Count field.
+func (o *RetrieveGameById200ResponseRating) SetCount(v int32) {
+	o.Count = &v
+}
+
+// GetMeanPlayers returns the MeanPlayers field value if set, zero value otherwise.
+func (o *RetrieveGameById200ResponseRating) GetMeanPlayers() float32 {
+	if o == nil || IsNil(o.MeanPlayers) {
+		var ret float32
+		return ret
+	}
+	return *o.MeanPlayers
+}
+
+// GetMeanPlayersOk returns a tuple with the MeanPlayers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveGameById200ResponseRating) GetMeanPlayersOk() (*float32, bool) {
+	if o == nil || IsNil(o.MeanPlayers) {
+		return nil, false
+	}
+	return o.MeanPlayers, true
+}
+
+// HasMeanPlayers returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseRating) HasMeanPlayers() bool {
+	if o != nil && !IsNil(o.MeanPlayers) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeanPlayers gets a reference to the given float32 and assigns it to the MeanPlayers field.
+func (o *RetrieveGameById200ResponseRating) SetMeanPlayers(v float32) {
+	o.MeanPlayers = &v
+}
+
 // GetCountPlayers returns the CountPlayers field value if set, zero value otherwise.
 func (o *RetrieveGameById200ResponseRating) GetCountPlayers() int32 {
 	if o == nil || IsNil(o.CountPlayers) {
@@ -237,6 +173,70 @@ func (o *RetrieveGameById200ResponseRating) SetCountPlayers(v int32) {
 	o.CountPlayers = &v
 }
 
+// GetMeanCritics returns the MeanCritics field value if set, zero value otherwise.
+func (o *RetrieveGameById200ResponseRating) GetMeanCritics() float32 {
+	if o == nil || IsNil(o.MeanCritics) {
+		var ret float32
+		return ret
+	}
+	return *o.MeanCritics
+}
+
+// GetMeanCriticsOk returns a tuple with the MeanCritics field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveGameById200ResponseRating) GetMeanCriticsOk() (*float32, bool) {
+	if o == nil || IsNil(o.MeanCritics) {
+		return nil, false
+	}
+	return o.MeanCritics, true
+}
+
+// HasMeanCritics returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseRating) HasMeanCritics() bool {
+	if o != nil && !IsNil(o.MeanCritics) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeanCritics gets a reference to the given float32 and assigns it to the MeanCritics field.
+func (o *RetrieveGameById200ResponseRating) SetMeanCritics(v float32) {
+	o.MeanCritics = &v
+}
+
+// GetCountCritics returns the CountCritics field value if set, zero value otherwise.
+func (o *RetrieveGameById200ResponseRating) GetCountCritics() int32 {
+	if o == nil || IsNil(o.CountCritics) {
+		var ret int32
+		return ret
+	}
+	return *o.CountCritics
+}
+
+// GetCountCriticsOk returns a tuple with the CountCritics field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveGameById200ResponseRating) GetCountCriticsOk() (*int32, bool) {
+	if o == nil || IsNil(o.CountCritics) {
+		return nil, false
+	}
+	return o.CountCritics, true
+}
+
+// HasCountCritics returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseRating) HasCountCritics() bool {
+	if o != nil && !IsNil(o.CountCritics) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountCritics gets a reference to the given int32 and assigns it to the CountCritics field.
+func (o *RetrieveGameById200ResponseRating) SetCountCritics(v int32) {
+	o.CountCritics = &v
+}
+
 func (o RetrieveGameById200ResponseRating) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -247,23 +247,23 @@ func (o RetrieveGameById200ResponseRating) MarshalJSON() ([]byte, error) {
 
 func (o RetrieveGameById200ResponseRating) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Mean) {
+		toSerialize["mean"] = o.Mean
+	}
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
-	}
-	if !IsNil(o.CountCritics) {
-		toSerialize["count_critics"] = o.CountCritics
 	}
 	if !IsNil(o.MeanPlayers) {
 		toSerialize["mean_players"] = o.MeanPlayers
 	}
+	if !IsNil(o.CountPlayers) {
+		toSerialize["count_players"] = o.CountPlayers
+	}
 	if !IsNil(o.MeanCritics) {
 		toSerialize["mean_critics"] = o.MeanCritics
 	}
-	if !IsNil(o.Mean) {
-		toSerialize["mean"] = o.Mean
-	}
-	if !IsNil(o.CountPlayers) {
-		toSerialize["count_players"] = o.CountPlayers
+	if !IsNil(o.CountCritics) {
+		toSerialize["count_critics"] = o.CountCritics
 	}
 	return toSerialize, nil
 }

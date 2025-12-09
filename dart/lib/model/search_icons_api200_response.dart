@@ -16,7 +16,7 @@ class SearchIconsAPI200Response {
     this.icons = const [],
   });
 
-  List<SearchRoyaltyFreeImagesAPI200ResponseImagesInner> icons;
+  List<SearchIconsAPI200ResponseIconsInner> icons;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchIconsAPI200Response &&
@@ -55,7 +55,7 @@ class SearchIconsAPI200Response {
       }());
 
       return SearchIconsAPI200Response(
-        icons: SearchRoyaltyFreeImagesAPI200ResponseImagesInner.listFromJson(json[r'icons']),
+        icons: SearchIconsAPI200ResponseIconsInner.listFromJson(json[r'icons']),
       );
     }
     return null;

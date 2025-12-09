@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseDietaryProperties
 
 // RetrieveRecipeInformationAPI200ResponseDietaryProperties struct for RetrieveRecipeInformationAPI200ResponseDietaryProperties
 type RetrieveRecipeInformationAPI200ResponseDietaryProperties struct {
-	LowFodmap *bool `json:"low_fodmap,omitempty"`
 	Vegetarian *bool `json:"vegetarian,omitempty"`
 	Vegan *bool `json:"vegan,omitempty"`
 	GlutenFree *bool `json:"gluten_free,omitempty"`
 	DairyFree *bool `json:"dairy_free,omitempty"`
+	LowFodmap *bool `json:"low_fodmap,omitempty"`
 	Gaps NullableString `json:"gaps,omitempty"`
 	Diets []*string `json:"diets,omitempty"`
 }
@@ -44,38 +44,6 @@ func NewRetrieveRecipeInformationAPI200ResponseDietaryProperties() *RetrieveReci
 func NewRetrieveRecipeInformationAPI200ResponseDietaryPropertiesWithDefaults() *RetrieveRecipeInformationAPI200ResponseDietaryProperties {
 	this := RetrieveRecipeInformationAPI200ResponseDietaryProperties{}
 	return &this
-}
-
-// GetLowFodmap returns the LowFodmap field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmap() bool {
-	if o == nil || IsNil(o.LowFodmap) {
-		var ret bool
-		return ret
-	}
-	return *o.LowFodmap
-}
-
-// GetLowFodmapOk returns a tuple with the LowFodmap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmapOk() (*bool, bool) {
-	if o == nil || IsNil(o.LowFodmap) {
-		return nil, false
-	}
-	return o.LowFodmap, true
-}
-
-// HasLowFodmap returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) HasLowFodmap() bool {
-	if o != nil && !IsNil(o.LowFodmap) {
-		return true
-	}
-
-	return false
-}
-
-// SetLowFodmap gets a reference to the given bool and assigns it to the LowFodmap field.
-func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) SetLowFodmap(v bool) {
-	o.LowFodmap = &v
 }
 
 // GetVegetarian returns the Vegetarian field value if set, zero value otherwise.
@@ -206,6 +174,38 @@ func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) SetDairyFree(
 	o.DairyFree = &v
 }
 
+// GetLowFodmap returns the LowFodmap field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmap() bool {
+	if o == nil || IsNil(o.LowFodmap) {
+		var ret bool
+		return ret
+	}
+	return *o.LowFodmap
+}
+
+// GetLowFodmapOk returns a tuple with the LowFodmap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetLowFodmapOk() (*bool, bool) {
+	if o == nil || IsNil(o.LowFodmap) {
+		return nil, false
+	}
+	return o.LowFodmap, true
+}
+
+// HasLowFodmap returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) HasLowFodmap() bool {
+	if o != nil && !IsNil(o.LowFodmap) {
+		return true
+	}
+
+	return false
+}
+
+// SetLowFodmap gets a reference to the given bool and assigns it to the LowFodmap field.
+func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) SetLowFodmap(v bool) {
+	o.LowFodmap = &v
+}
+
 // GetGaps returns the Gaps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RetrieveRecipeInformationAPI200ResponseDietaryProperties) GetGaps() string {
 	if o == nil || IsNil(o.Gaps.Get()) {
@@ -290,9 +290,6 @@ func (o RetrieveRecipeInformationAPI200ResponseDietaryProperties) MarshalJSON() 
 
 func (o RetrieveRecipeInformationAPI200ResponseDietaryProperties) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LowFodmap) {
-		toSerialize["low_fodmap"] = o.LowFodmap
-	}
 	if !IsNil(o.Vegetarian) {
 		toSerialize["vegetarian"] = o.Vegetarian
 	}
@@ -304,6 +301,9 @@ func (o RetrieveRecipeInformationAPI200ResponseDietaryProperties) ToMap() (map[s
 	}
 	if !IsNil(o.DairyFree) {
 		toSerialize["dairy_free"] = o.DairyFree
+	}
+	if !IsNil(o.LowFodmap) {
+		toSerialize["low_fodmap"] = o.LowFodmap
 	}
 	if o.Gaps.IsSet() {
 		toSerialize["gaps"] = o.Gaps.Get()

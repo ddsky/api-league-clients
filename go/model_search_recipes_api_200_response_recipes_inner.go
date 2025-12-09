@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &SearchRecipesAPI200ResponseRecipesInner{}
 
 // SearchRecipesAPI200ResponseRecipesInner struct for SearchRecipesAPI200ResponseRecipesInner
 type SearchRecipesAPI200ResponseRecipesInner struct {
-	Images []*string `json:"images,omitempty"`
-	Nutrition *SearchRecipesAPI200ResponseRecipesInnerNutrition `json:"nutrition,omitempty"`
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
+	Images []*string `json:"images,omitempty"`
+	Nutrition *SearchRecipesAPI200ResponseRecipesInnerNutrition `json:"nutrition,omitempty"`
 }
 
 // NewSearchRecipesAPI200ResponseRecipesInner instantiates a new SearchRecipesAPI200ResponseRecipesInner object
@@ -41,70 +41,6 @@ func NewSearchRecipesAPI200ResponseRecipesInner() *SearchRecipesAPI200ResponseRe
 func NewSearchRecipesAPI200ResponseRecipesInnerWithDefaults() *SearchRecipesAPI200ResponseRecipesInner {
 	this := SearchRecipesAPI200ResponseRecipesInner{}
 	return &this
-}
-
-// GetImages returns the Images field value if set, zero value otherwise.
-func (o *SearchRecipesAPI200ResponseRecipesInner) GetImages() []*string {
-	if o == nil || IsNil(o.Images) {
-		var ret []*string
-		return ret
-	}
-	return o.Images
-}
-
-// GetImagesOk returns a tuple with the Images field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchRecipesAPI200ResponseRecipesInner) GetImagesOk() ([]*string, bool) {
-	if o == nil || IsNil(o.Images) {
-		return nil, false
-	}
-	return o.Images, true
-}
-
-// HasImages returns a boolean if a field has been set.
-func (o *SearchRecipesAPI200ResponseRecipesInner) HasImages() bool {
-	if o != nil && !IsNil(o.Images) {
-		return true
-	}
-
-	return false
-}
-
-// SetImages gets a reference to the given []*string and assigns it to the Images field.
-func (o *SearchRecipesAPI200ResponseRecipesInner) SetImages(v []*string) {
-	o.Images = v
-}
-
-// GetNutrition returns the Nutrition field value if set, zero value otherwise.
-func (o *SearchRecipesAPI200ResponseRecipesInner) GetNutrition() SearchRecipesAPI200ResponseRecipesInnerNutrition {
-	if o == nil || IsNil(o.Nutrition) {
-		var ret SearchRecipesAPI200ResponseRecipesInnerNutrition
-		return ret
-	}
-	return *o.Nutrition
-}
-
-// GetNutritionOk returns a tuple with the Nutrition field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchRecipesAPI200ResponseRecipesInner) GetNutritionOk() (*SearchRecipesAPI200ResponseRecipesInnerNutrition, bool) {
-	if o == nil || IsNil(o.Nutrition) {
-		return nil, false
-	}
-	return o.Nutrition, true
-}
-
-// HasNutrition returns a boolean if a field has been set.
-func (o *SearchRecipesAPI200ResponseRecipesInner) HasNutrition() bool {
-	if o != nil && !IsNil(o.Nutrition) {
-		return true
-	}
-
-	return false
-}
-
-// SetNutrition gets a reference to the given SearchRecipesAPI200ResponseRecipesInnerNutrition and assigns it to the Nutrition field.
-func (o *SearchRecipesAPI200ResponseRecipesInner) SetNutrition(v SearchRecipesAPI200ResponseRecipesInnerNutrition) {
-	o.Nutrition = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -181,6 +117,70 @@ func (o *SearchRecipesAPI200ResponseRecipesInner) UnsetTitle() {
 	o.Title.Unset()
 }
 
+// GetImages returns the Images field value if set, zero value otherwise.
+func (o *SearchRecipesAPI200ResponseRecipesInner) GetImages() []*string {
+	if o == nil || IsNil(o.Images) {
+		var ret []*string
+		return ret
+	}
+	return o.Images
+}
+
+// GetImagesOk returns a tuple with the Images field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchRecipesAPI200ResponseRecipesInner) GetImagesOk() ([]*string, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
+	}
+	return o.Images, true
+}
+
+// HasImages returns a boolean if a field has been set.
+func (o *SearchRecipesAPI200ResponseRecipesInner) HasImages() bool {
+	if o != nil && !IsNil(o.Images) {
+		return true
+	}
+
+	return false
+}
+
+// SetImages gets a reference to the given []*string and assigns it to the Images field.
+func (o *SearchRecipesAPI200ResponseRecipesInner) SetImages(v []*string) {
+	o.Images = v
+}
+
+// GetNutrition returns the Nutrition field value if set, zero value otherwise.
+func (o *SearchRecipesAPI200ResponseRecipesInner) GetNutrition() SearchRecipesAPI200ResponseRecipesInnerNutrition {
+	if o == nil || IsNil(o.Nutrition) {
+		var ret SearchRecipesAPI200ResponseRecipesInnerNutrition
+		return ret
+	}
+	return *o.Nutrition
+}
+
+// GetNutritionOk returns a tuple with the Nutrition field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchRecipesAPI200ResponseRecipesInner) GetNutritionOk() (*SearchRecipesAPI200ResponseRecipesInnerNutrition, bool) {
+	if o == nil || IsNil(o.Nutrition) {
+		return nil, false
+	}
+	return o.Nutrition, true
+}
+
+// HasNutrition returns a boolean if a field has been set.
+func (o *SearchRecipesAPI200ResponseRecipesInner) HasNutrition() bool {
+	if o != nil && !IsNil(o.Nutrition) {
+		return true
+	}
+
+	return false
+}
+
+// SetNutrition gets a reference to the given SearchRecipesAPI200ResponseRecipesInnerNutrition and assigns it to the Nutrition field.
+func (o *SearchRecipesAPI200ResponseRecipesInner) SetNutrition(v SearchRecipesAPI200ResponseRecipesInnerNutrition) {
+	o.Nutrition = &v
+}
+
 func (o SearchRecipesAPI200ResponseRecipesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -191,17 +191,17 @@ func (o SearchRecipesAPI200ResponseRecipesInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchRecipesAPI200ResponseRecipesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Images) {
-		toSerialize["images"] = o.Images
-	}
-	if !IsNil(o.Nutrition) {
-		toSerialize["nutrition"] = o.Nutrition
-	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
+	}
+	if !IsNil(o.Images) {
+		toSerialize["images"] = o.Images
+	}
+	if !IsNil(o.Nutrition) {
+		toSerialize["nutrition"] = o.Nutrition
 	}
 	return toSerialize, nil
 }

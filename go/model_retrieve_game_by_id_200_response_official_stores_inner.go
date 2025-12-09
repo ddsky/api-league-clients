@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &RetrieveGameById200ResponseOfficialStoresInner{}
 
 // RetrieveGameById200ResponseOfficialStoresInner struct for RetrieveGameById200ResponseOfficialStoresInner
 type RetrieveGameById200ResponseOfficialStoresInner struct {
-	Url NullableString `json:"url,omitempty"`
 	Source NullableString `json:"source,omitempty"`
+	Url NullableString `json:"url,omitempty"`
 }
 
 // NewRetrieveGameById200ResponseOfficialStoresInner instantiates a new RetrieveGameById200ResponseOfficialStoresInner object
@@ -39,48 +39,6 @@ func NewRetrieveGameById200ResponseOfficialStoresInner() *RetrieveGameById200Res
 func NewRetrieveGameById200ResponseOfficialStoresInnerWithDefaults() *RetrieveGameById200ResponseOfficialStoresInner {
 	this := RetrieveGameById200ResponseOfficialStoresInner{}
 	return &this
-}
-
-// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetrieveGameById200ResponseOfficialStoresInner) GetUrl() string {
-	if o == nil || IsNil(o.Url.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Url.Get()
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetrieveGameById200ResponseOfficialStoresInner) GetUrlOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Url.Get(), o.Url.IsSet()
-}
-
-// HasUrl returns a boolean if a field has been set.
-func (o *RetrieveGameById200ResponseOfficialStoresInner) HasUrl() bool {
-	if o != nil && o.Url.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
-func (o *RetrieveGameById200ResponseOfficialStoresInner) SetUrl(v string) {
-	o.Url.Set(&v)
-}
-// SetUrlNil sets the value for Url to be an explicit nil
-func (o *RetrieveGameById200ResponseOfficialStoresInner) SetUrlNil() {
-	o.Url.Set(nil)
-}
-
-// UnsetUrl ensures that no value is present for Url, not even an explicit nil
-func (o *RetrieveGameById200ResponseOfficialStoresInner) UnsetUrl() {
-	o.Url.Unset()
 }
 
 // GetSource returns the Source field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -125,6 +83,48 @@ func (o *RetrieveGameById200ResponseOfficialStoresInner) UnsetSource() {
 	o.Source.Unset()
 }
 
+// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RetrieveGameById200ResponseOfficialStoresInner) GetUrl() string {
+	if o == nil || IsNil(o.Url.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Url.Get()
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RetrieveGameById200ResponseOfficialStoresInner) GetUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Url.Get(), o.Url.IsSet()
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *RetrieveGameById200ResponseOfficialStoresInner) HasUrl() bool {
+	if o != nil && o.Url.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
+func (o *RetrieveGameById200ResponseOfficialStoresInner) SetUrl(v string) {
+	o.Url.Set(&v)
+}
+// SetUrlNil sets the value for Url to be an explicit nil
+func (o *RetrieveGameById200ResponseOfficialStoresInner) SetUrlNil() {
+	o.Url.Set(nil)
+}
+
+// UnsetUrl ensures that no value is present for Url, not even an explicit nil
+func (o *RetrieveGameById200ResponseOfficialStoresInner) UnsetUrl() {
+	o.Url.Unset()
+}
+
 func (o RetrieveGameById200ResponseOfficialStoresInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -135,11 +135,11 @@ func (o RetrieveGameById200ResponseOfficialStoresInner) MarshalJSON() ([]byte, e
 
 func (o RetrieveGameById200ResponseOfficialStoresInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Url.IsSet() {
-		toSerialize["url"] = o.Url.Get()
-	}
 	if o.Source.IsSet() {
 		toSerialize["source"] = o.Source.Get()
+	}
+	if o.Url.IsSet() {
+		toSerialize["url"] = o.Url.Get()
 	}
 	return toSerialize, nil
 }

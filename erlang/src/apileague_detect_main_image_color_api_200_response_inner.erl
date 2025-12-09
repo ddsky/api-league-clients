@@ -5,16 +5,16 @@
 -export_type([apileague_detect_main_image_color_api_200_response_inner/0]).
 
 -type apileague_detect_main_image_color_api_200_response_inner() ::
-    #{ 'specific_color' => binary(),
-       'main_color' => binary(),
-       'hex_code' => binary()
+    #{ 'hex_code' => binary(),
+       'specific_color' => binary(),
+       'main_color' => binary()
      }.
 
-encode(#{ 'specific_color' := SpecificColor,
-          'main_color' := MainColor,
-          'hex_code' := HexCode
+encode(#{ 'hex_code' := HexCode,
+          'specific_color' := SpecificColor,
+          'main_color' := MainColor
         }) ->
-    #{ 'specific_color' => SpecificColor,
-       'main_color' => MainColor,
-       'hex_code' => HexCode
+    #{ 'hex_code' => HexCode,
+       'specific_color' => SpecificColor,
+       'main_color' => MainColor
      }.

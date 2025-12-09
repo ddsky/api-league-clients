@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.apileague</groupId>
     <artifactId>android-client</artifactId>
-    <version>1.8.1</version>
+    <version>1.9.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.apileague:android-client:1.8.1"
+compile "com.apileague:android-client:1.9.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/android-client-1.8.1.jar
+- target/android-client-1.9.0.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -105,7 +105,6 @@ Class | Method | HTTP request | Description
 *FoodApi* | [**retrieveRecipeInformationAPI**](docs/FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 *FoodApi* | [**searchDrinksAPI**](docs/FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
 *FoodApi* | [**searchRecipesAPI**](docs/FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
-*FoodApi* | [**searchRestaurantsAPI**](docs/FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 *GamesApi* | [**findSimilarGamesAPI**](docs/GamesApi.md#findSimilarGamesAPI) | **GET** /list-similar-games | Find Similar Games API
 *GamesApi* | [**retrieveGameById**](docs/GamesApi.md#retrieveGameById) | **GET** /retrieve-game | Retrieve Game by Id
 *GamesApi* | [**searchGamesAPI**](docs/GamesApi.md#searchGamesAPI) | **GET** /search-games | Search Games API
@@ -115,12 +114,15 @@ Class | Method | HTTP request | Description
 *HumorApi* | [**searchGifsAPI**](docs/HumorApi.md#searchGifsAPI) | **GET** /search-gifs | Search Gifs API
 *HumorApi* | [**searchJokesAPI**](docs/HumorApi.md#searchJokesAPI) | **GET** /search-jokes | Search Jokes API
 *HumorApi* | [**searchMemesAPI**](docs/HumorApi.md#searchMemesAPI) | **GET** /search-memes | Search Memes API
+*KnowledgeApi* | [**randomAffirmationAPI**](docs/KnowledgeApi.md#randomAffirmationAPI) | **GET** /retrieve-random-affirmation | Random Affirmation API
+*KnowledgeApi* | [**randomLifeHackAPI**](docs/KnowledgeApi.md#randomLifeHackAPI) | **GET** /retrieve-random-life-hack | Random Life Hack API
 *KnowledgeApi* | [**randomQuoteAPI**](docs/KnowledgeApi.md#randomQuoteAPI) | **GET** /retrieve-random-quote | Random Quote API
 *KnowledgeApi* | [**randomRiddleAPI**](docs/KnowledgeApi.md#randomRiddleAPI) | **GET** /retrieve-random-riddle | Random Riddle API
 *KnowledgeApi* | [**randomTriviaAPI**](docs/KnowledgeApi.md#randomTriviaAPI) | **GET** /retrieve-random-trivia | Random Trivia API
 *MathApi* | [**convertUnitsAPI**](docs/MathApi.md#convertUnitsAPI) | **GET** /convert-units | Convert Units API
 *MediaApi* | [**detectMainImageColorAPI**](docs/MediaApi.md#detectMainImageColorAPI) | **GET** /detect-color | Detect Main Image Color API
 *MediaApi* | [**rescaleImageAPI**](docs/MediaApi.md#rescaleImageAPI) | **GET** /rescale-image | Rescale Image API
+*MediaApi* | [**screenshotAPI**](docs/MediaApi.md#screenshotAPI) | **GET** /take-screenshot | Screenshot API
 *MediaApi* | [**searchIconsAPI**](docs/MediaApi.md#searchIconsAPI) | **GET** /search-icons | Search Icons API
 *MediaApi* | [**searchRoyaltyFreeImagesAPI**](docs/MediaApi.md#searchRoyaltyFreeImagesAPI) | **GET** /search-images | Search Royalty Free Images API
 *MediaApi* | [**vectorSearchAPI**](docs/MediaApi.md#vectorSearchAPI) | **GET** /search-vectors | Vector Search API
@@ -181,6 +183,8 @@ Class | Method | HTTP request | Description
  - [GenerateNonsenseWordAPI200Response](docs/GenerateNonsenseWordAPI200Response.md)
  - [ListWordSynonymsAPI200Response](docs/ListWordSynonymsAPI200Response.md)
  - [PluralizeWordAPI200Response](docs/PluralizeWordAPI200Response.md)
+ - [RandomAffirmationAPI200Response](docs/RandomAffirmationAPI200Response.md)
+ - [RandomLifeHackAPI200Response](docs/RandomLifeHackAPI200Response.md)
  - [RandomMemeAPI200Response](docs/RandomMemeAPI200Response.md)
  - [RandomPoemAPI200Response](docs/RandomPoemAPI200Response.md)
  - [RandomQuoteAPI200Response](docs/RandomQuoteAPI200Response.md)
@@ -233,10 +237,10 @@ Class | Method | HTTP request | Description
  - [SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutrition](docs/SearchDrinksAPI200ResponseDrinksInnerNutrition.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md)
- - [SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md)
+ - [SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md)
  - [SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing](docs/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md)
  - [SearchGamesAPI200Response](docs/SearchGamesAPI200Response.md)
  - [SearchGamesAPI200ResponseActiveFilterOptionsInner](docs/SearchGamesAPI200ResponseActiveFilterOptionsInner.md)
@@ -250,6 +254,7 @@ Class | Method | HTTP request | Description
  - [SearchGifsAPI200Response](docs/SearchGifsAPI200Response.md)
  - [SearchGifsAPI200ResponseImagesInner](docs/SearchGifsAPI200ResponseImagesInner.md)
  - [SearchIconsAPI200Response](docs/SearchIconsAPI200Response.md)
+ - [SearchIconsAPI200ResponseIconsInner](docs/SearchIconsAPI200ResponseIconsInner.md)
  - [SearchJokesAPI200Response](docs/SearchJokesAPI200Response.md)
  - [SearchJokesAPI200ResponseJokesInner](docs/SearchJokesAPI200ResponseJokesInner.md)
  - [SearchMemesAPI200Response](docs/SearchMemesAPI200Response.md)
@@ -260,11 +265,6 @@ Class | Method | HTTP request | Description
  - [SearchRecipesAPI200ResponseRecipesInner](docs/SearchRecipesAPI200ResponseRecipesInner.md)
  - [SearchRecipesAPI200ResponseRecipesInnerNutrition](docs/SearchRecipesAPI200ResponseRecipesInnerNutrition.md)
  - [SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner](docs/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md)
- - [SearchRestaurantsAPI200Response](docs/SearchRestaurantsAPI200Response.md)
- - [SearchRestaurantsAPI200ResponseRestaurantsInner](docs/SearchRestaurantsAPI200ResponseRestaurantsInner.md)
- - [SearchRestaurantsAPI200ResponseRestaurantsInnerAddress](docs/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.md)
- - [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours](docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.md)
- - [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational](docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.md)
  - [SearchRoyaltyFreeImagesAPI200Response](docs/SearchRoyaltyFreeImagesAPI200Response.md)
  - [SearchRoyaltyFreeImagesAPI200ResponseImagesInner](docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md)
  - [SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense](docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md)

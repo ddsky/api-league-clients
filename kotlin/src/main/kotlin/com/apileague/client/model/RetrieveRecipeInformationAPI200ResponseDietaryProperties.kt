@@ -22,20 +22,17 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param lowFodmap 
  * @param vegetarian 
  * @param vegan 
  * @param glutenFree 
  * @param dairyFree 
+ * @param lowFodmap 
  * @param gaps 
  * @param diets 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseDietaryProperties (
-
-    @Json(name = "low_fodmap")
-    val lowFodmap: kotlin.Boolean? = null,
 
     @Json(name = "vegetarian")
     val vegetarian: kotlin.Boolean? = null,
@@ -48,6 +45,9 @@ data class RetrieveRecipeInformationAPI200ResponseDietaryProperties (
 
     @Json(name = "dairy_free")
     val dairyFree: kotlin.Boolean? = null,
+
+    @Json(name = "low_fodmap")
+    val lowFodmap: kotlin.Boolean? = null,
 
     @Json(name = "gaps")
     val gaps: kotlin.String? = null,

@@ -31,12 +31,6 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInnerTest : ShouldS
             //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `percentOfDailyNeeds`
-        should("test percentOfDailyNeeds") {
-            // uncomment below to test the property
-            //modelInstance.percentOfDailyNeeds shouldBe ("TODO")
-        }
-
         // to test the property `amount`
         should("test amount") {
             // uncomment below to test the property
@@ -47,6 +41,12 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInnerTest : ShouldS
         should("test unit") {
             // uncomment below to test the property
             //modelInstance.unit shouldBe ("TODO")
+        }
+
+        // to test the property `percentOfDailyNeeds`
+        should("test percentOfDailyNeeds") {
+            // uncomment below to test the property
+            //modelInstance.percentOfDailyNeeds shouldBe ("TODO")
         }
 
     }

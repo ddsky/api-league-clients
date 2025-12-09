@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalPossible** | **Number** |  | [optional] 
 **total** | **Number** |  | [optional] 
+**totalPossible** | **Number** |  | [optional] 
 
 

@@ -26,16 +26,10 @@ class SearchRoyaltyFreeImagesAPI200ResponseImagesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchRoyaltyFreeImagesAPI200ResponseImagesInner
         //val modelInstance = SearchRoyaltyFreeImagesAPI200ResponseImagesInner()
 
-        // to test the property `width`
-        should("test width") {
+        // to test the property `url`
+        should("test url") {
             // uncomment below to test the property
-            //modelInstance.width shouldBe ("TODO")
-        }
-
-        // to test the property `license`
-        should("test license") {
-            // uncomment below to test the property
-            //modelInstance.license shouldBe ("TODO")
+            //modelInstance.url shouldBe ("TODO")
         }
 
         // to test the property `thumbnail`
@@ -44,22 +38,28 @@ class SearchRoyaltyFreeImagesAPI200ResponseImagesInnerTest : ShouldSpec() {
             //modelInstance.thumbnail shouldBe ("TODO")
         }
 
-        // to test the property `id`
-        should("test id") {
+        // to test the property `width`
+        should("test width") {
             // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
-        }
-
-        // to test the property `url`
-        should("test url") {
-            // uncomment below to test the property
-            //modelInstance.url shouldBe ("TODO")
+            //modelInstance.width shouldBe ("TODO")
         }
 
         // to test the property `height`
         should("test height") {
             // uncomment below to test the property
             //modelInstance.height shouldBe ("TODO")
+        }
+
+        // to test the property `license`
+        should("test license") {
+            // uncomment below to test the property
+            //modelInstance.license shouldBe ("TODO")
+        }
+
+        // to test the property `id`
+        should("test id") {
+            // uncomment below to test the property
+            //modelInstance.id shouldBe ("TODO")
         }
 
     }

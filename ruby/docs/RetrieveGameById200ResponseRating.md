@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **count** | **Integer** |  | [optional] |
-| **count_critics** | **Integer** |  | [optional] |
-| **mean_players** | **Float** |  | [optional] |
-| **mean_critics** | **Float** |  | [optional] |
 | **mean** | **Float** |  | [optional] |
+| **count** | **Integer** |  | [optional] |
+| **mean_players** | **Float** |  | [optional] |
 | **count_players** | **Integer** |  | [optional] |
+| **mean_critics** | **Float** |  | [optional] |
+| **count_critics** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -17,12 +17,12 @@
 require 'openapi_client'
 
 instance = OpenapiClient::RetrieveGameById200ResponseRating.new(
-  count: null,
-  count_critics: null,
-  mean_players: null,
-  mean_critics: null,
   mean: null,
-  count_players: null
+  count: null,
+  mean_players: null,
+  count_players: null,
+  mean_critics: null,
+  count_critics: null
 )
 ```
 

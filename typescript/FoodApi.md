@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**retrieveRecipeInformationAPI**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**searchDrinksAPI**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API
 [**searchRecipesAPI**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API
-[**searchRestaurantsAPI**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API
 
 
 # **computeNutritionAPI**
@@ -566,93 +565,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **SearchRecipesAPI200Response**
-
-### Authorization
-
-[apiKey](README.md#apiKey), [headerApiKey](README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **searchRestaurantsAPI**
-> SearchRestaurantsAPI200Response searchRestaurantsAPI()
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-
-
-```typescript
-import {  } from '';
-import * as fs from 'fs';
-
-const configuration = .createConfiguration();
-const apiInstance = new .FoodApi(configuration);
-
-let body:.FoodApiSearchRestaurantsAPIRequest = {
-  // number | The latitude to search around.
-  lat: 32.715736,
-  // number | The longitude to search around.
-  lon: -117.161087,
-  // string | The search query. (optional)
-  query: "burger",
-  // number | The maximum distance of the restaurant in miles around the given location. (optional)
-  distance: 5,
-  // number | The budget in USD for the meal. (optional)
-  budget: 25,
-  // number | The minimum rating of the restaurants in range [0,5]. (optional)
-  minRating: 4.4,
-  // string | The cuisine that the restaurants should support. (optional)
-  cuisine: "Mexican",
-  // boolean | Whether the restaurants have to be open now. (optional)
-  isOpen: true,
-  // number | The page of the results. (optional)
-  page: 0,
-  // string | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
-  sort: "rating",
-};
-
-apiInstance.searchRestaurantsAPI(body).then((data:any) => {
-  console.log('API called successfully. Returned data: ' + data);
-}).catch((error:any) => console.error(error));
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | [**number**] | The latitude to search around. | defaults to undefined
- **lon** | [**number**] | The longitude to search around. | defaults to undefined
- **query** | [**string**] | The search query. | (optional) defaults to undefined
- **distance** | [**number**] | The maximum distance of the restaurant in miles around the given location. | (optional) defaults to undefined
- **budget** | [**number**] | The budget in USD for the meal. | (optional) defaults to undefined
- **minRating** | [**number**] | The minimum rating of the restaurants in range [0,5]. | (optional) defaults to undefined
- **cuisine** | [**string**] | The cuisine that the restaurants should support. | (optional) defaults to undefined
- **isOpen** | [**boolean**] | Whether the restaurants have to be open now. | (optional) defaults to undefined
- **page** | [**number**] | The page of the results. | (optional) defaults to undefined
- **sort** | [**string**] | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | (optional) defaults to undefined
-
-
-### Return type
-
-**SearchRestaurantsAPI200Response**
 
 ### Authorization
 

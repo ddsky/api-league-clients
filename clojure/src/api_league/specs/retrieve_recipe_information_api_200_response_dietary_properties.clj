@@ -7,11 +7,11 @@
 
 (def retrieve-recipe-information-api-200-response-dietary-properties-data
   {
-   (ds/opt :low_fodmap) boolean?
    (ds/opt :vegetarian) boolean?
    (ds/opt :vegan) boolean?
    (ds/opt :gluten_free) boolean?
    (ds/opt :dairy_free) boolean?
+   (ds/opt :low_fodmap) boolean?
    (ds/opt :gaps) string?
    (ds/opt :diets) (s/coll-of string?)
    })

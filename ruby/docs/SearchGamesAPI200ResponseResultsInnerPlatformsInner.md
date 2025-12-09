@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **name** | **String** |  | [optional] |
 | **value** | **String** |  | [optional] |
+| **name** | **String** |  | [optional] |
 
 ## Example
 
@@ -13,8 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchGamesAPI200ResponseResultsInnerPlatformsInner.new(
-  name: null,
-  value: null
+  value: null,
+  name: null
 )
 ```
 

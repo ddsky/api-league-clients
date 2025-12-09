@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**width** | **Number** |  | [optional] 
 **title** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
+**width** | **Number** |  | [optional] 
 **height** | **Number** |  | [optional] 
 
 

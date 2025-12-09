@@ -8,7 +8,6 @@ All URIs are relative to https://api.apileague.com, except if the operation defi
 | [**retrieveRecipeInformationAPI()**](FoodApi.md#retrieveRecipeInformationAPI) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
 | [**searchDrinksAPI()**](FoodApi.md#searchDrinksAPI) | **GET** /search-drinks | Search Drinks API |
 | [**searchRecipesAPI()**](FoodApi.md#searchRecipesAPI) | **GET** /search-recipes | Search Recipes API |
-| [**searchRestaurantsAPI()**](FoodApi.md#searchRestaurantsAPI) | **GET** /search-restaurants | Search Restaurants API |
 
 
 ## `computeNutritionAPI()`
@@ -491,91 +490,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\SearchRecipesAPI200Response**](../Model/SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [headerApiKey](../../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `searchRestaurantsAPI()`
-
-```php
-searchRestaurantsAPI($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort): \OpenAPI\Client\Model\SearchRestaurantsAPI200Response
-```
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: apiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
-
-// Configure API key authorization: headerApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\FoodApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$lat = 32.715736; // float | The latitude to search around.
-$lon = -117.161087; // float | The longitude to search around.
-$query = burger; // string | The search query.
-$distance = 5; // int | The maximum distance of the restaurant in miles around the given location.
-$budget = 25; // float | The budget in USD for the meal.
-$min_rating = 4.4; // float | The minimum rating of the restaurants in range [0,5].
-$cuisine = Mexican; // string | The cuisine that the restaurants should support.
-$is_open = true; // bool | Whether the restaurants have to be open now.
-$page = 0; // int | The page of the results.
-$sort = rating; // string | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-
-try {
-    $result = $apiInstance->searchRestaurantsAPI($lat, $lon, $query, $distance, $budget, $min_rating, $cuisine, $is_open, $page, $sort);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FoodApi->searchRestaurantsAPI: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **lat** | **float**| The latitude to search around. | |
-| **lon** | **float**| The longitude to search around. | |
-| **query** | **string**| The search query. | [optional] |
-| **distance** | **int**| The maximum distance of the restaurant in miles around the given location. | [optional] |
-| **budget** | **float**| The budget in USD for the meal. | [optional] |
-| **min_rating** | **float**| The minimum rating of the restaurants in range [0,5]. | [optional] |
-| **cuisine** | **string**| The cuisine that the restaurants should support. | [optional] |
-| **is_open** | **bool**| Whether the restaurants have to be open now. | [optional] |
-| **page** | **int**| The page of the results. | [optional] |
-| **sort** | **string**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\SearchRestaurantsAPI200Response**](../Model/SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

@@ -8,11 +8,11 @@ use WWW::OpenAPIClient::Object::RetrieveRecipeInformationAPI200ResponseDietaryPr
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**low_fodmap** | **boolean** |  | [optional] 
 **vegetarian** | **boolean** |  | [optional] 
 **vegan** | **boolean** |  | [optional] 
 **gluten_free** | **boolean** |  | [optional] 
 **dairy_free** | **boolean** |  | [optional] 
+**low_fodmap** | **boolean** |  | [optional] 
 **gaps** | **string** |  | [optional] 
 **diets** | **ARRAY[string]** |  | [optional] 
 

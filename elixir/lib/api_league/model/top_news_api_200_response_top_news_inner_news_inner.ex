@@ -8,24 +8,24 @@ defmodule APILeague.Model.TopNewsApi200ResponseTopNewsInnerNewsInner do
 
   @derive Jason.Encoder
   defstruct [
-    :summary,
-    :image,
     :id,
-    :text,
     :title,
-    :publish_date,
+    :text,
+    :summary,
     :url,
+    :image,
+    :publish_date,
     :authors
   ]
 
   @type t :: %__MODULE__{
-    :summary => String.t | nil,
-    :image => String.t | nil,
     :id => integer() | nil,
-    :text => String.t | nil,
     :title => String.t | nil,
-    :publish_date => String.t | nil,
+    :text => String.t | nil,
+    :summary => String.t | nil,
     :url => String.t | nil,
+    :image => String.t | nil,
+    :publish_date => String.t | nil,
     :authors => [String.t] | nil
   }
 

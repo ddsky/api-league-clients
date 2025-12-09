@@ -26,22 +26,10 @@ class FindSimilarGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
         // uncomment below to create an instance of FindSimilarGamesAPI200ResponseResultsInner
         //val modelInstance = FindSimilarGamesAPI200ResponseResultsInner()
 
-        // to test the property `image`
-        should("test image") {
+        // to test the property `id`
+        should("test id") {
             // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
-        }
-
-        // to test the property `shortDescription`
-        should("test shortDescription") {
-            // uncomment below to test the property
-            //modelInstance.shortDescription shouldBe ("TODO")
-        }
-
-        // to test the property `microTrailer`
-        should("test microTrailer") {
-            // uncomment below to test the property
-            //modelInstance.microTrailer shouldBe ("TODO")
+            //modelInstance.id shouldBe ("TODO")
         }
 
         // to test the property `year`
@@ -62,6 +50,12 @@ class FindSimilarGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
             //modelInstance.genre shouldBe ("TODO")
         }
 
+        // to test the property `image`
+        should("test image") {
+            // uncomment below to test the property
+            //modelInstance.image shouldBe ("TODO")
+        }
+
         // to test the property `link`
         should("test link") {
             // uncomment below to test the property
@@ -72,12 +66,6 @@ class FindSimilarGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
         should("test rating") {
             // uncomment below to test the property
             //modelInstance.rating shouldBe ("TODO")
-        }
-
-        // to test the property `id`
-        should("test id") {
-            // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
         }
 
         // to test the property `adultOnly`
@@ -92,10 +80,22 @@ class FindSimilarGamesAPI200ResponseResultsInnerTest : ShouldSpec() {
             //modelInstance.screenshots shouldBe ("TODO")
         }
 
+        // to test the property `microTrailer`
+        should("test microTrailer") {
+            // uncomment below to test the property
+            //modelInstance.microTrailer shouldBe ("TODO")
+        }
+
         // to test the property `gameplay`
         should("test gameplay") {
             // uncomment below to test the property
             //modelInstance.gameplay shouldBe ("TODO")
+        }
+
+        // to test the property `shortDescription`
+        should("test shortDescription") {
+            // uncomment below to test the property
+            //modelInstance.shortDescription shouldBe ("TODO")
         }
 
     }

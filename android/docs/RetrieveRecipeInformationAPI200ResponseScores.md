@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metaScore** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **weightWatcherSmartPoints** | **Integer** |  |  [optional]
 **healthScore** | **Integer** |  |  [optional]
+**metaScore** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 
 
 

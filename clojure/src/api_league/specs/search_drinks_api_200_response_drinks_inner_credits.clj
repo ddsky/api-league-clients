@@ -7,9 +7,9 @@
 
 (def search-drinks-api-200-response-drinks-inner-credits-data
   {
-   (ds/opt :text) string?
    (ds/opt :source_name) string?
    (ds/opt :source_url) string?
+   (ds/opt :text) string?
    })
 
 (def search-drinks-api-200-response-drinks-inner-credits-spec

@@ -25,12 +25,6 @@ class DetectSentimentAPI200ResponseSentencesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of DetectSentimentAPI200ResponseSentencesInner
         //val modelInstance = DetectSentimentAPI200ResponseSentencesInner()
 
-        // to test the property `length`
-        should("test length") {
-            // uncomment below to test the property
-            //modelInstance.length shouldBe ("TODO")
-        }
-
         // to test the property `sentiment`
         should("test sentiment") {
             // uncomment below to test the property
@@ -47,6 +41,12 @@ class DetectSentimentAPI200ResponseSentencesInnerTest : ShouldSpec() {
         should("test confidence") {
             // uncomment below to test the property
             //modelInstance.confidence shouldBe ("TODO")
+        }
+
+        // to test the property `length`
+        should("test length") {
+            // uncomment below to test the property
+            //modelInstance.length shouldBe ("TODO")
         }
 
     }

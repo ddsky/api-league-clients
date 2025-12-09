@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Key** | Pointer to **NullableString** |  | [optional] 
 **Sort** | Pointer to **NullableString** |  | [optional] 
+**Key** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -62,41 +62,6 @@ HasName returns a boolean if a field has been set.
 `func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetKey
-
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKey() string`
-
-GetKey returns the Key field if non-nil, zero value otherwise.
-
-### GetKeyOk
-
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKeyOk() (*string, bool)`
-
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKey
-
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKey(v string)`
-
-SetKey sets Key field to given value.
-
-### HasKey
-
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) HasKey() bool`
-
-HasKey returns a boolean if a field has been set.
-
-### SetKeyNil
-
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKeyNil(b bool)`
-
- SetKeyNil sets the value for Key to be an explicit nil
-
-### UnsetKey
-`func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetKey()`
-
-UnsetKey ensures that no value is present for Key, not even an explicit nil
 ### GetSort
 
 `func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetSort() string`
@@ -132,6 +97,41 @@ HasSort returns a boolean if a field has been set.
 `func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetSort()`
 
 UnsetSort ensures that no value is present for Sort, not even an explicit nil
+### GetKey
+
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKey() string`
+
+GetKey returns the Key field if non-nil, zero value otherwise.
+
+### GetKeyOk
+
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) GetKeyOk() (*string, bool)`
+
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKey
+
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKey(v string)`
+
+SetKey sets Key field to given value.
+
+### HasKey
+
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) HasKey() bool`
+
+HasKey returns a boolean if a field has been set.
+
+### SetKeyNil
+
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) SetKeyNil(b bool)`
+
+ SetKeyNil sets the value for Key to be an explicit nil
+
+### UnsetKey
+`func (o *SearchGamesAPI200ResponseSortingOptionsInner) UnsetKey()`
+
+UnsetKey ensures that no value is present for Key, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

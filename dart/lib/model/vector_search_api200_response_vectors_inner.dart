@@ -13,15 +13,15 @@ part of openapi.api;
 class VectorSearchAPI200ResponseVectorsInner {
   /// Returns a new [VectorSearchAPI200ResponseVectorsInner] instance.
   VectorSearchAPI200ResponseVectorsInner({
-    this.license,
     this.title,
+    this.license,
     this.author,
     this.imageUrl,
   });
 
-  String? license;
-
   String? title;
+
+  String? license;
 
   String? author;
 
@@ -29,33 +29,33 @@ class VectorSearchAPI200ResponseVectorsInner {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is VectorSearchAPI200ResponseVectorsInner &&
-    other.license == license &&
     other.title == title &&
+    other.license == license &&
     other.author == author &&
     other.imageUrl == imageUrl;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (license == null ? 0 : license!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
+    (license == null ? 0 : license!.hashCode) +
     (author == null ? 0 : author!.hashCode) +
     (imageUrl == null ? 0 : imageUrl!.hashCode);
 
   @override
-  String toString() => 'VectorSearchAPI200ResponseVectorsInner[license=$license, title=$title, author=$author, imageUrl=$imageUrl]';
+  String toString() => 'VectorSearchAPI200ResponseVectorsInner[title=$title, license=$license, author=$author, imageUrl=$imageUrl]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.license != null) {
-      json[r'license'] = this.license;
-    } else {
-      json[r'license'] = null;
-    }
     if (this.title != null) {
       json[r'title'] = this.title;
     } else {
       json[r'title'] = null;
+    }
+    if (this.license != null) {
+      json[r'license'] = this.license;
+    } else {
+      json[r'license'] = null;
     }
     if (this.author != null) {
       json[r'author'] = this.author;
@@ -89,8 +89,8 @@ class VectorSearchAPI200ResponseVectorsInner {
       }());
 
       return VectorSearchAPI200ResponseVectorsInner(
-        license: mapValueOfType<String>(json, r'license'),
         title: mapValueOfType<String>(json, r'title'),
+        license: mapValueOfType<String>(json, r'license'),
         author: mapValueOfType<String>(json, r'author'),
         imageUrl: mapValueOfType<String>(json, r'image_url'),
       );

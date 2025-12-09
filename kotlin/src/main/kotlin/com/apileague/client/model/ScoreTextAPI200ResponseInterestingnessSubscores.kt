@@ -22,30 +22,30 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param titleRatingScore 
- * @param quoteScore 
- * @param lengthScore 
- * @param linkScore 
  * @param googleHitsScore 
+ * @param linkScore 
+ * @param quoteScore 
+ * @param titleRatingScore 
+ * @param lengthScore 
  */
 
 
 data class ScoreTextAPI200ResponseInterestingnessSubscores (
 
-    @Json(name = "title_rating_score")
-    val titleRatingScore: kotlin.collections.List<kotlin.Int>? = null,
-
-    @Json(name = "quote_score")
-    val quoteScore: kotlin.collections.List<kotlin.Int>? = null,
-
-    @Json(name = "length_score")
-    val lengthScore: kotlin.collections.List<kotlin.Int>? = null,
+    @Json(name = "google_hits_score")
+    val googleHitsScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
     @Json(name = "link_score")
-    val linkScore: kotlin.collections.List<kotlin.Int>? = null,
+    val linkScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
-    @Json(name = "google_hits_score")
-    val googleHitsScore: kotlin.collections.List<kotlin.Int>? = null
+    @Json(name = "quote_score")
+    val quoteScore: kotlin.collections.List<java.math.BigDecimal>? = null,
+
+    @Json(name = "title_rating_score")
+    val titleRatingScore: kotlin.collections.List<java.math.BigDecimal>? = null,
+
+    @Json(name = "length_score")
+    val lengthScore: kotlin.collections.List<java.math.BigDecimal>? = null
 
 ) {
 

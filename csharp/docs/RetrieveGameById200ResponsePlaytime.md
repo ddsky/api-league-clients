@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Percentiles** | **List&lt;int&gt;** |  | [optional] 
+**Percentiles** | **List&lt;decimal&gt;** |  | [optional] 
 **Min** | **int** |  | [optional] 
 **Median** | **int** |  | [optional] 
 **Max** | **int** |  | [optional] 

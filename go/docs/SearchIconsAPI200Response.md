@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Icons** | Pointer to [**[]SearchRoyaltyFreeImagesAPI200ResponseImagesInner**](SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md) |  | [optional] 
+**Icons** | Pointer to [**[]SearchIconsAPI200ResponseIconsInner**](SearchIconsAPI200ResponseIconsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIcons
 
-`func (o *SearchIconsAPI200Response) GetIcons() []SearchRoyaltyFreeImagesAPI200ResponseImagesInner`
+`func (o *SearchIconsAPI200Response) GetIcons() []SearchIconsAPI200ResponseIconsInner`
 
 GetIcons returns the Icons field if non-nil, zero value otherwise.
 
 ### GetIconsOk
 
-`func (o *SearchIconsAPI200Response) GetIconsOk() (*[]SearchRoyaltyFreeImagesAPI200ResponseImagesInner, bool)`
+`func (o *SearchIconsAPI200Response) GetIconsOk() (*[]SearchIconsAPI200ResponseIconsInner, bool)`
 
 GetIconsOk returns a tuple with the Icons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIcons
 
-`func (o *SearchIconsAPI200Response) SetIcons(v []SearchRoyaltyFreeImagesAPI200ResponseImagesInner)`
+`func (o *SearchIconsAPI200Response) SetIcons(v []SearchIconsAPI200ResponseIconsInner)`
 
 SetIcons sets Icons field to given value.
 

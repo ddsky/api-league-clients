@@ -14,41 +14,41 @@ class SearchGamesAPI200ResponseFilterOptionsInner {
   /// Returns a new [SearchGamesAPI200ResponseFilterOptionsInner] instance.
   SearchGamesAPI200ResponseFilterOptionsInner({
     this.name,
-    this.filterType,
     this.key,
     this.values = const [],
+    this.filterType,
     this.filterConnection,
   });
 
   String? name;
 
-  String? filterType;
-
   String? key;
 
   List<SearchGamesAPI200ResponseFilterOptionsInnerValuesInner> values;
+
+  String? filterType;
 
   String? filterConnection;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchGamesAPI200ResponseFilterOptionsInner &&
     other.name == name &&
-    other.filterType == filterType &&
     other.key == key &&
     _deepEquality.equals(other.values, values) &&
+    other.filterType == filterType &&
     other.filterConnection == filterConnection;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (filterType == null ? 0 : filterType!.hashCode) +
     (key == null ? 0 : key!.hashCode) +
     (values.hashCode) +
+    (filterType == null ? 0 : filterType!.hashCode) +
     (filterConnection == null ? 0 : filterConnection!.hashCode);
 
   @override
-  String toString() => 'SearchGamesAPI200ResponseFilterOptionsInner[name=$name, filterType=$filterType, key=$key, values=$values, filterConnection=$filterConnection]';
+  String toString() => 'SearchGamesAPI200ResponseFilterOptionsInner[name=$name, key=$key, values=$values, filterType=$filterType, filterConnection=$filterConnection]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -57,17 +57,17 @@ class SearchGamesAPI200ResponseFilterOptionsInner {
     } else {
       json[r'name'] = null;
     }
-    if (this.filterType != null) {
-      json[r'filter_type'] = this.filterType;
-    } else {
-      json[r'filter_type'] = null;
-    }
     if (this.key != null) {
       json[r'key'] = this.key;
     } else {
       json[r'key'] = null;
     }
       json[r'values'] = this.values;
+    if (this.filterType != null) {
+      json[r'filter_type'] = this.filterType;
+    } else {
+      json[r'filter_type'] = null;
+    }
     if (this.filterConnection != null) {
       json[r'filter_connection'] = this.filterConnection;
     } else {
@@ -96,9 +96,9 @@ class SearchGamesAPI200ResponseFilterOptionsInner {
 
       return SearchGamesAPI200ResponseFilterOptionsInner(
         name: mapValueOfType<String>(json, r'name'),
-        filterType: mapValueOfType<String>(json, r'filter_type'),
         key: mapValueOfType<String>(json, r'key'),
         values: SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.listFromJson(json[r'values']),
+        filterType: mapValueOfType<String>(json, r'filter_type'),
         filterConnection: mapValueOfType<String>(json, r'filter_connection'),
       );
     }

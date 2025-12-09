@@ -13,18 +13,10 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseScores {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseScores] instance.
   RetrieveRecipeInformationAPI200ResponseScores({
-    this.metaScore,
     this.weightWatcherSmartPoints,
     this.healthScore,
+    this.metaScore,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? metaScore;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -42,29 +34,32 @@ class RetrieveRecipeInformationAPI200ResponseScores {
   ///
   int? healthScore;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? metaScore;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseScores &&
-    other.metaScore == metaScore &&
     other.weightWatcherSmartPoints == weightWatcherSmartPoints &&
-    other.healthScore == healthScore;
+    other.healthScore == healthScore &&
+    other.metaScore == metaScore;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (metaScore == null ? 0 : metaScore!.hashCode) +
     (weightWatcherSmartPoints == null ? 0 : weightWatcherSmartPoints!.hashCode) +
-    (healthScore == null ? 0 : healthScore!.hashCode);
+    (healthScore == null ? 0 : healthScore!.hashCode) +
+    (metaScore == null ? 0 : metaScore!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseScores[metaScore=$metaScore, weightWatcherSmartPoints=$weightWatcherSmartPoints, healthScore=$healthScore]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseScores[weightWatcherSmartPoints=$weightWatcherSmartPoints, healthScore=$healthScore, metaScore=$metaScore]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.metaScore != null) {
-      json[r'meta_score'] = this.metaScore;
-    } else {
-      json[r'meta_score'] = null;
-    }
     if (this.weightWatcherSmartPoints != null) {
       json[r'weight_watcher_smart_points'] = this.weightWatcherSmartPoints;
     } else {
@@ -74,6 +69,11 @@ class RetrieveRecipeInformationAPI200ResponseScores {
       json[r'health_score'] = this.healthScore;
     } else {
       json[r'health_score'] = null;
+    }
+    if (this.metaScore != null) {
+      json[r'meta_score'] = this.metaScore;
+    } else {
+      json[r'meta_score'] = null;
     }
     return json;
   }
@@ -97,9 +97,9 @@ class RetrieveRecipeInformationAPI200ResponseScores {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseScores(
-        metaScore: num.parse('${json[r'meta_score']}'),
         weightWatcherSmartPoints: mapValueOfType<int>(json, r'weight_watcher_smart_points'),
         healthScore: mapValueOfType<int>(json, r'health_score'),
+        metaScore: num.parse('${json[r'meta_score']}'),
       );
     }
     return null;

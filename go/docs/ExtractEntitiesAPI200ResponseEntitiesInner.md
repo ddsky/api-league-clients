@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartPosition** | Pointer to **int32** |  | [optional] 
-**Image** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to **NullableString** |  | [optional] 
 **Value** | Pointer to **NullableString** |  | [optional] 
+**StartPosition** | Pointer to **int32** |  | [optional] 
 **EndPosition** | Pointer to **int32** |  | [optional] 
+**Image** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -29,66 +29,6 @@ NewExtractEntitiesAPI200ResponseEntitiesInnerWithDefaults instantiates a new Ext
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStartPosition
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPosition() int32`
-
-GetStartPosition returns the StartPosition field if non-nil, zero value otherwise.
-
-### GetStartPositionOk
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPositionOk() (*int32, bool)`
-
-GetStartPositionOk returns a tuple with the StartPosition field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStartPosition
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetStartPosition(v int32)`
-
-SetStartPosition sets StartPosition field to given value.
-
-### HasStartPosition
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasStartPosition() bool`
-
-HasStartPosition returns a boolean if a field has been set.
-
-### GetImage
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImage() string`
-
-GetImage returns the Image field if non-nil, zero value otherwise.
-
-### GetImageOk
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImageOk() (*string, bool)`
-
-GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImage
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImage(v string)`
-
-SetImage sets Image field to given value.
-
-### HasImage
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasImage() bool`
-
-HasImage returns a boolean if a field has been set.
-
-### SetImageNil
-
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImageNil(b bool)`
-
- SetImageNil sets the value for Image to be an explicit nil
-
-### UnsetImage
-`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetImage()`
-
-UnsetImage ensures that no value is present for Image, not even an explicit nil
 ### GetType
 
 `func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetType() string`
@@ -159,6 +99,31 @@ HasValue returns a boolean if a field has been set.
 `func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
+### GetStartPosition
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPosition() int32`
+
+GetStartPosition returns the StartPosition field if non-nil, zero value otherwise.
+
+### GetStartPositionOk
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetStartPositionOk() (*int32, bool)`
+
+GetStartPositionOk returns a tuple with the StartPosition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartPosition
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetStartPosition(v int32)`
+
+SetStartPosition sets StartPosition field to given value.
+
+### HasStartPosition
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasStartPosition() bool`
+
+HasStartPosition returns a boolean if a field has been set.
+
 ### GetEndPosition
 
 `func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetEndPosition() int32`
@@ -184,6 +149,41 @@ SetEndPosition sets EndPosition field to given value.
 
 HasEndPosition returns a boolean if a field has been set.
 
+### GetImage
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImage() string`
+
+GetImage returns the Image field if non-nil, zero value otherwise.
+
+### GetImageOk
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) GetImageOk() (*string, bool)`
+
+GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImage
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImage(v string)`
+
+SetImage sets Image field to given value.
+
+### HasImage
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) HasImage() bool`
+
+HasImage returns a boolean if a field has been set.
+
+### SetImageNil
+
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) SetImageNil(b bool)`
+
+ SetImageNil sets the value for Image to be an explicit nil
+
+### UnsetImage
+`func (o *ExtractEntitiesAPI200ResponseEntitiesInner) UnsetImage()`
+
+UnsetImage ensures that no value is present for Image, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

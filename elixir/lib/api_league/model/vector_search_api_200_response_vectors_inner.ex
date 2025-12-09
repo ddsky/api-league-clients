@@ -8,15 +8,15 @@ defmodule APILeague.Model.VectorSearchApi200ResponseVectorsInner do
 
   @derive Jason.Encoder
   defstruct [
-    :license,
     :title,
+    :license,
     :author,
     :image_url
   ]
 
   @type t :: %__MODULE__{
-    :license => String.t | nil,
     :title => String.t | nil,
+    :license => String.t | nil,
     :author => String.t | nil,
     :image_url => String.t | nil
   }

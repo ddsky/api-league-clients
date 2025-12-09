@@ -25,18 +25,6 @@ class RetrieveRecipeInformationAPI200ResponseCreditsTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseCredits
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseCredits()
 
-        // to test the property `license`
-        should("test license") {
-            // uncomment below to test the property
-            //modelInstance.license shouldBe ("TODO")
-        }
-
-        // to test the property `text`
-        should("test text") {
-            // uncomment below to test the property
-            //modelInstance.text shouldBe ("TODO")
-        }
-
         // to test the property `sourceName`
         should("test sourceName") {
             // uncomment below to test the property
@@ -47,6 +35,18 @@ class RetrieveRecipeInformationAPI200ResponseCreditsTest : ShouldSpec() {
         should("test sourceUrl") {
             // uncomment below to test the property
             //modelInstance.sourceUrl shouldBe ("TODO")
+        }
+
+        // to test the property `text`
+        should("test text") {
+            // uncomment below to test the property
+            //modelInstance.text shouldBe ("TODO")
+        }
+
+        // to test the property `license`
+        should("test license") {
+            // uncomment below to test the property
+            //modelInstance.license shouldBe ("TODO")
         }
 
     }

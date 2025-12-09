@@ -16,13 +16,13 @@ void main() {
   // final instance = RetrieveGameById200ResponseRating();
 
   group('test RetrieveGameById200ResponseRating', () {
-    // int count
-    test('to test the property `count`', () async {
+    // num mean
+    test('to test the property `mean`', () async {
       // TODO
     });
 
-    // int countCritics
-    test('to test the property `countCritics`', () async {
+    // int count
+    test('to test the property `count`', () async {
       // TODO
     });
 
@@ -31,18 +31,18 @@ void main() {
       // TODO
     });
 
+    // int countPlayers
+    test('to test the property `countPlayers`', () async {
+      // TODO
+    });
+
     // num meanCritics
     test('to test the property `meanCritics`', () async {
       // TODO
     });
 
-    // num mean
-    test('to test the property `mean`', () async {
-      // TODO
-    });
-
-    // int countPlayers
-    test('to test the property `countPlayers`', () async {
+    // int countCritics
+    test('to test the property `countCritics`', () async {
       // TODO
     });
 

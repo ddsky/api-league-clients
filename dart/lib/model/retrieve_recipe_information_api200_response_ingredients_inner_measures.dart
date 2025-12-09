@@ -13,17 +13,9 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures] instance.
   RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures({
-    this.metric,
     this.us,
+    this.metric,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? metric;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -33,31 +25,39 @@ class RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures {
   ///
   SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? us;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? metric;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures &&
-    other.metric == metric &&
-    other.us == us;
+    other.us == us &&
+    other.metric == metric;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (metric == null ? 0 : metric!.hashCode) +
-    (us == null ? 0 : us!.hashCode);
+    (us == null ? 0 : us!.hashCode) +
+    (metric == null ? 0 : metric!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures[metric=$metric, us=$us]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures[us=$us, metric=$metric]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.metric != null) {
-      json[r'metric'] = this.metric;
-    } else {
-      json[r'metric'] = null;
-    }
     if (this.us != null) {
       json[r'us'] = this.us;
     } else {
       json[r'us'] = null;
+    }
+    if (this.metric != null) {
+      json[r'metric'] = this.metric;
+    } else {
+      json[r'metric'] = null;
     }
     return json;
   }
@@ -81,8 +81,8 @@ class RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures(
-        metric: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.fromJson(json[r'metric']),
         us: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.fromJson(json[r'us']),
+        metric: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.fromJson(json[r'metric']),
       );
     }
     return null;

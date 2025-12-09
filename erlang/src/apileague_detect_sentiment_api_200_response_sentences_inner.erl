@@ -5,19 +5,19 @@
 -export_type([apileague_detect_sentiment_api_200_response_sentences_inner/0]).
 
 -type apileague_detect_sentiment_api_200_response_sentences_inner() ::
-    #{ 'length' => integer(),
-       'sentiment' => binary(),
+    #{ 'sentiment' => binary(),
        'offset' => integer(),
-       'confidence' => integer()
+       'confidence' => integer(),
+       'length' => integer()
      }.
 
-encode(#{ 'length' := Length,
-          'sentiment' := Sentiment,
+encode(#{ 'sentiment' := Sentiment,
           'offset' := Offset,
-          'confidence' := Confidence
+          'confidence' := Confidence,
+          'length' := Length
         }) ->
-    #{ 'length' => Length,
-       'sentiment' => Sentiment,
+    #{ 'sentiment' => Sentiment,
        'offset' => Offset,
-       'confidence' => Confidence
+       'confidence' => Confidence,
+       'length' => Length
      }.

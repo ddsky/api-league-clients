@@ -25,16 +25,16 @@ class VectorSearchAPI200ResponseVectorsInnerTest : ShouldSpec() {
         // uncomment below to create an instance of VectorSearchAPI200ResponseVectorsInner
         //val modelInstance = VectorSearchAPI200ResponseVectorsInner()
 
-        // to test the property `license`
-        should("test license") {
-            // uncomment below to test the property
-            //modelInstance.license shouldBe ("TODO")
-        }
-
         // to test the property `title`
         should("test title") {
             // uncomment below to test the property
             //modelInstance.title shouldBe ("TODO")
+        }
+
+        // to test the property `license`
+        should("test license") {
+            // uncomment below to test the property
+            //modelInstance.license shouldBe ("TODO")
         }
 
         // to test the property `author`

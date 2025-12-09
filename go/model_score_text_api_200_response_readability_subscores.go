@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,15 +20,15 @@ var _ MappedNullable = &ScoreTextAPI200ResponseReadabilitySubscores{}
 
 // ScoreTextAPI200ResponseReadabilitySubscores struct for ScoreTextAPI200ResponseReadabilitySubscores
 type ScoreTextAPI200ResponseReadabilitySubscores struct {
-	ReadingTimeSeconds *int32 `json:"reading_time_seconds,omitempty"`
 	Forcast *float32 `json:"forcast,omitempty"`
 	Flesch *float32 `json:"flesch,omitempty"`
 	Smog *float32 `json:"smog,omitempty"`
 	Ari *float32 `json:"ari,omitempty"`
 	Lix *float32 `json:"lix,omitempty"`
-	ColemanLiau *float32 `json:"coleman_liau,omitempty"`
 	Kincaid *float32 `json:"kincaid,omitempty"`
 	Fog *float32 `json:"fog,omitempty"`
+	ColemanLiau *float32 `json:"coleman_liau,omitempty"`
+	ReadingTimeSeconds *int32 `json:"reading_time_seconds,omitempty"`
 }
 
 // NewScoreTextAPI200ResponseReadabilitySubscores instantiates a new ScoreTextAPI200ResponseReadabilitySubscores object
@@ -46,38 +46,6 @@ func NewScoreTextAPI200ResponseReadabilitySubscores() *ScoreTextAPI200ResponseRe
 func NewScoreTextAPI200ResponseReadabilitySubscoresWithDefaults() *ScoreTextAPI200ResponseReadabilitySubscores {
 	this := ScoreTextAPI200ResponseReadabilitySubscores{}
 	return &this
-}
-
-// GetReadingTimeSeconds returns the ReadingTimeSeconds field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSeconds() int32 {
-	if o == nil || IsNil(o.ReadingTimeSeconds) {
-		var ret int32
-		return ret
-	}
-	return *o.ReadingTimeSeconds
-}
-
-// GetReadingTimeSecondsOk returns a tuple with the ReadingTimeSeconds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSecondsOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReadingTimeSeconds) {
-		return nil, false
-	}
-	return o.ReadingTimeSeconds, true
-}
-
-// HasReadingTimeSeconds returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasReadingTimeSeconds() bool {
-	if o != nil && !IsNil(o.ReadingTimeSeconds) {
-		return true
-	}
-
-	return false
-}
-
-// SetReadingTimeSeconds gets a reference to the given int32 and assigns it to the ReadingTimeSeconds field.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetReadingTimeSeconds(v int32) {
-	o.ReadingTimeSeconds = &v
 }
 
 // GetForcast returns the Forcast field value if set, zero value otherwise.
@@ -240,38 +208,6 @@ func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetLix(v float32) {
 	o.Lix = &v
 }
 
-// GetColemanLiau returns the ColemanLiau field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiau() float32 {
-	if o == nil || IsNil(o.ColemanLiau) {
-		var ret float32
-		return ret
-	}
-	return *o.ColemanLiau
-}
-
-// GetColemanLiauOk returns a tuple with the ColemanLiau field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiauOk() (*float32, bool) {
-	if o == nil || IsNil(o.ColemanLiau) {
-		return nil, false
-	}
-	return o.ColemanLiau, true
-}
-
-// HasColemanLiau returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasColemanLiau() bool {
-	if o != nil && !IsNil(o.ColemanLiau) {
-		return true
-	}
-
-	return false
-}
-
-// SetColemanLiau gets a reference to the given float32 and assigns it to the ColemanLiau field.
-func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetColemanLiau(v float32) {
-	o.ColemanLiau = &v
-}
-
 // GetKincaid returns the Kincaid field value if set, zero value otherwise.
 func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetKincaid() float32 {
 	if o == nil || IsNil(o.Kincaid) {
@@ -336,6 +272,70 @@ func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetFog(v float32) {
 	o.Fog = &v
 }
 
+// GetColemanLiau returns the ColemanLiau field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiau() float32 {
+	if o == nil || IsNil(o.ColemanLiau) {
+		var ret float32
+		return ret
+	}
+	return *o.ColemanLiau
+}
+
+// GetColemanLiauOk returns a tuple with the ColemanLiau field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetColemanLiauOk() (*float32, bool) {
+	if o == nil || IsNil(o.ColemanLiau) {
+		return nil, false
+	}
+	return o.ColemanLiau, true
+}
+
+// HasColemanLiau returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasColemanLiau() bool {
+	if o != nil && !IsNil(o.ColemanLiau) {
+		return true
+	}
+
+	return false
+}
+
+// SetColemanLiau gets a reference to the given float32 and assigns it to the ColemanLiau field.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetColemanLiau(v float32) {
+	o.ColemanLiau = &v
+}
+
+// GetReadingTimeSeconds returns the ReadingTimeSeconds field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSeconds() int32 {
+	if o == nil || IsNil(o.ReadingTimeSeconds) {
+		var ret int32
+		return ret
+	}
+	return *o.ReadingTimeSeconds
+}
+
+// GetReadingTimeSecondsOk returns a tuple with the ReadingTimeSeconds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) GetReadingTimeSecondsOk() (*int32, bool) {
+	if o == nil || IsNil(o.ReadingTimeSeconds) {
+		return nil, false
+	}
+	return o.ReadingTimeSeconds, true
+}
+
+// HasReadingTimeSeconds returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) HasReadingTimeSeconds() bool {
+	if o != nil && !IsNil(o.ReadingTimeSeconds) {
+		return true
+	}
+
+	return false
+}
+
+// SetReadingTimeSeconds gets a reference to the given int32 and assigns it to the ReadingTimeSeconds field.
+func (o *ScoreTextAPI200ResponseReadabilitySubscores) SetReadingTimeSeconds(v int32) {
+	o.ReadingTimeSeconds = &v
+}
+
 func (o ScoreTextAPI200ResponseReadabilitySubscores) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -346,9 +346,6 @@ func (o ScoreTextAPI200ResponseReadabilitySubscores) MarshalJSON() ([]byte, erro
 
 func (o ScoreTextAPI200ResponseReadabilitySubscores) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReadingTimeSeconds) {
-		toSerialize["reading_time_seconds"] = o.ReadingTimeSeconds
-	}
 	if !IsNil(o.Forcast) {
 		toSerialize["forcast"] = o.Forcast
 	}
@@ -364,14 +361,17 @@ func (o ScoreTextAPI200ResponseReadabilitySubscores) ToMap() (map[string]interfa
 	if !IsNil(o.Lix) {
 		toSerialize["lix"] = o.Lix
 	}
-	if !IsNil(o.ColemanLiau) {
-		toSerialize["coleman_liau"] = o.ColemanLiau
-	}
 	if !IsNil(o.Kincaid) {
 		toSerialize["kincaid"] = o.Kincaid
 	}
 	if !IsNil(o.Fog) {
 		toSerialize["fog"] = o.Fog
+	}
+	if !IsNil(o.ColemanLiau) {
+		toSerialize["coleman_liau"] = o.ColemanLiau
+	}
+	if !IsNil(o.ReadingTimeSeconds) {
+		toSerialize["reading_time_seconds"] = o.ReadingTimeSeconds
 	}
 	return toSerialize, nil
 }

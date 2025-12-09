@@ -8,8 +8,8 @@
 (def search-games-api-200-response-filter-options-inner-values-inner-data
   {
    (ds/opt :name) string?
-   (ds/opt :count) int?
    (ds/opt :key) string?
+   (ds/opt :count) int?
    })
 
 (def search-games-api-200-response-filter-options-inner-values-inner-spec

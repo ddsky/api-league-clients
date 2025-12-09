@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,19 +20,19 @@ var _ MappedNullable = &SearchNewsAPI200ResponseNewsInner{}
 
 // SearchNewsAPI200ResponseNewsInner struct for SearchNewsAPI200ResponseNewsInner
 type SearchNewsAPI200ResponseNewsInner struct {
-	Summary NullableString `json:"summary,omitempty"`
-	Image NullableString `json:"image,omitempty"`
-	Sentiment *float32 `json:"sentiment,omitempty"`
-	Language NullableString `json:"language,omitempty"`
-	Video NullableString `json:"video,omitempty"`
-	Title NullableString `json:"title,omitempty"`
-	Url NullableString `json:"url,omitempty"`
-	SourceCountry NullableString `json:"source_country,omitempty"`
 	Id *int32 `json:"id,omitempty"`
+	Title NullableString `json:"title,omitempty"`
 	Text NullableString `json:"text,omitempty"`
-	Category NullableString `json:"category,omitempty"`
+	Summary NullableString `json:"summary,omitempty"`
+	Url NullableString `json:"url,omitempty"`
+	Image NullableString `json:"image,omitempty"`
+	Video NullableString `json:"video,omitempty"`
 	PublishDate NullableString `json:"publish_date,omitempty"`
 	Authors []*string `json:"authors,omitempty"`
+	Category NullableString `json:"category,omitempty"`
+	Language NullableString `json:"language,omitempty"`
+	SourceCountry NullableString `json:"source_country,omitempty"`
+	Sentiment *float32 `json:"sentiment,omitempty"`
 }
 
 // NewSearchNewsAPI200ResponseNewsInner instantiates a new SearchNewsAPI200ResponseNewsInner object
@@ -52,204 +52,36 @@ func NewSearchNewsAPI200ResponseNewsInnerWithDefaults() *SearchNewsAPI200Respons
 	return &this
 }
 
-// GetSummary returns the Summary field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetSummary() string {
-	if o == nil || IsNil(o.Summary.Get()) {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SearchNewsAPI200ResponseNewsInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
 		return ret
 	}
-	return *o.Summary.Get()
+	return *o.Id
 }
 
-// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetSummaryOk() (*string, bool) {
-	if o == nil {
+func (o *SearchNewsAPI200ResponseNewsInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Summary.Get(), o.Summary.IsSet()
+	return o.Id, true
 }
 
-// HasSummary returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasSummary() bool {
-	if o != nil && o.Summary.IsSet() {
+// HasId returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetSummary gets a reference to the given NullableString and assigns it to the Summary field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetSummary(v string) {
-	o.Summary.Set(&v)
-}
-// SetSummaryNil sets the value for Summary to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetSummaryNil() {
-	o.Summary.Set(nil)
-}
-
-// UnsetSummary ensures that no value is present for Summary, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetSummary() {
-	o.Summary.Unset()
-}
-
-// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetImage() string {
-	if o == nil || IsNil(o.Image.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Image.Get()
-}
-
-// GetImageOk returns a tuple with the Image field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetImageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Image.Get(), o.Image.IsSet()
-}
-
-// HasImage returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasImage() bool {
-	if o != nil && o.Image.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetImage gets a reference to the given NullableString and assigns it to the Image field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetImage(v string) {
-	o.Image.Set(&v)
-}
-// SetImageNil sets the value for Image to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetImageNil() {
-	o.Image.Set(nil)
-}
-
-// UnsetImage ensures that no value is present for Image, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetImage() {
-	o.Image.Unset()
-}
-
-// GetSentiment returns the Sentiment field value if set, zero value otherwise.
-func (o *SearchNewsAPI200ResponseNewsInner) GetSentiment() float32 {
-	if o == nil || IsNil(o.Sentiment) {
-		var ret float32
-		return ret
-	}
-	return *o.Sentiment
-}
-
-// GetSentimentOk returns a tuple with the Sentiment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) GetSentimentOk() (*float32, bool) {
-	if o == nil || IsNil(o.Sentiment) {
-		return nil, false
-	}
-	return o.Sentiment, true
-}
-
-// HasSentiment returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasSentiment() bool {
-	if o != nil && !IsNil(o.Sentiment) {
-		return true
-	}
-
-	return false
-}
-
-// SetSentiment gets a reference to the given float32 and assigns it to the Sentiment field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetSentiment(v float32) {
-	o.Sentiment = &v
-}
-
-// GetLanguage returns the Language field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetLanguage() string {
-	if o == nil || IsNil(o.Language.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Language.Get()
-}
-
-// GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetLanguageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Language.Get(), o.Language.IsSet()
-}
-
-// HasLanguage returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasLanguage() bool {
-	if o != nil && o.Language.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetLanguage gets a reference to the given NullableString and assigns it to the Language field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetLanguage(v string) {
-	o.Language.Set(&v)
-}
-// SetLanguageNil sets the value for Language to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetLanguageNil() {
-	o.Language.Set(nil)
-}
-
-// UnsetLanguage ensures that no value is present for Language, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetLanguage() {
-	o.Language.Unset()
-}
-
-// GetVideo returns the Video field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetVideo() string {
-	if o == nil || IsNil(o.Video.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Video.Get()
-}
-
-// GetVideoOk returns a tuple with the Video field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetVideoOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Video.Get(), o.Video.IsSet()
-}
-
-// HasVideo returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasVideo() bool {
-	if o != nil && o.Video.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetVideo gets a reference to the given NullableString and assigns it to the Video field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetVideo(v string) {
-	o.Video.Set(&v)
-}
-// SetVideoNil sets the value for Video to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetVideoNil() {
-	o.Video.Set(nil)
-}
-
-// UnsetVideo ensures that no value is present for Video, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetVideo() {
-	o.Video.Unset()
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -294,122 +126,6 @@ func (o *SearchNewsAPI200ResponseNewsInner) UnsetTitle() {
 	o.Title.Unset()
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetUrl() string {
-	if o == nil || IsNil(o.Url.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Url.Get()
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetUrlOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Url.Get(), o.Url.IsSet()
-}
-
-// HasUrl returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasUrl() bool {
-	if o != nil && o.Url.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetUrl(v string) {
-	o.Url.Set(&v)
-}
-// SetUrlNil sets the value for Url to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetUrlNil() {
-	o.Url.Set(nil)
-}
-
-// UnsetUrl ensures that no value is present for Url, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetUrl() {
-	o.Url.Unset()
-}
-
-// GetSourceCountry returns the SourceCountry field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetSourceCountry() string {
-	if o == nil || IsNil(o.SourceCountry.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.SourceCountry.Get()
-}
-
-// GetSourceCountryOk returns a tuple with the SourceCountry field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetSourceCountryOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.SourceCountry.Get(), o.SourceCountry.IsSet()
-}
-
-// HasSourceCountry returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasSourceCountry() bool {
-	if o != nil && o.SourceCountry.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceCountry gets a reference to the given NullableString and assigns it to the SourceCountry field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetSourceCountry(v string) {
-	o.SourceCountry.Set(&v)
-}
-// SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetSourceCountryNil() {
-	o.SourceCountry.Set(nil)
-}
-
-// UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetSourceCountry() {
-	o.SourceCountry.Unset()
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchNewsAPI200ResponseNewsInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetId(v int32) {
-	o.Id = &v
-}
-
 // GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchNewsAPI200ResponseNewsInner) GetText() string {
 	if o == nil || IsNil(o.Text.Get()) {
@@ -452,46 +168,172 @@ func (o *SearchNewsAPI200ResponseNewsInner) UnsetText() {
 	o.Text.Unset()
 }
 
-// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchNewsAPI200ResponseNewsInner) GetCategory() string {
-	if o == nil || IsNil(o.Category.Get()) {
+// GetSummary returns the Summary field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetSummary() string {
+	if o == nil || IsNil(o.Summary.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Category.Get()
+	return *o.Summary.Get()
 }
 
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// GetSummaryOk returns a tuple with the Summary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchNewsAPI200ResponseNewsInner) GetCategoryOk() (*string, bool) {
+func (o *SearchNewsAPI200ResponseNewsInner) GetSummaryOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Category.Get(), o.Category.IsSet()
+	return o.Summary.Get(), o.Summary.IsSet()
 }
 
-// HasCategory returns a boolean if a field has been set.
-func (o *SearchNewsAPI200ResponseNewsInner) HasCategory() bool {
-	if o != nil && o.Category.IsSet() {
+// HasSummary returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasSummary() bool {
+	if o != nil && o.Summary.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
-func (o *SearchNewsAPI200ResponseNewsInner) SetCategory(v string) {
-	o.Category.Set(&v)
+// SetSummary gets a reference to the given NullableString and assigns it to the Summary field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetSummary(v string) {
+	o.Summary.Set(&v)
 }
-// SetCategoryNil sets the value for Category to be an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) SetCategoryNil() {
-	o.Category.Set(nil)
+// SetSummaryNil sets the value for Summary to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetSummaryNil() {
+	o.Summary.Set(nil)
 }
 
-// UnsetCategory ensures that no value is present for Category, not even an explicit nil
-func (o *SearchNewsAPI200ResponseNewsInner) UnsetCategory() {
-	o.Category.Unset()
+// UnsetSummary ensures that no value is present for Summary, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetSummary() {
+	o.Summary.Unset()
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetUrl() string {
+	if o == nil || IsNil(o.Url.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Url.Get()
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Url.Get(), o.Url.IsSet()
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasUrl() bool {
+	if o != nil && o.Url.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetUrl(v string) {
+	o.Url.Set(&v)
+}
+// SetUrlNil sets the value for Url to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetUrlNil() {
+	o.Url.Set(nil)
+}
+
+// UnsetUrl ensures that no value is present for Url, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetUrl() {
+	o.Url.Unset()
+}
+
+// GetImage returns the Image field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetImage() string {
+	if o == nil || IsNil(o.Image.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Image.Get()
+}
+
+// GetImageOk returns a tuple with the Image field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetImageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Image.Get(), o.Image.IsSet()
+}
+
+// HasImage returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasImage() bool {
+	if o != nil && o.Image.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetImage gets a reference to the given NullableString and assigns it to the Image field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetImage(v string) {
+	o.Image.Set(&v)
+}
+// SetImageNil sets the value for Image to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetImageNil() {
+	o.Image.Set(nil)
+}
+
+// UnsetImage ensures that no value is present for Image, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetImage() {
+	o.Image.Unset()
+}
+
+// GetVideo returns the Video field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetVideo() string {
+	if o == nil || IsNil(o.Video.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Video.Get()
+}
+
+// GetVideoOk returns a tuple with the Video field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetVideoOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Video.Get(), o.Video.IsSet()
+}
+
+// HasVideo returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasVideo() bool {
+	if o != nil && o.Video.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVideo gets a reference to the given NullableString and assigns it to the Video field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetVideo(v string) {
+	o.Video.Set(&v)
+}
+// SetVideoNil sets the value for Video to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetVideoNil() {
+	o.Video.Set(nil)
+}
+
+// UnsetVideo ensures that no value is present for Video, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetVideo() {
+	o.Video.Unset()
 }
 
 // GetPublishDate returns the PublishDate field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -568,6 +410,164 @@ func (o *SearchNewsAPI200ResponseNewsInner) SetAuthors(v []*string) {
 	o.Authors = v
 }
 
+// GetCategory returns the Category field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetCategory() string {
+	if o == nil || IsNil(o.Category.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Category.Get()
+}
+
+// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetCategoryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Category.Get(), o.Category.IsSet()
+}
+
+// HasCategory returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasCategory() bool {
+	if o != nil && o.Category.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCategory gets a reference to the given NullableString and assigns it to the Category field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetCategory(v string) {
+	o.Category.Set(&v)
+}
+// SetCategoryNil sets the value for Category to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetCategoryNil() {
+	o.Category.Set(nil)
+}
+
+// UnsetCategory ensures that no value is present for Category, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetCategory() {
+	o.Category.Unset()
+}
+
+// GetLanguage returns the Language field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetLanguage() string {
+	if o == nil || IsNil(o.Language.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Language.Get()
+}
+
+// GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetLanguageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Language.Get(), o.Language.IsSet()
+}
+
+// HasLanguage returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasLanguage() bool {
+	if o != nil && o.Language.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLanguage gets a reference to the given NullableString and assigns it to the Language field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetLanguage(v string) {
+	o.Language.Set(&v)
+}
+// SetLanguageNil sets the value for Language to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetLanguageNil() {
+	o.Language.Set(nil)
+}
+
+// UnsetLanguage ensures that no value is present for Language, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetLanguage() {
+	o.Language.Unset()
+}
+
+// GetSourceCountry returns the SourceCountry field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchNewsAPI200ResponseNewsInner) GetSourceCountry() string {
+	if o == nil || IsNil(o.SourceCountry.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SourceCountry.Get()
+}
+
+// GetSourceCountryOk returns a tuple with the SourceCountry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchNewsAPI200ResponseNewsInner) GetSourceCountryOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SourceCountry.Get(), o.SourceCountry.IsSet()
+}
+
+// HasSourceCountry returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasSourceCountry() bool {
+	if o != nil && o.SourceCountry.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceCountry gets a reference to the given NullableString and assigns it to the SourceCountry field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetSourceCountry(v string) {
+	o.SourceCountry.Set(&v)
+}
+// SetSourceCountryNil sets the value for SourceCountry to be an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) SetSourceCountryNil() {
+	o.SourceCountry.Set(nil)
+}
+
+// UnsetSourceCountry ensures that no value is present for SourceCountry, not even an explicit nil
+func (o *SearchNewsAPI200ResponseNewsInner) UnsetSourceCountry() {
+	o.SourceCountry.Unset()
+}
+
+// GetSentiment returns the Sentiment field value if set, zero value otherwise.
+func (o *SearchNewsAPI200ResponseNewsInner) GetSentiment() float32 {
+	if o == nil || IsNil(o.Sentiment) {
+		var ret float32
+		return ret
+	}
+	return *o.Sentiment
+}
+
+// GetSentimentOk returns a tuple with the Sentiment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) GetSentimentOk() (*float32, bool) {
+	if o == nil || IsNil(o.Sentiment) {
+		return nil, false
+	}
+	return o.Sentiment, true
+}
+
+// HasSentiment returns a boolean if a field has been set.
+func (o *SearchNewsAPI200ResponseNewsInner) HasSentiment() bool {
+	if o != nil && !IsNil(o.Sentiment) {
+		return true
+	}
+
+	return false
+}
+
+// SetSentiment gets a reference to the given float32 and assigns it to the Sentiment field.
+func (o *SearchNewsAPI200ResponseNewsInner) SetSentiment(v float32) {
+	o.Sentiment = &v
+}
+
 func (o SearchNewsAPI200ResponseNewsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -578,44 +578,44 @@ func (o SearchNewsAPI200ResponseNewsInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchNewsAPI200ResponseNewsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Summary.IsSet() {
-		toSerialize["summary"] = o.Summary.Get()
-	}
-	if o.Image.IsSet() {
-		toSerialize["image"] = o.Image.Get()
-	}
-	if !IsNil(o.Sentiment) {
-		toSerialize["sentiment"] = o.Sentiment
-	}
-	if o.Language.IsSet() {
-		toSerialize["language"] = o.Language.Get()
-	}
-	if o.Video.IsSet() {
-		toSerialize["video"] = o.Video.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if o.Url.IsSet() {
-		toSerialize["url"] = o.Url.Get()
-	}
-	if o.SourceCountry.IsSet() {
-		toSerialize["source_country"] = o.SourceCountry.Get()
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
 	if o.Text.IsSet() {
 		toSerialize["text"] = o.Text.Get()
 	}
-	if o.Category.IsSet() {
-		toSerialize["category"] = o.Category.Get()
+	if o.Summary.IsSet() {
+		toSerialize["summary"] = o.Summary.Get()
+	}
+	if o.Url.IsSet() {
+		toSerialize["url"] = o.Url.Get()
+	}
+	if o.Image.IsSet() {
+		toSerialize["image"] = o.Image.Get()
+	}
+	if o.Video.IsSet() {
+		toSerialize["video"] = o.Video.Get()
 	}
 	if o.PublishDate.IsSet() {
 		toSerialize["publish_date"] = o.PublishDate.Get()
 	}
 	if !IsNil(o.Authors) {
 		toSerialize["authors"] = o.Authors
+	}
+	if o.Category.IsSet() {
+		toSerialize["category"] = o.Category.Get()
+	}
+	if o.Language.IsSet() {
+		toSerialize["language"] = o.Language.Get()
+	}
+	if o.SourceCountry.IsSet() {
+		toSerialize["source_country"] = o.SourceCountry.Get()
+	}
+	if !IsNil(o.Sentiment) {
+		toSerialize["sentiment"] = o.Sentiment
 	}
 	return toSerialize, nil
 }

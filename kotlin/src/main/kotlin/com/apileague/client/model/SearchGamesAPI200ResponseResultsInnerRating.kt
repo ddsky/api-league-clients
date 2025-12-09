@@ -22,18 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param count 
  * @param mean 
+ * @param count 
  */
 
 
 data class SearchGamesAPI200ResponseResultsInnerRating (
 
-    @Json(name = "count")
-    val count: kotlin.Int? = null,
-
     @Json(name = "mean")
-    val mean: java.math.BigDecimal? = null
+    val mean: java.math.BigDecimal? = null,
+
+    @Json(name = "count")
+    val count: kotlin.Int? = null
 
 ) {
 

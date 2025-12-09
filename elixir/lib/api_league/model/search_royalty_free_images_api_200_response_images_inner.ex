@@ -8,21 +8,21 @@ defmodule APILeague.Model.SearchRoyaltyFreeImagesApi200ResponseImagesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :width,
-    :license,
-    :thumbnail,
-    :id,
     :url,
-    :height
+    :thumbnail,
+    :width,
+    :height,
+    :license,
+    :id
   ]
 
   @type t :: %__MODULE__{
-    :width => integer() | nil,
-    :license => APILeague.Model.SearchRoyaltyFreeImagesApi200ResponseImagesInnerLicense.t | nil,
-    :thumbnail => String.t | nil,
-    :id => String.t | nil,
     :url => String.t | nil,
-    :height => integer() | nil
+    :thumbnail => String.t | nil,
+    :width => integer() | nil,
+    :height => integer() | nil,
+    :license => APILeague.Model.SearchRoyaltyFreeImagesApi200ResponseImagesInnerLicense.t | nil,
+    :id => String.t | nil
   }
 
   alias APILeague.Deserializer

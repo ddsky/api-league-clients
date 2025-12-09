@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param metaScore 
  * @param weightWatcherSmartPoints 
  * @param healthScore 
+ * @param metaScore 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseScores (
 
-    @Json(name = "meta_score")
-    val metaScore: java.math.BigDecimal? = null,
-
     @Json(name = "weight_watcher_smart_points")
     val weightWatcherSmartPoints: kotlin.Int? = null,
 
     @Json(name = "health_score")
-    val healthScore: kotlin.Int? = null
+    val healthScore: kotlin.Int? = null,
+
+    @Json(name = "meta_score")
+    val metaScore: java.math.BigDecimal? = null
 
 ) {
 

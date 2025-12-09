@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &SearchRoyaltyFreeImagesAPI200ResponseImagesInner{}
 
 // SearchRoyaltyFreeImagesAPI200ResponseImagesInner struct for SearchRoyaltyFreeImagesAPI200ResponseImagesInner
 type SearchRoyaltyFreeImagesAPI200ResponseImagesInner struct {
-	Width *int32 `json:"width,omitempty"`
-	License *SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense `json:"license,omitempty"`
-	Thumbnail NullableString `json:"thumbnail,omitempty"`
-	Id NullableString `json:"id,omitempty"`
 	Url NullableString `json:"url,omitempty"`
+	Thumbnail NullableString `json:"thumbnail,omitempty"`
+	Width *int32 `json:"width,omitempty"`
 	Height *int32 `json:"height,omitempty"`
+	License *SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense `json:"license,omitempty"`
+	Id NullableString `json:"id,omitempty"`
 }
 
 // NewSearchRoyaltyFreeImagesAPI200ResponseImagesInner instantiates a new SearchRoyaltyFreeImagesAPI200ResponseImagesInner object
@@ -43,154 +43,6 @@ func NewSearchRoyaltyFreeImagesAPI200ResponseImagesInner() *SearchRoyaltyFreeIma
 func NewSearchRoyaltyFreeImagesAPI200ResponseImagesInnerWithDefaults() *SearchRoyaltyFreeImagesAPI200ResponseImagesInner {
 	this := SearchRoyaltyFreeImagesAPI200ResponseImagesInner{}
 	return &this
-}
-
-// GetWidth returns the Width field value if set, zero value otherwise.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetWidth() int32 {
-	if o == nil || IsNil(o.Width) {
-		var ret int32
-		return ret
-	}
-	return *o.Width
-}
-
-// GetWidthOk returns a tuple with the Width field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetWidthOk() (*int32, bool) {
-	if o == nil || IsNil(o.Width) {
-		return nil, false
-	}
-	return o.Width, true
-}
-
-// HasWidth returns a boolean if a field has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasWidth() bool {
-	if o != nil && !IsNil(o.Width) {
-		return true
-	}
-
-	return false
-}
-
-// SetWidth gets a reference to the given int32 and assigns it to the Width field.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetWidth(v int32) {
-	o.Width = &v
-}
-
-// GetLicense returns the License field value if set, zero value otherwise.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetLicense() SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense {
-	if o == nil || IsNil(o.License) {
-		var ret SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense
-		return ret
-	}
-	return *o.License
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetLicenseOk() (*SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense, bool) {
-	if o == nil || IsNil(o.License) {
-		return nil, false
-	}
-	return o.License, true
-}
-
-// HasLicense returns a boolean if a field has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasLicense() bool {
-	if o != nil && !IsNil(o.License) {
-		return true
-	}
-
-	return false
-}
-
-// SetLicense gets a reference to the given SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense and assigns it to the License field.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetLicense(v SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense) {
-	o.License = &v
-}
-
-// GetThumbnail returns the Thumbnail field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetThumbnail() string {
-	if o == nil || IsNil(o.Thumbnail.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Thumbnail.Get()
-}
-
-// GetThumbnailOk returns a tuple with the Thumbnail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetThumbnailOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Thumbnail.Get(), o.Thumbnail.IsSet()
-}
-
-// HasThumbnail returns a boolean if a field has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasThumbnail() bool {
-	if o != nil && o.Thumbnail.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetThumbnail gets a reference to the given NullableString and assigns it to the Thumbnail field.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetThumbnail(v string) {
-	o.Thumbnail.Set(&v)
-}
-// SetThumbnailNil sets the value for Thumbnail to be an explicit nil
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetThumbnailNil() {
-	o.Thumbnail.Set(nil)
-}
-
-// UnsetThumbnail ensures that no value is present for Thumbnail, not even an explicit nil
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) UnsetThumbnail() {
-	o.Thumbnail.Unset()
-}
-
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetId() string {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Id.Get()
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Id.Get(), o.Id.IsSet()
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasId() bool {
-	if o != nil && o.Id.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetId(v string) {
-	o.Id.Set(&v)
-}
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) UnsetId() {
-	o.Id.Unset()
 }
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -235,6 +87,80 @@ func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) UnsetUrl() {
 	o.Url.Unset()
 }
 
+// GetThumbnail returns the Thumbnail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetThumbnail() string {
+	if o == nil || IsNil(o.Thumbnail.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Thumbnail.Get()
+}
+
+// GetThumbnailOk returns a tuple with the Thumbnail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetThumbnailOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Thumbnail.Get(), o.Thumbnail.IsSet()
+}
+
+// HasThumbnail returns a boolean if a field has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasThumbnail() bool {
+	if o != nil && o.Thumbnail.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetThumbnail gets a reference to the given NullableString and assigns it to the Thumbnail field.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetThumbnail(v string) {
+	o.Thumbnail.Set(&v)
+}
+// SetThumbnailNil sets the value for Thumbnail to be an explicit nil
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetThumbnailNil() {
+	o.Thumbnail.Set(nil)
+}
+
+// UnsetThumbnail ensures that no value is present for Thumbnail, not even an explicit nil
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) UnsetThumbnail() {
+	o.Thumbnail.Unset()
+}
+
+// GetWidth returns the Width field value if set, zero value otherwise.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetWidth() int32 {
+	if o == nil || IsNil(o.Width) {
+		var ret int32
+		return ret
+	}
+	return *o.Width
+}
+
+// GetWidthOk returns a tuple with the Width field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetWidthOk() (*int32, bool) {
+	if o == nil || IsNil(o.Width) {
+		return nil, false
+	}
+	return o.Width, true
+}
+
+// HasWidth returns a boolean if a field has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasWidth() bool {
+	if o != nil && !IsNil(o.Width) {
+		return true
+	}
+
+	return false
+}
+
+// SetWidth gets a reference to the given int32 and assigns it to the Width field.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetWidth(v int32) {
+	o.Width = &v
+}
+
 // GetHeight returns the Height field value if set, zero value otherwise.
 func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetHeight() int32 {
 	if o == nil || IsNil(o.Height) {
@@ -267,6 +193,80 @@ func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetHeight(v int32) {
 	o.Height = &v
 }
 
+// GetLicense returns the License field value if set, zero value otherwise.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetLicense() SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense {
+	if o == nil || IsNil(o.License) {
+		var ret SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense
+		return ret
+	}
+	return *o.License
+}
+
+// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetLicenseOk() (*SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense, bool) {
+	if o == nil || IsNil(o.License) {
+		return nil, false
+	}
+	return o.License, true
+}
+
+// HasLicense returns a boolean if a field has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasLicense() bool {
+	if o != nil && !IsNil(o.License) {
+		return true
+	}
+
+	return false
+}
+
+// SetLicense gets a reference to the given SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense and assigns it to the License field.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetLicense(v SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense) {
+	o.License = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetId() string {
+	if o == nil || IsNil(o.Id.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Id.Get()
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Id.Get(), o.Id.IsSet()
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) HasId() bool {
+	if o != nil && o.Id.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given NullableString and assigns it to the Id field.
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetId(v string) {
+	o.Id.Set(&v)
+}
+// SetIdNil sets the value for Id to be an explicit nil
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) SetIdNil() {
+	o.Id.Set(nil)
+}
+
+// UnsetId ensures that no value is present for Id, not even an explicit nil
+func (o *SearchRoyaltyFreeImagesAPI200ResponseImagesInner) UnsetId() {
+	o.Id.Unset()
+}
+
 func (o SearchRoyaltyFreeImagesAPI200ResponseImagesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -277,23 +277,23 @@ func (o SearchRoyaltyFreeImagesAPI200ResponseImagesInner) MarshalJSON() ([]byte,
 
 func (o SearchRoyaltyFreeImagesAPI200ResponseImagesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Width) {
-		toSerialize["width"] = o.Width
-	}
-	if !IsNil(o.License) {
-		toSerialize["license"] = o.License
+	if o.Url.IsSet() {
+		toSerialize["url"] = o.Url.Get()
 	}
 	if o.Thumbnail.IsSet() {
 		toSerialize["thumbnail"] = o.Thumbnail.Get()
 	}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
-	}
-	if o.Url.IsSet() {
-		toSerialize["url"] = o.Url.Get()
+	if !IsNil(o.Width) {
+		toSerialize["width"] = o.Width
 	}
 	if !IsNil(o.Height) {
 		toSerialize["height"] = o.Height
+	}
+	if !IsNil(o.License) {
+		toSerialize["license"] = o.License
+	}
+	if o.Id.IsSet() {
+		toSerialize["id"] = o.Id.Get()
 	}
 	return toSerialize, nil
 }

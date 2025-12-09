@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerNutrition{}
 
 // SearchDrinksAPI200ResponseDrinksInnerNutrition struct for SearchDrinksAPI200ResponseDrinksInnerNutrition
 type SearchDrinksAPI200ResponseDrinksInnerNutrition struct {
-	WeightPerServing *SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing `json:"weight_per_serving,omitempty"`
-	CaloricBreakdown *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown `json:"caloric_breakdown,omitempty"`
-	Flavonoids []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner `json:"flavonoids,omitempty"`
-	IngredientBreakdown []SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner `json:"ingredient_breakdown,omitempty"`
-	Properties []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner `json:"properties,omitempty"`
 	Nutrients []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner `json:"nutrients,omitempty"`
+	Properties []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner `json:"properties,omitempty"`
+	Flavonoids []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner `json:"flavonoids,omitempty"`
+	IngredientBreakdown []SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner `json:"ingredient_breakdown,omitempty"`
+	CaloricBreakdown *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown `json:"caloric_breakdown,omitempty"`
+	WeightPerServing *SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing `json:"weight_per_serving,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerNutrition instantiates a new SearchDrinksAPI200ResponseDrinksInnerNutrition object
@@ -45,74 +45,74 @@ func NewSearchDrinksAPI200ResponseDrinksInnerNutritionWithDefaults() *SearchDrin
 	return &this
 }
 
-// GetWeightPerServing returns the WeightPerServing field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServing() SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing {
-	if o == nil || IsNil(o.WeightPerServing) {
-		var ret SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
+// GetNutrients returns the Nutrients field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner {
+	if o == nil || IsNil(o.Nutrients) {
+		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner
 		return ret
 	}
-	return *o.WeightPerServing
+	return o.Nutrients
 }
 
-// GetWeightPerServingOk returns a tuple with the WeightPerServing field value if set, nil otherwise
+// GetNutrientsOk returns a tuple with the Nutrients field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServingOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing, bool) {
-	if o == nil || IsNil(o.WeightPerServing) {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrientsOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner, bool) {
+	if o == nil || IsNil(o.Nutrients) {
 		return nil, false
 	}
-	return o.WeightPerServing, true
+	return o.Nutrients, true
 }
 
-// HasWeightPerServing returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasWeightPerServing() bool {
-	if o != nil && !IsNil(o.WeightPerServing) {
+// HasNutrients returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasNutrients() bool {
+	if o != nil && !IsNil(o.Nutrients) {
 		return true
 	}
 
 	return false
 }
 
-// SetWeightPerServing gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing and assigns it to the WeightPerServing field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetWeightPerServing(v SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing) {
-	o.WeightPerServing = &v
+// SetNutrients gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner and assigns it to the Nutrients field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetNutrients(v []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) {
+	o.Nutrients = v
 }
 
-// GetCaloricBreakdown returns the CaloricBreakdown field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdown() SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
-	if o == nil || IsNil(o.CaloricBreakdown) {
-		var ret SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner {
+	if o == nil || IsNil(o.Properties) {
+		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 		return ret
 	}
-	return *o.CaloricBreakdown
+	return o.Properties
 }
 
-// GetCaloricBreakdownOk returns a tuple with the CaloricBreakdown field value if set, nil otherwise
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdownOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown, bool) {
-	if o == nil || IsNil(o.CaloricBreakdown) {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetPropertiesOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool) {
+	if o == nil || IsNil(o.Properties) {
 		return nil, false
 	}
-	return o.CaloricBreakdown, true
+	return o.Properties, true
 }
 
-// HasCaloricBreakdown returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasCaloricBreakdown() bool {
-	if o != nil && !IsNil(o.CaloricBreakdown) {
+// HasProperties returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasProperties() bool {
+	if o != nil && !IsNil(o.Properties) {
 		return true
 	}
 
 	return false
 }
 
-// SetCaloricBreakdown gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown and assigns it to the CaloricBreakdown field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetCaloricBreakdown(v SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) {
-	o.CaloricBreakdown = &v
+// SetProperties gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner and assigns it to the Properties field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner) {
+	o.Properties = v
 }
 
 // GetFlavonoids returns the Flavonoids field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoids() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoids() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner {
 	if o == nil || IsNil(o.Flavonoids) {
-		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
+		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 		return ret
 	}
 	return o.Flavonoids
@@ -120,7 +120,7 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoids() []Searc
 
 // GetFlavonoidsOk returns a tuple with the Flavonoids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoidsOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool) {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoidsOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool) {
 	if o == nil || IsNil(o.Flavonoids) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasFlavonoids() bool {
 	return false
 }
 
-// SetFlavonoids gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner and assigns it to the Flavonoids field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetFlavonoids(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner) {
+// SetFlavonoids gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner and assigns it to the Flavonoids field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetFlavonoids(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner) {
 	o.Flavonoids = v
 }
 
@@ -173,68 +173,68 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetIngredientBreakdown(
 	o.IngredientBreakdown = v
 }
 
-// GetProperties returns the Properties field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner {
-	if o == nil || IsNil(o.Properties) {
-		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
+// GetCaloricBreakdown returns the CaloricBreakdown field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdown() SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
+	if o == nil || IsNil(o.CaloricBreakdown) {
+		var ret SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
 		return ret
 	}
-	return o.Properties
+	return *o.CaloricBreakdown
 }
 
-// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
+// GetCaloricBreakdownOk returns a tuple with the CaloricBreakdown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetPropertiesOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool) {
-	if o == nil || IsNil(o.Properties) {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdownOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown, bool) {
+	if o == nil || IsNil(o.CaloricBreakdown) {
 		return nil, false
 	}
-	return o.Properties, true
+	return o.CaloricBreakdown, true
 }
 
-// HasProperties returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasProperties() bool {
-	if o != nil && !IsNil(o.Properties) {
+// HasCaloricBreakdown returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasCaloricBreakdown() bool {
+	if o != nil && !IsNil(o.CaloricBreakdown) {
 		return true
 	}
 
 	return false
 }
 
-// SetProperties gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner and assigns it to the Properties field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner) {
-	o.Properties = v
+// SetCaloricBreakdown gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown and assigns it to the CaloricBreakdown field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetCaloricBreakdown(v SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) {
+	o.CaloricBreakdown = &v
 }
 
-// GetNutrients returns the Nutrients field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner {
-	if o == nil || IsNil(o.Nutrients) {
-		var ret []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner
+// GetWeightPerServing returns the WeightPerServing field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServing() SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing {
+	if o == nil || IsNil(o.WeightPerServing) {
+		var ret SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
 		return ret
 	}
-	return o.Nutrients
+	return *o.WeightPerServing
 }
 
-// GetNutrientsOk returns a tuple with the Nutrients field value if set, nil otherwise
+// GetWeightPerServingOk returns a tuple with the WeightPerServing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrientsOk() ([]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner, bool) {
-	if o == nil || IsNil(o.Nutrients) {
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServingOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing, bool) {
+	if o == nil || IsNil(o.WeightPerServing) {
 		return nil, false
 	}
-	return o.Nutrients, true
+	return o.WeightPerServing, true
 }
 
-// HasNutrients returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasNutrients() bool {
-	if o != nil && !IsNil(o.Nutrients) {
+// HasWeightPerServing returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasWeightPerServing() bool {
+	if o != nil && !IsNil(o.WeightPerServing) {
 		return true
 	}
 
 	return false
 }
 
-// SetNutrients gets a reference to the given []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner and assigns it to the Nutrients field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetNutrients(v []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner) {
-	o.Nutrients = v
+// SetWeightPerServing gets a reference to the given SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing and assigns it to the WeightPerServing field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetWeightPerServing(v SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing) {
+	o.WeightPerServing = &v
 }
 
 func (o SearchDrinksAPI200ResponseDrinksInnerNutrition) MarshalJSON() ([]byte, error) {
@@ -247,11 +247,11 @@ func (o SearchDrinksAPI200ResponseDrinksInnerNutrition) MarshalJSON() ([]byte, e
 
 func (o SearchDrinksAPI200ResponseDrinksInnerNutrition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.WeightPerServing) {
-		toSerialize["weight_per_serving"] = o.WeightPerServing
+	if !IsNil(o.Nutrients) {
+		toSerialize["nutrients"] = o.Nutrients
 	}
-	if !IsNil(o.CaloricBreakdown) {
-		toSerialize["caloric_breakdown"] = o.CaloricBreakdown
+	if !IsNil(o.Properties) {
+		toSerialize["properties"] = o.Properties
 	}
 	if !IsNil(o.Flavonoids) {
 		toSerialize["flavonoids"] = o.Flavonoids
@@ -259,11 +259,11 @@ func (o SearchDrinksAPI200ResponseDrinksInnerNutrition) ToMap() (map[string]inte
 	if !IsNil(o.IngredientBreakdown) {
 		toSerialize["ingredient_breakdown"] = o.IngredientBreakdown
 	}
-	if !IsNil(o.Properties) {
-		toSerialize["properties"] = o.Properties
+	if !IsNil(o.CaloricBreakdown) {
+		toSerialize["caloric_breakdown"] = o.CaloricBreakdown
 	}
-	if !IsNil(o.Nutrients) {
-		toSerialize["nutrients"] = o.Nutrients
+	if !IsNil(o.WeightPerServing) {
+		toSerialize["weight_per_serving"] = o.WeightPerServing
 	}
 	return toSerialize, nil
 }

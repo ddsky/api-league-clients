@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total_possible** | **int** |  | [optional] 
 **total** | **float** |  | [optional] 
+**total_possible** | **int** |  | [optional] 
 
 ## Example
 

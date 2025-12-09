@@ -8,15 +8,15 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseScores do
 
   @derive Jason.Encoder
   defstruct [
-    :meta_score,
     :weight_watcher_smart_points,
-    :health_score
+    :health_score,
+    :meta_score
   ]
 
   @type t :: %__MODULE__{
-    :meta_score => float() | nil,
     :weight_watcher_smart_points => integer() | nil,
-    :health_score => integer() | nil
+    :health_score => integer() | nil,
+    :meta_score => float() | nil
   }
 
   def decode(value) do

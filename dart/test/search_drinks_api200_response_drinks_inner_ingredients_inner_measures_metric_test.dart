@@ -16,13 +16,13 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric', () {
-    // String unitShort
-    test('to test the property `unitShort`', () async {
+    // num amount
+    test('to test the property `amount`', () async {
       // TODO
     });
 
-    // num amount
-    test('to test the property `amount`', () async {
+    // String unitShort
+    test('to test the property `unitShort`', () async {
       // TODO
     });
 

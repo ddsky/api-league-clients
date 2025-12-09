@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WeightPerServing** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing**](SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md) |  | [optional] 
-**CaloricBreakdown** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
-**Flavonoids** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
-**IngredientBreakdown** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md) |  | [optional] 
-**Properties** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
 **Nutrients** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
+**Properties** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
+**Flavonoids** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
+**IngredientBreakdown** | Pointer to [**[]SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md) |  | [optional] 
+**CaloricBreakdown** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
+**WeightPerServing** | Pointer to [**SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing**](SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md) |  | [optional] 
 
 ## Methods
 
@@ -30,72 +30,72 @@ NewSearchDrinksAPI200ResponseDrinksInnerNutritionWithDefaults instantiates a new
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWeightPerServing
+### GetNutrients
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServing() SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner`
 
-GetWeightPerServing returns the WeightPerServing field if non-nil, zero value otherwise.
+GetNutrients returns the Nutrients field if non-nil, zero value otherwise.
 
-### GetWeightPerServingOk
+### GetNutrientsOk
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServingOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing, bool)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrientsOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner, bool)`
 
-GetWeightPerServingOk returns a tuple with the WeightPerServing field if it's non-nil, zero value otherwise
+GetNutrientsOk returns a tuple with the Nutrients field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWeightPerServing
+### SetNutrients
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetWeightPerServing(v SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetNutrients(v []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner)`
 
-SetWeightPerServing sets WeightPerServing field to given value.
+SetNutrients sets Nutrients field to given value.
 
-### HasWeightPerServing
+### HasNutrients
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasWeightPerServing() bool`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasNutrients() bool`
 
-HasWeightPerServing returns a boolean if a field has been set.
+HasNutrients returns a boolean if a field has been set.
 
-### GetCaloricBreakdown
+### GetProperties
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdown() SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner`
 
-GetCaloricBreakdown returns the CaloricBreakdown field if non-nil, zero value otherwise.
+GetProperties returns the Properties field if non-nil, zero value otherwise.
 
-### GetCaloricBreakdownOk
+### GetPropertiesOk
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdownOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown, bool)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetPropertiesOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool)`
 
-GetCaloricBreakdownOk returns a tuple with the CaloricBreakdown field if it's non-nil, zero value otherwise
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCaloricBreakdown
+### SetProperties
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetCaloricBreakdown(v SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner)`
 
-SetCaloricBreakdown sets CaloricBreakdown field to given value.
+SetProperties sets Properties field to given value.
 
-### HasCaloricBreakdown
+### HasProperties
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasCaloricBreakdown() bool`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasProperties() bool`
 
-HasCaloricBreakdown returns a boolean if a field has been set.
+HasProperties returns a boolean if a field has been set.
 
 ### GetFlavonoids
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoids() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoids() []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner`
 
 GetFlavonoids returns the Flavonoids field if non-nil, zero value otherwise.
 
 ### GetFlavonoidsOk
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoidsOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetFlavonoidsOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner, bool)`
 
 GetFlavonoidsOk returns a tuple with the Flavonoids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFlavonoids
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetFlavonoids(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetFlavonoids(v []SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner)`
 
 SetFlavonoids sets Flavonoids field to given value.
 
@@ -130,55 +130,55 @@ SetIngredientBreakdown sets IngredientBreakdown field to given value.
 
 HasIngredientBreakdown returns a boolean if a field has been set.
 
-### GetProperties
+### GetCaloricBreakdown
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetProperties() []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdown() SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown`
 
-GetProperties returns the Properties field if non-nil, zero value otherwise.
+GetCaloricBreakdown returns the CaloricBreakdown field if non-nil, zero value otherwise.
 
-### GetPropertiesOk
+### GetCaloricBreakdownOk
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetPropertiesOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner, bool)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetCaloricBreakdownOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown, bool)`
 
-GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+GetCaloricBreakdownOk returns a tuple with the CaloricBreakdown field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProperties
+### SetCaloricBreakdown
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetProperties(v []SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetCaloricBreakdown(v SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown)`
 
-SetProperties sets Properties field to given value.
+SetCaloricBreakdown sets CaloricBreakdown field to given value.
 
-### HasProperties
+### HasCaloricBreakdown
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasProperties() bool`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasCaloricBreakdown() bool`
 
-HasProperties returns a boolean if a field has been set.
+HasCaloricBreakdown returns a boolean if a field has been set.
 
-### GetNutrients
+### GetWeightPerServing
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServing() SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing`
 
-GetNutrients returns the Nutrients field if non-nil, zero value otherwise.
+GetWeightPerServing returns the WeightPerServing field if non-nil, zero value otherwise.
 
-### GetNutrientsOk
+### GetWeightPerServingOk
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetNutrientsOk() (*[]SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner, bool)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) GetWeightPerServingOk() (*SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing, bool)`
 
-GetNutrientsOk returns a tuple with the Nutrients field if it's non-nil, zero value otherwise
+GetWeightPerServingOk returns a tuple with the WeightPerServing field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNutrients
+### SetWeightPerServing
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetNutrients(v []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner)`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) SetWeightPerServing(v SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing)`
 
-SetNutrients sets Nutrients field to given value.
+SetWeightPerServing sets WeightPerServing field to given value.
 
-### HasNutrients
+### HasWeightPerServing
 
-`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasNutrients() bool`
+`func (o *SearchDrinksAPI200ResponseDrinksInnerNutrition) HasWeightPerServing() bool`
 
-HasNutrients returns a boolean if a field has been set.
+HasWeightPerServing returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

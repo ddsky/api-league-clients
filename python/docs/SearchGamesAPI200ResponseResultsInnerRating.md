@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
 **mean** | **float** |  | [optional] 
+**count** | **int** |  | [optional] 
 
 ## Example
 

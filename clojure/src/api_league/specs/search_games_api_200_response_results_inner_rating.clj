@@ -7,8 +7,8 @@
 
 (def search-games-api-200-response-results-inner-rating-data
   {
-   (ds/opt :count) int?
    (ds/opt :mean) float?
+   (ds/opt :count) int?
    })
 
 (def search-games-api-200-response-results-inner-rating-spec

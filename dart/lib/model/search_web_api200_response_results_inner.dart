@@ -13,35 +13,40 @@ part of openapi.api;
 class SearchWebAPI200ResponseResultsInner {
   /// Returns a new [SearchWebAPI200ResponseResultsInner] instance.
   SearchWebAPI200ResponseResultsInner({
+    this.url,
     this.title,
     this.summary,
-    this.url,
   });
+
+  String? url;
 
   String? title;
 
   String? summary;
 
-  String? url;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchWebAPI200ResponseResultsInner &&
+    other.url == url &&
     other.title == title &&
-    other.summary == summary &&
-    other.url == url;
+    other.summary == summary;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (url == null ? 0 : url!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
-    (summary == null ? 0 : summary!.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+    (summary == null ? 0 : summary!.hashCode);
 
   @override
-  String toString() => 'SearchWebAPI200ResponseResultsInner[title=$title, summary=$summary, url=$url]';
+  String toString() => 'SearchWebAPI200ResponseResultsInner[url=$url, title=$title, summary=$summary]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
+    }
     if (this.title != null) {
       json[r'title'] = this.title;
     } else {
@@ -51,11 +56,6 @@ class SearchWebAPI200ResponseResultsInner {
       json[r'summary'] = this.summary;
     } else {
       json[r'summary'] = null;
-    }
-    if (this.url != null) {
-      json[r'url'] = this.url;
-    } else {
-      json[r'url'] = null;
     }
     return json;
   }
@@ -79,9 +79,9 @@ class SearchWebAPI200ResponseResultsInner {
       }());
 
       return SearchWebAPI200ResponseResultsInner(
+        url: mapValueOfType<String>(json, r'url'),
         title: mapValueOfType<String>(json, r'title'),
         summary: mapValueOfType<String>(json, r'summary'),
-        url: mapValueOfType<String>(json, r'url'),
       );
     }
     return null;

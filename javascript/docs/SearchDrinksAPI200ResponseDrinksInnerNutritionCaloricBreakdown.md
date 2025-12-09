@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentFat** | **Number** |  | [optional] 
 **percentCarbs** | **Number** |  | [optional] 
 **percentProtein** | **Number** |  | [optional] 
+**percentFat** | **Number** |  | [optional] 
 
 

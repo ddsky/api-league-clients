@@ -7,8 +7,8 @@
 
 (def score-text-api-200-response-skimmability-mainscores-data
   {
-   (ds/opt :total_possible) int?
    (ds/opt :total) float?
+   (ds/opt :total_possible) int?
    })
 
 (def score-text-api-200-response-skimmability-mainscores-spec

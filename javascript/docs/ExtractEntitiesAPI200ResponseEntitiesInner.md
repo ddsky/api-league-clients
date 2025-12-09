@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startPosition** | **Number** |  | [optional] 
-**image** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **value** | **String** |  | [optional] 
+**startPosition** | **Number** |  | [optional] 
 **endPosition** | **Number** |  | [optional] 
+**image** | **String** |  | [optional] 
 
 

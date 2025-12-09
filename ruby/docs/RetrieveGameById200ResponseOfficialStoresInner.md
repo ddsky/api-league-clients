@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **url** | **String** |  | [optional] |
 | **source** | **String** |  | [optional] |
+| **url** | **String** |  | [optional] |
 
 ## Example
 
@@ -13,8 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::RetrieveGameById200ResponseOfficialStoresInner.new(
-  url: null,
-  source: null
+  source: null,
+  url: null
 )
 ```
 

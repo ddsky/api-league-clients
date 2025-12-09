@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**retrieve_recipe_information_api**](FoodApi.md#retrieve_recipe_information_api) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 [**search_drinks_api**](FoodApi.md#search_drinks_api) | **GET** /search-drinks | Search Drinks API
 [**search_recipes_api**](FoodApi.md#search_recipes_api) | **GET** /search-recipes | Search Recipes API
-[**search_restaurants_api**](FoodApi.md#search_restaurants_api) | **GET** /search-restaurants | Search Restaurants API
 
 
 # **compute_nutrition_api**
@@ -581,116 +580,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**401** | Unauthorized |  -  |
-**402** | Payment Required |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**406** | Not Acceptable |  -  |
-**429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_restaurants_api**
-> SearchRestaurantsAPI200Response search_restaurants_api(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-
-* Api Key Authentication (apiKey):
-* Api Key Authentication (headerApiKey):
-
-```python
-import apileague
-from apileague.models.search_restaurants_api200_response import SearchRestaurantsAPI200Response
-from apileague.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.apileague.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = apileague.Configuration(
-    host = "https://api.apileague.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: apiKey
-configuration.api_key['apiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apiKey'] = 'Bearer'
-
-# Configure API key authorization: headerApiKey
-configuration.api_key['headerApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['headerApiKey'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with apileague.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = apileague.FoodApi(api_client)
-    lat = 32.715736 # float | The latitude to search around.
-    lon = -117.161087 # float | The longitude to search around.
-    query = 'burger' # str | The search query. (optional)
-    distance = 5 # int | The maximum distance of the restaurant in miles around the given location. (optional)
-    budget = 25 # float | The budget in USD for the meal. (optional)
-    min_rating = 4.4 # float | The minimum rating of the restaurants in range [0,5]. (optional)
-    cuisine = 'Mexican' # str | The cuisine that the restaurants should support. (optional)
-    is_open = true # bool | Whether the restaurants have to be open now. (optional)
-    page = 0 # int | The page of the results. (optional)
-    sort = 'rating' # str | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
-
-    try:
-        # Search Restaurants API
-        api_response = api_instance.search_restaurants_api(lat, lon, query=query, distance=distance, budget=budget, min_rating=min_rating, cuisine=cuisine, is_open=is_open, page=page, sort=sort)
-        print("The response of FoodApi->search_restaurants_api:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FoodApi->search_restaurants_api: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **float**| The latitude to search around. | 
- **lon** | **float**| The longitude to search around. | 
- **query** | **str**| The search query. | [optional] 
- **distance** | **int**| The maximum distance of the restaurant in miles around the given location. | [optional] 
- **budget** | **float**| The budget in USD for the meal. | [optional] 
- **min_rating** | **float**| The minimum rating of the restaurants in range [0,5]. | [optional] 
- **cuisine** | **str**| The cuisine that the restaurants should support. | [optional] 
- **is_open** | **bool**| Whether the restaurants have to be open now. | [optional] 
- **page** | **int**| The page of the results. | [optional] 
- **sort** | **str**| The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional] 
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

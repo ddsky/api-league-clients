@@ -16,28 +16,28 @@ void main() {
   // final instance = ScoreTextAPI200ResponseInterestingnessSubscores();
 
   group('test ScoreTextAPI200ResponseInterestingnessSubscores', () {
-    // List<int> titleRatingScore (default value: const [])
-    test('to test the property `titleRatingScore`', () async {
+    // List<num> googleHitsScore (default value: const [])
+    test('to test the property `googleHitsScore`', () async {
       // TODO
     });
 
-    // List<int> quoteScore (default value: const [])
-    test('to test the property `quoteScore`', () async {
-      // TODO
-    });
-
-    // List<int> lengthScore (default value: const [])
-    test('to test the property `lengthScore`', () async {
-      // TODO
-    });
-
-    // List<int> linkScore (default value: const [])
+    // List<num> linkScore (default value: const [])
     test('to test the property `linkScore`', () async {
       // TODO
     });
 
-    // List<int> googleHitsScore (default value: const [])
-    test('to test the property `googleHitsScore`', () async {
+    // List<num> quoteScore (default value: const [])
+    test('to test the property `quoteScore`', () async {
+      // TODO
+    });
+
+    // List<num> titleRatingScore (default value: const [])
+    test('to test the property `titleRatingScore`', () async {
+      // TODO
+    });
+
+    // List<num> lengthScore (default value: const [])
+    test('to test the property `lengthScore`', () async {
       // TODO
     });
 

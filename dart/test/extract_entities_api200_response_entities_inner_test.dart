@@ -16,16 +16,6 @@ void main() {
   // final instance = ExtractEntitiesAPI200ResponseEntitiesInner();
 
   group('test ExtractEntitiesAPI200ResponseEntitiesInner', () {
-    // int startPosition
-    test('to test the property `startPosition`', () async {
-      // TODO
-    });
-
-    // String image
-    test('to test the property `image`', () async {
-      // TODO
-    });
-
     // String type
     test('to test the property `type`', () async {
       // TODO
@@ -36,8 +26,18 @@ void main() {
       // TODO
     });
 
+    // int startPosition
+    test('to test the property `startPosition`', () async {
+      // TODO
+    });
+
     // int endPosition
     test('to test the property `endPosition`', () async {
+      // TODO
+    });
+
+    // String image
+    test('to test the property `image`', () async {
       // TODO
     });
 

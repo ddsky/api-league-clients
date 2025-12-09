@@ -13,16 +13,12 @@ part of openapi.api;
 class RetrieveGameById200ResponseOffersInner {
   /// Returns a new [RetrieveGameById200ResponseOffersInner] instance.
   RetrieveGameById200ResponseOffersInner({
-    this.storeName,
-    this.title,
     this.price,
+    this.storeName,
     this.platform,
+    this.title,
     this.url,
   });
-
-  String? storeName;
-
-  String? title;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -32,51 +28,55 @@ class RetrieveGameById200ResponseOffersInner {
   ///
   RetrieveGameById200ResponseOffersInnerPrice? price;
 
+  String? storeName;
+
   String? platform;
+
+  String? title;
 
   String? url;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveGameById200ResponseOffersInner &&
-    other.storeName == storeName &&
-    other.title == title &&
     other.price == price &&
+    other.storeName == storeName &&
     other.platform == platform &&
+    other.title == title &&
     other.url == url;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (storeName == null ? 0 : storeName!.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
     (price == null ? 0 : price!.hashCode) +
+    (storeName == null ? 0 : storeName!.hashCode) +
     (platform == null ? 0 : platform!.hashCode) +
+    (title == null ? 0 : title!.hashCode) +
     (url == null ? 0 : url!.hashCode);
 
   @override
-  String toString() => 'RetrieveGameById200ResponseOffersInner[storeName=$storeName, title=$title, price=$price, platform=$platform, url=$url]';
+  String toString() => 'RetrieveGameById200ResponseOffersInner[price=$price, storeName=$storeName, platform=$platform, title=$title, url=$url]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.storeName != null) {
-      json[r'store_name'] = this.storeName;
-    } else {
-      json[r'store_name'] = null;
-    }
-    if (this.title != null) {
-      json[r'title'] = this.title;
-    } else {
-      json[r'title'] = null;
-    }
     if (this.price != null) {
       json[r'price'] = this.price;
     } else {
       json[r'price'] = null;
     }
+    if (this.storeName != null) {
+      json[r'store_name'] = this.storeName;
+    } else {
+      json[r'store_name'] = null;
+    }
     if (this.platform != null) {
       json[r'platform'] = this.platform;
     } else {
       json[r'platform'] = null;
+    }
+    if (this.title != null) {
+      json[r'title'] = this.title;
+    } else {
+      json[r'title'] = null;
     }
     if (this.url != null) {
       json[r'url'] = this.url;
@@ -105,10 +105,10 @@ class RetrieveGameById200ResponseOffersInner {
       }());
 
       return RetrieveGameById200ResponseOffersInner(
-        storeName: mapValueOfType<String>(json, r'store_name'),
-        title: mapValueOfType<String>(json, r'title'),
         price: RetrieveGameById200ResponseOffersInnerPrice.fromJson(json[r'price']),
+        storeName: mapValueOfType<String>(json, r'store_name'),
         platform: mapValueOfType<String>(json, r'platform'),
+        title: mapValueOfType<String>(json, r'title'),
         url: mapValueOfType<String>(json, r'url'),
       );
     }

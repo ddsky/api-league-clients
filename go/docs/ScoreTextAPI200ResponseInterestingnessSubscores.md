@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TitleRatingScore** | Pointer to **[]int32** |  | [optional] 
-**QuoteScore** | Pointer to **[]int32** |  | [optional] 
-**LengthScore** | Pointer to **[]int32** |  | [optional] 
-**LinkScore** | Pointer to **[]int32** |  | [optional] 
-**GoogleHitsScore** | Pointer to **[]int32** |  | [optional] 
+**GoogleHitsScore** | Pointer to **[]float32** |  | [optional] 
+**LinkScore** | Pointer to **[]float32** |  | [optional] 
+**QuoteScore** | Pointer to **[]float32** |  | [optional] 
+**TitleRatingScore** | Pointer to **[]float32** |  | [optional] 
+**LengthScore** | Pointer to **[]float32** |  | [optional] 
 
 ## Methods
 
@@ -29,97 +29,47 @@ NewScoreTextAPI200ResponseInterestingnessSubscoresWithDefaults instantiates a ne
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTitleRatingScore
+### GetGoogleHitsScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScore() []int32`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScore() []float32`
 
-GetTitleRatingScore returns the TitleRatingScore field if non-nil, zero value otherwise.
+GetGoogleHitsScore returns the GoogleHitsScore field if non-nil, zero value otherwise.
 
-### GetTitleRatingScoreOk
+### GetGoogleHitsScoreOk
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScoreOk() (*[]int32, bool)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScoreOk() (*[]float32, bool)`
 
-GetTitleRatingScoreOk returns a tuple with the TitleRatingScore field if it's non-nil, zero value otherwise
+GetGoogleHitsScoreOk returns a tuple with the GoogleHitsScore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTitleRatingScore
+### SetGoogleHitsScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetTitleRatingScore(v []int32)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetGoogleHitsScore(v []float32)`
 
-SetTitleRatingScore sets TitleRatingScore field to given value.
+SetGoogleHitsScore sets GoogleHitsScore field to given value.
 
-### HasTitleRatingScore
+### HasGoogleHitsScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasTitleRatingScore() bool`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasGoogleHitsScore() bool`
 
-HasTitleRatingScore returns a boolean if a field has been set.
-
-### GetQuoteScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScore() []int32`
-
-GetQuoteScore returns the QuoteScore field if non-nil, zero value otherwise.
-
-### GetQuoteScoreOk
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScoreOk() (*[]int32, bool)`
-
-GetQuoteScoreOk returns a tuple with the QuoteScore field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetQuoteScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetQuoteScore(v []int32)`
-
-SetQuoteScore sets QuoteScore field to given value.
-
-### HasQuoteScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasQuoteScore() bool`
-
-HasQuoteScore returns a boolean if a field has been set.
-
-### GetLengthScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScore() []int32`
-
-GetLengthScore returns the LengthScore field if non-nil, zero value otherwise.
-
-### GetLengthScoreOk
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScoreOk() (*[]int32, bool)`
-
-GetLengthScoreOk returns a tuple with the LengthScore field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLengthScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLengthScore(v []int32)`
-
-SetLengthScore sets LengthScore field to given value.
-
-### HasLengthScore
-
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLengthScore() bool`
-
-HasLengthScore returns a boolean if a field has been set.
+HasGoogleHitsScore returns a boolean if a field has been set.
 
 ### GetLinkScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScore() []int32`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScore() []float32`
 
 GetLinkScore returns the LinkScore field if non-nil, zero value otherwise.
 
 ### GetLinkScoreOk
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScoreOk() (*[]int32, bool)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLinkScoreOk() (*[]float32, bool)`
 
 GetLinkScoreOk returns a tuple with the LinkScore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinkScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLinkScore(v []int32)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLinkScore(v []float32)`
 
 SetLinkScore sets LinkScore field to given value.
 
@@ -129,30 +79,80 @@ SetLinkScore sets LinkScore field to given value.
 
 HasLinkScore returns a boolean if a field has been set.
 
-### GetGoogleHitsScore
+### GetQuoteScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScore() []int32`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScore() []float32`
 
-GetGoogleHitsScore returns the GoogleHitsScore field if non-nil, zero value otherwise.
+GetQuoteScore returns the QuoteScore field if non-nil, zero value otherwise.
 
-### GetGoogleHitsScoreOk
+### GetQuoteScoreOk
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetGoogleHitsScoreOk() (*[]int32, bool)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetQuoteScoreOk() (*[]float32, bool)`
 
-GetGoogleHitsScoreOk returns a tuple with the GoogleHitsScore field if it's non-nil, zero value otherwise
+GetQuoteScoreOk returns a tuple with the QuoteScore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGoogleHitsScore
+### SetQuoteScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetGoogleHitsScore(v []int32)`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetQuoteScore(v []float32)`
 
-SetGoogleHitsScore sets GoogleHitsScore field to given value.
+SetQuoteScore sets QuoteScore field to given value.
 
-### HasGoogleHitsScore
+### HasQuoteScore
 
-`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasGoogleHitsScore() bool`
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasQuoteScore() bool`
 
-HasGoogleHitsScore returns a boolean if a field has been set.
+HasQuoteScore returns a boolean if a field has been set.
+
+### GetTitleRatingScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScore() []float32`
+
+GetTitleRatingScore returns the TitleRatingScore field if non-nil, zero value otherwise.
+
+### GetTitleRatingScoreOk
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetTitleRatingScoreOk() (*[]float32, bool)`
+
+GetTitleRatingScoreOk returns a tuple with the TitleRatingScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTitleRatingScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetTitleRatingScore(v []float32)`
+
+SetTitleRatingScore sets TitleRatingScore field to given value.
+
+### HasTitleRatingScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasTitleRatingScore() bool`
+
+HasTitleRatingScore returns a boolean if a field has been set.
+
+### GetLengthScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScore() []float32`
+
+GetLengthScore returns the LengthScore field if non-nil, zero value otherwise.
+
+### GetLengthScoreOk
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) GetLengthScoreOk() (*[]float32, bool)`
+
+GetLengthScoreOk returns a tuple with the LengthScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLengthScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) SetLengthScore(v []float32)`
+
+SetLengthScore sets LengthScore field to given value.
+
+### HasLengthScore
+
+`func (o *ScoreTextAPI200ResponseInterestingnessSubscores) HasLengthScore() bool`
+
+HasLengthScore returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

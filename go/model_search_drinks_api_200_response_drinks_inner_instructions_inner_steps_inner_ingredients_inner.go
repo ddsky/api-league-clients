@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerSt
 
 // SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner struct for SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner
 type SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner struct {
+	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Image NullableString `json:"image,omitempty"`
-	Id *int32 `json:"id,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner instantiates a new SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner object
@@ -40,6 +40,38 @@ func NewSearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredie
 func NewSearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInnerWithDefaults() *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner {
 	this := SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -126,38 +158,6 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredi
 	o.Image.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) SetId(v int32) {
-	o.Id = &v
-}
-
 func (o SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -168,14 +168,14 @@ func (o SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredie
 
 func (o SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
 	if o.Image.IsSet() {
 		toSerialize["image"] = o.Image.Get()
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
 	}
 	return toSerialize, nil
 }

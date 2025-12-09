@@ -22,18 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param totalPossible 
  * @param total 
+ * @param totalPossible 
  */
 
 
 data class ScoreTextAPI200ResponseSkimmabilityMainscores (
 
-    @Json(name = "total_possible")
-    val totalPossible: kotlin.Int? = null,
-
     @Json(name = "total")
-    val total: java.math.BigDecimal? = null
+    val total: java.math.BigDecimal? = null,
+
+    @Json(name = "total_possible")
+    val totalPossible: kotlin.Int? = null
 
 ) {
 

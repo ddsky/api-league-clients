@@ -16,51 +16,6 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInner();
 
   group('test SearchDrinksAPI200ResponseDrinksInner', () {
-    // List<String> flavors (default value: const [])
-    test('to test the property `flavors`', () async {
-      // TODO
-    });
-
-    // List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner> instructions (default value: const [])
-    test('to test the property `instructions`', () async {
-      // TODO
-    });
-
-    // List<String> images (default value: const [])
-    test('to test the property `images`', () async {
-      // TODO
-    });
-
-    // SearchDrinksAPI200ResponseDrinksInnerNutrition nutrition
-    test('to test the property `nutrition`', () async {
-      // TODO
-    });
-
-    // String glassType
-    test('to test the property `glassType`', () async {
-      // TODO
-    });
-
-    // SearchDrinksAPI200ResponseDrinksInnerCredits credits
-    test('to test the property `credits`', () async {
-      // TODO
-    });
-
-    // num pricePerServing
-    test('to test the property `pricePerServing`', () async {
-      // TODO
-    });
-
-    // String description
-    test('to test the property `description`', () async {
-      // TODO
-    });
-
-    // List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner> ingredients (default value: const [])
-    test('to test the property `ingredients`', () async {
-      // TODO
-    });
-
     // int id
     test('to test the property `id`', () async {
       // TODO
@@ -71,8 +26,53 @@ void main() {
       // TODO
     });
 
+    // List<String> images (default value: const [])
+    test('to test the property `images`', () async {
+      // TODO
+    });
+
+    // num pricePerServing
+    test('to test the property `pricePerServing`', () async {
+      // TODO
+    });
+
+    // SearchDrinksAPI200ResponseDrinksInnerNutrition nutrition
+    test('to test the property `nutrition`', () async {
+      // TODO
+    });
+
+    // List<String> flavors (default value: const [])
+    test('to test the property `flavors`', () async {
+      // TODO
+    });
+
+    // String glassType
+    test('to test the property `glassType`', () async {
+      // TODO
+    });
+
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
     // List<String> cuisines (default value: const [])
     test('to test the property `cuisines`', () async {
+      // TODO
+    });
+
+    // List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner> ingredients (default value: const [])
+    test('to test the property `ingredients`', () async {
+      // TODO
+    });
+
+    // List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner> instructions (default value: const [])
+    test('to test the property `instructions`', () async {
+      // TODO
+    });
+
+    // SearchDrinksAPI200ResponseDrinksInnerCredits credits
+    test('to test the property `credits`', () async {
       // TODO
     });
 

@@ -31,6 +31,8 @@ import { FindSimilarGamesAPI200ResponseResultsInner } from '../models/FindSimila
 import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
 import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
 import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomAffirmationAPI200Response } from '../models/RandomAffirmationAPI200Response';
+import { RandomLifeHackAPI200Response } from '../models/RandomLifeHackAPI200Response';
 import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
 import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
 import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
@@ -83,10 +85,10 @@ import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from
 import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGamesAPI200Response } from '../models/SearchGamesAPI200Response';
 import { SearchGamesAPI200ResponseActiveFilterOptionsInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
@@ -100,6 +102,7 @@ import { SearchGamesAPI200ResponseSortingOptionsInner } from '../models/SearchGa
 import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
 import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
 import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchIconsAPI200ResponseIconsInner } from '../models/SearchIconsAPI200ResponseIconsInner';
 import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
 import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
 import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
@@ -110,11 +113,6 @@ import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Respon
 import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
 import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
 import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
-import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
 import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
@@ -797,57 +795,6 @@ export class ObservableFoodApi {
         return this.searchRecipesAPIWithHttpInfo(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number, _options).pipe(map((apiResponse: HttpInfo<SearchRecipesAPI200Response>) => apiResponse.data));
     }
 
-    /**
-     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants API
-     * @param lat The latitude to search around.
-     * @param lon The longitude to search around.
-     * @param query The search query.
-     * @param distance The maximum distance of the restaurant in miles around the given location.
-     * @param budget The budget in USD for the meal.
-     * @param minRating The minimum rating of the restaurants in range [0,5].
-     * @param cuisine The cuisine that the restaurants should support.
-     * @param isOpen Whether the restaurants have to be open now.
-     * @param page The page of the results.
-     * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-     */
-    public searchRestaurantsAPIWithHttpInfo(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<HttpInfo<SearchRestaurantsAPI200Response>> {
-        const requestContextPromise = this.requestFactory.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options);
-
-        // build promise chain
-        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
-        for (let middleware of this.configuration.middleware) {
-            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
-        }
-
-        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
-            pipe(mergeMap((response: ResponseContext) => {
-                let middlewarePostObservable = of(response);
-                for (let middleware of this.configuration.middleware) {
-                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
-                }
-                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.searchRestaurantsAPIWithHttpInfo(rsp)));
-            }));
-    }
-
-    /**
-     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants API
-     * @param lat The latitude to search around.
-     * @param lon The longitude to search around.
-     * @param query The search query.
-     * @param distance The maximum distance of the restaurant in miles around the given location.
-     * @param budget The budget in USD for the meal.
-     * @param minRating The minimum rating of the restaurants in range [0,5].
-     * @param cuisine The cuisine that the restaurants should support.
-     * @param isOpen Whether the restaurants have to be open now.
-     * @param page The page of the results.
-     * @param sort The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-     */
-    public searchRestaurantsAPI(lat: number, lon: number, query?: string, distance?: number, budget?: number, minRating?: number, cuisine?: string, isOpen?: boolean, page?: number, sort?: string, _options?: Configuration): Observable<SearchRestaurantsAPI200Response> {
-        return this.searchRestaurantsAPIWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort, _options).pipe(map((apiResponse: HttpInfo<SearchRestaurantsAPI200Response>) => apiResponse.data));
-    }
-
 }
 
 import { GamesApiRequestFactory, GamesApiResponseProcessor} from "../apis/GamesApi";
@@ -1252,6 +1199,70 @@ export class ObservableKnowledgeApi {
     }
 
     /**
+     * This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+     * Random Affirmation API
+     */
+    public randomAffirmationAPIWithHttpInfo(_options?: Configuration): Observable<HttpInfo<RandomAffirmationAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomAffirmationAPI(_options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomAffirmationAPIWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+     * Random Affirmation API
+     */
+    public randomAffirmationAPI(_options?: Configuration): Observable<RandomAffirmationAPI200Response> {
+        return this.randomAffirmationAPIWithHttpInfo(_options).pipe(map((apiResponse: HttpInfo<RandomAffirmationAPI200Response>) => apiResponse.data));
+    }
+
+    /**
+     * This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+     * Random Life Hack API
+     * @param maxLength The maximum length of the hack in letters.
+     */
+    public randomLifeHackAPIWithHttpInfo(maxLength?: number, _options?: Configuration): Observable<HttpInfo<RandomLifeHackAPI200Response>> {
+        const requestContextPromise = this.requestFactory.randomLifeHackAPI(maxLength, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.randomLifeHackAPIWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+     * Random Life Hack API
+     * @param maxLength The maximum length of the hack in letters.
+     */
+    public randomLifeHackAPI(maxLength?: number, _options?: Configuration): Observable<RandomLifeHackAPI200Response> {
+        return this.randomLifeHackAPIWithHttpInfo(maxLength, _options).pipe(map((apiResponse: HttpInfo<RandomLifeHackAPI200Response>) => apiResponse.data));
+    }
+
+    /**
      * This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
      * Random Quote API
      * @param minLength The minimum length of the quote in letters.
@@ -1497,6 +1508,43 @@ export class ObservableMediaApi {
      */
     public rescaleImageAPI(url: string, width: number, height: number, crop: boolean, _options?: Configuration): Observable<HttpFile> {
         return this.rescaleImageAPIWithHttpInfo(url, width, height, crop, _options).pipe(map((apiResponse: HttpInfo<HttpFile>) => apiResponse.data));
+    }
+
+    /**
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * Screenshot API
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     */
+    public screenshotAPIWithHttpInfo(url: string, width: number, height: number, _options?: Configuration): Observable<HttpInfo<HttpFile>> {
+        const requestContextPromise = this.requestFactory.screenshotAPI(url, width, height, _options);
+
+        // build promise chain
+        let middlewarePreObservable = from<RequestContext>(requestContextPromise);
+        for (let middleware of this.configuration.middleware) {
+            middlewarePreObservable = middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => middleware.pre(ctx)));
+        }
+
+        return middlewarePreObservable.pipe(mergeMap((ctx: RequestContext) => this.configuration.httpApi.send(ctx))).
+            pipe(mergeMap((response: ResponseContext) => {
+                let middlewarePostObservable = of(response);
+                for (let middleware of this.configuration.middleware) {
+                    middlewarePostObservable = middlewarePostObservable.pipe(mergeMap((rsp: ResponseContext) => middleware.post(rsp)));
+                }
+                return middlewarePostObservable.pipe(map((rsp: ResponseContext) => this.responseProcessor.screenshotAPIWithHttpInfo(rsp)));
+            }));
+    }
+
+    /**
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * Screenshot API
+     * @param url The url of the web page for which a screenshot should be taken.
+     * @param width The desired width of the screenshot.
+     * @param height The desired height of the screenshot.
+     */
+    public screenshotAPI(url: string, width: number, height: number, _options?: Configuration): Observable<HttpFile> {
+        return this.screenshotAPIWithHttpInfo(url, width, height, _options).pipe(map((apiResponse: HttpInfo<HttpFile>) => apiResponse.data));
     }
 
     /**

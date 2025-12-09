@@ -16,6 +16,11 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner', () {
+    // int id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -28,11 +33,6 @@ void main() {
 
     // String unit
     test('to test the property `unit`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
       // TODO
     });
 

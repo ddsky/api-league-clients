@@ -6,9 +6,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**width** | **Integer** |  |  [optional]
 **title** | **String** |  |  [optional]
 **url** | **String** |  |  [optional]
+**width** | **Integer** |  |  [optional]
 **height** | **Integer** |  |  [optional]
 
 

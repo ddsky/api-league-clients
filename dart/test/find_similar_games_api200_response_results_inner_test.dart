@@ -16,18 +16,8 @@ void main() {
   // final instance = FindSimilarGamesAPI200ResponseResultsInner();
 
   group('test FindSimilarGamesAPI200ResponseResultsInner', () {
-    // String image
-    test('to test the property `image`', () async {
-      // TODO
-    });
-
-    // String shortDescription
-    test('to test the property `shortDescription`', () async {
-      // TODO
-    });
-
-    // String microTrailer
-    test('to test the property `microTrailer`', () async {
+    // int id
+    test('to test the property `id`', () async {
       // TODO
     });
 
@@ -46,6 +36,11 @@ void main() {
       // TODO
     });
 
+    // String image
+    test('to test the property `image`', () async {
+      // TODO
+    });
+
     // String link
     test('to test the property `link`', () async {
       // TODO
@@ -53,11 +48,6 @@ void main() {
 
     // SearchGamesAPI200ResponseResultsInnerRating rating
     test('to test the property `rating`', () async {
-      // TODO
-    });
-
-    // int id
-    test('to test the property `id`', () async {
       // TODO
     });
 
@@ -71,8 +61,18 @@ void main() {
       // TODO
     });
 
+    // String microTrailer
+    test('to test the property `microTrailer`', () async {
+      // TODO
+    });
+
     // String gameplay
     test('to test the property `gameplay`', () async {
+      // TODO
+    });
+
+    // String shortDescription
+    test('to test the property `shortDescription`', () async {
       // TODO
     });
 

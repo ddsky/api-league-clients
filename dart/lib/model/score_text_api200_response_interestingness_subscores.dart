@@ -13,50 +13,50 @@ part of openapi.api;
 class ScoreTextAPI200ResponseInterestingnessSubscores {
   /// Returns a new [ScoreTextAPI200ResponseInterestingnessSubscores] instance.
   ScoreTextAPI200ResponseInterestingnessSubscores({
-    this.titleRatingScore = const [],
-    this.quoteScore = const [],
-    this.lengthScore = const [],
-    this.linkScore = const [],
     this.googleHitsScore = const [],
+    this.linkScore = const [],
+    this.quoteScore = const [],
+    this.titleRatingScore = const [],
+    this.lengthScore = const [],
   });
 
-  List<int> titleRatingScore;
+  List<num> googleHitsScore;
 
-  List<int> quoteScore;
+  List<num> linkScore;
 
-  List<int> lengthScore;
+  List<num> quoteScore;
 
-  List<int> linkScore;
+  List<num> titleRatingScore;
 
-  List<int> googleHitsScore;
+  List<num> lengthScore;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ScoreTextAPI200ResponseInterestingnessSubscores &&
-    _deepEquality.equals(other.titleRatingScore, titleRatingScore) &&
-    _deepEquality.equals(other.quoteScore, quoteScore) &&
-    _deepEquality.equals(other.lengthScore, lengthScore) &&
+    _deepEquality.equals(other.googleHitsScore, googleHitsScore) &&
     _deepEquality.equals(other.linkScore, linkScore) &&
-    _deepEquality.equals(other.googleHitsScore, googleHitsScore);
+    _deepEquality.equals(other.quoteScore, quoteScore) &&
+    _deepEquality.equals(other.titleRatingScore, titleRatingScore) &&
+    _deepEquality.equals(other.lengthScore, lengthScore);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (titleRatingScore.hashCode) +
-    (quoteScore.hashCode) +
-    (lengthScore.hashCode) +
+    (googleHitsScore.hashCode) +
     (linkScore.hashCode) +
-    (googleHitsScore.hashCode);
+    (quoteScore.hashCode) +
+    (titleRatingScore.hashCode) +
+    (lengthScore.hashCode);
 
   @override
-  String toString() => 'ScoreTextAPI200ResponseInterestingnessSubscores[titleRatingScore=$titleRatingScore, quoteScore=$quoteScore, lengthScore=$lengthScore, linkScore=$linkScore, googleHitsScore=$googleHitsScore]';
+  String toString() => 'ScoreTextAPI200ResponseInterestingnessSubscores[googleHitsScore=$googleHitsScore, linkScore=$linkScore, quoteScore=$quoteScore, titleRatingScore=$titleRatingScore, lengthScore=$lengthScore]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'title_rating_score'] = this.titleRatingScore;
-      json[r'quote_score'] = this.quoteScore;
-      json[r'length_score'] = this.lengthScore;
-      json[r'link_score'] = this.linkScore;
       json[r'google_hits_score'] = this.googleHitsScore;
+      json[r'link_score'] = this.linkScore;
+      json[r'quote_score'] = this.quoteScore;
+      json[r'title_rating_score'] = this.titleRatingScore;
+      json[r'length_score'] = this.lengthScore;
     return json;
   }
 
@@ -79,20 +79,20 @@ class ScoreTextAPI200ResponseInterestingnessSubscores {
       }());
 
       return ScoreTextAPI200ResponseInterestingnessSubscores(
-        titleRatingScore: json[r'title_rating_score'] is Iterable
-            ? (json[r'title_rating_score'] as Iterable).cast<int>().toList(growable: false)
-            : const [],
-        quoteScore: json[r'quote_score'] is Iterable
-            ? (json[r'quote_score'] as Iterable).cast<int>().toList(growable: false)
-            : const [],
-        lengthScore: json[r'length_score'] is Iterable
-            ? (json[r'length_score'] as Iterable).cast<int>().toList(growable: false)
+        googleHitsScore: json[r'google_hits_score'] is Iterable
+            ? (json[r'google_hits_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
         linkScore: json[r'link_score'] is Iterable
-            ? (json[r'link_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'link_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
-        googleHitsScore: json[r'google_hits_score'] is Iterable
-            ? (json[r'google_hits_score'] as Iterable).cast<int>().toList(growable: false)
+        quoteScore: json[r'quote_score'] is Iterable
+            ? (json[r'quote_score'] as Iterable).cast<num>().toList(growable: false)
+            : const [],
+        titleRatingScore: json[r'title_rating_score'] is Iterable
+            ? (json[r'title_rating_score'] as Iterable).cast<num>().toList(growable: false)
+            : const [],
+        lengthScore: json[r'length_score'] is Iterable
+            ? (json[r'length_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
       );
     }

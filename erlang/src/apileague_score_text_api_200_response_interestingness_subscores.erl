@@ -5,22 +5,22 @@
 -export_type([apileague_score_text_api_200_response_interestingness_subscores/0]).
 
 -type apileague_score_text_api_200_response_interestingness_subscores() ::
-    #{ 'title_rating_score' => list(),
-       'quote_score' => list(),
-       'length_score' => list(),
+    #{ 'google_hits_score' => list(),
        'link_score' => list(),
-       'google_hits_score' => list()
+       'quote_score' => list(),
+       'title_rating_score' => list(),
+       'length_score' => list()
      }.
 
-encode(#{ 'title_rating_score' := TitleRatingScore,
-          'quote_score' := QuoteScore,
-          'length_score' := LengthScore,
+encode(#{ 'google_hits_score' := GoogleHitsScore,
           'link_score' := LinkScore,
-          'google_hits_score' := GoogleHitsScore
+          'quote_score' := QuoteScore,
+          'title_rating_score' := TitleRatingScore,
+          'length_score' := LengthScore
         }) ->
-    #{ 'title_rating_score' => TitleRatingScore,
-       'quote_score' => QuoteScore,
-       'length_score' => LengthScore,
+    #{ 'google_hits_score' => GoogleHitsScore,
        'link_score' => LinkScore,
-       'google_hits_score' => GoogleHitsScore
+       'quote_score' => QuoteScore,
+       'title_rating_score' => TitleRatingScore,
+       'length_score' => LengthScore
      }.

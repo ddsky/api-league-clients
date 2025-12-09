@@ -8,8 +8,8 @@ use WWW::OpenAPIClient::Object::SearchDrinksAPI200ResponseDrinksInnerIngredients
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metric** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
 **us** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs.md) |  | [optional] 
+**metric** | [**SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

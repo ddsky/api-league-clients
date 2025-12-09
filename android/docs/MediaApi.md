@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectMainImageColorAPI**](MediaApi.md#detectMainImageColorAPI) | **GET** /detect-color | Detect Main Image Color API
 [**rescaleImageAPI**](MediaApi.md#rescaleImageAPI) | **GET** /rescale-image | Rescale Image API
+[**screenshotAPI**](MediaApi.md#screenshotAPI) | **GET** /take-screenshot | Screenshot API
 [**searchIconsAPI**](MediaApi.md#searchIconsAPI) | **GET** /search-icons | Search Icons API
 [**searchRoyaltyFreeImagesAPI**](MediaApi.md#searchRoyaltyFreeImagesAPI) | **GET** /search-images | Search Royalty Free Images API
 [**vectorSearchAPI**](MediaApi.md#vectorSearchAPI) | **GET** /search-vectors | Vector Search API
@@ -95,6 +96,56 @@ Name | Type | Description  | Notes
  **width** | **Integer**| The desired width of the rescaled image. | [default to null]
  **height** | **Integer**| The desired height of the rescaled image. | [default to null]
  **crop** | **Boolean**| Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | [default to null]
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+
+## screenshotAPI
+
+> File screenshotAPI(url, width, height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+
+```java
+// Import classes:
+//import com.apileague.MediaApi;
+
+MediaApi apiInstance = new MediaApi();
+String url = https://nytimes.com; // String | The url of the web page for which a screenshot should be taken.
+Integer width = 400; // Integer | The desired width of the screenshot.
+Integer height = 300; // Integer | The desired height of the screenshot.
+try {
+    File result = apiInstance.screenshotAPI(url, width, height);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaApi#screenshotAPI");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **String**| The url of the web page for which a screenshot should be taken. | [default to null]
+ **width** | **Integer**| The desired width of the screenshot. | [default to null]
+ **height** | **Integer**| The desired height of the screenshot. | [default to null]
 
 ### Return type
 

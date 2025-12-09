@@ -9,17 +9,17 @@ defmodule APILeague.Model.SearchGamesApi200ResponseFilterOptionsInner do
   @derive Jason.Encoder
   defstruct [
     :name,
-    :filter_type,
     :key,
     :values,
+    :filter_type,
     :filter_connection
   ]
 
   @type t :: %__MODULE__{
     :name => String.t | nil,
-    :filter_type => String.t | nil,
     :key => String.t | nil,
     :values => [APILeague.Model.SearchGamesApi200ResponseFilterOptionsInnerValuesInner.t] | nil,
+    :filter_type => String.t | nil,
     :filter_connection => String.t | nil
   }
 

@@ -16,13 +16,13 @@ void main() {
   // final instance = ScoreTextAPI200ResponseSkimmabilityMainscores();
 
   group('test ScoreTextAPI200ResponseSkimmabilityMainscores', () {
-    // int totalPossible
-    test('to test the property `totalPossible`', () async {
+    // num total
+    test('to test the property `total`', () async {
       // TODO
     });
 
-    // num total
-    test('to test the property `total`', () async {
+    // int totalPossible
+    test('to test the property `totalPossible`', () async {
       // TODO
     });
 

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**filterType** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **values** | [**[SearchGamesAPI200ResponseFilterOptionsInnerValuesInner]**](SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md) |  | [optional] 
+**filterType** | **String** |  | [optional] 
 **filterConnection** | **String** |  | [optional] 
 
 

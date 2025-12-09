@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **int** |  | [optional] 
+**step** | **str** |  | [optional] 
 **ingredients** | [**List[SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
 **equipment** | [**List[SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner]**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md) |  | [optional] 
-**step** | **str** |  | [optional] 
 
 ## Example
 

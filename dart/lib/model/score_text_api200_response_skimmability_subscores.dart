@@ -13,56 +13,56 @@ part of openapi.api;
 class ScoreTextAPI200ResponseSkimmabilitySubscores {
   /// Returns a new [ScoreTextAPI200ResponseSkimmabilitySubscores] instance.
   ScoreTextAPI200ResponseSkimmabilitySubscores({
-    this.bulletPointRatioScore = const [],
-    this.imageScore = const [],
     this.highlightedWordRatioScore = const [],
+    this.bulletPointRatioScore = const [],
+    this.paragraphHeadlineRatioScore = const [],
+    this.imageScore = const [],
     this.videoScore = const [],
     this.paragraphScore = const [],
-    this.paragraphHeadlineRatioScore = const [],
   });
 
-  List<int> bulletPointRatioScore;
+  List<num> highlightedWordRatioScore;
 
-  List<int> imageScore;
+  List<num> bulletPointRatioScore;
 
-  List<int> highlightedWordRatioScore;
+  List<num> paragraphHeadlineRatioScore;
 
-  List<int> videoScore;
+  List<num> imageScore;
 
-  List<int> paragraphScore;
+  List<num> videoScore;
 
-  List<int> paragraphHeadlineRatioScore;
+  List<num> paragraphScore;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ScoreTextAPI200ResponseSkimmabilitySubscores &&
-    _deepEquality.equals(other.bulletPointRatioScore, bulletPointRatioScore) &&
-    _deepEquality.equals(other.imageScore, imageScore) &&
     _deepEquality.equals(other.highlightedWordRatioScore, highlightedWordRatioScore) &&
+    _deepEquality.equals(other.bulletPointRatioScore, bulletPointRatioScore) &&
+    _deepEquality.equals(other.paragraphHeadlineRatioScore, paragraphHeadlineRatioScore) &&
+    _deepEquality.equals(other.imageScore, imageScore) &&
     _deepEquality.equals(other.videoScore, videoScore) &&
-    _deepEquality.equals(other.paragraphScore, paragraphScore) &&
-    _deepEquality.equals(other.paragraphHeadlineRatioScore, paragraphHeadlineRatioScore);
+    _deepEquality.equals(other.paragraphScore, paragraphScore);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (bulletPointRatioScore.hashCode) +
-    (imageScore.hashCode) +
     (highlightedWordRatioScore.hashCode) +
+    (bulletPointRatioScore.hashCode) +
+    (paragraphHeadlineRatioScore.hashCode) +
+    (imageScore.hashCode) +
     (videoScore.hashCode) +
-    (paragraphScore.hashCode) +
-    (paragraphHeadlineRatioScore.hashCode);
+    (paragraphScore.hashCode);
 
   @override
-  String toString() => 'ScoreTextAPI200ResponseSkimmabilitySubscores[bulletPointRatioScore=$bulletPointRatioScore, imageScore=$imageScore, highlightedWordRatioScore=$highlightedWordRatioScore, videoScore=$videoScore, paragraphScore=$paragraphScore, paragraphHeadlineRatioScore=$paragraphHeadlineRatioScore]';
+  String toString() => 'ScoreTextAPI200ResponseSkimmabilitySubscores[highlightedWordRatioScore=$highlightedWordRatioScore, bulletPointRatioScore=$bulletPointRatioScore, paragraphHeadlineRatioScore=$paragraphHeadlineRatioScore, imageScore=$imageScore, videoScore=$videoScore, paragraphScore=$paragraphScore]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'bullet_point_ratio_score'] = this.bulletPointRatioScore;
-      json[r'image_score'] = this.imageScore;
       json[r'highlighted_word_ratio_score'] = this.highlightedWordRatioScore;
+      json[r'bullet_point_ratio_score'] = this.bulletPointRatioScore;
+      json[r'paragraph_headline_ratio_score'] = this.paragraphHeadlineRatioScore;
+      json[r'image_score'] = this.imageScore;
       json[r'video_score'] = this.videoScore;
       json[r'paragraph_score'] = this.paragraphScore;
-      json[r'paragraph_headline_ratio_score'] = this.paragraphHeadlineRatioScore;
     return json;
   }
 
@@ -85,23 +85,23 @@ class ScoreTextAPI200ResponseSkimmabilitySubscores {
       }());
 
       return ScoreTextAPI200ResponseSkimmabilitySubscores(
-        bulletPointRatioScore: json[r'bullet_point_ratio_score'] is Iterable
-            ? (json[r'bullet_point_ratio_score'] as Iterable).cast<int>().toList(growable: false)
-            : const [],
-        imageScore: json[r'image_score'] is Iterable
-            ? (json[r'image_score'] as Iterable).cast<int>().toList(growable: false)
-            : const [],
         highlightedWordRatioScore: json[r'highlighted_word_ratio_score'] is Iterable
-            ? (json[r'highlighted_word_ratio_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'highlighted_word_ratio_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
-        videoScore: json[r'video_score'] is Iterable
-            ? (json[r'video_score'] as Iterable).cast<int>().toList(growable: false)
-            : const [],
-        paragraphScore: json[r'paragraph_score'] is Iterable
-            ? (json[r'paragraph_score'] as Iterable).cast<int>().toList(growable: false)
+        bulletPointRatioScore: json[r'bullet_point_ratio_score'] is Iterable
+            ? (json[r'bullet_point_ratio_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
         paragraphHeadlineRatioScore: json[r'paragraph_headline_ratio_score'] is Iterable
-            ? (json[r'paragraph_headline_ratio_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'paragraph_headline_ratio_score'] as Iterable).cast<num>().toList(growable: false)
+            : const [],
+        imageScore: json[r'image_score'] is Iterable
+            ? (json[r'image_score'] as Iterable).cast<num>().toList(growable: false)
+            : const [],
+        videoScore: json[r'video_score'] is Iterable
+            ? (json[r'video_score'] as Iterable).cast<num>().toList(growable: false)
+            : const [],
+        paragraphScore: json[r'paragraph_score'] is Iterable
+            ? (json[r'paragraph_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
       );
     }

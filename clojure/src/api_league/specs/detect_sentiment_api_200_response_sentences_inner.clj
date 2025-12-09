@@ -7,10 +7,10 @@
 
 (def detect-sentiment-api-200-response-sentences-inner-data
   {
-   (ds/opt :length) int?
    (ds/opt :sentiment) string?
    (ds/opt :offset) int?
    (ds/opt :confidence) int?
+   (ds/opt :length) int?
    })
 
 (def detect-sentiment-api-200-response-sentences-inner-spec

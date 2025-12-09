@@ -105,7 +105,6 @@ Class | Method | HTTP request | Description
 *FoodApi* | [**retrieveRecipeInformationAPI**](docs/Api/FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API
 *FoodApi* | [**searchDrinksAPI**](docs/Api/FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API
 *FoodApi* | [**searchRecipesAPI**](docs/Api/FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API
-*FoodApi* | [**searchRestaurantsAPI**](docs/Api/FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API
 *GamesApi* | [**findSimilarGamesAPI**](docs/Api/GamesApi.md#findsimilargamesapi) | **GET** /list-similar-games | Find Similar Games API
 *GamesApi* | [**retrieveGameById**](docs/Api/GamesApi.md#retrievegamebyid) | **GET** /retrieve-game | Retrieve Game by Id
 *GamesApi* | [**searchGamesAPI**](docs/Api/GamesApi.md#searchgamesapi) | **GET** /search-games | Search Games API
@@ -115,12 +114,15 @@ Class | Method | HTTP request | Description
 *HumorApi* | [**searchGifsAPI**](docs/Api/HumorApi.md#searchgifsapi) | **GET** /search-gifs | Search Gifs API
 *HumorApi* | [**searchJokesAPI**](docs/Api/HumorApi.md#searchjokesapi) | **GET** /search-jokes | Search Jokes API
 *HumorApi* | [**searchMemesAPI**](docs/Api/HumorApi.md#searchmemesapi) | **GET** /search-memes | Search Memes API
+*KnowledgeApi* | [**randomAffirmationAPI**](docs/Api/KnowledgeApi.md#randomaffirmationapi) | **GET** /retrieve-random-affirmation | Random Affirmation API
+*KnowledgeApi* | [**randomLifeHackAPI**](docs/Api/KnowledgeApi.md#randomlifehackapi) | **GET** /retrieve-random-life-hack | Random Life Hack API
 *KnowledgeApi* | [**randomQuoteAPI**](docs/Api/KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API
 *KnowledgeApi* | [**randomRiddleAPI**](docs/Api/KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API
 *KnowledgeApi* | [**randomTriviaAPI**](docs/Api/KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API
 *MathApi* | [**convertUnitsAPI**](docs/Api/MathApi.md#convertunitsapi) | **GET** /convert-units | Convert Units API
 *MediaApi* | [**detectMainImageColorAPI**](docs/Api/MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API
 *MediaApi* | [**rescaleImageAPI**](docs/Api/MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API
+*MediaApi* | [**screenshotAPI**](docs/Api/MediaApi.md#screenshotapi) | **GET** /take-screenshot | Screenshot API
 *MediaApi* | [**searchIconsAPI**](docs/Api/MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API
 *MediaApi* | [**searchRoyaltyFreeImagesAPI**](docs/Api/MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API
 *MediaApi* | [**vectorSearchAPI**](docs/Api/MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API
@@ -180,6 +182,8 @@ Class | Method | HTTP request | Description
 - [GenerateNonsenseWordAPI200Response](docs/Model/GenerateNonsenseWordAPI200Response.md)
 - [ListWordSynonymsAPI200Response](docs/Model/ListWordSynonymsAPI200Response.md)
 - [PluralizeWordAPI200Response](docs/Model/PluralizeWordAPI200Response.md)
+- [RandomAffirmationAPI200Response](docs/Model/RandomAffirmationAPI200Response.md)
+- [RandomLifeHackAPI200Response](docs/Model/RandomLifeHackAPI200Response.md)
 - [RandomMemeAPI200Response](docs/Model/RandomMemeAPI200Response.md)
 - [RandomPoemAPI200Response](docs/Model/RandomPoemAPI200Response.md)
 - [RandomQuoteAPI200Response](docs/Model/RandomQuoteAPI200Response.md)
@@ -232,10 +236,10 @@ Class | Method | HTTP request | Description
 - [SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutrition](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutrition.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md)
-- [SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md)
+- [SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md)
 - [SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing](docs/Model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md)
 - [SearchGamesAPI200Response](docs/Model/SearchGamesAPI200Response.md)
 - [SearchGamesAPI200ResponseActiveFilterOptionsInner](docs/Model/SearchGamesAPI200ResponseActiveFilterOptionsInner.md)
@@ -249,6 +253,7 @@ Class | Method | HTTP request | Description
 - [SearchGifsAPI200Response](docs/Model/SearchGifsAPI200Response.md)
 - [SearchGifsAPI200ResponseImagesInner](docs/Model/SearchGifsAPI200ResponseImagesInner.md)
 - [SearchIconsAPI200Response](docs/Model/SearchIconsAPI200Response.md)
+- [SearchIconsAPI200ResponseIconsInner](docs/Model/SearchIconsAPI200ResponseIconsInner.md)
 - [SearchJokesAPI200Response](docs/Model/SearchJokesAPI200Response.md)
 - [SearchJokesAPI200ResponseJokesInner](docs/Model/SearchJokesAPI200ResponseJokesInner.md)
 - [SearchMemesAPI200Response](docs/Model/SearchMemesAPI200Response.md)
@@ -259,11 +264,6 @@ Class | Method | HTTP request | Description
 - [SearchRecipesAPI200ResponseRecipesInner](docs/Model/SearchRecipesAPI200ResponseRecipesInner.md)
 - [SearchRecipesAPI200ResponseRecipesInnerNutrition](docs/Model/SearchRecipesAPI200ResponseRecipesInnerNutrition.md)
 - [SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner](docs/Model/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md)
-- [SearchRestaurantsAPI200Response](docs/Model/SearchRestaurantsAPI200Response.md)
-- [SearchRestaurantsAPI200ResponseRestaurantsInner](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInner.md)
-- [SearchRestaurantsAPI200ResponseRestaurantsInnerAddress](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.md)
-- [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.md)
-- [SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational](docs/Model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.md)
 - [SearchRoyaltyFreeImagesAPI200Response](docs/Model/SearchRoyaltyFreeImagesAPI200Response.md)
 - [SearchRoyaltyFreeImagesAPI200ResponseImagesInner](docs/Model/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md)
 - [SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense](docs/Model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md)
@@ -314,7 +314,7 @@ mail@apileague.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.8.1`
-    - Package version: `1.8.1`
+- API version: `1.9.0`
+    - Package version: `1.9.0`
     - Generator version: `7.8.0-SNAPSHOT`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

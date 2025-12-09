@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseCredits{}
 
 // RetrieveRecipeInformationAPI200ResponseCredits struct for RetrieveRecipeInformationAPI200ResponseCredits
 type RetrieveRecipeInformationAPI200ResponseCredits struct {
-	License NullableString `json:"license,omitempty"`
-	Text NullableString `json:"text,omitempty"`
 	SourceName NullableString `json:"source_name,omitempty"`
 	SourceUrl NullableString `json:"source_url,omitempty"`
+	Text NullableString `json:"text,omitempty"`
+	License NullableString `json:"license,omitempty"`
 }
 
 // NewRetrieveRecipeInformationAPI200ResponseCredits instantiates a new RetrieveRecipeInformationAPI200ResponseCredits object
@@ -41,90 +41,6 @@ func NewRetrieveRecipeInformationAPI200ResponseCredits() *RetrieveRecipeInformat
 func NewRetrieveRecipeInformationAPI200ResponseCreditsWithDefaults() *RetrieveRecipeInformationAPI200ResponseCredits {
 	this := RetrieveRecipeInformationAPI200ResponseCredits{}
 	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetLicense() string {
-	if o == nil || IsNil(o.License.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.License.Get()
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetLicenseOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.License.Get(), o.License.IsSet()
-}
-
-// HasLicense returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) HasLicense() bool {
-	if o != nil && o.License.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetLicense gets a reference to the given NullableString and assigns it to the License field.
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetLicense(v string) {
-	o.License.Set(&v)
-}
-// SetLicenseNil sets the value for License to be an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetLicenseNil() {
-	o.License.Set(nil)
-}
-
-// UnsetLicense ensures that no value is present for License, not even an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) UnsetLicense() {
-	o.License.Unset()
-}
-
-// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetText() string {
-	if o == nil || IsNil(o.Text.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Text.Get()
-}
-
-// GetTextOk returns a tuple with the Text field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetTextOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Text.Get(), o.Text.IsSet()
-}
-
-// HasText returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) HasText() bool {
-	if o != nil && o.Text.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetText gets a reference to the given NullableString and assigns it to the Text field.
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetText(v string) {
-	o.Text.Set(&v)
-}
-// SetTextNil sets the value for Text to be an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetTextNil() {
-	o.Text.Set(nil)
-}
-
-// UnsetText ensures that no value is present for Text, not even an explicit nil
-func (o *RetrieveRecipeInformationAPI200ResponseCredits) UnsetText() {
-	o.Text.Unset()
 }
 
 // GetSourceName returns the SourceName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -211,6 +127,90 @@ func (o *RetrieveRecipeInformationAPI200ResponseCredits) UnsetSourceUrl() {
 	o.SourceUrl.Unset()
 }
 
+// GetText returns the Text field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetText() string {
+	if o == nil || IsNil(o.Text.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Text.Get()
+}
+
+// GetTextOk returns a tuple with the Text field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetTextOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Text.Get(), o.Text.IsSet()
+}
+
+// HasText returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) HasText() bool {
+	if o != nil && o.Text.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetText gets a reference to the given NullableString and assigns it to the Text field.
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetText(v string) {
+	o.Text.Set(&v)
+}
+// SetTextNil sets the value for Text to be an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetTextNil() {
+	o.Text.Set(nil)
+}
+
+// UnsetText ensures that no value is present for Text, not even an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) UnsetText() {
+	o.Text.Unset()
+}
+
+// GetLicense returns the License field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetLicense() string {
+	if o == nil || IsNil(o.License.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.License.Get()
+}
+
+// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) GetLicenseOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.License.Get(), o.License.IsSet()
+}
+
+// HasLicense returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) HasLicense() bool {
+	if o != nil && o.License.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLicense gets a reference to the given NullableString and assigns it to the License field.
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetLicense(v string) {
+	o.License.Set(&v)
+}
+// SetLicenseNil sets the value for License to be an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) SetLicenseNil() {
+	o.License.Set(nil)
+}
+
+// UnsetLicense ensures that no value is present for License, not even an explicit nil
+func (o *RetrieveRecipeInformationAPI200ResponseCredits) UnsetLicense() {
+	o.License.Unset()
+}
+
 func (o RetrieveRecipeInformationAPI200ResponseCredits) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -221,17 +221,17 @@ func (o RetrieveRecipeInformationAPI200ResponseCredits) MarshalJSON() ([]byte, e
 
 func (o RetrieveRecipeInformationAPI200ResponseCredits) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.License.IsSet() {
-		toSerialize["license"] = o.License.Get()
-	}
-	if o.Text.IsSet() {
-		toSerialize["text"] = o.Text.Get()
-	}
 	if o.SourceName.IsSet() {
 		toSerialize["source_name"] = o.SourceName.Get()
 	}
 	if o.SourceUrl.IsSet() {
 		toSerialize["source_url"] = o.SourceUrl.Get()
+	}
+	if o.Text.IsSet() {
+		toSerialize["text"] = o.Text.Get()
+	}
+	if o.License.IsSet() {
+		toSerialize["license"] = o.License.Get()
 	}
 	return toSerialize, nil
 }

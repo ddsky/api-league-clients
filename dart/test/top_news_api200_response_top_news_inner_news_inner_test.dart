@@ -16,23 +16,8 @@ void main() {
   // final instance = TopNewsAPI200ResponseTopNewsInnerNewsInner();
 
   group('test TopNewsAPI200ResponseTopNewsInnerNewsInner', () {
-    // String summary
-    test('to test the property `summary`', () async {
-      // TODO
-    });
-
-    // String image
-    test('to test the property `image`', () async {
-      // TODO
-    });
-
     // int id
     test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // String text
-    test('to test the property `text`', () async {
       // TODO
     });
 
@@ -41,13 +26,28 @@ void main() {
       // TODO
     });
 
-    // String publishDate
-    test('to test the property `publishDate`', () async {
+    // String text
+    test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // String summary
+    test('to test the property `summary`', () async {
       // TODO
     });
 
     // String url
     test('to test the property `url`', () async {
+      // TODO
+    });
+
+    // String image
+    test('to test the property `image`', () async {
+      // TODO
+    });
+
+    // String publishDate
+    test('to test the property `publishDate`', () async {
       // TODO
     });
 

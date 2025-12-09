@@ -22,15 +22,21 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param title 
+ * @param url 
  * @param summary 
  * @param duration 
  * @param thumbnail 
- * @param title 
- * @param url 
  */
 
 
 data class ExtractNewsAPI200ResponseVideosInner (
+
+    @Json(name = "title")
+    val title: kotlin.String? = null,
+
+    @Json(name = "url")
+    val url: kotlin.String? = null,
 
     @Json(name = "summary")
     val summary: kotlin.String? = null,
@@ -39,13 +45,7 @@ data class ExtractNewsAPI200ResponseVideosInner (
     val duration: kotlin.Int? = null,
 
     @Json(name = "thumbnail")
-    val thumbnail: kotlin.String? = null,
-
-    @Json(name = "title")
-    val title: kotlin.String? = null,
-
-    @Json(name = "url")
-    val url: kotlin.String? = null
+    val thumbnail: kotlin.String? = null
 
 ) {
 

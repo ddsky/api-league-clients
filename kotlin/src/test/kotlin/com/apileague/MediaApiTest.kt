@@ -48,6 +48,16 @@ class MediaApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
+        // to test screenshotAPI
+        should("test screenshotAPI") {
+            // uncomment below to test screenshotAPI
+            //val url : kotlin.String = https://nytimes.com // kotlin.String | The url of the web page for which a screenshot should be taken.
+            //val width : kotlin.Int = 400 // kotlin.Int | The desired width of the screenshot.
+            //val height : kotlin.Int = 300 // kotlin.Int | The desired height of the screenshot.
+            //val result : java.io.File = apiInstance.screenshotAPI(url, width, height)
+            //result shouldBe ("TODO")
+        }
+
         // to test searchIconsAPI
         should("test searchIconsAPI") {
             // uncomment below to test searchIconsAPI

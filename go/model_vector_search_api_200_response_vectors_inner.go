@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &VectorSearchAPI200ResponseVectorsInner{}
 
 // VectorSearchAPI200ResponseVectorsInner struct for VectorSearchAPI200ResponseVectorsInner
 type VectorSearchAPI200ResponseVectorsInner struct {
-	License NullableString `json:"license,omitempty"`
 	Title NullableString `json:"title,omitempty"`
+	License NullableString `json:"license,omitempty"`
 	Author NullableString `json:"author,omitempty"`
 	ImageUrl NullableString `json:"image_url,omitempty"`
 }
@@ -41,48 +41,6 @@ func NewVectorSearchAPI200ResponseVectorsInner() *VectorSearchAPI200ResponseVect
 func NewVectorSearchAPI200ResponseVectorsInnerWithDefaults() *VectorSearchAPI200ResponseVectorsInner {
 	this := VectorSearchAPI200ResponseVectorsInner{}
 	return &this
-}
-
-// GetLicense returns the License field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VectorSearchAPI200ResponseVectorsInner) GetLicense() string {
-	if o == nil || IsNil(o.License.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.License.Get()
-}
-
-// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VectorSearchAPI200ResponseVectorsInner) GetLicenseOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.License.Get(), o.License.IsSet()
-}
-
-// HasLicense returns a boolean if a field has been set.
-func (o *VectorSearchAPI200ResponseVectorsInner) HasLicense() bool {
-	if o != nil && o.License.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetLicense gets a reference to the given NullableString and assigns it to the License field.
-func (o *VectorSearchAPI200ResponseVectorsInner) SetLicense(v string) {
-	o.License.Set(&v)
-}
-// SetLicenseNil sets the value for License to be an explicit nil
-func (o *VectorSearchAPI200ResponseVectorsInner) SetLicenseNil() {
-	o.License.Set(nil)
-}
-
-// UnsetLicense ensures that no value is present for License, not even an explicit nil
-func (o *VectorSearchAPI200ResponseVectorsInner) UnsetLicense() {
-	o.License.Unset()
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -125,6 +83,48 @@ func (o *VectorSearchAPI200ResponseVectorsInner) SetTitleNil() {
 // UnsetTitle ensures that no value is present for Title, not even an explicit nil
 func (o *VectorSearchAPI200ResponseVectorsInner) UnsetTitle() {
 	o.Title.Unset()
+}
+
+// GetLicense returns the License field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VectorSearchAPI200ResponseVectorsInner) GetLicense() string {
+	if o == nil || IsNil(o.License.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.License.Get()
+}
+
+// GetLicenseOk returns a tuple with the License field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VectorSearchAPI200ResponseVectorsInner) GetLicenseOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.License.Get(), o.License.IsSet()
+}
+
+// HasLicense returns a boolean if a field has been set.
+func (o *VectorSearchAPI200ResponseVectorsInner) HasLicense() bool {
+	if o != nil && o.License.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLicense gets a reference to the given NullableString and assigns it to the License field.
+func (o *VectorSearchAPI200ResponseVectorsInner) SetLicense(v string) {
+	o.License.Set(&v)
+}
+// SetLicenseNil sets the value for License to be an explicit nil
+func (o *VectorSearchAPI200ResponseVectorsInner) SetLicenseNil() {
+	o.License.Set(nil)
+}
+
+// UnsetLicense ensures that no value is present for License, not even an explicit nil
+func (o *VectorSearchAPI200ResponseVectorsInner) UnsetLicense() {
+	o.License.Unset()
 }
 
 // GetAuthor returns the Author field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -221,11 +221,11 @@ func (o VectorSearchAPI200ResponseVectorsInner) MarshalJSON() ([]byte, error) {
 
 func (o VectorSearchAPI200ResponseVectorsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.License.IsSet() {
-		toSerialize["license"] = o.License.Get()
-	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
+	}
+	if o.License.IsSet() {
+		toSerialize["license"] = o.License.Get()
 	}
 	if o.Author.IsSet() {
 		toSerialize["author"] = o.Author.Get()

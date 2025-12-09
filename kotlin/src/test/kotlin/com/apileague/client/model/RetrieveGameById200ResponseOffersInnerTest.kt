@@ -26,28 +26,28 @@ class RetrieveGameById200ResponseOffersInnerTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveGameById200ResponseOffersInner
         //val modelInstance = RetrieveGameById200ResponseOffersInner()
 
-        // to test the property `storeName`
-        should("test storeName") {
-            // uncomment below to test the property
-            //modelInstance.storeName shouldBe ("TODO")
-        }
-
-        // to test the property `title`
-        should("test title") {
-            // uncomment below to test the property
-            //modelInstance.title shouldBe ("TODO")
-        }
-
         // to test the property `price`
         should("test price") {
             // uncomment below to test the property
             //modelInstance.price shouldBe ("TODO")
         }
 
+        // to test the property `storeName`
+        should("test storeName") {
+            // uncomment below to test the property
+            //modelInstance.storeName shouldBe ("TODO")
+        }
+
         // to test the property `platform`
         should("test platform") {
             // uncomment below to test the property
             //modelInstance.platform shouldBe ("TODO")
+        }
+
+        // to test the property `title`
+        should("test title") {
+            // uncomment below to test the property
+            //modelInstance.title shouldBe ("TODO")
         }
 
         // to test the property `url`

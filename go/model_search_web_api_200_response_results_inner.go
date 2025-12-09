@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchWebAPI200ResponseResultsInner{}
 
 // SearchWebAPI200ResponseResultsInner struct for SearchWebAPI200ResponseResultsInner
 type SearchWebAPI200ResponseResultsInner struct {
+	Url NullableString `json:"url,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	Summary NullableString `json:"summary,omitempty"`
-	Url NullableString `json:"url,omitempty"`
 }
 
 // NewSearchWebAPI200ResponseResultsInner instantiates a new SearchWebAPI200ResponseResultsInner object
@@ -40,6 +40,48 @@ func NewSearchWebAPI200ResponseResultsInner() *SearchWebAPI200ResponseResultsInn
 func NewSearchWebAPI200ResponseResultsInnerWithDefaults() *SearchWebAPI200ResponseResultsInner {
 	this := SearchWebAPI200ResponseResultsInner{}
 	return &this
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchWebAPI200ResponseResultsInner) GetUrl() string {
+	if o == nil || IsNil(o.Url.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Url.Get()
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchWebAPI200ResponseResultsInner) GetUrlOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Url.Get(), o.Url.IsSet()
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *SearchWebAPI200ResponseResultsInner) HasUrl() bool {
+	if o != nil && o.Url.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
+func (o *SearchWebAPI200ResponseResultsInner) SetUrl(v string) {
+	o.Url.Set(&v)
+}
+// SetUrlNil sets the value for Url to be an explicit nil
+func (o *SearchWebAPI200ResponseResultsInner) SetUrlNil() {
+	o.Url.Set(nil)
+}
+
+// UnsetUrl ensures that no value is present for Url, not even an explicit nil
+func (o *SearchWebAPI200ResponseResultsInner) UnsetUrl() {
+	o.Url.Unset()
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -126,48 +168,6 @@ func (o *SearchWebAPI200ResponseResultsInner) UnsetSummary() {
 	o.Summary.Unset()
 }
 
-// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchWebAPI200ResponseResultsInner) GetUrl() string {
-	if o == nil || IsNil(o.Url.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Url.Get()
-}
-
-// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchWebAPI200ResponseResultsInner) GetUrlOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Url.Get(), o.Url.IsSet()
-}
-
-// HasUrl returns a boolean if a field has been set.
-func (o *SearchWebAPI200ResponseResultsInner) HasUrl() bool {
-	if o != nil && o.Url.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
-func (o *SearchWebAPI200ResponseResultsInner) SetUrl(v string) {
-	o.Url.Set(&v)
-}
-// SetUrlNil sets the value for Url to be an explicit nil
-func (o *SearchWebAPI200ResponseResultsInner) SetUrlNil() {
-	o.Url.Set(nil)
-}
-
-// UnsetUrl ensures that no value is present for Url, not even an explicit nil
-func (o *SearchWebAPI200ResponseResultsInner) UnsetUrl() {
-	o.Url.Unset()
-}
-
 func (o SearchWebAPI200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -178,14 +178,14 @@ func (o SearchWebAPI200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchWebAPI200ResponseResultsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Url.IsSet() {
+		toSerialize["url"] = o.Url.Get()
+	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
 	if o.Summary.IsSet() {
 		toSerialize["summary"] = o.Summary.Get()
-	}
-	if o.Url.IsSet() {
-		toSerialize["url"] = o.Url.Get()
 	}
 	return toSerialize, nil
 }

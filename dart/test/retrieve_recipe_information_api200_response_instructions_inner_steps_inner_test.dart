@@ -21,6 +21,11 @@ void main() {
       // TODO
     });
 
+    // String step
+    test('to test the property `step`', () async {
+      // TODO
+    });
+
     // List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> ingredients (default value: const [])
     test('to test the property `ingredients`', () async {
       // TODO
@@ -28,11 +33,6 @@ void main() {
 
     // List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner> equipment (default value: const [])
     test('to test the property `equipment`', () async {
-      // TODO
-    });
-
-    // String step
-    test('to test the property `step`', () async {
       // TODO
     });
 

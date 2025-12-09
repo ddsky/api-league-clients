@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &ScoreTextAPI200ResponseSkimmabilityMainscores{}
 
 // ScoreTextAPI200ResponseSkimmabilityMainscores struct for ScoreTextAPI200ResponseSkimmabilityMainscores
 type ScoreTextAPI200ResponseSkimmabilityMainscores struct {
-	TotalPossible *int32 `json:"total_possible,omitempty"`
 	Total *float32 `json:"total,omitempty"`
+	TotalPossible *int32 `json:"total_possible,omitempty"`
 }
 
 // NewScoreTextAPI200ResponseSkimmabilityMainscores instantiates a new ScoreTextAPI200ResponseSkimmabilityMainscores object
@@ -39,38 +39,6 @@ func NewScoreTextAPI200ResponseSkimmabilityMainscores() *ScoreTextAPI200Response
 func NewScoreTextAPI200ResponseSkimmabilityMainscoresWithDefaults() *ScoreTextAPI200ResponseSkimmabilityMainscores {
 	this := ScoreTextAPI200ResponseSkimmabilityMainscores{}
 	return &this
-}
-
-// GetTotalPossible returns the TotalPossible field value if set, zero value otherwise.
-func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) GetTotalPossible() int32 {
-	if o == nil || IsNil(o.TotalPossible) {
-		var ret int32
-		return ret
-	}
-	return *o.TotalPossible
-}
-
-// GetTotalPossibleOk returns a tuple with the TotalPossible field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) GetTotalPossibleOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalPossible) {
-		return nil, false
-	}
-	return o.TotalPossible, true
-}
-
-// HasTotalPossible returns a boolean if a field has been set.
-func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) HasTotalPossible() bool {
-	if o != nil && !IsNil(o.TotalPossible) {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalPossible gets a reference to the given int32 and assigns it to the TotalPossible field.
-func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) SetTotalPossible(v int32) {
-	o.TotalPossible = &v
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
@@ -105,6 +73,38 @@ func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) SetTotal(v float32) {
 	o.Total = &v
 }
 
+// GetTotalPossible returns the TotalPossible field value if set, zero value otherwise.
+func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) GetTotalPossible() int32 {
+	if o == nil || IsNil(o.TotalPossible) {
+		var ret int32
+		return ret
+	}
+	return *o.TotalPossible
+}
+
+// GetTotalPossibleOk returns a tuple with the TotalPossible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) GetTotalPossibleOk() (*int32, bool) {
+	if o == nil || IsNil(o.TotalPossible) {
+		return nil, false
+	}
+	return o.TotalPossible, true
+}
+
+// HasTotalPossible returns a boolean if a field has been set.
+func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) HasTotalPossible() bool {
+	if o != nil && !IsNil(o.TotalPossible) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalPossible gets a reference to the given int32 and assigns it to the TotalPossible field.
+func (o *ScoreTextAPI200ResponseSkimmabilityMainscores) SetTotalPossible(v int32) {
+	o.TotalPossible = &v
+}
+
 func (o ScoreTextAPI200ResponseSkimmabilityMainscores) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -115,11 +115,11 @@ func (o ScoreTextAPI200ResponseSkimmabilityMainscores) MarshalJSON() ([]byte, er
 
 func (o ScoreTextAPI200ResponseSkimmabilityMainscores) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TotalPossible) {
-		toSerialize["total_possible"] = o.TotalPossible
-	}
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
+	}
+	if !IsNil(o.TotalPossible) {
+		toSerialize["total_possible"] = o.TotalPossible
 	}
 	return toSerialize, nil
 }

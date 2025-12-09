@@ -4,13 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fattiness** | **Float** |  | [optional] |
-| **spiciness** | **Integer** |  | [optional] |
+| **sweetness** | **Float** |  | [optional] |
 | **saltiness** | **Integer** |  | [optional] |
+| **sourness** | **Float** |  | [optional] |
 | **bitterness** | **Float** |  | [optional] |
 | **savoriness** | **Float** |  | [optional] |
-| **sweetness** | **Float** |  | [optional] |
-| **sourness** | **Float** |  | [optional] |
+| **fattiness** | **Float** |  | [optional] |
+| **spiciness** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -18,13 +18,13 @@
 require 'openapi_client'
 
 instance = OpenapiClient::RetrieveRecipeInformationAPI200ResponseTaste.new(
-  fattiness: null,
-  spiciness: null,
+  sweetness: null,
   saltiness: null,
+  sourness: null,
   bitterness: null,
   savoriness: null,
-  sweetness: null,
-  sourness: null
+  fattiness: null,
+  spiciness: null
 )
 ```
 

@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**low_fodmap** | **bool** |  | [optional] 
 **vegetarian** | **bool** |  | [optional] 
 **vegan** | **bool** |  | [optional] 
 **gluten_free** | **bool** |  | [optional] 
 **dairy_free** | **bool** |  | [optional] 
+**low_fodmap** | **bool** |  | [optional] 
 **gaps** | **str** |  | [optional] 
 **diets** | **List[Optional[str]]** |  | [optional] 
 

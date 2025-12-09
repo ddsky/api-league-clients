@@ -8,14 +8,14 @@ defmodule APILeague.Model.SearchGifsApi200ResponseImagesInner do
 
   @derive Jason.Encoder
   defstruct [
-    :width,
     :url,
+    :width,
     :height
   ]
 
   @type t :: %__MODULE__{
-    :width => integer() | nil,
     :url => String.t | nil,
+    :width => integer() | nil,
     :height => integer() | nil
   }
 

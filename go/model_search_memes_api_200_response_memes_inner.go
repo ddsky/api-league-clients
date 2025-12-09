@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchMemesAPI200ResponseMemesInner{}
 
 // SearchMemesAPI200ResponseMemesInner struct for SearchMemesAPI200ResponseMemesInner
 type SearchMemesAPI200ResponseMemesInner struct {
-	Type NullableString `json:"type,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	Url NullableString `json:"url,omitempty"`
+	Type NullableString `json:"type,omitempty"`
 }
 
 // NewSearchMemesAPI200ResponseMemesInner instantiates a new SearchMemesAPI200ResponseMemesInner object
@@ -40,48 +40,6 @@ func NewSearchMemesAPI200ResponseMemesInner() *SearchMemesAPI200ResponseMemesInn
 func NewSearchMemesAPI200ResponseMemesInnerWithDefaults() *SearchMemesAPI200ResponseMemesInner {
 	this := SearchMemesAPI200ResponseMemesInner{}
 	return &this
-}
-
-// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SearchMemesAPI200ResponseMemesInner) GetType() string {
-	if o == nil || IsNil(o.Type.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Type.Get()
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SearchMemesAPI200ResponseMemesInner) GetTypeOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Type.Get(), o.Type.IsSet()
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *SearchMemesAPI200ResponseMemesInner) HasType() bool {
-	if o != nil && o.Type.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given NullableString and assigns it to the Type field.
-func (o *SearchMemesAPI200ResponseMemesInner) SetType(v string) {
-	o.Type.Set(&v)
-}
-// SetTypeNil sets the value for Type to be an explicit nil
-func (o *SearchMemesAPI200ResponseMemesInner) SetTypeNil() {
-	o.Type.Set(nil)
-}
-
-// UnsetType ensures that no value is present for Type, not even an explicit nil
-func (o *SearchMemesAPI200ResponseMemesInner) UnsetType() {
-	o.Type.Unset()
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -168,6 +126,48 @@ func (o *SearchMemesAPI200ResponseMemesInner) UnsetUrl() {
 	o.Url.Unset()
 }
 
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SearchMemesAPI200ResponseMemesInner) GetType() string {
+	if o == nil || IsNil(o.Type.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Type.Get()
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SearchMemesAPI200ResponseMemesInner) GetTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Type.Get(), o.Type.IsSet()
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *SearchMemesAPI200ResponseMemesInner) HasType() bool {
+	if o != nil && o.Type.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given NullableString and assigns it to the Type field.
+func (o *SearchMemesAPI200ResponseMemesInner) SetType(v string) {
+	o.Type.Set(&v)
+}
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *SearchMemesAPI200ResponseMemesInner) SetTypeNil() {
+	o.Type.Set(nil)
+}
+
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *SearchMemesAPI200ResponseMemesInner) UnsetType() {
+	o.Type.Unset()
+}
+
 func (o SearchMemesAPI200ResponseMemesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -178,14 +178,14 @@ func (o SearchMemesAPI200ResponseMemesInner) MarshalJSON() ([]byte, error) {
 
 func (o SearchMemesAPI200ResponseMemesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Type.IsSet() {
-		toSerialize["type"] = o.Type.Get()
-	}
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
+	}
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
 	return toSerialize, nil
 }

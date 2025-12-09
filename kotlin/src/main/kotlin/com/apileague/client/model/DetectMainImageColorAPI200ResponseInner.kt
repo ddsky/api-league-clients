@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param hexCode 
  * @param specificColor 
  * @param mainColor 
- * @param hexCode 
  */
 
 
 data class DetectMainImageColorAPI200ResponseInner (
 
+    @Json(name = "hex_code")
+    val hexCode: kotlin.String? = null,
+
     @Json(name = "specific_color")
     val specificColor: kotlin.String? = null,
 
     @Json(name = "main_color")
-    val mainColor: kotlin.String? = null,
-
-    @Json(name = "hex_code")
-    val hexCode: kotlin.String? = null
+    val mainColor: kotlin.String? = null
 
 ) {
 

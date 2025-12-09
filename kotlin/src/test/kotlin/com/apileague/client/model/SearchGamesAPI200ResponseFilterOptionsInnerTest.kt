@@ -32,12 +32,6 @@ class SearchGamesAPI200ResponseFilterOptionsInnerTest : ShouldSpec() {
             //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `filterType`
-        should("test filterType") {
-            // uncomment below to test the property
-            //modelInstance.filterType shouldBe ("TODO")
-        }
-
         // to test the property `key`
         should("test key") {
             // uncomment below to test the property
@@ -48,6 +42,12 @@ class SearchGamesAPI200ResponseFilterOptionsInnerTest : ShouldSpec() {
         should("test propertyValues") {
             // uncomment below to test the property
             //modelInstance.propertyValues shouldBe ("TODO")
+        }
+
+        // to test the property `filterType`
+        should("test filterType") {
+            // uncomment below to test the property
+            //modelInstance.filterType shouldBe ("TODO")
         }
 
         // to test the property `filterConnection`

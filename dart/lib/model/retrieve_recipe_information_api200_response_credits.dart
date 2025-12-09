@@ -13,50 +13,40 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseCredits {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseCredits] instance.
   RetrieveRecipeInformationAPI200ResponseCredits({
-    this.license,
-    this.text,
     this.sourceName,
     this.sourceUrl,
+    this.text,
+    this.license,
   });
-
-  String? license;
-
-  String? text;
 
   String? sourceName;
 
   String? sourceUrl;
 
+  String? text;
+
+  String? license;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseCredits &&
-    other.license == license &&
-    other.text == text &&
     other.sourceName == sourceName &&
-    other.sourceUrl == sourceUrl;
+    other.sourceUrl == sourceUrl &&
+    other.text == text &&
+    other.license == license;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (license == null ? 0 : license!.hashCode) +
-    (text == null ? 0 : text!.hashCode) +
     (sourceName == null ? 0 : sourceName!.hashCode) +
-    (sourceUrl == null ? 0 : sourceUrl!.hashCode);
+    (sourceUrl == null ? 0 : sourceUrl!.hashCode) +
+    (text == null ? 0 : text!.hashCode) +
+    (license == null ? 0 : license!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseCredits[license=$license, text=$text, sourceName=$sourceName, sourceUrl=$sourceUrl]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseCredits[sourceName=$sourceName, sourceUrl=$sourceUrl, text=$text, license=$license]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.license != null) {
-      json[r'license'] = this.license;
-    } else {
-      json[r'license'] = null;
-    }
-    if (this.text != null) {
-      json[r'text'] = this.text;
-    } else {
-      json[r'text'] = null;
-    }
     if (this.sourceName != null) {
       json[r'source_name'] = this.sourceName;
     } else {
@@ -66,6 +56,16 @@ class RetrieveRecipeInformationAPI200ResponseCredits {
       json[r'source_url'] = this.sourceUrl;
     } else {
       json[r'source_url'] = null;
+    }
+    if (this.text != null) {
+      json[r'text'] = this.text;
+    } else {
+      json[r'text'] = null;
+    }
+    if (this.license != null) {
+      json[r'license'] = this.license;
+    } else {
+      json[r'license'] = null;
     }
     return json;
   }
@@ -89,10 +89,10 @@ class RetrieveRecipeInformationAPI200ResponseCredits {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseCredits(
-        license: mapValueOfType<String>(json, r'license'),
-        text: mapValueOfType<String>(json, r'text'),
         sourceName: mapValueOfType<String>(json, r'source_name'),
         sourceUrl: mapValueOfType<String>(json, r'source_url'),
+        text: mapValueOfType<String>(json, r'text'),
+        license: mapValueOfType<String>(json, r'license'),
       );
     }
     return null;

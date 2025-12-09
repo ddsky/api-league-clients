@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBre
 
 // SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown struct for SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
 type SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown struct {
-	PercentFat *float32 `json:"percent_fat,omitempty"`
 	PercentCarbs *float32 `json:"percent_carbs,omitempty"`
 	PercentProtein *float32 `json:"percent_protein,omitempty"`
+	PercentFat *float32 `json:"percent_fat,omitempty"`
 }
 
 // NewSearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown instantiates a new SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown object
@@ -40,38 +40,6 @@ func NewSearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown() *Search
 func NewSearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdownWithDefaults() *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
 	this := SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown{}
 	return &this
-}
-
-// GetPercentFat returns the PercentFat field value if set, zero value otherwise.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) GetPercentFat() float32 {
-	if o == nil || IsNil(o.PercentFat) {
-		var ret float32
-		return ret
-	}
-	return *o.PercentFat
-}
-
-// GetPercentFatOk returns a tuple with the PercentFat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) GetPercentFatOk() (*float32, bool) {
-	if o == nil || IsNil(o.PercentFat) {
-		return nil, false
-	}
-	return o.PercentFat, true
-}
-
-// HasPercentFat returns a boolean if a field has been set.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) HasPercentFat() bool {
-	if o != nil && !IsNil(o.PercentFat) {
-		return true
-	}
-
-	return false
-}
-
-// SetPercentFat gets a reference to the given float32 and assigns it to the PercentFat field.
-func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) SetPercentFat(v float32) {
-	o.PercentFat = &v
 }
 
 // GetPercentCarbs returns the PercentCarbs field value if set, zero value otherwise.
@@ -138,6 +106,38 @@ func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) SetPerc
 	o.PercentProtein = &v
 }
 
+// GetPercentFat returns the PercentFat field value if set, zero value otherwise.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) GetPercentFat() float32 {
+	if o == nil || IsNil(o.PercentFat) {
+		var ret float32
+		return ret
+	}
+	return *o.PercentFat
+}
+
+// GetPercentFatOk returns a tuple with the PercentFat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) GetPercentFatOk() (*float32, bool) {
+	if o == nil || IsNil(o.PercentFat) {
+		return nil, false
+	}
+	return o.PercentFat, true
+}
+
+// HasPercentFat returns a boolean if a field has been set.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) HasPercentFat() bool {
+	if o != nil && !IsNil(o.PercentFat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPercentFat gets a reference to the given float32 and assigns it to the PercentFat field.
+func (o *SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) SetPercentFat(v float32) {
+	o.PercentFat = &v
+}
+
 func (o SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -148,14 +148,14 @@ func (o SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) MarshalJ
 
 func (o SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PercentFat) {
-		toSerialize["percent_fat"] = o.PercentFat
-	}
 	if !IsNil(o.PercentCarbs) {
 		toSerialize["percent_carbs"] = o.PercentCarbs
 	}
 	if !IsNil(o.PercentProtein) {
 		toSerialize["percent_protein"] = o.PercentProtein
+	}
+	if !IsNil(o.PercentFat) {
+		toSerialize["percent_fat"] = o.PercentFat
 	}
 	return toSerialize, nil
 }

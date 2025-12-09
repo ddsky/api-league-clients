@@ -16,13 +16,8 @@ void main() {
   // final instance = SearchRoyaltyFreeImagesAPI200ResponseImagesInner();
 
   group('test SearchRoyaltyFreeImagesAPI200ResponseImagesInner', () {
-    // int width
-    test('to test the property `width`', () async {
-      // TODO
-    });
-
-    // SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense license
-    test('to test the property `license`', () async {
+    // String url
+    test('to test the property `url`', () async {
       // TODO
     });
 
@@ -31,18 +26,23 @@ void main() {
       // TODO
     });
 
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // String url
-    test('to test the property `url`', () async {
+    // int width
+    test('to test the property `width`', () async {
       // TODO
     });
 
     // int height
     test('to test the property `height`', () async {
+      // TODO
+    });
+
+    // SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense license
+    test('to test the property `license`', () async {
+      // TODO
+    });
+
+    // String id
+    test('to test the property `id`', () async {
       // TODO
     });
 

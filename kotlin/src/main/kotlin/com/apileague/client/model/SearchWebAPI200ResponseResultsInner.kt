@@ -22,22 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param url 
  * @param title 
  * @param summary 
- * @param url 
  */
 
 
 data class SearchWebAPI200ResponseResultsInner (
 
+    @Json(name = "url")
+    val url: kotlin.String? = null,
+
     @Json(name = "title")
     val title: kotlin.String? = null,
 
     @Json(name = "summary")
-    val summary: kotlin.String? = null,
-
-    @Json(name = "url")
-    val url: kotlin.String? = null
+    val summary: kotlin.String? = null
 
 ) {
 

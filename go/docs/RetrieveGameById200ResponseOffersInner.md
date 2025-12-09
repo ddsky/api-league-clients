@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StoreName** | Pointer to **NullableString** |  | [optional] 
-**Title** | Pointer to **NullableString** |  | [optional] 
 **Price** | Pointer to [**RetrieveGameById200ResponseOffersInnerPrice**](RetrieveGameById200ResponseOffersInnerPrice.md) |  | [optional] 
+**StoreName** | Pointer to **NullableString** |  | [optional] 
 **Platform** | Pointer to **NullableString** |  | [optional] 
+**Title** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -28,6 +28,31 @@ will change when the set of required properties is changed
 NewRetrieveGameById200ResponseOffersInnerWithDefaults instantiates a new RetrieveGameById200ResponseOffersInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetPrice
+
+`func (o *RetrieveGameById200ResponseOffersInner) GetPrice() RetrieveGameById200ResponseOffersInnerPrice`
+
+GetPrice returns the Price field if non-nil, zero value otherwise.
+
+### GetPriceOk
+
+`func (o *RetrieveGameById200ResponseOffersInner) GetPriceOk() (*RetrieveGameById200ResponseOffersInnerPrice, bool)`
+
+GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrice
+
+`func (o *RetrieveGameById200ResponseOffersInner) SetPrice(v RetrieveGameById200ResponseOffersInnerPrice)`
+
+SetPrice sets Price field to given value.
+
+### HasPrice
+
+`func (o *RetrieveGameById200ResponseOffersInner) HasPrice() bool`
+
+HasPrice returns a boolean if a field has been set.
 
 ### GetStoreName
 
@@ -64,66 +89,6 @@ HasStoreName returns a boolean if a field has been set.
 `func (o *RetrieveGameById200ResponseOffersInner) UnsetStoreName()`
 
 UnsetStoreName ensures that no value is present for StoreName, not even an explicit nil
-### GetTitle
-
-`func (o *RetrieveGameById200ResponseOffersInner) GetTitle() string`
-
-GetTitle returns the Title field if non-nil, zero value otherwise.
-
-### GetTitleOk
-
-`func (o *RetrieveGameById200ResponseOffersInner) GetTitleOk() (*string, bool)`
-
-GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTitle
-
-`func (o *RetrieveGameById200ResponseOffersInner) SetTitle(v string)`
-
-SetTitle sets Title field to given value.
-
-### HasTitle
-
-`func (o *RetrieveGameById200ResponseOffersInner) HasTitle() bool`
-
-HasTitle returns a boolean if a field has been set.
-
-### SetTitleNil
-
-`func (o *RetrieveGameById200ResponseOffersInner) SetTitleNil(b bool)`
-
- SetTitleNil sets the value for Title to be an explicit nil
-
-### UnsetTitle
-`func (o *RetrieveGameById200ResponseOffersInner) UnsetTitle()`
-
-UnsetTitle ensures that no value is present for Title, not even an explicit nil
-### GetPrice
-
-`func (o *RetrieveGameById200ResponseOffersInner) GetPrice() RetrieveGameById200ResponseOffersInnerPrice`
-
-GetPrice returns the Price field if non-nil, zero value otherwise.
-
-### GetPriceOk
-
-`func (o *RetrieveGameById200ResponseOffersInner) GetPriceOk() (*RetrieveGameById200ResponseOffersInnerPrice, bool)`
-
-GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrice
-
-`func (o *RetrieveGameById200ResponseOffersInner) SetPrice(v RetrieveGameById200ResponseOffersInnerPrice)`
-
-SetPrice sets Price field to given value.
-
-### HasPrice
-
-`func (o *RetrieveGameById200ResponseOffersInner) HasPrice() bool`
-
-HasPrice returns a boolean if a field has been set.
-
 ### GetPlatform
 
 `func (o *RetrieveGameById200ResponseOffersInner) GetPlatform() string`
@@ -159,6 +124,41 @@ HasPlatform returns a boolean if a field has been set.
 `func (o *RetrieveGameById200ResponseOffersInner) UnsetPlatform()`
 
 UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
+### GetTitle
+
+`func (o *RetrieveGameById200ResponseOffersInner) GetTitle() string`
+
+GetTitle returns the Title field if non-nil, zero value otherwise.
+
+### GetTitleOk
+
+`func (o *RetrieveGameById200ResponseOffersInner) GetTitleOk() (*string, bool)`
+
+GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTitle
+
+`func (o *RetrieveGameById200ResponseOffersInner) SetTitle(v string)`
+
+SetTitle sets Title field to given value.
+
+### HasTitle
+
+`func (o *RetrieveGameById200ResponseOffersInner) HasTitle() bool`
+
+HasTitle returns a boolean if a field has been set.
+
+### SetTitleNil
+
+`func (o *RetrieveGameById200ResponseOffersInner) SetTitleNil(b bool)`
+
+ SetTitleNil sets the value for Title to be an explicit nil
+
+### UnsetTitle
+`func (o *RetrieveGameById200ResponseOffersInner) UnsetTitle()`
+
+UnsetTitle ensures that no value is present for Title, not even an explicit nil
 ### GetUrl
 
 `func (o *RetrieveGameById200ResponseOffersInner) GetUrl() string`

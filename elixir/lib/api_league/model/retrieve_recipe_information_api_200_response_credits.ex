@@ -8,17 +8,17 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseCredits do
 
   @derive Jason.Encoder
   defstruct [
-    :license,
-    :text,
     :source_name,
-    :source_url
+    :source_url,
+    :text,
+    :license
   ]
 
   @type t :: %__MODULE__{
-    :license => String.t | nil,
-    :text => String.t | nil,
     :source_name => String.t | nil,
-    :source_url => String.t | nil
+    :source_url => String.t | nil,
+    :text => String.t | nil,
+    :license => String.t | nil
   }
 
   def decode(value) do

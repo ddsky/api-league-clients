@@ -7,19 +7,19 @@
 
 (def search-news-api-200-response-news-inner-data
   {
-   (ds/opt :summary) string?
-   (ds/opt :image) string?
-   (ds/opt :sentiment) float?
-   (ds/opt :language) string?
-   (ds/opt :video) string?
-   (ds/opt :title) string?
-   (ds/opt :url) string?
-   (ds/opt :source_country) string?
    (ds/opt :id) int?
+   (ds/opt :title) string?
    (ds/opt :text) string?
-   (ds/opt :category) string?
+   (ds/opt :summary) string?
+   (ds/opt :url) string?
+   (ds/opt :image) string?
+   (ds/opt :video) string?
    (ds/opt :publish_date) string?
    (ds/opt :authors) (s/coll-of string?)
+   (ds/opt :category) string?
+   (ds/opt :language) string?
+   (ds/opt :source_country) string?
+   (ds/opt :sentiment) float?
    })
 
 (def search-news-api-200-response-news-inner-spec

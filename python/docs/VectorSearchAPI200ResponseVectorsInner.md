@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**license** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**license** | **str** |  | [optional] 
 **author** | **str** |  | [optional] 
 **image_url** | **str** |  | [optional] 
 

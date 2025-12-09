@@ -16,17 +16,17 @@ void main() {
   // final instance = RetrieveRecipeInformationAPI200ResponseNutrition();
 
   group('test RetrieveRecipeInformationAPI200ResponseNutrition', () {
-    // SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing weightPerServing
-    test('to test the property `weightPerServing`', () async {
+    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner> nutrients (default value: const [])
+    test('to test the property `nutrients`', () async {
       // TODO
     });
 
-    // SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown caloricBreakdown
-    test('to test the property `caloricBreakdown`', () async {
+    // List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner> properties (default value: const [])
+    test('to test the property `properties`', () async {
       // TODO
     });
 
-    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner> flavonoids (default value: const [])
+    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner> flavonoids (default value: const [])
     test('to test the property `flavonoids`', () async {
       // TODO
     });
@@ -36,13 +36,13 @@ void main() {
       // TODO
     });
 
-    // List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner> properties (default value: const [])
-    test('to test the property `properties`', () async {
+    // SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown caloricBreakdown
+    test('to test the property `caloricBreakdown`', () async {
       // TODO
     });
 
-    // List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner> nutrients (default value: const [])
-    test('to test the property `nutrients`', () async {
+    // SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing weightPerServing
+    test('to test the property `weightPerServing`', () async {
       // TODO
     });
 

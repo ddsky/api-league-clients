@@ -35,6 +35,15 @@ void main() {
       // TODO
     });
 
+    // Screenshot API
+    //
+    // Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+    //
+    //Future<MultipartFile> screenshotAPI(String url, int width, int height) async
+    test('test screenshotAPI', () async {
+      // TODO
+    });
+
     // Search Icons API
     //
     // Search through millions of icons to match any topic you want.

@@ -25,18 +25,6 @@ class ExtractEntitiesAPI200ResponseEntitiesInnerTest : ShouldSpec() {
         // uncomment below to create an instance of ExtractEntitiesAPI200ResponseEntitiesInner
         //val modelInstance = ExtractEntitiesAPI200ResponseEntitiesInner()
 
-        // to test the property `startPosition`
-        should("test startPosition") {
-            // uncomment below to test the property
-            //modelInstance.startPosition shouldBe ("TODO")
-        }
-
-        // to test the property `image`
-        should("test image") {
-            // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
-        }
-
         // to test the property `type`
         should("test type") {
             // uncomment below to test the property
@@ -49,10 +37,22 @@ class ExtractEntitiesAPI200ResponseEntitiesInnerTest : ShouldSpec() {
             //modelInstance.`value` shouldBe ("TODO")
         }
 
+        // to test the property `startPosition`
+        should("test startPosition") {
+            // uncomment below to test the property
+            //modelInstance.startPosition shouldBe ("TODO")
+        }
+
         // to test the property `endPosition`
         should("test endPosition") {
             // uncomment below to test the property
             //modelInstance.endPosition shouldBe ("TODO")
+        }
+
+        // to test the property `image`
+        should("test image") {
+            // uncomment below to test the property
+            //modelInstance.image shouldBe ("TODO")
         }
 
     }

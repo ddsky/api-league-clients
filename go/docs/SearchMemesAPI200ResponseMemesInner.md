@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
+**Type** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -27,41 +27,6 @@ NewSearchMemesAPI200ResponseMemesInnerWithDefaults instantiates a new SearchMeme
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
-
-`func (o *SearchMemesAPI200ResponseMemesInner) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *SearchMemesAPI200ResponseMemesInner) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *SearchMemesAPI200ResponseMemesInner) SetType(v string)`
-
-SetType sets Type field to given value.
-
-### HasType
-
-`func (o *SearchMemesAPI200ResponseMemesInner) HasType() bool`
-
-HasType returns a boolean if a field has been set.
-
-### SetTypeNil
-
-`func (o *SearchMemesAPI200ResponseMemesInner) SetTypeNil(b bool)`
-
- SetTypeNil sets the value for Type to be an explicit nil
-
-### UnsetType
-`func (o *SearchMemesAPI200ResponseMemesInner) UnsetType()`
-
-UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetDescription
 
 `func (o *SearchMemesAPI200ResponseMemesInner) GetDescription() string`
@@ -132,6 +97,41 @@ HasUrl returns a boolean if a field has been set.
 `func (o *SearchMemesAPI200ResponseMemesInner) UnsetUrl()`
 
 UnsetUrl ensures that no value is present for Url, not even an explicit nil
+### GetType
+
+`func (o *SearchMemesAPI200ResponseMemesInner) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *SearchMemesAPI200ResponseMemesInner) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *SearchMemesAPI200ResponseMemesInner) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *SearchMemesAPI200ResponseMemesInner) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *SearchMemesAPI200ResponseMemesInner) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *SearchMemesAPI200ResponseMemesInner) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

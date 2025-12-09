@@ -16,16 +16,6 @@ void main() {
   // final instance = SearchRecipesAPI200ResponseRecipesInner();
 
   group('test SearchRecipesAPI200ResponseRecipesInner', () {
-    // List<String> images (default value: const [])
-    test('to test the property `images`', () async {
-      // TODO
-    });
-
-    // SearchRecipesAPI200ResponseRecipesInnerNutrition nutrition
-    test('to test the property `nutrition`', () async {
-      // TODO
-    });
-
     // int id
     test('to test the property `id`', () async {
       // TODO
@@ -33,6 +23,16 @@ void main() {
 
     // String title
     test('to test the property `title`', () async {
+      // TODO
+    });
+
+    // List<String> images (default value: const [])
+    test('to test the property `images`', () async {
+      // TODO
+    });
+
+    // SearchRecipesAPI200ResponseRecipesInnerNutrition nutrition
+    test('to test the property `nutrition`', () async {
       // TODO
     });
 

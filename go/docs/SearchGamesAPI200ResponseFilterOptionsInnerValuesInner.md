@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Count** | Pointer to **int32** |  | [optional] 
 **Key** | Pointer to **NullableString** |  | [optional] 
+**Count** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -62,31 +62,6 @@ HasName returns a boolean if a field has been set.
 `func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetCount
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCount() int32`
-
-GetCount returns the Count field if non-nil, zero value otherwise.
-
-### GetCountOk
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCountOk() (*int32, bool)`
-
-GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCount
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) SetCount(v int32)`
-
-SetCount sets Count field to given value.
-
-### HasCount
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) HasCount() bool`
-
-HasCount returns a boolean if a field has been set.
-
 ### GetKey
 
 `func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetKey() string`
@@ -122,6 +97,31 @@ HasKey returns a boolean if a field has been set.
 `func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) UnsetKey()`
 
 UnsetKey ensures that no value is present for Key, not even an explicit nil
+### GetCount
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCount() int32`
+
+GetCount returns the Count field if non-nil, zero value otherwise.
+
+### GetCountOk
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCountOk() (*int32, bool)`
+
+GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCount
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) SetCount(v int32)`
+
+SetCount sets Count field to given value.
+
+### HasCount
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) HasCount() bool`
+
+HasCount returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

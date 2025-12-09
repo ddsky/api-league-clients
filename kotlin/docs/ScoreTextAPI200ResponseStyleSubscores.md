@@ -4,9 +4,9 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **abbreviationScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **styleScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **spellingScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **abbreviationScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **styleScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **spellingScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
 
 
 

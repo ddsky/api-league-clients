@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**icons** | [**[SearchRoyaltyFreeImagesAPI200ResponseImagesInner]**](SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md) |  | [optional] 
+**icons** | [**[SearchIconsAPI200ResponseIconsInner]**](SearchIconsAPI200ResponseIconsInner.md) |  | [optional] 
 
 

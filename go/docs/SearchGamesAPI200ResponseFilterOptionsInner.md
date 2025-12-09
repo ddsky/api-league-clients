@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**FilterType** | Pointer to **NullableString** |  | [optional] 
 **Key** | Pointer to **NullableString** |  | [optional] 
 **Values** | Pointer to [**[]SearchGamesAPI200ResponseFilterOptionsInnerValuesInner**](SearchGamesAPI200ResponseFilterOptionsInnerValuesInner.md) |  | [optional] 
+**FilterType** | Pointer to **NullableString** |  | [optional] 
 **FilterConnection** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -64,41 +64,6 @@ HasName returns a boolean if a field has been set.
 `func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetFilterType
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterType() string`
-
-GetFilterType returns the FilterType field if non-nil, zero value otherwise.
-
-### GetFilterTypeOk
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterTypeOk() (*string, bool)`
-
-GetFilterTypeOk returns a tuple with the FilterType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilterType
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterType(v string)`
-
-SetFilterType sets FilterType field to given value.
-
-### HasFilterType
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) HasFilterType() bool`
-
-HasFilterType returns a boolean if a field has been set.
-
-### SetFilterTypeNil
-
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterTypeNil(b bool)`
-
- SetFilterTypeNil sets the value for FilterType to be an explicit nil
-
-### UnsetFilterType
-`func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetFilterType()`
-
-UnsetFilterType ensures that no value is present for FilterType, not even an explicit nil
 ### GetKey
 
 `func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetKey() string`
@@ -159,6 +124,41 @@ SetValues sets Values field to given value.
 
 HasValues returns a boolean if a field has been set.
 
+### GetFilterType
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterType() string`
+
+GetFilterType returns the FilterType field if non-nil, zero value otherwise.
+
+### GetFilterTypeOk
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterTypeOk() (*string, bool)`
+
+GetFilterTypeOk returns a tuple with the FilterType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilterType
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterType(v string)`
+
+SetFilterType sets FilterType field to given value.
+
+### HasFilterType
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) HasFilterType() bool`
+
+HasFilterType returns a boolean if a field has been set.
+
+### SetFilterTypeNil
+
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) SetFilterTypeNil(b bool)`
+
+ SetFilterTypeNil sets the value for FilterType to be an explicit nil
+
+### UnsetFilterType
+`func (o *SearchGamesAPI200ResponseFilterOptionsInner) UnsetFilterType()`
+
+UnsetFilterType ensures that no value is present for FilterType, not even an explicit nil
 ### GetFilterConnection
 
 `func (o *SearchGamesAPI200ResponseFilterOptionsInner) GetFilterConnection() string`

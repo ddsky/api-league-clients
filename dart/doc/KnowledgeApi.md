@@ -9,10 +9,110 @@ All URIs are relative to *https://api.apileague.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**randomAffirmationAPI**](KnowledgeApi.md#randomaffirmationapi) | **GET** /retrieve-random-affirmation | Random Affirmation API
+[**randomLifeHackAPI**](KnowledgeApi.md#randomlifehackapi) | **GET** /retrieve-random-life-hack | Random Life Hack API
 [**randomQuoteAPI**](KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API
 [**randomRiddleAPI**](KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API
 [**randomTriviaAPI**](KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API
 
+
+# **randomAffirmationAPI**
+> RandomAffirmationAPI200Response randomAffirmationAPI()
+
+Random Affirmation API
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = KnowledgeApi();
+
+try {
+    final result = api_instance.randomAffirmationAPI();
+    print(result);
+} catch (e) {
+    print('Exception when calling KnowledgeApi->randomAffirmationAPI: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RandomAffirmationAPI200Response**](RandomAffirmationAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **randomLifeHackAPI**
+> RandomLifeHackAPI200Response randomLifeHackAPI(maxLength)
+
+Random Life Hack API
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: apiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('apiKey').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: headerApiKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('headerApiKey').apiKeyPrefix = 'Bearer';
+
+final api_instance = KnowledgeApi();
+final maxLength = 300; // int | The maximum length of the hack in letters.
+
+try {
+    final result = api_instance.randomLifeHackAPI(maxLength);
+    print(result);
+} catch (e) {
+    print('Exception when calling KnowledgeApi->randomLifeHackAPI: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **maxLength** | **int**| The maximum length of the hack in letters. | [optional] 
+
+### Return type
+
+[**RandomLifeHackAPI200Response**](RandomLifeHackAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **randomQuoteAPI**
 > RandomQuoteAPI200Response randomQuoteAPI(minLength, maxLength)

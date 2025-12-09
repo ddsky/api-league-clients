@@ -22,62 +22,62 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param summary 
- * @param image 
- * @param sentiment 
- * @param language 
- * @param video 
- * @param title 
- * @param url 
- * @param sourceCountry 
  * @param id 
+ * @param title 
  * @param text 
- * @param category 
+ * @param summary 
+ * @param url 
+ * @param image 
+ * @param video 
  * @param publishDate 
  * @param authors 
+ * @param category 
+ * @param language 
+ * @param sourceCountry 
+ * @param sentiment 
  */
 
 
 data class SearchNewsAPI200ResponseNewsInner (
 
-    @Json(name = "summary")
-    val summary: kotlin.String? = null,
-
-    @Json(name = "image")
-    val image: kotlin.String? = null,
-
-    @Json(name = "sentiment")
-    val sentiment: java.math.BigDecimal? = null,
-
-    @Json(name = "language")
-    val language: kotlin.String? = null,
-
-    @Json(name = "video")
-    val video: kotlin.String? = null,
+    @Json(name = "id")
+    val id: kotlin.Int? = null,
 
     @Json(name = "title")
     val title: kotlin.String? = null,
 
-    @Json(name = "url")
-    val url: kotlin.String? = null,
-
-    @Json(name = "source_country")
-    val sourceCountry: kotlin.String? = null,
-
-    @Json(name = "id")
-    val id: kotlin.Int? = null,
-
     @Json(name = "text")
     val text: kotlin.String? = null,
 
-    @Json(name = "category")
-    val category: kotlin.String? = null,
+    @Json(name = "summary")
+    val summary: kotlin.String? = null,
+
+    @Json(name = "url")
+    val url: kotlin.String? = null,
+
+    @Json(name = "image")
+    val image: kotlin.String? = null,
+
+    @Json(name = "video")
+    val video: kotlin.String? = null,
 
     @Json(name = "publish_date")
     val publishDate: kotlin.String? = null,
 
     @Json(name = "authors")
-    val authors: kotlin.collections.List<kotlin.String>? = null
+    val authors: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "category")
+    val category: kotlin.String? = null,
+
+    @Json(name = "language")
+    val language: kotlin.String? = null,
+
+    @Json(name = "source_country")
+    val sourceCountry: kotlin.String? = null,
+
+    @Json(name = "sentiment")
+    val sentiment: java.math.BigDecimal? = null
 
 ) {
 

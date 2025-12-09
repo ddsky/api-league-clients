@@ -16,13 +16,13 @@ void main() {
   // final instance = SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures();
 
   group('test SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures', () {
-    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric metric
-    test('to test the property `metric`', () async {
+    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs us
+    test('to test the property `us`', () async {
       // TODO
     });
 
-    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresUs us
-    test('to test the property `us`', () async {
+    // SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric metric
+    test('to test the property `metric`', () async {
       // TODO
     });
 

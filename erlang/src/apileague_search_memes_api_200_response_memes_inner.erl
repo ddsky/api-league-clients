@@ -5,16 +5,16 @@
 -export_type([apileague_search_memes_api_200_response_memes_inner/0]).
 
 -type apileague_search_memes_api_200_response_memes_inner() ::
-    #{ 'type' => binary(),
-       'description' => binary(),
-       'url' => binary()
+    #{ 'description' => binary(),
+       'url' => binary(),
+       'type' => binary()
      }.
 
-encode(#{ 'type' := Type,
-          'description' := Description,
-          'url' := Url
+encode(#{ 'description' := Description,
+          'url' := Url,
+          'type' := Type
         }) ->
-    #{ 'type' => Type,
-       'description' => Description,
-       'url' => Url
+    #{ 'description' => Description,
+       'url' => Url,
+       'type' => Type
      }.

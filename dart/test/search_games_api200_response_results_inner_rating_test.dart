@@ -16,13 +16,13 @@ void main() {
   // final instance = SearchGamesAPI200ResponseResultsInnerRating();
 
   group('test SearchGamesAPI200ResponseResultsInnerRating', () {
-    // int count
-    test('to test the property `count`', () async {
+    // num mean
+    test('to test the property `mean`', () async {
       // TODO
     });
 
-    // num mean
-    test('to test the property `mean`', () async {
+    // int count
+    test('to test the property `count`', () async {
       // TODO
     });
 

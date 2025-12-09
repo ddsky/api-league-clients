@@ -8,27 +8,27 @@ defmodule APILeague.Model.ScoreTextApi200ResponseReadabilitySubscores do
 
   @derive Jason.Encoder
   defstruct [
-    :reading_time_seconds,
     :forcast,
     :flesch,
     :smog,
     :ari,
     :lix,
-    :coleman_liau,
     :kincaid,
-    :fog
+    :fog,
+    :coleman_liau,
+    :reading_time_seconds
   ]
 
   @type t :: %__MODULE__{
-    :reading_time_seconds => integer() | nil,
     :forcast => float() | nil,
     :flesch => float() | nil,
     :smog => float() | nil,
     :ari => float() | nil,
     :lix => float() | nil,
-    :coleman_liau => float() | nil,
     :kincaid => float() | nil,
-    :fog => float() | nil
+    :fog => float() | nil,
+    :coleman_liau => float() | nil,
+    :reading_time_seconds => integer() | nil
   }
 
   def decode(value) do

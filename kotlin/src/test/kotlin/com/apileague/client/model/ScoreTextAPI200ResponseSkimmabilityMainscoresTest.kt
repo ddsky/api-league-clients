@@ -25,16 +25,16 @@ class ScoreTextAPI200ResponseSkimmabilityMainscoresTest : ShouldSpec() {
         // uncomment below to create an instance of ScoreTextAPI200ResponseSkimmabilityMainscores
         //val modelInstance = ScoreTextAPI200ResponseSkimmabilityMainscores()
 
-        // to test the property `totalPossible`
-        should("test totalPossible") {
-            // uncomment below to test the property
-            //modelInstance.totalPossible shouldBe ("TODO")
-        }
-
         // to test the property `total`
         should("test total") {
             // uncomment below to test the property
             //modelInstance.total shouldBe ("TODO")
+        }
+
+        // to test the property `totalPossible`
+        should("test totalPossible") {
+            // uncomment below to test the property
+            //modelInstance.totalPossible shouldBe ("TODO")
         }
 
     }

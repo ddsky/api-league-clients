@@ -14,20 +14,12 @@ class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner {
   /// Returns a new [ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner] instance.
   ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner({
     this.name,
-    this.percentOfDailyNeeds,
     this.amount,
     this.unit,
+    this.percentOfDailyNeeds,
   });
 
   String? name;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? percentOfDailyNeeds;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -39,23 +31,31 @@ class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner {
 
   String? unit;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? percentOfDailyNeeds;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner &&
     other.name == name &&
-    other.percentOfDailyNeeds == percentOfDailyNeeds &&
     other.amount == amount &&
-    other.unit == unit;
+    other.unit == unit &&
+    other.percentOfDailyNeeds == percentOfDailyNeeds;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (percentOfDailyNeeds == null ? 0 : percentOfDailyNeeds!.hashCode) +
     (amount == null ? 0 : amount!.hashCode) +
-    (unit == null ? 0 : unit!.hashCode);
+    (unit == null ? 0 : unit!.hashCode) +
+    (percentOfDailyNeeds == null ? 0 : percentOfDailyNeeds!.hashCode);
 
   @override
-  String toString() => 'ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner[name=$name, percentOfDailyNeeds=$percentOfDailyNeeds, amount=$amount, unit=$unit]';
+  String toString() => 'ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner[name=$name, amount=$amount, unit=$unit, percentOfDailyNeeds=$percentOfDailyNeeds]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -63,11 +63,6 @@ class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner {
       json[r'name'] = this.name;
     } else {
       json[r'name'] = null;
-    }
-    if (this.percentOfDailyNeeds != null) {
-      json[r'percent_of_daily_needs'] = this.percentOfDailyNeeds;
-    } else {
-      json[r'percent_of_daily_needs'] = null;
     }
     if (this.amount != null) {
       json[r'amount'] = this.amount;
@@ -78,6 +73,11 @@ class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner {
       json[r'unit'] = this.unit;
     } else {
       json[r'unit'] = null;
+    }
+    if (this.percentOfDailyNeeds != null) {
+      json[r'percent_of_daily_needs'] = this.percentOfDailyNeeds;
+    } else {
+      json[r'percent_of_daily_needs'] = null;
     }
     return json;
   }
@@ -102,9 +102,9 @@ class ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner {
 
       return ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner(
         name: mapValueOfType<String>(json, r'name'),
-        percentOfDailyNeeds: mapValueOfType<int>(json, r'percent_of_daily_needs'),
         amount: mapValueOfType<int>(json, r'amount'),
         unit: mapValueOfType<String>(json, r'unit'),
+        percentOfDailyNeeds: mapValueOfType<int>(json, r'percent_of_daily_needs'),
       );
     }
     return null;

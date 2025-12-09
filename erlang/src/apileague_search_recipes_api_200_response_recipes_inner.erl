@@ -5,19 +5,19 @@
 -export_type([apileague_search_recipes_api_200_response_recipes_inner/0]).
 
 -type apileague_search_recipes_api_200_response_recipes_inner() ::
-    #{ 'images' => list(),
-       'nutrition' => apileague_search_recipes_api_200_response_recipes_inner_nutrition:apileague_search_recipes_api_200_response_recipes_inner_nutrition(),
-       'id' => integer(),
-       'title' => binary()
+    #{ 'id' => integer(),
+       'title' => binary(),
+       'images' => list(),
+       'nutrition' => apileague_search_recipes_api_200_response_recipes_inner_nutrition:apileague_search_recipes_api_200_response_recipes_inner_nutrition()
      }.
 
-encode(#{ 'images' := Images,
-          'nutrition' := Nutrition,
-          'id' := Id,
-          'title' := Title
+encode(#{ 'id' := Id,
+          'title' := Title,
+          'images' := Images,
+          'nutrition' := Nutrition
         }) ->
-    #{ 'images' => Images,
-       'nutrition' => Nutrition,
-       'id' => Id,
-       'title' => Title
+    #{ 'id' => Id,
+       'title' => Title,
+       'images' => Images,
+       'nutrition' => Nutrition
      }.

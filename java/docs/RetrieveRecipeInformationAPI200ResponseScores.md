@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**metaScore** | **BigDecimal** |  |  [optional] |
 |**weightWatcherSmartPoints** | **Integer** |  |  [optional] |
 |**healthScore** | **Integer** |  |  [optional] |
+|**metaScore** | **BigDecimal** |  |  [optional] |
 
 
 

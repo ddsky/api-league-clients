@@ -8,23 +8,23 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseTaste do
 
   @derive Jason.Encoder
   defstruct [
-    :fattiness,
-    :spiciness,
+    :sweetness,
     :saltiness,
+    :sourness,
     :bitterness,
     :savoriness,
-    :sweetness,
-    :sourness
+    :fattiness,
+    :spiciness
   ]
 
   @type t :: %__MODULE__{
-    :fattiness => float() | nil,
-    :spiciness => integer() | nil,
+    :sweetness => float() | nil,
     :saltiness => integer() | nil,
+    :sourness => float() | nil,
     :bitterness => float() | nil,
     :savoriness => float() | nil,
-    :sweetness => float() | nil,
-    :sourness => float() | nil
+    :fattiness => float() | nil,
+    :spiciness => integer() | nil
   }
 
   def decode(value) do

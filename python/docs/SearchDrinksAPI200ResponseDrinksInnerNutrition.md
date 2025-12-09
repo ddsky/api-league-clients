@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**weight_per_serving** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing**](SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md) |  | [optional] 
-**caloric_breakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
-**flavonoids** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
-**ingredient_breakdown** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md) |  | [optional] 
-**properties** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
 **nutrients** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
+**properties** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
+**flavonoids** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
+**ingredient_breakdown** | [**List[SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md) |  | [optional] 
+**caloric_breakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 
+**weight_per_serving** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing**](SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md) |  | [optional] 
 
 ## Example
 

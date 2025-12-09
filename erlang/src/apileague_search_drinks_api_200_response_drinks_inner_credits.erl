@@ -5,16 +5,16 @@
 -export_type([apileague_search_drinks_api_200_response_drinks_inner_credits/0]).
 
 -type apileague_search_drinks_api_200_response_drinks_inner_credits() ::
-    #{ 'text' => binary(),
-       'source_name' => binary(),
-       'source_url' => binary()
+    #{ 'source_name' => binary(),
+       'source_url' => binary(),
+       'text' => binary()
      }.
 
-encode(#{ 'text' := Text,
-          'source_name' := SourceName,
-          'source_url' := SourceUrl
+encode(#{ 'source_name' := SourceName,
+          'source_url' := SourceUrl,
+          'text' := Text
         }) ->
-    #{ 'text' => Text,
-       'source_name' => SourceName,
-       'source_url' => SourceUrl
+    #{ 'source_name' => SourceName,
+       'source_url' => SourceUrl,
+       'text' => Text
      }.

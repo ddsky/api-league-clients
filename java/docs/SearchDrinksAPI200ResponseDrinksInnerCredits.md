@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**text** | **String** |  |  [optional] |
 |**sourceName** | **String** |  |  [optional] |
 |**sourceUrl** | **String** |  |  [optional] |
+|**text** | **String** |  |  [optional] |
 
 
 

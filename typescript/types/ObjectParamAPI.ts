@@ -30,6 +30,8 @@ import { FindSimilarGamesAPI200ResponseResultsInner } from '../models/FindSimila
 import { GenerateNonsenseWordAPI200Response } from '../models/GenerateNonsenseWordAPI200Response';
 import { ListWordSynonymsAPI200Response } from '../models/ListWordSynonymsAPI200Response';
 import { PluralizeWordAPI200Response } from '../models/PluralizeWordAPI200Response';
+import { RandomAffirmationAPI200Response } from '../models/RandomAffirmationAPI200Response';
+import { RandomLifeHackAPI200Response } from '../models/RandomLifeHackAPI200Response';
 import { RandomMemeAPI200Response } from '../models/RandomMemeAPI200Response';
 import { RandomPoemAPI200Response } from '../models/RandomPoemAPI200Response';
 import { RandomQuoteAPI200Response } from '../models/RandomQuoteAPI200Response';
@@ -82,10 +84,10 @@ import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner } from
 import { SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutrition } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutrition';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown';
-import { SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner';
+import { SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner';
 import { SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing } from '../models/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing';
 import { SearchGamesAPI200Response } from '../models/SearchGamesAPI200Response';
 import { SearchGamesAPI200ResponseActiveFilterOptionsInner } from '../models/SearchGamesAPI200ResponseActiveFilterOptionsInner';
@@ -99,6 +101,7 @@ import { SearchGamesAPI200ResponseSortingOptionsInner } from '../models/SearchGa
 import { SearchGifsAPI200Response } from '../models/SearchGifsAPI200Response';
 import { SearchGifsAPI200ResponseImagesInner } from '../models/SearchGifsAPI200ResponseImagesInner';
 import { SearchIconsAPI200Response } from '../models/SearchIconsAPI200Response';
+import { SearchIconsAPI200ResponseIconsInner } from '../models/SearchIconsAPI200ResponseIconsInner';
 import { SearchJokesAPI200Response } from '../models/SearchJokesAPI200Response';
 import { SearchJokesAPI200ResponseJokesInner } from '../models/SearchJokesAPI200ResponseJokesInner';
 import { SearchMemesAPI200Response } from '../models/SearchMemesAPI200Response';
@@ -109,11 +112,6 @@ import { SearchRecipesAPI200Response } from '../models/SearchRecipesAPI200Respon
 import { SearchRecipesAPI200ResponseRecipesInner } from '../models/SearchRecipesAPI200ResponseRecipesInner';
 import { SearchRecipesAPI200ResponseRecipesInnerNutrition } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutrition';
 import { SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner } from '../models/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner';
-import { SearchRestaurantsAPI200Response } from '../models/SearchRestaurantsAPI200Response';
-import { SearchRestaurantsAPI200ResponseRestaurantsInner } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInner';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerAddress } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours';
-import { SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational } from '../models/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational';
 import { SearchRoyaltyFreeImagesAPI200Response } from '../models/SearchRoyaltyFreeImagesAPI200Response';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInner } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInner';
 import { SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense } from '../models/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense';
@@ -1207,69 +1205,6 @@ export interface FoodApiSearchRecipesAPIRequest {
     number?: number
 }
 
-export interface FoodApiSearchRestaurantsAPIRequest {
-    /**
-     * The latitude to search around.
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    lat: number
-    /**
-     * The longitude to search around.
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    lon: number
-    /**
-     * The search query.
-     * @type string
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    query?: string
-    /**
-     * The maximum distance of the restaurant in miles around the given location.
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    distance?: number
-    /**
-     * The budget in USD for the meal.
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    budget?: number
-    /**
-     * The minimum rating of the restaurants in range [0,5].
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    minRating?: number
-    /**
-     * The cuisine that the restaurants should support.
-     * @type string
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    cuisine?: string
-    /**
-     * Whether the restaurants have to be open now.
-     * @type boolean
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    isOpen?: boolean
-    /**
-     * The page of the results.
-     * @type number
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    page?: number
-    /**
-     * The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-     * @type string
-     * @memberof FoodApisearchRestaurantsAPI
-     */
-    sort?: string
-}
-
 export class ObjectFoodApi {
     private api: ObservableFoodApi
 
@@ -1347,24 +1282,6 @@ export class ObjectFoodApi {
      */
     public searchRecipesAPI(param: FoodApiSearchRecipesAPIRequest = {}, options?: Configuration): Promise<SearchRecipesAPI200Response> {
         return this.api.searchRecipesAPI(param.query, param.cuisines, param.excludeCuisines, param.mealType, param.diet, param.intolerances, param.equipment, param.includeIngredients, param.excludeIngredients, param.fillIngredients, param.addRecipeInformation, param.maxTime, param.minServings, param.maxServings, param.minCalories, param.maxCalories, param.minCarbs, param.maxCarbs, param.minProtein, param.maxProtein, param.minFat, param.maxFat, param.minSugar, param.maxSugar, param.minFiber, param.maxFiber, param.minFolate, param.maxFolate, param.minFolicAcid, param.maxFolicAcid, param.minIodine, param.maxIodine, param.minIron, param.maxIron, param.minZinc, param.maxZinc, param.minMagnesium, param.maxMagnesium, param.minManganese, param.maxManganese, param.minPhosphorus, param.maxPhosphorus, param.minPotassium, param.maxPotassium, param.minSodium, param.maxSodium, param.minSelenium, param.maxSelenium, param.minCopper, param.maxCopper, param.minCalcium, param.maxCalcium, param.minCholine, param.maxCholine, param.minCholesterol, param.maxCholesterol, param.minFluoride, param.maxFluoride, param.minAlcohol, param.maxAlcohol, param.minCaffeine, param.maxCaffeine, param.minSaturatedFat, param.maxSaturatedFat, param.minVitaminA, param.maxVitaminA, param.minVitaminC, param.maxVitaminC, param.minVitaminD, param.maxVitaminD, param.minVitaminE, param.maxVitaminE, param.minVitaminK, param.maxVitaminK, param.minVitaminB1, param.maxVitaminB1, param.minVitaminB2, param.maxVitaminB2, param.minVitaminB3, param.maxVitaminB3, param.minVitaminB5, param.maxVitaminB5, param.minVitaminB6, param.maxVitaminB6, param.minVitaminB12, param.maxVitaminB12, param.sort, param.sortDirection, param.offset, param.number,  options).toPromise();
-    }
-
-    /**
-     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants API
-     * @param param the request object
-     */
-    public searchRestaurantsAPIWithHttpInfo(param: FoodApiSearchRestaurantsAPIRequest, options?: Configuration): Promise<HttpInfo<SearchRestaurantsAPI200Response>> {
-        return this.api.searchRestaurantsAPIWithHttpInfo(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
-    }
-
-    /**
-     * Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-     * Search Restaurants API
-     * @param param the request object
-     */
-    public searchRestaurantsAPI(param: FoodApiSearchRestaurantsAPIRequest, options?: Configuration): Promise<SearchRestaurantsAPI200Response> {
-        return this.api.searchRestaurantsAPI(param.lat, param.lon, param.query, param.distance, param.budget, param.minRating, param.cuisine, param.isOpen, param.page, param.sort,  options).toPromise();
     }
 
 }
@@ -1795,6 +1712,18 @@ export class ObjectHumorApi {
 import { ObservableKnowledgeApi } from "./ObservableAPI";
 import { KnowledgeApiRequestFactory, KnowledgeApiResponseProcessor} from "../apis/KnowledgeApi";
 
+export interface KnowledgeApiRandomAffirmationAPIRequest {
+}
+
+export interface KnowledgeApiRandomLifeHackAPIRequest {
+    /**
+     * The maximum length of the hack in letters.
+     * @type number
+     * @memberof KnowledgeApirandomLifeHackAPI
+     */
+    maxLength?: number
+}
+
 export interface KnowledgeApiRandomQuoteAPIRequest {
     /**
      * The minimum length of the quote in letters.
@@ -1833,6 +1762,42 @@ export class ObjectKnowledgeApi {
 
     public constructor(configuration: Configuration, requestFactory?: KnowledgeApiRequestFactory, responseProcessor?: KnowledgeApiResponseProcessor) {
         this.api = new ObservableKnowledgeApi(configuration, requestFactory, responseProcessor);
+    }
+
+    /**
+     * This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+     * Random Affirmation API
+     * @param param the request object
+     */
+    public randomAffirmationAPIWithHttpInfo(param: KnowledgeApiRandomAffirmationAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomAffirmationAPI200Response>> {
+        return this.api.randomAffirmationAPIWithHttpInfo( options).toPromise();
+    }
+
+    /**
+     * This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+     * Random Affirmation API
+     * @param param the request object
+     */
+    public randomAffirmationAPI(param: KnowledgeApiRandomAffirmationAPIRequest = {}, options?: Configuration): Promise<RandomAffirmationAPI200Response> {
+        return this.api.randomAffirmationAPI( options).toPromise();
+    }
+
+    /**
+     * This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+     * Random Life Hack API
+     * @param param the request object
+     */
+    public randomLifeHackAPIWithHttpInfo(param: KnowledgeApiRandomLifeHackAPIRequest = {}, options?: Configuration): Promise<HttpInfo<RandomLifeHackAPI200Response>> {
+        return this.api.randomLifeHackAPIWithHttpInfo(param.maxLength,  options).toPromise();
+    }
+
+    /**
+     * This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+     * Random Life Hack API
+     * @param param the request object
+     */
+    public randomLifeHackAPI(param: KnowledgeApiRandomLifeHackAPIRequest = {}, options?: Configuration): Promise<RandomLifeHackAPI200Response> {
+        return this.api.randomLifeHackAPI(param.maxLength,  options).toPromise();
     }
 
     /**
@@ -1987,6 +1952,27 @@ export interface MediaApiRescaleImageAPIRequest {
     crop: boolean
 }
 
+export interface MediaApiScreenshotAPIRequest {
+    /**
+     * The url of the web page for which a screenshot should be taken.
+     * @type string
+     * @memberof MediaApiscreenshotAPI
+     */
+    url: string
+    /**
+     * The desired width of the screenshot.
+     * @type number
+     * @memberof MediaApiscreenshotAPI
+     */
+    width: number
+    /**
+     * The desired height of the screenshot.
+     * @type number
+     * @memberof MediaApiscreenshotAPI
+     */
+    height: number
+}
+
 export interface MediaApiSearchIconsAPIRequest {
     /**
      * The search query.
@@ -2085,6 +2071,24 @@ export class ObjectMediaApi {
      */
     public rescaleImageAPI(param: MediaApiRescaleImageAPIRequest, options?: Configuration): Promise<HttpFile> {
         return this.api.rescaleImageAPI(param.url, param.width, param.height, param.crop,  options).toPromise();
+    }
+
+    /**
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * Screenshot API
+     * @param param the request object
+     */
+    public screenshotAPIWithHttpInfo(param: MediaApiScreenshotAPIRequest, options?: Configuration): Promise<HttpInfo<HttpFile>> {
+        return this.api.screenshotAPIWithHttpInfo(param.url, param.width, param.height,  options).toPromise();
+    }
+
+    /**
+     * Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+     * Screenshot API
+     * @param param the request object
+     */
+    public screenshotAPI(param: MediaApiScreenshotAPIRequest, options?: Configuration): Promise<HttpFile> {
+        return this.api.screenshotAPI(param.url, param.width, param.height,  options).toPromise();
     }
 
     /**

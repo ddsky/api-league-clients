@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -21,8 +21,8 @@ var _ MappedNullable = &SearchGamesAPI200ResponseFilterOptionsInnerValuesInner{}
 // SearchGamesAPI200ResponseFilterOptionsInnerValuesInner struct for SearchGamesAPI200ResponseFilterOptionsInnerValuesInner
 type SearchGamesAPI200ResponseFilterOptionsInnerValuesInner struct {
 	Name NullableString `json:"name,omitempty"`
-	Count *int32 `json:"count,omitempty"`
 	Key NullableString `json:"key,omitempty"`
+	Count *int32 `json:"count,omitempty"`
 }
 
 // NewSearchGamesAPI200ResponseFilterOptionsInnerValuesInner instantiates a new SearchGamesAPI200ResponseFilterOptionsInnerValuesInner object
@@ -84,38 +84,6 @@ func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) UnsetName() {
 	o.Name.Unset()
 }
 
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCount() int32 {
-	if o == nil || IsNil(o.Count) {
-		var ret int32
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// HasCount returns a boolean if a field has been set.
-func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) HasCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) SetCount(v int32) {
-	o.Count = &v
-}
-
 // GetKey returns the Key field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetKey() string {
 	if o == nil || IsNil(o.Key.Get()) {
@@ -158,6 +126,38 @@ func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) UnsetKey() {
 	o.Key.Unset()
 }
 
+// GetCount returns the Count field value if set, zero value otherwise.
+func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCount() int32 {
+	if o == nil || IsNil(o.Count) {
+		var ret int32
+		return ret
+	}
+	return *o.Count
+}
+
+// GetCountOk returns a tuple with the Count field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) GetCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.Count) {
+		return nil, false
+	}
+	return o.Count, true
+}
+
+// HasCount returns a boolean if a field has been set.
+func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) HasCount() bool {
+	if o != nil && !IsNil(o.Count) {
+		return true
+	}
+
+	return false
+}
+
+// SetCount gets a reference to the given int32 and assigns it to the Count field.
+func (o *SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) SetCount(v int32) {
+	o.Count = &v
+}
+
 func (o SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -171,11 +171,11 @@ func (o SearchGamesAPI200ResponseFilterOptionsInnerValuesInner) ToMap() (map[str
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !IsNil(o.Count) {
-		toSerialize["count"] = o.Count
-	}
 	if o.Key.IsSet() {
 		toSerialize["key"] = o.Key.Get()
+	}
+	if !IsNil(o.Count) {
+		toSerialize["count"] = o.Count
 	}
 	return toSerialize, nil
 }

@@ -16,11 +16,6 @@ void main() {
   // final instance = ScoreTextAPI200ResponseReadabilitySubscores();
 
   group('test ScoreTextAPI200ResponseReadabilitySubscores', () {
-    // int readingTimeSeconds
-    test('to test the property `readingTimeSeconds`', () async {
-      // TODO
-    });
-
     // num forcast
     test('to test the property `forcast`', () async {
       // TODO
@@ -46,11 +41,6 @@ void main() {
       // TODO
     });
 
-    // num colemanLiau
-    test('to test the property `colemanLiau`', () async {
-      // TODO
-    });
-
     // num kincaid
     test('to test the property `kincaid`', () async {
       // TODO
@@ -58,6 +48,16 @@ void main() {
 
     // num fog
     test('to test the property `fog`', () async {
+      // TODO
+    });
+
+    // num colemanLiau
+    test('to test the property `colemanLiau`', () async {
+      // TODO
+    });
+
+    // int readingTimeSeconds
+    test('to test the property `readingTimeSeconds`', () async {
       // TODO
     });
 

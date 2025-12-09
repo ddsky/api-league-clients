@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percent_fat** | **float** |  | [optional] 
 **percent_carbs** | **float** |  | [optional] 
 **percent_protein** | **float** |  | [optional] 
+**percent_fat** | **float** |  | [optional] 
 
 ## Example
 

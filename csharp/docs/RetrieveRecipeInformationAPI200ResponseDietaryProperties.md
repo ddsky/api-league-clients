@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LowFodmap** | **bool** |  | [optional] 
 **Vegetarian** | **bool** |  | [optional] 
 **Vegan** | **bool** |  | [optional] 
 **GlutenFree** | **bool** |  | [optional] 
 **DairyFree** | **bool** |  | [optional] 
+**LowFodmap** | **bool** |  | [optional] 
 **Gaps** | **string** |  | [optional] 
 **Diets** | **List&lt;string&gt;** |  | [optional] 
 

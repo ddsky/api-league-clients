@@ -4,11 +4,11 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **titleRatingScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **quoteScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **lengthScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **linkScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
-| **googleHitsScore** | **kotlin.collections.List&lt;kotlin.Int&gt;** |  |  [optional] |
+| **googleHitsScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **linkScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **quoteScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **titleRatingScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
+| **lengthScore** | [**kotlin.collections.List&lt;java.math.BigDecimal&gt;**](java.math.BigDecimal.md) |  |  [optional] |
 
 
 

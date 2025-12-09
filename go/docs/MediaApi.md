@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DetectMainImageColorAPI**](MediaAPI.md#DetectMainImageColorAPI) | **Get** /detect-color | Detect Main Image Color API
 [**RescaleImageAPI**](MediaAPI.md#RescaleImageAPI) | **Get** /rescale-image | Rescale Image API
+[**ScreenshotAPI**](MediaAPI.md#ScreenshotAPI) | **Get** /take-screenshot | Screenshot API
 [**SearchIconsAPI**](MediaAPI.md#SearchIconsAPI) | **Get** /search-icons | Search Icons API
 [**SearchRoyaltyFreeImagesAPI**](MediaAPI.md#SearchRoyaltyFreeImagesAPI) | **Get** /search-images | Search Royalty Free Images API
 [**VectorSearchAPI**](MediaAPI.md#VectorSearchAPI) | **Get** /search-vectors | Vector Search API
@@ -131,6 +132,76 @@ Name | Type | Description  | Notes
  **width** | **int32** | The desired width of the rescaled image. | 
  **height** | **int32** | The desired height of the rescaled image. | 
  **crop** | **bool** | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. | 
+
+### Return type
+
+[***os.File**](*os.File.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ScreenshotAPI
+
+> *os.File ScreenshotAPI(ctx).Url(url).Width(width).Height(height).Execute()
+
+Screenshot API
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
+)
+
+func main() {
+	url := "https://nytimes.com" // string | The url of the web page for which a screenshot should be taken.
+	width := int32(400) // int32 | The desired width of the screenshot.
+	height := int32(300) // int32 | The desired height of the screenshot.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MediaAPI.ScreenshotAPI(context.Background()).Url(url).Width(width).Height(height).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MediaAPI.ScreenshotAPI``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ScreenshotAPI`: *os.File
+	fmt.Fprintf(os.Stdout, "Response from `MediaAPI.ScreenshotAPI`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiScreenshotAPIRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **string** | The url of the web page for which a screenshot should be taken. | 
+ **width** | **int32** | The desired width of the screenshot. | 
+ **height** | **int32** | The desired height of the screenshot. | 
 
 ### Return type
 

@@ -16,7 +16,7 @@ void main() {
   // final instance = RetrieveGameById200ResponsePlaytime();
 
   group('test RetrieveGameById200ResponsePlaytime', () {
-    // List<int> percentiles (default value: const [])
+    // List<num> percentiles (default value: const [])
     test('to test the property `percentiles`', () async {
       // TODO
     });

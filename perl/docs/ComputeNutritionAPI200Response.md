@@ -9,7 +9,7 @@ use WWW::OpenAPIClient::Object::ComputeNutritionAPI200Response;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nutrients** | [**ARRAY[SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
-**properties** | [**ARRAY[SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
+**properties** | [**ARRAY[SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner]**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
 **flavonoids** | [**ARRAY[SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner]**](SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md) |  | [optional] 
 **ingredient_breakdown** | [**ARRAY[ComputeNutritionAPI200ResponseIngredientBreakdownInner]**](ComputeNutritionAPI200ResponseIngredientBreakdownInner.md) |  | [optional] 
 **caloric_breakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 

@@ -22,21 +22,15 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param startPosition 
- * @param image 
  * @param type 
  * @param `value` 
+ * @param startPosition 
  * @param endPosition 
+ * @param image 
  */
 
 
 data class ExtractEntitiesAPI200ResponseEntitiesInner (
-
-    @Json(name = "start_position")
-    val startPosition: kotlin.Int? = null,
-
-    @Json(name = "image")
-    val image: kotlin.String? = null,
 
     @Json(name = "type")
     val type: kotlin.String? = null,
@@ -44,8 +38,14 @@ data class ExtractEntitiesAPI200ResponseEntitiesInner (
     @Json(name = "value")
     val `value`: kotlin.String? = null,
 
+    @Json(name = "start_position")
+    val startPosition: kotlin.Int? = null,
+
     @Json(name = "end_position")
-    val endPosition: kotlin.Int? = null
+    val endPosition: kotlin.Int? = null,
+
+    @Json(name = "image")
+    val image: kotlin.String? = null
 
 ) {
 

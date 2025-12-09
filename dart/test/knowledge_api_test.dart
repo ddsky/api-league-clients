@@ -17,6 +17,24 @@ void main() {
   // final instance = KnowledgeApi();
 
   group('tests for KnowledgeApi', () {
+    // Random Affirmation API
+    //
+    // This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+    //
+    //Future<RandomAffirmationAPI200Response> randomAffirmationAPI() async
+    test('test randomAffirmationAPI', () async {
+      // TODO
+    });
+
+    // Random Life Hack API
+    //
+    // This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+    //
+    //Future<RandomLifeHackAPI200Response> randomLifeHackAPI({ int maxLength }) async
+    test('test randomLifeHackAPI', () async {
+      // TODO
+    });
+
     // Random Quote API
     //
     // This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.

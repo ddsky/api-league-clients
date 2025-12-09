@@ -27,16 +27,16 @@ class SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresTest : Should
         // uncomment below to create an instance of SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures
         //val modelInstance = SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasures()
 
-        // to test the property `metric`
-        should("test metric") {
-            // uncomment below to test the property
-            //modelInstance.metric shouldBe ("TODO")
-        }
-
         // to test the property `us`
         should("test us") {
             // uncomment below to test the property
             //modelInstance.us shouldBe ("TODO")
+        }
+
+        // to test the property `metric`
+        should("test metric") {
+            // uncomment below to test the property
+            //modelInstance.metric shouldBe ("TODO")
         }
 
     }

@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fattiness** | **float** |  | [optional] 
-**spiciness** | **int** |  | [optional] 
+**sweetness** | **float** |  | [optional] 
 **saltiness** | **int** |  | [optional] 
+**sourness** | **float** |  | [optional] 
 **bitterness** | **float** |  | [optional] 
 **savoriness** | **float** |  | [optional] 
-**sweetness** | **float** |  | [optional] 
-**sourness** | **float** |  | [optional] 
+**fattiness** | **float** |  | [optional] 
+**spiciness** | **int** |  | [optional] 
 
 ## Example
 

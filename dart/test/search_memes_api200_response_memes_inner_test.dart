@@ -16,11 +16,6 @@ void main() {
   // final instance = SearchMemesAPI200ResponseMemesInner();
 
   group('test SearchMemesAPI200ResponseMemesInner', () {
-    // String type
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
     // String description
     test('to test the property `description`', () async {
       // TODO
@@ -28,6 +23,11 @@ void main() {
 
     // String url
     test('to test the property `url`', () async {
+      // TODO
+    });
+
+    // String type
+    test('to test the property `type`', () async {
       // TODO
     });
 

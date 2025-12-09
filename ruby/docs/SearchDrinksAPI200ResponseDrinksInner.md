@@ -4,18 +4,18 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **flavors** | **Array&lt;String&gt;** |  | [optional] |
-| **instructions** | [**Array&lt;SearchDrinksAPI200ResponseDrinksInnerInstructionsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.md) |  | [optional] |
-| **images** | **Array&lt;String&gt;** |  | [optional] |
-| **nutrition** | [**SearchDrinksAPI200ResponseDrinksInnerNutrition**](SearchDrinksAPI200ResponseDrinksInnerNutrition.md) |  | [optional] |
-| **glass_type** | **String** |  | [optional] |
-| **credits** | [**SearchDrinksAPI200ResponseDrinksInnerCredits**](SearchDrinksAPI200ResponseDrinksInnerCredits.md) |  | [optional] |
-| **price_per_serving** | **Float** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **ingredients** | [**Array&lt;SearchDrinksAPI200ResponseDrinksInnerIngredientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.md) |  | [optional] |
 | **id** | **Integer** |  | [optional] |
 | **title** | **String** |  | [optional] |
+| **images** | **Array&lt;String&gt;** |  | [optional] |
+| **price_per_serving** | **Float** |  | [optional] |
+| **nutrition** | [**SearchDrinksAPI200ResponseDrinksInnerNutrition**](SearchDrinksAPI200ResponseDrinksInnerNutrition.md) |  | [optional] |
+| **flavors** | **Array&lt;String&gt;** |  | [optional] |
+| **glass_type** | **String** |  | [optional] |
+| **description** | **String** |  | [optional] |
 | **cuisines** | **Array&lt;String&gt;** |  | [optional] |
+| **ingredients** | [**Array&lt;SearchDrinksAPI200ResponseDrinksInnerIngredientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerIngredientsInner.md) |  | [optional] |
+| **instructions** | [**Array&lt;SearchDrinksAPI200ResponseDrinksInnerInstructionsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerInstructionsInner.md) |  | [optional] |
+| **credits** | [**SearchDrinksAPI200ResponseDrinksInnerCredits**](SearchDrinksAPI200ResponseDrinksInnerCredits.md) |  | [optional] |
 
 ## Example
 
@@ -23,18 +23,18 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchDrinksAPI200ResponseDrinksInner.new(
-  flavors: null,
-  instructions: null,
-  images: null,
-  nutrition: null,
-  glass_type: null,
-  credits: null,
-  price_per_serving: null,
-  description: null,
-  ingredients: null,
   id: null,
   title: null,
-  cuisines: null
+  images: null,
+  price_per_serving: null,
+  nutrition: null,
+  flavors: null,
+  glass_type: null,
+  description: null,
+  cuisines: null,
+  ingredients: null,
+  instructions: null,
+  credits: null
 )
 ```
 

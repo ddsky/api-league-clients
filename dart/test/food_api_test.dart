@@ -53,14 +53,5 @@ void main() {
       // TODO
     });
 
-    // Search Restaurants API
-    //
-    // Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-    //
-    //Future<SearchRestaurantsAPI200Response> searchRestaurantsAPI(double lat, double lon, { String query, int distance, double budget, double minRating, String cuisine, bool isOpen, int page, String sort }) async
-    test('test searchRestaurantsAPI', () async {
-      // TODO
-    });
-
   });
 }

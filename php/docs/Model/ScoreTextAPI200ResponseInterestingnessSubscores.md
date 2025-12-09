@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title_rating_score** | **int[]** |  | [optional]
-**quote_score** | **int[]** |  | [optional]
-**length_score** | **int[]** |  | [optional]
-**link_score** | **int[]** |  | [optional]
-**google_hits_score** | **int[]** |  | [optional]
+**google_hits_score** | **float[]** |  | [optional]
+**link_score** | **float[]** |  | [optional]
+**quote_score** | **float[]** |  | [optional]
+**title_rating_score** | **float[]** |  | [optional]
+**length_score** | **float[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -24,9 +24,9 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name 
- * @param filterType 
  * @param key 
  * @param propertyValues 
+ * @param filterType 
  * @param filterConnection 
  */
 
@@ -36,14 +36,14 @@ data class SearchGamesAPI200ResponseFilterOptionsInner (
     @Json(name = "name")
     val name: kotlin.String? = null,
 
-    @Json(name = "filter_type")
-    val filterType: kotlin.String? = null,
-
     @Json(name = "key")
     val key: kotlin.String? = null,
 
     @Json(name = "values")
     val propertyValues: kotlin.collections.List<SearchGamesAPI200ResponseFilterOptionsInnerValuesInner>? = null,
+
+    @Json(name = "filter_type")
+    val filterType: kotlin.String? = null,
 
     @Json(name = "filter_connection")
     val filterConnection: kotlin.String? = null

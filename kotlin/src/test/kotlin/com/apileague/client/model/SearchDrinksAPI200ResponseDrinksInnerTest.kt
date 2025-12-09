@@ -29,60 +29,6 @@ class SearchDrinksAPI200ResponseDrinksInnerTest : ShouldSpec() {
         // uncomment below to create an instance of SearchDrinksAPI200ResponseDrinksInner
         //val modelInstance = SearchDrinksAPI200ResponseDrinksInner()
 
-        // to test the property `flavors`
-        should("test flavors") {
-            // uncomment below to test the property
-            //modelInstance.flavors shouldBe ("TODO")
-        }
-
-        // to test the property `instructions`
-        should("test instructions") {
-            // uncomment below to test the property
-            //modelInstance.instructions shouldBe ("TODO")
-        }
-
-        // to test the property `images`
-        should("test images") {
-            // uncomment below to test the property
-            //modelInstance.images shouldBe ("TODO")
-        }
-
-        // to test the property `nutrition`
-        should("test nutrition") {
-            // uncomment below to test the property
-            //modelInstance.nutrition shouldBe ("TODO")
-        }
-
-        // to test the property `glassType`
-        should("test glassType") {
-            // uncomment below to test the property
-            //modelInstance.glassType shouldBe ("TODO")
-        }
-
-        // to test the property `credits`
-        should("test credits") {
-            // uncomment below to test the property
-            //modelInstance.credits shouldBe ("TODO")
-        }
-
-        // to test the property `pricePerServing`
-        should("test pricePerServing") {
-            // uncomment below to test the property
-            //modelInstance.pricePerServing shouldBe ("TODO")
-        }
-
-        // to test the property `description`
-        should("test description") {
-            // uncomment below to test the property
-            //modelInstance.description shouldBe ("TODO")
-        }
-
-        // to test the property `ingredients`
-        should("test ingredients") {
-            // uncomment below to test the property
-            //modelInstance.ingredients shouldBe ("TODO")
-        }
-
         // to test the property `id`
         should("test id") {
             // uncomment below to test the property
@@ -95,10 +41,64 @@ class SearchDrinksAPI200ResponseDrinksInnerTest : ShouldSpec() {
             //modelInstance.title shouldBe ("TODO")
         }
 
+        // to test the property `images`
+        should("test images") {
+            // uncomment below to test the property
+            //modelInstance.images shouldBe ("TODO")
+        }
+
+        // to test the property `pricePerServing`
+        should("test pricePerServing") {
+            // uncomment below to test the property
+            //modelInstance.pricePerServing shouldBe ("TODO")
+        }
+
+        // to test the property `nutrition`
+        should("test nutrition") {
+            // uncomment below to test the property
+            //modelInstance.nutrition shouldBe ("TODO")
+        }
+
+        // to test the property `flavors`
+        should("test flavors") {
+            // uncomment below to test the property
+            //modelInstance.flavors shouldBe ("TODO")
+        }
+
+        // to test the property `glassType`
+        should("test glassType") {
+            // uncomment below to test the property
+            //modelInstance.glassType shouldBe ("TODO")
+        }
+
+        // to test the property `description`
+        should("test description") {
+            // uncomment below to test the property
+            //modelInstance.description shouldBe ("TODO")
+        }
+
         // to test the property `cuisines`
         should("test cuisines") {
             // uncomment below to test the property
             //modelInstance.cuisines shouldBe ("TODO")
+        }
+
+        // to test the property `ingredients`
+        should("test ingredients") {
+            // uncomment below to test the property
+            //modelInstance.ingredients shouldBe ("TODO")
+        }
+
+        // to test the property `instructions`
+        should("test instructions") {
+            // uncomment below to test the property
+            //modelInstance.instructions shouldBe ("TODO")
+        }
+
+        // to test the property `credits`
+        should("test credits") {
+            // uncomment below to test the property
+            //modelInstance.credits shouldBe ("TODO")
         }
 
     }

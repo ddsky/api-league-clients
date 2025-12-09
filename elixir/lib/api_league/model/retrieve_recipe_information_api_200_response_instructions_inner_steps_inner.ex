@@ -9,16 +9,16 @@ defmodule APILeague.Model.RetrieveRecipeInformationApi200ResponseInstructionsInn
   @derive Jason.Encoder
   defstruct [
     :number,
+    :step,
     :ingredients,
-    :equipment,
-    :step
+    :equipment
   ]
 
   @type t :: %__MODULE__{
     :number => integer() | nil,
+    :step => String.t | nil,
     :ingredients => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.t] | nil,
-    :equipment => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.t] | nil,
-    :step => String.t | nil
+    :equipment => [APILeague.Model.SearchDrinksApi200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.t] | nil
   }
 
   alias APILeague.Deserializer

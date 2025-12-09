@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**PercentOfDailyNeeds** | Pointer to **int32** |  | [optional] 
 **Amount** | Pointer to **int32** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
+**PercentOfDailyNeeds** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -63,31 +63,6 @@ HasName returns a boolean if a field has been set.
 `func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
-### GetPercentOfDailyNeeds
-
-`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() int32`
-
-GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field if non-nil, zero value otherwise.
-
-### GetPercentOfDailyNeedsOk
-
-`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*int32, bool)`
-
-GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPercentOfDailyNeeds
-
-`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v int32)`
-
-SetPercentOfDailyNeeds sets PercentOfDailyNeeds field to given value.
-
-### HasPercentOfDailyNeeds
-
-`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool`
-
-HasPercentOfDailyNeeds returns a boolean if a field has been set.
-
 ### GetAmount
 
 `func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetAmount() int32`
@@ -148,6 +123,31 @@ HasUnit returns a boolean if a field has been set.
 `func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) UnsetUnit()`
 
 UnsetUnit ensures that no value is present for Unit, not even an explicit nil
+### GetPercentOfDailyNeeds
+
+`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeeds() int32`
+
+GetPercentOfDailyNeeds returns the PercentOfDailyNeeds field if non-nil, zero value otherwise.
+
+### GetPercentOfDailyNeedsOk
+
+`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) GetPercentOfDailyNeedsOk() (*int32, bool)`
+
+GetPercentOfDailyNeedsOk returns a tuple with the PercentOfDailyNeeds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPercentOfDailyNeeds
+
+`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) SetPercentOfDailyNeeds(v int32)`
+
+SetPercentOfDailyNeeds sets PercentOfDailyNeeds field to given value.
+
+### HasPercentOfDailyNeeds
+
+`func (o *ComputeNutritionAPI200ResponseIngredientBreakdownInnerNutrientsInner) HasPercentOfDailyNeeds() bool`
+
+HasPercentOfDailyNeeds returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

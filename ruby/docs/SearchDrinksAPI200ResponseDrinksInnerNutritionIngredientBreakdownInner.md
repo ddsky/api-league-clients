@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **Integer** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **amount** | **Integer** |  | [optional] |
 | **unit** | **String** |  | [optional] |
-| **id** | **Integer** |  | [optional] |
 | **nutrients** | [**Array&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md) |  | [optional] |
 
 ## Example
@@ -16,10 +16,10 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.new(
+  id: null,
   name: null,
   amount: null,
   unit: null,
-  id: null,
   nutrients: null
 )
 ```

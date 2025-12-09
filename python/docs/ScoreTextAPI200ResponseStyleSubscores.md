@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**abbreviation_score** | **List[int]** |  | [optional] 
-**style_score** | **List[int]** |  | [optional] 
-**spelling_score** | **List[int]** |  | [optional] 
+**abbreviation_score** | **List[float]** |  | [optional] 
+**style_score** | **List[float]** |  | [optional] 
+**spelling_score** | **List[float]** |  | [optional] 
 
 ## Example
 

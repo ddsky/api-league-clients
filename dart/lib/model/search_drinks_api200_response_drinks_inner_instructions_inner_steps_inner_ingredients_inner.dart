@@ -13,14 +13,10 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner] instance.
   SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner({
+    this.id,
     this.name,
     this.image,
-    this.id,
   });
-
-  String? name;
-
-  String? image;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -30,24 +26,33 @@ class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredient
   ///
   int? id;
 
+  String? name;
+
+  String? image;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner &&
+    other.id == id &&
     other.name == name &&
-    other.image == image &&
-    other.id == id;
+    other.image == image;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
-    (image == null ? 0 : image!.hashCode) +
-    (id == null ? 0 : id!.hashCode);
+    (image == null ? 0 : image!.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner[name=$name, image=$image, id=$id]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner[id=$id, name=$name, image=$image]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
@@ -57,11 +62,6 @@ class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredient
       json[r'image'] = this.image;
     } else {
       json[r'image'] = null;
-    }
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
     }
     return json;
   }
@@ -85,9 +85,9 @@ class SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredient
       }());
 
       return SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner(
+        id: mapValueOfType<int>(json, r'id'),
         name: mapValueOfType<String>(json, r'name'),
         image: mapValueOfType<String>(json, r'image'),
-        id: mapValueOfType<int>(json, r'id'),
       );
     }
     return null;

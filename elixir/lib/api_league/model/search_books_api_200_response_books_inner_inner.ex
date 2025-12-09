@@ -8,15 +8,15 @@ defmodule APILeague.Model.SearchBooksApi200ResponseBooksInnerInner do
 
   @derive Jason.Encoder
   defstruct [
+    :id,
     :title,
-    :image,
-    :id
+    :image
   ]
 
   @type t :: %__MODULE__{
+    :id => integer() | nil,
     :title => String.t | nil,
-    :image => String.t | nil,
-    :id => integer() | nil
+    :image => String.t | nil
   }
 
   def decode(value) do

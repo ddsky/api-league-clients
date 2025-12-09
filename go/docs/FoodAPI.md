@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**RetrieveRecipeInformationAPI**](FoodAPI.md#RetrieveRecipeInformationAPI) | **Get** /retrieve-recipe | Retrieve Recipe Information API
 [**SearchDrinksAPI**](FoodAPI.md#SearchDrinksAPI) | **Get** /search-drinks | Search Drinks API
 [**SearchRecipesAPI**](FoodAPI.md#SearchRecipesAPI) | **Get** /search-recipes | Search Recipes API
-[**SearchRestaurantsAPI**](FoodAPI.md#SearchRestaurantsAPI) | **Get** /search-restaurants | Search Restaurants API
 
 
 
@@ -487,90 +486,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SearchRestaurantsAPI
-
-> SearchRestaurantsAPI200Response SearchRestaurantsAPI(ctx).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
-
-Search Restaurants API
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/ddsky/api-league-clients/tree/master/go/"
-)
-
-func main() {
-	lat := float64(32.715736) // float64 | The latitude to search around.
-	lon := float64(-117.161087) // float64 | The longitude to search around.
-	query := "burger" // string | The search query. (optional)
-	distance := int32(5) // int32 | The maximum distance of the restaurant in miles around the given location. (optional)
-	budget := float64(25) // float64 | The budget in USD for the meal. (optional)
-	minRating := float64(4.4) // float64 | The minimum rating of the restaurants in range [0,5]. (optional)
-	cuisine := "Mexican" // string | The cuisine that the restaurants should support. (optional)
-	isOpen := true // bool | Whether the restaurants have to be open now. (optional)
-	page := int32(0) // int32 | The page of the results. (optional)
-	sort := "rating" // string | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FoodAPI.SearchRestaurantsAPI(context.Background()).Lat(lat).Lon(lon).Query(query).Distance(distance).Budget(budget).MinRating(minRating).Cuisine(cuisine).IsOpen(isOpen).Page(page).Sort(sort).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FoodAPI.SearchRestaurantsAPI``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `SearchRestaurantsAPI`: SearchRestaurantsAPI200Response
-	fmt.Fprintf(os.Stdout, "Response from `FoodAPI.SearchRestaurantsAPI`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSearchRestaurantsAPIRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **lat** | **float64** | The latitude to search around. | 
- **lon** | **float64** | The longitude to search around. | 
- **query** | **string** | The search query. | 
- **distance** | **int32** | The maximum distance of the restaurant in miles around the given location. | 
- **budget** | **float64** | The budget in USD for the meal. | 
- **minRating** | **float64** | The minimum rating of the restaurants in range [0,5]. | 
- **cuisine** | **string** | The cuisine that the restaurants should support. | 
- **isOpen** | **bool** | Whether the restaurants have to be open now. | 
- **page** | **int32** | The page of the results. | 
- **sort** | **string** | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | 
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

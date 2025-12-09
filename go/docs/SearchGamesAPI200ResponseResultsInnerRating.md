@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | Pointer to **int32** |  | [optional] 
 **Mean** | Pointer to **float32** |  | [optional] 
+**Count** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewSearchGamesAPI200ResponseResultsInnerRatingWithDefaults instantiates a new SearchGamesAPI200ResponseResultsInnerRating object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCount
-
-`func (o *SearchGamesAPI200ResponseResultsInnerRating) GetCount() int32`
-
-GetCount returns the Count field if non-nil, zero value otherwise.
-
-### GetCountOk
-
-`func (o *SearchGamesAPI200ResponseResultsInnerRating) GetCountOk() (*int32, bool)`
-
-GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCount
-
-`func (o *SearchGamesAPI200ResponseResultsInnerRating) SetCount(v int32)`
-
-SetCount sets Count field to given value.
-
-### HasCount
-
-`func (o *SearchGamesAPI200ResponseResultsInnerRating) HasCount() bool`
-
-HasCount returns a boolean if a field has been set.
 
 ### GetMean
 
@@ -75,6 +50,31 @@ SetMean sets Mean field to given value.
 `func (o *SearchGamesAPI200ResponseResultsInnerRating) HasMean() bool`
 
 HasMean returns a boolean if a field has been set.
+
+### GetCount
+
+`func (o *SearchGamesAPI200ResponseResultsInnerRating) GetCount() int32`
+
+GetCount returns the Count field if non-nil, zero value otherwise.
+
+### GetCountOk
+
+`func (o *SearchGamesAPI200ResponseResultsInnerRating) GetCountOk() (*int32, bool)`
+
+GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCount
+
+`func (o *SearchGamesAPI200ResponseResultsInnerRating) SetCount(v int32)`
+
+SetCount sets Count field to given value.
+
+### HasCount
+
+`func (o *SearchGamesAPI200ResponseResultsInnerRating) HasCount() bool`
+
+HasCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

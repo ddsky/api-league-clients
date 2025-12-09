@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name 
- * @param key 
  * @param sort 
+ * @param key 
  */
 
 
@@ -33,11 +33,11 @@ data class SearchGamesAPI200ResponseSortingOptionsInner (
     @Json(name = "name")
     val name: kotlin.String? = null,
 
-    @Json(name = "key")
-    val key: kotlin.String? = null,
-
     @Json(name = "sort")
-    val sort: kotlin.String? = null
+    val sort: kotlin.String? = null,
+
+    @Json(name = "key")
+    val key: kotlin.String? = null
 
 ) {
 

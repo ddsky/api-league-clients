@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &SearchBooksAPI200ResponseBooksInnerInner{}
 
 // SearchBooksAPI200ResponseBooksInnerInner struct for SearchBooksAPI200ResponseBooksInnerInner
 type SearchBooksAPI200ResponseBooksInnerInner struct {
+	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	Image NullableString `json:"image,omitempty"`
-	Id *int32 `json:"id,omitempty"`
 }
 
 // NewSearchBooksAPI200ResponseBooksInnerInner instantiates a new SearchBooksAPI200ResponseBooksInnerInner object
@@ -40,6 +40,38 @@ func NewSearchBooksAPI200ResponseBooksInnerInner() *SearchBooksAPI200ResponseBoo
 func NewSearchBooksAPI200ResponseBooksInnerInnerWithDefaults() *SearchBooksAPI200ResponseBooksInnerInner {
 	this := SearchBooksAPI200ResponseBooksInnerInner{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SearchBooksAPI200ResponseBooksInnerInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SearchBooksAPI200ResponseBooksInnerInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SearchBooksAPI200ResponseBooksInnerInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *SearchBooksAPI200ResponseBooksInnerInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -126,38 +158,6 @@ func (o *SearchBooksAPI200ResponseBooksInnerInner) UnsetImage() {
 	o.Image.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *SearchBooksAPI200ResponseBooksInnerInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SearchBooksAPI200ResponseBooksInnerInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *SearchBooksAPI200ResponseBooksInnerInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SearchBooksAPI200ResponseBooksInnerInner) SetId(v int32) {
-	o.Id = &v
-}
-
 func (o SearchBooksAPI200ResponseBooksInnerInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -168,14 +168,14 @@ func (o SearchBooksAPI200ResponseBooksInnerInner) MarshalJSON() ([]byte, error) 
 
 func (o SearchBooksAPI200ResponseBooksInnerInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
 	if o.Image.IsSet() {
 		toSerialize["image"] = o.Image.Get()
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
 	}
 	return toSerialize, nil
 }

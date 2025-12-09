@@ -5,19 +5,19 @@
 -export_type([apileague_extract_news_api_200_response_images_inner/0]).
 
 -type apileague_extract_news_api_200_response_images_inner() ::
-    #{ 'width' => integer(),
-       'title' => binary(),
+    #{ 'title' => binary(),
        'url' => binary(),
+       'width' => integer(),
        'height' => integer()
      }.
 
-encode(#{ 'width' := Width,
-          'title' := Title,
+encode(#{ 'title' := Title,
           'url' := Url,
+          'width' := Width,
           'height' := Height
         }) ->
-    #{ 'width' => Width,
-       'title' => Title,
+    #{ 'title' => Title,
        'url' => Url,
+       'width' => Width,
        'height' => Height
      }.

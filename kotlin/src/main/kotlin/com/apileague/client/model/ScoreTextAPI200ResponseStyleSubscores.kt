@@ -31,13 +31,13 @@ import com.squareup.moshi.JsonClass
 data class ScoreTextAPI200ResponseStyleSubscores (
 
     @Json(name = "abbreviation_score")
-    val abbreviationScore: kotlin.collections.List<kotlin.Int>? = null,
+    val abbreviationScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
     @Json(name = "style_score")
-    val styleScore: kotlin.collections.List<kotlin.Int>? = null,
+    val styleScore: kotlin.collections.List<java.math.BigDecimal>? = null,
 
     @Json(name = "spelling_score")
-    val spellingScore: kotlin.collections.List<kotlin.Int>? = null
+    val spellingScore: kotlin.collections.List<java.math.BigDecimal>? = null
 
 ) {
 

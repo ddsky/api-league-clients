@@ -8,7 +8,6 @@ All URIs are relative to *https://api.apileague.com*
 | [**RetrieveRecipeInformationAPI**](FoodApi.md#retrieverecipeinformationapi) | **GET** /retrieve-recipe | Retrieve Recipe Information API |
 | [**SearchDrinksAPI**](FoodApi.md#searchdrinksapi) | **GET** /search-drinks | Search Drinks API |
 | [**SearchRecipesAPI**](FoodApi.md#searchrecipesapi) | **GET** /search-recipes | Search Recipes API |
-| [**SearchRestaurantsAPI**](FoodApi.md#searchrestaurantsapi) | **GET** /search-restaurants | Search Restaurants API |
 
 <a id="computenutritionapi"></a>
 # **ComputeNutritionAPI**
@@ -636,130 +635,6 @@ catch (ApiException e)
 ### Return type
 
 [**SearchRecipesAPI200Response**](SearchRecipesAPI200Response.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Success |  -  |
-| **401** | Unauthorized |  -  |
-| **402** | Payment Required |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
-| **406** | Not Acceptable |  -  |
-| **429** | Too Many Requests |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="searchrestaurantsapi"></a>
-# **SearchRestaurantsAPI**
-> SearchRestaurantsAPI200Response SearchRestaurantsAPI (double lat, double lon, string? query = null, int? distance = null, double? budget = null, double? minRating = null, string? cuisine = null, bool? isOpen = null, int? page = null, string? sort = null)
-
-Search Restaurants API
-
-Search through thousands of restaurants (in North America) by location, cuisine, budget, and more.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using apileague.Api;
-using apileague.Client;
-using apileague.Model;
-
-namespace Example
-{
-    public class SearchRestaurantsAPIExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.apileague.com";
-            // Configure API key authorization: apiKey
-            config.AddApiKey("api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("api-key", "Bearer");
-            // Configure API key authorization: headerApiKey
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-
-            var apiInstance = new FoodApi(config);
-            var lat = 32.715736;  // double | The latitude to search around.
-            var lon = -117.161087;  // double | The longitude to search around.
-            var query = burger;  // string? | The search query. (optional) 
-            var distance = 5;  // int? | The maximum distance of the restaurant in miles around the given location. (optional) 
-            var budget = 25;  // double? | The budget in USD for the meal. (optional) 
-            var minRating = 4.4;  // double? | The minimum rating of the restaurants in range [0,5]. (optional) 
-            var cuisine = Mexican;  // string? | The cuisine that the restaurants should support. (optional) 
-            var isOpen = true;  // bool? | Whether the restaurants have to be open now. (optional) 
-            var page = 0;  // int? | The page of the results. (optional) 
-            var sort = rating;  // string? | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. (optional) 
-
-            try
-            {
-                // Search Restaurants API
-                SearchRestaurantsAPI200Response result = apiInstance.SearchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FoodApi.SearchRestaurantsAPI: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SearchRestaurantsAPIWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Search Restaurants API
-    ApiResponse<SearchRestaurantsAPI200Response> response = apiInstance.SearchRestaurantsAPIWithHttpInfo(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FoodApi.SearchRestaurantsAPIWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **lat** | **double** | The latitude to search around. |  |
-| **lon** | **double** | The longitude to search around. |  |
-| **query** | **string?** | The search query. | [optional]  |
-| **distance** | **int?** | The maximum distance of the restaurant in miles around the given location. | [optional]  |
-| **budget** | **double?** | The budget in USD for the meal. | [optional]  |
-| **minRating** | **double?** | The minimum rating of the restaurants in range [0,5]. | [optional]  |
-| **cuisine** | **string?** | The cuisine that the restaurants should support. | [optional]  |
-| **isOpen** | **bool?** | Whether the restaurants have to be open now. | [optional]  |
-| **page** | **int?** | The page of the results. | [optional]  |
-| **sort** | **string?** | The sort parameter, one of: cheapest, fastest, rating, distance or relevance. | [optional]  |
-
-### Return type
-
-[**SearchRestaurantsAPI200Response**](SearchRestaurantsAPI200Response.md)
 
 ### Authorization
 

@@ -13,22 +13,14 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseDietaryProperties {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseDietaryProperties] instance.
   RetrieveRecipeInformationAPI200ResponseDietaryProperties({
-    this.lowFodmap,
     this.vegetarian,
     this.vegan,
     this.glutenFree,
     this.dairyFree,
+    this.lowFodmap,
     this.gaps,
     this.diets = const [],
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  bool? lowFodmap;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -62,41 +54,44 @@ class RetrieveRecipeInformationAPI200ResponseDietaryProperties {
   ///
   bool? dairyFree;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? lowFodmap;
+
   String? gaps;
 
   List<String> diets;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseDietaryProperties &&
-    other.lowFodmap == lowFodmap &&
     other.vegetarian == vegetarian &&
     other.vegan == vegan &&
     other.glutenFree == glutenFree &&
     other.dairyFree == dairyFree &&
+    other.lowFodmap == lowFodmap &&
     other.gaps == gaps &&
     _deepEquality.equals(other.diets, diets);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (lowFodmap == null ? 0 : lowFodmap!.hashCode) +
     (vegetarian == null ? 0 : vegetarian!.hashCode) +
     (vegan == null ? 0 : vegan!.hashCode) +
     (glutenFree == null ? 0 : glutenFree!.hashCode) +
     (dairyFree == null ? 0 : dairyFree!.hashCode) +
+    (lowFodmap == null ? 0 : lowFodmap!.hashCode) +
     (gaps == null ? 0 : gaps!.hashCode) +
     (diets.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseDietaryProperties[lowFodmap=$lowFodmap, vegetarian=$vegetarian, vegan=$vegan, glutenFree=$glutenFree, dairyFree=$dairyFree, gaps=$gaps, diets=$diets]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseDietaryProperties[vegetarian=$vegetarian, vegan=$vegan, glutenFree=$glutenFree, dairyFree=$dairyFree, lowFodmap=$lowFodmap, gaps=$gaps, diets=$diets]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.lowFodmap != null) {
-      json[r'low_fodmap'] = this.lowFodmap;
-    } else {
-      json[r'low_fodmap'] = null;
-    }
     if (this.vegetarian != null) {
       json[r'vegetarian'] = this.vegetarian;
     } else {
@@ -116,6 +111,11 @@ class RetrieveRecipeInformationAPI200ResponseDietaryProperties {
       json[r'dairy_free'] = this.dairyFree;
     } else {
       json[r'dairy_free'] = null;
+    }
+    if (this.lowFodmap != null) {
+      json[r'low_fodmap'] = this.lowFodmap;
+    } else {
+      json[r'low_fodmap'] = null;
     }
     if (this.gaps != null) {
       json[r'gaps'] = this.gaps;
@@ -145,11 +145,11 @@ class RetrieveRecipeInformationAPI200ResponseDietaryProperties {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseDietaryProperties(
-        lowFodmap: mapValueOfType<bool>(json, r'low_fodmap'),
         vegetarian: mapValueOfType<bool>(json, r'vegetarian'),
         vegan: mapValueOfType<bool>(json, r'vegan'),
         glutenFree: mapValueOfType<bool>(json, r'gluten_free'),
         dairyFree: mapValueOfType<bool>(json, r'dairy_free'),
+        lowFodmap: mapValueOfType<bool>(json, r'low_fodmap'),
         gaps: mapValueOfType<String>(json, r'gaps'),
         diets: json[r'diets'] is Iterable
             ? (json[r'diets'] as Iterable).cast<String>().toList(growable: false)

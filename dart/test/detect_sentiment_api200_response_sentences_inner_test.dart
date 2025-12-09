@@ -16,11 +16,6 @@ void main() {
   // final instance = DetectSentimentAPI200ResponseSentencesInner();
 
   group('test DetectSentimentAPI200ResponseSentencesInner', () {
-    // int length
-    test('to test the property `length`', () async {
-      // TODO
-    });
-
     // String sentiment
     test('to test the property `sentiment`', () async {
       // TODO
@@ -33,6 +28,11 @@ void main() {
 
     // int confidence
     test('to test the property `confidence`', () async {
+      // TODO
+    });
+
+    // int length
+    test('to test the property `length`', () async {
       // TODO
     });
 

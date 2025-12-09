@@ -13,13 +13,13 @@ part of openapi.api;
 class RetrieveRecipeInformationAPI200ResponseTaste {
   /// Returns a new [RetrieveRecipeInformationAPI200ResponseTaste] instance.
   RetrieveRecipeInformationAPI200ResponseTaste({
-    this.fattiness,
-    this.spiciness,
+    this.sweetness,
     this.saltiness,
+    this.sourness,
     this.bitterness,
     this.savoriness,
-    this.sweetness,
-    this.sourness,
+    this.fattiness,
+    this.spiciness,
   });
 
   ///
@@ -28,15 +28,7 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? fattiness;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? spiciness;
+  num? sweetness;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -45,6 +37,14 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   int? saltiness;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? sourness;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -68,7 +68,7 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? sweetness;
+  num? fattiness;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -76,48 +76,48 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  num? sourness;
+  int? spiciness;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RetrieveRecipeInformationAPI200ResponseTaste &&
-    other.fattiness == fattiness &&
-    other.spiciness == spiciness &&
+    other.sweetness == sweetness &&
     other.saltiness == saltiness &&
+    other.sourness == sourness &&
     other.bitterness == bitterness &&
     other.savoriness == savoriness &&
-    other.sweetness == sweetness &&
-    other.sourness == sourness;
+    other.fattiness == fattiness &&
+    other.spiciness == spiciness;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (fattiness == null ? 0 : fattiness!.hashCode) +
-    (spiciness == null ? 0 : spiciness!.hashCode) +
+    (sweetness == null ? 0 : sweetness!.hashCode) +
     (saltiness == null ? 0 : saltiness!.hashCode) +
+    (sourness == null ? 0 : sourness!.hashCode) +
     (bitterness == null ? 0 : bitterness!.hashCode) +
     (savoriness == null ? 0 : savoriness!.hashCode) +
-    (sweetness == null ? 0 : sweetness!.hashCode) +
-    (sourness == null ? 0 : sourness!.hashCode);
+    (fattiness == null ? 0 : fattiness!.hashCode) +
+    (spiciness == null ? 0 : spiciness!.hashCode);
 
   @override
-  String toString() => 'RetrieveRecipeInformationAPI200ResponseTaste[fattiness=$fattiness, spiciness=$spiciness, saltiness=$saltiness, bitterness=$bitterness, savoriness=$savoriness, sweetness=$sweetness, sourness=$sourness]';
+  String toString() => 'RetrieveRecipeInformationAPI200ResponseTaste[sweetness=$sweetness, saltiness=$saltiness, sourness=$sourness, bitterness=$bitterness, savoriness=$savoriness, fattiness=$fattiness, spiciness=$spiciness]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.fattiness != null) {
-      json[r'fattiness'] = this.fattiness;
+    if (this.sweetness != null) {
+      json[r'sweetness'] = this.sweetness;
     } else {
-      json[r'fattiness'] = null;
-    }
-    if (this.spiciness != null) {
-      json[r'spiciness'] = this.spiciness;
-    } else {
-      json[r'spiciness'] = null;
+      json[r'sweetness'] = null;
     }
     if (this.saltiness != null) {
       json[r'saltiness'] = this.saltiness;
     } else {
       json[r'saltiness'] = null;
+    }
+    if (this.sourness != null) {
+      json[r'sourness'] = this.sourness;
+    } else {
+      json[r'sourness'] = null;
     }
     if (this.bitterness != null) {
       json[r'bitterness'] = this.bitterness;
@@ -129,15 +129,15 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
     } else {
       json[r'savoriness'] = null;
     }
-    if (this.sweetness != null) {
-      json[r'sweetness'] = this.sweetness;
+    if (this.fattiness != null) {
+      json[r'fattiness'] = this.fattiness;
     } else {
-      json[r'sweetness'] = null;
+      json[r'fattiness'] = null;
     }
-    if (this.sourness != null) {
-      json[r'sourness'] = this.sourness;
+    if (this.spiciness != null) {
+      json[r'spiciness'] = this.spiciness;
     } else {
-      json[r'sourness'] = null;
+      json[r'spiciness'] = null;
     }
     return json;
   }
@@ -161,13 +161,13 @@ class RetrieveRecipeInformationAPI200ResponseTaste {
       }());
 
       return RetrieveRecipeInformationAPI200ResponseTaste(
-        fattiness: num.parse('${json[r'fattiness']}'),
-        spiciness: mapValueOfType<int>(json, r'spiciness'),
+        sweetness: num.parse('${json[r'sweetness']}'),
         saltiness: mapValueOfType<int>(json, r'saltiness'),
+        sourness: num.parse('${json[r'sourness']}'),
         bitterness: num.parse('${json[r'bitterness']}'),
         savoriness: num.parse('${json[r'savoriness']}'),
-        sweetness: num.parse('${json[r'sweetness']}'),
-        sourness: num.parse('${json[r'sourness']}'),
+        fattiness: num.parse('${json[r'fattiness']}'),
+        spiciness: mapValueOfType<int>(json, r'spiciness'),
       );
     }
     return null;

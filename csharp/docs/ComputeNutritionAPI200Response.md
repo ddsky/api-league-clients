@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Nutrients** | [**List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md) |  | [optional] 
-**Properties** | [**List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md) |  | [optional] 
+**Properties** | [**List&lt;SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner&gt;**](SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md) |  | [optional] 
 **Flavonoids** | [**List&lt;SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner&gt;**](SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md) |  | [optional] 
 **IngredientBreakdown** | [**List&lt;ComputeNutritionAPI200ResponseIngredientBreakdownInner&gt;**](ComputeNutritionAPI200ResponseIngredientBreakdownInner.md) |  | [optional] 
 **CaloricBreakdown** | [**SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown**](SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md) |  | [optional] 

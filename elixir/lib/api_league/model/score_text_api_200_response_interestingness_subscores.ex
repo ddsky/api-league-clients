@@ -8,19 +8,19 @@ defmodule APILeague.Model.ScoreTextApi200ResponseInterestingnessSubscores do
 
   @derive Jason.Encoder
   defstruct [
-    :title_rating_score,
-    :quote_score,
-    :length_score,
+    :google_hits_score,
     :link_score,
-    :google_hits_score
+    :quote_score,
+    :title_rating_score,
+    :length_score
   ]
 
   @type t :: %__MODULE__{
-    :title_rating_score => [integer()] | nil,
-    :quote_score => [integer()] | nil,
-    :length_score => [integer()] | nil,
-    :link_score => [integer()] | nil,
-    :google_hits_score => [integer()] | nil
+    :google_hits_score => [float()] | nil,
+    :link_score => [float()] | nil,
+    :quote_score => [float()] | nil,
+    :title_rating_score => [float()] | nil,
+    :length_score => [float()] | nil
   }
 
   def decode(value) do

@@ -22,26 +22,26 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param license 
- * @param text 
  * @param sourceName 
  * @param sourceUrl 
+ * @param text 
+ * @param license 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseCredits (
 
-    @Json(name = "license")
-    val license: kotlin.String? = null,
-
-    @Json(name = "text")
-    val text: kotlin.String? = null,
-
     @Json(name = "source_name")
     val sourceName: kotlin.String? = null,
 
     @Json(name = "source_url")
-    val sourceUrl: kotlin.String? = null
+    val sourceUrl: kotlin.String? = null,
+
+    @Json(name = "text")
+    val text: kotlin.String? = null,
+
+    @Json(name = "license")
+    val license: kotlin.String? = null
 
 ) {
 

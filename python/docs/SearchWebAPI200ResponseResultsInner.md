@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**url** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
 
 ## Example
 

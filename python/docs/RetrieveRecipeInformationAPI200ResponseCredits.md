@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**license** | **str** |  | [optional] 
-**text** | **str** |  | [optional] 
 **source_name** | **str** |  | [optional] 
 **source_url** | **str** |  | [optional] 
+**text** | **str** |  | [optional] 
+**license** | **str** |  | [optional] 
 
 ## Example
 

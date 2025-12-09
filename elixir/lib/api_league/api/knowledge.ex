@@ -10,6 +10,82 @@ defmodule APILeague.Api.Knowledge do
   import APILeague.RequestBuilder
 
   @doc """
+  Random Affirmation API
+  This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `opts` (keyword): Optional parameters
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.RandomAffirmationApi200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec random_affirmation_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomAffirmationApi200Response.t} | {:error, Tesla.Env.t}
+  def random_affirmation_api(connection, _opts \\ []) do
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-random-affirmation")
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.RandomAffirmationApi200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
+  Random Life Hack API
+  This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+  ### Parameters
+
+  - `connection` (APILeague.Connection): Connection to server
+  - `opts` (keyword): Optional parameters
+    - `:"max-length"` (integer()): The maximum length of the hack in letters.
+
+  ### Returns
+
+  - `{:ok, APILeague.Model.RandomLifeHackApi200Response.t}` on success
+  - `{:error, Tesla.Env.t}` on failure
+  """
+  @spec random_life_hack_api(Tesla.Env.client, keyword()) :: {:ok, nil} | {:ok, APILeague.Model.RandomLifeHackApi200Response.t} | {:error, Tesla.Env.t}
+  def random_life_hack_api(connection, opts \\ []) do
+    optional_params = %{
+      :"max-length" => :query
+    }
+
+    request =
+      %{}
+      |> method(:get)
+      |> url("/retrieve-random-life-hack")
+      |> add_optional_params(optional_params, opts)
+      |> Enum.into([])
+
+    connection
+    |> Connection.request(request)
+    |> evaluate_response([
+      {200, APILeague.Model.RandomLifeHackApi200Response},
+      {401, false},
+      {402, false},
+      {403, false},
+      {404, false},
+      {406, false},
+      {429, false}
+    ])
+  end
+
+  @doc """
   Random Quote API
   This API returns a random quote from a collection of quotes. The quotes are from famous people and are in English.
 

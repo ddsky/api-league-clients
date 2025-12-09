@@ -5,13 +5,13 @@
 -export_type([apileague_retrieve_game_by_id_200_response_official_stores_inner/0]).
 
 -type apileague_retrieve_game_by_id_200_response_official_stores_inner() ::
-    #{ 'url' => binary(),
-       'source' => binary()
+    #{ 'source' => binary(),
+       'url' => binary()
      }.
 
-encode(#{ 'url' := Url,
-          'source' := Source
+encode(#{ 'source' := Source,
+          'url' := Url
         }) ->
-    #{ 'url' => Url,
-       'source' => Source
+    #{ 'source' => Source,
+       'url' => Url
      }.

@@ -6,6 +6,7 @@ All URIs are relative to *https://api.apileague.com*
 |--------|--------------|-------------|
 | [**DetectMainImageColorAPI**](MediaApi.md#detectmainimagecolorapi) | **GET** /detect-color | Detect Main Image Color API |
 | [**RescaleImageAPI**](MediaApi.md#rescaleimageapi) | **GET** /rescale-image | Rescale Image API |
+| [**ScreenshotAPI**](MediaApi.md#screenshotapi) | **GET** /take-screenshot | Screenshot API |
 | [**SearchIconsAPI**](MediaApi.md#searchiconsapi) | **GET** /search-icons | Search Icons API |
 | [**SearchRoyaltyFreeImagesAPI**](MediaApi.md#searchroyaltyfreeimagesapi) | **GET** /search-images | Search Royalty Free Images API |
 | [**VectorSearchAPI**](MediaApi.md#vectorsearchapi) | **GET** /search-vectors | Vector Search API |
@@ -200,6 +201,116 @@ catch (ApiException e)
 | **width** | **int** | The desired width of the rescaled image. |  |
 | **height** | **int** | The desired height of the rescaled image. |  |
 | **crop** | **bool** | Whether the image should be cropped. If true, the returned image will have exactly the given width and height and some content might have been cropped from the left/right or top/bottom. If this parameter is false, the image will keep its ratio but will be resized to fill the given box. Some content might be outside the box though. |  |
+
+### Return type
+
+**System.IO.Stream**
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="screenshotapi"></a>
+# **ScreenshotAPI**
+> System.IO.Stream ScreenshotAPI (string url, int width, int height)
+
+Screenshot API
+
+Take a screenshot of a web page by providing the URL. IP blocks, captchas, location restrictions etc. will be resolved in the process. The screenshot will be returned as an image.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class ScreenshotAPIExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new MediaApi(config);
+            var url = https://nytimes.com;  // string | The url of the web page for which a screenshot should be taken.
+            var width = 400;  // int | The desired width of the screenshot.
+            var height = 300;  // int | The desired height of the screenshot.
+
+            try
+            {
+                // Screenshot API
+                System.IO.Stream result = apiInstance.ScreenshotAPI(url, width, height);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MediaApi.ScreenshotAPI: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ScreenshotAPIWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Screenshot API
+    ApiResponse<System.IO.Stream> response = apiInstance.ScreenshotAPIWithHttpInfo(url, width, height);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MediaApi.ScreenshotAPIWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **url** | **string** | The url of the web page for which a screenshot should be taken. |  |
+| **width** | **int** | The desired width of the screenshot. |  |
+| **height** | **int** | The desired height of the screenshot. |  |
 
 ### Return type
 

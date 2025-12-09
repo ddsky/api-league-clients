@@ -13,22 +13,12 @@ part of openapi.api;
 class ExtractEntitiesAPI200ResponseEntitiesInner {
   /// Returns a new [ExtractEntitiesAPI200ResponseEntitiesInner] instance.
   ExtractEntitiesAPI200ResponseEntitiesInner({
-    this.startPosition,
-    this.image,
     this.type,
     this.value,
+    this.startPosition,
     this.endPosition,
+    this.image,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? startPosition;
-
-  String? image;
 
   String? type;
 
@@ -40,40 +30,40 @@ class ExtractEntitiesAPI200ResponseEntitiesInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? startPosition;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? endPosition;
+
+  String? image;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ExtractEntitiesAPI200ResponseEntitiesInner &&
-    other.startPosition == startPosition &&
-    other.image == image &&
     other.type == type &&
     other.value == value &&
-    other.endPosition == endPosition;
+    other.startPosition == startPosition &&
+    other.endPosition == endPosition &&
+    other.image == image;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (startPosition == null ? 0 : startPosition!.hashCode) +
-    (image == null ? 0 : image!.hashCode) +
     (type == null ? 0 : type!.hashCode) +
     (value == null ? 0 : value!.hashCode) +
-    (endPosition == null ? 0 : endPosition!.hashCode);
+    (startPosition == null ? 0 : startPosition!.hashCode) +
+    (endPosition == null ? 0 : endPosition!.hashCode) +
+    (image == null ? 0 : image!.hashCode);
 
   @override
-  String toString() => 'ExtractEntitiesAPI200ResponseEntitiesInner[startPosition=$startPosition, image=$image, type=$type, value=$value, endPosition=$endPosition]';
+  String toString() => 'ExtractEntitiesAPI200ResponseEntitiesInner[type=$type, value=$value, startPosition=$startPosition, endPosition=$endPosition, image=$image]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.startPosition != null) {
-      json[r'start_position'] = this.startPosition;
-    } else {
-      json[r'start_position'] = null;
-    }
-    if (this.image != null) {
-      json[r'image'] = this.image;
-    } else {
-      json[r'image'] = null;
-    }
     if (this.type != null) {
       json[r'type'] = this.type;
     } else {
@@ -84,10 +74,20 @@ class ExtractEntitiesAPI200ResponseEntitiesInner {
     } else {
       json[r'value'] = null;
     }
+    if (this.startPosition != null) {
+      json[r'start_position'] = this.startPosition;
+    } else {
+      json[r'start_position'] = null;
+    }
     if (this.endPosition != null) {
       json[r'end_position'] = this.endPosition;
     } else {
       json[r'end_position'] = null;
+    }
+    if (this.image != null) {
+      json[r'image'] = this.image;
+    } else {
+      json[r'image'] = null;
     }
     return json;
   }
@@ -111,11 +111,11 @@ class ExtractEntitiesAPI200ResponseEntitiesInner {
       }());
 
       return ExtractEntitiesAPI200ResponseEntitiesInner(
-        startPosition: mapValueOfType<int>(json, r'start_position'),
-        image: mapValueOfType<String>(json, r'image'),
         type: mapValueOfType<String>(json, r'type'),
         value: mapValueOfType<String>(json, r'value'),
+        startPosition: mapValueOfType<int>(json, r'start_position'),
         endPosition: mapValueOfType<int>(json, r'end_position'),
+        image: mapValueOfType<String>(json, r'image'),
       );
     }
     return null;

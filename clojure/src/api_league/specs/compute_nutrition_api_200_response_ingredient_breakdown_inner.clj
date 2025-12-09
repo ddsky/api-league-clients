@@ -8,10 +8,10 @@
 
 (def compute-nutrition-api-200-response-ingredient-breakdown-inner-data
   {
+   (ds/opt :id) int?
    (ds/opt :name) string?
    (ds/opt :amount) int?
    (ds/opt :unit) string?
-   (ds/opt :id) int?
    (ds/opt :nutrients) (s/coll-of compute-nutrition-api-200-response-ingredient-breakdown-inner-nutrients-inner-spec)
    })
 

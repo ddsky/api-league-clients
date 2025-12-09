@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**percentiles** | **List&lt;Integer&gt;** |  |  [optional] |
+|**percentiles** | **List&lt;BigDecimal&gt;** |  |  [optional] |
 |**min** | **Integer** |  |  [optional] |
 |**median** | **Integer** |  |  [optional] |
 |**max** | **Integer** |  |  [optional] |

@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | **str** |  | [optional] 
-**short_description** | **str** |  | [optional] 
-**micro_trailer** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
 **year** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **genre** | **str** |  | [optional] 
+**image** | **str** |  | [optional] 
 **link** | **str** |  | [optional] 
 **rating** | [**SearchGamesAPI200ResponseResultsInnerRating**](SearchGamesAPI200ResponseResultsInnerRating.md) |  | [optional] 
-**id** | **int** |  | [optional] 
 **adult_only** | **bool** |  | [optional] 
 **screenshots** | **List[Optional[str]]** |  | [optional] 
+**micro_trailer** | **str** |  | [optional] 
 **gameplay** | **str** |  | [optional] 
+**short_description** | **str** |  | [optional] 
 
 ## Example
 

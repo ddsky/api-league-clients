@@ -7,8 +7,8 @@
 
 (def search-gifs-api-200-response-images-inner-data
   {
-   (ds/opt :width) int?
    (ds/opt :url) string?
+   (ds/opt :width) int?
    (ds/opt :height) int?
    })
 

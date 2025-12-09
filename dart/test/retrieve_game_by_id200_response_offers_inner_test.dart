@@ -16,23 +16,23 @@ void main() {
   // final instance = RetrieveGameById200ResponseOffersInner();
 
   group('test RetrieveGameById200ResponseOffersInner', () {
-    // String storeName
-    test('to test the property `storeName`', () async {
-      // TODO
-    });
-
-    // String title
-    test('to test the property `title`', () async {
-      // TODO
-    });
-
     // RetrieveGameById200ResponseOffersInnerPrice price
     test('to test the property `price`', () async {
       // TODO
     });
 
+    // String storeName
+    test('to test the property `storeName`', () async {
+      // TODO
+    });
+
     // String platform
     test('to test the property `platform`', () async {
+      // TODO
+    });
+
+    // String title
+    test('to test the property `title`', () async {
       // TODO
     });
 

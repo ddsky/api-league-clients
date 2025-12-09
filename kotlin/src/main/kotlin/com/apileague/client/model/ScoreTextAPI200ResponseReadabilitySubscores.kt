@@ -22,22 +22,19 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param readingTimeSeconds 
  * @param forcast 
  * @param flesch 
  * @param smog 
  * @param ari 
  * @param lix 
- * @param colemanLiau 
  * @param kincaid 
  * @param fog 
+ * @param colemanLiau 
+ * @param readingTimeSeconds 
  */
 
 
 data class ScoreTextAPI200ResponseReadabilitySubscores (
-
-    @Json(name = "reading_time_seconds")
-    val readingTimeSeconds: kotlin.Int? = null,
 
     @Json(name = "forcast")
     val forcast: java.math.BigDecimal? = null,
@@ -54,14 +51,17 @@ data class ScoreTextAPI200ResponseReadabilitySubscores (
     @Json(name = "lix")
     val lix: java.math.BigDecimal? = null,
 
-    @Json(name = "coleman_liau")
-    val colemanLiau: java.math.BigDecimal? = null,
-
     @Json(name = "kincaid")
     val kincaid: java.math.BigDecimal? = null,
 
     @Json(name = "fog")
-    val fog: java.math.BigDecimal? = null
+    val fog: java.math.BigDecimal? = null,
+
+    @Json(name = "coleman_liau")
+    val colemanLiau: java.math.BigDecimal? = null,
+
+    @Json(name = "reading_time_seconds")
+    val readingTimeSeconds: kotlin.Int? = null
 
 ) {
 

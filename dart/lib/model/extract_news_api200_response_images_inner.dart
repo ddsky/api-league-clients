@@ -13,19 +13,11 @@ part of openapi.api;
 class ExtractNewsAPI200ResponseImagesInner {
   /// Returns a new [ExtractNewsAPI200ResponseImagesInner] instance.
   ExtractNewsAPI200ResponseImagesInner({
-    this.width,
     this.title,
     this.url,
+    this.width,
     this.height,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? width;
 
   String? title;
 
@@ -37,33 +29,36 @@ class ExtractNewsAPI200ResponseImagesInner {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? width;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? height;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ExtractNewsAPI200ResponseImagesInner &&
-    other.width == width &&
     other.title == title &&
     other.url == url &&
+    other.width == width &&
     other.height == height;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (width == null ? 0 : width!.hashCode) +
     (title == null ? 0 : title!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
+    (width == null ? 0 : width!.hashCode) +
     (height == null ? 0 : height!.hashCode);
 
   @override
-  String toString() => 'ExtractNewsAPI200ResponseImagesInner[width=$width, title=$title, url=$url, height=$height]';
+  String toString() => 'ExtractNewsAPI200ResponseImagesInner[title=$title, url=$url, width=$width, height=$height]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.width != null) {
-      json[r'width'] = this.width;
-    } else {
-      json[r'width'] = null;
-    }
     if (this.title != null) {
       json[r'title'] = this.title;
     } else {
@@ -73,6 +68,11 @@ class ExtractNewsAPI200ResponseImagesInner {
       json[r'url'] = this.url;
     } else {
       json[r'url'] = null;
+    }
+    if (this.width != null) {
+      json[r'width'] = this.width;
+    } else {
+      json[r'width'] = null;
     }
     if (this.height != null) {
       json[r'height'] = this.height;
@@ -101,9 +101,9 @@ class ExtractNewsAPI200ResponseImagesInner {
       }());
 
       return ExtractNewsAPI200ResponseImagesInner(
-        width: mapValueOfType<int>(json, r'width'),
         title: mapValueOfType<String>(json, r'title'),
         url: mapValueOfType<String>(json, r'url'),
+        width: mapValueOfType<int>(json, r'width'),
         height: mapValueOfType<int>(json, r'height'),
       );
     }

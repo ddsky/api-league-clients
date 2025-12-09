@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,13 +20,13 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseTaste{}
 
 // RetrieveRecipeInformationAPI200ResponseTaste struct for RetrieveRecipeInformationAPI200ResponseTaste
 type RetrieveRecipeInformationAPI200ResponseTaste struct {
-	Fattiness *float32 `json:"fattiness,omitempty"`
-	Spiciness *int32 `json:"spiciness,omitempty"`
+	Sweetness *float32 `json:"sweetness,omitempty"`
 	Saltiness *int32 `json:"saltiness,omitempty"`
+	Sourness *float32 `json:"sourness,omitempty"`
 	Bitterness *float32 `json:"bitterness,omitempty"`
 	Savoriness *float32 `json:"savoriness,omitempty"`
-	Sweetness *float32 `json:"sweetness,omitempty"`
-	Sourness *float32 `json:"sourness,omitempty"`
+	Fattiness *float32 `json:"fattiness,omitempty"`
+	Spiciness *int32 `json:"spiciness,omitempty"`
 }
 
 // NewRetrieveRecipeInformationAPI200ResponseTaste instantiates a new RetrieveRecipeInformationAPI200ResponseTaste object
@@ -46,68 +46,36 @@ func NewRetrieveRecipeInformationAPI200ResponseTasteWithDefaults() *RetrieveReci
 	return &this
 }
 
-// GetFattiness returns the Fattiness field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattiness() float32 {
-	if o == nil || IsNil(o.Fattiness) {
+// GetSweetness returns the Sweetness field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetness() float32 {
+	if o == nil || IsNil(o.Sweetness) {
 		var ret float32
 		return ret
 	}
-	return *o.Fattiness
+	return *o.Sweetness
 }
 
-// GetFattinessOk returns a tuple with the Fattiness field value if set, nil otherwise
+// GetSweetnessOk returns a tuple with the Sweetness field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattinessOk() (*float32, bool) {
-	if o == nil || IsNil(o.Fattiness) {
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetnessOk() (*float32, bool) {
+	if o == nil || IsNil(o.Sweetness) {
 		return nil, false
 	}
-	return o.Fattiness, true
+	return o.Sweetness, true
 }
 
-// HasFattiness returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasFattiness() bool {
-	if o != nil && !IsNil(o.Fattiness) {
+// HasSweetness returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSweetness() bool {
+	if o != nil && !IsNil(o.Sweetness) {
 		return true
 	}
 
 	return false
 }
 
-// SetFattiness gets a reference to the given float32 and assigns it to the Fattiness field.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetFattiness(v float32) {
-	o.Fattiness = &v
-}
-
-// GetSpiciness returns the Spiciness field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpiciness() int32 {
-	if o == nil || IsNil(o.Spiciness) {
-		var ret int32
-		return ret
-	}
-	return *o.Spiciness
-}
-
-// GetSpicinessOk returns a tuple with the Spiciness field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpicinessOk() (*int32, bool) {
-	if o == nil || IsNil(o.Spiciness) {
-		return nil, false
-	}
-	return o.Spiciness, true
-}
-
-// HasSpiciness returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSpiciness() bool {
-	if o != nil && !IsNil(o.Spiciness) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpiciness gets a reference to the given int32 and assigns it to the Spiciness field.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSpiciness(v int32) {
-	o.Spiciness = &v
+// SetSweetness gets a reference to the given float32 and assigns it to the Sweetness field.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSweetness(v float32) {
+	o.Sweetness = &v
 }
 
 // GetSaltiness returns the Saltiness field value if set, zero value otherwise.
@@ -140,6 +108,38 @@ func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSaltiness() bool {
 // SetSaltiness gets a reference to the given int32 and assigns it to the Saltiness field.
 func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSaltiness(v int32) {
 	o.Saltiness = &v
+}
+
+// GetSourness returns the Sourness field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSourness() float32 {
+	if o == nil || IsNil(o.Sourness) {
+		var ret float32
+		return ret
+	}
+	return *o.Sourness
+}
+
+// GetSournessOk returns a tuple with the Sourness field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSournessOk() (*float32, bool) {
+	if o == nil || IsNil(o.Sourness) {
+		return nil, false
+	}
+	return o.Sourness, true
+}
+
+// HasSourness returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSourness() bool {
+	if o != nil && !IsNil(o.Sourness) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourness gets a reference to the given float32 and assigns it to the Sourness field.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSourness(v float32) {
+	o.Sourness = &v
 }
 
 // GetBitterness returns the Bitterness field value if set, zero value otherwise.
@@ -206,68 +206,68 @@ func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSavoriness(v float32) 
 	o.Savoriness = &v
 }
 
-// GetSweetness returns the Sweetness field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetness() float32 {
-	if o == nil || IsNil(o.Sweetness) {
+// GetFattiness returns the Fattiness field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattiness() float32 {
+	if o == nil || IsNil(o.Fattiness) {
 		var ret float32
 		return ret
 	}
-	return *o.Sweetness
+	return *o.Fattiness
 }
 
-// GetSweetnessOk returns a tuple with the Sweetness field value if set, nil otherwise
+// GetFattinessOk returns a tuple with the Fattiness field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSweetnessOk() (*float32, bool) {
-	if o == nil || IsNil(o.Sweetness) {
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetFattinessOk() (*float32, bool) {
+	if o == nil || IsNil(o.Fattiness) {
 		return nil, false
 	}
-	return o.Sweetness, true
+	return o.Fattiness, true
 }
 
-// HasSweetness returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSweetness() bool {
-	if o != nil && !IsNil(o.Sweetness) {
+// HasFattiness returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasFattiness() bool {
+	if o != nil && !IsNil(o.Fattiness) {
 		return true
 	}
 
 	return false
 }
 
-// SetSweetness gets a reference to the given float32 and assigns it to the Sweetness field.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSweetness(v float32) {
-	o.Sweetness = &v
+// SetFattiness gets a reference to the given float32 and assigns it to the Fattiness field.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetFattiness(v float32) {
+	o.Fattiness = &v
 }
 
-// GetSourness returns the Sourness field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSourness() float32 {
-	if o == nil || IsNil(o.Sourness) {
-		var ret float32
+// GetSpiciness returns the Spiciness field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpiciness() int32 {
+	if o == nil || IsNil(o.Spiciness) {
+		var ret int32
 		return ret
 	}
-	return *o.Sourness
+	return *o.Spiciness
 }
 
-// GetSournessOk returns a tuple with the Sourness field value if set, nil otherwise
+// GetSpicinessOk returns a tuple with the Spiciness field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSournessOk() (*float32, bool) {
-	if o == nil || IsNil(o.Sourness) {
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) GetSpicinessOk() (*int32, bool) {
+	if o == nil || IsNil(o.Spiciness) {
 		return nil, false
 	}
-	return o.Sourness, true
+	return o.Spiciness, true
 }
 
-// HasSourness returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSourness() bool {
-	if o != nil && !IsNil(o.Sourness) {
+// HasSpiciness returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) HasSpiciness() bool {
+	if o != nil && !IsNil(o.Spiciness) {
 		return true
 	}
 
 	return false
 }
 
-// SetSourness gets a reference to the given float32 and assigns it to the Sourness field.
-func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSourness(v float32) {
-	o.Sourness = &v
+// SetSpiciness gets a reference to the given int32 and assigns it to the Spiciness field.
+func (o *RetrieveRecipeInformationAPI200ResponseTaste) SetSpiciness(v int32) {
+	o.Spiciness = &v
 }
 
 func (o RetrieveRecipeInformationAPI200ResponseTaste) MarshalJSON() ([]byte, error) {
@@ -280,14 +280,14 @@ func (o RetrieveRecipeInformationAPI200ResponseTaste) MarshalJSON() ([]byte, err
 
 func (o RetrieveRecipeInformationAPI200ResponseTaste) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Fattiness) {
-		toSerialize["fattiness"] = o.Fattiness
-	}
-	if !IsNil(o.Spiciness) {
-		toSerialize["spiciness"] = o.Spiciness
+	if !IsNil(o.Sweetness) {
+		toSerialize["sweetness"] = o.Sweetness
 	}
 	if !IsNil(o.Saltiness) {
 		toSerialize["saltiness"] = o.Saltiness
+	}
+	if !IsNil(o.Sourness) {
+		toSerialize["sourness"] = o.Sourness
 	}
 	if !IsNil(o.Bitterness) {
 		toSerialize["bitterness"] = o.Bitterness
@@ -295,11 +295,11 @@ func (o RetrieveRecipeInformationAPI200ResponseTaste) ToMap() (map[string]interf
 	if !IsNil(o.Savoriness) {
 		toSerialize["savoriness"] = o.Savoriness
 	}
-	if !IsNil(o.Sweetness) {
-		toSerialize["sweetness"] = o.Sweetness
+	if !IsNil(o.Fattiness) {
+		toSerialize["fattiness"] = o.Fattiness
 	}
-	if !IsNil(o.Sourness) {
-		toSerialize["sourness"] = o.Sourness
+	if !IsNil(o.Spiciness) {
+		toSerialize["spiciness"] = o.Spiciness
 	}
 	return toSerialize, nil
 }

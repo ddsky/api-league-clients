@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **int** |  | [optional] 
-**CountCritics** | **int** |  | [optional] 
-**MeanPlayers** | **decimal** |  | [optional] 
-**MeanCritics** | **decimal** |  | [optional] 
 **Mean** | **decimal** |  | [optional] 
+**Count** | **int** |  | [optional] 
+**MeanPlayers** | **decimal** |  | [optional] 
 **CountPlayers** | **int** |  | [optional] 
+**MeanCritics** | **decimal** |  | [optional] 
+**CountCritics** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

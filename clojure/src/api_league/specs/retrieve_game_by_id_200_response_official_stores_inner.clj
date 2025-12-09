@@ -7,8 +7,8 @@
 
 (def retrieve-game-by-id-200-response-official-stores-inner-data
   {
-   (ds/opt :url) string?
    (ds/opt :source) string?
+   (ds/opt :url) string?
    })
 
 (def retrieve-game-by-id-200-response-official-stores-inner-spec

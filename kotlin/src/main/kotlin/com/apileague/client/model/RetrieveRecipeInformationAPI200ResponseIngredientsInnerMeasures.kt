@@ -23,18 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param metric 
  * @param us 
+ * @param metric 
  */
 
 
 data class RetrieveRecipeInformationAPI200ResponseIngredientsInnerMeasures (
 
-    @Json(name = "metric")
-    val metric: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? = null,
-
     @Json(name = "us")
-    val us: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? = null
+    val us: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? = null,
+
+    @Json(name = "metric")
+    val metric: SearchDrinksAPI200ResponseDrinksInnerIngredientsInnerMeasuresMetric? = null
 
 ) {
 

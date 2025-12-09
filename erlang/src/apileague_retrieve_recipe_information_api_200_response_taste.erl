@@ -5,28 +5,28 @@
 -export_type([apileague_retrieve_recipe_information_api_200_response_taste/0]).
 
 -type apileague_retrieve_recipe_information_api_200_response_taste() ::
-    #{ 'fattiness' => integer(),
-       'spiciness' => integer(),
+    #{ 'sweetness' => integer(),
        'saltiness' => integer(),
+       'sourness' => integer(),
        'bitterness' => integer(),
        'savoriness' => integer(),
-       'sweetness' => integer(),
-       'sourness' => integer()
+       'fattiness' => integer(),
+       'spiciness' => integer()
      }.
 
-encode(#{ 'fattiness' := Fattiness,
-          'spiciness' := Spiciness,
+encode(#{ 'sweetness' := Sweetness,
           'saltiness' := Saltiness,
+          'sourness' := Sourness,
           'bitterness' := Bitterness,
           'savoriness' := Savoriness,
-          'sweetness' := Sweetness,
-          'sourness' := Sourness
+          'fattiness' := Fattiness,
+          'spiciness' := Spiciness
         }) ->
-    #{ 'fattiness' => Fattiness,
-       'spiciness' => Spiciness,
+    #{ 'sweetness' => Sweetness,
        'saltiness' => Saltiness,
+       'sourness' => Sourness,
        'bitterness' => Bitterness,
        'savoriness' => Savoriness,
-       'sweetness' => Sweetness,
-       'sourness' => Sourness
+       'fattiness' => Fattiness,
+       'spiciness' => Spiciness
      }.

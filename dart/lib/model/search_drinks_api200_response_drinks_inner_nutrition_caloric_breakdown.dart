@@ -13,18 +13,10 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown] instance.
   SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown({
-    this.percentFat,
     this.percentCarbs,
     this.percentProtein,
+    this.percentFat,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? percentFat;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -42,29 +34,32 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
   ///
   num? percentProtein;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  num? percentFat;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown &&
-    other.percentFat == percentFat &&
     other.percentCarbs == percentCarbs &&
-    other.percentProtein == percentProtein;
+    other.percentProtein == percentProtein &&
+    other.percentFat == percentFat;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (percentFat == null ? 0 : percentFat!.hashCode) +
     (percentCarbs == null ? 0 : percentCarbs!.hashCode) +
-    (percentProtein == null ? 0 : percentProtein!.hashCode);
+    (percentProtein == null ? 0 : percentProtein!.hashCode) +
+    (percentFat == null ? 0 : percentFat!.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown[percentFat=$percentFat, percentCarbs=$percentCarbs, percentProtein=$percentProtein]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown[percentCarbs=$percentCarbs, percentProtein=$percentProtein, percentFat=$percentFat]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.percentFat != null) {
-      json[r'percent_fat'] = this.percentFat;
-    } else {
-      json[r'percent_fat'] = null;
-    }
     if (this.percentCarbs != null) {
       json[r'percent_carbs'] = this.percentCarbs;
     } else {
@@ -74,6 +69,11 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
       json[r'percent_protein'] = this.percentProtein;
     } else {
       json[r'percent_protein'] = null;
+    }
+    if (this.percentFat != null) {
+      json[r'percent_fat'] = this.percentFat;
+    } else {
+      json[r'percent_fat'] = null;
     }
     return json;
   }
@@ -97,9 +97,9 @@ class SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown {
       }());
 
       return SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown(
-        percentFat: num.parse('${json[r'percent_fat']}'),
         percentCarbs: num.parse('${json[r'percent_carbs']}'),
         percentProtein: num.parse('${json[r'percent_protein']}'),
+        percentFat: num.parse('${json[r'percent_fat']}'),
       );
     }
     return null;

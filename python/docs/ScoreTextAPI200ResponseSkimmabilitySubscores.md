@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bullet_point_ratio_score** | **List[int]** |  | [optional] 
-**image_score** | **List[int]** |  | [optional] 
-**highlighted_word_ratio_score** | **List[int]** |  | [optional] 
-**video_score** | **List[int]** |  | [optional] 
-**paragraph_score** | **List[int]** |  | [optional] 
-**paragraph_headline_ratio_score** | **List[int]** |  | [optional] 
+**highlighted_word_ratio_score** | **List[float]** |  | [optional] 
+**bullet_point_ratio_score** | **List[float]** |  | [optional] 
+**paragraph_headline_ratio_score** | **List[float]** |  | [optional] 
+**image_score** | **List[float]** |  | [optional] 
+**video_score** | **List[float]** |  | [optional] 
+**paragraph_score** | **List[float]** |  | [optional] 
 
 ## Example
 

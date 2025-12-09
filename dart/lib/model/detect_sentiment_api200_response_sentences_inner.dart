@@ -13,19 +13,11 @@ part of openapi.api;
 class DetectSentimentAPI200ResponseSentencesInner {
   /// Returns a new [DetectSentimentAPI200ResponseSentencesInner] instance.
   DetectSentimentAPI200ResponseSentencesInner({
-    this.length,
     this.sentiment,
     this.offset,
     this.confidence,
+    this.length,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? length;
 
   String? sentiment;
 
@@ -45,31 +37,34 @@ class DetectSentimentAPI200ResponseSentencesInner {
   ///
   int? confidence;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? length;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is DetectSentimentAPI200ResponseSentencesInner &&
-    other.length == length &&
     other.sentiment == sentiment &&
     other.offset == offset &&
-    other.confidence == confidence;
+    other.confidence == confidence &&
+    other.length == length;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (length == null ? 0 : length!.hashCode) +
     (sentiment == null ? 0 : sentiment!.hashCode) +
     (offset == null ? 0 : offset!.hashCode) +
-    (confidence == null ? 0 : confidence!.hashCode);
+    (confidence == null ? 0 : confidence!.hashCode) +
+    (length == null ? 0 : length!.hashCode);
 
   @override
-  String toString() => 'DetectSentimentAPI200ResponseSentencesInner[length=$length, sentiment=$sentiment, offset=$offset, confidence=$confidence]';
+  String toString() => 'DetectSentimentAPI200ResponseSentencesInner[sentiment=$sentiment, offset=$offset, confidence=$confidence, length=$length]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.length != null) {
-      json[r'length'] = this.length;
-    } else {
-      json[r'length'] = null;
-    }
     if (this.sentiment != null) {
       json[r'sentiment'] = this.sentiment;
     } else {
@@ -84,6 +79,11 @@ class DetectSentimentAPI200ResponseSentencesInner {
       json[r'confidence'] = this.confidence;
     } else {
       json[r'confidence'] = null;
+    }
+    if (this.length != null) {
+      json[r'length'] = this.length;
+    } else {
+      json[r'length'] = null;
     }
     return json;
   }
@@ -107,10 +107,10 @@ class DetectSentimentAPI200ResponseSentencesInner {
       }());
 
       return DetectSentimentAPI200ResponseSentencesInner(
-        length: mapValueOfType<int>(json, r'length'),
         sentiment: mapValueOfType<String>(json, r'sentiment'),
         offset: mapValueOfType<int>(json, r'offset'),
         confidence: mapValueOfType<int>(json, r'confidence'),
+        length: mapValueOfType<int>(json, r'length'),
       );
     }
     return null;

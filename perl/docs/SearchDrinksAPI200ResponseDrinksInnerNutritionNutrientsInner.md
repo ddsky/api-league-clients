@@ -9,9 +9,9 @@ use WWW::OpenAPIClient::Object::SearchDrinksAPI200ResponseDrinksInnerNutritionNu
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
-**percent_of_daily_needs** | **double** |  | [optional] 
 **amount** | **double** |  | [optional] 
 **unit** | **string** |  | [optional] 
+**percent_of_daily_needs** | **double** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

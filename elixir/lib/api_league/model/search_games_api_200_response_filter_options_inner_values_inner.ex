@@ -9,14 +9,14 @@ defmodule APILeague.Model.SearchGamesApi200ResponseFilterOptionsInnerValuesInner
   @derive Jason.Encoder
   defstruct [
     :name,
-    :count,
-    :key
+    :key,
+    :count
   ]
 
   @type t :: %__MODULE__{
     :name => String.t | nil,
-    :count => integer() | nil,
-    :key => String.t | nil
+    :key => String.t | nil,
+    :count => integer() | nil
   }
 
   def decode(value) do

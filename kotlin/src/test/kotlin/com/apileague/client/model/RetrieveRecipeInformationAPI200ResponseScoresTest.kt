@@ -25,12 +25,6 @@ class RetrieveRecipeInformationAPI200ResponseScoresTest : ShouldSpec() {
         // uncomment below to create an instance of RetrieveRecipeInformationAPI200ResponseScores
         //val modelInstance = RetrieveRecipeInformationAPI200ResponseScores()
 
-        // to test the property `metaScore`
-        should("test metaScore") {
-            // uncomment below to test the property
-            //modelInstance.metaScore shouldBe ("TODO")
-        }
-
         // to test the property `weightWatcherSmartPoints`
         should("test weightWatcherSmartPoints") {
             // uncomment below to test the property
@@ -41,6 +35,12 @@ class RetrieveRecipeInformationAPI200ResponseScoresTest : ShouldSpec() {
         should("test healthScore") {
             // uncomment below to test the property
             //modelInstance.healthScore shouldBe ("TODO")
+        }
+
+        // to test the property `metaScore`
+        should("test metaScore") {
+            // uncomment below to test the property
+            //modelInstance.metaScore shouldBe ("TODO")
         }
 
     }

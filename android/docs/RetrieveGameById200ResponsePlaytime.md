@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percentiles** | **List&lt;Integer&gt;** |  |  [optional]
+**percentiles** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
 **min** | **Integer** |  |  [optional]
 **median** | **Integer** |  |  [optional]
 **max** | **Integer** |  |  [optional]

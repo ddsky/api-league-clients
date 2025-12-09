@@ -23,7 +23,6 @@ import com.apileague.client.model.ComputeNutritionAPI200Response
 import com.apileague.client.model.RetrieveRecipeInformationAPI200Response
 import com.apileague.client.model.SearchDrinksAPI200Response
 import com.apileague.client.model.SearchRecipesAPI200Response
-import com.apileague.client.model.SearchRestaurantsAPI200Response
 
 class FoodApiTest : ShouldSpec() {
     init {
@@ -172,23 +171,6 @@ class FoodApiTest : ShouldSpec() {
             //val offset : kotlin.Int = 0 // kotlin.Int | The number of recipes to skip, between 0 and 900.
             //val number : kotlin.Int = 3 // kotlin.Int | The number of recipes, between 1 and 100.
             //val result : SearchRecipesAPI200Response = apiInstance.searchRecipesAPI(query, cuisines, excludeCuisines, mealType, diet, intolerances, equipment, includeIngredients, excludeIngredients, fillIngredients, addRecipeInformation, maxTime, minServings, maxServings, minCalories, maxCalories, minCarbs, maxCarbs, minProtein, maxProtein, minFat, maxFat, minSugar, maxSugar, minFiber, maxFiber, minFolate, maxFolate, minFolicAcid, maxFolicAcid, minIodine, maxIodine, minIron, maxIron, minZinc, maxZinc, minMagnesium, maxMagnesium, minManganese, maxManganese, minPhosphorus, maxPhosphorus, minPotassium, maxPotassium, minSodium, maxSodium, minSelenium, maxSelenium, minCopper, maxCopper, minCalcium, maxCalcium, minCholine, maxCholine, minCholesterol, maxCholesterol, minFluoride, maxFluoride, minAlcohol, maxAlcohol, minCaffeine, maxCaffeine, minSaturatedFat, maxSaturatedFat, minVitaminA, maxVitaminA, minVitaminC, maxVitaminC, minVitaminD, maxVitaminD, minVitaminE, maxVitaminE, minVitaminK, maxVitaminK, minVitaminB1, maxVitaminB1, minVitaminB2, maxVitaminB2, minVitaminB3, maxVitaminB3, minVitaminB5, maxVitaminB5, minVitaminB6, maxVitaminB6, minVitaminB12, maxVitaminB12, sort, sortDirection, offset, number)
-            //result shouldBe ("TODO")
-        }
-
-        // to test searchRestaurantsAPI
-        should("test searchRestaurantsAPI") {
-            // uncomment below to test searchRestaurantsAPI
-            //val lat : kotlin.Double = 32.715736 // kotlin.Double | The latitude to search around.
-            //val lon : kotlin.Double = -117.161087 // kotlin.Double | The longitude to search around.
-            //val query : kotlin.String = burger // kotlin.String | The search query.
-            //val distance : kotlin.Int = 5 // kotlin.Int | The maximum distance of the restaurant in miles around the given location.
-            //val budget : kotlin.Double = 25 // kotlin.Double | The budget in USD for the meal.
-            //val minRating : kotlin.Double = 4.4 // kotlin.Double | The minimum rating of the restaurants in range [0,5].
-            //val cuisine : kotlin.String = Mexican // kotlin.String | The cuisine that the restaurants should support.
-            //val isOpen : kotlin.Boolean = true // kotlin.Boolean | Whether the restaurants have to be open now.
-            //val page : kotlin.Int = 0 // kotlin.Int | The page of the results.
-            //val sort : kotlin.String = rating // kotlin.String | The sort parameter, one of: cheapest, fastest, rating, distance or relevance.
-            //val result : SearchRestaurantsAPI200Response = apiInstance.searchRestaurantsAPI(lat, lon, query, distance, budget, minRating, cuisine, isOpen, page, sort)
             //result shouldBe ("TODO")
         }
 

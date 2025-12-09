@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title_rating_score** | **List[int]** |  | [optional] 
-**quote_score** | **List[int]** |  | [optional] 
-**length_score** | **List[int]** |  | [optional] 
-**link_score** | **List[int]** |  | [optional] 
-**google_hits_score** | **List[int]** |  | [optional] 
+**google_hits_score** | **List[float]** |  | [optional] 
+**link_score** | **List[float]** |  | [optional] 
+**quote_score** | **List[float]** |  | [optional] 
+**title_rating_score** | **List[float]** |  | [optional] 
+**length_score** | **List[float]** |  | [optional] 
 
 ## Example
 

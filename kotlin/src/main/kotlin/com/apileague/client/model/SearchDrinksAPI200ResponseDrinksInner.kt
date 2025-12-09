@@ -26,49 +26,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param flavors 
- * @param instructions 
- * @param images 
- * @param nutrition 
- * @param glassType 
- * @param credits 
- * @param pricePerServing 
- * @param description 
- * @param ingredients 
  * @param id 
  * @param title 
+ * @param images 
+ * @param pricePerServing 
+ * @param nutrition 
+ * @param flavors 
+ * @param glassType 
+ * @param description 
  * @param cuisines 
+ * @param ingredients 
+ * @param instructions 
+ * @param credits 
  */
 
 
 data class SearchDrinksAPI200ResponseDrinksInner (
-
-    @Json(name = "flavors")
-    val flavors: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "instructions")
-    val instructions: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner>? = null,
-
-    @Json(name = "images")
-    val images: kotlin.collections.List<kotlin.String>? = null,
-
-    @Json(name = "nutrition")
-    val nutrition: SearchDrinksAPI200ResponseDrinksInnerNutrition? = null,
-
-    @Json(name = "glass_type")
-    val glassType: kotlin.String? = null,
-
-    @Json(name = "credits")
-    val credits: SearchDrinksAPI200ResponseDrinksInnerCredits? = null,
-
-    @Json(name = "price_per_serving")
-    val pricePerServing: java.math.BigDecimal? = null,
-
-    @Json(name = "description")
-    val description: kotlin.String? = null,
-
-    @Json(name = "ingredients")
-    val ingredients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner>? = null,
 
     @Json(name = "id")
     val id: kotlin.Int? = null,
@@ -76,8 +49,35 @@ data class SearchDrinksAPI200ResponseDrinksInner (
     @Json(name = "title")
     val title: kotlin.String? = null,
 
+    @Json(name = "images")
+    val images: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "price_per_serving")
+    val pricePerServing: java.math.BigDecimal? = null,
+
+    @Json(name = "nutrition")
+    val nutrition: SearchDrinksAPI200ResponseDrinksInnerNutrition? = null,
+
+    @Json(name = "flavors")
+    val flavors: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "glass_type")
+    val glassType: kotlin.String? = null,
+
+    @Json(name = "description")
+    val description: kotlin.String? = null,
+
     @Json(name = "cuisines")
-    val cuisines: kotlin.collections.List<kotlin.String>? = null
+    val cuisines: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "ingredients")
+    val ingredients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerIngredientsInner>? = null,
+
+    @Json(name = "instructions")
+    val instructions: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerInstructionsInner>? = null,
+
+    @Json(name = "credits")
+    val credits: SearchDrinksAPI200ResponseDrinksInnerCredits? = null
 
 ) {
 

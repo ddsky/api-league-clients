@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **percentiles** | **Array&lt;Integer&gt;** |  | [optional] |
+| **percentiles** | **Array&lt;Float&gt;** |  | [optional] |
 | **min** | **Integer** |  | [optional] |
 | **median** | **Integer** |  | [optional] |
 | **max** | **Integer** |  | [optional] |

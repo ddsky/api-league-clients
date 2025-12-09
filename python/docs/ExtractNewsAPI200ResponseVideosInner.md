@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**title** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **duration** | **int** |  | [optional] 
 **thumbnail** | **str** |  | [optional] 
-**title** | **str** |  | [optional] 
-**url** | **str** |  | [optional] 
 
 ## Example
 

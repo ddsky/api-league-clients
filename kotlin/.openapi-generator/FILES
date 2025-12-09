@@ -39,6 +39,8 @@ docs/MathApi.md
 docs/MediaApi.md
 docs/NewsApi.md
 docs/PluralizeWordAPI200Response.md
+docs/RandomAffirmationAPI200Response.md
+docs/RandomLifeHackAPI200Response.md
 docs/RandomMemeAPI200Response.md
 docs/RandomPoemAPI200Response.md
 docs/RandomQuoteAPI200Response.md
@@ -91,10 +93,10 @@ docs/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutrition.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.md
-docs/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.md
+docs/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.md
 docs/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.md
 docs/SearchGamesAPI200Response.md
 docs/SearchGamesAPI200ResponseActiveFilterOptionsInner.md
@@ -108,6 +110,7 @@ docs/SearchGamesAPI200ResponseSortingOptionsInner.md
 docs/SearchGifsAPI200Response.md
 docs/SearchGifsAPI200ResponseImagesInner.md
 docs/SearchIconsAPI200Response.md
+docs/SearchIconsAPI200ResponseIconsInner.md
 docs/SearchJokesAPI200Response.md
 docs/SearchJokesAPI200ResponseJokesInner.md
 docs/SearchMemesAPI200Response.md
@@ -118,11 +121,6 @@ docs/SearchRecipesAPI200Response.md
 docs/SearchRecipesAPI200ResponseRecipesInner.md
 docs/SearchRecipesAPI200ResponseRecipesInnerNutrition.md
 docs/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.md
-docs/SearchRestaurantsAPI200Response.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInner.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.md
-docs/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.md
 docs/SearchRoyaltyFreeImagesAPI200Response.md
 docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.md
 docs/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.md
@@ -204,6 +202,8 @@ src/main/kotlin/com/apileague/client/model/FindSimilarGamesAPI200ResponseResults
 src/main/kotlin/com/apileague/client/model/GenerateNonsenseWordAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/ListWordSynonymsAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/PluralizeWordAPI200Response.kt
+src/main/kotlin/com/apileague/client/model/RandomAffirmationAPI200Response.kt
+src/main/kotlin/com/apileague/client/model/RandomLifeHackAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomMemeAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomPoemAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/RandomQuoteAPI200Response.kt
@@ -256,10 +256,10 @@ src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInner
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerIngredientsInner.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutrition.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown.kt
-src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInner.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInner.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner.kt
+src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing.kt
 src/main/kotlin/com/apileague/client/model/SearchGamesAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchGamesAPI200ResponseActiveFilterOptionsInner.kt
@@ -273,6 +273,7 @@ src/main/kotlin/com/apileague/client/model/SearchGamesAPI200ResponseSortingOptio
 src/main/kotlin/com/apileague/client/model/SearchGifsAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchGifsAPI200ResponseImagesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchIconsAPI200Response.kt
+src/main/kotlin/com/apileague/client/model/SearchIconsAPI200ResponseIconsInner.kt
 src/main/kotlin/com/apileague/client/model/SearchJokesAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchJokesAPI200ResponseJokesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchMemesAPI200Response.kt
@@ -283,11 +284,6 @@ src/main/kotlin/com/apileague/client/model/SearchRecipesAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerNutrition.kt
 src/main/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner.kt
-src/main/kotlin/com/apileague/client/model/SearchRestaurantsAPI200Response.kt
-src/main/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInner.kt
-src/main/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerAddress.kt
-src/main/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHours.kt
-src/main/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperational.kt
 src/main/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200Response.kt
 src/main/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInner.kt
 src/main/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicense.kt
@@ -344,6 +340,8 @@ src/test/kotlin/com/apileague/client/model/FindSimilarGamesAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/GenerateNonsenseWordAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/ListWordSynonymsAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/PluralizeWordAPI200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/RandomAffirmationAPI200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/RandomLifeHackAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomMemeAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomPoemAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/RandomQuoteAPI200ResponseTest.kt
@@ -393,10 +391,10 @@ src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInner
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerStepsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerInstructionsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdownTest.kt
-src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerNutrientsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionIngredientBreakdownInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInnerTest.kt
+src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServingTest.kt
 src/test/kotlin/com/apileague/client/model/SearchDrinksAPI200ResponseDrinksInnerTest.kt
@@ -412,6 +410,7 @@ src/test/kotlin/com/apileague/client/model/SearchGamesAPI200ResponseSortingOptio
 src/test/kotlin/com/apileague/client/model/SearchGamesAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifsAPI200ResponseImagesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchGifsAPI200ResponseTest.kt
+src/test/kotlin/com/apileague/client/model/SearchIconsAPI200ResponseIconsInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchIconsAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchJokesAPI200ResponseJokesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchJokesAPI200ResponseTest.kt
@@ -423,11 +422,6 @@ src/test/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInn
 src/test/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerNutritionTest.kt
 src/test/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseRecipesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchRecipesAPI200ResponseTest.kt
-src/test/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerAddressTest.kt
-src/test/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursOperationalTest.kt
-src/test/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerLocalHoursTest.kt
-src/test/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseRestaurantsInnerTest.kt
-src/test/kotlin/com/apileague/client/model/SearchRestaurantsAPI200ResponseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerLicenseTest.kt
 src/test/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseImagesInnerTest.kt
 src/test/kotlin/com/apileague/client/model/SearchRoyaltyFreeImagesAPI200ResponseTest.kt

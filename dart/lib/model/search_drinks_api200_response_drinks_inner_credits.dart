@@ -13,40 +13,35 @@ part of openapi.api;
 class SearchDrinksAPI200ResponseDrinksInnerCredits {
   /// Returns a new [SearchDrinksAPI200ResponseDrinksInnerCredits] instance.
   SearchDrinksAPI200ResponseDrinksInnerCredits({
-    this.text,
     this.sourceName,
     this.sourceUrl,
+    this.text,
   });
-
-  String? text;
 
   String? sourceName;
 
   String? sourceUrl;
 
+  String? text;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchDrinksAPI200ResponseDrinksInnerCredits &&
-    other.text == text &&
     other.sourceName == sourceName &&
-    other.sourceUrl == sourceUrl;
+    other.sourceUrl == sourceUrl &&
+    other.text == text;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (text == null ? 0 : text!.hashCode) +
     (sourceName == null ? 0 : sourceName!.hashCode) +
-    (sourceUrl == null ? 0 : sourceUrl!.hashCode);
+    (sourceUrl == null ? 0 : sourceUrl!.hashCode) +
+    (text == null ? 0 : text!.hashCode);
 
   @override
-  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerCredits[text=$text, sourceName=$sourceName, sourceUrl=$sourceUrl]';
+  String toString() => 'SearchDrinksAPI200ResponseDrinksInnerCredits[sourceName=$sourceName, sourceUrl=$sourceUrl, text=$text]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.text != null) {
-      json[r'text'] = this.text;
-    } else {
-      json[r'text'] = null;
-    }
     if (this.sourceName != null) {
       json[r'source_name'] = this.sourceName;
     } else {
@@ -56,6 +51,11 @@ class SearchDrinksAPI200ResponseDrinksInnerCredits {
       json[r'source_url'] = this.sourceUrl;
     } else {
       json[r'source_url'] = null;
+    }
+    if (this.text != null) {
+      json[r'text'] = this.text;
+    } else {
+      json[r'text'] = null;
     }
     return json;
   }
@@ -79,9 +79,9 @@ class SearchDrinksAPI200ResponseDrinksInnerCredits {
       }());
 
       return SearchDrinksAPI200ResponseDrinksInnerCredits(
-        text: mapValueOfType<String>(json, r'text'),
         sourceName: mapValueOfType<String>(json, r'source_name'),
         sourceUrl: mapValueOfType<String>(json, r'source_url'),
+        text: mapValueOfType<String>(json, r'text'),
       );
     }
     return null;

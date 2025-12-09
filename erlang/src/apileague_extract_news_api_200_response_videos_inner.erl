@@ -5,22 +5,22 @@
 -export_type([apileague_extract_news_api_200_response_videos_inner/0]).
 
 -type apileague_extract_news_api_200_response_videos_inner() ::
-    #{ 'summary' => binary(),
+    #{ 'title' => binary(),
+       'url' => binary(),
+       'summary' => binary(),
        'duration' => integer(),
-       'thumbnail' => binary(),
-       'title' => binary(),
-       'url' => binary()
+       'thumbnail' => binary()
      }.
 
-encode(#{ 'summary' := Summary,
+encode(#{ 'title' := Title,
+          'url' := Url,
+          'summary' := Summary,
           'duration' := Duration,
-          'thumbnail' := Thumbnail,
-          'title' := Title,
-          'url' := Url
+          'thumbnail' := Thumbnail
         }) ->
-    #{ 'summary' => Summary,
+    #{ 'title' => Title,
+       'url' => Url,
+       'summary' => Summary,
        'duration' => Duration,
-       'thumbnail' => Thumbnail,
-       'title' => Title,
-       'url' => Url
+       'thumbnail' => Thumbnail
      }.

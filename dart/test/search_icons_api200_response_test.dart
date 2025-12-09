@@ -16,7 +16,7 @@ void main() {
   // final instance = SearchIconsAPI200Response();
 
   group('test SearchIconsAPI200Response', () {
-    // List<SearchRoyaltyFreeImagesAPI200ResponseImagesInner> icons (default value: const [])
+    // List<SearchIconsAPI200ResponseIconsInner> icons (default value: const [])
     test('to test the property `icons`', () async {
       // TODO
     });

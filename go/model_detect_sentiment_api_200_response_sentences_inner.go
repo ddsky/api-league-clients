@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &DetectSentimentAPI200ResponseSentencesInner{}
 
 // DetectSentimentAPI200ResponseSentencesInner struct for DetectSentimentAPI200ResponseSentencesInner
 type DetectSentimentAPI200ResponseSentencesInner struct {
-	Length *int32 `json:"length,omitempty"`
 	Sentiment NullableString `json:"sentiment,omitempty"`
 	Offset *int32 `json:"offset,omitempty"`
 	Confidence *int32 `json:"confidence,omitempty"`
+	Length *int32 `json:"length,omitempty"`
 }
 
 // NewDetectSentimentAPI200ResponseSentencesInner instantiates a new DetectSentimentAPI200ResponseSentencesInner object
@@ -41,38 +41,6 @@ func NewDetectSentimentAPI200ResponseSentencesInner() *DetectSentimentAPI200Resp
 func NewDetectSentimentAPI200ResponseSentencesInnerWithDefaults() *DetectSentimentAPI200ResponseSentencesInner {
 	this := DetectSentimentAPI200ResponseSentencesInner{}
 	return &this
-}
-
-// GetLength returns the Length field value if set, zero value otherwise.
-func (o *DetectSentimentAPI200ResponseSentencesInner) GetLength() int32 {
-	if o == nil || IsNil(o.Length) {
-		var ret int32
-		return ret
-	}
-	return *o.Length
-}
-
-// GetLengthOk returns a tuple with the Length field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DetectSentimentAPI200ResponseSentencesInner) GetLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.Length) {
-		return nil, false
-	}
-	return o.Length, true
-}
-
-// HasLength returns a boolean if a field has been set.
-func (o *DetectSentimentAPI200ResponseSentencesInner) HasLength() bool {
-	if o != nil && !IsNil(o.Length) {
-		return true
-	}
-
-	return false
-}
-
-// SetLength gets a reference to the given int32 and assigns it to the Length field.
-func (o *DetectSentimentAPI200ResponseSentencesInner) SetLength(v int32) {
-	o.Length = &v
 }
 
 // GetSentiment returns the Sentiment field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -181,6 +149,38 @@ func (o *DetectSentimentAPI200ResponseSentencesInner) SetConfidence(v int32) {
 	o.Confidence = &v
 }
 
+// GetLength returns the Length field value if set, zero value otherwise.
+func (o *DetectSentimentAPI200ResponseSentencesInner) GetLength() int32 {
+	if o == nil || IsNil(o.Length) {
+		var ret int32
+		return ret
+	}
+	return *o.Length
+}
+
+// GetLengthOk returns a tuple with the Length field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetectSentimentAPI200ResponseSentencesInner) GetLengthOk() (*int32, bool) {
+	if o == nil || IsNil(o.Length) {
+		return nil, false
+	}
+	return o.Length, true
+}
+
+// HasLength returns a boolean if a field has been set.
+func (o *DetectSentimentAPI200ResponseSentencesInner) HasLength() bool {
+	if o != nil && !IsNil(o.Length) {
+		return true
+	}
+
+	return false
+}
+
+// SetLength gets a reference to the given int32 and assigns it to the Length field.
+func (o *DetectSentimentAPI200ResponseSentencesInner) SetLength(v int32) {
+	o.Length = &v
+}
+
 func (o DetectSentimentAPI200ResponseSentencesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -191,9 +191,6 @@ func (o DetectSentimentAPI200ResponseSentencesInner) MarshalJSON() ([]byte, erro
 
 func (o DetectSentimentAPI200ResponseSentencesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Length) {
-		toSerialize["length"] = o.Length
-	}
 	if o.Sentiment.IsSet() {
 		toSerialize["sentiment"] = o.Sentiment.Get()
 	}
@@ -202,6 +199,9 @@ func (o DetectSentimentAPI200ResponseSentencesInner) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
+	}
+	if !IsNil(o.Length) {
+		toSerialize["length"] = o.Length
 	}
 	return toSerialize, nil
 }

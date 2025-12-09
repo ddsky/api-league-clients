@@ -8,10 +8,10 @@
 
 (def search-recipes-api-200-response-recipes-inner-data
   {
-   (ds/opt :images) (s/coll-of string?)
-   (ds/opt :nutrition) search-recipes-api-200-response-recipes-inner-nutrition-spec
    (ds/opt :id) int?
    (ds/opt :title) string?
+   (ds/opt :images) (s/coll-of string?)
+   (ds/opt :nutrition) search-recipes-api-200-response-recipes-inner-nutrition-spec
    })
 
 (def search-recipes-api-200-response-recipes-inner-spec

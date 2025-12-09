@@ -17,8 +17,8 @@ package com.apileague.client.model
 
 import com.apileague.client.model.ComputeNutritionAPI200ResponseIngredientBreakdownInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionCaloricBreakdown
-import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner
+import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner
 import com.apileague.client.model.SearchDrinksAPI200ResponseDrinksInnerNutritionWeightPerServing
 import com.apileague.client.model.SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner
 
@@ -43,7 +43,7 @@ data class ComputeNutritionAPI200Response (
     val nutrients: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner>? = null,
 
     @Json(name = "properties")
-    val properties: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionFlavonoidsInner>? = null,
+    val properties: kotlin.collections.List<SearchDrinksAPI200ResponseDrinksInnerNutritionPropertiesInner>? = null,
 
     @Json(name = "flavonoids")
     val flavonoids: kotlin.collections.List<SearchRecipesAPI200ResponseRecipesInnerNutritionNutrientsInner>? = null,

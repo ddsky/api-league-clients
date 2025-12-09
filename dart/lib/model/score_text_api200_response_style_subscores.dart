@@ -18,11 +18,11 @@ class ScoreTextAPI200ResponseStyleSubscores {
     this.spellingScore = const [],
   });
 
-  List<int> abbreviationScore;
+  List<num> abbreviationScore;
 
-  List<int> styleScore;
+  List<num> styleScore;
 
-  List<int> spellingScore;
+  List<num> spellingScore;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ScoreTextAPI200ResponseStyleSubscores &&
@@ -68,13 +68,13 @@ class ScoreTextAPI200ResponseStyleSubscores {
 
       return ScoreTextAPI200ResponseStyleSubscores(
         abbreviationScore: json[r'abbreviation_score'] is Iterable
-            ? (json[r'abbreviation_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'abbreviation_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
         styleScore: json[r'style_score'] is Iterable
-            ? (json[r'style_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'style_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
         spellingScore: json[r'spelling_score'] is Iterable
-            ? (json[r'spelling_score'] as Iterable).cast<int>().toList(growable: false)
+            ? (json[r'spelling_score'] as Iterable).cast<num>().toList(growable: false)
             : const [],
       );
     }

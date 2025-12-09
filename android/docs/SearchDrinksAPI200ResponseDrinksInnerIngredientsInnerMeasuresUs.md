@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unitShort** | **String** |  |  [optional]
 **amount** | **Integer** |  |  [optional]
+**unitShort** | **String** |  |  [optional]
 **unitLong** | **String** |  |  [optional]
 
 

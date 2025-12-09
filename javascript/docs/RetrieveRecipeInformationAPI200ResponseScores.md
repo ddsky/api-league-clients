@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metaScore** | **Number** |  | [optional] 
 **weightWatcherSmartPoints** | **Number** |  | [optional] 
 **healthScore** | **Number** |  | [optional] 
+**metaScore** | **Number** |  | [optional] 
 
 

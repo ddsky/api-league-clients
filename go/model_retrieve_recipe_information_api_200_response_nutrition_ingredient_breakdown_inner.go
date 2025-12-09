@@ -3,7 +3,7 @@ API League
 
 API League is a Hub for World Class APIs.
 
-API version: 1.8.1
+API version: 1.9.0
 Contact: mail@apileague.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &RetrieveRecipeInformationAPI200ResponseNutritionIngredie
 
 // RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner struct for RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
 type RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner struct {
+	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Amount *float32 `json:"amount,omitempty"`
 	Unit NullableString `json:"unit,omitempty"`
-	Id *int32 `json:"id,omitempty"`
 	Nutrients []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner `json:"nutrients,omitempty"`
 }
 
@@ -42,6 +42,38 @@ func NewRetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
 func NewRetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInnerWithDefaults() *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner {
 	this := RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -160,38 +192,6 @@ func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInne
 	o.Unit.Unset()
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) GetId() int32 {
-	if o == nil || IsNil(o.Id) {
-		var ret int32
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) GetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) SetId(v int32) {
-	o.Id = &v
-}
-
 // GetNutrients returns the Nutrients field value if set, zero value otherwise.
 func (o *RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) GetNutrients() []SearchDrinksAPI200ResponseDrinksInnerNutritionNutrientsInner {
 	if o == nil || IsNil(o.Nutrients) {
@@ -234,6 +234,9 @@ func (o RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
 
 func (o RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
@@ -242,9 +245,6 @@ func (o RetrieveRecipeInformationAPI200ResponseNutritionIngredientBreakdownInner
 	}
 	if o.Unit.IsSet() {
 		toSerialize["unit"] = o.Unit.Get()
-	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Nutrients) {
 		toSerialize["nutrients"] = o.Nutrients

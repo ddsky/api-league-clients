@@ -4,19 +4,19 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **summary** | **String** |  | [optional] |
-| **image** | **String** |  | [optional] |
-| **sentiment** | **Float** |  | [optional] |
-| **language** | **String** |  | [optional] |
-| **video** | **String** |  | [optional] |
-| **title** | **String** |  | [optional] |
-| **url** | **String** |  | [optional] |
-| **source_country** | **String** |  | [optional] |
 | **id** | **Integer** |  | [optional] |
+| **title** | **String** |  | [optional] |
 | **text** | **String** |  | [optional] |
-| **category** | **String** |  | [optional] |
+| **summary** | **String** |  | [optional] |
+| **url** | **String** |  | [optional] |
+| **image** | **String** |  | [optional] |
+| **video** | **String** |  | [optional] |
 | **publish_date** | **String** |  | [optional] |
 | **authors** | **Array&lt;String&gt;** |  | [optional] |
+| **category** | **String** |  | [optional] |
+| **language** | **String** |  | [optional] |
+| **source_country** | **String** |  | [optional] |
+| **sentiment** | **Float** |  | [optional] |
 
 ## Example
 
@@ -24,19 +24,19 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchNewsAPI200ResponseNewsInner.new(
-  summary: null,
-  image: null,
-  sentiment: null,
-  language: null,
-  video: null,
-  title: null,
-  url: null,
-  source_country: null,
   id: null,
+  title: null,
   text: null,
-  category: null,
+  summary: null,
+  url: null,
+  image: null,
+  video: null,
   publish_date: null,
-  authors: null
+  authors: null,
+  category: null,
+  language: null,
+  source_country: null,
+  sentiment: null
 )
 ```
 

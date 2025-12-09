@@ -4,9 +4,218 @@ All URIs are relative to *https://api.apileague.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**RandomAffirmationAPI**](KnowledgeApi.md#randomaffirmationapi) | **GET** /retrieve-random-affirmation | Random Affirmation API |
+| [**RandomLifeHackAPI**](KnowledgeApi.md#randomlifehackapi) | **GET** /retrieve-random-life-hack | Random Life Hack API |
 | [**RandomQuoteAPI**](KnowledgeApi.md#randomquoteapi) | **GET** /retrieve-random-quote | Random Quote API |
 | [**RandomRiddleAPI**](KnowledgeApi.md#randomriddleapi) | **GET** /retrieve-random-riddle | Random Riddle API |
 | [**RandomTriviaAPI**](KnowledgeApi.md#randomtriviaapi) | **GET** /retrieve-random-trivia | Random Trivia API |
+
+<a id="randomaffirmationapi"></a>
+# **RandomAffirmationAPI**
+> RandomAffirmationAPI200Response RandomAffirmationAPI ()
+
+Random Affirmation API
+
+This endpoint returns a random affirmation to boost your confidence and motivation. Affirmations are positive statements that can help you overcome negative thoughts and improve your mindset and well-being.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class RandomAffirmationAPIExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new KnowledgeApi(config);
+
+            try
+            {
+                // Random Affirmation API
+                RandomAffirmationAPI200Response result = apiInstance.RandomAffirmationAPI();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.RandomAffirmationAPI: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RandomAffirmationAPIWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Random Affirmation API
+    ApiResponse<RandomAffirmationAPI200Response> response = apiInstance.RandomAffirmationAPIWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KnowledgeApi.RandomAffirmationAPIWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+[**RandomAffirmationAPI200Response**](RandomAffirmationAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="randomlifehackapi"></a>
+# **RandomLifeHackAPI**
+> RandomLifeHackAPI200Response RandomLifeHackAPI (int? maxLength = null)
+
+Random Life Hack API
+
+This endpoint returns a random life hack to make your life easier. Life hacks are simple and clever tips or tricks that can help you save time, money, or effort in your daily life.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using apileague.Api;
+using apileague.Client;
+using apileague.Model;
+
+namespace Example
+{
+    public class RandomLifeHackAPIExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.apileague.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("api-key", "Bearer");
+            // Configure API key authorization: headerApiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+
+            var apiInstance = new KnowledgeApi(config);
+            var maxLength = 300;  // int? | The maximum length of the hack in letters. (optional) 
+
+            try
+            {
+                // Random Life Hack API
+                RandomLifeHackAPI200Response result = apiInstance.RandomLifeHackAPI(maxLength);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling KnowledgeApi.RandomLifeHackAPI: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RandomLifeHackAPIWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Random Life Hack API
+    ApiResponse<RandomLifeHackAPI200Response> response = apiInstance.RandomLifeHackAPIWithHttpInfo(maxLength);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling KnowledgeApi.RandomLifeHackAPIWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **maxLength** | **int?** | The maximum length of the hack in letters. | [optional]  |
+
+### Return type
+
+[**RandomLifeHackAPI200Response**](RandomLifeHackAPI200Response.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [headerApiKey](../README.md#headerApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **406** | Not Acceptable |  -  |
+| **429** | Too Many Requests |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="randomquoteapi"></a>
 # **RandomQuoteAPI**

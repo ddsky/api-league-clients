@@ -21,11 +21,6 @@ void main() {
       // TODO
     });
 
-    // String filterType
-    test('to test the property `filterType`', () async {
-      // TODO
-    });
-
     // String key
     test('to test the property `key`', () async {
       // TODO
@@ -33,6 +28,11 @@ void main() {
 
     // List<SearchGamesAPI200ResponseFilterOptionsInnerValuesInner> values (default value: const [])
     test('to test the property `values`', () async {
+      // TODO
+    });
+
+    // String filterType
+    test('to test the property `filterType`', () async {
       // TODO
     });
 

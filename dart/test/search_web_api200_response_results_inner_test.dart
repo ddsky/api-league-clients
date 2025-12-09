@@ -16,6 +16,11 @@ void main() {
   // final instance = SearchWebAPI200ResponseResultsInner();
 
   group('test SearchWebAPI200ResponseResultsInner', () {
+    // String url
+    test('to test the property `url`', () async {
+      // TODO
+    });
+
     // String title
     test('to test the property `title`', () async {
       // TODO
@@ -23,11 +28,6 @@ void main() {
 
     // String summary
     test('to test the property `summary`', () async {
-      // TODO
-    });
-
-    // String url
-    test('to test the property `url`', () async {
       // TODO
     });
 

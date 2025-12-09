@@ -8,15 +8,15 @@ defmodule APILeague.Model.DetectMainImageColorApi200ResponseInner do
 
   @derive Jason.Encoder
   defstruct [
+    :hex_code,
     :specific_color,
-    :main_color,
-    :hex_code
+    :main_color
   ]
 
   @type t :: %__MODULE__{
+    :hex_code => String.t | nil,
     :specific_color => String.t | nil,
-    :main_color => String.t | nil,
-    :hex_code => String.t | nil
+    :main_color => String.t | nil
   }
 
   def decode(value) do

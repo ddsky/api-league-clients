@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 
@@ -14,9 +14,9 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SearchMemesAPI200ResponseMemesInner.new(
-  type: null,
   description: null,
-  url: null
+  url: null,
+  type: null
 )
 ```
 
